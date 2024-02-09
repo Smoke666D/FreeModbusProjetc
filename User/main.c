@@ -14,28 +14,18 @@
  *@Note
  task1 and task2 alternate printing
 */
-#include "string.h"
-#include "eth_driver.h"
-#include "debug.h"
-#include "FreeRTOS.h"
-#include "task.h"
-#include "wchnet.h"
-#include "port.h"
-#include "mb.h"
-#include "event_groups.h"
+#include "main.h"
 /* Global define */
 #define TASK1_TASK_PRIO     5
 #define TASK1_STK_SIZE      512
 #define TASK2_TASK_PRIO     5
 #define TASK2_STK_SIZE      512
+#define ADC_TASK_PRIO     5
+#define ADC_STK_SIZE      256
 
 #define KEEPALIVE_ENABLE                1               //Enable keep alive function
 
-//u8 MACAddr[6];                                          //MAC address
-//u8 IPAddr[4] = {192, 168, 1, 10};                       //IP address
-//u8 GWIPAddr[4] = {192, 168, 1, 1};                      //Gateway IP address
-//u8 IPMask[4] = {255, 255, 255, 0};                      //subnet mask
-//u16 srcport = 1000;                                     //source port
+                                   //source port
 
 //u8 SocketIdForListen;                                   //Socket for Listening
 //u8 socket[WCHNET_MAX_SOCKET_NUM];                       //Save the currently connected socket
@@ -45,13 +35,19 @@ void WCHNET_HandleGlobalInt(void);
 /* Global Variable */
 TaskHandle_t Task1Task_Handler;
 TaskHandle_t Task2Task_Handler;
+TaskHandle_t ADCTask_Handler;
 EventGroupHandle_t xOSEventGroupHandle;
+EventGroupHandle_t xADCEventGroupHandle;
 
 EventGroupHandle_t xGetOSEvent()
 {
     return (xOSEventGroupHandle);
 }
 
+EventGroupHandle_t xGetADCEvent()
+{
+    return (xADCEventGroupHandle);
+}
 /*********************************************************************
  * @fn      GPIO_Toggle_INIT
  *
@@ -79,159 +75,6 @@ void mStopIfError(u8 iError)
 
 
 
-/*void WCHNET_CreateTcpSocketListen(void)
-{
-    u8 i;
-    SOCK_INF TmpSocketInf;
-
-    memset((void *) &TmpSocketInf, 0, sizeof(SOCK_INF));
-    TmpSocketInf.SourPort = srcport;
-    TmpSocketInf.ProtoType = PROTO_TYPE_TCP;
-    i = WCHNET_SocketCreat(&SocketIdForListen, &TmpSocketInf);
-    printf("SocketIdForListen %d\r\n", SocketIdForListen);
-    mStopIfError(i);
-    i = WCHNET_SocketListen(SocketIdForListen);                   //listen for connections
-    mStopIfError(i);
-}
-*/
-/*********************************************************************
- * @fn      WCHNET_DataLoopback
- *
- * @brief   Data loopback function.
- *
- * @param   id - socket id.
- *
- * @return  none
- */
-/*void WCHNET_DataLoopback(u8 id)
-{
-#if 1
-    u8 i;
-    u32 len;
-    u32 endAddr = SocketInf[id].RecvStartPoint + SocketInf[id].RecvBufLen;       //Receive buffer end address
-
-    if ((SocketInf[id].RecvReadPoint + SocketInf[id].RecvRemLen) > endAddr) {    //Calculate the length of the received data
-        len = endAddr - SocketInf[id].RecvReadPoint;
-    }
-    else {
-        len = SocketInf[id].RecvRemLen;
-    }
-    i = WCHNET_SocketSend(id, (u8 *) SocketInf[id].RecvReadPoint, &len);        //send data
-    if (i == WCHNET_ERR_SUCCESS) {
-        WCHNET_SocketRecv(id, NULL, &len);                                      //Clear sent data
-    }
-#else
-    u32 len, totallen;
-    u8 *p = MyBuf, TransCnt = 255;
-
-    len = WCHNET_SocketRecvLen(id, NULL);                                //query length
-    printf("Receive Len = %d\r\n", len);
-    totallen = len;
-    WCHNET_SocketRecv(id, MyBuf, &len);                                  //Read the data of the receive buffer into MyBuf
-    while(1){
-        len = totallen;
-        WCHNET_SocketSend(id, p, &len);                                  //Send the data
-        totallen -= len;                                                 //Subtract the sent length from the total length
-        p += len;                                                        //offset buffer pointer
-        if( !--TransCnt )  break;                                        //Timeout exit
-        if(totallen) continue;                                           //If the data is not sent, continue to send
-        break;                                                           //After sending, exit
-    }
-#endif
-}
-
-/*********************************************************************
- * @fn      WCHNET_HandleSockInt
- *
- * @brief   Socket Interrupt Handle
- *
- * @param   socketid - socket id.
- *          intstat - interrupt status
- *
- * @return  none
- */
-/*void WCHNET_HandleSockInt(u8 socketid, u8 intstat)
-{
-    u8 i;
-
-    if (intstat & SINT_STAT_RECV)                                 //receive data
-    {
-        WCHNET_DataLoopback(socketid);                            //Data loopback
-    }
-    if (intstat & SINT_STAT_CONNECT)                              //connect successfully
-    {
-#if KEEPALIVE_ENABLE
-        WCHNET_SocketSetKeepLive(socketid, ENABLE);
-#endif
-        WCHNET_ModifyRecvBuf(socketid, (u32) SocketRecvBuf[socketid],
-        RECE_BUF_LEN);
-        for (i = 0; i < WCHNET_MAX_SOCKET_NUM; i++) {
-            if (socket[i] == 0xff) {                              //save connected socket id
-                socket[i] = socketid;
-                break;
-            }
-        }
-        printf("TCP Connect Success\r\n");
-        printf("socket id: %d\r\n",socket[i]);
-    }
-    if (intstat & SINT_STAT_DISCONNECT)                           //disconnect
-    {
-        for (i = 0; i < WCHNET_MAX_SOCKET_NUM; i++) {             //delete disconnected socket id
-            if (socket[i] == socketid) {
-                socket[i] = 0xff;
-                break;
-            }
-        }
-        printf("TCP Disconnect\r\n");
-    }
-    if (intstat & SINT_STAT_TIM_OUT)                              //timeout disconnect
-    {
-        for (i = 0; i < WCHNET_MAX_SOCKET_NUM; i++) {             //delete disconnected socket id
-            if (socket[i] == socketid) {
-                socket[i] = 0xff;
-                break;
-            }
-        }
-        printf("TCP Timeout\r\n");
-    }
-}
-
-/*********************************************************************
- * @fn      WCHNET_HandleGlobalInt
- *
- * @brief   Global Interrupt Handle
- *
- * @return  none
- */
-/*void WCHNET_HandleGlobalInt(void)
-{
-    u8 intstat;
-    u16 i;
-    u8 socketint;
-
-    intstat = WCHNET_GetGlobalInt();                              //get global interrupt flag
-    if (intstat & GINT_STAT_UNREACH)                              //Unreachable interrupt
-    {
-        printf("GINT_STAT_UNREACH\r\n");
-    }
-    if (intstat & GINT_STAT_IP_CONFLI)                            //IP conflict
-    {
-        printf("GINT_STAT_IP_CONFLI\r\n");
-    }
-    if (intstat & GINT_STAT_PHY_CHANGE)                           //PHY status change
-    {
-        i = WCHNET_GetPHYStatus();
-        if (i & PHY_Linked_Status)
-            printf("PHY Link Success\r\n");
-    }
-    if (intstat & GINT_STAT_SOCKET) {                             //socket related interrupt
-        for (i = 0; i < WCHNET_MAX_SOCKET_NUM; i++) {
-            socketint = WCHNET_GetSocketInt(i);
-            if (socketint)
-                WCHNET_HandleSockInt(i, socketint);
-        }
-    }
-}*/
 
 
 /*********************************************************************
@@ -364,6 +207,17 @@ eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT us
 
 
 
+
+
+
+/* Structure that will hold the TCB of the task being created. */
+//StaticTask_t xTaskBuffer;
+
+/* Buffer that the task being created will use as its stack.  Note this is
+an array of StackType_t variables.  The size of StackType_t is dependent on
+the RTOS port. */
+//StackType_t xStack[  TASK2_STK_SIZE  ];
+
 int main(void)
 {
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
@@ -377,14 +231,11 @@ int main(void)
 
 	GPIO_Toggle_INIT();
 	xOSEventGroupHandle =     xEventGroupCreate();
+	xADCEventGroupHandle =     xEventGroupCreate();
 	vNetInit();
 
 
-  //  memset(socket, 0xff, WCHNET_MAX_SOCKET_NUM);
-   // WCHNET_CreateTcpSocketListen();
 
-
-	/* create two task */
     xTaskCreate((TaskFunction_t )task2_task,
                         (const char*    )"task2",
                         (uint16_t       )TASK2_STK_SIZE,
@@ -398,6 +249,12 @@ int main(void)
                     (void*          )NULL,
                     (UBaseType_t    )TASK1_TASK_PRIO,
                     (TaskHandle_t*  )&Task1Task_Handler);
+    xTaskCreate((TaskFunction_t )ADC_task,
+                     (const char*    )"ADC",
+                     (uint16_t       )ADC_STK_SIZE,
+                     (void*          )NULL,
+                     (UBaseType_t    )ADC_TASK_PRIO,
+                     (TaskHandle_t*  )&ADCTask_Handler);
     vTaskStartScheduler();
 
 	while(1)

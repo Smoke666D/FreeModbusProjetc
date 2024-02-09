@@ -165,7 +165,7 @@ void WCHNET_HandleSockInt(u8 socketid, u8 intstat)
         else {
             len = SocketInf[socketid].RecvRemLen;
         }
-        printf("Recive socket id: %d\r\n", socketid);
+
 
 
 
@@ -202,9 +202,9 @@ void WCHNET_HandleSockInt(u8 socketid, u8 intstat)
                     u8 J;
                     ( void )xMBPortEventPost( EV_FRAME_RECEIVED );
                     xEventGroupWaitBits(xPortTCPOSEventGroup,DATA_READY,pdTRUE,pdTRUE,portMAX_DELAY);
-                    printf("send tcp2_1\n\r");
+
                     J = WCHNET_SocketSend(sss, outTCPBuf, &Len );
-                    printf("send tcp2_2\n\r");
+
                     mStopIfError(J);
                         if ( J == WCHNET_ERR_SUCCESS )
                         {
@@ -466,7 +466,7 @@ xMBTCPPortSendResponse( const UCHAR * pucMBTCPFrame, USHORT usTCPLength )
 
    // if( SocketIdClient!=0xFF )
     {
-        printf("send tcp1\n\r");
+
         /*Make sure we can send the packet. */
         memcpy( &outTCPBuf[0],pucMBTCPFrame, usTCPLength  );
 
@@ -474,7 +474,7 @@ xMBTCPPortSendResponse( const UCHAR * pucMBTCPFrame, USHORT usTCPLength )
         pData = outTCPBuf;
         xEventGroupSetBits(xPortTCPOSEventGroup,DATA_READY);
         xEventGroupWaitBits(xPortTCPOSEventGroup,DATA_SEND,pdTRUE,pdTRUE,portMAX_DELAY);
-        printf("send tcp3\n\r");
+
    /*     J = WCHNET_SocketSend(SocketIdForListen,pData, (uint32_t *)&Len );
        if ( J == WCHNET_ERR_SUCCESS )
        {
