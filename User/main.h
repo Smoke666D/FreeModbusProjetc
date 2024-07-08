@@ -18,7 +18,14 @@
 #include "mb.h"
 #include "event_groups.h"
 #include "ADC.H"
-
+#include <keyboard.h>
+#include "u8g2.h"
 EventGroupHandle_t xGetADCEvent();
+EventGroupHandle_t xGetOSEvent();
+
+#define DATA_READY  0x01
+#define DATA_SEND   0x02
+#define KEYBOARD_START 0x04
+
 
 #endif /* USER_MAIN_H_ */

@@ -15,6 +15,7 @@
  task1 and task2 alternate printing
 */
 #include "main.h"
+#include "system_init.h"
 /* Global define */
 #define TASK1_TASK_PRIO     5
 #define TASK1_STK_SIZE      512
@@ -22,6 +23,8 @@
 #define TASK2_STK_SIZE      512
 #define ADC_TASK_PRIO     5
 #define ADC_STK_SIZE      256
+#define KEYBOARD_TASK_PRIO     5
+#define KEYBOARD_STK_SIZE      128
 
 #define KEEPALIVE_ENABLE                1               //Enable keep alive function
 
@@ -31,11 +34,12 @@
 //u8 socket[WCHNET_MAX_SOCKET_NUM];                       //Save the currently connected socket
 //u8 SocketRecvBuf[WCHNET_MAX_SOCKET_NUM][RECE_BUF_LEN];  //socket receive buffer
 //u8 MyBuf[RECE_BUF_LEN];
-void WCHNET_HandleGlobalInt(void);
 /* Global Variable */
-TaskHandle_t Task1Task_Handler;
+
+
+
 TaskHandle_t Task2Task_Handler;
-TaskHandle_t ADCTask_Handler;
+
 EventGroupHandle_t xOSEventGroupHandle;
 EventGroupHandle_t xADCEventGroupHandle;
 
@@ -64,6 +68,21 @@ void GPIO_Toggle_INIT(void)
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
   GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
   GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB,ENABLE);
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+  GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
+  GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+
+
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC,ENABLE);
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+  GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
+  GPIO_Init(GPIOB, &GPIO_InitStructure);
 }
 
 void mStopIfError(u8 iError)
@@ -72,35 +91,6 @@ void mStopIfError(u8 iError)
         return;
     printf("Error: %02X\r\n", (u16) iError);
 }
-
-
-
-
-
-/*********************************************************************
- * @fn      task2_task
- *
- * @brief   task2 program.
- *
- * @param  *pvParameters - Parameters point of task2
- *
- * @return  none
- */
-void task2_task(void *pvParameters)
-{
-    while(1)
-    {
-        WCHNET_MainTask();
-               /*Query the Ethernet global interrupt,
-                * if there is an interrupt, call the global interrupt handler*/
-        if(WCHNET_QueryGlobalInt())
-        {
-                 WCHNET_HandleGlobalInt();
-        }
-        vTaskDelay(1);
-    }
-}
-
 
 
 
@@ -207,6 +197,8 @@ eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT us
 
 
 
+u8g2_t u8g2_ks0108;
+
 
 
 
@@ -226,37 +218,19 @@ int main(void)
 	USART_Printf_Init(115200);
 		
 	printf("SystemClk:%d\r\n",SystemCoreClock);
-	printf( "ChipID:%08x\r\n", DBGMCU_GetCHIPID() );
-	printf("FreeRTOS Kernel Version:%s\r\n",tskKERNEL_VERSION_NUMBER);
+	//printf( "ChipID:%08x\r\n", DBGMCU_GetCHIPID() );
+	//printf("FreeRTOS Kernel Version:%s\r\n",tskKERNEL_VERSION_NUMBER);
 
 	GPIO_Toggle_INIT();
-	xOSEventGroupHandle =     xEventGroupCreate();
+	xOSEventGroupHandle =      xEventGroupCreate();
 	xADCEventGroupHandle =     xEventGroupCreate();
 	vNetInit();
+	//vSetupKeyboard();
 
-
-
-    xTaskCreate((TaskFunction_t )task2_task,
-                        (const char*    )"task2",
-                        (uint16_t       )TASK2_STK_SIZE,
-                        (void*          )NULL,
-                        (UBaseType_t    )TASK2_TASK_PRIO,
-                        (TaskHandle_t*  )&Task2Task_Handler);
-
-    xTaskCreate((TaskFunction_t )MBTCP_task,
-                    (const char*    )"task1",
-                    (uint16_t       )TASK1_STK_SIZE,
-                    (void*          )NULL,
-                    (UBaseType_t    )TASK1_TASK_PRIO,
-                    (TaskHandle_t*  )&Task1Task_Handler);
-    xTaskCreate((TaskFunction_t )ADC_task,
-                     (const char*    )"ADC",
-                     (uint16_t       )ADC_STK_SIZE,
-                     (void*          )NULL,
-                     (UBaseType_t    )ADC_TASK_PRIO,
-                     (TaskHandle_t*  )&ADCTask_Handler);
+    vSYStaskInit ( );
     vTaskStartScheduler();
 
+    u8g2_Setup_ks0108_128x64_f(&u8g2_ks0108, U8G2_R0, 0, 0);
 	while(1)
 	{
 	    printf("shouldn't run at here!!\n");

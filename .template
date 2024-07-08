@@ -15,3 +15,4 @@ Description=Website: http://www.wch.cn/products/CH32V307.html?\nROM(byte): 256K,
 
 PeripheralVersion=2.2
 MCU=CH32V307-FreeRTOS
+CLKSpeed=1

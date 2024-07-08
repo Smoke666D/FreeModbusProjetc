@@ -50,7 +50,11 @@ User/AC_ConvertLib.o: ../User/AC_ConvertLib.c ../User/AC_ConvertLib.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/event_groups.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/timers.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/task.h \
- ../User/ADC.H
+ ../User/ADC.H C:\MRS_DATA\workspace\HWLIB/keyboard.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/semphr.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8g2.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8x8.h
 
 ../User/AC_ConvertLib.h:
 
@@ -157,3 +161,13 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/timers.h:
 C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/task.h:
 
 ../User/ADC.H:
+
+C:\MRS_DATA\workspace\HWLIB/keyboard.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/semphr.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8g2.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8x8.h:

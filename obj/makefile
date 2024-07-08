@@ -9,6 +9,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include u8g2-master/csrc/subdir.mk
 -include port/subdir.mk
 -include modbus/tcp/subdir.mk
 -include modbus/functions/subdir.mk

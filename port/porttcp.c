@@ -27,7 +27,7 @@
 /* ----------------------- lwIP includes ------------------------------------*/
 #include "eth_driver.h"
 #include "wchnet.h"
-//#include "main.h"
+#include "main.h"
 #include "string.h"
 #include "task.h"
 #include "event_groups.h"
@@ -74,8 +74,7 @@ static UCHAR    aucTCPBuf[MB_TCP_BUF_SIZE];
 static USHORT   usTCPBufPos;
 
 static UCHAR    outTCPBuf[MB_TCP_BUF_SIZE];
-#define DATA_READY  0x01
-#define DATA_SEND   0x02
+
 static EventGroupHandle_t xPortTCPOSEventGroup;
 
 

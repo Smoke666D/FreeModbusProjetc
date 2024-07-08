@@ -40,15 +40,23 @@ port/porttcp.o: ../port/porttcp.c ../port/port.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\NetLib/wchnet.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\User/net_config.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\NetLib/wchnet.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/task.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/list.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\port/port.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\modbus\include/mb.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\modbus\include/mbport.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\modbus\include/mbproto.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/event_groups.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/timers.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/task.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\modbus\include/mb.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\port/port.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\modbus\include/mbport.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\modbus\include/mbproto.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\User/ADC.H \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h \
+ C:\MRS_DATA\workspace\HWLIB/keyboard.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/semphr.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8g2.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8x8.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\modbus\include/mbport.h
 
 ../port/port.h:
@@ -135,9 +143,19 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\User/net_config.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\NetLib/wchnet.h:
 
+C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h:
+
 C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/task.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/list.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\port/port.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\modbus\include/mb.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\modbus\include/mbport.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\modbus\include/mbproto.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/event_groups.h:
 
@@ -145,12 +163,18 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/timers.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/task.h:
 
-C:\MRS_DATA\workspace\FreeModbusProjetc\modbus\include/mb.h:
+C:\MRS_DATA\workspace\FreeModbusProjetc\User/ADC.H:
 
-C:\MRS_DATA\workspace\FreeModbusProjetc\port/port.h:
+C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h:
 
-C:\MRS_DATA\workspace\FreeModbusProjetc\modbus\include/mbport.h:
+C:\MRS_DATA\workspace\HWLIB/keyboard.h:
 
-C:\MRS_DATA\workspace\FreeModbusProjetc\modbus\include/mbproto.h:
+C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/semphr.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8g2.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8x8.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\modbus\include/mbport.h:
