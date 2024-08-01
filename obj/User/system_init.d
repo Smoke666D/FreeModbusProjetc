@@ -50,13 +50,24 @@ User/system_init.o: ../User/system_init.c ../User/system_init.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/event_groups.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/timers.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/task.h \
- ../User/ADC.H C:\MRS_DATA\workspace\HWLIB/keyboard.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/semphr.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h \
+ ../User/ADC.H \
  C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8g2.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8x8.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/list.h
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/list.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/semphr.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_gpio.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/board_define.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/hw_lib_din.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\User/init.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/filters.h ../User/init.h \
+ ../User/adc.h ../User/data_model.h ../User/led.h
 
 ../User/system_init.h:
 
@@ -164,12 +175,6 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/task.h:
 
 ../User/ADC.H:
 
-C:\MRS_DATA\workspace\HWLIB/keyboard.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/semphr.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h:
-
 C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8g2.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8x8.h:
@@ -177,3 +182,35 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8x8.h:
 C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/list.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/semphr.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_gpio.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/board_define.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/hw_lib_din.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\User/init.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/filters.h:
+
+../User/init.h:
+
+../User/adc.h:
+
+../User/data_model.h:
+
+../User/led.h:

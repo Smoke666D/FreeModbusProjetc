@@ -28,6 +28,8 @@ Debug \
 FreeRTOS \
 FreeRTOS/portable/GCC/RISC-V \
 FreeRTOS/portable/MemMang \
+HAL \
+HW_LIB \
 NetLib \
 Peripheral/src \
 Startup \

@@ -6,22 +6,12 @@
  */
 
 
+
+
 #include "AC_ConvertLib.h"
 
 
- uint16_t vRCFilter( uint16_t input,uint16_t * old_output)
 
-{
-
-    volatile uint32_t new = input;
-    volatile uint32_t old = *old_output;
-
-
-    volatile uint16_t  output =  ( A * old + (256-A)*new )>>8;
-    //*old_input = input;
-    *old_output = output;
-    return output;
-}
 
 
 

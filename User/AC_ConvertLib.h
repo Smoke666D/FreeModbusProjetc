@@ -11,8 +11,7 @@
 #include "main.h"
 #include "math.h"
 
-#define A 220
-uint16_t vRCFilter( uint16_t input,uint16_t * old_output);
+
 
 #define MAX_ZERO_POINT 20
 #define FASE_DETECT_HISTERESIS  30

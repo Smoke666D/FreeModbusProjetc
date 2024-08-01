@@ -16,15 +16,9 @@
 */
 #include "main.h"
 #include "system_init.h"
+#include "init.h"
 /* Global define */
-#define TASK1_TASK_PRIO     5
-#define TASK1_STK_SIZE      512
-#define TASK2_TASK_PRIO     5
-#define TASK2_STK_SIZE      512
-#define ADC_TASK_PRIO     5
-#define ADC_STK_SIZE      256
-#define KEYBOARD_TASK_PRIO     5
-#define KEYBOARD_STK_SIZE      128
+
 
 #define KEEPALIVE_ENABLE                1               //Enable keep alive function
 
@@ -37,20 +31,17 @@
 /* Global Variable */
 
 
-
-TaskHandle_t Task2Task_Handler;
-
 EventGroupHandle_t xOSEventGroupHandle;
 EventGroupHandle_t xADCEventGroupHandle;
 
-EventGroupHandle_t xGetOSEvent()
+EventGroupHandle_t  * xGetOSEvent()
 {
-    return (xOSEventGroupHandle);
+    return (&xOSEventGroupHandle);
 }
 
-EventGroupHandle_t xGetADCEvent()
+EventGroupHandle_t * xGetADCEvent()
 {
-    return (xADCEventGroupHandle);
+    return (&xADCEventGroupHandle);
 }
 /*********************************************************************
  * @fn      GPIO_Toggle_INIT
@@ -212,7 +203,7 @@ the RTOS port. */
 
 int main(void)
 {
-	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+	//NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 	SystemCoreClockUpdate();
 	Delay_Init();
 	USART_Printf_Init(115200);
@@ -222,11 +213,10 @@ int main(void)
 	//printf("FreeRTOS Kernel Version:%s\r\n",tskKERNEL_VERSION_NUMBER);
 
 	GPIO_Toggle_INIT();
-	xOSEventGroupHandle =      xEventGroupCreate();
-	xADCEventGroupHandle =     xEventGroupCreate();
+	vInit_DeviceConfig();
 	vNetInit();
-	//vSetupKeyboard();
-
+	vSYSqueueInit ( );
+    vSYSeventInit ( );
     vSYStaskInit ( );
     vTaskStartScheduler();
 

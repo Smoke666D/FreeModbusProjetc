@@ -12,6 +12,8 @@
 
 #include "string.h"
 #include "eth_driver.h"
+#include "hal_gpio.h"
+#include "init.h"
 
 __attribute__((__aligned__(4))) ETH_DMADESCTypeDef DMARxDscrTab[ETH_RXBUFNB];       /* MAC receive descriptor, 4-byte aligned*/
 __attribute__((__aligned__(4))) ETH_DMADESCTypeDef DMATxDscrTab[ETH_TXBUFNB];       /* MAC send descriptor, 4-byte aligned */
@@ -349,13 +351,13 @@ void WCHNET_MainTask(void)
 void ETH_LedLinkSet( uint8_t mode )
 {
     if( mode == LED_OFF )
-    {
-        GPIO_SetBits(GPIOC, GPIO_Pin_0);
-    }
-    else
-    {
-        GPIO_ResetBits(GPIOC, GPIO_Pin_0);
-    }
+        {
+            HAL_SetBit(ELED_Port, ELED2_Pin);
+        }
+        else
+        {
+            HAL_ResetBit(ELED_Port, ELED2_Pin);
+        }
 }
 
 /*********************************************************************
@@ -369,11 +371,11 @@ void ETH_LedDataSet( uint8_t mode )
 {
     if( mode == LED_OFF )
     {
-        GPIO_SetBits(GPIOC, GPIO_Pin_1);
+        HAL_SetBit(ELED_Port, ELED1_Pin);
     }
     else
     {
-        GPIO_ResetBits(GPIOC, GPIO_Pin_1);
+        HAL_ResetBit(ELED_Port, ELED1_Pin);
     }
 }
 
