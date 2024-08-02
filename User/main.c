@@ -213,14 +213,14 @@ int main(void)
 	//printf("FreeRTOS Kernel Version:%s\r\n",tskKERNEL_VERSION_NUMBER);
 
 	GPIO_Toggle_INIT();
-	vInit_DeviceConfig();
+	//vInit_DeviceConfig();
 	vNetInit();
 	vSYSqueueInit ( );
     vSYSeventInit ( );
     vSYStaskInit ( );
     vTaskStartScheduler();
 
-    u8g2_Setup_ks0108_128x64_f(&u8g2_ks0108, U8G2_R0, 0, 0);
+  //  u8g2_Setup_ks0108_128x64_f(&u8g2_ks0108, U8G2_R0, 0, 0);
 	while(1)
 	{
 	    printf("shouldn't run at here!!\n");

@@ -54,7 +54,8 @@ HAL/hal_gpio_ch32.o: ../HAL/hal_gpio_ch32.c ../HAL/hal_gpio.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\User/ADC.H \
  C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8g2.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8x8.h
+ C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8x8.h \
+ ../HAL/hal_irq.h
 
 ../HAL/hal_gpio.h:
 
@@ -171,3 +172,5 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h:
 C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8g2.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8x8.h:
+
+../HAL/hal_irq.h:

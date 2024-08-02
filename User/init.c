@@ -15,13 +15,8 @@ static void MX_GPIO_Init(void);
 
 void vInit_DeviceConfig( void )
 {
-
-
-
-
-
      MX_GPIO_Init();
-     vLCDInit();
+    vLCDInit();
      ADC1_Init();
      InitEEPROM(HAL_SPI2,DMA1_CH4,DMA1_CH5);
      HW_TIMER_TimerInit(TIMER8,4000000,10);

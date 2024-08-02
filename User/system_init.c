@@ -74,13 +74,13 @@ void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer,
 
 void vSYStaskInit ( void )
 {
-   (* getLCDTaskHandle())
+ /*  (* getLCDTaskHandle())
            =  xTaskCreateStatic( LCD_task, "LCD", LCD_STK_SIZE , ( void * ) 1, LCD_TASK_PRIOR  ,
                    (StackType_t * const )LCDTaskBuffer, &LCDTaskControlBlock );
 
    (*  getADCTaskHandle())
              = xTaskCreateStatic( ADC_task, "ADC", ADC_STK_SIZE , ( void * ) 1, ADC_TASK_PRIO  ,
-                                     (StackType_t * const )ADCTaskBuffer, &ADCTaskControlBlock );
+                                     (StackType_t * const )ADCTaskBuffer, &ADCTaskControlBlock );*/
    MPTCPTask_Handler
   = xTaskCreateStatic( MBTCP_task, "MPTCP", MBTCP_STK_SIZE , ( void * ) 1, MBTCP_TASK_PRIO ,
                      (StackType_t * const )MBTCPTaskBuffer, &MBTCPTaskControlBlock );
@@ -89,9 +89,9 @@ void vSYStaskInit ( void )
   = xTaskCreateStatic( WCHNET_task, "MPTCP", WCHNET_STK_SIZE , ( void * ) 1,WCHNET_TASK_PRIO ,
                      (StackType_t * const )WCHNETTaskBuffer, &WCHNETTaskControlBlock );
 
-   KeyboarTask_Handler
+  /* KeyboarTask_Handler
    = xTaskCreateStatic( vKeyboardTask, "KEYBOARD", KEYBAORD_STK_SIZE , ( void * ) 1,KEYBAORD_TASK_PRIO ,
-                      (StackType_t * const )KeyboarTaskBuffer, &KeyboardTaskControlBlock);
+                      (StackType_t * const )KeyboarTaskBuffer, &KeyboardTaskControlBlock);*/
   DefautTask_Handler = xTaskCreateStatic( vDefaultTask, "DefTask", DEFAULT_TASK_STACK_SIZE , ( void * ) 1, DEFAULT_TASK_PRIOR, (StackType_t * const )defaultTaskBuffer, &defaultTaskControlBlock );
 
   return;
@@ -243,7 +243,7 @@ void vDefaultTask( void  * argument )
     TaskFSM_t main_task_fsm = STATE_INIT;
     while(1)
     {
-        switch (main_task_fsm)
+       /* switch (main_task_fsm)
         {
             case STATE_INIT:
                 DataModel_Init();
@@ -259,11 +259,11 @@ void vDefaultTask( void  * argument )
                     main_task_fsm = STATE_RUN;
                 }
                 break;
-            case STATE_RUN:
+            case STATE_RUN:*/
                 vTaskDelay(100);
-                break;
+               // break;
 
-        }
+       // }
 
     }
 }
