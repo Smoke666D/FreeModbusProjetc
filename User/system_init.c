@@ -80,10 +80,10 @@ void vSYStaskInit ( void )
            =  xTaskCreateStatic( LCD_task, "LCD", LCD_STK_SIZE , ( void * ) 1, LCD_TASK_PRIOR  ,
                    (StackType_t * const )LCDTaskBuffer, &LCDTaskControlBlock );
 */
-   (*  getADCTaskHandle())
+  (*  getADCTaskHandle())
              = xTaskCreateStatic( ADC_task, "ADC", ADC_STK_SIZE , ( void * ) 1, ADC_TASK_PRIO  ,
                                      (StackType_t * const )ADCTaskBuffer, &ADCTaskControlBlock );
-  MPTCPTask_Handler
+ MPTCPTask_Handler
   = xTaskCreateStatic( MBTCP_task, "MPTCP", MBTCP_STK_SIZE , ( void * ) 1, MBTCP_TASK_PRIO ,
                      (StackType_t * const )MBTCPTaskBuffer, &MBTCPTaskControlBlock );
 

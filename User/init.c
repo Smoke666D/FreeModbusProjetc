@@ -25,8 +25,7 @@ void vInit_DeviceConfig( void )
    // vLCDInit();
     ADC1_Init();
     // InitEEPROM(HAL_SPI2,DMA1_CH4,DMA1_CH5);
-   //  HW_TIMER_TimerInit(TIMER8,4000000,10);
-    // HW_TIMER_SelectOutTrigger(TIMER8,TIM_TRGOSource_Update);
+
 
 
  //    SPI_SSOutputCmd( SPI2, ENABLE );
@@ -44,6 +43,10 @@ void vInit_DeviceConfig( void )
 static void MX_GPIO_Init(void)
 {
     HAL_InitGPO();
+    HAL_InitGpioAIN(AC_SENSE_PORT, AC_SENS1_| AC_SENS2_);
+    HAL_InitGpioAIN(AIN5_6_PORT , AIN5_Pin | AIN6_Pin);
+    HAL_InitGpioAIN(AIN3_4_PORT , AIN3_Pin | AIN4_Pin);
+    HAL_InitGpioAIN(SEN1_POW_AIN1_2_PORT  , POWER_CONTROL | AIN2_Pin| AIN1_Pin);
   //  HAL_InitGpioAF(  LCDDATA_4_7_Port  , LCDDATA4_Pin   | LCDDATA5_Pin | LCDDATA6_Pin | LCDDATA7_Pin , 0, GPIO_Mode_AF_PP);
   //  HAL_InitGpioAF(  LCDDATA_0_1_n_Port , LCDDATA1_Pin     | LCDDATA0_Pin| LCDDni_Pin  , 0, GPIO_Mode_AF_PP);
   //  HAL_InitGpioAF(  LCDRST_Port , LCDRST_Pin , 0, GPIO_Mode_AF_PP);

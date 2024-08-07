@@ -25,7 +25,7 @@ static TIM_TypeDef * timers[TIMERS_COUNT] = { TIM1,TIM2,TIM3,TIM4,TIM5,TIM6,TIM7
 
 static uint32_t getTimerFreq( TimerName_t TimerName )
 {
-                return  ( 144000000U );
+                return  ( 72000000U );
 }
 #endif
 
@@ -107,16 +107,10 @@ static void vTimerInitRCC(TimerName_t TimerName)
 
 void  HW_TIMER_TimerInit(TimerName_t TimerName, uint32_t freq_in_hz, uint32_t Period )
 {
-    TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure = {0};
-    vTimerInitRCC(TimerName);
-    uint32_t Freq = getTimerFreq( TimerName );
     vTimerInitRCC(TimerName) ;
     config[TimerName].Period = Period;
-    TIM_TimeBaseInitStructure.TIM_Period = (Freq /freq_in_hz);
-    TIM_InternalClockConfig(timers[TimerName]);
-    TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;
-    TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;
-    TIM_TimeBaseInit(timers[TimerName], &TIM_TimeBaseInitStructure);
+    config[TimerName].Div = ( 72000000U /freq_in_hz);
+    HW_TIMER_BaseTimerInit(TimerName);
 
 }
 
@@ -143,6 +137,9 @@ void TIM3_IRQHandler(void) __attribute__((interrupt()));
 #endif
 #if TIM4_UP_ENABLE == 1
 void TIM4_IRQHandler(void) __attribute__((interrupt()));
+#endif
+#if TIM8_UP_ENABLE == 1
+void TIM8_UP_IRQHandler(void) __attribute__((interrupt()));
 #endif
 
 
@@ -176,6 +173,11 @@ void HAL_TIMER_InitIt( TimerName_t TimerName, uint32_t freq_in_hz, uint32_t Peri
 #if TIM4_UP_ENABLE == 1
         default:
             irq = TIM4_IRQn;
+            break;
+#endif
+#if TIM8_UP_ENABLE == 1
+        default:
+            irq = TIM8_UP_IRQn;
             break;
 #endif
     }
@@ -221,9 +223,12 @@ void  TIM4_IRQHandler(void)
     TimerUPIrq(TIMER4);
 }
 #endif
-
-
-
+#if TIM8_UP_ENABLE == 1
+void TIM8_UP_IRQHandler()
+{
+    TimerUPIrq(TIMER8);
+}
+#endif
 
 void HAL_TiemrDisable( TimerName_t TimerName )
 {

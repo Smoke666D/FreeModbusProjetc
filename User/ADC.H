@@ -38,6 +38,10 @@ typedef enum
 #define R1_24V 1000000.0
 #define R2_24V  150000.0
 #define COOF_24V ((R1_24V+R2_24V)/R2_24V)
+#define R1_10V 56000.0
+#define R2_10V  10000.0
+#define COOF_10V ((R1_10V+R2_10V)/R2_10V)
+
 
 TaskHandle_t * getADCTaskHandle();
 void ADC_TestInit();

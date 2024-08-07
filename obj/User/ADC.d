@@ -66,7 +66,8 @@ User/ADC.o: ../User/ADC.c ../User/AC_ConvertLib.h ../User/main.h \
  ../User/mb_task.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/hw_lib_adc.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\User/drivers_config.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/filters.h
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/filters.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_timers.h
 
 ../User/AC_ConvertLib.h:
 
@@ -207,3 +208,5 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/hw_lib_adc.h:
 C:\MRS_DATA\workspace\FreeModbusProjetc\User/drivers_config.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/filters.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_timers.h:

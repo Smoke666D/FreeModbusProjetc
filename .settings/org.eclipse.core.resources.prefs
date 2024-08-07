@@ -22,6 +22,7 @@ encoding//HAL/hal_dma.h=GBK
 encoding//HAL/hal_gpio.h=GBK
 encoding//HAL/hal_gpio_ch32.c=UTF-8
 encoding//HAL/hal_irq.c=GBK
+encoding//HAL/hal_irq.h=GBK
 encoding//HAL/hal_spi.h=UTF-8
 encoding//HAL/hal_spi_ch32.c=UTF-8
 encoding//HAL/hal_timers.c=UTF-8

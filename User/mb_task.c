@@ -155,6 +155,9 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
             tempdata =(uint32_t) (getAIN(i)*1000);
             *((float*) (usRegHoldingBuf+i*2)) =  (float)tempdata/1000.0;
         }
+        tempdata =(uint32_t) (getAIN(AC220)*1000);
+                   *((float*) (usRegHoldingBuf+26)) =  (float)tempdata/1000.0;
+
         usRegHoldingBuf[18] = GetSensCoof();
 
       while( usNRegs > 0 )
@@ -307,6 +310,9 @@ eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT us
 void MBTCP_task(void *pvParameters)
 {
      eMBErrorCode    xStatus;
+     vSetRegData(DAC1_ADDR+1);
+     vSetRegData(DAC2_ADDR+1);
+     vSetRegData(DAC3_ADDR+1);
      for( ;; )
      {
          vTaskDelay(1);

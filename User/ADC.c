@@ -11,6 +11,7 @@
 #include "main.h"
 #include "mb_task.h"
 #include "hw_lib_adc.h"
+#include "hal_timers.h"
 
 static TaskHandle_t pADCTaskHandle;
 static TaskHandle_t  pTaskToNotifykHandle;
@@ -21,11 +22,11 @@ static uint16_t ADC2_Buffer[DC_CONVERSION_NUMBER*DC_CHANNEL];
 static uint16_t DC_Buffer[DC_CHANNEL];
 static int16_t  ADC1_DMABuffer[AC_CONVERION_NUMBER*ADC_CHANNEL];
 static EventGroupHandle_t xADCEventGroupHandle;
-uint8_t ADC2_CHANNEL[DC_CHANNEL] = { ADC_CH_0,  ADC_CH_1, ADC_CH_2,ADC_CH_6,ADC_CH_7,ADC_CH_14,ADC_CH_15};
+uint8_t ADC2_CHANNEL[DC_CHANNEL] = { ADC_CH_8,  ADC_CH_9, ADC_CH_2,ADC_CH_6,ADC_CH_7,ADC_CH_14,ADC_CH_15};
 static uint8_t ADC_2_FSM  = 0;
 static uint8_t DC_cnversion =0;
 #define ADC1_CH_COUNT 2
-#define ADC1_PRIOR 2
+#define ADC1_PRIOR 1
 #define ADC1_SUB_PRIOR 0
 /*
  *
@@ -46,9 +47,11 @@ TaskHandle_t * getADCTaskHandle()
 
 static void ADC1_Event()
 {
+    HAL_TiemrDisable(TIMER3);
+    HAL_DMA_Disable(DMA1_CH1);
     static portBASE_TYPE xHigherPriorityTaskWoken;
     xHigherPriorityTaskWoken = pdFALSE;
-    xTaskNotifyIndexedFromISR(pADCTaskHandle, 2, ADC1_DATA_READY, eSetValueWithoutOverwrite, &xHigherPriorityTaskWoken  );
+    xTaskNotifyFromISR(pADCTaskHandle,  ADC1_DATA_READY, eSetBits, &xHigherPriorityTaskWoken  );
    // xEventGroupSetBitsFromISR( xADCEventGroupHandle, ADC1_DATA_READY, &xHigherPriorityTaskWoken );
     portEND_SWITCHING_ISR( xHigherPriorityTaskWoken );
 }
@@ -91,11 +94,11 @@ float getAIN( AIN_CHANNEL_t channel)
         case DC24:
             return adc_float[2]*KK*COOF_24V;
         case DCAIN1:
-            return adc_float[3]*KK;
+            return adc_float[3]*KK*COOF_10V;
         case DCAIN2:
-            return adc_float[4]*KK;
+            return adc_float[4]*KK*COOF_10V;
         case DCAIN3:
-            return adc_float[5]*KK;
+            return adc_float[5]*KK*COOF_10V;
        case DCAIN4:
             return adc_float[6]*KK;
        case  DIG_TEMP:
@@ -131,7 +134,7 @@ static void ADC2_Event()
         conversion_channel = 0;
         static portBASE_TYPE xHigherPriorityTaskWoken;
         xHigherPriorityTaskWoken = pdFALSE;
-        xTaskNotifyFromISR(pADCTaskHandle, ADC2_DATA_READY, eSetValueWithoutOverwrite, &xHigherPriorityTaskWoken  );
+        xTaskNotifyFromISR(pADCTaskHandle, ADC2_DATA_READY, eSetBits, &xHigherPriorityTaskWoken  );
         portEND_SWITCHING_ISR( xHigherPriorityTaskWoken );
         return;
     }
@@ -140,7 +143,7 @@ static void ADC2_Event()
         conversion_channel  = 0;
         conversion_number++;
     }
-    ADC_RegularChannelConfig(ADC2,   ADC2_CHANNEL[conversion_channel], 1, ADC_SampleTime_239Cycles5);
+    ADC_RegularChannelConfig(ADC2,   ADC2_CHANNEL[conversion_channel], 1, ADC_SampleTime_7Cycles5 );
     ADC_SoftwareStartConvCmd(ADC2, ENABLE);
 }
 
@@ -157,6 +160,8 @@ POINT_t DACCAL[DAC_CAL_POINT]={ {0,0},
                    {80,9.14},
                    {90,10.29}
 };
+
+
 
 void ADC1_Init()
 {
@@ -178,7 +183,7 @@ void ADC1_Init()
     RCC_APB2PeriphResetCmd(RCC_APB1Periph_I2C1,ENABLE);
     RCC_APB2PeriphResetCmd(RCC_APB1Periph_I2C1,DISABLE);
     I2C_InitTypeDef  I2C_InitTSturcture = {0};
-    I2C_InitTSturcture.I2C_ClockSpeed = 120000;
+    I2C_InitTSturcture.I2C_ClockSpeed = 350000;
     I2C_InitTSturcture.I2C_Mode = I2C_Mode_I2C;
     I2C_InitTSturcture.I2C_DutyCycle = I2C_DutyCycle_16_9;
     I2C_InitTSturcture.I2C_OwnAddress1 = 0;
@@ -190,9 +195,13 @@ void ADC1_Init()
     I2C_Cmd(I2C2, ENABLE);
   //  I2C_GenerateSTOP(I2C1, ENABLE);
    // I2C_GenerateSTOP(I2C2, ENABLE);
-   /* DMA_INIT_t init;
-    uint8_t ADC1_CHANNEL[ADC1_CH_COUNT] = { ADC_CH_8,  ADC_CH_9 };
-    HAL_ADC_ContiniusScanTrigCinvertionDMA( ADC_1, ADC1_CH_COUNT, ADC1_CHANNEL, ADC_ExternalTrigConv_Ext_IT11_TIM8_TRGO);
+    DMA_INIT_t init;
+    HW_TIMER_TimerInit(TIMER3,1945945,25);
+    HW_TIMER_SelectOutTrigger(TIMER3,TIM_TRGOSource_Update);
+   // HAL_ADC_InitIT(ADC_1,  ADC_ExternalTrigConv_T3_TRGO , 1, 0, &ADC1_Event );
+  //  ADC_RegularChannelConfig(ADC1, ADC2_CHANNEL[0], 1, ADC_SampleTime_239Cycles5);
+    uint8_t ADC1_CHANNEL[ADC1_CH_COUNT] = { ADC_CH_0,  ADC_CH_1 };
+    HAL_ADC_ContiniusScanTrigCinvertionDMA( ADC_1, ADC1_CH_COUNT, ADC1_CHANNEL, ADC_ExternalTrigConv_T3_TRGO);
     init.stream = DMA1_CH1;
     init.direction = PTOM;
     init.mode  = DMA_Circular;
@@ -202,7 +211,7 @@ void ADC1_Init()
     init.bufsize = AC_CONVERION_NUMBER*2;
     init.prioroty = dma_Medium;
     HAL_DMAInitIT(init,  ADC1_PRIOR , ADC1_SUB_PRIOR, &ADC1_Event  );
-    HAL_DMA_Enable(DMA1_CH1);*/
+    HAL_DMA_Enable(DMA1_CH1);
     HAL_ADC_InitIT(ADC_2, ADC_ExternalTrigConv_None , 1, 0, &ADC2_Event );
     ADC_RegularChannelConfig(ADC2, ADC2_CHANNEL[0], 1, ADC_SampleTime_239Cycles5);
     ADC_TempSensorVrefintCmd(ENABLE);
@@ -271,6 +280,10 @@ uint8_t GetI2CData(I2C_TypeDef * i2c,u8 ad)
     return temp;
 }
 
+#define SENOR_MAX_DATA 1000
+u32 sensor_data[2][SENOR_MAX_DATA];
+u16 period = 0;
+
 u8 adress[8]= {0x06,0x07,0x08,0x09,0x0A,0x30,0xA5,0xA6};
 
 void ADC_task(void *pvParameters)
@@ -285,26 +298,28 @@ void ADC_task(void *pvParameters)
 
     for (;;)
     {
-        vTaskDelay(10);
+        vTaskDelay(1);
             switch (ADC_TASK_FSM)
             {
                 case STATE_INIT:
-                    //TIM_Cmd(TIM8, ENABLE);
+
                     ADC_SoftwareStartConvCmd(ADC2, ENABLE);
+                    HAL_TiemrEneblae(TIMER3);
                     ADC_TASK_FSM = STATE_WHAIT_TO_RAEDY;
                     break;
                 case STATE_WHAIT_TO_RAEDY:
                     ADC_TASK_FSM = STATE_RUN;
+                    vTaskDelay(1000);
                     SetI2CData(I2C2,0x30,0x1B);
                     break;
                 case STATE_RUN:
 
-                    xTaskNotifyWait( 0,  ADC2_DATA_READY, &ulNotifiedValue,portMAX_DELAY );
-                  /*  bits =  xEventGroupWaitBits(xADCEventGroupHandle,ADC1_DATA_READY | ADC2_DATA_READY, pdTRUE, pdFALSE, portMAX_DELAY );
+                    xTaskNotifyWait( 0,  ADC2_DATA_READY | ADC1_DATA_READY, &ulNotifiedValue,portMAX_DELAY );
+
                     if (ulNotifiedValue & ADC1_DATA_READY)
                     {
                         printf( "ADC1 DMA\r\n");
-                        xEventGroupClearBits(xADCEventGroupHandle, ADC1_DATA_READY);
+                        //xEventGroupClearBits(xADCEventGroupHandle, ADC1_DATA_READY);
                         for (int i = 0; i<AC_CONVERION_NUMBER*ADC_CHANNEL;i++)
                         {
                             ADC1_DMABuffer[i]= Get_ConversionVal(ADC_1, ADC1_DMABuffer[i]);
@@ -319,8 +334,11 @@ void ADC_task(void *pvParameters)
                               AC_220_VALUE = (float)data1 * ( 401U * 3.3 / 4095U );
                                              //int8SetRegister(V220,(uint8_t)data1 );
                          }
-                        ADC_SoftwareStartConvCmd(ADC2, ENABLE);
-                   }*/
+                        HAL_DMA_SetCounter(DMA1_CH1, AC_CONVERION_NUMBER*2);
+                        HAL_DMA_Enable(DMA1_CH1);
+                        HAL_TiemrEneblae(TIMER3);
+                       // ADC_SoftwareStartConvCmd(ADC2, ENABLE);
+                   }
                    if (ulNotifiedValue & ADC2_DATA_READY)
                    {
                        for (u8 i=0;i<DC_CHANNEL;i++)
@@ -335,10 +353,8 @@ void ADC_task(void *pvParameters)
                        }
                        for (u8 i = 0; i<8; i++)
                        {
-                          //i2cdata[0][i] =  GetI2CData(I2C1,adress[i]);
-                         // vTaskDelay(1);
-                           i2cdata[1][i] =  GetI2CData(I2C2,adress[i]);
-                           vTaskDelay(1);
+                          i2cdata[1][i] =  GetI2CData(I2C2,adress[i]);
+                          vTaskDelay(1);
                        }
 
                        ADC_SoftwareStartConvCmd(ADC2, ENABLE);

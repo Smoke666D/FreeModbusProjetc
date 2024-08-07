@@ -132,8 +132,6 @@ static void HAL_ADC_Calubration(ADC_NUMBER_t adc )
     ADC_START_CAL(adc);
     while(ADC_GetCalibrationStatus(ADCS[adc]));
     CalibrattionVal[adc] = Get_CalibrationValue(ADCS[adc]);
-    ADC_BUFFER_ENABLE (adc);
-
 }
 
 #endif
@@ -156,7 +154,7 @@ void HAL_ADC_ContiniusScanTrigCinvertionDMA( ADC_NUMBER_t adc, uint8_t channel_c
     ADC_Init(ADCS[adc], &ADC_InitStructure);
     for (u8 i=0;i<channel_count;i++)
     {
-          ADC_RegularChannelConfig(ADCS[adc],  ADC_chennel_ref[channel_nmber[ i  ]], i + 1,  ADC_SampleTime_239Cycles5);
+          ADC_RegularChannelConfig(ADCS[adc],  ADC_chennel_ref[channel_nmber[ i  ]], i + 1,  ADC_SampleTime_13Cycles5);
      }
     if (ext_trig != ADC_ExternalTrigConv_None)
        {

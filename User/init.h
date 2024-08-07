@@ -19,19 +19,20 @@
 #define KL5_Pin                     GPIO_5
 #define KL6_Pin                     GPIO_6
 #define KL_Port                     PORT_E
-#define PRES_SENS1_                 Pin GPIO_Pin_0
-#define PRES_SENS2_                 Pin GPIO_Pin_1
-#define POWER_CONTROL               Pin GPIO_Pin_2
-#define AIN1_Pin                    Pin GPIO_Pin_6
-#define AIN2_Pin                    Pin GPIO_Pin_7
+#define AC_SENS1_                 GPIO_0
+#define AC_SENS2_                 GPIO_1
+#define AC_SENSE_PORT              PORT_B
+#define POWER_CONTROL               GPIO_2
+#define AIN1_Pin                    GPIO_6
+#define AIN2_Pin                    GPIO_7
 #define SEN1_POW_AIN1_2_PORT        PORT_A
-#define AIN3_Pin                    Pin GPIO_Pin_4
-#define AIN4_Pin                    Pin GPIO_Pin_5
+#define AIN3_Pin                    GPIO_4
+#define AIN4_Pin                    GPIO_5
 #define AIN3_4_PORT                 PORT_C
-#define AIN5_Pin                    Pin GPIO_Pin_0
-#define AIN6_Pin                    Pin GPIO_Pin_1
-#define AIN5_6_PORT                 PORT_B
-#define DAC0_Pin                    Pin GPIO_Pin_4
+#define AIN5_Pin                    GPIO_0
+#define AIN6_Pin                    GPIO_1
+#define AIN5_6_PORT                 PORT_A
+#define DAC0_Pin                    GPIO_4
 #define DAC0_Port                   PORT_A
 #define LCDDATA4_Pin                GPIO_7
 #define LCDDATA5_Pin                GPIO_8

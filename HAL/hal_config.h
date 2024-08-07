@@ -117,9 +117,19 @@ typedef enum
 #define DMA2_CH7_ENABLE 0
 
 
+#define TIM1_UP_ENABLE 0
+#define TIM2_UP_ENABLE 0
+#define TIM3_UP_ENABLE 0
+#define TIM4_UP_ENABLE 0
+#define TIM5_UP_ENABLE 0
+#define TIM6_UP_ENABLE 0
+#define TIM7_UP_ENABLE 0
+#define TIM8_UP_ENABLE 1
+#define TIM9_UP_ENABLE 0
+
 #define ADC_1_ENABLE 1
 #define ADC_2_ENABLE 1
-#define ADC_1_IT_ENABLE 0
+#define ADC_1_IT_ENABLE 1
 #define ADC_2_IT_ENABLE 1
 
 #endif /* HAL_HAL_CONFIG_H_ */
