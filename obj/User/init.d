@@ -66,7 +66,9 @@ User/init.o: ../User/init.c ../User/init.h ../User/main.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/list.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/semphr.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h \
+ ../User/din_dout_task.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h
 
 ../User/init.h:
 
@@ -207,3 +209,7 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/list.h:
 C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/semphr.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h:
+
+../User/din_dout_task.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h:

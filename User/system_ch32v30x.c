@@ -705,9 +705,9 @@ static void SetSysClockTo144_HSE(void)
   if (HSEStatus == (uint32_t)0x01)
   {
     /* HCLK = SYSCLK */
-    RCC->CFGR0 |= (uint32_t)RCC_HPRE_DIV1;
+    RCC->CFGR0 |= (uint32_t)RCC_HPRE_DIV2;
     /* PCLK2 = HCLK */
-    RCC->CFGR0 |= (uint32_t)RCC_PPRE2_DIV2;
+    RCC->CFGR0 |= (uint32_t)RCC_PPRE2_DIV1;
     /* PCLK1 = HCLK */
     RCC->CFGR0 |= (uint32_t)RCC_PPRE1_DIV2;
 

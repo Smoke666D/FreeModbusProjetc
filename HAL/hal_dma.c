@@ -129,6 +129,7 @@ void HAL_DMAInitIT(  DMA_INIT_t Init, uint8_t prior, uint8_t subprior, void (*f)
 
 
 
+
 void HAL_DMA1InitMemToMemHwordIT(DMA_Stram_t stream ,
                     DMA_Prioroty_t dma_prior,
                     uint8_t prior,
@@ -163,9 +164,10 @@ void HAL_DMAMem2MemStart(DMA_Stram_t stream, uint32_t data_size, u32 source, u32
 void  HAL_DMA_Start(DMA_Stram_t stream, uint32_t counter, u32 memadr )
 {
     DMACH[stream]->MADDR = memadr;
-    DMACH[stream]->CNTR = counter;
+    DMACH[stream]->CNTR  = counter;
     DMACH[stream]->CFGR |= DMA_CFGR1_EN;
 }
+
 
 void HAL_DMA_SetCouterAndEnable(DMA_Stram_t stream, uint32_t counter )
 {

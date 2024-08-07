@@ -130,8 +130,8 @@ void HW_TIMER_SelectOutTrigger( TimerName_t TimerName, u32 trigger_source)
 
 
 
-#if MCU == CH32V2
-static TIM_TypeDef * timers[TIMERS_COUNT] = { TIM1,TIM2,TIM3,TIM4};
+#if MCU == CH32V2 || MCU == CH32V3
+
 #if TIM1_UP_ENABLE == 1
 void TIM1_UP_IRQHandler(void) __attribute__((interrupt()));
 #endif
@@ -179,7 +179,12 @@ void HAL_TIMER_InitIt( TimerName_t TimerName, uint32_t freq_in_hz, uint32_t Peri
             break;
 #endif
     }
+#if MCU== CH32V2
     PFIC_IRQ_ENABLE_PG1(irq,prior,subprior);
+#else
+    PFIC_IRQ_ENABLE_PG2(irq,prior,subprior);
+
+#endif
 }
 
 
@@ -219,11 +224,6 @@ void  TIM4_IRQHandler(void)
 
 
 
-
-void HAL_TiemrEneblae( TimerName_t TimerName )
-{
-    timers[TimerName]->CTLR1 |= TIM_CEN;
-}
 
 void HAL_TiemrDisable( TimerName_t TimerName )
 {
@@ -267,7 +267,7 @@ void HAL_TIMER_PWMTimersInit(TimerName_t TimerName , uint32_t freq_in_hz, uint32
 	 TIM_OCInitTypeDef TIM_OCInitStructure={0};
 	 vTimerInitRCC(TimerName) ;
 	 config[TimerName].Period = Period;
-	 config[TimerName].Div = (72000000U /freq_in_hz);
+	 config[TimerName].Div = (72000000U /(freq_in_hz*Period));
 	 config[TimerName].ClockDiv = 0;
 	 HW_TIMER_BaseTimerInit(TimerName);
 	 TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM2;
@@ -361,7 +361,7 @@ void HAL_TIMER_SetPWMPulse( TimerName_t TimerName , uint8_t channel, uint32_t pu
      timers[TimerName]->BDTR &= (uint16_t)(~((uint16_t)TIM_MOE));
      TIM_OCInitTypeDef TIM_OCInitStructure={0};
      timers[TimerName]->BDTR &= (uint16_t)(~((uint16_t)TIM_MOE)); //Выключаем выхода ШИМ
-     TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;
+     TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM2;
      TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;
      TIM_OCInitStructure.TIM_Pulse = (uint16_t) pulse ;
      TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_Low;

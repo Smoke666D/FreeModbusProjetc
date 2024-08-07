@@ -46,6 +46,11 @@ typedef enum {
 } DIN_INPUT_TYPE;
 
 
+typedef enum {
+    DOUT_ACTIVE_CONFIG_NEGATIVE = 0U,
+    DOUT_ACTIVE_CONFIG_POSITIVE = 1U,
+} OUT_LEVEL_TYPE;
+
 typedef enum
 {
  DIN_CONFIG_OK            = 0,
@@ -90,6 +95,7 @@ typedef struct
 typedef struct DoutConfigDef_t
 {
     uint8_t ucValue;
+    OUT_LEVEL_TYPE ucActiveLevel;
     void (*setPortCallback)(OUT_NAME_TYPE ,  BIT_t);
 } DoutCinfig_t;
 
@@ -131,9 +137,11 @@ typedef enum {
 } DIN_INPUT_NAME;
 
 
-
-
+void xSetOut( uint8_t * data_mask);
+void xGetOut( uint8_t * data_mask);
+void xGetDins( uint8_t * data_mask);
 //#define  ucDinGet( a )  uGetDIN( a )
+uint8_t eGetDOUT(OUT_NAME_TYPE ucCh );
 void InitDinStcurt();
 uint8_t uGetDIN(DIN_INPUT_NAME ucCh);
 void RMPDataConvert(DIN_INPUT_NAME ucCh);

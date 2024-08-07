@@ -15,7 +15,7 @@
 #endif
 
 
-ADC_CF_t ADC_Callback[];
+ADC_CF_t ADC_Callback[2];
 ADC_t adcs;
 
 #if MCU == APM32

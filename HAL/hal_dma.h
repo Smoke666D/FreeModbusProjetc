@@ -56,7 +56,7 @@ DMA_Stram_t;
 typedef enum
 {
   PTOM =  DMA_DIR_PeripheralSRC,
-  MTOP = DMA_DIR_PeripheralDST,
+  MTOP =  DMA_DIR_PeripheralDST,
 } DMA_Derection_t;
 
 typedef enum

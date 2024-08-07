@@ -85,99 +85,9 @@ void mStopIfError(u8 iError)
 
 
 
-#define REG_INPUT_START 0x01
-#define REG_INPUT_NREGS 10
-#define REG_HOLDING_START 0x01
-#define REG_HOLDING_NREGS 10
-
-static USHORT usRegInputStart = REG_INPUT_START;
-static USHORT usRegInputBuf[REG_INPUT_NREGS];
-static USHORT usRegHoldingStart = REG_HOLDING_START;
-static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 
 
 
-
-
-eMBErrorCode eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
-{
-  eMBErrorCode    eStatus = MB_ENOERR;
-  int             iRegIndex;
-
-  if( ( usAddress >= REG_INPUT_START ) && ( usAddress + usNRegs <= REG_INPUT_START + REG_INPUT_NREGS ) )
-  {
-    iRegIndex = ( int )( usAddress - usRegInputStart );
-    while( usNRegs > 0 )
-    {
-      *pucRegBuffer++ =
-        ( unsigned char )( usRegInputBuf[iRegIndex] >> 8 );
-      *pucRegBuffer++ =
-        ( unsigned char )( usRegInputBuf[iRegIndex] & 0xFF );
-      iRegIndex++;
-      usNRegs--;
-    }
-  }
-  else
-  {
-    eStatus = MB_ENOREG;
-  }
-
-//  HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
-
-  return eStatus;
-}
-
-eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegisterMode eMode )
-{
-  eMBErrorCode    eStatus = MB_ENOERR;
-  int             iRegIndex;
-
-  if( ( usAddress >= REG_HOLDING_START ) && ( usAddress + usNRegs <= REG_HOLDING_START + REG_HOLDING_NREGS ) )
-  {
-    iRegIndex = ( int )( usAddress - usRegHoldingStart );
-    switch ( eMode )
-    {
-    case MB_REG_READ:
-
-      while( usNRegs > 0 )
-      {
-        *pucRegBuffer++ = ( unsigned char )( usRegHoldingBuf[iRegIndex] >> 8 );
-        *pucRegBuffer++ = ( unsigned char )( usRegHoldingBuf[iRegIndex] & 0xFF );
-        iRegIndex++;
-        usNRegs--;
-      }
-      break;
-
-    case MB_REG_WRITE:
-      while( usNRegs > 0 )
-      {
-        usRegHoldingBuf[iRegIndex] = *pucRegBuffer++ << 8;
-        usRegHoldingBuf[iRegIndex] |= *pucRegBuffer++;
-        iRegIndex++;
-        usNRegs--;
-      }
-    }
-  }
-  else
-  {
-    eStatus = MB_ENOREG;
-  }
-
- // HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
-
-  return eStatus;
-}
-
-
-eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils, eMBRegisterMode eMode )
-{
-  return MB_ENOREG;
-}
-
-eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNDiscrete )
-{
-  return MB_ENOREG;
-}
 /*********************************************************************
  * @fn      main
  *
@@ -212,12 +122,14 @@ int main(void)
 	//printf( "ChipID:%08x\r\n", DBGMCU_GetCHIPID() );
 	//printf("FreeRTOS Kernel Version:%s\r\n",tskKERNEL_VERSION_NUMBER);
 
-	GPIO_Toggle_INIT();
-	//vInit_DeviceConfig();
-	vNetInit();
+	//GPIO_Toggle_INIT();
+
+
 	vSYSqueueInit ( );
     vSYSeventInit ( );
     vSYStaskInit ( );
+    vNetInit();
+    vInit_DeviceConfig();
     vTaskStartScheduler();
 
   //  u8g2_Setup_ks0108_128x64_f(&u8g2_ks0108, U8G2_R0, 0, 0);

@@ -9,7 +9,7 @@
 #include "hal_spi.h"
 
 #if MCU == CH32V2 || MCU == CH32V3
-
+#include "hal_irq.h"
 
 #if MCU == CH32V2
 #include "ch32v20x_dma.h"
@@ -50,21 +50,23 @@ void HAL_SPI_MsterBaseInit(HAL_SPI_t spi, HAL_SPI_InitTypeDef *SPI_InitStruct)
     SPI[spi]->I2SCFGR &= SPI_Mode_Master;
     SPI[spi]->CRCR = SPI_InitStruct->SPI_CRCPolynomial;
 }
+
+void HAL_SPI_EnableDMA(HAL_SPI_t spi )
+{
+
+    SPI[spi]->CTLR2 |= (SPI_I2S_DMAReq_Tx | SPI_I2S_DMAReq_Rx);
+    SPI[spi]->CTLR1 |= CTLR1_SPE_Set;
+}
+
 void HAL_SPI_InitDMA(HAL_SPI_t spi , SPI_DATA_Size_t data_size )
 {
     if ( spi == HAL_SPI1)
     {
-
-        RCC->APB2PRSTR |= RCC_APB2Periph_SPI1;
-        RCC->APB2PRSTR &= ~RCC_APB2Periph_SPI1;
-        RCC->APB2PCENR |= RCC_APB2Periph_SPI1;
+        HAL_InitAPB2(RCC_APB2Periph_SPI1);
    }
    else
    {
-
-         RCC->APB1PRSTR |= RCC_APB1Periph_SPI2;
-         RCC->APB1PRSTR &= ~RCC_APB1Periph_SPI2;
-         RCC->APB1PCENR |= RCC_APB1Periph_SPI2;
+       HAL_InitAPB1(RCC_APB1Periph_SPI2);
    }
     uint16_t tmpreg = 0;
     tmpreg = SPI[spi]->CTLR1;

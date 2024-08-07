@@ -24,22 +24,25 @@ typedef enum
 {
   SENS1 = 0,
   SENS2 = 1,
-  DC24  = 3,
-  DCAIN1  = 4,
-  DCAIN2  = 5,
-  DCAIN3  = 6,
-  DCAIN4  = 7,
-  AC220   = 8,
+  DC24  = 2,
+  DCAIN1  = 3,
+  DCAIN2  = 4,
+  DCAIN3  = 5,
+  DCAIN4  = 6,
+  DIG_TEMP = 7,
+  DIG_PRES = 8,
+  AC220   = 9,
 } AIN_CHANNEL_t;
-#define K   ( 3.3 / 0xFFF )
+#define KK  ( 3.3 / 4095.0 )
 
-#define R1_24V 1000000
-#define R2_24V  150000
+#define R1_24V 1000000.0
+#define R2_24V  150000.0
 #define COOF_24V ((R1_24V+R2_24V)/R2_24V)
 
 TaskHandle_t * getADCTaskHandle();
 void ADC_TestInit();
 void ADC_task(void *pvParameters);
 void ADC1_Init();
+float getAIN( AIN_CHANNEL_t channel);
 uint16_t GetTempData();
 #endif /* USER_ADC_H_ */

@@ -63,7 +63,7 @@ typedef enum
    HAL_SPI2 = 1
 } HAL_SPI_t;
 
-
+void HAL_SPI_EnableDMA(HAL_SPI_t spi );
 void HAL_SPI_MsterBaseInit(HAL_SPI_t spi, HAL_SPI_InitTypeDef *SPI_InitStruct);
 void HAL_SPI_InitDMA(HAL_SPI_t spi , SPI_DATA_Size_t data_size );
 void HAL_SPI_RXOveleyClear(HAL_SPI_t spi );

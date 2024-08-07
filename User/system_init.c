@@ -5,13 +5,15 @@
  *      Author: i.dymov
  */
 #include "system_init.h"
-#include "hw_lib_keyboard.h"
-#include "hw_lib_din.h"
+
+
 #include "init.h"
 #include "adc.h"
 #include "data_model.h"
 #include "led.h"
-static void vKeyboardTask(void  * argument );
+#include "din_dout_task.h"
+#include "mb_task.h"
+
 static void vDefaultTask( void  * argument );
 static void WCHNET_task(void *pvParameters);
 
@@ -77,11 +79,11 @@ void vSYStaskInit ( void )
  /*  (* getLCDTaskHandle())
            =  xTaskCreateStatic( LCD_task, "LCD", LCD_STK_SIZE , ( void * ) 1, LCD_TASK_PRIOR  ,
                    (StackType_t * const )LCDTaskBuffer, &LCDTaskControlBlock );
-
+*/
    (*  getADCTaskHandle())
              = xTaskCreateStatic( ADC_task, "ADC", ADC_STK_SIZE , ( void * ) 1, ADC_TASK_PRIO  ,
-                                     (StackType_t * const )ADCTaskBuffer, &ADCTaskControlBlock );*/
-   MPTCPTask_Handler
+                                     (StackType_t * const )ADCTaskBuffer, &ADCTaskControlBlock );
+  MPTCPTask_Handler
   = xTaskCreateStatic( MBTCP_task, "MPTCP", MBTCP_STK_SIZE , ( void * ) 1, MBTCP_TASK_PRIO ,
                      (StackType_t * const )MBTCPTaskBuffer, &MBTCPTaskControlBlock );
 
@@ -89,14 +91,13 @@ void vSYStaskInit ( void )
   = xTaskCreateStatic( WCHNET_task, "MPTCP", WCHNET_STK_SIZE , ( void * ) 1,WCHNET_TASK_PRIO ,
                      (StackType_t * const )WCHNETTaskBuffer, &WCHNETTaskControlBlock );
 
-  /* KeyboarTask_Handler
+   KeyboarTask_Handler
    = xTaskCreateStatic( vKeyboardTask, "KEYBOARD", KEYBAORD_STK_SIZE , ( void * ) 1,KEYBAORD_TASK_PRIO ,
-                      (StackType_t * const )KeyboarTaskBuffer, &KeyboardTaskControlBlock);*/
+                      (StackType_t * const )KeyboarTaskBuffer, &KeyboardTaskControlBlock);
   DefautTask_Handler = xTaskCreateStatic( vDefaultTask, "DefTask", DEFAULT_TASK_STACK_SIZE , ( void * ) 1, DEFAULT_TASK_PRIOR, (StackType_t * const )defaultTaskBuffer, &defaultTaskControlBlock );
 
   return;
 }
-
 
 void vSYSeventInit ( void )
 {
@@ -109,163 +110,143 @@ void vSYSqueueInit ( void )
      *( xKeyboardQueue()) = xQueueCreateStatic( 16U, sizeof( KeyEvent ),ucQueueStorageArea, &xStaticQueue );
 }
 
-BitState_t fPortState (uint8_t i)
-{
-    switch (i)
-    {
-        case 0:
-            return HAL_GetBit( KL1_Port, KL1_Pin  );
-        case 1:
-            return HAL_GetBit( KL_Port, KL2_Pin  );
-        case 2:
-            return HAL_GetBit( KL_Port, KL3_Pin  );
-        case 3:
-            return HAL_GetBit( KL_Port, KL4_Pin  );
-        case 4:
-            return HAL_GetBit( KL_Port, KL5_Pin  );
-        case 5:
-            return HAL_GetBit( KL_Port, KL6_Pin  );
 
-        default:
-            return 0;
+u8 SPI1_ReadWriteByte(u8 TxData)
+{
+    u8 i = 0;
+
+    while(SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
+
+    SPI_I2S_SendData(SPI2, TxData);
+    i = 0;
+
+    while(SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
+
+    return SPI_I2S_ReceiveData(SPI2);
+}
+#define W25X_ReadStatusReg       0x05
+
+u8 WaitWileBusy()
+{
+    u8 data= 0;
+    GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_RESET);
+    vTaskDelay(1);
+    while(1)
+    {
+        while(SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
+        SPI_I2S_SendData(SPI2, 0x05);
+        while(SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
+        data =  SPI_I2S_ReceiveData(SPI2);
+        if ((data & 0x01) == 0 ) break;
     }
+    GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_SET);
+    return (data);
 }
-#define KEY_COUNT 6
-static uint8_t  STATUS[KEY_COUNT];
-static uint8_t  COUNTERS[KEY_COUNT];
 
-
-void vKeyboarInit()
+void Unprotect()
 {
-    KeybaordStruct_t KeyboardInit;
-    KeyboardInit.KEYBOARD_COUNT    = KEY_COUNT;
-    KeyboardInit.COUNTERS          = COUNTERS;
-    KeyboardInit.STATUS            = STATUS;
-    KeyboardInit.REPEAT_TIME       = 2;
-    KeyboardInit.KEYDOWN_HOLD_TIME = 3;
-    KeyboardInit.KEYDOWN_DELAY     = 1;
-    KeyboardInit.KEYBOARD_PERIOD   = 20;
-    KeyboardInit.getPortCallback = &fPortState;
-    eKeyboardInit(&KeyboardInit);
+
+    GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_RESET);
+                  vTaskDelay(1);
+                  SPI1_ReadWriteByte(0x06 );
+                  vTaskDelay(1);
+                  GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_SET);
+
 }
 
-/*
- *
- */
-uint8_t fDinStateCallback (uint8_t i)
-{
-    switch ( i)
-    {
-        case INPUT_1:
-            return HAL_GetBit( DIN_1_5_Port  ,DIN_1_Pin );
-        case INPUT_2:
-            return HAL_GetBit( DIN_1_5_Port  ,DIN_2_Pin );
-        case INPUT_3:
-            return HAL_GetBit( DIN_1_5_Port  ,DIN_3_Pin );
-        case INPUT_4:
-            return HAL_GetBit( DIN_1_5_Port  ,DIN_4_Pin );
-        case INPUT_5:
-            return HAL_GetBit( DIN_1_5_Port  ,DIN_5_Pin );
-        default:
-            return (RESET);
-    }
-}
-/*
- *
- */
-void  vSetDoutState( OUT_NAME_TYPE ucCh, u8 BitVal )
-{
-    switch (ucCh )
-    {
-           case OUT_1:
-               if ( BitVal == RESET)
-                     HAL_SetBit(DOUT_Port,DOUT_1_Pin  );
-                 else
-                     HAL_ResetBit(DOUT_Port,DOUT_1_Pin );
-                break;
-           case OUT_2:
-               if ( BitVal == RESET)
-                   HAL_SetBit(DOUT_Port,DOUT_2_Pin  );
-               else
-                  HAL_ResetBit(DOUT_Port,DOUT_2_Pin );
-                               break;
-           case OUT_3:
-               if ( BitVal == RESET)
-                   HAL_SetBit(DOUT_Port,DOUT_3_Pin  );
-               else
-                   HAL_ResetBit(DOUT_Port,DOUT_3_Pin );
-               break;
-           default:
-               break;
-       }
-}
-
-
-void vDIN_DOUT_Init()
-{
-    DoutCinfig_t  DOUT_CONFIG;
-    DinConfig_t DIN_CONFIG;
-    DIN_CONFIG.eInputType = DIN_CONFIG_POSITIVE;
-    DIN_CONFIG.ulHighCounter = DEF_H_FRONT;
-    DIN_CONFIG.ulLowCounter  = DEF_L_FRONT;
-    DIN_CONFIG.getPortCallback = &fDinStateCallback;
-    eDinConfigWtihStruct(INPUT_1,&DIN_CONFIG);
-    eDinConfigWtihStruct(INPUT_2,&DIN_CONFIG);
-    eDinConfigWtihStruct(INPUT_3,&DIN_CONFIG);
-    eDinConfigWtihStruct(INPUT_4,&DIN_CONFIG);
-    eDinConfigWtihStruct(INPUT_5,&DIN_CONFIG);
-    DIN_CONFIG.eInputType = DIN_CONFIG_POSITIVE;
-    DOUT_CONFIG.setPortCallback =&vSetDoutState;
-    eDOUTConfigWtihStruct( OUT_1, &DOUT_CONFIG);
-    eDOUTConfigWtihStruct( OUT_2, &DOUT_CONFIG);
-    eDOUTConfigWtihStruct( OUT_3, &DOUT_CONFIG);
-}
-
-void vKeyboardTask(void  * argument )
-{
-    vKeyboarInit();
-    vDIN_DOUT_Init();
-    for(;;)
-    {
-       vTaskDelay( HW_LIB_GetKeyboardPeriod() );
-       HW_LIB_KeyboradFSM();
-       vDinDoutProcess();
-    }
-}
-
-
-
-
+u8 data[10]= {1,2,3,4,5,6,7,8,9,10};
 
 void vDefaultTask( void  * argument )
 {
+    SPI_InitTypeDef  SPI_InitStructure = {0};
     uint32_t ulNotifiedValue;
-    TaskFSM_t main_task_fsm = STATE_INIT;
+
+    u8 byte = 0;
+    TaskFSM_t main_task_fsm = 1;
+    SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex;
+    SPI_InitStructure.SPI_Mode = SPI_Mode_Master;
+    SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b;
+    SPI_InitStructure.SPI_CPOL = SPI_CPOL_Low;
+    SPI_InitStructure.SPI_CPHA = SPI_CPHA_1Edge;
+    SPI_InitStructure.SPI_NSS = SPI_NSS_Soft;
+    SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_128;
+    SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;
+    SPI_InitStructure.SPI_CRCPolynomial = 0;
+    SPI_Init(SPI2, &SPI_InitStructure);
+    SPI_Cmd(SPI2, ENABLE);
     while(1)
     {
-       /* switch (main_task_fsm)
+        switch (main_task_fsm)
         {
-            case STATE_INIT:
-                DataModel_Init();
-                main_task_fsm = STATE_WHAIT_TO_RAEDY;
+            case 0:
+                GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_SET);
+                vTaskDelay(1);
+
+
+               // main_task_fsm = 1;
                 break;
-            case STATE_WHAIT_TO_RAEDY:
-                xTaskNotifyWait(0, 0, &ulNotifiedValue,portMAX_DELAY);
-                if ( ulNotifiedValue == 2)
+            case 1:
+                byte = WaitWileBusy();
+                if (byte & 0x02) Unprotect();
+                vTaskDelay(1);
+                WaitWileBusy();
+                GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_RESET);
+                vTaskDelay(1);
+
+                    SPI1_ReadWriteByte(0x02 );
+                    SPI1_ReadWriteByte(0x00 );
+                    SPI1_ReadWriteByte(0x01 );
+                    SPI1_ReadWriteByte(0x55 );
+                    SPI1_ReadWriteByte(0xAA );
+
+                vTaskDelay(1);
+                GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_SET);
+                vTaskDelay(5);
+                GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_RESET);
+                vTaskDelay(1);
+             //   SPI1_ReadWriteByte(0x05);
+             //   byte = SPI1_ReadWriteByte(0Xff);
+              //  if ((byte & 0x01) == 0)
                 {
-                                 ulTaskNotifyValueClearIndexed(0, 0, 0xFFFF);
+                              SPI1_ReadWriteByte(0x03 );
+                              SPI1_ReadWriteByte(0x00 );
+                              SPI1_ReadWriteByte(0x01 );
+                              data[0] = SPI1_ReadWriteByte(0xFF );
+                              data[1] = SPI1_ReadWriteByte(0xFF );
+                }
+
+                vTaskDelay(1);
+                GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_SET);
+                break;
+            case 2:
+               // if( SPI_I2S_GetFlagStatus( SPI2, SPI_I2S_FLAG_RXNE ) != RESET )
+               // {
+              //      u8 data = SPI_I2S_ReceiveData(SPI2);
+              //      main_task_fsm = 1;
+             //   }
+                break;
+               // DataModel_Init();
+              //  ReadEEPROMData(0x00 ,10 , data, 10 ,2);
+             //   main_task_fsm = STATE_WHAIT_TO_RAEDY;
+            //    break;
+          //  case STATE_WHAIT_TO_RAEDY:
+            //    xTaskNotifyWait(0, 0, &ulNotifiedValue,portMAX_DELAY);
+            //    if ( ulNotifiedValue == 2)
+            //    {
+             //                    ulTaskNotifyValueClearIndexed(0, 0, 0xFFFF);
                 //                 vTaskResume( *xCanOpenProcessTaskHandle());
                 //                 vTaskResume( *xCanOpenPeriodicTaskHandle ());
-                    main_task_fsm = STATE_RUN;
-                }
-                break;
-            case STATE_RUN:*/
-                vTaskDelay(100);
-               // break;
+            //        main_task_fsm = STATE_RUN;
+            //    }
+            //    break;
+           // case STATE_RUN:*/
+        }
 
-       // }
 
-    }
+
+        }
+
+
 }
 
 

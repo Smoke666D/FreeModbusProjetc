@@ -104,8 +104,8 @@ typedef enum
 #define DMA1_CH1_ENABLE 1
 #define DMA1_CH2_ENABLE 1
 #define DMA1_CH3_ENABLE 0
-#define DMA1_CH4_ENABLE 0
-#define DMA1_CH5_ENABLE 0
+#define DMA1_CH4_ENABLE 1
+#define DMA1_CH5_ENABLE 1
 #define DMA1_CH6_ENABLE 0
 #define DMA1_CH7_ENABLE 0
 #define DMA2_CH1_ENABLE 0

@@ -119,7 +119,7 @@ void vNetInit()
       cfg.KLIntvl = 15000;
       cfg.KLCount = 9;
       WCHNET_ConfigKeepLive(&cfg);
-      xPortTCPOSEventGroup= xGetOSEvent();
+      xPortTCPOSEventGroup= * xGetOSEvent();
 
 }
 
@@ -298,46 +298,7 @@ void WCHNET_HandleGlobalInt(void)
 }
 
 
-//u8 socket[WCHNET_MAX_SOCKET_NUM];
-//
-void MBTCP_task(void *pvParameters)
-{
 
-     eMBErrorCode    xStatus;
-    // memset(socket, 0xff, WCHNET_MAX_SOCKET_NUM);
-   //  WCHNET_CreateTcpSocketListen();
-     for( ;; )
-     {
-
-      //   printf("task1 entry\r\n");
-       //  GPIO_SetBits(GPIOA, GPIO_Pin_0);
-         vTaskDelay(1);
-       //  GPIO_ResetBits(GPIOA, GPIO_Pin_0);
-      //   vTaskDelay(250);
-       //  xEventGroupWaitBits( xPortTCPOSEventGroup,TCP_START_TASK,pdFALSE,pdTRUE,portMAX_DELAY);
-      if( eMBTCPInit( MB_TCP_PORT_USE_DEFAULT ) != MB_ENOERR )
-        {
-            printf("can't initialize modbus stack!\r\n" );
-        }
-        else if( eMBEnable(  ) != MB_ENOERR )
-            {
-                fprintf( stderr, "%s: can't enable modbus stack!\r\n", PROG );
-            }
-            else
-            {
-                printf("stack ok!" );
-                do
-                {
-                    xStatus = eMBPoll(  );
-                }
-                while( xStatus == MB_ENOERR );
-            }
-     }
-
-    ( void )eMBDisable(  );
-   ( void )eMBClose(  );
-
-}
 
 /* ----------------------- Prototypes ---------------------------------------*/
 void            vMBPortEventClose( void );

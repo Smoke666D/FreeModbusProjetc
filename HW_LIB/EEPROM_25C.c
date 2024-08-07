@@ -65,7 +65,7 @@ void InitEEPROM( HAL_SPI_t spi, DMA_Stram_t stream_read, DMA_Stram_t stream_writ
     Init.SPI_FirstBit = SPI_FirstBit_MSB;
     Init.SPI_CRCPolynomial = 0;
     HAL_SPI_MsterBaseInit(spi,&Init);
-    DMA_INIT_t init;
+  /*  DMA_INIT_t init;
     init.stream = stream_write;
     init.direction = MTOP;
     init.mode  = DMA_Normal;
@@ -74,13 +74,14 @@ void InitEEPROM( HAL_SPI_t spi, DMA_Stram_t stream_read, DMA_Stram_t stream_writ
     init.dma_size = DMA_BYTE;
     init.bufsize = 0;
     init.prioroty = dma_Medium;
-    HAL_DMAInitIT(init,5,0,&WriteCallBack);
+    HAL_DMAInitIT(init,1,0,&WriteCallBack);
     init.stream = stream_read;
     init.direction = PTOM;
-    HAL_DMAInitIT(init,5,0,&ReadCallBack);
+    HAL_DMAInitIT(init,1,0,&ReadCallBack);
     SPI_EEPROM.spi =  spi;
     SPI_EEPROM.dma_stream_read =  stream_read;
     SPI_EEPROM.dma_stream_write =  stream_write;
+    HAL_SPI_EnableDMA(spi );*/
 }
 
 

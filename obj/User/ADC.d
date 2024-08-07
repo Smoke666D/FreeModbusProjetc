@@ -62,7 +62,11 @@ User/ADC.o: ../User/ADC.c ../User/AC_ConvertLib.h ../User/main.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/board_define.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_dma.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\User/system_init.h
+ C:\MRS_DATA\workspace\FreeModbusProjetc\User/system_init.h \
+ ../User/mb_task.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/hw_lib_adc.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\User/drivers_config.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/filters.h
 
 ../User/AC_ConvertLib.h:
 
@@ -195,3 +199,11 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/board_define.h:
 C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_dma.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\User/system_init.h:
+
+../User/mb_task.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/hw_lib_adc.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\User/drivers_config.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/filters.h:

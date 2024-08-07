@@ -110,6 +110,47 @@ DIN_FUNCTION_ERROR_t eSetDUT(OUT_NAME_TYPE ucCh, uint8_t state )
     #endif
         return ( eRes );
 }
+
+void xSetOut( uint8_t * data_mask)
+{
+    uint8_t mask = 0x01;
+    for (uint8_t i = 0;i < DOUT_COUNT;i++)
+    {
+            if (data_mask[i/8] & mask)
+            {
+                eSetDUT(i, 1);
+            }
+            else
+            {
+                eSetDUT(i, 0);
+            }
+            mask<<=1;
+            if( mask ==0 ) mask = 0x01;
+    }
+}
+
+void xGetOut( uint8_t * data_mask)
+{
+    uint8_t mask = 0x01;
+       for (uint8_t i = 0;i < DOUT_COUNT;i++)
+       {
+           if ( eGetDOUT(i) !=0 )
+               data_mask[i/8] |= mask;
+           else
+               data_mask[i/8] &= ~mask;
+
+               mask<<=1;
+               if( mask ==0 ) mask = 0x01;
+       }
+
+}
+
+
+uint8_t eGetDOUT(OUT_NAME_TYPE ucCh )
+{
+    return ( xDoutConfig[ucCh].ucValue) ;
+}
+
 /*
  *
  */
@@ -334,7 +375,8 @@ void vDinDoutProcess()
      }
     for (uint8_t i=0; i < DOUT_COUNT; i++)
     {
-        xDoutConfig[i].setPortCallback(i, xDoutConfig[i].ucValue);
+
+        xDoutConfig[i].setPortCallback(i, (xDoutConfig[i].ucActiveLevel == DOUT_ACTIVE_CONFIG_NEGATIVE) ? !xDoutConfig[i].ucValue : xDoutConfig[i].ucValue);
     }
 }
 /*
@@ -361,4 +403,21 @@ uint32_t uiGetDinMask()
 		uiMask |= ( xDinConfig[ i ].ucValue & 0x01 );
 	}
 	return ( uiMask );
+}
+
+void xGetDins( uint8_t * data_mask)
+{
+    uint8_t mask = 0x01;
+    for (uint8_t i = 0; i< DIN_COUNT;i++)
+    {
+
+        if (xDinConfig[i].ucValue !=0)
+            data_mask[ i /8] |= mask;
+        else
+            data_mask[ i /8] %=~mask;
+       mask <<=1;
+       if (mask == 0) mask = 0x01;
+
+    }
+
 }

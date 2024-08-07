@@ -97,7 +97,7 @@ void  HW_TIMER_TimerInit(TimerName_t TimerName, uint32_t freq_in_hz, uint32_t Pe
 void HAL_TiemrEneblae( TimerName_t TimerName );
 void HAL_TiemrDisable( TimerName_t TimerName );
 
-
+void HAL_TIMER_EnablePWMCH(TimerName_t TimerName  );
 
 
 void HAL_TIMER_PWMTimersInit(TimerName_t TimerName , uint32_t freq_in_hz, uint32_t Period, uint8_t channel);

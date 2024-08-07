@@ -56,7 +56,7 @@
 #define CRASH_LED_Port              PORT_D
 #define AOUT1_Pin                   GPIO_9
 #define AOUT2_Pin                   GPIO_11
-#define AOUT3_Pin                   GPIO_12
+#define AOUT3_Pin                   GPIO_13
 #define AOUT_Port                   PORT_D
 #define LCDDni_Pin                  GPIO_12
 #define LCDDATA0_Pin                GPIO_14

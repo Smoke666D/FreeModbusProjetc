@@ -29,7 +29,8 @@ HAL/hal_spi_ch32.o: ../HAL/hal_spi_ch32.c ../HAL/hal_spi.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\Debug/debug.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\Peripheral\inc/ch32v30x.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\Peripheral\inc/ch32v30x_misc.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\Peripheral\inc/ch32v30x_eth.h
+ C:\MRS_DATA\workspace\FreeModbusProjetc\Peripheral\inc/ch32v30x_eth.h \
+ ../HAL/hal_irq.h
 
 ../HAL/hal_spi.h:
 
@@ -96,3 +97,5 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\Peripheral\inc/ch32v30x.h:
 C:\MRS_DATA\workspace\FreeModbusProjetc\Peripheral\inc/ch32v30x_misc.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\Peripheral\inc/ch32v30x_eth.h:
+
+../HAL/hal_irq.h:

@@ -61,8 +61,8 @@ void PFIC_IRQ_ENABLE_PG2(IRQn_Type irq, u8 prior, u8 subprior)
             tmppre = subprior+ (4 * (prior - 2));
             NVIC_SetPriority(irq, (1 << 7) | (tmppre << 4));
         }
-    }
 
-
+    NVIC_EnableIRQ(irq);
+ }
 #endif
 #endif
