@@ -48,6 +48,8 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define DAC3_ADDR  24
 #define SENS_COOF  18
 #define DAC_DATA   19
+#define SENS_PERIOD 28
+#define SENS_COUNT  29
 
 
 #define DAC_CAL_POINTS 10
@@ -107,6 +109,12 @@ void vSetRegData( u16 adress)
            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_1 ,usRegHoldingBuf[adress]);
            HAL_TIMER_EnablePWMCH(TIMER9);
            break;
+       case SENS_PERIOD:
+           vSetPeriod(usRegHoldingBuf[adress]);
+           break;
+       case SENS_COUNT:
+           vSetCount(usRegHoldingBuf[adress]);
+           break;
 
    }
 }
@@ -150,16 +158,18 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
     switch ( eMode )
     {
     case MB_REG_READ:
-        for (uint8_t i=0;i< DC_CHANNEL+2;i++)
+        for (uint8_t i=0;i< DC_CHANNEL+3;i++)
         {
             tempdata =(uint32_t) (getAIN(i)*1000);
             *((float*) (usRegHoldingBuf+i*2)) =  (float)tempdata/1000.0;
         }
-        tempdata =(uint32_t) (getAIN(AC220)*1000);
-                   *((float*) (usRegHoldingBuf+26)) =  (float)tempdata/1000.0;
+
+        tempdata =(uint32_t) getAIN(AC220);
+        *((float*) (usRegHoldingBuf+26)) =  tempdata;
 
         usRegHoldingBuf[18] = GetSensCoof();
-
+        usRegHoldingBuf[28] = (uint16_t)uGetPeriod();
+        usRegHoldingBuf[29] = uGetConversionCount();
       while( usNRegs > 0 )
       {
         *pucRegBuffer++ = ( unsigned char )( usRegHoldingBuf[iRegIndex] >> 8 );

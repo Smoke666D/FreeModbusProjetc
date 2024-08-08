@@ -10,7 +10,7 @@
 
 #include "main.h"
 
-#define DC_CHANNEL 7
+#define DC_CHANNEL 6
 #define DC_CONVERSION_NUMBER 3
 #define AC_CONVERION_NUMBER 1500
 #define ADC_CHANNEL 2
@@ -38,8 +38,11 @@ typedef struct
 {
     uint16_t * pBuff;
     uint16_t ConversionalSize;
+    uint16_t ViewDataCount;
     uint16_t pIndex;
 } ADC_Conversionl_Buf_t;
+
+
 
 #define KK  ( 3.3 / 4095.0 )
 
@@ -50,7 +53,9 @@ typedef struct
 #define R2_10V  10000.0
 #define COOF_10V ((R1_10V+R2_10V)/R2_10V)
 
-
+void vSetPeriod( u8  per);
+u8 uGetPeriod();
+u16 uGetConversionCount();
 TaskHandle_t * getADCTaskHandle();
 void ADC_TestInit();
 void ADC_task(void *pvParameters);

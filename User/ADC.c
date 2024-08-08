@@ -14,35 +14,33 @@
 #include "hal_timers.h"
 
 static TaskHandle_t pADCTaskHandle;
-static TaskHandle_t  pTaskToNotifykHandle;
-static uint16_t ADC_VALUE[DC_CHANNEL];
-static float adc_float[DC_CHANNEL];
 float AC_220_VALUE;
-static uint16_t ADC2_Buffer[DC_CONVERSION_NUMBER*DC_CHANNEL];
-static uint16_t DC_Buffer[DC_CHANNEL];
+static uint16_t ADC2_Buffer[DC_CHANNEL];
 static int16_t  ADC1_DMABuffer[AC_CONVERION_NUMBER*ADC_CHANNEL];
-static EventGroupHandle_t xADCEventGroupHandle;
-uint8_t ADC2_CHANNEL[DC_CHANNEL] = { ADC_CH_8,  ADC_CH_9, ADC_CH_2,ADC_CH_6,ADC_CH_7,ADC_CH_14,ADC_CH_15};
+uint8_t ADC2_CHANNEL[DC_CHANNEL] = {   ADC_CH_9, ADC_CH_2,ADC_CH_6,ADC_CH_7,ADC_CH_14,ADC_CH_15};
 static uint8_t ADC_2_FSM  = 0;
 static uint8_t DC_cnversion =0;
 #define ADC1_CH_COUNT 2
 #define ADC1_PRIOR 1
 #define ADC1_SUB_PRIOR 0
+static u16 period = 1;
+
 
 uint16_t GetConversional(ADC_Conversionl_Buf_t * pBuf);
 #define DC_24_BufferSize    3
 #define DC_AIN_BufferSize  10
-#define Sens_BufferSize 100
-ADC_Conversionl_Buf_t DataBuffer[DC_CHANNEL];
+#define Sens_BufferSize 1000
+ADC_Conversionl_Buf_t DataBuffer[DC_CHANNEL+2];
 
-uint16_t SenseBuffer1[ Sens_BufferSize];
-uint16_t SenseBuffer2[ Sens_BufferSize];
-uint16_t DC24Buffer[ DC_24_BufferSize];
-uint16_t AIN1Buffer[ DC_AIN_BufferSize];
-uint16_t AIN2Buffer[ DC_AIN_BufferSize];
-uint16_t AIN3Buffer[ DC_AIN_BufferSize];
-uint16_t AIN4Buffer[ DC_AIN_BufferSize];
 
+int16_t SenseBuffer1[ Sens_BufferSize];
+int16_t SenseBuffer2[ Sens_BufferSize];
+int16_t DC24Buffer[ DC_24_BufferSize];
+int16_t AIN1Buffer[ DC_AIN_BufferSize];
+int16_t AIN2Buffer[ DC_AIN_BufferSize];
+int16_t AIN3Buffer[ DC_AIN_BufferSize];
+int16_t AIN4Buffer[ DC_AIN_BufferSize];
+int16_t SensTemoBuffer[ DC_AIN_BufferSize];
 /*
  *
  */
@@ -50,10 +48,23 @@ uint16_t AIN4Buffer[ DC_AIN_BufferSize];
 /*
  *
  */
-
-
-
-
+void vSetPeriod( u8  per)
+{
+    if (per >0 && per <=10)  period = per;
+}
+u8 uGetPeriod()
+{
+    return period;
+}
+void vSetCount( u16 coount)
+{
+    if ((coount >0 ) && (coount <= Sens_BufferSize))
+    DataBuffer[0].ConversionalSize = coount;
+}
+u16 uGetConversionCount()
+{
+    return DataBuffer[0].ConversionalSize;
+}
 
 TaskHandle_t * getADCTaskHandle()
 {
@@ -67,12 +78,11 @@ static void ADC1_Event()
     static portBASE_TYPE xHigherPriorityTaskWoken;
     xHigherPriorityTaskWoken = pdFALSE;
     xTaskNotifyFromISR(pADCTaskHandle,  ADC1_DATA_READY, eSetBits, &xHigherPriorityTaskWoken  );
-   // xEventGroupSetBitsFromISR( xADCEventGroupHandle, ADC1_DATA_READY, &xHigherPriorityTaskWoken );
     portEND_SWITCHING_ISR( xHigherPriorityTaskWoken );
 }
 
 volatile u16 ADC_val[4];
-static u8 conversion_number;
+
 static u8 conversion_channel;
 
 #define MIN_BAR_VALUE -0.025
@@ -99,40 +109,30 @@ u8 i2cdata[2][8] ={0};
 
 float getAIN( AIN_CHANNEL_t channel)
 {
+    float temp_float;
     uint32_t temp_data = 0;
     switch (channel)
     {
         case  SENS1:
-            return ((float)GetConversional(&DataBuffer[0])*KK);//
-        //   adc_float[0]*KK;//Get_025HPDPN33_SensorData( adc_float[0]*KK);
+            return  ((float)GetConversional(&DataBuffer[0]));
         case SENS2:
-           return ((float)GetConversional(&DataBuffer[1])*KK);//r
-         //   return adc_float[1]*KK;//Get_025HPDPN33_SensorData( adc_float[1]*KK);
+           return ((float)GetConversional(&DataBuffer[1])*KK);
         case DC24:
              return  ((float)GetConversional(&DataBuffer[2])*KK*COOF_24V);
-         //   return adc_float[2]*KK*COOF_24V;
+
         case DCAIN1:
             return  ((float)GetConversional(&DataBuffer[3])*KK*COOF_10V);
-          //  return adc_float[3]*KK*COOF_10V;
+
         case DCAIN2:
             return  ((float)GetConversional(&DataBuffer[4])*KK*COOF_10V);
-            //return adc_float[4]*KK*COOF_10V;
+
         case DCAIN3:
             return  ((float)GetConversional(&DataBuffer[5])*KK*COOF_10V);
-            //return adc_float[5]*KK*COOF_10V;
+
        case DCAIN4:
             return ((float)GetConversional(&DataBuffer[6])*KK);
-           // return adc_float[6]*KK;
-
        case  DIG_TEMP:
-
-             temp_data = (i2cdata[1][3]<<8 | i2cdata[1][4]);
-             if (temp_data & 0x8000)
-                 return  (float)((temp_data - 0x8000)/256.0);
-             else
-
-
-             return  (float)(temp_data/256.0);
+           return ((float)GetConversional(&DataBuffer[7])/256.0);
        case DIG_PRES:
            temp_data = (u32)i2cdata[1][0]<<16 | (u32)i2cdata[1][1]<<8 | i2cdata[1][2];
            if (temp_data & 0x800000)
@@ -140,7 +140,7 @@ float getAIN( AIN_CHANNEL_t channel)
            else
             return (float)( temp_data/(float)GetSensCoof());
         case AC220:
-            return AC_220_VALUE;
+            return (AC_220_VALUE);
     }
 
 
@@ -149,23 +149,18 @@ float getAIN( AIN_CHANNEL_t channel)
 
 static void ADC2_Event()
 {
-    u8 index =  conversion_number*DC_CHANNEL + conversion_channel;
-
-    ADC2_Buffer[index ] = Get_ConversionVal(ADC_2,HAL_ADC_DATA(ADC_2));
-    if (conversion_number >= DC_CONVERSION_NUMBER)
+    ADC2_Buffer[conversion_channel ] = Get_ConversionVal(ADC_2,HAL_ADC_DATA(ADC_2));
+    conversion_channel++;
+    if (conversion_channel  >= DC_CHANNEL)
     {
-        conversion_number = 0;
-        conversion_channel = 0;
+        conversion_channel  = 0;
+        ADC_RegularChannelConfig(ADC2,   ADC2_CHANNEL[0], 1, ADC_SampleTime_7Cycles5 );
         static portBASE_TYPE xHigherPriorityTaskWoken;
         xHigherPriorityTaskWoken = pdFALSE;
         xTaskNotifyFromISR(pADCTaskHandle, ADC2_DATA_READY, eSetBits, &xHigherPriorityTaskWoken  );
         portEND_SWITCHING_ISR( xHigherPriorityTaskWoken );
         return;
-    }
-    if (++conversion_channel  >= DC_CHANNEL)
-    {
-        conversion_channel  = 0;
-        conversion_number++;
+
     }
     ADC_RegularChannelConfig(ADC2,   ADC2_CHANNEL[conversion_channel], 1, ADC_SampleTime_7Cycles5 );
     ADC_SoftwareStartConvCmd(ADC2, ENABLE);
@@ -235,10 +230,11 @@ void ADC1_Init()
     HAL_ADC_InitIT(ADC_2, ADC_ExternalTrigConv_None , 1, 0, &ADC2_Event );
     ADC_RegularChannelConfig(ADC2, ADC2_CHANNEL[0], 1, ADC_SampleTime_239Cycles5);
     ADC_TempSensorVrefintCmd(ENABLE);
-
+    memset(SenseBuffer1,0,Sens_BufferSize*2);
     DataBuffer[0].ConversionalSize = Sens_BufferSize;
     DataBuffer[0].pIndex = 0;
     DataBuffer[0].pBuff = SenseBuffer1;
+    memset(SenseBuffer2,0,Sens_BufferSize*2);
     DataBuffer[1].ConversionalSize = Sens_BufferSize;
     DataBuffer[1].pIndex = 0;
     DataBuffer[1].pBuff = SenseBuffer2;
@@ -257,8 +253,16 @@ void ADC1_Init()
     DataBuffer[6].ConversionalSize = DC_AIN_BufferSize;
     DataBuffer[6].pIndex = 0;
     DataBuffer[6].pBuff = AIN4Buffer;
+    DataBuffer[7].ConversionalSize = DC_AIN_BufferSize;
+    DataBuffer[7].pIndex = 0;
+    DataBuffer[7].pBuff = SensTemoBuffer;
 
 }
+
+
+
+
+
 
 
 void AddBufferData( ADC_Conversionl_Buf_t * pBuf, uint16_t data )
@@ -267,7 +271,6 @@ void AddBufferData( ADC_Conversionl_Buf_t * pBuf, uint16_t data )
     pBuf->pIndex++;
     if (pBuf-> pIndex >= pBuf->ConversionalSize)  pBuf->pIndex = 0;
 }
-
 
 uint16_t GetConversional(ADC_Conversionl_Buf_t * pBuf)
 {
@@ -318,9 +321,7 @@ uint8_t GetI2CData(I2C_TypeDef * i2c,u8 ad)
 {
     u8 temp;
     while( I2C_GetFlagStatus( i2c, I2C_FLAG_BUSY ) != RESET );
-
     I2C_GenerateSTART(i2c, ENABLE);
-
     while( !I2C_CheckEvent( i2c, I2C_EVENT_MASTER_MODE_SELECT ) );
     I2C_Send7bitAddress( i2c, 0x6D<<1, I2C_Direction_Transmitter );
 
@@ -331,15 +332,12 @@ uint8_t GetI2CData(I2C_TypeDef * i2c,u8 ad)
 
     I2C_GenerateSTART(i2c, ENABLE);
 
-    while(!I2C_CheckEvent(i2c, I2C_EVENT_MASTER_MODE_SELECT))
-        ;
+    while(!I2C_CheckEvent(i2c, I2C_EVENT_MASTER_MODE_SELECT));
     I2C_Send7bitAddress(i2c, 0x6D<<1, I2C_Direction_Receiver);
 
-    while(!I2C_CheckEvent(i2c, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED))
-        ;
+    while(!I2C_CheckEvent(i2c, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED));
     while(I2C_GetFlagStatus(i2c, I2C_FLAG_RXNE) == RESET)
         I2C_AcknowledgeConfig(i2c, DISABLE);
-
     temp = I2C_ReceiveData(i2c);
     I2C_GenerateSTOP(i2c, ENABLE);
     return temp;
@@ -347,7 +345,7 @@ uint8_t GetI2CData(I2C_TypeDef * i2c,u8 ad)
 
 #define SENOR_MAX_DATA 1000
 u32 sensor_data[2][SENOR_MAX_DATA];
-u16 period = 1;
+
 
 u8 adress[8]= {0x06,0x07,0x08,0x09,0x0A,0x30,0xA5,0xA6};
 
@@ -367,7 +365,7 @@ void ADC_task(void *pvParameters)
     xLastWakeTime = xTaskGetTickCount();
     for (;;)
     {
-            vTaskDelayUntil( &xLastWakeTime, 1);
+            vTaskDelayUntil( &xLastWakeTime,  1 );
             switch (ADC_TASK_FSM)
             {
                 case STATE_INIT:
@@ -417,34 +415,35 @@ void ADC_task(void *pvParameters)
                        {
                            DC_ConversionDoneFlasg  = 0;
                            for (u8 i=0;i<DC_CHANNEL;i++)
-                                                  {
-                                                      u32 adc_buffer_data = 0;
-                                                      for (u8 k=0;k <DC_CONVERSION_NUMBER;k++)
-                                                      {
-                                                          adc_buffer_data= adc_buffer_data + ADC2_Buffer[k*DC_CHANNEL + i];
-                                                      }
-                                                      ADC_VALUE[i] = adc_buffer_data/DC_CONVERSION_NUMBER;
-                                                      /*switch (i)
-                                                      {
-                                                          default:
-                                                              adc_float[i] = ADC_VALUE[i];
-                                                              break;
-                                                          case 2:
-                                                          case 3:
-                                                          case 4:
-                                                          case 5:
-                                                          case 6:*/
-                                                                AddBufferData(&DataBuffer[i],ADC_VALUE[i]);
-                                                              // break;
+                           {
+                              AddBufferData(&DataBuffer[i+1],ADC2_Buffer[i]);
+                           }
+                           ADC_SoftwareStartConvCmd(ADC2, ENABLE);
+                           for (u8 i = 0; i<3; i++)
+                           {
+                               i2cdata[1][i] =  GetI2CData(I2C2,adress[i]);
+                           }
+                           uint32_t temp_data = (u32)i2cdata[1][0]<<16 | (u32)i2cdata[1][1]<<8 | i2cdata[1][2];
+                           int32_t sss;
+                           if (temp_data & 0x800000) sss = temp_data - 0x800000;
+                           else
+                           {
+                            sss =temp_data;
+                           }
+                           sss = sss / GetSensCoof();
+                           AddBufferData(&DataBuffer[0],(uint16_t)sss );
+                           for (u8 i = 3; i<5; i++)
+                           {
+                              i2cdata[1][i] =  GetI2CData(I2C2,adress[i]);
+                           }
+                           int16_t temperature;
+                           uint16_t sens_temp = i2cdata[1][3]*256 + i2cdata[1][4];
+                           if (sens_temp & 0x8000)
+                               temperature = (sens_temp -65536);
+                            else
+                               temperature = sens_temp;
+                           AddBufferData(&DataBuffer[7],temperature);
 
-                                                     // }
-
-                                                  }
-                                                  for (u8 i = 0; i<5; i++)
-                                                  {
-                                                     i2cdata[1][i] =  GetI2CData(I2C2,adress[i]);
-                                                  }
-                                                  ADC_SoftwareStartConvCmd(ADC2, ENABLE);
                        }
                    }
                    break;
