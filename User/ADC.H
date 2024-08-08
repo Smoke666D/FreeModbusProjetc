@@ -33,6 +33,14 @@ typedef enum
   DIG_PRES = 8,
   AC220   = 9,
 } AIN_CHANNEL_t;
+
+typedef struct
+{
+    uint16_t * pBuff;
+    uint16_t ConversionalSize;
+    uint16_t pIndex;
+} ADC_Conversionl_Buf_t;
+
 #define KK  ( 3.3 / 4095.0 )
 
 #define R1_24V 1000000.0
