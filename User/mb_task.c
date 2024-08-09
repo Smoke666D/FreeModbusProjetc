@@ -50,6 +50,7 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define DAC_DATA   19
 #define SENS_PERIOD 28
 #define SENS_COUNT  29
+#define CONTR      30
 
 
 #define DAC_CAL_POINTS 10
@@ -115,6 +116,9 @@ void vSetRegData( u16 adress)
        case SENS_COUNT:
            vSetCount(usRegHoldingBuf[adress]);
            break;
+       case CONTR:
+           DAC_SetChannel1Data(DAC_Align_12b_R, usRegHoldingBuf[adress]);
+           break;
 
    }
 }
@@ -166,7 +170,6 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
 
         tempdata =(uint32_t) getAIN(AC220);
         *((float*) (usRegHoldingBuf+26)) =  tempdata;
-
         usRegHoldingBuf[18] = GetSensCoof();
         usRegHoldingBuf[28] = (uint16_t)uGetPeriod();
         usRegHoldingBuf[29] = uGetConversionCount();
@@ -176,7 +179,6 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
         *pucRegBuffer++ = ( unsigned char )( usRegHoldingBuf[iRegIndex] & 0xFF );
         iRegIndex++;
         usNRegs--;
-
       }
       break;
 

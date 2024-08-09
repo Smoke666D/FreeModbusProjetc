@@ -1,4 +1,5 @@
-User/ADC.o: ../User/ADC.c ../User/AC_ConvertLib.h ../User/main.h \
+HAL/hal_dac.o: ../HAL/hal_dac.c ../HAL/hal_dac.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\NetLib/eth_driver.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\Debug/debug.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\Peripheral\inc/ch32v30x.h \
@@ -49,31 +50,15 @@ User/ADC.o: ../User/ADC.c ../User/AC_ConvertLib.h ../User/main.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/event_groups.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/timers.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/task.h \
- ../User/ADC.H \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\User/ADC.H \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8g2.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8x8.h \
- ../User/system_init.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/list.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/semphr.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_adc.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/board_define.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_dma.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\User/system_init.h \
- ../User/mb_task.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/hw_lib_adc.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\User/drivers_config.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/filters.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_timers.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_gpio.h ../User/init.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h
+ ../HAL/hal_irq.h ../HAL/hal_config.h ../HAL/board_define.h
 
-../User/AC_ConvertLib.h:
+../HAL/hal_dac.h:
 
-../User/main.h:
+C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\NetLib/eth_driver.h:
 
@@ -175,46 +160,16 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/timers.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/task.h:
 
-../User/ADC.H:
+C:\MRS_DATA\workspace\FreeModbusProjetc\User/ADC.H:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8g2.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8x8.h:
 
-../User/system_init.h:
+../HAL/hal_irq.h:
 
-C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h:
+../HAL/hal_config.h:
 
-C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/list.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/semphr.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_adc.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/board_define.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_dma.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\User/system_init.h:
-
-../User/mb_task.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/hw_lib_adc.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\User/drivers_config.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/filters.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_timers.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_gpio.h:
-
-../User/init.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h:
+../HAL/board_define.h:

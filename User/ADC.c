@@ -12,6 +12,7 @@
 #include "mb_task.h"
 #include "hw_lib_adc.h"
 #include "hal_timers.h"
+#include "hal_gpio.h"
 
 static TaskHandle_t pADCTaskHandle;
 float AC_220_VALUE;
@@ -211,8 +212,7 @@ void ADC1_Init()
   //  I2C_GenerateSTOP(I2C1, ENABLE);
    // I2C_GenerateSTOP(I2C2, ENABLE);
     DMA_INIT_t init;
-    HW_TIMER_TimerInit(TIMER3,1945945,25);
-    HW_TIMER_SelectOutTrigger(TIMER3,TIM_TRGOSource_Update);
+
    // HAL_ADC_InitIT(ADC_1,  ADC_ExternalTrigConv_T3_TRGO , 1, 0, &ADC1_Event );
   //  ADC_RegularChannelConfig(ADC1, ADC2_CHANNEL[0], 1, ADC_SampleTime_239Cycles5);
     uint8_t ADC1_CHANNEL[ADC1_CH_COUNT] = { ADC_CH_0,  ADC_CH_1 };
@@ -337,7 +337,7 @@ uint8_t GetI2CData(I2C_TypeDef * i2c,u8 ad)
 
     while(!I2C_CheckEvent(i2c, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED));
     while(I2C_GetFlagStatus(i2c, I2C_FLAG_RXNE) == RESET)
-        I2C_AcknowledgeConfig(i2c, DISABLE);
+    I2C_AcknowledgeConfig(i2c, DISABLE);
     temp = I2C_ReceiveData(i2c);
     I2C_GenerateSTOP(i2c, ENABLE);
     return temp;
@@ -349,10 +349,12 @@ u32 sensor_data[2][SENOR_MAX_DATA];
 
 u8 adress[8]= {0x06,0x07,0x08,0x09,0x0A,0x30,0xA5,0xA6};
 
-
+#include "init.h"
 
 void ADC_task(void *pvParameters)
 {
+    uint16_t counter_led = 0;
+    u8 led_state = 0;
     uint32_t ulNotifiedValue;
     TaskFSM_t ADC_TASK_FSM = STATE_INIT;
     TickType_t xLastWakeTime;
@@ -362,9 +364,24 @@ void ADC_task(void *pvParameters)
     uint16_t ConversionFrequncy = 0;
     uint16_t uCurPeriod = AC_CONVERION_NUMBER-1;
     uint8_t DC_ConversionDoneFlasg = 0;
+    u16 initr = 0;
     xLastWakeTime = xTaskGetTickCount();
     for (;;)
     {
+            if (++counter_led >500)
+            {
+                counter_led =0;
+                if (led_state == 0)
+                {
+                    led_state = 1;
+                    HAL_SetBit(CRACH_Port,  CRACH_Pin);
+                }
+                else
+                {
+                    HAL_ResetBit(CRACH_Port, CRACH_Pin);
+                   led_state = 0;
+                }
+            }
             vTaskDelayUntil( &xLastWakeTime,  1 );
             switch (ADC_TASK_FSM)
             {
@@ -382,7 +399,6 @@ void ADC_task(void *pvParameters)
                 case STATE_RUN:
 
                     xTaskNotifyWait( 0,  ADC2_DATA_READY | ADC1_DATA_READY, &ulNotifiedValue,0);
-
                     if (ulNotifiedValue & ADC1_DATA_READY)
                     {
                         for (int i = 0; i<AC_CONVERION_NUMBER*ADC_CHANNEL;i++)
@@ -410,6 +426,8 @@ void ADC_task(void *pvParameters)
                    }
                    if (++ConversionFrequncy >=  period)
                    {
+                       if (++initr > 0xFFF) initr =0;
+                        DAC_SetChannel1Data(DAC_Align_12b_R, initr);
                        ConversionFrequncy = 0;
                        if (DC_ConversionDoneFlasg )
                        {
@@ -443,7 +461,6 @@ void ADC_task(void *pvParameters)
                             else
                                temperature = sens_temp;
                            AddBufferData(&DataBuffer[7],temperature);
-
                        }
                    }
                    break;

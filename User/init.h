@@ -11,6 +11,8 @@
 #include "main.h"
 #include "hal_config.h"
 
+#define CRACH_Port                  PORT_C
+#define CRACH_Pin                   GPIO_2
 #define KL1_Pin                     GPIO_8
 #define KL1_Port                    PORT_B
 #define KL2_Pin                     GPIO_2
@@ -90,6 +92,7 @@
 #define RS485_TX_Pin                Pin GPIO_Pin_0
 #define RS485_RX_Pin                Pin GPIO_Pin_1
 #define RS485_Port                  PORT_E
+
 
 #define DEF_H_FRONT 10U
 #define DEF_L_FRONT 10U

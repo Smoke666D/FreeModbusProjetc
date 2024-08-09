@@ -6,6 +6,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../HAL/hal_adc.c \
+../HAL/hal_dac.c \
 ../HAL/hal_dma.c \
 ../HAL/hal_gpio_ch32.c \
 ../HAL/hal_irq.c \
@@ -14,6 +15,7 @@ C_SRCS += \
 
 OBJS += \
 ./HAL/hal_adc.o \
+./HAL/hal_dac.o \
 ./HAL/hal_dma.o \
 ./HAL/hal_gpio_ch32.o \
 ./HAL/hal_irq.o \
@@ -22,6 +24,7 @@ OBJS += \
 
 C_DEPS += \
 ./HAL/hal_adc.d \
+./HAL/hal_dac.d \
 ./HAL/hal_dma.d \
 ./HAL/hal_gpio_ch32.d \
 ./HAL/hal_irq.d \
