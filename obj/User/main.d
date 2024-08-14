@@ -59,7 +59,7 @@ User/main.o: ../User/main.c ../User/main.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h \
  ../User/init.h C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/board_define.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h ../User/menu.h
 
 ../User/main.h:
 
@@ -186,3 +186,5 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h:
 C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/board_define.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h:
+
+../User/menu.h:

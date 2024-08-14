@@ -26,5 +26,6 @@ typedef struct
   uint32_t DAC_OutputBuffer;
 }HAL_DAC_InitTypeDef;
 
+void HAL_DAC_Init(HAL_DAC_InitTypeDef * init);
 
 #endif /* HAL_HAL_DAC_H_ */

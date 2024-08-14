@@ -6,9 +6,12 @@
  */
 #include "hal_i2c.h"
 
-#if MCU == CH32V2
 
-#include "hw_lib_eeprom.h"
+
+#if MCU == CH32V2 || MCU == CH32V3
+#include "ch32v30x_i2c.h"
+#include "ch32v30x.h"
+
 #include "hal_gpio.h"
 #include "hal_irq.h"
 
@@ -47,20 +50,20 @@ static I2C_TypeDef * I2C[]={I2C1,I2C2};
 #define FLAG_Mask                ((uint32_t)0x00FFFFFF)
 
 
-EEPOROM *   pEEPROM             __SECTION(RAM_SECTION_CCMRAM);
 
-static inline void EEPROM_I2C_ENABLE()          { pEEPROM->dev->CTLR1 |= CTLR1_PE_Set;    }
-static inline void EEPROM_I2C_DISABLE()         { pEEPROM->dev->CTLR1 &= CTLR1_PE_Reset;   }
-static inline void EEPROM_I2C_STOP()            { pEEPROM->dev->CTLR1 |= CTLR1_STOP_Set;  }
-static inline void EEPROM_I2C_START()           { pEEPROM->dev->CTLR1 |= CTLR1_START_Set; }
-static inline void I2C_IT_ENABLE( u16 DATA )    { pEEPROM->dev->CTLR2  |= DATA;           }
-static inline void I2C_IT_DISABLE( u16 DATA )   { pEEPROM->dev->CTLR2 &= (uint16_t)~DATA; }
-static inline void EEPROM_I2C_SEND( u8 DATA)    {pEEPROM->dev->DATAR = DATA;}
-static inline void  EERPOM_I2C_SEND_ADDR_TRANS( u8 DATA)   { pEEPROM->dev->DATAR = ( DATA & OADDR1_ADD0_Reset);}
-static inline void  EERPOM_I2C_SEND_ADDR_RECIEVE( u8 DATA)  { pEEPROM->dev->DATAR = DATA | OADDR1_ADD0_Set;}
-static inline void EEPROM_I2C_ACK_ENABLE()      { pEEPROM->dev->CTLR1 |= CTLR1_ACK_Set;}
-static inline void EEPROM_I2C_ACK_DISABLE()     { pEEPROM->dev->CTLR1 &= CTLR1_ACK_Reset;}
-#define            EEPROM_I2C_READ_DATA()       pEEPROM->dev->DATAR
+
+void HAL_I2C_ENABLE( I2C_NAME_t i2c )          { I2C[i2c]->CTLR1 |= CTLR1_PE_Set;    }
+static inline void EEPROM_I2C_DISABLE(I2C_NAME_t i2c )         { I2C[i2c]->CTLR1 &= CTLR1_PE_Reset;   }
+static inline void EEPROM_I2C_STOP(I2C_NAME_t i2c )            { I2C[i2c]->CTLR1 |= CTLR1_STOP_Set;  }
+static inline void EEPROM_I2C_START(I2C_NAME_t i2c )           { I2C[i2c]->CTLR1 |= CTLR1_START_Set; }
+static inline void I2C_IT_ENABLE(I2C_NAME_t i2c ,u16 DATA )    { I2C[i2c]->CTLR2  |= DATA;           }
+static inline void I2C_IT_DISABLE(I2C_NAME_t i2c , u16 DATA )   {I2C[i2c]->CTLR2 &= (uint16_t)~DATA; }
+static inline void EEPROM_I2C_SEND(I2C_NAME_t i2c , u8 DATA)    {I2C[i2c]->DATAR = DATA;}
+static inline void  EERPOM_I2C_SEND_ADDR_TRANS(I2C_NAME_t i2c ,u8 DATA)   { I2C[i2c]->DATAR = ( DATA & OADDR1_ADD0_Reset);}
+static inline void  EERPOM_I2C_SEND_ADDR_RECIEVE(I2C_NAME_t i2c , u8 DATA)  { I2C[i2c]->DATAR = DATA | OADDR1_ADD0_Set;}
+static inline void EEPROM_I2C_ACK_ENABLE(I2C_NAME_t i2c )      { I2C[i2c]->CTLR1 |= CTLR1_ACK_Set;}
+static inline void EEPROM_I2C_ACK_DISABLE(I2C_NAME_t i2c )     { I2C[i2c]->CTLR1 &= CTLR1_ACK_Reset;}
+#define            EEPROM_I2C_READ_DATA(i2c )      I2C[i2c]->DATAR
 
 #if I2C1_ENABLE == 1
 void   I2C1_EV_IRQHandler(void)  __attribute__((interrupt()));  /* USB HP and CAN1 TX */
@@ -73,21 +76,20 @@ void   I2C2_ER_IRQHandler(void)  __attribute__((interrupt()));     /* CAN1 SCE *
 
 
 
-static EERPOM_ERROR_CODE_t I2C_Master_ReviceIT(  u8 DevAdrees, u16 data_addres,  u8 * data, u16 data_size, u32 timeout,uint8_t TNI  );
-static EERPOM_ERROR_CODE_t I2C_Master_TransmitIT(  u8 DevAdrees, u16 data_addres, u8 * data, u16 data_size, u32 timeout,uint8_t TNI  );
-static EERPOM_ERROR_CODE_t I2C_Master_TransmitFast( u8 DevAdrees, u16 data_addres,  u8 * data, u16 data_size  );
+//static EERPOM_ERROR_CODE_t I2C_Master_ReviceIT(  u8 DevAdrees, u16 data_addres,  u8 * data, u16 data_size, u32 timeout,uint8_t TNI  );
+//static EERPOM_ERROR_CODE_t I2C_Master_TransmitIT(  u8 DevAdrees, u16 data_addres, u8 * data, u16 data_size, u32 timeout,uint8_t TNI  );
+//static EERPOM_ERROR_CODE_t I2C_Master_TransmitFast( u8 DevAdrees, u16 data_addres,  u8 * data, u16 data_size  );
 
 
-void InitI2CDMA( I2C_NAME_t i2c, uint8_t prior, uint8_t subprior)
+void HAL_I2C_InitIT( I2C_NAME_t i2c, HAL_I2C_InitTypeDef * I2C_InitStruct, uint8_t prior, uint8_t subprior)
 {
-    I2C_TypeDef *  I2Cx = i2c;
+    ;
 #if I2C1_ENABLE == 1
     if ( i2c == I2C_1)
     {
         RCC->APB1PCENR |= RCC_APB1Periph_I2C1;
         RCC->APB1PRSTR |= RCC_APB1Periph_I2C1;
         RCC->APB1PRSTR &= ~RCC_APB1Periph_I2C1;
-
     }
 #endif
 #if I2C2_ENABLE == 1
@@ -99,47 +101,71 @@ void InitI2CDMA( I2C_NAME_t i2c, uint8_t prior, uint8_t subprior)
 
     }
 #endif
-   uint16_t  freqrange = 0;
-   uint16_t result = 0x04;
-   uint32_t pclk1 = 8000000;
-   RCC_ClocksTypeDef rcc_clocks;;
-   RCC_GetClocksFreq(&rcc_clocks);
-   pclk1 = rcc_clocks.PCLK1_Frequency;
-   I2Cx->CTLR2 = (uint16_t)(pclk1 / 1000000);;
-   I2Cx->CTLR1 &= CTLR1_PE_Reset;
-   result = (uint16_t)(pclk1 / ( 400000 * 25));
-   result |= I2C_DutyCycle_16_9;
-   if((result & CKCFGR_CCR_Set) == 0)
-   {
-       result |= (uint16_t)0x0001;
-   }
-   I2Cx->RTR = (uint16_t)(((freqrange * (uint16_t)300) / (uint16_t)1000) + (uint16_t)1);
-   I2Cx->CKCFGR = (uint16_t)(result | CKCFGR_FS_Set);
-   I2Cx->CTLR1 |= CTLR1_PE_Set;
-   I2Cx->CTLR1 |= (uint16_t)((uint32_t)I2C_Mode_I2C | I2C_Ack_Enable);
-   I2Cx->OADDR1 = I2C_AcknowledgedAddress_7bit ;
-   pEEPROM =xGetEEPROM();
-   pEEPROM->dev = i2c;
-   pEEPROM->I2C_Master_Recive_func =    I2C_Master_ReviceIT;
-   pEEPROM->I2C_Master_Transmit_func =  I2C_Master_TransmitIT;
-   pEEPROM->I2C_Master_Transmit_func_fast = I2C_Master_TransmitFast;
-   if (i2c == I2C_1)
-   {
+    uint16_t tmpreg = 0, freqrange = 0;
+    uint16_t result = 0x04;
+    uint32_t pclk1 = 8000000;
+    RCC_ClocksTypeDef rcc_clocks;
+    RCC_GetClocksFreq(&rcc_clocks);
+    pclk1 = rcc_clocks.PCLK1_Frequency;
+    freqrange = (uint16_t)(pclk1 / 1000000);
+    I2C[i2c]->CTLR2 = freqrange;
+    I2C[i2c]->CTLR1 &= CTLR1_PE_Reset;
+    tmpreg = 0;
 
-	   PFIC_IRQ_ENABLE_PG1(I2C1_EV_IRQn ,prior,subprior);
-	   PFIC_IRQ_ENABLE_PG1(I2C1_ER_IRQn ,prior,subprior);
+    if(I2C_InitStruct->I2C_ClockSpeed <= 100000)
+    {
+        result = (uint16_t)(pclk1 / (I2C_InitStruct->I2C_ClockSpeed << 1));
+        if(result < 0x04)
+        {
+           result = 0x04;
+        }
+        tmpreg |= result;
+        I2C[i2c]->RTR = freqrange + 1;
+    }
+    else
+    {
+        if(I2C_InitStruct->I2C_DutyCycle == I2C_DutyCycle_2)
+        {
+            result = (uint16_t)(pclk1 / (I2C_InitStruct->I2C_ClockSpeed * 3));
+        }
+        else
+        {
+            result = (uint16_t)(pclk1 / (I2C_InitStruct->I2C_ClockSpeed * 25));
+            result |= I2C_DutyCycle_16_9;
+        }
+        if((result & CKCFGR_CCR_Set) == 0)
+        {
+            result |= (uint16_t)0x0001;
+        }
+        tmpreg |= (uint16_t)(result | CKCFGR_FS_Set);
+        I2C[i2c]->RTR = (uint16_t)(((freqrange * (uint16_t)300) / (uint16_t)1000) + (uint16_t)1);
+    }
+    I2C[i2c]->CKCFGR = tmpreg;
+    I2C[i2c]->CTLR1 |= CTLR1_PE_Set;
+    tmpreg = I2C[i2c]->CTLR1;
+    tmpreg &= CTLR1_CLEAR_Mask;
+    tmpreg |= (uint16_t)((uint32_t)I2C_InitStruct->I2C_Mode | I2C_InitStruct->I2C_Ack);
+    I2C[i2c]->CTLR1 = tmpreg;
+    I2C[i2c]->OADDR1 = (I2C_InitStruct->I2C_AcknowledgedAddress | I2C_InitStruct->I2C_OwnAddress1);
+
+
+  // pEEPROM->I2C_Master_Recive_func =    I2C_Master_ReviceIT;
+ //  pEEPROM->I2C_Master_Transmit_func =  I2C_Master_TransmitIT;
+ //  pEEPROM->I2C_Master_Transmit_func_fast = I2C_Master_TransmitFast;
+  if (i2c == I2C_1)
+   {
+	   PFIC_IRQ_ENABLE_PG2(I2C1_EV_IRQn ,prior,subprior);
+	   PFIC_IRQ_ENABLE_PG2(I2C1_ER_IRQn ,prior,subprior);
    }
    else
    {
-       PFIC_IRQ_ENABLE_PG1(I2C2_EV_IRQn ,prior,subprior);
-       PFIC_IRQ_ENABLE_PG1(I2C2_ER_IRQn ,prior,subprior);
+       PFIC_IRQ_ENABLE_PG2(I2C2_EV_IRQn ,prior,subprior);
+       PFIC_IRQ_ENABLE_PG2(I2C2_ER_IRQn ,prior,subprior);
 
    }
-   I2C_DualAddressCmd(pEEPROM->dev,DISABLE);
-   EEPROM_I2C_ENABLE();
 }
 
-
+/*
 static EERPOM_ERROR_CODE_t I2C_Master_ReviceIT( u8 DevAdrees, u16 data_addres,  u8 * data, u16 data_size, u32 timeout,uint8_t TNI  )
 {
 	EERPOM_ERROR_CODE_t res = EEPROM_ACCESS_ERROR;
@@ -187,98 +213,94 @@ static EERPOM_ERROR_CODE_t I2C_Master_TransmitFast( u8 DevAdrees, u16 data_addre
 }
 
 
+*/
+I2C_TypeDef_T I2CConfig[2];
 
-static EERPOM_ERROR_CODE_t I2C_Master_TransmitIT(  u8 DevAdrees, u16 data_addres,  u8 * data, u16 data_size, u32 timeout,uint8_t TNI  )
+I2C_ERROR_CODE_t I2C_Master_TransmitIT( I2C_NAME_t i2c,  u8 DevAdrees, u16 data_addres,  u8 * data, u16 data_size, u32 timeout,uint8_t TNI  )
 {
-	EERPOM_ERROR_CODE_t res = EEPROM_ACCESS_ERROR;
+    I2C_ERROR_CODE_t res;
 	uint32_t exit_code;
-	pEEPROM->ucTaskNatificationIndex = TNI;
-	pEEPROM->Index          = 0;
-	pEEPROM->DataLength     = data_size;
-    pEEPROM->ReciveBuffer   = data;
-	pEEPROM->DevAdrres      = DevAdrees;
-    pEEPROM->data_address   = data_addres;
-    pEEPROM->NotifyTaskHeandle = xTaskGetCurrentTaskHandle();
-    pEEPROM->I2C_State = I2C_MASTER_TRANSMIT_START;
-	EEPROM_I2C_ENABLE();
-	while(  pEEPROM->dev->STAR2 & STAR2_BUSY_FLAG  );
-	I2C_IT_ENABLE( I2C_IT_BUF | I2C_IT_EVT | I2C_IT_ERR );
-	EEPROM_I2C_START();
-	exit_code = ulTaskNotifyTakeIndexed( pEEPROM->ucTaskNatificationIndex, 0xFFFFFFFF, timeout );
-	I2C_IT_DISABLE( I2C_IT_BUF | I2C_IT_EVT | I2C_IT_ERR);
-	EEPROM_I2C_DISABLE();
-	res = (exit_code > 0  )? (EEPROM_OK) : (EEPROM_READ_ERROR);
+	I2CConfig[i2c].ucTaskNatificationIndex = TNI;
+	I2CConfig[i2c].Index          = 0;
+	I2CConfig[i2c].DataLength     = data_size;
+	I2CConfig[i2c].ReciveBuffer   = data;
+	I2CConfig[i2c].DevAdrres      = DevAdrees;
+	I2CConfig[i2c].data_address   = data_addres;
+	I2CConfig[i2c].NotifyTaskHeandle = xTaskGetCurrentTaskHandle();
+	I2CConfig[i2c].I2C_State = I2C_MASTER_TRANSMIT_START;
+	HAL_I2C_ENABLE(i2c);
+	while( I2C[i2c]->STAR2 & STAR2_BUSY_FLAG  );
+	I2C_IT_ENABLE( i2c, I2C_IT_BUF | I2C_IT_EVT | I2C_IT_ERR );
+	EEPROM_I2C_START(i2c);
+	exit_code = ulTaskNotifyTakeIndexed( I2CConfig[i2c].ucTaskNatificationIndex, 0xFFFFFFFF, timeout );
+	I2C_IT_DISABLE( i2c,I2C_IT_BUF | I2C_IT_EVT | I2C_IT_ERR);
+	EEPROM_I2C_DISABLE(i2c);
+	res = (exit_code > 0  )? (HAL_I2C_OK) : (HAL_I2C_ERROR);
 	return (res) ;
 }
 
 
-static void I2C_FSM()
+
+
+
+static void I2C_FSM( I2C_NAME_t i2c )
 {
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
 
-
-#if MCU == CH32V2
-        uint16_t int_flags =   pEEPROM->dev->STAR1;
-        switch(pEEPROM->I2C_State)
+    uint16_t int_flags =   I2C[i2c]->STAR1;
+     switch(I2CConfig[i2c].I2C_State)
         {
              case  I2C_MASTER_RECIVE_START:
                  if (int_flags &  STAR1_SB_FLAG)
                  {
-                     EERPOM_I2C_SEND_ADDR_TRANS( pEEPROM->DevAdrres );
-                     pEEPROM->I2C_State = I2C_MASTER_RECIVE_WRITE_ADDR;
+                     EERPOM_I2C_SEND_ADDR_TRANS( i2c,I2CConfig[i2c].DevAdrres );
+                     I2CConfig[i2c].I2C_State = I2C_MASTER_RECIVE_WRITE_ADDR;
                  }
                  break;
               case I2C_MASTER_RECIVE_WRITE_ADDR:
                  if (int_flags & STAR1_ADDR_FLAG)
                  {
-                       int_flags = pEEPROM->dev->STAR2;
-                       EEPROM_I2C_SEND( (pEEPROM->data_address >>  8) & 0x1F );
-                       pEEPROM->I2C_State = I2C_MASTER_RECIVE_WRITE_ADDR2;
+                       int_flags = I2C[i2c]->STAR2;
+                       EEPROM_I2C_SEND( i2c, I2CConfig[i2c].data_address  );
+                       I2CConfig[i2c].I2C_State = I2C_MASTER_RECIVE_DA_WRITE;
                  }
                  break;
-              case  I2C_MASTER_RECIVE_WRITE_ADDR2:
-                  if (int_flags & STAR1_TXE_FLAG)
-                  {
-                      EEPROM_I2C_SEND( pEEPROM->data_address & 0xFF );
-                      pEEPROM->I2C_State = I2C_MASTER_RECIVE_DA_WRITE;
-                  }
-                  break;
               case I2C_MASTER_RECIVE_DA_WRITE:
                   if (int_flags & STAR1_TXE_FLAG)
                   {
-                      EEPROM_I2C_START();
-                      pEEPROM->I2C_State = I2C_MASTER_RECIVE_ADDR;
+                      EEPROM_I2C_START(i2c);
+                      I2CConfig[i2c].I2C_State = I2C_MASTER_RECIVE_ADDR;
                    }
                    break;
               case I2C_MASTER_RECIVE_ADDR:
                   if (int_flags & STAR1_SB_FLAG)
                   {
-                      EERPOM_I2C_SEND_ADDR_RECIEVE( pEEPROM->DevAdrres);
-                      pEEPROM->I2C_State = I2C_MASTER_RECIVE_MODE;
+                      EERPOM_I2C_SEND_ADDR_RECIEVE(i2c, I2CConfig[i2c].DevAdrres);
+                      I2CConfig[i2c].I2C_State = I2C_MASTER_RECIVE_MODE;
                   }
                   break;
              case I2C_MASTER_RECIVE_MODE:
                   if (int_flags & STAR1_ADDR_FLAG)
                   {
-                      int_flags = pEEPROM->dev->STAR2;
-                      pEEPROM->I2C_State = I2C_MASTER_RECIEVE;
+                      int_flags = I2C[i2c]->STAR2;
+                      I2CConfig[i2c].I2C_State = I2C_MASTER_RECIEVE;
                    }
                    break;
             case I2C_MASTER_RECIEVE:
                    if (int_flags & 0x0040)
                    {
-                       if (pEEPROM->Index < (pEEPROM->DataLength-1))
+                       if (I2CConfig[i2c].Index < (I2CConfig[i2c].DataLength-1))
                        {
-                            pEEPROM->ReciveBuffer[pEEPROM->Index++] = EEPROM_I2C_READ_DATA();
+                           I2CConfig[i2c].ReciveBuffer[ I2CConfig[i2c].Index++] = EEPROM_I2C_READ_DATA(i2c );
                        }
                        else
                        {
-                            EEPROM_I2C_ACK_DISABLE();
-                            pEEPROM->ReciveBuffer[pEEPROM->Index++] = EEPROM_I2C_READ_DATA();
-                            EEPROM_I2C_STOP();
-                            xTaskNotifyIndexedFromISR(pEEPROM->NotifyTaskHeandle, pEEPROM->ucTaskNatificationIndex, 0x01, eSetValueWithOverwrite, &xHigherPriorityTaskWoken  );
+                            EEPROM_I2C_ACK_DISABLE(i2c);
+                            I2CConfig[i2c].ReciveBuffer[ I2CConfig[i2c].Index++] = EEPROM_I2C_READ_DATA(i2c);
+                            EEPROM_I2C_STOP(i2c);
+                            xTaskNotifyIndexedFromISR(I2CConfig[i2c].NotifyTaskHeandle, I2CConfig[i2c].ucTaskNatificationIndex, 0x01, eSetValueWithOverwrite, &xHigherPriorityTaskWoken  );
                             portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
-                            pEEPROM->I2C_State = I2C_IDLE;
+                            I2CConfig[i2c].I2C_State = I2C_IDLE;
                         }
                      }
                      break;
@@ -286,54 +308,47 @@ static void I2C_FSM()
 
                     if (int_flags & STAR1_SB_FLAG)
                     {
-                        EERPOM_I2C_SEND_ADDR_TRANS( pEEPROM->DevAdrres );
-                        pEEPROM->I2C_State = I2C_MASTER_TRANSMIT_ADDR;
+                        EERPOM_I2C_SEND_ADDR_TRANS( i2c,I2CConfig[i2c].DevAdrres);
+                        I2CConfig[i2c].I2C_State = I2C_MASTER_TRANSMIT_ADDR;
                     }
                      break;
                  case I2C_MASTER_TRANSMIT_ADDR:
                     if  ( int_flags & 0x0400)
                      {
-                        I2C_ClearFlag( pEEPROM->dev,I2C_FLAG_AF);
-                        EEPROM_I2C_START();
-                         pEEPROM->I2C_State = I2C_MASTER_TRANSMIT_START;
+                        I2C_ClearFlag( I2C[i2c],I2C_FLAG_AF);
+                        EEPROM_I2C_START(i2c);
+                        I2CConfig[i2c].I2C_State = I2C_MASTER_TRANSMIT_START;
                       }
                      else
 
                     if (int_flags & STAR1_ADDR_FLAG)
                     {
-                        int_flags = pEEPROM->dev->STAR2;
-                        EEPROM_I2C_SEND( (pEEPROM->data_address >>  8) & 0x1F );
-                        pEEPROM->I2C_State = I2C_MASTER_TRANSMIT_ADDR2;
+                        int_flags = I2C[i2c]->STAR2;
+                        EEPROM_I2C_SEND( i2c, I2CConfig[i2c].data_address  );
+                        I2CConfig[i2c].I2C_State = I2C_MASTER_TRANSMIT_NEXT;
                     }
                      break;
 
-                 case I2C_MASTER_TRANSMIT_ADDR2:
-                     if (int_flags & STAR1_TXE_FLAG)
-                     {
-                         EEPROM_I2C_SEND( pEEPROM->data_address & 0xFF );
-                         pEEPROM->I2C_State = I2C_MASTER_TRANSMIT_NEXT;
-                     }
 
-                     break;
                  case I2C_MASTER_TRANSMIT_NEXT:
                      if (int_flags & STAR1_TXE_FLAG)
                      {
-                        if (pEEPROM->Index < pEEPROM->DataLength )
+                        if (I2CConfig[i2c].Index < I2CConfig[i2c].DataLength )
                         {
-                           EEPROM_I2C_SEND( pEEPROM->ReciveBuffer[pEEPROM->Index] );
-                           pEEPROM->Index++;
+                           EEPROM_I2C_SEND(i2c, I2CConfig[i2c].ReciveBuffer[I2CConfig[i2c].Index] );
+                           I2CConfig[i2c].Index++;
                         }
                         else
-                             pEEPROM->I2C_State = I2C_MASTER_TRANSMIT_LAST;
+                            I2CConfig[i2c].I2C_State = I2C_MASTER_TRANSMIT_LAST;
                      }
                      break;
                  case  I2C_MASTER_TRANSMIT_LAST:
                      if (int_flags & STAR1_BTF_FLAG)
                      {
-                         EEPROM_I2C_STOP();
-                         xTaskNotifyIndexedFromISR(pEEPROM->NotifyTaskHeandle, pEEPROM->ucTaskNatificationIndex, 0x01, eSetValueWithOverwrite, &xHigherPriorityTaskWoken  );
+                         EEPROM_I2C_STOP(i2c);
+                         xTaskNotifyIndexedFromISR(I2CConfig[i2c].NotifyTaskHeandle, I2CConfig[i2c].ucTaskNatificationIndex, 0x01, eSetValueWithOverwrite, &xHigherPriorityTaskWoken  );
                          portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
-                         pEEPROM->I2C_State = I2C_IDLE;
+                         I2CConfig[i2c].I2C_State = I2C_IDLE;
                      }
                      break;
                  default:
@@ -341,28 +356,27 @@ static void I2C_FSM()
              }
 
 
-#endif
-}
 
+}
 
 #if I2C1_ENABLE == 1
 void I2C1_EV_IRQHandler( void )
 {
-	I2C_FSM();
+	I2C_FSM( I2C_1);
 }
 void I2C1_ER_IRQHandler ( void )
 {
-	I2C_FSM();
+	I2C_FSM(I2C_1 );
 }
 #endif
 #if I2C2_ENABLE == 1
 void  I2C2_EV_IRQHandler( void )
 {
-	I2C_FSM();
+	I2C_FSM(I2C_2);
 }
 void I2C2_ER_IRQHandler ( void )
 {
-	I2C_FSM();
+	I2C_FSM(I2C_2);
 }
 #endif
 

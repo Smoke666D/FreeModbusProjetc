@@ -68,7 +68,8 @@ User/ADC.o: ../User/ADC.c ../User/AC_ConvertLib.h ../User/main.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\User/drivers_config.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/filters.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_timers.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_gpio.h ../User/init.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_gpio.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_i2c.h ../User/init.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h
 
 ../User/AC_ConvertLib.h:
@@ -214,6 +215,8 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/filters.h:
 C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_timers.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_gpio.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_i2c.h:
 
 ../User/init.h:
 

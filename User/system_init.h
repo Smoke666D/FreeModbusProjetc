@@ -20,18 +20,18 @@
 
 #define __SECTION(x)
 
-#define LCD_TASK_PRIOR         5
-#define LCD_STK_SIZE        128
+#define LCD_TASK_PRIOR        5
+#define LCD_STK_SIZE        512
 #define KEYBAORD_TASK_PRIO     5
 #define KEYBAORD_STK_SIZE  128
 #define MBTCP_TASK_PRIO     5
 #define MBTCP_STK_SIZE      512
 #define WCHNET_TASK_PRIO     5
 #define WCHNET_STK_SIZE      512
-#define ADC_TASK_PRIO     5
+#define ADC_TASK_PRIO     6
 #define ADC_STK_SIZE      256
-#define DEFAULT_TASK_PRIOR              5
-#define DEFAULT_TASK_STACK_SIZE         128U
+#define DEFAULT_TASK_PRIOR          5
+#define DEFAULT_TASK_STACK_SIZE         256U
 
 
 typedef enum

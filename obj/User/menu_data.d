@@ -52,8 +52,8 @@ User/menu_data.o: ../User/menu_data.c ../User/menu_data.h ../User/main.h \
  ../User/ADC.H \
  C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8g2.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8x8.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/lib_menu.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h ../User/menu.h
+ ../User/menu.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h
 
 ../User/menu_data.h:
 
@@ -165,8 +165,6 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8g2.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8x8.h:
 
-C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/lib_menu.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h:
-
 ../User/menu.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h:

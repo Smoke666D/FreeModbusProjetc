@@ -92,7 +92,7 @@ BitState_t fPortState (uint8_t i)
     switch (i)
     {
         case 0:
-            return HAL_GetBit( KL1_Port, KL1_Pin  );
+            return HAL_GetBit( KL_Port, KL1_Pin  );
         case 1:
             return HAL_GetBit( KL_Port, KL2_Pin  );
         case 2:
@@ -102,8 +102,7 @@ BitState_t fPortState (uint8_t i)
         case 4:
             return HAL_GetBit( KL_Port, KL5_Pin  );
         case 5:
-            return HAL_GetBit( KL_Port, KL6_Pin  );
-
+            return HAL_GetBit( KL6_Port, KL6_Pin  );
         default:
             return 0;
     }
@@ -118,9 +117,9 @@ void vKeyboarInit()
     KeyboardInit.KEYBOARD_COUNT    = KEY_COUNT;
     KeyboardInit.COUNTERS          = COUNTERS;
     KeyboardInit.STATUS            = STATUS;
-    KeyboardInit.REPEAT_TIME       = 2;
-    KeyboardInit.KEYDOWN_HOLD_TIME = 3;
-    KeyboardInit.KEYDOWN_DELAY     = 1;
+    KeyboardInit.REPEAT_TIME       = 20;
+    KeyboardInit.KEYDOWN_HOLD_TIME = 100;
+    KeyboardInit.KEYDOWN_DELAY     = 2;
     KeyboardInit.KEYBOARD_PERIOD   = 20;
     KeyboardInit.getPortCallback = &fPortState;
     eKeyboardInit(&KeyboardInit);

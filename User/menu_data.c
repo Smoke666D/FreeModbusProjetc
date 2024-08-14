@@ -9,41 +9,34 @@
 #include "menu.h"
 
 
-static xScreenObjet const Info1MainScreen[]=
+static xScreenObjet const InfoScreen1[]=
 {
+        {0,2,12,70,READ_DATA,"Уставка 1",0},
+        {0,2,25,70,READ_DATA,"Факт 1",1},
+        {0,2,37,70,READ_DATA,"Уставка 2",0},
+        {1,2,50,70,READ_DATA,"Факт 1",0},
+};
 
+static xScreenObjet const InfoScreen2[]=
+{
+        {1,2,37,0,TEXT_STRING,"Журанл аварий",0},
+};
+static xScreenObjet const InfoScreen3[]=
+{
+        {0,2,12,70,READ_DATA,"Дата",CURENT_DATE_ADDR},
+        {0,2,25,70,READ_DATA,"Время",CURENT_TIME_ADDR},
+        {0,2,37,90,READ_DATA,"Напяжение",AC_VOLTAGE_ID },
+        {0,2,50,70,READ_DATA,"Адрес ModBus",0},
+        {1,2,62,15,READ_DATA,"",IP_ADRESS_DATA_ID },
 
 };
 
-static xScreenObjet const Info2MainScreen[]=
+//����ڧ�ѧߧڧ� ��ܧ�ѧߧ�� �ԧݧѧӧ�ߧԧ� �ާ֧ߧ�
+xScreenType  xScreens1[] =
 {
-
-
+  {1,InfoScreen1,  0,   2,  0  ,0 },
+  {2,InfoScreen2,  1,   0,  0,  0 },
+  {0,InfoScreen3,  2,   1,  0,  0 },
 };
 
 
-static xScreenObjet const SettingMainScreen[]=
-{
-
-
-};
-
-
-//����ڧ�ѧߧڧ� ��ܧ�ѧߧ�� �ԧݧѧӧ�ߧԧ� �ާ֧ߧ�
-xScreenType  xScreensLev1[MENU_LEVEL1_COUNT]=
-{
-  {Info1MainScreen,     &xMainMenu, NULL    ,0U,0U},
-  {Info2MainScreen,     &xMainMenu, NULL    ,0U,0U},
-  {SettingMainScreen,   &xMainMenu, NULL    ,0U,0U},
-};
-/*---------------------------------------------------------------------------------------------------*/
-/*
- * ���ҧ�ӧէ֧ߧڧ� ��ҧ�֧ܧ�-�ܧѧ���֧ݧ� ��ܧ�ѧߧ�� �ӧ֧��ߧ֧ԧ� ����ӧߧ�
- */
-xScreenSetObject xMainMenu =
-{
-  xScreensLev1,
-  ( MENU_LEVEL1_COUNT - 1U ),
-  0U,
-  ( void* )&xInfoScreenCallBack,
-};

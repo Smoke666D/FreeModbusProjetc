@@ -63,7 +63,11 @@ User/system_init.o: ../User/system_init.c ../User/system_init.h \
  ../User/data_model.h ../User/led.h ../User/din_dout_task.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_gpio.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h ../User/mb_task.h
+ C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h ../User/mb_task.h \
+ ../User/menu.h C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_spi.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/EEPROM_25C.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_dma.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\User/system_init.h
 
 ../User/system_init.h:
 
@@ -204,3 +208,13 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_gpio.h:
 C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h:
 
 ../User/mb_task.h:
+
+../User/menu.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_spi.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/EEPROM_25C.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_dma.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\User/system_init.h:

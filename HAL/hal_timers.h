@@ -87,7 +87,7 @@ typedef struct
 u32 HAL_GetTimerCounterRegAdres(TimerName_t TimerName , uint8_t ch );
 void HAL_TIMER_EnablePWMCH(TimerName_t TimerName  );
 void HAL_TimeInitCaptureDMA( TimerName_t TimerName , uint32_t freq_in_hz, uint32_t Period, uint8_t channel );
-void HAL_TIMER_InitIt( TimerName_t TimerName, uint32_t freq_in_hz, uint32_t Period, void (*f)() ,uint8_t prior, uint8_t subprior );
+
 #endif
 
 
@@ -98,7 +98,7 @@ void HAL_TiemrEneblae( TimerName_t TimerName );
 void HAL_TiemrDisable( TimerName_t TimerName );
 
 void HAL_TIMER_EnablePWMCH(TimerName_t TimerName  );
-
+void HAL_TIMER_InitIt( TimerName_t TimerName, uint32_t freq_in_hz, uint32_t Period, void (*f)() ,uint8_t prior, uint8_t subprior );
 
 void HAL_TIMER_PWMTimersInit(TimerName_t TimerName , uint32_t freq_in_hz, uint32_t Period, uint8_t channel);
 void HAL_TIMER_SetPWMPulse( TimerName_t TimerName , uint8_t channel, uint32_t pulse );

@@ -112,14 +112,12 @@ void vNetInit()
      TIM2_Init();
 
      i = ETH_LibInit(IPAddr, GWIPAddr, IPMask, MACAddr);           //Ethernet library initialize
-     mStopIfError(i);
-     if (i == WCHNET_ERR_SUCCESS)
-           printf("WCHNET_LibInit Success\r\n");
-      cfg.KLIdle = 20000;
-      cfg.KLIntvl = 15000;
-      cfg.KLCount = 9;
-      WCHNET_ConfigKeepLive(&cfg);
-      xPortTCPOSEventGroup= * xGetOSEvent();
+     if (i == WCHNET_ERR_SUCCESS){};
+     cfg.KLIdle = 20000;
+     cfg.KLIntvl = 15000;
+     cfg.KLCount = 9;
+     WCHNET_ConfigKeepLive(&cfg);
+     xPortTCPOSEventGroup= * xGetOSEvent();
 
 }
 
@@ -204,7 +202,7 @@ void WCHNET_HandleSockInt(u8 socketid, u8 intstat)
 
                     J = WCHNET_SocketSend(sss, outTCPBuf, &Len );
 
-                    mStopIfError(J);
+                   // mStopIfError(J);
                         if ( J == WCHNET_ERR_SUCCESS )
                         {
 
@@ -213,7 +211,7 @@ void WCHNET_HandleSockInt(u8 socketid, u8 intstat)
                          }
                          else
                          {
-                             mStopIfError(J);
+                            // mStopIfError(J);
 
                              prvvMBPortReleaseClient( &socketid  );
                          }
@@ -350,7 +348,7 @@ u8 i;
     else
     {
         i = WCHNET_SocketListen(SocketIdForListen);
-        mStopIfError(i);
+       // mStopIfError(i);
        if ( i!= WCHNET_ERR_SUCCESS)
       {
         WCHNET_SocketClose(SocketIdForListen,TCP_CLOSE_ABANDON);
@@ -359,8 +357,8 @@ u8 i;
        else
        {
 
-         printf("ListnerSoceketCreate\n\r");
-         printf("socket id: %d\r\n", SocketIdForListen);
+         //printf("ListnerSoceketCreate\n\r");
+        // printf("socket id: %d\r\n", SocketIdForListen);
         //tcp_accept( pxPCBListenNew, prvxMBTCPPortAccept );
         //SocketIdClient = SocketIdForListen;
         bOkay = TRUE;

@@ -17,6 +17,7 @@
 #include "main.h"
 #include "system_init.h"
 #include "init.h"
+#include "menu.h"
 /* Global define */
 
 
@@ -97,12 +98,6 @@ void mStopIfError(u8 iError)
  */
 
 
-
-u8g2_t u8g2_ks0108;
-
-
-
-
 /* Structure that will hold the TCB of the task being created. */
 //StaticTask_t xTaskBuffer;
 
@@ -117,24 +112,14 @@ int main(void)
 	SystemCoreClockUpdate();
 	Delay_Init();
 	USART_Printf_Init(115200);
-		
-	printf("SystemClk:%d\r\n",SystemCoreClock);
-	//printf( "ChipID:%08x\r\n", DBGMCU_GetCHIPID() );
-	//printf("FreeRTOS Kernel Version:%s\r\n",tskKERNEL_VERSION_NUMBER);
-
-	//GPIO_Toggle_INIT();
-
-
 	vSYSqueueInit ( );
     vSYSeventInit ( );
     vSYStaskInit ( );
     vNetInit();
     vInit_DeviceConfig();
     vTaskStartScheduler();
-
-  //  u8g2_Setup_ks0108_128x64_f(&u8g2_ks0108, U8G2_R0, 0, 0);
 	while(1)
 	{
-	    printf("shouldn't run at here!!\n");
+
 	}
 }

@@ -110,8 +110,7 @@ void vSetRegData( u16 adress)
            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_1 ,usRegHoldingBuf[adress]);
            HAL_TIMER_EnablePWMCH(TIMER9);
            break;
-       case SENS_PERIOD:
-           vSetPeriod(usRegHoldingBuf[adress]);
+
            break;
        case SENS_COUNT:
            vSetCount(usRegHoldingBuf[adress]);
@@ -155,7 +154,7 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
 {
   eMBErrorCode    eStatus = MB_ENOERR;
   int             iRegIndex;
- uint32_t tempdata;
+  int32_t tempdata;
   if( ( usAddress >= REG_HOLDING_START ) && ( usAddress + usNRegs <= REG_HOLDING_START + REG_HOLDING_NREGS ) )
   {
     iRegIndex = ( int )( usAddress - usRegHoldingStart );
@@ -164,14 +163,13 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
     case MB_REG_READ:
         for (uint8_t i=0;i< DC_CHANNEL+3;i++)
         {
-            tempdata =(uint32_t) (getAIN(i)*1000);
+            tempdata =(int32_t) (getAIN(i)*1000);
             *((float*) (usRegHoldingBuf+i*2)) =  (float)tempdata/1000.0;
         }
 
         tempdata =(uint32_t) getAIN(AC220);
         *((float*) (usRegHoldingBuf+26)) =  tempdata;
         usRegHoldingBuf[18] = GetSensCoof();
-        usRegHoldingBuf[28] = (uint16_t)uGetPeriod();
         usRegHoldingBuf[29] = uGetConversionCount();
       while( usNRegs > 0 )
       {

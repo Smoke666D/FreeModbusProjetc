@@ -1,4 +1,4 @@
-User/menu.o: ../User/menu.c ../User/menu.h ../User/main.h \
+User/rtc_task.o: ../User/rtc_task.c ../User/rtc_task.h ../User/main.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\NetLib/eth_driver.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\Debug/debug.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\Peripheral\inc/ch32v30x.h \
@@ -52,19 +52,12 @@ User/menu.o: ../User/menu.c ../User/menu.h ../User/main.h \
  ../User/ADC.H \
  C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8g2.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8x8.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h \
- ../User/system_init.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/list.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/semphr.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_gpio.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_rtc.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/board_define.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h ../User/menu_data.h \
- ../User/led.h C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_rtc.h
+ ../User/init.h C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h
 
-../User/menu.h:
+../User/rtc_task.h:
 
 ../User/main.h:
 
@@ -174,28 +167,12 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8g2.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\u8g2-master\csrc/u8x8.h:
 
-C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h:
-
-../User/system_init.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/list.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/semphr.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/queue.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_gpio.h:
+C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_rtc.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/board_define.h:
 
-C:\MRS_DATA\workspace\FreeModbusProjetc\User/main.h:
+../User/init.h:
 
-../User/menu_data.h:
-
-../User/led.h:
-
-C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_rtc.h:
+C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h:

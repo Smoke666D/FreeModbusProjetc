@@ -9,36 +9,42 @@
 #include "hal_dma.h"
 #include "init.h"
 #include "hal_gpio.h"
+#include "hal_timers.h"
+#include "menu.h"
+#define FONT_TYPE4          ( u8g2_font_6x13_t_cyrillic )
+
 
 static TaskHandle_t LCDTaskHandle;
-static u8g2_t             u8g2                             = { 0U };
-static uint8_t            LCD_Buffer[LCD_DATA_BUFFER_SIZE] = { 0U };
+u8g2_t             u8g2                             = { 0U };
 
-typedef struct
-{
-    vu16 LCD_REG;
-    vu16 LCD_RAM;
-} LCD_TypeDef;
 
 /* A17, Bank1, sector1 */
-#define LCD_C1_BASE        ((u32)(0x60000000 | 0x0003FFFE))
-#define LCD_C2_BASE        ((u32)(0x70000000 | 0x0003FFFE))
 
 
-#define LCD_C1             ((LCD_TypeDef *) LCD_C1_BASE)
-#define LCD_C2             ((LCD_TypeDef *) LCD_C2_BASE)
+#define RESET_ENABLE HAL_ResetBit( LDCDATA_2_3_E_REW_CD_LED_Port , LCDnE_Pin )
+#define SET_ENABLE   HAL_SetBit( LDCDATA_2_3_E_REW_CD_LED_Port , LCDnE_Pin )
+#define SEND_COMMAND HAL_ResetBit(  LCDDATA_0_1_n_Port , LCDDni_Pin  )
+#define SEND_DATA    HAL_SetBit(  LCDDATA_0_1_n_Port , LCDDni_Pin  )
+#define READ_DATA   HAL_SetBit( LDCDATA_2_3_E_REW_CD_LED_Port,LCDnRW_Pin )
+#define WRITE_DATA   HAL_ResetBit( LDCDATA_2_3_E_REW_CD_LED_Port,LCDnRW_Pin )
+#define CS1_ENABLE   HAL_ResetBit( LDCDATA_2_3_E_REW_CD_LED_Port,LCDCS_Pin )
+#define CS2_ENABLE   HAL_SetBit( LDCDATA_2_3_E_REW_CD_LED_Port,LCDCS_Pin )
 
-static u8 DmaCS  =0;
 
 #define LCD_DATA_SEND  0x02
+void WriteCommand( u8 command );
+void WriteDispalay( u8 * data, u16 size);
 
-static void vRedrawLCD(void );
+
 
 
 TaskHandle_t * getLCDTaskHandle()
 {
     return (&LCDTaskHandle);
 }
+
+#define SCREEN_BUFFER_SIZE  1024
+static u8 screen_buufer[SCREEN_BUFFER_SIZE ];
 
 
 
@@ -50,135 +56,153 @@ void LCD_task(void *pvParameters)
         switch ( LCD_Task_FSM  )
         {
             case STATE_INIT:
-                vDispalayON();
+                RESET_ENABLE;
+                CS1_ENABLE;
+                HAL_ResetBit(LCDRST_Port,LCDRST_Pin);
+                vTaskDelay(10);
+                HAL_SetBit(LCDRST_Port,LCDRST_Pin);
+                vTaskDelay(10);
+                CS2_ENABLE;
+                HAL_ResetBit(LCDRST_Port,LCDRST_Pin);
+                vTaskDelay(10);
+                HAL_SetBit(LCDRST_Port,LCDRST_Pin);
+                vTaskDelay(10);
+                CS1_ENABLE;
+                WriteCommand(0x3F);
+                vTaskDelay(1);
+                CS2_ENABLE;
+                WriteCommand(0x3F);
+                vTaskDelay(1);
+                //memset(screen_buufer,0,SCREEN_BUFFER_SIZE);
+
                 LCD_Task_FSM  = STATE_WHAIT_TO_RAEDY;
                 break;
             case STATE_WHAIT_TO_RAEDY:
                 LCD_Task_FSM  = STATE_RUN;
                 break;
             case STATE_RUN:
-                vTaskDelay(100);
-                vRedrawLCD();
-                break;
-        }
+                ulTaskNotifyTakeIndexed( 0, pdTRUE, portMAX_DELAY );
+                memcpy(screen_buufer,u8g2.tile_buf_ptr,SCREEN_BUFFER_SIZE );
+                for (u8 i =0;i<8;i++)
+                {
+                     CS1_ENABLE;
+                     WriteCommand( 0x040  );
+                     WriteCommand( 0x0b8 | i );
+                     CS2_ENABLE;
+                     WriteCommand( 0x040  );
+                     WriteCommand( 0x0b8 | i );
+                     WriteDispalay(&screen_buufer[i*128],128);
+                }
+
+               break;
+       }
     }
 
 
 }
-void callback()
-{
-    if ( DmaCS == 0 )
-    {
-        HAL_DMA_Disable(DMA1_CH3);
-        HAL_DMAMem2MemStart(DMA1_CH3,LCD_DATA_BUFFER_SIZE/2,  (u32) LCD_Buffer[LCD_DATA_BUFFER_SIZE/2], LCD_C2->LCD_RAM );
-        DmaCS = 1;
-    }
-    else
-    {
-        HAL_DMA_Disable(DMA1_CH3);
-        static portBASE_TYPE xHigherPriorityTaskWoken;
-        xHigherPriorityTaskWoken = pdFALSE;
-        xTaskNotifyIndexedFromISR(LCDTaskHandle, 2, LCD_DATA_SEND, eSetValueWithOverwrite, &xHigherPriorityTaskWoken  );
-        portEND_SWITCHING_ISR( xHigherPriorityTaskWoken );
-        DmaCS = 0;
 
-    }
+
+uint8_t led_sycle;
+
+
+typedef struct
+{
+   u8 command;
+   u8 * data;
+   u16 size;
+   u16 index;
+   u16 tile;
+} LCD_DATA_t;
+
+LCD_DATA_t lcd_data;
+TaskHandle_t NotifyTaskHeandle;
+
+void vSetData( u8 data)
+{
+  u16 bufdata = GPIO_ReadOutputData(GPIOD) & 0x3FFC;
+  bufdata|= ((u16)(data & 0x03))<<14 | ((data & 0x0C)>>2);
+  GPIO_Write(GPIOD ,bufdata);
+  bufdata =  GPIO_ReadOutputData(GPIOE) & 0xF87F;
+  bufdata = bufdata | ((data & 0xF0)<<3);
+  GPIO_Write(GPIOE,bufdata);
 }
 
-
-static void vRedrawLCD(void )
+void LEDCall()
 {
-    uint32_t ulNotifiedValue;
-    for (u16 i = 0; i < 64;i++)
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    switch (led_sycle)
     {
-        memcpy(&LCD_Buffer[i*8],u8g2.tile_buf_ptr[i*16],8 );
-        memcpy(&LCD_Buffer[LCD_DATA_BUFFER_SIZE/2+ i*8],u8g2.tile_buf_ptr[i*16+8],8 );
+        case 0:
+            WRITE_DATA;
+            if (lcd_data.command)
+            {
+                SEND_COMMAND;
+                vSetData ( lcd_data.command);
+                lcd_data.size = 0;
+            }
+            else
+            {
+                SEND_DATA;
+                if (lcd_data.tile < 64)
+                    CS2_ENABLE;
+                else {
+                    CS1_ENABLE;
+                }
+                vSetData( lcd_data.data[lcd_data.index]) ;
+            }
+            break;
+        case 1:
+            SET_ENABLE;
+            break;
+        case 2:
+            RESET_ENABLE;
+            break;
+        case 3:
+            if (++lcd_data.tile>=128)
+            {
+                lcd_data.tile = 0;
+            }
+            if (++lcd_data.index >= lcd_data.size)
+             {
+                  HAL_TiemrDisable(TIMER5);
+                  xTaskNotifyIndexedFromISR(LCDTaskHandle, 2, 0x01, eSetValueWithOverwrite, &xHigherPriorityTaskWoken  );
+                  portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+             }
+            break;
+
     }
-    HAL_DMAMem2MemStart(DMA1_CH3,LCD_DATA_BUFFER_SIZE/2,  (u32) LCD_Buffer, LCD_C1->LCD_RAM );
-    xTaskNotifyWaitIndexed(2, 0, LCD_DATA_SEND, &ulNotifiedValue,portMAX_DELAY );
+   if (++led_sycle>3) led_sycle = 0;
 }
 
 void vLCDInit()
 {
-
-    FSMC_NORSRAMInitTypeDef  FSMC_NORSRAMInitStructure;
-    FSMC_NORSRAMTimingInitTypeDef  readWriteTiming;
-    FSMC_NORSRAMTimingInitTypeDef  writeTiming;
-
-    readWriteTiming.FSMC_AddressSetupTime = 0x40;
-    readWriteTiming.FSMC_AddressHoldTime = 0x00;
-    readWriteTiming.FSMC_DataSetupTime = 0x40;
-    readWriteTiming.FSMC_BusTurnAroundDuration = 0x00;
-    readWriteTiming.FSMC_AccessMode = FSMC_AccessMode_B;
-
-    writeTiming.FSMC_AddressSetupTime = 0x40;
-    writeTiming.FSMC_AddressHoldTime = 0x00;
-    writeTiming.FSMC_DataSetupTime = 0x40;
-    writeTiming.FSMC_BusTurnAroundDuration = 0x00;
-    writeTiming.FSMC_CLKDivision = 0x00;
-    writeTiming.FSMC_DataLatency = 0x00;
-    writeTiming.FSMC_AccessMode = FSMC_AccessMode_B;
-
-    FSMC_NORSRAMInitStructure.FSMC_Bank = FSMC_Bank1_NORSRAM1;
-
-    FSMC_NORSRAMInitStructure.FSMC_DataAddressMux = FSMC_DataAddressMux_Disable;
-    FSMC_NORSRAMInitStructure.FSMC_MemoryType =FSMC_MemoryType_SRAM;
-    FSMC_NORSRAMInitStructure.FSMC_MemoryDataWidth = FSMC_MemoryDataWidth_8b;
-    FSMC_NORSRAMInitStructure.FSMC_BurstAccessMode =FSMC_BurstAccessMode_Disable;
-    FSMC_NORSRAMInitStructure.FSMC_WaitSignalPolarity = FSMC_WaitSignalPolarity_Low;
-    FSMC_NORSRAMInitStructure.FSMC_AsynchronousWait=FSMC_AsynchronousWait_Disable;
-    FSMC_NORSRAMInitStructure.FSMC_WrapMode = FSMC_WrapMode_Disable;
-    FSMC_NORSRAMInitStructure.FSMC_WaitSignalActive = FSMC_WaitSignalActive_BeforeWaitState;
-    FSMC_NORSRAMInitStructure.FSMC_WriteOperation = FSMC_WriteOperation_Enable;
-        FSMC_NORSRAMInitStructure.FSMC_WaitSignal = FSMC_WaitSignal_Disable;
-        FSMC_NORSRAMInitStructure.FSMC_ExtendedMode = FSMC_ExtendedMode_Enable;
-        FSMC_NORSRAMInitStructure.FSMC_WriteBurst = FSMC_WriteBurst_Disable;
-        FSMC_NORSRAMInitStructure.FSMC_ReadWriteTimingStruct = &readWriteTiming;
-        FSMC_NORSRAMInitStructure.FSMC_WriteTimingStruct = &writeTiming;
-
-        FSMC_NORSRAMInit(&FSMC_NORSRAMInitStructure);
-
-        FSMC_NORSRAMCmd(FSMC_Bank1_NORSRAM1, ENABLE);
-
-    HAL_SetBit(LCDRST_Port,LCDRST_Pin);
+    HAL_TIMER_InitIt(TIMER5,300000,1,&LEDCall,0,1);
+    HAL_ResetBit( LDCDATA_2_3_E_REW_CD_LED_Port , LCDnRW_Pin);
     u8g2_Setup_ks0108_128x64_f(&u8g2, U8G2_R0, 0U, 0U );
-    HAL_DMA1InitMemToMemHwordIT(DMA1_CH3,dma_High,1,5,&callback);
-    memset(LCD_Buffer,0xFF,LCD_DATA_BUFFER_SIZE);
-
+    u8g2_SetFont( &u8g2, u8g2_font_6x13_t_cyrillic);
+    u8g2_ClearBuffer(&u8g2);
 }
 
-void vDispalayON()
+
+
+void WriteDispalay( u8 * data, u16 size)
 {
-    LCD_C1->LCD_REG = 0x3F;
-    LCD_C1->LCD_REG = 0x40;
-    LCD_C2->LCD_REG = 0x3F;
-    LCD_C2->LCD_REG = 0x40;
+    lcd_data.command = 0;
+    lcd_data.index = 0;
+    lcd_data.data = data;
+    lcd_data.size = size;
+    lcd_data.tile =0;
+    HAL_TiemrEneblae(TIMER5);
+    NotifyTaskHeandle = xTaskGetCurrentTaskHandle();
+    ulTaskNotifyTakeIndexed(2, 0xFFFFFFFF, portMAX_DELAY );
 }
 
-void vSetADDR( u8 addr)
+
+void WriteCommand( u8 command )
 {
-
-}
-
-void vSetPage( u8 page)
-{
-
-}
-
-void vDispalyStartLine( u8 line)
-{
-
-}
-u8 vStatusRead()
-{
-    return 0;
-}
-void WriteDispalay( u8 * data, u8 size)
-{
-
-}
-
-void ReadDispalay( u8 * data, u8 size)
-{
+    lcd_data.command = command;
+    HAL_TiemrEneblae(TIMER5);
+    NotifyTaskHeandle = xTaskGetCurrentTaskHandle();
+    ulTaskNotifyTakeIndexed(2, 0xFFFFFFFF, portMAX_DELAY );
 
 }

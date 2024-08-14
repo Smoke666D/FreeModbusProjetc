@@ -18,5 +18,6 @@
 TaskHandle_t * getLCDTaskHandle();
 void LCD_task(void *pvParameters);
 void vLCDInit();
-
+void vDispalayON();
+extern u8g2_t             u8g2;
 #endif /* USER_LED_H_ */

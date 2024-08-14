@@ -41,19 +41,77 @@ typedef enum
 
 #define MODE_I2C  MODE_IT
 
+typedef struct
+{
+  uint32_t I2C_ClockSpeed;          /* Specifies the clock frequency.
+                                       This parameter must be set to a value lower than 400kHz */
+
+  uint16_t I2C_Mode;                /* Specifies the I2C mode.
+                                       This parameter can be a value of @ref I2C_mode */
+
+  uint16_t I2C_DutyCycle;           /* Specifies the I2C fast mode duty cycle.
+                                       This parameter can be a value of @ref I2C_duty_cycle_in_fast_mode */
+
+  uint16_t I2C_OwnAddress1;         /* Specifies the first device own address.
+                                       This parameter can be a 7-bit or 10-bit address. */
+
+  uint16_t I2C_Ack;                 /* Enables or disables the acknowledgement.
+                                       This parameter can be a value of @ref I2C_acknowledgement */
+
+  uint16_t I2C_AcknowledgedAddress; /* Specifies if 7-bit or 10-bit address is acknowledged.
+                                       This parameter can be a value of @ref I2C_acknowledged_address */
+}HAL_I2C_InitTypeDef;
+
+
 
 #if MCU == APM32
 #define I2C_1  I2C1
 #define I2C_2  I2C2
 #define  I2C_NAME_t I2C_T*
 #endif
-#if MCU == CH32V2
-#define I2C_1  I2C1
-#define I2C_2  I2C2
-#define I2C_NAME_t I2C_TypeDef *
+#if MCU == CH32V2 || MCU == CH32V3
+typedef enum
+      {
+    I2C_1  =0,
+    I2C_2  =1,
+      }
+ I2C_NAME_t;
+
+#define STAR1_SB_FLAG     0x0001
+#define STAR1_ADDR_FLAG   0x0002
+#define STAR1_BTF_FLAG    0x0004
+#define STAR1_TXE_FLAG    0x0080
+#define STAR2_BUSY_FLAG   0x0002
+
 #endif
 
-void InitI2CDMA( I2C_NAME_t i2c);
+
+ typedef enum {
+     HAL_I2C_OK,
+     HAL_I2C_ERROR,
+ } I2C_ERROR_CODE_t;
+
+
+ typedef struct
+ {
+    uint8_t ucTaskNatificationIndex;
+    uint8_t BusyFlag;
+    uint8_t DataLength;
+    uint8_t Index;
+    uint8_t ADDR[2];
+    uint8_t DevAdrres;
+    I2C_STATE_t I2C_State;
+    uint16_t data_address;
+    uint8_t * ReciveBuffer;
+    I2C_NAME_t dev;
+    TaskHandle_t NotifyTaskHeandle;
+  //  EERPOM_ERROR_CODE_t (*I2C_Master_Recive_func) (  u8 , u16,  u8 * , u16 , u32 ,u8 );
+  //  EERPOM_ERROR_CODE_t (*I2C_Master_Transmit_func)( u8 , u16,  u8 * , u16 , u32 ,u8 );
+ } I2C_TypeDef_T;
+
+ I2C_ERROR_CODE_t I2C_Master_TransmitIT( I2C_NAME_t i2c,  u8 DevAdrees, u16 data_addres,  u8 * data, u16 data_size, u32 timeout,uint8_t TNI  );
+void HAL_I2C_ENABLE( I2C_NAME_t i2c )  ;
+ void HAL_I2C_InitIT( I2C_NAME_t i2c, HAL_I2C_InitTypeDef * I2C_InitStruct, uint8_t prior, uint8_t subprior);
 void I2C1_EV_IRQHandler( void );
 void I2C1_ER_IRQHandler ( void );
 void I2C2_EV_IRQHandler( void );

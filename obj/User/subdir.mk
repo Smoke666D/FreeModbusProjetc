@@ -18,6 +18,7 @@ C_SRCS += \
 ../User/mb_task.c \
 ../User/menu.c \
 ../User/menu_data.c \
+../User/rtc_task.c \
 ../User/system_ch32v30x.c \
 ../User/system_init.c 
 
@@ -35,6 +36,7 @@ OBJS += \
 ./User/mb_task.o \
 ./User/menu.o \
 ./User/menu_data.o \
+./User/rtc_task.o \
 ./User/system_ch32v30x.o \
 ./User/system_init.o 
 
@@ -52,6 +54,7 @@ C_DEPS += \
 ./User/mb_task.d \
 ./User/menu.d \
 ./User/menu_data.d \
+./User/rtc_task.d \
 ./User/system_ch32v30x.d \
 ./User/system_init.d 
 

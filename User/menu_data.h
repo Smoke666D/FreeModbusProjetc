@@ -9,7 +9,7 @@
 #define USER_MENU_DATA_H_
 
 #include "main.h"
-#include "lib_menu.h"
+#include "menu.h"
 
 #define MENU_LEVEL1_COUNT      3U
 
@@ -19,15 +19,8 @@
 #define LINE4        60U
 #define LINE5        60U
 
-enum
-{
-  SETTING_1 = 0x00,
-  FACT1     = 0x01,
-  SETTING2  = 0x02,
-  FACT2     = 0x03,
 
-} xParametrName_t;
 
-extern xScreenSetObject xMainMenu;
+extern xScreenType  xScreens1[];
 
 #endif /* USER_MENU_DATA_H_ */

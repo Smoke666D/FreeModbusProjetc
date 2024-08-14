@@ -13,6 +13,9 @@
 #include "led.h"
 #include "din_dout_task.h"
 #include "mb_task.h"
+#include "menu.h"
+#include "hal_spi.h"
+#include "EEPROM_25C.h"
 
 static void vDefaultTask( void  * argument );
 static void WCHNET_task(void *pvParameters);
@@ -76,11 +79,11 @@ void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer,
 
 void vSYStaskInit ( void )
 {
- /*  (* getLCDTaskHandle())
+  (* getLCDTaskHandle())
            =  xTaskCreateStatic( LCD_task, "LCD", LCD_STK_SIZE , ( void * ) 1, LCD_TASK_PRIOR  ,
                    (StackType_t * const )LCDTaskBuffer, &LCDTaskControlBlock );
-*/
-  (*  getADCTaskHandle())
+
+  /*(*  getADCTaskHandle())
              = xTaskCreateStatic( ADC_task, "ADC", ADC_STK_SIZE , ( void * ) 1, ADC_TASK_PRIO  ,
                                      (StackType_t * const )ADCTaskBuffer, &ADCTaskControlBlock );
  MPTCPTask_Handler
@@ -90,7 +93,7 @@ void vSYStaskInit ( void )
    WCHNETTask_Handler
   = xTaskCreateStatic( WCHNET_task, "MPTCP", WCHNET_STK_SIZE , ( void * ) 1,WCHNET_TASK_PRIO ,
                      (StackType_t * const )WCHNETTaskBuffer, &WCHNETTaskControlBlock );
-
+*/
    KeyboarTask_Handler
    = xTaskCreateStatic( vKeyboardTask, "KEYBOARD", KEYBAORD_STK_SIZE , ( void * ) 1,KEYBAORD_TASK_PRIO ,
                       (StackType_t * const )KeyboarTaskBuffer, &KeyboardTaskControlBlock);
@@ -155,6 +158,7 @@ void Unprotect()
 }
 
 u8 data[10]= {1,2,3,4,5,6,7,8,9,10};
+u8 data1[10]= {0};
 
 void vDefaultTask( void  * argument )
 {
@@ -162,8 +166,8 @@ void vDefaultTask( void  * argument )
     uint32_t ulNotifiedValue;
 
     u8 byte = 0;
-    TaskFSM_t main_task_fsm = 1;
-    SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex;
+    TaskFSM_t main_task_fsm = STATE_RUN;
+  /*  SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex;
     SPI_InitStructure.SPI_Mode = SPI_Mode_Master;
     SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b;
     SPI_InitStructure.SPI_CPOL = SPI_CPOL_Low;
@@ -173,20 +177,27 @@ void vDefaultTask( void  * argument )
     SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;
     SPI_InitStructure.SPI_CRCPolynomial = 0;
     SPI_Init(SPI2, &SPI_InitStructure);
-    SPI_Cmd(SPI2, ENABLE);
+    SPI_Cmd(SPI2, ENABLE);*/
+    InitEEPROM( HAL_SPI2);
+
+    vMenuInit();
     while(1)
     {
-        switch (main_task_fsm)
+        vMenuTask();
+        xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
+        vTaskDelay(100);
+       switch (main_task_fsm)
         {
-            case 0:
+            case STATE_RUN:
                 GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_SET);
                 vTaskDelay(1);
-
-
-               // main_task_fsm = 1;
+               // SetEEPROMUnprotect(HAL_SPI2,10,2);
+               main_task_fsm = STATE_SAVE_DATA;
                 break;
-            case 1:
-                byte = WaitWileBusy();
+            case STATE_SAVE_DATA:
+                WriteEEPROMData(HAL_SPI2, 0, 0, data,10, 10, 2);
+               // ReadEEPROMData(HAL_SPI2, 0, 0, data1,10, 10, 2);
+                /*byte = WaitWileBusy();
                 if (byte & 0x02) Unprotect();
                 vTaskDelay(1);
                 WaitWileBusy();
@@ -216,15 +227,15 @@ void vDefaultTask( void  * argument )
                 }
 
                 vTaskDelay(1);
-                GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_SET);
+                GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_SET);*/
                 break;
-            case 2:
+
                // if( SPI_I2S_GetFlagStatus( SPI2, SPI_I2S_FLAG_RXNE ) != RESET )
                // {
               //      u8 data = SPI_I2S_ReceiveData(SPI2);
               //      main_task_fsm = 1;
              //   }
-                break;
+
                // DataModel_Init();
               //  ReadEEPROMData(0x00 ,10 , data, 10 ,2);
              //   main_task_fsm = STATE_WHAIT_TO_RAEDY;
@@ -239,9 +250,9 @@ void vDefaultTask( void  * argument )
             //        main_task_fsm = STATE_RUN;
             //    }
             //    break;
-           // case STATE_RUN:*/
-        }
+           // case STATE_RUN:
 
+        }
 
 
         }

@@ -180,7 +180,7 @@ void HAL_InitGPIO(GPIO_TypeDef *GPIOx,    uint16_t GPIO_Pin, GPIOSpeed_TypeDef G
  */
 void HAL_InitGpioOut( PortName_t PORT, uint16_t Pin  )
 {
-    HAL_InitGPIO( PORT, Pin,GPIO_Speed_2MHz, GPIO_Mode_Out_PP );
+    HAL_InitGPIO( PORT, Pin,GPIO_Speed_50MHz, GPIO_Mode_Out_PP );
 }
 
 /*

@@ -63,6 +63,7 @@ typedef enum
    HAL_SPI2 = 1
 } HAL_SPI_t;
 
+void HAL_SPI_ConfgiIT(HAL_SPI_t spi , void (* spi_rx_it_callback) ( void ),  void (* spi_tx_it_callback) ( void ), uint8_t prior, uint8_t subprior);
 void HAL_SPI_EnableDMA(HAL_SPI_t spi );
 void HAL_SPI_MsterBaseInit(HAL_SPI_t spi, HAL_SPI_InitTypeDef *SPI_InitStruct);
 void HAL_SPI_InitDMA(HAL_SPI_t spi , SPI_DATA_Size_t data_size );

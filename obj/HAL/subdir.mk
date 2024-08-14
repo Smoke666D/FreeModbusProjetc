@@ -9,27 +9,36 @@ C_SRCS += \
 ../HAL/hal_dac.c \
 ../HAL/hal_dma.c \
 ../HAL/hal_gpio_ch32.c \
+../HAL/hal_i2c_ch32.c \
 ../HAL/hal_irq.c \
+../HAL/hal_rtc_ch32.c \
 ../HAL/hal_spi_ch32.c \
-../HAL/hal_timers.c 
+../HAL/hal_timers.c \
+../HAL/hal_wdt_ch32.c 
 
 OBJS += \
 ./HAL/hal_adc.o \
 ./HAL/hal_dac.o \
 ./HAL/hal_dma.o \
 ./HAL/hal_gpio_ch32.o \
+./HAL/hal_i2c_ch32.o \
 ./HAL/hal_irq.o \
+./HAL/hal_rtc_ch32.o \
 ./HAL/hal_spi_ch32.o \
-./HAL/hal_timers.o 
+./HAL/hal_timers.o \
+./HAL/hal_wdt_ch32.o 
 
 C_DEPS += \
 ./HAL/hal_adc.d \
 ./HAL/hal_dac.d \
 ./HAL/hal_dma.d \
 ./HAL/hal_gpio_ch32.d \
+./HAL/hal_i2c_ch32.d \
 ./HAL/hal_irq.d \
+./HAL/hal_rtc_ch32.d \
 ./HAL/hal_spi_ch32.d \
-./HAL/hal_timers.d 
+./HAL/hal_timers.d \
+./HAL/hal_wdt_ch32.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

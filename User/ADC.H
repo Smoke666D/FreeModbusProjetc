@@ -36,7 +36,7 @@ typedef enum
 
 typedef struct
 {
-    uint16_t * pBuff;
+    int16_t * pBuff;
     uint16_t ConversionalSize;
     uint16_t ViewDataCount;
     uint16_t pIndex;

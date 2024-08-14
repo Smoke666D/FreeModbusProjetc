@@ -17,7 +17,17 @@
 #if MCU == CH32V3
 #include "ch32v30x_spi.h"
 #endif
+
+void SPI1_IRQHandler ( void )  __attribute__((interrupt()));
+void SPI2_IRQHandler ( void )  __attribute__((interrupt()));
+void SPI3_IRQHandler ( void )  __attribute__((interrupt()));
 SPI_TypeDef * SPI[] ={SPI1,SPI2};
+
+typedef struct
+{
+    void (* f)( void );
+
+} SPI_CFG_t;
 
 #define CTLR1_SPE_Set         ((uint16_t)0x0040)
 #define CTLR1_SPE_Reset       ((uint16_t)0xFFBF)
@@ -25,6 +35,8 @@ SPI_TypeDef * SPI[] ={SPI1,SPI2};
 #define CTLR1_CLEAR_Mask      ((uint16_t)0x3040)
 #define I2SCFGR_CLEAR_Mask    ((uint16_t)0xF040)
 
+
+ SPI_CFG_t CallBack[3][2];
 
 void HAL_SPI_MsterBaseInit(HAL_SPI_t spi, HAL_SPI_InitTypeDef *SPI_InitStruct)
 {
@@ -49,6 +61,61 @@ void HAL_SPI_MsterBaseInit(HAL_SPI_t spi, HAL_SPI_InitTypeDef *SPI_InitStruct)
 
     SPI[spi]->I2SCFGR &= SPI_Mode_Master;
     SPI[spi]->CRCR = SPI_InitStruct->SPI_CRCPolynomial;
+}
+
+void HAL_SPI_ConfgiIT(HAL_SPI_t spi , void (* spi_rx_it_callback) ( void ),  void (* spi_tx_it_callback) ( void ), uint8_t prior, uint8_t subprior)
+{
+
+
+#if MCU== CH32V3
+    switch (spi)
+    {
+        case HAL_SPI1:
+            PFIC_IRQ_ENABLE_PG2(SPI1_IRQn ,prior, subprior);
+            if (spi_rx_it_callback!= NULL)
+            {
+
+                CallBack[0][0].f = spi_rx_it_callback;
+            }
+            if (spi_tx_it_callback!= NULL)
+            {
+
+                CallBack[0][1].f = spi_tx_it_callback;
+            }
+            break;
+        case HAL_SPI2:
+            PFIC_IRQ_ENABLE_PG2(SPI2_IRQn ,prior, subprior);
+            if (spi_rx_it_callback!= NULL)
+             {
+
+                 CallBack[1][0].f = spi_rx_it_callback;
+             }
+                     if (spi_tx_it_callback!= NULL)
+                     {
+
+                         CallBack[1][1].f = spi_tx_it_callback;
+                     }
+            break;
+        default:
+            PFIC_IRQ_ENABLE_PG2(SPI3_IRQn ,prior, subprior);
+            if (spi_rx_it_callback!= NULL)
+                         {
+
+                             CallBack[2][0].f = spi_rx_it_callback;
+                         }
+                                 if (spi_tx_it_callback!= NULL)
+                                 {
+
+                                     CallBack[2][1].f = spi_tx_it_callback;
+                                 }
+            break;
+    }
+
+    SPI_Cmd(SPI[spi], ENABLE);
+#endif
+
+
+
 }
 
 void HAL_SPI_EnableDMA(HAL_SPI_t spi )
@@ -92,5 +159,41 @@ uint8_t HAL_SPI_GetBusy(HAL_SPI_t spi )
 {
     return (((SPI[spi]->STATR & SPI_I2S_FLAG_BSY) == SET) ? HAL_SET : HAL_RESET);
 }
+
+void SPI1_IRQHandler ( void )
+{
+    if( SPI_I2S_GetITStatus( SPI1, SPI_I2S_IT_TXE ) != RESET )
+    {
+        CallBack[0][1].f();
+    }
+    if( SPI_I2S_GetITStatus( SPI1, SPI_I2S_IT_RXNE ) != RESET )
+    {
+        CallBack[0][0].f();
+    }
+}
+
+void SPI2_IRQHandler ( void )
+{
+    if( SPI_I2S_GetITStatus( SPI2, SPI_I2S_IT_TXE ) != RESET )
+        {
+            CallBack[1][1].f();
+        }
+        if( SPI_I2S_GetITStatus(SPI2, SPI_I2S_IT_RXNE ) != RESET )
+        {
+            CallBack[1][0].f();
+        }
+}
+void SPI3_IRQHandler ( void )
+        {
+    if( SPI_I2S_GetITStatus( SPI3, SPI_I2S_IT_TXE ) != RESET )
+            {
+                CallBack[2][1].f();
+            }
+            if( SPI_I2S_GetITStatus( SPI3, SPI_I2S_IT_RXNE ) != RESET )
+            {
+                CallBack[2][0].f();
+            }
+        }
+
 
 #endif

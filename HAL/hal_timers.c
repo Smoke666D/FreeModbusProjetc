@@ -141,6 +141,9 @@ void TIM4_IRQHandler(void) __attribute__((interrupt()));
 #if TIM8_UP_ENABLE == 1
 void TIM8_UP_IRQHandler(void) __attribute__((interrupt()));
 #endif
+#if TIM5_UP_ENABLE == 1
+void TIM5_IRQHandler(void) __attribute__((interrupt()));
+#endif
 
 
 void HAL_TIMER_InitIt( TimerName_t TimerName, uint32_t freq_in_hz, uint32_t Period, void (*f)() ,uint8_t prior, uint8_t subprior )
@@ -178,6 +181,11 @@ void HAL_TIMER_InitIt( TimerName_t TimerName, uint32_t freq_in_hz, uint32_t Peri
 #if TIM8_UP_ENABLE == 1
         default:
             irq = TIM8_UP_IRQn;
+            break;
+#endif
+#if TIM5_UP_ENABLE == 1
+        case TIMER5:
+            irq = TIM5_IRQn;
             break;
 #endif
     }
@@ -227,6 +235,12 @@ void  TIM4_IRQHandler(void)
 void TIM8_UP_IRQHandler()
 {
     TimerUPIrq(TIMER8);
+}
+#endif
+#if TIM5_UP_ENABLE == 1
+void TIM5_IRQHandler()
+{
+    TimerUPIrq(TIMER5);
 }
 #endif
 

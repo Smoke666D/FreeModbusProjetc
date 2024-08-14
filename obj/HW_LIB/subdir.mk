@@ -9,24 +9,21 @@ C_SRCS += \
 ../HW_LIB/filters.c \
 ../HW_LIB/hw_lib_adc.c \
 ../HW_LIB/hw_lib_din.c \
-../HW_LIB/hw_lib_keyboard.c \
-../HW_LIB/lib_menu.c 
+../HW_LIB/hw_lib_keyboard.c 
 
 OBJS += \
 ./HW_LIB/EEPROM_25C.o \
 ./HW_LIB/filters.o \
 ./HW_LIB/hw_lib_adc.o \
 ./HW_LIB/hw_lib_din.o \
-./HW_LIB/hw_lib_keyboard.o \
-./HW_LIB/lib_menu.o 
+./HW_LIB/hw_lib_keyboard.o 
 
 C_DEPS += \
 ./HW_LIB/EEPROM_25C.d \
 ./HW_LIB/filters.d \
 ./HW_LIB/hw_lib_adc.d \
 ./HW_LIB/hw_lib_din.d \
-./HW_LIB/hw_lib_keyboard.d \
-./HW_LIB/lib_menu.d 
+./HW_LIB/hw_lib_keyboard.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

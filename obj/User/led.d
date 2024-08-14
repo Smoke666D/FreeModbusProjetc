@@ -63,7 +63,8 @@ User/led.o: ../User/led.c ../User/led.h ../User/system_init.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/board_define.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\User/system_init.h \
  ../User/init.h C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_gpio.h
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_gpio.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_timers.h ../User/menu.h
 
 ../User/led.h:
 
@@ -200,3 +201,7 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\User/system_init.h:
 C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_config.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_gpio.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_timers.h:
+
+../User/menu.h:

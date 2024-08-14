@@ -13,21 +13,19 @@
 #include "hw_lib_adc.h"
 #include "hal_timers.h"
 #include "hal_gpio.h"
+#include "hal_i2c.h"
 
 static TaskHandle_t pADCTaskHandle;
 float AC_220_VALUE;
 static uint16_t ADC2_Buffer[DC_CHANNEL];
 static int16_t  ADC1_DMABuffer[AC_CONVERION_NUMBER*ADC_CHANNEL];
 uint8_t ADC2_CHANNEL[DC_CHANNEL] = {   ADC_CH_9, ADC_CH_2,ADC_CH_6,ADC_CH_7,ADC_CH_14,ADC_CH_15};
-static uint8_t ADC_2_FSM  = 0;
-static uint8_t DC_cnversion =0;
 #define ADC1_CH_COUNT 2
 #define ADC1_PRIOR 1
 #define ADC1_SUB_PRIOR 0
-static u16 period = 1;
+static int16_t sens_press=0;
 
-
-uint16_t GetConversional(ADC_Conversionl_Buf_t * pBuf);
+int16_t GetConversional(ADC_Conversionl_Buf_t * pBuf);
 #define DC_24_BufferSize    3
 #define DC_AIN_BufferSize  10
 #define Sens_BufferSize 1000
@@ -49,18 +47,12 @@ int16_t SensTemoBuffer[ DC_AIN_BufferSize];
 /*
  *
  */
-void vSetPeriod( u8  per)
-{
-    if (per >0 && per <=10)  period = per;
-}
-u8 uGetPeriod()
-{
-    return period;
-}
+
 void vSetCount( u16 coount)
 {
-    if ((coount >0 ) && (coount <= Sens_BufferSize))
+    if ((coount >1 ) && (coount <= Sens_BufferSize))
     DataBuffer[0].ConversionalSize = coount;
+    DataBuffer[1].ConversionalSize = coount;
 }
 u16 uGetConversionCount()
 {
@@ -86,15 +78,15 @@ volatile u16 ADC_val[4];
 
 static u8 conversion_channel;
 
-#define MIN_BAR_VALUE -0.025
-#define MAX_BAR_VALUE  0.025
-#define MIN_VDD_VALUE  0.2
+#define MIN_BAR_VALUE -2500
+#define MAX_BAR_VALUE  2500
+#define MIN_VDD_VALUE  0.177
 #define MAX_VDD_VALUE  2.7
 #define VDD_RANGE    (MAX_VDD_VALUE - MIN_VDD_VALUE)
 
 float Get_025HPDPN33_SensorData( float data)
 {
-    if ( (data - MIN_VDD_VALUE) >- (VDD_RANGE/2))
+    if ( (data - MIN_VDD_VALUE) >= (VDD_RANGE/2-MIN_VDD_VALUE))
     {
         return (data - MIN_VDD_VALUE - VDD_RANGE/2)* (MAX_BAR_VALUE/(VDD_RANGE/2));
     }
@@ -110,14 +102,12 @@ u8 i2cdata[2][8] ={0};
 
 float getAIN( AIN_CHANNEL_t channel)
 {
-    float temp_float;
-    uint32_t temp_data = 0;
     switch (channel)
     {
         case  SENS1:
             return  ((float)GetConversional(&DataBuffer[0]));
         case SENS2:
-           return ((float)GetConversional(&DataBuffer[1])*KK);
+           return (Get_025HPDPN33_SensorData((float)GetConversional(&DataBuffer[1])*KK));
         case DC24:
              return  ((float)GetConversional(&DataBuffer[2])*KK*COOF_24V);
 
@@ -133,13 +123,11 @@ float getAIN( AIN_CHANNEL_t channel)
        case DCAIN4:
             return ((float)GetConversional(&DataBuffer[6])*KK);
        case  DIG_TEMP:
-           return ((float)GetConversional(&DataBuffer[7])/256.0);
+           return ((float)GetConversional(&DataBuffer[7])/256);
        case DIG_PRES:
-           temp_data = (u32)i2cdata[1][0]<<16 | (u32)i2cdata[1][1]<<8 | i2cdata[1][2];
-           if (temp_data & 0x800000)
-               return (float)(temp_data - 0x800000)/(float)GetSensCoof();
-           else
-            return (float)( temp_data/(float)GetSensCoof());
+
+               return (float)(sens_press);
+
         case AC220:
             return (AC_220_VALUE);
     }
@@ -191,30 +179,8 @@ void ADC1_Init()
     eSetDacCalPoint(DAC2,  DACCAL, DAC_CAL_POINT );
     eDacCalDataConfig(DAC3,DAC_CAL_POINT);
     eSetDacCalPoint(DAC3,  DACCAL, DAC_CAL_POINT );
-
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2C2, ENABLE);
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_I2C1, ENABLE);
-    RCC_APB2PeriphResetCmd(RCC_APB1Periph_I2C2,ENABLE);
-    RCC_APB2PeriphResetCmd(RCC_APB1Periph_I2C2,DISABLE);
-    RCC_APB2PeriphResetCmd(RCC_APB1Periph_I2C1,ENABLE);
-    RCC_APB2PeriphResetCmd(RCC_APB1Periph_I2C1,DISABLE);
-    I2C_InitTypeDef  I2C_InitTSturcture = {0};
-    I2C_InitTSturcture.I2C_ClockSpeed = 350000;
-    I2C_InitTSturcture.I2C_Mode = I2C_Mode_I2C;
-    I2C_InitTSturcture.I2C_DutyCycle = I2C_DutyCycle_16_9;
-    I2C_InitTSturcture.I2C_OwnAddress1 = 0;
-    I2C_InitTSturcture.I2C_Ack = I2C_Ack_Enable;
-    I2C_InitTSturcture.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
-    I2C_Init(I2C1, &I2C_InitTSturcture);
-    I2C_Init(I2C2, &I2C_InitTSturcture);
-    I2C_Cmd(I2C1, ENABLE);
-    I2C_Cmd(I2C2, ENABLE);
-  //  I2C_GenerateSTOP(I2C1, ENABLE);
-   // I2C_GenerateSTOP(I2C2, ENABLE);
     DMA_INIT_t init;
 
-   // HAL_ADC_InitIT(ADC_1,  ADC_ExternalTrigConv_T3_TRGO , 1, 0, &ADC1_Event );
-  //  ADC_RegularChannelConfig(ADC1, ADC2_CHANNEL[0], 1, ADC_SampleTime_239Cycles5);
     uint8_t ADC1_CHANNEL[ADC1_CH_COUNT] = { ADC_CH_0,  ADC_CH_1 };
     HAL_ADC_ContiniusScanTrigCinvertionDMA( ADC_1, ADC1_CH_COUNT, ADC1_CHANNEL, ADC_ExternalTrigConv_T3_TRGO);
     init.stream = DMA1_CH1;
@@ -256,7 +222,6 @@ void ADC1_Init()
     DataBuffer[7].ConversionalSize = DC_AIN_BufferSize;
     DataBuffer[7].pIndex = 0;
     DataBuffer[7].pBuff = SensTemoBuffer;
-
 }
 
 
@@ -265,16 +230,16 @@ void ADC1_Init()
 
 
 
-void AddBufferData( ADC_Conversionl_Buf_t * pBuf, uint16_t data )
+void AddBufferData( ADC_Conversionl_Buf_t * pBuf, int16_t data )
 {
     pBuf->pBuff[pBuf->pIndex] = data;
     pBuf->pIndex++;
     if (pBuf-> pIndex >= pBuf->ConversionalSize)  pBuf->pIndex = 0;
 }
 
-uint16_t GetConversional(ADC_Conversionl_Buf_t * pBuf)
+int16_t GetConversional(ADC_Conversionl_Buf_t * pBuf)
 {
-    uint32_t tempdata = 0;
+    int32_t tempdata = 0;
     uint16_t index = pBuf-> pIndex;
     for (uint16_t i = 0; i < pBuf->ConversionalSize; i++)
     {
@@ -283,7 +248,7 @@ uint16_t GetConversional(ADC_Conversionl_Buf_t * pBuf)
         tempdata+=  pBuf->pBuff[index];
     }
     tempdata/= pBuf->ConversionalSize;
-    return (uint16_t)tempdata;
+    return (int16_t)tempdata;
 }
 
 void SetI2CData(I2C_TypeDef * i2c,u8 ad, u8 data)
@@ -320,6 +285,7 @@ void SetI2CData(I2C_TypeDef * i2c,u8 ad, u8 data)
 uint8_t GetI2CData(I2C_TypeDef * i2c,u8 ad)
 {
     u8 temp;
+    I2C_Cmd(i2c,ENABLE);
     while( I2C_GetFlagStatus( i2c, I2C_FLAG_BUSY ) != RESET );
     I2C_GenerateSTART(i2c, ENABLE);
     while( !I2C_CheckEvent( i2c, I2C_EVENT_MASTER_MODE_SELECT ) );
@@ -353,6 +319,7 @@ u8 adress[8]= {0x06,0x07,0x08,0x09,0x0A,0x30,0xA5,0xA6};
 
 void ADC_task(void *pvParameters)
 {
+    uint8_t ADC_FSM = 0;
     uint16_t counter_led = 0;
     u8 led_state = 0;
     uint32_t ulNotifiedValue;
@@ -361,10 +328,12 @@ void ADC_task(void *pvParameters)
     int16_t iMax =0;
     uint16_t DF1;
     uint16_t old= 0;
-    uint16_t ConversionFrequncy = 0;
     uint16_t uCurPeriod = AC_CONVERION_NUMBER-1;
     uint8_t DC_ConversionDoneFlasg = 0;
+    uint8_t AC_ConversionDoneFlasg = 0;
     u16 initr = 0;
+    volatile u8 status;
+    uint8_t dc_conv_start = 5;
     xLastWakeTime = xTaskGetTickCount();
     for (;;)
     {
@@ -386,7 +355,6 @@ void ADC_task(void *pvParameters)
             switch (ADC_TASK_FSM)
             {
                 case STATE_INIT:
-
                     ADC_SoftwareStartConvCmd(ADC2, ENABLE);
                     HAL_TiemrEneblae(TIMER3);
                     ADC_TASK_FSM = STATE_WHAIT_TO_RAEDY;
@@ -394,75 +362,110 @@ void ADC_task(void *pvParameters)
                 case STATE_WHAIT_TO_RAEDY:
                     ADC_TASK_FSM = STATE_RUN;
                     vTaskDelay(1000);
-                    SetI2CData(I2C2,0x30,0x1B);
                     break;
                 case STATE_RUN:
-
                     xTaskNotifyWait( 0,  ADC2_DATA_READY | ADC1_DATA_READY, &ulNotifiedValue,0);
                     if (ulNotifiedValue & ADC1_DATA_READY)
                     {
-                        for (int i = 0; i<AC_CONVERION_NUMBER*ADC_CHANNEL;i++)
-                        {
-                            ADC1_DMABuffer[i]= Get_ConversionVal(ADC_1, ADC1_DMABuffer[i]);
-                        }
-                        vDecNetural(&ADC1_DMABuffer[0]);
-                        iMax=xADCMax((int16_t *)&ADC1_DMABuffer[0], &DF1);
-                        vADCFindFreq((int16_t *)&ADC1_DMABuffer[0], &uCurPeriod,2,iMax);
-                        if ((uCurPeriod < AC_CONVERION_NUMBER-1) && (uCurPeriod!=0) )
-                        {
-                              uint16_t data1 = xADCRMS(&ADC1_DMABuffer[0],uCurPeriod,2);
-                              data1 = vRCFilter(data1, &old);
-                              AC_220_VALUE = (float)data1 * ( 401U * 3.3 / 4095U );
-                        }
-                        HAL_DMA_SetCounter(DMA1_CH1, AC_CONVERION_NUMBER*2);
-                        HAL_DMA_Enable(DMA1_CH1);
-                        HAL_TiemrEneblae(TIMER3);
-                   }
-                   if (ulNotifiedValue & ADC2_DATA_READY)
-                   {
-
+                        AC_ConversionDoneFlasg = 1;
+                    }
+                    if (ulNotifiedValue & ADC2_DATA_READY)
+                    {
                        DC_ConversionDoneFlasg = 1;
-
-                   }
-                   if (++ConversionFrequncy >=  period)
-                   {
-                       if (++initr > 0xFFF) initr =0;
-                        DAC_SetChannel1Data(DAC_Align_12b_R, initr);
-                       ConversionFrequncy = 0;
-                       if (DC_ConversionDoneFlasg )
-                       {
-                           DC_ConversionDoneFlasg  = 0;
-                           for (u8 i=0;i<DC_CHANNEL;i++)
-                           {
-                              AddBufferData(&DataBuffer[i+1],ADC2_Buffer[i]);
-                           }
-                           ADC_SoftwareStartConvCmd(ADC2, ENABLE);
-                           for (u8 i = 0; i<3; i++)
-                           {
-                               i2cdata[1][i] =  GetI2CData(I2C2,adress[i]);
-                           }
-                           uint32_t temp_data = (u32)i2cdata[1][0]<<16 | (u32)i2cdata[1][1]<<8 | i2cdata[1][2];
-                           int32_t sss;
-                           if (temp_data & 0x800000) sss = temp_data - 0x800000;
-                           else
-                           {
-                            sss =temp_data;
-                           }
-                           sss = sss / GetSensCoof();
-                           AddBufferData(&DataBuffer[0],(uint16_t)sss );
-                           for (u8 i = 3; i<5; i++)
-                           {
-                              i2cdata[1][i] =  GetI2CData(I2C2,adress[i]);
-                           }
-                           int16_t temperature;
-                           uint16_t sens_temp = i2cdata[1][3]*256 + i2cdata[1][4];
-                           if (sens_temp & 0x8000)
-                               temperature = (sens_temp -65536);
-                            else
-                               temperature = sens_temp;
-                           AddBufferData(&DataBuffer[7],temperature);
-                       }
-                   }
+                    }
+                     switch (ADC_FSM )
+                     {
+                         case 0:
+                             SetI2CData(I2C2,0x30,0x0A);
+                             break;
+                         case 1:
+                             if (AC_ConversionDoneFlasg  == 1)
+                             {
+                                 for (int i = 0; i<AC_CONVERION_NUMBER*ADC_CHANNEL;i++)
+                                 {
+                                    ADC1_DMABuffer[i]= Get_ConversionVal(ADC_1, ADC1_DMABuffer[i]);
+                                 }
+                                 vDecNetural(&ADC1_DMABuffer[0]);
+                                 iMax=xADCMax((int16_t *)&ADC1_DMABuffer[0], &DF1);
+                                 vADCFindFreq((int16_t *)&ADC1_DMABuffer[0], &uCurPeriod,2,iMax);
+                                 AC_ConversionDoneFlasg  = 2;
+                             }
+                             break;
+                         case 2:
+                             if (AC_ConversionDoneFlasg  == 2)
+                             {
+                                 if ((uCurPeriod < AC_CONVERION_NUMBER-1) && (uCurPeriod!=0) )
+                                 {
+                                     uint16_t data1 = xADCRMS(&ADC1_DMABuffer[0],uCurPeriod,2);
+                                     data1 = vRCFilter(data1, &old);
+                                     AC_220_VALUE = (float)data1 * ( 401U * 3.3 / 4095U );
+                                 }
+                                 HAL_DMA_SetCounter(DMA1_CH1, AC_CONVERION_NUMBER*2);
+                                 HAL_DMA_Enable(DMA1_CH1);
+                                 HAL_TiemrEneblae(TIMER3);
+                                 AC_ConversionDoneFlasg  = 0;
+                             }
+                             break;
+                         case 3:
+                         case 4:
+                             break;
+                         case 5:
+                             status = GetI2CData(I2C2,0x30);
+                             break;
+                         case 6:
+                             if  (status & 0x08)
+                             status =  GetI2CData(I2C2,0x30);
+                             break;
+                         case 7:
+                             if  (status & 0x08)
+                             status =  GetI2CData(I2C2,0x30);
+                             break;
+                         case 8:
+                             if ((status & 0x08) == 0 )
+                             {
+                                 for (u8 i = 0; i<3; i++)
+                                 {
+                                    i2cdata[1][i] =  GetI2CData(I2C2,adress[i]);
+                                 }
+                                 uint32_t temp_data = (u32)i2cdata[1][0]<<16 | (u32)i2cdata[1][1]<<8 | i2cdata[1][2];
+                                 if (temp_data > 0x800000)
+                                 {
+                                      sens_press  = ((temp_data - 16777216)/GetSensCoof());
+                                 }
+                                 else
+                                 {
+                                     sens_press  = temp_data/GetSensCoof();
+                                 }
+                                 AddBufferData(&DataBuffer[0], sens_press  );
+                             }
+                             break;
+                         case 9:
+                             if ((status & 0x08) == 0 )
+                             {
+                                 u8 temp_low  = GetI2CData(I2C2,0x0A);
+                                 u8 temp_high = GetI2CData(I2C2,0x09);
+                                 uint16_t sens_temp = temp_high*256 + temp_low;
+                                 int16_t temperature = (sens_temp & 0x8000) ? (sens_temp -65536) : sens_temp;
+                                 AddBufferData(&DataBuffer[7],temperature);
+                             }
+                             break;
+                     }
+                     if (++ADC_FSM >=10) ADC_FSM = 0;
+                     if (dc_conv_start == ADC_FSM)
+                     {
+                        if  (--dc_conv_start == 0) dc_conv_start = 5;
+                         ADC_SoftwareStartConvCmd(ADC2, ENABLE);
+                     }
+                     if (DC_ConversionDoneFlasg )
+                     {
+                          DC_ConversionDoneFlasg  = 0;
+                          for (u8 i=0;i<DC_CHANNEL;i++)
+                          {
+                               AddBufferData(&DataBuffer[i+1],(int16_t)ADC2_Buffer[i]);
+                          }
+                     }
+                    // if (++initr > 0xFFF) initr =0;
+                   //  DAC_SetChannel1Data(DAC_Align_12b_R, initr);
                    break;
             }
     }
