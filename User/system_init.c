@@ -41,6 +41,8 @@ static StackType_t LCDTaskBuffer[MBTCP_STK_SIZE];
 static StaticTask_t LCDTaskControlBlock;
 
 
+
+
 static TaskHandle_t MPTCPTask_Handler;
 static StackType_t MBTCPTaskBuffer[MBTCP_STK_SIZE];
 static StaticTask_t MBTCPTaskControlBlock;
@@ -83,17 +85,19 @@ void vSYStaskInit ( void )
            =  xTaskCreateStatic( LCD_task, "LCD", LCD_STK_SIZE , ( void * ) 1, LCD_TASK_PRIOR  ,
                    (StackType_t * const )LCDTaskBuffer, &LCDTaskControlBlock );
 
-  /*(*  getADCTaskHandle())
+  (*  getADCTaskHandle())
              = xTaskCreateStatic( ADC_task, "ADC", ADC_STK_SIZE , ( void * ) 1, ADC_TASK_PRIO  ,
                                      (StackType_t * const )ADCTaskBuffer, &ADCTaskControlBlock );
  MPTCPTask_Handler
   = xTaskCreateStatic( MBTCP_task, "MPTCP", MBTCP_STK_SIZE , ( void * ) 1, MBTCP_TASK_PRIO ,
                      (StackType_t * const )MBTCPTaskBuffer, &MBTCPTaskControlBlock );
 
+
+
    WCHNETTask_Handler
   = xTaskCreateStatic( WCHNET_task, "MPTCP", WCHNET_STK_SIZE , ( void * ) 1,WCHNET_TASK_PRIO ,
                      (StackType_t * const )WCHNETTaskBuffer, &WCHNETTaskControlBlock );
-*/
+
    KeyboarTask_Handler
    = xTaskCreateStatic( vKeyboardTask, "KEYBOARD", KEYBAORD_STK_SIZE , ( void * ) 1,KEYBAORD_TASK_PRIO ,
                       (StackType_t * const )KeyboarTaskBuffer, &KeyboardTaskControlBlock);

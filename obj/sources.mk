@@ -36,6 +36,7 @@ Startup \
 User \
 modbus/functions \
 modbus \
+modbus/rtu \
 modbus/tcp \
 port \
 u8g2-master/csrc \

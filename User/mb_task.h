@@ -18,5 +18,6 @@
 
 eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils, eMBRegisterMode eMode );
 void MBTCP_task(void *pvParameters);
+void MBRTU_task(void *pvParameters);
 uint16_t GetSensCoof();
 #endif /* USER_MB_TASK_H_ */

@@ -26,6 +26,8 @@
 #define KEYBAORD_STK_SIZE  128
 #define MBTCP_TASK_PRIO     5
 #define MBTCP_STK_SIZE      512
+#define MBRTU_TASK_PRIO     5
+#define MBRTU_STK_SIZE      512
 #define WCHNET_TASK_PRIO     5
 #define WCHNET_STK_SIZE      512
 #define ADC_TASK_PRIO     6

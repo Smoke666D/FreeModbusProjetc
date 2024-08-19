@@ -346,3 +346,37 @@ void MBTCP_task(void *pvParameters)
      ( void )eMBDisable(  );
      ( void )eMBClose(  );
 }
+
+void MBRTU_task(void *pvParameters)
+{
+     u8 mb_ready = 0;
+     eMBErrorCode    xStatus;
+     vSetRegData(DAC1_ADDR+1);
+     vSetRegData(DAC2_ADDR+1);
+     vSetRegData(DAC3_ADDR+1);
+     for( ;; )
+     {
+         vTaskDelay(1);
+         if( eMBTCPInit( MB_TCP_PORT_USE_DEFAULT ) == MB_ENOERR )
+         {
+             mb_ready = 1;
+         }
+         if (eMBInit(MB_RTU,1,0,19200,MB_PAR_ODD ) == MB_ENOERR )
+         {
+             mb_ready = 1;
+         }
+         if (mb_ready)
+         {
+             if( eMBEnable(  ) == MB_ENOERR )
+             {
+                do
+                {
+                    xStatus = eMBPoll(  );
+                }
+                while( xStatus == MB_ENOERR );
+             }
+         }
+     }
+     ( void )eMBDisable(  );
+     ( void )eMBClose(  );
+}

@@ -112,6 +112,8 @@
 
 #define RTC_IT_PRIOR    1
 #define RTC_IT_SUBPRIOR 3
+#define UART2_IT_PRIOR    1
+#define UART2_IT_SUBPRIOR 3
 
 void vInit_DeviceConfig( void );
 
