@@ -142,6 +142,7 @@ encoding//u8g2-master/csrc/u8g2.h=GBK
 encoding//u8g2-master/csrc/u8g2_d_memory.c=GBK
 encoding//u8g2-master/csrc/u8g2_d_setup.c=GBK
 encoding//u8g2-master/csrc/u8g2_font.c=GBK
+encoding//u8g2-master/csrc/u8g2_hvline.c=GBK
 encoding//u8g2-master/csrc/u8g2_setup.c=GBK
 encoding//u8g2-master/csrc/u8x8.h=GBK
 encoding//u8g2-master/csrc/u8x8_cad.c=GBK

@@ -71,20 +71,34 @@ void ViewScreenCallback( u8 key_code)
 }
 
 
-
-
+u8 edit_data[MAX_STRING_NUMBER];
+u8 blink_counter = 0;
 
 void vMenuTask ( void )
 {
-   u8 key;
 
    if ( menu_mode == 1)
    {
-
+       memset(edit_data,0,MAX_STRING_NUMBER);
+       u8 edit_flag = 0;
+       for (u8 i=0;i<MAX_STRING_NUMBER;i++)
+       {
+          if ( xScreens1[pCurrMenu].pScreenCurObjets->xType == WRITE_DATA)
+          {
+              if( edit_flag == 0)
+              {
+                  edit_flag = 1;
+                  edit_data[i] = 2;
+              }
+              else
+              {
+                  edit_data[i] = 1;
+              }
+          }
+       }
    }
    else
    {
-
        if ( uxQueueMessagesWaiting(pKeyboard) != 0)
        {
            if ( xQueueReceive(pKeyboard, &TempEvent, 0U ) == pdPASS )
@@ -96,7 +110,7 @@ void vMenuTask ( void )
                       case 0:
                           ViewScreenCallback (TempEvent.KeyCode );
                           break;
-                          case 1:
+                          case 2:
 
                               switch ( TempEvent.KeyCode )
                                              {
@@ -130,12 +144,9 @@ void vMenuTask ( void )
           }
 
 
-
    }
-
-
-    vDraw(xScreens1[pCurrMenu].pScreenCurObjets);
-
+   vDraw(xScreens1[pCurrMenu].pScreenCurObjets);
+   if (++blink_counter>10) blink_counter=0;
 
 }
 
@@ -197,9 +208,21 @@ void vDraw( xScreenObjet * pScreenDraw)
             x = pScreenDraw[i].x;
             y = pScreenDraw[i].y;
             u8g2_DrawUTF8(&u8g2,x,y,pScreenDraw[i].pStringParametr);
+            if (( menu_mode >0) && (edit_data[i]>=2))
+            {
+                if (edit_data[i]==2)
+                {
+                   if ( blink_counter <= 5)
+                   {
+                       u8g2_SetDrawColor(&u8g2,0);
+                   }
+                }
+            }
             x = pScreenDraw[i].x_data;
             vGetData(pScreenDraw[i].DataID,str);
             u8g2_DrawUTF8(&u8g2,x,y,str);
+            u8g2_SetDrawColor(&u8g2,1);
+            u8g2_SetFontMode(&u8g2,0);
             break;
         }
         if (pScreenDraw[i].last) break;
