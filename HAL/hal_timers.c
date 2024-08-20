@@ -174,7 +174,7 @@ void HAL_TIMER_InitIt( TimerName_t TimerName, uint32_t freq_in_hz, uint32_t Peri
             break;
 #endif
 #if TIM4_UP_ENABLE == 1
-        default:
+        case TIMER4:
             irq = TIM4_IRQn;
             break;
 #endif
@@ -243,6 +243,12 @@ void TIM5_IRQHandler()
     TimerUPIrq(TIMER5);
 }
 #endif
+
+
+void HAL_TimerReset( TimerName_t TimerName)
+{
+    timers[TimerName]->CNT = 0;
+}
 
 void HAL_TiemrDisable( TimerName_t TimerName )
 {

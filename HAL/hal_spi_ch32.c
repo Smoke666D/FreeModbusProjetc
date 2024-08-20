@@ -111,9 +111,9 @@ void HAL_SPI_ConfgiIT(HAL_SPI_t spi , void (* spi_rx_it_callback) ( void ),  voi
             break;
     }
 
-    SPI_Cmd(SPI[spi], ENABLE);
-#endif
 
+#endif
+    SPI_Cmd(SPI[spi], ENABLE);
 
 
 }
@@ -150,14 +150,35 @@ void HAL_SPI_InitDMA(HAL_SPI_t spi , SPI_DATA_Size_t data_size )
     SPI[spi]->CTLR1 |= CTLR1_SPE_Set;
 }
 
-void HAL_SPI_RXOveleyClear(HAL_SPI_t spi )
+void HAL_SPI_MODF_CLEAR(HAL_SPI_t spi)
 {
-    SPI[spi]->STATR = (uint16_t)~SPI_I2S_FLAG_OVR;
+    uint16_t temp = SPI[spi]->STATR;
+    SPI[spi]->CTLR1 |= CTLR1_SPE_Set | SPI_Mode_Master;
+}
+
+u8 HAL_SPI_RXOveleyClear(HAL_SPI_t spi )
+{
+    if (SPI[spi]->STATR & 0x040)
+    {
+        return (SPI[spi]->DATAR);
+    }
+    else
+        return (0);
+}
+
+u16 HAL_SPI_GetData(HAL_SPI_t spi)
+{
+    return (SPI[spi]->DATAR);
 }
 
 uint8_t HAL_SPI_GetBusy(HAL_SPI_t spi )
 {
     return (((SPI[spi]->STATR & SPI_I2S_FLAG_BSY) == SET) ? HAL_SET : HAL_RESET);
+}
+
+void HAL_SPI_Send(HAL_SPI_t spi, u8 data )
+{
+   SPI[spi]->DATAR = data;
 }
 
 void SPI1_IRQHandler ( void )
@@ -174,12 +195,14 @@ void SPI1_IRQHandler ( void )
 
 void SPI2_IRQHandler ( void )
 {
+
     if( SPI_I2S_GetITStatus( SPI2, SPI_I2S_IT_TXE ) != RESET )
         {
             CallBack[1][1].f();
         }
         if( SPI_I2S_GetITStatus(SPI2, SPI_I2S_IT_RXNE ) != RESET )
         {
+
             CallBack[1][0].f();
         }
 }

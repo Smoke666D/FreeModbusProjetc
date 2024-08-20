@@ -24,40 +24,34 @@
 #include "mb.h"
 #include "mbport.h"
 #include "port.h"
+#include "hal_timers.h"
 //#include "mainFSM.h"
 
 /* ----------------------- static functions ---------------------------------*/
 //static struct rt_timer timer;
 
-
+static void rvvTIMERExpiredISR();
 
 /* ----------------------- Start implementation -----------------------------*/
 BOOL xMBPortTimersInit(USHORT usTim1Timerout50us)
 {
-
-   vTimerInit(usTim1Timerout50us);
-
-  //  rt_timer_init(&timer, "slave timer",
-   //                timer_timeout_ind, /* bind timeout callback function */
-    //               RT_NULL,
-     //              (50 * usTim1Timerout50us) / (1000 * 1000 / RT_TICK_PER_SECOND) + 1,
-      //             RT_TIMER_FLAG_ONE_SHOT); /* one shot */
+    HAL_TIMER_InitIt(TIMER4,19607,usTim1Timerout50us,&rvvTIMERExpiredISR,1,5);
     return TRUE;
 }
 
 void vMBPortTimersEnable()
 {
-	vStartTimer();
+	HAL_TiemrEneblae(TIMER4);
 }
 
 
 void vMBPortTimersDisable()
 {
-	vStopTimer();
+    HAL_TiemrDisable(TIMER4);
 }
 
 
-void rvvTIMERExpiredISR()
+static void rvvTIMERExpiredISR()
 {
     (void) pxMBPortCBTimerExpired();
 }

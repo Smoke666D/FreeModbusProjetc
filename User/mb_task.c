@@ -17,6 +17,7 @@
 #include "task.h"
 #include "event_groups.h"
 #include "hw_lib_adc.h"
+#include "hal_usart.h"
 
 #if REG_COILS_NREGS%8 && REG_COILS_NREGS>8
 UCHAR    ucSCoilBuf[REG_COILS_NREGS/8+1];
@@ -357,11 +358,11 @@ void MBRTU_task(void *pvParameters)
      for( ;; )
      {
          vTaskDelay(1);
-         if( eMBTCPInit( MB_TCP_PORT_USE_DEFAULT ) == MB_ENOERR )
-         {
-             mb_ready = 1;
-         }
-         if (eMBInit(MB_RTU,1,0,19200,MB_PAR_ODD ) == MB_ENOERR )
+      //   if( eMBTCPInit( MB_TCP_PORT_USE_DEFAULT ) == MB_ENOERR )
+      //   {
+     //        mb_ready = 1;
+     //    }
+         if (eMBInit(MB_RTU,1,HAL_USART4,19200,MB_PAR_ODD ) == MB_ENOERR )
          {
              mb_ready = 1;
          }

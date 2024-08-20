@@ -11,4 +11,6 @@
 #include "main.h"
 #include "hal_rtc.h"
 
+void vRTCTaskInit(HAL_RTC_INIT_t init);
+
 #endif /* USER_RTC_TASK_H_ */

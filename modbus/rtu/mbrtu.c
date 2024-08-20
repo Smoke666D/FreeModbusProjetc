@@ -95,11 +95,11 @@ eMBRTUInit( UCHAR ucSlaveAddress, UCHAR ucPort, ULONG ulBaudRate, eMBParity ePar
         /* If baudrate > 19200 then we should use the fixed timer values
          * t35 = 1750us. Otherwise t35 must be 3.5 times the character time.
          */
-        if( ulBaudRate > 19200 )
+       if( ulBaudRate > 19200 )
         {
             usTimerT35_50us = 35;       /* 1800us. */
-        }
-        else
+       }
+       else
         {
             /* The timer reload value for a character is given by:
              *
@@ -109,8 +109,9 @@ eMBRTUInit( UCHAR ucSlaveAddress, UCHAR ucPort, ULONG ulBaudRate, eMBParity ePar
              * The reload for t3.5 is 1.5 times this value and similary
              * for t3.5.
              */
-            usTimerT35_50us = ( 7UL * 220000UL ) / ( 2UL * ulBaudRate );
+            usTimerT35_50us =  35000000/ ulBaudRate ;
         }
+        printf("%i\n\r",usTimerT35_50us);
         if( xMBPortTimersInit( ( USHORT ) usTimerT35_50us ) != TRUE )
         {
             eStatus = MB_EPORTERR;
@@ -154,7 +155,11 @@ eMBRTUReceive( UCHAR * pucRcvAddress, UCHAR ** pucFrame, USHORT * pusLength )
 
     ENTER_CRITICAL_SECTION(  );
     assert( usRcvBufferPos < MB_SER_PDU_SIZE_MAX );
-
+   /*for (int i=0;i<usRcvBufferPos;i++)
+    {
+       printf("%i ",ucRTUBuf[i]);
+    }
+    printf("\r\n%");*/
     /* Length and CRC check */
     if( ( usRcvBufferPos >= MB_SER_PDU_SIZE_MIN )
         && ( usMBCRC16( ( UCHAR * ) ucRTUBuf, usRcvBufferPos ) == 0 ) )
@@ -246,6 +251,7 @@ xMBRTUReceiveFSM( void )
          */
     case STATE_RX_ERROR:
         vMBPortTimersEnable(  );
+
         break;
 
         /* In the idle state we wait for a new character. If a character
@@ -270,6 +276,7 @@ xMBRTUReceiveFSM( void )
         if( usRcvBufferPos < MB_SER_PDU_SIZE_MAX )
         {
             ucRTUBuf[usRcvBufferPos++] = ucByte;
+
         }
         else
         {

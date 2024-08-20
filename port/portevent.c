@@ -28,38 +28,105 @@
 
 /* ----------------------- Modbus includes ----------------------------------*/
 #include "mb.h"
-
+#include "system_init.h"
+#include "main.h"
 
 /* ----------------------- Variables ----------------------------------------*/
-static eMBEventType eQueuedEvent;
-static BOOL     xEventInQueue;
 
+EventGroupHandle_t xSlaveOsEventGroupHandle;
 /* ----------------------- Start implementation -----------------------------*/
+
+
+EventGroupHandle_t  * xGetOSEvent()
+{
+    return (&xSlaveOsEventGroupHandle);
+}
+
 BOOL
 xMBPortEventInit( void )
 {
-    xEventInQueue = FALSE;
+  //  xEventInQueue = FALSE;
+   // xSlaveOsEventGroupHandle = xGetOSEvent();
     return TRUE;
 }
 
 BOOL
 xMBPortEventPost( eMBEventType eEvent )
 {
-    xEventInQueue = TRUE;
-    eQueuedEvent = eEvent;
+    BaseType_t xHigherPriorityTaskWoken, xResult;
+          switch (eEvent)
+            {
+            case EV_READY:
+            case EV_FRAME_RECEIVED:
+
+                    /* xHigherPriorityTaskWoken must be initialised to pdFALSE. */
+                    xHigherPriorityTaskWoken = pdFALSE;
+
+                     /* Set bit 0 and bit 4 in xEventGroup. */
+                     xResult = xEventGroupSetBitsFromISR(
+                                                     xSlaveOsEventGroupHandle,   /* The event group being updated. */
+                                                     eEvent , /* The bits being set. */
+                                                  &xHigherPriorityTaskWoken );
+
+                      /* Was the message posted successfully? */
+                      if( xResult != pdFAIL )
+                      {
+                          /* If xHigherPriorityTaskWoken is now set to pdTRUE then a context
+                          switch should be requested.  The macro used is port specific and will
+                          be either portYIELD_FROM_ISR() or portEND_SWITCHING_ISR() - refer to
+                          the documentation page for the port being used. */
+                          portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+                      }
+
+                break;
+            case EV_EXECUTE:
+
+            case EV_FRAME_SENT:
+                xHigherPriorityTaskWoken = pdFALSE;
+                xResult =xEventGroupSetBitsFromISR(
+                         xSlaveOsEventGroupHandle,   /* The event group being updated. */
+                         eEvent , /* The bits being set. */
+                     &xHigherPriorityTaskWoken );
+                 if( xResult != pdFAIL )
+                                  {
+                                      /* If xHigherPriorityTaskWoken is now set to pdTRUE then a context
+                                      switch should be requested.  The macro used is port specific and will
+                                      be either portYIELD_FROM_ISR() or portEND_SWITCHING_ISR() - refer to
+                                      the documentation page for the port being used. */
+                                      portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+                                  }
+                    //  xEventGroupSetBits(xSlaveOsEventGroupHandle,eEvent);
+                break;
+            }
+
     return TRUE;
 }
 
 BOOL
 xMBPortEventGet( eMBEventType * eEvent )
 {
-    BOOL            xEventHappened = FALSE;
+    /* waiting forever OS event */
+        EventBits_t recvedEvent;
+        recvedEvent = xEventGroupWaitBits(xSlaveOsEventGroupHandle,    EV_READY | EV_FRAME_RECEIVED | EV_EXECUTE | EV_FRAME_SENT,   pdTRUE, pdFALSE, portMAX_DELAY );
+      // rt_event_recv(&xSlaveOsEvent,
+      //         EV_READY | EV_FRAME_RECEIVED | EV_EXECUTE | EV_FRAME_SENT,
+      //         RT_EVENT_FLAG_OR | RT_EVENT_FLAG_CLEAR, RT_WAITING_FOREVER,
+      //         &recvedEvent);
+       switch (recvedEvent)
+       {
+       case EV_READY:
+           *eEvent = EV_READY;
+           break;
+       case EV_FRAME_RECEIVED:
+           *eEvent = EV_FRAME_RECEIVED;
+           break;
+       case EV_EXECUTE:
+           *eEvent = EV_EXECUTE;
+           break;
+       case EV_FRAME_SENT:
+           *eEvent = EV_FRAME_SENT;
+           break;
+       }
+       return TRUE;
+   }
 
-    if( xEventInQueue )
-    {
-        *eEvent = eQueuedEvent;
-        xEventInQueue = FALSE;
-        xEventHappened = TRUE;
-    }
-    return xEventHappened;
-}

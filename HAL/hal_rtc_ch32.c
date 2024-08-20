@@ -21,32 +21,36 @@ static void (* func)( void);
 
 
 
-void HAL_RTC_IT_Init(  void (* rtc_it_callback) ( void ), uint8_t prior, uint8_t subprior )
+void HAL_RTC_IT_Init( HAL_RTC_INIT_t init, void (* rtc_it_callback) ( void ), uint8_t prior, uint8_t subprior )
 {
 
     uint8_t temp = 0;
     RCC->APB1PCENR |=(RCC_APB1Periph_PWR | RCC_APB1Periph_BKP);   //Разрешаем тактирование
     PWR->CTLR |= (1 << 8);
-    RCC->BDCTLR |= (1<<16);    //Сборс модуля Buckup
-    RCC->BDCTLR &= ~(1<<16);
 
-    RCC_LSEConfig(RCC_LSE_ON);
-
-    while(RCC_GetFlagStatus(RCC_FLAG_LSERDY) == RESET && temp < 250)
+    if ( init == HAL_RTC_NEW_INIT)
     {
+        RCC->BDCTLR |= (1<<16);    //Сборс модуля Buckup
+        RCC->BDCTLR &= ~(1<<16);
+        RCC_LSEConfig(RCC_LSE_ON);
+
+        while(RCC_GetFlagStatus(RCC_FLAG_LSERDY) == RESET && temp < 250)
+        {
               temp++;
-              Delay_Ms(20);
-    }
-    if(temp >= 250) return;
-    RCC->BDCTLR |=RCC_RTCCLKSource_LSE;
-    RCC->BDCTLR |= (1<<15); //This function must be used only after the RTC clock was selected
+              vTaskDelay(20);
+        }
+        if(temp >= 250) return;
+        RCC->BDCTLR |=RCC_RTCCLKSource_LSE;
+        RCC->BDCTLR |= (1<<15); //This function must be used only after the RTC clock was selected
                             // using the RCC_RTCCLKConfig function.
-    RTC_WaitForLastTask();
-    RTC_WaitForSynchro();
+        RTC_WaitForLastTask();
+        RTC_WaitForSynchro();
+        RTC_WaitForLastTask();
+        RTC_SetPrescaler(32767);
+        RTC_WaitForLastTask();
+        RTC_ExitConfigMode();
+    }
     RTC->CTLRH |= RTC_IT_SEC;   //Разрешаем прерывание
-    RTC_WaitForLastTask();
-    RTC_SetPrescaler(32767);
-    RTC_WaitForLastTask();
 #if MCU == CH32V2
     PFIC_IRQ_ENABLE_PG1(RTC_IRQn,prior,subprior);
 #endif
@@ -54,11 +58,6 @@ void HAL_RTC_IT_Init(  void (* rtc_it_callback) ( void ), uint8_t prior, uint8_t
     PFIC_IRQ_ENABLE_PG2(RTC_IRQn,prior,subprior);
 #endif
 	  func = rtc_it_callback;
-	  HAL_DateConfig_T dateConfig;
-	  dateConfig.year =24;
-	  dateConfig.month = 8;
-	  dateConfig.date = 14;
-	  HAL_RTC_ConfigDate( &dateConfig);
 	  return;
 }
 

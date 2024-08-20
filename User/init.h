@@ -21,9 +21,9 @@
 #define KL2_Pin                     GPIO_5
 #define KL1_Pin                     GPIO_6
 #define KL_Port                     PORT_E
-#define AC_SENS1_                 GPIO_0
-#define AC_SENS2_                 GPIO_1
-#define AC_SENSE_PORT              PORT_B
+#define AC_SENS1_                   GPIO_0
+#define AC_SENS2_                   GPIO_1
+#define AC_SENSE_PORT               PORT_B
 #define POWER_CONTROL               GPIO_2
 #define AIN1_Pin                    GPIO_6
 #define AIN2_Pin                    GPIO_7
@@ -61,14 +61,14 @@
 #define AOUT3_Pin                   GPIO_13
 #define AOUT_Port                   PORT_D
 
-#define RX1_Pin                     Pin GPIO_Pin_9
-#define TX1_Pin                     Pin GPIO_Pin_10
+
+
+#define RX1_Pin                     GPIO_9
+#define TX1_Pin                     GPIO_10
 #define UART_Port                   PORT_A
 #define ELED2_Pin                   GPIO_10
 #define ELED1_Pin                   GPIO_11
 #define ELED_Port                   PORT_C
-
-
 
 /*LCD PORT */
 #define LCDDATA4_Pin                GPIO_7
@@ -116,5 +116,10 @@
 #define UART2_IT_SUBPRIOR 3
 
 void vInit_DeviceConfig( void );
+
+EventGroupHandle_t * getSerialEvenGroup();
+TaskHandle_t * getSerialTask();
+void StartUARTTask(void *argument);
+
 
 #endif /* USER_INIT_H_ */

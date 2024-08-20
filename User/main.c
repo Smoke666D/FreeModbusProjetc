@@ -35,10 +35,6 @@
 EventGroupHandle_t xOSEventGroupHandle;
 EventGroupHandle_t xADCEventGroupHandle;
 
-EventGroupHandle_t  * xGetOSEvent()
-{
-    return (&xOSEventGroupHandle);
-}
 
 EventGroupHandle_t * xGetADCEvent()
 {
@@ -111,13 +107,19 @@ int main(void)
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 	SystemCoreClockUpdate();
 	Delay_Init();
-	USART_Printf_Init(115200);
+
+
 	vSYSqueueInit ( );
     vSYSeventInit ( );
     vSYStaskInit ( );
-    vNetInit();
+
+    //vNetInit();
+
     vInit_DeviceConfig();
+    USART_Printf_Init(115200);
+    printf("System start\n");
     vTaskStartScheduler();
+
 	while(1)
 	{
 

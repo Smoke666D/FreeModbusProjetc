@@ -17,6 +17,7 @@
 #define CURENT_TIME_ADDR   3
 #define AC_VOLTAGE_ID      4
 #define IP_ADRESS_DATA_ID  5
+#define MB_RTU_ADDR_ID     6
 
 typedef enum
 {
@@ -37,7 +38,9 @@ typedef struct
 } xScreenObjet;
 
 
-
+#define EXIT_COMMAND  0xFF
+#define ENTER_COMMNAD 0xFE
+#define COMMNAD_MASK  100
 
 typedef struct
 {
@@ -47,6 +50,8 @@ typedef struct
   u8          pRigthScreen;
   u8          pUpScreenSet;
   u8          pDownScreenSet;
+  u8          pEnter;
+  u8          pBack;
  // void          ( *pFunc )( void*, char );
 } xScreenType;
 

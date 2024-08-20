@@ -15,6 +15,8 @@ typedef enum
 {
     HAL_USART1 = 0,
     HAL_USART2 = 1,
+    HAL_USART3 = 2,
+    HAL_USART4 = 3,
 } HAL_USART_t;
 
 typedef struct
@@ -54,4 +56,6 @@ void HALUSARTInit(HAL_USART_t usart, uint32_t USART_BaudRate, HAL_USART_STOP_BIT
 void HALUSARTEnable(HAL_USART_t usart);
 void HALUSARTInitIT(HAL_USART_t usart, void (* rx_it_callback) ( void ), void (* tx_it_callback) ( void ), uint8_t prior, uint8_t subprior);
 void HAL_SendByte_IT(HAL_USART_t usart, u8 data );
+void HAL_RecieveByte_IT(HAL_USART_t usart , u8 * rb);
+void HAL_RecieveITDisable(HAL_USART_t usart);
 #endif /* HAL_HAL_USART_H_ */

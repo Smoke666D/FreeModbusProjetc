@@ -24,8 +24,10 @@
 #define LCD_STK_SIZE        512
 #define KEYBAORD_TASK_PRIO     5
 #define KEYBAORD_STK_SIZE  128
+#define SERIAL_TASK_PRIO     5
+#define SERIAL_STK_SIZE  128
 #define MBTCP_TASK_PRIO     5
-#define MBTCP_STK_SIZE      512
+#define MBTCP_STK_SIZE      700
 #define MBRTU_TASK_PRIO     5
 #define MBRTU_STK_SIZE      512
 #define WCHNET_TASK_PRIO     5

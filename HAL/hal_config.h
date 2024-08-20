@@ -120,7 +120,7 @@ typedef enum
 #define TIM1_UP_ENABLE 0
 #define TIM2_UP_ENABLE 0
 #define TIM3_UP_ENABLE 0
-#define TIM4_UP_ENABLE 0
+#define TIM4_UP_ENABLE 1
 #define TIM5_UP_ENABLE 1
 #define TIM6_UP_ENABLE 0
 #define TIM7_UP_ENABLE 0

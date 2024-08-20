@@ -7,23 +7,48 @@
 #include "data_model.h"
 #include "EEPROM_25C.h"
 
-u8 REGISTER[DATA_MODEL_REGISTERS];
-static const u8 default_data[]= { VALID_CODE, 2, 13, 13, 0x20 ,1};
+u8 DATA_MODEL_REGISTER[EEPROM_REGISTER_COUNT];
 
-void DataModel_Init()
+
+DATA_MODEL_INIT_t DataModel_Init()
 {
 
- //   memset(REGISTER,0,DATA_MODEL_REGISTERS);
-   // if (
-        //    ReadEEPROMData(0x00 ,REGISTER , DATA_MODEL_REGISTERS, 10 ,2);// == EEPROM_OK)
-   // {
-    //        if (REGISTER[VALID_CODE_ADDRES]!=VALID_CODE )
-     //       {
-      //          memcpy(REGISTER,default_data,6);
-       //         WriteEEPROMData(0x00 ,REGISTER , DATA_MODEL_REGISTERS, 10 ,2);
-        //    }
-//
-//
- //   }
+    memset(DATA_MODEL_REGISTER,0,EEPROM_REGISTER_COUNT);
+    if (   ReadEEPROMData(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ,2) == EEPROM_OK)
+    {
+           if (DATA_MODEL_REGISTER[VALID_CODE_ADDRES]!=VALID_CODE )
+           {
+               DATA_MODEL_REGISTER[VALID_CODE_ADDRES] = VALID_CODE;
+               DATA_MODEL_REGISTER[MB_PROTOCOL_TYPE]  = MB_RTU;
+               DATA_MODEL_REGISTER[MB_RTU_ADDR]       = 2;
+               if (WriteEEPROM(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 1000 ,2) == EEPROM_OK) printf("EEPROMwtiye\r\n");
+               ReadEEPROMData(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ,2);
+               return (NEW_INIT);
+           }
+           else
+           {
+               return (NORMAL_INIT);
+           }
+
+   }
+    else
+        return (INIT_ERROR);
 }
 
+void int8SetRegisterBit(uint16_t addres, uint8_t bits, uint8_t data)
+{
+    if ( addres < TOTAL_REGISTER_COUNT  )
+    {
+        if (data != 0)
+            DATA_MODEL_REGISTER[addres] |= 0x1 << bits;
+        else
+            DATA_MODEL_REGISTER[addres] &= ~(0x1 << bits);
+    }
+
+}
+
+uint8_t int8GetRegister(uint16_t addres)
+{
+    return  (( addres < TOTAL_REGISTER_COUNT   ) ? DATA_MODEL_REGISTER[addres] : 0);
+
+}

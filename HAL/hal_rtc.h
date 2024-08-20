@@ -67,7 +67,11 @@ typedef struct
     uint8_t       year;     /*!< Set year of RTC date */
 } HAL_DateConfig_T;
 
-
+typedef enum
+{
+  HAL_RTC_NEW_INIT    = 0,
+  HAL_RTC_NORMAL_INIT = 1,
+} HAL_RTC_INIT_t;
 
 #if MCU == APM32
 
@@ -81,7 +85,7 @@ void HAL_RTC_ReadDate(HAL_DateConfig_T* date);
 
 #if MCU== CH32V2 || MCU == CH32V3
 void RTC_IRQHandler ( void );
-void HAL_RTC_IT_Init(  void (* rtc_it_callback) ( void ), uint8_t prior, uint8_t subprior );
+void HAL_RTC_IT_Init( HAL_RTC_INIT_t init, void (* rtc_it_callback) ( void ), uint8_t prior, uint8_t subprior );
 #endif
 
 #endif /* HAL_HAL_RTC_H_ */

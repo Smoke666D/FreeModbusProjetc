@@ -32,8 +32,19 @@ static void HAL_UART_TxCpltCallback(void);
 static void HAL_UART_RxCpltCallback(void);
 
 /* ----------------------- Static variables ---------------------------------*/
-
+static TaskHandle_t SerialTaskHandle;
 static EventGroupHandle_t xSerialEventGroupHandle;
+
+EventGroupHandle_t * getSerialEvenGroup()
+{
+    return &xSerialEventGroupHandle;
+}
+
+TaskHandle_t * getSerialTask()
+{
+    return &SerialTaskHandle;
+}
+
 static uint8_t rx_data_buf;
 static uint8_t rx_data;
 
@@ -91,9 +102,9 @@ BOOL xMBPortSerialInit(UCHAR ucPORT, ULONG ulBaudRate, UCHAR ucDataBits, eMBPari
     		USART_Parity = HAL_Parity_Even;
     		break;
     }
-    MBPORT = (ucPORT == 1)? HAL_USART1 : HAL_USART2;
-    HALUSARTInit(MBPORT, ulBaudRate, HAL_StopBits_1 ,USART_Parity , USART_wordlength  );
-    HALUSARTInitIT(MBPORT,&HAL_UART_RxCpltCallback , &HAL_UART_TxCpltCallback, UART2_IT_PRIOR,  UART2_IT_SUBPRIOR);
+    MBPORT = ucPORT;
+    HALUSARTInit  (MBPORT, ulBaudRate, HAL_StopBits_1 ,USART_Parity , USART_wordlength  );
+    HALUSARTInitIT(MBPORT, &HAL_UART_RxCpltCallback , &HAL_UART_TxCpltCallback, UART2_IT_PRIOR,  UART2_IT_SUBPRIOR);
     HALUSARTEnable(MBPORT);
     return TRUE;
 }
@@ -103,8 +114,8 @@ void vMBPortSerialEnable(BOOL xRxEnable, BOOL xTxEnable)
 //    rt_uint32_t recved_event;
     if (xRxEnable)
     {
+        HAL_RecieveByte_IT(MBPORT ,&rx_data_buf);
 
-    	HAL_UART_Receive_IT(&huart1,&rx_data_buf,1);
     	//HAL_HalfDuplex_EnableReceiver(&huart1);
         /* enable RX interrupt */
   //      serial->ops->control(serial, RT_DEVICE_CTRL_SET_INT, (void *)RT_DEVICE_FLAG_INT_RX);
@@ -117,7 +128,8 @@ void vMBPortSerialEnable(BOOL xRxEnable, BOOL xTxEnable)
         /* switch 485 to transmit mode */
     	vTransmitEnable();
         /* disable RX interrupt */
-    	HAL_UART_AbortReceive_IT(&huart1);
+
+    	HAL_RecieveITDisable(MBPORT);
      //   serial->ops->control(serial, RT_DEVICE_CTRL_CLR_INT, (void *)RT_DEVICE_FLAG_INT_RX);
     }
     if (xTxEnable)
@@ -157,8 +169,6 @@ BOOL xMBPortSerialGetByte(CHAR * pucByte)
     return TRUE;
 }
 
-
-
 static void HAL_UART_TxCpltCallback()
 {
 
@@ -183,13 +193,10 @@ static void HAL_UART_TxCpltCallback()
 	  }
 }
 
-
-
 void StartUARTTask(void *argument)
 {
-	  EventBits_t uxBits;
-	  /* Attempt to create the event group. */
-	  xSerialEventGroupHandle = xGetUARTEvent();
+	  EventBits_t uxBits;	  /* Attempt to create the event group. */
+
 	  while(1)
 	  {
 		  uxBits = xEventGroupWaitBits( xSerialEventGroupHandle,  EVENT_SERIAL_TRANS_START,  pdTRUE, pdFALSE, portMAX_DELAY );
@@ -202,18 +209,12 @@ void StartUARTTask(void *argument)
 		  	  		  break;
 		  }
 	  }
-
-
 }
-
 
 static void HAL_UART_RxCpltCallback()
 {
 	rx_data = rx_data_buf;
-
-	HAL_UART_Receive_IT(&huart1,&rx_data_buf,1);
+	HAL_RecieveByte_IT(MBPORT ,&rx_data_buf);
 	pxMBFrameCBByteReceived();
 }
-
-
 

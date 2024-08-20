@@ -80,11 +80,11 @@ void ADC1_2_IRQHandler(void)
         ADC_Callback[1].CallBack();
     }
 #endif
-    if(ADC_GetITStatus( ADC1, ADC_IT_AWD))
-    {
-        ADC_ClearITPendingBit( ADC1, ADC_IT_AWD);
-        adcs.awdt_callback();
-    }
+   // if(ADC_GetITStatus( ADC1, ADC_IT_AWD))
+   // {
+    //    ADC_ClearITPendingBit( ADC1, ADC_IT_AWD);
+   //     adcs.awdt_callback();
+  //  }
 }
 #endif
 

@@ -15,6 +15,8 @@
 #include "mb_task.h"
 #include "menu.h"
 #include "hal_spi.h"
+#include "hal_rtc.h"
+#include "rtc_task.h"
 #include "EEPROM_25C.h"
 
 static void vDefaultTask( void  * argument );
@@ -31,11 +33,15 @@ static TaskHandle_t WCHNETTask_Handler;
 static StackType_t WCHNETTaskBuffer[WCHNET_STK_SIZE];
 static StaticTask_t WCHNETTaskControlBlock;
 
+
 static TaskHandle_t KeyboarTask_Handler;
 static StackType_t  KeyboarTaskBuffer[KEYBAORD_STK_SIZE];
 static StaticTask_t KeyboardTaskControlBlock;
 
 
+
+static StackType_t  SERIALTaskBuffer[SERIAL_STK_SIZE];
+static StaticTask_t SERIALTaskControlBlock;
 
 static StackType_t LCDTaskBuffer[MBTCP_STK_SIZE];
 static StaticTask_t LCDTaskControlBlock;
@@ -58,6 +64,7 @@ uint8_t ucQueueStorageArea[  16U * sizeof( KeyEvent ) ];
 static StaticQueue_t xStaticQueue;
 static StaticEventGroup_t xADCStateEventGroup;
 static StaticEventGroup_t xOSStateEventGroup;
+static StaticEventGroup_t xSerialStateEventGroup;
 
 void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer,
                                     StackType_t **ppxIdleTaskStackBuffer,
@@ -81,26 +88,31 @@ void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer,
 
 void vSYStaskInit ( void )
 {
+   (* getSerialTask())
+           =    xTaskCreateStatic( StartUARTTask, "Serial", SERIAL_STK_SIZE , ( void * ) 1, SERIAL_TASK_PRIO  ,
+                   (StackType_t * const )SERIALTaskBuffer, &SERIALTaskControlBlock );
+
   (* getLCDTaskHandle())
            =  xTaskCreateStatic( LCD_task, "LCD", LCD_STK_SIZE , ( void * ) 1, LCD_TASK_PRIOR  ,
                    (StackType_t * const )LCDTaskBuffer, &LCDTaskControlBlock );
 
-  (*  getADCTaskHandle())
+  /*(*  getADCTaskHandle())
              = xTaskCreateStatic( ADC_task, "ADC", ADC_STK_SIZE , ( void * ) 1, ADC_TASK_PRIO  ,
-                                     (StackType_t * const )ADCTaskBuffer, &ADCTaskControlBlock );
+                                    (StackType_t * const )ADCTaskBuffer, &ADCTaskControlBlock );*/
  MPTCPTask_Handler
-  = xTaskCreateStatic( MBTCP_task, "MPTCP", MBTCP_STK_SIZE , ( void * ) 1, MBTCP_TASK_PRIO ,
+  = xTaskCreateStatic( MBRTU_task, "MPTCP", MBTCP_STK_SIZE , ( void * ) 1, MBTCP_TASK_PRIO ,
                      (StackType_t * const )MBTCPTaskBuffer, &MBTCPTaskControlBlock );
 
 
 
-   WCHNETTask_Handler
+ /*  WCHNETTask_Handler
   = xTaskCreateStatic( WCHNET_task, "MPTCP", WCHNET_STK_SIZE , ( void * ) 1,WCHNET_TASK_PRIO ,
                      (StackType_t * const )WCHNETTaskBuffer, &WCHNETTaskControlBlock );
-
+*/
    KeyboarTask_Handler
    = xTaskCreateStatic( vKeyboardTask, "KEYBOARD", KEYBAORD_STK_SIZE , ( void * ) 1,KEYBAORD_TASK_PRIO ,
                       (StackType_t * const )KeyboarTaskBuffer, &KeyboardTaskControlBlock);
+
   DefautTask_Handler = xTaskCreateStatic( vDefaultTask, "DefTask", DEFAULT_TASK_STACK_SIZE , ( void * ) 1, DEFAULT_TASK_PRIOR, (StackType_t * const )defaultTaskBuffer, &defaultTaskControlBlock );
 
   return;
@@ -109,6 +121,7 @@ void vSYStaskInit ( void )
 void vSYSeventInit ( void )
 {
   *(xGetOSEvent() ) = xEventGroupCreateStatic(&xOSStateEventGroup );
+  *(getSerialEvenGroup()) = xEventGroupCreateStatic(&xSerialStateEventGroup );
 }
 
 
@@ -121,7 +134,6 @@ void vSYSqueueInit ( void )
 u8 SPI1_ReadWriteByte(u8 TxData)
 {
     u8 i = 0;
-
     while(SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
 
     SPI_I2S_SendData(SPI2, TxData);
@@ -161,46 +173,56 @@ void Unprotect()
 
 }
 
-u8 data[10]= {1,2,3,4,5,6,7,8,9,10};
-u8 data1[10]= {0};
+u8 data[100]= {1,2,3,4,5,6,7,8,9,10};
+u8 data1[100]= {0};
 
 void vDefaultTask( void  * argument )
 {
-    SPI_InitTypeDef  SPI_InitStructure = {0};
     uint32_t ulNotifiedValue;
+    HAL_RTC_INIT_t RTC_INIT_TYPE;
+    TaskFSM_t main_task_fsm = STATE_INIT;
 
-    u8 byte = 0;
-    TaskFSM_t main_task_fsm = STATE_RUN;
-  /*  SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex;
-    SPI_InitStructure.SPI_Mode = SPI_Mode_Master;
-    SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b;
-    SPI_InitStructure.SPI_CPOL = SPI_CPOL_Low;
-    SPI_InitStructure.SPI_CPHA = SPI_CPHA_1Edge;
-    SPI_InitStructure.SPI_NSS = SPI_NSS_Soft;
-    SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_128;
-    SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;
-    SPI_InitStructure.SPI_CRCPolynomial = 0;
-    SPI_Init(SPI2, &SPI_InitStructure);
-    SPI_Cmd(SPI2, ENABLE);*/
-    InitEEPROM( HAL_SPI2);
 
     vMenuInit();
     while(1)
     {
-        vMenuTask();
-        xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
-        vTaskDelay(100);
+
        switch (main_task_fsm)
         {
+            case STATE_INIT:
+                if (DataModel_Init()!=NORMAL_INIT)
+                {
+                    RTC_INIT_TYPE = HAL_RTC_NEW_INIT;
+                }
+                else
+                {
+                    RTC_INIT_TYPE = HAL_RTC_NORMAL_INIT;
+                }
+                vRTCTaskInit(RTC_INIT_TYPE);
+                printf("System start\r\n");
+                main_task_fsm =  STATE_RUN;
+                break;
             case STATE_RUN:
-                GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_SET);
-                vTaskDelay(1);
-               // SetEEPROMUnprotect(HAL_SPI2,10,2);
-               main_task_fsm = STATE_SAVE_DATA;
+                vMenuTask();
+
+                xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
+                vTaskDelay(100);
                 break;
             case STATE_SAVE_DATA:
-                WriteEEPROMData(HAL_SPI2, 0, 0, data,10, 10, 2);
-               // ReadEEPROMData(HAL_SPI2, 0, 0, data1,10, 10, 2);
+
+                ReadEEPROMData( 0, data1,100, 100, 2);
+                for (u8 i=0;i<100;i++)
+                {
+                   printf("%i\r\n",data1[i]);
+                }
+
+
+
+                //WriteEEPROM(HAL_SPI2, 0, data,100, 100, 2);
+                for (u8 i=0;i<100;i++)
+                                {
+                                  data[i]=i+50;
+                                }
                 /*byte = WaitWileBusy();
                 if (byte & 0x02) Unprotect();
                 vTaskDelay(1);

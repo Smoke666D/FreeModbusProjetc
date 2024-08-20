@@ -65,6 +65,9 @@ typedef enum
 } eMBPortLogLevel;
 #endif
 
+#define ENTER_CRITICAL_SECTION()   {} //EnterCriticalSection()
+#define EXIT_CRITICAL_SECTION()   {}// ExitCriticalSection()
+
 
 typedef  uint8_t err_t;
 /* ----------------------- Function prototypes ------------------------------*/

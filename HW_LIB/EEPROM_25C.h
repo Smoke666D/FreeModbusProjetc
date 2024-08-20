@@ -25,11 +25,13 @@
 #define BP0_BIT       0x04
 #define BP1_BIT       0x08
 
+#define EEPROM_SIZE 32768
+#define SECTOR_SIZE 64
+
 typedef enum
 {
   EEPROM_IDLE_STATE     = 0,
   READ_ADDR_WRITE_STATE = 1,
-
   READ_ADDR_WRITE_STATE1 = 2,
   READ_DATA_READ_STATE  = 3,
   READ_DATA_READ_STATE1 = 10,
@@ -39,7 +41,17 @@ typedef enum
   WRITE_STATUS_STATE     = 7,
   READ_STATUS_STATE      = 8,
   WRITE_COMMAND_STATE   = 9,
-
+  WRITE_COMMANDw        = 11,
+  WRITE_ADRR_LSB       = 12,
+  WRITE_ADRR_LSBr       = 13,
+  WRTIE_STATE_1,
+  WRTIE_STATE_2,
+  WRTIE_STATE_3,
+  WRTIE_STATE_4,
+  WRTIE_STATE_5,
+  WRTIE_STATE_6,
+  WRTIE_STATE_7,
+  WRTIE_STATE_8,
 } EEPROM_FSM_t;
 
 typedef struct
@@ -68,6 +80,9 @@ typedef enum {
     EEPROM_BUSY,
 } EERPOM_ERROR_CODE_t;
 
-EERPOM_ERROR_CODE_t SetEEPROMUnprotect(HAL_SPI_t spi, u32 timeout,u8 TASK_NOTIFICATION_INDEX);
+EERPOM_ERROR_CODE_t ReadEEPROMData( u16 data_adress, u8 * data, u16 data_size, u32 timeout, u8 TASK_NOTIFICATION_INDEX);
+EERPOM_ERROR_CODE_t WriteEEPROMData( u16 data_adress, u8 * data, u16 data_size, u32 timeout, u8 TASK_NOTIFICATION_INDEX);
+EERPOM_ERROR_CODE_t WriteEEPROM( u16 data_adress, u8 * data, u16 data_size, u32 timeout, u8 TASK_NOTIFICATION_INDEX);
+EERPOM_ERROR_CODE_t SetEEPROMUnprotect( u32 timeout,u8 TASK_NOTIFICATION_INDEX);
 void InitEEPROM( HAL_SPI_t spi);
 #endif /* HW_LIB_EEPROM_25C_H_ */

@@ -17,9 +17,9 @@ static void vRTCTaskITCallback()
 
 }
 
-void vRTCTaskInit()
+void vRTCTaskInit(HAL_RTC_INIT_t init)
 {
 
-    HAL_RTC_IT_Init( &vRTCTaskITCallback, RTC_IT_PRIOR,RTC_IT_SUBPRIOR);
+    HAL_RTC_IT_Init(init, &vRTCTaskITCallback, RTC_IT_PRIOR,RTC_IT_SUBPRIOR);
 
 }

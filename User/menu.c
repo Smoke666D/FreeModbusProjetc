@@ -11,6 +11,7 @@
 #include "u8g2.h"
 #include "led.h"
 #include "hal_rtc.h"
+#include "data_model.h"
 
 u8 pCurrMenu = 0;
 static QueueHandle_t     pKeyboard        = NULL;
@@ -34,40 +35,105 @@ u8 GetID( u8 id)
     }
 }
 
-void vMenuTask ( void )
+static menu_mode = 0;
+
+void ViewScreenCallback( u8 key_code)
 {
 
-   u8 key;
-   if ( uxQueueMessagesWaiting(pKeyboard) != 0)
+    switch ( key_code )
     {
-        if ( xQueueReceive(pKeyboard, &TempEvent, 0U ) == pdPASS )
-        {
-        if ( TempEvent.Status == MAKECODE )
-        {
-
-          switch ( TempEvent.KeyCode )
+        case 0:
+           if (xScreens1[pCurrMenu].pBack < COMMNAD_MASK)
+                  pCurrMenu= GetID(xScreens1[pCurrMenu].pBack);
+           break;
+        case 1:
+           if (xScreens1[pCurrMenu].pEnter < COMMNAD_MASK)
+                  pCurrMenu= GetID(xScreens1[pCurrMenu].pEnter );
+          else
           {
-              case 0:
+              if (xScreens1[pCurrMenu].pEnter == ENTER_COMMNAD)  menu_mode = 1;
+           }
+           break;
+        case 2:
+           pCurrMenu= GetID(xScreens1[pCurrMenu].pUpScreenSet);
+           break;
+        case 3:
+           pCurrMenu= GetID(xScreens1[pCurrMenu].pDownScreenSet);
+           break;
+        case 4:
+           pCurrMenu= GetID(xScreens1[pCurrMenu].pRigthScreen);
+           break;
+        case 5:
+           pCurrMenu = GetID(xScreens1[pCurrMenu].pLeftScreen);
+            break;
+     }
 
-                  break;
-              case 1:
-                  break;
-              case 2:
-                  break;
-              case 3:
-                  break;
-              case 4:
-                  pCurrMenu= GetID(xScreens1[pCurrMenu].pRigthScreen);
-                  break;
-              case 5:
-                  pCurrMenu = GetID(xScreens1[pCurrMenu].pLeftScreen);
-                  break;
+}
 
 
+
+
+
+void vMenuTask ( void )
+{
+   u8 key;
+
+   if ( menu_mode == 1)
+   {
+
+   }
+   else
+   {
+
+       if ( uxQueueMessagesWaiting(pKeyboard) != 0)
+       {
+           if ( xQueueReceive(pKeyboard, &TempEvent, 0U ) == pdPASS )
+           {
+              if ( TempEvent.Status == MAKECODE )
+              {
+                  switch (menu_mode)
+                  {
+                      case 0:
+                          ViewScreenCallback (TempEvent.KeyCode );
+                          break;
+                          case 1:
+
+                              switch ( TempEvent.KeyCode )
+                                             {
+                                                 case 0:
+
+                                                     break;
+                                                 case 1:
+
+                                                     break;
+                                                 case 2:
+
+                                                     break;
+                                                 case 3:
+
+                                                     break;
+                                                 case 4:
+
+                                                     break;
+                                                 case 5:
+
+                                                     break;
+
+
+                                             }
+                  }
+
+
+
+              }
+            }
           }
-        }
-      }
-    }
+
+
+
+   }
+
+
     vDraw(xScreens1[pCurrMenu].pScreenCurObjets);
 
 
@@ -92,6 +158,9 @@ void vGetData(u16 data_id, u8 * str)
     case CURENT_DATE_ADDR:
         HAL_RTC_ReadDate(&date);
         sprintf(str,"%02i:%02i:%02i",date.date,date.month,date.year);
+        break;
+    case MB_RTU_ADDR_ID :
+        sprintf(str,"%02i",int8GetRegister(MB_RTU_ADDR));
         break;
     default:
         strcpy(str,"0,0");
