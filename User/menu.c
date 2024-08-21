@@ -13,12 +13,100 @@
 #include "hal_rtc.h"
 #include "data_model.h"
 
+
+
+static unsigned char rcp0606536715761_bits[] = {
+  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0x1F, 0x00, 0x00,
+  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xFF, 0xF9,
+  0x07, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0xFC, 0xFF, 0x7F, 0x00, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0x00, 0x00, 0x00, 0x80, 0x1F, 0x00, 0x1C, 0x00, 0x80, 0x01, 0x00,
+  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xE0, 0x0C, 0x00, 0x18,
+  0x00, 0x00, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x80,
+  0x71, 0x00, 0x00, 0x20, 0x00, 0x00, 0x06, 0x00, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0xE0, 0x03, 0xE0, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x06, 0x00,
+  0x00, 0x00, 0x00, 0x00, 0x00, 0xE0, 0x07, 0x30, 0x06, 0x00, 0x00, 0x00,
+  0x00, 0x00, 0x06, 0x0C, 0x00, 0x00, 0x00, 0x00, 0x00, 0xE0, 0x07, 0x1C,
+  0x06, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0C, 0x78, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0xE0, 0x07, 0x0E, 0xFC, 0x01, 0x00, 0x00, 0x00, 0x00, 0x0C, 0xE0,
+  0x01, 0x00, 0x00, 0x00, 0x00, 0xE0, 0x87, 0x03, 0xC0, 0x1F, 0x00, 0x00,
+  0x00, 0x00, 0x0E, 0x80, 0x03, 0x00, 0x00, 0x00, 0x00, 0xE0, 0xC7, 0x01,
+  0x00, 0x70, 0x00, 0x00, 0x00, 0x00, 0x06, 0x00, 0x0F, 0x00, 0x00, 0x00,
+  0x00, 0xE0, 0xE7, 0x00, 0x00, 0xC0, 0x00, 0x00, 0x00, 0x00, 0x06, 0x00,
+  0x3C, 0x00, 0x00, 0x00, 0x00, 0xE0, 0x7F, 0x00, 0x00, 0x80, 0x01, 0x00,
+  0x00, 0x00, 0x06, 0x00, 0x78, 0x00, 0x00, 0x00, 0x00, 0xC0, 0x3F, 0x00,
+  0x00, 0x80, 0x01, 0x00, 0x00, 0x00, 0x06, 0x00, 0xE0, 0x00, 0x00, 0x00,
+  0x00, 0xC0, 0x1F, 0x00, 0x00, 0x80, 0x01, 0x00, 0x00, 0x00, 0x06, 0x00,
+  0xC0, 0x03, 0x00, 0x00, 0x00, 0xC0, 0x0F, 0x00, 0x00, 0x80, 0x01, 0x00,
+  0x00, 0x00, 0x06, 0x00, 0x80, 0x07, 0x00, 0x00, 0x00, 0xC0, 0x0F, 0x00,
+  0x00, 0x80, 0x01, 0x00, 0x00, 0x00, 0x0C, 0x00, 0x00, 0x0F, 0x00, 0x00,
+  0x00, 0xC0, 0x0F, 0x00, 0x00, 0x80, 0x01, 0x00, 0x00, 0x00, 0x0C, 0x00,
+  0x00, 0x1E, 0x00, 0x00, 0x00, 0xE0, 0x0F, 0x00, 0x00, 0x80, 0x01, 0x00,
+  0x00, 0x00, 0x18, 0x00, 0x00, 0x3C, 0x00, 0x00, 0x00, 0xE0, 0x0F, 0x00,
+  0x00, 0x80, 0x01, 0x00, 0x00, 0x00, 0x38, 0x00, 0x00, 0x78, 0x00, 0x00,
+  0x00, 0xF0, 0x1F, 0x00, 0x00, 0x80, 0x01, 0x00, 0x00, 0x00, 0x3C, 0x00,
+  0x00, 0xF0, 0x00, 0x00, 0x00, 0xF8, 0x1F, 0x00, 0x00, 0xC0, 0x00, 0x00,
+  0x00, 0x00, 0x1E, 0x00, 0x00, 0xE0, 0x01, 0x00, 0x00, 0xBC, 0x1F, 0x00,
+  0x00, 0xE0, 0x00, 0x00, 0x00, 0x00, 0x0F, 0x00, 0x00, 0xC0, 0x03, 0x00,
+  0x00, 0xBC, 0x1F, 0x00, 0x00, 0xE0, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0x80, 0x07, 0x00, 0x00, 0x1E, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0F, 0x00, 0x00, 0x0F, 0x3F, 0x00,
+  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1E, 0x00,
+  0x00, 0x0F, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0x00, 0x3E, 0x00, 0x80, 0x07, 0x3E, 0x00, 0x00, 0xE0, 0x07, 0x00,
+  0x00, 0x00, 0xF0, 0x01, 0x00, 0x0C, 0x3C, 0x00, 0xC0, 0x03, 0x7E, 0xC0,
+  0xFF, 0xE0, 0x87, 0xE3, 0xFF, 0x0F, 0xFE, 0x0F, 0x00, 0x0F, 0x78, 0x00,
+  0xC0, 0x03, 0x7E, 0xC0, 0xFF, 0xE3, 0xC7, 0xE7, 0xFF, 0x0F, 0xFF, 0x1F,
+  0xC0, 0x0F, 0xF8, 0x00, 0xE0, 0x03, 0xFE, 0xC0, 0xFF, 0xE7, 0xE3, 0xEF,
+  0xFF, 0x8F, 0xFF, 0x3F, 0xF0, 0x1F, 0xF0, 0x00, 0xE0, 0x07, 0xFC, 0xC0,
+  0xEF, 0xE7, 0xF3, 0xE7, 0xFF, 0xCF, 0xFF, 0x7F, 0xF8, 0x0F, 0xE0, 0x01,
+  0xF0, 0x0F, 0xFC, 0xC0, 0xCF, 0xE7, 0xFB, 0x03, 0x7C, 0xE0, 0x0F, 0x7F,
+  0xFC, 0x03, 0xE0, 0x03, 0xF0, 0x1F, 0xFC, 0xC1, 0xCF, 0xE7, 0xFF, 0x01,
+  0xFC, 0xE0, 0x07, 0x7E, 0xFE, 0x00, 0xC0, 0x03, 0xF8, 0x3F, 0xF8, 0xC1,
+  0xCF, 0xE7, 0xFF, 0x00, 0xFC, 0xE0, 0x07, 0x7E, 0x7E, 0x00, 0xC0, 0x07,
+  0x78, 0xFF, 0xF8, 0xC1, 0xEF, 0xE7, 0xFF, 0x00, 0xFC, 0xE0, 0x07, 0x7E,
+  0x3E, 0x00, 0x80, 0x07, 0x7C, 0xFE, 0xF9, 0xC3, 0xFF, 0xE3, 0xFF, 0x01,
+  0xFC, 0xE0, 0x07, 0x7E, 0x3F, 0x00, 0x00, 0x0F, 0x3C, 0xFC, 0xF3, 0xC3,
+  0xFF, 0xE1, 0xFB, 0x03, 0xFC, 0xE0, 0x07, 0x7E, 0x7F, 0x00, 0x00, 0x0F,
+  0x3C, 0xF8, 0xFF, 0xC7, 0x7F, 0xE0, 0xF3, 0x07, 0xFC, 0xE0, 0x0F, 0x3F,
+  0xFE, 0x01, 0x00, 0x1F, 0x3E, 0xE0, 0xFF, 0xC7, 0x0F, 0xE0, 0xF3, 0x07,
+  0xFC, 0xC0, 0xFF, 0x3F, 0xFE, 0x1F, 0x00, 0x1E, 0x1E, 0xC0, 0xFF, 0xCF,
+  0x0F, 0xE0, 0xE3, 0x07, 0xFC, 0xC0, 0xFF, 0x1F, 0xFC, 0x1F, 0x00, 0x3E,
+  0x1E, 0x80, 0xFF, 0xCF, 0x0F, 0xE0, 0xC7, 0x07, 0xFC, 0x00, 0xFF, 0x0F,
+  0xF8, 0x1F, 0x00, 0x3C, 0x1F, 0x00, 0xFE, 0xDF, 0x0F, 0xE0, 0x87, 0x01,
+  0xFC, 0x00, 0xFE, 0x03, 0xE0, 0x1F, 0x00, 0x7C, 0x0F, 0x00, 0xFC, 0x1F,
+  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x78,
+  0x0F, 0x00, 0xF0, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0x00, 0x00, 0xF8, 0x0F, 0x00, 0xE0, 0x7F, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF8, 0x07, 0x00, 0x80, 0xFF,
+  0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF0,
+  0x00, 0x00, 0x00, 0xFE, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0x00, 0x00, 0xF0, 0x00, 0x00, 0x00, 0xF8, 0x3F, 0x00, 0x00, 0x00,
+  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF0, 0x00, 0x00, 0x00, 0xE0,
+  0xFF, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xE0,
+  0x00, 0x00, 0x00, 0x80, 0xFF, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0x00, 0x00, 0xE0, 0x00, 0x00, 0x00, 0x00, 0xFC, 0x3F, 0x00, 0x00,
+  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  0xF0, 0xFF, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0x00, 0x00, 0x00, 0x80, 0xFF, 0x3F, 0x00, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF8, 0xFF, 0x0F,
+  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0x80, 0xFF, 0xFF, 0xFF, 0x7F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFC, 0xFF, 0xFF, 0xFF, 0x00, 0x00,
+  0x00, 0x00, 0x00, 0x00, };
+
+
+void vDrawBitmap()
+{
+    u8g2_DrawXBM(&u8g2,0,0,128,58,rcp0606536715761_bits);
+
+}
 u8 pCurrMenu = 0;
 static QueueHandle_t     pKeyboard        = NULL;
 static KeyEvent          TempEvent        = { 0U };
 
-void vDraw( xScreenObjet * pScreenDraw);
-
+static void vDraw( xScreenObjet * pScreenDraw);
+void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len);
 
 void vMenuInit(  )
 {
@@ -28,45 +116,51 @@ void vMenuInit(  )
 
 u8 GetID( u8 id)
 {
-    for (u8 i = 0; i< 100;i++)
+    for (u8 i = 0; i< SCREENS_COUNT;i++)
     {
-
-        if ((xScreens1[i].ScreenId == 0) || (xScreens1[i].ScreenId ==id)) return (i);
+        if ( (xScreens1[i].ScreenId ==id)) return (i);
     }
+    return (0);
 }
 
 static menu_mode = 0;
 
 void ViewScreenCallback( u8 key_code)
 {
-
+    uint8_t pscreen = 0;
     switch ( key_code )
     {
         case 0:
-           if (xScreens1[pCurrMenu].pBack < COMMNAD_MASK)
-                  pCurrMenu= GetID(xScreens1[pCurrMenu].pBack);
+            pscreen = ( xScreens1[pCurrMenu].pBack & MAX_MENU_COUNT);
+
            break;
         case 1:
-           if (xScreens1[pCurrMenu].pEnter < COMMNAD_MASK)
-                  pCurrMenu= GetID(xScreens1[pCurrMenu].pEnter );
-          else
-          {
-              if (xScreens1[pCurrMenu].pEnter == ENTER_COMMNAD)  menu_mode = 1;
-           }
+            pscreen = ( xScreens1[pCurrMenu].pEnter & MAX_MENU_COUNT);
+            if ((xScreens1[pCurrMenu].pEnter & COMMNAD_MASK) == ENTER_COMMNAD)
+            {
+                menu_mode = 1;
+            }
            break;
         case 2:
-           pCurrMenu= GetID(xScreens1[pCurrMenu].pUpScreenSet);
+            pscreen = xScreens1[pCurrMenu].pUpScreenSet;
            break;
         case 3:
-           pCurrMenu= GetID(xScreens1[pCurrMenu].pDownScreenSet);
+            pscreen = xScreens1[pCurrMenu].pDownScreenSet;
            break;
         case 4:
-           pCurrMenu= GetID(xScreens1[pCurrMenu].pRigthScreen);
+            pscreen = xScreens1[pCurrMenu].pRigthScreen;
            break;
         case 5:
-           pCurrMenu = GetID(xScreens1[pCurrMenu].pLeftScreen);
+            pscreen =  xScreens1[pCurrMenu].pLeftScreen;
             break;
      }
+
+     if (pscreen)
+     {
+         pCurrMenu = GetID(pscreen);
+     }
+
+
 
 }
 
@@ -74,28 +168,117 @@ void ViewScreenCallback( u8 key_code)
 u8 edit_data[MAX_STRING_NUMBER];
 u8 blink_counter = 0;
 
+
+void SetFirtsEditString( )
+{
+    memset(edit_data,0,MAX_STRING_NUMBER);
+    u8 edit_flag = 0;
+    for (u8 i=0;i<MAX_STRING_NUMBER;i++)
+    {
+        if ( xScreens1[pCurrMenu].pScreenCurObjets[i].xType == WRITE_DATA)
+        {
+            if( edit_flag == 0)
+            {
+                 edit_flag = 1;
+                 edit_data[i] = 2;
+            }
+            else
+            {
+                      edit_data[i] = 1;
+            }
+        }
+     }
+
+}
+
+void vSelectNext()
+{
+    uint8_t index;
+    for (index =0; index < MAX_STRING_NUMBER;index ++)
+    {
+           if (edit_data[index ] == 2)
+           {
+               edit_data[index ] = 1;
+               break;
+           }
+    }
+    for (uint8_t i = 0; i < MAX_STRING_NUMBER; i++)
+    {
+        if (++index >= MAX_STRING_NUMBER) index = 0;
+        if (edit_data[index ] == 1)
+        {
+            edit_data[index ] = 2;
+            break;
+        }
+    }
+}
+void vSelectPervius()
+{
+    uint8_t index;
+        for (index =0; index < MAX_STRING_NUMBER;index ++)
+        {
+               if (edit_data[index ] == 2)
+               {
+                   edit_data[index ] = 1;
+                   break;
+               }
+        }
+        for (uint8_t i = 0; i < MAX_STRING_NUMBER; i++)
+        {
+            if (index == 0 ) index = MAX_STRING_NUMBER;
+            else {
+                index--;
+            }
+            if (edit_data[index ] == 1)
+            {
+                edit_data[index ] = 2;
+                break;
+            }
+        }
+}
+
+static uint16_t curr_edit_data_id = 0;
+
+void vSetEdit()
+{
+    for (u8 i =0; i < MAX_STRING_NUMBER;i ++)
+    {
+        if (edit_data[i ] == 2)
+        {
+              edit_data[i ] = 3;
+              curr_edit_data_id = xScreens1[pCurrMenu].pScreenCurObjets[i].DataID;
+              vGetData( curr_edit_data_id , 0,CMD_START_EDIT ,0,0);
+              break;
+        }
+    }
+
+}
+
+
+
+
+
+void vSetCommnad( DATA_VIEW_COMMAND_t cmd )
+{
+    for (u8 i =0; i < MAX_STRING_NUMBER;i ++)
+    {
+      if (edit_data[i ] == 3)
+      {
+          edit_data[i] = 2;
+          vGetData( xScreens1[pCurrMenu].pScreenCurObjets[i].DataID, 0,cmd,0,0);
+          break;
+      }
+   }
+   menu_mode = 2;
+}
+
 void vMenuTask ( void )
 {
 
    if ( menu_mode == 1)
    {
-       memset(edit_data,0,MAX_STRING_NUMBER);
-       u8 edit_flag = 0;
-       for (u8 i=0;i<MAX_STRING_NUMBER;i++)
-       {
-          if ( xScreens1[pCurrMenu].pScreenCurObjets->xType == WRITE_DATA)
-          {
-              if( edit_flag == 0)
-              {
-                  edit_flag = 1;
-                  edit_data[i] = 2;
-              }
-              else
-              {
-                  edit_data[i] = 1;
-              }
-          }
-       }
+       SetFirtsEditString();
+       menu_mode = 2;
    }
    else
    {
@@ -110,82 +293,177 @@ void vMenuTask ( void )
                       case 0:
                           ViewScreenCallback (TempEvent.KeyCode );
                           break;
-                          case 2:
-
-                              switch ( TempEvent.KeyCode )
-                                             {
-                                                 case 0:
-
-                                                     break;
-                                                 case 1:
-
-                                                     break;
-                                                 case 2:
-
-                                                     break;
-                                                 case 3:
-
-                                                     break;
-                                                 case 4:
-
-                                                     break;
-                                                 case 5:
-
-                                                     break;
-
-
-                                             }
+                      case 2:
+                          switch ( TempEvent.KeyCode )
+                          {
+                               case 0: menu_mode = 0;  break;
+                               case 1: menu_mode = 3; vSetEdit(); break;
+                               case 2: vSelectNext(); break;
+                               case 3: vSelectPervius(); break;
+                               default: break;
+                           }
+                          break;
+                     case 3:
+                         switch ( TempEvent.KeyCode )
+                         {
+                            case 0: vSetCommnad(CMD_EXIT_EDIT); break;
+                            case 1: vSetCommnad(CMD_SAVE_EDIT); break;
+                            case 2: vGetData( curr_edit_data_id, 0,CMD_INC,0,0); break;
+                            case 3: vGetData( curr_edit_data_id, 0,CMD_DEC,0,0); break;
+                            case 4: vGetData( curr_edit_data_id, 0,CMD_NEXT_EDIT,0,0); break;
+                            case 5: vGetData( curr_edit_data_id, 0,CMD_PREV_EDIT,0,0); break;
+                         }
+                         break;
                   }
-
-
-
               }
             }
           }
-
-
    }
-   vDraw(xScreens1[pCurrMenu].pScreenCurObjets);
+   vDraw((xScreenObjet *) xScreens1[pCurrMenu].pScreenCurObjets);
    if (++blink_counter>10) blink_counter=0;
 
 }
 
-void vGetData(u16 data_id, u8 * str)
+u8 data_edit_flag = 0;
+u8 max_edit_index = 0;
+
+
+static u8 cur_edit_index = 0;
+
+
+char * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
+static uint8_t start_edit_flag =0;
+uint8_t edit_data_buffer_byte;
+uint32_t coof[]={1,10,100,1000};
+
+
+void vByteDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index )
+{
+    switch (command)
+    {
+        case CMD_START_EDIT:
+            edit_data_buffer_byte = DM_GetByteRegData( data_id );
+            start_edit_flag = 1;
+            cur_edit_index = 0;
+            break;
+        case CMD_SAVE_EDIT:
+            DM_SetByteRegData( MB_RTU_ADDR, edit_data_buffer_byte );
+            start_edit_flag = 0;
+             break;
+        case CMD_NEXT_EDIT:
+             if (++cur_edit_index >=max_index) cur_edit_index = 0;
+             break;
+        case CMD_PREV_EDIT:
+            if (cur_edit_index ==0) cur_edit_index = max_index; else cur_edit_index--;
+               break;
+        case CMD_INC:
+             if ((edit_data_buffer_byte + coof[cur_edit_index]) <= DM_GetByteRegMax( data_id))
+                 edit_data_buffer_byte=edit_data_buffer_byte+coof[cur_edit_index];
+             else
+                 edit_data_buffer_byte = DM_GetByteRegMax( data_id);
+             break;
+       case CMD_DEC:
+             if (  (edit_data_buffer_byte - DM_GetByteRegMin( data_id)) >=  coof[cur_edit_index] )
+                 edit_data_buffer_byte=edit_data_buffer_byte-coof[cur_edit_index];
+             else
+                  edit_data_buffer_byte = DM_GetByteRegMin( data_id);
+             break;
+       case CMD_EXIT_EDIT:
+             start_edit_flag = 0;
+             break;
+     }
+
+}
+
+
+void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len)
 {
     HAL_TimeConfig_T time;
     HAL_DateConfig_T date;
+
+    if (index!=0) *index = cur_edit_index;
+    if (len!=0)   *len = 1;
     switch (data_id)
     {
+
+        case SETTING_ID:
+            strcpy(str,"0000 м^3/ч");
+            break;
+        case FACT_RASH_ID:
+            strcpy(str,"0000 м^3/ч");
+            break;
+        case FILTER_STATE_ID:
+            strcpy(str,"000 %");
+            break;
+        case MODE_STATE_ID:
+            strcpy(str,"1");
+            break;
+
+    case PROCESS_STATE_ID:
+        USER_GetProccesState(   str );
+        break;
     case IP_ADRESS_DATA_ID:
+        if (str!=0)
         strcpy(str,"000.000.000.000");
         break;
     case AC_VOLTAGE_ID:
+        if (str!=0)
         sprintf(str,"%i В",(uint16_t)getAIN(AC220));
         break;
     case CURENT_TIME_ADDR:
         HAL_RTC_ReadTime( &time);
+        if (str!=0)
         sprintf(str,"%02i:%02i:%02i",time.hours,time.minutes,time.seconds);
         break;
     case CURENT_DATE_ADDR:
         HAL_RTC_ReadDate(&date);
+        if (str!=0)
         sprintf(str,"%02i:%02i:%02i",date.date,date.month,date.year);
         break;
     case MB_RTU_ADDR_ID :
-        sprintf(str,"%02i",int8GetRegister(MB_RTU_ADDR));
+        switch (command)
+        {
+            case CMD_READ:
+                sprintf(str,"%02i",DM_GetByteRegData(MB_RTU_ADDR) );
+                break;
+            case CMD_EDIT_READ:
+                sprintf(str,"%02i",edit_data_buffer_byte );
+                break;
+            default:
+                vByteDataEdit(MB_RTU_ADDR,command,1);
+                break;
+        }
+        break;
+    case CONTROL_MODE_ID:
+        *len = 0;
+        switch (command)
+        {
+            case CMD_EDIT_READ:
+                strcpy(str, ControlModeStrig[ edit_data_buffer_byte ] );
+                break;
+            case CMD_READ:
+                strcpy(str, ControlModeStrig[ DM_GetByteRegData( CONTROL_TYPE)] );
+                break;
+            default:
+                vByteDataEdit(CONTROL_TYPE,command,0);
+                break;
+        }
         break;
     default:
+        if (str!=0)
         strcpy(str,"0,0");
         break;
     }
 }
 
 
-void vDraw( xScreenObjet * pScreenDraw)
+static void vDraw( xScreenObjet * pScreenDraw)
 {
+
     u8g2_ClearBuffer(&u8g2);
     u8 x,y;
-    u8 len;
-    u8 str[20];
+    u8 len,high,edit_index,char_len,box_len;
+    u8 str[20],chars[2];
     for (u8 i=0;i<MAX_STRING_NUMBER;i++)
     {
         switch (pScreenDraw[i].xType)
@@ -200,7 +478,7 @@ void vDraw( xScreenObjet * pScreenDraw)
             y = pScreenDraw[i].y;
             u8g2_DrawUTF8(&u8g2,x,y,pScreenDraw[i].pStringParametr);
             x = pScreenDraw[i].x_data;
-            vGetData(pScreenDraw[i].DataID,str);
+            vGetData(pScreenDraw[i].DataID,str,CMD_READ,&edit_index,&box_len);
             len = u8g2_GetUTF8Width(&u8g2,str);
             u8g2_DrawUTF8(&u8g2,128-len,y,str);
             break;
@@ -208,19 +486,31 @@ void vDraw( xScreenObjet * pScreenDraw)
             x = pScreenDraw[i].x;
             y = pScreenDraw[i].y;
             u8g2_DrawUTF8(&u8g2,x,y,pScreenDraw[i].pStringParametr);
+            vGetData(pScreenDraw[i].DataID,str,edit_data[i]==3 ? CMD_EDIT_READ : CMD_READ,&edit_index,&box_len);
+            len = u8g2_GetUTF8Width(&u8g2,str);
+            //x = pScreenDraw[i].x_data;
             if (( menu_mode >0) && (edit_data[i]>=2))
             {
                 if (edit_data[i]==2)
                 {
                    if ( blink_counter <= 5)
                    {
+                       u8g2_DrawBox( &u8g2, 128-len, y-10 , len , 11 );
                        u8g2_SetDrawColor(&u8g2,0);
+                       u8g2_SetFontMode(&u8g2,1);
                    }
                 }
+                if (edit_data[i]==3)
+                {
+                    if (box_len == 1)
+                       u8g2_DrawBox( &u8g2, 128-6*(edit_index+1), y-10 , 6 , 11 );
+                    else
+                        u8g2_DrawBox( &u8g2, 128-len, y-10 , len , 11 );
+                    u8g2_SetDrawColor(&u8g2,2);
+                    u8g2_SetFontMode(&u8g2,1);
+                }
             }
-            x = pScreenDraw[i].x_data;
-            vGetData(pScreenDraw[i].DataID,str);
-            u8g2_DrawUTF8(&u8g2,x,y,str);
+            u8g2_DrawUTF8(&u8g2,128-len,y,str);
             u8g2_SetDrawColor(&u8g2,1);
             u8g2_SetFontMode(&u8g2,0);
             break;

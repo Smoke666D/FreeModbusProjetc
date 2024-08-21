@@ -7,18 +7,6 @@
 #include "system_init.h"
 
 
-#include "init.h"
-#include "adc.h"
-#include "data_model.h"
-#include "led.h"
-#include "din_dout_task.h"
-#include "mb_task.h"
-#include "menu.h"
-#include "hal_spi.h"
-#include "hal_rtc.h"
-#include "rtc_task.h"
-#include "EEPROM_25C.h"
-
 static void vDefaultTask( void  * argument );
 static void WCHNET_task(void *pvParameters);
 
@@ -47,7 +35,8 @@ static StackType_t LCDTaskBuffer[MBTCP_STK_SIZE];
 static StaticTask_t LCDTaskControlBlock;
 
 
-
+static StackType_t USERTaskBuffer[USER_STK_SIZE];
+static StaticTask_t USERTaskControlBlock;
 
 static TaskHandle_t MPTCPTask_Handler;
 static StackType_t MBTCPTaskBuffer[MBTCP_STK_SIZE];
@@ -86,6 +75,14 @@ void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer,
 }
 
 
+void TaskSuspend()
+{
+    vTaskSuspend( WCHNETTask_Handler );
+    vTaskSuspend( MPTCPTask_Handler  );
+    vTaskSuspend(* getSerialTask());
+    vTaskSuspend(*  getADCTaskHandle());
+}
+
 void vSYStaskInit ( void )
 {
    (* getSerialTask())
@@ -96,25 +93,28 @@ void vSYStaskInit ( void )
            =  xTaskCreateStatic( LCD_task, "LCD", LCD_STK_SIZE , ( void * ) 1, LCD_TASK_PRIOR  ,
                    (StackType_t * const )LCDTaskBuffer, &LCDTaskControlBlock );
 
-  /*(*  getADCTaskHandle())
+  (*  getADCTaskHandle())
              = xTaskCreateStatic( ADC_task, "ADC", ADC_STK_SIZE , ( void * ) 1, ADC_TASK_PRIO  ,
-                                    (StackType_t * const )ADCTaskBuffer, &ADCTaskControlBlock );*/
- MPTCPTask_Handler
+                                    (StackType_t * const )ADCTaskBuffer, &ADCTaskControlBlock );
+  MPTCPTask_Handler
   = xTaskCreateStatic( MBRTU_task, "MPTCP", MBTCP_STK_SIZE , ( void * ) 1, MBTCP_TASK_PRIO ,
                      (StackType_t * const )MBTCPTaskBuffer, &MBTCPTaskControlBlock );
 
+  (*getUserProcessTaskHandle())
+        = xTaskCreateStatic( user_process_task, "user", USER_STK_SIZE , ( void * ) 1, USER_TASK_PRIO,
+                (StackType_t * const )USERTaskBuffer, &USERTaskControlBlock );
 
 
- /*  WCHNETTask_Handler
+   WCHNETTask_Handler
   = xTaskCreateStatic( WCHNET_task, "MPTCP", WCHNET_STK_SIZE , ( void * ) 1,WCHNET_TASK_PRIO ,
                      (StackType_t * const )WCHNETTaskBuffer, &WCHNETTaskControlBlock );
-*/
+
    KeyboarTask_Handler
    = xTaskCreateStatic( vKeyboardTask, "KEYBOARD", KEYBAORD_STK_SIZE , ( void * ) 1,KEYBAORD_TASK_PRIO ,
                       (StackType_t * const )KeyboarTaskBuffer, &KeyboardTaskControlBlock);
 
   DefautTask_Handler = xTaskCreateStatic( vDefaultTask, "DefTask", DEFAULT_TASK_STACK_SIZE , ( void * ) 1, DEFAULT_TASK_PRIOR, (StackType_t * const )defaultTaskBuffer, &defaultTaskControlBlock );
-
+  TaskSuspend();
   return;
 }
 
@@ -131,53 +131,12 @@ void vSYSqueueInit ( void )
 }
 
 
-u8 SPI1_ReadWriteByte(u8 TxData)
-{
-    u8 i = 0;
-    while(SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
 
-    SPI_I2S_SendData(SPI2, TxData);
-    i = 0;
 
-    while(SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
-
-    return SPI_I2S_ReceiveData(SPI2);
-}
-#define W25X_ReadStatusReg       0x05
-
-u8 WaitWileBusy()
-{
-    u8 data= 0;
-    GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_RESET);
-    vTaskDelay(1);
-    while(1)
-    {
-        while(SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_TXE) == RESET);
-        SPI_I2S_SendData(SPI2, 0x05);
-        while(SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
-        data =  SPI_I2S_ReceiveData(SPI2);
-        if ((data & 0x01) == 0 ) break;
-    }
-    GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_SET);
-    return (data);
-}
-
-void Unprotect()
-{
-
-    GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_RESET);
-                  vTaskDelay(1);
-                  SPI1_ReadWriteByte(0x06 );
-                  vTaskDelay(1);
-                  GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_SET);
-
-}
-
-u8 data[100]= {1,2,3,4,5,6,7,8,9,10};
-u8 data1[100]= {0};
 
 void vDefaultTask( void  * argument )
 {
+    u8 control_type;
     uint32_t ulNotifiedValue;
     HAL_RTC_INIT_t RTC_INIT_TYPE;
     TaskFSM_t main_task_fsm = STATE_INIT;
@@ -190,6 +149,8 @@ void vDefaultTask( void  * argument )
        switch (main_task_fsm)
         {
             case STATE_INIT:
+                vDrawBitmap();
+                xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
                 if (DataModel_Init()!=NORMAL_INIT)
                 {
                     RTC_INIT_TYPE = HAL_RTC_NEW_INIT;
@@ -199,92 +160,37 @@ void vDefaultTask( void  * argument )
                     RTC_INIT_TYPE = HAL_RTC_NORMAL_INIT;
                 }
                 vRTCTaskInit(RTC_INIT_TYPE);
-                printf("System start\r\n");
-                main_task_fsm =  STATE_RUN;
+                main_task_fsm =  STATE_WHAIT_TO_RAEDY;
+                vTaskDelay(3000);
+                break;
+            case STATE_WHAIT_TO_RAEDY:
+
+                control_type  = DM_GetByteRegData(CONTROL_TYPE );
+                if (control_type == MB_DIN )  control_type  = DM_GetByteRegData(MB_PROTOCOL_TYPE);
+                if (control_type == MB_RTU)
+                {
+                    vTaskResume(* getSerialTask());
+                    vTaskResume( MPTCPTask_Handler  );
+                }
+                else
+                {
+                    vTaskResume( WCHNETTask_Handler );
+                    vTaskResume( MPTCPTask_Handler  );
+                }
+                main_task_fsm  = STATE_RUN;
                 break;
             case STATE_RUN:
                 vMenuTask();
-
                 xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
                 vTaskDelay(100);
                 break;
-            case STATE_SAVE_DATA:
-
-                ReadEEPROMData( 0, data1,100, 100, 2);
-                for (u8 i=0;i<100;i++)
-                {
-                   printf("%i\r\n",data1[i]);
-                }
-
-
-
-                //WriteEEPROM(HAL_SPI2, 0, data,100, 100, 2);
-                for (u8 i=0;i<100;i++)
-                                {
-                                  data[i]=i+50;
-                                }
-                /*byte = WaitWileBusy();
-                if (byte & 0x02) Unprotect();
-                vTaskDelay(1);
-                WaitWileBusy();
-                GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_RESET);
-                vTaskDelay(1);
-
-                    SPI1_ReadWriteByte(0x02 );
-                    SPI1_ReadWriteByte(0x00 );
-                    SPI1_ReadWriteByte(0x01 );
-                    SPI1_ReadWriteByte(0x55 );
-                    SPI1_ReadWriteByte(0xAA );
-
-                vTaskDelay(1);
-                GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_SET);
-                vTaskDelay(5);
-                GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_RESET);
-                vTaskDelay(1);
-             //   SPI1_ReadWriteByte(0x05);
-             //   byte = SPI1_ReadWriteByte(0Xff);
-              //  if ((byte & 0x01) == 0)
-                {
-                              SPI1_ReadWriteByte(0x03 );
-                              SPI1_ReadWriteByte(0x00 );
-                              SPI1_ReadWriteByte(0x01 );
-                              data[0] = SPI1_ReadWriteByte(0xFF );
-                              data[1] = SPI1_ReadWriteByte(0xFF );
-                }
-
-                vTaskDelay(1);
-                GPIO_WriteBit(GPIOB, GPIO_Pin_12, Bit_SET);*/
-                break;
-
-               // if( SPI_I2S_GetFlagStatus( SPI2, SPI_I2S_FLAG_RXNE ) != RESET )
-               // {
-              //      u8 data = SPI_I2S_ReceiveData(SPI2);
-              //      main_task_fsm = 1;
-             //   }
-
-               // DataModel_Init();
-              //  ReadEEPROMData(0x00 ,10 , data, 10 ,2);
-             //   main_task_fsm = STATE_WHAIT_TO_RAEDY;
-            //    break;
-          //  case STATE_WHAIT_TO_RAEDY:
-            //    xTaskNotifyWait(0, 0, &ulNotifiedValue,portMAX_DELAY);
-            //    if ( ulNotifiedValue == 2)
-            //    {
-             //                    ulTaskNotifyValueClearIndexed(0, 0, 0xFFFF);
-                //                 vTaskResume( *xCanOpenProcessTaskHandle());
-                //                 vTaskResume( *xCanOpenPeriodicTaskHandle ());
-            //        main_task_fsm = STATE_RUN;
-            //    }
-            //    break;
-           // case STATE_RUN:
-
         }
-
-
-        }
+  }
 
 
 }
+
+
 
 
 /*********************************************************************

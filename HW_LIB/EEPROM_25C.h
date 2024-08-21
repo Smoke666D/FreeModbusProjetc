@@ -58,8 +58,7 @@ typedef struct
 {
     uint8_t ucTaskNatificationIndex;
     TaskHandle_t NotifyTaskHeandle;
-    DMA_Stram_t  dma_stream_read;
-    DMA_Stram_t  dma_stream_write;
+
     HAL_SPI_t spi;
     EEPROM_FSM_t state;
     u16          data_addres;

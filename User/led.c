@@ -150,14 +150,12 @@ void LEDCall()
                 }
                 vSetData( lcd_data.data[lcd_data.index]) ;
             }
-            break;
-        case 1:
             SET_ENABLE;
             break;
-        case 2:
+        case 1:
             RESET_ENABLE;
             break;
-        case 3:
+        case 2:
             if (++lcd_data.tile>=128)
             {
                 lcd_data.tile = 0;
@@ -171,18 +169,17 @@ void LEDCall()
             break;
 
     }
-   if (++led_sycle>3) led_sycle = 0;
+   if (++led_sycle>2) led_sycle = 0;
 }
 
 void vLCDInit()
 {
-    HAL_TIMER_InitIt(TIMER5,300000,1,&LEDCall,0,1);
+    HAL_TIMER_InitIt(TIMER5,700000,1,&LEDCall,0,1);
     HAL_ResetBit( LDCDATA_2_3_E_REW_CD_LED_Port , LCDnRW_Pin);
     u8g2_Setup_ks0108_128x64_f(&u8g2, U8G2_R0, 0U, 0U );
     u8g2_SetFont( &u8g2, u8g2_font_6x13_t_cyrillic);
     u8g2_ClearBuffer(&u8g2);
 }
-
 
 
 void WriteDispalay( u8 * data, u16 size)

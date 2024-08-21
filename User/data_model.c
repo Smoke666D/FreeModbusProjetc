@@ -19,8 +19,15 @@ DATA_MODEL_INIT_t DataModel_Init()
            if (DATA_MODEL_REGISTER[VALID_CODE_ADDRES]!=VALID_CODE )
            {
                DATA_MODEL_REGISTER[VALID_CODE_ADDRES] = VALID_CODE;
-               DATA_MODEL_REGISTER[MB_PROTOCOL_TYPE]  = MB_RTU;
-               DATA_MODEL_REGISTER[MB_RTU_ADDR]       = 2;
+               DM_SetByteRegData(CONTROL_TYPE, MB_RTU );
+               DM_SetByteRegMax( CONTROL_TYPE, MB_TCP );
+               DM_SetByteRegMin( CONTROL_TYPE, MB_DIN );
+               DM_SetByteRegData(MB_RTU_ADDR, 2 );
+               DM_SetByteRegMax( MB_RTU_ADDR, 99 );
+               DM_SetByteRegMin( MB_RTU_ADDR, 1 );
+               DM_SetByteRegData(MB_PROTOCOL_TYPE, MB_RTU );
+               DM_SetByteRegMax( MB_PROTOCOL_TYPE, MB_TCP );
+               DM_SetByteRegMin( MB_PROTOCOL_TYPE, MB_RTU );
                if (WriteEEPROM(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 1000 ,2) == EEPROM_OK) printf("EEPROMwtiye\r\n");
                ReadEEPROMData(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ,2);
                return (NEW_INIT);
@@ -35,20 +42,32 @@ DATA_MODEL_INIT_t DataModel_Init()
         return (INIT_ERROR);
 }
 
-void int8SetRegisterBit(uint16_t addres, uint8_t bits, uint8_t data)
-{
-    if ( addres < TOTAL_REGISTER_COUNT  )
-    {
-        if (data != 0)
-            DATA_MODEL_REGISTER[addres] |= 0x1 << bits;
-        else
-            DATA_MODEL_REGISTER[addres] &= ~(0x1 << bits);
-    }
 
+void DM_SetByteRegData( uint16_t addres, uint8_t data)
+{
+    DATA_MODEL_REGISTER[BYTE_BLOCK_START + addres*BYTE_BLOCK_SIZE] = data;
+}
+void DM_SetByteRegMax( uint16_t addres, uint8_t data)
+{
+    DATA_MODEL_REGISTER[BYTE_BLOCK_START + addres*BYTE_BLOCK_SIZE +1] = data;
+}
+void DM_SetByteRegMin( uint16_t addres, uint8_t data)
+{
+    DATA_MODEL_REGISTER[BYTE_BLOCK_START + addres*BYTE_BLOCK_SIZE +2 ] = data;
+}
+uint8_t DM_GetByteRegData( uint16_t addres)
+{
+    return (DATA_MODEL_REGISTER[BYTE_BLOCK_START + addres*BYTE_BLOCK_SIZE]);
+}
+uint8_t DM_GetByteRegMax( uint16_t addres)
+{
+    return (DATA_MODEL_REGISTER[BYTE_BLOCK_START + addres*BYTE_BLOCK_SIZE+1]);
+}
+uint8_t DM_GetByteRegMin( uint16_t addres)
+{
+    return (DATA_MODEL_REGISTER[BYTE_BLOCK_START + addres*BYTE_BLOCK_SIZE+2]);
 }
 
-uint8_t int8GetRegister(uint16_t addres)
-{
-    return  (( addres < TOTAL_REGISTER_COUNT   ) ? DATA_MODEL_REGISTER[addres] : 0);
 
-}
+
+

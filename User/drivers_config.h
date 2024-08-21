@@ -10,7 +10,7 @@
 
 
 
-#define KEYBOARD_COUNT     6U
+
 
 
 #define AIN_NUMBER  3

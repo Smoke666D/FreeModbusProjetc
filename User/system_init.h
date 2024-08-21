@@ -2,7 +2,7 @@
  * system_init.h
  *
  *  Created on: Jul 8, 2024
- *      Author: i.dymov
+ *      Author: i.dymov 444
  */
 
 #ifndef USER_SYSTEM_INIT_H_
@@ -17,6 +17,18 @@
 #include "event_groups.h"
 #include "portmacro.h"
 #include "stdbool.h"
+#include "init.h"
+#include "adc.h"
+#include "data_model.h"
+#include "led.h"
+#include "din_dout_task.h"
+#include "mb_task.h"
+#include "menu.h"
+#include "hal_spi.h"
+#include "hal_rtc.h"
+#include "rtc_task.h"
+#include "EEPROM_25C.h"
+#include "user_process.h"
 
 #define __SECTION(x)
 
@@ -36,7 +48,8 @@
 #define ADC_STK_SIZE      256
 #define DEFAULT_TASK_PRIOR          5
 #define DEFAULT_TASK_STACK_SIZE         256U
-
+#define USER_TASK_PRIO     5
+#define USER_STK_SIZE      128
 
 typedef enum
 {
