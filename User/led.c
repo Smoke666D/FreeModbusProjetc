@@ -11,42 +11,33 @@
 #include "hal_gpio.h"
 #include "hal_timers.h"
 #include "menu.h"
+
 #define FONT_TYPE4          ( u8g2_font_6x13_t_cyrillic )
-
-
-static TaskHandle_t LCDTaskHandle;
-u8g2_t             u8g2                             = { 0U };
-
-
-/* A17, Bank1, sector1 */
-
-
 #define RESET_ENABLE HAL_ResetBit( LDCDATA_2_3_E_REW_CD_LED_Port , LCDnE_Pin )
 #define SET_ENABLE   HAL_SetBit( LDCDATA_2_3_E_REW_CD_LED_Port , LCDnE_Pin )
 #define SEND_COMMAND HAL_ResetBit(  LCDDATA_0_1_n_Port , LCDDni_Pin  )
 #define SEND_DATA    HAL_SetBit(  LCDDATA_0_1_n_Port , LCDDni_Pin  )
-#define READ_DATA   HAL_SetBit( LDCDATA_2_3_E_REW_CD_LED_Port,LCDnRW_Pin )
+#define READ_DATA    HAL_SetBit( LDCDATA_2_3_E_REW_CD_LED_Port,LCDnRW_Pin )
 #define WRITE_DATA   HAL_ResetBit( LDCDATA_2_3_E_REW_CD_LED_Port,LCDnRW_Pin )
 #define CS1_ENABLE   HAL_ResetBit( LDCDATA_2_3_E_REW_CD_LED_Port,LCDCS_Pin )
 #define CS2_ENABLE   HAL_SetBit( LDCDATA_2_3_E_REW_CD_LED_Port,LCDCS_Pin )
-
-
+#define SCREEN_BUFFER_SIZE  1024
 #define LCD_DATA_SEND  0x02
-void WriteCommand( u8 command );
-void WriteDispalay( u8 * data, u16 size);
 
+static uint8_t      led_sycle;
+static LCD_DATA_t   lcd_data;
+static TaskHandle_t LCDTaskHandle;
+static u8 screen_buufer[SCREEN_BUFFER_SIZE ];
+u8g2_t              u8g2  = { 0U };
 
+static void WriteCommand( u8 command );
+static void WriteDispalay( u8 * data, u16 size);
 
 
 TaskHandle_t * getLCDTaskHandle()
 {
     return (&LCDTaskHandle);
 }
-
-#define SCREEN_BUFFER_SIZE  1024
-static u8 screen_buufer[SCREEN_BUFFER_SIZE ];
-
-
 
 void LCD_task(void *pvParameters)
 {
@@ -73,8 +64,6 @@ void LCD_task(void *pvParameters)
                 CS2_ENABLE;
                 WriteCommand(0x3F);
                 vTaskDelay(1);
-                //memset(screen_buufer,0,SCREEN_BUFFER_SIZE);
-
                 LCD_Task_FSM  = STATE_WHAIT_TO_RAEDY;
                 break;
             case STATE_WHAIT_TO_RAEDY:
@@ -82,124 +71,112 @@ void LCD_task(void *pvParameters)
                 break;
             case STATE_RUN:
                 ulTaskNotifyTakeIndexed( 0, pdTRUE, portMAX_DELAY );
-                memcpy(screen_buufer,u8g2.tile_buf_ptr,SCREEN_BUFFER_SIZE );
-                for (u8 i =0;i<8;i++)
+                if (memcmp(screen_buufer,u8g2.tile_buf_ptr,SCREEN_BUFFER_SIZE ))
                 {
-                     CS1_ENABLE;
-                     WriteCommand( 0x040  );
-                     WriteCommand( 0x0b8 | i );
-                     CS2_ENABLE;
-                     WriteCommand( 0x040  );
-                     WriteCommand( 0x0b8 | i );
-                     WriteDispalay(&screen_buufer[i*128],128);
+                    memcpy(screen_buufer,u8g2.tile_buf_ptr,SCREEN_BUFFER_SIZE );
+                    for (u8 i =0;i<8;i++)
+                    {
+                        CS1_ENABLE;
+                        WriteCommand( 0x040  );
+                        WriteCommand( 0x0b8 | i );
+                        CS2_ENABLE;
+                        WriteCommand( 0x040  );
+                        WriteCommand( 0x0b8 | i );
+                        WriteDispalay(&screen_buufer[i*128],128);
+                    }
                 }
-
                break;
        }
     }
-
-
 }
 
 
-uint8_t led_sycle;
-
-
-typedef struct
-{
-   u8 command;
-   u8 * data;
-   u16 size;
-   u16 index;
-   u16 tile;
-} LCD_DATA_t;
-
-LCD_DATA_t lcd_data;
-TaskHandle_t NotifyTaskHeandle;
 
 void vSetData( u8 data)
 {
-  u16 bufdata = GPIO_ReadOutputData(GPIOD) & 0x3FFC;
+  u16 bufdata = HAL_GetPort(GPIOD) & 0x3FFC;
   bufdata|= ((u16)(data & 0x03))<<14 | ((data & 0x0C)>>2);
-  GPIO_Write(GPIOD ,bufdata);
-  bufdata =  GPIO_ReadOutputData(GPIOE) & 0xF87F;
+  HAL_SetPort(GPIOD ,bufdata);
+  bufdata =  HAL_GetPort(GPIOE) & 0xF87F;
   bufdata = bufdata | ((data & 0xF0)<<3);
-  GPIO_Write(GPIOE,bufdata);
+  HAL_SetPort(GPIOE,bufdata);
 }
 
-void LEDCall()
+/*
+ * Callback функция таймера, выполняет команды по прерыванию от таймера и киадет уведомление вызывающей задачи
+ * таймер нужен для того, что бы формировать таймин сигнала Enable
+ */
+static void LEDCall()
 {
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-    switch (led_sycle)
+    if (!led_sycle)
     {
-        case 0:
-            WRITE_DATA;
-            if (lcd_data.command)
-            {
-                SEND_COMMAND;
-                vSetData ( lcd_data.command);
-                lcd_data.size = 0;
-            }
+        WRITE_DATA;
+        if (lcd_data.command)
+        {
+            SEND_COMMAND;
+            vSetData ( lcd_data.command);
+            lcd_data.size = 0;
+        }
+        else
+        {
+            SEND_DATA;
+            if (lcd_data.tile < 64)
+                 CS2_ENABLE;
             else
-            {
-                SEND_DATA;
-                if (lcd_data.tile < 64)
-                    CS2_ENABLE;
-                else {
-                    CS1_ENABLE;
-                }
-                vSetData( lcd_data.data[lcd_data.index]) ;
-            }
-            SET_ENABLE;
-            break;
-        case 1:
-            RESET_ENABLE;
-            break;
-        case 2:
-            if (++lcd_data.tile>=128)
-            {
-                lcd_data.tile = 0;
-            }
-            if (++lcd_data.index >= lcd_data.size)
-             {
-                  HAL_TiemrDisable(TIMER5);
-                  xTaskNotifyIndexedFromISR(LCDTaskHandle, 2, 0x01, eSetValueWithOverwrite, &xHigherPriorityTaskWoken  );
-                  portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
-             }
-            break;
-
+                 CS1_ENABLE;
+            vSetData( lcd_data.data[lcd_data.index]) ;
+        }
+        SET_ENABLE;
+        led_sycle = 1;
     }
-   if (++led_sycle>2) led_sycle = 0;
+    else
+    {
+       RESET_ENABLE;
+       if (++lcd_data.tile>=128)
+       {
+           lcd_data.tile = 0;
+       }
+       if (++lcd_data.index >= lcd_data.size)
+       {
+            HAL_TiemrDisable(TIMER5);
+            xTaskNotifyIndexedFromISR(LCDTaskHandle, 2, 0x01, eSetValueWithOverwrite, &xHigherPriorityTaskWoken  );
+            portYIELD_FROM_ISR( xHigherPriorityTaskWoken );
+       }
+       led_sycle = 0;
+    }
 }
 
-void vLCDInit()
+/*
+ * Функция инициализации дилплея и бибилиотеки u8g2
+ */
+void vLCDInit( TimerName_t TimerName )
 {
-    HAL_TIMER_InitIt(TIMER5,700000,1,&LEDCall,0,1);
+    HAL_TIMER_InitIt(TimerName,700000,1,&LEDCall,0,1);
     HAL_ResetBit( LDCDATA_2_3_E_REW_CD_LED_Port , LCDnRW_Pin);
     u8g2_Setup_ks0108_128x64_f(&u8g2, U8G2_R0, 0U, 0U );
     u8g2_SetFont( &u8g2, u8g2_font_6x13_t_cyrillic);
     u8g2_ClearBuffer(&u8g2);
 }
-
-
-void WriteDispalay( u8 * data, u16 size)
+/*
+ * Функция полной перерисовки дисплея
+ */
+static void WriteDispalay( u8 * data, u16 size)
 {
     lcd_data.command = 0;
     lcd_data.index = 0;
     lcd_data.data = data;
     lcd_data.size = size;
-    lcd_data.tile =0;
+    lcd_data.tile = 0;
     HAL_TiemrEneblae(TIMER5);
-    NotifyTaskHeandle = xTaskGetCurrentTaskHandle();
-    ulTaskNotifyTakeIndexed(2, 0xFFFFFFFF, portMAX_DELAY );
+    ulTaskNotifyTakeIndexed(2, 0xFFFFFFFF, LED_TIME_OUT );
 }
-
-
-void WriteCommand( u8 command )
+/*
+ * Функция записи команды в LCD
+ */
+static void WriteCommand( u8 command )
 {
     lcd_data.command = command;
     HAL_TiemrEneblae(TIMER5);
-    NotifyTaskHeandle = xTaskGetCurrentTaskHandle();
-    ulTaskNotifyTakeIndexed(2, 0xFFFFFFFF, portMAX_DELAY );
-
+    ulTaskNotifyTakeIndexed(2, 0xFFFFFFFF, LED_TIME_OUT );
 }

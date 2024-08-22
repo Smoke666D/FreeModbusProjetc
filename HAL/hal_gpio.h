@@ -74,6 +74,8 @@ void HAL_InitGpioInPUP(PortName_t PORT, uint16_t Pin);
 void HAL_InitGpioOut( PortName_t PORT, uint16_t Pin  );
 void HAL_SetBit(  PortName_t  port, uint16_t pin );
 void HAL_ResetBit(  PortName_t  port, uint16_t pin );
+void HAL_SetPort(PortName_t  port, uint16_t data);
+uint16_t HAL_GetPort( PortName_t port);
 void HAL_InitGpioAIN(PortName_t PORT, uint16_t Pin );
 BitState_t HAL_GetBit( PortName_t  port, uint16_t pin);
 BitState_t xHAL_GetOutBit( PortName_t  port, uint16_t pin);

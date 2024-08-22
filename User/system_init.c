@@ -27,6 +27,8 @@ static StackType_t  KeyboarTaskBuffer[KEYBAORD_STK_SIZE];
 static StaticTask_t KeyboardTaskControlBlock;
 
 
+static StackType_t  I2CTaskBuffer[I2C_STK_SIZE];
+static StaticTask_t I2CTaskControlBlock;
 
 static StackType_t  SERIALTaskBuffer[SERIAL_STK_SIZE];
 static StaticTask_t SERIALTaskControlBlock;
@@ -51,7 +53,7 @@ static StaticTask_t ADCTaskControlBlock;
 
 uint8_t ucQueueStorageArea[  16U * sizeof( KeyEvent ) ];
 static StaticQueue_t xStaticQueue;
-static StaticEventGroup_t xADCStateEventGroup;
+
 static StaticEventGroup_t xOSStateEventGroup;
 static StaticEventGroup_t xSerialStateEventGroup;
 
@@ -80,11 +82,17 @@ void TaskSuspend()
     vTaskSuspend( WCHNETTask_Handler );
     vTaskSuspend( MPTCPTask_Handler  );
     vTaskSuspend(* getSerialTask());
-    vTaskSuspend(*  getADCTaskHandle());
+    //vTaskSuspend(*  getADCTaskHandle());
 }
 
 void vSYStaskInit ( void )
 {
+
+    (* getI2CTaskHandle())
+
+                    =    xTaskCreateStatic( I2C_task, "I2C", I2C_STK_SIZE , ( void * ) 1, I2C_TASK_PRIO  ,
+                                      (StackType_t * const )I2CTaskBuffer, &I2CTaskControlBlock );
+
    (* getSerialTask())
            =    xTaskCreateStatic( StartUARTTask, "Serial", SERIAL_STK_SIZE , ( void * ) 1, SERIAL_TASK_PRIO  ,
                    (StackType_t * const )SERIALTaskBuffer, &SERIALTaskControlBlock );

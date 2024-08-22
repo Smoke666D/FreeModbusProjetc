@@ -111,7 +111,7 @@ eMBRTUInit( UCHAR ucSlaveAddress, UCHAR ucPort, ULONG ulBaudRate, eMBParity ePar
              */
             usTimerT35_50us =  35000000/ ulBaudRate ;
         }
-        printf("%i\n\r",usTimerT35_50us);
+
         if( xMBPortTimersInit( ( USHORT ) usTimerT35_50us ) != TRUE )
         {
             eStatus = MB_EPORTERR;

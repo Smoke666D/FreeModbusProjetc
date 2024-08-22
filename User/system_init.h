@@ -32,7 +32,7 @@
 
 #define __SECTION(x)
 
-#define LCD_TASK_PRIOR        5
+#define LCD_TASK_PRIOR        7
 #define LCD_STK_SIZE        512
 #define KEYBAORD_TASK_PRIO     5
 #define KEYBAORD_STK_SIZE  128
@@ -50,6 +50,9 @@
 #define DEFAULT_TASK_STACK_SIZE         256U
 #define USER_TASK_PRIO     5
 #define USER_STK_SIZE      128
+#define I2C_TASK_PRIO     4
+#define I2C_STK_SIZE  256
+
 
 typedef enum
 {

@@ -15,6 +15,18 @@
 #define LCD_HEIGHT           64U
 #define LCD_DATA_BUFFER_SIZE 1024U
 
+typedef struct
+{
+   u8 command;
+   u8 * data;
+   u16 size;
+   u16 index;
+   u16 tile;
+} LCD_DATA_t;
+
+#define LED_TIME_OUT  100
+
+
 TaskHandle_t * getLCDTaskHandle();
 void LCD_task(void *pvParameters);
 void vLCDInit();

@@ -246,6 +246,21 @@ void HAL_SetBit(  PortName_t  port, uint16_t pin )
      port->BSHR = pin;
 #endif
 }
+/*
+ * Функция установки состояния прота
+ */
+void inline HAL_SetPort(PortName_t  port, uint16_t data)
+{
+    port->OUTDR = data;
+}
+/*
+ * функция получения состояния порта
+ */
+uint16_t HAL_GetPort( PortName_t port)
+{
+    return ((uint16_t)port->OUTDR);
+}
+
 
 /*
  * Получить бит порта

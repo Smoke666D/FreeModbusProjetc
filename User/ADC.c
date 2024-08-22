@@ -16,6 +16,7 @@
 #include "hal_i2c.h"
 
 static TaskHandle_t pADCTaskHandle;
+static TaskHandle_t pI2CTaskHandle;
 float AC_220_VALUE;
 static uint16_t ADC2_Buffer[DC_CHANNEL];
 static int16_t  ADC1_DMABuffer[AC_CONVERION_NUMBER*ADC_CHANNEL];
@@ -62,6 +63,11 @@ u16 uGetConversionCount()
 TaskHandle_t * getADCTaskHandle()
 {
     return (&pADCTaskHandle);
+}
+
+TaskHandle_t * getI2CTaskHandle()
+{
+    return (&pI2CTaskHandle);
 }
 
 static void ADC1_Event()
@@ -116,7 +122,6 @@ float getAIN( AIN_CHANNEL_t channel)
 
         case DCAIN2:
             return  ((float)GetConversional(&DataBuffer[4])*KK*COOF_10V);
-
         case DCAIN3:
             return  ((float)GetConversional(&DataBuffer[5])*KK*COOF_10V);
 
@@ -224,10 +229,12 @@ void ADC1_Init()
     DataBuffer[7].pBuff = SensTemoBuffer;
 }
 
-
-
-
-
+void AddBufferDataI2C( ADC_Conversionl_Buf_t * pBuf, int16_t data )
+{
+    pBuf->pBuff[pBuf->pIndex] = data;
+    pBuf->pIndex++;
+    if (pBuf-> pIndex >= pBuf->ConversionalSize)  pBuf->pIndex = 0;
+}
 
 
 void AddBufferData( ADC_Conversionl_Buf_t * pBuf, int16_t data )
@@ -251,77 +258,20 @@ int16_t GetConversional(ADC_Conversionl_Buf_t * pBuf)
     return (int16_t)tempdata;
 }
 
-void SetI2CData(I2C_TypeDef * i2c,u8 ad, u8 data)
-{
-    while(I2C_GetFlagStatus( i2c, I2C_FLAG_BUSY) != RESET)
-        ;
-    I2C_GenerateSTART(I2C2, ENABLE);
 
-    while(!I2C_CheckEvent( i2c, I2C_EVENT_MASTER_MODE_SELECT))
-        ;
-    I2C_Send7bitAddress( i2c, 0x6D<<1, I2C_Direction_Transmitter);
-
-    while(!I2C_CheckEvent(i2c, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED))
-        ;
-
-
-    I2C_SendData(i2c, (u8)(ad & 0x00FF));
-    while(!I2C_CheckEvent(i2c, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
-        ;
-
-
-
-    if(I2C_GetFlagStatus(i2c, I2C_FLAG_TXE) != RESET)
-    {
-        I2C_SendData(i2c, data);
-    }
-
-    while(!I2C_CheckEvent(i2c, I2C_EVENT_MASTER_BYTE_TRANSMITTED))
-        ;
-    I2C_GenerateSTOP(i2c, ENABLE);
-}
-
-
-uint8_t GetI2CData(I2C_TypeDef * i2c,u8 ad)
-{
-    u8 temp;
-    I2C_Cmd(i2c,ENABLE);
-    while( I2C_GetFlagStatus( i2c, I2C_FLAG_BUSY ) != RESET );
-    I2C_GenerateSTART(i2c, ENABLE);
-    while( !I2C_CheckEvent( i2c, I2C_EVENT_MASTER_MODE_SELECT ) );
-    I2C_Send7bitAddress( i2c, 0x6D<<1, I2C_Direction_Transmitter );
-
-    while( !I2C_CheckEvent( i2c, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED ) );
-
-    I2C_SendData(i2c, (u8)(ad & 0x00FF));
-    while(!I2C_CheckEvent(i2c, I2C_EVENT_MASTER_BYTE_TRANSMITTED));
-
-    I2C_GenerateSTART(i2c, ENABLE);
-
-    while(!I2C_CheckEvent(i2c, I2C_EVENT_MASTER_MODE_SELECT));
-    I2C_Send7bitAddress(i2c, 0x6D<<1, I2C_Direction_Receiver);
-
-    while(!I2C_CheckEvent(i2c, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED));
-    while(I2C_GetFlagStatus(i2c, I2C_FLAG_RXNE) == RESET)
-    I2C_AcknowledgeConfig(i2c, DISABLE);
-    temp = I2C_ReceiveData(i2c);
-    I2C_GenerateSTOP(i2c, ENABLE);
-    return temp;
-}
 
 #define SENOR_MAX_DATA 1000
 u32 sensor_data[2][SENOR_MAX_DATA];
 
 
 u8 adress[8]= {0x06,0x07,0x08,0x09,0x0A,0x30,0xA5,0xA6};
+#define SICLE_I2C 100
 
 #include "init.h"
 
 void ADC_task(void *pvParameters)
 {
-    uint8_t ADC_FSM = 0;
-    uint16_t counter_led = 0;
-    u8 led_state = 0;
+    uint8_t ANALOG_DATA_FSM = 0;
     uint32_t ulNotifiedValue;
     TaskFSM_t ADC_TASK_FSM = STATE_INIT;
     TickType_t xLastWakeTime;
@@ -332,25 +282,12 @@ void ADC_task(void *pvParameters)
     uint8_t DC_ConversionDoneFlasg = 0;
     uint8_t AC_ConversionDoneFlasg = 0;
     u16 initr = 0;
-    volatile u8 status;
+
     uint8_t dc_conv_start = 5;
+
     xLastWakeTime = xTaskGetTickCount();
     for (;;)
     {
-            if (++counter_led >500)
-            {
-                counter_led =0;
-                if (led_state == 0)
-                {
-                    led_state = 1;
-                    HAL_SetBit(CRACH_Port,  CRACH_Pin);
-                }
-                else
-                {
-                    HAL_ResetBit(CRACH_Port, CRACH_Pin);
-                   led_state = 0;
-                }
-            }
             vTaskDelayUntil( &xLastWakeTime,  1 );
             switch (ADC_TASK_FSM)
             {
@@ -361,109 +298,63 @@ void ADC_task(void *pvParameters)
                     break;
                 case STATE_WHAIT_TO_RAEDY:
                     ADC_TASK_FSM = STATE_RUN;
-                    vTaskDelay(1000);
+
                     break;
                 case STATE_RUN:
                     xTaskNotifyWait( 0,  ADC2_DATA_READY | ADC1_DATA_READY, &ulNotifiedValue,0);
+                    if (ulNotifiedValue & ADC2_DATA_READY)    //§¦§ã§Ý§Ú §á§â§Ú§Ý§Ö§ä§Ö§Ý§à §á§â§Ö§â§Ó§Ñ§ß§Ú§Ö §à§ä §¡§¸§± §à§Ò§â§Ñ§Ò§Ñ§ä§í§Ó§Ñ§ð§ë§Ö§Ô§à DC §Õ§Ñ§ß§ß§í§Ö
+                    {
+                        for (u8 i=0;i<DC_CHANNEL;i++)
+                        {
+                            AddBufferData(&DataBuffer[i+1],(int16_t)ADC2_Buffer[i]);   //§©§Ñ§Ü§Ú§Õ§í§Ó§Ñ§Ö§Þ §Ú§ç §Ó §Ò§å§æ§æ§Ö§â
+                        }
+                        DC_ConversionDoneFlasg = 1;
+                    }
+                    if (DC_ConversionDoneFlasg)
+                    {
+                        if (dc_conv_start == ( ANALOG_DATA_FSM %10) )
+                        {
+                           if  (--dc_conv_start == 0) dc_conv_start = 9;
+                           ADC_SoftwareStartConvCmd(ADC2, ENABLE);
+                           DC_ConversionDoneFlasg = 0;
+                        }
+                    }
                     if (ulNotifiedValue & ADC1_DATA_READY)
                     {
                         AC_ConversionDoneFlasg = 1;
                     }
-                    if (ulNotifiedValue & ADC2_DATA_READY)
+
+                    if (AC_ConversionDoneFlasg  == 1)
                     {
-                       DC_ConversionDoneFlasg = 1;
+                       for (int i = 0; i<AC_CONVERION_NUMBER*ADC_CHANNEL;i++)
+                       {
+                          ADC1_DMABuffer[i]= Get_ConversionVal(ADC_1, ADC1_DMABuffer[i]);
+                       }
+                       vDecNetural(&ADC1_DMABuffer[0]);
+                       iMax=xADCMax((int16_t *)&ADC1_DMABuffer[0], &DF1);
+                       vADCFindFreq((int16_t *)&ADC1_DMABuffer[0], &uCurPeriod,2,iMax);
+                       AC_ConversionDoneFlasg  = 2;
                     }
-                     switch (ADC_FSM )
-                     {
-                         case 0:
-                             SetI2CData(I2C2,0x30,0x0A);
-                             break;
-                         case 1:
-                             if (AC_ConversionDoneFlasg  == 1)
-                             {
-                                 for (int i = 0; i<AC_CONVERION_NUMBER*ADC_CHANNEL;i++)
-                                 {
-                                    ADC1_DMABuffer[i]= Get_ConversionVal(ADC_1, ADC1_DMABuffer[i]);
-                                 }
-                                 vDecNetural(&ADC1_DMABuffer[0]);
-                                 iMax=xADCMax((int16_t *)&ADC1_DMABuffer[0], &DF1);
-                                 vADCFindFreq((int16_t *)&ADC1_DMABuffer[0], &uCurPeriod,2,iMax);
-                                 AC_ConversionDoneFlasg  = 2;
-                             }
-                             break;
-                         case 2:
-                             if (AC_ConversionDoneFlasg  == 2)
-                             {
-                                 if ((uCurPeriod < AC_CONVERION_NUMBER-1) && (uCurPeriod!=0) )
-                                 {
-                                     uint16_t data1 = xADCRMS(&ADC1_DMABuffer[0],uCurPeriod,2);
-                                     data1 = vRCFilter(data1, &old);
-                                     AC_220_VALUE = (float)data1 * ( 401U * 3.3 / 4095U );
-                                 }
-                                 HAL_DMA_SetCounter(DMA1_CH1, AC_CONVERION_NUMBER*2);
-                                 HAL_DMA_Enable(DMA1_CH1);
-                                 HAL_TiemrEneblae(TIMER3);
-                                 AC_ConversionDoneFlasg  = 0;
-                             }
-                             break;
-                         case 3:
-                         case 4:
-                             break;
-                         case 5:
-                             status = GetI2CData(I2C2,0x30);
-                             break;
-                         case 6:
-                             if  (status & 0x08)
-                             status =  GetI2CData(I2C2,0x30);
-                             break;
-                         case 7:
-                             if  (status & 0x08)
-                             status =  GetI2CData(I2C2,0x30);
-                             break;
-                         case 8:
-                             if ((status & 0x08) == 0 )
-                             {
-                                 for (u8 i = 0; i<3; i++)
-                                 {
-                                    i2cdata[1][i] =  GetI2CData(I2C2,adress[i]);
-                                 }
-                                 uint32_t temp_data = (u32)i2cdata[1][0]<<16 | (u32)i2cdata[1][1]<<8 | i2cdata[1][2];
-                                 if (temp_data > 0x800000)
-                                 {
-                                      sens_press  = ((temp_data - 16777216)/GetSensCoof());
-                                 }
-                                 else
-                                 {
-                                     sens_press  = temp_data/GetSensCoof();
-                                 }
-                                 AddBufferData(&DataBuffer[0], sens_press  );
-                             }
-                             break;
-                         case 9:
-                             if ((status & 0x08) == 0 )
-                             {
-                                 u8 temp_low  = GetI2CData(I2C2,0x0A);
-                                 u8 temp_high = GetI2CData(I2C2,0x09);
-                                 uint16_t sens_temp = temp_high*256 + temp_low;
-                                 int16_t temperature = (sens_temp & 0x8000) ? (sens_temp -65536) : sens_temp;
-                                 AddBufferData(&DataBuffer[7],temperature);
-                             }
-                             break;
-                     }
-                     if (++ADC_FSM >=10) ADC_FSM = 0;
-                     if (dc_conv_start == ADC_FSM)
-                     {
-                        if  (--dc_conv_start == 0) dc_conv_start = 5;
-                         ADC_SoftwareStartConvCmd(ADC2, ENABLE);
-                     }
-                     if (DC_ConversionDoneFlasg )
-                     {
-                          DC_ConversionDoneFlasg  = 0;
-                          for (u8 i=0;i<DC_CHANNEL;i++)
-                          {
-                               AddBufferData(&DataBuffer[i+1],(int16_t)ADC2_Buffer[i]);
-                          }
-                     }
+                    else
+                    if (AC_ConversionDoneFlasg  == 2)
+                    {
+                      if ((uCurPeriod < AC_CONVERION_NUMBER-1) && (uCurPeriod!=0) )
+                      {
+                           uint16_t data1 = xADCRMS(&ADC1_DMABuffer[0],uCurPeriod,2);
+                           data1 = vRCFilter(data1, &old);
+                           AC_220_VALUE = (float)data1 * ( 401U * 3.3 / 4095U );
+                      }
+                       HAL_DMA_SetCounter(DMA1_CH1, AC_CONVERION_NUMBER*2);
+                       HAL_DMA_Enable(DMA1_CH1);
+                       HAL_TiemrEneblae(TIMER3);
+                       AC_ConversionDoneFlasg  = 0;
+                    }
+
+
+                    if (++ANALOG_DATA_FSM >=10) ANALOG_DATA_FSM = 0;
+
+
+
                     // if (++initr > 0xFFF) initr =0;
                    //  DAC_SetChannel1Data(DAC_Align_12b_R, initr);
                    break;
@@ -471,7 +362,229 @@ void ADC_task(void *pvParameters)
     }
 }
 
+#define SENSOR_TIME_OUT 100
 
+void I2C_task(void *pvParameters)
+{
+    u8 status;
+    u8 bufdata;
+    u16 delay_counter=0;
+    uint8_t sens_conversion_start;
+    uint8_t ADC_FSM = 0;
+    uint16_t counter_led = 0;
+      u8 led_state = 0;
+      vTaskDelay(1000);
+                         printf("Start I2C OK %i\r\n",SICLE_I2C);
+
+ while(1)
+ {
+     if (++counter_led >500)
+                {
+                    counter_led =0;
+                    if (led_state == 0)
+                    {
+                        led_state = 1;
+                        HAL_SetBit(CRACH_Port,  CRACH_Pin);
+                    }
+                    else
+                    {
+                        HAL_ResetBit(CRACH_Port, CRACH_Pin);
+                       led_state = 0;
+                    }
+                }
+
+
+     vTaskDelay(1);
+     delay_counter++;
+
+     if (HAL_GetI2CBusy( I2C_2 ) == 0 )
+     {
+
+         switch (ADC_FSM )
+         {
+             case 0:
+                 printf("1\r\n");
+                     bufdata = 0x0A;
+                     I2C_Master_TransmitIT(I2C_2, 0x6D<<1 , 0x30, &bufdata,1,1,0);
+                     ADC_FSM = 1;
+                     delay_counter = 0;
+
+                 break;
+             case 1:
+                 printf("2\r\n");
+                sens_conversion_start = I2C_Master_ReviceIT(I2C_2,0x6D<<1, 0x30 ,&status,1,1,0);
+                if (( sens_conversion_start != HAL_I2C_ERROR) && ((status & 0x08) == 0 ))
+                 {
+                     ADC_FSM = 2;
+                 }
+                 break;
+             case 2:
+                 printf("3\r\n");
+                 sens_conversion_start = I2C_Master_ReviceIT(I2C_2,0x6D<<1, 0x06 ,&i2cdata[1][0],1,1,0);
+                 if ( sens_conversion_start != HAL_I2C_ERROR)
+                     ADC_FSM = 3;
+
+                 break;
+             case 3:
+                 printf("4\r\n");
+                 sens_conversion_start = I2C_Master_ReviceIT(I2C_2,0x6D<<1, 0x07 ,&i2cdata[1][1],1,1,0);
+                 if ( sens_conversion_start != HAL_I2C_ERROR)
+                                    ADC_FSM = 4;
+
+                 break;
+             case 4:
+                 printf("5\r\n");
+                 sens_conversion_start = I2C_Master_ReviceIT(I2C_2,0x6D<<1, 0x08 ,&i2cdata[1][2],1,1,0);
+                 if ( sens_conversion_start != HAL_I2C_ERROR)
+                 {
+
+                     uint32_t temp_data = (u32)i2cdata[1][0]<<16 | (u32)i2cdata[1][1]<<8 | i2cdata[1][2];
+                                         if (temp_data > 0x800000)
+                                         {
+                                             sens_press  = ((temp_data - 16777216)/GetSensCoof());
+                                         }
+                                         else
+                                         {
+                                             sens_press  = temp_data/GetSensCoof();
+                                         }
+                                         AddBufferDataI2C(&DataBuffer[0], sens_press  );
+
+                                         ADC_FSM = 5;
+                 }
+
+                 break;
+
+             case 5:
+
+                 if (delay_counter >SENSOR_TIME_OUT) ADC_FSM = 0;
+                 break;
+            /* case 19:
+                // sens_conversion_start = I2C_Master_ReviceIT(I2C_2,0x6D<<1, 0x30 ,&status,1,10,2);
+                // if ( sens_conversion_start != HAL_I2C_ERROR)
+               //  {
+               //    if ((status & 0x08) == 0 ) ADC_FSM++;
+               //  }
+                 break;
+             case 20:
+               //  sens_conversion_start = I2C_Master_ReviceIT(I2C_2,0x6D<<1, 0x06 ,&i2cdata[1][0],2,10,0);
+              //   if ( sens_conversion_start != HAL_I2C_ERROR) ADC_FSM++;
+              //   else
+              //   {
+              //       ADC_FSM = 23;
+              //   }
+                 break;
+             case 21:
+                / sens_conversion_start = I2C_Master_ReviceIT(I2C_2,0x6D<<1, 0x07 ,&i2cdata[1][1],2,10,0);
+                 if ( sens_conversion_start != HAL_I2C_ERROR) ADC_FSM++;
+                  else
+                  {
+                     ADC_FSM = 23;
+                  }
+                 break;
+             case 22:
+                  sens_conversion_start = I2C_Master_ReviceIT(I2C_2,0x6D<<1, 0x08 ,&i2cdata[1][2],2,10,0);
+                 if (sens_conversion_start == HAL_I2C_OK)
+                 {
+                     uint32_t temp_data = (u32)i2cdata[1][0]<<16 | (u32)i2cdata[1][1]<<8 | i2cdata[1][2];
+                     if (temp_data > 0x800000)
+                     {
+                         sens_press  = ((temp_data - 16777216)/GetSensCoof());
+                     }
+                     else
+                     {
+                         sens_press  = temp_data/GetSensCoof();
+                     }
+                     AddBufferData(&DataBuffer[0], sens_press  );
+                     ADC_FSM = 23;
+                 }
+                 else {
+                     ADC_FSM = 25;
+                }
+                 break;
+             case 23:
+                 I2C_Master_ReviceIT(I2C_2,0x6D<<1, 0x09 ,&status,1,10,2);
+                 ADC_FSM = 24;
+                 break;
+             case 24:
+                 I2C_Master_ReviceIT(I2C_2,0x6D<<1, 0x0A ,&status,1,10,2);
+                                  ADC_FSM = 25;
+                 break;*/
+             case 40:
+                 ADC_FSM = 0;
+                 break;
+         }
+         //if (++ADC_FSM >=SICLE_I2C) ADC_FSM = 0;
+
+     }
+     /*
+                         {
+
+                             case 0:
+                                 //§©§Ñ§á§å§ã§Ü§Ñ§Ö§Þ §á§â§Ö§à§Ò§â§Ñ§Ù§à§Ó§Ñ§ß§Ú§Ö §ß§Ñ §è§Ú§æ§â§à§Ó§à§Þ §Õ§Ñ§ä§é§Ú§Ü§Ö
+                                 bufdata = 0x0A;
+
+                                 sens_conversion_start  = I2C_Master_TransmitIT(I2C_2, 0x6D<<1 , 0x30, &bufdata,1,10,2);
+                                 break;
+                             case 1:
+
+                             case 3:
+                             case 4:
+                                 break;
+                             case 5:
+                                 if (sens_conversion_start == HAL_I2C_OK)
+                                 {
+                                     sens_conversion_start = I2C_Master_ReviceIT(I2C_2,0x6D<<1, 0x30 ,&status,1,10,2);
+                                 }
+                                 break;
+                             case 6:
+                                 if (sens_conversion_start == HAL_I2C_OK)
+                                 {
+                                     if  (status & 0x08)
+                                         sens_conversion_start = I2C_Master_ReviceIT(I2C_2,0x6D<<1, 0x30 ,&status,1,10,2);
+                                 }
+                                 break;
+                             case 7:
+                                 if (sens_conversion_start == HAL_I2C_OK)
+                                 {
+                                     if  (status & 0x08)
+                                         sens_conversion_start = I2C_Master_ReviceIT(I2C_2,0x6D<<1, 0x30 ,&status,1,10,2);
+                                 }
+                                 break;
+                             case 8:
+                                 if (sens_conversion_start == HAL_I2C_OK)
+                                 {
+                                 if ((status & 0x08) == 0 )
+                                 {
+                                     for (u8 i = 0; i<3; i++)
+                                     {
+                                         sens_conversion_start = I2C_Master_ReviceIT(I2C_2,0x6D<<1, adress[i] ,&i2cdata[1][i],2,10,2);
+                                         if ( sens_conversion_start == HAL_I2C_ERROR) break;
+
+                                     }
+                                     if (sens_conversion_start == HAL_I2C_OK)
+                                     {
+                                     uint32_t temp_data = (u32)i2cdata[1][0]<<16 | (u32)i2cdata[1][1]<<8 | i2cdata[1][2];
+                                     if (temp_data > 0x800000)
+                                     {
+                                          sens_press  = ((temp_data - 16777216)/GetSensCoof());
+                                     }
+                                     else
+                                     {
+                                         sens_press  = temp_data/GetSensCoof();
+                                     }
+                                     AddBufferData(&DataBuffer[0], sens_press  );
+                                     }
+                                 }
+                                 }
+                                 break;
+
+                             default:
+
+                                 break;
+                         }
+                        */
+ }
+}
 
 
 
