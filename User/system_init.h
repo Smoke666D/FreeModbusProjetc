@@ -51,7 +51,7 @@
 #define USER_TASK_PRIO     5
 #define USER_STK_SIZE      128
 #define I2C_TASK_PRIO     4
-#define I2C_STK_SIZE  256
+#define I2C_STK_SIZE      256
 
 
 typedef enum

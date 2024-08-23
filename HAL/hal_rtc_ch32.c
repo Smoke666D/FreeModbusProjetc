@@ -32,6 +32,7 @@ void HAL_RTC_IT_Init( HAL_RTC_INIT_t init, void (* rtc_it_callback) ( void ), ui
     {
         RCC->BDCTLR |= (1<<16);    //Сборс модуля Buckup
         RCC->BDCTLR &= ~(1<<16);
+    }
         RCC_LSEConfig(RCC_LSE_ON);
 
         while(RCC_GetFlagStatus(RCC_FLAG_LSERDY) == RESET && temp < 250)
@@ -49,7 +50,7 @@ void HAL_RTC_IT_Init( HAL_RTC_INIT_t init, void (* rtc_it_callback) ( void ), ui
         RTC_SetPrescaler(32767);
         RTC_WaitForLastTask();
         RTC_ExitConfigMode();
-    }
+
     RTC->CTLRH |= RTC_IT_SEC;   //Разрешаем прерывание
 #if MCU == CH32V2
     PFIC_IRQ_ENABLE_PG1(RTC_IRQn,prior,subprior);
@@ -76,6 +77,7 @@ void RTC_IRQHandler ( void )
 
 void HAL_RTC_ReadTime( HAL_TimeConfig_T* time)
 {
+    printf("%i\r\n",RTC_GetCounter());
     u32 temp = RTC_GetCounter() % 86400;
     time->hours    = temp / 3600;
     time->minutes  = (temp % 3600) / 60;

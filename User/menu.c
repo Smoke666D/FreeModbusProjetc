@@ -412,12 +412,11 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
         break;
     case CURENT_TIME_ADDR:
         HAL_RTC_ReadTime( &time);
-        if (str!=0)
+
         sprintf(str,"%02i:%02i:%02i",time.hours,time.minutes,time.seconds);
         break;
     case CURENT_DATE_ADDR:
         HAL_RTC_ReadDate(&date);
-        if (str!=0)
         sprintf(str,"%02i:%02i:%02i",date.date,date.month,date.year);
         break;
     case MB_RTU_ADDR_ID :

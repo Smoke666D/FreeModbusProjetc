@@ -35,7 +35,7 @@ void vInit_DeviceConfig( void )
      HAL_TIMER_EnablePWMCH(TIMER9);
      HAL_TiemrEneblae(TIMER9);
 
-     I2C_InitTSturcture.I2C_ClockSpeed = 200000;
+     I2C_InitTSturcture.I2C_ClockSpeed = 350000;
      I2C_InitTSturcture.I2C_Mode = I2C_Mode_I2C;
      I2C_InitTSturcture.I2C_DutyCycle = I2C_DutyCycle_16_9;
      I2C_InitTSturcture.I2C_OwnAddress1 = 0;
@@ -79,9 +79,9 @@ static void MX_GPIO_Init(void)
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14;
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
     GPIO_Init( GPIOB, &GPIO_InitStructure);
-   // HAL_InitGpioIn(  SPI2_Port,  SPI2_MISO_Pin);
-    HAL_InitGpioOut( SPI2_Port,  SPI2_NSS_Pin);
 
+    HAL_InitGpioOut( SPI2_Port,  SPI2_NSS_Pin);
+    HAL_InitGpioAF (  I2C2_Port , I2C2_SDA_Pin   | I2C2_SCL_Pin  , 0 , GPIO_Mode_AF_OD );
     HAL_InitGpioOut( CRACH_Port, CRACH_Pin);
     HAL_InitGpioOut( LDCDATA_2_3_E_REW_CD_LED_Port,   LCDLED_Pin);
     HAL_InitGpioAF(  AOUT_Port, AOUT1_Pin   | AOUT2_Pin | AOUT3_Pin , GPIO_FullRemap_TIM9, GPIO_Mode_AF_PP );
@@ -98,7 +98,7 @@ static void MX_GPIO_Init(void)
     HAL_InitGpioAF(  RS485_Port , RS485_TX_Pin    ,GPIO_FullRemap_USART4 ,  GPIO_Mode_AF_PP );
     HAL_InitGpioAF(  UART_Port , TX1_Pin   ,0 ,  GPIO_Mode_AF_PP );
 
-    HAL_InitGpioAF (  I2C2_Port , I2C2_SDA_Pin   | I2C2_SCL_Pin  , 0 , GPIO_Mode_AF_OD );
+
   //  HAL_ResetBit(DAC0_Port, DAC0_Pin);
 
 }
