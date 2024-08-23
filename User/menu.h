@@ -24,7 +24,12 @@
 #define FACT_RASH_ID       9
 #define FILTER_STATE_ID   10
 #define MODE_STATE_ID     11
-
+#define VOLTAGE_MIN_ON_ID  12
+#define VOLTAGE_MIN_OFF_ID 13
+#define VOLTAGE_MAX_ON_ID  14
+#define VOLTAGE_MAX_OFF_ID 15
+#define PROTOCOL_ID        16
+#define MAC_ADRESS_ID      17
 
 typedef enum
 {

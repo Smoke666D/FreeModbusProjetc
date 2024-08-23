@@ -173,8 +173,8 @@ void vDefaultTask( void  * argument )
                 break;
             case STATE_WHAIT_TO_RAEDY:
 
-                control_type  = DM_GetByteRegData(CONTROL_TYPE );
-                if (control_type == MB_DIN )  control_type  = DM_GetByteRegData(MB_PROTOCOL_TYPE);
+                control_type  = getReg8(CONTROL_TYPE );
+                if (control_type == MB_DIN )  control_type  = getReg8(MB_PROTOCOL_TYPE);
                 if (control_type == MB_RTU)
                 {
                     vTaskResume(* getSerialTask());

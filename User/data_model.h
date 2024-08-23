@@ -10,19 +10,25 @@
 
 #include "system_init.h"
 
-#define VALID_CODE            0x11
+#define VALID_CODE            0x32
 #define VALID_CODE_ADDRES     0
 /*§¢§Ý§à§Ü §Ò§Ñ§Û§ä§à§Ó§í§ç §å§ã§ä§Ó§à§Ü*/
-#define BYTE_BLOCK_COUNT       3
-#define BYTE_BLOCK_SIZE        3
-#define CONTROL_TYPE         0
-#define MB_RTU_ADDR          1
-#define MB_PROTOCOL_TYPE     2
-#define WORD_BLOCK_SIZE      0
-#define FLOAT_BLOCK_SIZE     0
 
-#define BYTE_BLOCK_START       (VALID_CODE_ADDRES +1)
-#define EEPROM_REGISTER_COUNT  ( 1 +(BYTE_BLOCK_COUNT *BYTE_BLOCK_SIZE) + WORD_BLOCK_SIZE + FLOAT_BLOCK_SIZE )
+#define CONTROL_TYPE         ( VALID_CODE_ADDRES+sizeof(uint8_t)  )
+#define MB_RTU_ADDR          ( CONTROL_TYPE      +sizeof(uint8_t) )
+#define MB_PROTOCOL_TYPE     ( MB_RTU_ADDR       +sizeof(uint8_t) )
+#define LOW_VOLTAGE_ON       ( MB_PROTOCOL_TYPE  +sizeof(uint8_t) )
+#define LOW_VOLTAGE_OFF      ( LOW_VOLTAGE_ON    +sizeof(uint8_t) )
+#define HIGH_VOLTAGE_ON      ( LOW_VOLTAGE_OFF   +sizeof(uint8_t) )
+#define HIGH_VOLTAGE_OFF     ( HIGH_VOLTAGE_ON   +sizeof(uint8_t) )
+#define IP_1                 ( HIGH_VOLTAGE_OFF   +sizeof(uint8_t) )
+#define IP_2                 ( IP_1   +sizeof(uint8_t) )
+#define IP_3                 ( IP_2   +sizeof(uint8_t) )
+#define IP_4                 ( IP_3   +sizeof(uint8_t) )
+#define SENSOR1_ZERO         ( IP_4   +sizeof(uint8_t) )
+#define SENSOR2_ZERO         ( SENSOR1_ZERO     + sizeof(uint16_t) )
+#define RESURSE              ( SENSOR2_ZERO  +  sizeof(uint16_t)   )
+#define EEPROM_REGISTER_COUNT  ( sizeof(uint32_t)  +SENSOR2_ZERO )
 
 
 typedef enum
@@ -44,16 +50,13 @@ typedef enum
 #define TOTAL_REGISTER_COUNT   DATA_MODEL_REGISTERS
 
 
-void DM_SetByteRegData( uint16_t addres, uint8_t data);
-void DM_SetByteRegMax( uint16_t addres, uint8_t data);
-void DM_SetByteRegMin( uint16_t addres, uint8_t data);
-uint8_t DM_GetByteRegData( uint16_t addres);
-uint8_t DM_GetByteRegMax( uint16_t addres);
-uint8_t DM_GetByteRegMin( uint16_t addres);
-void DM_SetByteData( uint16_t addres, uint8_t data);
-uint8_t DM_GetByteData( uint16_t addres);
-
-
+void SaveReg8( u16 reg_adress, u8 data);
+void setReg16( u16 reg_adress, u16 data);
+void setReg8( u16 reg_adress, u8 data);
+u32 getReg32(u16 reg_adress );
+u16 getReg16(u16 reg_adress );
+void setReg32( u16 reg_adress, u32 data);
+u8 getReg8( u16 reg_adress);
 
 DATA_MODEL_INIT_t DataModel_Init();
 

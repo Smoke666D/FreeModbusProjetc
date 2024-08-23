@@ -259,12 +259,11 @@ int16_t GetConversional(ADC_Conversionl_Buf_t * pBuf)
 }
 
 
-
 #define SENOR_MAX_DATA 1000
 u32 sensor_data[2][SENOR_MAX_DATA];
 
 
-u8 adress[8]= {0x06,0x07,0x08,0x09,0x0A,0x30,0xA5,0xA6};
+
 #define SICLE_I2C 100
 
 #include "init.h"
@@ -349,8 +348,6 @@ void ADC_task(void *pvParameters)
                        HAL_TiemrEneblae(TIMER3);
                        AC_ConversionDoneFlasg  = 0;
                     }
-
-
                     if (++ANALOG_DATA_FSM >=10) ANALOG_DATA_FSM = 0;
 
 
@@ -420,9 +417,6 @@ void SetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 data)
 
 uint8_t GetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 * temp, u8 * i2cfsm )
 {
-   // uint8_t i2cfsm=0;
-
-
     while(1)
     {
         switch (*i2cfsm)
@@ -516,12 +510,13 @@ void I2C_task(void *pvParameters)
                        led_state = 0;
                     }
                 }
-
+     printf("Start1\r\n");
      xLastWakeTime =  xTaskGetTickCount ();
      ADC_FSM = 1;
 
      while (1)
      {
+
          if ((xTaskGetTickCount () - xLastWakeTime ) >20)
          {
              if (ADC_FSM!=6) printf("i2c error\r\n");
@@ -530,11 +525,13 @@ void I2C_task(void *pvParameters)
          switch (ADC_FSM )
          {
              case 1:
+
                  SetI2CDataFSM(I2C2,  0x30, 0x0A);
                  ADC_FSM = 2;
                  fsm = 0;
                  break;
              case 2:
+
                  if (GetI2CDataFSM(I2C2, 0x30,&status,&fsm) == 1)
                   {
                       if ((status & 0x08) == 0 )
@@ -555,9 +552,8 @@ void I2C_task(void *pvParameters)
              case 4:
                   if ( GetI2CDataFSM(I2C2, 0x07, &i2cdata[1][1],&fsm) == 1)
                   {
-                                      fsm = 0;
-
-                                      ADC_FSM = 5;
+                      fsm = 0;
+                      ADC_FSM = 5;
                   }
                   break;
              case 5:

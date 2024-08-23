@@ -77,7 +77,6 @@ void RTC_IRQHandler ( void )
 
 void HAL_RTC_ReadTime( HAL_TimeConfig_T* time)
 {
-    printf("%i\r\n",RTC_GetCounter());
     u32 temp = RTC_GetCounter() % 86400;
     time->hours    = temp / 3600;
     time->minutes  = (temp % 3600) / 60;

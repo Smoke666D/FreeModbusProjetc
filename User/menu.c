@@ -154,14 +154,10 @@ void ViewScreenCallback( u8 key_code)
             pscreen =  xScreens1[pCurrMenu].pLeftScreen;
             break;
      }
-
      if (pscreen)
      {
          pCurrMenu = GetID(pscreen);
      }
-
-
-
 }
 
 
@@ -335,19 +331,19 @@ char * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
 static uint8_t start_edit_flag =0;
 uint8_t edit_data_buffer_byte;
 uint32_t coof[]={1,10,100,1000};
+float coof_float[]={0.0001,0.001,0.01,0.1,1.0,10.0,100.0,1000.0};
 
-
-void vByteDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index )
+void vByteDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , uint8_t max_data, uint8_t min_data )
 {
     switch (command)
     {
         case CMD_START_EDIT:
-            edit_data_buffer_byte = DM_GetByteRegData( data_id );
+            edit_data_buffer_byte = getReg8( data_id );
             start_edit_flag = 1;
             cur_edit_index = 0;
             break;
         case CMD_SAVE_EDIT:
-            DM_SetByteRegData( MB_RTU_ADDR, edit_data_buffer_byte );
+            SaveReg8( data_id, edit_data_buffer_byte );
             start_edit_flag = 0;
              break;
         case CMD_NEXT_EDIT:
@@ -357,16 +353,56 @@ void vByteDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index )
             if (cur_edit_index ==0) cur_edit_index = max_index; else cur_edit_index--;
                break;
         case CMD_INC:
-             if ((edit_data_buffer_byte + coof[cur_edit_index]) <= DM_GetByteRegMax( data_id))
+             if ((edit_data_buffer_byte + coof[cur_edit_index]) <=  max_data )
                  edit_data_buffer_byte=edit_data_buffer_byte+coof[cur_edit_index];
              else
-                 edit_data_buffer_byte = DM_GetByteRegMax( data_id);
+                 edit_data_buffer_byte = max_data;
              break;
        case CMD_DEC:
-             if (  (edit_data_buffer_byte - DM_GetByteRegMin( data_id)) >=  coof[cur_edit_index] )
+             if (  (edit_data_buffer_byte - min_data) >=  coof[cur_edit_index] )
                  edit_data_buffer_byte=edit_data_buffer_byte-coof[cur_edit_index];
              else
-                  edit_data_buffer_byte = DM_GetByteRegMin( data_id);
+                  edit_data_buffer_byte = min_data;
+             break;
+       case CMD_EXIT_EDIT:
+             start_edit_flag = 0;
+             break;
+     }
+
+}
+
+float edit_data_buffer_float;
+
+void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8 min_index, float max_data, float min_data )
+{
+    switch (command)
+    {
+        case CMD_START_EDIT:
+            edit_data_buffer_float= getReg8( data_id );
+            start_edit_flag = 1;
+            cur_edit_index = max_index + min_index;
+            break;
+        case CMD_SAVE_EDIT:
+            SaveReg8( data_id, edit_data_buffer_float );
+            start_edit_flag = 0;
+             break;
+        case CMD_NEXT_EDIT:
+             if (++cur_edit_index >=max_index) cur_edit_index = 0;
+             break;
+        case CMD_PREV_EDIT:
+            if (cur_edit_index <=min_index ) cur_edit_index = max_index; else cur_edit_index--;
+               break;
+        case CMD_INC:
+             if ((edit_data_buffer_float + coof[cur_edit_index]) <=  max_data )
+                 edit_data_buffer_float=edit_data_buffer_byte+coof_float[cur_edit_index];
+             else
+                 edit_data_buffer_float = max_data;
+             break;
+       case CMD_DEC:
+             if (  (edit_data_buffer_float - min_data) >=  coof_float[cur_edit_index] )
+                 edit_data_buffer_float=edit_data_buffer_byte-coof_float[cur_edit_index];
+             else
+                 edit_data_buffer_float = min_data;
              break;
        case CMD_EXIT_EDIT:
              start_edit_flag = 0;
@@ -376,11 +412,26 @@ void vByteDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index )
 }
 
 
+u16 getDataModelID( u16 MENU_ID)
+{
+    switch (MENU_ID)
+    {
+        case VOLTAGE_MIN_ON_ID: return (LOW_VOLTAGE_ON);
+        case VOLTAGE_MIN_OFF_ID:return (LOW_VOLTAGE_OFF);
+        case VOLTAGE_MAX_ON_ID: return (HIGH_VOLTAGE_ON);
+        case VOLTAGE_MAX_OFF_ID:return (HIGH_VOLTAGE_OFF);
+        case CONTROL_MODE_ID:   return (MB_RTU_ADDR);
+        case PROTOCOL_ID:       return (MB_PROTOCOL_TYPE);
+        default: return 0;
+    }
+}
+
 void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len)
 {
     HAL_TimeConfig_T time;
     HAL_DateConfig_T date;
-
+    u8 MACAddr[6];
+    u8 max,min;
     if (index!=0) *index = cur_edit_index;
     if (len!=0)   *len = 1;
     switch (data_id)
@@ -398,13 +449,15 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
         case MODE_STATE_ID:
             strcpy(str,"1");
             break;
-
+     case MAC_ADRESS_ID:
+         WCHNET_GetMacAddr(MACAddr);                                   //get the chip MAC address
+         sprintf(str,"%x%x%x%x%x%x",MACAddr[0],MACAddr[1],MACAddr[2],MACAddr[3],MACAddr[4],MACAddr[5]);
+         break;
     case PROCESS_STATE_ID:
         USER_GetProccesState(   str );
         break;
     case IP_ADRESS_DATA_ID:
-        if (str!=0)
-        strcpy(str,"000.000.000.000");
+        sprintf(str,"%03i.%03i.%03i.%03i",getReg8(IP_1),getReg8(IP_2),getReg8(IP_3),getReg8(IP_4));
         break;
     case AC_VOLTAGE_ID:
         if (str!=0)
@@ -412,28 +465,56 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
         break;
     case CURENT_TIME_ADDR:
         HAL_RTC_ReadTime( &time);
-
         sprintf(str,"%02i:%02i:%02i",time.hours,time.minutes,time.seconds);
         break;
     case CURENT_DATE_ADDR:
         HAL_RTC_ReadDate(&date);
         sprintf(str,"%02i:%02i:%02i",date.date,date.month,date.year);
         break;
+
+    case VOLTAGE_MIN_ON_ID:
+    case VOLTAGE_MIN_OFF_ID:
+    case VOLTAGE_MAX_ON_ID:
+    case VOLTAGE_MAX_OFF_ID:
+        switch (command)
+        {
+           case CMD_READ:
+                 sprintf(str,"%03i",getReg8(getDataModelID(data_id)) );
+                 break;
+           case CMD_EDIT_READ:
+                 sprintf(str,"%03i",edit_data_buffer_byte );
+                 break;
+           default:
+                 if ( data_id == VOLTAGE_MIN_ON_ID) max = getReg8(getDataModelID(VOLTAGE_MIN_OFF_ID));
+                 else
+                 if ( data_id == VOLTAGE_MIN_OFF_ID) max = getReg8(getDataModelID(VOLTAGE_MAX_OFF_ID));
+                 else
+                   max = 255;
+                 if ( data_id == VOLTAGE_MAX_OFF_ID) min = getReg8(getDataModelID(VOLTAGE_MIN_OFF_ID));
+                      else
+                 if ( data_id == VOLTAGE_MAX_ON_ID) min = getReg8(getDataModelID(VOLTAGE_MIN_OFF_ID));
+                     else
+                  min = 100;
+                 vByteDataEdit((getDataModelID(data_id)),command,2,max,min);
+                 break;
+        }
+        break;
     case MB_RTU_ADDR_ID :
         switch (command)
         {
             case CMD_READ:
-                sprintf(str,"%02i",DM_GetByteRegData(MB_RTU_ADDR) );
+                sprintf(str,"%02i",getReg8(MB_RTU_ADDR) );
                 break;
             case CMD_EDIT_READ:
                 sprintf(str,"%02i",edit_data_buffer_byte );
                 break;
             default:
-                vByteDataEdit(MB_RTU_ADDR,command,1);
+                vByteDataEdit(MB_RTU_ADDR,command,2,100,1);
                 break;
         }
         break;
     case CONTROL_MODE_ID:
+    case PROTOCOL_ID:
         *len = 0;
         switch (command)
         {
@@ -441,10 +522,10 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                 strcpy(str, ControlModeStrig[ edit_data_buffer_byte ] );
                 break;
             case CMD_READ:
-                strcpy(str, ControlModeStrig[ DM_GetByteRegData( CONTROL_TYPE)] );
+                strcpy(str, ControlModeStrig[ getReg8( getDataModelID(data_id))] );
                 break;
             default:
-                vByteDataEdit(CONTROL_TYPE,command,0);
+                vByteDataEdit(getDataModelID(data_id),command,0,MB_TCP,(data_id == CONTROL_MODE_ID)? MB_DIN : MB_RTU);
                 break;
         }
         break;
