@@ -15,7 +15,7 @@
 
 
 
-static unsigned char rcp0606536715761_bits[] = {
+static const unsigned char rcp0606536715761_bits[] = {
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0x1F, 0x00, 0x00,
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xFF, 0xF9,
   0x07, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -96,22 +96,27 @@ static unsigned char rcp0606536715761_bits[] = {
   0x00, 0x00, 0x00, 0x00, };
 
 
-void vDrawBitmap()
-{
-    u8g2_DrawXBM(&u8g2,0,0,128,58,rcp0606536715761_bits);
-
-}
-u8 pCurrMenu = 0;
+static u8 menu_mode = 0;
+static u8 pCurrMenu = 0;
 static QueueHandle_t     pKeyboard        = NULL;
 static KeyEvent          TempEvent        = { 0U };
+static u8 edit_data[MAX_STRING_NUMBER];
+static u8 blink_counter = 0;
+
 
 static void vDraw( xScreenObjet * pScreenDraw);
 void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len);
 
+
+void vDrawBitmap()
+{
+    u8g2_DrawXBM(&u8g2,0,0,128,58,rcp0606536715761_bits);
+}
+
+
 void vMenuInit(  )
 {
-
-    pKeyboard = *( xKeyboardQueue());
+   pKeyboard = *( xKeyboardQueue());
 }
 
 u8 GetID( u8 id)
@@ -123,7 +128,7 @@ u8 GetID( u8 id)
     return (0);
 }
 
-static menu_mode = 0;
+
 
 void ViewScreenCallback( u8 key_code)
 {
@@ -161,8 +166,6 @@ void ViewScreenCallback( u8 key_code)
 }
 
 
-u8 edit_data[MAX_STRING_NUMBER];
-u8 blink_counter = 0;
 
 
 void SetFirtsEditString( )
@@ -241,13 +244,12 @@ void vSetEdit()
     {
         if (edit_data[i ] == 2)
         {
-              edit_data[i ] = 3;
+              edit_data[i] = 3;
               curr_edit_data_id = xScreens1[pCurrMenu].pScreenCurObjets[i].DataID;
               vGetData( curr_edit_data_id , 0,CMD_START_EDIT ,0,0);
               break;
         }
     }
-
 }
 
 
@@ -322,28 +324,28 @@ void vMenuTask ( void )
 
 u8 data_edit_flag = 0;
 u8 max_edit_index = 0;
-
-
 static u8 cur_edit_index = 0;
-
-
 char * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
 static uint8_t start_edit_flag =0;
-uint8_t edit_data_buffer_byte;
+uint16_t edit_data_buffer_byte;
+
 uint32_t coof[]={1,10,100,1000};
 float coof_float[]={0.0001,0.001,0.01,0.1,1.0,10.0,100.0,1000.0};
 
-void vByteDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , uint8_t max_data, uint8_t min_data )
+void vByteDataEdit(u8 size, u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , uint16_t max_data, uint16_t min_data )
 {
     switch (command)
     {
         case CMD_START_EDIT:
-            edit_data_buffer_byte = getReg8( data_id );
+            edit_data_buffer_byte = (size == 0) ?(u16) getReg8( data_id ) : getReg16( data_id ) ;
             start_edit_flag = 1;
             cur_edit_index = 0;
             break;
         case CMD_SAVE_EDIT:
-            SaveReg8( data_id, edit_data_buffer_byte );
+            if (size == 0)
+                SaveReg8( data_id, (u8)edit_data_buffer_byte );
+            else
+                saveReg16( data_id, edit_data_buffer_byte );
             start_edit_flag = 0;
              break;
         case CMD_NEXT_EDIT:
@@ -378,12 +380,12 @@ void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8
     switch (command)
     {
         case CMD_START_EDIT:
-            edit_data_buffer_float= getReg8( data_id );
+            edit_data_buffer_float= getRegFloat( data_id );
             start_edit_flag = 1;
             cur_edit_index = max_index + min_index;
             break;
         case CMD_SAVE_EDIT:
-            SaveReg8( data_id, edit_data_buffer_float );
+            saveRegFloat( data_id, edit_data_buffer_float );
             start_edit_flag = 0;
              break;
         case CMD_NEXT_EDIT:
@@ -394,13 +396,13 @@ void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8
                break;
         case CMD_INC:
              if ((edit_data_buffer_float + coof[cur_edit_index]) <=  max_data )
-                 edit_data_buffer_float=edit_data_buffer_byte+coof_float[cur_edit_index];
+                 edit_data_buffer_float = edit_data_buffer_byte + coof_float [cur_edit_index];
              else
                  edit_data_buffer_float = max_data;
              break;
        case CMD_DEC:
              if (  (edit_data_buffer_float - min_data) >=  coof_float[cur_edit_index] )
-                 edit_data_buffer_float=edit_data_buffer_byte-coof_float[cur_edit_index];
+                 edit_data_buffer_float = edit_data_buffer_byte-coof_float[cur_edit_index];
              else
                  edit_data_buffer_float = min_data;
              break;
@@ -416,6 +418,10 @@ u16 getDataModelID( u16 MENU_ID)
 {
     switch (MENU_ID)
     {
+        case SENS_1_RAW_ID:     return (SENS1);
+        case SENS_2_RAW_ID:     return (SENS2);
+        case COOF_P_ID:         return (COOF_P);
+        case COOF_I_ID:         return (COOF_I);
         case VOLTAGE_MIN_ON_ID: return (LOW_VOLTAGE_ON);
         case VOLTAGE_MIN_OFF_ID:return (LOW_VOLTAGE_OFF);
         case VOLTAGE_MAX_ON_ID: return (HIGH_VOLTAGE_ON);
@@ -431,12 +437,31 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
     HAL_TimeConfig_T time;
     HAL_DateConfig_T date;
     u8 MACAddr[6];
-    u8 max,min;
+    u16 max,min;
     if (index!=0) *index = cur_edit_index;
     if (len!=0)   *len = 1;
+    u16 reg_id = getDataModelID(data_id);
     switch (data_id)
     {
-
+        case COOF_P_ID:
+        case COOF_I_ID:
+            switch (command)
+            {
+                case CMD_READ:
+                    sprintf(str,"%000.00f",getRegFloat(reg_id));
+                    break;
+                case CMD_EDIT_READ:
+                    sprintf(str,"%000.00f",edit_data_buffer_byte );
+                    break;
+               default:
+                   vFloatDataEdit(reg_id, command,4,2,999.99,-999.99);
+                   break;
+            }
+             break;
+        case SENS_1_RAW_ID:
+        case SENS_2_RAW_ID:
+            sprintf(str, "%i Па",(int)getAIN(reg_id) );
+            break;
         case SETTING_ID:
             strcpy(str,"0000 м^3/ч");
             break;
@@ -449,53 +474,72 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
         case MODE_STATE_ID:
             strcpy(str,"1");
             break;
-     case MAC_ADRESS_ID:
-         WCHNET_GetMacAddr(MACAddr);                                   //get the chip MAC address
-         sprintf(str,"%x%x%x%x%x%x",MACAddr[0],MACAddr[1],MACAddr[2],MACAddr[3],MACAddr[4],MACAddr[5]);
-         break;
-    case PROCESS_STATE_ID:
-        USER_GetProccesState(   str );
-        break;
-    case IP_ADRESS_DATA_ID:
-        sprintf(str,"%03i.%03i.%03i.%03i",getReg8(IP_1),getReg8(IP_2),getReg8(IP_3),getReg8(IP_4));
-        break;
-    case AC_VOLTAGE_ID:
-        if (str!=0)
-        sprintf(str,"%i В",(uint16_t)getAIN(AC220));
-        break;
-    case CURENT_TIME_ADDR:
-        HAL_RTC_ReadTime( &time);
-        sprintf(str,"%02i:%02i:%02i",time.hours,time.minutes,time.seconds);
-        break;
-    case CURENT_DATE_ADDR:
-        HAL_RTC_ReadDate(&date);
-        sprintf(str,"%02i:%02i:%02i",date.date,date.month,date.year);
-        break;
+        case MAC_ADRESS_ID:
+            WCHNET_GetMacAddr(MACAddr);
+            sprintf(str,"%x%x%x%x%x%x",MACAddr[0],MACAddr[1],MACAddr[2],MACAddr[3],MACAddr[4],MACAddr[5]);
+            break;
+        case PROCESS_STATE_ID:
+            sprintf(str, (USER_GetProccesState()== USER_RROCCES_WORK) ? "Работа" : "Останов");
 
-    case VOLTAGE_MIN_ON_ID:
-    case VOLTAGE_MIN_OFF_ID:
-    case VOLTAGE_MAX_ON_ID:
-    case VOLTAGE_MAX_OFF_ID:
-        switch (command)
-        {
-           case CMD_READ:
-                 sprintf(str,"%03i",getReg8(getDataModelID(data_id)) );
-                 break;
-           case CMD_EDIT_READ:
-                 sprintf(str,"%03i",edit_data_buffer_byte );
-                 break;
-           default:
-                 if ( data_id == VOLTAGE_MIN_ON_ID) max = getReg8(getDataModelID(VOLTAGE_MIN_OFF_ID));
-                 else
-                 if ( data_id == VOLTAGE_MIN_OFF_ID) max = getReg8(getDataModelID(VOLTAGE_MAX_OFF_ID));
-                 else
-                   max = 255;
-                 if ( data_id == VOLTAGE_MAX_OFF_ID) min = getReg8(getDataModelID(VOLTAGE_MIN_OFF_ID));
+            break;
+        case IP_ADRESS_DATA_ID:
+            sprintf(str,"%03u.%03u.%03u.%03u",getReg8(IP_1),getReg8(IP_2),getReg8(IP_3),getReg8(IP_4));
+            break;
+        case IP_PORT_ID:
+            switch (command)
+            {
+                case CMD_READ:
+                    sprintf(str,"%03i",getReg16(IP_PORT) );
+                    break;
+                case CMD_EDIT_READ:
+                    sprintf(str,"%03i",edit_data_buffer_byte );
+                     break;
+                default:
+                    vByteDataEdit(1,IP_PORT,command,2,999,0);
+                    break;
+            }
+            break;
+        case IP_GATE_ID:
+            sprintf(str,"%03u.%03u.%03u.%03u",getReg8(GATE_1),getReg8(GATE_2),getReg8(GATE_3),getReg8(GATE_4));
+            break;
+        case IP_SUBNETMASK_ID:
+            sprintf(str,"%03u.%03u.%03u.%03u",getReg8(MASK_1),getReg8(MASK_2),getReg8(MASK_3),getReg8(MASK_4));
+            break;
+        case AC_VOLTAGE_ID:
+            sprintf(str,"%i В",(uint16_t)getAIN(AC220));
+            break;
+        case CURENT_TIME_ADDR:
+            HAL_RTC_ReadTime( &time);
+            sprintf(str,"%02i:%02i:%02i",time.hours,time.minutes,time.seconds);
+            break;
+        case CURENT_DATE_ADDR:
+            HAL_RTC_ReadDate(&date);
+            sprintf(str,"%02i:%02i:%02i",date.date,date.month,date.year);
+            break;
+        case VOLTAGE_MIN_ON_ID:
+        case VOLTAGE_MIN_OFF_ID:
+        case VOLTAGE_MAX_ON_ID:
+        case VOLTAGE_MAX_OFF_ID:
+            switch (command)
+            {
+                case CMD_READ:
+                    sprintf(str,"%03i",getReg8(reg_id) );
+                    break;
+                case CMD_EDIT_READ:
+                    sprintf(str,"%03i",edit_data_buffer_byte );
+                    break;
+               default:
+                    if ( data_id == VOLTAGE_MIN_ON_ID)  max = getReg8(getDataModelID(VOLTAGE_MIN_OFF_ID));
+                    else
+                    if ( data_id == VOLTAGE_MIN_OFF_ID) max = getReg8(getDataModelID(VOLTAGE_MAX_OFF_ID));
+                    else
+                                                        max = 255;
+                    if ( data_id == VOLTAGE_MAX_OFF_ID) min = getReg8(getDataModelID(VOLTAGE_MIN_OFF_ID));
                       else
-                 if ( data_id == VOLTAGE_MAX_ON_ID) min = getReg8(getDataModelID(VOLTAGE_MIN_OFF_ID));
+                    if ( data_id == VOLTAGE_MAX_ON_ID)  min = getReg8(getDataModelID(VOLTAGE_MIN_OFF_ID));
                      else
-                  min = 100;
-                 vByteDataEdit((getDataModelID(data_id)),command,2,max,min);
+                                                        min = 100;
+                 vByteDataEdit(0,reg_id,command,2,max,min);
                  break;
         }
         break;
@@ -509,7 +553,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                 sprintf(str,"%02i",edit_data_buffer_byte );
                 break;
             default:
-                vByteDataEdit(MB_RTU_ADDR,command,2,100,1);
+                vByteDataEdit(0,MB_RTU_ADDR,command,2,100,1);
                 break;
         }
         break;
@@ -525,9 +569,12 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                 strcpy(str, ControlModeStrig[ getReg8( getDataModelID(data_id))] );
                 break;
             default:
-                vByteDataEdit(getDataModelID(data_id),command,0,MB_TCP,(data_id == CONTROL_MODE_ID)? MB_DIN : MB_RTU);
+                vByteDataEdit(0,getDataModelID(data_id),command,0,MB_TCP,(data_id == CONTROL_MODE_ID)? MB_DIN : MB_RTU);
                 break;
         }
+        break;
+    case HOURE_COUNTER_ID:
+        sprintf(str,"%000000i часов %00i минут",vRTC_TASK_GetHoure(), vRTC_TASK_GetMinute( ));
         break;
     default:
         if (str!=0)
@@ -539,11 +586,10 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
 
 static void vDraw( xScreenObjet * pScreenDraw)
 {
-
     u8g2_ClearBuffer(&u8g2);
     u8 x,y;
-    u8 len,high,edit_index,char_len,box_len;
-    u8 str[20],chars[2];
+    u8 len,edit_index,box_len;
+    u8 str[20];
     for (u8 i=0;i<MAX_STRING_NUMBER;i++)
     {
         switch (pScreenDraw[i].xType)

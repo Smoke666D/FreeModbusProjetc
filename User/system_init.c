@@ -148,8 +148,6 @@ void vDefaultTask( void  * argument )
     uint32_t ulNotifiedValue;
     HAL_RTC_INIT_t RTC_INIT_TYPE;
     TaskFSM_t main_task_fsm = STATE_INIT;
-
-
     vMenuInit();
     while(1)
     {
@@ -167,7 +165,7 @@ void vDefaultTask( void  * argument )
                 {
                     RTC_INIT_TYPE = HAL_RTC_NORMAL_INIT;
                 }
-                vRTCTaskInit(RTC_INIT_TYPE);
+                vRTC_TASK_Init(RTC_INIT_TYPE);
                 main_task_fsm =  STATE_WHAIT_TO_RAEDY;
                 vTaskDelay(3000);
                 break;

@@ -89,10 +89,7 @@ BOOL xMBPortSerialInit(UCHAR ucPORT, ULONG ulBaudRate, UCHAR ucDataBits, eMBPari
     HAL_USART_WL_t USART_wordlength;
     switch(eParity)
     {
-    	case MB_PAR_NONE:
-    	    USART_wordlength= UART_WORDLENGTH_8B;
-    		USART_Parity = HAL_Parity_No;
-    		break;
+
     	case MB_PAR_ODD:
     	    USART_wordlength= UART_WORDLENGTH_9B;
     		USART_Parity = HAL_Parity_Odd;
@@ -101,6 +98,10 @@ BOOL xMBPortSerialInit(UCHAR ucPORT, ULONG ulBaudRate, UCHAR ucDataBits, eMBPari
     	    USART_wordlength= UART_WORDLENGTH_9B;
     		USART_Parity = HAL_Parity_Even;
     		break;
+    	 default:
+    	    USART_wordlength= UART_WORDLENGTH_8B;
+    	    USART_Parity = HAL_Parity_No;
+    	    break;
     }
     MBPORT = ucPORT;
     HALUSARTInit  (MBPORT, ulBaudRate, HAL_StopBits_1 ,USART_Parity , USART_wordlength  );

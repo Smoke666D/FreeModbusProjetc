@@ -109,6 +109,7 @@ encoding//User/menu.h=GBK
 encoding//User/menu_data.c=UTF-8
 encoding//User/menu_data.h=GBK
 encoding//User/net_config.h=GBK
+encoding//User/pid.h=GBK
 encoding//User/rtc_task.c=GBK
 encoding//User/rtc_task.h=GBK
 encoding//User/system_ch32v30x.c=GBK

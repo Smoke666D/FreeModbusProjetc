@@ -30,6 +30,23 @@ int16_t GetConversional(ADC_Conversionl_Buf_t * pBuf);
 #define DC_24_BufferSize    3
 #define DC_AIN_BufferSize  10
 #define Sens_BufferSize 1000
+
+
+#define DAC_CAL_POINT 10
+
+POINT_t const DACCAL[DAC_CAL_POINT]={ {0,0},
+                   {10,1.126},
+                   {20,2.273},
+                   {30,3.420},
+                   {40,4.567},
+                   {50,5.714},
+                   {60,6.85},
+                   {70,8.0},
+                   {80,9.14},
+                   {90,10.29}
+};
+
+
 ADC_Conversionl_Buf_t DataBuffer[DC_CHANNEL+2];
 
 
@@ -160,19 +177,7 @@ static void ADC2_Event()
     ADC_SoftwareStartConvCmd(ADC2, ENABLE);
 }
 
-#define DAC_CAL_POINT 10
 
-POINT_t DACCAL[DAC_CAL_POINT]={ {0,0},
-                   {10,1.126},
-                   {20,2.273},
-                   {30,3.420},
-                   {40,4.567},
-                   {50,5.714},
-                   {60,6.85},
-                   {70,8.0},
-                   {80,9.14},
-                   {90,10.29}
-};
 
 
 void ADC1_Init()
@@ -185,7 +190,6 @@ void ADC1_Init()
     eDacCalDataConfig(DAC3,DAC_CAL_POINT);
     eSetDacCalPoint(DAC3,  DACCAL, DAC_CAL_POINT );
     DMA_INIT_t init;
-
     uint8_t ADC1_CHANNEL[ADC1_CH_COUNT] = { ADC_CH_0,  ADC_CH_1 };
     HAL_ADC_ContiniusScanTrigCinvertionDMA( ADC_1, ADC1_CH_COUNT, ADC1_CHANNEL, ADC_ExternalTrigConv_T3_TRGO);
     init.stream = DMA1_CH1;
@@ -477,22 +481,18 @@ uint8_t GetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 * temp, u8 * i2cfsm )
    return 0;
 }
 
-
 #define SENSOR_TIME_OUT 50
 
 void I2C_task(void *pvParameters)
 {
     TickType_t xLastWakeTime;
-    TickType_t xTicksToWait = 1000;
-    TimeOut_t xTimeOut;
     u8 status;
-    uint8_t sens_conversion_start;
     uint8_t ADC_FSM = 0;
     uint16_t counter_led = 0;
-      u8 led_state = 0;
-      vTaskDelay(1000);
- u8 fsm;
-       printf("Start I2C OK 1.5\r\n");
+    u8 led_state = 0;
+    vTaskDelay(1000);
+    u8 fsm;
+    printf("Start I2C OK 1.5\r\n");
 
  while(1)
  {

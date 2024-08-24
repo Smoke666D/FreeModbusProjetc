@@ -31,8 +31,7 @@
 #include "string.h"
 #include "task.h"
 #include "event_groups.h"
-//#include "lwip/api.h"
-//#include "lwip/tcp.h"
+#include "data_model.h"
 
 /* ----------------------- Modbus includes ----------------------------------*/
 #include "mb.h"
@@ -104,20 +103,21 @@ void vNetInit()
 {
     u8 i;
     struct _KEEP_CFG cfg;
-    WCHNET_GetMacAddr(MACAddr);                                   //get the chip MAC address
-    printf("mac addr:");
-    for( i = 0; i < 6; i++)
-          printf("%x ",MACAddr[i]);
-          printf("\n");
-     TIM2_Init();
 
-     i = ETH_LibInit(IPAddr, GWIPAddr, IPMask, MACAddr);           //Ethernet library initialize
-     if (i == WCHNET_ERR_SUCCESS){};
-     cfg.KLIdle = 20000;
-     cfg.KLIntvl = 15000;
-     cfg.KLCount = 9;
-     WCHNET_ConfigKeepLive(&cfg);
-     xPortTCPOSEventGroup= * xGetOSEvent();
+    TIM2_Init();
+    for (u8 i = 0;i<4;i++)
+    {
+        IPAddr[i] = getReg8(IP_1+i);
+        GWIPAddr[i]= getReg8(GATE_1+i);
+        IPMask[i] = getReg8(MASK_1+i);
+    }
+    i = ETH_LibInit(IPAddr, GWIPAddr, IPMask, MACAddr);           //Ethernet library initialize
+    if (i == WCHNET_ERR_SUCCESS){};
+    cfg.KLIdle = 20000;
+    cfg.KLIntvl = 15000;
+    cfg.KLCount = 9;
+    WCHNET_ConfigKeepLive(&cfg);
+    xPortTCPOSEventGroup= * xGetOSEvent();
 
 }
 
@@ -148,7 +148,7 @@ u8 * pData;
  */
 void WCHNET_HandleSockInt(u8 socketid, u8 intstat)
 {
-    u8 i;
+
     u32 len;
     USHORT          usLength;
     u8 sss = socketid;
@@ -238,19 +238,17 @@ void WCHNET_HandleSockInt(u8 socketid, u8 intstat)
 
         SocketIdClient = socketid;
 
-        printf("TCP Connect Success\r\n");
-        printf("socket id: %d\r\n", SocketIdClient);
        }
     }
     if (intstat & SINT_STAT_DISCONNECT)                         //disconnect
     {
         SocketIdClient =0xFF;
-        printf("TCP Disconnect\r\n");
+
     }
     if (intstat & SINT_STAT_TIM_OUT)                            //timeout disconnect
     {
         SocketIdClient =0xFF;
-        printf("TCP Timeout\r\n");
+
         //WCHNET_CreateTcpSocket();
     }
 }

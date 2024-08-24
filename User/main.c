@@ -112,9 +112,7 @@ int main(void)
 	vSYSqueueInit ( );
     vSYSeventInit ( );
     vSYStaskInit ( );
-
-    //vNetInit();
-
+    vNetInit();
     vInit_DeviceConfig();
     USART_Printf_Init(115200);
     printf("System start\n");

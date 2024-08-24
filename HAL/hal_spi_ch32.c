@@ -150,11 +150,7 @@ void HAL_SPI_InitDMA(HAL_SPI_t spi , SPI_DATA_Size_t data_size )
     SPI[spi]->CTLR1 |= CTLR1_SPE_Set;
 }
 
-void HAL_SPI_MODF_CLEAR(HAL_SPI_t spi)
-{
-    uint16_t temp = SPI[spi]->STATR;
-    SPI[spi]->CTLR1 |= CTLR1_SPE_Set | SPI_Mode_Master;
-}
+
 
 u8 HAL_SPI_RXOveleyClear(HAL_SPI_t spi )
 {

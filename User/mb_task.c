@@ -18,6 +18,7 @@
 #include "event_groups.h"
 #include "hw_lib_adc.h"
 #include "hal_usart.h"
+#include "data_model.h"
 
 #if REG_COILS_NREGS%8 && REG_COILS_NREGS>8
 UCHAR    ucSCoilBuf[REG_COILS_NREGS/8+1];
@@ -357,15 +358,21 @@ void MBRTU_task(void *pvParameters)
      vSetRegData(DAC3_ADDR+1);
      for( ;; )
      {
+         u8 control_type  = getReg8(CONTROL_TYPE );
          vTaskDelay(1);
-      //   if( eMBTCPInit( MB_TCP_PORT_USE_DEFAULT ) == MB_ENOERR )
-      //   {
-     //        mb_ready = 1;
-     //    }
-         if (eMBInit(MB_RTU,1,HAL_USART4,19200,MB_PAR_ODD ) == MB_ENOERR )
+         if (control_type == MB_RTU)
          {
-             mb_ready = 1;
+             if (eMBInit(MB_RTU,1,HAL_USART4,19200,MB_PAR_ODD ) == MB_ENOERR )
+             {
+                mb_ready = 1;
+             }
          }
+         else
+         if( eMBTCPInit( MB_TCP_PORT_USE_DEFAULT ) == MB_ENOERR )
+        {
+            mb_ready = 1;
+        }
+
          if (mb_ready)
          {
              if( eMBEnable(  ) == MB_ENOERR )

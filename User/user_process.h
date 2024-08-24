@@ -21,8 +21,8 @@ typedef enum
 } USER_PROCESS_FSM_t;
 
 
-void USER_GetProccesState(  char * str );
-TaskHandle_t * getUserProcessTaskHandle();
+USER_PROCESS_FSM_t USER_GetProccesState( void  );
+TaskHandle_t * getUserProcessTaskHandle( void  );
 void user_process_task(void *pvParameters);
 
 #endif /* USER_USER_PROCESS_H_ */

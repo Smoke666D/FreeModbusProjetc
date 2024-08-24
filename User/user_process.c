@@ -9,32 +9,19 @@
 
 
 static TaskHandle_t processTaskHandle;
-
-USER_PROCESS_FSM_t task_fsm;
+static USER_PROCESS_FSM_t task_fsm;
 
 TaskHandle_t * getUserProcessTaskHandle()
 {
     return &processTaskHandle;
 }
 
-void USER_GetProccesState( char * str )
+
+
+USER_PROCESS_FSM_t USER_GetProccesState()
 {
-    switch (task_fsm)
-    {
-        case USER_PROCCES_IDLE:
-        case USER_PROCCES_STOP:
-        case USER_PROCESS_PAUSE:
-        case USER_PROCESS_ALARM:
-            sprintf(str,"Останов");
-            break;
-        case USER_RROCCES_WORK:
-            sprintf(str,"Работа");
-            break;
-
-    }
+    return (task_fsm);
 }
-
-
 
 void user_process_task(void *pvParameters)
 {
@@ -48,6 +35,9 @@ void user_process_task(void *pvParameters)
            case USER_PROCCES_STOP:
                break;
            case USER_RROCCES_WORK:
+
+
+
                break;
            case USER_PROCESS_PAUSE:
                break;

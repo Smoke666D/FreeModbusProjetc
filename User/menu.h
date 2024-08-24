@@ -13,23 +13,32 @@
 
 #define MAX_STRING_NUMBER 5
 
-#define PROCESS_STATE_ID   1
-#define CURENT_DATE_ADDR   2
-#define CURENT_TIME_ADDR   3
-#define AC_VOLTAGE_ID      4
-#define IP_ADRESS_DATA_ID  5
-#define MB_RTU_ADDR_ID     6
-#define CONTROL_MODE_ID    7
-#define SETTING_ID         8
-#define FACT_RASH_ID       9
-#define FILTER_STATE_ID   10
-#define MODE_STATE_ID     11
-#define VOLTAGE_MIN_ON_ID  12
-#define VOLTAGE_MIN_OFF_ID 13
-#define VOLTAGE_MAX_ON_ID  14
-#define VOLTAGE_MAX_OFF_ID 15
-#define PROTOCOL_ID        16
-#define MAC_ADRESS_ID      17
+#define PROCESS_STATE_ID        1
+#define CURENT_DATE_ADDR        2
+#define CURENT_TIME_ADDR        3
+#define AC_VOLTAGE_ID           4
+#define IP_ADRESS_DATA_ID       5
+#define MB_RTU_ADDR_ID          6
+#define CONTROL_MODE_ID         7
+#define SETTING_ID              8
+#define FACT_RASH_ID            9
+#define FILTER_STATE_ID         10
+#define MODE_STATE_ID           11
+#define VOLTAGE_MIN_ON_ID       12
+#define VOLTAGE_MIN_OFF_ID      13
+#define VOLTAGE_MAX_ON_ID       14
+#define VOLTAGE_MAX_OFF_ID      15
+#define PROTOCOL_ID             16
+#define MAC_ADRESS_ID           17
+#define SENS_1_RAW_ID           18
+#define SENS_2_RAW_ID           19
+#define COOF_P_ID               20
+#define COOF_I_ID               21
+#define IP_PORT_ID              22
+#define IP_GATE_ID              23
+#define IP_SUBNETMASK_ID        24
+#define HOURE_COUNTER_ID        26
+
 
 typedef enum
 {

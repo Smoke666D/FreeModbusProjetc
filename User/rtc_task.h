@@ -11,6 +11,8 @@
 #include "main.h"
 #include "hal_rtc.h"
 
-void vRTCTaskInit(HAL_RTC_INIT_t init);
+void vRTC_TASK_Init(HAL_RTC_INIT_t init);
+u16 vRTC_TASK_GetMinute( void );
+u32 vRTC_TASK_GetHoure( void );
 
 #endif /* USER_RTC_TASK_H_ */
