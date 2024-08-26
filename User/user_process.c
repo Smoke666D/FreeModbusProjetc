@@ -59,17 +59,24 @@ void user_process_task(void *pvParameters)
    {
        Fact = 0;
        ac_voltage = getACVoltage();
+
        if  (ac_voltage >= getReg8(HIGH_VOLTAGE_ON))
        {
-           vADDRecord(HIGH_VOLTAGE_ERROR);
-           task_fsm = USER_PROCESS_ALARM;
+           if (task_fsm != USER_PROCESS_ALARM)
+           {
+               vADDRecord(HIGH_VOLTAGE_ERROR);
+               task_fsm = USER_PROCESS_ALARM;
+           }
        }
        else if ( ac_voltage <=  getReg8(LOW_VOLTAGE_ON))
        {
-           vADDRecord(LOW_VOLTAGE_ERROR);
-           task_fsm = USER_PROCESS_ALARM;
+           if (task_fsm != USER_PROCESS_ALARM)
+           {
+               vADDRecord(LOW_VOLTAGE_ERROR);
+               task_fsm = USER_PROCESS_ALARM;
+           }
        }
-       if (ucDinGet(OUT_2))
+    /*   if (ucDinGet(OUT_2))
        {
            if ( set_point_old == 0) set_point_flag = 1;
            set_point_old = 1;
@@ -83,14 +90,14 @@ void user_process_task(void *pvParameters)
        }
        if ( FSM_STATE >= 3 )
        {
-           HAL_SetBit(CRACH_Port,  CRACH_Pin);
+          // HAL_SetBit(CRACH_Port,  CRACH_Pin);
            eSetDUT(OUT_2,TRUE);
-       }
+       }*/
        switch (task_fsm)
        {
            case USER_PROCCES_IDLE:
                vTaskDelay(20);
-               HAL_ResetBit(CRACH_Port,  CRACH_Pin);
+              // HAL_SetBit(CRACH_Port,  CRACH_Pin);
                eSetDUT(OUT_2,FALSE);
                FSM_STATE = 0;
                temp_counter = 0;
@@ -126,10 +133,11 @@ void user_process_task(void *pvParameters)
                break;
            case USER_PROCESS_ALARM:
                FSM_STATE = 3;
-               if  ((ac_voltage <= getReg8(HIGH_VOLTAGE_OFF)) || ( ac_voltage >=  getReg8(LOW_VOLTAGE_OFF)))
+               if  ((ac_voltage <= getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  getReg8(LOW_VOLTAGE_OFF)))
                {
                     task_fsm = USER_PROCCES_IDLE;
                }
+               HAL_ResetBit(CRACH_Port,  CRACH_Pin);
                eSetDUT(OUT_1,FALSE);
                vTaskDelay(20);
                break;

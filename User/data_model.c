@@ -19,9 +19,9 @@ DATA_MODEL_INIT_t DataModel_Init()
            {
                memset(DATA_MODEL_REGISTER,0,EEPROM_REGISTER_COUNT);
                DATA_MODEL_REGISTER[VALID_CODE_ADDRES] = VALID_CODE;
-               DATA_MODEL_REGISTER[CONTROL_TYPE ]     = MB_RTU;
+               DATA_MODEL_REGISTER[CONTROL_TYPE ]     = MKV_MB_RTU;
                DATA_MODEL_REGISTER[MB_RTU_ADDR ]      = 4;
-               DATA_MODEL_REGISTER[MB_PROTOCOL_TYPE]  = MB_RTU;
+               DATA_MODEL_REGISTER[MB_PROTOCOL_TYPE]  = MKV_MB_RTU;
                DATA_MODEL_REGISTER[LOW_VOLTAGE_ON]    = 190;
                DATA_MODEL_REGISTER[LOW_VOLTAGE_OFF]   = 199;
                DATA_MODEL_REGISTER[HIGH_VOLTAGE_ON ]  = 250;
@@ -39,6 +39,8 @@ DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[MASK_3]              = 255;
                DATA_MODEL_REGISTER[MASK_4]              = 0;
                setReg16(IP_PORT,502);
+               DATA_MODEL_REGISTER[SENSOR_COUNT]        = TIME_10_0;
+
                if (WriteEEPROM(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 1000 ,2) == EEPROM_OK) printf("EEPROMwtiye\r\n");
                ReadEEPROMData(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ,2);
                return (NEW_INIT);
@@ -122,7 +124,7 @@ float getRegFloat(u16 reg_adress )
     u32 data = (u32)DATA_MODEL_REGISTER[reg_adress] | (u32)(DATA_MODEL_REGISTER[reg_adress+1])<<8 |
             (u32)DATA_MODEL_REGISTER[reg_adress+2]<<16 | (u32)(DATA_MODEL_REGISTER[reg_adress+3])<<24;
     ptemp = (float *)&data;
-    return  0.12;//(*ptemp);
+    return  (*ptemp);
 }
 
 

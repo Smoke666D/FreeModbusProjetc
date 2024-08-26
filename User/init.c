@@ -35,7 +35,7 @@ void vInit_DeviceConfig( void )
      HAL_TIMER_EnablePWMCH(TIMER9);
      HAL_TiemrEneblae(TIMER9);
 
-     I2C_InitTSturcture.I2C_ClockSpeed = 350000;
+     I2C_InitTSturcture.I2C_ClockSpeed = 200000;
      I2C_InitTSturcture.I2C_Mode = I2C_Mode_I2C;
      I2C_InitTSturcture.I2C_DutyCycle = I2C_DutyCycle_16_9;
      I2C_InitTSturcture.I2C_OwnAddress1 = 0;

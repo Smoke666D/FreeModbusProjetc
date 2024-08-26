@@ -360,8 +360,9 @@ void MBRTU_task(void *pvParameters)
      {
          u8 control_type  = getReg8(CONTROL_TYPE );
          vTaskDelay(1);
-         if (control_type == MB_RTU)
+         if (control_type == MKV_MB_RTU)
          {
+
              if (eMBInit(MB_RTU,1,HAL_USART4,19200,MB_PAR_ODD ) == MB_ENOERR )
              {
                 mb_ready = 1;
@@ -370,6 +371,7 @@ void MBRTU_task(void *pvParameters)
          else
          if( eMBTCPInit( MB_TCP_PORT_USE_DEFAULT ) == MB_ENOERR )
         {
+             printf("tcp\r\n");
             mb_ready = 1;
         }
 

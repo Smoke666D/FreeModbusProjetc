@@ -46,7 +46,11 @@
 #define JOURNAL_COUNT_ID        32
 #define JURNAL_RECORD_ID        33
 #define JOURNAL_TIME_ID         34
-#define JOURNAL_INFO_ID         35
+#define JOURNAL_DATE_ID         35
+#define JOURNAL_INFO1_ID        36
+#define JOURNAL_INFO2_ID        37
+#define JOURNAL_RESET_ID        38
+#define SENS_COUNT_ID           39
 
 
 typedef enum

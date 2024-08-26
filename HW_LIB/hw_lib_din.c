@@ -180,7 +180,7 @@ DIN_FUNCTION_ERROR_t eDinConfigWtihStruct(DIN_INPUT_NAME ucCh, DinConfig_t * con
     xDinConfig[ucCh].ulHighCounter = config->ulHighCounter;
     xDinConfig[ucCh].ulLowCounter = config->ulLowCounter;
     xDinConfig[ucCh].getPortCallback = config->getPortCallback;
-    xDinConfig[ucCh].ucTempValue = xDinConfig[ucCh].ucValue;
+    xDinConfig[ucCh].ucTempValue = xDinConfig[ucCh].ucValue ? 0U : 1U;
     xDinConfig[ucCh].ulCounter = 0;
     eRes = DIN_CONFIG_OK;
     return ( eRes );

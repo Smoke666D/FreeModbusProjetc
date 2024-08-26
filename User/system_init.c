@@ -82,7 +82,7 @@ void TaskSuspend()
     vTaskSuspend( WCHNETTask_Handler );
     vTaskSuspend( MPTCPTask_Handler  );
     vTaskSuspend(* getSerialTask());
-    //vTaskSuspend(*  getADCTaskHandle());
+    vTaskSuspend(*  getUserProcessTaskHandle());
 }
 
 void vSYStaskInit ( void )
@@ -168,17 +168,20 @@ void vDefaultTask( void  * argument )
                 vRTC_TASK_Init(RTC_INIT_TYPE);
                 main_task_fsm =  STATE_WHAIT_TO_RAEDY;
                 vTaskDelay(3000);
+                vTaskResume(*getUserProcessTaskHandle());
                 break;
             case STATE_WHAIT_TO_RAEDY:
                 control_type  = getReg8(CONTROL_TYPE );
-                if (control_type == MB_DIN )  control_type  = getReg8(MB_PROTOCOL_TYPE);
-                if (control_type == MB_RTU)
+                if (control_type == MKV_MB_DIN )  control_type  = getReg8(MB_PROTOCOL_TYPE);
+                if (control_type == MKV_MB_RTU)
                 {
+
                     vTaskResume(* getSerialTask());
                     vTaskResume( MPTCPTask_Handler  );
                 }
                 else
                 {
+
                     vTaskResume( WCHNETTask_Handler );
                     vTaskResume( MPTCPTask_Handler  );
                 }

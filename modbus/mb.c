@@ -135,6 +135,7 @@ eMBInit( eMBMode eMode, UCHAR ucSlaveAddress, UCHAR ucPort, ULONG ulBaudRate, eM
     if( ( ucSlaveAddress == MB_ADDRESS_BROADCAST ) ||
         ( ucSlaveAddress < MB_ADDRESS_MIN ) || ( ucSlaveAddress > MB_ADDRESS_MAX ) )
     {
+        printf("rs-485 addres\r\n");
         eStatus = MB_EINVAL;
     }
     else
@@ -145,6 +146,7 @@ eMBInit( eMBMode eMode, UCHAR ucSlaveAddress, UCHAR ucPort, ULONG ulBaudRate, eM
         {
 #if MB_RTU_ENABLED > 0
         case MB_RTU:
+
             pvMBFrameStartCur = eMBRTUStart;
             pvMBFrameStopCur = eMBRTUStop;
             peMBFrameSendCur = eMBRTUSend;

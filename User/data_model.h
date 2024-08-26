@@ -10,7 +10,7 @@
 
 #include "system_init.h"
 
-#define VALID_CODE            0x33
+#define VALID_CODE            0x66
 #define VALID_CODE_ADDRES     0
 /*§¢§Ý§à§Ü §Ò§Ñ§Û§ä§à§Ó§í§ç §å§ã§ä§Ó§à§Ü*/
 
@@ -33,7 +33,8 @@
 #define MASK_2                ( MASK_1 +sizeof(uint8_t) )
 #define MASK_3                ( MASK_2 +sizeof(uint8_t) )
 #define MASK_4                ( MASK_3 +sizeof(uint8_t) )
-#define IP_PORT               ( MASK_4 +sizeof(uint8_t) )
+#define SENSOR_COUNT          ( MASK_4 +sizeof(uint8_t) )
+#define IP_PORT               ( SENSOR_COUNT +sizeof(uint8_t) )
 #define SENSOR1_ZERO          ( IP_PORT +sizeof(uint16_t) )
 #define SENSOR2_ZERO          ( SENSOR1_ZERO     + sizeof(uint16_t) )
 #define RESURSE               ( SENSOR2_ZERO     + sizeof(uint16_t) )
@@ -51,7 +52,7 @@
 
 
 #define RECORD_SIZE 7
-#define RECORD_DATA_SIZE       300
+#define RECORD_DATA_SIZE      50
 
 typedef enum
 {
@@ -61,9 +62,20 @@ typedef enum
 
 } DATA_MODEL_INIT_t;
 
-#define MB_DIN 0
-#define MB_RTU 1
-#define MB_TCP 2
+typedef enum
+{
+  TIME_0_1 = 0,
+  TIME_0_5 = 1,
+  TIME_1_0 = 2,
+  TIME_2_0 = 3,
+  TIME_3_0 = 4,
+  TIME_5_0 = 5,
+  TIME_10_0 = 6,
+} SENSOR_COUNT_t;
+
+#define MKV_MB_DIN 0
+#define MKV_MB_RTU 1
+#define MKV_MB_TCP 2
 
 //#define EEPROM_REGISTER_COUNT   20
 //#define  EEPROM_REGISTER_COUNT  20

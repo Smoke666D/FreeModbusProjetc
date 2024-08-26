@@ -133,7 +133,7 @@ u8 journal_index =0;
 
 void ViewScreenCallback( u8 key_code)
 {
-    uint8_t pscreen = 0;
+    uint16_t pscreen = 0;
     switch ( key_code )
     {
         case 0:
@@ -151,29 +151,28 @@ void ViewScreenCallback( u8 key_code)
         case 4:
             pscreen = xScreens1[pCurrMenu].pRigthScreen;
            break;
-        case 5:
+        default:
             pscreen =  xScreens1[pCurrMenu].pLeftScreen;
             break;
      }
      if (pscreen)
      {
+
          switch (pscreen  & COMMNAD_MASK )
          {
              case ENTER_COMMNAD:
+                 SetFirtsEditString();
                   menu_mode = 2;
-                  SelectEditFlag  = 0;
+                  SelectEditFlag  = 1;
                   break;
              case JOURNAL_VIEW_COMMAND:
                  journal_index = 0;
                  break;
-             case JOURNAL_EXIT:
-                 journal_index = 0;
-                 break;
              case JOURNAL_NEXT:
-                 if (journal_index < getReg16(RECORD_COUNT)) journal_index++;
+                 if ((journal_index+1) < getReg16(RECORD_COUNT)) journal_index++;
                  break;
-             case JOURNAL_PREV:
-                 if (journal_index > 0) journal_index--;
+              case JOURNAL_PREV:
+                 if ((journal_index+1) > 1) journal_index--;
                  break;
          }
          if (pscreen & ~COMMNAD_MASK)
@@ -242,7 +241,8 @@ void vSelectPervius()
         }
         for (uint8_t i = 0; i < MAX_STRING_NUMBER; i++)
         {
-            if (index == 0 ) index = MAX_STRING_NUMBER;
+            if (index == 0 ) index = (MAX_STRING_NUMBER-1);
+
             else {
                 index--;
             }
@@ -308,16 +308,20 @@ void vMenuTask ( void )
                           switch ( TempEvent.KeyCode )
                           {
                                case 0: if  (SelectEditFlag) SelectEditFlag = 0; else { menu_mode = 0;pCurrMenu = GetID(xScreens1[pCurrMenu].pBack); } break;
-                               case 1:  printf("selet %i\r\n",SelectEditFlag);
-                                   if  (SelectEditFlag )
-                                       { menu_mode = 3; vSetEdit();}
+                               case 1:
+                                       if  (!SelectEditFlag )
+                                           {
+                                              SelectEditFlag  = 1;
+                                              SetFirtsEditString();
+                                           }
+
                                        else
-                                       {   SelectEditFlag  = 1;
-                                           SetFirtsEditString();
-
+                                       {
+                                           menu_mode = 3;
+                                           vSetEdit();
+//
                                        }
-
-                               break;
+                                        break;
                                case 2: if   (SelectEditFlag)  vSelectNext();
                                else {
                                    pCurrMenu = GetID(xScreens1[pCurrMenu].pUpScreenSet);
@@ -359,7 +363,7 @@ static uint8_t start_edit_flag =0;
 uint16_t edit_data_buffer_byte;
 
 uint32_t coof[]={1,10,100,1000};
-float coof_float[]={0.0001,0.001,0.01,0.1,1.0,10.0,100.0,1000.0};
+float coof_float[]={0.01,0.1,1.0,10.0,100.0,1000.0};
 
 void vByteDataEdit(u8 size, u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , uint16_t max_data, uint16_t min_data )
 {
@@ -406,32 +410,42 @@ float edit_data_buffer_float;
 
 void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8 min_index, float max_data, float min_data )
 {
+    u8 temp_index;
     switch (command)
     {
         case CMD_START_EDIT:
             edit_data_buffer_float= getRegFloat( data_id );
             start_edit_flag = 1;
-            cur_edit_index = max_index + min_index;
+            cur_edit_index = min_index+1;
             break;
         case CMD_SAVE_EDIT:
             saveRegFloat( data_id, edit_data_buffer_float );
             start_edit_flag = 0;
              break;
         case CMD_NEXT_EDIT:
-             if (++cur_edit_index >=max_index) cur_edit_index = 0;
+             if (++cur_edit_index >=max_index + min_index) cur_edit_index = 0;
+             if (cur_edit_index == min_index) cur_edit_index++;
              break;
         case CMD_PREV_EDIT:
-            if (cur_edit_index <=min_index ) cur_edit_index = max_index; else cur_edit_index--;
+            if (cur_edit_index == 0) cur_edit_index = max_index+1; else cur_edit_index--;
+            if (cur_edit_index == min_index) cur_edit_index--;
                break;
         case CMD_INC:
-             if ((edit_data_buffer_float + coof[cur_edit_index]) <=  max_data )
-                 edit_data_buffer_float = edit_data_buffer_byte + coof_float [cur_edit_index];
+            temp_index = cur_edit_index;
+            if (temp_index > min_index)  temp_index--;
+            printf("%f",coof_float [temp_index]);
+            if ((edit_data_buffer_float + coof_float[temp_index]) <=  max_data )
+                 edit_data_buffer_float = edit_data_buffer_float+ coof_float [temp_index];
              else
                  edit_data_buffer_float = max_data;
              break;
        case CMD_DEC:
-             if (  (edit_data_buffer_float - min_data) >=  coof_float[cur_edit_index] )
-                 edit_data_buffer_float = edit_data_buffer_byte-coof_float[cur_edit_index];
+            temp_index = cur_edit_index;
+            if (temp_index > min_index)  temp_index--;
+            printf("%f",coof_float [temp_index]);
+
+             if (  (edit_data_buffer_float - min_data) >=  coof_float[temp_index] )
+                 edit_data_buffer_float = edit_data_buffer_float-coof_float[temp_index];
              else
                  edit_data_buffer_float = min_data;
              break;
@@ -568,6 +582,12 @@ u16 getDataModelID( u16 MENU_ID)
     }
 }
 
+uint8_t error_flag;
+HAL_TimeConfig_T error_time;
+HAL_DateConfig_T  error_date;
+u8 * SENSOR_COUNT_STRING[]={"0.1","0.5","1.0","2.0","3.0","5.0","10.0"};
+u8 * ErrorString[]={"HEPA Фильтр засорен более 90%","Низкое напряжение сети","Высокое напряжение сети","Невозможно поддерживать уставку"};
+
 void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len)
 {
     HAL_TimeConfig_T time;
@@ -580,7 +600,51 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
     switch (data_id)
     {
 
+        case JOURNAL_TIME_ID:
+            sprintf(str,"%02i:%02i:%02i",error_time.hours,error_time.minutes,error_time.seconds);
+            break;
+        case JOURNAL_DATE_ID:
+            sprintf(str,"%02i:%02i:%02i",error_date.date,error_date.month,error_date.year);
+            break;
+        case JOURNAL_INFO1_ID:
+            switch (error_flag)
+            {
+                case 0:
+                    strcpy(str,"HEPA Фильтр засорен");
+                    break;
+                case 1:
+                    strcpy(str,"Низкое напряжение");
+                    break;
+                case 2:
+                    strcpy(str,"Высокое напряжение");
+                    break;
+                default:
+                    strcpy(str,"Невозможно");
+                    break;
+            }
+
+            break;
+        case JOURNAL_INFO2_ID:
+            switch (error_flag)
+            {
+                case 0:
+                   strcpy(str,"более 90%");
+                   break;
+                case 1:
+                   sprintf(str,"сети < %i В",getReg8(LOW_VOLTAGE_ON));
+                   break;
+                 case 2:
+                     sprintf(str,"сети > %i В",getReg8(HIGH_VOLTAGE_ON));
+                     break;
+                           default:
+                               strcpy(str,"поддерживать уставку");
+                               break;
+                       }
+
+             break;
         case JURNAL_RECORD_ID:
+            sprintf(str,"%02i/%02i",journal_index+1, getReg16(RECORD_COUNT));
+            vGetRecord(journal_index,&error_flag,&error_time,&error_date);
             break;
         case COOF_P_ID:
         case COOF_I_ID:
@@ -588,10 +652,10 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             switch (command)
             {
                 case CMD_READ:
-                    sprintf(str,"%000.00f",getRegFloat(reg_id));
+                    sprintf(str,"%+07.2f",getRegFloat(reg_id));
                     break;
                 case CMD_EDIT_READ:
-                    sprintf(str,"%000.00f",edit_data_buffer_byte );
+                    sprintf(str,"%+07.2f",edit_data_buffer_float );
                     break;
                default:
                    vFloatDataEdit(reg_id, command,4,2,999.99,-999.99);
@@ -622,10 +686,10 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             switch (command)
             {
                case CMD_READ:
-                  sprintf(str,"%04i м^3/ч",getReg16(getDataModelID(data_id)) );
+                  sprintf(str,"%04i",getReg16(getDataModelID(data_id)) );
                   break;
                case CMD_EDIT_READ:
-                  sprintf(str,"%04i м^3/ч",edit_data_buffer_byte );
+                  sprintf(str,"%04i",edit_data_buffer_byte );
                   break;
                default:
                   vByteDataEdit(1,getDataModelID(data_id),command,3,9999,0);
@@ -724,6 +788,35 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
     case JOURNAL_COUNT_ID:
         sprintf(str,"%02i",getReg16(RECORD_COUNT) );
         break;
+    case JOURNAL_RESET_ID:
+        switch (command )
+        {
+            case CMD_EDIT_READ:
+                sprintf(str,"");
+                break;
+            case CMD_READ:
+                if ( SelectEditFlag )
+                    sprintf(str,"     Сбросить журнал?   ");
+                else
+                    sprintf(str,"");
+                break;
+            case CMD_SAVE_EDIT:
+            case CMD_START_EDIT:
+                 saveReg16(RECORD_INDEX, 0);
+                 saveReg16(RECORD_COUNT, 0);
+                 start_edit_flag = 0;
+                 menu_mode = 0;
+                 SelectEditFlag = 0;
+                 break;
+
+               //vSetCommnad(CMD_SAVE_EDIT);
+               break;
+           default:
+               start_edit_flag = 0;
+               menu_mode = 0;
+            break;
+        }
+        break;
     case MB_RTU_ADDR_ID :
         switch (command)
         {
@@ -750,12 +843,30 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                 strcpy(str, ControlModeStrig[ getReg8( getDataModelID(data_id))] );
                 break;
             default:
-                vByteDataEdit(0,getDataModelID(data_id),command,0,MB_TCP,(data_id == CONTROL_MODE_ID)? MB_DIN : MB_RTU);
+                vByteDataEdit(0,getDataModelID(data_id),command,0,MKV_MB_TCP,(data_id == CONTROL_MODE_ID)? MKV_MB_DIN : MKV_MB_RTU);
                 break;
         }
         break;
     case HOURE_COUNTER_ID:
         sprintf(str,"%000000i часов %00i минут",vRTC_TASK_GetHoure(), vRTC_TASK_GetMinute( ));
+        break;
+    case SENS_COUNT_ID:
+        *len = 0;
+        switch (command)
+        {
+             case CMD_READ:
+                 strcpy(str,SENSOR_COUNT_STRING[getReg8(SENSOR_COUNT)]);
+                       break;
+                   case CMD_EDIT_READ:
+                       strcpy(str,SENSOR_COUNT_STRING[edit_data_buffer_byte ]);
+
+                       break;
+                   default:
+                       vByteDataEdit(0,SENSOR_COUNT,command,0,6,0);
+                       break;
+               }
+
+
         break;
     default:
         if (str!=0)
@@ -770,7 +881,7 @@ static void vDraw( xScreenObjet * pScreenDraw)
     u8g2_ClearBuffer(&u8g2);
     u8 x,y;
     u8 len,edit_index,box_len;
-    u8 str[20];
+    u8 str[50];
     for (u8 i=0;i<MAX_STRING_NUMBER;i++)
     {
         switch (pScreenDraw[i].xType)
