@@ -29,9 +29,9 @@ static int16_t sens_press=0;
 int16_t GetConversional(ADC_Conversionl_Buf_t * pBuf);
 #define DC_24_BufferSize    3
 #define DC_AIN_BufferSize  10
-#define Sens_BufferSize_MAX 500
+#define Sens_BufferSize_MAX 400
 
-u16 sensor_timer[] = { 5,25,50,100,150,250,500};
+u16 sensor_timer[] = { 4,20,40,80,120,200,400};
 
 #define DAC_CAL_POINT 10
 
@@ -504,7 +504,7 @@ void I2C_task(void *pvParameters)
 
  while(1)
  {
-     if (++counter_led >25)
+     if (++counter_led >20)
                 {
                     counter_led =0;
                     if (led_state == 0)
@@ -526,7 +526,7 @@ void I2C_task(void *pvParameters)
      while (1)
      {
 
-         if ((xTaskGetTickCount () - xLastWakeTime ) >20)
+         if ((xTaskGetTickCount () - xLastWakeTime ) >25)
          {
              if (ADC_FSM!=6)
                  {

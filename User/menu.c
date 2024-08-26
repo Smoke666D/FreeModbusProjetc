@@ -457,9 +457,6 @@ void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8
 }
 
 
-
-
-
 u8 edit_ip_addres[4];
 
 void vIPDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command )
@@ -578,6 +575,8 @@ u16 getDataModelID( u16 MENU_ID)
         case SETTING1_ID:       return (SETTING1);
         case SETTING2_ID:       return (SETTING2);
         case KOOFKPS_ID:        return (KOOFKPS);
+        case MB_RTU_ADDR_ID:    return (MB_RTU_ADDR);
+        case MOD_BUS_TIMEOUT_ID:return (MOD_BUS_TIMEOUT);
         default: return 0;
     }
 }
@@ -593,7 +592,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
     HAL_TimeConfig_T time;
     HAL_DateConfig_T date;
     u8 MACAddr[6];
-    u16 max,min,temp_index;
+    u16 max,min;
     if (index!=0) *index = cur_edit_index;
     if (len!=0)   *len = 1;
     u16 reg_id = getDataModelID(data_id);
@@ -808,9 +807,6 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                  menu_mode = 0;
                  SelectEditFlag = 0;
                  break;
-
-               //vSetCommnad(CMD_SAVE_EDIT);
-               break;
            default:
                start_edit_flag = 0;
                menu_mode = 0;
@@ -818,16 +814,17 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
         }
         break;
     case MB_RTU_ADDR_ID :
+    case MOD_BUS_TIMEOUT_ID:
         switch (command)
         {
             case CMD_READ:
-                sprintf(str,"%02i",getReg8(MB_RTU_ADDR) );
+                sprintf(str,"%02i",getReg8(reg_id) );
                 break;
             case CMD_EDIT_READ:
                 sprintf(str,"%02i",edit_data_buffer_byte );
                 break;
             default:
-                vByteDataEdit(0,MB_RTU_ADDR,command,2,100,1);
+                vByteDataEdit(0,reg_id,command,2,100,1);
                 break;
         }
         break;

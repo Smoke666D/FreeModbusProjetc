@@ -76,7 +76,7 @@ void user_process_task(void *pvParameters)
                task_fsm = USER_PROCESS_ALARM;
            }
        }
-    /*   if (ucDinGet(OUT_2))
+       if (ucDinGet(OUT_2))
        {
            if ( set_point_old == 0) set_point_flag = 1;
            set_point_old = 1;
@@ -88,7 +88,7 @@ void user_process_task(void *pvParameters)
            set_point_old = 0;
            setpoint = getReg16(SETTING2);
        }
-       if ( FSM_STATE >= 3 )
+      /* if ( FSM_STATE >= 3 )
        {
           // HAL_SetBit(CRACH_Port,  CRACH_Pin);
            eSetDUT(OUT_2,TRUE);

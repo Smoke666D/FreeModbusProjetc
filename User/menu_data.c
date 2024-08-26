@@ -42,16 +42,16 @@ static xScreenObjet const InfoScreen4[]=
 
 static xScreenObjet const SettingsScreen1[]=
 {
-        {0,10,LINE1,70,TEXT_STRING,"Настройки      1/8",0},
+        {0,10,LINE1,70,TEXT_STRING,"Настройки      1/9",0},
         {0,2,25,70,WRITE_DATA,"Режим управл.",          CONTROL_MODE_ID },
         {0,2,37,70,WRITE_DATA,"Протокол связи.",        PROTOCOL_ID },
         {0,2,50,70,WRITE_DATA,"Адрес ModBus",           MB_RTU_ADDR_ID},
-        {1,2,62,15,WRITE_DATA,"Время усред. с",         SENS_COUNT_ID },
+        {1,2,62,70,WRITE_DATA,"Таймаут связи с.",    MOD_BUS_TIMEOUT_ID},
 };
 
 static xScreenObjet const SettingsScreen2[]=
 {
-        {0,10,LINE1,70,TEXT_STRING,"Настройки      2/8",    0},
+        {0,10,LINE1,70,TEXT_STRING,"Настройки      2/9",    0},
         {0,2,25,70,WRITE_DATA,"IP",            IP_ADRESS_DATA_ID},
         {0,2,37,90,WRITE_DATA,"IP Порт",                 IP_PORT_ID},
         {0,2,50,70,WRITE_DATA,"Шлюз",                    IP_GATE_ID},
@@ -60,7 +60,7 @@ static xScreenObjet const SettingsScreen2[]=
 
 static xScreenObjet const SettingsScreen3[]=
 {
-        {0,10,LINE1,70,TEXT_STRING,"Настройки      3/8",    0},
+        {0,10,LINE1,70,TEXT_STRING,"Настройки      3/9",    0},
         {0,2,25,70,TEXT_STRING,"Уставки режимов  м^3/ч",    0},
         {0,2,37,70,WRITE_DATA,"Режим 1",        SETTING1_ID},
         {0,2,50,90,WRITE_DATA,"Режим 2",        SETTING2_ID},
@@ -69,7 +69,7 @@ static xScreenObjet const SettingsScreen3[]=
 };
 static xScreenObjet const SettingsScreen4[]=
 {
-        {0,10,LINE1,70,TEXT_STRING,"Настройки      4/8",0},
+        {0,10,LINE1,70,TEXT_STRING,"Настройки      4/9",0},
         {0,2,25,70,TEXT_STRING,"Нижний дипазон фильтра",0},
         {0,2,37,90,WRITE_DATA,"",                       FILTER_LOW_ID},
         {0,2,50,70,TEXT_STRING,"Верхний дипазон фильтра",0},
@@ -77,7 +77,7 @@ static xScreenObjet const SettingsScreen4[]=
 };
 static xScreenObjet const SettingsScreen5[]=
 {
-        {0,10,LINE1,70,TEXT_STRING,"Настройки      5/8",0},
+        {0,10,LINE1,70,TEXT_STRING,"Настройки      5/9",0},
         {0,2,25,70,WRITE_DATA,"Напряжение min",     VOLTAGE_MIN_ON_ID},
         {0,2,37,90,WRITE_DATA,"Сборс аварии min",   VOLTAGE_MIN_OFF_ID },
         {0,2,50,70,WRITE_DATA,"Напряжение max",     VOLTAGE_MAX_ON_ID},
@@ -85,7 +85,7 @@ static xScreenObjet const SettingsScreen5[]=
 };
 static xScreenObjet const SettingsScreen6[]=
 {
-        {0,10,LINE1,70,TEXT_STRING,"Настройки      6/8",0},
+        {0,10,LINE1,70,TEXT_STRING,"Настройки      6/9",0},
         {0,2,25,70,TEXT_STRING,"ПИ регулятор",0},
         {0,2,37,90,WRITE_DATA,"Коэф. П",                COOF_P_ID },
         {1,2,50,70,WRITE_DATA,"Коэф. И",                COOF_I_ID },
@@ -93,7 +93,7 @@ static xScreenObjet const SettingsScreen6[]=
 };
 static xScreenObjet const SettingsScreen7[]=
 {
-        {0,10,LINE1,70,TEXT_STRING,"Настройки      7/8",    0},
+        {0,10,LINE1,70,TEXT_STRING,"Настройки      7/9",    0},
         {0,2,25,70,TEXT_STRING,"Текущий перепад давл.",  0},
         {0,2,37,90,READ_DATA,"Вентилятор",               SENS_1_RAW_ID},
         {0,2,50,70,READ_DATA,"Фильтр",                   SENS_2_RAW_ID},
@@ -102,7 +102,17 @@ static xScreenObjet const SettingsScreen7[]=
 
 static xScreenObjet const SettingsScreen8[]=
 {
-        {0,10,LINE1,70,TEXT_STRING,"Настройки      8/8",    0},
+        {0,10,LINE1,70,TEXT_STRING,"Настройки      8/9",    0},
+        {0,2,25,70,TEXT_STRING,"Текущий перепад давл.",  0},
+        {0,2,37,90,READ_DATA,"Вентилятор",              SENS_1_RAW_ID},
+        {0,2,50,70,READ_DATA,"Фильтр",                  SENS_2_RAW_ID},
+        {1,2,62,15,WRITE_DATA,"Время усред. с",         SENS_COUNT_ID },
+};
+
+
+static xScreenObjet const SettingsScreen9[]=
+{
+        {0,10,LINE1,70,TEXT_STRING,"Настройки      9/9",    0},
         {0,2,25,70,TEXT_STRING,"  Для сборса журнала",  0},
         {0,2,37,90,TEXT_STRING,"      нажмите ВВОД",        0},
         {0,2,50,70,READ_DATA,"Записей:",JOURNAL_COUNT_ID},
@@ -124,7 +134,7 @@ xScreenType  xScreens1[SCREENS_COUNT] =
   {1,InfoScreen1,      3,   2,  11,  11, 0, 0 },
   {2,InfoScreen2,      1,   3,  0,  0 , 12 | JOURNAL_VIEW_COMMAND, 0 },
   {3,InfoScreen3,      2,   1,  0,   0, 4  , 0  },
-  {4,SettingsScreen1,  0,   0,  13,  5, ENTER_COMMNAD , 3  },
+  {4,SettingsScreen1,  0,   0,  14,  5, ENTER_COMMNAD , 3  },
   {5,SettingsScreen2,  0,   0,  4,   6, ENTER_COMMNAD , 3 },
   {6,SettingsScreen3,  0,   0,  5,  7,  ENTER_COMMNAD , 3 },
   {7,SettingsScreen4,  0,   0,  6,  8, 0, 3  },
@@ -133,7 +143,8 @@ xScreenType  xScreens1[SCREENS_COUNT] =
   {10,SettingsScreen7, 0,   0,  9,   4,  0, 3 },
   {11,InfoScreen4,      0,   0,  1,  1, 0, 0 },
   {12,JournalViewScreen, 0,   0, JOURNAL_NEXT , JOURNAL_PREV, 0,  2 },
-  {13,SettingsScreen8, 0,   0,  10,   4,   ENTER_COMMNAD, 3 },
+  {13,SettingsScreen8, 0,   0,  10,   14,   ENTER_COMMNAD, 3 },
+  {14,SettingsScreen9, 0,   0,  13,   4,   ENTER_COMMNAD, 3 },
 };
 
 

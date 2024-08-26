@@ -19,7 +19,7 @@
 #define LINE4        60U
 #define LINE5        60U
 
-#define SCREENS_COUNT 14
+#define SCREENS_COUNT 15
 
 extern xScreenType  xScreens1[];
 

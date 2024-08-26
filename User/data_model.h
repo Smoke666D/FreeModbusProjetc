@@ -9,6 +9,7 @@
 #define USER_DATA_MODEL_H_
 
 #include "system_init.h"
+#include "hal_rtc.h"
 
 #define VALID_CODE            0x66
 #define VALID_CODE_ADDRES     0
@@ -21,7 +22,9 @@
 #define LOW_VOLTAGE_OFF       ( LOW_VOLTAGE_ON    +sizeof(uint8_t)  )
 #define HIGH_VOLTAGE_ON       ( LOW_VOLTAGE_OFF   +sizeof(uint8_t)  )
 #define HIGH_VOLTAGE_OFF      ( HIGH_VOLTAGE_ON   +sizeof(uint8_t)  )
-#define IP_1                  ( HIGH_VOLTAGE_OFF  +sizeof(uint8_t) )
+#define CONTRAST              ( HIGH_VOLTAGE_OFF  +sizeof(uint8_t)  )
+#define MOD_BUS_TIMEOUT       ( CONTRAST          +sizeof(uint8_t) )
+#define IP_1                  ( MOD_BUS_TIMEOUT   +sizeof(uint8_t) )
 #define IP_2                  ( IP_1   +sizeof(uint8_t) )
 #define IP_3                  ( IP_2   +sizeof(uint8_t) )
 #define IP_4                  ( IP_3   +sizeof(uint8_t) )
@@ -104,5 +107,6 @@ u8 getReg8( u16 reg_adress);
 void saveRegFloat(u16 reg_adress, float data );
 DATA_MODEL_INIT_t DataModel_Init();
 void vADDRecord( uint8_t flag);
+void vGetRecord( uint16_t addr,uint8_t * flag, HAL_TimeConfig_T * time, HAL_DateConfig_T * date);
 
 #endif /* USER_DATA_MODEL_H_ */

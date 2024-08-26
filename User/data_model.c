@@ -7,6 +7,7 @@
 #include "data_model.h"
 #include "EEPROM_25C.h"
 
+
 u8 DATA_MODEL_REGISTER[EEPROM_REGISTER_COUNT];
 
 
@@ -38,6 +39,8 @@ DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[MASK_2]              = 255;
                DATA_MODEL_REGISTER[MASK_3]              = 255;
                DATA_MODEL_REGISTER[MASK_4]              = 0;
+               DATA_MODEL_REGISTER[CONTRAST]            = 50;
+               DATA_MODEL_REGISTER[MOD_BUS_TIMEOUT ]    = 10;
                setReg16(IP_PORT,502);
                DATA_MODEL_REGISTER[SENSOR_COUNT]        = TIME_10_0;
 

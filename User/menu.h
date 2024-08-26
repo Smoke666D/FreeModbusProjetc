@@ -51,6 +51,7 @@
 #define JOURNAL_INFO2_ID        37
 #define JOURNAL_RESET_ID        38
 #define SENS_COUNT_ID           39
+#define MOD_BUS_TIMEOUT_ID      40
 
 
 typedef enum
