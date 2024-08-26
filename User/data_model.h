@@ -39,9 +39,19 @@
 #define RESURSE               ( SENSOR2_ZERO     + sizeof(uint16_t) )
 #define COOF_I                ( RESURSE + sizeof(uint32_t)  )
 #define COOF_P                ( COOF_I + sizeof(uint32_t) )
-#define MOTO_HOURS            ( COOF_P + sizeof(uint32_t))
-#define EEPROM_REGISTER_COUNT ( MOTO_HOURS  + sizeof(uint32_t) )
+#define KOOFKPS               ( COOF_P + sizeof(uint32_t))
+#define SETTING1              ( KOOFKPS + sizeof(uint32_t))
+#define SETTING2              ( SETTING1 + sizeof(uint16_t) )
+#define FILTER_LOW            ( SETTING2 + sizeof(uint16_t) )
+#define FILTER_HIGH           ( FILTER_LOW + sizeof(uint16_t) )
+#define MOTO_HOURS            ( FILTER_HIGH + sizeof(uint16_t) )
+#define RECORD_COUNT          ( MOTO_HOURS  + sizeof(uint32_t)  )
+#define RECORD_INDEX          ( RECORD_COUNT + sizeof(uint16_t) )
+#define EEPROM_REGISTER_COUNT ( RECORD_INDEX  + sizeof(uint16_t) )
 
+
+#define RECORD_SIZE 7
+#define RECORD_DATA_SIZE       300
 
 typedef enum
 {
@@ -61,7 +71,13 @@ typedef enum
 #define DATA_MODEL_REGISTERS   EEPROM_REGISTER_COUNT + RAM_REGISTER_COUNT
 #define TOTAL_REGISTER_COUNT   DATA_MODEL_REGISTERS
 
-
+typedef enum
+{
+  FILTER_ERROR = 0,
+  LOW_VOLTAGE_ERROR = 1,
+  HIGH_VOLTAGE_ERROR = 2,
+  SETTING_ERROR   =3
+} FMCH_ERROR_t;
 
 void saveReg16( u16 reg_adress, u16 data);
 void setRegFloat( u16 reg_adress, float data);
@@ -75,5 +91,6 @@ void setReg32( u16 reg_adress, u32 data);
 u8 getReg8( u16 reg_adress);
 void saveRegFloat(u16 reg_adress, float data );
 DATA_MODEL_INIT_t DataModel_Init();
+void vADDRecord( uint8_t flag);
 
 #endif /* USER_DATA_MODEL_H_ */

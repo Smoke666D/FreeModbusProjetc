@@ -60,18 +60,18 @@ static xScreenObjet const SettingsScreen2[]=
 static xScreenObjet const SettingsScreen3[]=
 {
         {0,10,LINE1,70,TEXT_STRING,"Настройки      3/7",    0},
-        {0,2,25,70,TEXT_STRING,"Текущий перепад давл.",  0},
-        {0,2,37,90,READ_DATA,"Вентилятор",               SENS_1_RAW_ID},
-        {0,2,50,70,READ_DATA,"Фильтр",                   SENS_2_RAW_ID},
-        {1,2,62,15,WRITE_DATA,"Откалибравать 0",         0 },
+        {0,2,25,70,WRITE_DATA,"Уставка режим 1",        SETTING1_ID},
+        {0,2,37,90,WRITE_DATA,"Уставка режим 2",        SETTING2_ID},
+        {1,2,50,70,WRITE_DATA,"Коэф Кп.с.",             KOOFKPS_ID},
+        //{1,2,62,15,WRITE_DATA,"Откалибравать 0",         0 },
 };
 static xScreenObjet const SettingsScreen4[]=
 {
         {0,10,LINE1,70,TEXT_STRING,"Настройки      4/7",0},
-        {0,2,25,70,TEXT_STRING,"Режим управления",0},
-       // {0,2,37,90,READ_DATA,"Напяжение",AC_VOLTAGE_ID },
-       // {0,2,50,70,READ_DATA,"Адрес ModBus",MB_RTU_ADDR_ID},
-        {1,2,62,15,READ_DATA,"",IP_ADRESS_DATA_ID },
+        {0,2,25,70,TEXT_STRING,"Нижний дипазон фильтра",0},
+        {0,2,37,90,WRITE_DATA,"",                       FILTER_LOW_ID},
+        {0,2,50,70,TEXT_STRING,"Верхний дипазон фильтра",0},
+        {1,2,62,15,WRITE_DATA,"",                       FILTER_HIGH_ID },
 };
 static xScreenObjet const SettingsScreen5[]=
 {

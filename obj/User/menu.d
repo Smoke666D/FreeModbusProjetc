@@ -71,7 +71,10 @@ User/menu.o: ../User/menu.c ../User/menu.h ../User/main.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/EEPROM_25C.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_dma.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\User/system_init.h \
- ../User/user_process.h ../User/menu_data.h
+ ../User/user_process.h ../User/menu_data.h \
+ C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_din.h \
+ C:\Users\smoke\Documents\FreeModbusProjetc\User/init.h \
+ C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/filters.h
 
 ../User/menu.h:
 
@@ -232,3 +235,9 @@ C:\Users\smoke\Documents\FreeModbusProjetc\User/system_init.h:
 ../User/user_process.h:
 
 ../User/menu_data.h:
+
+C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_din.h:
+
+C:\Users\smoke\Documents\FreeModbusProjetc\User/init.h:
+
+C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/filters.h:

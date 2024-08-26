@@ -137,7 +137,7 @@
 
 	#elif defined(__GNUC__) && !defined(USE_HAL_DRIVER)  /* Check compiler */
 
-		#define GetTime()   0
+		#define GetTime()   20
 
 	/* ------------------------------------------------------------------ */
 

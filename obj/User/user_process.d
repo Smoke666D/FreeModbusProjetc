@@ -70,7 +70,14 @@ User/user_process.o: ../User/user_process.c ../User/user_process.h \
  ../User/rtc_task.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/EEPROM_25C.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_dma.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\User/system_init.h
+ C:\Users\smoke\Documents\FreeModbusProjetc\User/system_init.h \
+ ../User/pid.h \
+ C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_din.h \
+ C:\Users\smoke\Documents\FreeModbusProjetc\User/init.h \
+ C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/filters.h \
+ C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_adc.h \
+ C:\Users\smoke\Documents\FreeModbusProjetc\User/drivers_config.h \
+ C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_timers.h
 
 ../User/user_process.h:
 
@@ -229,3 +236,17 @@ C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/EEPROM_25C.h:
 C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_dma.h:
 
 C:\Users\smoke\Documents\FreeModbusProjetc\User/system_init.h:
+
+../User/pid.h:
+
+C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_din.h:
+
+C:\Users\smoke\Documents\FreeModbusProjetc\User/init.h:
+
+C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/filters.h:
+
+C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_adc.h:
+
+C:\Users\smoke\Documents\FreeModbusProjetc\User/drivers_config.h:
+
+C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_timers.h:

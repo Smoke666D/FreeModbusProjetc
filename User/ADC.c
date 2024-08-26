@@ -153,8 +153,11 @@ float getAIN( AIN_CHANNEL_t channel)
         case AC220:
             return (AC_220_VALUE);
     }
+}
 
-
+uint8_t getACVoltage()
+{
+    return ((uint8_t)AC_220_VALUE);
 }
 
 

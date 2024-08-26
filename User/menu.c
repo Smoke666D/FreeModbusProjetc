@@ -12,7 +12,7 @@
 #include "led.h"
 #include "hal_rtc.h"
 #include "data_model.h"
-
+#include "hw_lib_din.h"
 
 
 static const unsigned char rcp0606536715761_bits[] = {
@@ -414,6 +414,105 @@ void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8
 }
 
 
+
+
+
+u8 edit_ip_addres[4];
+
+void vIPDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command )
+{
+    switch (command)
+    {
+        case CMD_START_EDIT:
+            for (u8 i=0;i<4;i++)
+                edit_ip_addres[i]=  getReg8( data_id +i);
+            start_edit_flag = 1;
+            cur_edit_index = 0;
+            break;
+        case CMD_SAVE_EDIT:
+            for (u8 i=0;i<4;i++)
+                SaveReg8( data_id+ i , edit_ip_addres[i] );
+            start_edit_flag = 0;
+             break;
+        case CMD_NEXT_EDIT:
+             if (++cur_edit_index >=15) cur_edit_index = 0;
+             if ((cur_edit_index == 3) || (cur_edit_index == 7) ||  (cur_edit_index == 11)) cur_edit_index ++;
+             break;
+        case CMD_PREV_EDIT:
+            if (cur_edit_index ==0 ) cur_edit_index = 0; else cur_edit_index--;
+            if ((cur_edit_index == 3) || (cur_edit_index == 7) ||  (cur_edit_index == 11)) cur_edit_index --;
+               break;
+        case CMD_INC:
+             if (cur_edit_index < 3)
+             {
+                 if (( edit_ip_addres[3] + coof[cur_edit_index %3]) <=  255 )
+                     edit_ip_addres[3] =+ + coof[cur_edit_index %3];
+                 else
+                     edit_ip_addres[3] = 255;
+
+             } else if (cur_edit_index < 7)
+             {
+                 if (( edit_ip_addres[2] + coof[(cur_edit_index - 3)%3]) <=  255 )
+                           edit_ip_addres[2] =+  coof[(cur_edit_index - 3) %3];
+                 else
+                          edit_ip_addres[2] = 255;
+             }
+             else if (cur_edit_index < 11)
+             {
+                  if (( edit_ip_addres[1] + coof[(cur_edit_index -7)%3]) <=  255 )
+                      edit_ip_addres[1] =+  coof[(cur_edit_index - 7) %3];
+                  else
+                      edit_ip_addres[1] = 255;
+              }
+             else
+              {
+                  if (( edit_ip_addres[0] + coof[(cur_edit_index - 11)%3]) <=  255 )
+                                        edit_ip_addres[0] =+  coof[(cur_edit_index - 11) %3];
+                  else
+                      edit_ip_addres[0] = 255;
+              }
+             break;
+       case CMD_DEC:
+              if (cur_edit_index < 3)
+              {
+                  if (( edit_ip_addres[3]  >=  coof[cur_edit_index %3]))
+                        edit_ip_addres[3] =- coof[cur_edit_index %3];
+                  else
+                       edit_ip_addres[3] = 0;
+              }
+              else if (cur_edit_index < 7)
+              {
+                  if (( edit_ip_addres[2] >= coof[(cur_edit_index - 3)%3]))
+                         edit_ip_addres[2] =-  coof[(cur_edit_index - 3) %3];
+                  else
+                        edit_ip_addres[2] = 0;
+             }
+             else if (cur_edit_index < 11)
+             {
+                  if (( edit_ip_addres[1] >= coof[(cur_edit_index -7)%3]))
+                         edit_ip_addres[1] =-  coof[(cur_edit_index - 7) %3];
+                  else
+                         edit_ip_addres[1] = 255;
+             }
+             else
+             {
+                 if (( edit_ip_addres[0] >= coof[(cur_edit_index - 11)%3]))
+                        edit_ip_addres[0] =-  coof[(cur_edit_index - 11) %3];
+                 else
+                       edit_ip_addres[0] = 255;
+             }
+             break;
+       case CMD_EXIT_EDIT:
+             start_edit_flag = 0;
+             break;
+     }
+
+}
+
+
+
+
+
 u16 getDataModelID( u16 MENU_ID)
 {
     switch (MENU_ID)
@@ -428,6 +527,14 @@ u16 getDataModelID( u16 MENU_ID)
         case VOLTAGE_MAX_OFF_ID:return (HIGH_VOLTAGE_OFF);
         case CONTROL_MODE_ID:   return (MB_RTU_ADDR);
         case PROTOCOL_ID:       return (MB_PROTOCOL_TYPE);
+        case IP_ADRESS_DATA_ID: return (IP_1);
+        case IP_GATE_ID:        return (GATE_1);
+        case IP_SUBNETMASK_ID:  return (MASK_1);
+        case FILTER_HIGH_ID:    return (FILTER_HIGH);
+        case FILTER_LOW_ID:     return (FILTER_LOW);
+        case SETTING1_ID:       return (SETTING1);
+        case SETTING2_ID:       return (SETTING2);
+        case KOOFKPS_ID:        return (KOOFKPS);
         default: return 0;
     }
 }
@@ -437,7 +544,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
     HAL_TimeConfig_T time;
     HAL_DateConfig_T date;
     u8 MACAddr[6];
-    u16 max,min;
+    u16 max,min,temp_index;
     if (index!=0) *index = cur_edit_index;
     if (len!=0)   *len = 1;
     u16 reg_id = getDataModelID(data_id);
@@ -445,6 +552,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
     {
         case COOF_P_ID:
         case COOF_I_ID:
+        case KOOFKPS_ID:
             switch (command)
             {
                 case CMD_READ:
@@ -457,22 +565,55 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                    vFloatDataEdit(reg_id, command,4,2,999.99,-999.99);
                    break;
             }
+            break;
+        case FILTER_HIGH_ID:
+        case FILTER_LOW_ID:
+            switch (command)
+            {
+                case CMD_READ:
+                     sprintf(str,"%03i",getReg16(getDataModelID(data_id)) );
+                     break;
+                case CMD_EDIT_READ:
+                     sprintf(str,"%03i",edit_data_buffer_byte );
+                     break;
+                default:
+                     vByteDataEdit(1,getDataModelID(data_id),command,2,999,0);
+                     break;
+             }
              break;
         case SENS_1_RAW_ID:
         case SENS_2_RAW_ID:
             sprintf(str, "%i Па",(int)getAIN(reg_id) );
             break;
+        case SETTING1_ID:
+        case SETTING2_ID:
+            switch (command)
+            {
+               case CMD_READ:
+                  sprintf(str,"%04i м^3/ч",getReg16(getDataModelID(data_id)) );
+                  break;
+               case CMD_EDIT_READ:
+                  sprintf(str,"%04i м^3/ч",edit_data_buffer_byte );
+                  break;
+               default:
+                  vByteDataEdit(1,getDataModelID(data_id),command,3,9999,0);
+                  break;
+             }
+            break;
         case SETTING_ID:
-            strcpy(str,"0000 м^3/ч");
+            sprintf(str,"%04i м^3/ч", USER_GetSetting());
             break;
         case FACT_RASH_ID:
-            strcpy(str,"0000 м^3/ч");
+            sprintf(str,"%04i м^3/ч", USER_GetFact());
             break;
         case FILTER_STATE_ID:
             strcpy(str,"000 %");
             break;
         case MODE_STATE_ID:
-            strcpy(str,"1");
+            if (ucDinGet(OUT_2))
+                strcpy(str,"1");
+            else
+                strcpy(str,"2");
             break;
         case MAC_ADRESS_ID:
             WCHNET_GetMacAddr(MACAddr);
@@ -480,10 +621,22 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             break;
         case PROCESS_STATE_ID:
             sprintf(str, (USER_GetProccesState()== USER_RROCCES_WORK) ? "Работа" : "Останов");
-
             break;
         case IP_ADRESS_DATA_ID:
-            sprintf(str,"%03u.%03u.%03u.%03u",getReg8(IP_1),getReg8(IP_2),getReg8(IP_3),getReg8(IP_4));
+        case IP_GATE_ID:
+        case IP_SUBNETMASK_ID:
+            switch (command)
+            {
+                case CMD_READ:
+                    temp_index = getDataModelID(reg_id);
+                    sprintf(str,"%03u.%03u.%03u.%03u",getReg8(temp_index),getReg8(temp_index+1),getReg8(temp_index+2),getReg8(temp_index+3));
+                    break;
+                case CMD_EDIT_READ:
+                    sprintf(str,"%03u.%03u.%03u.%03u",edit_ip_addres[0],edit_ip_addres[1],edit_ip_addres[2],edit_ip_addres[3]);
+                    break;
+                default:
+                    vIPDataEdit(getDataModelID(reg_id),command);
+            }
             break;
         case IP_PORT_ID:
             switch (command)
@@ -498,12 +651,6 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                     vByteDataEdit(1,IP_PORT,command,2,999,0);
                     break;
             }
-            break;
-        case IP_GATE_ID:
-            sprintf(str,"%03u.%03u.%03u.%03u",getReg8(GATE_1),getReg8(GATE_2),getReg8(GATE_3),getReg8(GATE_4));
-            break;
-        case IP_SUBNETMASK_ID:
-            sprintf(str,"%03u.%03u.%03u.%03u",getReg8(MASK_1),getReg8(MASK_2),getReg8(MASK_3),getReg8(MASK_4));
             break;
         case AC_VOLTAGE_ID:
             sprintf(str,"%i В",(uint16_t)getAIN(AC220));

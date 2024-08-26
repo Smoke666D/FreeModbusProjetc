@@ -124,3 +124,87 @@ float getRegFloat(u16 reg_adress )
     ptemp = (float *)&data;
     return  (*ptemp);
 }
+
+
+
+/*
+ *   §±§à§Ý§å§é§Ú§ä§î §Ù§Ñ§á§Ú§ã§î §Ú§Ù §Ø§å§â§ß§Ñ§Ý§Ñ
+ */
+void vGetRecord( uint16_t addr,uint8_t * flag, HAL_TimeConfig_T * time, HAL_DateConfig_T * date)
+{
+  uint16_t total     =  getReg16( RECORD_COUNT );
+  uint16_t cur_index =  getReg16( RECORD_INDEX);
+  uint8_t pData[RECORD_DATA_SIZE];
+  uint16_t index = 0;
+  if ( addr  <= total )
+  {
+      if ( (cur_index - total) >= 0  )
+      {
+          index = addr;
+      }
+      else
+      {
+          if ((cur_index + index) < total)
+          {
+              index = cur_index + index;
+          }
+          else
+          {
+              index = addr - (total - cur_index + 1);
+          }
+      }
+
+      ReadEEPROMData(EEPROM_REGISTER_COUNT+  index*RECORD_SIZE  ,pData , RECORD_SIZE ,10,2);
+      *flag =         pData[0];
+      date->date    = pData[1];
+      date->month   = pData[2];
+      date->year    = pData[3];
+      time->hours   = pData[4];
+      time->minutes = pData[5];
+      time->seconds = pData[6];
+  }
+  else
+  {
+      *flag = 0;
+  }
+}
+/*
+ * §¥§à§Ò§Ñ§Ó§Ú§ä§î §Ù§Ñ§á§Ú§ã§î §Ó §Ø§å§â§ß§Ñ§Ý
+ */
+void vADDRecord( uint8_t flag)
+{
+    HAL_TimeConfig_T time;
+    HAL_DateConfig_T date;
+
+    uint16_t  index = getReg16(RECORD_INDEX);
+    uint8_t DataBuffer[RECORD_SIZE];
+    DataBuffer[0] =  flag;
+    HAL_RTC_ReadTime( &time);
+    HAL_RTC_ReadDate(&date);
+
+    DataBuffer[1] =  date.date;
+    DataBuffer[2] =  date.month;
+    DataBuffer[3] =  date.year;
+    DataBuffer[4] =  time.hours;
+    DataBuffer[5] =  time.minutes;
+    DataBuffer[6] =  time.seconds;
+    WriteEEPROM(EEPROM_REGISTER_COUNT +  index* RECORD_SIZE,  DataBuffer, RECORD_SIZE ,10, 2);
+
+    if ( ++index >= RECORD_DATA_SIZE ) index = 0;
+    setReg16(RECORD_INDEX, index);
+    if (getReg16(RECORD_COUNT) < ( RECORD_DATA_SIZE)  )
+    {
+        setReg16(RECORD_COUNT,  getReg16(RECORD_COUNT) +1 );
+    }
+    WriteEEPROM(RECORD_COUNT , &DATA_MODEL_REGISTER[RECORD_COUNT], 4 ,10, 2);
+}
+
+/*
+ * §°§é§Ú§ã§ä§Ú§ä§î §Ø§å§â§ß§Ñ§Ý
+ */
+void JournalClear()
+{
+    setReg16(RECORD_INDEX, 0);
+    setReg16(RECORD_COUNT, 0);
+    WriteEEPROM(RECORD_COUNT , &DATA_MODEL_REGISTER[RECORD_COUNT], 4,10, 2 );
+}

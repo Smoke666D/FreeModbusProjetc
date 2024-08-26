@@ -170,7 +170,6 @@ void vDefaultTask( void  * argument )
                 vTaskDelay(3000);
                 break;
             case STATE_WHAIT_TO_RAEDY:
-
                 control_type  = getReg8(CONTROL_TYPE );
                 if (control_type == MB_DIN )  control_type  = getReg8(MB_PROTOCOL_TYPE);
                 if (control_type == MB_RTU)

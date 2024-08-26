@@ -83,8 +83,8 @@ uint8_t PID_Compute(PID_TypeDef *uPID)
 	}
 	
 	/* ~~~~~~~~~~ Calculate time ~~~~~~~~~~ */
-	now        = GetTime();
-	timeChange = (now - uPID->LastTime);
+	//now        = GetTime();
+	timeChange = 20;//(now - uPID->LastTime);
 	
 	if (timeChange >= uPID->SampleTime)
 	{

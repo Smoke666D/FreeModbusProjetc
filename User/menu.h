@@ -38,6 +38,11 @@
 #define IP_GATE_ID              23
 #define IP_SUBNETMASK_ID        24
 #define HOURE_COUNTER_ID        26
+#define FILTER_LOW_ID           27
+#define FILTER_HIGH_ID          28
+#define SETTING1_ID             29
+#define SETTING2_ID             30
+#define KOOFKPS_ID              31
 
 
 typedef enum
