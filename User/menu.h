@@ -52,6 +52,8 @@
 #define JOURNAL_RESET_ID        38
 #define SENS_COUNT_ID           39
 #define MOD_BUS_TIMEOUT_ID      40
+#define CONTRAST_ID             41
+#define FAN_START_TIMEOUT_ID    42
 
 
 typedef enum

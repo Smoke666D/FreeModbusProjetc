@@ -577,6 +577,8 @@ u16 getDataModelID( u16 MENU_ID)
         case KOOFKPS_ID:        return (KOOFKPS);
         case MB_RTU_ADDR_ID:    return (MB_RTU_ADDR);
         case MOD_BUS_TIMEOUT_ID:return (MOD_BUS_TIMEOUT);
+        case CONTRAST_ID:       return (CONTRAST);
+        case FAN_START_TIMEOUT_ID: return (FAN_START_TIMEOUT);
         default: return 0;
     }
 }
@@ -585,7 +587,7 @@ uint8_t error_flag;
 HAL_TimeConfig_T error_time;
 HAL_DateConfig_T  error_date;
 u8 * SENSOR_COUNT_STRING[]={"0.1","0.5","1.0","2.0","3.0","5.0","10.0"};
-u8 * ErrorString[]={"HEPA Фильтр засорен более 90%","Низкое напряжение сети","Высокое напряжение сети","Невозможно поддерживать уставку"};
+u8 * ErrorString[]={"HEPA Фильтр засорен","Низкое напряжение","Высокое напряжение","Невозможно"};
 
 void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len)
 {
@@ -598,7 +600,6 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
     u16 reg_id = getDataModelID(data_id);
     switch (data_id)
     {
-
         case JOURNAL_TIME_ID:
             sprintf(str,"%02i:%02i:%02i",error_time.hours,error_time.minutes,error_time.seconds);
             break;
@@ -606,22 +607,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             sprintf(str,"%02i:%02i:%02i",error_date.date,error_date.month,error_date.year);
             break;
         case JOURNAL_INFO1_ID:
-            switch (error_flag)
-            {
-                case 0:
-                    strcpy(str,"HEPA Фильтр засорен");
-                    break;
-                case 1:
-                    strcpy(str,"Низкое напряжение");
-                    break;
-                case 2:
-                    strcpy(str,"Высокое напряжение");
-                    break;
-                default:
-                    strcpy(str,"Невозможно");
-                    break;
-            }
-
+             strcpy(str,ErrorString[error_flag]);
             break;
         case JOURNAL_INFO2_ID:
             switch (error_flag)
@@ -635,11 +621,10 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                  case 2:
                      sprintf(str,"сети > %i В",getReg8(HIGH_VOLTAGE_ON));
                      break;
-                           default:
-                               strcpy(str,"поддерживать уставку");
-                               break;
-                       }
-
+                 default:
+                     strcpy(str,"поддерживать уставку");
+                     break;
+             }
              break;
         case JURNAL_RECORD_ID:
             sprintf(str,"%02i/%02i",journal_index+1, getReg16(RECORD_COUNT));
@@ -815,6 +800,8 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
         break;
     case MB_RTU_ADDR_ID :
     case MOD_BUS_TIMEOUT_ID:
+    case CONTRAST_ID:
+    case FAN_START_TIMEOUT_ID:
         switch (command)
         {
             case CMD_READ:
@@ -853,17 +840,14 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
         {
              case CMD_READ:
                  strcpy(str,SENSOR_COUNT_STRING[getReg8(SENSOR_COUNT)]);
-                       break;
-                   case CMD_EDIT_READ:
-                       strcpy(str,SENSOR_COUNT_STRING[edit_data_buffer_byte ]);
-
-                       break;
-                   default:
-                       vByteDataEdit(0,SENSOR_COUNT,command,0,6,0);
-                       break;
-               }
-
-
+                 break;
+             case CMD_EDIT_READ:
+                 strcpy(str,SENSOR_COUNT_STRING[edit_data_buffer_byte ]);
+                 break;
+            default:
+                vByteDataEdit(0,SENSOR_COUNT,command,0,6,0);
+                break;
+         }
         break;
     default:
         if (str!=0)

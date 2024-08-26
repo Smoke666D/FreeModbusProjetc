@@ -23,7 +23,8 @@
 #define HIGH_VOLTAGE_ON       ( LOW_VOLTAGE_OFF   +sizeof(uint8_t)  )
 #define HIGH_VOLTAGE_OFF      ( HIGH_VOLTAGE_ON   +sizeof(uint8_t)  )
 #define CONTRAST              ( HIGH_VOLTAGE_OFF  +sizeof(uint8_t)  )
-#define MOD_BUS_TIMEOUT       ( CONTRAST          +sizeof(uint8_t) )
+#define FAN_START_TIMEOUT     ( CONTRAST          +sizeof(uint8_t) )
+#define MOD_BUS_TIMEOUT       ( FAN_START_TIMEOUT +sizeof(uint8_t) )
 #define IP_1                  ( MOD_BUS_TIMEOUT   +sizeof(uint8_t) )
 #define IP_2                  ( IP_1   +sizeof(uint8_t) )
 #define IP_3                  ( IP_2   +sizeof(uint8_t) )
@@ -52,7 +53,7 @@
 #define RECORD_COUNT          ( MOTO_HOURS  + sizeof(uint32_t)  )
 #define RECORD_INDEX          ( RECORD_COUNT + sizeof(uint16_t) )
 #define EEPROM_REGISTER_COUNT ( RECORD_INDEX  + sizeof(uint16_t) )
-
+#define SYSTEM_START          ( RECORD_INDEX  + sizeof(uint16_t) )
 
 #define RECORD_SIZE 7
 #define RECORD_DATA_SIZE      50
