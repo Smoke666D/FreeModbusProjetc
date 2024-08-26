@@ -122,7 +122,7 @@ float getRegFloat(u16 reg_adress )
     u32 data = (u32)DATA_MODEL_REGISTER[reg_adress] | (u32)(DATA_MODEL_REGISTER[reg_adress+1])<<8 |
             (u32)DATA_MODEL_REGISTER[reg_adress+2]<<16 | (u32)(DATA_MODEL_REGISTER[reg_adress+3])<<24;
     ptemp = (float *)&data;
-    return  (*ptemp);
+    return  0.12;//(*ptemp);
 }
 
 

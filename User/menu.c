@@ -126,7 +126,7 @@ u8 GetID( u8 id)
     {
         if ( ((xScreens1[i].ScreenId & ~COMMNAD_MASK) ==id)) return (i);
     }
-    return (0);
+    return (1);
 }
 
 u8 journal_index =0;
@@ -157,11 +157,11 @@ void ViewScreenCallback( u8 key_code)
      }
      if (pscreen)
      {
-         switch (xScreens1[pCurrMenu].pEnter & COMMNAD_MASK )
+         switch (pscreen  & COMMNAD_MASK )
          {
              case ENTER_COMMNAD:
-                   menu_mode = 2;
-                   SelectEditFlag  = 0;
+                  menu_mode = 2;
+                  SelectEditFlag  = 0;
                   break;
              case JOURNAL_VIEW_COMMAND:
                  journal_index = 0;
@@ -176,7 +176,8 @@ void ViewScreenCallback( u8 key_code)
                  if (journal_index > 0) journal_index--;
                  break;
          }
-         pCurrMenu = GetID(pscreen);
+         if (pscreen & ~COMMNAD_MASK)
+             pCurrMenu = GetID(pscreen);
      }
 }
 
@@ -313,7 +314,7 @@ void vMenuTask ( void )
                                        else
                                        {   SelectEditFlag  = 1;
                                            SetFirtsEditString();
-                                           printf("selet\r\n");
+
                                        }
 
                                break;

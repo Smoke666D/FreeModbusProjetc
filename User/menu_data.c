@@ -19,8 +19,8 @@ static  xScreenObjet const InfoScreen1[]=
 
 static xScreenObjet const InfoScreen2[]=
 {
-        {0,2,37,0,TEXT_STRING,"Журанл аварий",0},
-        {1,2,50,70,READ_DATA,"Записей:",JOURNAL_COUNT_ID},
+        {1,2,37,0, TEXT_STRING,"Журанл аварий",0},
+       // {1,2,50,70,READ_DATA,"Записей:",JOURNAL_COUNT_ID},
 };
 static xScreenObjet const InfoScreen3[]=
 {
@@ -112,7 +112,7 @@ static xScreenObjet const JournalViewScreen[]=
 xScreenType  xScreens1[SCREENS_COUNT] =
 {
   {1,InfoScreen1,      3,   2,  11,  11, 0, 0 },
-  {2,InfoScreen2,      1,   3,  12,  12, 0, 0 },
+  {2,InfoScreen2,      1,   3,  0,  0 , 0, 0 },
   {3,InfoScreen3,      2,   1,  0,   0, 4 | ENTER_COMMNAD , 0  },
   {4,SettingsScreen1,  0,   0,  10,  5, ENTER_COMMNAD , 3  },
   {5,SettingsScreen2,  0,   0,  4,   6, 0 , 3 },
