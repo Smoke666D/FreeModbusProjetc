@@ -12,7 +12,7 @@ static  xScreenObjet const InfoScreen1[]=
 {
         {0,0,LINE1,70,READ_DATA,"Состояние",PROCESS_STATE_ID},
         {0,0,25,70,READ_DATA,"Уставка",SETTING_ID },
-        {0,0,37,70,READ_DATA,"Факт. расход",FACT_RASH_ID},
+        {0,0,37,70,READ_DATA,"Факт. расх.",FACT_RASH_ID},
         {0,0,50,70,READ_DATA,"Фильтр",FILTER_STATE_ID },
         {1,0,62,70,READ_DATA,"Режим",MODE_STATE_ID },
 };
@@ -26,17 +26,17 @@ static xScreenObjet const InfoScreen3[]=
 {
         {0,2,LINE1,70,READ_DATA,"Дата",CURENT_DATE_ADDR},
         {0,2,25,70,READ_DATA,"Время",CURENT_TIME_ADDR},
-       // {0,2,37,90,READ_DATA,"Напяжение",AC_VOLTAGE_ID },
+        {0,2,37,70,WRITE_DATA,"Режим управл.",CONTROL_MODE_ID },
         {0,2,50,70,READ_DATA,"Адрес ModBus",MB_RTU_ADDR_ID},
         {1,2,62,15,READ_DATA,"",IP_ADRESS_DATA_ID },
 };
 
 static xScreenObjet const InfoScreen4[]=
 {
-        {0,2,LINE1,70,READ_DATA,"Температура воздуха",0},
+        {0,2,LINE1,70,READ_DATA,"Темп. воздуха",0},
         {0,2,25,70,READ_DATA,"MAC",MAC_ADRESS_ID},
         {0,2,37,90,READ_DATA,"Напяжение",AC_VOLTAGE_ID },
-        {0,2,50,70,READ_DATA,"Моточасы",0},
+        {0,2,50,70,TEXT_STRING,"Моточасы",0},
         {1,2,62,15,READ_DATA,"",HOURE_COUNTER_ID },
 };
 
@@ -114,13 +114,13 @@ xScreenType  xScreens1[SCREENS_COUNT] =
   {1,InfoScreen1,      3,   2,  11,  11, 0, 0 },
   {2,InfoScreen2,      1,   3,  12,  12, 0, 0 },
   {3,InfoScreen3,      2,   1,  0,   0, 4, 0  },
-  {4,SettingsScreen1,  0,   0,  8,  5, ENTER_COMMNAD , 3  },
-  {5,SettingsScreen2,  0,   0,  4,  6, 0 , 3 },
+  {4,SettingsScreen1,  0,   0,  10,  5, ENTER_COMMNAD , 3  },
+  {5,SettingsScreen2,  0,   0,  4,   6, 0 , 3 },
   {6,SettingsScreen3,  0,   0,  5,  7, ENTER_COMMNAD , 3 },
   {7,SettingsScreen4,  0,   0,  6,  8, 0, 3  },
   {8,SettingsScreen5,  0,   0,  7,  9, 0, 3  },
   {9,SettingsScreen6,  0,   0,  8,  10, 0, 3 },
-  {10,SettingsScreen7, 0,   0, 9,   4,  0, 3 },
+  {10,SettingsScreen7, 0,   0,  9,   4,  0, 3 },
   {11,InfoScreen4,      0,   0,  1,  1, 0, 0 },
   {12,JournalViewScreen,  0,   0, 0, 0, 2 }
 };

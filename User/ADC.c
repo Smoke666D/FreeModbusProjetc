@@ -513,7 +513,7 @@ void I2C_task(void *pvParameters)
                        led_state = 0;
                     }
                 }
-     printf("Start1\r\n");
+   //  printf("Start1\r\n");
      xLastWakeTime =  xTaskGetTickCount ();
      ADC_FSM = 1;
 

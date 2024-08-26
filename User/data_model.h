@@ -10,7 +10,7 @@
 
 #include "system_init.h"
 
-#define VALID_CODE            0x32
+#define VALID_CODE            0x33
 #define VALID_CODE_ADDRES     0
 /*§¢§Ý§à§Ü §Ò§Ñ§Û§ä§à§Ó§í§ç §å§ã§ä§Ó§à§Ü*/
 
@@ -21,7 +21,7 @@
 #define LOW_VOLTAGE_OFF       ( LOW_VOLTAGE_ON    +sizeof(uint8_t)  )
 #define HIGH_VOLTAGE_ON       ( LOW_VOLTAGE_OFF   +sizeof(uint8_t)  )
 #define HIGH_VOLTAGE_OFF      ( HIGH_VOLTAGE_ON   +sizeof(uint8_t)  )
-#define IP_1                  ( HIGH_VOLTAGE_OFF   +sizeof(uint8_t) )
+#define IP_1                  ( HIGH_VOLTAGE_OFF  +sizeof(uint8_t) )
 #define IP_2                  ( IP_1   +sizeof(uint8_t) )
 #define IP_3                  ( IP_2   +sizeof(uint8_t) )
 #define IP_4                  ( IP_3   +sizeof(uint8_t) )

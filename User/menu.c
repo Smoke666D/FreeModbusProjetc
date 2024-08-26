@@ -123,7 +123,7 @@ u8 GetID( u8 id)
 {
     for (u8 i = 0; i< SCREENS_COUNT;i++)
     {
-        if ( (xScreens1[i].ScreenId ==id)) return (i);
+        if ( ((xScreens1[i].ScreenId & ~COMMNAD_MASK) ==id)) return (i);
     }
     return (0);
 }
@@ -173,7 +173,7 @@ void ViewScreenCallback( u8 key_code)
              case JOURNAL_PREV:
                  if (journal_index > 0) journal_index--;
                  break;
-          }
+         }
          pCurrMenu = GetID(pscreen);
      }
 }
@@ -196,7 +196,7 @@ void SetFirtsEditString( )
             }
             else
             {
-                      edit_data[i] = 1;
+                edit_data[i] = 1;
             }
         }
      }
@@ -308,7 +308,7 @@ void vMenuTask ( void )
                           switch ( TempEvent.KeyCode )
                           {
                                case 0: menu_mode = 0;  break;
-                               case 1: menu_mode = 3; vSetEdit(); break;
+                               case 1: {menu_mode = 3; vSetEdit(); printf("edit_start\r\n");} break;
                                case 2: vSelectNext(); break;
                                case 3: vSelectPervius(); break;
                                default: break;
@@ -538,7 +538,7 @@ u16 getDataModelID( u16 MENU_ID)
         case VOLTAGE_MIN_OFF_ID:return (LOW_VOLTAGE_OFF);
         case VOLTAGE_MAX_ON_ID: return (HIGH_VOLTAGE_ON);
         case VOLTAGE_MAX_OFF_ID:return (HIGH_VOLTAGE_OFF);
-        case CONTROL_MODE_ID:   return (MB_RTU_ADDR);
+        case CONTROL_MODE_ID:   return (CONTROL_TYPE);
         case PROTOCOL_ID:       return (MB_PROTOCOL_TYPE);
         case IP_ADRESS_DATA_ID: return (IP_1);
         case IP_GATE_ID:        return (GATE_1);
@@ -644,11 +644,10 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             switch (command)
             {
                 case CMD_READ:
-                    temp_index = getDataModelID(reg_id);
-                    sprintf(str,"%03u.%03u.%03u.%03u",getReg8(temp_index),getReg8(temp_index+1),getReg8(temp_index+2),getReg8(temp_index+3));
+                    sprintf(str,"%03i.%03i.%03i.%03i",getReg8(reg_id),getReg8(reg_id+1),getReg8(reg_id+2),getReg8(reg_id+3));
                     break;
                 case CMD_EDIT_READ:
-                    sprintf(str,"%03u.%03u.%03u.%03u",edit_ip_addres[0],edit_ip_addres[1],edit_ip_addres[2],edit_ip_addres[3]);
+                    sprintf(str,"%03i.%03i.%03i.%03i",edit_ip_addres[0],edit_ip_addres[1],edit_ip_addres[2],edit_ip_addres[3]);
                     break;
                 default:
                     vIPDataEdit(getDataModelID(reg_id),command);
