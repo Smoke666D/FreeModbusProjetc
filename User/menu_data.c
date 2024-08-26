@@ -52,10 +52,10 @@ static xScreenObjet const SettingsScreen1[]=
 static xScreenObjet const SettingsScreen2[]=
 {
         {0,10,LINE1,70,TEXT_STRING,"Настройки      2/7",    0},
-        {0,2,25,70,WRITE_DATA,"Адрес ModBus",            IP_ADRESS_DATA_ID},
+        {0,2,25,70,WRITE_DATA,"IP",            IP_ADRESS_DATA_ID},
         {0,2,37,90,WRITE_DATA,"IP Порт",                 IP_PORT_ID},
         {0,2,50,70,WRITE_DATA,"Шлюз",                    IP_GATE_ID},
-        {1,2,62,15,WRITE_DATA,"Маска подсети",           IP_SUBNETMASK_ID },
+        {1,2,62,15,WRITE_DATA,"Маска",           IP_SUBNETMASK_ID },
 };
 
 static xScreenObjet const SettingsScreen3[]=
@@ -113,7 +113,7 @@ xScreenType  xScreens1[SCREENS_COUNT] =
 {
   {1,InfoScreen1,      3,   2,  11,  11, 0, 0 },
   {2,InfoScreen2,      1,   3,  12,  12, 0, 0 },
-  {3,InfoScreen3,      2,   1,  0,   0, 4, 0  },
+  {3,InfoScreen3,      2,   1,  0,   0, 4 | ENTER_COMMNAD , 0  },
   {4,SettingsScreen1,  0,   0,  10,  5, ENTER_COMMNAD , 3  },
   {5,SettingsScreen2,  0,   0,  4,   6, 0 , 3 },
   {6,SettingsScreen3,  0,   0,  5,  7, ENTER_COMMNAD , 3 },

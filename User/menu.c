@@ -102,6 +102,7 @@ static QueueHandle_t     pKeyboard        = NULL;
 static KeyEvent          TempEvent        = { 0U };
 static u8 edit_data[MAX_STRING_NUMBER];
 static u8 blink_counter = 0;
+static u8 SelectEditFlag = 0;
 
 
 static void vDraw( xScreenObjet * pScreenDraw);
@@ -159,7 +160,8 @@ void ViewScreenCallback( u8 key_code)
          switch (xScreens1[pCurrMenu].pEnter & COMMNAD_MASK )
          {
              case ENTER_COMMNAD:
-                   menu_mode = 1;
+                   menu_mode = 2;
+                   SelectEditFlag  = 0;
                   break;
              case JOURNAL_VIEW_COMMAND:
                  journal_index = 0;
@@ -191,7 +193,7 @@ void SetFirtsEditString( )
         {
             if( edit_flag == 0)
             {
-                 edit_flag = 1;
+                 edit_flag    = 1;
                  edit_data[i] = 2;
             }
             else
@@ -202,6 +204,8 @@ void SetFirtsEditString( )
      }
 
 }
+
+
 
 void vSelectNext()
 {
@@ -263,6 +267,7 @@ void vSetEdit()
               break;
         }
     }
+    SelectEditFlag = 1;
 }
 
 
@@ -286,17 +291,11 @@ void vSetCommnad( DATA_VIEW_COMMAND_t cmd )
 void vMenuTask ( void )
 {
 
-   if ( menu_mode == 1)
-   {
-       SetFirtsEditString();
-       menu_mode = 2;
-   }
-   else
-   {
        if ( uxQueueMessagesWaiting(pKeyboard) != 0)
        {
            if ( xQueueReceive(pKeyboard, &TempEvent, 0U ) == pdPASS )
            {
+               printf("mode %i key %i\r\n",menu_mode,TempEvent.KeyCode );
               if ( TempEvent.Status == MAKECODE )
               {
                   switch (menu_mode)
@@ -307,11 +306,27 @@ void vMenuTask ( void )
                       case 2:
                           switch ( TempEvent.KeyCode )
                           {
-                               case 0: menu_mode = 0;  break;
-                               case 1: {menu_mode = 3; vSetEdit(); printf("edit_start\r\n");} break;
-                               case 2: vSelectNext(); break;
-                               case 3: vSelectPervius(); break;
-                               default: break;
+                               case 0: if  (SelectEditFlag) SelectEditFlag = 0; else { menu_mode = 0;pCurrMenu = GetID(xScreens1[pCurrMenu].pBack); } break;
+                               case 1:  printf("selet %i\r\n",SelectEditFlag);
+                                   if  (SelectEditFlag )
+                                       { menu_mode = 3; vSetEdit();}
+                                       else
+                                       {   SelectEditFlag  = 1;
+                                           SetFirtsEditString();
+                                           printf("selet\r\n");
+                                       }
+
+                               break;
+                               case 2: if   (SelectEditFlag)  vSelectNext();
+                               else {
+                                   pCurrMenu = GetID(xScreens1[pCurrMenu].pUpScreenSet);
+                            }
+                                      break;
+                               case 3: if   (SelectEditFlag) vSelectPervius();
+                               else {
+                                   pCurrMenu = GetID(xScreens1[pCurrMenu].pDownScreenSet);
+                            }break;
+                               default: ; break;
                            }
                           break;
                      case 3:
@@ -329,7 +344,7 @@ void vMenuTask ( void )
               }
             }
           }
-   }
+
    vDraw((xScreenObjet *) xScreens1[pCurrMenu].pScreenCurObjets);
    if (++blink_counter>10) blink_counter=0;
 
@@ -459,28 +474,28 @@ void vIPDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command )
              if (cur_edit_index < 3)
              {
                  if (( edit_ip_addres[3] + coof[cur_edit_index %3]) <=  255 )
-                     edit_ip_addres[3] =+ + coof[cur_edit_index %3];
+                     edit_ip_addres[3] =edit_ip_addres[3]+ coof[cur_edit_index %3];
                  else
                      edit_ip_addres[3] = 255;
 
              } else if (cur_edit_index < 7)
              {
-                 if (( edit_ip_addres[2] + coof[(cur_edit_index - 3)%3]) <=  255 )
-                           edit_ip_addres[2] =+  coof[(cur_edit_index - 3) %3];
+                 if (( edit_ip_addres[2] + coof[(cur_edit_index - 4)%3]) <=  255 )
+                           edit_ip_addres[2] =edit_ip_addres[2]+  coof[(cur_edit_index - 4) %3];
                  else
                           edit_ip_addres[2] = 255;
              }
              else if (cur_edit_index < 11)
              {
-                  if (( edit_ip_addres[1] + coof[(cur_edit_index -7)%3]) <=  255 )
-                      edit_ip_addres[1] =+  coof[(cur_edit_index - 7) %3];
+                  if (( edit_ip_addres[1] + coof[(cur_edit_index -8)%3]) <=  255 )
+                      edit_ip_addres[1] =edit_ip_addres[1]+ coof[(cur_edit_index - 8) %3];
                   else
                       edit_ip_addres[1] = 255;
               }
              else
               {
-                  if (( edit_ip_addres[0] + coof[(cur_edit_index - 11)%3]) <=  255 )
-                                        edit_ip_addres[0] =+  coof[(cur_edit_index - 11) %3];
+                  if (( edit_ip_addres[0] + coof[(cur_edit_index - 12)%3]) <=  255 )
+                                        edit_ip_addres[0] =edit_ip_addres[0]+  coof[(cur_edit_index - 12) %3];
                   else
                       edit_ip_addres[0] = 255;
               }
@@ -489,28 +504,28 @@ void vIPDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command )
               if (cur_edit_index < 3)
               {
                   if (( edit_ip_addres[3]  >=  coof[cur_edit_index %3]))
-                        edit_ip_addres[3] =- coof[cur_edit_index %3];
+                        edit_ip_addres[3] =edit_ip_addres[3]- coof[cur_edit_index %3];
                   else
                        edit_ip_addres[3] = 0;
               }
               else if (cur_edit_index < 7)
               {
-                  if (( edit_ip_addres[2] >= coof[(cur_edit_index - 3)%3]))
-                         edit_ip_addres[2] =-  coof[(cur_edit_index - 3) %3];
+                  if (( edit_ip_addres[2] >= coof[(cur_edit_index - 4)%3]))
+                         edit_ip_addres[2] =edit_ip_addres[2]-  coof[(cur_edit_index - 4) %3];
                   else
                         edit_ip_addres[2] = 0;
              }
              else if (cur_edit_index < 11)
              {
-                  if (( edit_ip_addres[1] >= coof[(cur_edit_index -7)%3]))
-                         edit_ip_addres[1] =-  coof[(cur_edit_index - 7) %3];
+                  if (( edit_ip_addres[1] >= coof[(cur_edit_index -8)%3]))
+                         edit_ip_addres[1] =edit_ip_addres[1]-  coof[(cur_edit_index - 8) %3];
                   else
                          edit_ip_addres[1] = 255;
              }
              else
              {
-                 if (( edit_ip_addres[0] >= coof[(cur_edit_index - 11)%3]))
-                        edit_ip_addres[0] =-  coof[(cur_edit_index - 11) %3];
+                 if (( edit_ip_addres[0] >= coof[(cur_edit_index - 12)%3]))
+                        edit_ip_addres[0] =edit_ip_addres[0]-  coof[(cur_edit_index - 12) %3];
                  else
                        edit_ip_addres[0] = 255;
              }
@@ -650,7 +665,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                     sprintf(str,"%03i.%03i.%03i.%03i",edit_ip_addres[0],edit_ip_addres[1],edit_ip_addres[2],edit_ip_addres[3]);
                     break;
                 default:
-                    vIPDataEdit(getDataModelID(reg_id),command);
+                    vIPDataEdit(reg_id,command);
             }
             break;
         case IP_PORT_ID:
@@ -663,7 +678,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                     sprintf(str,"%03i",edit_data_buffer_byte );
                      break;
                 default:
-                    vByteDataEdit(1,IP_PORT,command,2,999,0);
+                    vByteDataEdit(1,IP_PORT,command,3,999,0);
                     break;
             }
             break;
@@ -782,7 +797,7 @@ static void vDraw( xScreenObjet * pScreenDraw)
             //x = pScreenDraw[i].x_data;
             if (( menu_mode >0) && (edit_data[i]>=2))
             {
-                if (edit_data[i]==2)
+                if ((edit_data[i]==2) && (SelectEditFlag))
                 {
                    if ( blink_counter <= 5)
                    {
