@@ -43,6 +43,10 @@
 #define SETTING1_ID             29
 #define SETTING2_ID             30
 #define KOOFKPS_ID              31
+#define JOURNAL_COUNT_ID        32
+#define JURNAL_RECORD_ID        33
+#define JOURNAL_TIME_ID         34
+#define JOURNAL_INFO_ID         35
 
 
 typedef enum
@@ -76,22 +80,26 @@ typedef enum
   CMD_PREV_EDIT = 7,
 } DATA_VIEW_COMMAND_t;
 
-#define SAVE_COMMAND   0x60
-#define ENTER_COMMNAD  0x80
-#define COMMNAD_MASK   0xC0
+#define JOURNAL_VIEW_COMMAND 0x8100
+#define JOURNAL_EXIT         0x8200
+#define JOURNAL_NEXT         0x8300
+#define JOURNAL_PREV         0x8400
+#define SAVE_COMMAND         0x6000
+#define ENTER_COMMNAD        0x8000
+#define COMMNAD_MASK         0xFF00
 
-#define MAX_MENU_COUNT 0x3F
+#define MAX_MENU_COUNT 0xFF
 
 typedef struct
 {
   u8 ScreenId;
   const xScreenObjet*  pScreenCurObjets;
-  u8          pLeftScreen;
-  u8          pRigthScreen;
-  u8          pUpScreenSet;
-  u8          pDownScreenSet;
-  u8          pEnter;
-  u8          pBack;
+  u16          pLeftScreen;
+  u16          pRigthScreen;
+  u16          pUpScreenSet;
+  u16          pDownScreenSet;
+  u16          pEnter;
+  u16          pBack;
  // void          ( *pFunc )( void*, char );
 } xScreenType;
 

@@ -128,7 +128,7 @@ u8 GetID( u8 id)
     return (0);
 }
 
-
+u8 journal_index =0;
 
 void ViewScreenCallback( u8 key_code)
 {
@@ -136,15 +136,10 @@ void ViewScreenCallback( u8 key_code)
     switch ( key_code )
     {
         case 0:
-            pscreen = ( xScreens1[pCurrMenu].pBack & MAX_MENU_COUNT);
-
+           pscreen =  xScreens1[pCurrMenu].pBack ;
            break;
         case 1:
-            pscreen = ( xScreens1[pCurrMenu].pEnter & MAX_MENU_COUNT);
-            if ((xScreens1[pCurrMenu].pEnter & COMMNAD_MASK) == ENTER_COMMNAD)
-            {
-                menu_mode = 1;
-            }
+           pscreen =  xScreens1[pCurrMenu].pEnter ;
            break;
         case 2:
             pscreen = xScreens1[pCurrMenu].pUpScreenSet;
@@ -161,6 +156,24 @@ void ViewScreenCallback( u8 key_code)
      }
      if (pscreen)
      {
+         switch (xScreens1[pCurrMenu].pEnter & COMMNAD_MASK )
+         {
+             case ENTER_COMMNAD:
+                   menu_mode = 1;
+                  break;
+             case JOURNAL_VIEW_COMMAND:
+                 journal_index = 0;
+                 break;
+             case JOURNAL_EXIT:
+                 journal_index = 0;
+                 break;
+             case JOURNAL_NEXT:
+                 if (journal_index < getReg16(RECORD_COUNT)) journal_index++;
+                 break;
+             case JOURNAL_PREV:
+                 if (journal_index > 0) journal_index--;
+                 break;
+          }
          pCurrMenu = GetID(pscreen);
      }
 }
@@ -550,6 +563,9 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
     u16 reg_id = getDataModelID(data_id);
     switch (data_id)
     {
+
+        case JURNAL_RECORD_ID:
+            break;
         case COOF_P_ID:
         case COOF_I_ID:
         case KOOFKPS_ID:
@@ -689,6 +705,9 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                  vByteDataEdit(0,reg_id,command,2,max,min);
                  break;
         }
+        break;
+    case JOURNAL_COUNT_ID:
+        sprintf(str,"%02i",getReg16(RECORD_COUNT) );
         break;
     case MB_RTU_ADDR_ID :
         switch (command)
