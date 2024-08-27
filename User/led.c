@@ -39,6 +39,11 @@ TaskHandle_t * getLCDTaskHandle()
     return (&LCDTaskHandle);
 }
 
+u8 LED_BufferCompare()
+{
+   return (memcmp(screen_buufer,u8g2.tile_buf_ptr,SCREEN_BUFFER_SIZE ));
+}
+
 void LCD_task(void *pvParameters)
 {
     TaskFSM_t LCD_Task_FSM = STATE_INIT;
@@ -71,8 +76,7 @@ void LCD_task(void *pvParameters)
                 break;
             case STATE_RUN:
                 ulTaskNotifyTakeIndexed( 0, pdTRUE, portMAX_DELAY );
-                if (memcmp(screen_buufer,u8g2.tile_buf_ptr,SCREEN_BUFFER_SIZE ))
-                {
+
                     memcpy(screen_buufer,u8g2.tile_buf_ptr,SCREEN_BUFFER_SIZE );
                     for (u8 i =0;i<8;i++)
                     {
@@ -84,7 +88,7 @@ void LCD_task(void *pvParameters)
                         WriteCommand( 0x0b8 | i );
                         WriteDispalay(&screen_buufer[i*128],128);
                     }
-                }
+
                break;
        }
     }

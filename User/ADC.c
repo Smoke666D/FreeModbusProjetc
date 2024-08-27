@@ -311,7 +311,7 @@ void ADC_task(void *pvParameters)
 
                     break;
                 case STATE_RUN:
-                    xTaskNotifyWait( 0,  ADC2_DATA_READY | ADC1_DATA_READY, &ulNotifiedValue,0);
+                    xTaskNotifyWait( 0,  ADC2_DATA_READY | ADC1_DATA_READY, &ulNotifiedValue,1);
                     if (ulNotifiedValue & ADC2_DATA_READY)    //§¦§ã§Ý§Ú §á§â§Ú§Ý§Ö§ä§Ö§Ý§à §á§â§Ö§â§Ó§Ñ§ß§Ú§Ö §à§ä §¡§¸§± §à§Ò§â§Ñ§Ò§Ñ§ä§í§Ó§Ñ§ð§ë§Ö§Ô§à DC §Õ§Ñ§ß§ß§í§Ö
                     {
                         for (u8 i=0;i<DC_CHANNEL;i++)
@@ -331,11 +331,6 @@ void ADC_task(void *pvParameters)
                     }
                     if (ulNotifiedValue & ADC1_DATA_READY)
                     {
-                        AC_ConversionDoneFlasg = 1;
-                    }
-
-                    if (AC_ConversionDoneFlasg  == 1)
-                    {
                        for (int i = 0; i<AC_CONVERION_NUMBER*ADC_CHANNEL;i++)
                        {
                           ADC1_DMABuffer[i]= Get_ConversionVal(ADC_1, ADC1_DMABuffer[i]);
@@ -343,12 +338,7 @@ void ADC_task(void *pvParameters)
                        vDecNetural(&ADC1_DMABuffer[0]);
                        iMax=xADCMax((int16_t *)&ADC1_DMABuffer[0], &DF1);
                        vADCFindFreq((int16_t *)&ADC1_DMABuffer[0], &uCurPeriod,2,iMax);
-                       AC_ConversionDoneFlasg  = 2;
-                    }
-                    else
-                    if (AC_ConversionDoneFlasg  == 2)
-                    {
-                      if ((uCurPeriod < AC_CONVERION_NUMBER-1) && (uCurPeriod!=0) )
+                      if (uCurPeriod < AC_CONVERION_NUMBER-1)
                       {
                            uint16_t data1 = xADCRMS(&ADC1_DMABuffer[0],uCurPeriod,2);
                            data1 = vRCFilter(data1, &old);
@@ -359,7 +349,10 @@ void ADC_task(void *pvParameters)
                        HAL_TiemrEneblae(TIMER3);
                        AC_ConversionDoneFlasg  = 0;
                     }
-                    if (++ANALOG_DATA_FSM >=10) ANALOG_DATA_FSM = 0;
+                    if (++ANALOG_DATA_FSM >=10)
+                    {
+                        ANALOG_DATA_FSM = 0;
+                    }
 
 
 
@@ -381,8 +374,8 @@ void ADC_task(void *pvParameters)
 uint8_t SetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 data, u8 * i2cfsm )
 {
 
-    I2C_Cmd(i2c,ENABLE);
-   // while (1)
+
+    I2C_Cmd(I2C2,ENABLE);
     {
        switch (*i2cfsm)
        {
@@ -501,7 +494,7 @@ void I2C_task(void *pvParameters)
     vTaskDelay(1000);
     u8 fsm;
     printf("Start I2C OK 1.5\r\n");
-
+    I2C_Cmd(I2C2,ENABLE);
  while(1)
  {
      if (++counter_led >20)
@@ -529,12 +522,18 @@ void I2C_task(void *pvParameters)
          if ((xTaskGetTickCount () - xLastWakeTime ) >25)
          {
              if (ADC_FSM!=6)
-                 {
-                 printf("i2c error %i\r\n",fsm);
-                 I2C_GenerateSTART(I2C2, ENABLE);
-                 I2C_GenerateSTOP(I2C2, ENABLE);
-                 }
-             fsm = 0;
+            {
+                 vTaskDelay(100);
+                // printf("i2c error %i %i\r\n",fsm,ADC_FSM);
+                // printf("i2c START %i %i\r\n",I2C2->STAR1,I2C2->STAR2);
+                // I2C_Cmd(I2C2,DISABLE);
+               //  I2C_Cmd(I2C2,ENABLE);
+                // I2C_GenerateSTART(I2C2, ENABLE);
+               //  I2C_SendData(I2C2, (u8)(0));
+                // I2C_GenerateSTOP(I2C2, ENABLE);
+                 fsm = 0;
+            }
+
              break;
          }
 

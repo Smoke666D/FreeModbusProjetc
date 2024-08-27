@@ -103,7 +103,10 @@ static KeyEvent          TempEvent        = { 0U };
 static u8 edit_data[MAX_STRING_NUMBER];
 static u8 blink_counter = 0;
 static u8 SelectEditFlag = 0;
+static HAL_TimeConfig_T time;
 
+#define  DateFormatString  "%02i.%02i.%02i"
+#define  TimeFormatString  "%02i:%02i:%02i"
 
 static void vDraw( xScreenObjet * pScreenDraw);
 void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len);
@@ -339,10 +342,10 @@ void vMenuTask ( void )
                          {
                             case 0: vSetCommnad(CMD_EXIT_EDIT); break;
                             case 1: vSetCommnad(CMD_SAVE_EDIT); break;
-                            case 2: vGetData( curr_edit_data_id, 0,CMD_INC,0,0); break;
-                            case 3: vGetData( curr_edit_data_id, 0,CMD_DEC,0,0); break;
-                            case 4: vGetData( curr_edit_data_id, 0,CMD_NEXT_EDIT,0,0); break;
-                            case 5: vGetData( curr_edit_data_id, 0,CMD_PREV_EDIT,0,0); break;
+                            case 2: vGetData( curr_edit_data_id, 0,CMD_DEC,0,0); break;
+                            case 3: vGetData( curr_edit_data_id, 0,CMD_INC,0,0); break;
+                            case 4: vGetData( curr_edit_data_id, 0,CMD_PREV_EDIT,0,0); break;
+                            case 5: vGetData( curr_edit_data_id, 0,CMD_NEXT_EDIT,0,0); break;
                          }
                          break;
                   }
@@ -551,6 +554,162 @@ void vIPDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command )
 
 
 
+void  vTimeDataEdit(DATA_VIEW_COMMAND_t command, u8 * str)
+{
+
+    if ( command == CMD_READ)  HAL_RTC_ReadTime( &time);
+    switch(command)
+    {
+       case CMD_READ:
+       case CMD_EDIT_READ:
+            sprintf(str,TimeFormatString,time.hours,time.minutes,time.seconds);
+            break;
+       case CMD_START_EDIT:;
+            start_edit_flag = 1;
+            cur_edit_index = 0;
+            break;
+       case CMD_SAVE_EDIT:
+            HAL_RTC_ConfigTime(&time);
+            start_edit_flag = 0;
+            break;
+       case CMD_NEXT_EDIT:
+            if (++cur_edit_index >7) cur_edit_index = 0;
+            if ((cur_edit_index == 2) || (cur_edit_index == 5)  ) cur_edit_index ++;
+            break;
+       case CMD_PREV_EDIT:
+            if (cur_edit_index ==0 ) cur_edit_index = 7; else cur_edit_index--;
+            if ((cur_edit_index == 2) || (cur_edit_index == 5) ) cur_edit_index --;
+            break;
+       case CMD_INC:
+            if (cur_edit_index < 2)
+            {
+                if (( time.seconds + coof[cur_edit_index %2]) <=  59 )
+                    time.seconds += coof[cur_edit_index %2];
+                else
+                    time.seconds = 59;
+            }
+            else if (cur_edit_index < 5)
+            {
+                if (( time.minutes + coof[(cur_edit_index - 3)%2]) <=  59 )
+                    time.minutes +=  coof[(cur_edit_index - 3) %2];
+                else
+                    time.minutes = 59;
+            }
+            else
+            {
+                if (( time.hours + coof[(cur_edit_index - 6)%2]) <=  23 )
+                    time.hours +=  coof[(cur_edit_index -6) %2];
+                else
+                    time.hours = 23;
+            }
+            break;
+       case CMD_DEC:
+            if (cur_edit_index < 2)
+            {
+                if (( time.seconds  >=  coof[cur_edit_index %2]))
+                    time.seconds -=coof[cur_edit_index %2];
+                else
+                     time.seconds = 0;
+            }
+            else if (cur_edit_index < 5 )
+            {
+                if (( time.minutes >= coof[(cur_edit_index - 3)%2]))
+                    time.minutes -= coof[(cur_edit_index - 3) %2];
+                else
+                    time.minutes = 0;
+            }
+            else
+            {
+                if (( time.hours >= coof[(cur_edit_index - 6)%2]))
+                    time.hours -=  coof[(cur_edit_index - 6) %2];
+                else
+                    time.hours = 0;
+            }
+            break;
+       case CMD_EXIT_EDIT:
+            start_edit_flag = 0;
+            break;
+    }
+}
+
+static HAL_DateConfig_T date;
+
+static void vDateDataEdit(DATA_VIEW_COMMAND_t command, char * str)
+{
+    if ( command ==  CMD_READ) HAL_RTC_ReadDate(&date);
+    switch(command)
+    {
+       case CMD_READ:
+       case CMD_EDIT_READ:
+             sprintf(str,DateFormatString,date.date,date.month,date.year);
+             break;
+       case CMD_START_EDIT:
+             start_edit_flag = 1;
+             cur_edit_index = 0;
+             break;
+      case CMD_SAVE_EDIT:
+             HAL_RTC_ConfigDate(&date);
+             start_edit_flag = 0;
+             break;
+      case CMD_NEXT_EDIT:
+             if (++cur_edit_index >7) cur_edit_index = 0;
+             if ((cur_edit_index == 2) || (cur_edit_index == 5)  ) cur_edit_index ++;
+             break;
+      case CMD_PREV_EDIT:
+             if (cur_edit_index ==0 ) cur_edit_index = 0; else cur_edit_index--;
+             if ((cur_edit_index == 2) || (cur_edit_index == 5) ) cur_edit_index --;
+              break;
+      case CMD_INC:
+              if (cur_edit_index < 2)
+              {
+                 if (( date.year + coof[cur_edit_index %2]) <=  99 )
+                     date.year += coof[cur_edit_index %2];
+                 else
+                     date.year = 99;
+               }
+               else if (cur_edit_index < 5)
+               {
+                  if (( date.month +  coof[(cur_edit_index - 3)%2]) <=  12)
+                        date.month += coof[(cur_edit_index - 3)%2];
+                  else
+                      date.month = 12;
+               }
+               else
+               {
+                   if (( date.date + coof[(cur_edit_index - 6)%2]) <=  31 )
+                       date.date +=  coof[(cur_edit_index -6) %2];
+                    else
+                        date.date = 31;
+               }
+               break;
+              case CMD_DEC:
+                     if (cur_edit_index < 2)
+                     {
+                         if (( date.year  >  coof[cur_edit_index %2]))
+                             date.year -=    coof[cur_edit_index %2];
+                         else
+                             date.year = 1;
+                     }
+                     else if (cur_edit_index < 5)
+                     {
+                         if (( date.month > coof[(cur_edit_index - 3)%2]))
+                             date.month -=  coof[(cur_edit_index - 3)%2];
+                         else
+                             date.month = 1;
+                    }
+                    else
+                    {
+                        if (( date.date > coof[(cur_edit_index - 6)%2]))
+                            date.date -=  coof[(cur_edit_index - 6)%2];
+                        else
+                            date.date = 1;
+                    }
+                    break;
+              case CMD_EXIT_EDIT:
+                    start_edit_flag = 0;
+                    break;
+    }
+}
 
 
 u16 getDataModelID( u16 MENU_ID)
@@ -591,8 +750,6 @@ u8 * ErrorString[]={"HEPA Фильтр засорен","Низкое напря�
 
 void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len)
 {
-    HAL_TimeConfig_T time;
-    HAL_DateConfig_T date;
     u8 MACAddr[6];
     u16 max,min;
     if (index!=0) *index = cur_edit_index;
@@ -601,10 +758,10 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
     switch (data_id)
     {
         case JOURNAL_TIME_ID:
-            sprintf(str,"%02i:%02i:%02i",error_time.hours,error_time.minutes,error_time.seconds);
+            sprintf(str,TimeFormatString,error_time.hours,error_time.minutes,error_time.seconds);
             break;
         case JOURNAL_DATE_ID:
-            sprintf(str,"%02i:%02i:%02i",error_date.date,error_date.month,error_date.year);
+            sprintf(str,DateFormatString,error_date.date,error_date.month,error_date.year);
             break;
         case JOURNAL_INFO1_ID:
              strcpy(str,ErrorString[error_flag]);
@@ -619,11 +776,11 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                    sprintf(str,"сети < %i В",getReg8(LOW_VOLTAGE_ON));
                    break;
                  case 2:
-                     sprintf(str,"сети > %i В",getReg8(HIGH_VOLTAGE_ON));
-                     break;
+                   sprintf(str,"сети > %i В",getReg8(HIGH_VOLTAGE_ON));
+                   break;
                  default:
-                     strcpy(str,"поддерживать уставку");
-                     break;
+                   strcpy(str,"поддерживать уставку");
+                   break;
              }
              break;
         case JURNAL_RECORD_ID:
@@ -735,12 +892,10 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             sprintf(str,"%i В",(uint16_t)getAIN(AC220));
             break;
         case CURENT_TIME_ADDR:
-            HAL_RTC_ReadTime( &time);
-            sprintf(str,"%02i:%02i:%02i",time.hours,time.minutes,time.seconds);
+            vTimeDataEdit(command,str);
             break;
         case CURENT_DATE_ADDR:
-            HAL_RTC_ReadDate(&date);
-            sprintf(str,"%02i:%02i:%02i",date.date,date.month,date.year);
+            vDateDataEdit(command,str);
             break;
         case VOLTAGE_MIN_ON_ID:
         case VOLTAGE_MIN_OFF_ID:
@@ -755,18 +910,31 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                     sprintf(str,"%03i",edit_data_buffer_byte );
                     break;
                default:
-                    if ( data_id == VOLTAGE_MIN_ON_ID)  max = getReg8(getDataModelID(VOLTAGE_MIN_OFF_ID));
+                    if ( data_id == VOLTAGE_MIN_ON_ID)
+                    {
+                        max = getReg8(getDataModelID(VOLTAGE_MIN_OFF_ID))-1;
+                        min = 100;
+                    }
                     else
-                    if ( data_id == VOLTAGE_MIN_OFF_ID) max = getReg8(getDataModelID(VOLTAGE_MAX_OFF_ID));
+                    if ( data_id == VOLTAGE_MIN_OFF_ID)
+                    {
+                        max = getReg8(getDataModelID(VOLTAGE_MAX_OFF_ID))-1;
+                        min = getReg8(getDataModelID(VOLTAGE_MIN_ON_ID))+1;
+                    }
                     else
-                                                        max = 255;
-                    if ( data_id == VOLTAGE_MAX_OFF_ID) min = getReg8(getDataModelID(VOLTAGE_MIN_OFF_ID));
-                      else
-                    if ( data_id == VOLTAGE_MAX_ON_ID)  min = getReg8(getDataModelID(VOLTAGE_MIN_OFF_ID));
-                     else
-                                                        min = 100;
-                 vByteDataEdit(0,reg_id,command,2,max,min);
-                 break;
+
+                    if ( data_id == VOLTAGE_MAX_OFF_ID)
+                    {
+                        min = getReg8(getDataModelID(VOLTAGE_MIN_OFF_ID))+1;
+                        max = getReg8(getDataModelID(VOLTAGE_MAX_ON_ID))-1;
+                    }
+                    else
+                    {
+                        min = getReg8(getDataModelID(VOLTAGE_MAX_OFF_ID))+1;
+                        max =255;
+                    }
+                    vByteDataEdit(0,reg_id,command,2,max,min);
+                    break;
         }
         break;
     case JOURNAL_COUNT_ID:
@@ -855,7 +1023,6 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
         break;
     }
 }
-
 
 static void vDraw( xScreenObjet * pScreenDraw)
 {

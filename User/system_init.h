@@ -42,15 +42,15 @@
 #define MBTCP_STK_SIZE      700
 #define MBRTU_TASK_PRIO     5
 #define MBRTU_STK_SIZE      512
-#define WCHNET_TASK_PRIO     5
+#define WCHNET_TASK_PRIO     8
 #define WCHNET_STK_SIZE      512
 #define ADC_TASK_PRIO     6
 #define ADC_STK_SIZE      256
 #define DEFAULT_TASK_PRIOR          5
 #define DEFAULT_TASK_STACK_SIZE         256U
 #define USER_TASK_PRIO     5
-#define USER_STK_SIZE      128
-#define I2C_TASK_PRIO     4
+#define USER_STK_SIZE      256
+#define I2C_TASK_PRIO     6
 #define I2C_STK_SIZE      256
 
 

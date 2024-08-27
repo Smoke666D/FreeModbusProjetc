@@ -26,7 +26,7 @@ typedef struct
 
 #define LED_TIME_OUT  100
 
-
+u8 LED_BufferCompare();
 TaskHandle_t * getLCDTaskHandle();
 void LCD_task(void *pvParameters);
 void vLCDInit();

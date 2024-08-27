@@ -105,7 +105,10 @@ static xScreenObjet const SettingsScreen8[]=
 {
         {0,10,LINE1,70,TEXT_STRING,"Настройки      8/9",    0},
         {0,2,25,70,WRITE_DATA,"Контрасность", CONTRAST_ID},
-        {1,2,37,90,WRITE_DATA,"Ост. вент с.", FAN_START_TIMEOUT_ID},
+        {0,2,37,90,WRITE_DATA,"Ост. вент с.", FAN_START_TIMEOUT_ID},
+        {0,2,50,70,WRITE_DATA,"Дата:",       CURENT_DATE_ADDR  },
+        {1,2,62,15,WRITE_DATA,"Время",       CURENT_TIME_ADDR  },
+
 };
 
 
@@ -139,7 +142,7 @@ xScreenType  xScreens1[SCREENS_COUNT] =
   {7,SettingsScreen4,  0,   0,  6,  8,  ENTER_COMMNAD , 3  },
   {8,SettingsScreen5,  0,   0,  7,  9,  ENTER_COMMNAD , 3  },
   {9,SettingsScreen6,  0,   0,  8,  10, ENTER_COMMNAD,  3 },
-  {10,SettingsScreen7, 0,   0,  9,   4, ENTER_COMMNAD,  3 },
+  {10,SettingsScreen7, 0,   0,  9,  13, ENTER_COMMNAD,  3 },
   {11,InfoScreen4,      0,   0,  1,  1, 0, 0 },
   {12,JournalViewScreen, 0,   0, JOURNAL_NEXT , JOURNAL_PREV, 0,  2 },
   {13,SettingsScreen8, 0,   0,  10,   14,   ENTER_COMMNAD, 3 },

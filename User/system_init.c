@@ -82,13 +82,15 @@ void TaskSuspend()
     vTaskSuspend( WCHNETTask_Handler );
     vTaskSuspend( MPTCPTask_Handler  );
     vTaskSuspend(* getSerialTask());
-    vTaskSuspend(*  getUserProcessTaskHandle());
+    vTaskSuspend(* getUserProcessTaskHandle());
+    vTaskSuspend(* getI2CTaskHandle());
+
 }
 
 void vSYStaskInit ( void )
 {
 
-    (* getI2CTaskHandle())
+   (* getI2CTaskHandle())
 
                     =    xTaskCreateStatic( I2C_task, "I2C", I2C_STK_SIZE , ( void * ) 1, I2C_TASK_PRIO  ,
                                       (StackType_t * const )I2CTaskBuffer, &I2CTaskControlBlock );
@@ -145,7 +147,7 @@ void vSYSqueueInit ( void )
 void vDefaultTask( void  * argument )
 {
     u8 control_type;
-    uint32_t ulNotifiedValue;
+    u8 buffer_draw_counter = 0;
     HAL_RTC_INIT_t RTC_INIT_TYPE;
     TaskFSM_t main_task_fsm = STATE_INIT;
     vMenuInit();
@@ -160,15 +162,21 @@ void vDefaultTask( void  * argument )
                 if (DataModel_Init()!=NORMAL_INIT)
                 {
                     RTC_INIT_TYPE = HAL_RTC_NEW_INIT;
+                    printf("new int\r\n");
                 }
                 else
                 {
+                    printf(" normal\r\n");
                     RTC_INIT_TYPE = HAL_RTC_NORMAL_INIT;
                 }
                 vRTC_TASK_Init(RTC_INIT_TYPE);
+
                 main_task_fsm =  STATE_WHAIT_TO_RAEDY;
                 vTaskDelay(3000);
+
                 vTaskResume(*getUserProcessTaskHandle());
+                vTaskResume(*getI2CTaskHandle());
+                printf(" user_enablr\r\n");
                 break;
             case STATE_WHAIT_TO_RAEDY:
                 control_type  = getReg8(CONTROL_TYPE );
@@ -189,7 +197,14 @@ void vDefaultTask( void  * argument )
                 break;
             case STATE_RUN:
                 vMenuTask();
-                xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
+                if (++buffer_draw_counter>2)
+                {
+                    buffer_draw_counter = 0;
+                    if (LED_BufferCompare())
+                    {
+                        xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
+                    }
+                }
                 vTaskDelay(100);
                 break;
         }

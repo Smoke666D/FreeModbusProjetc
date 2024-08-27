@@ -152,7 +152,7 @@ void HAL_I2C_InitIT( I2C_NAME_t i2c, HAL_I2C_InitTypeDef * I2C_InitStruct, uint8
   // pEEPROM->I2C_Master_Recive_func =    I2C_Master_ReviceIT;
  //  pEEPROM->I2C_Master_Transmit_func =  I2C_Master_TransmitIT;
  //  pEEPROM->I2C_Master_Transmit_func_fast = I2C_Master_TransmitFast;
-  if (i2c == I2C_1)
+  /*if (i2c == I2C_1)
    {
 	   PFIC_IRQ_ENABLE_PG2(I2C1_EV_IRQn ,prior,subprior);
 	   PFIC_IRQ_ENABLE_PG2(I2C1_ER_IRQn ,prior,subprior);
@@ -162,7 +162,7 @@ void HAL_I2C_InitIT( I2C_NAME_t i2c, HAL_I2C_InitTypeDef * I2C_InitStruct, uint8
        PFIC_IRQ_ENABLE_PG2(I2C2_EV_IRQn ,prior,subprior);
        PFIC_IRQ_ENABLE_PG2(I2C2_ER_IRQn ,prior,subprior);
 
-   }
+   }*/
 }
 
 uint16_t HAL_GetI2CBusy( I2C_NAME_t i2c)

@@ -157,7 +157,14 @@ void HAL_RTC_ReadDate(HAL_DateConfig_T* date)
 
 uint8_t HAL_RTC_ConfigTime( HAL_TimeConfig_T* timeConfig)
 {
+  u32 data = RTC_GetCounter() / 86400;
+  data = data+ timeConfig->hours*3600 + timeConfig->minutes*60 + timeConfig->seconds;
+ // RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR | RCC_APB1Periph_BKP, ENABLE);
+  PWR_BackupAccessCmd(ENABLE);
+  RTC_SetCounter(data);
+  RTC_WaitForLastTask();
   return 1;
+
 }
 uint8_t HAL_RTC_ConfigDate( HAL_DateConfig_T* dateConfig)
 {

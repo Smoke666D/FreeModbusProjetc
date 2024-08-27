@@ -42,6 +42,7 @@ DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[CONTRAST]            = 50;
                DATA_MODEL_REGISTER[MOD_BUS_TIMEOUT ]    = 10;
                DATA_MODEL_REGISTER[FAN_START_TIMEOUT ] = 1;
+               setRegFloat(KOOFKPS , 10.43);
                setReg16(IP_PORT,502);
                DATA_MODEL_REGISTER[SENSOR_COUNT]        = TIME_10_0;
 

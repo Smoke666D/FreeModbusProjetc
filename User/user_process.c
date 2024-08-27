@@ -40,7 +40,7 @@ uint16_t USER_GetSetting()
 
 uint16_t USER_GetFact()
 {
-    return (u16)( getRegFloat(KOOFKPS)*(float)getAIN(SENS1)) ;
+    return (u16)(getAIN(SENS2)*getRegFloat(KOOFKPS)) ;
 }
 
 u8 USER_CHECK_ON( u8 STATE)
