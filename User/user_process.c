@@ -119,7 +119,7 @@ void user_process_task(void *pvParameters)
                task_fsm = USER_PROCESS_ALARM;
            }
        }
-       if (ucDinGet(INPUT_2))
+     /*  if (ucDinGet(INPUT_2))
        {
            if ( set_point_old == 0) set_point_flag = 1;
            set_point_old = 1;
@@ -151,7 +151,7 @@ void user_process_task(void *pvParameters)
         {
            task_fsm = USER_PROCCES_IDLE;
         }
-        break;
+        break;*/
        switch (task_fsm)
        {
            case USER_PROCCES_IDLE:

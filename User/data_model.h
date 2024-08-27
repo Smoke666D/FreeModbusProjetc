@@ -11,7 +11,7 @@
 #include "system_init.h"
 #include "hal_rtc.h"
 
-#define VALID_CODE            0x66
+#define VALID_CODE            0x22
 #define VALID_CODE_ADDRES     0
 /*§¢§Ý§à§Ü §Ò§Ñ§Û§ä§à§Ó§í§ç §å§ã§ä§Ó§à§Ü*/
 
