@@ -32,7 +32,7 @@ UCHAR ucSDiscInBuf[REG_DISCRETE_NREGS/8];
 #endif
 
 #define REG_INPUT_START 0x01
-#define REG_INPUT_NREGS 10
+#define REG_INPUT_NREGS 40
 #define REG_HOLDING_START 0x01
 
 
@@ -129,18 +129,27 @@ eMBErrorCode eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRe
 {
   eMBErrorCode    eStatus = MB_ENOERR;
   int             iRegIndex;
-
+  int32_t tempdata;
   if( ( usAddress >= REG_INPUT_START ) && ( usAddress + usNRegs <= REG_INPUT_START + REG_INPUT_NREGS ) )
   {
     iRegIndex = ( int )( usAddress - usRegInputStart );
     while( usNRegs > 0 )
     {
-      *pucRegBuffer++ =
-        ( unsigned char )( usRegInputBuf[iRegIndex] >> 8 );
-      *pucRegBuffer++ =
-        ( unsigned char )( usRegInputBuf[iRegIndex] & 0xFF );
-      iRegIndex++;
-      usNRegs--;
+        for (uint8_t i=0;i< DC_CHANNEL+3;i++)
+        {
+            tempdata =(int32_t) (getAIN(i)*1000);
+            *((float*) (usRegInputBuf+i*2)) =  (float)tempdata/1000.0;
+       }
+       tempdata =(uint32_t) getAIN(AC220);
+       *((float*) (usRegInputBuf+26)) =  tempdata;
+
+       while( usNRegs > 0 )
+       {
+          *pucRegBuffer++ = ( unsigned char )( usRegInputBuf[iRegIndex] >> 8 );
+          *pucRegBuffer++ = ( unsigned char )( usRegInputBuf[iRegIndex] & 0xFF );
+          iRegIndex++;
+          usNRegs--;
+       }
     }
   }
   else

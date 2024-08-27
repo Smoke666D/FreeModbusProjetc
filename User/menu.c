@@ -104,6 +104,19 @@ static u8 edit_data[MAX_STRING_NUMBER];
 static u8 blink_counter = 0;
 static u8 SelectEditFlag = 0;
 static HAL_TimeConfig_T time;
+static uint8_t error_flag;
+static u8 *  SENSOR_COUNT_STRING[]={"0.1","0.5","1.0","2.0","3.0","5.0","10.0"};
+static u8 *  ErrorString[]={"HEPA Фильтр засорен","Низкое напряжение","Высокое напряжение","Невозможно"};
+static u8 journal_index =0;
+static uint16_t curr_edit_data_id = 0;
+static u8 cur_edit_index = 0;
+static u8 * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
+static uint8_t start_edit_flag =0;
+static uint16_t edit_data_buffer_byte;
+static const uint32_t coof[]={1,10,100,1000};
+static const float coof_float[]={0.01,0.1,1.0,10.0,100.0,1000.0};
+static HAL_DateConfig_T date;
+static u8 edit_ip_addres[4];
 
 #define  DateFormatString  "%02i.%02i.%02i"
 #define  TimeFormatString  "%02i:%02i:%02i"
@@ -132,7 +145,26 @@ u8 GetID( u8 id)
     return (1);
 }
 
-u8 journal_index =0;
+static void SetFirtsEditString( )
+{
+    memset(edit_data,0,MAX_STRING_NUMBER);
+    u8 edit_flag = 0;
+    for (u8 i=0;i<MAX_STRING_NUMBER;i++)
+    {
+        if ( xScreens1[pCurrMenu].pScreenCurObjets[i].xType == WRITE_DATA)
+        {
+            if( edit_flag == 0)
+            {
+                 edit_flag    = 1;
+                 edit_data[i] = 2;
+            }
+            else
+            {
+                edit_data[i] = 1;
+            }
+        }
+     }
+}
 
 void ViewScreenCallback( u8 key_code)
 {
@@ -160,7 +192,6 @@ void ViewScreenCallback( u8 key_code)
      }
      if (pscreen)
      {
-
          switch (pscreen  & COMMNAD_MASK )
          {
              case ENTER_COMMNAD:
@@ -185,79 +216,38 @@ void ViewScreenCallback( u8 key_code)
 
 
 
-
-void SetFirtsEditString( )
-{
-    memset(edit_data,0,MAX_STRING_NUMBER);
-    u8 edit_flag = 0;
-    for (u8 i=0;i<MAX_STRING_NUMBER;i++)
-    {
-        if ( xScreens1[pCurrMenu].pScreenCurObjets[i].xType == WRITE_DATA)
-        {
-            if( edit_flag == 0)
-            {
-                 edit_flag    = 1;
-                 edit_data[i] = 2;
-            }
-            else
-            {
-                edit_data[i] = 1;
-            }
-        }
-     }
-
-}
-
-
-
-void vSelectNext()
+static void vSelect( u8 direction)
 {
     uint8_t index;
     for (index =0; index < MAX_STRING_NUMBER;index ++)
     {
-           if (edit_data[index ] == 2)
-           {
-               edit_data[index ] = 1;
-               break;
-           }
-    }
-    for (uint8_t i = 0; i < MAX_STRING_NUMBER; i++)
-    {
-        if (++index >= MAX_STRING_NUMBER) index = 0;
-        if (edit_data[index ] == 1)
+        if (edit_data[index ] == 2)
         {
-            edit_data[index ] = 2;
+            edit_data[index ] = 1;
             break;
         }
     }
-}
-void vSelectPervius()
-{
-    uint8_t index;
-        for (index =0; index < MAX_STRING_NUMBER;index ++)
+   for (uint8_t i = 0; i < MAX_STRING_NUMBER; i++)
+   {
+        if (direction==0)
         {
-               if (edit_data[index ] == 2)
-               {
-                   edit_data[index ] = 1;
-                   break;
-               }
+          if (index == 0) index = (MAX_STRING_NUMBER-1);
+              else
+          index--;
         }
-        for (uint8_t i = 0; i < MAX_STRING_NUMBER; i++)
+        else
         {
-            if (index == 0 ) index = (MAX_STRING_NUMBER-1);
-
-            else {
-                index--;
-            }
-            if (edit_data[index ] == 1)
-            {
-                edit_data[index ] = 2;
-                break;
-            }
+          if (++index >= MAX_STRING_NUMBER) index = 0;
         }
+        if (edit_data[index ] == 1)
+        {
+           edit_data[index ] = 2;
+           break;
+        }
+    }
 }
 
-static uint16_t curr_edit_data_id = 0;
+
 
 void vSetEdit()
 {
@@ -294,12 +284,11 @@ void vSetCommnad( DATA_VIEW_COMMAND_t cmd )
 
 void vMenuTask ( void )
 {
-
        if ( uxQueueMessagesWaiting(pKeyboard) != 0)
        {
            if ( xQueueReceive(pKeyboard, &TempEvent, 0U ) == pdPASS )
            {
-               printf("mode %i key %i\r\n",menu_mode,TempEvent.KeyCode );
+               //printf("mode %i key %i\r\n",menu_mode,TempEvent.KeyCode );
               if ( TempEvent.Status == MAKECODE )
               {
                   switch (menu_mode)
@@ -325,12 +314,12 @@ void vMenuTask ( void )
 //
                                        }
                                         break;
-                               case 2: if   (SelectEditFlag)  vSelectNext();
+                               case 2: if   (SelectEditFlag)  vSelect(1);
                                else {
                                    pCurrMenu = GetID(xScreens1[pCurrMenu].pUpScreenSet);
                             }
                                       break;
-                               case 3: if   (SelectEditFlag) vSelectPervius();
+                               case 3: if   (SelectEditFlag) vSelect(0);
                                else {
                                    pCurrMenu = GetID(xScreens1[pCurrMenu].pDownScreenSet);
                             }break;
@@ -358,15 +347,7 @@ void vMenuTask ( void )
 
 }
 
-u8 data_edit_flag = 0;
-u8 max_edit_index = 0;
-static u8 cur_edit_index = 0;
-char * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
-static uint8_t start_edit_flag =0;
-uint16_t edit_data_buffer_byte;
 
-uint32_t coof[]={1,10,100,1000};
-float coof_float[]={0.01,0.1,1.0,10.0,100.0,1000.0};
 
 void vByteDataEdit(u8 size, u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , uint16_t max_data, uint16_t min_data )
 {
@@ -460,7 +441,6 @@ void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8
 }
 
 
-u8 edit_ip_addres[4];
 
 void vIPDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command )
 {
@@ -632,7 +612,7 @@ void  vTimeDataEdit(DATA_VIEW_COMMAND_t command, u8 * str)
     }
 }
 
-static HAL_DateConfig_T date;
+
 
 static void vDateDataEdit(DATA_VIEW_COMMAND_t command, char * str)
 {
@@ -742,11 +722,7 @@ u16 getDataModelID( u16 MENU_ID)
     }
 }
 
-uint8_t error_flag;
-HAL_TimeConfig_T error_time;
-HAL_DateConfig_T  error_date;
-u8 * SENSOR_COUNT_STRING[]={"0.1","0.5","1.0","2.0","3.0","5.0","10.0"};
-u8 * ErrorString[]={"HEPA Фильтр засорен","Низкое напряжение","Высокое напряжение","Невозможно"};
+
 
 void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len)
 {
@@ -758,10 +734,10 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
     switch (data_id)
     {
         case JOURNAL_TIME_ID:
-            sprintf(str,TimeFormatString,error_time.hours,error_time.minutes,error_time.seconds);
+            sprintf(str,TimeFormatString,time.hours,time.minutes,time.seconds);
             break;
         case JOURNAL_DATE_ID:
-            sprintf(str,DateFormatString,error_date.date,error_date.month,error_date.year);
+            sprintf(str,DateFormatString,date.date,date.month,date.year);
             break;
         case JOURNAL_INFO1_ID:
              strcpy(str,ErrorString[error_flag]);
@@ -785,7 +761,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
              break;
         case JURNAL_RECORD_ID:
             sprintf(str,"%02i/%02i",journal_index+1, getReg16(RECORD_COUNT));
-            vGetRecord(journal_index,&error_flag,&error_time,&error_date);
+            vGetRecord(journal_index,&error_flag,&time,&date);
             break;
         case COOF_P_ID:
         case COOF_I_ID:
@@ -808,13 +784,13 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             switch (command)
             {
                 case CMD_READ:
-                     sprintf(str,"%03i",getReg16(getDataModelID(data_id)) );
+                     sprintf(str,"%03i",getReg16(reg_id) );
                      break;
                 case CMD_EDIT_READ:
                      sprintf(str,"%03i",edit_data_buffer_byte );
                      break;
                 default:
-                     vByteDataEdit(1,getDataModelID(data_id),command,2,999,0);
+                     vByteDataEdit(1,reg_id,command,2,999,0);
                      break;
              }
              break;
@@ -827,13 +803,13 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             switch (command)
             {
                case CMD_READ:
-                  sprintf(str,"%04i",getReg16(getDataModelID(data_id)) );
+                  sprintf(str,"%04i",getReg16(reg_id) );
                   break;
                case CMD_EDIT_READ:
                   sprintf(str,"%04i",edit_data_buffer_byte );
                   break;
                default:
-                  vByteDataEdit(1,getDataModelID(data_id),command,3,9999,0);
+                  vByteDataEdit(1,reg_id,command,3,9999,0);
                   break;
              }
             break;
@@ -992,10 +968,10 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                 strcpy(str, ControlModeStrig[ edit_data_buffer_byte ] );
                 break;
             case CMD_READ:
-                strcpy(str, ControlModeStrig[ getReg8( getDataModelID(data_id))] );
+                strcpy(str, ControlModeStrig[ getReg8( reg_id)] );
                 break;
             default:
-                vByteDataEdit(0,getDataModelID(data_id),command,0,MKV_MB_TCP,(data_id == CONTROL_MODE_ID)? MKV_MB_DIN : MKV_MB_RTU);
+                vByteDataEdit(0,reg_id,command,0,MKV_MB_TCP,(data_id == CONTROL_MODE_ID)? MKV_MB_DIN : MKV_MB_RTU);
                 break;
         }
         break;
