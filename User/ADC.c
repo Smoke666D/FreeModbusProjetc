@@ -30,7 +30,6 @@ int16_t GetConversional(ADC_Conversionl_Buf_t * pBuf);
 #define DC_24_BufferSize    3
 #define DC_AIN_BufferSize  10
 #define Sens_BufferSize_MAX 400
-
 u16 sensor_timer[] = { 4,20,40,80,120,200,400};
 
 #define DAC_CAL_POINT 10
@@ -48,7 +47,7 @@ POINT_t const DACCAL[DAC_CAL_POINT]={ {0,0},
 };
 
 
-ADC_Conversionl_Buf_t DataBuffer[DC_CHANNEL+2];
+ADC_Conversionl_Buf_t DataBuffer[DC_CHANNEL+3];
 
 
 int16_t SenseBuffer1[ Sens_BufferSize_MAX ];
@@ -59,6 +58,7 @@ int16_t AIN2Buffer[ DC_AIN_BufferSize];
 int16_t AIN3Buffer[ DC_AIN_BufferSize];
 int16_t AIN4Buffer[ DC_AIN_BufferSize];
 int16_t SensTemoBuffer[ DC_AIN_BufferSize];
+int16_t SensTemoBuffer1[ DC_AIN_BufferSize];
 /*
  *
  */
@@ -72,7 +72,7 @@ void vSetCount( u16 coount)
     if (coount <= 7 )
     {
         saveReg16(SENSOR_COUNT,coount );
-        DataBuffer[0].ConversionalSize = sensor_timer[ coount];
+        DataBuffer[0].ConversionalSize = sensor_timer[coount];
         DataBuffer[1].ConversionalSize = sensor_timer[coount];
     }
 }
@@ -111,18 +111,7 @@ static u8 conversion_channel;
 #define MAX_VDD_VALUE  2.7
 #define VDD_RANGE    (MAX_VDD_VALUE - MIN_VDD_VALUE)
 
-float Get_025HPDPN33_SensorData( float data)
-{
-    if ( (data - MIN_VDD_VALUE) >= (VDD_RANGE/2-MIN_VDD_VALUE))
-    {
-        return (data - MIN_VDD_VALUE - VDD_RANGE/2)* (MAX_BAR_VALUE/(VDD_RANGE/2));
-    }
-    else
-    {
-        return (VDD_RANGE/2 - (data - MIN_VDD_VALUE))*(MAX_BAR_VALUE/(VDD_RANGE/2))*-1;
-    }
 
-}
 u8 i2cdata[2][8] ={0};
 
 #define DELTA  ((MAX_VDD_VALUE -MIN_VDD_VALUE )/(MIN_BAR_VALUE -  MAX_BAR_VALUE))
@@ -134,7 +123,7 @@ float getAIN( AIN_CHANNEL_t channel)
         case  SENS1:
             return  ((float)GetConversional(&DataBuffer[0]));
         case SENS2:
-           return (Get_025HPDPN33_SensorData((float)GetConversional(&DataBuffer[1])*KK));
+            return  ((float)GetConversional(&DataBuffer[1]));
         case DC24:
              return  ((float)GetConversional(&DataBuffer[2])*KK*COOF_24V);
 
@@ -238,6 +227,9 @@ void ADC1_Init()
     DataBuffer[7].ConversionalSize = DC_AIN_BufferSize;
     DataBuffer[7].pIndex = 0;
     DataBuffer[7].pBuff = SensTemoBuffer;
+    DataBuffer[8].ConversionalSize = DC_AIN_BufferSize;
+     DataBuffer[8].pIndex = 0;
+     DataBuffer[8].pBuff = SensTemoBuffer;
 }
 
 void AddBufferDataI2C( ADC_Conversionl_Buf_t * pBuf, int16_t data )
@@ -291,7 +283,6 @@ void ADC_task(void *pvParameters)
     uint16_t uCurPeriod = AC_CONVERION_NUMBER-1;
     uint8_t DC_ConversionDoneFlasg = 0;
     uint8_t dc_conv_start = 5;
-
     xLastWakeTime = xTaskGetTickCount();
     for (;;)
     {
@@ -356,17 +347,8 @@ void ADC_task(void *pvParameters)
 
 
 
-
-
-
-
-
-
 uint8_t SetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 data, I2C_FSM_t * i2cfsm )
 {
-
-
-
        switch (*i2cfsm)
        {
            case I2C_GET_BUSY:
@@ -386,7 +368,7 @@ uint8_t SetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 data, I2C_FSM_t * i2cfsm )
            case I2C_SEND_REG_ADDR :
                if (I2C_CheckEvent(i2c, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED)==READY)
                {
-                   I2C_SendData(i2c, (u8)(ad & 0x00FF));
+                   I2C_SendData(i2c, ad );
                    *i2cfsm =I2C_SEND_DATA ;
                }
                break;
@@ -404,7 +386,7 @@ uint8_t SetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 data, I2C_FSM_t * i2cfsm )
                    return (1);
                }
                break;
-       }
+     }
     return (0);
 }
 
@@ -518,23 +500,37 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm, u8 
                    {
                        *sens_press  = temp_data/GetSensCoof();
                     }
-                    AddBufferDataI2C(&DataBuffer[0], *sens_press  );
+                    AddBufferDataI2C(&DataBuffer[index], *sens_press  );
                     *SENS_FSM = SENSOR_GET_TEMP_1;
                     *fsm = I2C_GET_BUSY;
                 }
                 break;
             case SENSOR_GET_TEMP_1:
-                *SENS_FSM = SENSOR_GET_TEMP_2;
-                *fsm = I2C_GET_BUSY;
+                if ( GetI2CDataFSM(i2c, 0x09, &i2cdata[index][3],fsm) == 1)
+                {
+                    *SENS_FSM = SENSOR_GET_TEMP_2;
+                    *fsm = I2C_GET_BUSY;
+                }
                 break;
             case SENSOR_GET_TEMP_2:
-                *SENS_FSM = SENSOR_IDLE;
-                *fsm = I2C_GET_BUSY;
+                if ( GetI2CDataFSM(i2c, 0x0A, &i2cdata[index][4],fsm) == 1)
+                {
+                      int16_t temperature;
+                      uint16_t sens_temp = i2cdata[1][3]*256 + i2cdata[1][4];
+                      if (sens_temp & 0x8000)
+                             temperature = (sens_temp -65536);
+                      else
+                          temperature = sens_temp;
+                        AddBufferData(&DataBuffer[index?7:8],temperature);
+                        *SENS_FSM = SENSOR_IDLE;
+                        *fsm = I2C_GET_BUSY;
+                }
                 break;
             case SENSOR_IDLE:
                 *fsm = I2C_GET_BUSY;;
                 break;
         }
+
 }
 
 
@@ -548,7 +544,6 @@ void I2C_task(void *pvParameters)
     vTaskDelay(1000);
     I2C_FSM_t fsm,fsm1;
     printf("Start I2C OK 1.5\r\n");
-
  while(1)
  {
      if (++counter_led >20)
@@ -566,8 +561,6 @@ void I2C_task(void *pvParameters)
                     }
                 }
      xLastWakeTime =  xTaskGetTickCount ();
-    //printf("Start1 %i\r\n",xLastWakeTime);
-
      SENS1_FSM = SENSOR_START_CONVERSION;
      SENS2_FSM = SENSOR_START_CONVERSION;
      fsm = 0;

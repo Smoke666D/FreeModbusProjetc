@@ -368,7 +368,6 @@ void MBRTU_task(void *pvParameters)
      for( ;; )
      {
          u8 control_type  = getReg8(CONTROL_TYPE );
-         vTaskDelay(1);
          if (control_type == MKV_MB_RTU)
          {
 
@@ -390,7 +389,9 @@ void MBRTU_task(void *pvParameters)
              {
                 do
                 {
+                    vTaskDelay(1);
                     xStatus = eMBPoll(  );
+
                 }
                 while( xStatus == MB_ENOERR );
              }
