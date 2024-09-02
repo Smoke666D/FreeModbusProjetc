@@ -41,9 +41,11 @@ void vInit_DeviceConfig( void )
      I2C_InitTSturcture.I2C_OwnAddress1 = 0;
      I2C_InitTSturcture.I2C_Ack = I2C_Ack_Enable;
      I2C_InitTSturcture.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
-   //  HAL_I2C_InitIT(I2C_1, &I2C_InitTSturcture,1,1);
+     HAL_I2C_InitIT(I2C_1, &I2C_InitTSturcture,1,1);
      HAL_I2C_InitIT(I2C_2, &I2C_InitTSturcture, 1,1);
-   //  HAL_I2C_ENABLE( I2C_1 );
+     HAL_InitGpioAF (  I2C1_Port , I2C1_SDA_Pin   | I2C1_SCL_Pin  , 0 , GPIO_Mode_AF_OD );
+     HAL_InitGpioAF (  I2C2_Port , I2C2_SDA_Pin   | I2C2_SCL_Pin  , 0 , GPIO_Mode_AF_OD );
+     HAL_I2C_ENABLE( I2C_1 );
      HAL_I2C_ENABLE( I2C_2 );
      HAL_DAC_InitTypeDef init;
      init.channel = HAL_DAC1;
@@ -78,7 +80,6 @@ static void MX_GPIO_Init(void)
     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
     GPIO_Init( GPIOB, &GPIO_InitStructure);
     HAL_InitGpioOut( SPI2_Port,  SPI2_NSS_Pin);
-    HAL_InitGpioAF (  I2C2_Port , I2C2_SDA_Pin   | I2C2_SCL_Pin  , 0 , GPIO_Mode_AF_OD );
     HAL_InitGpioOut( CRACH_Port, CRACH_Pin);
     HAL_InitGpioOut( LDCDATA_2_3_E_REW_CD_LED_Port,   LCDLED_Pin);
     HAL_InitGpioAF(  AOUT_Port, AOUT1_Pin   | AOUT2_Pin | AOUT3_Pin , GPIO_FullRemap_TIM9, GPIO_Mode_AF_PP );

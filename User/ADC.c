@@ -25,7 +25,7 @@ uint8_t ADC2_CHANNEL[DC_CHANNEL] = {   ADC_CH_9, ADC_CH_2,ADC_CH_6,ADC_CH_7,ADC_
 #define ADC1_PRIOR 1
 #define ADC1_SUB_PRIOR 0
 static int16_t sens_press=0;
-
+static int16_t sens_press1=0;
 int16_t GetConversional(ADC_Conversionl_Buf_t * pBuf);
 #define DC_24_BufferSize    3
 #define DC_AIN_BufferSize  10
@@ -290,9 +290,6 @@ void ADC_task(void *pvParameters)
     uint16_t old= 0;
     uint16_t uCurPeriod = AC_CONVERION_NUMBER-1;
     uint8_t DC_ConversionDoneFlasg = 0;
-    uint8_t AC_ConversionDoneFlasg = 0;
-    u16 initr = 0;
-
     uint8_t dc_conv_start = 5;
 
     xLastWakeTime = xTaskGetTickCount();
@@ -347,17 +344,11 @@ void ADC_task(void *pvParameters)
                        HAL_DMA_SetCounter(DMA1_CH1, AC_CONVERION_NUMBER*2);
                        HAL_DMA_Enable(DMA1_CH1);
                        HAL_TiemrEneblae(TIMER3);
-                       AC_ConversionDoneFlasg  = 0;
                     }
                     if (++ANALOG_DATA_FSM >=10)
                     {
                         ANALOG_DATA_FSM = 0;
                     }
-
-
-
-                    // if (++initr > 0xFFF) initr =0;
-                   //  DAC_SetChannel1Data(DAC_Align_12b_R, initr);
                    break;
             }
     }
@@ -371,43 +362,42 @@ void ADC_task(void *pvParameters)
 
 
 
-uint8_t SetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 data, u8 * i2cfsm )
+uint8_t SetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 data, I2C_FSM_t * i2cfsm )
 {
 
 
-    I2C_Cmd(I2C2,ENABLE);
-    {
+
        switch (*i2cfsm)
        {
-           case 0:
+           case I2C_GET_BUSY:
                if (I2C_GetFlagStatus( i2c, I2C_FLAG_BUSY) == RESET)
                {
                    I2C_GenerateSTART(i2c, ENABLE);
-                   *i2cfsm = 1;
+                   *i2cfsm = I2C_SEND_ADDR;
                }
                break;
-           case 1:
+           case I2C_SEND_ADDR:
                if (I2C_CheckEvent( i2c, I2C_EVENT_MASTER_MODE_SELECT)== READY)
                {
                    I2C_Send7bitAddress( i2c, 0x6D<<1, I2C_Direction_Transmitter);
-                   *i2cfsm =2;
+                   *i2cfsm =I2C_SEND_REG_ADDR ;
                }
                break;
-           case 2:
+           case I2C_SEND_REG_ADDR :
                if (I2C_CheckEvent(i2c, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED)==READY)
                {
                    I2C_SendData(i2c, (u8)(ad & 0x00FF));
-                   *i2cfsm =3;
+                   *i2cfsm =I2C_SEND_DATA ;
                }
                break;
-           case 3:
+           case I2C_SEND_DATA :
                if (I2C_CheckEvent(i2c, I2C_EVENT_MASTER_BYTE_TRANSMITTED) == READY)
                {
                    I2C_SendData(i2c, data);
-                   *i2cfsm = 4;
+                   *i2cfsm = I2C_SEND_STOP  ;
                }
                break;
-           case 4:
+           case I2C_SEND_STOP:
                if (I2C_CheckEvent(i2c, I2C_EVENT_MASTER_BYTE_TRANSMITTED) == READY)
                {
                    I2C_GenerateSTOP(i2c, ENABLE);
@@ -415,59 +405,56 @@ uint8_t SetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 data, u8 * i2cfsm )
                }
                break;
        }
-    }
     return (0);
 }
 
 
-uint8_t GetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 * temp, u8 * i2cfsm )
+uint8_t GetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 * temp, I2C_FSM_t * i2cfsm )
 {
-  //  while(1)
-    {
-        switch (*i2cfsm)
-        {
-          case 0:
+      switch (*i2cfsm)
+      {
+          case I2C_GET_BUSY:
               if (I2C_GetFlagStatus( i2c, I2C_FLAG_BUSY) == RESET)
               {
                  I2C_GenerateSTART(i2c, ENABLE);
-                 *i2cfsm = 1;
+                 *i2cfsm = I2C_SEND_ADDR;
               }
               break;
-         case 1:
+         case I2C_SEND_ADDR:
              if  (I2C_CheckEvent( i2c, I2C_EVENT_MASTER_MODE_SELECT ) == READY)
              {
                 I2C_Send7bitAddress( i2c, 0x6D<<1, I2C_Direction_Transmitter );
-                *i2cfsm = 2;
+                *i2cfsm = I2C_SEND_REG_ADDR ;
              }
              break;
-         case 2:
+         case I2C_SEND_REG_ADDR :
              if ( I2C_CheckEvent( i2c, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED )== READY )
              {
                 I2C_SendData(i2c, (u8)(ad & 0x00FF));
-                *i2cfsm = 3;
+                *i2cfsm = I2C_START_READ ;
              }
              break;
-         case 3:
+         case I2C_START_READ :
              if ( I2C_CheckEvent(i2c, I2C_EVENT_MASTER_BYTE_TRANSMITTED) == READY)
              {
                  I2C_GenerateSTART(i2c, ENABLE);
-                 *i2cfsm = 4;
+                 *i2cfsm = I2C_SEND_ADDR_R;
              }
              break;
-         case 4:
+         case I2C_SEND_ADDR_R:
              if (I2C_CheckEvent(i2c, I2C_EVENT_MASTER_MODE_SELECT) == READY)
              {
                  I2C_Send7bitAddress(i2c, 0x6D<<1, I2C_Direction_Receiver);
-                 *i2cfsm = 5;
+                 *i2cfsm =I2C_CHECK_ACK_R;
              }
              break;
-         case 5:
+         case I2C_CHECK_ACK_R:
              if (I2C_CheckEvent(i2c, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED)== READY)
              {
-                 *i2cfsm = 6;
+                 *i2cfsm = I2C_GET_DATA_R ;
              }
              break;
-         case 6:
+         case I2C_GET_DATA_R :
              if (I2C_GetFlagStatus(i2c, I2C_FLAG_RXNE) != RESET)
              {
                  I2C_AcknowledgeConfig(i2c, DISABLE);
@@ -476,25 +463,92 @@ uint8_t GetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 * temp, u8 * i2cfsm )
                  return (1);
              }
              break;
-
-        }
-    }
+   }
    return 0;
 }
 
 #define SENSOR_TIME_OUT 50
 
+static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm, u8 * status, u16 * sens_press )
+{
+    I2C_TypeDef * i2c = (channel)? I2C2:I2C1;
+    u8 index = channel ? 1: 0;
+    switch (*SENS_FSM )
+    {
+         case SENSOR_START_CONVERSION :
+             if (SetI2CDataFSM(i2c, 0x30, 0x0A, fsm) == 1)
+             {
+                  *SENS_FSM = SENSOR_GET_STATUS;
+                  *fsm = I2C_GET_BUSY;
+             }
+             break;
+         case SENSOR_GET_STATUS:
+              if (GetI2CDataFSM(i2c, 0x30,status,fsm) == 1)
+              {
+                  if ((*status & 0x08) == 0 )
+                  {
+                      *SENS_FSM = SENSOR_GET_PERS_1;
+                  }
+                  *fsm = I2C_GET_BUSY;
+               }
+               break;
+          case SENSOR_GET_PERS_1:
+              if  (GetI2CDataFSM(i2c, 0x06, &i2cdata[index][0],fsm) == 1)
+              {
+                   *fsm  =I2C_GET_BUSY;
+                   *SENS_FSM=SENSOR_GET_PERS_2;
+              }
+              break;
+         case SENSOR_GET_PERS_2:
+              if ( GetI2CDataFSM(i2c, 0x07, &i2cdata[index][1],fsm) == 1)
+              {
+                   *fsm = I2C_GET_BUSY;
+                   *SENS_FSM = SENSOR_GET_PERS_3;
+              }
+              break;
+        case SENSOR_GET_PERS_3:
+             if  ( GetI2CDataFSM(i2c, 0x08, &i2cdata[index][2], fsm) == 1)
+             {
+                   uint32_t temp_data = (u32)i2cdata[index][0]<<16 | (u32)i2cdata[index][1]<<8 | i2cdata[index][2];
+                   if (temp_data > 0x800000)
+                   {
+                       *sens_press  = ((temp_data - 16777216)/GetSensCoof());
+                   }
+                   else
+                   {
+                       *sens_press  = temp_data/GetSensCoof();
+                    }
+                    AddBufferDataI2C(&DataBuffer[0], *sens_press  );
+                    *SENS_FSM = SENSOR_GET_TEMP_1;
+                    *fsm = I2C_GET_BUSY;
+                }
+                break;
+            case SENSOR_GET_TEMP_1:
+                *SENS_FSM = SENSOR_GET_TEMP_2;
+                *fsm = I2C_GET_BUSY;
+                break;
+            case SENSOR_GET_TEMP_2:
+                *SENS_FSM = SENSOR_IDLE;
+                *fsm = I2C_GET_BUSY;
+                break;
+            case SENSOR_IDLE:
+                *fsm = I2C_GET_BUSY;;
+                break;
+        }
+}
+
+
 void I2C_task(void *pvParameters)
 {
     TickType_t xLastWakeTime;
-    u8 status;
-    uint8_t ADC_FSM = 0;
+    u8 status,status1;
+    SENSOR_FSM_t SENS1_FSM,SENS2_FSM;
     uint16_t counter_led = 0;
     u8 led_state = 0;
     vTaskDelay(1000);
-    u8 fsm;
+    I2C_FSM_t fsm,fsm1;
     printf("Start I2C OK 1.5\r\n");
-    I2C_Cmd(I2C2,ENABLE);
+
  while(1)
  {
      if (++counter_led >20)
@@ -514,87 +568,34 @@ void I2C_task(void *pvParameters)
      xLastWakeTime =  xTaskGetTickCount ();
     //printf("Start1 %i\r\n",xLastWakeTime);
 
-     ADC_FSM = 1;
+     SENS1_FSM = SENSOR_START_CONVERSION;
+     SENS2_FSM = SENSOR_START_CONVERSION;
      fsm = 0;
      while (1)
      {
-
+         if ((SENS1_FSM ==SENSOR_IDLE) && (SENS2_FSM ==SENSOR_IDLE))
+         {
+             vTaskDelay(1);
+         }
          if ((xTaskGetTickCount () - xLastWakeTime ) >25)
          {
-             if (ADC_FSM!=6)
+            if (SENS1_FSM !=SENSOR_IDLE)
             {
-                 vTaskDelay(100);
-                // printf("i2c error %i %i\r\n",fsm,ADC_FSM);
-                // printf("i2c START %i %i\r\n",I2C2->STAR1,I2C2->STAR2);
-                // I2C_Cmd(I2C2,DISABLE);
-               //  I2C_Cmd(I2C2,ENABLE);
-                // I2C_GenerateSTART(I2C2, ENABLE);
-               //  I2C_SendData(I2C2, (u8)(0));
-                // I2C_GenerateSTOP(I2C2, ENABLE);
-                 fsm = 0;
+                 printf("i2c error %i %i\r\n",fsm,SENS1_FSM);
+                 I2C_GenerateSTOP(I2C2, ENABLE);
+                 fsm = I2C_GET_BUSY;
             }
+            if (SENS2_FSM !=SENSOR_IDLE)
+            {
+                 printf("i21 error %i %i\r\n",fsm1,SENS2_FSM);
+                 I2C_GenerateSTOP(I2C1, ENABLE);
+                 fsm1 = I2C_GET_BUSY;
+            }
+            break;
 
-             break;
          }
-
-         switch (ADC_FSM )
-         {
-             case 1:
-
-                 if (SetI2CDataFSM(I2C2,  0x30, 0x0A,&fsm) == 1)
-                 {
-                     ADC_FSM = 2;
-                     fsm = 0;
-                 }
-                 break;
-             case 2:
-
-                 if (GetI2CDataFSM(I2C2, 0x30,&status,&fsm) == 1)
-                  {
-                      if ((status & 0x08) == 0 )
-                      {
-                          ADC_FSM = 3;
-                      }
-                      fsm = 0;
-                  }
-                 break;
-             case 3:
-                  if  (GetI2CDataFSM(I2C2, 0x06, &i2cdata[1][0],&fsm) == 1)
-                  {
-                      fsm  =0;
-
-                      ADC_FSM = 4;
-                  }
-                  break;
-             case 4:
-                  if ( GetI2CDataFSM(I2C2, 0x07, &i2cdata[1][1],&fsm) == 1)
-                  {
-                      fsm = 0;
-                      ADC_FSM = 5;
-                  }
-                  break;
-             case 5:
-                 if  ( GetI2CDataFSM(I2C2, 0x08, &i2cdata[1][2], &fsm) == 1)
-                 {
-
-                             uint32_t temp_data = (u32)i2cdata[1][0]<<16 | (u32)i2cdata[1][1]<<8 | i2cdata[1][2];
-                             if (temp_data > 0x800000)
-                             {
-                                  sens_press  = ((temp_data - 16777216)/GetSensCoof());
-                             }
-                             else
-                             {
-                                  sens_press  = temp_data/GetSensCoof();
-                             }
-                             AddBufferDataI2C(&DataBuffer[0], sens_press  );
-                             ADC_FSM = 6;
-                 }
-                 break;
-             case 6:
-                 fsm = 0;
-                 vTaskDelay(1);
-                 break;
-         }
+         vSensFSM(0,&SENS1_FSM,&fsm,&status, &sens_press);
+         vSensFSM(1,&SENS2_FSM,&fsm1,&status1,&sens_press1);
      }
  }
 }

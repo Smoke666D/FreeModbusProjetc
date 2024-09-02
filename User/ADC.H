@@ -22,6 +22,32 @@
 
 typedef enum
 {
+  SENSOR_START_CONVERSION = 0,
+  SENSOR_GET_STATUS       = 1,
+  SENSOR_GET_PERS_1       = 2,
+  SENSOR_GET_PERS_2       = 3,
+  SENSOR_GET_PERS_3       = 4,
+  SENSOR_GET_TEMP_1       = 5,
+  SENSOR_GET_TEMP_2       = 6,
+  SENSOR_IDLE             = 7,
+} SENSOR_FSM_t;
+
+typedef enum
+{
+   I2C_GET_BUSY      = 0,
+   I2C_SEND_ADDR     = 1,
+   I2C_SEND_REG_ADDR = 2,
+   I2C_SEND_DATA     = 3,
+   I2C_START_READ    = 4,
+   I2C_SEND_ADDR_R   = 5,
+   I2C_CHECK_ACK_R   = 6,
+   I2C_GET_DATA_R    = 7,
+   I2C_SEND_STOP     = 8,
+
+} I2C_FSM_t;
+
+typedef enum
+{
   SENS1 = 0,
   SENS2 = 1,
   DC24  = 2,
