@@ -39,12 +39,12 @@ typedef enum
    I2C_EVT_5_R      = 10,
    I2C_EVT_6        =   2,
 
-   I2C_SEND_DATA     = 3,
+   I2C_EVT8    = 3,
    I2C_START_READ    = 4,
    I2C_SEND_ADDR_R   = 5,
    I2C_CHECK_ACK_R   = 6,
    I2C_EVT_6_1   = 7,
-   I2C_SEND_STOP     = 8,
+   I2C_EVT_8_2    = 8,
 
 } I2C_FSM_t;
 

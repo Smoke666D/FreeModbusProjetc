@@ -376,18 +376,18 @@ uint8_t SetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 data, I2C_FSM_t * i2cfsm )
                {
                    HAL_I2C_GET_STAT2(I2C);
                    HAL_I2C_SEND(I2C, ad );
-                   *i2cfsm =I2C_SEND_DATA ;
+                   *i2cfsm =I2C_EVT8;
                }
                break;
-           case I2C_SEND_DATA :
-               if (I2C_CheckEvent(i2c, I2C_EVENT_MASTER_BYTE_TRANSMITTED) == READY)
+           case I2C_EVT8 :
+               if (HAL_I2C_GET_STAT1(I2C) & STAR1_TXE_FLAG  )
                {
                    HAL_I2C_SEND(I2C, data);
-                   *i2cfsm = I2C_SEND_STOP  ;
+                   *i2cfsm = I2C_EVT_8_2;
                }
                break;
-           case I2C_SEND_STOP:
-               if (I2C_CheckEvent(i2c, I2C_EVENT_MASTER_BYTE_TRANSMITTED) == READY)
+           case I2C_EVT_8_2:
+               if (HAL_I2C_GET_STAT1(I2C) & (STAR1_TXE_FLAG |  STAR1_BTF_FLAG) )
                {
                    HAL_I2C_STOP(I2C);
                    return (1);
