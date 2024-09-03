@@ -597,7 +597,6 @@ void I2C_task(void *pvParameters)
                  fsm1 = I2C_GET_BUSY;
             }
             break;
-
          }
          else if (sensor_time_out > 5)
          {
@@ -611,7 +610,6 @@ void I2C_task(void *pvParameters)
                  SENS2_FSM = SENSOR_IDLE;
                   HAL_I2C_STOP(I2C_1);
              }
-
 
          }
          vSensFSM(0,&SENS1_FSM,&fsm,&status, &sens_press);
