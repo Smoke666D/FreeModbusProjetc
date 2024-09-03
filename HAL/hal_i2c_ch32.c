@@ -166,6 +166,11 @@ void HAL_I2C_InitIT( I2C_NAME_t i2c, HAL_I2C_InitTypeDef * I2C_InitStruct, uint8
 }
 
 
+uint8_t HAL_I2C_GET_DATA(I2C_NAME_t i2c)
+{
+    return (I2C[i2c]->DATAR);
+}
+
 uint16_t HAL_I2C_GET_STAT1(I2C_NAME_t i2c)
 {
     return (I2C[i2c]->STAR1);

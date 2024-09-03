@@ -367,21 +367,22 @@ uint8_t SetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 data, I2C_FSM_t * i2cfsm )
            case I2C_EVT_5 :
                if (HAL_I2C_GET_STAT1(I2C) & STAR1_SB_FLAG )
                {
-                   I2C_Send7bitAddress( i2c, 0x6D<<1, I2C_Direction_Transmitter);
-                   *i2cfsm =I2C_SEND_REG_ADDR ;
+                   HAL_I2C_SEND_ADDR_TRANS( I2C, 0x6D<<1);
+                   *i2cfsm =I2C_EVT_6   ;
                }
                break;
-           case I2C_SEND_REG_ADDR :
-               if (I2C_CheckEvent(i2c, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED)==READY)
+           case I2C_EVT_6   :
+               if (HAL_I2C_GET_STAT1(I2C) & STAR1_ADDR_FLAG )
                {
-                   I2C_SendData(i2c, ad );
+                   HAL_I2C_GET_STAT2(I2C);
+                   HAL_I2C_SEND(I2C, ad );
                    *i2cfsm =I2C_SEND_DATA ;
                }
                break;
            case I2C_SEND_DATA :
                if (I2C_CheckEvent(i2c, I2C_EVENT_MASTER_BYTE_TRANSMITTED) == READY)
                {
-                   I2C_SendData(i2c, data);
+                   HAL_I2C_SEND(I2C, data);
                    *i2cfsm = I2C_SEND_STOP  ;
                }
                break;
@@ -412,13 +413,14 @@ uint8_t GetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 * temp, I2C_FSM_t * i2cfsm )
          case I2C_EVT_5 :
              if (HAL_I2C_GET_STAT1(I2C) & STAR1_SB_FLAG )
              {
-                I2C_Send7bitAddress( i2c, 0x6D<<1, I2C_Direction_Transmitter );
-                *i2cfsm = I2C_SEND_REG_ADDR ;
+                 HAL_I2C_SEND_ADDR_TRANS( I2C, 0x6D<<1);
+                *i2cfsm = I2C_EVT_6   ;
              }
              break;
-         case I2C_SEND_REG_ADDR :
-             if ( I2C_CheckEvent( i2c, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED )== READY )
+         case I2C_EVT_6   :
+             if (HAL_I2C_GET_STAT1(I2C) & STAR1_ADDR_FLAG )
              {
+                 HAL_I2C_GET_STAT2(I2C);
                  HAL_I2C_SEND(I2C, ad );
                 *i2cfsm = I2C_START_READ ;
              }
@@ -433,21 +435,22 @@ uint8_t GetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 * temp, I2C_FSM_t * i2cfsm )
          case I2C_EVT_5_R:
              if (HAL_I2C_GET_STAT1(I2C) & STAR1_SB_FLAG )
              {
-                 I2C_Send7bitAddress(i2c, 0x6D<<1, I2C_Direction_Receiver);
+                 HAL_I2C_SEND_ADDR_RECIEVE(I2C, 0x6D<<1);
                  *i2cfsm =I2C_CHECK_ACK_R;
              }
              break;
          case I2C_CHECK_ACK_R:
-             if (I2C_CheckEvent(i2c, I2C_EVENT_MASTER_RECEIVER_MODE_SELECTED)== READY)
+             if (HAL_I2C_GET_STAT1(I2C) & STAR1_ADDR_FLAG )
              {
-                 *i2cfsm = I2C_GET_DATA_R ;
+                 HAL_I2C_GET_STAT2(I2C);
+                 *i2cfsm = I2C_EVT_6_1 ;
              }
              break;
-         case I2C_GET_DATA_R :
-             if (I2C_GetFlagStatus(i2c, I2C_FLAG_RXNE) != RESET)
+         case I2C_EVT_6_1 :
+             if (HAL_I2C_GET_STAT1(I2C) & STAR1_RXNE_FLAG )
              {
-                 I2C_AcknowledgeConfig(i2c, DISABLE);
-                 *temp = I2C_ReceiveData(i2c);
+                 HAL_I2C_ACK_DISABLE(I2C);
+                 *temp = HAL_I2C_GET_DATA(I2C);
                  HAL_I2C_STOP(I2C);
                  return (1);
              }

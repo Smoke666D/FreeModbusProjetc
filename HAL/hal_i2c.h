@@ -81,6 +81,7 @@ typedef enum
 #define STAR1_ADDR_FLAG   0x0002
 #define STAR1_BTF_FLAG    0x0004
 #define STAR1_TXE_FLAG    0x0080
+#define STAR1_RXNE_FLAG    0x0040
 #define STAR2_BUSY_FLAG   0x0002
 
 #endif
@@ -118,7 +119,7 @@ typedef enum
   void HAL_I2C_SEND_ADDR_RECIEVE(I2C_NAME_t i2c , u8 DATA);
   void HAL_I2C_STOP(I2C_NAME_t i2c ) ;
   void HAL_I2C_START(I2C_NAME_t i2c );
-
+  uint8_t HAL_I2C_GET_DATA(I2C_NAME_t i2c);
   void HAL_I2C_ACK_ENABLE(I2C_NAME_t i2c );
   void HAL_I2C_ACK_DISABLE(I2C_NAME_t i2c );
 uint16_t HAL_GetI2CBusy( I2C_NAME_t i2c);
