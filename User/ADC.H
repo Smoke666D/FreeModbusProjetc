@@ -35,6 +35,8 @@ typedef enum
 typedef enum
 {
    I2C_GET_BUSY      = 0,
+   I2C_EVT_5         = 9,
+   I2C_EVT_5_R      = 10,
    I2C_SEND_ADDR     = 1,
    I2C_SEND_REG_ADDR = 2,
    I2C_SEND_DATA     = 3,
