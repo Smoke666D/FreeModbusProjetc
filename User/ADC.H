@@ -58,6 +58,9 @@ typedef enum
   DIG_TEMP = 7,
   DIG_PRES = 8,
   AC220   = 9,
+  DIG2_PRES =10,
+  DIG2_TEMP =11,
+
 } AIN_CHANNEL_t;
 
 typedef struct

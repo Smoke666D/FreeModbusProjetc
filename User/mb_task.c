@@ -145,6 +145,16 @@ eMBErrorCode eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRe
 
        while( usNRegs > 0 )
        {
+          tempdata =(int32_t) (getAIN(DIG_TEMP)*1000);
+          *((float*) (usRegInputBuf)) =  (float)tempdata/1000.0;
+          tempdata =(int32_t) (getAIN(DIG_PRES)*1000);
+          *((float*) (usRegInputBuf+2)) =  (float)tempdata/1000.0;
+          tempdata =(int32_t) (getAIN(DIG2_TEMP)*1000);
+          *((float*) (usRegInputBuf+4)) =  (float)tempdata/1000.0;
+          tempdata =(int32_t) (getAIN(DIG2_PRES)*1000);
+          *((float*) (usRegInputBuf+6)) =  (float)tempdata/1000.0;
+
+
           *pucRegBuffer++ = ( unsigned char )( usRegInputBuf[iRegIndex] >> 8 );
           *pucRegBuffer++ = ( unsigned char )( usRegInputBuf[iRegIndex] & 0xFF );
           iRegIndex++;

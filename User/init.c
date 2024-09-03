@@ -21,21 +21,16 @@ void vInit_DeviceConfig( void )
      HAL_I2C_InitTypeDef  I2C_InitTSturcture = {0};
      MX_GPIO_Init();
      RCC_APB1PeriphClockCmd(  RCC_APB1Periph_SPI2, ENABLE );
-
      vLCDInit(TIMER5);
-
-
      ADC1_Init();
      HW_TIMER_TimerInit(TIMER3,1945945,25);
-
      HW_TIMER_SelectOutTrigger(TIMER3,TIM_TRGOSource_Update);
      HAL_TIMER_PWMTimersInit(TIMER9,20000,1000,TIM_CHANNEL_1 | TIM_CHANNEL_2 | TIM_CHANNEL_3);
-
      HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_1 | TIM_CHANNEL_2 | TIM_CHANNEL_3, 500 );
      HAL_TIMER_EnablePWMCH(TIMER9);
      HAL_TiemrEneblae(TIMER9);
-
      I2C_InitTSturcture.I2C_ClockSpeed = 200000;
+
      I2C_InitTSturcture.I2C_Mode = I2C_Mode_I2C;
      I2C_InitTSturcture.I2C_DutyCycle = I2C_DutyCycle_16_9;
      I2C_InitTSturcture.I2C_OwnAddress1 = 0;
@@ -43,8 +38,8 @@ void vInit_DeviceConfig( void )
      I2C_InitTSturcture.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
      HAL_I2C_InitIT(I2C_1, &I2C_InitTSturcture,1,1);
      HAL_I2C_InitIT(I2C_2, &I2C_InitTSturcture, 1,1);
-     HAL_InitGpioAF (  I2C1_Port , I2C1_SDA_Pin   | I2C1_SCL_Pin  , 0 , GPIO_Mode_AF_OD );
      HAL_InitGpioAF (  I2C2_Port , I2C2_SDA_Pin   | I2C2_SCL_Pin  , 0 , GPIO_Mode_AF_OD );
+     HAL_InitGpioAF (  I2C1_Port , I2C1_SDA_Pin   | I2C1_SCL_Pin  , 0 , GPIO_Mode_AF_OD );
      HAL_I2C_ENABLE( I2C_1 );
      HAL_I2C_ENABLE( I2C_2 );
      HAL_DAC_InitTypeDef init;
@@ -54,6 +49,8 @@ void vInit_DeviceConfig( void )
      init.DAC_LFSRUnmask_TriangleAmplitude = DAC_LFSRUnmask_Bit0;
      init.DAC_OutputBuffer = DAC_OutputBuffer_Disable;
      HAL_DAC_Init(&init);
+     DAC_Cmd(DAC_Channel_1, ENABLE);
+     DAC_SetChannel1Data(DAC_Align_12b_R, 1000);
      vDIN_DOUT_Init();
      InitEEPROM( HAL_SPI2 );
 }
@@ -91,7 +88,8 @@ static void MX_GPIO_Init(void)
     DAC_SetChannel1Data( DAC_Align_12b_R, 0x00 );
     HAL_SetBit(LDCDATA_2_3_E_REW_CD_LED_Port,  LCDLED_Pin);
     HAL_InitGpioOut(RS485_EN_Port,  RS485_EN_Pin);
-    HAL_InitGpioAF(  RS485_Port  , RS485_RX_Pin   ,GPIO_FullRemap_USART4 ,  GPIO_Mode_IN_FLOATING );
-    HAL_InitGpioAF(  RS485_Port , RS485_TX_Pin    ,GPIO_FullRemap_USART4 ,  GPIO_Mode_AF_PP );
+    HAL_InitGpioAF(  RS485_Port  , RS485_RX_Pin   ,GPIO_FullRemap_USART4 ,   GPIO_Mode_IN_FLOATING );
+    HAL_InitGpioAF(  RS485_Port ,  RS485_TX_Pin    ,GPIO_FullRemap_USART4 ,  GPIO_Mode_AF_PP );
     HAL_InitGpioAF(  UART_Port , TX1_Pin   ,0 ,  GPIO_Mode_AF_PP );
+
 }

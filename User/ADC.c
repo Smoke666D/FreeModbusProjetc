@@ -142,7 +142,11 @@ float getAIN( AIN_CHANNEL_t channel)
        case DIG_PRES:
 
                return (float)(sens_press);
+       case DIG2_TEMP:
+           return ((float)GetConversional(&DataBuffer[8])/256);
 
+       case DIG2_PRES:
+           return (float)(sens_press1);
         case AC220:
             return (AC_220_VALUE);
     }
