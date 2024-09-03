@@ -109,6 +109,18 @@ typedef enum
   //  EERPOM_ERROR_CODE_t (*I2C_Master_Transmit_func)( u8 , u16,  u8 * , u16 , u32 ,u8 );
  } I2C_TypeDef_T;
 
+
+
+ uint16_t HAL_I2C_GET_STAT1(I2C_NAME_t i2c);
+ uint16_t HAL_I2C_GET_STAT2(I2C_NAME_t i2c);
+ void HAL_I2C_SEND(I2C_NAME_t i2c , u8 DATA);
+  void HAL_I2C_SEND_ADDR_TRANS(I2C_NAME_t i2c ,u8 DATA);
+  void HAL_I2C_SEND_ADDR_RECIEVE(I2C_NAME_t i2c , u8 DATA);
+  void HAL_I2C_STOP(I2C_NAME_t i2c ) ;
+  void HAL_I2C_START(I2C_NAME_t i2c );
+
+  void HAL_I2C_ACK_ENABLE(I2C_NAME_t i2c );
+  void HAL_I2C_ACK_DISABLE(I2C_NAME_t i2c );
 uint16_t HAL_GetI2CBusy( I2C_NAME_t i2c);
  EERPOM_ERROR_CODE_t I2C_Master_ReviceIT( I2C_NAME_t i2c, u8 DevAdrees, u16 data_addres,  u8 * data, u16 data_size, u32 timeout,uint8_t TNI  );
  I2C_ERROR_CODE_t I2C_Master_TransmitIT( I2C_NAME_t i2c,  u8 DevAdrees, u16 data_addres,  u8 * data, u16 data_size, u32 timeout,uint8_t TNI  );

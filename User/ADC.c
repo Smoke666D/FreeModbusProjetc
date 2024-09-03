@@ -353,6 +353,8 @@ void ADC_task(void *pvParameters)
 
 uint8_t SetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 data, I2C_FSM_t * i2cfsm )
 {
+
+    I2C_NAME_t I2C = (i2c == I2C1)? I2C_1 : I2C_2;
        switch (*i2cfsm)
        {
            case I2C_GET_BUSY:
@@ -397,6 +399,7 @@ uint8_t SetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 data, I2C_FSM_t * i2cfsm )
 
 uint8_t GetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 * temp, I2C_FSM_t * i2cfsm )
 {
+    I2C_NAME_t I2C = (i2c == I2C1)? I2C_1 : I2C_2;
       switch (*i2cfsm)
       {
           case I2C_GET_BUSY:
@@ -416,7 +419,7 @@ uint8_t GetI2CDataFSM(I2C_TypeDef * i2c,u8 ad, u8 * temp, I2C_FSM_t * i2cfsm )
          case I2C_SEND_REG_ADDR :
              if ( I2C_CheckEvent( i2c, I2C_EVENT_MASTER_TRANSMITTER_MODE_SELECTED )== READY )
              {
-                I2C_SendData(i2c, (u8)(ad & 0x00FF));
+                 HAL_I2C_SEND(I2C, ad );
                 *i2cfsm = I2C_START_READ ;
              }
              break;

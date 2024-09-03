@@ -165,6 +165,27 @@ void HAL_I2C_InitIT( I2C_NAME_t i2c, HAL_I2C_InitTypeDef * I2C_InitStruct, uint8
    }*/
 }
 
+
+uint16_t HAL_I2C_GET_STAT1(I2C_NAME_t i2c)
+{
+    return (I2C[i2c]->STAR1);
+}
+
+uint16_t HAL_I2C_GET_STAT2(I2C_NAME_t i2c)
+{
+    return (I2C[i2c]->STAR2);
+}
+
+
+ void HAL_I2C_SEND(I2C_NAME_t i2c , u8 DATA)    {I2C[i2c]->DATAR = DATA;}
+ void HAL_I2C_SEND_ADDR_TRANS(I2C_NAME_t i2c ,u8 DATA)   { I2C[i2c]->DATAR = ( DATA & OADDR1_ADD0_Reset);}
+ void HAL_I2C_SEND_ADDR_RECIEVE(I2C_NAME_t i2c , u8 DATA)  { I2C[i2c]->DATAR = DATA | OADDR1_ADD0_Set;}
+ void HAL_I2C_ACK_ENABLE(I2C_NAME_t i2c )      { I2C[i2c]->CTLR1 |= CTLR1_ACK_Set;}
+ void HAL_I2C_ACK_DISABLE(I2C_NAME_t i2c )     { I2C[i2c]->CTLR1 &= CTLR1_ACK_Reset;}
+ void HAL_I2C_STOP(I2C_NAME_t i2c )            { I2C[i2c]->CTLR1 |= CTLR1_STOP_Set;  }
+ void HAL_I2C_START(I2C_NAME_t i2c )           { I2C[i2c]->CTLR1 |= CTLR1_START_Set; }
+
+
 uint16_t HAL_GetI2CBusy( I2C_NAME_t i2c)
 {
     u16 data;
