@@ -114,7 +114,6 @@ void vSYStaskInit ( void )
         = xTaskCreateStatic( user_process_task, "user", USER_STK_SIZE , ( void * ) 1, USER_TASK_PRIO,
                 (StackType_t * const )USERTaskBuffer, &USERTaskControlBlock );
 
-
    WCHNETTask_Handler
   = xTaskCreateStatic( WCHNET_task, "MPTCP", WCHNET_STK_SIZE , ( void * ) 1,WCHNET_TASK_PRIO ,
                      (StackType_t * const )WCHNETTaskBuffer, &WCHNETTaskControlBlock );
@@ -140,10 +139,6 @@ void vSYSqueueInit ( void )
      *( xKeyboardQueue()) = xQueueCreateStatic( 16U, sizeof( KeyEvent ),ucQueueStorageArea, &xStaticQueue );
 }
 
-
-
-
-
 void vDefaultTask( void  * argument )
 {
     u8 control_type;
@@ -153,7 +148,6 @@ void vDefaultTask( void  * argument )
     vMenuInit();
     while(1)
     {
-
        switch (main_task_fsm)
         {
             case STATE_INIT:
@@ -173,7 +167,6 @@ void vDefaultTask( void  * argument )
 
                 main_task_fsm =  STATE_WHAIT_TO_RAEDY;
                 vTaskDelay(3000);
-
                 vTaskResume(*getUserProcessTaskHandle());
                 vTaskResume(*getI2CTaskHandle());
                 printf(" user_enablr\r\n");

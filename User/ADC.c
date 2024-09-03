@@ -126,30 +126,26 @@ float getAIN( AIN_CHANNEL_t channel)
             return  ((float)GetConversional(&DataBuffer[1]));
         case DC24:
              return  ((float)GetConversional(&DataBuffer[2])*KK*COOF_24V);
-
         case DCAIN1:
             return  ((float)GetConversional(&DataBuffer[3])*KK*COOF_10V);
-
         case DCAIN2:
             return  ((float)GetConversional(&DataBuffer[4])*KK*COOF_10V);
         case DCAIN3:
             return  ((float)GetConversional(&DataBuffer[5])*KK*COOF_10V);
-
        case DCAIN4:
             return ((float)GetConversional(&DataBuffer[6])*KK);
-       case  DIG_TEMP:
+       case DIG_TEMP:
            return ((float)GetConversional(&DataBuffer[7])/256);
        case DIG_PRES:
-
-               return (float)(sens_press);
+           return (float)(sens_press);
        case DIG2_TEMP:
            return ((float)GetConversional(&DataBuffer[8])/256);
-
        case DIG2_PRES:
            return (float)(sens_press1);
         case AC220:
-            return (AC_220_VALUE);
+           return (AC_220_VALUE);
     }
+    return (0);
 }
 
 uint8_t getACVoltage()
@@ -171,7 +167,6 @@ static void ADC2_Event()
         xTaskNotifyFromISR(pADCTaskHandle, ADC2_DATA_READY, eSetBits, &xHigherPriorityTaskWoken  );
         portEND_SWITCHING_ISR( xHigherPriorityTaskWoken );
         return;
-
     }
     ADC_RegularChannelConfig(ADC2,   ADC2_CHANNEL[conversion_channel], 1, ADC_SampleTime_7Cycles5 );
     ADC_SoftwareStartConvCmd(ADC2, ENABLE);
@@ -232,8 +227,8 @@ void ADC1_Init()
     DataBuffer[7].pIndex = 0;
     DataBuffer[7].pBuff = SensTemoBuffer;
     DataBuffer[8].ConversionalSize = DC_AIN_BufferSize;
-     DataBuffer[8].pIndex = 0;
-     DataBuffer[8].pBuff = SensTemoBuffer;
+    DataBuffer[8].pIndex = 0;
+    DataBuffer[8].pBuff = SensTemoBuffer;
 }
 
 void AddBufferDataI2C( ADC_Conversionl_Buf_t * pBuf, int16_t data )
@@ -323,13 +318,13 @@ void ADC_task(void *pvParameters)
                     }
                     if (ulNotifiedValue & ADC1_DATA_READY)
                     {
-                       for (int i = 0; i<AC_CONVERION_NUMBER*ADC_CHANNEL;i++)
-                       {
+                      for (int i = 0; i<AC_CONVERION_NUMBER*ADC_CHANNEL;i++)
+                      {
                           ADC1_DMABuffer[i]= Get_ConversionVal(ADC_1, ADC1_DMABuffer[i]);
-                       }
-                       vDecNetural(&ADC1_DMABuffer[0]);
-                       iMax=xADCMax((int16_t *)&ADC1_DMABuffer[0], &DF1);
-                       vADCFindFreq((int16_t *)&ADC1_DMABuffer[0], &uCurPeriod,2,iMax);
+                      }
+                      vDecNetural(&ADC1_DMABuffer[0]);
+                      iMax=xADCMax((int16_t *)&ADC1_DMABuffer[0], &DF1);
+                      vADCFindFreq((int16_t *)&ADC1_DMABuffer[0], &uCurPeriod,2,iMax);
                       if (uCurPeriod < AC_CONVERION_NUMBER-1)
                       {
                            uint16_t data1 = xADCRMS(&ADC1_DMABuffer[0],uCurPeriod,2);
@@ -353,8 +348,6 @@ void ADC_task(void *pvParameters)
 
 uint8_t SetI2CDataFSM(I2C_NAME_t I2C,u8 ad, u8 data, I2C_FSM_t * i2cfsm )
 {
-
-
        switch (*i2cfsm)
        {
            case I2C_GET_BUSY:
@@ -394,7 +387,7 @@ uint8_t SetI2CDataFSM(I2C_NAME_t I2C,u8 ad, u8 data, I2C_FSM_t * i2cfsm )
                }
                break;
      }
-    return (0);
+     return (0);
 }
 
 
@@ -461,9 +454,10 @@ uint8_t GetI2CDataFSM(I2C_NAME_t I2C,u8 ad, u8 * temp, I2C_FSM_t * i2cfsm )
 
 #define SENSOR_TIME_OUT 50
 
-static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm, u8 * status, u16 * sens_press )
+static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  u16 * sens_press )
 {
     I2C_NAME_t i2c = (channel)? I2C_1:I2C_2;
+    u8 status;
     u8 index = channel ? 1: 0;
     switch (*SENS_FSM )
     {
@@ -475,9 +469,9 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm, u8 
              }
              break;
          case SENSOR_GET_STATUS:
-              if (GetI2CDataFSM(i2c, 0x30,status,fsm) == 1)
+              if (GetI2CDataFSM(i2c, 0x30,&status,fsm) == 1)
               {
-                  if ((*status & 0x08) == 0 )
+                  if ((status & 0x08) == 0 )
                   {
                       *SENS_FSM = SENSOR_GET_PERS_1;
                   }
@@ -547,73 +541,71 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm, u8 
 void I2C_task(void *pvParameters)
 {
     TickType_t xLastWakeTime;
-    u8 status,status1;
     SENSOR_FSM_t SENS1_FSM,SENS2_FSM;
     uint16_t counter_led = 0;
     u8 led_state = 0;
     vTaskDelay(1000);
-    I2C_FSM_t fsm,fsm1;
+    I2C_FSM_t fsm  = I2C_GET_BUSY;
+    I2C_FSM_t fsm1 = I2C_GET_BUSY;
     u16 sensor_time_out;
     printf("Start I2C OK 1.5\r\n");
- while(1)
- {
-     if (++counter_led >20)
+    while(1)
+    {
+        if (++counter_led >20)
+        {
+            counter_led =0;
+            if (led_state == 0)
+            {
+                led_state = 1;
+                HAL_SetBit(CRACH_Port,  CRACH_Pin);
+            }
+            else
+            {
+                HAL_ResetBit(CRACH_Port, CRACH_Pin);
+                led_state = 0;
+            }
+        }
+        xLastWakeTime =  xTaskGetTickCount ();
+        SENS1_FSM = SENSOR_START_CONVERSION;
+        SENS2_FSM = SENSOR_START_CONVERSION;
+        while (1)
+        {
+            if ((SENS1_FSM ==SENSOR_IDLE) && (SENS2_FSM ==SENSOR_IDLE))
+            {
+                vTaskDelay(1);
+            }
+            sensor_time_out = xTaskGetTickCount () - xLastWakeTime;
+            if (sensor_time_out  >25)
+            {
+                if (SENS1_FSM !=SENSOR_IDLE)
                 {
-                    counter_led =0;
-                    if (led_state == 0)
-                    {
-                        led_state = 1;
-                        HAL_SetBit(CRACH_Port,  CRACH_Pin);
-                    }
-                    else
-                    {
-                        HAL_ResetBit(CRACH_Port, CRACH_Pin);
-                       led_state = 0;
-                    }
+                    printf("i2c error %i %i\r\n",fsm,SENS1_FSM);
+                    HAL_I2C_STOP(I2C_2);
+                    fsm = I2C_GET_BUSY;
                 }
-     xLastWakeTime =  xTaskGetTickCount ();
-     SENS1_FSM = SENSOR_START_CONVERSION;
-     SENS2_FSM = SENSOR_START_CONVERSION;
-     fsm = 0;
-     while (1)
-     {
-         if ((SENS1_FSM ==SENSOR_IDLE) && (SENS2_FSM ==SENSOR_IDLE))
-         {
-             vTaskDelay(1);
-         }
-         sensor_time_out = xTaskGetTickCount () - xLastWakeTime;
-         if (sensor_time_out  >25)
-         {
-            if (SENS1_FSM !=SENSOR_IDLE)
-            {
-                 printf("i2c error %i %i\r\n",fsm,SENS1_FSM);
-                 HAL_I2C_STOP(I2C_2);
-                 fsm = I2C_GET_BUSY;
+                if (SENS2_FSM !=SENSOR_IDLE)
+                {
+                    printf("i21 error %i %i\r\n",fsm1,SENS2_FSM);
+                    HAL_I2C_STOP(I2C_1);
+                    fsm1 = I2C_GET_BUSY;
+                }
+                break;
             }
-            if (SENS2_FSM !=SENSOR_IDLE)
+            else if (sensor_time_out > 5)
             {
-                 printf("i21 error %i %i\r\n",fsm1,SENS2_FSM);
-                 HAL_I2C_STOP(I2C_1);
-                 fsm1 = I2C_GET_BUSY;
+                if (SENS1_FSM ==SENSOR_START_CONVERSION)
+                {
+                    SENS1_FSM = SENSOR_IDLE;
+                    HAL_I2C_STOP(I2C_2);
+                }
+                if (SENS2_FSM ==SENSOR_START_CONVERSION)
+                {
+                    SENS2_FSM = SENSOR_IDLE;
+                    HAL_I2C_STOP(I2C_1);
+                }
             }
-            break;
-         }
-         else if (sensor_time_out > 5)
-         {
-             if (SENS1_FSM ==SENSOR_START_CONVERSION)
-             {
-                 SENS1_FSM = SENSOR_IDLE;
-                 HAL_I2C_STOP(I2C_2);
-             }
-             if (SENS2_FSM ==SENSOR_START_CONVERSION)
-             {
-                 SENS2_FSM = SENSOR_IDLE;
-                  HAL_I2C_STOP(I2C_1);
-             }
-
-         }
-         vSensFSM(0,&SENS1_FSM,&fsm,&status, &sens_press);
-         vSensFSM(1,&SENS2_FSM,&fsm1,&status1,&sens_press1);
+            vSensFSM(0,&SENS1_FSM,&fsm,  &sens_press );
+            vSensFSM(1,&SENS2_FSM,&fsm1, &sens_press1);
      }
  }
 }

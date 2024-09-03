@@ -112,8 +112,6 @@ void vSetRegData( u16 adress)
            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_1 ,usRegHoldingBuf[adress]);
            HAL_TIMER_EnablePWMCH(TIMER9);
            break;
-
-           break;
        case SENS_COUNT:
            vSetCount(usRegHoldingBuf[adress]);
            break;
@@ -125,42 +123,46 @@ void vSetRegData( u16 adress)
 }
 
 
+static const AIN_CHANNEL_t AINS[]={DIG_TEMP,DIG_PRES,SENS1,DIG2_TEMP,DIG2_PRES,SENS2,DCAIN1,DCAIN2,DCAIN3,DCAIN4,DC24};
+
+static void MB_TASK_INPUTS_UDATE()
+{
+    int32_t tempdata;
+    for (u8 i =0; i<11;i++)
+    {
+        tempdata =(int32_t) (getAIN(AINS[i])*1000);
+        *((float*) (usRegInputBuf+2*i)) =  (float)tempdata/1000.0;
+    }
+    tempdata =(uint32_t) getAIN(AC220);
+    *((float*) (usRegHoldingBuf+22)) =  tempdata;
+}
+void MB_TASK_HOLDING_UDATE()
+{
+    int32_t tempdata;
+    tempdata =(int32_t) (getRegFloat(COOF_P)*1000);
+    *((float*) (usRegHoldingBuf)) =  (float)tempdata/1000.0;
+    tempdata =(int32_t) (getRegFloat(COOF_I)*1000);
+    *((float*) (usRegHoldingBuf+2)) =  (float)tempdata/1000.0;
+    tempdata =(int32_t) (getRegFloat(KOOFKPS)*1000);
+    *((float*) (usRegHoldingBuf+4)) =  (float)tempdata/1000.0;
+}
+
 eMBErrorCode eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
 {
   eMBErrorCode    eStatus = MB_ENOERR;
   int             iRegIndex;
-  int32_t tempdata;
+
   if( ( usAddress >= REG_INPUT_START ) && ( usAddress + usNRegs <= REG_INPUT_START + REG_INPUT_NREGS ) )
   {
     iRegIndex = ( int )( usAddress - usRegInputStart );
+    MB_TASK_INPUTS_UDATE();
     while( usNRegs > 0 )
     {
-        for (uint8_t i=0;i< DC_CHANNEL+3;i++)
-        {
-            tempdata =(int32_t) (getAIN(i)*1000);
-            *((float*) (usRegInputBuf+i*2)) =  (float)tempdata/1000.0;
-       }
-       tempdata =(uint32_t) getAIN(AC220);
-       *((float*) (usRegInputBuf+26)) =  tempdata;
-
-       while( usNRegs > 0 )
-       {
-          tempdata =(int32_t) (getAIN(DIG_TEMP)*1000);
-          *((float*) (usRegInputBuf)) =  (float)tempdata/1000.0;
-          tempdata =(int32_t) (getAIN(DIG_PRES)*1000);
-          *((float*) (usRegInputBuf+2)) =  (float)tempdata/1000.0;
-          tempdata =(int32_t) (getAIN(DIG2_TEMP)*1000);
-          *((float*) (usRegInputBuf+4)) =  (float)tempdata/1000.0;
-          tempdata =(int32_t) (getAIN(DIG2_PRES)*1000);
-          *((float*) (usRegInputBuf+6)) =  (float)tempdata/1000.0;
-
-
-          *pucRegBuffer++ = ( unsigned char )( usRegInputBuf[iRegIndex] >> 8 );
-          *pucRegBuffer++ = ( unsigned char )( usRegInputBuf[iRegIndex] & 0xFF );
-          iRegIndex++;
-          usNRegs--;
-       }
-    }
+        *pucRegBuffer++ = ( unsigned char )( usRegInputBuf[iRegIndex] >> 8 );
+        *pucRegBuffer++ = ( unsigned char )( usRegInputBuf[iRegIndex] & 0xFF );
+        iRegIndex++;
+        usNRegs--;
+     }
   }
   else
   {
@@ -175,23 +177,14 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
 {
   eMBErrorCode    eStatus = MB_ENOERR;
   int             iRegIndex;
-  int32_t tempdata;
+
   if( ( usAddress >= REG_HOLDING_START ) && ( usAddress + usNRegs <= REG_HOLDING_START + REG_HOLDING_NREGS ) )
   {
     iRegIndex = ( int )( usAddress - usRegHoldingStart );
     switch ( eMode )
     {
     case MB_REG_READ:
-        for (uint8_t i=0;i< DC_CHANNEL+3;i++)
-        {
-            tempdata =(int32_t) (getAIN(i)*1000);
-            *((float*) (usRegHoldingBuf+i*2)) =  (float)tempdata/1000.0;
-        }
-
-        tempdata =(uint32_t) getAIN(AC220);
-        *((float*) (usRegHoldingBuf+26)) =  tempdata;
-        usRegHoldingBuf[18] = GetSensCoof();
-        usRegHoldingBuf[29] = uGetConversionCount();
+      MB_TASK_HOLDING_UDATE();
       while( usNRegs > 0 )
       {
         *pucRegBuffer++ = ( unsigned char )( usRegHoldingBuf[iRegIndex] >> 8 );
@@ -202,9 +195,8 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
       break;
 
     case MB_REG_WRITE:
-      while( usNRegs > 0 )
+       while( usNRegs > 0 )
       {
-
         usRegHoldingBuf[iRegIndex] = *pucRegBuffer++ << 8;
         usRegHoldingBuf[iRegIndex] |= *pucRegBuffer++;
         vSetRegData(iRegIndex);
