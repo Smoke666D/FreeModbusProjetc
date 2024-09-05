@@ -47,7 +47,7 @@ void vInit_DeviceConfig( void )
      init.DAC_Trigger = DAC_Trigger_None;
      init.DAC_WaveGeneration = DAC_WaveGeneration_None;
      init.DAC_LFSRUnmask_TriangleAmplitude = DAC_LFSRUnmask_Bit0;
-     init.DAC_OutputBuffer = DAC_OutputBuffer_Disable;
+     init.DAC_OutputBuffer = DAC_OutputBuffer_Enable;
      HAL_DAC_Init(&init);
      DAC_Cmd(DAC_Channel_1, ENABLE);
      DAC_SetChannel1Data(DAC_Align_12b_R, 1000);

@@ -85,6 +85,7 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define COMMAND_REG      41
 #define LIGTH_REG_MB     42
 #define MODE_REG_MB      43
+#define ZERO_MB          44
 
 
 #define INP_MODE_MB      24
@@ -144,6 +145,9 @@ void vSetRegData( u16 adress)
    switch (adress)
    {
 
+       case ZERO_MB:
+           if  (usRegHoldingBuf[adress]!=0) CalibrateZeroStart();
+           break;
        case  LIGTH_REG_MB:
             setReg8(LIGTH, (uint8_t) usRegHoldingBuf[adress]);
              break;

@@ -17,6 +17,8 @@
 
 static TaskHandle_t pADCTaskHandle;
 static TaskHandle_t pI2CTaskHandle;
+static int16_t calib_offset    = 0;
+static int16_t calib_offset1   = 0;
 float AC_220_VALUE;
 static uint16_t ADC2_Buffer[DC_CHANNEL];
 static int16_t  ADC1_DMABuffer[AC_CONVERION_NUMBER*ADC_CHANNEL];
@@ -204,10 +206,12 @@ void ADC1_Init()
     DataBuffer[0].ConversionalSize = sensor_timer[getReg16(SENSOR_COUNT )];
     DataBuffer[0].pIndex = 0;
     DataBuffer[0].pBuff = SenseBuffer1;
+    DataBuffer[0].offset = 0;
     memset(SenseBuffer2,0,Sens_BufferSize_MAX*2);
     DataBuffer[1].ConversionalSize = sensor_timer[getReg16(SENSOR_COUNT )];
     DataBuffer[1].pIndex = 0;
     DataBuffer[1].pBuff = SenseBuffer2;
+    DataBuffer[1].offset = 0;
     DataBuffer[2].ConversionalSize = DC_24_BufferSize;
     DataBuffer[2].pIndex = 0;
     DataBuffer[2].pBuff = DC24Buffer;
@@ -256,7 +260,9 @@ int16_t GetConversional(ADC_Conversionl_Buf_t * pBuf)
         index--;
         tempdata+=  pBuf->pBuff[index];
     }
+    tempdata = tempdata - (pBuf->offset*pBuf->ConversionalSize);
     tempdata/= pBuf->ConversionalSize;
+
     return (int16_t)tempdata;
 }
 
@@ -536,11 +542,40 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  u1
         }
 
 }
+#define CALIB_COUNT 10
+u8 calibration_zero_flag = 0;
+u8 calibration_zero_count = 0;
+u16 calib_data[2][CALIB_COUNT];
 
+void CalibrateZeroStart()
+{
+    calibration_zero_flag = 1;
+}
 
 void CalibrateZero()
 {
-
+  if (calibration_zero_flag)
+  {
+      if ( calibration_zero_count < 10 )
+      {
+          calib_data[0][calibration_zero_count] = sens_press;
+          calib_data[1][calibration_zero_count] = sens_press1;
+          calibration_zero_count++;
+      }
+      else
+      {
+          int32_t temp= 0;
+          int32_t temp1 = 0;
+          for (u8 i=0;i<CALIB_COUNT;i++)
+          {
+              temp = temp + calib_data[0][i];
+              temp1 = temp1 + calib_data[1][i];
+          }
+          DataBuffer[1].offset   = temp  / CALIB_COUNT;
+          DataBuffer[0].offset    = temp1 / CALIB_COUNT;
+          calibration_zero_flag = 0;
+      }
+  }
 
 
 }
@@ -601,6 +636,7 @@ void I2C_task(void *pvParameters)
             vSensFSM(0,&SENS1_FSM,&fsm,  &sens_press1 );
             vSensFSM(1,&SENS2_FSM,&fsm1, &sens_press);
      }
+     CalibrateZero();
  }
 }
 
