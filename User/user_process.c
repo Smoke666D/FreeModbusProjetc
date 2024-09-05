@@ -33,6 +33,19 @@ static u16 Fact;
 static u8 FSM_STATE;
 static long temp_counter;
 static long mb_time_out = 0;
+static u8 control_state =0;
+
+void USER_SetControlState(u8 state)
+{
+    mb_time_out = 0;
+    control_state =  state;
+}
+
+u8 getControlState()
+{
+    return (control_state);
+}
+
 uint16_t USER_GetSetting()
 {
     return (u16)(setpoint);
@@ -43,49 +56,57 @@ uint16_t USER_GetFact()
     return (u16)(getAIN(SENS2)*getRegFloat(KOOFKPS)) ;
 }
 
-u8 USER_CHECK_ON( u8 STATE)
+
+
+static void USER_OnOffControll()
 {
-   if (STATE == 3) return 0;
-   else
-   {
-       if (getReg8(CONTROL_TYPE )==MKV_MB_DIN)
-       {
-           if (ucDinGet(INPUT_2))
-                return 1;
-
-           else
-
-                return 0;
-
-       }
-       else
-       if (getReg8(SYSTEM_START))
-       {
-           setReg8(SYSTEM_START,0);
-           mb_time_out = 0;
-           return 1;
-       }
-       else
-       {
-           if (++mb_time_out >=getReg8(MOD_BUS_TIMEOUT )*100)
-           {
-               return 0;
-           }
-           else
-           {
-               return 1;
-           }
-       }
-    }
+  u8 start;
+  u8 control_type = getReg8(CONTROL_TYPE );
+  if (control_type !=   MKV_MB_DIN)
+  {
+      mb_time_out++;
+      if ( mb_time_out>= getReg8(MOD_BUS_TIMEOUT)*100)
+          control_state = 0;
+  }
+  else
+  {
+      mb_time_out =0;
+  }
+   start = (control_type ==   MKV_MB_DIN) ? ucDinGet(INPUT_1) : control_state ;
+  if ( start && (task_fsm == USER_PROCCES_IDLE))
+  {
+      task_fsm = USER_PEOCESS_WORK_TIME_OUT;
+  }
+  if ( (start==0) && (task_fsm != USER_PROCCES_IDLE) &&  (task_fsm != USER_PROCESS_ALARM))
+  {
+       task_fsm = USER_PROCCES_IDLE;
+  }
 }
 
+static void USER_SETTING_CHECK( u8 * point_old,u8 * flag)
+{
 
+    if (getReg8(CONTROL_TYPE )== MKV_MB_DIN) setReg8(MODE,ucDinGet(INPUT_2));
+
+    if (getReg8(MODE ))
+        {
+            if ( *point_old == 0)*flag = 1;
+            *point_old = 1;
+             setpoint = getReg16(SETTING1);
+        }
+        else
+        {
+            if ( *point_old == 1) *flag = 1;
+            *point_old = 0;
+             setpoint = getReg16(SETTING2);
+        }
+
+}
 
 void user_process_task(void *pvParameters)
 {
    static PID_TypeDef TPID;
    double Temp, PIDOut;
-
    u16 ref;
    uint8_t ac_voltage;
    u8 set_point_old = 0;
@@ -119,27 +140,10 @@ void user_process_task(void *pvParameters)
                task_fsm = USER_PROCESS_ALARM;
            }
        }
-       if (ucDinGet(INPUT_2))
-       {
-           if ( set_point_old == 0) set_point_flag = 1;
-           set_point_old = 1;
-           setpoint = getReg16(SETTING1);
-       }
-       else
-       {
-           if ( set_point_old == 1) set_point_flag = 1;
-           set_point_old = 0;
-           setpoint = getReg16(SETTING2);
-       }
-       if ( ucDinGet(INPUT_1) && (task_fsm == USER_PROCCES_IDLE))
-       {
-           task_fsm = USER_PEOCESS_WORK_TIME_OUT;
-       }
-       if ( (ucDinGet(INPUT_1)==0) && (task_fsm != USER_PROCCES_IDLE) &&  (task_fsm != USER_PROCESS_ALARM))
-       {
-                 task_fsm = USER_PROCCES_IDLE;
-       }
-   /*    if ( FSM_STATE >= 3 )
+
+       USER_OnOffControll();
+       USER_SETTING_CHECK( &set_point_old,&set_point_flag );
+       if ( FSM_STATE >= 3 )
        {
            HAL_ResetBit(CRACH_Port,  CRACH_Pin);
            eSetDUT(OUT_2,TRUE);
@@ -149,17 +153,10 @@ void user_process_task(void *pvParameters)
            HAL_SetBit(CRACH_Port,  CRACH_Pin);
            eSetDUT(OUT_2,FALSE);
        }
-       eSetDUT(OUT_3,ucDinGet(INPUT_3)); //Свет
+       eSetDUT(OUT_3,ucDinGet(INPUT_3) || getReg8(LIGTH)); //Свет
 
-       if (USER_CHECK_ON(FSM_STATE))
-       {
-           if  (FSM_STATE == 1) task_fsm = USER_PEOCESS_WORK_TIME_OUT;
-       }
-        else
-        {
-           task_fsm = USER_PROCCES_IDLE;
-        }
-        break;*/
+
+
        switch (task_fsm)
        {
 

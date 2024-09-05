@@ -121,10 +121,8 @@ float getAIN( AIN_CHANNEL_t channel)
     switch (channel)
     {
         case  SENS1:
-            printf("sens1\r\n");
             return  ((float)GetConversional(&DataBuffer[0]));
         case SENS2:
-            printf("sens2\r\n");
             return  ((float)GetConversional(&DataBuffer[1]));
         case DC24:
              return  ((float)GetConversional(&DataBuffer[2])*KK*COOF_24V);
@@ -303,7 +301,7 @@ void ADC_task(void *pvParameters)
                     xTaskNotifyWait( 0,  ADC2_DATA_READY | ADC1_DATA_READY, &ulNotifiedValue,1);
                     if (ulNotifiedValue & ADC2_DATA_READY)    //§¦§ã§Ý§Ú §á§â§Ú§Ý§Ö§ä§Ö§Ý§à §á§â§Ö§â§Ó§Ñ§ß§Ú§Ö §à§ä §¡§¸§± §à§Ò§â§Ñ§Ò§Ñ§ä§í§Ó§Ñ§ð§ë§Ö§Ô§à DC §Õ§Ñ§ß§ß§í§Ö
                     {
-                        for (u8 i=0;i<DC_CHANNEL;i++)
+                        for (u8 i=1;i<DC_CHANNEL;i++)
                         {
                             AddBufferData(&DataBuffer[i+1],(int16_t)ADC2_Buffer[i]);   //§©§Ñ§Ü§Ú§Õ§í§Ó§Ñ§Ö§Þ §Ú§ç §Ó §Ò§å§æ§æ§Ö§â
                         }
@@ -540,12 +538,17 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  u1
 }
 
 
+void CalibrateZero()
+{
+
+
+
+}
+
 void I2C_task(void *pvParameters)
 {
     TickType_t xLastWakeTime;
     SENSOR_FSM_t SENS1_FSM,SENS2_FSM;
-    uint16_t counter_led = 0;
-    u8 led_state = 0;
     vTaskDelay(1000);
     I2C_FSM_t fsm  = I2C_GET_BUSY;
     I2C_FSM_t fsm1 = I2C_GET_BUSY;
@@ -553,20 +556,7 @@ void I2C_task(void *pvParameters)
     printf("Start I2C OK 1.5\r\n");
     while(1)
     {
-        if (++counter_led >20)
-        {
-            counter_led =0;
-            if (led_state == 0)
-            {
-                led_state = 1;
-                HAL_SetBit(CRACH_Port,  CRACH_Pin);
-            }
-            else
-            {
-                HAL_ResetBit(CRACH_Port, CRACH_Pin);
-                led_state = 0;
-            }
-        }
+
         xLastWakeTime =  xTaskGetTickCount ();
         SENS1_FSM = SENSOR_START_CONVERSION;
         SENS2_FSM = SENSOR_START_CONVERSION;
@@ -608,8 +598,8 @@ void I2C_task(void *pvParameters)
                     HAL_I2C_STOP(I2C_1);
                 }
             }
-            vSensFSM(0,&SENS1_FSM,&fsm,  &sens_press );
-            vSensFSM(1,&SENS2_FSM,&fsm1, &sens_press1);
+            vSensFSM(0,&SENS1_FSM,&fsm,  &sens_press1 );
+            vSensFSM(1,&SENS2_FSM,&fsm1, &sens_press);
      }
  }
 }

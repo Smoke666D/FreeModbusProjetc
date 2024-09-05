@@ -22,6 +22,8 @@ typedef enum
     USER_PEOCESS_WORK_TIME_OUT,
 } USER_PROCESS_FSM_t;
 
+u8 getControlState();
+void USER_SetControlState(u8 state);
 uint16_t USER_GetSetting();
 uint16_t USER_GetFact();
 USER_PROCESS_FSM_t USER_GetProccesState( void  );

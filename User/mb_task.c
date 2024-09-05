@@ -82,6 +82,9 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define FILTER_HIGH_MB   38
 #define TIME_SENS_MB     39
 #define TIME_FAN_STOP_MB 40
+#define COMMAND_REG      41
+#define LIGTH_REG_MB     42
+#define MODE_REG_MB      43
 
 
 #define INP_MODE_MB      24
@@ -140,6 +143,16 @@ void vSetRegData( u16 adress)
    u8 byte_data;
    switch (adress)
    {
+
+       case  LIGTH_REG_MB:
+            setReg8(LIGTH, (uint8_t) usRegHoldingBuf[adress]);
+             break;
+       case MODE_REG_MB:
+            setReg8(MODE, (uint8_t) usRegHoldingBuf[adress]);
+            break;
+       case COMMAND_REG:
+           USER_SetControlState( (uint8_t) usRegHoldingBuf[adress]);
+           break;
        case MODE_MB:
            if (usRegHoldingBuf[adress] > 3)
                usRegHoldingBuf[adress] = WORK_MODE;
@@ -370,6 +383,7 @@ void MB_TASK_HOLDING_UDATE()
     usRegHoldingBuf[FILTER_HIGH_MB] = getReg16(FILTER_HIGH );
     usRegHoldingBuf[TIME_SENS_MB]  = getReg8(SENSOR_COUNT);
     usRegHoldingBuf[TIME_FAN_STOP_MB] =getReg8(FAN_START_TIMEOUT);
+    usRegHoldingBuf[COMMAND_REG ] = getControlState();
 }
 
 eMBErrorCode eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )

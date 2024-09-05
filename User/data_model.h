@@ -11,7 +11,7 @@
 #include "system_init.h"
 #include "hal_rtc.h"
 
-#define VALID_CODE            0x11
+#define VALID_CODE            0x98
 #define VALID_CODE_ADDRES     0
 /*§¢§Ý§à§Ü §Ò§Ñ§Û§ä§à§Ó§í§ç §å§ã§ä§Ó§à§Ü*/
 
@@ -54,6 +54,8 @@
 #define RECORD_INDEX          ( RECORD_COUNT + sizeof(uint16_t) )
 #define EEPROM_REGISTER_COUNT ( RECORD_INDEX  + sizeof(uint16_t) )
 #define SYSTEM_START          ( RECORD_INDEX  + sizeof(uint16_t) )
+#define LIGTH                 ( SYSTEM_START + sizeof(uint16_t) )
+#define MODE                  ( LIGTH    + sizeof(uint16_t) )
 
 #define RECORD_SIZE 7
 #define RECORD_DATA_SIZE      50
@@ -83,7 +85,7 @@ typedef enum
 
 //#define EEPROM_REGISTER_COUNT   20
 //#define  EEPROM_REGISTER_COUNT  20
-#define RAM_REGISTER_COUNT      1
+#define RAM_REGISTER_COUNT      3
 #define DATA_MODEL_REGISTERS   EEPROM_REGISTER_COUNT + RAM_REGISTER_COUNT
 #define TOTAL_REGISTER_COUNT   DATA_MODEL_REGISTERS
 

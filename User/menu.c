@@ -823,10 +823,10 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             strcpy(str,"000 %");
             break;
         case MODE_STATE_ID:
-            if (ucDinGet(OUT_2))
-                strcpy(str,"1");
-            else
+            if (getReg8(MODE ))
                 strcpy(str,"2");
+            else
+                strcpy(str,"1");
             break;
         case MAC_ADRESS_ID:
             WCHNET_GetMacAddr(MACAddr);
