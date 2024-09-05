@@ -141,13 +141,19 @@ void vSYSqueueInit ( void )
 
 void vDefaultTask( void  * argument )
 {
-    u8 control_type;
     u8 buffer_draw_counter = 0;
     HAL_RTC_INIT_t RTC_INIT_TYPE;
     TaskFSM_t main_task_fsm = STATE_INIT;
+    u8 contrast = 0;
     vMenuInit();
     while(1)
     {
+       if ( contrast != getReg8(CONTRAST))
+       {
+           contrast = getReg8(CONTRAST);
+           u16 cc = (u16)((4095.0)*(contrast/100.0));
+           DAC_SetChannel1Data(DAC_Align_12b_R, cc);
+       }
        switch (main_task_fsm)
         {
             case STATE_INIT:
@@ -172,20 +178,15 @@ void vDefaultTask( void  * argument )
                 printf(" user_enablr\r\n");
                 break;
             case STATE_WHAIT_TO_RAEDY:
-                control_type  = getReg8(CONTROL_TYPE );
-                if (control_type == MKV_MB_DIN )  control_type  = getReg8(MB_PROTOCOL_TYPE);
-                if (control_type == MKV_MB_RTU)
+                if (getReg8(MB_PROTOCOL_TYPE) == MKV_MB_RTU)
                 {
-
                     vTaskResume(* getSerialTask());
-                    vTaskResume( MPTCPTask_Handler  );
                 }
                 else
                 {
-
                     vTaskResume( WCHNETTask_Handler );
-                    vTaskResume( MPTCPTask_Handler  );
                 }
+                vTaskResume( MPTCPTask_Handler  );
                 main_task_fsm  = STATE_RUN;
                 break;
             case STATE_RUN:

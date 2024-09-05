@@ -72,14 +72,51 @@ void saveReg16( u16 reg_adress, u16 data)
     WriteEEPROM(reg_adress, &DATA_MODEL_REGISTER[ reg_adress], 2,10, 2);
 }
 
+
+u8 VerifyAndSetReg8(u16 reg_adress, u8 data )
+{
+    u8 temp_data = data;
+    switch (reg_adress)
+    {
+        case LIGTH:
+        case MODE:
+              if (data > 1) temp_data = 1;
+              break;
+        case CONTRAST:
+              if (data>100)  temp_data = 100;
+              break;
+        case MB_RTU_ADDR:
+             if ((data >100) && (data==0)) return (0);
+             break;
+        case CONTROL_TYPE:
+             if (data >3 ) return 0;
+             if ( data > 0)
+             {
+                 DATA_MODEL_REGISTER[ MB_PROTOCOL_TYPE] = temp_data ;
+                 WriteEEPROM(MB_PROTOCOL_TYPE, &DATA_MODEL_REGISTER[ MB_PROTOCOL_TYPE], 1,10, 2);
+             }
+             break;
+        case MB_PROTOCOL_TYPE:
+            if ( (data!=2) || (data!=3) || (getReg8(CONTROL_TYPE)!=0)) return 0;
+            break;
+        default:
+            break;
+    }
+    DATA_MODEL_REGISTER[ reg_adress] = temp_data ;
+    return 1;
+}
+
+
 void setReg8( u16 reg_adress, u8 data)
 {
     DATA_MODEL_REGISTER[ reg_adress] = (u8)( data );
 }
 void SaveReg8( u16 reg_adress, u8 data)
 {
-    DATA_MODEL_REGISTER[ reg_adress] = (u8)( data );
-    WriteEEPROM(reg_adress, &DATA_MODEL_REGISTER[ reg_adress], 1,10, 2);
+    if (VerifyAndSetReg8( reg_adress,  data))
+    {
+        WriteEEPROM(reg_adress, &DATA_MODEL_REGISTER[ reg_adress], 1,10, 2);
+    }
 }
 
 u16 getReg16(u16 reg_adress )

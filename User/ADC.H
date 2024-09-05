@@ -85,6 +85,7 @@ typedef struct
 #define R2_10V  10000.0
 #define COOF_10V ((R1_10V+R2_10V)/R2_10V)
 
+void vSetCount( u16 coount);
 void CalibrateZeroStart();
 uint8_t getACVoltage();
 void I2C_task(void *pvParameters);

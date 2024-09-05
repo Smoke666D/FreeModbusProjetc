@@ -122,7 +122,7 @@ float getAIN( AIN_CHANNEL_t channel)
 {
     switch (channel)
     {
-        case  SENS1:
+        case SENS1:
             return  ((float)GetConversional(&DataBuffer[0]));
         case SENS2:
             return  ((float)GetConversional(&DataBuffer[1]));
@@ -591,7 +591,6 @@ void I2C_task(void *pvParameters)
     printf("Start I2C OK 1.5\r\n");
     while(1)
     {
-
         xLastWakeTime =  xTaskGetTickCount ();
         SENS1_FSM = SENSOR_START_CONVERSION;
         SENS2_FSM = SENSOR_START_CONVERSION;

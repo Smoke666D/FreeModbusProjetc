@@ -76,18 +76,17 @@ void LCD_task(void *pvParameters)
                 break;
             case STATE_RUN:
                 ulTaskNotifyTakeIndexed( 0, pdTRUE, portMAX_DELAY );
-
-                    memcpy(screen_buufer,u8g2.tile_buf_ptr,SCREEN_BUFFER_SIZE );
-                    for (u8 i =0;i<8;i++)
-                    {
-                        CS1_ENABLE;
-                        WriteCommand( 0x040  );
-                        WriteCommand( 0x0b8 | i );
-                        CS2_ENABLE;
-                        WriteCommand( 0x040  );
-                        WriteCommand( 0x0b8 | i );
-                        WriteDispalay(&screen_buufer[i*128],128);
-                    }
+                memcpy(screen_buufer,u8g2.tile_buf_ptr,SCREEN_BUFFER_SIZE );
+                for (u8 i =0;i<8;i++)
+                {
+                   CS1_ENABLE;
+                   WriteCommand( 0x040  );
+                   WriteCommand( 0x0b8 | i );
+                   CS2_ENABLE;
+                   WriteCommand( 0x040  );
+                   WriteCommand( 0x0b8 | i );
+                   WriteDispalay(&screen_buufer[i*128],128);
+                }
 
                break;
        }

@@ -11,6 +11,8 @@
 #include "system_init.h"
 
 
+
+
 typedef enum
 {
     USER_PROCCES_IDLE,
@@ -22,7 +24,8 @@ typedef enum
     USER_PEOCESS_WORK_TIME_OUT,
 } USER_PROCESS_FSM_t;
 
-u8 getControlState();
+u8 USER_GerErrorState();
+u8 USER_FilterState();
 void USER_SetControlState(u8 state);
 uint16_t USER_GetSetting();
 uint16_t USER_GetFact();

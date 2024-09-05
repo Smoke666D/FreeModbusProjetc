@@ -264,10 +264,6 @@ void vSetEdit()
     SelectEditFlag = 1;
 }
 
-
-
-
-
 void vSetCommnad( DATA_VIEW_COMMAND_t cmd )
 {
     for (u8 i =0; i < MAX_STRING_NUMBER;i ++)
@@ -288,7 +284,6 @@ void vMenuTask ( void )
        {
            if ( xQueueReceive(pKeyboard, &TempEvent, 0U ) == pdPASS )
            {
-               //printf("mode %i key %i\r\n",menu_mode,TempEvent.KeyCode );
               if ( TempEvent.Status == MAKECODE )
               {
                   switch (menu_mode)
@@ -302,27 +297,28 @@ void vMenuTask ( void )
                                case EXIT_KEY: if  (SelectEditFlag) SelectEditFlag = 0; else { menu_mode = 0;pCurrMenu = GetID(xScreens1[pCurrMenu].pBack); } break;
                                case ENTER_KEY:
                                        if  (!SelectEditFlag )
-                                           {
-                                              SelectEditFlag  = 1;
-                                              SetFirtsEditString();
-                                           }
-
+                                        {
+                                           SelectEditFlag  = 1;
+                                           SetFirtsEditString();
+                                        }
                                        else
                                        {
                                            menu_mode = 3;
                                            vSetEdit();
-//
                                        }
-                                        break;
+                                       break;
                                case UP_KEY: if   (SelectEditFlag)  vSelect(1);
-                               else {
-                                   pCurrMenu = GetID(xScreens1[pCurrMenu].pUpScreenSet);
-                            }
-                                      break;
+                                       else
+                                       {
+                                           pCurrMenu = GetID(xScreens1[pCurrMenu].pUpScreenSet);
+                                       }
+                                       break;
                                case DOWN_KEY: if   (SelectEditFlag) vSelect(0);
-                               else {
-                                   pCurrMenu = GetID(xScreens1[pCurrMenu].pDownScreenSet);
-                            }break;
+                                       else
+                                       {
+                                           pCurrMenu = GetID(xScreens1[pCurrMenu].pDownScreenSet);
+                                       }
+                                       break;
                                default: ; break;
                            }
                           break;
@@ -533,10 +529,8 @@ void vIPDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command )
 }
 
 
-
 void  vTimeDataEdit(DATA_VIEW_COMMAND_t command, u8 * str)
 {
-
     if ( command == CMD_READ)  HAL_RTC_ReadTime( &time);
     switch(command)
     {
@@ -611,7 +605,6 @@ void  vTimeDataEdit(DATA_VIEW_COMMAND_t command, u8 * str)
             break;
     }
 }
-
 
 
 static void vDateDataEdit(DATA_VIEW_COMMAND_t command, char * str)
@@ -722,8 +715,6 @@ u16 getDataModelID( u16 MENU_ID)
     }
 }
 
-
-
 void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len)
 {
     u8 MACAddr[6];
@@ -820,7 +811,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             sprintf(str,"%04i м^3/ч", USER_GetFact());
             break;
         case FILTER_STATE_ID:
-            strcpy(str,"000 %");
+            sprintf(str,"%03i %",USER_FilterState());
             break;
         case MODE_STATE_ID:
             if (getReg8(MODE ))
@@ -960,6 +951,20 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
         }
         break;
     case CONTROL_MODE_ID:
+        *len = 0;
+         switch (command)
+         {
+            case CMD_EDIT_READ:
+                 strcpy(str, ControlModeStrig[ edit_data_buffer_byte ] );
+                 break;
+            case CMD_READ:
+                 strcpy(str, ControlModeStrig[ getReg8( reg_id)] );
+                 break;
+             default:
+                vByteDataEdit(0,reg_id,command,0,MKV_MB_TCP, MKV_MB_DIN );
+                break;
+         }
+         break;
     case PROTOCOL_ID:
         *len = 0;
         switch (command)
@@ -971,7 +976,10 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                 strcpy(str, ControlModeStrig[ getReg8( reg_id)] );
                 break;
             default:
-                vByteDataEdit(0,reg_id,command,0,MKV_MB_TCP,(data_id == CONTROL_MODE_ID)? MKV_MB_DIN : MKV_MB_RTU);
+                if ( getReg8(MB_PROTOCOL_TYPE)== MKV_MB_DIN)
+                {
+                    vByteDataEdit(0,reg_id,command,0,MKV_MB_TCP, MKV_MB_RTU);
+                }
                 break;
         }
         break;

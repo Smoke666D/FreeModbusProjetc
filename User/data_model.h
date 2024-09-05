@@ -111,5 +111,7 @@ void saveRegFloat(u16 reg_adress, float data );
 DATA_MODEL_INIT_t DataModel_Init();
 void vADDRecord( uint8_t flag);
 void vGetRecord( uint16_t addr,uint8_t * flag, HAL_TimeConfig_T * time, HAL_DateConfig_T * date);
+u8 VerifyAndSetReg8(u16 reg_adress, u8 data );
+
 
 #endif /* USER_DATA_MODEL_H_ */

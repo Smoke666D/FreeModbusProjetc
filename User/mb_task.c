@@ -92,6 +92,7 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define INP_MH_H_MB      25
 #define INP_MH_M_MB      26
 #define INP_STATE_MB     27
+#define ERROR_STATE_MB   28
 
 #define DAC1_ADDR  53
 #define DAC2_ADDR  55
@@ -133,36 +134,71 @@ uint16_t GetSensCoof()
 
 static u8 WORK_MODE =0;
 
+
+
+
+
+
+static u8 getRegID( u8 mb_reg_address)
+{
+    switch (mb_reg_address)
+    {
+        case CONTR_MB:          return (CONTRAST);
+        case MB_ADDRES_MB:      return (MB_RTU_ADDR);
+        case TIME_OUT_MB:       return (MOD_BUS_TIMEOUT);
+        case COMMAND_REG:
+        case INP_STATE_MB:      return (SYSTEM_START);
+        case INP_MODE_MB:       return (MODE);
+        case IP_PORT_MB:        return (IP_PORT);
+        case LIGTH_REG_MB:      return (LIGTH);
+        case MODE_REG_MB:       return (MODE);
+        case SET_MOD1_MB:       return (SETTING1);
+        case SET_MOD2_MB:       return (SETTING2);
+        case FILTER_LOW_MB:     return (FILTER_LOW);
+        case FILTER_HIGH_MB:    return (FILTER_HIGH);
+        case TIME_SENS_MB:      return (SENSOR_COUNT);
+        case TIME_FAN_STOP_MB:  return (FAN_START_TIMEOUT);
+        case (KOOF_P_MB+1):     return  (COOF_P);
+        case (KOOF_I_MB+1):     return  (COOF_I);
+        case (KOOF_K_MP+1):     return  (KOOFKPS);
+        case V_MIN_ON:          return (LOW_VOLTAGE_ON);
+        case V_MIN_OFF:         return (LOW_VOLTAGE_OFF);
+        case V_MAX_ON:          return (HIGH_VOLTAGE_ON);
+        case V_MAX_OFF:          return (HIGH_VOLTAGE_OFF);
+        case CONTROL_TYPE_MB :   return (CONTROL_TYPE);
+        case PROTOCOL_TYPE_MB:  return (MB_PROTOCOL_TYPE);
+
+    }
+    return 0;
+}
+
 void vSetRegData( u16 adress)
 {
-
 
    u8 set_time_flag = 0;
    u8 set_date_flag = 0;
    float data;
    u16   ref;
-   u8 byte_data;
+   u8 byte_data =(u8)usRegHoldingBuf[adress];
+   u8 reg_addr = getRegID(adress);
    switch (adress)
    {
-
        case ZERO_MB:
-           if  (usRegHoldingBuf[adress]!=0) CalibrateZeroStart();
+           if  (byte_data !=0) CalibrateZeroStart();
            break;
-       case  LIGTH_REG_MB:
-            setReg8(LIGTH, (uint8_t) usRegHoldingBuf[adress]);
-             break;
+       case LIGTH_REG_MB:
        case MODE_REG_MB:
-            setReg8(MODE, (uint8_t) usRegHoldingBuf[adress]);
+            VerifyAndSetReg8(reg_addr, (uint8_t) byte_data );
             break;
        case COMMAND_REG:
-           USER_SetControlState( (uint8_t) usRegHoldingBuf[adress]);
+           USER_SetControlState( (uint8_t) byte_data );
            break;
        case MODE_MB:
-           if (usRegHoldingBuf[adress] > 3)
+           if (byte_data  > 3)
                usRegHoldingBuf[adress] = WORK_MODE;
            else
            {
-               WORK_MODE = usRegHoldingBuf[adress];
+               WORK_MODE = byte_data ;
                switch (WORK_MODE)
                {
                    case 1:
@@ -181,93 +217,60 @@ void vSetRegData( u16 adress)
           HAL_TIMER_EnablePWMCH(TIMER9);
           break;
        case DAC2_ADDR+1:
-       data = *((float *)&usRegHoldingBuf[adress-1]);
-                 ref = (uint16_t)fGetDacCalData(DAC2,data);
-       HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_2 ,ref *10 );
-                HAL_TIMER_EnablePWMCH(TIMER9);
+           data = *((float *)&usRegHoldingBuf[adress-1]);
+           ref = (uint16_t)fGetDacCalData(DAC2,data);
+           HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_2 ,ref *10 );
+           HAL_TIMER_EnablePWMCH(TIMER9);
           break;
        case DAC3_ADDR+1:
-       data = *((float *)&usRegHoldingBuf[adress-1]);
-                        ref = (uint16_t)fGetDacCalData(DAC3,data);
-       HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_3 ,ref *10 );
-       HAL_TIMER_EnablePWMCH(TIMER9);
+           data = *((float *)&usRegHoldingBuf[adress-1]);
+           ref = (uint16_t)fGetDacCalData(DAC3,data);
+           HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_3 ,ref *10 );
+           HAL_TIMER_EnablePWMCH(TIMER9);
        break;
-     //  case  SENS_COOF:
-      //     sens_coof = usRegHoldingBuf[adress] ;
-      //     break;
-
        case SENS_COUNT:
            vSetCount(usRegHoldingBuf[adress]);
            break;
-       case CONTR_MB:
-           DAC_SetChannel1Data(DAC_Align_12b_R, usRegHoldingBuf[adress]);
-           break;
        case V_MIN_ON:
-           byte_data = usRegHoldingBuf[adress];
-           if (byte_data <usRegHoldingBuf[V_MIN_OFF] ) SaveReg8(LOW_VOLTAGE_ON,byte_data);
+           if (byte_data <usRegHoldingBuf[V_MIN_OFF] ) SaveReg8(reg_addr,byte_data);
            break;
        case V_MIN_OFF:
-           byte_data = usRegHoldingBuf[adress];
-           if ((byte_data > usRegHoldingBuf[V_MIN_ON] ) && (byte_data < usRegHoldingBuf[V_MAX_OFF] ))  SaveReg8(LOW_VOLTAGE_OFF,byte_data);
+           if ((byte_data > usRegHoldingBuf[V_MIN_ON] ) && (byte_data < usRegHoldingBuf[V_MAX_OFF] ) )  SaveReg8(reg_addr,byte_data);
             break;
        case V_MAX_OFF:
-           byte_data = usRegHoldingBuf[adress];
-           if ((byte_data > usRegHoldingBuf[V_MIN_OFF] ) && (byte_data < usRegHoldingBuf[V_MAX_ON] ))  SaveReg8(HIGH_VOLTAGE_OFF,byte_data);
+           if ((byte_data > usRegHoldingBuf[V_MIN_OFF] ) && (byte_data < usRegHoldingBuf[V_MAX_ON] ) )  SaveReg8(reg_addr,byte_data);
            break;
        case V_MAX_ON:
-           byte_data = usRegHoldingBuf[adress];
-           if (byte_data >usRegHoldingBuf[V_MAX_OFF] ) SaveReg8(HIGH_VOLTAGE_ON,byte_data);
-           break;
-       case (KOOF_P_MB+1):
-           data = *((float *)&usRegHoldingBuf[adress-1]);
-           setRegFloat(COOF_P , data);
+           if ( byte_data > usRegHoldingBuf[V_MAX_OFF] ) SaveReg8(reg_addr,byte_data);
            break;
        case (KOOF_I_MB+1):
-           data = *((float *)&usRegHoldingBuf[adress-1]);
-           setRegFloat(COOF_I , data);
-           break;
        case (KOOF_K_MP+1):
+       case (KOOF_P_MB+1):
            data = *((float *)&usRegHoldingBuf[adress-1]);
-           setRegFloat(KOOFKPS , data);
-           break;
-       case CONTROL_TYPE_MB:
-           byte_data = usRegHoldingBuf[adress];
-           if ((byte_data <3) && (WORK_MODE) ) SaveReg8(CONTROL_TYPE, byte_data);
-           break;
-       case PROTOCOL_TYPE_MB:
-           byte_data = usRegHoldingBuf[adress];
-           if (((byte_data <3) && (byte_data>0)) && (WORK_MODE) && (getReg8(CONTROL_TYPE)==0) ) SaveReg8(MB_PROTOCOL_TYPE, byte_data);
+           setRegFloat(reg_addr, data);
            break;
        case MB_ADDRES_MB:
+       case CONTROL_TYPE_MB:
+       case PROTOCOL_TYPE_MB:
            if (WORK_MODE)
            {
-               byte_data = usRegHoldingBuf[adress];
-               if ((byte_data <100) && (byte_data>0)) SaveReg8(MB_RTU_ADDR, byte_data);
+                SaveReg8(reg_addr, byte_data);
            }
            break;
-       case TIME_OUT_MB:
-           byte_data = usRegHoldingBuf[adress];
-           SaveReg8(MOD_BUS_TIMEOUT,byte_data);
-           break;
        case TIME_H_MB:
-           byte_data = usRegHoldingBuf[adress];
            if (byte_data <24) set_time_flag = 1;
            break;
        case TIME_M_MB:
        case TIME_S_MB:
-           byte_data = usRegHoldingBuf[adress];
            if (byte_data <60) set_time_flag = 1;
            break;
        case DATE_D_MB:
-           byte_data = usRegHoldingBuf[adress];
            if ((byte_data <32) && (byte_data>0)) set_date_flag = 1;
            break;
        case DATE_M_MB:
-           byte_data = usRegHoldingBuf[adress];
            if ((byte_data <13) && (byte_data>0)) set_date_flag = 1;
            break;
        case DATE_Y_MB:
-           byte_data = usRegHoldingBuf[adress];
            if (byte_data <99) set_date_flag = 1;
            break;
        case IP_1_MB:
@@ -290,27 +293,20 @@ void vSetRegData( u16 adress)
        case IP_PORT_MB:
            if (WORK_MODE)
            {
-
-               saveReg16(IP_PORT, usRegHoldingBuf[IP_PORT_MB]);
+               saveReg16(reg_addr, usRegHoldingBuf[adress]);
            }
            break;
        case  SET_MOD1_MB:
-           saveReg16(SETTING1, usRegHoldingBuf[adress]);
-           break;
        case  SET_MOD2_MB:
-           saveReg16(SETTING2, usRegHoldingBuf[adress]);
-           break;
        case  FILTER_LOW_MB:
-           saveReg16(FILTER_LOW, usRegHoldingBuf[adress]);
-           break;
        case  FILTER_HIGH_MB:
-           saveReg16(FILTER_HIGH, usRegHoldingBuf[adress]);
+           saveReg16(reg_addr, usRegHoldingBuf[adress]);
            break;
+       case CONTR_MB:
        case TIME_SENS_MB:
-           SaveReg8(SENSOR_COUNT,usRegHoldingBuf[adress] );
-            break;
        case TIME_FAN_STOP_MB:
-           SaveReg8(FAN_START_TIMEOUT,usRegHoldingBuf[adress]);
+       case TIME_OUT_MB:
+           SaveReg8(reg_addr,byte_data);
            break;
    }
    if (set_time_flag)
@@ -344,12 +340,30 @@ static void MB_TASK_INPUTS_UDATE()
     }
     tempdata =(uint32_t) getAIN(AC220);
     *((float*) (usRegInputBuf+22)) =  tempdata;
-    usRegInputBuf[INP_MODE_MB] = ucDinGet(OUT_2);
-    usRegInputBuf[ INP_MH_H_MB] = vRTC_TASK_GetHoure();
-    usRegInputBuf[INP_MH_M_MB ] = vRTC_TASK_GetMinute();
-    usRegInputBuf[INP_STATE_MB] = ucDinGet(OUT_1);
+    usRegInputBuf[INP_MODE_MB]    = getReg8(getRegID(INP_MODE_MB));
+    usRegInputBuf[INP_MH_H_MB]    = vRTC_TASK_GetHoure();
+    usRegInputBuf[INP_MH_M_MB ]   = vRTC_TASK_GetMinute();
+    usRegInputBuf[INP_STATE_MB]   = getReg8(getRegID(INP_STATE_MB));
+    usRegInputBuf[ERROR_STATE_MB] = USER_GerErrorState();
 
 }
+#define REG_SEQ_COUNT 5
+#define REG8_SEQ_COUNT 12
+static const u8 REGS[REG_SEQ_COUNT]={IP_PORT_MB,SET_MOD1_MB,SET_MOD2_MB,FILTER_LOW_MB,FILTER_HIGH_MB};
+static const u8 REGS8[REG8_SEQ_COUNT]={COMMAND_REG,
+                                       TIME_SENS_MB,
+                                       TIME_FAN_STOP_MB,
+                                       V_MIN_ON,
+                                       V_MIN_OFF,
+                                       V_MAX_ON,
+                                       V_MAX_OFF,
+                                       CONTROL_TYPE_MB,
+                                       PROTOCOL_TYPE_MB,
+                                       MB_ADDRES_MB,
+                                       TIME_OUT_MB,
+                                       CONTR_MB};
+
+
 void MB_TASK_HOLDING_UDATE()
 {
     static HAL_TimeConfig_T time;
@@ -362,8 +376,6 @@ void MB_TASK_HOLDING_UDATE()
     *((float*) (usRegHoldingBuf+KOOF_I_MB )) =  (float)tempdata/1000.0;
     tempdata =(int32_t) (getRegFloat(KOOFKPS)*1000);
     *((float*) (usRegHoldingBuf+KOOF_K_MP)) =  (float)tempdata/1000.0;
-    usRegHoldingBuf[CONTROL_TYPE_MB ] = getReg8(CONTROL_TYPE );
-    usRegHoldingBuf[PROTOCOL_TYPE_MB] = getReg8(MB_PROTOCOL_TYPE );
     HAL_RTC_ReadTime(&time);
     HAL_RTC_ReadDate(&date);
     usRegHoldingBuf[TIME_H_MB]     = time.hours;
@@ -372,22 +384,18 @@ void MB_TASK_HOLDING_UDATE()
     usRegHoldingBuf[DATE_D_MB]     = date.date;
     usRegHoldingBuf[DATE_M_MB]     = date.month;
     usRegHoldingBuf[DATE_Y_MB]     = date.year;
-    usRegHoldingBuf[V_MIN_ON]      = getReg8(LOW_VOLTAGE_ON);
-    usRegHoldingBuf[V_MIN_OFF]     = getReg8(LOW_VOLTAGE_OFF);
-    usRegHoldingBuf[V_MAX_ON]      = getReg8(HIGH_VOLTAGE_ON);
-    usRegHoldingBuf[V_MAX_OFF]     = getReg8(HIGH_VOLTAGE_OFF);
-    usRegHoldingBuf[MB_ADDRES_MB ] = getReg8(MB_RTU_ADDR);
-    usRegHoldingBuf[TIME_OUT_MB]   = getReg8(MOD_BUS_TIMEOUT);
     for (u8 i=0;i<12;i++)
          usRegHoldingBuf[IP_1_MB+i]       = getReg8(IP_1+i);
-    usRegHoldingBuf[IP_PORT_MB] =getReg16(IP_PORT);
-    usRegHoldingBuf[SET_MOD1_MB] = getReg16(SETTING1);
-    usRegHoldingBuf[SET_MOD2_MB] = getReg16(SETTING2);
-    usRegHoldingBuf[FILTER_LOW_MB ] = getReg16(FILTER_LOW );
-    usRegHoldingBuf[FILTER_HIGH_MB] = getReg16(FILTER_HIGH );
-    usRegHoldingBuf[TIME_SENS_MB]  = getReg8(SENSOR_COUNT);
-    usRegHoldingBuf[TIME_FAN_STOP_MB] =getReg8(FAN_START_TIMEOUT);
-    usRegHoldingBuf[COMMAND_REG ] = getControlState();
+    for (u8 i=0;i<REG_SEQ_COUNT;i++)
+    {
+        u8 index = getRegID(REGS[i]);
+        usRegHoldingBuf[index]      = getReg16(index);
+    }
+    for (u8 i=0;i<REG8_SEQ_COUNT;i++)
+    {
+        u8 index = getRegID(REGS8[i]);
+        usRegHoldingBuf[index]      = getReg8(index);
+    }
 }
 
 eMBErrorCode eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
@@ -612,8 +620,7 @@ void MBRTU_task(void *pvParameters)
      vSetRegData(DAC3_ADDR+1);
      for( ;; )
      {
-         u8 control_type  = getReg8(CONTROL_TYPE );
-         if (control_type == MKV_MB_RTU)
+         if (getReg8(MB_PROTOCOL_TYPE)== MKV_MB_RTU)
          {
 
              if (eMBInit(MB_RTU,1,HAL_USART4,19200,MB_PAR_ODD ) == MB_ENOERR )
