@@ -65,6 +65,7 @@ void HAL_RTC_IT_Init( HAL_RTC_INIT_t init, void (* rtc_it_callback) ( void ), ui
 
 void RTC_IRQHandler ( void )
 {
+
     if ((RTC->CTLRH & RTC_FLAG_SEC) )
     {
         func();

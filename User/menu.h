@@ -11,6 +11,14 @@
 #include "main.h"
 #include "queue.h"
 
+
+#define ENTER_KEY  4
+#define EXIT_KEY   5
+#define DOWN_KEY   2
+#define UP_KEY     3
+#define RIGTH_KEY  1
+#define LEFT_KEY   0
+
 #define MAX_STRING_NUMBER 5
 
 #define PROCESS_STATE_ID        1

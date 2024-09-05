@@ -171,19 +171,19 @@ void ViewScreenCallback( u8 key_code)
     uint16_t pscreen = 0;
     switch ( key_code )
     {
-        case 0:
+        case EXIT_KEY:
            pscreen =  xScreens1[pCurrMenu].pBack ;
            break;
-        case 1:
+        case ENTER_KEY:
            pscreen =  xScreens1[pCurrMenu].pEnter ;
            break;
-        case 2:
+        case UP_KEY:
             pscreen = xScreens1[pCurrMenu].pUpScreenSet;
            break;
-        case 3:
+        case DOWN_KEY:
             pscreen = xScreens1[pCurrMenu].pDownScreenSet;
            break;
-        case 4:
+        case RIGTH_KEY:
             pscreen = xScreens1[pCurrMenu].pRigthScreen;
            break;
         default:
@@ -299,8 +299,8 @@ void vMenuTask ( void )
                       case 2:
                           switch ( TempEvent.KeyCode )
                           {
-                               case 0: if  (SelectEditFlag) SelectEditFlag = 0; else { menu_mode = 0;pCurrMenu = GetID(xScreens1[pCurrMenu].pBack); } break;
-                               case 1:
+                               case EXIT_KEY: if  (SelectEditFlag) SelectEditFlag = 0; else { menu_mode = 0;pCurrMenu = GetID(xScreens1[pCurrMenu].pBack); } break;
+                               case ENTER_KEY:
                                        if  (!SelectEditFlag )
                                            {
                                               SelectEditFlag  = 1;
@@ -314,12 +314,12 @@ void vMenuTask ( void )
 //
                                        }
                                         break;
-                               case 2: if   (SelectEditFlag)  vSelect(1);
+                               case UP_KEY: if   (SelectEditFlag)  vSelect(1);
                                else {
                                    pCurrMenu = GetID(xScreens1[pCurrMenu].pUpScreenSet);
                             }
                                       break;
-                               case 3: if   (SelectEditFlag) vSelect(0);
+                               case DOWN_KEY: if   (SelectEditFlag) vSelect(0);
                                else {
                                    pCurrMenu = GetID(xScreens1[pCurrMenu].pDownScreenSet);
                             }break;
@@ -329,12 +329,12 @@ void vMenuTask ( void )
                      case 3:
                          switch ( TempEvent.KeyCode )
                          {
-                            case 0: vSetCommnad(CMD_EXIT_EDIT); break;
-                            case 1: vSetCommnad(CMD_SAVE_EDIT); break;
-                            case 2: vGetData( curr_edit_data_id, 0,CMD_DEC,0,0); break;
-                            case 3: vGetData( curr_edit_data_id, 0,CMD_INC,0,0); break;
-                            case 4: vGetData( curr_edit_data_id, 0,CMD_PREV_EDIT,0,0); break;
-                            case 5: vGetData( curr_edit_data_id, 0,CMD_NEXT_EDIT,0,0); break;
+                            case EXIT_KEY: vSetCommnad(CMD_EXIT_EDIT); break;
+                            case ENTER_KEY: vSetCommnad(CMD_SAVE_EDIT); break;
+                            case DOWN_KEY: vGetData( curr_edit_data_id, 0,CMD_DEC,0,0); break;
+                            case UP_KEY: vGetData( curr_edit_data_id, 0,CMD_INC,0,0); break;
+                            case RIGTH_KEY: vGetData( curr_edit_data_id, 0,CMD_PREV_EDIT,0,0); break;
+                            case LEFT_KEY: vGetData( curr_edit_data_id, 0,CMD_NEXT_EDIT,0,0); break;
                          }
                          break;
                   }

@@ -119,7 +119,7 @@ void user_process_task(void *pvParameters)
                task_fsm = USER_PROCESS_ALARM;
            }
        }
-     /*  if (ucDinGet(INPUT_2))
+       if (ucDinGet(INPUT_2))
        {
            if ( set_point_old == 0) set_point_flag = 1;
            set_point_old = 1;
@@ -131,7 +131,15 @@ void user_process_task(void *pvParameters)
            set_point_old = 0;
            setpoint = getReg16(SETTING2);
        }
-       if ( FSM_STATE >= 3 )
+       if ( ucDinGet(INPUT_1) && (task_fsm == USER_PROCCES_IDLE))
+       {
+           task_fsm = USER_PEOCESS_WORK_TIME_OUT;
+       }
+       if ( (ucDinGet(INPUT_1)==0) && (task_fsm != USER_PROCCES_IDLE) &&  (task_fsm != USER_PROCESS_ALARM))
+       {
+                 task_fsm = USER_PROCCES_IDLE;
+       }
+   /*    if ( FSM_STATE >= 3 )
        {
            HAL_ResetBit(CRACH_Port,  CRACH_Pin);
            eSetDUT(OUT_2,TRUE);
@@ -154,7 +162,9 @@ void user_process_task(void *pvParameters)
         break;*/
        switch (task_fsm)
        {
+
            case USER_PROCCES_IDLE:
+
                eSetDUT(OUT_1,FALSE);
                FSM_STATE = 0;
                start_timeout = 0;

@@ -121,8 +121,10 @@ float getAIN( AIN_CHANNEL_t channel)
     switch (channel)
     {
         case  SENS1:
+            printf("sens1\r\n");
             return  ((float)GetConversional(&DataBuffer[0]));
         case SENS2:
+            printf("sens2\r\n");
             return  ((float)GetConversional(&DataBuffer[1]));
         case DC24:
              return  ((float)GetConversional(&DataBuffer[2])*KK*COOF_24V);
@@ -228,7 +230,7 @@ void ADC1_Init()
     DataBuffer[7].pBuff = SensTemoBuffer;
     DataBuffer[8].ConversionalSize = DC_AIN_BufferSize;
     DataBuffer[8].pIndex = 0;
-    DataBuffer[8].pBuff = SensTemoBuffer;
+    DataBuffer[8].pBuff = SensTemoBuffer1;
 }
 
 void AddBufferDataI2C( ADC_Conversionl_Buf_t * pBuf, int16_t data )
@@ -520,7 +522,7 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  u1
                 if ( GetI2CDataFSM(i2c, 0x0A, &i2cdata[index][4],fsm) == 1)
                 {
                       int16_t temperature;
-                      uint16_t sens_temp = i2cdata[1][3]*256 + i2cdata[1][4];
+                      uint16_t sens_temp = i2cdata[index][3]*256 + i2cdata[index][4];
                       if (sens_temp & 0x8000)
                              temperature = (sens_temp -65536);
                       else
@@ -595,11 +597,13 @@ void I2C_task(void *pvParameters)
             {
                 if (SENS1_FSM ==SENSOR_START_CONVERSION)
                 {
+                    printf("i22 timeout\r\n");
                     SENS1_FSM = SENSOR_IDLE;
                     HAL_I2C_STOP(I2C_2);
                 }
                 if (SENS2_FSM ==SENSOR_START_CONVERSION)
                 {
+                    printf("i21 timeout\r\n");
                     SENS2_FSM = SENSOR_IDLE;
                     HAL_I2C_STOP(I2C_1);
                 }
