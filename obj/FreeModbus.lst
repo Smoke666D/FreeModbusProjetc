@@ -5993,19 +5993,19 @@ Disassembly of section .text:
     2d9c:	bc47a683          	lw	a3,-1084(a5)
     2da0:	bfbd                	j	2d1e <getAIN+0x68>
     2da2:	20004537          	lui	a0,0x20004
-    2da6:	d4c50513          	addi	a0,a0,-692 # 20003d4c <DataBuffer+0x54>
+    2da6:	d5850513          	addi	a0,a0,-680 # 20003d58 <DataBuffer+0x60>
     2daa:	ecdff0ef          	jal	ra,2c76 <GetConversional>
     2dae:	0001c7b7          	lui	a5,0x1c
     2db2:	d00577d3          	fcvt.s.w	fa5,a0
     2db6:	bbc7a707          	flw	fa4,-1092(a5) # 1bbbc <DACCAL+0xac>
     2dba:	10e7f7d3          	fmul.s	fa5,fa5,fa4
     2dbe:	b7b5                	j	2d2a <getAIN+0x74>
-    2dc0:	94419503          	lh	a0,-1724(gp) # 20000534 <sens_press>
+    2dc0:	94619503          	lh	a0,-1722(gp) # 20000536 <sens_press1>
     2dc4:	bf19                	j	2cda <getAIN+0x24>
     2dc6:	20004537          	lui	a0,0x20004
-    2dca:	d5850513          	addi	a0,a0,-680 # 20003d58 <DataBuffer+0x60>
+    2dca:	d4c50513          	addi	a0,a0,-692 # 20003d4c <DataBuffer+0x54>
     2dce:	bff1                	j	2daa <getAIN+0xf4>
-    2dd0:	94619503          	lh	a0,-1722(gp) # 20000536 <sens_press1>
+    2dd0:	94419503          	lh	a0,-1724(gp) # 20000534 <sens_press>
     2dd4:	b719                	j	2cda <getAIN+0x24>
     2dd6:	9301a787          	flw	fa5,-1744(gp) # 20000520 <AC_220_VALUE>
     2dda:	bf81                	j	2d2a <getAIN+0x74>

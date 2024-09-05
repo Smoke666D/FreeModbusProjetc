@@ -135,13 +135,13 @@ float getAIN( AIN_CHANNEL_t channel)
        case DCAIN4:
             return ((float)GetConversional(&DataBuffer[6])*KK);
        case DIG_TEMP:
-           return ((float)GetConversional(&DataBuffer[7])/256);
-       case DIG_PRES:
-           return (float)(sens_press);
-       case DIG2_TEMP:
            return ((float)GetConversional(&DataBuffer[8])/256);
-       case DIG2_PRES:
+       case DIG_PRES:
            return (float)(sens_press1);
+       case DIG2_TEMP:
+           return ((float)GetConversional(&DataBuffer[7])/256);
+       case DIG2_PRES:
+           return (float)(sens_press);
         case AC220:
            return (AC_220_VALUE);
     }
