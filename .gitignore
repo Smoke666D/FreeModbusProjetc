@@ -16,3 +16,4 @@ obj/Peripheral/src/ch32v30x_wwdg.o
 obj/u8g2-master/csrc/u8g2_d_memory.o
 obj/u8g2-master/csrc/u8g2_d_setup.o
 obj/u8g2-master/csrc/u8g2_fonts.o
+obj/
