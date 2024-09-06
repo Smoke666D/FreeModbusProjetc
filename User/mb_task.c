@@ -246,7 +246,7 @@ void vSetRegData( u16 adress)
        case (KOOF_I_MB+1):
        case (KOOF_K_MP+1):
        case (KOOF_P_MB+1):
-           data = *((float *)&usRegHoldingBuf[adress-1]);
+           data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
            setRegFloat(reg_addr, data);
            break;
        case MB_ADDRES_MB:
@@ -371,11 +371,18 @@ void MB_TASK_HOLDING_UDATE()
     int32_t tempdata;
     usRegHoldingBuf[MODE_MB] = WORK_MODE;
     tempdata =(int32_t) (getRegFloat(COOF_P)*1000);
-    *((float*) (usRegHoldingBuf+KOOF_P_MB )) =  (float)tempdata/1000.0;
+
+    convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_P_MB]);
+
+   // *((float*) (usRegHoldingBuf+KOOF_P_MB )) =  (float)tempdata/1000.0;
     tempdata =(int32_t) (getRegFloat(COOF_I)*1000);
-    *((float*) (usRegHoldingBuf+KOOF_I_MB )) =  (float)tempdata/1000.0;
+    convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_I_MB]);
+   // *((float*) (usRegHoldingBuf+KOOF_I_MB )) =  (float)tempdata/1000.0;
     tempdata =(int32_t) (getRegFloat(KOOFKPS)*1000);
-    *((float*) (usRegHoldingBuf+KOOF_K_MP)) =  (float)tempdata/1000.0;
+  //  *((float*) (usRegHoldingBuf+KOOF_K_MP)) =  (float)tempdata/1000.0;
+    convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_K_MP]);
+
+
     HAL_RTC_ReadTime(&time);
     HAL_RTC_ReadDate(&date);
     usRegHoldingBuf[TIME_H_MB]     = time.hours;

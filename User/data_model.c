@@ -173,6 +173,24 @@ void saveRegFloat(u16 reg_adress, float data )
     WriteEEPROM(reg_adress, &DATA_MODEL_REGISTER[ reg_adress], 4,10, 2);
 }
 
+
+float convert_int_to_float( u16 * data)
+{
+
+    u32 temp_int = (data[0]<<16 | data[1]);
+    float * ftemp = &temp_int;
+    return (*ftemp);
+
+}
+
+void convert_float_to_int(float fdata, u16 * data)
+{
+    float temp = fdata;
+    u32 * temp_int = &temp;
+    data[0]= ((*temp_int) >>16 ) & 0xFFFF;
+    data[1]= ((*temp_int) >> 0) & 0xFFFF ;
+}
+
 float getRegFloat(u16 reg_adress )
 {
     float * ptemp;
