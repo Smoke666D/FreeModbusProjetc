@@ -24,7 +24,7 @@
 
 
 
-
+static u8 setting_change_flag =0;    //Флаг измения значения устаки, нужен для изменения отображения на индикаторе текущей уставки
 static TaskHandle_t processTaskHandle;
 static USER_PROCESS_FSM_t task_fsm;
 static u8 FilterState;
@@ -39,6 +39,10 @@ TaskHandle_t * getUserProcessTaskHandle()
     return (&processTaskHandle);
 }
 
+void USER_SetSettingChange()
+{
+    setting_change_flag = 1;
+}
 
 u8 USER_GerErrorState()
 {
@@ -99,8 +103,9 @@ static void USER_SETTING_CHECK(u8 control_type, u8 * point_old)
       }
     if ( control_type == MKV_MB_DIN) setReg8(MODE,ucDinGet(INPUT_3));
 
-    if (getReg8(MODE ) != *point_old)
+    if ((getReg8(MODE ) != *point_old) || (setting_change_flag))
     {
+        setting_change_flag  = 0;
         *point_old = getReg8(MODE );
         setpoint = getReg16((*point_old ==0)? SETTING1 : SETTING2);
         SET_POINT =pow(setpoint/getRegFloat(KOOFKPS),2);

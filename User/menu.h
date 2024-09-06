@@ -62,6 +62,8 @@
 #define MOD_BUS_TIMEOUT_ID      40
 #define CONTRAST_ID             41
 #define FAN_START_TIMEOUT_ID    42
+#define ALARM_COUNT_ID          43
+#define CURRENT_ALARM_COUNT_ID  44
 
 
 typedef enum

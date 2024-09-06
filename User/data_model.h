@@ -100,7 +100,7 @@ typedef enum
 void saveReg16( u16 reg_adress, u16 data);
 void setRegFloat( u16 reg_adress, float data);
 float getRegFloat(u16 reg_adress );
-void SaveReg8( u16 reg_adress, u8 data);
+void SaveReg8( u16 reg_adress, u16 data);
 void setReg16( u16 reg_adress, u16 data);
 void setReg8( u16 reg_adress, u8 data);
 u32 getReg32(u16 reg_adress );
@@ -111,7 +111,7 @@ void saveRegFloat(u16 reg_adress, float data );
 DATA_MODEL_INIT_t DataModel_Init();
 void vADDRecord( uint8_t flag);
 void vGetRecord( uint16_t addr,uint8_t * flag, HAL_TimeConfig_T * time, HAL_DateConfig_T * date);
-u8 VerifyAndSetReg8(u16 reg_adress, u8 data );
+u8 VerifyAndSetReg8(u16 reg_adress, u16 data );
 
 
 #endif /* USER_DATA_MODEL_H_ */

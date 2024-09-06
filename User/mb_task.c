@@ -179,7 +179,7 @@ void vSetRegData( u16 adress)
    u8 set_date_flag = 0;
    float data;
    u16   ref;
-   u8 byte_data =(u8)usRegHoldingBuf[adress];
+   u16 byte_data =(u16)usRegHoldingBuf[adress];
    u8 reg_addr = getRegID(adress);
    switch (adress)
    {
@@ -389,12 +389,12 @@ void MB_TASK_HOLDING_UDATE()
     for (u8 i=0;i<REG_SEQ_COUNT;i++)
     {
         u8 index = getRegID(REGS[i]);
-        usRegHoldingBuf[index]      = getReg16(index);
+        usRegHoldingBuf[REGS[i]]      = getReg16(index);
     }
     for (u8 i=0;i<REG8_SEQ_COUNT;i++)
     {
         u8 index = getRegID(REGS8[i]);
-        usRegHoldingBuf[index]      = getReg8(index);
+        usRegHoldingBuf[REGS8[i]]      = getReg8(index);
     }
 }
 

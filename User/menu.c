@@ -715,9 +715,15 @@ u16 getDataModelID( u16 MENU_ID)
     }
 }
 
+
+
+static u8 error_shif = 0;
+static u8 *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение"};
+
 void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len)
 {
     u8 MACAddr[6];
+    u8 temp_byte,temp_state = 0;
     u16 max,min;
     if (index!=0) *index = cur_edit_index;
     if (len!=0)   *len = 1;
@@ -753,6 +759,37 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
         case JURNAL_RECORD_ID:
             sprintf(str,"%02i/%02i",journal_index+1, getReg16(RECORD_COUNT));
             vGetRecord(journal_index,&error_flag,&time,&date);
+            break;
+        case ALARM_COUNT_ID:
+            temp_state =0;
+            temp_byte =  USER_GerErrorState();
+            for (u8 i=0;i<8;i++)
+            {
+                if (temp_byte & 0x01) temp_state++;
+                temp_byte = temp_byte>>1;
+            }
+            sprintf(str,"%02i",temp_state);
+            break;
+        case CURRENT_ALARM_COUNT_ID:
+            temp_byte =  USER_GerErrorState();
+            if (temp_byte == 0)
+                sprintf(str,"");
+            else
+            {
+                if ((blink_counter ==0) || ((temp_byte>>error_shif) & 0x01)==0)
+                {
+                     for (u8 i=0;i<5;i++)
+                     {
+                          if (++error_shif>3) error_shif = 0;
+
+                           if ((temp_byte>>error_shif) & 0x01)
+                           {
+                               break;
+                           }
+                     }
+                }
+                strcpy(str,ViewErrorString[error_shif]);
+            }
             break;
         case COOF_P_ID:
         case COOF_I_ID:

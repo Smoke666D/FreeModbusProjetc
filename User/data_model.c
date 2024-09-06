@@ -66,18 +66,31 @@ void setReg16( u16 reg_adress, u16 data)
     DATA_MODEL_REGISTER[ reg_adress + 1] =(u8)( data>>8 & 0xFF);
 }
 
+
+
+
 void saveReg16( u16 reg_adress, u16 data)
 {
+    switch (reg_adress)
+    {
+        case SETTING1:
+        case SETTING2:
+            USER_SetSettingChange();
+            break;
+    }
     setReg16(reg_adress,data);
     WriteEEPROM(reg_adress, &DATA_MODEL_REGISTER[ reg_adress], 2,10, 2);
 }
 
 
-u8 VerifyAndSetReg8(u16 reg_adress, u8 data )
+u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
 {
     u8 temp_data = data;
     switch (reg_adress)
     {
+        case SENSOR_COUNT:
+             if (data >6) return 0;
+             break;
         case LIGTH:
         case MODE:
               if (data > 1) temp_data = 1;
@@ -111,7 +124,7 @@ void setReg8( u16 reg_adress, u8 data)
 {
     DATA_MODEL_REGISTER[ reg_adress] = (u8)( data );
 }
-void SaveReg8( u16 reg_adress, u8 data)
+void SaveReg8( u16 reg_adress, u16 data)
 {
     if (VerifyAndSetReg8( reg_adress,  data))
     {

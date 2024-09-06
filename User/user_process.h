@@ -24,6 +24,7 @@ typedef enum
     USER_PEOCESS_WORK_TIME_OUT,
 } USER_PROCESS_FSM_t;
 
+void USER_SetSettingChange();
 u8 USER_GerErrorState();
 u8 USER_FilterState();
 void USER_SetControlState(u8 state);

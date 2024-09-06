@@ -19,8 +19,10 @@ static  xScreenObjet const InfoScreen1[]=
 
 static xScreenObjet const InfoScreen2[]=
 {
-        {0,2,37,0, TEXT_STRING,     "Журанл аварий",0},
-        {1,2,50,70,READ_DATA,"Записей:",JOURNAL_COUNT_ID},
+        {0,2,LINE1,70,READ_DATA,"Текущаих аварий:",ALARM_COUNT_ID},
+        {0,2,25,70,READ_DATA,"",CURRENT_ALARM_COUNT_ID},
+        {0,2,50,0, TEXT_STRING,     "Журанл аварий",0},
+        {1,2,62,70,READ_DATA,"Записей:",JOURNAL_COUNT_ID},
 };
 static xScreenObjet const InfoScreen3[]=
 {
