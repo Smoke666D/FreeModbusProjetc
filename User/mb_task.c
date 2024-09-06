@@ -640,7 +640,7 @@ void MBRTU_task(void *pvParameters)
          if (getReg8(MB_PROTOCOL_TYPE)== MKV_MB_RTU)
          {
 
-             if (eMBInit(MB_RTU,1,HAL_USART4,19200,MB_PAR_ODD ) == MB_ENOERR )
+             if (eMBInit(MB_RTU,getReg8(MB_RTU_ADDR),HAL_USART4,19200,MB_PAR_ODD ) == MB_ENOERR )
              {
                 mb_ready = 1;
              }
