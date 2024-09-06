@@ -74,7 +74,8 @@ USER_PROCESS_FSM_t USER_GetProccesState()
 
 uint16_t USER_GetFact()
 {
-    return (u16)(sqrt( (float)getAIN(SENS2))*getRegFloat(KOOFKPS)) ;
+
+    return (u16)( sqrt((float)getAIN(SENS2))*getRegFloat(KOOFKPS)) ;
 }
 
 
