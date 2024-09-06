@@ -100,7 +100,7 @@ static xScreenObjet const SettingsScreen7[]=
         {0,2,25,70,TEXT_STRING,"Текущий перепад давл.",  0},
         {0,2,37,90,READ_DATA,"Вентилятор",               SENS_1_RAW_ID},
         {0,2,50,70,READ_DATA,"Фильтр",                   SENS_2_RAW_ID},
-        {1,2,62,15,WRITE_DATA,"Откалибравать 0",         0 },
+        {1,2,62,15,WRITE_DATA,"Откалибравать 0",         ZERO_CALIBRATE_ID },
 };
 
 static xScreenObjet const SettingsScreen8[]=

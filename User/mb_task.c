@@ -86,7 +86,9 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define LIGTH_REG_MB     42
 #define MODE_REG_MB      43
 #define ZERO_MB          44
-
+#define AOUT1_C_MB       45
+#define AOUT2_C_MB       47
+#define AOUT3_C_MB       49
 
 #define INP_MODE_MB      24
 #define INP_MH_H_MB      25
@@ -97,9 +99,7 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define AOUT2_MB         31
 #define AOUT3_MB         33
 
-#define DAC1_ADDR  53
-#define DAC2_ADDR  55
-#define DAC3_ADDR  57
+
 //#define SENS_COOF  18
 //#define DAC_DATA   19
 #define SENS_PERIOD 58
@@ -138,7 +138,10 @@ uint16_t GetSensCoof()
 static u8 WORK_MODE =0;
 
 
-
+u8 MB_TASK_GetMode()
+{
+    return (WORK_MODE);
+}
 
 
 
@@ -201,35 +204,37 @@ void vSetRegData( u16 adress)
                usRegHoldingBuf[adress] = WORK_MODE;
            else
            {
+               printf("set mode %i\r\n",byte_data);
                WORK_MODE = byte_data ;
-               switch (WORK_MODE)
+               if (WORK_MODE ==3 )
                {
-                   case 1:
-                       break;
-                   case 2:
-                       break;
-                   case 3:
-                       break;
+                   NVIC_SystemReset();
                }
            }
            break;
-       case DAC1_ADDR+1:
-          data = *((float *)&usRegHoldingBuf[adress-1]);
-          ref = (uint16_t)fGetDacCalData(DAC1,data);
-          HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_1 ,ref *10);
-          HAL_TIMER_EnablePWMCH(TIMER9);
+       case AOUT1_C_MB+1:
+           if (WORK_MODE ==2)
+          {
+
+               data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
+               printf("set data %f\r\n",data);
+               USER_AOUT_SET(DAC1,data);
+         }
+
           break;
-       case DAC2_ADDR+1:
-           data = *((float *)&usRegHoldingBuf[adress-1]);
-           ref = (uint16_t)fGetDacCalData(DAC2,data);
-           HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_2 ,ref *10 );
-           HAL_TIMER_EnablePWMCH(TIMER9);
+       case AOUT2_C_MB+1:
+       if (WORK_MODE ==2)
+                 {
+                      data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
+                      USER_AOUT_SET(DAC2,data);
+                }
           break;
-       case DAC3_ADDR+1:
-           data = *((float *)&usRegHoldingBuf[adress-1]);
-           ref = (uint16_t)fGetDacCalData(DAC3,data);
-           HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_3 ,ref *10 );
-           HAL_TIMER_EnablePWMCH(TIMER9);
+       case AOUT3_C_MB+1:
+       if (WORK_MODE ==2)
+                 {
+                      data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
+                      USER_AOUT_SET(DAC3,data);
+                }
        break;
        case SENS_COUNT:
            vSetCount(usRegHoldingBuf[adress]);
@@ -388,10 +393,12 @@ void MB_TASK_HOLDING_UDATE()
     tempdata =(int32_t) (getRegFloat(KOOFKPS)*1000);
   //  *((float*) (usRegHoldingBuf+KOOF_K_MP)) =  (float)tempdata/1000.0;
     convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_K_MP]);
-
-
+    convert_float_to_int(USER_AOUT_GET(DAC1),&usRegHoldingBuf[AOUT1_C_MB]);
+    convert_float_to_int(USER_AOUT_GET(DAC2),&usRegHoldingBuf[AOUT2_C_MB]);
+    convert_float_to_int(USER_AOUT_GET(DAC3),&usRegHoldingBuf[AOUT3_C_MB]);
     HAL_RTC_ReadTime(&time);
     HAL_RTC_ReadDate(&date);
+    usRegHoldingBuf[LIGTH_REG_MB]  = eGetDOUT(OUT_2);
     usRegHoldingBuf[TIME_H_MB]     = time.hours;
     usRegHoldingBuf[TIME_M_MB]     = time.minutes;
     usRegHoldingBuf[TIME_S_MB]     = time.seconds;
@@ -532,7 +539,7 @@ eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCo
                     xMBUtilSetBits(&pucCoilBuf[iRegIndex++], iRegBitIndex, usNCoils,
                             *pucRegBuffer++);
                 }
-                xSetOut( ucSCoilBuf );
+                if (WORK_MODE ==2) xSetOut( ucSCoilBuf );
                 break;
             }
         }
@@ -598,9 +605,7 @@ eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT us
 void MBTCP_task(void *pvParameters)
 {
      eMBErrorCode    xStatus;
-     vSetRegData(DAC1_ADDR+1);
-     vSetRegData(DAC2_ADDR+1);
-     vSetRegData(DAC3_ADDR+1);
+
      for( ;; )
      {
          vTaskDelay(1);
@@ -629,9 +634,7 @@ void MBRTU_task(void *pvParameters)
 {
      u8 mb_ready = 0;
      eMBErrorCode    xStatus;
-     vSetRegData(DAC1_ADDR+1);
-     vSetRegData(DAC2_ADDR+1);
-     vSetRegData(DAC3_ADDR+1);
+
      for( ;; )
      {
          if (getReg8(MB_PROTOCOL_TYPE)== MKV_MB_RTU)

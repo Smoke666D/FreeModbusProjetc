@@ -40,8 +40,8 @@
 #define SENSOR_COUNT          ( MASK_4 +sizeof(uint8_t) )
 #define IP_PORT               ( SENSOR_COUNT +sizeof(uint8_t) )
 #define SENSOR1_ZERO          ( IP_PORT +sizeof(uint16_t) )
-#define SENSOR2_ZERO          ( SENSOR1_ZERO     + sizeof(uint16_t) )
-#define RESURSE               ( SENSOR2_ZERO     + sizeof(uint16_t) )
+#define SENSOR2_ZERO          ( SENSOR1_ZERO + sizeof(uint16_t) )
+#define RESURSE               ( SENSOR2_ZERO + sizeof(uint16_t) )
 #define COOF_I                ( RESURSE + sizeof(uint32_t)  )
 #define COOF_P                ( COOF_I + sizeof(uint32_t) )
 #define KOOFKPS               ( COOF_P + sizeof(uint32_t))
@@ -54,8 +54,9 @@
 #define RECORD_INDEX          ( RECORD_COUNT + sizeof(uint16_t) )
 #define EEPROM_REGISTER_COUNT ( RECORD_INDEX  + sizeof(uint16_t) )
 #define SYSTEM_START          ( RECORD_INDEX  + sizeof(uint16_t) )
-#define LIGTH                 ( SYSTEM_START + sizeof(uint16_t) )
-#define MODE                  ( LIGTH    + sizeof(uint16_t) )
+#define LIGTH                 ( SYSTEM_START + sizeof(uint8_t) )
+#define MODE                  ( LIGTH    + sizeof(uint8_t) )
+
 
 #define RECORD_SIZE 7
 #define RECORD_DATA_SIZE      50

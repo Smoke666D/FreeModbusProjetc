@@ -16,6 +16,7 @@
 #define REG_DISCRETE_START   0x00
 #define REG_DISCRETE_NREGS   5
 
+u8 MB_TASK_GetMode();
 eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils, eMBRegisterMode eMode );
 void MBTCP_task(void *pvParameters);
 void MBRTU_task(void *pvParameters);

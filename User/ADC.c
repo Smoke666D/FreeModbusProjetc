@@ -571,9 +571,13 @@ void CalibrateZero()
               temp = temp + calib_data[0][i];
               temp1 = temp1 + calib_data[1][i];
           }
-          DataBuffer[1].offset   = temp  / CALIB_COUNT;
+          DataBuffer[1].offset   =  temp  / CALIB_COUNT;
           DataBuffer[0].offset    = temp1 / CALIB_COUNT;
           calibration_zero_flag = 0;
+          saveReg16(SENSOR1_ZERO, DataBuffer[1].offset );
+          saveReg16(SENSOR2_ZERO, DataBuffer[0].offset );
+
+          printf("save\r\n");
       }
   }
 
@@ -588,6 +592,8 @@ void I2C_task(void *pvParameters)
     I2C_FSM_t fsm  = I2C_GET_BUSY;
     I2C_FSM_t fsm1 = I2C_GET_BUSY;
     u16 sensor_time_out;
+    DataBuffer[1].offset = getReg16(SENSOR1_ZERO );
+    DataBuffer[0].offset = getReg16(SENSOR2_ZERO );
     printf("Start I2C OK 1.5\r\n");
     while(1)
     {

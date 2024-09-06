@@ -143,6 +143,7 @@ void user_process_task(void *pvParameters)
    u8 set_point_old = 2;
    u32 pid_counter = 0;
    u32 start_timeout = 0;
+   u8 c_type;
    error_state = 0;
    task_fsm = USER_PROCCES_IDLE;
    FilterState = 0;
@@ -153,109 +154,129 @@ void user_process_task(void *pvParameters)
    while(1)
    {
        vTaskDelay(10);
-       ac_voltage = getACVoltage();
-       if  (ac_voltage >= getReg8(HIGH_VOLTAGE_ON))
+       c_type =getReg8(CONTROL_TYPE );
+       if (MB_TASK_GetMode()!=2)
        {
-           if (task_fsm != USER_PROCESS_ALARM)
+           eSetDUT(OUT_2, (c_type == MKV_MB_DIN )? ucDinGet(INPUT_2) : getReg8(LIGTH) );
+       }
+       if ((MB_TASK_GetMode()== 0) || (MB_TASK_GetMode() && (task_fsm != USER_PROCCES_IDLE)))
+       {
+
+
+           ac_voltage = getACVoltage();
+           if  (ac_voltage >= getReg8(HIGH_VOLTAGE_ON))
            {
-               error_state |= HIGH_VOLTAGE_ERROR;
-               vADDRecord(HIGH_VOLTAGE_ERROR);
-               task_fsm = USER_PROCESS_ALARM;
+               if (task_fsm != USER_PROCESS_ALARM)
+               {
+                   error_state |= HIGH_VOLTAGE_ERROR;
+                   vADDRecord(HIGH_VOLTAGE_ERROR);
+                   task_fsm = USER_PROCESS_ALARM;
+               }
            }
-       }
-       else if ( ac_voltage <=  getReg8(LOW_VOLTAGE_ON))
-       {
-           if (task_fsm != USER_PROCESS_ALARM)
+           else if ( ac_voltage <=  getReg8(LOW_VOLTAGE_ON))
            {
-               error_state |= LOW_VOLTAGE_ERROR;
-               vADDRecord(LOW_VOLTAGE_ERROR);
-               task_fsm = USER_PROCESS_ALARM;
+               if (task_fsm != USER_PROCESS_ALARM)
+               {
+                   error_state |= LOW_VOLTAGE_ERROR;
+                   vADDRecord(LOW_VOLTAGE_ERROR);
+                   task_fsm = USER_PROCESS_ALARM;
+               }
            }
-       }
-       u8 c_type =getReg8(CONTROL_TYPE );
-       USER_SETTING_CHECK(c_type, &set_point_old);
-// Если засоренность фильта больше значения устваки, то выставляем предупрежние и делаем запись в журнал
-       FilterState = USER_FilterState();
-       if  ((FilterState >=FILTER_WARNINR_VALUE) && ((error_state & FILTER_ERROR) == 0))
-       {
-            vADDRecord(FILTER_ERROR);
-            error_state |=FILTER_ERROR;
-       }
-//Ecли есть ошибка включаем реле и зажигаем светодиод
-       if ( error_state )
-       {
-           HAL_ResetBit(CRACH_Port,  CRACH_Pin);
-           eSetDUT(OUT_3,TRUE);
-       }
-       else
-       {
-           HAL_SetBit(CRACH_Port,  CRACH_Pin);
-           eSetDUT(OUT_3,FALSE);
-       }
-       eSetDUT(OUT_2, (c_type == MKV_MB_DIN )? ucDinGet(INPUT_2) : getReg8(LIGTH) ); //Свет
-       switch (task_fsm)
-       {
-           case USER_PROCCES_IDLE:
-               eSetDUT(OUT_1,FALSE);
-               PIDOut = 0;
-               USER_AOUT_SET(DAC1,0);
-               start_timeout = 0;
-               temp_counter = 0;
-               error_state = 0;
-               break;
-           case USER_PEOCESS_WORK_TIME_OUT:
-               if ( (++start_timeout)> ( getReg8(FAN_START_TIMEOUT)*100))
-               {
-                   task_fsm = USER_RROCCES_WORK;
-                   CalibrateZeroStart();
-               }
-               PID_Init(&TPID);
-               break;
-           case USER_RROCCES_WORK:
-               if (++pid_counter >=10)
-               {
 
-                   pid_counter = 0;
-                   Temp = getAIN(SENS1);
-                   if (abs(SET_POINT-Temp)  <= ( SET_POINT *0.05) )
-                   {
-                       task_fsm = USER_PROCEES_RUN;
-                   }
-                   PID_Compute(&TPID);
-                   if ((PIDOut >=9.5) && ((error_state & SETTING_ERROR )==0))
-                   {
-                        vADDRecord(SETTING_ERROR);
-                        error_state |= SETTING_ERROR;
-                    }
-                    USER_AOUT_SET(DAC1,PIDOut);
+           USER_SETTING_CHECK(c_type, &set_point_old);
+           // Если засоренность фильта больше значения устваки, то выставляем предупрежние и делаем запись в журнал
+           FilterState = USER_FilterState();
+           if  ((FilterState >=FILTER_WARNINR_VALUE) && ((error_state & FILTER_ERROR) == 0))
+           {
+               vADDRecord(FILTER_ERROR);
+               error_state |=FILTER_ERROR;
+           }
+           //Ecли есть ошибка включаем реле и зажигаем светодиод
+           if ( error_state )
+           {
+               HAL_ResetBit(CRACH_Port,  CRACH_Pin);
+               eSetDUT(OUT_3,TRUE);
+           }
+           else
+           {
+               HAL_SetBit(CRACH_Port,  CRACH_Pin);
+               eSetDUT(OUT_3,FALSE);
+           }
+            //Свет
+           if (MB_TASK_GetMode() && (task_fsm != USER_PROCCES_IDLE))
+                 {
 
-               }
-               if ((++temp_counter) == 30000 )
-               {
-                   vADDRecord(SETTING_ERROR);
-                   error_state |= SETTING_ERROR;
-               }
-               if ( temp_counter > 30000) temp_counter = 30001;
-               eSetDUT(OUT_1,TRUE);
-               break;
-           case USER_PROCEES_RUN:
+                     task_fsm = USER_PROCCES_IDLE;
+                     HAL_SetBit(CRACH_Port,  CRACH_Pin);
+                     eSetDUT(OUT_3,FALSE);
+                 }
 
-               if (abs(SET_POINT-Temp) > ( SET_POINT*0.05) )
-               {
-                   task_fsm = USER_RROCCES_WORK;
+           switch (task_fsm)
+           {
+               case USER_PROCCES_IDLE:
+                   eSetDUT(OUT_1,FALSE);
+                   PIDOut = 0;
+                   USER_AOUT_SET(DAC1,0);
+                   start_timeout = 0;
                    temp_counter = 0;
-               }
-               break;
-           case USER_PROCESS_ALARM:
-               if  ((ac_voltage <= getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  getReg8(LOW_VOLTAGE_OFF)))
-               {
-                    task_fsm = USER_PROCCES_IDLE;
-               }
-               PIDOut = 0;
-               USER_AOUT_SET(DAC1,0);
-               eSetDUT(OUT_1,FALSE);
-               break;
+                   error_state = 0;
+                   break;
+               case USER_PEOCESS_WORK_TIME_OUT:
+                   if ( (++start_timeout)> ( getReg8(FAN_START_TIMEOUT)*100))
+                   {
+                       task_fsm = USER_RROCCES_WORK;
+                       CalibrateZeroStart();
+                   }
+                   PID_Init(&TPID);
+                   break;
+               case USER_RROCCES_WORK:
+                   if (++pid_counter >=10)
+                   {
+
+                       pid_counter = 0;
+                       Temp = getAIN(SENS1);
+                       if (abs(SET_POINT-Temp)  <= ( SET_POINT *0.05) )
+                       {
+                           task_fsm = USER_PROCEES_RUN;
+                       }
+                       PID_Compute(&TPID);
+                       if ((PIDOut >=9.5) && ((error_state & SETTING_ERROR )==0))
+                       {
+                           vADDRecord(SETTING_ERROR);
+                           error_state |= SETTING_ERROR;
+                       }
+                       USER_AOUT_SET(DAC1,PIDOut);
+
+                   }
+                   if ((++temp_counter) == 30000 )
+                   {
+                       vADDRecord(SETTING_ERROR);
+                       error_state |= SETTING_ERROR;
+                   }
+                   if ( temp_counter > 30000) temp_counter = 30001;
+                   eSetDUT(OUT_1,TRUE);
+                   break;
+               case USER_PROCEES_RUN:
+
+                   if (abs(SET_POINT-Temp) > ( SET_POINT*0.05) )
+                   {
+                       task_fsm = USER_RROCCES_WORK;
+                       temp_counter = 0;
+                   }
+                   break;
+               case USER_PROCESS_ALARM:
+                   if  ((ac_voltage <= getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  getReg8(LOW_VOLTAGE_OFF)))
+                   {
+                       task_fsm = USER_PROCCES_IDLE;
+                   }
+                   PIDOut = 0;
+                   USER_AOUT_SET(DAC1,0);
+                   eSetDUT(OUT_1,FALSE);
+                   break;
+           }
        }
+
+
    }
 }
 

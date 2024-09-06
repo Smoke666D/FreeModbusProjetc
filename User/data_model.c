@@ -79,7 +79,7 @@ void saveReg16( u16 reg_adress, u16 data)
             break;
     }
     setReg16(reg_adress,data);
-    WriteEEPROM(reg_adress, &DATA_MODEL_REGISTER[ reg_adress], 2,10, 2);
+    WriteEEPROM(reg_adress, &DATA_MODEL_REGISTER[ reg_adress], 2, 10, 2);
 }
 
 

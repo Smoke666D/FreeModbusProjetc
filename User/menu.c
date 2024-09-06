@@ -950,6 +950,33 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
     case JOURNAL_COUNT_ID:
         sprintf(str,"%02i",getReg16(RECORD_COUNT) );
         break;
+    case ZERO_CALIBRATE_ID:
+        switch (command )
+        {
+            case CMD_EDIT_READ:
+                   sprintf(str,"");
+                   break;
+            case CMD_READ:
+                   if ( SelectEditFlag )
+                            sprintf(str,"Старт?");
+                        else
+                            sprintf(str,"");
+                        break;
+                    case CMD_SAVE_EDIT:
+                    case CMD_START_EDIT:
+                         CalibrateZeroStart();
+                         start_edit_flag = 0;
+                         menu_mode = 0;
+                         SelectEditFlag = 0;
+                         break;
+                   default:
+                       start_edit_flag = 0;
+                       menu_mode = 0;
+                    break;
+                }
+
+        break;
+
     case JOURNAL_RESET_ID:
         switch (command )
         {

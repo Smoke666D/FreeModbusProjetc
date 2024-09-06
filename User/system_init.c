@@ -159,6 +159,7 @@ void vDefaultTask( void  * argument )
             case STATE_INIT:
                 vDrawBitmap();
                 xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
+
                 if (DataModel_Init()!=NORMAL_INIT)
                 {
                     RTC_INIT_TYPE = HAL_RTC_NEW_INIT;

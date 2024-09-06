@@ -64,6 +64,7 @@
 #define FAN_START_TIMEOUT_ID    42
 #define ALARM_COUNT_ID          43
 #define CURRENT_ALARM_COUNT_ID  44
+#define ZERO_CALIBRATE_ID       45
 
 
 typedef enum
