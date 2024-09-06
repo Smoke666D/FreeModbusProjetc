@@ -74,7 +74,7 @@ USER_PROCESS_FSM_t USER_GetProccesState()
 
 uint16_t USER_GetFact()
 {
-    return (u16)(sqrt(getAIN(SENS2))*getRegFloat(KOOFKPS)) ;
+    return (u16)(sqrt( (float)getAIN(SENS2))*getRegFloat(KOOFKPS)) ;
 }
 
 
@@ -127,7 +127,12 @@ u8 USER_FilterState()
     return (temp);
 }
 
+static float DAC1_OUT = 0;
 
+float getDAC1_Out()
+{
+    return (DAC1_OUT);
+}
 
 void user_process_task(void *pvParameters)
 {
@@ -192,6 +197,8 @@ void user_process_task(void *pvParameters)
        {
            case USER_PROCCES_IDLE:
                eSetDUT(OUT_1,FALSE);
+               PIDOut = 0;
+               USER_AOUT_SET(DAC1,0);
                start_timeout = 0;
                temp_counter = 0;
                error_state = 0;
@@ -202,10 +209,12 @@ void user_process_task(void *pvParameters)
                    task_fsm = USER_RROCCES_WORK;
                    CalibrateZeroStart();
                }
+               PID_Init(&TPID);
                break;
            case USER_RROCCES_WORK:
                if (++pid_counter >=10)
                {
+
                    pid_counter = 0;
                    Temp = getAIN(SENS1);
                    if (abs(SET_POINT-Temp)  <= ( SET_POINT *0.05) )
@@ -218,8 +227,8 @@ void user_process_task(void *pvParameters)
                         vADDRecord(SETTING_ERROR);
                         error_state |= SETTING_ERROR;
                     }
-                    ref = (uint16_t)fGetDacCalData(DAC2,PIDOut);
-                    HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_2 ,ref *10 );
+                    USER_AOUT_SET(DAC1,PIDOut);
+
                }
                if ((++temp_counter) == 30000 )
                {
@@ -230,6 +239,7 @@ void user_process_task(void *pvParameters)
                eSetDUT(OUT_1,TRUE);
                break;
            case USER_PROCEES_RUN:
+
                if (abs(SET_POINT-Temp) > ( SET_POINT*0.05) )
                {
                    task_fsm = USER_RROCCES_WORK;
@@ -241,9 +251,37 @@ void user_process_task(void *pvParameters)
                {
                     task_fsm = USER_PROCCES_IDLE;
                }
-
+               PIDOut = 0;
+               USER_AOUT_SET(DAC1,0);
                eSetDUT(OUT_1,FALSE);
                break;
        }
    }
 }
+
+static float AOUTDATA[3]={0,0,0};
+void USER_AOUT_SET(u8 channel, float data)
+{
+    AOUTDATA[channel]= data;
+    u16 ref = (uint16_t)fGetDacCalData(channel,data);
+    switch (channel)
+    {
+        case DAC1:
+            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_1 ,ref *10 );
+            break;
+        case DAC2:
+            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_2 ,ref *10 );
+            break;
+        case DAC3:
+            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_3 ,ref *10 );
+            break;
+    }
+
+
+}
+
+float USER_AOUT_GET(u8 channel)
+{
+    return (AOUTDATA[channel]);
+}
+

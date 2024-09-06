@@ -90,7 +90,7 @@ void HAL_TimeInitCaptureDMA( TimerName_t TimerName , uint32_t freq_in_hz, uint32
 
 #endif
 
-
+u16 HAL_TIMER_GetPuse(TimerName_t TimerName , uint8_t channel);
 void vHW_L_LIB_FreeRunEneblae( TimerName_t TimerName );
 void HAL_TimerReset( TimerName_t TimerName);
 void  HW_TIMER_TimerInit(TimerName_t TimerName, uint32_t freq_in_hz, uint32_t Period );

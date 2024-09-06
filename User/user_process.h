@@ -24,6 +24,10 @@ typedef enum
     USER_PEOCESS_WORK_TIME_OUT,
 } USER_PROCESS_FSM_t;
 
+
+void USER_AOUT_SET(u8 channel, float data);
+float USER_AOUT_GET(u8 channel);
+float getDAC1_Out();
 void USER_SetSettingChange();
 u8 USER_GerErrorState();
 u8 USER_FilterState();

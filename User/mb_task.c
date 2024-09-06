@@ -37,7 +37,7 @@ UCHAR ucSDiscInBuf[REG_DISCRETE_NREGS/8];
 
 
 #define REG_HOLDING_START 0x01
-#define REG_HOLDING_NREGS 50
+#define REG_HOLDING_NREGS 51
 
 static USHORT usRegInputStart = REG_INPUT_START;
 static USHORT usRegInputBuf[REG_INPUT_NREGS];
@@ -93,6 +93,9 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define INP_MH_M_MB      26
 #define INP_STATE_MB     27
 #define ERROR_STATE_MB   28
+#define AOUT1_MB         29
+#define AOUT2_MB         31
+#define AOUT3_MB         33
 
 #define DAC1_ADDR  53
 #define DAC2_ADDR  55
@@ -247,7 +250,7 @@ void vSetRegData( u16 adress)
        case (KOOF_K_MP+1):
        case (KOOF_P_MB+1):
            data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
-           setRegFloat(reg_addr, data);
+           saveRegFloat(reg_addr, data);
            break;
        case MB_ADDRES_MB:
        case CONTROL_TYPE_MB:
@@ -345,6 +348,10 @@ static void MB_TASK_INPUTS_UDATE()
     usRegInputBuf[INP_MH_M_MB ]   = vRTC_TASK_GetMinute();
     usRegInputBuf[INP_STATE_MB]   = getReg8(getRegID(INP_STATE_MB));
     usRegInputBuf[ERROR_STATE_MB] = USER_GerErrorState();
+    convert_float_to_int(USER_AOUT_GET(DAC1),&usRegInputBuf[AOUT1_MB]);
+    convert_float_to_int(USER_AOUT_GET(DAC2),&usRegInputBuf[AOUT2_MB]);
+    convert_float_to_int(USER_AOUT_GET(DAC3),&usRegInputBuf[AOUT3_MB]);
+
 
 }
 #define REG_SEQ_COUNT 5

@@ -106,7 +106,7 @@ static u8 SelectEditFlag = 0;
 static HAL_TimeConfig_T time;
 static uint8_t error_flag;
 static u8 *  SENSOR_COUNT_STRING[]={"0.1","0.5","1.0","2.0","3.0","5.0","10.0"};
-static u8 *  ErrorString[]={"HEPA Фильтр засорен","Низкое напряжение","Высокое напряжение","Невозможно"};
+
 static u8 journal_index =0;
 static uint16_t curr_edit_data_id = 0;
 static u8 cur_edit_index = 0;
@@ -715,10 +715,15 @@ u16 getDataModelID( u16 MENU_ID)
     }
 }
 
+#define FILTER_ERROR  0x01
+#define SETTING_ERROR 0x02
+#define LOW_VOLTAGE_ERROR 0x04
+#define HIGH_VOLTAGE_ERROR 0x08
 
 
 static u8 error_shif = 0;
-static u8 *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение"};
+static u8 const *  ErrorString[]={"HEPA Фильтр засорен","Невозможно","Низкое напряжение","Высокое напряжение"};
+static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение"};
 
 void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len)
 {
@@ -737,6 +742,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             sprintf(str,DateFormatString,date.date,date.month,date.year);
             break;
         case JOURNAL_INFO1_ID:
+
              strcpy(str,ErrorString[error_flag]);
             break;
         case JOURNAL_INFO2_ID:
@@ -745,10 +751,10 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                 case 0:
                    strcpy(str,"более 90%");
                    break;
-                case 1:
+                case 2:
                    sprintf(str,"сети < %i В",getReg8(LOW_VOLTAGE_ON));
                    break;
-                 case 2:
+                 case 3:
                    sprintf(str,"сети > %i В",getReg8(HIGH_VOLTAGE_ON));
                    break;
                  default:

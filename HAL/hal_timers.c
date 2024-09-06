@@ -397,6 +397,10 @@ void HAL_TIMER_SetPWMPulse( TimerName_t TimerName , uint8_t channel, uint32_t pu
      timers[TimerName]->BDTR |= TIM_MOE;   //Включем выхода ШИМ
 }
 
+u16 HAL_TIMER_GetPuse(TimerName_t TimerName , uint8_t channel)
+{
+    return (timers[TimerName]->CH1CVR);
+}
 
 void HAL_TIMER_EnablePWMCH(TimerName_t TimerName  )
 {

@@ -230,7 +230,13 @@ void vGetRecord( uint16_t addr,uint8_t * flag, HAL_TimeConfig_T * time, HAL_Date
       }
 
       ReadEEPROMData(EEPROM_REGISTER_COUNT+  index*RECORD_SIZE  ,pData , RECORD_SIZE ,10,2);
-      *flag =         pData[0];
+      u8 temp = pData[0];
+      for (index=0;index<4;index++)
+      {
+          if (temp & 0x01) break;
+          temp =temp>>1;
+      }
+      *flag =         index;
       date->date    = pData[1];
       date->month   = pData[2];
       date->year    = pData[3];
