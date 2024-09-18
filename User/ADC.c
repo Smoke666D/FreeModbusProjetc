@@ -29,6 +29,7 @@ uint8_t ADC2_CHANNEL[DC_CHANNEL] = {   ADC_CH_9, ADC_CH_2,ADC_CH_6,ADC_CH_7,ADC_
 static int16_t sens_press=0;
 static int16_t sens_press1=0;
 int16_t GetConversional(ADC_Conversionl_Buf_t * pBuf);
+int16_t GetConversionali2c(ADC_Conversionl_Buf_t * pBuf);
 #define DC_24_BufferSize    3
 #define DC_AIN_BufferSize  10
 #define Sens_BufferSize_MAX 400
@@ -123,9 +124,9 @@ float getAIN( AIN_CHANNEL_t channel)
     switch (channel)
     {
         case SENS1:
-            return  ((float)GetConversional(&DataBuffer[0]));
+            return  ((float)GetConversionali2c(&DataBuffer[0]));
         case SENS2:
-            return  ((float)GetConversional(&DataBuffer[1]));
+            return  ((float)GetConversionali2c(&DataBuffer[1]));
         case DC24:
              return  ((float)GetConversional(&DataBuffer[2])*KK*COOF_24V);
         case DCAIN1:
@@ -261,11 +262,31 @@ int16_t GetConversional(ADC_Conversionl_Buf_t * pBuf)
         tempdata+=  pBuf->pBuff[index];
     }
     tempdata = tempdata - (pBuf->offset*pBuf->ConversionalSize);
-    tempdata/= pBuf->ConversionalSize;
 
+    tempdata = tempdata/pBuf->ConversionalSize;
     return (int16_t)tempdata;
 }
 
+
+int16_t GetConversionali2c(ADC_Conversionl_Buf_t * pBuf)
+{
+    int32_t tempdata = 0;
+    uint16_t index = pBuf-> pIndex;
+    for (uint16_t i = 0; i < pBuf->ConversionalSize; i++)
+    {
+        tempdata+=  pBuf->pBuff[index];
+        if (index == 0) index = (pBuf->ConversionalSize -1 );
+        index--;
+
+    }
+    printf("raw = %i\r\n", tempdata);
+    tempdata = tempdata - (pBuf->offset*pBuf->ConversionalSize);
+    printf("offset = %i\r\n", pBuf->offset);
+    printf("size = %i\r\n", pBuf->ConversionalSize);
+    printf("res = %i\r\n", tempdata);
+    tempdata = tempdata/pBuf->ConversionalSize;
+    return (int16_t)tempdata;
+}
 
 #define SENOR_MAX_DATA 1000
 u32 sensor_data[2][SENOR_MAX_DATA];
@@ -513,6 +534,7 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  u1
                     AddBufferDataI2C(&DataBuffer[index], *sens_press  );
                     *SENS_FSM = SENSOR_GET_TEMP_1;
                     *fsm = I2C_GET_BUSY;
+                    *sens_press = *sens_press+100;
                 }
                 break;
             case SENSOR_GET_TEMP_1:
@@ -627,19 +649,20 @@ void I2C_task(void *pvParameters)
             {
                 if (SENS1_FSM ==SENSOR_START_CONVERSION)
                 {
-                    printf("i22 timeout\r\n");
+                   // printf("i22 timeout\r\n");
                     SENS1_FSM = SENSOR_IDLE;
                     HAL_I2C_STOP(I2C_2);
                 }
                 if (SENS2_FSM ==SENSOR_START_CONVERSION)
                 {
-                    printf("i21 timeout\r\n");
+                    //printf("i21 timeout\r\n");
                     SENS2_FSM = SENSOR_IDLE;
                     HAL_I2C_STOP(I2C_1);
                 }
             }
             vSensFSM(0,&SENS1_FSM,&fsm,  &sens_press1 );
             vSensFSM(1,&SENS2_FSM,&fsm1, &sens_press);
+
      }
      CalibrateZero();
  }
