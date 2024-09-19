@@ -78,7 +78,8 @@ User/mb_task.o: ../User/mb_task.c ../User/mb_task.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/EEPROM_25C.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_dma.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\User/system_init.h \
- ../User/user_process.h
+ ../User/user_process.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\modbus\include/mbutils.h
 
 ../User/mb_task.h:
 
@@ -255,3 +256,5 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_dma.h:
 C:\MRS_DATA\workspace\FreeModbusProjetc\User/system_init.h:
 
 ../User/user_process.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\modbus\include/mbutils.h:

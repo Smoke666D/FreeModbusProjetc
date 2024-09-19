@@ -136,8 +136,8 @@ static xScreenObjet const JournalViewScreen[]=
 xScreenType  xScreens1[SCREENS_COUNT] =
 {
   {1,InfoScreen1,      3,   2,  11,  11, 0, 0 },
-  {2,InfoScreen2,      1,   3,  0,  0 , 12 | JOURNAL_VIEW_COMMAND, 0 },
-  {3,InfoScreen3,      2,   1,  0,   0, 4  , 0  },
+  {2,InfoScreen2,      1,   3,  0,  0 , 12 | JOURNAL_VIEW_COMMAND, 1 },
+  {3,InfoScreen3,      2,   1,  0,   0, 4  , 1  },
   {4,SettingsScreen1,  0,   0,  14,  5, ENTER_COMMNAD , 3  },
   {5,SettingsScreen2,  0,   0,  4,   6, ENTER_COMMNAD , 3 },
   {6,SettingsScreen3,  0,   0,  5,  7,  ENTER_COMMNAD , 3 },

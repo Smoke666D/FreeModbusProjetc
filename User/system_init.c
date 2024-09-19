@@ -170,6 +170,7 @@ void vDefaultTask( void  * argument )
                     printf(" normal\r\n");
                     RTC_INIT_TYPE = HAL_RTC_NORMAL_INIT;
                 }
+                vDataBufferInit();
                 vRTC_TASK_Init(RTC_INIT_TYPE);
 
                 main_task_fsm =  STATE_WHAIT_TO_RAEDY;

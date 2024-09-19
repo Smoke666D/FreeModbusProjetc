@@ -99,4 +99,5 @@ void ADC_task(void *pvParameters);
 void ADC1_Init();
 float getAIN( AIN_CHANNEL_t channel);
 uint16_t GetTempData();
+void vDataBufferInit();
 #endif /* USER_ADC_H_ */

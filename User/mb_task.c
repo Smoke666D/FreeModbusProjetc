@@ -485,6 +485,7 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
   return eStatus;
 }
 
+#include "mbutils.h"
 
 eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils, eMBRegisterMode eMode )
 {
@@ -501,45 +502,32 @@ eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCo
         if( ( usAddress >= REG_COILS_START) &&  ( usAddress + usNCoils <= REG_COILS_START + REG_COILS_NREGS ) )
         {
             iRegIndex = (USHORT) (usAddress - usCoilStart) / 8;
-            iRegBitIndex = (USHORT) (usAddress - usCoilStart) % 8;
+            iRegBitIndex = (USHORT) (usAddress - usCoilStart);
+          //  iRegBitIndex++;
             switch ( eMode )
             {
             /* read current coil values from the protocol stack. */
             case MB_REG_READ:
-                //vUPDATECoils(0);
-                xGetOut(ucSCoilBuf);
-                while (iNReg > 0)
-                {
-                    *pucRegBuffer++ = xMBUtilGetBits(&pucCoilBuf[iRegIndex++],
-                            iRegBitIndex, 8);
-                    iNReg--;
-                }
-                pucRegBuffer--;
-                /* last coils */
-                usNCoils = usNCoils % 8;
-                /* filling zero to high bit */
-                *pucRegBuffer = *pucRegBuffer << (8 - usNCoils);
-                *pucRegBuffer = *pucRegBuffer >> (8 - usNCoils);
 
+                xGetOut( pucCoilBuf);
+                while ( usNCoils > 0)
+                {
+                    UCHAR ucResult = xMBUtilGetBits( pucCoilBuf, iRegBitIndex, 1 );
+                    xMBUtilSetBits( pucRegBuffer, iRegBitIndex, 1, ucResult );
+                    iRegBitIndex++;
+                    usNCoils--;
+                }
                 break;
 
                 /* write current coil values with new values from the protocol stack. */
             case MB_REG_WRITE:
-                while (iNReg > 1)
+                while ( usNCoils > 0 )
                 {
-                    xMBUtilSetBits(&pucCoilBuf[iRegIndex++], iRegBitIndex, 8,
-                            *pucRegBuffer++);
-                    iNReg--;
+                    UCHAR ucResult = pucRegBuffer[0];
+                    eSetDUT(iRegBitIndex,ucResult);
+                    iRegBitIndex++;
+                    usNCoils--;
                 }
-                /* last coils */
-                usNCoils = usNCoils % 8;
-                /* xMBUtilSetBits has bug when ucNBits is zero */
-                if (usNCoils != 0)
-                {
-                    xMBUtilSetBits(&pucCoilBuf[iRegIndex++], iRegBitIndex, usNCoils,
-                            *pucRegBuffer++);
-                }
-                if (WORK_MODE ==2) xSetOut( ucSCoilBuf );
                 break;
             }
         }

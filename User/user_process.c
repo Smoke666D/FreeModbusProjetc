@@ -72,11 +72,19 @@ USER_PROCESS_FSM_t USER_GetProccesState()
     return (task_fsm);
 }
 
-uint16_t USER_GetFact()
+uint16_t USER_GetFact(u8 * state)
 {
-
+ if ((task_fsm == USER_RROCCES_WORK) || (task_fsm == USER_PROCEES_RUN))
+ {
+     *state = 1;
     return (u16)( sqrt((float)getAIN(SENS2))*getRegFloat(KOOFKPS)) ;
-}
+ }
+ else
+ {
+     *state = 0;
+    return 0;
+ }
+ }
 
 
 
@@ -116,16 +124,30 @@ static void USER_SETTING_CHECK(u8 control_type, u8 * point_old)
 }
 
 
-u8 USER_FilterState()
+u8 USER_FilterState( u8 * state)
 {
-    u16 sensor_data = getAIN(SENS1);
-    if (sensor_data  <= getReg16(FILTER_LOW))
-            return (0);
-    if (sensor_data  >= getReg16(FILTER_HIGH))
-            return (100);
-    u16 temp = sensor_data - getReg16(FILTER_LOW);
-    temp = temp/(getReg16(FILTER_HIGH) - getReg16(FILTER_LOW));
-    return (temp);
+    if ((task_fsm == USER_RROCCES_WORK) || (task_fsm == USER_PROCEES_RUN))
+    {
+        *state = 1;
+        u16 sensor_data = getAIN(SENS1);
+        if (sensor_data  <= getReg16(FILTER_LOW))
+                return (0);
+        if (sensor_data  >= getReg16(FILTER_HIGH))
+                return (100);
+        u16 temp = sensor_data - getReg16(FILTER_LOW);
+        temp = temp/(getReg16(FILTER_HIGH) - getReg16(FILTER_LOW));
+        if (temp != (u8)getReg32(RESURSE))
+        {
+            setReg32(RESURSE, temp);
+        }
+
+        return (temp);
+    }
+    else
+        *state = 0;
+        return (u8)getReg32(RESURSE);
+
+
 }
 
 static float DAC1_OUT = 0;
@@ -139,6 +161,9 @@ void user_process_task(void *pvParameters)
 {
    PID_TypeDef TPID;
    double Temp, PIDOut;
+   static u8 HEPA_CONTROL_ON = 0;
+   static u8 low_voltage_alarm_timer =0;
+   static u8 power_off_flag = 0;
    u16 ref;
    uint8_t ac_voltage;
    u8 set_point_old = 2;
@@ -160,10 +185,8 @@ void user_process_task(void *pvParameters)
        {
            eSetDUT(OUT_2, (c_type == MKV_MB_DIN )? ucDinGet(INPUT_2) : getReg8(LIGTH) );
        }
-       if ((MB_TASK_GetMode()== 0) || (MB_TASK_GetMode() && (task_fsm != USER_PROCCES_IDLE)))
+       if (MB_TASK_GetMode()!=2)
        {
-
-
            ac_voltage = getACVoltage();
            if  (ac_voltage >= getReg8(HIGH_VOLTAGE_ON))
            {
@@ -176,21 +199,40 @@ void user_process_task(void *pvParameters)
            }
            else if ( ac_voltage <=  getReg8(LOW_VOLTAGE_ON))
            {
-               if (task_fsm != USER_PROCESS_ALARM)
+               if ((task_fsm != USER_PROCESS_ALARM) && (power_off_flag==0))
                {
-                   error_state |= LOW_VOLTAGE_ERROR;
-                   vADDRecord(LOW_VOLTAGE_ERROR);
-                   task_fsm = USER_PROCESS_ALARM;
+                   low_voltage_alarm_timer++;
+                   if (low_voltage_alarm_timer >100)
+                   {
+                       error_state |= LOW_VOLTAGE_ERROR;
+                       vADDRecord(LOW_VOLTAGE_ERROR);
+                       task_fsm = USER_PROCESS_ALARM;
+                   }
                }
            }
+           if (ac_voltage < 20)
+           {
+               if (power_off_flag==0)
+               {
+                   SaveBeforePowerOff();
+                   power_off_flag = 1;
+               }
+           }
+           if (ac_voltage >40) power_off_flag = 0;
+
+
 
            USER_SETTING_CHECK(c_type, &set_point_old);
+           u8 ss;
            // Если засоренность фильта больше значения устваки, то выставляем предупрежние и делаем запись в журнал
-           FilterState = USER_FilterState();
-           if  ((FilterState >=FILTER_WARNINR_VALUE) && ((error_state & FILTER_ERROR) == 0))
+           FilterState = USER_FilterState(&ss);
+           if (HEPA_CONTROL_ON)
            {
-               vADDRecord(FILTER_ERROR);
-               error_state |=FILTER_ERROR;
+               if  ((FilterState >=FILTER_WARNINR_VALUE) && ((error_state & FILTER_ERROR) == 0))
+               {
+                   vADDRecord(FILTER_ERROR);
+                   error_state |=FILTER_ERROR;
+               }
            }
            //Ecли есть ошибка включаем реле и зажигаем светодиод
            if ( error_state )
@@ -258,10 +300,14 @@ void user_process_task(void *pvParameters)
                    eSetDUT(OUT_1,TRUE);
                    break;
                case USER_PROCEES_RUN:
-
+                   if (abs(SET_POINT-Temp) > ( SET_POINT*0.02) )
+                   {
+                       HEPA_CONTROL_ON = 1;
+                   }
                    if (abs(SET_POINT-Temp) > ( SET_POINT*0.05) )
                    {
                        task_fsm = USER_RROCCES_WORK;
+                       HEPA_CONTROL_ON = 0;
                        temp_counter = 0;
                    }
                    break;

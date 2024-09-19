@@ -25,6 +25,7 @@ static void vRTCTaskITCallback( void )
       {
           hour_counter++;
           second_counter = 0;
+          setReg32(MOTO_HOURS,hour_counter);
       }
   }
   return;

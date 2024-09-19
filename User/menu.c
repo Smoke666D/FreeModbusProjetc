@@ -327,8 +327,8 @@ void vMenuTask ( void )
                          {
                             case EXIT_KEY: vSetCommnad(CMD_EXIT_EDIT); break;
                             case ENTER_KEY: vSetCommnad(CMD_SAVE_EDIT); break;
-                            case DOWN_KEY: vGetData( curr_edit_data_id, 0,CMD_DEC,0,0); break;
-                            case UP_KEY: vGetData( curr_edit_data_id, 0,CMD_INC,0,0); break;
+                            case UP_KEY: vGetData( curr_edit_data_id, 0,CMD_DEC,0,0); break;
+                            case DOWN_KEY: vGetData( curr_edit_data_id, 0,CMD_INC,0,0); break;
                             case RIGTH_KEY: vGetData( curr_edit_data_id, 0,CMD_PREV_EDIT,0,0); break;
                             case LEFT_KEY: vGetData( curr_edit_data_id, 0,CMD_NEXT_EDIT,0,0); break;
                          }
@@ -729,6 +729,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
 {
     u8 MACAddr[6];
     u8 temp_byte,temp_state = 0;
+    int16_t temp_int;
     u16 max,min;
     if (index!=0) *index = cur_edit_index;
     if (len!=0)   *len = 1;
@@ -851,10 +852,23 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             sprintf(str,"%04i м^3/ч", USER_GetSetting());
             break;
         case FACT_RASH_ID:
-            sprintf(str,"%04i м^3/ч", USER_GetFact());
+            temp_int = USER_GetFact(&temp_state);
+            if (temp_state)
+                sprintf(str,"%04i м^3/ч", temp_int);
+            else {
+                sprintf(str,"---- м^3/ч");
+            }
             break;
         case FILTER_STATE_ID:
-            sprintf(str,"%03i %",USER_FilterState());
+            temp_byte = USER_FilterState(&temp_state);
+            if (temp_state)
+            {
+                sprintf(str,"%i Па %03i %%",getAIN(SENS1),temp_byte);
+            }
+            else
+            {
+                sprintf(str,"%i Па ---%%",getAIN(SENS1));
+            }
             break;
         case MODE_STATE_ID:
             if (getReg8(MODE ))
@@ -867,7 +881,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             sprintf(str,"%x%x%x%x%x%x",MACAddr[0],MACAddr[1],MACAddr[2],MACAddr[3],MACAddr[4],MACAddr[5]);
             break;
         case PROCESS_STATE_ID:
-            sprintf(str, (USER_GetProccesState()== USER_RROCCES_WORK) ? "Работа" : "Останов");
+            sprintf(str, ((USER_GetProccesState()!= USER_PROCCES_IDLE) &&  (USER_GetProccesState()!= USER_PROCESS_ALARM)) ? "Работа" : "Останов");
             break;
         case IP_ADRESS_DATA_ID:
         case IP_GATE_ID:

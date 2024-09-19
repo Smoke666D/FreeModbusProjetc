@@ -204,12 +204,12 @@ void ADC1_Init()
     ADC_RegularChannelConfig(ADC2, ADC2_CHANNEL[0], 1, ADC_SampleTime_239Cycles5);
     ADC_TempSensorVrefintCmd(ENABLE);
     memset(SenseBuffer1,0,Sens_BufferSize_MAX*2);
-    DataBuffer[0].ConversionalSize = sensor_timer[getReg16(SENSOR_COUNT )];
+    DataBuffer[0].ConversionalSize = sensor_timer[getReg8(SENSOR_COUNT )];
     DataBuffer[0].pIndex = 0;
     DataBuffer[0].pBuff = SenseBuffer1;
     DataBuffer[0].offset = 0;
     memset(SenseBuffer2,0,Sens_BufferSize_MAX*2);
-    DataBuffer[1].ConversionalSize = sensor_timer[getReg16(SENSOR_COUNT )];
+    DataBuffer[1].ConversionalSize = sensor_timer[getReg8(SENSOR_COUNT )];
     DataBuffer[1].pIndex = 0;
     DataBuffer[1].pBuff = SenseBuffer2;
     DataBuffer[1].offset = 0;
@@ -235,6 +235,14 @@ void ADC1_Init()
     DataBuffer[8].pIndex = 0;
     DataBuffer[8].pBuff = SensTemoBuffer1;
 }
+
+void vDataBufferInit()
+{
+    DataBuffer[0].ConversionalSize = sensor_timer[getReg8(SENSOR_COUNT )];
+    DataBuffer[1].ConversionalSize = sensor_timer[getReg8(SENSOR_COUNT )];
+
+}
+
 
 void AddBufferDataI2C( ADC_Conversionl_Buf_t * pBuf, int16_t data )
 {
@@ -279,11 +287,9 @@ int16_t GetConversionali2c(ADC_Conversionl_Buf_t * pBuf)
         index--;
 
     }
-    printf("raw = %i\r\n", tempdata);
+  printf("size = %i\r\n",pBuf->ConversionalSize  );
     tempdata = tempdata - (pBuf->offset*pBuf->ConversionalSize);
-    printf("offset = %i\r\n", pBuf->offset);
-    printf("size = %i\r\n", pBuf->ConversionalSize);
-    printf("res = %i\r\n", tempdata);
+
     tempdata = tempdata/pBuf->ConversionalSize;
     return (int16_t)tempdata;
 }
@@ -370,8 +376,6 @@ void ADC_task(void *pvParameters)
             }
     }
 }
-
-
 
 uint8_t SetI2CDataFSM(I2C_NAME_t I2C,u8 ad, u8 data, I2C_FSM_t * i2cfsm )
 {
@@ -534,7 +538,7 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  u1
                     AddBufferDataI2C(&DataBuffer[index], *sens_press  );
                     *SENS_FSM = SENSOR_GET_TEMP_1;
                     *fsm = I2C_GET_BUSY;
-                    *sens_press = *sens_press+100;
+
                 }
                 break;
             case SENSOR_GET_TEMP_1:
@@ -596,10 +600,9 @@ void CalibrateZero()
           DataBuffer[1].offset   =  temp  / CALIB_COUNT;
           DataBuffer[0].offset    = temp1 / CALIB_COUNT;
           calibration_zero_flag = 0;
+          calibration_zero_count = 0;
           saveReg16(SENSOR1_ZERO, DataBuffer[1].offset );
           saveReg16(SENSOR2_ZERO, DataBuffer[0].offset );
-
-          printf("save\r\n");
       }
   }
 

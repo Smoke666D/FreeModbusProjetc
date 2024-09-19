@@ -289,3 +289,9 @@ void JournalClear()
     setReg16(RECORD_COUNT, 0);
     WriteEEPROM(RECORD_COUNT , &DATA_MODEL_REGISTER[RECORD_COUNT], 4,10, 2 );
 }
+
+void SaveBeforePowerOff()
+{
+    WriteEEPROM(MOTO_HOURS , &DATA_MODEL_REGISTER[MOTO_HOURS], 4,10, 2 );
+    WriteEEPROM(RESURSE  , &DATA_MODEL_REGISTER[RESURSE ], 4,10, 2 );
+}
