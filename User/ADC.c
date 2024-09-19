@@ -287,7 +287,7 @@ int16_t GetConversionali2c(ADC_Conversionl_Buf_t * pBuf)
         index--;
 
     }
-  printf("size = %i\r\n",pBuf->ConversionalSize  );
+
     tempdata = tempdata - (pBuf->offset*pBuf->ConversionalSize);
 
     tempdata = tempdata/pBuf->ConversionalSize;
