@@ -121,7 +121,8 @@ typedef struct
  // void          ( *pFunc )( void*, char );
 } xScreenType;
 
-
+void MENU_DrawString(u8 x, u8 y, char const * str);
+void MENU_ClearScreen();
 void vMenuInit(  );
 void vDrawBitmap();
 void vMenuTask ( void );

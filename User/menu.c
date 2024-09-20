@@ -1094,7 +1094,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
 
 static void vDraw( xScreenObjet * pScreenDraw)
 {
-    u8g2_ClearBuffer(&u8g2);
+    MENU_ClearScreen();
     u8 x,y;
     u8 len,edit_index,box_len;
     u8 str[50];
@@ -1151,4 +1151,15 @@ static void vDraw( xScreenObjet * pScreenDraw)
         }
         if (pScreenDraw[i].last) break;
     }
+}
+
+void MENU_DrawString(u8 x, u8 y, char const * str)
+{
+    u8g2_DrawUTF8(&u8g2,x,y,str);
+}
+
+
+void MENU_ClearScreen()
+{
+    u8g2_ClearBuffer(&u8g2);
 }

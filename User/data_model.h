@@ -11,11 +11,18 @@
 #include "system_init.h"
 #include "hal_rtc.h"
 
-#define VALID_CODE            0x55
+
+#define SW_V                  1
+#define SW_V2                 2
+#define SW_V3                 6
+
+#define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
 /*§¢§Ý§à§Ü §Ò§Ñ§Û§ä§à§Ó§í§ç §å§ã§ä§Ó§à§Ü*/
-
-#define CONTROL_TYPE          ( VALID_CODE_ADDRES+sizeof(uint8_t)   )
+#define SOFT_V1               ( VALID_CODE_ADDRES+sizeof(uint8_t)   )
+#define SOFT_V2               ( SOFT_V1+sizeof(uint8_t)   )
+#define SOFT_V3               ( SOFT_V2+sizeof(uint8_t)   )
+#define CONTROL_TYPE          ( SOFT_V3+sizeof(uint8_t)   )
 #define MB_RTU_ADDR           ( CONTROL_TYPE      +sizeof(uint8_t)  )
 #define MB_PROTOCOL_TYPE      ( MB_RTU_ADDR       +sizeof(uint8_t)  )
 #define LOW_VOLTAGE_ON        ( MB_PROTOCOL_TYPE  +sizeof(uint8_t)  )

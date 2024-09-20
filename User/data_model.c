@@ -20,6 +20,9 @@ DATA_MODEL_INIT_t DataModel_Init()
            {
                memset(DATA_MODEL_REGISTER,0,EEPROM_REGISTER_COUNT);
                DATA_MODEL_REGISTER[VALID_CODE_ADDRES] = VALID_CODE;
+               DATA_MODEL_REGISTER[SOFT_V1 ] =  SW_V ;
+               DATA_MODEL_REGISTER[SOFT_V2 ] =  SW_V2 ;
+               DATA_MODEL_REGISTER[SOFT_V3 ] =  SW_V3;
                DATA_MODEL_REGISTER[CONTROL_TYPE ]     = MKV_MB_RTU;
                DATA_MODEL_REGISTER[MB_RTU_ADDR ]      = 4;
                DATA_MODEL_REGISTER[MB_PROTOCOL_TYPE]  = MKV_MB_RTU;
@@ -293,5 +296,5 @@ void JournalClear()
 void SaveBeforePowerOff()
 {
     WriteEEPROM(MOTO_HOURS , &DATA_MODEL_REGISTER[MOTO_HOURS], 4,10, 2 );
-    WriteEEPROM(RESURSE  , &DATA_MODEL_REGISTER[RESURSE ], 4,10, 2 );
+    WriteEEPROM(RESURSE  ,   &DATA_MODEL_REGISTER[RESURSE ],   4,10, 2 );
 }

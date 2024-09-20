@@ -141,8 +141,8 @@ void vSYSqueueInit ( void )
 
 void vDefaultTask( void  * argument )
 {
+    char temp_str[50];
     u8 buffer_draw_counter = 0;
-    HAL_RTC_INIT_t RTC_INIT_TYPE;
     TaskFSM_t main_task_fsm = STATE_INIT;
     u8 contrast = 0;
     vMenuInit();
@@ -159,24 +159,21 @@ void vDefaultTask( void  * argument )
             case STATE_INIT:
                 vDrawBitmap();
                 xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
-
-                if (DataModel_Init()!=NORMAL_INIT)
-                {
-                    RTC_INIT_TYPE = HAL_RTC_NEW_INIT;
-                    printf("new int\r\n");
-                }
-                else
-                {
-                    printf(" normal\r\n");
-                    RTC_INIT_TYPE = HAL_RTC_NORMAL_INIT;
-                }
+                DataModel_Init();
                 vDataBufferInit();
-                vRTC_TASK_Init(RTC_INIT_TYPE);
-
+                vRTC_TASK_Init();
                 main_task_fsm =  STATE_WHAIT_TO_RAEDY;
-                vTaskDelay(3000);
+                vTaskDelay(2000);
+                MENU_ClearScreen();
+                sprintf(temp_str, "Режим ФМЧ");
+                MENU_DrawString(40, 20, temp_str);
+                sprintf(temp_str, "Версия ПО %02i.%02i.%02i",getReg8(SOFT_V1 ),getReg8(SOFT_V2 ),getReg8(SOFT_V3 ));
+                MENU_DrawString(10, 40, temp_str);
+                xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
                 vTaskResume(*getUserProcessTaskHandle());
                 vTaskResume(*getI2CTaskHandle());
+
+                vTaskDelay(1500);
                 printf(" user_enablr\r\n");
                 break;
             case STATE_WHAIT_TO_RAEDY:

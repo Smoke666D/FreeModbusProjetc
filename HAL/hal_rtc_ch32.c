@@ -6,6 +6,8 @@
  */
 
 #include "hal_rtc.h"
+#include "FreeRTOS.h"
+#include "task.h"
 
 #if MCU == CH32V2 || MCU == CH32V3
 
@@ -21,35 +23,33 @@ static void (* func)( void);
 
 
 
-void HAL_RTC_IT_Init( HAL_RTC_INIT_t init, void (* rtc_it_callback) ( void ), uint8_t prior, uint8_t subprior )
+void HAL_RTC_IT_Init(  void (* rtc_it_callback) ( void ), uint8_t prior, uint8_t subprior )
 {
 
     uint8_t temp = 0;
     RCC->APB1PCENR |=(RCC_APB1Periph_PWR | RCC_APB1Periph_BKP);   //Разрешаем тактирование
     PWR->CTLR |= (1 << 8);
+    u32 rtc_data = RTC_GetCounter();
 
-    if ( init == HAL_RTC_NEW_INIT)
+    RCC->BDCTLR |= (1<<16);    //Сборс модуля Buckup
+    RCC->BDCTLR &= ~(1<<16);
+    RCC_LSEConfig(RCC_LSE_ON);
+
+    while(RCC_GetFlagStatus(RCC_FLAG_LSERDY) == RESET && temp < 250)
     {
-        RCC->BDCTLR |= (1<<16);    //Сборс модуля Buckup
-        RCC->BDCTLR &= ~(1<<16);
+         temp++;
+         vTaskDelay(20);
     }
-        RCC_LSEConfig(RCC_LSE_ON);
-
-        while(RCC_GetFlagStatus(RCC_FLAG_LSERDY) == RESET && temp < 250)
-        {
-              temp++;
-              vTaskDelay(20);
-        }
-        if(temp >= 250) return;
-        RCC->BDCTLR |=RCC_RTCCLKSource_LSE;
-        RCC->BDCTLR |= (1<<15); //This function must be used only after the RTC clock was selected
+    if(temp >= 250) return;
+    RCC->BDCTLR |=RCC_RTCCLKSource_LSE;
+    RCC->BDCTLR |= (1<<15); //This function must be used only after the RTC clock was selected
                             // using the RCC_RTCCLKConfig function.
-        RTC_WaitForLastTask();
-        RTC_WaitForSynchro();
-        RTC_WaitForLastTask();
-        RTC_SetPrescaler(32767);
-        RTC_WaitForLastTask();
-        RTC_ExitConfigMode();
+    RTC_WaitForLastTask();
+    RTC_WaitForSynchro();
+    RTC_WaitForLastTask();
+    RTC_SetPrescaler(32767);
+    RTC_WaitForLastTask();
+    RTC_ExitConfigMode();
 
     RTC->CTLRH |= RTC_IT_SEC;   //Разрешаем прерывание
 #if MCU == CH32V2
@@ -58,6 +58,7 @@ void HAL_RTC_IT_Init( HAL_RTC_INIT_t init, void (* rtc_it_callback) ( void ), ui
 #if MCU == CH32V3
     PFIC_IRQ_ENABLE_PG2(RTC_IRQn,prior,subprior);
 #endif
+    RTC_SetCounter(rtc_data);
 	  func = rtc_it_callback;
 	  return;
 }
@@ -159,8 +160,7 @@ void HAL_RTC_ReadDate(HAL_DateConfig_T* date)
 uint8_t HAL_RTC_ConfigTime( HAL_TimeConfig_T* timeConfig)
 {
   u32 data = RTC_GetCounter() / 86400;
-  data = data+ timeConfig->hours*3600 + timeConfig->minutes*60 + timeConfig->seconds;
- // RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR | RCC_APB1Periph_BKP, ENABLE);
+  data = (data * 86400) + timeConfig->hours*3600 + timeConfig->minutes*60 + timeConfig->seconds;
   PWR_BackupAccessCmd(ENABLE);
   RTC_SetCounter(data);
   RTC_WaitForLastTask();

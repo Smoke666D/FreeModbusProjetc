@@ -30,6 +30,15 @@ HAL/hal_rtc_ch32.o: ../HAL/hal_rtc_ch32.c ../HAL/hal_rtc.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\Peripheral\inc/ch32v30x.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\Peripheral\inc/ch32v30x_misc.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\Peripheral\inc/ch32v30x_eth.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/FreeRTOS.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\User/FreeRTOSConfig.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/projdefs.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/portable.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/deprecated_definitions.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\portable\GCC\RISC-V/portmacro.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/mpu_wrappers.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/task.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/list.h \
  ../HAL/hal_irq.h
 
 ../HAL/hal_rtc.h:
@@ -97,5 +106,23 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\Peripheral\inc/ch32v30x.h:
 C:\MRS_DATA\workspace\FreeModbusProjetc\Peripheral\inc/ch32v30x_misc.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\Peripheral\inc/ch32v30x_eth.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/FreeRTOS.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\User/FreeRTOSConfig.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/projdefs.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/portable.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/deprecated_definitions.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\portable\GCC\RISC-V/portmacro.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/mpu_wrappers.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/task.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\FreeRTOS\include/list.h:
 
 ../HAL/hal_irq.h:

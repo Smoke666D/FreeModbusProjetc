@@ -85,7 +85,7 @@ void HAL_RTC_ReadDate(HAL_DateConfig_T* date);
 
 #if MCU== CH32V2 || MCU == CH32V3
 void RTC_IRQHandler ( void );
-void HAL_RTC_IT_Init( HAL_RTC_INIT_t init, void (* rtc_it_callback) ( void ), uint8_t prior, uint8_t subprior );
+void HAL_RTC_IT_Init(  void (* rtc_it_callback) ( void ), uint8_t prior, uint8_t subprior );
 #endif
 
 #endif /* HAL_HAL_RTC_H_ */
