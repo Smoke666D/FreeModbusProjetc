@@ -622,7 +622,6 @@ void MBRTU_task(void *pvParameters)
 {
      u8 mb_ready = 0;
      eMBErrorCode    xStatus;
-
      for( ;; )
      {
          if (getReg8(MB_PROTOCOL_TYPE)== MKV_MB_RTU)
@@ -634,12 +633,14 @@ void MBRTU_task(void *pvParameters)
              }
          }
          else
+         {
+             printf("tcp\r\n");
          if( eMBTCPInit( MB_TCP_PORT_USE_DEFAULT ) == MB_ENOERR )
         {
-             printf("tcp\r\n");
+
             mb_ready = 1;
         }
-
+         }
          if (mb_ready)
          {
              if( eMBEnable(  ) == MB_ENOERR )

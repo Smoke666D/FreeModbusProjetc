@@ -161,22 +161,20 @@ void vDefaultTask( void  * argument )
                 xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
                 DataModel_Init();
                 vDataBufferInit();
-                vRTC_TASK_Init();
                 main_task_fsm =  STATE_WHAIT_TO_RAEDY;
                 vTaskDelay(2000);
                 MENU_ClearScreen();
-                sprintf(temp_str, "Режим ФМЧ");
-                MENU_DrawString(40, 20, temp_str);
+                MENU_DrawString(40, 20, "Режим ФМЧ");
                 sprintf(temp_str, "Версия ПО %02i.%02i.%02i",getReg8(SOFT_V1 ),getReg8(SOFT_V2 ),getReg8(SOFT_V3 ));
                 MENU_DrawString(10, 40, temp_str);
                 xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
                 vTaskResume(*getUserProcessTaskHandle());
                 vTaskResume(*getI2CTaskHandle());
-
                 vTaskDelay(1500);
-                printf(" user_enablr\r\n");
+
                 break;
             case STATE_WHAIT_TO_RAEDY:
+                printf("starit protocol\r\n");
                 if (getReg8(MB_PROTOCOL_TYPE) == MKV_MB_RTU)
                 {
                     vTaskResume(* getSerialTask());
@@ -185,6 +183,7 @@ void vDefaultTask( void  * argument )
                 {
                     vTaskResume( WCHNETTask_Handler );
                 }
+                printf("starit mb\r\n");
                 vTaskResume( MPTCPTask_Handler  );
                 main_task_fsm  = STATE_RUN;
                 break;
@@ -220,10 +219,12 @@ void vDefaultTask( void  * argument )
  */
 void WCHNET_task(void *pvParameters)
 {
+
     while(1)
     {
+
         WCHNET_MainTask();
-               /*Query the Ethernet global interrupt,
+              /*Query the Ethernet global interrupt,
                 * if there is an interrupt, call the global interrupt handler*/
         if(WCHNET_QueryGlobalInt())
         {

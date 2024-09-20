@@ -43,7 +43,7 @@
 #define MBRTU_TASK_PRIO     5
 #define MBRTU_STK_SIZE      512
 #define WCHNET_TASK_PRIO     8
-#define WCHNET_STK_SIZE      512
+#define WCHNET_STK_SIZE     700
 #define ADC_TASK_PRIO     6
 #define ADC_STK_SIZE      256
 #define DEFAULT_TASK_PRIOR          5

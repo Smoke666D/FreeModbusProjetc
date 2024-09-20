@@ -199,15 +199,17 @@ eMBErrorCode
 eMBTCPInit( USHORT ucTCPPort )
 {
     eMBErrorCode    eStatus = MB_ENOERR;
-
+    printf("PORT start init\r\n");
     if( ( eStatus = eMBTCPDoInit( ucTCPPort ) ) != MB_ENOERR )
     {
+        printf("PORT DISABLE\r\n");
         eMBState = STATE_DISABLED;
     }
     else if( !xMBPortEventInit(  ) )
     {
         /* Port dependent event module initalization failed. */
         eStatus = MB_EPORTERR;
+        printf("PORT not itit\r\n");
     }
     else
     {
