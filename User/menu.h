@@ -65,6 +65,56 @@
 #define ALARM_COUNT_ID          43
 #define CURRENT_ALARM_COUNT_ID  44
 #define ZERO_CALIBRATE_ID       45
+#define CVD_SETTING1_ID         46
+#define CVD_FACT1_ID            47
+#define CVD_SETTING2_ID         48
+#define CVD_FACT2_ID            49
+#define TEMPERATURE_AIT_ID      50
+#define TEMPERATURE_ID          51
+#define CO2_ID                  52
+#define CDV_HUMMANITY_ID        53
+#define SENSOR_ID               54
+#define CDV_CH_COUNT_ID         55
+#define MEASERING_UNIT_ID       56
+#define CHANNEL_COUNT_ID        57
+#define OFFSET2_ID              58
+#define SETTING1_TITLE_ID       59
+#define SETTING2_TITLE_ID       60
+#define SETTING_MIN_ID          61
+#define SETTING_AVER_ID         62
+#define SETTING_MAX_ID          63
+#define FAIL_SET_CH1_ID         64
+#define FAIL_SET_CH2_ID         65
+#define F_CHANNEL_ID            67
+#define CLEAN_TIMER_ID          68
+#define ZERO_POINT_ID           69
+#define SENSOR_TYPE_ID          70
+#define SENSOR_F_TYPE_ID        71
+#define KK_SENSOR_TYPE_ID       72
+#define CO2_SENSOR_TYPE_ID      73
+#define H_SENSOR_TYPE_ID        74
+#define  PRIOR_SENSOR_ID        75
+#define T_SENSOR_MIN_ID         76
+#define T_SENSOR_MAX_ID         77
+#define CO2_SENSOR_MIN_ID       78
+#define CO2_SENSOR_MAX_ID       79
+#define H_SENSOR_MIN_ID         80
+#define H_SENSOR_MAX_ID         81
+#define T_SENSOR_OFFSET_ID      82
+#define CO2_SENSOR_OFFSET_ID    83
+#define H_SENSOR_OFFSET_ID      84
+#define T_SENSOR_SETTING_ID     85
+#define CO2_SENSOR_SETTING_ID   86
+#define H_SENSOR_SETTING_ID     87
+#define AFTER_ZONE_SETTING_ID   88
+#define COOF_P_1_ID             89
+#define COOF_I_1_ID             90
+#define COOF_P_2_ID             91
+#define COOF_I_2_ID             92
+#define COOF_P_3_ID             93
+#define COOF_I_3_ID             94
+#define VOLTAG_SCREEN_TITLE_ID  95
+
 
 
 typedef enum
@@ -121,6 +171,8 @@ typedef struct
  // void          ( *pFunc )( void*, char );
 } xScreenType;
 
+
+void MenuSetDevice();
 void MENU_DrawString(u8 x, u8 y, char const * str);
 void MENU_ClearScreen();
 void vMenuInit(  );

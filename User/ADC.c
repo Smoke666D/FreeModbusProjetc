@@ -240,7 +240,6 @@ void vDataBufferInit()
 {
     DataBuffer[0].ConversionalSize = sensor_timer[getReg8(SENSOR_COUNT )];
     DataBuffer[1].ConversionalSize = sensor_timer[getReg8(SENSOR_COUNT )];
-
 }
 
 

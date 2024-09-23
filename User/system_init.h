@@ -53,6 +53,13 @@
 #define I2C_TASK_PRIO     6
 #define I2C_STK_SIZE      256
 
+typedef enum
+{
+  DEV_FMCH = 0,
+  DEV_CDV  = 1,
+  DEV_BP   = 2,
+} DEVICE_TYPE_t;
+
 
 typedef enum
 {
@@ -73,5 +80,5 @@ void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer,
 void vSYStaskInit ( void );
 void vSYSeventInit ( void );
 void vSYSqueueInit ( void );
-
+DEVICE_TYPE_t SystemInitGetDevType();
 #endif /* USER_SYSTEM_INIT_H_ */

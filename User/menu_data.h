@@ -20,7 +20,11 @@
 #define LINE5        60U
 
 #define SCREENS_COUNT 15
+#define CDV_SCREENS_COUNT 25
+#define BP_SCREENS_COUNT 25
 
-extern xScreenType  xScreens1[];
+extern xScreenType  xScreenFMCH[];
+extern xScreenType  xScreenCVD[];
+extern xScreenType  xScreenBP[];
 
 #endif /* USER_MENU_DATA_H_ */

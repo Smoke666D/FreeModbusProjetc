@@ -139,8 +139,17 @@ void vSYSqueueInit ( void )
      *( xKeyboardQueue()) = xQueueCreateStatic( 16U, sizeof( KeyEvent ),ucQueueStorageArea, &xStaticQueue );
 }
 
+static DEVICE_TYPE_t device;
+
+DEVICE_TYPE_t SystemInitGetDevType()
+{
+    return (device);
+}
+
+
 void vDefaultTask( void  * argument )
 {
+    static const char * DevString[3]={"Режим ФМЧ","CAV/VAV/DCV","Режим BP"};
     char temp_str[50];
     u8 buffer_draw_counter = 0;
     TaskFSM_t main_task_fsm = STATE_INIT;
@@ -161,17 +170,18 @@ void vDefaultTask( void  * argument )
                 xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
                 DataModel_Init();
                 vDataBufferInit();
-                main_task_fsm =  STATE_WHAIT_TO_RAEDY;
+                device = getReg8(DEVICE_TYPE);
                 vTaskDelay(2000);
                 MENU_ClearScreen();
-                MENU_DrawString(40, 20, "Режим ФМЧ");
+                MENU_DrawString(40, 20, DevString[device]);
+                MenuSetDevice();
                 sprintf(temp_str, "Версия ПО %02i.%02i.%02i",getReg8(SOFT_V1 ),getReg8(SOFT_V2 ),getReg8(SOFT_V3 ));
                 MENU_DrawString(10, 40, temp_str);
                 xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
                 vTaskResume(*getUserProcessTaskHandle());
                 vTaskResume(*getI2CTaskHandle());
                 vTaskDelay(1500);
-
+                main_task_fsm =  STATE_WHAIT_TO_RAEDY;
                 break;
             case STATE_WHAIT_TO_RAEDY:
                 printf("starit protocol\r\n");

@@ -106,7 +106,7 @@ static u8 SelectEditFlag = 0;
 static HAL_TimeConfig_T time;
 static uint8_t error_flag;
 static u8 *  SENSOR_COUNT_STRING[]={"0.1","0.5","1.0","2.0","3.0","5.0","10.0"};
-
+static xScreenType * pMenu;
 static u8 journal_index =0;
 static uint16_t curr_edit_data_id = 0;
 static u8 cur_edit_index = 0;
@@ -140,7 +140,7 @@ u8 GetID( u8 id)
 {
     for (u8 i = 0; i< SCREENS_COUNT;i++)
     {
-        if ( ((xScreens1[i].ScreenId & ~COMMNAD_MASK) ==id)) return (i);
+        if ( ((pMenu[i].ScreenId & ~COMMNAD_MASK) ==id)) return (i);
     }
     return (1);
 }
@@ -151,7 +151,7 @@ static void SetFirtsEditString( )
     u8 edit_flag = 0;
     for (u8 i=0;i<MAX_STRING_NUMBER;i++)
     {
-        if ( xScreens1[pCurrMenu].pScreenCurObjets[i].xType == WRITE_DATA)
+        if ( pMenu[pCurrMenu].pScreenCurObjets[i].xType == WRITE_DATA)
         {
             if( edit_flag == 0)
             {
@@ -172,22 +172,22 @@ void ViewScreenCallback( u8 key_code)
     switch ( key_code )
     {
         case EXIT_KEY:
-           pscreen =  xScreens1[pCurrMenu].pBack ;
+           pscreen =  pMenu[pCurrMenu].pBack ;
            break;
         case ENTER_KEY:
-           pscreen =  xScreens1[pCurrMenu].pEnter ;
+           pscreen =  pMenu[pCurrMenu].pEnter ;
            break;
         case UP_KEY:
-            pscreen = xScreens1[pCurrMenu].pUpScreenSet;
+            pscreen = pMenu[pCurrMenu].pUpScreenSet;
            break;
         case DOWN_KEY:
-            pscreen = xScreens1[pCurrMenu].pDownScreenSet;
+            pscreen = pMenu[pCurrMenu].pDownScreenSet;
            break;
         case RIGTH_KEY:
-            pscreen = xScreens1[pCurrMenu].pRigthScreen;
+            pscreen = pMenu[pCurrMenu].pRigthScreen;
            break;
         default:
-            pscreen =  xScreens1[pCurrMenu].pLeftScreen;
+            pscreen = pMenu[pCurrMenu].pLeftScreen;
             break;
      }
      if (pscreen)
@@ -256,7 +256,7 @@ void vSetEdit()
         if (edit_data[i ] == 2)
         {
               edit_data[i] = 3;
-              curr_edit_data_id = xScreens1[pCurrMenu].pScreenCurObjets[i].DataID;
+              curr_edit_data_id = pMenu[pCurrMenu].pScreenCurObjets[i].DataID;
               vGetData( curr_edit_data_id , 0,CMD_START_EDIT ,0,0);
               break;
         }
@@ -271,7 +271,7 @@ void vSetCommnad( DATA_VIEW_COMMAND_t cmd )
       if (edit_data[i ] == 3)
       {
           edit_data[i] = 2;
-          vGetData( xScreens1[pCurrMenu].pScreenCurObjets[i].DataID, 0,cmd,0,0);
+          vGetData( pMenu[pCurrMenu].pScreenCurObjets[i].DataID, 0,cmd,0,0);
           break;
       }
    }
@@ -294,7 +294,7 @@ void vMenuTask ( void )
                       case 2:
                           switch ( TempEvent.KeyCode )
                           {
-                               case EXIT_KEY: if  (SelectEditFlag) SelectEditFlag = 0; else { menu_mode = 0;pCurrMenu = GetID(xScreens1[pCurrMenu].pBack); } break;
+                               case EXIT_KEY: if  (SelectEditFlag) SelectEditFlag = 0; else { menu_mode = 0;pCurrMenu = GetID(pMenu[pCurrMenu].pBack); } break;
                                case ENTER_KEY:
                                        if  (!SelectEditFlag )
                                         {
@@ -310,13 +310,13 @@ void vMenuTask ( void )
                                case UP_KEY: if   (SelectEditFlag)  vSelect(1);
                                        else
                                        {
-                                           pCurrMenu = GetID(xScreens1[pCurrMenu].pUpScreenSet);
+                                           pCurrMenu = GetID(pMenu[pCurrMenu].pUpScreenSet);
                                        }
                                        break;
                                case DOWN_KEY: if   (SelectEditFlag) vSelect(0);
                                        else
                                        {
-                                           pCurrMenu = GetID(xScreens1[pCurrMenu].pDownScreenSet);
+                                           pCurrMenu = GetID(pMenu[pCurrMenu].pDownScreenSet);
                                        }
                                        break;
                                default: ; break;
@@ -338,11 +338,28 @@ void vMenuTask ( void )
             }
           }
 
-   vDraw((xScreenObjet *) xScreens1[pCurrMenu].pScreenCurObjets);
+   vDraw((xScreenObjet *) pMenu[pCurrMenu].pScreenCurObjets);
    if (++blink_counter>10) blink_counter=0;
 
 }
 
+
+
+void MenuSetDevice()
+{
+    switch  ( SystemInitGetDevType())
+    {
+        case DEV_FMCH:
+            pMenu = xScreenFMCH;
+            break;
+        case DEV_CDV:
+            pMenu = xScreenCVD;
+            break;
+        case DEV_BP:
+            pMenu = xScreenBP;
+            break;
+    }
+}
 
 
 void vByteDataEdit(u8 size, u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , uint16_t max_data, uint16_t min_data )
@@ -379,7 +396,7 @@ void vByteDataEdit(u8 size, u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_ind
              else
                   edit_data_buffer_byte = min_data;
              break;
-       case CMD_EXIT_EDIT:
+       default:
              start_edit_flag = 0;
              break;
      }
@@ -429,7 +446,7 @@ void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8
              else
                  edit_data_buffer_float = min_data;
              break;
-       case CMD_EXIT_EDIT:
+       default:
              start_edit_flag = 0;
              break;
      }
@@ -521,7 +538,7 @@ void vIPDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command )
                        edit_ip_addres[0] = 255;
              }
              break;
-       case CMD_EXIT_EDIT:
+       default:
              start_edit_flag = 0;
              break;
      }
@@ -689,27 +706,27 @@ u16 getDataModelID( u16 MENU_ID)
 {
     switch (MENU_ID)
     {
-        case SENS_1_RAW_ID:     return (SENS1);
-        case SENS_2_RAW_ID:     return (SENS2);
-        case COOF_P_ID:         return (COOF_P);
-        case COOF_I_ID:         return (COOF_I);
-        case VOLTAGE_MIN_ON_ID: return (LOW_VOLTAGE_ON);
-        case VOLTAGE_MIN_OFF_ID:return (LOW_VOLTAGE_OFF);
-        case VOLTAGE_MAX_ON_ID: return (HIGH_VOLTAGE_ON);
-        case VOLTAGE_MAX_OFF_ID:return (HIGH_VOLTAGE_OFF);
-        case CONTROL_MODE_ID:   return (CONTROL_TYPE);
-        case PROTOCOL_ID:       return (MB_PROTOCOL_TYPE);
-        case IP_ADRESS_DATA_ID: return (IP_1);
-        case IP_GATE_ID:        return (GATE_1);
-        case IP_SUBNETMASK_ID:  return (MASK_1);
-        case FILTER_HIGH_ID:    return (FILTER_HIGH);
-        case FILTER_LOW_ID:     return (FILTER_LOW);
-        case SETTING1_ID:       return (SETTING1);
-        case SETTING2_ID:       return (SETTING2);
-        case KOOFKPS_ID:        return (KOOFKPS);
-        case MB_RTU_ADDR_ID:    return (MB_RTU_ADDR);
-        case MOD_BUS_TIMEOUT_ID:return (MOD_BUS_TIMEOUT);
-        case CONTRAST_ID:       return (CONTRAST);
+        case SENS_1_RAW_ID:        return (SENS1);
+        case SENS_2_RAW_ID:        return (SENS2);
+        case COOF_P_ID:            return (COOF_P);
+        case COOF_I_ID:            return (COOF_I);
+        case VOLTAGE_MIN_ON_ID:    return (LOW_VOLTAGE_ON);
+        case VOLTAGE_MIN_OFF_ID:   return (LOW_VOLTAGE_OFF);
+        case VOLTAGE_MAX_ON_ID:    return (HIGH_VOLTAGE_ON);
+        case VOLTAGE_MAX_OFF_ID:   return (HIGH_VOLTAGE_OFF);
+        case CONTROL_MODE_ID:      return (CONTROL_TYPE);
+        case PROTOCOL_ID:          return (MB_PROTOCOL_TYPE);
+        case IP_ADRESS_DATA_ID:    return (IP_1);
+        case IP_GATE_ID:           return (GATE_1);
+        case IP_SUBNETMASK_ID:     return (MASK_1);
+        case FILTER_HIGH_ID:       return (FILTER_HIGH);
+        case FILTER_LOW_ID:        return (FILTER_LOW);
+        case SETTING1_ID:          return (SETTING1);
+        case SETTING2_ID:          return (SETTING2);
+        case KOOFKPS_ID:           return (KOOFKPS);
+        case MB_RTU_ADDR_ID:       return (MB_RTU_ADDR);
+        case MOD_BUS_TIMEOUT_ID:   return (MOD_BUS_TIMEOUT);
+        case CONTRAST_ID:          return (CONTRAST);
         case FAN_START_TIMEOUT_ID: return (FAN_START_TIMEOUT);
         default: return 0;
     }
@@ -724,6 +741,9 @@ u16 getDataModelID( u16 MENU_ID)
 static u8 error_shif = 0;
 static u8 const *  ErrorString[]={"HEPA Фильтр засорен","Невозможно","Низкое напряжение","Высокое напряжение"};
 static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение"};
+static u8 const *  SettingTilteStirnf[]={"1/9","1/21","1/18"};
+static u8 const *  Setting2TilteStirnf[]={"2/9","2/21","2/18"};
+static u8 const *  VoltageTilteStirnf[] ={"5/9","20/21","17/18"};
 
 void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len)
 {
@@ -736,6 +756,15 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
     u16 reg_id = getDataModelID(data_id);
     switch (data_id)
     {
+        case SETTING1_TITLE_ID:
+            strcpy(str,SettingTilteStirnf[getReg8(DEVICE_TYPE)]);
+            break;
+        case SETTING2_TITLE_ID:
+            strcpy(str,Setting2TilteStirnf[getReg8(DEVICE_TYPE)]);
+            break;
+        case VOLTAG_SCREEN_TITLE_ID:
+            strcpy(str,VoltageTilteStirnf[getReg8(DEVICE_TYPE)]);
+            break;
         case JOURNAL_TIME_ID:
             sprintf(str,TimeFormatString,time.hours,time.minutes,time.seconds);
             break;
@@ -743,7 +772,6 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             sprintf(str,DateFormatString,date.date,date.month,date.year);
             break;
         case JOURNAL_INFO1_ID:
-
              strcpy(str,ErrorString[error_flag]);
             break;
         case JOURNAL_INFO2_ID:
@@ -881,7 +909,10 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             sprintf(str,"%x%x%x%x%x%x",MACAddr[0],MACAddr[1],MACAddr[2],MACAddr[3],MACAddr[4],MACAddr[5]);
             break;
         case PROCESS_STATE_ID:
-            sprintf(str, ((USER_GetProccesState()!= USER_PROCCES_IDLE) &&  (USER_GetProccesState()!= USER_PROCESS_ALARM)) ? "Работа" : "Останов");
+            if ((USER_GetProccesState()!= USER_PROCCES_IDLE ) &&  (USER_GetProccesState()!= USER_PROCESS_ALARM))
+              strcpy(str,"Работа");
+            else
+              strcpy(str,"Останов");
             break;
         case IP_ADRESS_DATA_ID:
         case IP_GATE_ID:
@@ -968,13 +999,13 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
         switch (command )
         {
             case CMD_EDIT_READ:
-                   sprintf(str,"");
+                   strcpy(str,"");
                    break;
             case CMD_READ:
                    if ( SelectEditFlag )
-                            sprintf(str,"Старт?");
+                            strcpy(str,"Старт?");
                         else
-                            sprintf(str,"");
+                            strcpy(str,"");
                         break;
                     case CMD_SAVE_EDIT:
                     case CMD_START_EDIT:
@@ -995,13 +1026,13 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
         switch (command )
         {
             case CMD_EDIT_READ:
-                sprintf(str,"");
+                strcpy(str,"");
                 break;
             case CMD_READ:
                 if ( SelectEditFlag )
-                    sprintf(str,"     Сбросить журнал?   ");
+                    strcpy(str,"     Сбросить журнал?   ");
                 else
-                    sprintf(str,"");
+                    strcpy(str,"");
                 break;
             case CMD_SAVE_EDIT:
             case CMD_START_EDIT:
