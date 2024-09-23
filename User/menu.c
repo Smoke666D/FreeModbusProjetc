@@ -741,9 +741,9 @@ u16 getDataModelID( u16 MENU_ID)
 static u8 error_shif = 0;
 static u8 const *  ErrorString[]={"HEPA Фильтр засорен","Невозможно","Низкое напряжение","Высокое напряжение"};
 static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение"};
-static u8 const *  SettingTilteStirnf[]={"1/9","1/21","1/18"};
-static u8 const *  Setting2TilteStirnf[]={"2/9","2/21","2/18"};
-static u8 const *  VoltageTilteStirnf[] ={"5/9","20/21","17/18"};
+static u8 const *  SettingTilteStirnf[]={"1/9 ","1/21 ","1/18 "};
+static u8 const *  Setting2TilteStirnf[]={"2/9 ","2/21 ","2/18 "};
+static u8 const *  VoltageTilteStirnf[] ={"5/9 ","20/21 ","17/18 "};
 
 void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len)
 {
@@ -891,11 +891,11 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             temp_byte = USER_FilterState(&temp_state);
             if (temp_state)
             {
-                sprintf(str,"%i Па %03i %%",getAIN(SENS1),temp_byte);
+                sprintf(str,"%i Па %03i %%",getAIN(SENS2),temp_byte);
             }
             else
             {
-                sprintf(str,"%i Па ---%%",getAIN(SENS1));
+                sprintf(str,"%i Па ---%%",getAIN(SENS2));
             }
             break;
         case MODE_STATE_ID:

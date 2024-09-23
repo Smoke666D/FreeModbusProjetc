@@ -23,15 +23,15 @@
 
 
 
-
+static  PID_TypeDef TPID;
 static u8 setting_change_flag =0;    //Флаг измения значения устаки, нужен для изменения отображения на индикаторе текущей уставки
 static TaskHandle_t processTaskHandle;
 static USER_PROCESS_FSM_t task_fsm;
 static u8 FilterState;
-static double setpoint;
+static float setpoint;
 static long temp_counter;
 static long mb_time_out = 0;
-static double SET_POINT;
+static float SET_POINT;
 static u8 error_state;
 
 TaskHandle_t * getUserProcessTaskHandle()
@@ -74,10 +74,11 @@ USER_PROCESS_FSM_t USER_GetProccesState()
 
 uint16_t USER_GetFact(u8 * state)
 {
- if ((task_fsm == USER_RROCCES_WORK) || (task_fsm == USER_PROCEES_RUN))
+ if (task_fsm == USER_RROCCES_WORK)
  {
      *state = 1;
-    return (u16)( sqrt((float)getAIN(SENS2))*getRegFloat(KOOFKPS)) ;
+     //printf("DATA = %f, sqrt = %f, k=%f", getAIN(SENS1), sqrt((float)getAIN(SENS1)),getRegFloat(KOOFKPS) );
+    return (u16)( sqrt((float)getAIN(SENS1))*getRegFloat(KOOFKPS)) ;
  }
  else
  {
@@ -126,10 +127,10 @@ static void USER_SETTING_CHECK(u8 control_type, u8 * point_old)
 
 u8 USER_FilterState( u8 * state)
 {
-    if ((task_fsm == USER_RROCCES_WORK) || (task_fsm == USER_PROCEES_RUN))
+    if (task_fsm == USER_RROCCES_WORK)
     {
         *state = 1;
-        u16 sensor_data = getAIN(SENS1);
+        u16 sensor_data = getAIN(SENS2);
         if (sensor_data  <= getReg16(FILTER_LOW))
                 return (0);
         if (sensor_data  >= getReg16(FILTER_HIGH))
@@ -150,6 +151,11 @@ u8 USER_FilterState( u8 * state)
 
 }
 
+void UPDATE_COOF()
+{
+    PID_SetTunings2(&TPID,getRegFloat(COOF_P), getRegFloat(COOF_I), 0,_PID_CD_DIRECT);
+}
+
 static float DAC1_OUT = 0;
 
 float getDAC1_Out()
@@ -157,14 +163,38 @@ float getDAC1_Out()
     return (DAC1_OUT);
 }
 
+u16 testdata[10]={700,680,670,660,650,670,685,500,550,625};
+static float Temp;
+static float PIDOut;
+
+static u16 counterpid = 0;
+
+float setTestDta(float input)
+{
+  counterpid ++;
+  counterpid  =  counterpid %10;
+  float out = 625;
+  if (input ==0) return 10;
+  if (input == 5.5) out = 625.0;
+  else
+  if (input < 5.5)  out = 600;
+  else
+  if (input > 5.5 ) out =  670;
+//  printf("data %f %f\r\n",input,out);
+
+
+  return out;
+}
+
 void user_process_task(void *pvParameters)
 {
-   PID_TypeDef TPID;
-   double Temp, PIDOut;
+
+
    static u8 HEPA_CONTROL_ON = 0;
    static u8 low_voltage_alarm_timer =0;
    static u8 power_off_flag = 0;
    u16 ref;
+   u8 ss=0,sss=0;
    uint8_t ac_voltage;
    u8 set_point_old = 2;
    u32 pid_counter = 0;
@@ -175,8 +205,9 @@ void user_process_task(void *pvParameters)
    FilterState = 0;
    PID(&TPID, &Temp, &PIDOut, &SET_POINT, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_P_ON_E, _PID_CD_DIRECT);
    PID_SetMode(&TPID, _PID_MODE_AUTOMATIC);
-   PID_SetOutputLimits(&TPID,0,9.9);
+   PID_SetOutputLimits(&TPID,0,9999);
    PID_SetSampleTime(&TPID, 20);
+
    while(1)
    {
        vTaskDelay(10);
@@ -235,7 +266,7 @@ void user_process_task(void *pvParameters)
                }
            }
            //Ecли есть ошибка включаем реле и зажигаем светодиод
-           if ( error_state )
+           if ( error_state  & ~SETTING_ERROR)
            {
                HAL_ResetBit(CRACH_Port,  CRACH_Pin);
                eSetDUT(OUT_3,TRUE);
@@ -257,9 +288,12 @@ void user_process_task(void *pvParameters)
            switch (task_fsm)
            {
                case USER_PROCCES_IDLE:
+
                    eSetDUT(OUT_1,FALSE);
                    PIDOut = 0;
                    USER_AOUT_SET(DAC1,0);
+                   USER_AOUT_SET(DAC2,0);
+                   USER_AOUT_SET(DAC3,0);
                    start_timeout = 0;
                    temp_counter = 0;
                    error_state = 0;
@@ -267,49 +301,58 @@ void user_process_task(void *pvParameters)
                case USER_PEOCESS_WORK_TIME_OUT:
                    if ( (++start_timeout)> ( getReg8(FAN_START_TIMEOUT)*100))
                    {
-                       task_fsm = USER_RROCCES_WORK;
+                       printf("start calib\r\n");
+                       task_fsm = USER_PEOCESS_ZERO_CALIB;
                        CalibrateZeroStart();
                    }
-                   PID_Init(&TPID);
+                   break;
+               case USER_PEOCESS_ZERO_CALIB:
+                   if (CalibrationZeroWhait())
+                   {
+                       PIDOut = 0;
+                       Temp = testdata[0];
+                       UPDATE_COOF();
+                       PID_Init(&TPID,0,setTestDta( PIDOut));
+                       task_fsm = USER_RROCCES_WORK;
+                       printf("set_point %f p = %f  i =%f  pr = %f  ir =%f\r\n", SET_POINT,TPID.Kp,TPID.Ki,PIDOut, getRegFloat(COOF_I));
+                   }
                    break;
                case USER_RROCCES_WORK:
                    if (++pid_counter >=10)
                    {
 
                        pid_counter = 0;
-                       Temp = getAIN(SENS1);
-                       if (abs(SET_POINT-Temp)  <= ( SET_POINT *0.05) )
-                       {
-                           task_fsm = USER_PROCEES_RUN;
-                       }
-                       PID_Compute(&TPID);
-                       if ((PIDOut >=9.5) && ((error_state & SETTING_ERROR )==0))
+
+
+
+                       Temp = setTestDta( PIDOut/1000.0);//getAIN(SENS1);
+
+                       Temp =getAIN(SENS1);
+
+                       PID_Compute(&TPID,Temp);
+
+                       USER_AOUT_SET(DAC2,PIDOut/1000.0);
+
+                       if ( ( fabs(SET_POINT-Temp) > ( SET_POINT*0.05) ) && ((PIDOut/1000.0) >=9.5) && ((error_state & SETTING_ERROR )==0))
                        {
                            vADDRecord(SETTING_ERROR);
                            error_state |= SETTING_ERROR;
+
                        }
-                       USER_AOUT_SET(DAC1,PIDOut);
+
+                       if (fabs(SET_POINT-Temp) > ( SET_POINT*0.02) )
+                       {
+                                             HEPA_CONTROL_ON = 1;
+                       }
 
                    }
-                   if ((++temp_counter) == 30000 )
+                  /* if ((++temp_counter) == 30000 )
                    {
                        vADDRecord(SETTING_ERROR);
                        error_state |= SETTING_ERROR;
                    }
-                   if ( temp_counter > 30000) temp_counter = 30001;
+                   if ( temp_counter > 30000) temp_counter = 30001;*/
                    eSetDUT(OUT_1,TRUE);
-                   break;
-               case USER_PROCEES_RUN:
-                   if (abs(SET_POINT-Temp) > ( SET_POINT*0.02) )
-                   {
-                       HEPA_CONTROL_ON = 1;
-                   }
-                   if (abs(SET_POINT-Temp) > ( SET_POINT*0.05) )
-                   {
-                       task_fsm = USER_RROCCES_WORK;
-                       HEPA_CONTROL_ON = 0;
-                       temp_counter = 0;
-                   }
                    break;
                case USER_PROCESS_ALARM:
                    if  ((ac_voltage <= getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  getReg8(LOW_VOLTAGE_OFF)))
@@ -317,7 +360,7 @@ void user_process_task(void *pvParameters)
                        task_fsm = USER_PROCCES_IDLE;
                    }
                    PIDOut = 0;
-                   USER_AOUT_SET(DAC1,0);
+                   USER_AOUT_SET(DAC2,0);
                    eSetDUT(OUT_1,FALSE);
                    break;
            }
@@ -326,15 +369,17 @@ void user_process_task(void *pvParameters)
 
    }
 }
-
+static u16 ddd =0;
 static float AOUTDATA[3]={0,0,0};
 void USER_AOUT_SET(u8 channel, float data)
 {
+
     AOUTDATA[channel]= data;
     u16 ref = (uint16_t)fGetDacCalData(channel,data);
     switch (channel)
     {
         case DAC1:
+
             HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_1 ,ref *10 );
             break;
         case DAC2:

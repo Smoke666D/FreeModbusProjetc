@@ -14,7 +14,7 @@
 
 #define SW_V                  1
 #define SW_V2                 2
-#define SW_V3                 7
+#define SW_V3              11
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0

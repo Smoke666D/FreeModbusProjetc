@@ -138,13 +138,13 @@ float getAIN( AIN_CHANNEL_t channel)
        case DCAIN4:
             return ((float)GetConversional(&DataBuffer[6])*KK);
        case DIG_TEMP:
-           return ((float)GetConversional(&DataBuffer[8])/256);
-       case DIG_PRES:
-           return (float)(sens_press1);
-       case DIG2_TEMP:
            return ((float)GetConversional(&DataBuffer[7])/256);
-       case DIG2_PRES:
+       case DIG_PRES:
            return (float)(sens_press);
+       case DIG2_TEMP:
+           return ((float)GetConversional(&DataBuffer[8])/256);
+       case DIG2_PRES:
+           return (float)(sens_press1);
         case AC220:
            return (AC_220_VALUE);
     }
@@ -534,6 +534,7 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  u1
                    {
                        *sens_press  = temp_data/GetSensCoof();
                     }
+                  // *sens_press= *sens_press+100;
                     AddBufferDataI2C(&DataBuffer[index], *sens_press  );
                     *SENS_FSM = SENSOR_GET_TEMP_1;
                     *fsm = I2C_GET_BUSY;
@@ -556,7 +557,7 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  u1
                              temperature = (sens_temp -65536);
                       else
                           temperature = sens_temp;
-                        AddBufferData(&DataBuffer[index?7:8],temperature);
+                        AddBufferData(&DataBuffer[index?8:7],temperature);
                         *SENS_FSM = SENSOR_IDLE;
                         *fsm = I2C_GET_BUSY;
                 }
@@ -568,6 +569,7 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  u1
 
 }
 #define CALIB_COUNT 10
+static u8 cla_zero_end = 0;
 u8 calibration_zero_flag = 0;
 u8 calibration_zero_count = 0;
 u16 calib_data[2][CALIB_COUNT];
@@ -575,6 +577,13 @@ u16 calib_data[2][CALIB_COUNT];
 void CalibrateZeroStart()
 {
     calibration_zero_flag = 1;
+    cla_zero_end = 0;
+}
+
+
+u8 CalibrationZeroWhait()
+{
+    return (cla_zero_end);
 }
 
 void CalibrateZero()
@@ -583,6 +592,7 @@ void CalibrateZero()
   {
       if ( calibration_zero_count < 10 )
       {
+
           calib_data[0][calibration_zero_count] = sens_press;
           calib_data[1][calibration_zero_count] = sens_press1;
           calibration_zero_count++;
@@ -596,12 +606,13 @@ void CalibrateZero()
               temp = temp + calib_data[0][i];
               temp1 = temp1 + calib_data[1][i];
           }
-          DataBuffer[1].offset   =  temp  / CALIB_COUNT;
-          DataBuffer[0].offset    = temp1 / CALIB_COUNT;
+          DataBuffer[0].offset   =  temp  / CALIB_COUNT;
+          DataBuffer[1].offset    = temp1 / CALIB_COUNT;
           calibration_zero_flag = 0;
           calibration_zero_count = 0;
-          saveReg16(SENSOR1_ZERO, DataBuffer[1].offset );
-          saveReg16(SENSOR2_ZERO, DataBuffer[0].offset );
+          saveReg16(SENSOR1_ZERO, DataBuffer[0].offset );
+          saveReg16(SENSOR2_ZERO, DataBuffer[1].offset );
+          cla_zero_end = 1;
       }
   }
 
@@ -651,19 +662,19 @@ void I2C_task(void *pvParameters)
             {
                 if (SENS1_FSM ==SENSOR_START_CONVERSION)
                 {
-                   // printf("i22 timeout\r\n");
+                  //  printf("i22 timeout\r\n");
                     SENS1_FSM = SENSOR_IDLE;
                     HAL_I2C_STOP(I2C_2);
                 }
                 if (SENS2_FSM ==SENSOR_START_CONVERSION)
                 {
-                    //printf("i21 timeout\r\n");
+                  //  printf("i21 timeout\r\n");
                     SENS2_FSM = SENSOR_IDLE;
                     HAL_I2C_STOP(I2C_1);
                 }
             }
-            vSensFSM(0,&SENS1_FSM,&fsm,  &sens_press1 );
-            vSensFSM(1,&SENS2_FSM,&fsm1, &sens_press);
+            vSensFSM(0,&SENS1_FSM,&fsm,  &sens_press );
+            vSensFSM(1,&SENS2_FSM,&fsm1, &sens_press1);
 
      }
      CalibrateZero();

@@ -45,8 +45,14 @@ DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[CONTRAST]            = 50;
                DATA_MODEL_REGISTER[MOD_BUS_TIMEOUT ]    = 10;
                DATA_MODEL_REGISTER[FAN_START_TIMEOUT ] = 1;
-               setRegFloat(KOOFKPS , 10.43);
+               setRegFloat(KOOFKPS , 36.0);
+               setRegFloat(COOF_I,0.5);
+               setRegFloat(COOF_P,5);
+               setReg16(SETTING1, 900);
+               setReg16(SETTING2, 600);
                setReg16(IP_PORT,502);
+               setReg16( FILTER_LOW, 150);
+               setReg16( FILTER_HIGH, 300);
                DATA_MODEL_REGISTER[SENSOR_COUNT]        = TIME_10_0;
 
                if (WriteEEPROM(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 1000 ,2) == EEPROM_OK) printf("EEPROMwtiye\r\n");
@@ -172,8 +178,11 @@ void setRegFloat( u16 reg_adress, float data)
 }
 void saveRegFloat(u16 reg_adress, float data )
 {
+
     setRegFloat(reg_adress,data);
     WriteEEPROM(reg_adress, &DATA_MODEL_REGISTER[ reg_adress], 4,10, 2);
+    if ((reg_adress ==COOF_I ) || (reg_adress ==COOF_P))
+            UPDATE_COOF();
 }
 
 

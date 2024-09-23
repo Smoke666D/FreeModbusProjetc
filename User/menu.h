@@ -114,7 +114,15 @@
 #define COOF_P_3_ID             93
 #define COOF_I_3_ID             94
 #define VOLTAG_SCREEN_TITLE_ID  95
-
+#define BP_SETTING1_ID          96
+#define BP_FACT_ID              97
+#define BP_SIZE_ID              98
+#define  BP_REGULATION_TYPE_ID  99
+#define CH1_ERROR_ID            100
+#define CH2_ERROR_ID            101
+#define SETTING_BP_MIN_ID       102
+#define SETTING_BP_AVER_ID      103
+#define SETTING_BP_MAX_ID       104
 
 
 typedef enum

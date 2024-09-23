@@ -85,6 +85,8 @@ typedef struct
 #define R2_10V  10000.0
 #define COOF_10V ((R1_10V+R2_10V)/R2_10V)
 
+
+u8 CalibrationZeroWhait();
 void vSetCount( u16 coount);
 void CalibrateZeroStart();
 uint8_t getACVoltage();
