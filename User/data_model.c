@@ -48,6 +48,12 @@ DATA_MODEL_INIT_t DataModel_Init()
                setRegFloat(KOOFKPS , 36.0);
                setRegFloat(COOF_I,0.5);
                setRegFloat(COOF_P,5);
+               setRegFloat(COOF_I1,0.5);
+               setRegFloat(COOF_P1,5);
+               setRegFloat(COOF_I2,0.5);
+               setRegFloat(COOF_P2,5);
+               setRegFloat(COOF_I3,0.5);
+               setRegFloat(COOF_P3,5);
                setReg16(SETTING1, 900);
                setReg16(SETTING2, 600);
                setReg16(IP_PORT,502);

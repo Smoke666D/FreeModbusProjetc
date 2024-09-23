@@ -78,8 +78,7 @@
 #define MEASERING_UNIT_ID       56
 #define CHANNEL_COUNT_ID        57
 #define OFFSET2_ID              58
-#define SETTING1_TITLE_ID       59
-#define SETTING2_TITLE_ID       60
+
 #define SETTING_MIN_ID          61
 #define SETTING_AVER_ID         62
 #define SETTING_MAX_ID          63
@@ -113,16 +112,25 @@
 #define COOF_I_2_ID             92
 #define COOF_P_3_ID             93
 #define COOF_I_3_ID             94
-#define VOLTAG_SCREEN_TITLE_ID  95
-#define BP_SETTING1_ID          96
-#define BP_FACT_ID              97
-#define BP_SIZE_ID              98
-#define  BP_REGULATION_TYPE_ID  99
-#define CH1_ERROR_ID            100
-#define CH2_ERROR_ID            101
-#define SETTING_BP_MIN_ID       102
-#define SETTING_BP_AVER_ID      103
-#define SETTING_BP_MAX_ID       104
+#define BP_SETTING1_ID          95
+#define BP_FACT_ID              96
+#define BP_SIZE_ID              97
+#define  BP_REGULATION_TYPE_ID  98
+#define CH1_ERROR_ID            99
+#define CH2_ERROR_ID            100
+#define SETTING_BP_MIN_ID       101
+#define SETTING_BP_AVER_ID      102
+#define SETTING_BP_MAX_ID       103
+
+
+
+#define VOLTAG_SCREEN_TITLE_ID  104
+#define SETTING1_TITLE_ID       105
+#define SETTING2_TITLE_ID       106
+#define CALIBRATION_TITLE_ID    107
+
+#define TITLE_FIRST         VOLTAG_SCREEN_TITLE_ID
+#define TITLE_LAST          CALIBRATION_TITLE_ID
 
 
 typedef enum

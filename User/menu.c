@@ -710,6 +710,12 @@ u16 getDataModelID( u16 MENU_ID)
         case SENS_2_RAW_ID:        return (SENS2);
         case COOF_P_ID:            return (COOF_P);
         case COOF_I_ID:            return (COOF_I);
+        case COOF_P_1_ID:            return (COOF_P1);
+        case COOF_I_1_ID:            return (COOF_I1);
+        case COOF_P_2_ID:            return (COOF_P2);
+        case COOF_I_2_ID:            return (COOF_I2);
+        case COOF_P_3_ID:            return (COOF_P3);
+        case COOF_I_3_ID:            return (COOF_I3);
         case VOLTAGE_MIN_ON_ID:    return (LOW_VOLTAGE_ON);
         case VOLTAGE_MIN_OFF_ID:   return (LOW_VOLTAGE_OFF);
         case VOLTAGE_MAX_ON_ID:    return (HIGH_VOLTAGE_ON);
@@ -744,6 +750,28 @@ static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Нев
 static u8 const *  SettingTilteStirnf[]={"1/9 ","1/21 ","1/18 "};
 static u8 const *  Setting2TilteStirnf[]={"2/9 ","2/21 ","2/18 "};
 static u8 const *  VoltageTilteStirnf[] ={"5/9 ","20/21 ","17/18 "};
+static u8 const *  CalTilteStirnf[] ={"7/9 ","21/21 ","20/20 "};
+
+void vSetTitle(u16 data_id, u8 * str, u8 dev_type)
+{
+    switch (data_id)
+    {
+           case CALIBRATION_TITLE_ID:
+               strcpy(str,CalTilteStirnf[dev_type]);
+               break;
+           case SETTING1_TITLE_ID:
+               strcpy(str,SettingTilteStirnf[dev_type]);
+               break;
+           case SETTING2_TITLE_ID:
+               strcpy(str,Setting2TilteStirnf[dev_type]);
+               break;
+           case VOLTAG_SCREEN_TITLE_ID:
+               strcpy(str,VoltageTilteStirnf[dev_type]);
+               break;
+    }
+
+}
+
 
 void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len)
 {
@@ -754,17 +782,14 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
     if (index!=0) *index = cur_edit_index;
     if (len!=0)   *len = 1;
     u16 reg_id = getDataModelID(data_id);
+    if (( data_id >=TITLE_FIRST) &&  ( data_id <=TITLE_LAST))
+    {
+        vSetTitle(data_id,str,getReg8(DEVICE_TYPE));
+    }
+    else
     switch (data_id)
     {
-        case SETTING1_TITLE_ID:
-            strcpy(str,SettingTilteStirnf[getReg8(DEVICE_TYPE)]);
-            break;
-        case SETTING2_TITLE_ID:
-            strcpy(str,Setting2TilteStirnf[getReg8(DEVICE_TYPE)]);
-            break;
-        case VOLTAG_SCREEN_TITLE_ID:
-            strcpy(str,VoltageTilteStirnf[getReg8(DEVICE_TYPE)]);
-            break;
+
         case JOURNAL_TIME_ID:
             sprintf(str,TimeFormatString,time.hours,time.minutes,time.seconds);
             break;
@@ -828,6 +853,12 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             break;
         case COOF_P_ID:
         case COOF_I_ID:
+        case COOF_P_1_ID:
+        case COOF_I_1_ID:
+        case COOF_P_2_ID:
+        case COOF_I_2_ID:
+        case COOF_P_3_ID:
+        case COOF_I_3_ID:
         case KOOFKPS_ID:
             switch (command)
             {

@@ -37,7 +37,8 @@ UCHAR ucSDiscInBuf[REG_DISCRETE_NREGS/8];
 
 
 #define REG_HOLDING_START 0x01
-#define REG_HOLDING_NREGS 51
+#define REG_HOLDING_NREGS 151
+
 
 static USHORT usRegInputStart = REG_INPUT_START;
 static USHORT usRegInputBuf[REG_INPUT_NREGS];
@@ -45,9 +46,6 @@ static USHORT usRegHoldingStart = REG_HOLDING_START;
 static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 
 #define MODE_MB          0
-#define KOOF_P_MB        1
-#define KOOF_I_MB        3
-#define KOOF_K_MP        5
 #define CONTROL_TYPE_MB  7
 #define PROTOCOL_TYPE_MB 8
 #define TIME_H_MB        9
@@ -76,19 +74,15 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define MASK_3_MB        32
 #define MASK_4_MB        33
 #define IP_PORT_MB       34
-#define SET_MOD1_MB      35
-#define SET_MOD2_MB      36
-#define FILTER_LOW_MB    37
-#define FILTER_HIGH_MB   38
 #define TIME_SENS_MB     39
 #define TIME_FAN_STOP_MB 40
 #define COMMAND_REG      41
-#define LIGTH_REG_MB     42
 #define MODE_REG_MB      43
 #define ZERO_MB          44
 #define AOUT1_C_MB       45
 #define AOUT2_C_MB       47
 #define AOUT3_C_MB       49
+
 
 #define INP_MODE_MB      24
 #define INP_MH_H_MB      25
@@ -99,6 +93,47 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define AOUT2_MB         31
 #define AOUT3_MB         33
 
+
+#define COMMON_REG_COUNT 50
+
+
+//妓快忍我扼找把抑 FMCH
+#define FMCH_OFFSET       0
+#define FMCH_COUNT        10
+#define KOOF_P_MB         100
+#define KOOF_I_MB         102
+#define KOOF_K_MP         104
+#define FILTER_LOW_MB     106
+#define FILTER_HIGH_MB    107
+#define SET_MOD1_MB       108
+#define SET_MOD2_MB       109
+#define LIGTH_REG_MB      110
+
+#define CDV_OFFSET          100
+#define CDV_COUNT         20
+//妓快忍我扼找把抑 CDV
+#define CDV_KOOF_P_MB        200
+#define CDV_KOOF_I_MB        202
+#define CDV_KOOF_K_MP        204
+#define CDV_KOOF_I1_MB       208
+#define CDV_KOOF_P1_MB       210
+#define CDV_KOOF_I2_MB       212
+#define CDV_KOOF_P2_MB       214
+#define CDV_KOOF_I3_MB       216
+#define CDV_KOOF_P3_MB       218
+
+#define BP_OFFSET          200
+#define BP_COUNT           20
+//妓快忍我扼找把抑 BP
+#define BP_KOOF_P_MB        300
+#define BP_KOOF_I_MB        302
+#define BP_KOOF_K_MB        304
+#define BP_KOOF_I1_MB       308
+#define BP_KOOF_P1_MB       310
+#define BP_KOOF_I2_MB       312
+#define BP_KOOF_P2_MB       314
+#define BP_KOOF_I3_MB       316
+#define BP_KOOF_P3_MB       318
 
 //#define SENS_COOF  18
 //#define DAC_DATA   19
@@ -145,7 +180,7 @@ u8 MB_TASK_GetMode()
 
 
 
-static u8 getRegID( u8 mb_reg_address)
+static u8 getRegID( u16 mb_reg_address)
 {
     switch (mb_reg_address)
     {
@@ -164,15 +199,43 @@ static u8 getRegID( u8 mb_reg_address)
         case FILTER_HIGH_MB:    return (FILTER_HIGH);
         case TIME_SENS_MB:      return (SENSOR_COUNT);
         case TIME_FAN_STOP_MB:  return (FAN_START_TIMEOUT);
-        case (KOOF_P_MB+1):     return  (COOF_P);
-        case (KOOF_I_MB+1):     return  (COOF_I);
-        case (KOOF_K_MP+1):     return  (KOOFKPS);
+        case (KOOF_P_MB+1):
+        case (CDV_KOOF_P_MB+1):
+        case (BP_KOOF_P_MB+1):
+                                return  (COOF_P);
+
+        case (KOOF_I_MB+1):
+        case (CDV_KOOF_I_MB+1):
+        case (BP_KOOF_I_MB+1):
+                                return  (COOF_I);
+        case (KOOF_K_MP+1):
+        case (CDV_KOOF_K_MP+1):
+        case (BP_KOOF_K_MB+1):
+                                return  (KOOFKPS);
         case V_MIN_ON:          return (LOW_VOLTAGE_ON);
         case V_MIN_OFF:         return (LOW_VOLTAGE_OFF);
         case V_MAX_ON:          return (HIGH_VOLTAGE_ON);
         case V_MAX_OFF:          return (HIGH_VOLTAGE_OFF);
         case CONTROL_TYPE_MB :   return (CONTROL_TYPE);
         case PROTOCOL_TYPE_MB:  return (MB_PROTOCOL_TYPE);
+        case (CDV_KOOF_I1_MB +1):
+        case (BP_KOOF_I1_MB +1):
+                                return  (COOF_I1);
+        case (CDV_KOOF_P1_MB+1):
+        case (BP_KOOF_P1_MB+1):
+                                  return  (COOF_P1);
+        case (CDV_KOOF_I2_MB +1):
+        case (BP_KOOF_I2_MB +1):
+                                 return  (COOF_I2);
+        case (CDV_KOOF_P2_MB +1):
+        case (BP_KOOF_P2_MB +1):
+                                 return  (COOF_P2);
+        case (CDV_KOOF_I3_MB +1):
+        case (BP_KOOF_I3_MB +1):
+                                return  (COOF_I3);
+        case (CDV_KOOF_P3_MB +1):
+        case (BP_KOOF_P3_MB +1):
+                                return  (COOF_P3);
 
     }
     return 0;
@@ -184,7 +247,6 @@ void vSetRegData( u16 adress)
    u8 set_time_flag = 0;
    u8 set_date_flag = 0;
    float data;
-   u16   ref;
    u16 byte_data =(u16)usRegHoldingBuf[adress];
    u8 reg_addr = getRegID(adress);
    switch (adress)
@@ -254,6 +316,24 @@ void vSetRegData( u16 adress)
        case (KOOF_I_MB+1):
        case (KOOF_K_MP+1):
        case (KOOF_P_MB+1):
+       case (CDV_KOOF_I_MB+1):
+       case (CDV_KOOF_K_MP+1):
+       case (CDV_KOOF_P_MB+1):
+       case (CDV_KOOF_I1_MB+1):
+       case (CDV_KOOF_P1_MB+1):
+       case (CDV_KOOF_I2_MB+1):
+       case (CDV_KOOF_P2_MB+1):
+       case (CDV_KOOF_I3_MB+1):
+       case (CDV_KOOF_P3_MB+1):
+       case (BP_KOOF_I_MB+1):
+       case (BP_KOOF_K_MB+1):
+       case (BP_KOOF_P_MB+1):
+       case (BP_KOOF_I1_MB+1):
+       case (BP_KOOF_P1_MB+1):
+       case (BP_KOOF_I2_MB+1):
+       case (BP_KOOF_P2_MB+1):
+       case (BP_KOOF_I3_MB+1):
+       case (BP_KOOF_P3_MB+1):
            data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
            saveRegFloat(reg_addr, data);
            break;
@@ -376,23 +456,38 @@ static const u8 REGS8[REG8_SEQ_COUNT]={COMMAND_REG,
                                        CONTR_MB};
 
 
+static u16 const  device_specific_reg_offset[] = {FMCH_OFFSET ,CDV_OFFSET,BP_OFFSET };
+static u16 const  device_specific_reg_count[] =  {FMCH_COUNT ,CDV_COUNT,BP_COUNT};
 void MB_TASK_HOLDING_UDATE()
 {
     static HAL_TimeConfig_T time;
     static HAL_DateConfig_T date;
+    u16 reg_offet = 100;
     int32_t tempdata;
     usRegHoldingBuf[MODE_MB] = WORK_MODE;
+
     tempdata =(int32_t) (getRegFloat(COOF_P)*1000);
-
     convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_P_MB]);
-
-   // *((float*) (usRegHoldingBuf+KOOF_P_MB )) =  (float)tempdata/1000.0;
     tempdata =(int32_t) (getRegFloat(COOF_I)*1000);
     convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_I_MB]);
-   // *((float*) (usRegHoldingBuf+KOOF_I_MB )) =  (float)tempdata/1000.0;
     tempdata =(int32_t) (getRegFloat(KOOFKPS)*1000);
-  //  *((float*) (usRegHoldingBuf+KOOF_K_MP)) =  (float)tempdata/1000.0;
     convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_K_MP]);
+    if ( ( (DEVICE_TYPE_t)getReg8(DEVICE_TYPE) ==DEV_CDV ) || ( (DEVICE_TYPE_t)getReg8(DEVICE_TYPE) ==DEV_BP ) )
+    {
+          tempdata =(int32_t) (getRegFloat(COOF_P1)*1000);
+          convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P1_MB-reg_offet]);
+          tempdata =(int32_t) (getRegFloat(COOF_I1)*1000);
+          convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I1_MB-reg_offet]);
+          tempdata =(int32_t) (getRegFloat(COOF_P2)*1000);
+          convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P2_MB-reg_offet]);
+          tempdata =(int32_t) (getRegFloat(COOF_I2)*1000);
+          convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I2_MB-reg_offet]);
+          tempdata =(int32_t) (getRegFloat(COOF_P3)*1000);
+          convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P3_MB-reg_offet]);
+          tempdata =(int32_t) (getRegFloat(COOF_I3)*1000);
+          convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-reg_offet]);
+    }
+
     convert_float_to_int(USER_AOUT_GET(DAC1),&usRegHoldingBuf[AOUT1_C_MB]);
     convert_float_to_int(USER_AOUT_GET(DAC2),&usRegHoldingBuf[AOUT2_C_MB]);
     convert_float_to_int(USER_AOUT_GET(DAC3),&usRegHoldingBuf[AOUT3_C_MB]);
@@ -449,18 +544,22 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
 {
   eMBErrorCode    eStatus = MB_ENOERR;
   int             iRegIndex;
+  u16 reg_offet = device_specific_reg_offset[getReg8(DEVICE_TYPE)];
+  u16 reg_count = device_specific_reg_count[getReg8(DEVICE_TYPE)];
 
-  if( ( usAddress >= REG_HOLDING_START ) && ( usAddress + usNRegs <= REG_HOLDING_START + REG_HOLDING_NREGS ) )
+  if (( ( usAddress >= REG_HOLDING_START ) && ( usAddress + usNRegs <= COMMON_REG_COUNT ) ) ||  ( ( usAddress >= 100 + reg_offet ) && ( usAddress + usNRegs <= (reg_offet+ 100 +reg_count) ) ))
   {
     iRegIndex = ( int )( usAddress - usRegHoldingStart );
     switch ( eMode )
     {
     case MB_REG_READ:
       MB_TASK_HOLDING_UDATE();
+      u16 offset=0;
       while( usNRegs > 0 )
       {
-        *pucRegBuffer++ = ( unsigned char )( usRegHoldingBuf[iRegIndex] >> 8 );
-        *pucRegBuffer++ = ( unsigned char )( usRegHoldingBuf[iRegIndex] & 0xFF );
+        if (iRegIndex >=(100+ reg_offet)) offset = reg_offet; else offset = 0;
+        *pucRegBuffer++ = ( unsigned char )( usRegHoldingBuf[iRegIndex-offset] >> 8 );
+        *pucRegBuffer++ = ( unsigned char )( usRegHoldingBuf[iRegIndex-offset] & 0xFF );
         iRegIndex++;
         usNRegs--;
       }
@@ -469,8 +568,9 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
     case MB_REG_WRITE:
        while( usNRegs > 0 )
       {
-        usRegHoldingBuf[iRegIndex] = *pucRegBuffer++ << 8;
-        usRegHoldingBuf[iRegIndex] |= *pucRegBuffer++;
+        if (iRegIndex >=(100+ reg_offet)) offset = reg_offet; else offset = 0;
+        usRegHoldingBuf[iRegIndex-offset ] = *pucRegBuffer++ << 8;
+        usRegHoldingBuf[iRegIndex-offset ] |= *pucRegBuffer++;
         vSetRegData(iRegIndex);
         iRegIndex++;
         usNRegs--;

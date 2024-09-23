@@ -12,6 +12,7 @@
 #include "hal_rtc.h"
 
 
+
 #define SW_V                  1
 #define SW_V2                 2
 #define SW_V3              11
@@ -52,7 +53,13 @@
 #define RESURSE               ( SENSOR2_ZERO + sizeof(uint16_t) )
 #define COOF_I                ( RESURSE + sizeof(uint32_t)  )
 #define COOF_P                ( COOF_I + sizeof(uint32_t) )
-#define KOOFKPS               ( COOF_P + sizeof(uint32_t))
+#define COOF_I1               ( COOF_P + sizeof(uint32_t))
+#define COOF_P1               ( COOF_I1 + sizeof(uint32_t) )
+#define COOF_I2               ( COOF_P1 + sizeof(uint32_t))
+#define COOF_P2               ( COOF_I2 + sizeof(uint32_t) )
+#define COOF_I3               ( COOF_P2 + sizeof(uint32_t))
+#define COOF_P3               ( COOF_I3 + sizeof(uint32_t) )
+#define KOOFKPS               ( COOF_P3 + sizeof(uint32_t))
 #define SETTING1              ( KOOFKPS + sizeof(uint32_t))
 #define SETTING2              ( SETTING1 + sizeof(uint16_t) )
 #define FILTER_LOW            ( SETTING2 + sizeof(uint16_t) )

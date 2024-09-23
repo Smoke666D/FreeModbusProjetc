@@ -50,7 +50,7 @@ static xScreenObjet const InfoScreen4[]=
 
 static xScreenObjet const SettingsScreen1[]=
 {
-        {0,10,LINE1,70,READ_DATA, "Настройки",    SETTING1_TITLE_ID },
+        {0,10,LINE1,70,READ_DATA, "Настройки",          SETTING1_TITLE_ID },
         {0,2,25,70,WRITE_DATA,"Режим управл.",          CONTROL_MODE_ID },
         {0,2,37,70,WRITE_DATA,"Протокол связи.",        PROTOCOL_ID },
         {0,2,50,70,WRITE_DATA,"Адрес ModBus",           MB_RTU_ADDR_ID},
@@ -59,11 +59,11 @@ static xScreenObjet const SettingsScreen1[]=
 
 static xScreenObjet const SettingsScreen2[]=
 {
-        {0,10,LINE1,70,READ_DATA, "Настройки      ",        SETTING2_TITLE_ID },
-        {0,2,25,70,WRITE_DATA,"IP",                         IP_ADRESS_DATA_ID},
-        {0,2,37,90,WRITE_DATA,"IP Порт",                    IP_PORT_ID},
-        {0,2,50,70,WRITE_DATA,"Шлюз",                       IP_GATE_ID},
-        {1,2,62,15,WRITE_DATA,"Маска",                      IP_SUBNETMASK_ID },
+        {0,10,LINE1,70,READ_DATA, "Настройки      ",    SETTING2_TITLE_ID },
+        {0,2,25,70,WRITE_DATA,"IP",                     IP_ADRESS_DATA_ID},
+        {0,2,37,90,WRITE_DATA,"IP Порт",                IP_PORT_ID},
+        {0,2,50,70,WRITE_DATA,"Шлюз",                   IP_GATE_ID},
+        {1,2,62,15,WRITE_DATA,"Маска",                  IP_SUBNETMASK_ID },
 };
 
 static xScreenObjet const SettingsScreen3[]=
@@ -72,7 +72,7 @@ static xScreenObjet const SettingsScreen3[]=
         {0,2,25,70,TEXT_STRING,"Уставки режимов  м^3/ч",    0},
         {0,2,37,70,WRITE_DATA,"Режим 1",                SETTING1_ID},
         {0,2,50,90,WRITE_DATA,"Режим 2",                SETTING2_ID},
-        {1,2,62,70,WRITE_DATA,KOOFKPS_TEXT,             KOOFKPS_ID},
+        {1,2,62,70,WRITE_DATA,(char*)KOOFKPS_TEXT,             KOOFKPS_ID},
 
 };
 static xScreenObjet const SettingsScreen4[]=
@@ -102,7 +102,7 @@ static xScreenObjet const SettingsScreen6[]=
 };
 static xScreenObjet const SettingsScreen7[]=
 {
-        {0,10,LINE1,70,TEXT_STRING,"Настройки       7/9",    0},
+        {0,10,LINE1,70,READ_DATA,"Настройки",  CALIBRATION_TITLE_ID},
         {0,2,25,70,TEXT_STRING,"Текущий перепад давл.",  0},
         {0,2,37,90,READ_DATA,"Вентилятор",               SENS_1_RAW_ID},
         {0,2,50,70,READ_DATA,"Фильтр",                   SENS_2_RAW_ID},
@@ -339,40 +339,41 @@ static xScreenObjet const CDVSettingsScreen19[]=
 
 static xScreenObjet const CDVSettingsScreen20[]=
 {
-        {0,10,LINE1,70,TEXT_STRING,"Настройки      21/21",    0},
-        {0,2,25,70,TEXT_STRING,"Текущий перепад давл.",  0},
-        {0,2,37,90,READ_DATA,"Канал 1",               SENS_1_RAW_ID},
-        {0,2,50,70,READ_DATA,"Канал 2",                   SENS_2_RAW_ID},
-        {1,2,62,15,WRITE_DATA,"Откалибравать 0",         ZERO_CALIBRATE_ID },
+        {0,10,LINE1,70,READ_DATA,"Настройки",               CALIBRATION_TITLE_ID},
+        {0,2,25,70,TEXT_STRING,"Текущий перепад давл.",    0},
+        {0,2,37,90,READ_DATA,"Канал 1",                     SENS_1_RAW_ID},
+        {0,2,50,70,READ_DATA,"Канал 2",                     SENS_2_RAW_ID},
+        {1,2,62,15,WRITE_DATA,"Откалибравать 0",            ZERO_CALIBRATE_ID },
 };
 
 xScreenType  xScreenCVD[CDV_SCREENS_COUNT] =
 {
   {1,CDVInfoScreen1,   3,   2,  11,  11, 0, 0 },
   {2,CDVInfoScreen3,   1,   3,  0,  0 ,  0, 1 },
-  {3,InfoScreen3,      2,   1,  0,   0, 4  , 1  },
-  {4,SettingsScreen1,  0,   0,  25,  5,   ENTER_COMMNAD , 3  },
-  {5,SettingsScreen2,  0,   0,  4,   6, ENTER_COMMNAD , 3 },
-  {6,CDVSettingsScreen3,  0,   0,  5,  7,  ENTER_COMMNAD , 3 },
-  {7,CDVSettingsScreen4,  0,   0,  6,  8,  ENTER_COMMNAD , 3  },
-  {8,CDVSettingsScreen5,  0,   0,  7,  9,  ENTER_COMMNAD , 3  },
-  {9,CDVSettingsScreen6,  0,   0,  8,  10, ENTER_COMMNAD,  3 },
-  {10,CDVSettingsScreen7, 0,   0,  9,  12, ENTER_COMMNAD,  3 },
-  {11,CDVInfoScreen2,      0,   0,  1,  1, 0, 0 },
-  {12,CDVSettingsScreen8, 0,   0, JOURNAL_NEXT , JOURNAL_PREV, 0,  2 },
-  {13,CDVSettingsScreen9, 0,   0,  10,   14,   ENTER_COMMNAD, 3 },
-  {14,CDVSettingsScreen10, 0,   0,  13,   15,   ENTER_COMMNAD, 3 },
-  {15,CDVSettingsScreen11, 0,   0,  14,   16,   ENTER_COMMNAD, 3 },
-  {16,CDVSettingsScreen12, 0,   0,  15,   17,   ENTER_COMMNAD, 3 },
-  {17,CDVSettingsScreen13, 0,   0,  16,   18,   ENTER_COMMNAD, 3 },
-  {18,CDVSettingsScreen14, 0,   0,  17,   19,   ENTER_COMMNAD, 3 },
-  {19,CDVSettingsScreen15, 0,   0,  18,   20,   ENTER_COMMNAD, 3 },
-  {20,CDVSettingsScreen16, 0,   0,  19,   21,   ENTER_COMMNAD, 3 },
-  {21,CDVSettingsScreen17, 0,   0,  20,   22,   ENTER_COMMNAD, 3 },
-  {22,CDVSettingsScreen18, 0,   0,  21,   23,   ENTER_COMMNAD, 3 },
-  {23,CDVSettingsScreen19, 0,   0,  22,   24,   ENTER_COMMNAD, 3 },
-  {24,SettingsScreen5,     0,   0,  23,   25,   ENTER_COMMNAD, 3 },
-  {25,CDVSettingsScreen20, 0,   0,  24,   4,    ENTER_COMMNAD, 3 },
+  {3,InfoScreen2,      1,   3,  0,  0 , 12 | JOURNAL_VIEW_COMMAND, 1 },
+  {4,InfoScreen3,      2,   1,  0,   0, 4  , 1  },
+  {5,SettingsScreen1,  0,   0,  25,  5,   ENTER_COMMNAD , 3  },
+  {6,SettingsScreen2,  0,   0,  4,   6, ENTER_COMMNAD , 3 },
+  {7,CDVSettingsScreen3,  0,   0,  5,  7,  ENTER_COMMNAD , 3 },
+  {8,CDVSettingsScreen4,  0,   0,  6,  8,  ENTER_COMMNAD , 3  },
+  {9,CDVSettingsScreen5,  0,   0,  7,  9,  ENTER_COMMNAD , 3  },
+  {10,CDVSettingsScreen6,  0,   0,  8,  10, ENTER_COMMNAD,  3 },
+  {11,CDVSettingsScreen7, 0,   0,  9,  12, ENTER_COMMNAD,  3 },
+  {12,CDVInfoScreen2,      0,   0,  1,  1, 0, 0 },
+  {13,CDVSettingsScreen8, 0,   0, JOURNAL_NEXT , JOURNAL_PREV, 0,  2 },
+  {14,CDVSettingsScreen9, 0,   0,  10,   14,   ENTER_COMMNAD, 3 },
+  {15,CDVSettingsScreen10, 0,   0,  13,   15,   ENTER_COMMNAD, 3 },
+  {16,CDVSettingsScreen11, 0,   0,  14,   16,   ENTER_COMMNAD, 3 },
+  {17,CDVSettingsScreen12, 0,   0,  15,   17,   ENTER_COMMNAD, 3 },
+  {18,CDVSettingsScreen13, 0,   0,  16,   18,   ENTER_COMMNAD, 3 },
+  {19,CDVSettingsScreen14, 0,   0,  17,   19,   ENTER_COMMNAD, 3 },
+  {20,CDVSettingsScreen15, 0,   0,  18,   20,   ENTER_COMMNAD, 3 },
+  {21,CDVSettingsScreen16, 0,   0,  19,   21,   ENTER_COMMNAD, 3 },
+  {22,CDVSettingsScreen17, 0,   0,  20,   22,   ENTER_COMMNAD, 3 },
+  {23,CDVSettingsScreen18, 0,   0,  21,   23,   ENTER_COMMNAD, 3 },
+  {24,CDVSettingsScreen19, 0,   0,  22,   24,   ENTER_COMMNAD, 3 },
+  {25,SettingsScreen5,     0,   0,  23,   25,   ENTER_COMMNAD, 3 },
+  {26,CDVSettingsScreen20, 0,   0,  24,   4,    ENTER_COMMNAD, 3 },
 };
 
 /*
@@ -407,7 +408,7 @@ static xScreenObjet const BPSettingsScreen3[]=
 
 static xScreenObjet const BPSettingsScreen4[]=
 {
-        {0,10,LINE1,70,TEXT_STRING,"Настройки      4/21",    0},
+        {0,10,LINE1,70,TEXT_STRING,"Настройки      4/20",    0},
         {0,2,25,70,WRITE_DATA,"Кол-во каналов",              CHANNEL_COUNT_ID},
         {0,2,37,70,WRITE_DATA,"Смещ 2",                      OFFSET2_ID},
         {0,2,50,90,WRITE_DATA,"Авар кан.1",                  CH1_ERROR_ID},
@@ -416,7 +417,7 @@ static xScreenObjet const BPSettingsScreen4[]=
 
 static xScreenObjet const PBSettingsScreen5[]=
 {
-        {0,10,LINE1,70,TEXT_STRING,"Настройки      4/21",    0},
+        {0,10,LINE1,70,TEXT_STRING,"Настройки      5/20",    0},
         {0,2,25,70,TEXT_STRING,"Уставки",          0},
         {0,2,37,70,WRITE_DATA,"Мин.",               SETTING_BP_MIN_ID},
         {0,2,50,90,WRITE_DATA,"Сред.",              SETTING_BP_AVER_ID},
@@ -429,27 +430,27 @@ xScreenType  xScreenBP[BP_SCREENS_COUNT] =
 {
   {1,BPInfoScreen1,   3,   2,  11,  11, 0, 0 },
   {2,BPInfoScreen3,   1,   3,  0,  0 ,  0, 1 },
-  {3,InfoScreen3,      2,   1,  0,   0, 4  , 1  },
-  {4,SettingsScreen1,  0,   0,  25,  5,   ENTER_COMMNAD , 3  },
-  {5,SettingsScreen2,  0,   0,  4,   6, ENTER_COMMNAD , 3 },
-  {6,BPSettingsScreen3,  0,   0,  5,  7,  ENTER_COMMNAD , 3 },
-  {7,BPSettingsScreen4,  0,   0,  6,  8,  ENTER_COMMNAD , 3  },
-  {8,PBSettingsScreen5,  0,   0,  7,  9,  ENTER_COMMNAD , 3  },
-  {9,CDVSettingsScreen7,  0,   0,  8,  10, ENTER_COMMNAD,  3 },
-  {10,CDVSettingsScreen14, 0,   0,  9,  12, ENTER_COMMNAD,  3 },
-  {11,CDVInfoScreen2,      0,   0,  1,  1, 0, 0 },
-  {12,CDVSettingsScreen13, 0,   0, JOURNAL_NEXT , JOURNAL_PREV, 0,  2 },
-  {13,CDVSettingsScreen11, 0,   0,  10,   14,   ENTER_COMMNAD, 3 },
-  {14,CDVSettingsScreen12, 0,   0,  13,   15,   ENTER_COMMNAD, 3 },
-  {15,CDVSettingsScreen10, 0,   0,  14,   16,   ENTER_COMMNAD, 3 },
-  {16,CDVSettingsScreen9, 0,   0,  15,   17,   ENTER_COMMNAD, 3 },
-  {17,CDVSettingsScreen8, 0,   0,  16,   18,   ENTER_COMMNAD, 3 },
-  {18,CDVSettingsScreen13, 0,   0,  17,   19,   ENTER_COMMNAD, 3 },
-  {19,CDVSettingsScreen15, 0,   0,  18,   20,   ENTER_COMMNAD, 3 },
-  {20,CDVSettingsScreen16, 0,   0,  19,   21,   ENTER_COMMNAD, 3 },
-  {21,CDVSettingsScreen17, 0,   0,  20,   22,   ENTER_COMMNAD, 3 },
-  {22,CDVSettingsScreen18, 0,   0,  21,   23,   ENTER_COMMNAD, 3 },
-  {23,CDVSettingsScreen19, 0,   0,  22,   24,   ENTER_COMMNAD, 3 },
+  {3,InfoScreen2,      1,   3,  0,  0 , 12 | JOURNAL_VIEW_COMMAND, 1 },
+  {4,InfoScreen3,      2,   1,  0,   0, 4  , 1  },
+  {5,SettingsScreen1,  0,   0,  25,  5,   ENTER_COMMNAD , 3  },
+  {6,SettingsScreen2,  0,   0,  4,   6, ENTER_COMMNAD , 3 },
+  {7,BPSettingsScreen3,  0,   0,  5,  7,  ENTER_COMMNAD , 3 },
+  {8,BPSettingsScreen4,  0,   0,  6,  8,  ENTER_COMMNAD , 3  },
+  {9,PBSettingsScreen5,  0,   0,  7,  9,  ENTER_COMMNAD , 3  },
+  {10,CDVSettingsScreen7,  0,   0,  8,  10, ENTER_COMMNAD,  3 },
+  {11,CDVSettingsScreen14, 0,   0,  9,  12, ENTER_COMMNAD,  3 },
+  {12,CDVInfoScreen2,      0,   0,  1,  1, 0, 0 },
+  {13,CDVSettingsScreen13, 0,   0, JOURNAL_NEXT , JOURNAL_PREV, 0,  2 },
+  {14,CDVSettingsScreen11, 0,   0,  10,   14,   ENTER_COMMNAD, 3 },
+  {15,CDVSettingsScreen12, 0,   0,  13,   15,   ENTER_COMMNAD, 3 },
+  {16,CDVSettingsScreen10, 0,   0,  14,   16,   ENTER_COMMNAD, 3 },
+  {17,CDVSettingsScreen9, 0,   0,  15,   17,   ENTER_COMMNAD, 3 },
+  {18,CDVSettingsScreen8, 0,   0,  16,   18,   ENTER_COMMNAD, 3 },
+  {19,CDVSettingsScreen15, 0,   0,  17,   19,   ENTER_COMMNAD, 3 },
+  {20,CDVSettingsScreen16, 0,   0,  18,   20,   ENTER_COMMNAD, 3 },
+  {21,CDVSettingsScreen17, 0,   0,  19,   21,   ENTER_COMMNAD, 3 },
+  {22,CDVSettingsScreen18, 0,   0,  20,   22,   ENTER_COMMNAD, 3 },
+  {23,CDVSettingsScreen19, 0,   0,  21,   23,   ENTER_COMMNAD, 3 },
   {24,SettingsScreen5,     0,   0,  23,   25,   ENTER_COMMNAD, 3 },
   {25,CDVSettingsScreen20, 0,   0,  24,   4,    ENTER_COMMNAD, 3 },
 };
