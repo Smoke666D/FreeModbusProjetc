@@ -112,7 +112,7 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define LIGTH_REG_MB      113
 
 #define CDV_OFFSET          100
-#define CDV_COUNT         22
+#define CDV_COUNT         31
 //§²§Ö§Ô§Ú§ã§ä§â§í CDV
 #define CDV_KOOF_P_MB           200
 #define CDV_KOOF_I_MB           202
@@ -130,6 +130,9 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define CDV_PRIOR_SENS          225
 #define CDV_CLEAN_TIMER         226
 #define CDV_ZERO_POINT_TIMEOUT  227
+#define CDV_KK_SENSOR_TYPE      228
+#define CDV_CO2_SENSOR_TYPE     229
+#define CDV_H_SENSOR_TYPE       230
 
 
 #define BP_OFFSET          200
@@ -151,6 +154,9 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define BP_PRIOR_SENS           325
 #define BP_CLEAN_TIMER          326
 #define BP_ZERO_POINT_TIMEOUT   327
+#define BP_KK_SENSOR_TYPE       328
+#define BP_CO2_SENSOR_TYPE      329
+#define BP_H_SENSOR_TYPE        330
 
 //#define SENS_COOF  18
 //#define DAC_DATA   19
@@ -199,6 +205,63 @@ u8 MB_TASK_GetMode()
 
 static u8 getRegID( u16 mb_reg_address)
 {
+
+    if (mb_reg_address >= CDV_OFFSET)
+    {
+        switch (mb_reg_address)
+        {
+                case (CDV_KOOF_I1_MB +1):
+                case (BP_KOOF_I1_MB +1):
+                                        return  (COOF_I1);
+                case (CDV_KOOF_P1_MB+1):
+                case (BP_KOOF_P1_MB+1):
+                                          return  (COOF_P1);
+                case (CDV_KOOF_I2_MB +1):
+                case (BP_KOOF_I2_MB +1):
+                                         return  (COOF_I2);
+                case (CDV_KOOF_P2_MB +1):
+                case (BP_KOOF_P2_MB +1):
+                                         return  (COOF_P2);
+                case (CDV_KOOF_I3_MB +1):
+                case (BP_KOOF_I3_MB +1):
+                                        return  (COOF_I3);
+                case (CDV_KOOF_P3_MB +1):
+                case (BP_KOOF_P3_MB +1):
+                                        return  (COOF_P3);
+                case CDV_AFZONE_SETTING_MB:
+                case BP_AFZONE_SETTING_MB:
+                                        return (AFTER_ZONE_SETTING);
+                case CDV_CH_COUNT_MB:
+                case BP_CH_COUNT_MB:
+                                        return ( CDV_BP_CH_COUNT );
+                case CDV_MEASERING_UNIT:
+                case BP_MEASERING_UNIT:
+                                        return  (MEASERING_UNIT);
+                case  CDV_OFFSET_CH2+1:
+                case  BP_OFFSET_CH2+1:
+                                        return  ( OFFSET_CH2);
+                case BP_PRIOR_SENS:
+                case CDV_PRIOR_SENS:
+                                        return (PRIOR_SENSOR );
+                case CDV_CLEAN_TIMER:
+                case BP_CLEAN_TIMER:
+                                      return (CLEAN_TIMER);
+                case CDV_ZERO_POINT_TIMEOUT:
+                case BP_ZERO_POINT_TIMEOUT:
+                                    return (ZERO_POINT_TIMEOUT);
+                case CDV_KK_SENSOR_TYPE:
+                case BP_KK_SENSOR_TYPE:
+                                        return (KK_SENSOR_TYPE);
+                case CDV_CO2_SENSOR_TYPE:
+                case BP_CO2_SENSOR_TYPE:
+                                        return (CO2_SENSOR_TYPE);
+                case CDV_H_SENSOR_TYPE:
+                case BP_H_SENSOR_TYPE:
+                                        return (H_SENSOR_TYPE);
+        }
+    }
+    else
+
     switch (mb_reg_address)
     {
         case CONTR_MB:          return (CONTRAST);
@@ -234,45 +297,7 @@ static u8 getRegID( u16 mb_reg_address)
         case V_MAX_OFF:          return (HIGH_VOLTAGE_OFF);
         case CONTROL_TYPE_MB :   return (CONTROL_TYPE);
         case PROTOCOL_TYPE_MB:  return (MB_PROTOCOL_TYPE);
-        case (CDV_KOOF_I1_MB +1):
-        case (BP_KOOF_I1_MB +1):
-                                return  (COOF_I1);
-        case (CDV_KOOF_P1_MB+1):
-        case (BP_KOOF_P1_MB+1):
-                                  return  (COOF_P1);
-        case (CDV_KOOF_I2_MB +1):
-        case (BP_KOOF_I2_MB +1):
-                                 return  (COOF_I2);
-        case (CDV_KOOF_P2_MB +1):
-        case (BP_KOOF_P2_MB +1):
-                                 return  (COOF_P2);
-        case (CDV_KOOF_I3_MB +1):
-        case (BP_KOOF_I3_MB +1):
-                                return  (COOF_I3);
-        case (CDV_KOOF_P3_MB +1):
-        case (BP_KOOF_P3_MB +1):
-                                return  (COOF_P3);
-        case CDV_AFZONE_SETTING_MB:
-        case BP_AFZONE_SETTING_MB:
-                                return (AFTER_ZONE_SETTING);
-        case CDV_CH_COUNT_MB:
-        case BP_CH_COUNT_MB:
-                                return ( CDV_BP_CH_COUNT );
-        case CDV_MEASERING_UNIT:
-        case BP_MEASERING_UNIT:
-                                return  (MEASERING_UNIT);
-        case  CDV_OFFSET_CH2+1:
-        case  BP_OFFSET_CH2+1:
-                                return  ( OFFSET_CH2);
-        case BP_PRIOR_SENS:
-        case CDV_PRIOR_SENS:
-                                return (PRIOR_SENSOR );
-        case CDV_CLEAN_TIMER:
-        case BP_CLEAN_TIMER:
-                              return (CLEAN_TIMER);
-        case CDV_ZERO_POINT_TIMEOUT:
-        case BP_ZERO_POINT_TIMEOUT:
-                            return (ZERO_POINT_TIMEOUT);
+
     }
     return 0;
 }
@@ -299,6 +324,12 @@ void vSetRegData( u16 adress)
                }
            }
            break;
+       case CDV_KK_SENSOR_TYPE:
+       case BP_KK_SENSOR_TYPE:
+       case CDV_H_SENSOR_TYPE:
+       case BP_H_SENSOR_TYPE:
+       case CDV_CO2_SENSOR_TYPE:
+       case BP_CO2_SENSOR_TYPE:
        case CDV_AFZONE_SETTING_MB:
        case BP_AFZONE_SETTING_MB:
        case CDV_CH_COUNT_MB:
@@ -445,6 +476,7 @@ void vSetRegData( u16 adress)
        case  FILTER_HIGH_MB:
        case CDV_ZERO_POINT_TIMEOUT:
        case BP_ZERO_POINT_TIMEOUT:
+
            saveReg16(reg_addr, usRegHoldingBuf[adress]);
            break;
        case CDV_CLEAN_TIMER:
@@ -498,14 +530,14 @@ static void MB_TASK_INPUTS_UDATE()
 
 
 }
-#define CDV_BP_REG8_SEQ_COUNT 5
+#define CDV_BP_REG8_SEQ_COUNT 8
 #define CDV_BP_REG_SEQ_COUNT 1
 
 #define REG_SEQ_COUNT 5
 #define REG8_SEQ_COUNT 12
 
 
-static const u8 CDV_BP_REGS8[CDV_BP_REG8_SEQ_COUNT]={CDV_AFZONE_SETTING_MB,CDV_CH_COUNT_MB ,CDV_MEASERING_UNIT,CDV_PRIOR_SENS,CDV_CLEAN_TIMER};
+static const u8 CDV_BP_REGS8[CDV_BP_REG8_SEQ_COUNT]={CDV_AFZONE_SETTING_MB,CDV_CH_COUNT_MB ,CDV_MEASERING_UNIT,CDV_PRIOR_SENS,CDV_CLEAN_TIMER,CDV_KK_SENSOR_TYPE,CDV_CO2_SENSOR_TYPE,CDV_H_SENSOR_TYPE};
 static const u8 CDV_BP_REGS[CDV_BP_REG_SEQ_COUNT]={CDV_ZERO_POINT_TIMEOUT};
 static const u8 REGS[REG_SEQ_COUNT]={IP_PORT_MB,SET_MOD1_MB,SET_MOD2_MB,FILTER_LOW_MB,FILTER_HIGH_MB};
 static const u8 REGS8[REG8_SEQ_COUNT]={COMMAND_REG,
@@ -565,7 +597,7 @@ void MB_TASK_HOLDING_UDATE()
                u8 index = getRegID(CDV_BP_REGS8[i]);
                usRegHoldingBuf[CDV_BP_REGS8[i] -CDV_OFFSET ]      = getReg8(index);
           }
-          for (u8 i=0;i<CDV_BP_REG_SEQ_COUNT;i++)
+          for (u8 i=0;i<CDV_BP_REG_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  16 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
           {
                u8 index = getRegID(CDV_BP_REGS[i]);
                usRegHoldingBuf[CDV_BP_REGS[i]]      = getReg16(index);

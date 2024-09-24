@@ -68,7 +68,10 @@
 #define PRIOR_SENSOR          ( CDV_BP_CH_COUNT    + sizeof(uint8_t) )
 #define CLEAN_TIMER           ( PRIOR_SENSOR       + sizeof(uint8_t) )
 #define ZERO_POINT_TIMEOUT    ( CLEAN_TIMER       + sizeof(uint8_t) )
-#define OFFSET_CH2            ( ZERO_POINT_TIMEOUT  + sizeof(uint16_t) )
+#define KK_SENSOR_TYPE        ( ZERO_POINT_TIMEOUT  + sizeof(uint16_t) )
+#define CO2_SENSOR_TYPE       ( KK_SENSOR_TYPE + sizeof(uint8_t) )
+#define H_SENSOR_TYPE         ( CO2_SENSOR_TYPE + sizeof(uint8_t) )
+#define OFFSET_CH2            ( H_SENSOR_TYPE   + sizeof(uint8_t) )
 #define FILTER_LOW            ( OFFSET_CH2         + sizeof(uint32_t) )
 #define FILTER_HIGH           ( FILTER_LOW + sizeof(uint16_t) )
 #define MOTO_HOURS            ( FILTER_HIGH + sizeof(uint16_t) )
@@ -109,6 +112,13 @@ typedef enum
   TROOM_TCH = 1,
   T_AUTO    = 2,
 } AFTER_ZONE_CONTROL_t;
+
+typedef enum
+{
+  T0_10     = 0,
+  T2_10     = 1,
+  T4_20     = 2,
+} SENSOR_TYPE_t;
 
 typedef enum
 {

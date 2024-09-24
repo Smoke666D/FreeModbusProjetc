@@ -104,6 +104,9 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
     u8 need_to_save = 0;
     switch (reg_adress)
     {
+        case KK_SENSOR_TYPE:
+        case CO2_SENSOR_TYPE:
+        case H_SENSOR_TYPE:
         case MEASERING_UNIT:
         case AFTER_ZONE_SETTING:
         case PRIOR_SENSOR:

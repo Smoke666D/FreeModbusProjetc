@@ -110,6 +110,7 @@ static u8 * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
 static u8 * AfterZoneStrig[]={"Tканала<Tпомещения","Tканала>Tпомещения","Автомат"};
 static u8 * MUnitStrig[] = {"м^3/ч","м/c","Па"};
 static u8 * PriorSentStrig[]= {"T","CO2","H"};
+static u8 * SensorTypeStrig[]= {"0-10","2-10","4-20"};
 static xScreenType * pMenu;
 static u8 journal_index =0;
 static uint16_t curr_edit_data_id = 0;
@@ -743,6 +744,9 @@ u16 getDataModelID( u16 MENU_ID)
         case PRIOR_SENSOR_ID:       return (PRIOR_SENSOR );
         case CLEAN_TIMER_ID:        return (CLEAN_TIMER);
         case ZERO_POINT_TIMEOUT_ID: return (ZERO_POINT_TIMEOUT);
+        case KK_SENSOR_TYPE_ID:     return (KK_SENSOR_TYPE);
+        case CO2_SENSOR_TYPE_ID:    return (CO2_SENSOR_TYPE);
+        case H_SENSOR_TYPE_ID:      return (H_SENSOR_TYPE);
         default: return 0;
     }
 }
@@ -785,6 +789,24 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
     switch (data_id)
     {
 
+        case KK_SENSOR_TYPE_ID:
+        case CO2_SENSOR_TYPE_ID:
+        case H_SENSOR_TYPE_ID:
+            *len = 0;
+            switch (command)
+            {
+                case CMD_EDIT_READ:
+                    strcpy(str, SensorTypeStrig[ edit_data_buffer_byte ] );
+                    break;
+                case CMD_READ:
+                    strcpy(str, SensorTypeStrig[ getReg8( reg_id)] );
+                    break;
+                default:
+                    vByteDataEdit(0,reg_id,command,0,T4_20, T0_10 );
+                    break;
+            }
+
+            break;
         case ZERO_POINT_TIMEOUT_ID:
             switch (command)
             {
