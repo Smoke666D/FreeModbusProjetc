@@ -46,42 +46,40 @@ static USHORT usRegHoldingStart = REG_HOLDING_START;
 static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 
 #define MODE_MB          0
-#define CONTROL_TYPE_MB  7
-#define PROTOCOL_TYPE_MB 8
-#define TIME_H_MB        9
-#define TIME_M_MB        10
-#define TIME_S_MB        11
-#define DATE_D_MB        12
-#define DATE_M_MB        13
-#define DATE_Y_MB        14
-#define V_MIN_ON         15
-#define V_MIN_OFF        16
-#define V_MAX_ON         17
-#define V_MAX_OFF        18
-#define CONTR_MB         19
-#define MB_ADDRES_MB     20
-#define TIME_OUT_MB      21
-#define IP_1_MB          22
-#define IP_2_MB          23
-#define IP_3_MB          24
-#define IP_4_MB          25
-#define GATE_1_MB        26
-#define GATE_2_MB        27
-#define GATE_3_MB        28
-#define GATE_4_MB        29
-#define MASK_1_MB        30
-#define MASK_2_MB        31
-#define MASK_3_MB        32
-#define MASK_4_MB        33
-#define IP_PORT_MB       34
-#define TIME_SENS_MB     39
-#define TIME_FAN_STOP_MB 40
-#define COMMAND_REG      41
-#define MODE_REG_MB      43
-#define ZERO_MB          44
-#define AOUT1_C_MB       45
-#define AOUT2_C_MB       47
-#define AOUT3_C_MB       49
+#define CONTROL_TYPE_MB  1
+#define PROTOCOL_TYPE_MB 2
+#define TIME_H_MB        3
+#define TIME_M_MB        4
+#define TIME_S_MB        5
+#define DATE_D_MB        6
+#define DATE_M_MB        7
+#define DATE_Y_MB        8
+#define V_MIN_ON         9
+#define V_MIN_OFF        10
+#define V_MAX_ON         11
+#define V_MAX_OFF        12
+#define CONTR_MB         13
+#define MB_ADDRES_MB     14
+#define TIME_OUT_MB      15
+#define IP_1_MB          16
+#define IP_2_MB          17
+#define IP_3_MB          18
+#define IP_4_MB          19
+#define GATE_1_MB        20
+#define GATE_2_MB        21
+#define GATE_3_MB        22
+#define GATE_4_MB        23
+#define MASK_1_MB        24
+#define MASK_2_MB        25
+#define MASK_3_MB        26
+#define MASK_4_MB        27
+#define IP_PORT_MB       28
+#define TIME_SENS_MB     29
+#define ZERO_MB          30
+#define AOUT1_C_MB       31
+#define AOUT2_C_MB       33
+#define AOUT3_C_MB       35
+
 
 
 #define INP_MODE_MB      24
@@ -94,12 +92,12 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define AOUT3_MB         33
 
 
-#define COMMON_REG_COUNT 50
+#define COMMON_REG_COUNT (AOUT3_C_MB+3)
 
 
 //§²§Ö§Ô§Ú§ã§ä§â§í FMCH
 #define FMCH_OFFSET       0
-#define FMCH_COUNT        10
+#define FMCH_COUNT        ( 14 )
 #define KOOF_P_MB         100
 #define KOOF_I_MB         102
 #define KOOF_K_MP         104
@@ -107,7 +105,9 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define FILTER_HIGH_MB    107
 #define SET_MOD1_MB       108
 #define SET_MOD2_MB       109
-#define LIGTH_REG_MB      110
+#define MODE_REG_MB       110
+#define TIME_FAN_STOP_MB  111
+#define LIGTH_REG_MB      112
 
 #define CDV_OFFSET          100
 #define CDV_COUNT         20
@@ -472,6 +472,11 @@ void MB_TASK_HOLDING_UDATE()
     convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_I_MB]);
     tempdata =(int32_t) (getRegFloat(KOOFKPS)*1000);
     convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_K_MP]);
+    //if  ( (DEVICE_TYPE_t)getReg8(DEVICE_TYPE) ==DEV_FMCH )
+   // {
+//
+   // }
+
     if ( ( (DEVICE_TYPE_t)getReg8(DEVICE_TYPE) ==DEV_CDV ) || ( (DEVICE_TYPE_t)getReg8(DEVICE_TYPE) ==DEV_BP ) )
     {
           tempdata =(int32_t) (getRegFloat(COOF_P1)*1000);
@@ -547,7 +552,7 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
   u16 reg_offet = device_specific_reg_offset[getReg8(DEVICE_TYPE)];
   u16 reg_count = device_specific_reg_count[getReg8(DEVICE_TYPE)];
 
-  if (( ( usAddress >= REG_HOLDING_START ) && ( usAddress + usNRegs <= COMMON_REG_COUNT ) ) ||  ( ( usAddress >= 100 + reg_offet ) && ( usAddress + usNRegs <= (reg_offet+ 100 +reg_count) ) ))
+  if (( ( usAddress >= REG_HOLDING_START ) && ( usAddress + usNRegs <= COMMON_REG_COUNT ) ) ||  ( ( usAddress >= 100 + reg_offet ) && ( (usAddress + usNRegs) <= (reg_offet+ 100 + reg_count+1) ) ))
   {
     iRegIndex = ( int )( usAddress - usRegHoldingStart );
     switch ( eMode )
