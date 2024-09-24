@@ -25,9 +25,9 @@ static  xScreenObjet const InfoScreen1[]=
 
 static xScreenObjet const InfoScreen2[]=
 {
-        {0,2,LINE1,70,READ_DATA,"Текущаих аварий:",ALARM_COUNT_ID},
+        {0,2,LINE1,70,READ_DATA,"Текущих аварий:",ALARM_COUNT_ID},
         {0,2,25,70,READ_DATA,"",CURRENT_ALARM_COUNT_ID},
-        {0,2,50,0, TEXT_STRING,     "Журанл аварий",0},
+        {0,2,50,0, TEXT_STRING,     "Журнaл аварий",0},
         {1,2,62,70,READ_DATA,"Записей:",JOURNAL_COUNT_ID},
 };
 static xScreenObjet const InfoScreen3[]=
@@ -69,27 +69,27 @@ static xScreenObjet const SettingsScreen2[]=
 static xScreenObjet const SettingsScreen3[]=
 {
         {0,10,LINE1,70,TEXT_STRING,"Настройки       3/9",    0},
-        {0,2,25,70,TEXT_STRING,"Уставки режимов  м^3/ч",    0},
-        {0,2,37,70,WRITE_DATA,"Режим 1",                SETTING1_ID},
-        {0,2,50,90,WRITE_DATA,"Режим 2",                SETTING2_ID},
+        {0,2,25,70,TEXT_STRING,"Уставки реж.  м^3/ч",    0},
+        {0,2,37,70,WRITE_DATA,"Режим 1 (Осн.)",                SETTING1_ID},
+        {0,2,50,90,WRITE_DATA,"Режим 2 (Доп.)",                SETTING2_ID},
         {1,2,62,70,WRITE_DATA,(char*)KOOFKPS_TEXT,             KOOFKPS_ID},
 
 };
 static xScreenObjet const SettingsScreen4[]=
 {
         {0,10,LINE1,70,TEXT_STRING,"Настройки       4/9",0},
-        {0,2,25,70,TEXT_STRING,"Нижний дипазон фильтра",0},
+        {0,2,25,70,TEXT_STRING,"Нач. сопр. фильтра",0},
         {0,2,37,90,WRITE_DATA,"",                       FILTER_LOW_ID},
-        {0,2,50,70,TEXT_STRING,"Верхний дипазон фильтра",0},
+        {0,2,50,70,TEXT_STRING,"Конеч. сопр. фильтра",0},
         {1,2,62,15,WRITE_DATA,"",                       FILTER_HIGH_ID },
 };
 static xScreenObjet const SettingsScreen5[]=
 {
         {0,10,LINE1,70,WRITE_DATA,"Настройки      ",VOLTAG_SCREEN_TITLE_ID},
         {0,2,25,70,WRITE_DATA,"Напряжение min",     VOLTAGE_MIN_ON_ID},
-        {0,2,37,90,WRITE_DATA,"Сборс аварии min",   VOLTAGE_MIN_OFF_ID },
+        {0,2,37,90,WRITE_DATA,"Сброс аварии min",   VOLTAGE_MIN_OFF_ID },
         {0,2,50,70,WRITE_DATA,"Напряжение max",     VOLTAGE_MAX_ON_ID},
-        {1,2,62,15,WRITE_DATA,"Cборс авари max",    VOLTAGE_MAX_OFF_ID },
+        {1,2,62,15,WRITE_DATA,"Cброс авари max",    VOLTAGE_MAX_OFF_ID },
 };
 static xScreenObjet const SettingsScreen6[]=
 {
@@ -112,7 +112,7 @@ static xScreenObjet const SettingsScreen7[]=
 static xScreenObjet const SettingsScreen8[]=
 {
         {0,10,LINE1,70,TEXT_STRING,"Настройки       8/9",    0},
-        {0,2,25,70,WRITE_DATA,"Контрасность", CONTRAST_ID},
+        {0,2,25,70,WRITE_DATA,"Контрастность", CONTRAST_ID},
         {0,2,37,90,WRITE_DATA,"Ост. вент с.", FAN_START_TIMEOUT_ID},
         {0,2,50,70,WRITE_DATA,"Дата:",       CURENT_DATE_ADDR  },
         {1,2,62,15,WRITE_DATA,"Время",       CURENT_TIME_ADDR  },
@@ -123,7 +123,7 @@ static xScreenObjet const SettingsScreen8[]=
 static xScreenObjet const SettingsScreen9[]=
 {
         {0,10,LINE1,70,TEXT_STRING,"Настройки       9/9",    0},
-        {0,2,25,70,TEXT_STRING,"  Для сборса журнала",  0},
+        {0,2,25,70,TEXT_STRING,"  Для сброса журнала",  0},
         {0,2,37,90,TEXT_STRING,"      нажмите ВВОД",        0},
         {0,2,50,70,READ_DATA,"Записей:",JOURNAL_COUNT_ID},
         {1,2,62,15,WRITE_DATA,"",         JOURNAL_RESET_ID },
@@ -151,7 +151,7 @@ xScreenType  xScreenFMCH[SCREENS_COUNT] =
   {8,SettingsScreen5,  0,   0,  7,  9,  ENTER_COMMNAD , 3  },
   {9,SettingsScreen6,  0,   0,  8,  10, ENTER_COMMNAD,  3 },
   {10,SettingsScreen7, 0,   0,  9,  13, ENTER_COMMNAD,  3 },
-  {11,InfoScreen4,      0,   0,  1,  1, 0, 0 },
+  {11,InfoScreen4,      0,   0,  1,  1, 0, 3 },
   {12,JournalViewScreen, 0,   0, JOURNAL_NEXT , JOURNAL_PREV, 0,  2 },
   {13,SettingsScreen8, 0,   0,  10,   14,   ENTER_COMMNAD, 3 },
   {14,SettingsScreen9, 0,   0,  13,   4,   ENTER_COMMNAD, 3 },

@@ -20,9 +20,9 @@ DATA_MODEL_INIT_t DataModel_Init()
            {
                memset(DATA_MODEL_REGISTER,0,EEPROM_REGISTER_COUNT);
                DATA_MODEL_REGISTER[VALID_CODE_ADDRES] = VALID_CODE;
-               DATA_MODEL_REGISTER[SOFT_V1 ] =  SW_V ;
-               DATA_MODEL_REGISTER[SOFT_V2 ] =  SW_V2 ;
-               DATA_MODEL_REGISTER[SOFT_V3 ] =  SW_V3;
+               DATA_MODEL_REGISTER[SOFT_V1 ]          =  SW_V ;
+               DATA_MODEL_REGISTER[SOFT_V2 ]          =  SW_V2 ;
+               DATA_MODEL_REGISTER[SOFT_V3 ]          =  SW_V3;
                DATA_MODEL_REGISTER[CONTROL_TYPE ]     = MKV_MB_RTU;
                DATA_MODEL_REGISTER[MB_RTU_ADDR ]      = 4;
                DATA_MODEL_REGISTER[MB_PROTOCOL_TYPE]  = MKV_MB_RTU;
@@ -43,8 +43,8 @@ DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[MASK_3]              = 255;
                DATA_MODEL_REGISTER[MASK_4]              = 0;
                DATA_MODEL_REGISTER[CONTRAST]            = 50;
-               DATA_MODEL_REGISTER[MOD_BUS_TIMEOUT ]    = 10;
-               DATA_MODEL_REGISTER[FAN_START_TIMEOUT ] = 1;
+               DATA_MODEL_REGISTER[MOD_BUS_TIMEOUT ]    = 25;
+               DATA_MODEL_REGISTER[FAN_START_TIMEOUT ] =  20;
                setRegFloat(KOOFKPS , 36.0);
                setRegFloat(COOF_I,0.5);
                setRegFloat(COOF_P,5);
@@ -60,7 +60,6 @@ DATA_MODEL_INIT_t DataModel_Init()
                setReg16( FILTER_LOW, 150);
                setReg16( FILTER_HIGH, 300);
                DATA_MODEL_REGISTER[SENSOR_COUNT]        = TIME_10_0;
-
                if (WriteEEPROM(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 1000 ,2) == EEPROM_OK) printf("EEPROMwtiye\r\n");
                ReadEEPROMData(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ,2);
                return (NEW_INIT);
@@ -226,7 +225,7 @@ float getRegFloat(u16 reg_adress )
 void vGetRecord( uint16_t addr,uint8_t * flag, HAL_TimeConfig_T * time, HAL_DateConfig_T * date)
 {
   uint16_t total     =  getReg16( RECORD_COUNT );
-  uint16_t cur_index =  getReg16( RECORD_INDEX);
+  uint16_t cur_index =  getReg16( RECORD_INDEX );
   uint8_t pData[RECORD_DATA_SIZE];
   uint16_t index = 0;
   if ( addr  <= total )
@@ -246,7 +245,6 @@ void vGetRecord( uint16_t addr,uint8_t * flag, HAL_TimeConfig_T * time, HAL_Date
               index = addr - (total - cur_index + 1);
           }
       }
-
       ReadEEPROMData(EEPROM_REGISTER_COUNT+  index*RECORD_SIZE  ,pData , RECORD_SIZE ,10,2);
       u8 temp = pData[0];
       for (index=0;index<4;index++)

@@ -931,19 +931,30 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
             break;
         case MODE_STATE_ID:
             if (getReg8(MODE ))
-                strcpy(str,"2");
+                strcpy(str,"2 (Доп.)");
             else
-                strcpy(str,"1");
+                strcpy(str,"1 (Основной)");
             break;
         case MAC_ADRESS_ID:
             WCHNET_GetMacAddr(MACAddr);
             sprintf(str,"%x%x%x%x%x%x",MACAddr[0],MACAddr[1],MACAddr[2],MACAddr[3],MACAddr[4],MACAddr[5]);
             break;
         case PROCESS_STATE_ID:
-            if ((USER_GetProccesState()!= USER_PROCCES_IDLE ) &&  (USER_GetProccesState()!= USER_PROCESS_ALARM))
-              strcpy(str,"Работа");
-            else
-              strcpy(str,"Останов");
+            switch( USER_GetProccesState() )
+            {
+                case USER_PROCCES_IDLE:
+                case USER_PROCESS_ALARM:
+                    strcpy(str,"Остановлен");
+                    break;
+                case USER_PEOCESS_WORK_TIME_OUT:
+                case USER_PEOCESS_ZERO_CALIB:
+                    strcpy(str,"Калибровка");
+                    break;
+                case USER_RROCCES_WORK:
+                    strcpy(str,"Работа");
+                    break;
+
+            }
             break;
         case IP_ADRESS_DATA_ID:
         case IP_GATE_ID:
@@ -1033,17 +1044,27 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                    strcpy(str,"");
                    break;
             case CMD_READ:
-                   if ( SelectEditFlag )
-                            strcpy(str,"Старт?");
+                       if ( SelectEditFlag )
+                       {
+                           if ((USER_GetProccesState() == USER_PROCCES_IDLE))
+                               strcpy(str,"Старт?");
+                           else
+                               strcpy(str,"Заблок");
+
+                       }
                         else
                             strcpy(str,"");
                         break;
                     case CMD_SAVE_EDIT:
                     case CMD_START_EDIT:
+                        if ((USER_GetProccesState() == USER_PROCCES_IDLE))
+                        {
                          CalibrateZeroStart();
-                         start_edit_flag = 0;
-                         menu_mode = 0;
-                         SelectEditFlag = 0;
+
+                        }
+                        start_edit_flag = 0;
+                        menu_mode = 0;
+                        SelectEditFlag = 0;
                          break;
                    default:
                        start_edit_flag = 0;

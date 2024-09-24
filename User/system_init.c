@@ -155,6 +155,7 @@ void vDefaultTask( void  * argument )
     TaskFSM_t main_task_fsm = STATE_INIT;
     u8 contrast = 0;
     vMenuInit();
+    vRTC_TASK_Init();
     while(1)
     {
        if ( contrast != getReg8(CONTRAST))

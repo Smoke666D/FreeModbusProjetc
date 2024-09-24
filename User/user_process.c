@@ -130,16 +130,25 @@ u8 USER_FilterState( u8 * state)
     if (task_fsm == USER_RROCCES_WORK)
     {
         *state = 1;
-        u16 sensor_data = getAIN(SENS2);
-        if (sensor_data  <= getReg16(FILTER_LOW))
-                return (0);
-        if (sensor_data  >= getReg16(FILTER_HIGH))
-                return (100);
-        u16 temp = sensor_data - getReg16(FILTER_LOW);
-        temp = temp/(getReg16(FILTER_HIGH) - getReg16(FILTER_LOW));
-        if (temp != (u8)getReg32(RESURSE))
+        u16 temp;
+        if (getReg8(MODE )==0)
         {
-            setReg32(RESURSE, temp);
+            u16 sensor_data = getAIN(SENS2);
+            if (sensor_data  <= getReg16(FILTER_LOW))
+                    return (0);
+            if (sensor_data  >= getReg16(FILTER_HIGH))
+                    return (100);
+            temp = sensor_data - getReg16(FILTER_LOW);
+            temp = temp/(getReg16(FILTER_HIGH) - getReg16(FILTER_LOW));
+
+            if (temp != (u8)getReg32(RESURSE))
+            {
+                setReg32(RESURSE, temp);
+            }
+        }
+        else
+        {
+            temp = (u8)getReg32(RESURSE);
         }
 
         return (temp);

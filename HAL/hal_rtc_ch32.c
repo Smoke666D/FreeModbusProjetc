@@ -60,6 +60,7 @@ void HAL_RTC_IT_Init(  void (* rtc_it_callback) ( void ), uint8_t prior, uint8_t
 #endif
     RTC_SetCounter(rtc_data);
 	  func = rtc_it_callback;
+	  printf("RTC iNIT\r\n");
 	  return;
 }
 

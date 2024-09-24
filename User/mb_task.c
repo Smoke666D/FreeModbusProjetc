@@ -107,7 +107,8 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define SET_MOD2_MB       109
 #define MODE_REG_MB       110
 #define TIME_FAN_STOP_MB  111
-#define LIGTH_REG_MB      112
+#define COMMAND_REG       112
+#define LIGTH_REG_MB      113
 
 #define CDV_OFFSET          100
 #define CDV_COUNT         20
@@ -252,7 +253,15 @@ void vSetRegData( u16 adress)
    switch (adress)
    {
        case ZERO_MB:
-           if  (byte_data !=0) CalibrateZeroStart();
+           if  (byte_data !=0)
+           {
+               if (USER_GetProccesState() == USER_PROCCES_IDLE)
+                   CalibrateZeroStart();
+               else
+               {
+                   usRegHoldingBuf[adress] = 0;
+               }
+           }
            break;
        case LIGTH_REG_MB:
        case MODE_REG_MB:
