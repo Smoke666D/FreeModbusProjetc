@@ -127,6 +127,10 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define CDV_CH_COUNT_MB         221
 #define CDV_MEASERING_UNIT      222
 #define CDV_OFFSET_CH2          223
+#define CDV_PRIOR_SENS          225
+#define CDV_CLEAN_TIMER         226
+#define CDV_ZERO_POINT_TIMEOUT  227
+
 
 #define BP_OFFSET          200
 #define BP_COUNT           22
@@ -144,6 +148,9 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define BP_CH_COUNT_MB          321
 #define BP_MEASERING_UNIT       322
 #define BP_OFFSET_CH2           323
+#define BP_PRIOR_SENS           325
+#define BP_CLEAN_TIMER          326
+#define BP_ZERO_POINT_TIMEOUT   327
 
 //#define SENS_COOF  18
 //#define DAC_DATA   19
@@ -213,7 +220,6 @@ static u8 getRegID( u16 mb_reg_address)
         case (CDV_KOOF_P_MB+1):
         case (BP_KOOF_P_MB+1):
                                 return  (COOF_P);
-
         case (KOOF_I_MB+1):
         case (CDV_KOOF_I_MB+1):
         case (BP_KOOF_I_MB+1):
@@ -258,7 +264,15 @@ static u8 getRegID( u16 mb_reg_address)
         case  CDV_OFFSET_CH2+1:
         case  BP_OFFSET_CH2+1:
                                 return  ( OFFSET_CH2);
-
+        case BP_PRIOR_SENS:
+        case CDV_PRIOR_SENS:
+                                return (PRIOR_SENSOR );
+        case CDV_CLEAN_TIMER:
+        case BP_CLEAN_TIMER:
+                              return (CLEAN_TIMER);
+        case CDV_ZERO_POINT_TIMEOUT:
+        case BP_ZERO_POINT_TIMEOUT:
+                            return (ZERO_POINT_TIMEOUT);
     }
     return 0;
 }
@@ -293,6 +307,8 @@ void vSetRegData( u16 adress)
        case MODE_REG_MB:
        case CDV_MEASERING_UNIT:
        case BP_MEASERING_UNIT:
+       case CDV_PRIOR_SENS:
+       case BP_PRIOR_SENS:
             VerifyAndSetReg8(reg_addr, (uint8_t) byte_data );
             break;
        case COMMAND_REG:
@@ -427,8 +443,12 @@ void vSetRegData( u16 adress)
        case  SET_MOD2_MB:
        case  FILTER_LOW_MB:
        case  FILTER_HIGH_MB:
+       case CDV_ZERO_POINT_TIMEOUT:
+       case BP_ZERO_POINT_TIMEOUT:
            saveReg16(reg_addr, usRegHoldingBuf[adress]);
            break;
+       case CDV_CLEAN_TIMER:
+       case BP_CLEAN_TIMER:
        case CONTR_MB:
        case TIME_SENS_MB:
        case TIME_FAN_STOP_MB:
@@ -478,13 +498,15 @@ static void MB_TASK_INPUTS_UDATE()
 
 
 }
-#define CDV_BP_REG8_SEQ_COUNT 3
+#define CDV_BP_REG8_SEQ_COUNT 5
+#define CDV_BP_REG_SEQ_COUNT 1
 
 #define REG_SEQ_COUNT 5
 #define REG8_SEQ_COUNT 12
 
 
-static const u8 CDV_BP_REGS8[CDV_BP_REG8_SEQ_COUNT]={CDV_AFZONE_SETTING_MB,CDV_CH_COUNT_MB ,CDV_MEASERING_UNIT};
+static const u8 CDV_BP_REGS8[CDV_BP_REG8_SEQ_COUNT]={CDV_AFZONE_SETTING_MB,CDV_CH_COUNT_MB ,CDV_MEASERING_UNIT,CDV_PRIOR_SENS,CDV_CLEAN_TIMER};
+static const u8 CDV_BP_REGS[CDV_BP_REG_SEQ_COUNT]={CDV_ZERO_POINT_TIMEOUT};
 static const u8 REGS[REG_SEQ_COUNT]={IP_PORT_MB,SET_MOD1_MB,SET_MOD2_MB,FILTER_LOW_MB,FILTER_HIGH_MB};
 static const u8 REGS8[REG8_SEQ_COUNT]={COMMAND_REG,
                                        TIME_SENS_MB,
@@ -500,8 +522,9 @@ static const u8 REGS8[REG8_SEQ_COUNT]={COMMAND_REG,
                                        CONTR_MB};
 
 
-static u16 const  device_specific_reg_offset[] = {FMCH_OFFSET ,CDV_OFFSET,BP_OFFSET };
-static u16 const  device_specific_reg_count[] =  {FMCH_COUNT ,CDV_COUNT,BP_COUNT};
+static u16 const device_specific_reg_offset[] =  { FMCH_OFFSET ,CDV_OFFSET, BP_OFFSET };
+static u16 const  device_specific_reg_count[] =  { FMCH_COUNT  ,CDV_COUNT , BP_COUNT  };
+
 void MB_TASK_HOLDING_UDATE()
 {
     static HAL_TimeConfig_T time;
@@ -539,8 +562,13 @@ void MB_TASK_HOLDING_UDATE()
           convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-reg_offet]);
           for (u8 i=0;i<CDV_BP_REG8_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
           {
-               u8 index = getRegID(REGS8[i]);
+               u8 index = getRegID(CDV_BP_REGS8[i]);
                usRegHoldingBuf[CDV_BP_REGS8[i] -CDV_OFFSET ]      = getReg8(index);
+          }
+          for (u8 i=0;i<CDV_BP_REG_SEQ_COUNT;i++)
+          {
+               u8 index = getRegID(CDV_BP_REGS[i]);
+               usRegHoldingBuf[CDV_BP_REGS[i]]      = getReg16(index);
           }
     }
 

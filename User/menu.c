@@ -109,6 +109,7 @@ static u8 * SENSOR_COUNT_STRING[]={"0.1","0.5","1.0","2.0","3.0","5.0","10.0"};
 static u8 * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
 static u8 * AfterZoneStrig[]={"Tканала<Tпомещения","Tканала>Tпомещения","Автомат"};
 static u8 * MUnitStrig[] = {"м^3/ч","м/c","Па"};
+static u8 * PriorSentStrig[]= {"T","CO2","H"};
 static xScreenType * pMenu;
 static u8 journal_index =0;
 static uint16_t curr_edit_data_id = 0;
@@ -737,8 +738,11 @@ u16 getDataModelID( u16 MENU_ID)
         case FAN_START_TIMEOUT_ID:  return (FAN_START_TIMEOUT);
         case AFTER_ZONE_SETTING_ID: return (AFTER_ZONE_SETTING);
         case CDV_CH_COUNT_ID:       return (CDV_BP_CH_COUNT);
-        case MEASERING_UNIT_ID:     return ( MEASERING_UNIT);
+        case MEASERING_UNIT_ID:     return (MEASERING_UNIT);
         case OFFSET2_ID:            return (OFFSET_CH2);
+        case PRIOR_SENSOR_ID:       return (PRIOR_SENSOR );
+        case CLEAN_TIMER_ID:        return (CLEAN_TIMER);
+        case ZERO_POINT_TIMEOUT_ID: return (ZERO_POINT_TIMEOUT);
         default: return 0;
     }
 }
@@ -780,6 +784,35 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
 {
     switch (data_id)
     {
+
+        case ZERO_POINT_TIMEOUT_ID:
+            switch (command)
+            {
+                case CMD_READ:
+                     sprintf(str,"%03i",getReg16(reg_id) );
+                     break;
+               case CMD_EDIT_READ:
+                     sprintf(str,"%03i",edit_data_buffer_byte );
+                     break;
+               default:
+                    vByteDataEdit(1,reg_id,command,2,999,0);
+                    break;
+            }
+            break;
+        case CLEAN_TIMER_ID:
+            switch (command)
+            {
+                 case CMD_READ:
+                       sprintf(str,"%02i",getReg8(reg_id) );
+                       break;
+                 case CMD_EDIT_READ:
+                       sprintf(str,"%02i",edit_data_buffer_byte );
+                       break;
+                default:
+                      vByteDataEdit(0,reg_id,command,2,99,0);
+                      break;
+            }
+            break;
         case AFTER_ZONE_SETTING_ID:
             *len = 0;
             switch (command)
@@ -838,6 +871,22 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                       break;
             }
             break;
+        case PRIOR_SENSOR_ID:
+             *len = 0;
+              switch (command)
+              {
+                   case CMD_EDIT_READ:
+                        strcpy(str,PriorSentStrig[ edit_data_buffer_byte ] );
+                        break;
+                   case CMD_READ:
+                        strcpy(str, PriorSentStrig[ getReg8( reg_id)] );
+                        break;
+                   default:
+                        vByteDataEdit(0,reg_id,command,0,H_PRIOR , TEM_PRIOR );
+                        break;
+             }
+             break;
+
     }
 }
 

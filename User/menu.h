@@ -82,28 +82,28 @@
 #define FAIL_SET_CH2_ID         58
 #define F_CHANNEL_ID            59
 #define CLEAN_TIMER_ID          60
-#define ZERO_POINT_ID           61
+#define ZERO_POINT_TIMEOUT_ID   61
 #define SENSOR_TYPE_ID          62
 #define SENSOR_F_TYPE_ID        63
 #define KK_SENSOR_TYPE_ID       64
 #define CO2_SENSOR_TYPE_ID      65
 #define H_SENSOR_TYPE_ID        66
-#define  PRIOR_SENSOR_ID        67
-#define T_SENSOR_MIN_ID         68
-#define T_SENSOR_MAX_ID         69
-#define CO2_SENSOR_MIN_ID       70
-#define CO2_SENSOR_MAX_ID       71
-#define H_SENSOR_MIN_ID         72
-#define H_SENSOR_MAX_ID         73
-#define T_SENSOR_OFFSET_ID      74
-#define CO2_SENSOR_OFFSET_ID    75
-#define H_SENSOR_OFFSET_ID      76
-#define T_SENSOR_SETTING_ID     77
-#define CO2_SENSOR_SETTING_ID   78
-#define H_SENSOR_SETTING_ID     79
-#define AFTER_ZONE_SETTING_ID   80
-#define CDV_CH_COUNT_ID         81
-#define MEASERING_UNIT_ID       82
+#define T_SENSOR_MIN_ID         67
+#define T_SENSOR_MAX_ID         68
+#define CO2_SENSOR_MIN_ID       69
+#define CO2_SENSOR_MAX_ID       70
+#define H_SENSOR_MIN_ID         71
+#define H_SENSOR_MAX_ID         72
+#define T_SENSOR_OFFSET_ID      73
+#define CO2_SENSOR_OFFSET_ID    74
+#define H_SENSOR_OFFSET_ID      75
+#define T_SENSOR_SETTING_ID     76
+#define CO2_SENSOR_SETTING_ID   77
+#define H_SENSOR_SETTING_ID     78
+#define AFTER_ZONE_SETTING_ID   79
+#define CDV_CH_COUNT_ID         80
+#define MEASERING_UNIT_ID       81
+#define PRIOR_SENSOR_ID         82
 #define OFFSET2_ID              83
 #define COOF_P_1_ID             84
 #define COOF_I_1_ID             85
@@ -132,7 +132,7 @@
 #define TITLE_LAST          CALIBRATION_TITLE_ID
 
 #define CDV_BP_FIRST        AFTER_ZONE_SETTING_ID
-#define CDV_BP_LAST         CDV_CH_COUNT_ID
+#define CDV_BP_LAST         OFFSET2_ID
 
 typedef enum
 {

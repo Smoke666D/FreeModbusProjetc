@@ -229,7 +229,7 @@ static xScreenObjet const CDVSettingsScreen7[]=
         {0,2,25,70,TEXT_STRING,"Таймеры",          0},
         {0,2,37,70,WRITE_DATA,"Уборка (DI4) мин",              CLEAN_TIMER_ID},
         {0,2,50,70,TEXT_STRING,"Калибровка 0 точки ожид.",          0},
-        {1,2,62,90,WRITE_DATA,"закрытия клапана, сек.",           ZERO_POINT_ID},
+        {1,2,62,90,WRITE_DATA,"закрытия клапана, сек.",          ZERO_POINT_TIMEOUT_ID},
 };
 
 static xScreenObjet const CDVSettingsScreen8[]=

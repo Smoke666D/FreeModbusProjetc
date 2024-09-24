@@ -65,7 +65,10 @@
 #define AFTER_ZONE_SETTING    ( SETTING2 + sizeof(uint16_t) )
 #define MEASERING_UNIT        ( AFTER_ZONE_SETTING + sizeof(uint8_t) )
 #define CDV_BP_CH_COUNT       ( MEASERING_UNIT     + sizeof(uint8_t) )
-#define OFFSET_CH2            ( CDV_BP_CH_COUNT    + sizeof(uint8_t) )
+#define PRIOR_SENSOR          ( CDV_BP_CH_COUNT    + sizeof(uint8_t) )
+#define CLEAN_TIMER           ( PRIOR_SENSOR       + sizeof(uint8_t) )
+#define ZERO_POINT_TIMEOUT    ( CLEAN_TIMER       + sizeof(uint8_t) )
+#define OFFSET_CH2            ( ZERO_POINT_TIMEOUT  + sizeof(uint16_t) )
 #define FILTER_LOW            ( OFFSET_CH2         + sizeof(uint32_t) )
 #define FILTER_HIGH           ( FILTER_LOW + sizeof(uint16_t) )
 #define MOTO_HOURS            ( FILTER_HIGH + sizeof(uint16_t) )
@@ -113,6 +116,13 @@ typedef enum
  M_C_U   = 1,
  PA_U    = 2,
 } MESURING_UNIT_t;
+
+typedef enum
+{
+  TEM_PRIOR = 0,
+  CO2_PRIOR = 1,
+  H_PRIOR   = 2,
+} PRIOR_SENSOR_t;
 
 #define MKV_MB_DIN 0
 #define MKV_MB_RTU 1

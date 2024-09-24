@@ -45,6 +45,7 @@ DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[CONTRAST]            = 50;
                DATA_MODEL_REGISTER[MOD_BUS_TIMEOUT ]    = 25;
                DATA_MODEL_REGISTER[FAN_START_TIMEOUT ] =  20;
+               DATA_MODEL_REGISTER[CLEAN_TIMER]       =   20;
                setRegFloat(KOOFKPS , 36.0);
                setRegFloat(COOF_I,0.5);
                setRegFloat(COOF_P,5);
@@ -105,6 +106,7 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
     {
         case MEASERING_UNIT:
         case AFTER_ZONE_SETTING:
+        case PRIOR_SENSOR:
             if (data>3) return 0;
             need_to_save = 1;
             break;
