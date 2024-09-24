@@ -10,9 +10,6 @@
 
 #include "system_init.h"
 
-
-
-
 typedef enum
 {
     USER_PROCCES_IDLE,
@@ -20,7 +17,6 @@ typedef enum
     USER_RROCCES_WORK,
     USER_PROCESS_PAUSE,
     USER_PROCESS_ALARM,
-
     USER_PEOCESS_WORK_TIME_OUT,
     USER_PEOCESS_ZERO_CALIB,
 } USER_PROCESS_FSM_t;

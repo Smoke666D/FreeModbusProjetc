@@ -194,7 +194,7 @@ static xScreenObjet const CDVSettingsScreen3[]=
         {0,10,LINE1,70,TEXT_STRING,"Настройки      3/21",    0},
         {0,2,25,70,TEXT_STRING,"Еденицы измерения",          0},
         {0,2,37,70,WRITE_DATA,"",                            MEASERING_UNIT_ID},
-        {0,2,50,90,WRITE_DATA,"Кол-во каналов",              CHANNEL_COUNT_ID},
+        {0,2,50,90,WRITE_DATA,"Кол-во каналов",              CDV_CH_COUNT_ID},
         {1,2,62,70,WRITE_DATA,"Смещ 2",                      OFFSET2_ID},
 };
 
@@ -409,7 +409,7 @@ static xScreenObjet const BPSettingsScreen3[]=
 static xScreenObjet const BPSettingsScreen4[]=
 {
         {0,10,LINE1,70,TEXT_STRING,"Настройки      4/20",    0},
-        {0,2,25,70,WRITE_DATA,"Кол-во каналов",              CHANNEL_COUNT_ID},
+        {0,2,25,70,WRITE_DATA,"Кол-во каналов",              CDV_CH_COUNT_ID },
         {0,2,37,70,WRITE_DATA,"Смещ 2",                      OFFSET2_ID},
         {0,2,50,90,WRITE_DATA,"Авар кан.1",                  CH1_ERROR_ID},
         {1,2,62,70,WRITE_DATA,"Авар кан.2",                  CH2_ERROR_ID},

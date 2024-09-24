@@ -65,6 +65,7 @@
 #define ALARM_COUNT_ID          43
 #define CURRENT_ALARM_COUNT_ID  44
 #define ZERO_CALIBRATE_ID       45
+
 #define CVD_SETTING1_ID         46
 #define CVD_FACT1_ID            47
 #define CVD_SETTING2_ID         48
@@ -74,64 +75,64 @@
 #define CO2_ID                  52
 #define CDV_HUMMANITY_ID        53
 #define SENSOR_ID               54
-#define CDV_CH_COUNT_ID         55
-#define MEASERING_UNIT_ID       56
-#define CHANNEL_COUNT_ID        57
-#define OFFSET2_ID              58
-
-#define SETTING_MIN_ID          61
-#define SETTING_AVER_ID         62
-#define SETTING_MAX_ID          63
-#define FAIL_SET_CH1_ID         64
-#define FAIL_SET_CH2_ID         65
-#define F_CHANNEL_ID            67
-#define CLEAN_TIMER_ID          68
-#define ZERO_POINT_ID           69
-#define SENSOR_TYPE_ID          70
-#define SENSOR_F_TYPE_ID        71
-#define KK_SENSOR_TYPE_ID       72
-#define CO2_SENSOR_TYPE_ID      73
-#define H_SENSOR_TYPE_ID        74
-#define  PRIOR_SENSOR_ID        75
-#define T_SENSOR_MIN_ID         76
-#define T_SENSOR_MAX_ID         77
-#define CO2_SENSOR_MIN_ID       78
-#define CO2_SENSOR_MAX_ID       79
-#define H_SENSOR_MIN_ID         80
-#define H_SENSOR_MAX_ID         81
-#define T_SENSOR_OFFSET_ID      82
-#define CO2_SENSOR_OFFSET_ID    83
-#define H_SENSOR_OFFSET_ID      84
-#define T_SENSOR_SETTING_ID     85
-#define CO2_SENSOR_SETTING_ID   86
-#define H_SENSOR_SETTING_ID     87
-#define AFTER_ZONE_SETTING_ID   88
-#define COOF_P_1_ID             89
-#define COOF_I_1_ID             90
-#define COOF_P_2_ID             91
-#define COOF_I_2_ID             92
-#define COOF_P_3_ID             93
-#define COOF_I_3_ID             94
-#define BP_SETTING1_ID          95
-#define BP_FACT_ID              96
-#define BP_SIZE_ID              97
-#define  BP_REGULATION_TYPE_ID  98
-#define CH1_ERROR_ID            99
-#define CH2_ERROR_ID            100
-#define SETTING_BP_MIN_ID       101
-#define SETTING_BP_AVER_ID      102
-#define SETTING_BP_MAX_ID       103
+#define SETTING_MIN_ID          54
+#define SETTING_AVER_ID         55
+#define SETTING_MAX_ID          56
+#define FAIL_SET_CH1_ID         57
+#define FAIL_SET_CH2_ID         58
+#define F_CHANNEL_ID            59
+#define CLEAN_TIMER_ID          60
+#define ZERO_POINT_ID           61
+#define SENSOR_TYPE_ID          62
+#define SENSOR_F_TYPE_ID        63
+#define KK_SENSOR_TYPE_ID       64
+#define CO2_SENSOR_TYPE_ID      65
+#define H_SENSOR_TYPE_ID        66
+#define  PRIOR_SENSOR_ID        67
+#define T_SENSOR_MIN_ID         68
+#define T_SENSOR_MAX_ID         69
+#define CO2_SENSOR_MIN_ID       70
+#define CO2_SENSOR_MAX_ID       71
+#define H_SENSOR_MIN_ID         72
+#define H_SENSOR_MAX_ID         73
+#define T_SENSOR_OFFSET_ID      74
+#define CO2_SENSOR_OFFSET_ID    75
+#define H_SENSOR_OFFSET_ID      76
+#define T_SENSOR_SETTING_ID     77
+#define CO2_SENSOR_SETTING_ID   78
+#define H_SENSOR_SETTING_ID     79
+#define AFTER_ZONE_SETTING_ID   80
+#define CDV_CH_COUNT_ID         81
+#define MEASERING_UNIT_ID       82
+#define OFFSET2_ID              83
+#define COOF_P_1_ID             84
+#define COOF_I_1_ID             85
+#define COOF_P_2_ID             86
+#define COOF_I_2_ID             87
+#define COOF_P_3_ID             88
+#define COOF_I_3_ID             89
+#define BP_SETTING1_ID          90
+#define BP_FACT_ID              91
+#define BP_SIZE_ID              92
+#define  BP_REGULATION_TYPE_ID  93
+#define CH1_ERROR_ID            94
+#define CH2_ERROR_ID            95
+#define SETTING_BP_MIN_ID       96
+#define SETTING_BP_AVER_ID      97
+#define SETTING_BP_MAX_ID       98
 
 
 
-#define VOLTAG_SCREEN_TITLE_ID  104
-#define SETTING1_TITLE_ID       105
-#define SETTING2_TITLE_ID       106
-#define CALIBRATION_TITLE_ID    107
+#define VOLTAG_SCREEN_TITLE_ID  101
+#define SETTING1_TITLE_ID       102
+#define SETTING2_TITLE_ID       103
+#define CALIBRATION_TITLE_ID    104
 
 #define TITLE_FIRST         VOLTAG_SCREEN_TITLE_ID
 #define TITLE_LAST          CALIBRATION_TITLE_ID
 
+#define CDV_BP_FIRST        AFTER_ZONE_SETTING_ID
+#define CDV_BP_LAST         CDV_CH_COUNT_ID
 
 typedef enum
 {

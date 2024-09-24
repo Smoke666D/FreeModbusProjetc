@@ -100,10 +100,21 @@ void saveReg16( u16 reg_adress, u16 data)
 u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
 {
     u8 temp_data = data;
+    u8 need_to_save = 0;
     switch (reg_adress)
     {
+        case MEASERING_UNIT:
+        case AFTER_ZONE_SETTING:
+            if (data>3) return 0;
+            need_to_save = 1;
+            break;
         case SENSOR_COUNT:
              if (data >6) return 0;
+             need_to_save = 1;
+             break;
+        case CDV_BP_CH_COUNT:
+            if (data > 1) temp_data = 1;
+             need_to_save = 1;
              break;
         case LIGTH:
         case MODE:
@@ -111,9 +122,11 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
               break;
         case CONTRAST:
               if (data>100)  temp_data = 100;
+              need_to_save = 1;
               break;
         case MB_RTU_ADDR:
              if ((data >100) && (data==0)) return (0);
+             need_to_save = 1;
              break;
         case CONTROL_TYPE:
              if (data >3 ) return 0;
@@ -125,11 +138,13 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
              break;
         case MB_PROTOCOL_TYPE:
             if ( (data!=2) || (data!=3) || (getReg8(CONTROL_TYPE)!=0)) return 0;
+            need_to_save = 1;
             break;
         default:
             break;
     }
     DATA_MODEL_REGISTER[ reg_adress] = temp_data ;
+    if (need_to_save)  WriteEEPROM(reg_adress, &DATA_MODEL_REGISTER[ reg_adress], 1,10, 2);
     return 1;
 }
 

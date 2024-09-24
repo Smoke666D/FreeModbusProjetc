@@ -62,7 +62,11 @@
 #define KOOFKPS               ( COOF_P3 + sizeof(uint32_t))
 #define SETTING1              ( KOOFKPS + sizeof(uint32_t))
 #define SETTING2              ( SETTING1 + sizeof(uint16_t) )
-#define FILTER_LOW            ( SETTING2 + sizeof(uint16_t) )
+#define AFTER_ZONE_SETTING    ( SETTING2 + sizeof(uint16_t) )
+#define MEASERING_UNIT        ( AFTER_ZONE_SETTING + sizeof(uint8_t) )
+#define CDV_BP_CH_COUNT       ( MEASERING_UNIT     + sizeof(uint8_t) )
+#define OFFSET_CH2            ( CDV_BP_CH_COUNT    + sizeof(uint8_t) )
+#define FILTER_LOW            ( OFFSET_CH2         + sizeof(uint32_t) )
 #define FILTER_HIGH           ( FILTER_LOW + sizeof(uint16_t) )
 #define MOTO_HOURS            ( FILTER_HIGH + sizeof(uint16_t) )
 #define RECORD_COUNT          ( MOTO_HOURS  + sizeof(uint32_t)  )
@@ -94,6 +98,21 @@ typedef enum
   TIME_5_0 = 5,
   TIME_10_0 = 6,
 } SENSOR_COUNT_t;
+
+
+typedef enum
+{
+  TCH_TROOM  = 0,
+  TROOM_TCH = 1,
+  T_AUTO    = 2,
+} AFTER_ZONE_CONTROL_t;
+
+typedef enum
+{
+ M3_CH_U = 0,
+ M_C_U   = 1,
+ PA_U    = 2,
+} MESURING_UNIT_t;
 
 #define MKV_MB_DIN 0
 #define MKV_MB_RTU 1

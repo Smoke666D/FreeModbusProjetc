@@ -10,6 +10,7 @@
 
 
 #include "mb.h"
+#include "user_process.h"
 
 #define REG_COILS_START      0x0
 #define REG_COILS_NREGS      3

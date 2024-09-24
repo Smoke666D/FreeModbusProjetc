@@ -20,6 +20,7 @@
 #include "hal_usart.h"
 #include "data_model.h"
 
+
 #if REG_COILS_NREGS%8 && REG_COILS_NREGS>8
 UCHAR    ucSCoilBuf[REG_COILS_NREGS/8+1];
 #else
@@ -111,30 +112,38 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define LIGTH_REG_MB      113
 
 #define CDV_OFFSET          100
-#define CDV_COUNT         20
+#define CDV_COUNT         22
 //妓快忍我扼找把抑 CDV
-#define CDV_KOOF_P_MB        200
-#define CDV_KOOF_I_MB        202
-#define CDV_KOOF_K_MP        204
-#define CDV_KOOF_I1_MB       208
-#define CDV_KOOF_P1_MB       210
-#define CDV_KOOF_I2_MB       212
-#define CDV_KOOF_P2_MB       214
-#define CDV_KOOF_I3_MB       216
-#define CDV_KOOF_P3_MB       218
+#define CDV_KOOF_P_MB           200
+#define CDV_KOOF_I_MB           202
+#define CDV_KOOF_K_MP           204
+#define CDV_KOOF_I1_MB          208
+#define CDV_KOOF_P1_MB          210
+#define CDV_KOOF_I2_MB          212
+#define CDV_KOOF_P2_MB          214
+#define CDV_KOOF_I3_MB          216
+#define CDV_KOOF_P3_MB          218
+#define CDV_AFZONE_SETTING_MB   220
+#define CDV_CH_COUNT_MB         221
+#define CDV_MEASERING_UNIT      222
+#define CDV_OFFSET_CH2          223
 
 #define BP_OFFSET          200
-#define BP_COUNT           20
+#define BP_COUNT           22
 //妓快忍我扼找把抑 BP
-#define BP_KOOF_P_MB        300
-#define BP_KOOF_I_MB        302
-#define BP_KOOF_K_MB        304
-#define BP_KOOF_I1_MB       308
-#define BP_KOOF_P1_MB       310
-#define BP_KOOF_I2_MB       312
-#define BP_KOOF_P2_MB       314
-#define BP_KOOF_I3_MB       316
-#define BP_KOOF_P3_MB       318
+#define BP_KOOF_P_MB            300
+#define BP_KOOF_I_MB            302
+#define BP_KOOF_K_MB            304
+#define BP_KOOF_I1_MB           308
+#define BP_KOOF_P1_MB           310
+#define BP_KOOF_I2_MB           312
+#define BP_KOOF_P2_MB           314
+#define BP_KOOF_I3_MB           316
+#define BP_KOOF_P3_MB           318
+#define BP_AFZONE_SETTING_MB    320
+#define BP_CH_COUNT_MB          321
+#define BP_MEASERING_UNIT       322
+#define BP_OFFSET_CH2           323
 
 //#define SENS_COOF  18
 //#define DAC_DATA   19
@@ -237,6 +246,18 @@ static u8 getRegID( u16 mb_reg_address)
         case (CDV_KOOF_P3_MB +1):
         case (BP_KOOF_P3_MB +1):
                                 return  (COOF_P3);
+        case CDV_AFZONE_SETTING_MB:
+        case BP_AFZONE_SETTING_MB:
+                                return (AFTER_ZONE_SETTING);
+        case CDV_CH_COUNT_MB:
+        case BP_CH_COUNT_MB:
+                                return ( CDV_BP_CH_COUNT );
+        case CDV_MEASERING_UNIT:
+        case BP_MEASERING_UNIT:
+                                return  (MEASERING_UNIT);
+        case  CDV_OFFSET_CH2+1:
+        case  BP_OFFSET_CH2+1:
+                                return  ( OFFSET_CH2);
 
     }
     return 0;
@@ -252,6 +273,7 @@ void vSetRegData( u16 adress)
    u8 reg_addr = getRegID(adress);
    switch (adress)
    {
+
        case ZERO_MB:
            if  (byte_data !=0)
            {
@@ -263,8 +285,14 @@ void vSetRegData( u16 adress)
                }
            }
            break;
+       case CDV_AFZONE_SETTING_MB:
+       case BP_AFZONE_SETTING_MB:
+       case CDV_CH_COUNT_MB:
+       case BP_CH_COUNT_MB:
        case LIGTH_REG_MB:
        case MODE_REG_MB:
+       case CDV_MEASERING_UNIT:
+       case BP_MEASERING_UNIT:
             VerifyAndSetReg8(reg_addr, (uint8_t) byte_data );
             break;
        case COMMAND_REG:
@@ -343,6 +371,8 @@ void vSetRegData( u16 adress)
        case (BP_KOOF_P2_MB+1):
        case (BP_KOOF_I3_MB+1):
        case (BP_KOOF_P3_MB+1):
+       case (CDV_OFFSET_CH2+1):
+       case (BP_OFFSET_CH2+1):
            data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
            saveRegFloat(reg_addr, data);
            break;
@@ -448,8 +478,13 @@ static void MB_TASK_INPUTS_UDATE()
 
 
 }
+#define CDV_BP_REG8_SEQ_COUNT 3
+
 #define REG_SEQ_COUNT 5
 #define REG8_SEQ_COUNT 12
+
+
+static const u8 CDV_BP_REGS8[CDV_BP_REG8_SEQ_COUNT]={CDV_AFZONE_SETTING_MB,CDV_CH_COUNT_MB ,CDV_MEASERING_UNIT};
 static const u8 REGS[REG_SEQ_COUNT]={IP_PORT_MB,SET_MOD1_MB,SET_MOD2_MB,FILTER_LOW_MB,FILTER_HIGH_MB};
 static const u8 REGS8[REG8_SEQ_COUNT]={COMMAND_REG,
                                        TIME_SENS_MB,
@@ -500,6 +535,13 @@ void MB_TASK_HOLDING_UDATE()
           convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P3_MB-reg_offet]);
           tempdata =(int32_t) (getRegFloat(COOF_I3)*1000);
           convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-reg_offet]);
+          tempdata =(int32_t) (getRegFloat(OFFSET_CH2)*1000);
+          convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-reg_offet]);
+          for (u8 i=0;i<CDV_BP_REG8_SEQ_COUNT;i++)                                      //妝忘扭抉抖扶攸快技  8 忌我找扶抑快 把快忍我扼找把抑 扼扭快
+          {
+               u8 index = getRegID(REGS8[i]);
+               usRegHoldingBuf[CDV_BP_REGS8[i] -CDV_OFFSET ]      = getReg8(index);
+          }
     }
 
     convert_float_to_int(USER_AOUT_GET(DAC1),&usRegHoldingBuf[AOUT1_C_MB]);

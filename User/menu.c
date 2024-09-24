@@ -105,16 +105,19 @@ static u8 blink_counter = 0;
 static u8 SelectEditFlag = 0;
 static HAL_TimeConfig_T time;
 static uint8_t error_flag;
-static u8 *  SENSOR_COUNT_STRING[]={"0.1","0.5","1.0","2.0","3.0","5.0","10.0"};
+static u8 * SENSOR_COUNT_STRING[]={"0.1","0.5","1.0","2.0","3.0","5.0","10.0"};
+static u8 * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
+static u8 * AfterZoneStrig[]={"Tканала<Tпомещения","Tканала>Tпомещения","Автомат"};
+static u8 * MUnitStrig[] = {"м^3/ч","м/c","Па"};
 static xScreenType * pMenu;
 static u8 journal_index =0;
 static uint16_t curr_edit_data_id = 0;
 static u8 cur_edit_index = 0;
-static u8 * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
+
 static uint8_t start_edit_flag =0;
 static uint16_t edit_data_buffer_byte;
 static const uint32_t coof[]={1,10,100,1000};
-static const float coof_float[]={0.01,0.1,1.0,10.0,100.0,1000.0};
+static const float coof_float[]={0.01,0.1,1.0,10.0,100.0,1000.0,10000.0};
 static HAL_DateConfig_T date;
 static u8 edit_ip_addres[4];
 
@@ -430,7 +433,7 @@ void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8
         case CMD_INC:
             temp_index = cur_edit_index;
             if (temp_index > min_index)  temp_index--;
-            printf("%f",coof_float [temp_index]);
+
             if ((edit_data_buffer_float + coof_float[temp_index]) <=  max_data )
                  edit_data_buffer_float = edit_data_buffer_float+ coof_float [temp_index];
              else
@@ -439,8 +442,6 @@ void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8
        case CMD_DEC:
             temp_index = cur_edit_index;
             if (temp_index > min_index)  temp_index--;
-            printf("%f",coof_float [temp_index]);
-
              if (  (edit_data_buffer_float - min_data) >=  coof_float[temp_index] )
                  edit_data_buffer_float = edit_data_buffer_float-coof_float[temp_index];
              else
@@ -706,34 +707,38 @@ u16 getDataModelID( u16 MENU_ID)
 {
     switch (MENU_ID)
     {
-        case SENS_1_RAW_ID:        return (SENS1);
-        case SENS_2_RAW_ID:        return (SENS2);
-        case COOF_P_ID:            return (COOF_P);
-        case COOF_I_ID:            return (COOF_I);
-        case COOF_P_1_ID:            return (COOF_P1);
-        case COOF_I_1_ID:            return (COOF_I1);
-        case COOF_P_2_ID:            return (COOF_P2);
-        case COOF_I_2_ID:            return (COOF_I2);
-        case COOF_P_3_ID:            return (COOF_P3);
-        case COOF_I_3_ID:            return (COOF_I3);
-        case VOLTAGE_MIN_ON_ID:    return (LOW_VOLTAGE_ON);
-        case VOLTAGE_MIN_OFF_ID:   return (LOW_VOLTAGE_OFF);
-        case VOLTAGE_MAX_ON_ID:    return (HIGH_VOLTAGE_ON);
-        case VOLTAGE_MAX_OFF_ID:   return (HIGH_VOLTAGE_OFF);
-        case CONTROL_MODE_ID:      return (CONTROL_TYPE);
-        case PROTOCOL_ID:          return (MB_PROTOCOL_TYPE);
-        case IP_ADRESS_DATA_ID:    return (IP_1);
-        case IP_GATE_ID:           return (GATE_1);
-        case IP_SUBNETMASK_ID:     return (MASK_1);
-        case FILTER_HIGH_ID:       return (FILTER_HIGH);
-        case FILTER_LOW_ID:        return (FILTER_LOW);
-        case SETTING1_ID:          return (SETTING1);
-        case SETTING2_ID:          return (SETTING2);
-        case KOOFKPS_ID:           return (KOOFKPS);
-        case MB_RTU_ADDR_ID:       return (MB_RTU_ADDR);
-        case MOD_BUS_TIMEOUT_ID:   return (MOD_BUS_TIMEOUT);
-        case CONTRAST_ID:          return (CONTRAST);
-        case FAN_START_TIMEOUT_ID: return (FAN_START_TIMEOUT);
+        case SENS_1_RAW_ID:         return (SENS1);
+        case SENS_2_RAW_ID:         return (SENS2);
+        case COOF_P_ID:             return (COOF_P);
+        case COOF_I_ID:             return (COOF_I);
+        case COOF_P_1_ID:           return (COOF_P1);
+        case COOF_I_1_ID:           return (COOF_I1);
+        case COOF_P_2_ID:           return (COOF_P2);
+        case COOF_I_2_ID:           return (COOF_I2);
+        case COOF_P_3_ID:           return (COOF_P3);
+        case COOF_I_3_ID:           return (COOF_I3);
+        case VOLTAGE_MIN_ON_ID:     return (LOW_VOLTAGE_ON);
+        case VOLTAGE_MIN_OFF_ID:    return (LOW_VOLTAGE_OFF);
+        case VOLTAGE_MAX_ON_ID:     return (HIGH_VOLTAGE_ON);
+        case VOLTAGE_MAX_OFF_ID:    return (HIGH_VOLTAGE_OFF);
+        case CONTROL_MODE_ID:       return (CONTROL_TYPE);
+        case PROTOCOL_ID:           return (MB_PROTOCOL_TYPE);
+        case IP_ADRESS_DATA_ID:     return (IP_1);
+        case IP_GATE_ID:            return (GATE_1);
+        case IP_SUBNETMASK_ID:      return (MASK_1);
+        case FILTER_HIGH_ID:        return (FILTER_HIGH);
+        case FILTER_LOW_ID:         return (FILTER_LOW);
+        case SETTING1_ID:           return (SETTING1);
+        case SETTING2_ID:           return (SETTING2);
+        case KOOFKPS_ID:            return (KOOFKPS);
+        case MB_RTU_ADDR_ID:        return (MB_RTU_ADDR);
+        case MOD_BUS_TIMEOUT_ID:    return (MOD_BUS_TIMEOUT);
+        case CONTRAST_ID:           return (CONTRAST);
+        case FAN_START_TIMEOUT_ID:  return (FAN_START_TIMEOUT);
+        case AFTER_ZONE_SETTING_ID: return (AFTER_ZONE_SETTING);
+        case CDV_CH_COUNT_ID:       return (CDV_BP_CH_COUNT);
+        case MEASERING_UNIT_ID:     return ( MEASERING_UNIT);
+        case OFFSET2_ID:            return (OFFSET_CH2);
         default: return 0;
     }
 }
@@ -771,6 +776,70 @@ void vSetTitle(u16 data_id, u8 * str, u8 dev_type)
     }
 
 }
+void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u16 reg_id)
+{
+    switch (data_id)
+    {
+        case AFTER_ZONE_SETTING_ID:
+            *len = 0;
+            switch (command)
+            {
+                case CMD_EDIT_READ:
+                    strcpy(str, AfterZoneStrig[ edit_data_buffer_byte ] );
+                    break;
+                case CMD_READ:
+                    strcpy(str, AfterZoneStrig[ getReg8( reg_id)] );
+                    break;
+                default:
+                    vByteDataEdit(0,reg_id,command,0,T_AUTO , TCH_TROOM );
+                    break;
+            }
+            break;
+        case CDV_CH_COUNT_ID:
+            switch (command)
+              {
+                  case CMD_READ:
+                      sprintf(str,"%01i",getReg8(reg_id) );
+                      break;
+                  case CMD_EDIT_READ:
+                      sprintf(str,"%01i",edit_data_buffer_byte );
+                      break;
+                  default:
+                      vByteDataEdit(0,reg_id,command,0,1,0);
+                      break;
+              }
+            break;
+        case MEASERING_UNIT_ID:
+            *len = 0;
+             switch (command)
+             {
+                  case CMD_EDIT_READ:
+                      strcpy(str,MUnitStrig[ edit_data_buffer_byte ] );
+                      break;
+                 case CMD_READ:
+                      strcpy(str, MUnitStrig[ getReg8( reg_id)] );
+                      break;
+                 default:
+                      vByteDataEdit(0,reg_id,command,0,PA_U , M3_CH_U );
+                      break;
+             }
+            break;
+        case OFFSET2_ID:
+            switch (command)
+            {
+                 case CMD_READ:
+                      sprintf(str,"%+07.1f",getRegFloat(reg_id));
+                      break;
+                 case CMD_EDIT_READ:
+                      sprintf(str,"%+07.1f",edit_data_buffer_float );
+                      break;
+                default:
+                      vFloatDataEdit(reg_id, command,5,1,9999.9,-9999.9);
+                      break;
+            }
+            break;
+    }
+}
 
 
 void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len)
@@ -785,6 +854,11 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
     if (( data_id >=TITLE_FIRST) &&  ( data_id <=TITLE_LAST))
     {
         vSetTitle(data_id,str,getReg8(DEVICE_TYPE));
+    }
+    else
+    if ((data_id>= CDV_BP_FIRST) && ( data_id<=CDV_BP_LAST))
+    {
+        vSetCDV_PB(data_id,str,command,len,reg_id);
     }
     else
     switch (data_id)
@@ -1150,6 +1224,9 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                 break;
         }
         break;
+
+
+
     case HOURE_COUNTER_ID:
         sprintf(str,"%000000i часов %00i минут",vRTC_TASK_GetHoure(), vRTC_TASK_GetMinute( ));
         break;
