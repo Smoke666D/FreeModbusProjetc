@@ -53,7 +53,7 @@ void USER_SetControlState(u8 state)
 {
     mb_time_out = 0;
     setReg8(SYSTEM_START,state);
-  printf("sss\r\n");
+
 }
 
 
@@ -96,7 +96,10 @@ static void USER_SETTING_CHECK(u8 control_type, u8 * point_old)
       {
           mb_time_out++;
           if ( mb_time_out>= getReg8(MOD_BUS_TIMEOUT)*100)
+          {
               setReg8(SYSTEM_START, 0);
+              printf("time out mb\r\n");
+          }
       }
       else
       {
@@ -105,10 +108,12 @@ static void USER_SETTING_CHECK(u8 control_type, u8 * point_old)
        start = (control_type ==   MKV_MB_DIN) ? ucDinGet(INPUT_1) : getReg8(SYSTEM_START) ;
       if ( start && (task_fsm == USER_PROCCES_IDLE))
       {
+
           task_fsm = USER_PEOCESS_WORK_TIME_OUT;
       }
       if ( (start==0) && (task_fsm != USER_PROCCES_IDLE) &&  (task_fsm != USER_PROCESS_ALARM))
       {
+
            task_fsm = USER_PROCCES_IDLE;
       }
     if ( control_type == MKV_MB_DIN) setReg8(MODE,ucDinGet(INPUT_3));
@@ -308,16 +313,20 @@ void user_process_task(void *pvParameters)
                    error_state = 0;
                    break;
                case USER_PEOCESS_WORK_TIME_OUT:
-                   if ( (++start_timeout)> ( getReg8(FAN_START_TIMEOUT)*100))
+
+                   if ( (++start_timeout)> ( getReg8(FAN_START_TIMEOUT)*10))
                    {
-                       printf("start calib\r\n");
+
                        task_fsm = USER_PEOCESS_ZERO_CALIB;
                        CalibrateZeroStart();
+                       printf("start calib\r\n");
                    }
                    break;
                case USER_PEOCESS_ZERO_CALIB:
+
                    if (CalibrationZeroWhait())
                    {
+                       printf("end calib\r\n");
                        PIDOut = 0;
                        Temp = testdata[0];
                        UPDATE_COOF();

@@ -583,6 +583,7 @@ void CalibrateZeroStart()
 
 u8 CalibrationZeroWhait()
 {
+    printf("%x\r\n",cla_zero_end);
     return (cla_zero_end);
 }
 
@@ -662,13 +663,13 @@ void I2C_task(void *pvParameters)
             {
                 if (SENS1_FSM ==SENSOR_START_CONVERSION)
                 {
-                  //  printf("i22 timeout\r\n");
+                    //printf("i22 timeout\r\n");
                     SENS1_FSM = SENSOR_IDLE;
                     HAL_I2C_STOP(I2C_2);
                 }
                 if (SENS2_FSM ==SENSOR_START_CONVERSION)
                 {
-                  //  printf("i21 timeout\r\n");
+                   // printf("i21 timeout\r\n");
                     SENS2_FSM = SENSOR_IDLE;
                     HAL_I2C_STOP(I2C_1);
                 }
