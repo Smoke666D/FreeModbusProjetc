@@ -19,7 +19,7 @@
 #define RIGTH_KEY  1
 #define LEFT_KEY   0
 
-#define MAX_STRING_NUMBER 5
+#define MAX_STRING_NUMBER 10
 
 #define PROCESS_STATE_ID        1
 #define CURENT_DATE_ADDR        2

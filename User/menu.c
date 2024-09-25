@@ -178,6 +178,7 @@ void ViewScreenCallback( u8 key_code)
     switch ( key_code )
     {
         case EXIT_KEY:
+
            pscreen =  pMenu[pCurrMenu].pBack ;
            break;
         case ENTER_KEY:
@@ -196,12 +197,13 @@ void ViewScreenCallback( u8 key_code)
             pscreen = pMenu[pCurrMenu].pLeftScreen;
             break;
      }
+
      if (pscreen)
      {
          switch (pscreen  & COMMNAD_MASK )
          {
              case ENTER_COMMNAD:
-                 SetFirtsEditString();
+                  SetFirtsEditString();
                   menu_mode = 2;
                   SelectEditFlag  = 1;
                   break;
@@ -215,6 +217,7 @@ void ViewScreenCallback( u8 key_code)
                  if ((journal_index+1) > 1) journal_index--;
                  break;
               case EXIT_COMMAND:
+
                   NVIC_SystemReset();
                   break;
          }
@@ -295,6 +298,7 @@ void vMenuTask ( void )
            {
               if ( TempEvent.Status == MAKECODE )
               {
+                  printf("menu_mode %i\r\n",menu_mode);
                   switch (menu_mode)
                   {
                       case 0:
@@ -393,7 +397,7 @@ void vByteDataEdit(u8 size, u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_ind
             start_edit_flag = 0;
              break;
         case CMD_NEXT_EDIT:
-             if (++cur_edit_index >=max_index) cur_edit_index = 0;
+             if (++cur_edit_index >max_index) cur_edit_index = 0;
              break;
         case CMD_PREV_EDIT:
             if (cur_edit_index ==0) cur_edit_index = max_index; else cur_edit_index--;
@@ -1282,7 +1286,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                 sprintf(str,"%02i",edit_data_buffer_byte );
                 break;
             default:
-                vByteDataEdit(0,reg_id,command,2,100,1);
+                vByteDataEdit(0,reg_id,command,2,99,1);
                 break;
         }
         break;
@@ -1350,7 +1354,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
 static void vDraw( xScreenObjet * pScreenDraw)
 {
     MENU_ClearScreen();
-    u8 x,y;
+    u8 x,y,offset;
     u8 len,edit_index,box_len;
     u8 str[50];
     for (u8 i=0;i<MAX_STRING_NUMBER;i++)
@@ -1377,14 +1381,18 @@ static void vDraw( xScreenObjet * pScreenDraw)
             u8g2_DrawUTF8(&u8g2,x,y,pScreenDraw[i].pStringParametr);
             vGetData(pScreenDraw[i].DataID,str,edit_data[i]==3 ? CMD_EDIT_READ : CMD_READ,&edit_index,&box_len);
             len = u8g2_GetUTF8Width(&u8g2,str);
-            //x = pScreenDraw[i].x_data;
+            if (pScreenDraw[i].x_data!=0)
+              offset = pScreenDraw[i].x_data;
+            else
+               offset = 0;
+
             if (( menu_mode >0) && (edit_data[i]>=2))
             {
                 if ((edit_data[i]==2) && (SelectEditFlag))
                 {
                    if ( blink_counter <= 5)
                    {
-                       u8g2_DrawBox( &u8g2, 128-len, y-10 , len , 11 );
+                       u8g2_DrawBox( &u8g2, 128-len-offset, y-10 , len , 11 );
                        u8g2_SetDrawColor(&u8g2,0);
                        u8g2_SetFontMode(&u8g2,1);
                    }
@@ -1392,14 +1400,14 @@ static void vDraw( xScreenObjet * pScreenDraw)
                 if (edit_data[i]==3)
                 {
                     if (box_len == 1)
-                       u8g2_DrawBox( &u8g2, 128-6*(edit_index+1), y-10 , 6 , 11 );
+                       u8g2_DrawBox( &u8g2, 128-6*(edit_index+1)-offset, y-10 , 6 , 11 );
                     else
-                        u8g2_DrawBox( &u8g2, 128-len, y-10 , len , 11 );
+                        u8g2_DrawBox( &u8g2, 128-len-offset, y-10 , len , 11 );
                     u8g2_SetDrawColor(&u8g2,2);
                     u8g2_SetFontMode(&u8g2,1);
                 }
             }
-            u8g2_DrawUTF8(&u8g2,128-len,y,str);
+            u8g2_DrawUTF8(&u8g2,128-len-offset,y,str);
             u8g2_SetDrawColor(&u8g2,1);
             u8g2_SetFontMode(&u8g2,0);
             break;
