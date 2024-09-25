@@ -206,7 +206,7 @@ u8 MB_TASK_GetMode()
 static u8 getRegID( u16 mb_reg_address)
 {
 
-    if (mb_reg_address >= CDV_OFFSET)
+    if (mb_reg_address >= (CDV_OFFSET+100))
     {
         switch (mb_reg_address)
         {

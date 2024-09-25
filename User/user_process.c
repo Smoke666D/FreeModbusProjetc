@@ -53,7 +53,7 @@ void USER_SetControlState(u8 state)
 {
     mb_time_out = 0;
     setReg8(SYSTEM_START,state);
-
+  printf("sss\r\n");
 }
 
 
