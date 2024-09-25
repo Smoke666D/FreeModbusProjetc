@@ -110,6 +110,7 @@ static u8 * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
 static u8 * AfterZoneStrig[]={"Tканала<Tпомещения","Tканала>Tпомещения","Автомат"};
 static u8 * MUnitStrig[] = {"м^3/ч","м/c","Па"};
 static u8 * PriorSentStrig[]= {"T","CO2","H"};
+static const char * DevString[3]={"Режим ФМЧ","CAV/VAV/DCV","Режим BP"};
 static u8 * SensorTypeStrig[]= {"0-10","2-10","4-20"};
 static xScreenType * pMenu;
 static u8 journal_index =0;
@@ -213,6 +214,9 @@ void ViewScreenCallback( u8 key_code)
               case JOURNAL_PREV:
                  if ((journal_index+1) > 1) journal_index--;
                  break;
+              case EXIT_COMMAND:
+                  NVIC_SystemReset();
+                  break;
          }
          if (pscreen & ~COMMNAD_MASK)
              pCurrMenu = GetID(pscreen);
@@ -364,6 +368,11 @@ void MenuSetDevice()
             pMenu = xScreenBP;
             break;
     }
+}
+
+void MenuSetDeviceMenu()
+{
+    pMenu = xDeiceInit;
 }
 
 
@@ -747,6 +756,7 @@ u16 getDataModelID( u16 MENU_ID)
         case KK_SENSOR_TYPE_ID:     return (KK_SENSOR_TYPE);
         case CO2_SENSOR_TYPE_ID:    return (CO2_SENSOR_TYPE);
         case H_SENSOR_TYPE_ID:      return (H_SENSOR_TYPE);
+        case DEVICE_TYPE_ID:        return (DEVICE_TYPE);
         default: return 0;
     }
 }
@@ -934,7 +944,21 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
     else
     switch (data_id)
     {
-
+        case DEVICE_TYPE_ID:
+            *len = 0;
+             switch (command)
+             {
+                  case CMD_EDIT_READ:
+                       strcpy(str,DevString[ edit_data_buffer_byte ] );
+                       break;
+                  case CMD_READ:
+                       strcpy(str, DevString[ getReg8( reg_id)] );
+                       break;
+                  default:
+                       vByteDataEdit(0,reg_id,command,0,2 , 0);
+                       break;
+            }
+            break;
         case JOURNAL_TIME_ID:
             sprintf(str,TimeFormatString,time.hours,time.minutes,time.seconds);
             break;

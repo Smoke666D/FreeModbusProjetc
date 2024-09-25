@@ -346,6 +346,19 @@ static xScreenObjet const CDVSettingsScreen20[]=
         {1,2,62,15,WRITE_DATA,"Откалибравать 0",            ZERO_CALIBRATE_ID },
 };
 
+
+static xScreenObjet const DeviceInit[]=
+{
+        {0,10,LINE1,70,TEXT_STRING,"Тип усртойства:",            0},
+        {1,2,62,15,WRITE_DATA,"",                       DEVICE_TYPE_ID },
+};
+
+xScreenType  xDeiceInit[] =
+{
+        {1,DeviceInit,   0,   0,  0,  0, ENTER_COMMNAD, EXIT_COMMAND },
+};
+
+
 xScreenType  xScreenCVD[CDV_SCREENS_COUNT] =
 {
   {1,CDVInfoScreen1,   3,   2,  11,  11, 0, 0 },

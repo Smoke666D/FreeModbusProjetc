@@ -150,6 +150,8 @@ DEVICE_TYPE_t SystemInitGetDevType()
 void vDefaultTask( void  * argument )
 {
     static const char * DevString[3]={"Режим ФМЧ","CAV/VAV/DCV","Режим BP"};
+    QueueHandle_t     pKeyboard        = *( xKeyboardQueue());
+    static KeyEvent          TempEvent        = { 0U };
     char temp_str[50];
     u8 buffer_draw_counter = 0;
     TaskFSM_t main_task_fsm = STATE_INIT;
@@ -167,21 +169,38 @@ void vDefaultTask( void  * argument )
        switch (main_task_fsm)
         {
             case STATE_INIT:
+
                 vDrawBitmap();
                 xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
                 DataModel_Init();
                 vDataBufferInit();
                 device = getReg8(DEVICE_TYPE);
-                vTaskDelay(2000);
-                MENU_ClearScreen();
-                MENU_DrawString(40, 20, DevString[device]);
-                MenuSetDevice();
-                sprintf(temp_str, "Версия ПО %02i.%02i.%02i",getReg8(SOFT_V1 ),getReg8(SOFT_V2 ),getReg8(SOFT_V3 ));
-                MENU_DrawString(10, 40, temp_str);
-                xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
-                vTaskResume(*getUserProcessTaskHandle());
-                vTaskResume(*getI2CTaskHandle());
-                vTaskDelay(1500);
+                for (uint16_t k=0; k< 3000;k++)
+                {
+                    if ( uxQueueMessagesWaiting(pKeyboard) != 0)
+                    {
+                        if ( xQueueReceive(pKeyboard, &TempEvent, 0U ) == pdPASS )
+                        {
+                              if (( TempEvent.Status == MAKECODE ) &&  (TempEvent.KeyCode ==ENTER_KEY))
+                              {
+                                  MenuSetDeviceMenu();
+                                  main_task_fsm  = STATE_RUN;
+                              }
+                        }
+                    }
+                    vTaskDelay(1);
+                    if (k==2000)
+                    {
+                        MENU_ClearScreen();
+                        MENU_DrawString(40, 20, DevString[device]);
+                        MenuSetDevice();
+                        sprintf(temp_str, "Версия ПО %02i.%02i.%02i",getReg8(SOFT_V1 ),getReg8(SOFT_V2 ),getReg8(SOFT_V3 ));
+                        MENU_DrawString(10, 40, temp_str);
+                        xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
+                        vTaskResume(*getUserProcessTaskHandle());
+                        vTaskResume(*getI2CTaskHandle());
+                    }
+                }
                 main_task_fsm =  STATE_WHAIT_TO_RAEDY;
                 break;
             case STATE_WHAIT_TO_RAEDY:

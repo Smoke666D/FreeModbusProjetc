@@ -128,6 +128,8 @@
 #define SETTING2_TITLE_ID       103
 #define CALIBRATION_TITLE_ID    104
 
+#define  DEVICE_TYPE_ID         105
+
 #define TITLE_FIRST         VOLTAG_SCREEN_TITLE_ID
 #define TITLE_LAST          CALIBRATION_TITLE_ID
 
@@ -171,6 +173,7 @@ typedef enum
 #define JOURNAL_PREV         0x8400
 #define SAVE_COMMAND         0x6000
 #define ENTER_COMMNAD        0x8000
+#define EXIT_COMMAND         0x6300
 #define COMMNAD_MASK         0xFF00
 
 #define MAX_MENU_COUNT 0xFF
@@ -188,7 +191,7 @@ typedef struct
  // void          ( *pFunc )( void*, char );
 } xScreenType;
 
-
+void MenuSetDeviceMenu();
 void MenuSetDevice();
 void MENU_DrawString(u8 x, u8 y, char const * str);
 void MENU_ClearScreen();
