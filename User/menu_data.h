@@ -19,7 +19,7 @@
 #define LINE4        60U
 #define LINE5        60U
 
-#define SCREENS_COUNT 15
+#define SCREENS_COUNT 100
 #define CDV_SCREENS_COUNT 26
 #define BP_SCREENS_COUNT 25
 
