@@ -91,11 +91,18 @@ uint8_t PID_Compute(PID_TypeDef *uPID, float input)
 
 		/* ..... Compute all the working error variables ..... */
 	//	input   = *uPID->MyInput;
+
+	    //Вычисление ошибки
 		error   = *uPID->MySetpoint - input;
 
-		dInput  = (input - uPID->LastInput);
+		//dInput  = (input - uPID->LastInput);
+
+
 		
-	//	printf("input =%f\r\n",*uPID->MyInput);
+
+
+
+
 
 		uPID->OutputSum     = uPID->OutputSum + (uPID->Ki * error);
 		
@@ -104,7 +111,7 @@ uint8_t PID_Compute(PID_TypeDef *uPID, float input)
 		/* ..... Add Proportional on Measurement, if P_ON_M is specified ..... */
 		//if (!uPID->POnE)
 		//{
-			uPID->OutputSum =uPID->OutputSum - uPID->Kp * dInput;
+			//uPID->OutputSum =uPID->OutputSum - uPID->Kp * dInput;
 	//	}
 
 
@@ -119,18 +126,9 @@ uint8_t PID_Compute(PID_TypeDef *uPID, float input)
 		}
 		else { }
 		
-		/* ..... Add Proportional on Error, if P_ON_E is specified ..... */
-		//if (uPID->POnE)
-		//{
-			output = uPID->Kp * error;
-		//}
-		//else
-	//	{
-		//	output = 0;
-		//}
-		
-		/* ..... Compute Rest of PID Output ..... */
-		output =output+ uPID->OutputSum;// - uPID->Kd * dInput;
+		//Пропорциональная составляющая
+	     output = uPID->Kp * error + uPID->OutputSum;
+
 		
 		if (output > uPID->OutMax)
 		{
