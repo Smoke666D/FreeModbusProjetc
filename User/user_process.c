@@ -98,7 +98,7 @@ static void USER_SETTING_CHECK(u8 control_type, u8 * point_old)
           if ( mb_time_out>= getReg8(MOD_BUS_TIMEOUT)*100)
           {
               setReg8(SYSTEM_START, 0);
-              printf("time out mb\r\n");
+
           }
       }
       else
@@ -314,7 +314,7 @@ void user_process_task(void *pvParameters)
                    break;
                case USER_PEOCESS_WORK_TIME_OUT:
 
-                   if ( (++start_timeout)> ( getReg8(FAN_START_TIMEOUT)*10))
+                   if ( (++start_timeout)> ( getReg8(FAN_START_TIMEOUT)*100))
                    {
 
                        task_fsm = USER_PEOCESS_ZERO_CALIB;
@@ -398,13 +398,13 @@ void USER_AOUT_SET(u8 channel, float data)
     {
         case DAC1:
 
-            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_1 ,ref *10 );
+            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_1 ,ref );
             break;
         case DAC2:
-            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_2 ,ref *10 );
+            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_2 ,ref  );
             break;
         case DAC3:
-            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_3 ,ref *10 );
+            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_3 ,ref  );
             break;
     }
 
