@@ -210,6 +210,7 @@ typedef struct
 
 	float          OutputSum;
 	float          LastInput;
+	float          LastOutput;
 
 	float          OutMin;
 	float          OutMax;

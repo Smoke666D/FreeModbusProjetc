@@ -15,7 +15,7 @@
 
 #define SW_V                  1
 #define SW_V2                 3
-#define SW_V3                 4
+#define SW_V3                 5
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -71,7 +71,8 @@
 #define KK_SENSOR_TYPE        ( ZERO_POINT_TIMEOUT  + sizeof(uint16_t) )
 #define CO2_SENSOR_TYPE       ( KK_SENSOR_TYPE + sizeof(uint8_t) )
 #define H_SENSOR_TYPE         ( CO2_SENSOR_TYPE + sizeof(uint8_t) )
-#define OFFSET_CH2            ( H_SENSOR_TYPE   + sizeof(uint8_t) )
+#define F_CHANNEL             ( H_SENSOR_TYPE   + sizeof(uint8_t) )
+#define OFFSET_CH2            ( F_CHANNEL       + sizeof(uint32_t) )
 #define FILTER_LOW            ( OFFSET_CH2         + sizeof(uint32_t) )
 #define FILTER_HIGH           ( FILTER_LOW + sizeof(uint16_t) )
 #define MOTO_HOURS            ( FILTER_HIGH + sizeof(uint16_t) )

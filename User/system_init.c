@@ -156,10 +156,12 @@ void vDefaultTask( void  * argument )
     u8 buffer_draw_counter = 0;
     TaskFSM_t main_task_fsm = STATE_INIT;
     u8 contrast = 0;
+    printf("Start def\r\n");
     vMenuInit();
     vRTC_TASK_Init();
     while(1)
     {
+        HAL_WDTReset();
        if ( contrast != getReg8(CONTRAST))
        {
            contrast = getReg8(CONTRAST);
@@ -188,9 +190,12 @@ void vDefaultTask( void  * argument )
                               }
                         }
                     }
+                    HAL_WDTReset();
                     vTaskDelay(1);
                     if (k==2000)
                     {
+
+
                         MENU_ClearScreen();
                         MENU_DrawString(40, 20, DevString[device]);
                         MenuSetDevice();

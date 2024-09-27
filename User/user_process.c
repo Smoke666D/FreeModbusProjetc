@@ -219,8 +219,7 @@ void user_process_task(void *pvParameters)
    FilterState = 0;
    PID(&TPID, &Temp, &PIDOut, &SET_POINT, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_P_ON_E, _PID_CD_DIRECT);
    PID_SetMode(&TPID, _PID_MODE_AUTOMATIC);
-   PID_SetOutputLimits(&TPID,0,9999);
-  // PID_SetSampleTime(&TPID, 20);
+   PID_SetOutputLimits(&TPID,1000,10000);
 
    while(1)
    {

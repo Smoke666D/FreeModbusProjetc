@@ -133,6 +133,7 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define CDV_KK_SENSOR_TYPE      228
 #define CDV_CO2_SENSOR_TYPE     229
 #define CDV_H_SENSOR_TYPE       230
+#define CDV_F_CHANNEL           231
 
 
 #define BP_OFFSET          200
@@ -157,6 +158,7 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define BP_KK_SENSOR_TYPE       328
 #define BP_CO2_SENSOR_TYPE      329
 #define BP_H_SENSOR_TYPE        330
+#define PB_F_CHANNEL            331
 
 //#define SENS_COOF  18
 //#define DAC_DATA   19
@@ -258,6 +260,9 @@ static u8 getRegID( u16 mb_reg_address)
                 case CDV_H_SENSOR_TYPE:
                 case BP_H_SENSOR_TYPE:
                                         return (H_SENSOR_TYPE);
+                case PB_F_CHANNEL+1:
+                case CDV_F_CHANNEL+1:
+                                    return (F_CHANNEL);
         }
     }
     else
@@ -420,6 +425,8 @@ void vSetRegData( u16 adress)
        case (BP_KOOF_P3_MB+1):
        case (CDV_OFFSET_CH2+1):
        case (BP_OFFSET_CH2+1):
+       case (PB_F_CHANNEL+1):
+       case (CDV_F_CHANNEL+1):
            data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
            saveRegFloat(reg_addr, data);
            break;
@@ -592,6 +599,10 @@ void MB_TASK_HOLDING_UDATE()
           convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-reg_offet]);
           tempdata =(int32_t) (getRegFloat(OFFSET_CH2)*1000);
           convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-reg_offet]);
+          tempdata =(int32_t) (getRegFloat(F_CHANNEL)*1000);
+                   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_F_CHANNEL-reg_offet]);
+
+
           for (u8 i=0;i<CDV_BP_REG8_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
           {
                u8 index = getRegID(CDV_BP_REGS8[i]);

@@ -70,51 +70,30 @@ uint8_t PID_Compute(PID_TypeDef *uPID, float input)
 	
 	uint32_t now;
 	uint32_t timeChange;
-	
+	float SampleTimeInSec = ((float)uPID->SampleTime) / 1000;
 //	float input;
 	float error;
 	float dInput;
 	float output;
 	
-	/* ~~~~~~~~~~ Check PID mode ~~~~~~~~~~ */
-	if (!uPID->InAuto)
-	{
-		return _FALSE;
-	}
 	
-	/* ~~~~~~~~~~ Calculate time ~~~~~~~~~~ */
-	//now        = GetTime();
-	timeChange = 100;//(now - uPID->LastTime);
 	
-	if (timeChange >= uPID->SampleTime)
-	{
+
+
+
 
 		/* ..... Compute all the working error variables ..... */
 	//	input   = *uPID->MyInput;
 
-	    //Вычисление ошибки
-		error   = *uPID->MySetpoint - input;
+	//Вход в 0-2500Па, умножаем на 10
+	float temp_input = input *10;
+	//Вычисляем ошибку
+	error   = *uPID->MySetpoint - temp_input;
 
-		//dInput  = (input - uPID->LastInput);
-
-
+    //Интергальная составляющая
+	 uPID->OutputSum     = (*uPID->MyOutput + error ) * 0.1 / uPID->Ki ;
 		
-
-
-
-
-
-		uPID->OutputSum     = uPID->OutputSum + (uPID->Ki * error);
-		
-
-
-		/* ..... Add Proportional on Measurement, if P_ON_M is specified ..... */
-		//if (!uPID->POnE)
-		//{
-			//uPID->OutputSum =uPID->OutputSum - uPID->Kp * dInput;
-	//	}
-
-
+  //Проверяем что не вывалились за преелы.
 
 		if (uPID->OutputSum > uPID->OutMax)
 		{
@@ -127,9 +106,8 @@ uint8_t PID_Compute(PID_TypeDef *uPID, float input)
 		else { }
 		
 		//Пропорциональная составляющая
-	     output = uPID->Kp * error + uPID->OutputSum;
+	     output = uPID->Kp * (error + uPID->OutputSum) ;
 
-		
 		if (output > uPID->OutMax)
 		{
 			output = uPID->OutMax;
@@ -144,16 +122,12 @@ uint8_t PID_Compute(PID_TypeDef *uPID, float input)
 		
 	   // printf("eerro %f %f\r\n",error,uPID->OutputSum );
 		/* ..... Remember some variables for next time ..... */
-		uPID->LastInput = input;
-		uPID->LastTime = now;
+		//uPID->LastInput = temp_input;
+		//uPID->LastTime = now;
 		
 		return _TRUE;
 		
-	}
-	else
-	{
-		return _FALSE;
-	}
+
 	
 }
 
@@ -247,7 +221,7 @@ void PID_SetTunings2(PID_TypeDef *uPID, float Kp, float Ki, float Kd, PIDPON_Typ
 	SampleTimeInSec = ((float)uPID->SampleTime) / 1000;
 	
 	uPID->Kp = Kp;
-	uPID->Ki = Ki * SampleTimeInSec;
+	uPID->Ki = Ki;// * SampleTimeInSec;
 	uPID->Kd = Kd / SampleTimeInSec;
 	
 	/* ~~~~~~~~ Check direction ~~~~~~~~ */

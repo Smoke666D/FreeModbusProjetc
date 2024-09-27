@@ -53,6 +53,7 @@ void vInit_DeviceConfig( void )
      DAC_SetChannel1Data(DAC_Align_12b_R, 1000);
      vDIN_DOUT_Init();
      InitEEPROM( HAL_SPI2 );
+     HAL_WDTInit();
 
 }
 

@@ -761,6 +761,7 @@ u16 getDataModelID( u16 MENU_ID)
         case CO2_SENSOR_TYPE_ID:    return (CO2_SENSOR_TYPE);
         case H_SENSOR_TYPE_ID:      return (H_SENSOR_TYPE);
         case DEVICE_TYPE_ID:        return (DEVICE_TYPE);
+        case F_CHANNEL_ID:          return (F_CHANNEL);
         default: return 0;
     }
 }
@@ -903,7 +904,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                       sprintf(str,"%+07.1f",edit_data_buffer_float );
                       break;
                 default:
-                      vFloatDataEdit(reg_id, command,5,1,9999.9,-9999.9);
+                      vFloatDataEdit(reg_id, command,7,2,9999.9,-9999.9);
                       break;
             }
             break;
@@ -922,6 +923,20 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                         break;
              }
              break;
+        case F_CHANNEL_ID:
+            switch (command)
+                      {
+                          case CMD_READ:
+                              sprintf(str,"%+07.4f",getRegFloat(reg_id));
+                              break;
+                          case CMD_EDIT_READ:
+                              sprintf(str,"%+07.4f",edit_data_buffer_float );
+                              break;
+                         default:
+                             vFloatDataEdit(reg_id, command,4,1,9.999,-9.999);
+                             break;
+                      }
+            break;
 
     }
 }
@@ -1042,7 +1057,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                     sprintf(str,"%+07.2f",edit_data_buffer_float );
                     break;
                default:
-                   vFloatDataEdit(reg_id, command,4,2,999.99,-999.99);
+                   vFloatDataEdit(reg_id, command,6,2,999.99,-999.99);
                    break;
             }
             break;

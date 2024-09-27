@@ -9,4 +9,4 @@
 #include "hal_config.h"
 
 #define MCU CH32V3
-//#define WDT
+#define WDT
