@@ -26,7 +26,7 @@ void HAL_WDTInit()
 {
 #ifdef WDT
     IWDG->CTLR = IWDG_WriteAccess_Enable;
-    IWDG->PSCR = IWDG_Prescaler_64;
+    IWDG->PSCR = IWDG_Prescaler_128;
     IWDG->RLDR = 4000;
     IWDG->CTLR = CTLR_KEY_Reload;
     IWDG->CTLR = CTLR_KEY_Enable;

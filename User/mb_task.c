@@ -817,34 +817,6 @@ eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT us
 }
 
 
-void MBTCP_task(void *pvParameters)
-{
-     eMBErrorCode    xStatus;
-
-     for( ;; )
-     {
-         vTaskDelay(1);
-         if( eMBTCPInit( MB_TCP_PORT_USE_DEFAULT ) != MB_ENOERR )
-         {
-            printf("can't initialize modbus stack!\r\n" );
-         }
-         else if( eMBEnable(  ) != MB_ENOERR )
-         {
-
-         }
-         else
-         {
-                do
-                {
-                    xStatus = eMBPoll(  );
-                }
-                while( xStatus == MB_ENOERR );
-         }
-     }
-     ( void )eMBDisable(  );
-     ( void )eMBClose(  );
-}
-
 void MBRTU_task(void *pvParameters)
 {
      u8 mb_ready = 0;

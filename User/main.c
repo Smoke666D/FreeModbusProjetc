@@ -115,7 +115,6 @@ int main(void)
     USART_Printf_Init(115200);
     printf("System start\n");
     vTaskStartScheduler();
-
 	while(1)
 	{
 

@@ -90,7 +90,6 @@ void vSYStaskInit ( void )
 {
 
    (* getI2CTaskHandle())
-
                     =    xTaskCreateStatic( I2C_task, "I2C", I2C_STK_SIZE , ( void * ) 1, I2C_TASK_PRIO  ,
                                       (StackType_t * const )I2CTaskBuffer, &I2CTaskControlBlock );
 
