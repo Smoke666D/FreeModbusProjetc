@@ -216,6 +216,7 @@ void vDefaultTask( void  * argument )
                 }
                 else
                 {
+                    printf("wichnet\r\n");
                     vTaskResume( WCHNETTask_Handler );
                 }
                 printf("starit mb\r\n");

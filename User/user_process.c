@@ -219,7 +219,7 @@ void user_process_task(void *pvParameters)
    FilterState = 0;
    PID(&TPID, &Temp, &PIDOut, &SET_POINT, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_P_ON_E, _PID_CD_DIRECT);
    PID_SetMode(&TPID, _PID_MODE_AUTOMATIC);
-   PID_SetOutputLimits(&TPID,1000,10000);
+   PID_SetOutputLimits(&TPID,(float)1000.0,(float)10000.0);
 
    while(1)
    {
@@ -386,7 +386,7 @@ void user_process_task(void *pvParameters)
 
    }
 }
-static u16 ddd =0;
+
 static float AOUTDATA[3]={0,0,0};
 void USER_AOUT_SET(u8 channel, float data)
 {

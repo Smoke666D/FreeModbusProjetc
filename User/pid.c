@@ -68,31 +68,23 @@ void PID2(PID_TypeDef *uPID, float *Input, float *Output, float *Setpoint, float
 uint8_t PID_Compute(PID_TypeDef *uPID, float input)
 {
 	
-	uint32_t now;
-	uint32_t timeChange;
-	float SampleTimeInSec = ((float)uPID->SampleTime) / 1000;
-//	float input;
 	float error;
 	float dInput;
 	float output;
-	
-	
-	
-
-
-
-
 		/* ..... Compute all the working error variables ..... */
 	//	input   = *uPID->MyInput;
 
 	//Вход в 0-2500Па, умножаем на 10
-	float temp_input = input *10;
+	//float temp_input = input /10.0;
 	//Вычисляем ошибку
-	error   = *uPID->MySetpoint - temp_input;
+	error   = (*uPID->MySetpoint - input)/10.0;
+	dInput  = (input - uPID->LastInput)/10.0;
 
     //Интергальная составляющая
-	 uPID->OutputSum     = (*uPID->MyOutput + error ) * 0.1 / uPID->Ki ;
+	 uPID->OutputSum     = uPID->OutputSum  + error  * 0.1 * uPID->Ki ;
 		
+
+	 uPID->OutputSum -= uPID->Kp * dInput;
   //Проверяем что не вывалились за преелы.
 
 		if (uPID->OutputSum > uPID->OutMax)
@@ -106,7 +98,7 @@ uint8_t PID_Compute(PID_TypeDef *uPID, float input)
 		else { }
 		
 		//Пропорциональная составляющая
-	     output = uPID->Kp * (error + uPID->OutputSum) ;
+	    output = uPID->Kp *  error + uPID->OutputSum  ;
 
 		if (output > uPID->OutMax)
 		{
@@ -122,7 +114,7 @@ uint8_t PID_Compute(PID_TypeDef *uPID, float input)
 		
 	   // printf("eerro %f %f\r\n",error,uPID->OutputSum );
 		/* ..... Remember some variables for next time ..... */
-		//uPID->LastInput = temp_input;
+		uPID->LastInput = input;
 		//uPID->LastTime = now;
 		
 		return _TRUE;

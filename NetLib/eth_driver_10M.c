@@ -151,7 +151,9 @@ void WCHNET_RecProcess(void)
     if(((ChipId & 0xf0) == 0x20) && \
             ((ETH->DMAMFBOCR & 0x1FFE0000) != 0))
     {
+
         ReInitMACReg();
+
     }
 }
 
@@ -335,10 +337,16 @@ void WCHNET_HandlePhyNegotiation(void)
  */
 void WCHNET_MainTask(void)
 {
-    WCHNET_NetInput( );                     /* Ethernet data input */
-    WCHNET_PeriodicHandle( );               /* Protocol stack time-related task processing */
+    WCHNET_NetInput( );
+
+    /* Ethernet data input */
+    WCHNET_PeriodicHandle( );
+    /* Protocol stack time-related task processing */
+
     WCHNET_HandlePhyNegotiation();
+    printf("start wich1\r\n");
     WCHNET_RecProcess();
+
 }
 
 /*********************************************************************
@@ -502,15 +510,19 @@ void ReInitMACReg(void)
     /* Wait for sending data to complete */
     while((ETH->DMASR & (7 << 20)) != ETH_DMA_TransmitProcess_Suspended);
 
+
     PHY_TR_REVERSE();
 
     /* Software reset */
     ETH_SoftwareReset();
+
     /* Wait for software reset */
     do{
         Delay_Us(10);
         if( !--timeout )  break;
     }while(ETH->DMABMR & ETH_DMABMR_SR);
+    printf("start wich12\r\n");
+
 
     /* ETHERNET Configuration */
     /* Call ETH_StructInit if you don't like to configure all ETH_InitStructure parameter */

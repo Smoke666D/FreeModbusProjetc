@@ -128,7 +128,7 @@ static u8 edit_ip_addres[4];
 #define  TimeFormatString  "%02i:%02i:%02i"
 
 static void vDraw( xScreenObjet * pScreenDraw);
-void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len);
+u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len);
 
 
 void vDrawBitmap()
@@ -261,19 +261,22 @@ static void vSelect( u8 direction)
 
 
 
-void vSetEdit()
+u8 vSetEdit()
 {
+    u8 res= 1;
     for (u8 i =0; i < MAX_STRING_NUMBER;i ++)
     {
         if (edit_data[i ] == 2)
         {
               edit_data[i] = 3;
               curr_edit_data_id = pMenu[pCurrMenu].pScreenCurObjets[i].DataID;
-              vGetData( curr_edit_data_id , 0,CMD_START_EDIT ,0,0);
+              res = vGetData( curr_edit_data_id , 0,CMD_START_EDIT ,0,0);
               break;
         }
     }
     SelectEditFlag = 1;
+    return (res);
+
 }
 
 void vSetCommnad( DATA_VIEW_COMMAND_t cmd )
@@ -316,8 +319,16 @@ void vMenuTask ( void )
                                         }
                                        else
                                        {
-                                           menu_mode = 3;
-                                           vSetEdit();
+
+                                           if (vSetEdit() == 1)
+                                           {
+                                               vSetCommnad(CMD_EXIT_EDIT);
+                                               menu_mode = 0;
+                                           }
+                                           else
+                                           {
+                                               menu_mode = 3;
+                                           }
                                        }
                                        break;
                                case UP_KEY: if   (SelectEditFlag)  vSelect(1);
@@ -942,8 +953,9 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
 }
 
 
-void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len)
+u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len)
 {
+    u8 res = 0;
     u8 MACAddr[6];
     u8 temp_byte,temp_state = 0;
     int16_t temp_int;
@@ -1243,20 +1255,22 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                         else
                             strcpy(str,"");
                         break;
-                    case CMD_SAVE_EDIT:
+
                     case CMD_START_EDIT:
                         if ((USER_GetProccesState() == USER_PROCCES_IDLE))
                         {
                          CalibrateZeroStart();
 
                         }
-                        start_edit_flag = 0;
-                        menu_mode = 0;
-                        SelectEditFlag = 0;
+                       // start_edit_flag = 0;
+                       // menu_mode = 2;
+                       // SelectEditFlag = 0;
+                         res = 1;
                          break;
                    default:
                        start_edit_flag = 0;
-                       menu_mode = 0;
+                      // menu_mode = 2;
+                      // res =1;
                     break;
                 }
 
@@ -1274,17 +1288,15 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
                 else
                     strcpy(str,"");
                 break;
-            case CMD_SAVE_EDIT:
+
             case CMD_START_EDIT:
                  saveReg16(RECORD_INDEX, 0);
                  saveReg16(RECORD_COUNT, 0);
-                 start_edit_flag = 0;
-                 menu_mode = 0;
-                 SelectEditFlag = 0;
+                 res = 1;
                  break;
            default:
                start_edit_flag = 0;
-               menu_mode = 0;
+
             break;
         }
         break;
@@ -1364,6 +1376,7 @@ void vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8
         strcpy(str,"0,0");
         break;
     }
+    return (res);
 }
 
 static void vDraw( xScreenObjet * pScreenDraw)
