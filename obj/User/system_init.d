@@ -70,7 +70,8 @@ User/system_init.o: ../User/system_init.c ../User/system_init.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_spi.h ../User/rtc_task.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/EEPROM_25C.h \
  C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_dma.h \
- C:\MRS_DATA\workspace\FreeModbusProjetc\User/system_init.h
+ C:\MRS_DATA\workspace\FreeModbusProjetc\User/system_init.h \
+ C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_wdt.h
 
 ../User/system_init.h:
 
@@ -227,3 +228,5 @@ C:\MRS_DATA\workspace\FreeModbusProjetc\HW_LIB/EEPROM_25C.h:
 C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_dma.h:
 
 C:\MRS_DATA\workspace\FreeModbusProjetc\User/system_init.h:
+
+C:\MRS_DATA\workspace\FreeModbusProjetc\HAL/hal_wdt.h:

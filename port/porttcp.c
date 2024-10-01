@@ -103,14 +103,19 @@ void vNetInit()
 {
     u8 i;
     struct _KEEP_CFG cfg;
-
+   // printf("mm\r\n");
+    WCHNET_GetMacAddr(MACAddr);                                   //get the chip MAC address
+  //  printf("mac addr:");
+  // for( i = 0; i < 6; i++)
+  //        printf("%x ",MACAddr[i]);
+  //        printf("\r\\n");
     TIM2_Init();
-    for (u8 i = 0;i<4;i++)
+    /*for (u8 i = 0;i<4;i++)
     {
         IPAddr[i] = getReg8(IP_1+i);
         GWIPAddr[i]= getReg8(GATE_1+i);
         IPMask[i] = getReg8(MASK_1+i);
-    }
+    }*/
     i = ETH_LibInit(IPAddr, GWIPAddr, IPMask, MACAddr);           //Ethernet library initialize
     if (i == WCHNET_ERR_SUCCESS){};
     cfg.KLIdle = 20000;

@@ -24,7 +24,7 @@ DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[SOFT_V2 ]          =  SW_V2 ;
                DATA_MODEL_REGISTER[SOFT_V3 ]          =  SW_V3;
                DATA_MODEL_REGISTER[CONTROL_TYPE ]     = MKV_MB_RTU;
-               DATA_MODEL_REGISTER[MB_RTU_ADDR ]      = 4;
+               DATA_MODEL_REGISTER[MB_RTU_ADDR ]      = 1;
                DATA_MODEL_REGISTER[MB_PROTOCOL_TYPE]  = MKV_MB_RTU;
                DATA_MODEL_REGISTER[LOW_VOLTAGE_ON]    = 190;
                DATA_MODEL_REGISTER[LOW_VOLTAGE_OFF]   = 199;
@@ -47,8 +47,8 @@ DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[FAN_START_TIMEOUT ] =  20;
                DATA_MODEL_REGISTER[CLEAN_TIMER]       =   20;
                setRegFloat(KOOFKPS , 36.0);
-               setRegFloat(COOF_I,0.5);
-               setRegFloat(COOF_P,5);
+               setRegFloat(COOF_I,15.0);
+               setRegFloat(COOF_P,5.0);
                setRegFloat(COOF_I1,0.5);
                setRegFloat(COOF_P1,5);
                setRegFloat(COOF_I2,0.5);
@@ -60,7 +60,7 @@ DATA_MODEL_INIT_t DataModel_Init()
                setReg16(IP_PORT,502);
                setReg16( FILTER_LOW, 150);
                setReg16( FILTER_HIGH, 300);
-               DATA_MODEL_REGISTER[SENSOR_COUNT]        = TIME_10_0;
+               DATA_MODEL_REGISTER[SENSOR_COUNT]        = TIME_1_0;
                if (WriteEEPROM(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 1000 ,2) == EEPROM_OK) printf("EEPROMwtiye\r\n");
                ReadEEPROMData(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ,2);
                return (NEW_INIT);

@@ -342,9 +342,7 @@ void WCHNET_MainTask(void)
     /* Ethernet data input */
     WCHNET_PeriodicHandle( );
     /* Protocol stack time-related task processing */
-
     WCHNET_HandlePhyNegotiation();
-    printf("start wich1\r\n");
     WCHNET_RecProcess();
 
 }

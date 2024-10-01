@@ -5,7 +5,7 @@
  *      Author: i.dymov
  */
 #include "system_init.h"
-
+#include "hal_wdt.h"
 
 static void vDefaultTask( void  * argument );
 static void WCHNET_task(void *pvParameters);
@@ -79,7 +79,6 @@ void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer,
 
 void TaskSuspend()
 {
-    vTaskSuspend( WCHNETTask_Handler );
     vTaskSuspend( MPTCPTask_Handler  );
     vTaskSuspend(* getSerialTask());
     vTaskSuspend(* getUserProcessTaskHandle());
@@ -147,6 +146,8 @@ DEVICE_TYPE_t SystemInitGetDevType()
 }
 
 
+static u8 TCP_STOP = 0;
+
 void vDefaultTask( void  * argument )
 {
     static const char * DevString[3]={"Режим ФМЧ","CAV/VAV/DCV","Режим BP"};
@@ -156,12 +157,11 @@ void vDefaultTask( void  * argument )
     u8 buffer_draw_counter = 0;
     TaskFSM_t main_task_fsm = STATE_INIT;
     u8 contrast = 0;
-    printf("Start def\r\n");
     vMenuInit();
-    vRTC_TASK_Init();
+    ulTaskNotifyTake( pdTRUE, portMAX_DELAY );
     while(1)
     {
-        HAL_WDTReset();
+
        if ( contrast != getReg8(CONTRAST))
        {
            contrast = getReg8(CONTRAST);
@@ -171,10 +171,8 @@ void vDefaultTask( void  * argument )
        switch (main_task_fsm)
         {
             case STATE_INIT:
-
                 vDrawBitmap();
                 xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
-                DataModel_Init();
                 vDataBufferInit();
                 device = getReg8(DEVICE_TYPE);
                 for (uint16_t k=0; k< 3000;k++)
@@ -194,8 +192,6 @@ void vDefaultTask( void  * argument )
                     vTaskDelay(1);
                     if (k==2000)
                     {
-
-
                         MENU_ClearScreen();
                         MENU_DrawString(40, 20, DevString[device]);
                         MenuSetDevice();
@@ -209,17 +205,11 @@ void vDefaultTask( void  * argument )
                 main_task_fsm =  STATE_WHAIT_TO_RAEDY;
                 break;
             case STATE_WHAIT_TO_RAEDY:
-                printf("starit protocol\r\n");
                 if (getReg8(MB_PROTOCOL_TYPE) == MKV_MB_RTU)
                 {
                     vTaskResume(* getSerialTask());
+                    TCP_STOP = 1;
                 }
-                else
-                {
-                    printf("wichnet\r\n");
-                    vTaskResume( WCHNETTask_Handler );
-                }
-                printf("starit mb\r\n");
                 vTaskResume( MPTCPTask_Handler  );
                 main_task_fsm  = STATE_RUN;
                 break;
@@ -255,17 +245,24 @@ void vDefaultTask( void  * argument )
  */
 void WCHNET_task(void *pvParameters)
 {
-
+    TCP_STOP  = 0;
+    DataModel_Init();
+    vRTC_TASK_Init();
+    xTaskNotifyGive( DefautTask_Handler );
     while(1)
     {
-
-        WCHNET_MainTask();
+        if (TCP_STOP==0)
+        {
+            WCHNET_MainTask();
               /*Query the Ethernet global interrupt,
                 * if there is an interrupt, call the global interrupt handler*/
-        if(WCHNET_QueryGlobalInt())
-        {
-                 WCHNET_HandleGlobalInt();
+            if(WCHNET_QueryGlobalInt())
+            {
+                WCHNET_HandleGlobalInt();
+            }
+
         }
+        HAL_WDTReset();
         vTaskDelay(1);
     }
 }

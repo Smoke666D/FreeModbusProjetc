@@ -202,13 +202,9 @@ float setTestDta(float input)
 
 void user_process_task(void *pvParameters)
 {
-
-
    static u8 HEPA_CONTROL_ON = 0;
    static u8 low_voltage_alarm_timer =0;
    static u8 power_off_flag = 0;
-   u16 ref;
-   u8 ss=0,sss=0;
    uint8_t ac_voltage;
    u8 set_point_old = 2;
    u32 pid_counter = 0;
@@ -315,10 +311,8 @@ void user_process_task(void *pvParameters)
 
                    if ( (++start_timeout)> ( getReg8(FAN_START_TIMEOUT)*100))
                    {
-
                        task_fsm = USER_PEOCESS_ZERO_CALIB;
                        CalibrateZeroStart();
-                       printf("start calib\r\n");
                    }
                    break;
                case USER_PEOCESS_ZERO_CALIB:
@@ -337,38 +331,20 @@ void user_process_task(void *pvParameters)
                case USER_RROCCES_WORK:
                    if (++pid_counter >=10)
                    {
-
                        pid_counter = 0;
-
-
-
-                      // Temp = setTestDta( PIDOut/1000.0);//getAIN(SENS1);
-
                        Temp =getAIN(SENS1);
-
                        PID_Compute(&TPID,Temp);
-
                        USER_AOUT_SET(DAC2,PIDOut/1000.0);
-
                        if ( ( fabs(SET_POINT-Temp) > ( SET_POINT*0.05) ) && ((PIDOut/1000.0) >=9.5) && ((error_state & SETTING_ERROR )==0))
                        {
                            vADDRecord(SETTING_ERROR);
                            error_state |= SETTING_ERROR;
-
                        }
-
                        if (fabs(SET_POINT-Temp) > ( SET_POINT*0.02) )
                        {
-                                             HEPA_CONTROL_ON = 1;
+                           HEPA_CONTROL_ON = 1;
                        }
-
                    }
-                  /* if ((++temp_counter) == 30000 )
-                   {
-                       vADDRecord(SETTING_ERROR);
-                       error_state |= SETTING_ERROR;
-                   }
-                   if ( temp_counter > 30000) temp_counter = 30001;*/
                    eSetDUT(OUT_1,TRUE);
                    break;
                case USER_PROCESS_ALARM:
@@ -382,8 +358,6 @@ void user_process_task(void *pvParameters)
                    break;
            }
        }
-
-
    }
 }
 

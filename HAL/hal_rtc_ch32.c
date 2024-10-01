@@ -25,7 +25,7 @@ static void (* func)( void);
 
 void HAL_RTC_IT_Init(  void (* rtc_it_callback) ( void ), uint8_t prior, uint8_t subprior )
 {
-    printf("RTC SRART_INIT\r\n");
+
     uint8_t temp = 0;
     RCC->APB1PCENR |=(RCC_APB1Periph_PWR | RCC_APB1Periph_BKP);   //Разрешаем тактирование
     PWR->CTLR |= (1 << 8);
@@ -61,14 +61,14 @@ void HAL_RTC_IT_Init(  void (* rtc_it_callback) ( void ), uint8_t prior, uint8_t
     PFIC_IRQ_ENABLE_PG1(RTC_IRQn,prior,subprior);
 #endif
 #if MCU == CH32V3
-    printf("RTC 2\r\n");
+
     PFIC_IRQ_ENABLE_PG2(RTC_IRQn,prior,subprior);
 #endif
 
     RTC_SetCounter(rtc_data);
 
 	  func = rtc_it_callback;
-	  printf("RTC iNIT\r\n");
+	  printf("RTC INIT\r\n");
 	  return;
 }
 
