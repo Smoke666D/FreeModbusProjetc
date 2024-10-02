@@ -40,28 +40,28 @@ void PID_Init(PID_TypeDef *uPID, float LastOut, float LastInput)
 
 }
 
-void PID(PID_TypeDef *uPID, float *Input, float *Output, float *Setpoint, float Kp, float Ki, float Kd, PIDPON_TypeDef POn, PIDCD_TypeDef ControllerDirection)
+void PID(PID_TypeDef *uPID, float *Input, float *Output, float *Setpoint, float Kp, float Ki, float Kd,  PIDCD_TypeDef ControllerDirection)
 {
 	/* ~~~~~~~~~~ Set parameter ~~~~~~~~~~ */
 	uPID->MyOutput   = Output;
 	uPID->MyInput    = Input;
 	uPID->MySetpoint = Setpoint;
-	uPID->InAuto     = (PIDMode_TypeDef)_FALSE;
 	
+
 	PID_SetOutputLimits(uPID, 0, _PID_8BIT_PWM_MAX);
 	
 	uPID->SampleTime = _PID_SAMPLE_TIME_MS_DEF; /* default Controller Sample Time is 0.1 seconds */
 	
 	PID_SetControllerDirection(uPID, ControllerDirection);
-	PID_SetTunings2(uPID, Kp, Ki, Kd, POn);
+	PID_SetTunings2(uPID, Kp, Ki, Kd);
 	
-	uPID->LastTime = GetTime() - uPID->SampleTime;
 	
+
 }
 
 void PID2(PID_TypeDef *uPID, float *Input, float *Output, float *Setpoint, float Kp, float Ki,float Kd, PIDCD_TypeDef ControllerDirection)
 {
-	PID(uPID, Input, Output, Setpoint, Kp, Ki, Kd, _PID_P_ON_E, ControllerDirection);
+	PID(uPID, Input, Output, Setpoint, Kp, Ki, Kd, ControllerDirection);
 }
 
 /* ~~~~~~~~~~~~~~~~~ Computing ~~~~~~~~~~~~~~~~~ */
@@ -74,9 +74,6 @@ uint8_t PID_Compute(PID_TypeDef *uPID, float input)
 		/* ..... Compute all the working error variables ..... */
 	//	input   = *uPID->MyInput;
 
-	//Вход в 0-2500Па, умножаем на 10
-	//float temp_input = input /10.0;
-	//Вычисляем ошибку
 	error   = (*uPID->MySetpoint - input)/10.0;
 	dInput  = (input - uPID->LastInput)/10.0;
 
@@ -85,63 +82,38 @@ uint8_t PID_Compute(PID_TypeDef *uPID, float input)
 		
 
 	 uPID->OutputSum -= uPID->Kp * dInput;
-  //Проверяем что не вывалились за преелы.
+    //Проверяем что не вывалились за преелы.
 
-		if (uPID->OutputSum > uPID->OutMax)
-		{
-			uPID->OutputSum = uPID->OutMax;
-		}
-		else if (uPID->OutputSum < uPID->OutMin)
-		{
-			uPID->OutputSum = uPID->OutMin;
-		}
-		else { }
+    if (uPID->OutputSum > uPID->OutMax)
+    {
+		uPID->OutputSum = uPID->OutMax;
+	}
+	else if (uPID->OutputSum < uPID->OutMin)
+	{
+		uPID->OutputSum = uPID->OutMin;
+	}
+	else { }
 		
-		//Пропорциональная составляющая
-	    output = uPID->Kp *  error + uPID->OutputSum  ;
+	//Пропорциональная составляющая
+	output = uPID->Kp *  error + uPID->OutputSum  ;
 
-		if (output > uPID->OutMax)
-		{
-			output = uPID->OutMax;
-		}
-		else if (output < uPID->OutMin)
-		{
-			output = uPID->OutMin;
-		}
-		else { }
+	if (output > uPID->OutMax)
+	{
+		output = uPID->OutMax;
+	}
+	else if (output < uPID->OutMin)
+	{
+		output = uPID->OutMin;
+	}
+	else { }
 		
-		*uPID->MyOutput = output;
-		
-	   // printf("eerro %f %f\r\n",error,uPID->OutputSum );
-		/* ..... Remember some variables for next time ..... */
-		uPID->LastInput = input;
-		//uPID->LastTime = now;
-		
-		return _TRUE;
-		
-
-	
+	*uPID->MyOutput = output;
+	uPID->LastInput = input;
+	return _TRUE;
 }
 
-/* ~~~~~~~~~~~~~~~~~ PID Mode ~~~~~~~~~~~~~~~~~~ */
-void            PID_SetMode(PID_TypeDef *uPID, PIDMode_TypeDef Mode)
-{
-	
-	uint8_t newAuto = (Mode == _PID_MODE_AUTOMATIC);
-	
-	/* ~~~~~~~~~~ Initialize the PID ~~~~~~~~~~ */
-	//if (newAuto && !uPID->InAuto)
-	//{
-	//	PID_Init(uPID);
-	//}
-	
-	uPID->InAuto = (PIDMode_TypeDef)newAuto;
-	
-}
-PIDMode_TypeDef PID_GetMode(PID_TypeDef *uPID)
-{
-	return uPID->InAuto ? _PID_MODE_AUTOMATIC : _PID_MODE_MANUAL;
-}
+
+
 
 /* ~~~~~~~~~~~~~~~~ PID Limits ~~~~~~~~~~~~~~~~~ */
 void PID_SetOutputLimits(PID_TypeDef *uPID, float Min, float Max)
@@ -156,8 +128,7 @@ void PID_SetOutputLimits(PID_TypeDef *uPID, float Min, float Max)
 	uPID->OutMax = Max;
 	
 	/* ~~~~~~~~~~ Check PID Mode ~~~~~~~~~~ */
-	if (uPID->InAuto)
-	{
+
 		
 		/* ..... Check out value ..... */
 		if (*uPID->MyOutput > uPID->OutMax)
@@ -181,16 +152,16 @@ void PID_SetOutputLimits(PID_TypeDef *uPID, float Min, float Max)
 		}
 		else { }
 		
-	}
 	
+
 }
 
 /* ~~~~~~~~~~~~~~~~ PID Tunings ~~~~~~~~~~~~~~~~ */
 void PID_SetTunings(PID_TypeDef *uPID, float Kp, float Ki, float Kd)
 {
-	PID_SetTunings2(uPID, Kp, Ki, Kd, uPID->POn);
+	PID_SetTunings2(uPID, Kp, Ki, Kd);
 }
-void PID_SetTunings2(PID_TypeDef *uPID, float Kp, float Ki, float Kd, PIDPON_TypeDef POn)
+void PID_SetTunings2(PID_TypeDef *uPID, float Kp, float Ki, float Kd)
 {
 	
 	float SampleTimeInSec;
@@ -202,8 +173,7 @@ void PID_SetTunings2(PID_TypeDef *uPID, float Kp, float Ki, float Kd, PIDPON_Typ
 	}
 	
 	/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-	uPID->POn    = POn;
-	uPID->POnE   = (PIDPON_TypeDef)(POn == _PID_P_ON_E);
+
 
 	uPID->DispKp = Kp;
 	uPID->DispKi = Ki;
@@ -232,7 +202,7 @@ void PID_SetTunings2(PID_TypeDef *uPID, float Kp, float Ki, float Kd, PIDPON_Typ
 void          PID_SetControllerDirection(PID_TypeDef *uPID, PIDCD_TypeDef Direction)
 {
 	/* ~~~~~~~~~~ Check parameters ~~~~~~~~~~ */
-	if ((uPID->InAuto) && (Direction !=uPID->ControllerDirection))
+	if ((Direction !=uPID->ControllerDirection))
 	{
 		
 		uPID->Kp = (0 - uPID->Kp);
@@ -240,7 +210,7 @@ void          PID_SetControllerDirection(PID_TypeDef *uPID, PIDCD_TypeDef Direct
 		uPID->Kd = (0 - uPID->Kd);
 		
 	}
-	
+
 	uPID->ControllerDirection = Direction;
 	
 }

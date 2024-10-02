@@ -578,10 +578,7 @@ void MB_TASK_HOLDING_UDATE()
     convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_I_MB]);
     tempdata =(int32_t) (getRegFloat(KOOFKPS)*1000);
     convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_K_MP]);
-    //if  ( (DEVICE_TYPE_t)getReg8(DEVICE_TYPE) ==DEV_FMCH )
-   // {
-//
-   // }
+
 
     if ( ( (DEVICE_TYPE_t)getReg8(DEVICE_TYPE) ==DEV_CDV ) || ( (DEVICE_TYPE_t)getReg8(DEVICE_TYPE) ==DEV_BP ) )
     {
@@ -600,7 +597,7 @@ void MB_TASK_HOLDING_UDATE()
           tempdata =(int32_t) (getRegFloat(OFFSET_CH2)*1000);
           convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-reg_offet]);
           tempdata =(int32_t) (getRegFloat(F_CHANNEL)*1000);
-                   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_F_CHANNEL-reg_offet]);
+          convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_F_CHANNEL-reg_offet]);
 
 
           for (u8 i=0;i<CDV_BP_REG8_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö

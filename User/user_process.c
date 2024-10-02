@@ -167,7 +167,7 @@ u8 USER_FilterState( u8 * state)
 
 void UPDATE_COOF()
 {
-    PID_SetTunings2(&TPID,getRegFloat(COOF_P), getRegFloat(COOF_I), 0,_PID_CD_DIRECT);
+    PID_SetTunings2(&TPID,getRegFloat(COOF_P), getRegFloat(COOF_I), 0);
 }
 
 static float DAC1_OUT = 0;
@@ -213,8 +213,7 @@ void user_process_task(void *pvParameters)
    error_state = 0;
    task_fsm = USER_PROCCES_IDLE;
    FilterState = 0;
-   PID(&TPID, &Temp, &PIDOut, &SET_POINT, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_P_ON_E, _PID_CD_DIRECT);
-   PID_SetMode(&TPID, _PID_MODE_AUTOMATIC);
+   PID(&TPID, &Temp, &PIDOut, &SET_POINT, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
    PID_SetOutputLimits(&TPID,(float)1000.0,(float)10000.0);
 
    while(1)
@@ -259,9 +258,6 @@ void user_process_task(void *pvParameters)
                }
            }
            if (ac_voltage >40) power_off_flag = 0;
-
-
-
            USER_SETTING_CHECK(c_type, &set_point_old);
            u8 ss;
            // Если засоренность фильта больше значения устваки, то выставляем предупрежние и делаем запись в журнал
@@ -325,17 +321,16 @@ void user_process_task(void *pvParameters)
                        UPDATE_COOF();
                        PID_Init(&TPID,0,setTestDta( PIDOut));
                        task_fsm = USER_RROCCES_WORK;
-                       printf("set_point %f p = %f  i =%f  pr = %f  ir =%f\r\n", SET_POINT,TPID.Kp,TPID.Ki,PIDOut, getRegFloat(COOF_I));
                    }
                    break;
                case USER_RROCCES_WORK:
                    if (++pid_counter >=10)
                    {
                        pid_counter = 0;
-                       Temp =getAIN(SENS1);
-                       PID_Compute(&TPID,Temp);
-                       USER_AOUT_SET(DAC2,PIDOut/1000.0);
-                       if ( ( fabs(SET_POINT-Temp) > ( SET_POINT*0.05) ) && ((PIDOut/1000.0) >=9.5) && ((error_state & SETTING_ERROR )==0))
+                       PID_Compute(&TPID,getAIN(SENS1));
+                       float PID_Out = PIDOut/1000.0;
+                       USER_AOUT_SET(DAC2,PID_Out);
+                       if ( ( fabs(SET_POINT-Temp) > ( SET_POINT*0.05) ) && ((PID_Out) >=9.5) && ((error_state & SETTING_ERROR )==0))
                        {
                            vADDRecord(SETTING_ERROR);
                            error_state |= SETTING_ERROR;
@@ -364,13 +359,11 @@ void user_process_task(void *pvParameters)
 static float AOUTDATA[3]={0,0,0};
 void USER_AOUT_SET(u8 channel, float data)
 {
-
     AOUTDATA[channel]= data;
     u16 ref = (uint16_t)fGetDacCalData(channel,data);
     switch (channel)
     {
         case DAC1:
-
             HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_1 ,ref );
             break;
         case DAC2:

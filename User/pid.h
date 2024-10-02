@@ -155,24 +155,7 @@
 
 /* --------------------------------------------------------- */
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Types ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/* PID Mode */
-typedef enum
-{
-	
-	_PID_MODE_MANUAL    = 0,
-	_PID_MODE_AUTOMATIC = 1
-	
-}PIDMode_TypeDef;
-
-/* PID P On x */
-typedef enum
-{
-	
-	_PID_P_ON_M = 0, /* Proportional on Measurement */
-	_PID_P_ON_E = 1
-	
-}PIDPON_TypeDef;
+;
 
 /* PID Control direction */
 typedef enum
@@ -187,13 +170,9 @@ typedef enum
 typedef struct
 {
 	
-	PIDPON_TypeDef  POnE;
-	PIDMode_TypeDef InAuto;
 
-	PIDPON_TypeDef  POn;
 	PIDCD_TypeDef   ControllerDirection;
 
-	uint32_t        LastTime;
 	uint32_t        SampleTime;
 
 	float          DispKp;
@@ -225,22 +204,18 @@ typedef struct
 /* :::::::::::::: Init ::::::::::::: */
 void PID_Init(PID_TypeDef *uPID,float LastOut, float LastInput);
 
-void PID(PID_TypeDef *uPID, float *Input, float *Output, float *Setpoint, float Kp, float Ki, float Kd, PIDPON_TypeDef POn, PIDCD_TypeDef ControllerDirection);
+void PID(PID_TypeDef *uPID, float *Input, float *Output, float *Setpoint, float Kp, float Ki, float Kd,  PIDCD_TypeDef ControllerDirection);
 void PID2(PID_TypeDef *uPID, float *Input, float *Output, float *Setpoint, float Kp, float Ki, float Kd, PIDCD_TypeDef ControllerDirection);
 
 /* ::::::::::: Computing ::::::::::: */
 uint8_t PID_Compute(PID_TypeDef *uPID, float input);
-
-/* ::::::::::: PID Mode :::::::::::: */
-void            PID_SetMode(PID_TypeDef *uPID, PIDMode_TypeDef Mode);
-PIDMode_TypeDef PID_GetMode(PID_TypeDef *uPID);
 
 /* :::::::::: PID Limits ::::::::::: */
 void PID_SetOutputLimits(PID_TypeDef *uPID, float Min, float Max);
 
 /* :::::::::: PID Tunings :::::::::: */
 void PID_SetTunings(PID_TypeDef *uPID, float Kp, float Ki,float Kd);
-void PID_SetTunings2(PID_TypeDef *uPID, float Kp, float Ki, float Kd, PIDPON_TypeDef POn);
+void PID_SetTunings2(PID_TypeDef *uPID, float Kp, float Ki, float Kd);
 
 /* ::::::::: PID Direction ::::::::: */
 void          PID_SetControllerDirection(PID_TypeDef *uPID, PIDCD_TypeDef Direction);

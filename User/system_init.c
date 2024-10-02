@@ -160,7 +160,6 @@ void vDefaultTask( void  * argument )
     ulTaskNotifyTake( pdTRUE, portMAX_DELAY );
     while(1)
     {
-
        if ( contrast != getReg8(CONTRAST))
        {
            contrast = getReg8(CONTRAST);

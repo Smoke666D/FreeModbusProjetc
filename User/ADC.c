@@ -15,10 +15,12 @@
 #include "hal_gpio.h"
 #include "hal_i2c.h"
 
+
 static TaskHandle_t pADCTaskHandle;
 static TaskHandle_t pI2CTaskHandle;
 static int16_t calib_offset    = 0;
 static int16_t calib_offset1   = 0;
+static float PressSens[2]={0,0};
 float AC_220_VALUE;
 static uint16_t ADC2_Buffer[DC_CHANNEL];
 static int16_t  ADC1_DMABuffer[AC_CONVERION_NUMBER*ADC_CHANNEL];
@@ -124,9 +126,9 @@ float getAIN( AIN_CHANNEL_t channel)
     switch (channel)
     {
         case SENS1:
-            return  ((float)GetConversionali2c(&DataBuffer[0]));
+            return   (PressSens[0]);///((float)GetConversionali2c(&DataBuffer[0]));
         case SENS2:
-            return  ((float)GetConversionali2c(&DataBuffer[1]));
+            return  ( PressSens[1]);//((float)GetConversionali2c(&DataBuffer[1]));
         case DC24:
              return  ((float)GetConversional(&DataBuffer[2])*KK*COOF_24V);
         case DCAIN1:
@@ -286,9 +288,7 @@ int16_t GetConversionali2c(ADC_Conversionl_Buf_t * pBuf)
         index--;
 
     }
-
     tempdata = tempdata - (pBuf->offset*pBuf->ConversionalSize);
-
     tempdata = tempdata/pBuf->ConversionalSize;
     return (int16_t)tempdata;
 }
@@ -533,11 +533,10 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  u1
                    else
                    {
                        *sens_press  = temp_data/GetSensCoof();
-                    }
-                  // *sens_press= *sens_press+100;
-                    AddBufferDataI2C(&DataBuffer[index], *sens_press  );
-                    *SENS_FSM = SENSOR_GET_TEMP_1;
-                    *fsm = I2C_GET_BUSY;
+                   }
+                   AddBufferDataI2C(&DataBuffer[index], *sens_press  );
+                   *SENS_FSM = SENSOR_GET_TEMP_1;
+                   *fsm = I2C_GET_BUSY;
 
                 }
                 break;
@@ -630,7 +629,6 @@ void I2C_task(void *pvParameters)
     u16 sensor_time_out;
     DataBuffer[1].offset = getReg16(SENSOR1_ZERO );
     DataBuffer[0].offset = getReg16(SENSOR2_ZERO );
-    printf("Start I2C OK 1.5\r\n");
     while(1)
     {
         xLastWakeTime =  xTaskGetTickCount ();
@@ -657,6 +655,8 @@ void I2C_task(void *pvParameters)
                     HAL_I2C_STOP(I2C_1);
                     fsm1 = I2C_GET_BUSY;
                 }
+                PressSens[0] = ((float)GetConversionali2c(&DataBuffer[0]));
+                PressSens[1] = ((float)GetConversionali2c(&DataBuffer[1]));
                 break;
             }
             else if (sensor_time_out > 5)

@@ -1262,15 +1262,10 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                          CalibrateZeroStart();
 
                         }
-                       // start_edit_flag = 0;
-                       // menu_mode = 2;
-                       // SelectEditFlag = 0;
                          res = 1;
                          break;
                    default:
                        start_edit_flag = 0;
-                      // menu_mode = 2;
-                      // res =1;
                     break;
                 }
 
