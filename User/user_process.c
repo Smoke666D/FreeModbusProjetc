@@ -205,6 +205,8 @@ void user_process_task(void *pvParameters)
    static u8 HEPA_CONTROL_ON = 0;
    static u8 low_voltage_alarm_timer =0;
    static u8 power_off_flag = 0;
+   static u16 low_voltage_timeout = 0;
+   static u16 high_voltage_timeout = 0;
    uint8_t ac_voltage;
    u8 set_point_old = 2;
    u32 pid_counter = 0;
@@ -231,12 +233,21 @@ void user_process_task(void *pvParameters)
            {
                if (task_fsm != USER_PROCESS_ALARM)
                {
+                   high_voltage_timeout++;
+                   if  (high_voltage_timeout>100)
+                   {
                    error_state |= HIGH_VOLTAGE_ERROR;
                    vADDRecord(HIGH_VOLTAGE_ERROR);
                    task_fsm = USER_PROCESS_ALARM;
+                   }
                }
            }
-           else if ( ac_voltage <=  getReg8(LOW_VOLTAGE_ON))
+           else
+               high_voltage_timeout = 0;
+
+
+
+           if ( ac_voltage <=  getReg8(LOW_VOLTAGE_ON))
            {
                if ((task_fsm != USER_PROCESS_ALARM) && (power_off_flag==0))
                {
@@ -249,6 +260,9 @@ void user_process_task(void *pvParameters)
                    }
                }
            }
+           else
+               low_voltage_alarm_timer = 0;
+
            if (ac_voltage < 20)
            {
                if (power_off_flag==0)
