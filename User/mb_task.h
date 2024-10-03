@@ -13,7 +13,7 @@
 #include "user_process.h"
 
 #define REG_COILS_START      0x0
-#define REG_COILS_NREGS      3
+#define REG_COILS_NREGS      4
 #define REG_DISCRETE_START   0x00
 #define REG_DISCRETE_NREGS   5
 

@@ -386,6 +386,8 @@ uint8_t SetI2CDataFSM(I2C_NAME_t I2C,u8 ad, u8 data, I2C_FSM_t * i2cfsm )
                    HAL_I2C_START(I2C);
                    *i2cfsm = I2C_EVT_5 ;
                }
+
+
                break;
            case I2C_EVT_5 :
                if (HAL_I2C_GET_STAT1(I2C) & STAR1_SB_FLAG )
@@ -627,6 +629,7 @@ void I2C_task(void *pvParameters)
     I2C_FSM_t fsm  = I2C_GET_BUSY;
     I2C_FSM_t fsm1 = I2C_GET_BUSY;
     u16 sensor_time_out;
+
     DataBuffer[1].offset = getReg16(SENSOR1_ZERO );
     DataBuffer[0].offset = getReg16(SENSOR2_ZERO );
     while(1)
@@ -645,13 +648,13 @@ void I2C_task(void *pvParameters)
             {
                 if (SENS1_FSM !=SENSOR_IDLE)
                 {
-                    printf("i2c error %i %i\r\n",fsm,SENS1_FSM);
+                    printf(" error %i %i\r\n",fsm,SENS1_FSM);
                     HAL_I2C_STOP(I2C_2);
                     fsm = I2C_GET_BUSY;
                 }
                 if (SENS2_FSM !=SENSOR_IDLE)
                 {
-                    printf("i21 error %i %i\r\n",fsm1,SENS2_FSM);
+                    printf(" error %i %i\r\n",fsm1,SENS2_FSM);
                     HAL_I2C_STOP(I2C_1);
                     fsm1 = I2C_GET_BUSY;
                 }
@@ -663,17 +666,22 @@ void I2C_task(void *pvParameters)
             {
                 if (SENS1_FSM ==SENSOR_START_CONVERSION)
                 {
+                    printf("i2c1 error %i %i\r\n",fsm,SENS1_FSM);
                     SENS1_FSM = SENSOR_IDLE;
+
                     HAL_I2C_STOP(I2C_2);
                 }
                 if (SENS2_FSM ==SENSOR_START_CONVERSION)
                 {
+                    printf("i2c2 error %i %i\r\n",fsm1,SENS2_FSM);
                     SENS2_FSM = SENSOR_IDLE;
+
                     HAL_I2C_STOP(I2C_1);
                 }
             }
             vSensFSM(0,&SENS1_FSM,&fsm,  &sens_press );
             vSensFSM(1,&SENS2_FSM,&fsm1, &sens_press1);
+
 
      }
      CalibrateZero();

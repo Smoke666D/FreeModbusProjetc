@@ -98,7 +98,20 @@ DIN_FUNCTION_ERROR_t eSetDUT(OUT_NAME_TYPE ucCh, uint8_t state )
         if ( ucCh <DOUT_COUNT)
         {
     #endif
+  if (ucCh == OUT_4)
+  {
+      if (state == 0){
 
+      printf("RESET\r\n");
+          HAL_ResetBit(I2C_ENABLE_Port , I2C_ENABLE_Pin);
+  }
+      else
+      {
+          printf("SET\r\n");
+          HAL_SetBit(I2C_ENABLE_Port , I2C_ENABLE_Pin);
+      }
+  }
+  else
             xDoutConfig[ucCh].ucValue = state;
 
     #if DIN_PARAM_CHECK == 1

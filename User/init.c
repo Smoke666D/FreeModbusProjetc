@@ -36,10 +36,11 @@ void vInit_DeviceConfig( void )
      I2C_InitTSturcture.I2C_OwnAddress1 = 0;
      I2C_InitTSturcture.I2C_Ack = I2C_Ack_Enable;
      I2C_InitTSturcture.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
-     HAL_I2C_InitIT(I2C_1, &I2C_InitTSturcture,1,1);
-     HAL_I2C_InitIT(I2C_2, &I2C_InitTSturcture, 1,1);
+
      HAL_InitGpioAF (  I2C2_Port , I2C2_SDA_Pin   | I2C2_SCL_Pin  , 0 , GPIO_Mode_AF_OD );
      HAL_InitGpioAF (  I2C1_Port , I2C1_SDA_Pin   | I2C1_SCL_Pin  , 0 , GPIO_Mode_AF_OD );
+     HAL_I2C_InitIT(I2C_1, &I2C_InitTSturcture,1,1);
+     HAL_I2C_InitIT(I2C_2, &I2C_InitTSturcture, 1,1);
      HAL_I2C_ENABLE( I2C_1 );
      HAL_I2C_ENABLE( I2C_2 );
      HAL_DAC_InitTypeDef init;
@@ -93,5 +94,7 @@ static void MX_GPIO_Init(void)
     HAL_InitGpioAF(  RS485_Port  , RS485_RX_Pin   ,GPIO_FullRemap_USART4 ,   GPIO_Mode_IN_FLOATING );
     HAL_InitGpioAF(  RS485_Port ,  RS485_TX_Pin    ,GPIO_FullRemap_USART4 ,  GPIO_Mode_AF_PP );
     HAL_InitGpioAF(  UART_Port , TX1_Pin   ,0 ,  GPIO_Mode_AF_PP );
+    HAL_InitGpioOut(I2C_ENABLE_Port ,I2C_ENABLE_Pin);
+    HAL_ResetBit(I2C_ENABLE_Port , I2C_ENABLE_Pin);
 
 }

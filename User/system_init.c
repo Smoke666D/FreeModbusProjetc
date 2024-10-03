@@ -157,6 +157,7 @@ void vDefaultTask( void  * argument )
     TaskFSM_t main_task_fsm = STATE_INIT;
     u8 contrast = 0;
     vMenuInit();
+
     ulTaskNotifyTake( pdTRUE, portMAX_DELAY );
     while(1)
     {
@@ -190,6 +191,7 @@ void vDefaultTask( void  * argument )
                     vTaskDelay(1);
                     if (k==2000)
                     {
+                        HAL_SetBit(I2C_ENABLE_Port , I2C_ENABLE_Pin);
                         MENU_ClearScreen();
                         MENU_DrawString(40, 20, DevString[device]);
                         MenuSetDevice();
@@ -197,9 +199,10 @@ void vDefaultTask( void  * argument )
                         MENU_DrawString(10, 40, temp_str);
                         xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
                         vTaskResume(*getUserProcessTaskHandle());
-                        vTaskResume(*getI2CTaskHandle());
+
                     }
                 }
+                vTaskResume(*getI2CTaskHandle());
                 main_task_fsm =  STATE_WHAIT_TO_RAEDY;
                 break;
             case STATE_WHAIT_TO_RAEDY:

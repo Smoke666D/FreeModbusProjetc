@@ -60,7 +60,8 @@
 #define AOUT2_Pin                   GPIO_11
 #define AOUT3_Pin                   GPIO_13
 #define AOUT_Port                   PORT_D
-
+#define I2C_ENABLE_Pin              GPIO_Pin_15
+#define I2C_ENABLE_Port             PORT_A
 
 
 #define RX1_Pin                     GPIO_9
