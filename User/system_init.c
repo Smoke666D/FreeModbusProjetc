@@ -82,6 +82,7 @@ void TaskSuspend()
     vTaskSuspend( MPTCPTask_Handler  );
     vTaskSuspend(* getSerialTask());
     vTaskSuspend(* getUserProcessTaskHandle());
+    vTaskSuspend(*getI2CTaskHandle());
 
 }
 
@@ -162,7 +163,7 @@ void vDefaultTask( void  * argument )
        if ( contrast != getReg8(CONTRAST))
        {
            contrast = getReg8(CONTRAST);
-           u16 cc = (u16)((4095.0)*(contrast/100.0));
+           u16 cc = (u16)((4095.0)*((100-contrast)/100.0));
            DAC_SetChannel1Data(DAC_Align_12b_R, cc);
        }
        switch (main_task_fsm)
@@ -196,7 +197,7 @@ void vDefaultTask( void  * argument )
                         MENU_DrawString(10, 40, temp_str);
                         xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
                         vTaskResume(*getUserProcessTaskHandle());
-                       // vTaskResume(*getI2CTaskHandle());
+                        vTaskResume(*getI2CTaskHandle());
                     }
                 }
                 main_task_fsm =  STATE_WHAIT_TO_RAEDY;

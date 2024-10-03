@@ -24,7 +24,7 @@ static float PressSens[2]={0,0};
 float AC_220_VALUE;
 static uint16_t ADC2_Buffer[DC_CHANNEL];
 static int16_t  ADC1_DMABuffer[AC_CONVERION_NUMBER*ADC_CHANNEL];
-uint8_t ADC2_CHANNEL[DC_CHANNEL] = {  ADC_CH_9, ADC_CH_2,ADC_CH_6,ADC_CH_7,ADC_CH_14,ADC_CH_15};
+uint8_t ADC2_CHANNEL[DC_CHANNEL] = {  ADC_CH_2, ADC_CH_5,ADC_CH_6,ADC_CH_7,ADC_CH_14,ADC_CH_15};
 #define ADC1_CH_COUNT 2
 #define ADC1_PRIOR 1
 #define ADC1_SUB_PRIOR 0
@@ -51,8 +51,21 @@ POINT_t const DACCAL[DAC_CAL_POINT]={ {0,0},
                    {2700,10.29}
 };
 
+#define K10 10000
+const uint16_t B57164CalPoint[11][2] = {{0,K10*3.5563},
+                                 {5,K10*2.7119},
+                                 {10,K10*2.086},
+                                 {15,K10*1.6204},
+                                 {20,K10*1.2683},
+                                 {25,K10},
+                                 {30,K10*0.7942},
+                                 {35,K10*0.63268},
+                                 {40,K10*0.5074},
+                                 {45,K10*0.41026},
+                                 {50,K10*0.33363}
+};
 
-ADC_Conversionl_Buf_t DataBuffer[DC_CHANNEL+3];
+ADC_Conversionl_Buf_t DataBuffer[DC_CHANNEL+4];
 
 
 int16_t SenseBuffer1[ Sens_BufferSize_MAX ];
@@ -62,6 +75,7 @@ int16_t AIN1Buffer[ DC_AIN_BufferSize];
 int16_t AIN2Buffer[ DC_AIN_BufferSize];
 int16_t AIN3Buffer[ DC_AIN_BufferSize];
 int16_t AIN4Buffer[ DC_AIN_BufferSize];
+int16_t AIN5Buffer[ DC_AIN_BufferSize];
 int16_t SensTemoBuffer[ DC_AIN_BufferSize];
 int16_t SensTemoBuffer1[ DC_AIN_BufferSize];
 /*
@@ -121,30 +135,89 @@ u8 i2cdata[2][8] ={0};
 
 #define DELTA  ((MAX_VDD_VALUE -MIN_VDD_VALUE )/(MIN_BAR_VALUE -  MAX_BAR_VALUE))
 
+
+#define AIN1_ERROR 0x01
+#define AIN2_ERROR 0x02
+#define AIN3_ERROR 0x04
+
+static u8 const SENSOR_ERROR_MASK[]={AIN1_ERROR,AIN2_ERROR,AIN3_ERROR};
+float getAINConver( u8 ch)
+{
+    uint32_t raw_data;
+    float temp_data;
+    u8 sensor_error = getReg8(SENSOR_ERROR);
+    u8 type;
+    switch(ch)
+    {
+    default:
+        raw_data = GetConversional(&DataBuffer[3]);
+        type = getReg8(AIN1_TYPE);
+       break;
+    case 1:
+        type = getReg8(AIN2_TYPE);
+        raw_data = GetConversional(&DataBuffer[4]);
+        break;
+    case 2:
+        type = getReg8(AIN3_TYPE);
+        raw_data = GetConversional(&DataBuffer[5]);
+        break;
+    }
+    switch (type)
+    {
+        default:
+            sensor_error &= ~SENSOR_ERROR_MASK[ch];
+            temp_data =  raw_data*KK*COOF_10V;
+            break;
+        case 1:
+            temp_data = raw_data*KK*COOF_10V;
+            if ( temp_data < 2.0 )
+                sensor_error |=SENSOR_ERROR_MASK[ch];
+            else
+                sensor_error &= ~SENSOR_ERROR_MASK[ch];
+            break;
+        case 2:
+            temp_data = raw_data*KK*10.0;
+            if (temp_data < 4.0)
+                sensor_error |=SENSOR_ERROR_MASK[ch];
+                        else
+                            sensor_error &= ~SENSOR_ERROR_MASK[ch];
+            break;
+    }
+   setReg8(SENSOR_ERROR,sensor_error );
+   return (temp_data);
+}
+
+
+
 float getAIN( AIN_CHANNEL_t channel)
 {
+    u16 temp_data;
     switch (channel)
     {
         case SENS1:
-            return   (PressSens[0]);///((float)GetConversionali2c(&DataBuffer[0]));
+            return   (PressSens[0]);
         case SENS2:
-            return  ( PressSens[1]);//((float)GetConversionali2c(&DataBuffer[1]));
+            return  ( PressSens[1]);
         case DC24:
              return  ((float)GetConversional(&DataBuffer[2])*KK*COOF_24V);
         case DCAIN1:
-            return  ((float)GetConversional(&DataBuffer[3])*KK*COOF_10V);
+            return  getAINConver(0);
         case DCAIN2:
-            return  ((float)GetConversional(&DataBuffer[4])*KK*COOF_10V);
+            return  getAINConver(1);
         case DCAIN3:
-            return  ((float)GetConversional(&DataBuffer[5])*KK*COOF_10V);
+            return  getAINConver(2);
        case DCAIN4:
-            return ((float)GetConversional(&DataBuffer[6])*KK);
+            temp_data = (u16)GetConversional(&DataBuffer[6]);
+            return  fGetAinCalData(AIN4,(float)(temp_data*K10)/(4095-temp_data));
+       case DCAIN5:
+            temp_data = (u16)GetConversional(&DataBuffer[7]);
+            return  fGetAinCalData(AIN5,(float)(temp_data*K10)/(4095-temp_data));
        case DIG_TEMP:
-           return ((float)GetConversional(&DataBuffer[7])/256);
+           return ((float)GetConversional(&DataBuffer[8])/256);
        case DIG_PRES:
            return (float)(sens_press);
        case DIG2_TEMP:
-           return ((float)GetConversional(&DataBuffer[8])/256);
+           return ((float)GetConversional(&DataBuffer[9])/256);
        case DIG2_PRES:
            return (float)(sens_press1);
         case AC220:
@@ -182,6 +255,20 @@ static void ADC2_Event()
 
 void ADC1_Init()
 {
+
+    POINT_t d[2];
+    vAINInit();
+    eAinCalDataConfig(AIN4,11);
+    eAinCalDataConfig(AIN5,11);
+    for (int i = 0;i<10;i++)
+    {
+          d[0].X = B57164CalPoint[i][1];
+          d[0].Y = B57164CalPoint[i][0];
+          d[1].X = B57164CalPoint[i+1][1];
+          d[1].Y = B57164CalPoint[i+1][0];
+          eSetAinCalPoint(AIN4,&d[0],i);
+          eSetAinCalPoint(AIN5,&d[0],i);
+    }
     vDacInit();
     eDacCalDataConfig(DAC1,DAC_CAL_POINT);
     eSetDacCalPoint(DAC1,  DACCAL, DAC_CAL_POINT );
@@ -230,12 +317,16 @@ void ADC1_Init()
     DataBuffer[6].ConversionalSize = DC_AIN_BufferSize;
     DataBuffer[6].pIndex = 0;
     DataBuffer[6].pBuff = AIN4Buffer;
-    DataBuffer[7].ConversionalSize = DC_AIN_BufferSize;
-    DataBuffer[7].pIndex = 0;
-    DataBuffer[7].pBuff = SensTemoBuffer;
     DataBuffer[8].ConversionalSize = DC_AIN_BufferSize;
     DataBuffer[8].pIndex = 0;
-    DataBuffer[8].pBuff = SensTemoBuffer1;
+    DataBuffer[8].pBuff = SensTemoBuffer;
+    DataBuffer[9].ConversionalSize = DC_AIN_BufferSize;
+    DataBuffer[9].pIndex = 0;
+    DataBuffer[9].pBuff = SensTemoBuffer1;
+    DataBuffer[7].ConversionalSize = DC_AIN_BufferSize;
+    DataBuffer[7].pIndex = 0;
+    DataBuffer[7].pBuff = AIN5Buffer;
+
 }
 
 void vDataBufferInit()
@@ -333,9 +424,9 @@ void ADC_task(void *pvParameters)
                     xTaskNotifyWait( 0,  ADC2_DATA_READY | ADC1_DATA_READY, &ulNotifiedValue,1);
                     if (ulNotifiedValue & ADC2_DATA_READY)    //§¦§ã§Ý§Ú §á§â§Ú§Ý§Ö§ä§Ö§Ý§à §á§â§Ö§â§Ó§Ñ§ß§Ú§Ö §à§ä §¡§¸§± §à§Ò§â§Ñ§Ò§Ñ§ä§í§Ó§Ñ§ð§ë§Ö§Ô§à DC §Õ§Ñ§ß§ß§í§Ö
                     {
-                        for (u8 i=1;i<DC_CHANNEL;i++)
+                        for (u8 i=0;i<DC_CHANNEL;i++)
                         {
-                            AddBufferData(&DataBuffer[i+1],(int16_t)ADC2_Buffer[i]);   //§©§Ñ§Ü§Ú§Õ§í§Ó§Ñ§Ö§Þ §Ú§ç §Ó §Ò§å§æ§æ§Ö§â
+                            AddBufferData(&DataBuffer[i+2],(int16_t)ADC2_Buffer[i]);   //§©§Ñ§Ü§Ú§Õ§í§Ó§Ñ§Ö§Þ §Ú§ç §Ó §Ò§å§æ§æ§Ö§â
                         }
                         DC_ConversionDoneFlasg = 1;
                     }
@@ -556,7 +647,7 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  u1
                              temperature = (sens_temp -65536);
                       else
                           temperature = sens_temp;
-                        AddBufferData(&DataBuffer[index?8:7],temperature);
+                        AddBufferData(&DataBuffer[index?9:8],temperature);
                         *SENS_FSM = SENSOR_IDLE;
                         *fsm = I2C_GET_BUSY;
                 }
@@ -621,8 +712,8 @@ void CalibrateZero()
 
 void I2C_task(void *pvParameters)
 {
-    u8 i2c1_error_counter = 0;
-    u8 i2c2_error_counter = 0;
+   // u8 i2c1_error_counter = 0;
+   // u8 i2c2_error_counter = 0;
     TickType_t xLastWakeTime;
     SENSOR_FSM_t SENS1_FSM,SENS2_FSM;
 
@@ -643,7 +734,7 @@ void I2C_task(void *pvParameters)
         SENS2_FSM = SENSOR_START_CONVERSION;
         while (1)
         {
-           /* if ( (i2c2_error_counter == 1000) || (i2c1_error_counter  ==1000))
+          /*  if ( (i2c2_error_counter == 1000) || (i2c1_error_counter  ==1000))
             {
 
                 HAL_ResetBit(I2C_EN_PORT, I2C_EN_PIN);
@@ -662,8 +753,8 @@ void I2C_task(void *pvParameters)
                         SENS2_FSM = SENSOR_START_CONVERSION;
                         printf("i2c_restart\r\n");
                         xLastWakeTime =  xTaskGetTickCount ();
-            }*/
-
+            }
+*/
             if ((SENS1_FSM ==SENSOR_IDLE) && (SENS2_FSM ==SENSOR_IDLE))
             {
                 vTaskDelay(1);
@@ -677,19 +768,14 @@ void I2C_task(void *pvParameters)
                     HAL_I2C_STOP(I2C_2);
                     fsm = I2C_GET_BUSY;
                 }
-                else
-                    i2c2_error_counter = 0;
 
 
                 if (SENS2_FSM !=SENSOR_IDLE)
                 {
-                   // i2c1_error_counter++;
+                    //i2c1_error_counter++;
                     HAL_I2C_STOP(I2C_1);
                     fsm1 = I2C_GET_BUSY;
                 }
-                else
-                    i2c1_error_counter = 0;
-
                 PressSens[0] = ((float)GetConversionali2c(&DataBuffer[0]));
                 PressSens[1] = ((float)GetConversionali2c(&DataBuffer[1]));
                 break;

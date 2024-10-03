@@ -13,9 +13,9 @@
 
 
 
-#define SW_V                  1
-#define SW_V2                 3
-#define SW_V3                 11
+#define SW_V                 2
+#define SW_V2                 0
+#define SW_V3                1
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -34,7 +34,10 @@
 #define CONTRAST              ( HIGH_VOLTAGE_OFF  +sizeof(uint8_t)  )
 #define FAN_START_TIMEOUT     ( CONTRAST          +sizeof(uint8_t) )
 #define MOD_BUS_TIMEOUT       ( FAN_START_TIMEOUT +sizeof(uint8_t) )
-#define IP_1                  ( MOD_BUS_TIMEOUT   +sizeof(uint8_t) )
+#define AIN1_TYPE             ( MOD_BUS_TIMEOUT   +sizeof(uint8_t) )
+#define AIN2_TYPE             ( AIN1_TYPE    +sizeof(uint8_t) )
+#define AIN3_TYPE             ( AIN2_TYPE   +sizeof(uint8_t) )
+#define IP_1                  ( AIN3_TYPE    +sizeof(uint8_t) )
 #define IP_2                  ( IP_1   +sizeof(uint8_t) )
 #define IP_3                  ( IP_2   +sizeof(uint8_t) )
 #define IP_4                  ( IP_3   +sizeof(uint8_t) )
@@ -82,7 +85,7 @@
 #define SYSTEM_START          ( RECORD_INDEX  + sizeof(uint16_t) )
 #define LIGTH                 ( SYSTEM_START + sizeof(uint8_t) )
 #define MODE                  ( LIGTH    + sizeof(uint8_t) )
-
+#define SENSOR_ERROR          ( MODE  + sizeof(uint8_t) )
 
 #define RECORD_SIZE 7
 #define RECORD_DATA_SIZE      50
@@ -141,7 +144,7 @@ typedef enum
 
 //#define EEPROM_REGISTER_COUNT   20
 //#define  EEPROM_REGISTER_COUNT  20
-#define RAM_REGISTER_COUNT      3
+#define RAM_REGISTER_COUNT     4
 #define DATA_MODEL_REGISTERS   EEPROM_REGISTER_COUNT + RAM_REGISTER_COUNT
 #define TOTAL_REGISTER_COUNT   DATA_MODEL_REGISTERS
 

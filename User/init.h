@@ -25,6 +25,7 @@
 #define AC_SENS2_                   GPIO_1
 #define AC_SENSE_PORT               PORT_B
 #define POWER_CONTROL               GPIO_2
+#ifndef REV2
 #define AIN1_Pin                    GPIO_6
 #define AIN2_Pin                    GPIO_7
 #define SEN1_POW_AIN1_2_PORT        PORT_A
@@ -34,6 +35,19 @@
 #define AIN5_Pin                    GPIO_0
 #define AIN6_Pin                    GPIO_1
 #define AIN5_6_PORT                 PORT_A
+#else
+#define AIN1_Pin                    GPIO_5
+#define AIN2_Pin                    GPIO_6
+#define AIN3_Pin                    GPIO_7
+#define SEN1_POW_AIN1_3_PORT        PORT_A
+
+#define AIN4_Pin                    GPIO_4
+#define AIN5_Pin                    GPIO_5
+#define AIN4_5_PORT                 PORT_C
+
+
+
+#endif
 #define DAC0_Pin                    GPIO_4
 #define DAC0_Port                   PORT_A
 

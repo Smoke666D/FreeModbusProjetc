@@ -155,7 +155,7 @@ xScreenType  xScreenFMCH[SCREENS_COUNT] =
   {9,SettingsScreen6,  0,   0,  8,  10, ENTER_COMMNAD,  3 },
   {10,SettingsScreen7, 0,   0,  9,  13, ENTER_COMMNAD,  3 },
   {11,InfoScreen4,      0,   0,  1,  1, 0, 3 },
-  {12,JournalViewScreen, 0,   0, JOURNAL_NEXT , JOURNAL_PREV, 0,  2 },
+  {12,JournalViewScreen, 0,   0, JOURNAL_PREV , JOURNAL_NEXT, 0,  2 },
   {13,SettingsScreen8, 0,   0,  10,   14,   ENTER_COMMNAD, 3 },
   {14,SettingsScreen9, 0,   0,  13,   4,   ENTER_COMMNAD, 3 },
 };

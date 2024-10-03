@@ -33,7 +33,7 @@ UCHAR ucSDiscInBuf[REG_DISCRETE_NREGS/8];
 #endif
 
 #define REG_INPUT_START 0x01
-#define REG_INPUT_NREGS 40
+
 #define REG_HOLDING_START 0x01
 
 
@@ -42,7 +42,7 @@ UCHAR ucSDiscInBuf[REG_DISCRETE_NREGS/8];
 
 
 static USHORT usRegInputStart = REG_INPUT_START;
-static USHORT usRegInputBuf[REG_INPUT_NREGS];
+
 static USHORT usRegHoldingStart = REG_HOLDING_START;
 static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 
@@ -80,21 +80,20 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define AOUT1_C_MB       31
 #define AOUT2_C_MB       33
 #define AOUT3_C_MB       35
+#define AIN1_TYPE_MB     37
+#define AIN2_TYPE_MB     38
+#define AIN3_TYPE_MB     39
 
+#define INP_MH_H_MB      26
+#define INP_MH_M_MB      27
+#define INP_STATE_MB     28
+#define ERROR_STATE_MB   29
+#define SENSOR_ERROR_MB  30
 
+#define REG_INPUT_NREGS ( SENSOR_ERROR_MB+1)
 
-#define INP_MODE_MB      24
-#define INP_MH_H_MB      25
-#define INP_MH_M_MB      26
-#define INP_STATE_MB     27
-#define ERROR_STATE_MB   28
-#define AOUT1_MB         29
-#define AOUT2_MB         31
-#define AOUT3_MB         33
-
-
-#define COMMON_REG_COUNT (AOUT3_C_MB+3)
-
+#define COMMON_REG_COUNT (AIN3_TYPE_MB+3)
+static USHORT usRegInputBuf[REG_INPUT_NREGS];
 
 //§²§Ö§Ô§Ú§ã§ä§â§í FMCH
 #define FMCH_OFFSET       0
@@ -272,9 +271,7 @@ static u8 getRegID( u16 mb_reg_address)
         case CONTR_MB:          return (CONTRAST);
         case MB_ADDRES_MB:      return (MB_RTU_ADDR);
         case TIME_OUT_MB:       return (MOD_BUS_TIMEOUT);
-        case COMMAND_REG:
-        case INP_STATE_MB:      return (SYSTEM_START);
-        case INP_MODE_MB:       return (MODE);
+        case COMMAND_REG:      return (SYSTEM_START);
         case IP_PORT_MB:        return (IP_PORT);
         case LIGTH_REG_MB:      return (LIGTH);
         case MODE_REG_MB:       return (MODE);
@@ -302,6 +299,9 @@ static u8 getRegID( u16 mb_reg_address)
         case V_MAX_OFF:          return (HIGH_VOLTAGE_OFF);
         case CONTROL_TYPE_MB :   return (CONTROL_TYPE);
         case PROTOCOL_TYPE_MB:  return (MB_PROTOCOL_TYPE);
+        case AIN1_TYPE_MB:     return (AIN1_TYPE );
+        case AIN2_TYPE_MB:return (AIN2_TYPE );
+        case AIN3_TYPE_MB:return (AIN3_TYPE );
 
     }
     return 0;
@@ -345,6 +345,9 @@ void vSetRegData( u16 adress)
        case BP_MEASERING_UNIT:
        case CDV_PRIOR_SENS:
        case BP_PRIOR_SENS:
+       case AIN1_TYPE_MB:
+       case AIN2_TYPE_MB:
+       case AIN3_TYPE_MB:
             VerifyAndSetReg8(reg_addr, (uint8_t) byte_data );
             break;
        case COMMAND_REG:
@@ -514,34 +517,40 @@ void vSetRegData( u16 adress)
 }
 
 
-static const AIN_CHANNEL_t AINS[]={DIG_TEMP,DIG_PRES,SENS1,DIG2_TEMP,DIG2_PRES,SENS2,DCAIN1,DCAIN2,DCAIN3,DCAIN4,DC24};
+static const AIN_CHANNEL_t AINS[]={DIG_TEMP,DIG_PRES,SENS1,DIG2_TEMP,DIG2_PRES,SENS2,DCAIN1,DCAIN2,DCAIN3,DCAIN4,DCAIN5,DC24,AC220};
 
 static void MB_TASK_INPUTS_UDATE()
 {
     int32_t tempdata;
-    for (u8 i =0; i<11;i++)
+    for (u8 i =0; i<13;i++)
     {
         tempdata =(int32_t) (getAIN(AINS[i])*1000);
-        *((float*) (usRegInputBuf+2*i)) =  (float)tempdata/1000.0;
+        convert_float_to_int((float)tempdata/1000.0, &usRegInputBuf[2*i]);
     }
-    tempdata =(uint32_t) getAIN(AC220);
-    *((float*) (usRegInputBuf+22)) =  tempdata;
-    usRegInputBuf[INP_MODE_MB]    = getReg8(getRegID(INP_MODE_MB));
     usRegInputBuf[INP_MH_H_MB]    = vRTC_TASK_GetHoure();
     usRegInputBuf[INP_MH_M_MB ]   = vRTC_TASK_GetMinute();
-    usRegInputBuf[INP_STATE_MB]   = getReg8(getRegID(INP_STATE_MB));
+    switch( USER_GetProccesState() )
+    {
+           default:
+                 tempdata = 0;
+                 break;
+           case USER_PEOCESS_WORK_TIME_OUT:
+           case USER_PEOCESS_ZERO_CALIB:
+                 tempdata = 1;
+                 break;
+          case USER_RROCCES_WORK:
+                 tempdata = 2;
+                 break;
+    }
+    usRegInputBuf[INP_STATE_MB]   = tempdata;
     usRegInputBuf[ERROR_STATE_MB] = USER_GerErrorState();
-    convert_float_to_int(USER_AOUT_GET(DAC1),&usRegInputBuf[AOUT1_MB]);
-    convert_float_to_int(USER_AOUT_GET(DAC2),&usRegInputBuf[AOUT2_MB]);
-    convert_float_to_int(USER_AOUT_GET(DAC3),&usRegInputBuf[AOUT3_MB]);
-
-
+    usRegInputBuf[SENSOR_ERROR_MB] =  getReg8(SENSOR_ERROR);
 }
 #define CDV_BP_REG8_SEQ_COUNT 8
 #define CDV_BP_REG_SEQ_COUNT 1
 
 #define REG_SEQ_COUNT 5
-#define REG8_SEQ_COUNT 12
+#define REG8_SEQ_COUNT 15
 
 
 static const u8 CDV_BP_REGS8[CDV_BP_REG8_SEQ_COUNT]={CDV_AFZONE_SETTING_MB,CDV_CH_COUNT_MB ,CDV_MEASERING_UNIT,CDV_PRIOR_SENS,CDV_CLEAN_TIMER,CDV_KK_SENSOR_TYPE,CDV_CO2_SENSOR_TYPE,CDV_H_SENSOR_TYPE};
@@ -558,7 +567,10 @@ static const u8 REGS8[REG8_SEQ_COUNT]={COMMAND_REG,
                                        PROTOCOL_TYPE_MB,
                                        MB_ADDRES_MB,
                                        TIME_OUT_MB,
-                                       CONTR_MB};
+                                       CONTR_MB,
+                                       AIN1_TYPE_MB,
+                                       AIN2_TYPE_MB,
+                                       AIN3_TYPE_MB,};
 
 
 static u16 const device_specific_reg_offset[] =  { FMCH_OFFSET ,CDV_OFFSET, BP_OFFSET };

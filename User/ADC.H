@@ -58,11 +58,13 @@ typedef enum
   DCAIN2  = 4,
   DCAIN3  = 5,
   DCAIN4  = 6,
-  DIG_TEMP = 7,
-  DIG_PRES = 8,
-  AC220   = 9,
-  DIG2_PRES =10,
-  DIG2_TEMP =11,
+  DCAIN5  = 7,
+  DIG_TEMP = 8,
+  DIG_PRES = 9,
+  AC220   = 10,
+  DIG2_PRES =11,
+  DIG2_TEMP =12,
+
 
 } AIN_CHANNEL_t;
 
@@ -84,8 +86,9 @@ typedef struct
 #define COOF_24V ((R1_24V+R2_24V)/R2_24V)
 #define R1_10V 56000.0
 #define R2_10V  10000.0
+#define RTC_COOF  10000
 #define COOF_10V ((R1_10V+R2_10V)/R2_10V)
-
+#define COOF_NTC ((R1_10V+R2_10V)/R2_10V)
 
 u8 CalibrationZeroWhait();
 void vSetCount( u16 coount);

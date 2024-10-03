@@ -13,7 +13,7 @@
 
 
 
-#define AIN_NUMBER  3
+#define AIN_NUMBER  5
 #define DAC_NUMBER  4
 #define ADC1_CHANNELS  1
 #define ADC2_CHANNELS  3

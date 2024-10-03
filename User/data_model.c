@@ -144,6 +144,11 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
             if ( (data!=2) || (data!=3) || (getReg8(CONTROL_TYPE)!=0)) return 0;
 
             break;
+        case AIN1_TYPE:
+        case AIN2_TYPE:
+        case AIN3_TYPE:
+            if (temp_data>2) return 0;
+            break;
         default:
             break;
     }

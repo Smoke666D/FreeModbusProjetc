@@ -323,6 +323,7 @@ void vMenuTask ( void )
                                            if (vSetEdit() == 1)
                                            {
                                                vSetCommnad(CMD_EXIT_EDIT);
+                                               SelectEditFlag = 0;
                                                menu_mode = 0;
                                            }
                                            else
@@ -991,15 +992,37 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
             }
             break;
         case JOURNAL_TIME_ID:
-            sprintf(str,TimeFormatString,time.hours,time.minutes,time.seconds);
+            if (getReg16(RECORD_COUNT)!=0)
+            {
+                sprintf(str,TimeFormatString,time.hours,time.minutes,time.seconds);
+            }
+            else
+            {
+                sprintf(str,"");
+            }
             break;
         case JOURNAL_DATE_ID:
-            sprintf(str,DateFormatString,date.date,date.month,date.year);
+            if (getReg16(RECORD_COUNT)!=0)
+            {
+                sprintf(str,DateFormatString,date.date,date.month,date.year);
+            }
+            else
+            {
+                sprintf(str,"");
+            }
             break;
         case JOURNAL_INFO1_ID:
+            if (getReg16(RECORD_COUNT)!=0)
+                     {
              strcpy(str,ErrorString[error_flag]);
+                     }
+            else {
+                sprintf(str,"");
+            }
             break;
         case JOURNAL_INFO2_ID:
+            if (getReg16(RECORD_COUNT)!=0)
+            {
             switch (error_flag)
             {
                 case 0:
@@ -1015,10 +1038,24 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                    strcpy(str,"поддерживать уставку");
                    break;
              }
+            }
+            else {
+                sprintf(str,"");
+            }
              break;
         case JURNAL_RECORD_ID:
-            sprintf(str,"%02i/%02i",journal_index+1, getReg16(RECORD_COUNT));
-            vGetRecord(journal_index,&error_flag,&time,&date);
+            if  (getReg16(RECORD_COUNT) == 0)
+            {
+                sprintf(str,"00/00");
+            }
+
+            else
+            {
+                sprintf(str,"%02i/%02i",journal_index+1, getReg16(RECORD_COUNT));
+                 vGetRecord(journal_index,&error_flag,&time,&date);
+            }
+
+
             break;
         case ALARM_COUNT_ID:
             temp_state =0;
@@ -1262,6 +1299,7 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                          CalibrateZeroStart();
 
                         }
+
                          res = 1;
                          break;
                    default:
@@ -1295,9 +1333,24 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
             break;
         }
         break;
+    case CONTRAST_ID:
+        switch (command)
+        {
+              case CMD_READ:
+                   sprintf(str,"%02i",getReg8(reg_id) );
+                    break;
+               case CMD_EDIT_READ:
+                    setReg8(reg_id,edit_data_buffer_byte);
+                    sprintf(str,"%02i",edit_data_buffer_byte );
+                    break;
+               default:
+                    vByteDataEdit(0,reg_id,command,2,99,1);
+                    break;
+                }
+                break;
+        break;
     case MB_RTU_ADDR_ID :
     case MOD_BUS_TIMEOUT_ID:
-    case CONTRAST_ID:
     case FAN_START_TIMEOUT_ID:
         switch (command)
         {
