@@ -44,9 +44,9 @@ void  vSetDoutState( OUT_NAME_TYPE ucCh, u8 BitVal )
     {
            case OUT_1:
                if ( BitVal == RESET)
-                     HAL_SetBit(DOUT_Port,DOUT_1_Pin  );
+                     HAL_SetBit(DOUT1_Port,DOUT_1_Pin  );
                  else
-                     HAL_ResetBit(DOUT_Port,DOUT_1_Pin );
+                     HAL_ResetBit(DOUT1_Port,DOUT_1_Pin );
                 break;
            case OUT_2:
                if ( BitVal == RESET)
@@ -60,6 +60,12 @@ void  vSetDoutState( OUT_NAME_TYPE ucCh, u8 BitVal )
                else
                    HAL_ResetBit(DOUT_Port,DOUT_3_Pin );
                break;
+           case OUT_4:
+              if ( BitVal == RESET)
+                   HAL_SetBit(DOUT_Port,DOUT_4_Pin  );
+              else
+                   HAL_ResetBit(DOUT_Port,DOUT_4_Pin );
+              break;
            default:
                break;
        }
@@ -84,6 +90,7 @@ void vDIN_DOUT_Init()
     eDOUTConfigWtihStruct( OUT_1, &DOUT_CONFIG);
     eDOUTConfigWtihStruct( OUT_2, &DOUT_CONFIG);
     eDOUTConfigWtihStruct( OUT_3, &DOUT_CONFIG);
+    eDOUTConfigWtihStruct( OUT_4, &DOUT_CONFIG);
 }
 
 

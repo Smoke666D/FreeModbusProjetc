@@ -8,5 +8,7 @@
 
 #include "hal_config.h"
 
+
+#define REV2
 #define MCU CH32V3
 #define WDT

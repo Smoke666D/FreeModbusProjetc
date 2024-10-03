@@ -82,7 +82,8 @@ static void MX_GPIO_Init(void)
     HAL_InitGpioOut( CRACH_Port, CRACH_Pin);
     HAL_InitGpioOut( LDCDATA_2_3_E_REW_CD_LED_Port,   LCDLED_Pin);
     HAL_InitGpioAF(  AOUT_Port, AOUT1_Pin   | AOUT2_Pin | AOUT3_Pin , GPIO_FullRemap_TIM9, GPIO_Mode_AF_PP );
-    HAL_InitGpioOut( DOUT_Port, DOUT_1_Pin | DOUT_2_Pin | DOUT_3_Pin);
+    HAL_InitGpioOut( DOUT_Port, DOUT_2_Pin | DOUT_3_Pin | DOUT_4_Pin);
+    HAL_InitGpioOut( DOUT1_Port, DOUT_1_Pin );
     HAL_InitGpioOut( ELED_Port,ELED1_Pin | ELED2_Pin);
     HAL_InitGpioIn( KL_Port ,KL1_Pin | KL2_Pin |  KL3_Pin | KL4_Pin | KL5_Pin  );
     HAL_InitGpioIn( KL6_Port ,KL6_Pin   );

@@ -36,10 +36,20 @@
 #define AIN5_6_PORT                 PORT_A
 #define DAC0_Pin                    GPIO_4
 #define DAC0_Port                   PORT_A
+
+#ifndef REV2
 #define DOUT_1_Pin                  GPIO_3
 #define DOUT_2_Pin                  GPIO_4
 #define DOUT_3_Pin                  GPIO_5
 #define DOUT_Port                   PORT_B
+#else
+#define DOUT_2_Pin                  GPIO_3
+#define DOUT_3_Pin                  GPIO_4
+#define DOUT_4_Pin                  GPIO_5
+#define DOUT_Port                   PORT_B
+#define DOUT_1_Pin                  GPIO_4
+#define DOUT1_Port                  PORT_D
+#endif
 #define DIN_1_Pin                   GPIO_11
 #define DIN_2_Pin                   GPIO_12
 #define DIN_3_Pin                   GPIO_13
@@ -107,8 +117,11 @@
 #define RPM_CHANNEL_COUNT     0
 #define DIN_CHANNEL_COUNT     5
 #define DIN_COUNT            ( RPM_CHANNEL_COUNT + DIN_CHANNEL_COUNT )
+#ifndef REV2
 #define DOUT_COUNT           3
-
+#else
+#define DOUT_COUNT           4
+#endif
 
 #define RTC_IT_PRIOR    1
 #define RTC_IT_SUBPRIOR 3
