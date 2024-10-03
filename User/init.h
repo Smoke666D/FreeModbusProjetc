@@ -64,7 +64,7 @@
 #define SPI2_MISO_Pin               GPIO_14
 #define SPI2_MOSI_Pin               GPIO_15
 #define SPI2_Port                   PORT_B
-#define CRASH_LED_Pin               Pin GPIO_Pin_8
+#define CRASH_LED_Pin               GPIO_8
 #define CRASH_LED_Port              PORT_D
 #define AOUT1_Pin                   GPIO_9
 #define AOUT2_Pin                   GPIO_11
@@ -72,7 +72,10 @@
 #define AOUT_Port                   PORT_D
 
 
-
+#ifdef REV2
+#define I2C_EN_PIN                   GPIO_15
+#define I2C_EN_PORT                  PORT_A
+#endif
 #define RX1_Pin                     GPIO_9
 #define TX1_Pin                     GPIO_10
 #define UART_Port                   PORT_A
@@ -129,7 +132,7 @@
 #define UART2_IT_SUBPRIOR 3
 
 void vInit_DeviceConfig( void );
-
+void InitI2C();
 EventGroupHandle_t * getSerialEvenGroup();
 TaskHandle_t * getSerialTask();
 void StartUARTTask(void *argument);

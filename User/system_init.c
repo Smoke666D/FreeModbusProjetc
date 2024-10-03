@@ -82,7 +82,6 @@ void TaskSuspend()
     vTaskSuspend( MPTCPTask_Handler  );
     vTaskSuspend(* getSerialTask());
     vTaskSuspend(* getUserProcessTaskHandle());
-    vTaskSuspend(* getI2CTaskHandle());
 
 }
 
@@ -197,7 +196,7 @@ void vDefaultTask( void  * argument )
                         MENU_DrawString(10, 40, temp_str);
                         xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
                         vTaskResume(*getUserProcessTaskHandle());
-                        vTaskResume(*getI2CTaskHandle());
+                       // vTaskResume(*getI2CTaskHandle());
                     }
                 }
                 main_task_fsm =  STATE_WHAIT_TO_RAEDY;

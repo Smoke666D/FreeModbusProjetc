@@ -30,6 +30,7 @@ typedef enum
   SENSOR_GET_TEMP_1       = 5,
   SENSOR_GET_TEMP_2       = 6,
   SENSOR_IDLE             = 7,
+  SENSOR_TIME_OUT         = 8,
 } SENSOR_FSM_t;
 
 typedef enum

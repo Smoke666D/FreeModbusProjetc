@@ -621,9 +621,16 @@ void CalibrateZero()
 
 void I2C_task(void *pvParameters)
 {
+    u8 i2c1_error_counter = 0;
+    u8 i2c2_error_counter = 0;
     TickType_t xLastWakeTime;
     SENSOR_FSM_t SENS1_FSM,SENS2_FSM;
+
+    HAL_ResetBit(I2C_EN_PORT, I2C_EN_PIN);
     vTaskDelay(1000);
+    HAL_SetBit(I2C_EN_PORT, I2C_EN_PIN);
+    vTaskDelay(1000);
+    InitI2C();
     I2C_FSM_t fsm  = I2C_GET_BUSY;
     I2C_FSM_t fsm1 = I2C_GET_BUSY;
     u16 sensor_time_out;
@@ -636,6 +643,27 @@ void I2C_task(void *pvParameters)
         SENS2_FSM = SENSOR_START_CONVERSION;
         while (1)
         {
+           /* if ( (i2c2_error_counter == 1000) || (i2c1_error_counter  ==1000))
+            {
+
+                HAL_ResetBit(I2C_EN_PORT, I2C_EN_PIN);
+                vTaskDelay(1000);
+                HAL_SetBit(I2C_EN_PORT, I2C_EN_PIN);
+                vTaskDelay(1000);
+                I2C_SoftwareResetCmd(I2C1,ENABLE);
+                I2C_SoftwareResetCmd(I2C2,ENABLE);
+              //  vTaskDelay(1000);
+               // InitI2C();
+                I2C_SoftwareResetCmd(I2C1,DISABLE);
+               I2C_SoftwareResetCmd(I2C2,DISABLE);
+                i2c2_error_counter = 0;
+                i2c1_error_counter = 0;
+                SENS1_FSM = SENSOR_START_CONVERSION;
+                        SENS2_FSM = SENSOR_START_CONVERSION;
+                        printf("i2c_restart\r\n");
+                        xLastWakeTime =  xTaskGetTickCount ();
+            }*/
+
             if ((SENS1_FSM ==SENSOR_IDLE) && (SENS2_FSM ==SENSOR_IDLE))
             {
                 vTaskDelay(1);
@@ -645,16 +673,23 @@ void I2C_task(void *pvParameters)
             {
                 if (SENS1_FSM !=SENSOR_IDLE)
                 {
-                    printf("i2c error %i %i\r\n",fsm,SENS1_FSM);
+                   // i2c2_error_counter++;
                     HAL_I2C_STOP(I2C_2);
                     fsm = I2C_GET_BUSY;
                 }
+                else
+                    i2c2_error_counter = 0;
+
+
                 if (SENS2_FSM !=SENSOR_IDLE)
                 {
-                    printf("i21 error %i %i\r\n",fsm1,SENS2_FSM);
+                   // i2c1_error_counter++;
                     HAL_I2C_STOP(I2C_1);
                     fsm1 = I2C_GET_BUSY;
                 }
+                else
+                    i2c1_error_counter = 0;
+
                 PressSens[0] = ((float)GetConversionali2c(&DataBuffer[0]));
                 PressSens[1] = ((float)GetConversionali2c(&DataBuffer[1]));
                 break;
@@ -663,14 +698,16 @@ void I2C_task(void *pvParameters)
             {
                 if (SENS1_FSM ==SENSOR_START_CONVERSION)
                 {
-                    SENS1_FSM = SENSOR_IDLE;
-                    HAL_I2C_STOP(I2C_2);
+                    SENS1_FSM = SENSOR_TIME_OUT;
                 }
+
                 if (SENS2_FSM ==SENSOR_START_CONVERSION)
                 {
-                    SENS2_FSM = SENSOR_IDLE;
-                    HAL_I2C_STOP(I2C_1);
+                    SENS2_FSM = SENSOR_TIME_OUT;
+
                 }
+
+
             }
             vSensFSM(0,&SENS1_FSM,&fsm,  &sens_press );
             vSensFSM(1,&SENS2_FSM,&fsm1, &sens_press1);
