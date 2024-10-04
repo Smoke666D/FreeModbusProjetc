@@ -39,12 +39,13 @@ UCHAR ucSDiscInBuf[REG_DISCRETE_NREGS/8];
 
 #define REG_HOLDING_START 0x01
 #define REG_HOLDING_NREGS 151
-
+#define REG_INPUTS_NREGS  151
 
 static USHORT usRegInputStart = REG_INPUT_START;
 
 static USHORT usRegHoldingStart = REG_HOLDING_START;
 static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
+static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 
 #define MODE_MB          0
 #define CONTROL_TYPE_MB  1
@@ -83,21 +84,18 @@ static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 #define AIN1_TYPE_MB     37
 #define AIN2_TYPE_MB     38
 #define AIN3_TYPE_MB     39
-
 #define INP_MH_H_MB      26
 #define INP_MH_M_MB      27
-#define INP_STATE_MB     28
-#define ERROR_STATE_MB   29
-#define SENSOR_ERROR_MB  30
+#define SENSOR_ERROR_MB  28
 
-#define REG_INPUT_NREGS ( SENSOR_ERROR_MB+1)
+#define COMMON_REG_INPUT_NREGS ( SENSOR_ERROR_MB+1)
 
 #define COMMON_REG_COUNT (AIN3_TYPE_MB+3)
-static USHORT usRegInputBuf[REG_INPUT_NREGS];
+
 
 //§²§Ö§Ô§Ú§ã§ä§â§í FMCH
 #define FMCH_OFFSET       0
-#define FMCH_COUNT        ( 14 )
+
 #define KOOF_P_MB         100
 #define KOOF_I_MB         102
 #define KOOF_K_MP         104
@@ -109,6 +107,23 @@ static USHORT usRegInputBuf[REG_INPUT_NREGS];
 #define TIME_FAN_STOP_MB  111
 #define COMMAND_REG       112
 #define LIGTH_REG_MB      113
+#define JOURNAL_SELECT_MB 114
+
+#define FMCH_COUNT         ( JOURNAL_SELECT_MB - KOOF_P_MB + 1 )
+
+#define FACT_RASH_MB            100
+#define PROCESS_STATE          ( FACT_RASH_MB               + 1 )
+#define ERROR_STATE_MB         ( PROCESS_STATE              + 1 )
+#define JOURNAL_ERROR_COUNT_MB ( ERROR_STATE_MB             + 1 )
+#define JOURNAL_CUR_DATE_MB    ( JOURNAL_ERROR_COUNT_MB     + 1 )
+#define JOURNAL_CUR_MOUNTH_MB  ( JOURNAL_CUR_DATE_MB        + 1 )
+#define JOURNAL_CUR_YEAR_MB    ( JOURNAL_CUR_MOUNTH_MB      + 1 )
+#define JOURNAL_CUR_HOUR_MB    ( JOURNAL_CUR_YEAR_MB        + 1 )
+#define JOURNAL_CUR_MIN_MB     ( JOURNAL_CUR_HOUR_MB        + 1 )
+#define JOURNAL_CUR_SEC_MB     ( JOURNAL_CUR_MIN_MB         + 1 )
+#define JOURNAL_CUR_E_CODE_MB  ( JOURNAL_CUR_SEC_MB         + 1 )
+#define FMCH_INPUTS_COUNT      ( JOURNAL_CUR_E_CODE_MB - FACT_RASH_MB   + 1 )
+
 
 #define CDV_OFFSET          100
 #define CDV_COUNT         31
@@ -134,6 +149,7 @@ static USHORT usRegInputBuf[REG_INPUT_NREGS];
 #define CDV_H_SENSOR_TYPE       230
 #define CDV_F_CHANNEL           231
 
+#define CDV_INPUTS_COUNT          0
 
 #define BP_OFFSET          200
 #define BP_COUNT           22
@@ -158,6 +174,8 @@ static USHORT usRegInputBuf[REG_INPUT_NREGS];
 #define BP_CO2_SENSOR_TYPE      329
 #define BP_H_SENSOR_TYPE        330
 #define PB_F_CHANNEL            331
+
+#define BP_INPUTS_COUNT          0
 
 //#define SENS_COOF  18
 //#define DAC_DATA   19
@@ -528,22 +546,48 @@ static void MB_TASK_INPUTS_UDATE()
     }
     usRegInputBuf[INP_MH_H_MB]    = vRTC_TASK_GetHoure();
     usRegInputBuf[INP_MH_M_MB ]   = vRTC_TASK_GetMinute();
-    switch( USER_GetProccesState() )
-    {
-           default:
-                 tempdata = 0;
-                 break;
-           case USER_PEOCESS_WORK_TIME_OUT:
-           case USER_PEOCESS_ZERO_CALIB:
-                 tempdata = 1;
-                 break;
-          case USER_RROCCES_WORK:
-                 tempdata = 2;
-                 break;
-    }
-    usRegInputBuf[INP_STATE_MB]   = tempdata;
     usRegInputBuf[ERROR_STATE_MB] = USER_GerErrorState();
     usRegInputBuf[SENSOR_ERROR_MB] =  getReg8(SENSOR_ERROR);
+    if  ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE) ==DEV_FMCH )
+    {
+        u8 temp_state;
+        u16 temp_int = USER_GetFact(&temp_state);
+        if (!temp_state) temp_int = 0;
+        usRegInputBuf[ FACT_RASH_MB  ] = temp_int;
+        switch( USER_GetProccesState() )
+           {
+                  default:
+                        tempdata = 0;
+                        break;
+                  case USER_PEOCESS_WORK_TIME_OUT:
+                  case USER_PEOCESS_ZERO_CALIB:
+                        tempdata = 1;
+                        break;
+                 case USER_RROCCES_WORK:
+                        tempdata = 2;
+                        break;
+           }
+           usRegInputBuf[PROCESS_STATE]          = tempdata;
+           usRegInputBuf[JOURNAL_ERROR_COUNT_MB] = getReg16(RECORD_COUNT);
+           u8 cur_journal_rec = usRegHoldingBuf[JOURNAL_SELECT_MB];
+           if (usRegHoldingBuf[JOURNAL_SELECT_MB]==0) memset(&usRegInputBuf[JOURNAL_CUR_DATE_MB],0,7*2);
+           else
+           {
+               static HAL_TimeConfig_T time;
+               static uint8_t error_flag;
+               static HAL_DateConfig_T date;
+               vGetRecord(cur_journal_rec -1 ,&error_flag,&time,&date);
+               usRegInputBuf[JOURNAL_CUR_DATE_MB] = date.date;
+               usRegInputBuf[JOURNAL_CUR_MOUNTH_MB] = date.month;
+               usRegInputBuf[JOURNAL_CUR_YEAR_MB] = date.year;
+               usRegInputBuf[JOURNAL_CUR_HOUR_MB] = time.hours;
+               usRegInputBuf[JOURNAL_CUR_MIN_MB] = time.minutes;
+               usRegInputBuf[JOURNAL_CUR_SEC_MB] = time.seconds;
+               usRegInputBuf[JOURNAL_CUR_E_CODE_MB] = error_flag;
+
+          }
+    }
+
 }
 #define CDV_BP_REG8_SEQ_COUNT 8
 #define CDV_BP_REG_SEQ_COUNT 1
@@ -647,14 +691,28 @@ void MB_TASK_HOLDING_UDATE()
         u8 index = getRegID(REGS8[i]);
         usRegHoldingBuf[REGS8[i]]      = getReg8(index);
     }
+
+    if  ( (DEVICE_TYPE_t)getReg8(DEVICE_TYPE) ==DEV_FMCH )
+    {
+        if  (usRegHoldingBuf[JOURNAL_SELECT_MB] > getReg16(RECORD_COUNT))
+            usRegHoldingBuf[JOURNAL_SELECT_MB] = getReg16(RECORD_COUNT);
+    }
 }
+
+
+static u16 const  device_specific_input_count[] =  { FMCH_INPUTS_COUNT  ,CDV_INPUTS_COUNT , BP_INPUTS_COUNT  };
+
 
 eMBErrorCode eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
 {
   eMBErrorCode    eStatus = MB_ENOERR;
   int             iRegIndex;
+  u16 reg_offet = device_specific_reg_offset[getReg8(DEVICE_TYPE)];
+  u16 reg_count = device_specific_input_count[getReg8(DEVICE_TYPE)];
 
-  if( ( usAddress >= REG_INPUT_START ) && ( usAddress + usNRegs <= REG_INPUT_START + REG_INPUT_NREGS ) )
+  if ((( usAddress >= REG_INPUT_START ) && ( usAddress + usNRegs <= REG_INPUT_START + COMMON_REG_INPUT_NREGS ) )
+
+      ||  ( ( usAddress >= 100 + reg_offet ) && ( (usAddress + usNRegs) <= (reg_offet+ 100 + reg_count+1) ) ))
   {
     iRegIndex = ( int )( usAddress - usRegInputStart );
     MB_TASK_INPUTS_UDATE();
