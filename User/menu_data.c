@@ -88,7 +88,7 @@ static xScreenObjet const SettingsScreen4[]=
 };
 static xScreenObjet const SettingsScreen5[]=
 {
-        {0,10,LINE1,0,WRITE_DATA,"Настройки      ",VOLTAG_SCREEN_TITLE_ID},
+        {0,10,LINE1,0,READ_DATA,"Настройки      ",VOLTAG_SCREEN_TITLE_ID},
         {0,2,25,0,WRITE_DATA,"Напряжение min",     VOLTAGE_MIN_ON_ID},
         {0,2,37,0,WRITE_DATA,"Сброс аварии min",   VOLTAGE_MIN_OFF_ID },
         {0,2,50,0,WRITE_DATA,"Напряжение max",     VOLTAGE_MAX_ON_ID},
@@ -133,6 +133,16 @@ static xScreenObjet const SettingsScreen9[]=
 };
 
 
+static xScreenObjet const ResetScreen[]=
+{
+        {0,10,LINE1,0,TEXT_STRING,"Перезагрузка модуля",    0},
+        {0,2,25,0,TEXT_STRING,"  Для перезагрузки ",  0},
+        {0,2,37,0,TEXT_STRING,"    нажмите ВВОД",        0},
+        {1,2,62,0,WRITE_DATA,"",         DEVICE_RESET_ID },
+};
+
+
+
 static xScreenObjet const JournalViewScreen[]=
 {
         {0,2,LINE1,0,READ_DATA,"Запись журнала:",JURNAL_RECORD_ID },
@@ -142,12 +152,12 @@ static xScreenObjet const JournalViewScreen[]=
         {1,2,62,0,READ_DATA,"",        JOURNAL_INFO2_ID},
 };
 
-xScreenType  xScreenFMCH[SCREENS_COUNT] =
+xScreenType  xScreenFMCH[FMCH_SCREEN_COUNT] =
 {
   {1,InfoScreen1,      3,   2,  11,  11, 0, 0 },
   {2,InfoScreen2,      1,   3,  0,  0 , 12 | JOURNAL_VIEW_COMMAND, 1 },
   {3,InfoScreen3,      2,   1,  0,   0, 4  , 1  },
-  {4,SettingsScreen1,  0,   0,  14,  5, ENTER_COMMNAD , 3  },
+  {4,SettingsScreen1,  0,   0,  15,  5, ENTER_COMMNAD , 3  },
   {5,SettingsScreen2,  0,   0,  4,   6, ENTER_COMMNAD , 3 },
   {6,SettingsScreen3,  0,   0,  5,  7,  ENTER_COMMNAD , 3 },
   {7,SettingsScreen4,  0,   0,  6,  8,  ENTER_COMMNAD , 3  },
@@ -157,7 +167,8 @@ xScreenType  xScreenFMCH[SCREENS_COUNT] =
   {11,InfoScreen4,      0,   0,  1,  1, 0, 3 },
   {12,JournalViewScreen, 0,   0, JOURNAL_PREV , JOURNAL_NEXT, 0,  2 },
   {13,SettingsScreen8, 0,   0,  10,   14,   ENTER_COMMNAD, 3 },
-  {14,SettingsScreen9, 0,   0,  13,   4,   ENTER_COMMNAD, 3 },
+  {14,SettingsScreen9, 0,   0,  13,   15,   ENTER_COMMNAD, 3 },
+  {15, ResetScreen    ,0,   0,  14,    4,   ENTER_COMMNAD ,3 },
 };
 
 

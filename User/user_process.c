@@ -205,8 +205,8 @@ void user_process_task(void *pvParameters)
    static u8 HEPA_CONTROL_ON = 0;
    static u8 low_voltage_alarm_timer =0;
    static u8 power_off_flag = 0;
-   static u16 low_voltage_timeout = 0;
-   static u16 high_voltage_timeout = 0;
+
+   static u8 high_voltage_timeout = 0;
    uint8_t ac_voltage;
    u8 set_point_old = 2;
    u32 pid_counter = 0;

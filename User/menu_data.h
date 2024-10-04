@@ -20,6 +20,7 @@
 #define LINE5        60U
 
 #define SCREENS_COUNT 100
+#define FMCH_SCREEN_COUNT 16
 #define CDV_SCREENS_COUNT 26
 #define BP_SCREENS_COUNT 25
 

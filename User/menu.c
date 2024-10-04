@@ -1333,6 +1333,26 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
             break;
         }
         break;
+        case DEVICE_RESET_ID :
+               switch (command )
+               {
+                   case CMD_EDIT_READ:
+                       strcpy(str,"");
+                       break;
+                   case CMD_READ:
+                       if ( SelectEditFlag )
+                           strcpy(str,"     Перегрузить?    ");
+                       break;
+                   case CMD_START_EDIT:
+                        NVIC_SystemReset();
+                        break;
+                  default:
+                      start_edit_flag = 0;
+
+                   break;
+               }
+               break;
+
     case CONTRAST_ID:
         switch (command)
         {
