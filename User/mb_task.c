@@ -372,7 +372,11 @@ void vSetRegData( u16 adress)
            break;
        case MODE_MB:
            if (byte_data  > 3)
-               usRegHoldingBuf[adress] = WORK_MODE;
+               {
+                  if (0x55) vDataModelResetJournal();
+
+                   usRegHoldingBuf[adress] = WORK_MODE;
+               }
            else
            {
                printf("set mode %i\r\n",byte_data);
@@ -544,10 +548,10 @@ static void MB_TASK_INPUTS_UDATE()
         tempdata =(int32_t) (getAIN(AINS[i])*1000);
         convert_float_to_int((float)tempdata/1000.0, &usRegInputBuf[2*i]);
     }
-    usRegInputBuf[INP_MH_H_MB]    = vRTC_TASK_GetHoure();
-    usRegInputBuf[INP_MH_M_MB ]   = vRTC_TASK_GetMinute();
-    usRegInputBuf[ERROR_STATE_MB] = USER_GerErrorState();
-    usRegInputBuf[SENSOR_ERROR_MB] =  getReg8(SENSOR_ERROR);
+    usRegInputBuf[INP_MH_H_MB]      = vRTC_TASK_GetHoure();
+    usRegInputBuf[INP_MH_M_MB ]     = vRTC_TASK_GetMinute();
+    usRegInputBuf[ERROR_STATE_MB]   = USER_GerErrorState();
+    usRegInputBuf[SENSOR_ERROR_MB]  = getReg8(SENSOR_ERROR);
     if  ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE) ==DEV_FMCH )
     {
         u8 temp_state;
@@ -568,23 +572,22 @@ static void MB_TASK_INPUTS_UDATE()
                         break;
            }
            usRegInputBuf[PROCESS_STATE]          = tempdata;
-           usRegInputBuf[JOURNAL_ERROR_COUNT_MB] = getReg16(RECORD_COUNT);
+           usRegInputBuf[JOURNAL_ERROR_COUNT_MB] = getReg16(RECORD_COUNT); //§£§í§Ó§à§Õ §Ü§à§Ý-§Ó§à §Ù§Ñ§á§Ú§ã§Ö§Û §Ó §Ø§å§â§ß§Ñ§Ý§Ö
            u8 cur_journal_rec = usRegHoldingBuf[JOURNAL_SELECT_MB];
-           if (usRegHoldingBuf[JOURNAL_SELECT_MB]==0) memset(&usRegInputBuf[JOURNAL_CUR_DATE_MB],0,7*2);
-           else
+           if (usRegHoldingBuf[JOURNAL_SELECT_MB]==0)
+               memset(&usRegInputBuf[JOURNAL_CUR_DATE_MB],0,7*2);  //§¦§ã§Ý§Ú §ä§Ö§Ü§å§ë§Ñ §Ó§í§Ò§â§Ñ§ß§Ñ§ñ §Ù§á§Ú§ã§î 0, §ä§à §Ù§Ñ§á§à§Ý§ß§ñ§Ö§Þ §â§Ö§Ô§Ú§ã§ä§â§í 0-§Þ§Ú
+           else                                                    //§¦§ã§Ý§Ú §ß§à§Þ§Ö§â §Ù§Ñ§á§Ú§ã§Ú §Ñ§Ü§ä§å§Ñ§Ý§î§ß§Ö, §ä§à §Ó§í§Ó§à§Õ§Ú§Þ §ß§å§Ø§ß§í§Ö §Õ§Ñ§ß§ß§í§Ö §à §Ù§Ñ§á§Ú§ã§Ú
            {
                static HAL_TimeConfig_T time;
-               static uint8_t error_flag;
                static HAL_DateConfig_T date;
-               vGetRecord(cur_journal_rec -1 ,&error_flag,&time,&date);
-               usRegInputBuf[JOURNAL_CUR_DATE_MB] = date.date;
+               vGetRecord(cur_journal_rec -1 ,&temp_state,&time,&date);
+               usRegInputBuf[JOURNAL_CUR_DATE_MB]   = date.date;
                usRegInputBuf[JOURNAL_CUR_MOUNTH_MB] = date.month;
-               usRegInputBuf[JOURNAL_CUR_YEAR_MB] = date.year;
-               usRegInputBuf[JOURNAL_CUR_HOUR_MB] = time.hours;
-               usRegInputBuf[JOURNAL_CUR_MIN_MB] = time.minutes;
-               usRegInputBuf[JOURNAL_CUR_SEC_MB] = time.seconds;
-               usRegInputBuf[JOURNAL_CUR_E_CODE_MB] = error_flag;
-
+               usRegInputBuf[JOURNAL_CUR_YEAR_MB]   = date.year;
+               usRegInputBuf[JOURNAL_CUR_HOUR_MB]   = time.hours;
+               usRegInputBuf[JOURNAL_CUR_MIN_MB]    = time.minutes;
+               usRegInputBuf[JOURNAL_CUR_SEC_MB]    = time.seconds;
+               usRegInputBuf[JOURNAL_CUR_E_CODE_MB] = temp_state;
           }
     }
 

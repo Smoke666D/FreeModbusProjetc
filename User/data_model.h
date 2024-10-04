@@ -14,7 +14,7 @@
 
 
 #define SW_V                 2
-#define SW_V2                 0
+#define SW_V2                0
 #define SW_V3                2
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
@@ -155,7 +155,7 @@ typedef enum
   HIGH_VOLTAGE_ERROR = 2,
   SETTING_ERROR   =3
 } FMCH_ERROR_t;
-
+void vDataModelResetJournal();
 float convert_int_to_float( u16 * data);
 void convert_float_to_int(float fdata, u16 * data);
 void saveReg16( u16 reg_adress, u16 data);

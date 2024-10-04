@@ -82,7 +82,10 @@ void setReg16( u16 reg_adress, u16 data)
 }
 
 
-
+void vDataModelResetJournal()
+{
+    saveReg16(RECORD_COUNT, 0);
+}
 
 void saveReg16( u16 reg_adress, u16 data)
 {
