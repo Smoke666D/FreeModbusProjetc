@@ -155,6 +155,7 @@ typedef enum
   HIGH_VOLTAGE_ERROR = 2,
   SETTING_ERROR   =3
 } FMCH_ERROR_t;
+
 void vDataModelResetJournal();
 float convert_int_to_float( u16 * data);
 void convert_float_to_int(float fdata, u16 * data);

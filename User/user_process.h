@@ -22,6 +22,11 @@ typedef enum
 } USER_PROCESS_FSM_t;
 
 
+#define WORK_CODE      2
+#define CALIBRATE_CODE 1
+#define STOP_CODE      0
+
+u8 getProcessStateCode();
 void USER_AOUT_SET(u8 channel, float data);
 float USER_AOUT_GET(u8 channel);
 float getDAC1_Out();

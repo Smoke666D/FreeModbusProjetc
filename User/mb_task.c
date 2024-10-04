@@ -92,6 +92,7 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 
 #define COMMON_REG_COUNT (AIN3_TYPE_MB+3)
 
+#define DEVICE_SPECIFIC_ADDRES 100
 
 //§²§Ö§Ô§Ú§ã§ä§â§í FMCH
 #define FMCH_OFFSET       0
@@ -286,19 +287,10 @@ static u8 getRegID( u16 mb_reg_address)
 
     switch (mb_reg_address)
     {
-        case CONTR_MB:          return (CONTRAST);
-        case MB_ADDRES_MB:      return (MB_RTU_ADDR);
-        case TIME_OUT_MB:       return (MOD_BUS_TIMEOUT);
-        case COMMAND_REG:      return (SYSTEM_START);
-        case IP_PORT_MB:        return (IP_PORT);
+
         case LIGTH_REG_MB:      return (LIGTH);
         case MODE_REG_MB:       return (MODE);
-        case SET_MOD1_MB:       return (SETTING1);
-        case SET_MOD2_MB:       return (SETTING2);
-        case FILTER_LOW_MB:     return (FILTER_LOW);
-        case FILTER_HIGH_MB:    return (FILTER_HIGH);
-        case TIME_SENS_MB:      return (SENSOR_COUNT);
-        case TIME_FAN_STOP_MB:  return (FAN_START_TIMEOUT);
+
         case (KOOF_P_MB+1):
         case (CDV_KOOF_P_MB+1):
         case (BP_KOOF_P_MB+1):
@@ -311,15 +303,6 @@ static u8 getRegID( u16 mb_reg_address)
         case (CDV_KOOF_K_MP+1):
         case (BP_KOOF_K_MB+1):
                                 return  (KOOFKPS);
-        case V_MIN_ON:          return (LOW_VOLTAGE_ON);
-        case V_MIN_OFF:         return (LOW_VOLTAGE_OFF);
-        case V_MAX_ON:          return (HIGH_VOLTAGE_ON);
-        case V_MAX_OFF:          return (HIGH_VOLTAGE_OFF);
-        case CONTROL_TYPE_MB :   return (CONTROL_TYPE);
-        case PROTOCOL_TYPE_MB:  return (MB_PROTOCOL_TYPE);
-        case AIN1_TYPE_MB:     return (AIN1_TYPE );
-        case AIN2_TYPE_MB:return (AIN2_TYPE );
-        case AIN3_TYPE_MB:return (AIN3_TYPE );
 
     }
     return 0;
@@ -538,73 +521,76 @@ void vSetRegData( u16 adress)
 }
 
 
+
+void UodateFMCHInputs()
+{
+    u8 temp_state;
+    u16 temp_int = USER_GetFact(&temp_state);
+    if (!temp_state) temp_int = 0;
+    usRegInputBuf[ FACT_RASH_MB  ] = temp_int;
+    usRegInputBuf[PROCESS_STATE]          = getProcessStateCode();
+    usRegInputBuf[JOURNAL_ERROR_COUNT_MB] = getReg16(RECORD_COUNT); //§£§í§Ó§à§Õ §Ü§à§Ý-§Ó§à §Ù§Ñ§á§Ú§ã§Ö§Û §Ó §Ø§å§â§ß§Ñ§Ý§Ö
+    u8 cur_journal_rec = usRegHoldingBuf[JOURNAL_SELECT_MB];
+    if (usRegHoldingBuf[JOURNAL_SELECT_MB]==0)
+                          memset(&usRegInputBuf[JOURNAL_CUR_DATE_MB],0,7*sizeof(uint16_t));  //§¦§ã§Ý§Ú §ä§Ö§Ü§å§ë§Ñ §Ó§í§Ò§â§Ñ§ß§Ñ§ñ §Ù§á§Ú§ã§î 0, §ä§à §Ù§Ñ§á§à§Ý§ß§ñ§Ö§Þ §â§Ö§Ô§Ú§ã§ä§â§í 0-§Þ§Ú
+    else                                                    //§¦§ã§Ý§Ú §ß§à§Þ§Ö§â §Ù§Ñ§á§Ú§ã§Ú §Ñ§Ü§ä§å§Ñ§Ý§î§ß§Ö, §ä§à §Ó§í§Ó§à§Õ§Ú§Þ §ß§å§Ø§ß§í§Ö §Õ§Ñ§ß§ß§í§Ö §à §Ù§Ñ§á§Ú§ã§Ú
+    {
+        static HAL_TimeConfig_T time;
+        static HAL_DateConfig_T date;
+        vGetRecord(cur_journal_rec -1 ,&temp_state,&time,&date);
+        usRegInputBuf[JOURNAL_CUR_DATE_MB]   = date.date;
+        usRegInputBuf[JOURNAL_CUR_MOUNTH_MB] = date.month;
+        usRegInputBuf[JOURNAL_CUR_YEAR_MB]   = date.year;
+        usRegInputBuf[JOURNAL_CUR_HOUR_MB]   = time.hours;
+        usRegInputBuf[JOURNAL_CUR_MIN_MB]    = time.minutes;
+        usRegInputBuf[JOURNAL_CUR_SEC_MB]    = time.seconds;
+        usRegInputBuf[JOURNAL_CUR_E_CODE_MB] = temp_state;
+    }
+
+}
+
 static const AIN_CHANNEL_t AINS[]={DIG_TEMP,DIG_PRES,SENS1,DIG2_TEMP,DIG2_PRES,SENS2,DCAIN1,DCAIN2,DCAIN3,DCAIN4,DCAIN5,DC24,AC220};
 
-static void MB_TASK_INPUTS_UDATE()
+// §°§Ò§ß§à§Ó§Ý§Ö§ß§Ú§Ö §ã§à§ã§à§ä§à§ñ§ß§Ú§Û INPUTS
+static void MB_TASK_INPUTS_UDATE(u16 start_reg_index )
 {
-    int32_t tempdata;
-    for (u8 i =0; i<13;i++)
+    if  (start_reg_index < DEVICE_SPECIFIC_ADDRES )   //§¦§ã§Ý§Ú §á§Ö§â§í§Û §Ñ§Õ§â§Ö§ã §Ó §Õ§Ú§Ñ§á§Ñ§Ù§à§ß§Ö §à§Ò§ë§Ú§ç §â§Ö§Ô§Ú§ã§ä§â§à§Ó
     {
-        tempdata =(int32_t) (getAIN(AINS[i])*1000);
-        convert_float_to_int((float)tempdata/1000.0, &usRegInputBuf[2*i]);
+        int32_t tempdata;
+        for (u8 i =0; i<13;i++)
+        {
+            tempdata =(int32_t) (getAIN(AINS[i])*1000);
+            convert_float_to_int((float)tempdata/1000.0, &usRegInputBuf[2*i]);
+        }
+        usRegInputBuf[INP_MH_H_MB]      = vRTC_TASK_GetHoure();
+        usRegInputBuf[INP_MH_M_MB ]     = vRTC_TASK_GetMinute();
+        usRegInputBuf[ERROR_STATE_MB]   = USER_GerErrorState();
+        usRegInputBuf[SENSOR_ERROR_MB]  = getReg8(SENSOR_ERROR);
     }
-    usRegInputBuf[INP_MH_H_MB]      = vRTC_TASK_GetHoure();
-    usRegInputBuf[INP_MH_M_MB ]     = vRTC_TASK_GetMinute();
-    usRegInputBuf[ERROR_STATE_MB]   = USER_GerErrorState();
-    usRegInputBuf[SENSOR_ERROR_MB]  = getReg8(SENSOR_ERROR);
-    if  ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE) ==DEV_FMCH )
+    else                                              //§¦§ã§Ý§Ú §á§Ö§â§Ó§í§Û §Ñ§Õ§â§Ö§ã §Ó §Õ§Ú§Ñ§á§Ñ§Ù§à§ß§Ö §ã§á§Ö§è§Ú§æ§Ú§é§Ö§ã§Ü§Ú§ç §Õ§Ý§ñ §å§ã§ä§â§à§Û§ã§ä§Ó§Ñ §â§Ö§Ô§ã§Ú§ä§â§à§Ó
     {
-        u8 temp_state;
-        u16 temp_int = USER_GetFact(&temp_state);
-        if (!temp_state) temp_int = 0;
-        usRegInputBuf[ FACT_RASH_MB  ] = temp_int;
-        switch( USER_GetProccesState() )
-           {
-                  default:
-                        tempdata = 0;
-                        break;
-                  case USER_PEOCESS_WORK_TIME_OUT:
-                  case USER_PEOCESS_ZERO_CALIB:
-                        tempdata = 1;
-                        break;
-                 case USER_RROCCES_WORK:
-                        tempdata = 2;
-                        break;
-           }
-           usRegInputBuf[PROCESS_STATE]          = tempdata;
-           usRegInputBuf[JOURNAL_ERROR_COUNT_MB] = getReg16(RECORD_COUNT); //§£§í§Ó§à§Õ §Ü§à§Ý-§Ó§à §Ù§Ñ§á§Ú§ã§Ö§Û §Ó §Ø§å§â§ß§Ñ§Ý§Ö
-           u8 cur_journal_rec = usRegHoldingBuf[JOURNAL_SELECT_MB];
-           if (usRegHoldingBuf[JOURNAL_SELECT_MB]==0)
-               memset(&usRegInputBuf[JOURNAL_CUR_DATE_MB],0,7*2);  //§¦§ã§Ý§Ú §ä§Ö§Ü§å§ë§Ñ §Ó§í§Ò§â§Ñ§ß§Ñ§ñ §Ù§á§Ú§ã§î 0, §ä§à §Ù§Ñ§á§à§Ý§ß§ñ§Ö§Þ §â§Ö§Ô§Ú§ã§ä§â§í 0-§Þ§Ú
-           else                                                    //§¦§ã§Ý§Ú §ß§à§Þ§Ö§â §Ù§Ñ§á§Ú§ã§Ú §Ñ§Ü§ä§å§Ñ§Ý§î§ß§Ö, §ä§à §Ó§í§Ó§à§Õ§Ú§Þ §ß§å§Ø§ß§í§Ö §Õ§Ñ§ß§ß§í§Ö §à §Ù§Ñ§á§Ú§ã§Ú
-           {
-               static HAL_TimeConfig_T time;
-               static HAL_DateConfig_T date;
-               vGetRecord(cur_journal_rec -1 ,&temp_state,&time,&date);
-               usRegInputBuf[JOURNAL_CUR_DATE_MB]   = date.date;
-               usRegInputBuf[JOURNAL_CUR_MOUNTH_MB] = date.month;
-               usRegInputBuf[JOURNAL_CUR_YEAR_MB]   = date.year;
-               usRegInputBuf[JOURNAL_CUR_HOUR_MB]   = time.hours;
-               usRegInputBuf[JOURNAL_CUR_MIN_MB]    = time.minutes;
-               usRegInputBuf[JOURNAL_CUR_SEC_MB]    = time.seconds;
-               usRegInputBuf[JOURNAL_CUR_E_CODE_MB] = temp_state;
-          }
+        switch ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE))
+        {
+            case DEV_FMCH:
+                UodateFMCHInputs();
+                break;
+            default:
+                break;
+        }
     }
-
 }
 #define CDV_BP_REG8_SEQ_COUNT 8
 #define CDV_BP_REG_SEQ_COUNT 1
 
 #define REG_SEQ_COUNT 5
-#define REG8_SEQ_COUNT 15
+#define REG8_SEQ_COUNT 13
 
 
 static const u8 CDV_BP_REGS8[CDV_BP_REG8_SEQ_COUNT]={CDV_AFZONE_SETTING_MB,CDV_CH_COUNT_MB ,CDV_MEASERING_UNIT,CDV_PRIOR_SENS,CDV_CLEAN_TIMER,CDV_KK_SENSOR_TYPE,CDV_CO2_SENSOR_TYPE,CDV_H_SENSOR_TYPE};
 static const u8 CDV_BP_REGS[CDV_BP_REG_SEQ_COUNT]={CDV_ZERO_POINT_TIMEOUT};
-static const u8 REGS[REG_SEQ_COUNT]={IP_PORT_MB,SET_MOD1_MB,SET_MOD2_MB,FILTER_LOW_MB,FILTER_HIGH_MB};
-static const u8 REGS8[REG8_SEQ_COUNT]={COMMAND_REG,
+
+static const u8 REGS8[REG8_SEQ_COUNT]={
                                        TIME_SENS_MB,
-                                       TIME_FAN_STOP_MB,
                                        V_MIN_ON,
                                        V_MIN_OFF,
                                        V_MAX_ON,
@@ -618,88 +604,129 @@ static const u8 REGS8[REG8_SEQ_COUNT]={COMMAND_REG,
                                        AIN2_TYPE_MB,
                                        AIN3_TYPE_MB,};
 
+static const u8 REGS8_MODEL[REG8_SEQ_COUNT]={SENSOR_COUNT,
+                                            LOW_VOLTAGE_ON,
+                                            LOW_VOLTAGE_OFF,
+                                            HIGH_VOLTAGE_ON,
+                                            HIGH_VOLTAGE_OFF,
+                                            CONTROL_TYPE,
+                                            MB_PROTOCOL_TYPE,
+                                            MB_RTU_ADDR,
+                                            MOD_BUS_TIMEOUT,
+                                            CONTRAST,
+                                            AIN1_TYPE,
+                                            AIN2_TYPE,
+                                            AIN3_TYPE
+};
+
+
+
+
+
+
+
+
+
 
 static u16 const device_specific_reg_offset[] =  { FMCH_OFFSET ,CDV_OFFSET, BP_OFFSET };
 static u16 const  device_specific_reg_count[] =  { FMCH_COUNT  ,CDV_COUNT , BP_COUNT  };
 
-void MB_TASK_HOLDING_UDATE()
+
+
+
+static const u8 REGS[REG_SEQ_COUNT]={SET_MOD1_MB,SET_MOD2_MB,FILTER_LOW_MB,FILTER_HIGH_MB};
+static const u8 REGS_MODEL[REG_SEQ_COUNT]={SETTING1,SETTING2,FILTER_LOW,FILTER_HIGH};
+
+void UpdateFMCHHoldings()
 {
-    static HAL_TimeConfig_T time;
-    static HAL_DateConfig_T date;
-    u16 reg_offet = 100;
     int32_t tempdata;
-    usRegHoldingBuf[MODE_MB] = WORK_MODE;
-
-    tempdata =(int32_t) (getRegFloat(COOF_P)*1000);
-    convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_P_MB]);
-    tempdata =(int32_t) (getRegFloat(COOF_I)*1000);
-    convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_I_MB]);
-    tempdata =(int32_t) (getRegFloat(KOOFKPS)*1000);
-    convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_K_MP]);
-
-
-    if ( ( (DEVICE_TYPE_t)getReg8(DEVICE_TYPE) ==DEV_CDV ) || ( (DEVICE_TYPE_t)getReg8(DEVICE_TYPE) ==DEV_BP ) )
-    {
-          tempdata =(int32_t) (getRegFloat(COOF_P1)*1000);
-          convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P1_MB-reg_offet]);
-          tempdata =(int32_t) (getRegFloat(COOF_I1)*1000);
-          convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I1_MB-reg_offet]);
-          tempdata =(int32_t) (getRegFloat(COOF_P2)*1000);
-          convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P2_MB-reg_offet]);
-          tempdata =(int32_t) (getRegFloat(COOF_I2)*1000);
-          convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I2_MB-reg_offet]);
-          tempdata =(int32_t) (getRegFloat(COOF_P3)*1000);
-          convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P3_MB-reg_offet]);
-          tempdata =(int32_t) (getRegFloat(COOF_I3)*1000);
-          convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-reg_offet]);
-          tempdata =(int32_t) (getRegFloat(OFFSET_CH2)*1000);
-          convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-reg_offet]);
-          tempdata =(int32_t) (getRegFloat(F_CHANNEL)*1000);
-          convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_F_CHANNEL-reg_offet]);
-
-
-          for (u8 i=0;i<CDV_BP_REG8_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
-          {
-               u8 index = getRegID(CDV_BP_REGS8[i]);
-               usRegHoldingBuf[CDV_BP_REGS8[i] -CDV_OFFSET ]      = getReg8(index);
-          }
-          for (u8 i=0;i<CDV_BP_REG_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  16 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
-          {
-               u8 index = getRegID(CDV_BP_REGS[i]);
-               usRegHoldingBuf[CDV_BP_REGS[i]]      = getReg16(index);
-          }
-    }
-
-    convert_float_to_int(USER_AOUT_GET(DAC1),&usRegHoldingBuf[AOUT1_C_MB]);
-    convert_float_to_int(USER_AOUT_GET(DAC2),&usRegHoldingBuf[AOUT2_C_MB]);
-    convert_float_to_int(USER_AOUT_GET(DAC3),&usRegHoldingBuf[AOUT3_C_MB]);
-    HAL_RTC_ReadTime(&time);
-    HAL_RTC_ReadDate(&date);
-    usRegHoldingBuf[LIGTH_REG_MB]  = eGetDOUT(OUT_2);
-    usRegHoldingBuf[TIME_H_MB]     = time.hours;
-    usRegHoldingBuf[TIME_M_MB]     = time.minutes;
-    usRegHoldingBuf[TIME_S_MB]     = time.seconds;
-    usRegHoldingBuf[DATE_D_MB]     = date.date;
-    usRegHoldingBuf[DATE_M_MB]     = date.month;
-    usRegHoldingBuf[DATE_Y_MB]     = date.year;
-    for (u8 i=0;i<12;i++)
-         usRegHoldingBuf[IP_1_MB+i]       = getReg8(IP_1+i);
-    for (u8 i=0;i<REG_SEQ_COUNT;i++)
-    {
-        u8 index = getRegID(REGS[i]);
-        usRegHoldingBuf[REGS[i]]      = getReg16(index);
-    }
-    for (u8 i=0;i<REG8_SEQ_COUNT;i++)
-    {
-        u8 index = getRegID(REGS8[i]);
-        usRegHoldingBuf[REGS8[i]]      = getReg8(index);
-    }
-
-    if  ( (DEVICE_TYPE_t)getReg8(DEVICE_TYPE) ==DEV_FMCH )
-    {
-        if  (usRegHoldingBuf[JOURNAL_SELECT_MB] > getReg16(RECORD_COUNT))
+    for (u8 i=0;i<4;i++)
+       usRegHoldingBuf[REGS[i]]      = getReg16(REGS_MODEL[i]);
+   usRegHoldingBuf[COMMAND_REG] = getReg8(SYSTEM_START);
+   usRegHoldingBuf[TIME_FAN_STOP_MB] = getReg8(FAN_START_TIMEOUT);
+   tempdata =(int32_t) (getRegFloat(COOF_P)*1000);
+   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_P_MB]);
+   tempdata =(int32_t) (getRegFloat(COOF_I)*1000);
+   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_I_MB]);
+   tempdata =(int32_t) (getRegFloat(KOOFKPS)*1000);
+   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_K_MP]);
+   if  (usRegHoldingBuf[JOURNAL_SELECT_MB] > getReg16(RECORD_COUNT))
             usRegHoldingBuf[JOURNAL_SELECT_MB] = getReg16(RECORD_COUNT);
+
+
+}
+
+
+void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
+{
+    int32_t tempdata;
+    if (start_reg_index < DEVICE_SPECIFIC_ADDRES)
+    {
+        static HAL_TimeConfig_T time;
+        static HAL_DateConfig_T date;
+        usRegHoldingBuf[MODE_MB] = WORK_MODE;
+        convert_float_to_int(USER_AOUT_GET(DAC1),&usRegHoldingBuf[AOUT1_C_MB]);
+        convert_float_to_int(USER_AOUT_GET(DAC2),&usRegHoldingBuf[AOUT2_C_MB]);
+        convert_float_to_int(USER_AOUT_GET(DAC3),&usRegHoldingBuf[AOUT3_C_MB]);
+        HAL_RTC_ReadTime(&time);
+        HAL_RTC_ReadDate(&date);
+        usRegHoldingBuf[LIGTH_REG_MB]  = eGetDOUT(OUT_2);
+        usRegHoldingBuf[TIME_H_MB]     = time.hours;
+        usRegHoldingBuf[TIME_M_MB]     = time.minutes;
+        usRegHoldingBuf[TIME_S_MB]     = time.seconds;
+        usRegHoldingBuf[DATE_D_MB]     = date.date;
+        usRegHoldingBuf[DATE_M_MB]     = date.month;
+        usRegHoldingBuf[DATE_Y_MB]     = date.year;
+        usRegHoldingBuf[IP_PORT_MB] =  getReg16(IP_PORT);
+        for (u8 i=0;i<12;i++)
+                 usRegHoldingBuf[IP_1_MB+i]       = getReg8(IP_1+i);
+        for (u8 i=0;i<REG8_SEQ_COUNT;i++)
+            {
+
+                usRegHoldingBuf[REGS8[i]]      = getReg8(REGS8_MODEL[i]);
+            }
     }
+    else
+    {
+        u16 reg_offet = 100;
+        switch ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE))
+        {
+            case DEV_CDV:
+            case DEV_BP:
+                  tempdata =(int32_t) (getRegFloat(COOF_P1)*1000);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P1_MB-reg_offet]);
+                  tempdata =(int32_t) (getRegFloat(COOF_I1)*1000);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I1_MB-reg_offet]);
+                  tempdata =(int32_t) (getRegFloat(COOF_P2)*1000);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P2_MB-reg_offet]);
+                  tempdata =(int32_t) (getRegFloat(COOF_I2)*1000);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I2_MB-reg_offet]);
+                  tempdata =(int32_t) (getRegFloat(COOF_P3)*1000);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P3_MB-reg_offet]);
+                  tempdata =(int32_t) (getRegFloat(COOF_I3)*1000);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-reg_offet]);
+                  tempdata =(int32_t) (getRegFloat(OFFSET_CH2)*1000);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-reg_offet]);
+                  tempdata =(int32_t) (getRegFloat(F_CHANNEL)*1000);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_F_CHANNEL-reg_offet]);
+                  for (u8 i=0;i<CDV_BP_REG8_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
+                  {
+                       u8 index = getRegID(CDV_BP_REGS8[i]);
+                       usRegHoldingBuf[CDV_BP_REGS8[i] -CDV_OFFSET ]      = getReg8(index);
+                  }
+                  for (u8 i=0;i<CDV_BP_REG_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  16 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
+                  {
+                       u8 index = getRegID(CDV_BP_REGS[i]);
+                       usRegHoldingBuf[CDV_BP_REGS[i]]      = getReg16(index);
+                  }
+                  break;
+            case DEV_FMCH:
+                UpdateFMCHHoldings();
+                break;
+            }
+
+    }
+
 }
 
 
@@ -718,7 +745,7 @@ eMBErrorCode eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRe
       ||  ( ( usAddress >= 100 + reg_offet ) && ( (usAddress + usNRegs) <= (reg_offet+ 100 + reg_count+1) ) ))
   {
     iRegIndex = ( int )( usAddress - usRegInputStart );
-    MB_TASK_INPUTS_UDATE();
+    MB_TASK_INPUTS_UDATE(  iRegIndex  );
     while( usNRegs > 0 )
     {
         *pucRegBuffer++ = ( unsigned char )( usRegInputBuf[iRegIndex] >> 8 );
@@ -749,7 +776,7 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
     switch ( eMode )
     {
     case MB_REG_READ:
-      MB_TASK_HOLDING_UDATE();
+      MB_TASK_HOLDING_UDATE(  iRegIndex  );
       u16 offset=0;
       while( usNRegs > 0 )
       {
@@ -786,20 +813,16 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
 eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils, eMBRegisterMode eMode )
 {
 
-    eMBErrorCode    eStatus = MB_ENOERR;
-        USHORT          iRegIndex , iRegBitIndex , iNReg;
+        eMBErrorCode    eStatus = MB_ENOERR;
+        USHORT          iRegBitIndex;
         UCHAR *         pucCoilBuf  = ucSCoilBuf;
         USHORT          usCoilStart = REG_COILS_START;
-        iNReg =  usNCoils / 8 + 1;
-
         /* it already plus one in modbus function method. */
         usAddress--;
 
         if( ( usAddress >= REG_COILS_START) &&  ( usAddress + usNCoils <= REG_COILS_START + REG_COILS_NREGS ) )
         {
-            iRegIndex = (USHORT) (usAddress - usCoilStart) / 8;
             iRegBitIndex = (USHORT) (usAddress - usCoilStart);
-          //  iRegBitIndex++;
             switch ( eMode )
             {
             /* read current coil values from the protocol stack. */

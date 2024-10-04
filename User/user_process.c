@@ -72,6 +72,22 @@ USER_PROCESS_FSM_t USER_GetProccesState()
     return (task_fsm);
 }
 
+
+
+u8 getProcessStateCode()
+{
+    switch( task_fsm )
+    {
+        default:
+            return (STOP_CODE);
+        case USER_PEOCESS_WORK_TIME_OUT:
+        case USER_PEOCESS_ZERO_CALIB:
+           return (CALIBRATE_CODE);
+       case USER_RROCCES_WORK:
+           return (WORK_CODE);
+     }
+}
+
 uint16_t USER_GetFact(u8 * state)
 {
  if (task_fsm == USER_RROCCES_WORK)

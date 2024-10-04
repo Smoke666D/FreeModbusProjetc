@@ -1180,20 +1180,17 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
             sprintf(str,"%x%x%x%x%x%x",MACAddr[0],MACAddr[1],MACAddr[2],MACAddr[3],MACAddr[4],MACAddr[5]);
             break;
         case PROCESS_STATE_ID:
-            switch( USER_GetProccesState() )
+            switch( getProcessStateCode() )
             {
-                case USER_PROCCES_IDLE:
-                case USER_PROCESS_ALARM:
+                 default:
                     strcpy(str,"Остановлен");
                     break;
-                case USER_PEOCESS_WORK_TIME_OUT:
-                case USER_PEOCESS_ZERO_CALIB:
+                case CALIBRATE_CODE:
                     strcpy(str,"Калибровка");
                     break;
-                case USER_RROCCES_WORK:
+                case WORK_CODE:
                     strcpy(str,"Работа");
                     break;
-
             }
             break;
         case IP_ADRESS_DATA_ID:
