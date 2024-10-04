@@ -309,7 +309,6 @@ static u8 getRegID( u16 mb_reg_address)
 
 void vSetRegData( u16 adress)
 {
-
    u8 set_time_flag = 0;
    u8 set_date_flag = 0;
    float data;

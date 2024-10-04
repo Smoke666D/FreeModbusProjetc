@@ -205,7 +205,6 @@ void user_process_task(void *pvParameters)
    static u8 HEPA_CONTROL_ON = 0;
    static u8 low_voltage_alarm_timer =0;
    static u8 power_off_flag = 0;
-
    static u8 high_voltage_timeout = 0;
    uint8_t ac_voltage;
    u8 set_point_old = 2;
@@ -228,7 +227,7 @@ void user_process_task(void *pvParameters)
        }
        if (MB_TASK_GetMode()!=2)
        {
-           ac_voltage = getACVoltage();
+           ac_voltage = (uint8_t)getAIN(AC220);
            if  (ac_voltage >= getReg8(HIGH_VOLTAGE_ON))
            {
                if (task_fsm != USER_PROCESS_ALARM)
@@ -262,8 +261,9 @@ void user_process_task(void *pvParameters)
            }
            else
                low_voltage_alarm_timer = 0;
+           u8 ac_control_value = (u8) getAIN(AC220_CONTROL);
 
-           if (ac_voltage < 20)
+           if (ac_control_value < 20.0)
            {
                if (power_off_flag==0)
                {
@@ -271,7 +271,7 @@ void user_process_task(void *pvParameters)
                    power_off_flag = 1;
                }
            }
-           if (ac_voltage >40) power_off_flag = 0;
+           if (ac_control_value >40) power_off_flag = 0;
            USER_SETTING_CHECK(c_type, &set_point_old);
            u8 ss;
            // Если засоренность фильта больше значения устваки, то выставляем предупрежние и делаем запись в журнал

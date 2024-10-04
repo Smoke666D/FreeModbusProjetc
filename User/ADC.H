@@ -64,7 +64,7 @@ typedef enum
   AC220   = 10,
   DIG2_PRES =11,
   DIG2_TEMP =12,
-
+  AC220_CONTROL = 13,
 
 } AIN_CHANNEL_t;
 
@@ -93,7 +93,6 @@ typedef struct
 u8 CalibrationZeroWhait();
 void vSetCount( u16 coount);
 void CalibrateZeroStart();
-uint8_t getACVoltage();
 void I2C_task(void *pvParameters);
 TaskHandle_t * getI2CTaskHandle();
 void vSetPeriod( u8  per);

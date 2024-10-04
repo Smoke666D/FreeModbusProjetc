@@ -1125,6 +1125,9 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                      break;
              }
              break;
+        case CUR_TEMP_ID:
+            sprintf(str, "%i C",(u8)getAIN(DCAIN5));
+            break;
         case SENS_1_RAW_ID:
         case SENS_2_RAW_ID:
             sprintf(str, "%i Па",(int)getAIN(reg_id) );

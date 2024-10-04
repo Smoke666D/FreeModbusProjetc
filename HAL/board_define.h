@@ -11,4 +11,4 @@
 
 #define REV2
 #define MCU CH32V3
-//#define WDT
+#define WDT

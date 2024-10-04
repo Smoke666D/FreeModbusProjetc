@@ -22,6 +22,7 @@ static int16_t calib_offset    = 0;
 static int16_t calib_offset1   = 0;
 static float PressSens[2]={0,0};
 float AC_220_VALUE;
+float AC_220_VALUE_CONTROL;
 static uint16_t ADC2_Buffer[DC_CHANNEL];
 static int16_t  ADC1_DMABuffer[AC_CONVERION_NUMBER*ADC_CHANNEL];
 uint8_t ADC2_CHANNEL[DC_CHANNEL] = {  ADC_CH_2, ADC_CH_5,ADC_CH_6,ADC_CH_7,ADC_CH_14,ADC_CH_15};
@@ -222,14 +223,12 @@ float getAIN( AIN_CHANNEL_t channel)
            return (float)(sens_press1);
         case AC220:
            return (AC_220_VALUE);
+        case AC220_CONTROL:
+           return (AC_220_VALUE_CONTROL);
     }
     return (0);
 }
 
-uint8_t getACVoltage()
-{
-    return ((uint8_t)AC_220_VALUE);
-}
 
 
 static void ADC2_Event()
@@ -451,6 +450,7 @@ void ADC_task(void *pvParameters)
                       if (uCurPeriod < AC_CONVERION_NUMBER-1)
                       {
                            uint16_t data1 = xADCRMS(&ADC1_DMABuffer[0],uCurPeriod,2);
+                           AC_220_VALUE_CONTROL = (float)data1 * ( 401U * 3.3 / 4095U );
                            data1 = vRCFilter(data1, &old);
                            AC_220_VALUE = (float)data1 * ( 401U * 3.3 / 4095U );
                       }

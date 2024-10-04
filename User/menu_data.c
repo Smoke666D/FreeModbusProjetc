@@ -41,7 +41,7 @@ static xScreenObjet const InfoScreen3[]=
 
 static xScreenObjet const InfoScreen4[]=
 {
-        {0,2,LINE1,00,READ_DATA,"Темп. воздуха",0},
+        {0,2,LINE1,00,READ_DATA,"Темп. воздуха",CUR_TEMP_ID},
         {0,2,25,00,READ_DATA,"MAC",MAC_ADRESS_ID},
         {0,2,37,00,READ_DATA,(char*)VOLTAGE_TEXT,AC_VOLTAGE_ID },
         {0,2,50,00,TEXT_STRING,"Моточасы",0},
