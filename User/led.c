@@ -46,50 +46,37 @@ u8 LED_BufferCompare()
 
 void LCD_task(void *pvParameters)
 {
-    TaskFSM_t LCD_Task_FSM = STATE_INIT;
+    RESET_ENABLE;
+    CS1_ENABLE;
+    HAL_ResetBit(LCDRST_Port,LCDRST_Pin);
+    vTaskDelay(10);
+    HAL_SetBit(LCDRST_Port,LCDRST_Pin);
+    vTaskDelay(10);
+    CS2_ENABLE;
+    HAL_ResetBit(LCDRST_Port,LCDRST_Pin);
+    vTaskDelay(10);
+    HAL_SetBit(LCDRST_Port,LCDRST_Pin);
+    vTaskDelay(10);
+    CS1_ENABLE;
+    WriteCommand(0x3F);
+    vTaskDelay(1);
+    CS2_ENABLE;
+    WriteCommand(0x3F);
+    vTaskDelay(1);
     while (1)
     {
-        switch ( LCD_Task_FSM  )
-        {
-            case STATE_INIT:
-                RESET_ENABLE;
+           ulTaskNotifyTakeIndexed( 0, pdTRUE, portMAX_DELAY );
+           memcpy(screen_buufer,u8g2.tile_buf_ptr,SCREEN_BUFFER_SIZE );
+           for (u8 i =0;i<8;i++)
+           {
                 CS1_ENABLE;
-                HAL_ResetBit(LCDRST_Port,LCDRST_Pin);
-                vTaskDelay(10);
-                HAL_SetBit(LCDRST_Port,LCDRST_Pin);
-                vTaskDelay(10);
+                WriteCommand( 0x040  );
+                WriteCommand( 0x0b8 | i );
                 CS2_ENABLE;
-                HAL_ResetBit(LCDRST_Port,LCDRST_Pin);
-                vTaskDelay(10);
-                HAL_SetBit(LCDRST_Port,LCDRST_Pin);
-                vTaskDelay(10);
-                CS1_ENABLE;
-                WriteCommand(0x3F);
-                vTaskDelay(1);
-                CS2_ENABLE;
-                WriteCommand(0x3F);
-                vTaskDelay(1);
-                LCD_Task_FSM  = STATE_WHAIT_TO_RAEDY;
-                break;
-            case STATE_WHAIT_TO_RAEDY:
-                LCD_Task_FSM  = STATE_RUN;
-                break;
-            case STATE_RUN:
-                ulTaskNotifyTakeIndexed( 0, pdTRUE, portMAX_DELAY );
-                memcpy(screen_buufer,u8g2.tile_buf_ptr,SCREEN_BUFFER_SIZE );
-                for (u8 i =0;i<8;i++)
-                {
-                   CS1_ENABLE;
-                   WriteCommand( 0x040  );
-                   WriteCommand( 0x0b8 | i );
-                   CS2_ENABLE;
-                   WriteCommand( 0x040  );
-                   WriteCommand( 0x0b8 | i );
-                   WriteDispalay(&screen_buufer[i*128],128);
-                }
-
-               break;
-       }
+                WriteCommand( 0x040  );
+                WriteCommand( 0x0b8 | i );
+                WriteDispalay(&screen_buufer[i*128],128);
+           }
     }
 }
 

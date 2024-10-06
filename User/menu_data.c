@@ -10,9 +10,9 @@
 #include "menu_data.h"
 #include "menu.h"
 
-static const char   SETTING_TEXT[] = "Уставка";
-static const char   VOLTAGE_TEXT[] = "Напряжение";
-static const char   KOOFKPS_TEXT[] = "Кооэ к.п.с";
+static const char SETTING_TEXT[] = "Уставка";
+static const char VOLTAGE_TEXT[] = "Напряжение";
+static const char KOOFKPS_TEXT[] = "Кооэ к.п.с";
 
 static  xScreenObjet const InfoScreen1[]=
 {
@@ -233,7 +233,7 @@ static xScreenObjet const CDVSettingsScreen6[]=
 {
         {0,10,LINE1,0,TEXT_STRING,"Настройки      6/21",    0},
         {0,2,25,0,TEXT_STRING,"Расчет потока",          0},
-        {0,2,37,0,WRITE_DATA,KOOFKPS_TEXT,              KOOFKPS_ID},
+        {0,2,37,0,WRITE_DATA,(char*)KOOFKPS_TEXT,              KOOFKPS_ID},
         {1,2,50,0,WRITE_DATA,"F канала, м^2",           F_CHANNEL_ID},
 };
 
@@ -409,7 +409,7 @@ xScreenType  xScreenCVD[CDV_SCREENS_COUNT] =
 
 static  xScreenObjet const BPInfoScreen1[]=
 {
-        {0,0,LINE1,70,  READ_DATA,SETTING_TEXT,         BP_SETTING1_ID},
+        {0,0,LINE1,70,  READ_DATA,(char*)SETTING_TEXT,         BP_SETTING1_ID},
         {0,0,25,70,     READ_DATA,"Факт",               BP_FACT_ID },
         {0,0,37,70,     READ_DATA,"Типоразмер BP",      BP_SIZE_ID},
         {1,0,50,70,     TEXT_STRING,"Тип регулирования",     0 },
