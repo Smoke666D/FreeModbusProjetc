@@ -111,7 +111,7 @@ static u8 * AfterZoneStrig[]={"Tканала<Tпомещения","Tканала
 static u8 * MUnitStrig[] = {"м^3/ч","м/c","Па"};
 static u8 * PriorSentStrig[]= {"T","CO2","H"};
 static const char * DevString[3]={"Режим ФМЧ","CAV/VAV/DCV","Режим BP"};
-static u8 * SensorTypeStrig[]= {"0-10","2-10","4-20"};
+static u8 * SensorTypeStrig[]= {"0-10 В","2-10 В","4-20 мA"};
 static xScreenType * pMenu;
 static u8 journal_index =0;
 static uint16_t curr_edit_data_id = 0;
@@ -119,9 +119,11 @@ static u8 cur_edit_index = 0;
 static uint8_t start_edit_flag =0;
 static uint16_t edit_data_buffer_byte;
 static const uint32_t coof[]={1,10,100,1000};
-static const float coof_float[]={0.01,0.1,1.0,10.0,100.0,1000.0,10000.0};
+
 static HAL_DateConfig_T date;
 static u8 edit_ip_addres[4];
+
+static u8 cur_max_stirng = 0;
 
 #define  DateFormatString  "%02i.%02i.%02i"
 #define  TimeFormatString  "%02i:%02i:%02i"
@@ -167,6 +169,11 @@ static void SetFirtsEditString( )
             {
                 edit_data[i] = 1;
             }
+        }
+        if ( pMenu[pCurrMenu].pScreenCurObjets[i].last == 1 )
+        {
+            cur_max_stirng  = i +1;
+            break;
         }
      }
 }
@@ -228,7 +235,7 @@ void ViewScreenCallback( u8 key_code)
 static void vSelect( u8 direction)
 {
     uint8_t index;
-    for (index =0; index < MAX_STRING_NUMBER;index ++)
+    for (index =0; index < cur_max_stirng ;index ++)
     {
         if (edit_data[index ] == 2)
         {
@@ -236,17 +243,17 @@ static void vSelect( u8 direction)
             break;
         }
     }
-   for (uint8_t i = 0; i < MAX_STRING_NUMBER; i++)
+   for (uint8_t i = 0; i < cur_max_stirng ; i++)
    {
         if (direction==0)
         {
-          if (index == 0) index = (MAX_STRING_NUMBER-1);
+          if (index == 0) index = (cur_max_stirng -1);
               else
           index--;
         }
         else
         {
-          if (++index >= MAX_STRING_NUMBER) index = 0;
+          if (++index >= cur_max_stirng ) index = 0;
         }
         if (edit_data[index ] == 1)
         {
@@ -261,7 +268,7 @@ static void vSelect( u8 direction)
 u8 vSetEdit()
 {
     u8 res= 1;
-    for (u8 i =0; i < MAX_STRING_NUMBER;i ++)
+    for (u8 i =0; i < cur_max_stirng ;i ++)
     {
         if (edit_data[i ] == 2)
         {
@@ -278,7 +285,7 @@ u8 vSetEdit()
 
 void vSetCommnad( DATA_VIEW_COMMAND_t cmd )
 {
-    for (u8 i =0; i < MAX_STRING_NUMBER;i ++)
+    for (u8 i =0; i < cur_max_stirng ;i ++)
     {
       if (edit_data[i ] == 3)
       {
@@ -342,7 +349,7 @@ void vMenuTask ( void )
                                            pCurrMenu = GetID(pMenu[pCurrMenu].pDownScreenSet);
                                        }
                                        break;
-                               default: ; break;
+                               default:  break;
                            }
                           break;
                      case 3:
@@ -400,7 +407,7 @@ void vByteDataEdit(u8 size, u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_ind
             start_edit_flag = 0;
              break;
         case CMD_NEXT_EDIT:
-             if (++cur_edit_index >max_index) cur_edit_index = 0;
+             if (++cur_edit_index > max_index) cur_edit_index = 0;
              break;
         case CMD_PREV_EDIT:
             if (cur_edit_index ==0) cur_edit_index = max_index; else cur_edit_index--;
@@ -425,10 +432,26 @@ void vByteDataEdit(u8 size, u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_ind
 }
 
 float edit_data_buffer_float;
+static const float coof_float[]={0.01,0.1,1.0,10.0,100.0,1000.0,10000.0};
 
 void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8 min_index, float max_data, float min_data )
 {
+    u8 offset;
     u8 temp_index;
+    switch ( min_index )
+    {
+       case 0:
+           offset  =2;
+           break;
+       case 1:
+           offset = 1;
+           break;
+       case 2:
+           offset = 0;
+           break;
+
+    }
+
     switch (command)
     {
         case CMD_START_EDIT:
@@ -453,7 +476,7 @@ void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8
             if (temp_index > min_index)  temp_index--;
 
             if ((edit_data_buffer_float + coof_float[temp_index]) <=  max_data )
-                 edit_data_buffer_float = edit_data_buffer_float+ coof_float [temp_index];
+                 edit_data_buffer_float = edit_data_buffer_float+ coof_float [temp_index + offset];
              else
                  edit_data_buffer_float = max_data;
              break;
@@ -461,7 +484,7 @@ void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8
             temp_index = cur_edit_index;
             if (temp_index > min_index)  temp_index--;
              if (  (edit_data_buffer_float - min_data) >=  coof_float[temp_index] )
-                 edit_data_buffer_float = edit_data_buffer_float-coof_float[temp_index];
+                 edit_data_buffer_float = edit_data_buffer_float-coof_float[temp_index + offset];
              else
                  edit_data_buffer_float = min_data;
              break;
@@ -776,30 +799,68 @@ static const u16 MenuFMCHRegMap[]={
                              0,       //46
 };
 
-u16 getDataModelID( u16 MENU_ID)
-{
-    switch (MENU_ID)
-    {
-        case COOF_P_1_ID:           return (COOF_P1);
-        case COOF_I_1_ID:           return (COOF_I1);
-        case COOF_P_2_ID:           return (COOF_P2);
-        case COOF_I_2_ID:           return (COOF_I2);
-        case COOF_P_3_ID:           return (COOF_P3);
-        case COOF_I_3_ID:           return (COOF_I3);
-        case AFTER_ZONE_SETTING_ID: return (AFTER_ZONE_SETTING);
-        case CDV_CH_COUNT_ID:       return (CDV_BP_CH_COUNT);
-        case MEASERING_UNIT_ID:     return (MEASERING_UNIT);
-        case OFFSET2_ID:            return (OFFSET_CH2);
-        case PRIOR_SENSOR_ID:       return (PRIOR_SENSOR );
-        case CLEAN_TIMER_ID:        return (CLEAN_TIMER);
-        case ZERO_POINT_TIMEOUT_ID: return (ZERO_POINT_TIMEOUT);
-        case KK_SENSOR_TYPE_ID:     return (KK_SENSOR_TYPE);
-        case CO2_SENSOR_TYPE_ID:    return (CO2_SENSOR_TYPE);
-        case H_SENSOR_TYPE_ID:      return (H_SENSOR_TYPE);
-        case F_CHANNEL_ID:          return (F_CHANNEL);
-        default: return 0;
-    }
-}
+static const u16 MenuCDV_BPRegMap[54]=
+                        {
+                                 0,    //0
+                                 0,    //1
+                                 0,    //2
+                                 0,    //3
+                                 0,    //4
+                                 0,    //5
+                                 0,    //6
+                                 0,    //7
+                                 0,    //8
+                                 SETTING_MIN ,    //9
+                                 SETTING_MID ,    //10
+                                 SETTING_MAX,    //11
+                                 CH1_SETTING,    //12
+                                 CH2_SETTING,    //13
+                                 F_CHANNEL,    //14
+                                 0,    //15
+                                 0,    //16
+                                 TEMP_MIN_SET,    //17
+                                 TEMP_MAX_SET,    //18
+                                 CO2_MIN_SET,    //19
+                                 CO2_MAX_SET,    //20
+                                 H_MIN_SET,    //21
+                                 H_MAX_SET,    //22
+                                 0,    //23
+                                 0,    //24
+                                 0,    //25
+                                 0,    //26
+                                 0,    //27
+                                 0,    //28
+                                 AFTER_ZONE_SETTING,    //29
+                                 CDV_BP_CH_COUNT,    //30
+                                 MEASERING_UNIT,    //31
+                                 CLEAN_TIMER,    //32
+                                 ZERO_POINT_TIMEOUT,    //33
+                                 PRIOR_SENSOR ,    //34
+                                 KK_SENSOR_TYPE,    //35
+                                 CO2_SENSOR_TYPE,    //36
+                                 H_SENSOR_TYPE,    //37
+                                 OFFSET_CH2,    //38
+                                 COOF_P1,    //39
+                                 COOF_I1,    //40
+                                 COOF_P2,    //41
+                                 COOF_I2,    //42
+                                 COOF_P3,    //43
+                                 COOF_I3,    //44
+                                 0,    //45
+                                 0,    //46
+                                 0,    //47
+                                 0,    //48
+                                 0,    //49
+                                 0,    //50
+                                 0,    //51
+                                 0,    //52
+                                 0,    //53
+                                 0,    //54
+
+                         };
+
+
+
 
 #define FILTER_ERROR  0x01
 #define SETTING_ERROR 0x02
@@ -810,10 +871,10 @@ u16 getDataModelID( u16 MENU_ID)
 static u8 error_shif = 0;
 static u8 const *  ErrorString[]={"HEPA Фильтр засорен","Невозможно","Низкое напряжение","Высокое напряжение"};
 static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение"};
-static u8 const *  SettingTilteStirnf[]={"1/9 ","1/21 ","1/18 "};
-static u8 const *  Setting2TilteStirnf[]={"2/9 ","2/21 ","2/18 "};
-static u8 const *  VoltageTilteStirnf[] ={"5/9 ","20/21 ","17/18 "};
-static u8 const *  CalTilteStirnf[] ={"7/9 ","21/21 ","20/20 "};
+static u8 const *  SettingTilteStirnf[]={"1/9","1/19","1/18"};
+static u8 const *  Setting2TilteStirnf[]={"2/9","2/19","2/18"};
+static u8 const *  VoltageTilteStirnf[] ={"5/9","18/19","17/18"};
+static u8 const *  CalTilteStirnf[] ={"7/9","19/19","20/20"};
 
 void vSetTitle(u16 data_id, u8 * str )
 {
@@ -835,9 +896,9 @@ void vSetTitle(u16 data_id, u8 * str )
     }
 
 }
-void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len)
+void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 * res)
 {
-    u16 reg_id = getDataModelID(data_id);
+    u16 reg_id = MenuCDV_BPRegMap[data_id - CVD_SETTING1_ID];
     switch (data_id)
     {
 
@@ -931,7 +992,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len)
                       sprintf(str,"%01i",edit_data_buffer_byte );
                       break;
                   default:
-                      vByteDataEdit(0,reg_id,command,0,1,0);
+                      vByteDataEdit(0,reg_id,command,0,2,1);
                       break;
               }
             break;
@@ -951,6 +1012,11 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len)
              }
             break;
         case OFFSET2_ID:
+        case SETTING_MIN_ID:
+        case SETTING_AVER_ID:
+        case SETTING_MAX_ID:
+        case FAIL_SET_CH1_ID:
+        case FAIL_SET_CH2_ID:
             switch (command)
             {
                  case CMD_READ:
@@ -960,7 +1026,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len)
                       sprintf(str,"%+07.1f",edit_data_buffer_float );
                       break;
                 default:
-                      vFloatDataEdit(reg_id, command,7,2,9999.9,-9999.9);
+                      vFloatDataEdit(reg_id, command,5,1,9999.9,-9999.9);
                       break;
             }
             break;
@@ -994,6 +1060,67 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len)
                       }
             break;
 
+            case T_SENSOR_MIN_ID:
+            case T_SENSOR_MAX_ID:
+            case H_SENSOR_MIN_ID:
+            case H_SENSOR_MAX_ID:
+                          switch (command)
+                          {
+                               case CMD_READ:
+                                    sprintf(str,"%03i",getReg16(reg_id) );
+                                    break;
+                               case CMD_EDIT_READ:
+                                    sprintf(str,"%03i",edit_data_buffer_byte );
+                                    break;
+                               default:
+                                    vByteDataEdit(1,reg_id,command,2,999,0);
+                                    break;
+                         }
+                         break;
+            case CO2_SENSOR_MIN_ID:
+            case CO2_SENSOR_MAX_ID:
+                           switch (command)
+                                       {
+                                            case CMD_READ:
+                                                 sprintf(str,"%04i",getReg16(reg_id) );
+                                                 break;
+                                            case CMD_EDIT_READ:
+                                                 sprintf(str,"%04i",edit_data_buffer_byte );
+                                                 break;
+                                            default:
+                                                 vByteDataEdit(1,reg_id,command,3,9999,0);
+                                                 break;
+                                      }
+                                      break;
+
+                break;
+                case ZERO_CAL_COMMAND:
+                    switch (command)
+                    {
+                        case CMD_READ:
+                            if ((USER_GetProccesState() == USER_RROCCES_WORK))
+                                  strcpy(str,"Откалибравать 0?");
+                            else
+                            {
+                                if (SelectEditFlag )  strcpy(str,"Отменить калиборвку?");
+                                else
+                                  strcpy(str,"Калиборвка...");
+                            }
+                            break;
+
+                        case CMD_START_EDIT:
+                            if ((USER_GetProccesState() == USER_RROCCES_WORK))
+                                SystemCalibraionStart();
+                            else
+                                SystemCalibraionStop();
+                             *res = 1;
+                             break;
+                        default:
+                            start_edit_flag = 0;
+                            break;
+
+                    }
+                    break;
     }
 }
 
@@ -1012,20 +1139,14 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
         case JOURNAL_TIME_ID:
                if (getReg16(RECORD_COUNT)!=0)
                    sprintf(str,TimeFormatString,time.hours,time.minutes,time.seconds);
-               else
-                   strcpy(str,"");
                break;
            case JOURNAL_DATE_ID:
                if (getReg16(RECORD_COUNT)!=0)
                    sprintf(str,DateFormatString,date.date,date.month,date.year);
-               else
-                   strcpy(str,"");
                break;
            case JOURNAL_INFO1_ID:
                if (getReg16(RECORD_COUNT)!=0)
                    strcpy(str,ErrorString[error_flag]);
-               else
-                   strcpy(str,"");
                break;
            case JOURNAL_INFO2_ID:
                if (getReg16(RECORD_COUNT)!=0)
@@ -1046,8 +1167,6 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                            break;
                    }
                }
-               else
-                   strcpy(str,"");
                 break;
            case JURNAL_RECORD_ID:
                if  (getReg16(RECORD_COUNT) == 0)
@@ -1117,7 +1236,6 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                    switch (command )
                    {
                        case CMD_EDIT_READ:
-                           strcpy(str,"");
                            break;
                        case CMD_READ:
                            if ( SelectEditFlag )
@@ -1125,7 +1243,6 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                            else
                                strcpy(str,"");
                            break;
-
                        case CMD_START_EDIT:
                             saveReg16(RECORD_INDEX, 0);
                             saveReg16(RECORD_COUNT, 0);
@@ -1133,8 +1250,7 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                             break;
                       default:
                           start_edit_flag = 0;
-
-                       break;
+                          break;
                    }
                    break;
                case CUR_TEMP_ID:
@@ -1163,6 +1279,7 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
     u8 MACAddr[6];
     u8 temp_byte,temp_state = 0;
     u16 max,min;
+    str[0]=0;
     if (index!=0) *index = cur_edit_index;
     if (len!=0)   *len = 1;
     if (( data_id >=TITLE_FIRST) &&  ( data_id <=TITLE_LAST))
@@ -1172,12 +1289,11 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
     else
     if ((data_id>= CDV_BP_FIRST) && ( data_id<=CDV_BP_LAST))
     {
-
-        vSetCDV_PB(data_id,str,command,len);
+        vSetCDV_PB(data_id,str,command,len,&res);
     }
+    else
     if ((data_id>= FMCH_FIRST) && ( data_id<=FMCH_LAST))
     {
-
         vSetFMCH(data_id,str,command,len,&res);
     }
     else
@@ -1212,12 +1328,10 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                break;
           case CURRENT_ALARM_COUNT_ID:
                temp_byte =  USER_GerErrorState();
-               if (temp_byte == 0)
-                   strcpy(str,"");
-               else
+               if (temp_byte != 0)
                {
-                if ((blink_counter ==0) || ((temp_byte>>error_shif) & 0x01)==0)
-                {
+                   if ((blink_counter ==0) || ((temp_byte>>error_shif) & 0x01)==0)
+                   {
                      for (u8 i=0;i<5;i++)
                      {
                           if (++error_shif>3) error_shif = 0;
@@ -1227,8 +1341,8 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                                break;
                            }
                      }
-                }
-                strcpy(str,ViewErrorString[error_shif]);
+                   }
+                   strcpy(str,ViewErrorString[error_shif]);
                }
                break;
         case COOF_P_ID:
@@ -1294,7 +1408,7 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                     sprintf(str,"%03i",edit_data_buffer_byte );
                      break;
                 default:
-                    vByteDataEdit(1,reg_id,command,3,999,0);
+                    vByteDataEdit(1,reg_id,command,2,999,0);
                     break;
             }
             break;
@@ -1345,46 +1459,34 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                     }
                     vByteDataEdit(0,reg_id,command,2,max,min);
                     break;
-        }
-        break;
-    case ZERO_CALIBRATE_ID:
-        switch (command )
-        {
-            case CMD_EDIT_READ:
-                   strcpy(str,"");
-                   break;
-            case CMD_READ:
-                       if ( SelectEditFlag )
-                       {
-                           if ((USER_GetProccesState() == USER_PROCCES_IDLE))
+            }
+            break;
+        case ZERO_CALIBRATE_ID:
+            if (command == CMD_READ )
+            {
+              if ( SelectEditFlag )
+              {
+                   if ((USER_GetProccesState() == USER_PROCCES_IDLE))
                                strcpy(str,"Старт?");
                            else
                                strcpy(str,"Заблок");
-
-                       }
-                        else
-                            strcpy(str,"");
-                        break;
-
-                    case CMD_START_EDIT:
-                        if ((USER_GetProccesState() == USER_PROCCES_IDLE))
-                        {
-                         CalibrateZeroStart();
-
-                        }
-                         res = 1;
-                         break;
-                   default:
-                       start_edit_flag = 0;
-                    break;
+              }
+            }
+            else if (command == CMD_START_EDIT)
+            {
+                if ((USER_GetProccesState() == USER_PROCCES_IDLE))
+                {
+                  CalibrateZeroStart();
                 }
-
-        break;
+                res = 1;
+            }
+            else
+                start_edit_flag = 0;
+            break;
         case DEVICE_RESET_ID :
                switch (command )
                {
                    case CMD_EDIT_READ:
-                       strcpy(str,"");
                        break;
                    case CMD_READ:
                        if ( SelectEditFlag )
@@ -1394,9 +1496,8 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                         NVIC_SystemReset();
                         break;
                   default:
-                      start_edit_flag = 0;
-
-                   break;
+                        start_edit_flag = 0;
+                        break;
                }
                break;
            case CONTRAST_ID:
@@ -1412,7 +1513,7 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                        sprintf(str,"%02i",edit_data_buffer_byte );
                        break;
                    default:
-                       vByteDataEdit(0,reg_id,command,2,99,1);
+                       vByteDataEdit(0,reg_id,command,1,99,1);
                        break;
                }
         break;
@@ -1468,10 +1569,9 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
          }
         break;
     default:
-        if (str!=0)
-        strcpy(str,"0,0");
         break;
     }
+
     }
     return (res);
 }
@@ -1484,6 +1584,8 @@ static void vDraw( xScreenObjet * pScreenDraw)
     u8 str[50];
     for (u8 i=0;i<MAX_STRING_NUMBER;i++)
     {
+
+
         switch (pScreenDraw[i].xType)
         {
         case TEXT_STRING:
@@ -1517,7 +1619,7 @@ static void vDraw( xScreenObjet * pScreenDraw)
                 {
                    if ( blink_counter <= 5)
                    {
-                       u8g2_DrawBox( &u8g2, 128-len-offset, y-10 , len , 11 );
+                       u8g2_DrawBox( &u8g2, 127-len-offset, y-10 , len , 11 );
                        u8g2_SetDrawColor(&u8g2,0);
                        u8g2_SetFontMode(&u8g2,1);
                    }
@@ -1525,14 +1627,14 @@ static void vDraw( xScreenObjet * pScreenDraw)
                 if (edit_data[i]==3)
                 {
                     if (box_len == 1)
-                       u8g2_DrawBox( &u8g2, 128-6*(edit_index+1)-offset, y-10 , 6 , 11 );
+                       u8g2_DrawBox( &u8g2, 127-6*(edit_index+1)-offset, y-10 , 6 , 11 );
                     else
-                        u8g2_DrawBox( &u8g2, 128-len-offset, y-10 , len , 11 );
+                        u8g2_DrawBox( &u8g2, 127-len-offset, y-10 , len , 11 );
                     u8g2_SetDrawColor(&u8g2,2);
                     u8g2_SetFontMode(&u8g2,1);
                 }
             }
-            u8g2_DrawUTF8(&u8g2,128-len-offset,y,str);
+            u8g2_DrawUTF8(&u8g2,127-len-offset,y,str);
             u8g2_SetDrawColor(&u8g2,1);
             u8g2_SetFontMode(&u8g2,0);
             break;

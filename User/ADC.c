@@ -292,15 +292,15 @@ void ADC1_Init()
     ADC_RegularChannelConfig(ADC2, ADC2_CHANNEL[0], 1, ADC_SampleTime_239Cycles5);
     ADC_TempSensorVrefintCmd(ENABLE);
     memset(SenseBuffer1,0,Sens_BufferSize_MAX*2);
-    DataBuffer[0].ConversionalSize = sensor_timer[getReg8(SENSOR_COUNT )];
+    DataBuffer[0].ConversionalSize = 400;
     DataBuffer[0].pIndex = 0;
     DataBuffer[0].pBuff = SenseBuffer1;
-    DataBuffer[0].offset = 0;
+    DataBuffer[0].offset =0;
     memset(SenseBuffer2,0,Sens_BufferSize_MAX*2);
-    DataBuffer[1].ConversionalSize = sensor_timer[getReg8(SENSOR_COUNT )];
+    DataBuffer[1].ConversionalSize = 400;
     DataBuffer[1].pIndex = 0;
     DataBuffer[1].pBuff = SenseBuffer2;
-    DataBuffer[1].offset = 0;
+    DataBuffer[1].offset =0;
     DataBuffer[2].ConversionalSize = DC_24_BufferSize;
     DataBuffer[2].pIndex = 0;
     DataBuffer[2].pBuff = DC24Buffer;
@@ -330,8 +330,11 @@ void ADC1_Init()
 
 void vDataBufferInit()
 {
+
     DataBuffer[0].ConversionalSize = sensor_timer[getReg8(SENSOR_COUNT )];
     DataBuffer[1].ConversionalSize = sensor_timer[getReg8(SENSOR_COUNT )];
+    DataBuffer[0].offset =getRegi16(SENSOR1_ZERO);
+    DataBuffer[1].offset =getRegi16(SENSOR2_ZERO);
 }
 
 
@@ -673,7 +676,7 @@ void CalibrateZeroStart()
 
 u8 CalibrationZeroWhait()
 {
-    printf("%x\r\n",cla_zero_end);
+
     return (cla_zero_end);
 }
 
@@ -697,12 +700,12 @@ void CalibrateZero()
               temp = temp + calib_data[0][i];
               temp1 = temp1 + calib_data[1][i];
           }
-          DataBuffer[0].offset   =  temp  / CALIB_COUNT;
+          DataBuffer[0].offset    =  temp  / CALIB_COUNT;
           DataBuffer[1].offset    = temp1 / CALIB_COUNT;
           calibration_zero_flag = 0;
           calibration_zero_count = 0;
-          saveReg16(SENSOR1_ZERO, DataBuffer[0].offset );
-          saveReg16(SENSOR2_ZERO, DataBuffer[1].offset );
+          setReg16(SENSOR1_ZERO, DataBuffer[0].offset );
+          setReg16(SENSOR2_ZERO, DataBuffer[1].offset );
           cla_zero_end = 1;
       }
   }
@@ -725,8 +728,7 @@ void I2C_task(void *pvParameters)
     I2C_FSM_t fsm  = I2C_GET_BUSY;
     I2C_FSM_t fsm1 = I2C_GET_BUSY;
     u16 sensor_time_out;
-    DataBuffer[1].offset = getReg16(SENSOR1_ZERO );
-    DataBuffer[0].offset = getReg16(SENSOR2_ZERO );
+    vDataBufferInit();
     while(1)
     {
         xLastWakeTime =  xTaskGetTickCount ();
@@ -778,6 +780,7 @@ void I2C_task(void *pvParameters)
                 }
                 PressSens[0] = ((float)GetConversionali2c(&DataBuffer[0]));
                 PressSens[1] = ((float)GetConversionali2c(&DataBuffer[1]));
+
                 break;
             }
             else if (sensor_time_out > 5)
@@ -792,8 +795,6 @@ void I2C_task(void *pvParameters)
                     SENS2_FSM = SENSOR_TIME_OUT;
 
                 }
-
-
             }
             vSensFSM(0,&SENS1_FSM,&fsm,  &sens_press );
             vSensFSM(1,&SENS2_FSM,&fsm1, &sens_press1);

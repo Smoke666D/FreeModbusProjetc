@@ -216,17 +216,178 @@ float setTestDta(float input)
   return out;
 }
 
+
+void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u8 * set_point_old, uint8_t ac_voltage)
+{
+    u8 ss;
+    u8 c_type  =getReg8( CONTROL_TYPE );
+    if (MB_TASK_GetMode()!=2)
+    {
+       eSetDUT(OUT_2, (c_type == MKV_MB_DIN )? ucDinGet(INPUT_2) : getReg8(LIGTH) );
+    }
+    USER_SETTING_CHECK(c_type, set_point_old);
+
+    // Если засоренность фильта больше значения устваки, то выставляем предупрежние и делаем запись в журнал
+     FilterState = USER_FilterState(&ss);
+     if ( *HEPA_CONTROL_ON)
+     {
+          if  ((FilterState >=FILTER_WARNINR_VALUE) && ((error_state & FILTER_ERROR) == 0))
+          {
+                vADDRecord(FILTER_ERROR);
+                error_state |=FILTER_ERROR;
+          }
+     }
+     //Ecли есть ошибка включаем реле и зажигаем светодиод
+     if ( error_state  & ~SETTING_ERROR)
+     {
+         HAL_ResetBit(CRACH_Port,  CRACH_Pin);
+         eSetDUT(OUT_3,TRUE);
+     }
+     else
+     {
+         HAL_SetBit(CRACH_Port,  CRACH_Pin);
+         eSetDUT(OUT_3,FALSE);
+      }
+               //Свет
+      if (MB_TASK_GetMode() && (task_fsm != USER_PROCCES_IDLE))
+      {
+           task_fsm = USER_PROCCES_IDLE;
+           HAL_SetBit(CRACH_Port,  CRACH_Pin);
+           eSetDUT(OUT_3,FALSE);
+      }
+
+    switch (task_fsm)
+               {
+                   case USER_PROCCES_IDLE:
+
+                       eSetDUT(OUT_1,FALSE);
+                       PIDOut = 0;
+                       USER_AOUT_SET(DAC1,0);
+                       USER_AOUT_SET(DAC2,0);
+                       USER_AOUT_SET(DAC3,0);
+                       *start_timeout = 0;
+                       temp_counter = 0;
+                       error_state = 0;
+                       break;
+                   case USER_PEOCESS_WORK_TIME_OUT:
+
+                       if ( (++*start_timeout)> ( getReg8(FAN_START_TIMEOUT)*100))
+                       {
+                           task_fsm = USER_PEOCESS_ZERO_CALIB;
+                           CalibrateZeroStart();
+                       }
+                       break;
+                   case USER_PEOCESS_ZERO_CALIB:
+
+                       if (CalibrationZeroWhait())
+                       {
+                           printf("end calib\r\n");
+                           PIDOut = 0;
+                           Temp = testdata[0];
+                           UPDATE_COOF();
+                           PID_Init(&TPID,0,setTestDta( PIDOut));
+                           task_fsm = USER_RROCCES_WORK;
+                       }
+                       break;
+                   case USER_RROCCES_WORK:
+                       if (++*pid_counter >=10)
+                       {
+                           *pid_counter = 0;
+                           PID_Compute(&TPID,getAIN(SENS1));
+                           float PID_Out = PIDOut/1000.0;
+                           USER_AOUT_SET(DAC2,PID_Out);
+                           if ( ( fabs(SET_POINT-Temp) > ( SET_POINT*0.05) ) && ((PID_Out) >=9.5) && ((error_state & SETTING_ERROR )==0))
+                           {
+                               vADDRecord(SETTING_ERROR);
+                               error_state |= SETTING_ERROR;
+                           }
+                           if (fabs(SET_POINT-Temp) > ( SET_POINT*0.02) )
+                           {
+                               *HEPA_CONTROL_ON = 1;
+                           }
+                       }
+                       eSetDUT(OUT_1,TRUE);
+                       break;
+                   case USER_PROCESS_ALARM:
+                       if  ((ac_voltage <= getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  getReg8(LOW_VOLTAGE_OFF)))
+                       {
+                           task_fsm = USER_PROCCES_IDLE;
+                       }
+                       PIDOut = 0;
+                       USER_AOUT_SET(DAC2,0);
+                       eSetDUT(OUT_1,FALSE);
+                       break;
+               }
+
+}
+
+void SystemCalibraionStart()
+{
+   task_fsm = USER_PEOCESS_ZERO_CALIB;
+}
+void SystemCalibraionStop()
+{
+   task_fsm = USER_RROCCES_WORK;
+}
+
+
+void vCDV_FSM( u32 * start_timeout, u8 * cal_flag)
+{
+    switch (task_fsm)
+    {
+            case USER_PROCCES_IDLE:
+                task_fsm =USER_RROCCES_WORK;
+                break;
+            case USER_RROCCES_WORK:
+                *start_timeout = 0;
+                *cal_flag = 0;
+                break;
+            case USER_PEOCESS_ZERO_CALIB:
+
+                if ((*start_timeout) >= ( getReg16(ZERO_POINT_TIMEOUT)*6000) )
+                {
+                    printf("start \r\n");
+                    if (*cal_flag == 0)
+                    {
+                        CalibrateZeroStart();
+                        *cal_flag = 1;
+                    }
+                    else
+                    {
+                        if (CalibrationZeroWhait())
+                        {
+                            task_fsm = USER_RROCCES_WORK;
+                        }
+                    }
+                }
+                else
+                {
+                    (*start_timeout)++;
+                    if (getReg8(CDV_BP_CH_COUNT) >1 )  USER_AOUT_SET(DAC1,0);
+                    USER_AOUT_SET(DAC2,0);
+                }
+                break;
+            case USER_PROCESS_ALARM:
+                break;
+
+    }
+
+
+}
+
 void user_process_task(void *pvParameters)
 {
+   static u8 power_on = 0;
+   static u8 power_off_filter = 0;
    static u8 HEPA_CONTROL_ON = 0;
    static u8 low_voltage_alarm_timer =0;
    static u8 power_off_flag = 0;
    static u8 high_voltage_timeout = 0;
+   static u8 flag = 0;
    uint8_t ac_voltage;
    u8 set_point_old = 2;
    u32 pid_counter = 0;
    u32 start_timeout = 0;
-   u8 c_type;
    error_state = 0;
    task_fsm = USER_PROCCES_IDLE;
    FilterState = 0;
@@ -236,14 +397,11 @@ void user_process_task(void *pvParameters)
    while(1)
    {
        vTaskDelay(10);
-       c_type =getReg8(CONTROL_TYPE );
-       if (MB_TASK_GetMode()!=2)
-       {
-           eSetDUT(OUT_2, (c_type == MKV_MB_DIN )? ucDinGet(INPUT_2) : getReg8(LIGTH) );
-       }
        if (MB_TASK_GetMode()!=2)
        {
            ac_voltage = (uint8_t)getAIN(AC220);
+
+
            if  (ac_voltage >= getReg8(HIGH_VOLTAGE_ON))
            {
                if (task_fsm != USER_PROCESS_ALARM)
@@ -259,9 +417,6 @@ void user_process_task(void *pvParameters)
            }
            else
                high_voltage_timeout = 0;
-
-
-
            if ( ac_voltage <=  getReg8(LOW_VOLTAGE_ON))
            {
                if ((task_fsm != USER_PROCESS_ALARM) && (power_off_flag==0))
@@ -278,108 +433,43 @@ void user_process_task(void *pvParameters)
            else
                low_voltage_alarm_timer = 0;
            u8 ac_control_value = (u8) getAIN(AC220_CONTROL);
+           if (power_on)
+           {
+               if ((ac_control_value < 20.0))
+               {
+                   power_off_filter++;
+                   if ((power_off_flag==0) && (power_off_filter>2))
+                   {
+                       HAL_ResetBit(LDCDATA_2_3_E_REW_CD_LED_Port,  LCDLED_Pin);
+                       SaveBeforePowerOff();
+                       power_off_flag = 1;
+                       task_fsm = USER_PROCCES_IDLE;
+                   }
+               }
+               else
+                   power_off_filter = 0;
 
-           if (ac_control_value < 20.0)
-           {
-               if (power_off_flag==0)
+               if ((ac_control_value >40) && (power_off_flag))
                {
-                   SaveBeforePowerOff();
-                   power_off_flag = 1;
+                   printf("reset\r\n");
+                   vTaskDelay(10);
+                   NVIC_SystemReset();
+                   power_off_flag = 0;
                }
-           }
-           if (ac_control_value >40) power_off_flag = 0;
-           USER_SETTING_CHECK(c_type, &set_point_old);
-           u8 ss;
-           // Если засоренность фильта больше значения устваки, то выставляем предупрежние и делаем запись в журнал
-           FilterState = USER_FilterState(&ss);
-           if (HEPA_CONTROL_ON)
-           {
-               if  ((FilterState >=FILTER_WARNINR_VALUE) && ((error_state & FILTER_ERROR) == 0))
-               {
-                   vADDRecord(FILTER_ERROR);
-                   error_state |=FILTER_ERROR;
-               }
-           }
-           //Ecли есть ошибка включаем реле и зажигаем светодиод
-           if ( error_state  & ~SETTING_ERROR)
-           {
-               HAL_ResetBit(CRACH_Port,  CRACH_Pin);
-               eSetDUT(OUT_3,TRUE);
            }
            else
            {
-               HAL_SetBit(CRACH_Port,  CRACH_Pin);
-               eSetDUT(OUT_3,FALSE);
+              if ( ac_control_value >190)  power_on = 1;
            }
-            //Свет
-           if (MB_TASK_GetMode() && (task_fsm != USER_PROCCES_IDLE))
-                 {
-
-                     task_fsm = USER_PROCCES_IDLE;
-                     HAL_SetBit(CRACH_Port,  CRACH_Pin);
-                     eSetDUT(OUT_3,FALSE);
-                 }
-
-           switch (task_fsm)
+           switch (getReg8(DEVICE_TYPE))
            {
-               case USER_PROCCES_IDLE:
-
-                   eSetDUT(OUT_1,FALSE);
-                   PIDOut = 0;
-                   USER_AOUT_SET(DAC1,0);
-                   USER_AOUT_SET(DAC2,0);
-                   USER_AOUT_SET(DAC3,0);
-                   start_timeout = 0;
-                   temp_counter = 0;
-                   error_state = 0;
+               case 0:
+                   vFMCH_FSM(&start_timeout, &pid_counter, &HEPA_CONTROL_ON , &set_point_old, ac_voltage);
                    break;
-               case USER_PEOCESS_WORK_TIME_OUT:
-
-                   if ( (++start_timeout)> ( getReg8(FAN_START_TIMEOUT)*100))
-                   {
-                       task_fsm = USER_PEOCESS_ZERO_CALIB;
-                       CalibrateZeroStart();
-                   }
+               case 1:
+                   vCDV_FSM(&start_timeout,&flag);
                    break;
-               case USER_PEOCESS_ZERO_CALIB:
-
-                   if (CalibrationZeroWhait())
-                   {
-                       printf("end calib\r\n");
-                       PIDOut = 0;
-                       Temp = testdata[0];
-                       UPDATE_COOF();
-                       PID_Init(&TPID,0,setTestDta( PIDOut));
-                       task_fsm = USER_RROCCES_WORK;
-                   }
-                   break;
-               case USER_RROCCES_WORK:
-                   if (++pid_counter >=10)
-                   {
-                       pid_counter = 0;
-                       PID_Compute(&TPID,getAIN(SENS1));
-                       float PID_Out = PIDOut/1000.0;
-                       USER_AOUT_SET(DAC2,PID_Out);
-                       if ( ( fabs(SET_POINT-Temp) > ( SET_POINT*0.05) ) && ((PID_Out) >=9.5) && ((error_state & SETTING_ERROR )==0))
-                       {
-                           vADDRecord(SETTING_ERROR);
-                           error_state |= SETTING_ERROR;
-                       }
-                       if (fabs(SET_POINT-Temp) > ( SET_POINT*0.02) )
-                       {
-                           HEPA_CONTROL_ON = 1;
-                       }
-                   }
-                   eSetDUT(OUT_1,TRUE);
-                   break;
-               case USER_PROCESS_ALARM:
-                   if  ((ac_voltage <= getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  getReg8(LOW_VOLTAGE_OFF)))
-                   {
-                       task_fsm = USER_PROCCES_IDLE;
-                   }
-                   PIDOut = 0;
-                   USER_AOUT_SET(DAC2,0);
-                   eSetDUT(OUT_1,FALSE);
+               case 2:
                    break;
            }
        }
@@ -403,8 +493,6 @@ void USER_AOUT_SET(u8 channel, float data)
             HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_3 ,ref  );
             break;
     }
-
-
 }
 
 float USER_AOUT_GET(u8 channel)

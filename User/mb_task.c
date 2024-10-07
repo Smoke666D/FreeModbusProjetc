@@ -127,11 +127,11 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 
 
 #define CDV_OFFSET          100
-#define CDV_COUNT         31
+
 //§²§Ö§Ô§Ú§ã§ä§â§í CDV
-#define CDV_KOOF_P_MB           200
+#define CDV_KOOF_K_MP           200
 #define CDV_KOOF_I_MB           202
-#define CDV_KOOF_K_MP           204
+#define CDV_KOOF_P_MB           204
 #define CDV_KOOF_I1_MB          206
 #define CDV_KOOF_P1_MB          208
 #define CDV_KOOF_I2_MB          210
@@ -149,6 +149,9 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define CDV_CO2_SENSOR_TYPE     227
 #define CDV_H_SENSOR_TYPE       238
 #define CDV_F_CHANNEL           239
+
+#define CDV_COUNT             ( CDV_F_CHANNEL - CDV_KOOF_P_MB +1)
+
 
 #define CDV_INPUTS_COUNT          0
 
@@ -287,12 +290,13 @@ static const u16 FMCH_REGS_MAP[] ={
 
 
 static const u16 CDV_REGS_MAP[] = {
-                                               COOF_P,           //0
-                                               COOF_P,           //1
-                                               COOF_I,           //2
-                                               COOF_I,           //3
-                                               KOOFKPS,          //4
-                                               KOOFKPS,          //5
+
+                                               KOOFKPS,          //0
+                                               KOOFKPS,          //1
+                                               COOF_P,           //2
+                                               COOF_P,           //3
+                                               COOF_I,           //4
+                                               COOF_I,           //5
                                                COOF_I1,          //6
                                                COOF_I1,          //7
                                                COOF_P1,          //8
@@ -764,6 +768,12 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
         {
             case DEV_CDV:
             case DEV_BP:
+                 tempdata =(int32_t) (getRegFloat(COOF_P)*1000);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P_MB-reg_offet]);
+                  tempdata =(int32_t) (getRegFloat(COOF_I)*1000);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I_MB-reg_offet]);
+                  tempdata =(int32_t) (getRegFloat(KOOFKPS)*1000);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_K_MP-reg_offet]);
                   tempdata =(int32_t) (getRegFloat(COOF_P1)*1000);
                   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P1_MB-reg_offet]);
                   tempdata =(int32_t) (getRegFloat(COOF_I1)*1000);
@@ -776,20 +786,18 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
                   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P3_MB-reg_offet]);
                   tempdata =(int32_t) (getRegFloat(COOF_I3)*1000);
                   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-reg_offet]);
-                  tempdata =(int32_t) (getRegFloat(OFFSET_CH2)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-reg_offet]);
-                  tempdata =(int32_t) (getRegFloat(F_CHANNEL)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_F_CHANNEL-reg_offet]);
-                  for (u8 i=0;i<CDV_BP_REG8_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
+                 // tempdata =(int32_t) (getRegFloat(F_CHANNEL)*1000);
+                //  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_F_CHANNEL-reg_offet]);
+                 for (u8 i=0;i<2;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
                   {
 
-                       usRegHoldingBuf[CDV_BP_REGS8[i] -CDV_OFFSET ]      = getReg8(CDV_REGS_MAP[CDV_BP_REGS8[i] -CDV_OFFSET]);
+                       usRegHoldingBuf[CDV_BP_REGS8[i] -reg_offet ]      = getReg8(CDV_REGS_MAP[CDV_BP_REGS8[i] -reg_offet*2]);
                   }
-                  for (u8 i=0;i<CDV_BP_REG_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  16 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
+                /*  for (u8 i=0;i<CDV_BP_REG_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  16 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
                   {
 
                        usRegHoldingBuf[CDV_BP_REGS[i]]      = getReg16(CDV_REGS_MAP[CDV_BP_REGS[i]]);
-                  }
+                  }*/
                   break;
             case DEV_FMCH:
                 UpdateFMCHHoldings();

@@ -19,6 +19,7 @@ typedef enum
     USER_PROCESS_ALARM,
     USER_PEOCESS_WORK_TIME_OUT,
     USER_PEOCESS_ZERO_CALIB,
+    USER_PROCESS_POWER_OFF,
 } USER_PROCESS_FSM_t;
 
 
@@ -26,6 +27,8 @@ typedef enum
 #define CALIBRATE_CODE 1
 #define STOP_CODE      0
 
+void SystemCalibraionStop();
+void SystemCalibraionStart();
 u8 getProcessStateCode();
 void USER_AOUT_SET(u8 channel, float data);
 float USER_AOUT_GET(u8 channel);

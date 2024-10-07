@@ -15,7 +15,7 @@
 
 #define SW_V                 2
 #define SW_V2                0
-#define SW_V3                3
+#define SW_V3                5
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -70,13 +70,24 @@
 #define CDV_BP_CH_COUNT       ( MEASERING_UNIT     + sizeof(uint8_t) )
 #define PRIOR_SENSOR          ( CDV_BP_CH_COUNT    + sizeof(uint8_t) )
 #define CLEAN_TIMER           ( PRIOR_SENSOR       + sizeof(uint8_t) )
-#define ZERO_POINT_TIMEOUT    ( CLEAN_TIMER       + sizeof(uint8_t) )
-#define KK_SENSOR_TYPE        ( ZERO_POINT_TIMEOUT  + sizeof(uint16_t) )
+#define ZERO_POINT_TIMEOUT    ( CLEAN_TIMER        + sizeof(uint8_t) )
+#define TEMP_MIN_SET          ( ZERO_POINT_TIMEOUT  + sizeof(uint16_t) )
+#define TEMP_MAX_SET          ( TEMP_MIN_SET  + sizeof(uint16_t) )
+#define CO2_MIN_SET           ( TEMP_MAX_SET  + sizeof(uint16_t) )
+#define CO2_MAX_SET           ( CO2_MIN_SET  + sizeof(uint16_t) )
+#define H_MIN_SET             ( CO2_MAX_SET  + sizeof(uint16_t) )
+#define H_MAX_SET             ( H_MIN_SET  + sizeof(uint16_t) )
+#define KK_SENSOR_TYPE        ( H_MAX_SET  + sizeof(uint16_t) )
 #define CO2_SENSOR_TYPE       ( KK_SENSOR_TYPE + sizeof(uint8_t) )
 #define H_SENSOR_TYPE         ( CO2_SENSOR_TYPE + sizeof(uint8_t) )
 #define F_CHANNEL             ( H_SENSOR_TYPE   + sizeof(uint8_t) )
-#define OFFSET_CH2            ( F_CHANNEL       + sizeof(uint32_t) )
-#define FILTER_LOW            ( OFFSET_CH2         + sizeof(uint32_t) )
+#define SETTING_MAX           ( F_CHANNEL       + sizeof(uint32_t) )
+#define SETTING_MIN           ( SETTING_MAX       + sizeof(uint32_t) )
+#define SETTING_MID           ( SETTING_MIN       + sizeof(uint32_t) )
+#define OFFSET_CH2            ( SETTING_MID       + sizeof(uint32_t) )
+#define CH1_SETTING           ( OFFSET_CH2         + sizeof(uint32_t) )
+#define CH2_SETTING           ( CH1_SETTING         + sizeof(uint32_t) )
+#define FILTER_LOW            ( CH2_SETTING         + sizeof(uint32_t) )
 #define FILTER_HIGH           ( FILTER_LOW + sizeof(uint16_t) )
 #define MOTO_HOURS            ( FILTER_HIGH + sizeof(uint16_t) )
 #define RECORD_COUNT          ( MOTO_HOURS  + sizeof(uint32_t)  )
@@ -156,6 +167,7 @@ typedef enum
   SETTING_ERROR   =3
 } FMCH_ERROR_t;
 
+int16_t getRegi16(u16 reg_adress );
 void vDataModelResetJournal();
 float convert_int_to_float( u16 * data);
 void convert_float_to_int(float fdata, u16 * data);

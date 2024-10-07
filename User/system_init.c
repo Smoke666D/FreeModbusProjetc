@@ -171,7 +171,6 @@ void vDefaultTask( void  * argument )
             case STATE_INIT:
                 vDrawBitmap();
                 xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
-                vDataBufferInit();
                 device = getReg8(DEVICE_TYPE);
                 for (uint16_t k=0; k< 3000;k++)
                 {

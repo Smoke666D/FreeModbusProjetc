@@ -45,21 +45,36 @@ DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[CONTRAST]            = 50;
                DATA_MODEL_REGISTER[MOD_BUS_TIMEOUT ]    = 25;
                DATA_MODEL_REGISTER[FAN_START_TIMEOUT ] =  20;
-               DATA_MODEL_REGISTER[CLEAN_TIMER]       =   20;
+               DATA_MODEL_REGISTER[CLEAN_TIMER]        =  20;
+               DATA_MODEL_REGISTER[CDV_BP_CH_COUNT]    =  1;
                setRegFloat(KOOFKPS , 36.0);
                setRegFloat(COOF_I,15.0);
                setRegFloat(COOF_P,5.0);
-               setRegFloat(COOF_I1,0.5);
-               setRegFloat(COOF_P1,5);
-               setRegFloat(COOF_I2,0.5);
-               setRegFloat(COOF_P2,5);
-               setRegFloat(COOF_I3,0.5);
-               setRegFloat(COOF_P3,5);
+               setRegFloat(COOF_I1,15.0);
+               setRegFloat(COOF_P1,5.0);
+               setRegFloat(COOF_I2,15.0);
+               setRegFloat(COOF_P2,5.0);
+               setRegFloat(COOF_I3,15.0);
+               setRegFloat(COOF_P3,5.0);
                setReg16(SETTING1, 900);
                setReg16(SETTING2, 600);
                setReg16(IP_PORT,502);
                setReg16( FILTER_LOW, 150);
                setReg16( FILTER_HIGH, 300);
+               setRegFloat(SETTING_MIN , 10.1);
+               setRegFloat(SETTING_MID , 12.3);
+               setRegFloat(SETTING_MAX , 14.4);
+               setRegFloat(CH1_SETTING  , 10.0);
+               setRegFloat(CH2_SETTING  , 13.5);
+
+
+
+               setReg16(TEMP_MIN_SET, 10);
+               setReg16(TEMP_MAX_SET,11);
+               setReg16(CO2_MIN_SET,12);
+               setReg16(CO2_MAX_SET,13);
+               setReg16(H_MIN_SET  ,14);
+               setReg16(H_MAX_SET  ,15);
                DATA_MODEL_REGISTER[SENSOR_COUNT]        = TIME_1_0;
                if (WriteEEPROM(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 1000 ,2) == EEPROM_OK) printf("EEPROMwtiye\r\n");
                ReadEEPROMData(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ,2);
@@ -97,6 +112,7 @@ void saveReg16( u16 reg_adress, u16 data)
             break;
     }
     setReg16(reg_adress,data);
+    printf("set_reg\r\n");
     WriteEEPROM(reg_adress, &DATA_MODEL_REGISTER[ reg_adress], 2, 10, 2);
 }
 
@@ -176,6 +192,13 @@ void SaveReg8( u16 reg_adress, u16 data)
 u16 getReg16(u16 reg_adress )
 {
     uint16_t  data =  (u16)DATA_MODEL_REGISTER[reg_adress] | (u16)(DATA_MODEL_REGISTER[reg_adress+1])<<8;
+    return  data;
+}
+
+
+int16_t getRegi16(u16 reg_adress )
+{
+    int16_t  data = (int16_t) (DATA_MODEL_REGISTER[reg_adress] | (DATA_MODEL_REGISTER[reg_adress+1])<<8);
     return  data;
 }
 
@@ -335,6 +358,9 @@ void JournalClear()
 
 void SaveBeforePowerOff()
 {
+
     WriteEEPROM(MOTO_HOURS , &DATA_MODEL_REGISTER[MOTO_HOURS], 4,10, 2 );
     WriteEEPROM(RESURSE  ,   &DATA_MODEL_REGISTER[RESURSE ],   4,10, 2 );
+    WriteEEPROM(SENSOR1_ZERO, &DATA_MODEL_REGISTER[SENSOR1_ZERO],   2,10, 2 );
+    WriteEEPROM(SENSOR2_ZERO, &DATA_MODEL_REGISTER[SENSOR2_ZERO],   2,10, 2 );
 }
