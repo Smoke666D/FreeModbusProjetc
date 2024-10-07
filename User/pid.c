@@ -40,11 +40,10 @@ void PID_Init(PID_TypeDef *uPID, float LastOut, float LastInput)
 
 }
 
-void PID(PID_TypeDef *uPID, float *Input, float *Output, float *Setpoint, float Kp, float Ki, float Kd,  PIDCD_TypeDef ControllerDirection)
+void PID(PID_TypeDef *uPID,  float *Output, float *Setpoint, float Kp, float Ki, float Kd,  PIDCD_TypeDef ControllerDirection)
 {
 	/* ~~~~~~~~~~ Set parameter ~~~~~~~~~~ */
 	uPID->MyOutput   = Output;
-	uPID->MyInput    = Input;
 	uPID->MySetpoint = Setpoint;
 	
 
@@ -59,9 +58,9 @@ void PID(PID_TypeDef *uPID, float *Input, float *Output, float *Setpoint, float 
 
 }
 
-void PID2(PID_TypeDef *uPID, float *Input, float *Output, float *Setpoint, float Kp, float Ki,float Kd, PIDCD_TypeDef ControllerDirection)
+void PID2(PID_TypeDef *uPID,  float *Output, float *Setpoint, float Kp, float Ki,float Kd, PIDCD_TypeDef ControllerDirection)
 {
-	PID(uPID, Input, Output, Setpoint, Kp, Ki, Kd, ControllerDirection);
+	PID(uPID,  Output, Setpoint, Kp, Ki, Kd, ControllerDirection);
 }
 
 /* ~~~~~~~~~~~~~~~~~ Computing ~~~~~~~~~~~~~~~~~ */

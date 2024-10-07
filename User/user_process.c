@@ -24,6 +24,8 @@
 
 
 static  PID_TypeDef TPID;
+static  PID_TypeDef TPID2;
+static  PID_TypeDef InputTPID;
 static u8 setting_change_flag =0;    //Флаг измения значения устаки, нужен для изменения отображения на индикаторе текущей уставки
 static TaskHandle_t processTaskHandle;
 static USER_PROCESS_FSM_t task_fsm;
@@ -32,6 +34,8 @@ static float setpoint;
 static long temp_counter;
 static long mb_time_out = 0;
 static float SET_POINT;
+static float SET_POINT1;
+static float SET_POINT_INPUT;
 static u8 error_state;
 
 TaskHandle_t * getUserProcessTaskHandle()
@@ -196,6 +200,8 @@ float getDAC1_Out()
 u16 testdata[10]={700,680,670,660,650,670,685,500,550,625};
 static float Temp;
 static float PIDOut;
+static float PIDOut2;
+static float PID_FirstOut;
 
 static u16 counterpid = 0;
 
@@ -331,16 +337,67 @@ void SystemCalibraionStop()
 }
 
 
-void vCDV_FSM( u32 * start_timeout, u8 * cal_flag)
+u8 vCDV_SetpointCheck()
+{
+   // SET_POINT =
+   //                 SET_POINT1 = getRegFloat(OFFSET_CH2);
+
+    return 0;
+}
+
+void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag)
 {
     switch (task_fsm)
     {
             case USER_PROCCES_IDLE:
+
                 task_fsm =USER_RROCCES_WORK;
                 break;
             case USER_RROCCES_WORK:
                 *start_timeout = 0;
                 *cal_flag = 0;
+                if (++*pid_counter >=10)
+                {
+                    *pid_counter = 0;
+
+                    u8 reg_mode = vCDV_SetpointCheck();
+
+                    switch (reg_mode)
+                    {
+                        case 0:
+                            USER_AOUT_SET(DAC1,0.0);
+                            break;
+                        case 1:
+                            USER_AOUT_SET(DAC1,10.0);
+                            break;
+                        default:
+                            SET_POINT = PID_FirstOut;
+                            PID_Compute(&TPID,getAIN(SENS1));
+                            float PID_Out = PIDOut/1000.0;
+                            USER_AOUT_SET(DAC1,PID_Out);
+                            break;
+                    }
+
+
+                    if (getReg8(CDV_BP_CH_COUNT) == 2)
+                    {
+                        switch (reg_mode)
+                        {
+                              case 0:
+                                  USER_AOUT_SET(DAC2,0.0);
+                                  break;
+                              case 1:
+                                  USER_AOUT_SET(DAC1,10.0);
+                                  break;
+                              default:
+                                  SET_POINT1  = SET_POINT + getRegFloat(OFFSET_CH2);
+                                  PID_Compute(&TPID2,getAIN(SENS2));
+                                  float PID_Out = PIDOut2/1000.0;
+                                  USER_AOUT_SET(DAC2,PID_Out);
+                        }
+
+                    }
+                }
                 break;
             case USER_PEOCESS_ZERO_CALIB:
 
@@ -388,12 +445,22 @@ void user_process_task(void *pvParameters)
    u8 set_point_old = 2;
    u32 pid_counter = 0;
    u32 start_timeout = 0;
+   u8 process_mode = getReg8(DEVICE_TYPE);
    error_state = 0;
    task_fsm = USER_PROCCES_IDLE;
    FilterState = 0;
-   PID(&TPID, &Temp, &PIDOut, &SET_POINT, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
-   PID_SetOutputLimits(&TPID,(float)1000.0,(float)10000.0);
+   PID(&TPID,  &PIDOut, &SET_POINT, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
+   if (process_mode == 0)
+       PID_SetOutputLimits(&TPID,(float)1000.0,(float)10000.0);
+   else
+   {
+       PID_SetOutputLimits(&TPID,(float)0000.0,(float)10000.0);
+   }
+   PID(&TPID2, &PIDOut2, &SET_POINT1, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
+   PID_SetOutputLimits(&TPID2,(float)0000.0,(float)10000.0);
 
+   PID(&InputTPID, &PID_FirstOut, &SET_POINT_INPUT, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
+   PID_SetOutputLimits(&InputTPID,(float)0000.0,(float)250000.0);
    while(1)
    {
        vTaskDelay(10);
@@ -461,13 +528,13 @@ void user_process_task(void *pvParameters)
            {
               if ( ac_control_value >190)  power_on = 1;
            }
-           switch (getReg8(DEVICE_TYPE))
+           switch (process_mode )
            {
                case 0:
                    vFMCH_FSM(&start_timeout, &pid_counter, &HEPA_CONTROL_ON , &set_point_old, ac_voltage);
                    break;
                case 1:
-                   vCDV_FSM(&start_timeout,&flag);
+                   vCDV_FSM(&start_timeout,&pid_counter,&flag);
                    break;
                case 2:
                    break;

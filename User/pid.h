@@ -183,7 +183,6 @@ typedef struct
 	float          Ki;
 	float          Kd;
 
-	float          *MyInput;
 	float          *MyOutput;
 	float          *MySetpoint;
 
@@ -204,8 +203,8 @@ typedef struct
 /* :::::::::::::: Init ::::::::::::: */
 void PID_Init(PID_TypeDef *uPID,float LastOut, float LastInput);
 
-void PID(PID_TypeDef *uPID, float *Input, float *Output, float *Setpoint, float Kp, float Ki, float Kd,  PIDCD_TypeDef ControllerDirection);
-void PID2(PID_TypeDef *uPID, float *Input, float *Output, float *Setpoint, float Kp, float Ki, float Kd, PIDCD_TypeDef ControllerDirection);
+void PID(PID_TypeDef *uPID,  float *Output, float *Setpoint, float Kp, float Ki, float Kd,  PIDCD_TypeDef ControllerDirection);
+void PID2(PID_TypeDef *uPID,  float *Output, float *Setpoint, float Kp, float Ki, float Kd, PIDCD_TypeDef ControllerDirection);
 
 /* ::::::::::: Computing ::::::::::: */
 uint8_t PID_Compute(PID_TypeDef *uPID, float input);

@@ -763,35 +763,36 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
     }
     else
     {
-        u16 reg_offet = 100;
+        u16 reg_offet;
         switch ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE))
         {
             case DEV_CDV:
             case DEV_BP:
-                 tempdata =(int32_t) (getRegFloat(COOF_P)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P_MB-reg_offet]);
+                  reg_offet  =  (getReg8(DEVICE_TYPE) == DEV_CDV) ? 200 : 300;
+                  tempdata =(int32_t) (getRegFloat(COOF_P)*1000);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P_MB-CDV_OFFSET]);
                   tempdata =(int32_t) (getRegFloat(COOF_I)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I_MB-reg_offet]);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I_MB-CDV_OFFSET]);
                   tempdata =(int32_t) (getRegFloat(KOOFKPS)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_K_MP-reg_offet]);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_K_MP-CDV_OFFSET]);
                   tempdata =(int32_t) (getRegFloat(COOF_P1)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P1_MB-reg_offet]);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P1_MB-CDV_OFFSET]);
                   tempdata =(int32_t) (getRegFloat(COOF_I1)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I1_MB-reg_offet]);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I1_MB-CDV_OFFSET]);
                   tempdata =(int32_t) (getRegFloat(COOF_P2)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P2_MB-reg_offet]);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P2_MB-CDV_OFFSET]);
                   tempdata =(int32_t) (getRegFloat(COOF_I2)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I2_MB-reg_offet]);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I2_MB-CDV_OFFSET]);
                   tempdata =(int32_t) (getRegFloat(COOF_P3)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P3_MB-reg_offet]);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P3_MB-CDV_OFFSET]);
                   tempdata =(int32_t) (getRegFloat(COOF_I3)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-reg_offet]);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-CDV_OFFSET]);
                  // tempdata =(int32_t) (getRegFloat(F_CHANNEL)*1000);
                 //  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_F_CHANNEL-reg_offet]);
                  for (u8 i=0;i<2;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
                   {
 
-                       usRegHoldingBuf[CDV_BP_REGS8[i] -reg_offet ]      = getReg8(CDV_REGS_MAP[CDV_BP_REGS8[i] -reg_offet*2]);
+                       usRegHoldingBuf[CDV_BP_REGS8[i] -CDV_OFFSET ]      = getReg8(CDV_REGS_MAP[CDV_BP_REGS8[i] -reg_offet]);
                   }
                 /*  for (u8 i=0;i<CDV_BP_REG_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  16 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
                   {
