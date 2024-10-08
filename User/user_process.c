@@ -19,6 +19,7 @@
 #define SETTING_ERROR 0x02
 #define LOW_VOLTAGE_ERROR 0x04
 #define HIGH_VOLTAGE_ERROR 0x08
+#define DIN_ERROR          0x10
 
 
 
@@ -97,7 +98,6 @@ uint16_t USER_GetFact(u8 * state)
  if (task_fsm == USER_RROCCES_WORK)
  {
      *state = 1;
-     //printf("DATA = %f, sqrt = %f, k=%f", getAIN(SENS1), sqrt((float)getAIN(SENS1)),getRegFloat(KOOFKPS) );
     return (u16)( sqrt((float)getAIN(SENS1))*getRegFloat(KOOFKPS)) ;
  }
  else
@@ -106,6 +106,9 @@ uint16_t USER_GetFact(u8 * state)
     return 0;
  }
  }
+
+
+
 
 
 
@@ -336,14 +339,66 @@ void SystemCalibraionStop()
    task_fsm = USER_RROCCES_WORK;
 }
 
+static u32 clean_timer = 0;
+
 
 u8 vCDV_SetpointCheck()
 {
+    error_state &=~DIN_ERROR;  //Сбрасываем ошибку дискретных входов
+    u8 din_mask = (u8)uiGetDinMask();
+    if (din_mask & 0x01)return 0;
+    if (din_mask & 0x10)
+    {
+       u32 clean_timer_time_out = getReg8(CLEAN_TIMER)*600;
+        if (++clean_timer >= clean_timer_time_out)
+        {
+            clean_timer = clean_timer_time_out;
+            return 4;
+        }
+    }
+    else
+        clean_timer = 0;
+    switch (getReg8(INPUT_SENSOR_TYPE))
+    {
+      case 0:
+          if ((getReg8(CONTROL_TYPE))==0 )
+          {
+              u8 din_mask = (u8)uiGetDinMask();
+              switch (din_mask & 0xE)
+              {
+                  case 0x02:
+                      return (1);
+                      break;
+                  case 0x04:
+                      return (2);
+                      break;
+                  case 0x08:
+                      return (3);
+                      break;
+                  default:
+                      error_state |=DIN_ERROR;
+                      return (0);
+                      break;
+              }
+          }
+          break;
+      case 1:
+          break;
+      case 2:
+          break;
+      case 3:
+          break;
+
+
+
+    }
    // SET_POINT =
    //                 SET_POINT1 = getRegFloat(OFFSET_CH2);
 
     return 0;
 }
+
+
 
 void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag)
 {
@@ -362,22 +417,37 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag)
 
                     u8 reg_mode = vCDV_SetpointCheck();
 
-                    switch (reg_mode)
+                    if (reg_mode == 0)
                     {
-                        case 0:
-                            USER_AOUT_SET(DAC1,0.0);
-                            break;
-                        case 1:
-                            USER_AOUT_SET(DAC1,10.0);
-                            break;
-                        default:
-                            SET_POINT = PID_FirstOut;
-                            PID_Compute(&TPID,getAIN(SENS1));
-                            float PID_Out = PIDOut/1000.0;
-                            USER_AOUT_SET(DAC1,PID_Out);
-                            break;
+                        USER_AOUT_SET(DAC1,0.0);
                     }
+                    else if (reg_mode == 4)
+                    {
+                        USER_AOUT_SET(DAC1,10.0);
+                    }
+                    else
+                    {
+                       switch (reg_mode)
+                       {
+                           case 1:
+                               SET_POINT = getRegFloat(SETTING_MIN);
+                               break;
+                           case 2:
+                               SET_POINT = getRegFloat(SETTING_MID);
+                               break;
+                           case 3:
+                               SET_POINT = getRegFloat(SETTING_MAX);
+                               break;
+                           default:
+                               SET_POINT = PID_FirstOut;
+                               break;
 
+                       }
+                        PID_Compute(&TPID,getAIN(SENS1));
+                        float PID_Out = PIDOut/1000.0;
+                        USER_AOUT_SET(DAC1,PID_Out);
+
+                    }
 
                     if (getReg8(CDV_BP_CH_COUNT) == 2)
                     {
@@ -499,10 +569,10 @@ void user_process_task(void *pvParameters)
            }
            else
                low_voltage_alarm_timer = 0;
-           u8 ac_control_value = (u8) getAIN(AC220_CONTROL);
+
            if (power_on)
            {
-               if ((ac_control_value < 20.0))
+               if ((ac_voltage < 20.0))
                {
                    power_off_filter++;
                    if ((power_off_flag==0) && (power_off_filter>2))
@@ -516,7 +586,7 @@ void user_process_task(void *pvParameters)
                else
                    power_off_filter = 0;
 
-               if ((ac_control_value >40) && (power_off_flag))
+               if ((ac_voltage >40) && (power_off_flag))
                {
                    printf("reset\r\n");
                    vTaskDelay(10);
@@ -526,7 +596,7 @@ void user_process_task(void *pvParameters)
            }
            else
            {
-              if ( ac_control_value >190)  power_on = 1;
+              if ( ac_voltage >190)  power_on = 1;
            }
            switch (process_mode )
            {

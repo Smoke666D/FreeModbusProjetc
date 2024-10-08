@@ -256,8 +256,7 @@ static xScreenObjet const CDVSettingsScreen8[]=
 {
         {0,10,LINE1,00,TEXT_STRING,"Настройки      8/19",    0},
         {0,2,25,70,TEXT_STRING,"Выбор датчика:",          0},
-        {0,2,37,70,WRITE_DATA,"",              SENSOR_TYPE_ID},
-        {1,2,50,70,WRITE_DATA,"Датчики",       SENSOR_F_TYPE_ID},
+        {1,2,37,00,WRITE_DATA,"",              SENSOR_TYPE_ID},
 
 };
 

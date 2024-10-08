@@ -112,6 +112,7 @@ static u8 * MUnitStrig[] = {"м^3/ч","м/c","Па"};
 static u8 * PriorSentStrig[]= {"T","CO2","H"};
 static const char * DevString[3]={"Режим ФМЧ","CAV/VAV/DCV","Режим BP"};
 static u8 * SensorTypeStrig[]= {"0-10 В","2-10 В","4-20 мA"};
+static u8 * IniputSignalTypeStrig[]= {"Дискретные входы","Пассивный датчик T","Комнатный контроллер","Датчики 0-10В/4-20 мA"};
 static xScreenType * pMenu;
 static u8 journal_index =0;
 static uint16_t curr_edit_data_id = 0;
@@ -432,7 +433,7 @@ void vByteDataEdit(u8 size, u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_ind
 }
 
 float edit_data_buffer_float;
-static const float coof_float[]={0.01,0.1,1.0,10.0,100.0,1000.0,10000.0};
+static const float coof_float[]={0.0001,0.001,0.01,0.1,1.0,10.0,100.0,1000.0,10000.0};
 
 void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8 min_index, float max_data, float min_data )
 {
@@ -441,15 +442,20 @@ void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8
     switch ( min_index )
     {
        case 0:
-           offset  =2;
+           offset  =4;
            break;
        case 1:
-           offset = 1;
+           offset = 3;
            break;
        case 2:
+           offset = 2;
+           break;
+       case 3:
+           offset = 1;
+           break;
+       default:
            offset = 0;
            break;
-
     }
 
     switch (command)
@@ -745,6 +751,8 @@ static void vDateDataEdit(DATA_VIEW_COMMAND_t command, char * str)
 
 
 
+
+
 static const u16 MenuRegMap[]={ DEVICE_TYPE,
                                 0,   //1
                                 0,   //2
@@ -816,36 +824,36 @@ static const u16 MenuCDV_BPRegMap[54]=
                                  CH1_SETTING,    //12
                                  CH2_SETTING,    //13
                                  F_CHANNEL,    //14
-                                 0,    //15
-                                 0,    //16
-                                 TEMP_MIN_SET,    //17
-                                 TEMP_MAX_SET,    //18
-                                 CO2_MIN_SET,    //19
-                                 CO2_MAX_SET,    //20
-                                 H_MIN_SET,    //21
-                                 H_MAX_SET,    //22
+                                 INPUT_SENSOR_TYPE , //15
+                                 TEMP_MIN_SET,    //16
+                                 TEMP_MAX_SET,    //17
+                                 CO2_MIN_SET,    //18
+                                 CO2_MAX_SET,    //19
+                                 H_MIN_SET,    //22
+                                 H_MAX_SET,    //21
+                                 0,    //22
                                  0,    //23
                                  0,    //24
                                  0,    //25
                                  0,    //26
                                  0,    //27
-                                 0,    //28
-                                 AFTER_ZONE_SETTING,    //29
-                                 CDV_BP_CH_COUNT,    //30
-                                 MEASERING_UNIT,    //31
-                                 CLEAN_TIMER,    //32
-                                 ZERO_POINT_TIMEOUT,    //33
-                                 PRIOR_SENSOR ,    //34
-                                 KK_SENSOR_TYPE,    //35
-                                 CO2_SENSOR_TYPE,    //36
-                                 H_SENSOR_TYPE,    //37
-                                 OFFSET_CH2,    //38
-                                 COOF_P1,    //39
-                                 COOF_I1,    //40
-                                 COOF_P2,    //41
-                                 COOF_I2,    //42
-                                 COOF_P3,    //43
-                                 COOF_I3,    //44
+                                 AFTER_ZONE_SETTING,   //28
+                                 CDV_BP_CH_COUNT,    //29
+                                 MEASERING_UNIT,    //39
+                                 CLEAN_TIMER,    //31
+                                 ZERO_POINT_TIMEOUT,    //32
+                                 PRIOR_SENSOR ,    //33
+                                 KK_SENSOR_TYPE,    //34
+                                 CO2_SENSOR_TYPE,    //35
+                                 H_SENSOR_TYPE,    //36
+                                 OFFSET_CH2,    //37
+                                 COOF_P1,    //38
+                                 COOF_I1,    //39
+                                 COOF_P2,    //40
+                                 COOF_I2,    //41
+                                 COOF_P3,    //42
+                                 COOF_I3,    //43
+                                 0,    //44
                                  0,    //45
                                  0,    //46
                                  0,    //47
@@ -855,7 +863,6 @@ static const u16 MenuCDV_BPRegMap[54]=
                                  0,    //51
                                  0,    //52
                                  0,    //53
-                                 0,    //54
 
                          };
 
@@ -898,10 +905,25 @@ void vSetTitle(u16 data_id, u8 * str )
 }
 void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 * res)
 {
+    static float temp_float;
     u16 reg_id = MenuCDV_BPRegMap[data_id - CVD_SETTING1_ID];
     switch (data_id)
     {
-
+        case SENSOR_TYPE_ID:
+                *len = 0;
+                switch (command)
+                        {
+                            case CMD_EDIT_READ:
+                                strcpy(str, IniputSignalTypeStrig[ edit_data_buffer_byte ] );
+                                break;
+                            case CMD_READ:
+                                strcpy(str, IniputSignalTypeStrig[ getReg8( reg_id)] );
+                                break;
+                            default:
+                                vByteDataEdit(0,reg_id,command,0,3, 0);
+                                break;
+                        }
+                break;
     case COOF_P_1_ID:
     case COOF_I_1_ID:
     case COOF_P_2_ID:
@@ -1017,16 +1039,74 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
         case SETTING_MAX_ID:
         case FAIL_SET_CH1_ID:
         case FAIL_SET_CH2_ID:
-            switch (command)
-            {
+
+                switch (command)
+                {
+                     case CMD_START_EDIT:
+                         temp_float  = getRegFloat(reg_id);
+                          switch ( getReg8(MEASERING_UNIT) )
+                           {
+                               case 0:
+                                       temp_float = DataModel_GetPressureToL(temp_float);
+                                       break;
+                               case 1:
+                                       temp_float = DataModel_GetPressureToV(temp_float);
+                                       break;
+                               default:
+                                        break;
+                              }
+
+
+                           edit_data_buffer_float= temp_float;
+                           start_edit_flag = 1;
+                           cur_edit_index = 2;
+                           break;
+                    case CMD_SAVE_EDIT:
+                        temp_float = edit_data_buffer_float;
+                        switch ( getReg8(MEASERING_UNIT) )
+                        {
+                                case 0:
+                                    temp_float = DataModel_SetLToPressere(temp_float);
+                                    break;
+                                case 1:
+                                    temp_float = DataModel_SetVToPressere(temp_float);
+                                    break;
+                                 default:
+                                 break;
+                         }
+
+                        saveRegFloat( reg_id, temp_float);
+                        start_edit_flag = 0;
+                        break;
                  case CMD_READ:
-                      sprintf(str,"%+07.1f",getRegFloat(reg_id));
-                      break;
+                        temp_float  = getRegFloat(reg_id);
+                        switch ( getReg8(MEASERING_UNIT) )
+                        {
+                            case 0:
+                                  temp_float = DataModel_GetPressureToL(temp_float);
+                                  break;
+                            case 1:
+                                  temp_float = DataModel_GetPressureToV(temp_float);
+                                  break;
+                            default:
+                                  break;
+                        }
+                        sprintf(str,"%06.1f",temp_float);
+                        break;
                  case CMD_EDIT_READ:
-                      sprintf(str,"%+07.1f",edit_data_buffer_float );
+                      sprintf(str,"%06.1f",edit_data_buffer_float );
                       break;
                 default:
-                      vFloatDataEdit(reg_id, command,5,1,9999.9,-9999.9);
+                      switch (getReg8(MEASERING_UNIT))
+                      {
+                          case 0: temp_float = DataModel_GetPressureToL(2500);
+                                  break;
+                          case 1: temp_float = DataModel_GetPressureToV(2500);
+                                  break;
+                          default: temp_float = 2500.0;
+                                  break;
+                      }
+                      vFloatDataEdit(reg_id, command,5,1,temp_float ,0);
                       break;
             }
             break;
@@ -1047,19 +1127,18 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
              break;
         case F_CHANNEL_ID:
             switch (command)
-                      {
-                          case CMD_READ:
-                              sprintf(str,"%+07.4f",getRegFloat(reg_id));
-                              break;
-                          case CMD_EDIT_READ:
-                              sprintf(str,"%+07.4f",edit_data_buffer_float );
-                              break;
-                         default:
-                             vFloatDataEdit(reg_id, command,4,1,9.999,-9.999);
-                             break;
-                      }
+            {
+                 case CMD_READ:
+                       sprintf(str,"%6.4f",getRegFloat(reg_id));
+                       break;
+                 case CMD_EDIT_READ:
+                       sprintf(str,"%6.4f",edit_data_buffer_float );
+                       break;
+                 default:
+                      vFloatDataEdit(reg_id, command,1,4,9.999,0.0);
+                      break;
+            }
             break;
-
             case T_SENSOR_MIN_ID:
             case T_SENSOR_MAX_ID:
             case H_SENSOR_MIN_ID:
@@ -1206,7 +1285,7 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                        sprintf(str,"%04i",edit_data_buffer_byte );
                        break;
                  default:
-                      vByteDataEdit(1,reg_id,command,3,9999,0);
+                      vByteDataEdit(1,reg_id,command,3,(u16)DataModel_GetPressureToL(2500),0);
                       break;
              }
              break;

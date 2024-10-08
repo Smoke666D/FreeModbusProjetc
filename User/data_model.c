@@ -6,7 +6,8 @@
  */
 #include "data_model.h"
 #include "EEPROM_25C.h"
-
+#include "stdlib.h"
+#include "math.h"
 
 u8 DATA_MODEL_REGISTER[DATA_MODEL_REGISTERS];
 
@@ -268,7 +269,40 @@ float getRegFloat(u16 reg_adress )
 }
 
 
+u16 DataModel_SetLToPressere(float L)
+{
+   float K = getRegFloat(KOOFKPS);
+  if ( ( L!=0 ) && ( K!=0 ) )
+   return pow(L/K,2);
+  else
+    return 0;
 
+}
+
+u16 DataModel_SetVToPressere(float V)
+{
+  float F = getRegFloat(F_CHANNEL);
+  if ( V!=0 )
+   return  DataModel_SetLToPressere (V* F *3600.0);
+  else
+    return 0;
+
+}
+
+
+float  DataModel_GetPressureToL(u16 pressure)
+{
+    return (float) sqrt((float)pressure)*getRegFloat(KOOFKPS) ;
+}
+
+float  DataModel_GetPressureToV(u16 pressure)
+{
+    float L = DataModel_GetPressureToL(pressure);
+    float F = getRegFloat(F_CHANNEL);
+    if (F == 0) return (0);
+            else
+    return  L/F/3600.0 ;
+}
 /*
  *   §±§à§Ý§å§é§Ú§ä§î §Ù§Ñ§á§Ú§ã§î §Ú§Ù §Ø§å§â§ß§Ñ§Ý§Ñ
  */

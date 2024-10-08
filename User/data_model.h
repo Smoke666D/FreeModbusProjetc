@@ -15,7 +15,7 @@
 
 #define SW_V                 2
 #define SW_V2                0
-#define SW_V3                5
+#define SW_V3               6
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -84,7 +84,8 @@
 #define SETTING_MAX           ( F_CHANNEL       + sizeof(uint32_t) )
 #define SETTING_MIN           ( SETTING_MAX       + sizeof(uint32_t) )
 #define SETTING_MID           ( SETTING_MIN       + sizeof(uint32_t) )
-#define OFFSET_CH2            ( SETTING_MID       + sizeof(uint32_t) )
+#define INPUT_SENSOR_TYPE     ( SETTING_MID       + sizeof(uint32_t) )
+#define OFFSET_CH2            ( INPUT_SENSOR_TYPE       + sizeof(uint8_t) )
 #define CH1_SETTING           ( OFFSET_CH2         + sizeof(uint32_t) )
 #define CH2_SETTING           ( CH1_SETTING         + sizeof(uint32_t) )
 #define FILTER_LOW            ( CH2_SETTING         + sizeof(uint32_t) )
@@ -167,6 +168,11 @@ typedef enum
   SETTING_ERROR   =3
 } FMCH_ERROR_t;
 
+
+u16 DataModel_SetLToPressere(float L);
+u16 DataModel_SetVToPressere(float V);
+float  DataModel_GetPressureToL(u16 pressure);
+float  DataModel_GetPressureToV(u16 pressure);
 int16_t getRegi16(u16 reg_adress );
 void vDataModelResetJournal();
 float convert_int_to_float( u16 * data);

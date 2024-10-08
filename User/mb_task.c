@@ -147,10 +147,11 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define CDV_ZERO_POINT_TIMEOUT  225
 #define CDV_KK_SENSOR_TYPE      226
 #define CDV_CO2_SENSOR_TYPE     227
-#define CDV_H_SENSOR_TYPE       238
-#define CDV_F_CHANNEL           239
+#define CDV_H_SENSOR_TYPE       228
+#define INPUT_SENSOR_TYPE_MB    229
+#define CDV_F_CHANNEL           230
 
-#define CDV_COUNT             ( CDV_F_CHANNEL - CDV_KOOF_P_MB +1)
+#define CDV_COUNT             ( CDV_F_CHANNEL - CDV_KOOF_K_MP +2)
 
 
 #define CDV_INPUTS_COUNT          0
@@ -320,8 +321,9 @@ static const u16 CDV_REGS_MAP[] = {
                                                KK_SENSOR_TYPE,    //26
                                                CO2_SENSOR_TYPE,   //27
                                                H_SENSOR_TYPE,     //28
-                                               F_CHANNEL,         //29
+                                               INPUT_SENSOR_TYPE, //29
                                                F_CHANNEL,         //30
+                                               F_CHANNEL,         //31
 };
 
 static const u16 BP_REGS_MAP[] = {
@@ -678,14 +680,14 @@ static void MB_TASK_INPUTS_UDATE(u16 start_reg_index )
         }
     }
 }
-#define CDV_BP_REG8_SEQ_COUNT 8
+#define CDV_BP_REG8_SEQ_COUNT 9
 #define CDV_BP_REG_SEQ_COUNT 1
 
 #define REG_SEQ_COUNT 5
 #define REG8_SEQ_COUNT 13
 
 
-static const u8 CDV_BP_REGS8[CDV_BP_REG8_SEQ_COUNT]={CDV_AFZONE_SETTING_MB,CDV_CH_COUNT_MB ,CDV_MEASERING_UNIT,CDV_PRIOR_SENS,CDV_CLEAN_TIMER,CDV_KK_SENSOR_TYPE,CDV_CO2_SENSOR_TYPE,CDV_H_SENSOR_TYPE};
+static const u8 CDV_BP_REGS8[CDV_BP_REG8_SEQ_COUNT]={CDV_AFZONE_SETTING_MB,CDV_CH_COUNT_MB ,CDV_MEASERING_UNIT,CDV_PRIOR_SENS,CDV_CLEAN_TIMER,CDV_KK_SENSOR_TYPE,CDV_CO2_SENSOR_TYPE,CDV_H_SENSOR_TYPE,INPUT_SENSOR_TYPE_MB};
 static const u8 CDV_BP_REGS[CDV_BP_REG_SEQ_COUNT]={CDV_ZERO_POINT_TIMEOUT};
 
 static const u8 REGS8[REG8_SEQ_COUNT]={
@@ -787,17 +789,15 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
                   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P3_MB-CDV_OFFSET]);
                   tempdata =(int32_t) (getRegFloat(COOF_I3)*1000);
                   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-CDV_OFFSET]);
-                 // tempdata =(int32_t) (getRegFloat(F_CHANNEL)*1000);
-                //  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_F_CHANNEL-reg_offet]);
-                 for (u8 i=0;i<2;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
+                 tempdata =(int32_t) (getRegFloat(OFFSET_CH2)*1000);
+                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_OFFSET_CH2-reg_offet]);
+                  for (u8 i=0;i<CDV_BP_REG8_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
                   {
-
                        usRegHoldingBuf[CDV_BP_REGS8[i] -CDV_OFFSET ]      = getReg8(CDV_REGS_MAP[CDV_BP_REGS8[i] -reg_offet]);
                   }
-                /*  for (u8 i=0;i<CDV_BP_REG_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  16 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
+                 /* for (u8 i=0;i<CDV_BP_REG_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  16 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
                   {
-
-                       usRegHoldingBuf[CDV_BP_REGS[i]]      = getReg16(CDV_REGS_MAP[CDV_BP_REGS[i]]);
+                       usRegHoldingBuf[CDV_BP_REGS[i]  -CDV_OFFSET  ]      = getReg16(CDV_REGS_MAP[CDV_BP_REGS[i] -reg_offet]);
                   }*/
                   break;
             case DEV_FMCH:
