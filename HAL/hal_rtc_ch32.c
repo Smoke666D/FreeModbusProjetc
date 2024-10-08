@@ -23,6 +23,13 @@ static void (* func)( void);
 
 
 
+//void HAL_RTC_IT_On(void (* rtc_it_callback) ( void ), uint8_t prior, uint8_t subprior)
+//{
+ //   RTC->CTLRH |= RTC_IT_SEC;
+ //   PFIC_IRQ_ENABLE_PG2(RTC_IRQn,prior,subprior);
+//    printf("RTC INIT\r\n");
+//}
+
 void HAL_RTC_IT_Init(  void (* rtc_it_callback) ( void ), uint8_t prior, uint8_t subprior )
 {
 
@@ -30,17 +37,14 @@ void HAL_RTC_IT_Init(  void (* rtc_it_callback) ( void ), uint8_t prior, uint8_t
     RCC->APB1PCENR |=(RCC_APB1Periph_PWR | RCC_APB1Periph_BKP);   //Разрешаем тактирование
     PWR->CTLR |= (1 << 8);
     u32 rtc_data = RTC_GetCounter();
-
     RCC->BDCTLR |= (1<<16);    //Сборс модуля Buckup
     RCC->BDCTLR &= ~(1<<16);
     RCC_LSEConfig(RCC_LSE_ON);
-
     while(RCC_GetFlagStatus(RCC_FLAG_LSERDY) == RESET && temp < 250)
     {
          temp++;
-         vTaskDelay(20);
+         Delay_Ms(20);
     }
-
     if(temp >= 250) return;
     RCC->BDCTLR |=RCC_RTCCLKSource_LSE;
     RCC->BDCTLR |= (1<<15); //This function must be used only after the RTC clock was selected
@@ -67,9 +71,9 @@ void HAL_RTC_IT_Init(  void (* rtc_it_callback) ( void ), uint8_t prior, uint8_t
 
     RTC_SetCounter(rtc_data);
 
-	  func = rtc_it_callback;
-	  printf("RTC INIT\r\n");
-	  return;
+	func = rtc_it_callback;
+	printf("RTC INIT\r\n");
+	return;
 }
 
 

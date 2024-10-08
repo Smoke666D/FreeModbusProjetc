@@ -340,13 +340,76 @@ void SystemCalibraionStop()
 }
 
 static u32 clean_timer = 0;
+static u8 din_mask = 0;
+static u8 clean_state = 0;
+static u8 clear_timer_flag =0;
 
-
-u8 vCDV_SetpointCheck()
+void vCDV_SetpointCheck( u8 * state, u32 * timeout )
 {
     error_state &=~DIN_ERROR;  //Сбрасываем ошибку дискретных входов
-    u8 din_mask = (u8)uiGetDinMask();
-    if (din_mask & 0x01)return 0;
+    if ( getReg8(INPUT_SENSOR_TYPE) == 0 )
+    {
+        u8 new_state = ( getReg8( CONTROL_TYPE )==  MKV_MB_DIN)? ( (u8)uiGetDinMask() & 0x0F ) : getReg8(SYSTEM_START);
+        if ( din_mask != new_state )
+        {
+            din_mask = new_state ;
+            *timeout = 0;
+        }
+        u8 temp_state;
+        switch (din_mask)
+        {
+            case 0:
+                temp_state = 0;
+                break;
+            case 1:
+                temp_state = 1;
+                break;
+            case 3:
+                temp_state = 2;
+                break;
+            case 7:
+                temp_state = 3;
+                break;
+            case 0xFF:
+                temp_state = 4;
+                break;
+            default:
+                *state = 0;
+                error_state |=DIN_ERROR;
+                return;
+            break;
+        }
+        if (*state!=temp_state)
+        {
+            if ( ++(*timeout) >= getReg8(SETTING_TIMER)*10 )
+                   *state = temp_state;
+        }
+    }
+
+
+
+
+    if (clear_timer_flag == 0 )
+    {
+        u8 clean_state =  getReg8( CONTROL_TYPE ) ==  MKV_MB_DIN ? ucDinGet(INPUT_5) : getReg8(LIGTH );
+        if ( clean_state == 1)
+        {
+            clear_timer_flag = 1;
+        }
+    }
+    else
+    {
+       if (++clean_timer >= getReg8(CLEAN_TIMER)*600)
+       {
+           clear_timer_flag = 0;
+           setReg8(LIGTH, 0 );
+       }
+       else
+           *state = 4;
+           return;
+    }
+
+   /* if (din_mask & 0x01)return 0;
     if (din_mask & 0x10)
     {
        u32 clean_timer_time_out = getReg8(CLEAN_TIMER)*600;
@@ -376,7 +439,7 @@ u8 vCDV_SetpointCheck()
                       return (3);
                       break;
                   default:
-                      error_state |=DIN_ERROR;
+
                       return (0);
                       break;
               }
@@ -391,67 +454,69 @@ u8 vCDV_SetpointCheck()
 
 
 
-    }
+    }*/
    // SET_POINT =
    //                 SET_POINT1 = getRegFloat(OFFSET_CH2);
 
-    return 0;
+    return ;
 }
 
 
 
-void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag)
+void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag, u8 * state)
 {
     switch (task_fsm)
     {
             case USER_PROCCES_IDLE:
-
+                *start_timeout = 0;
                 task_fsm =USER_RROCCES_WORK;
                 break;
             case USER_RROCCES_WORK:
-                *start_timeout = 0;
+
                 *cal_flag = 0;
                 if (++*pid_counter >=10)
                 {
                     *pid_counter = 0;
 
-                    u8 reg_mode = vCDV_SetpointCheck();
+                   vCDV_SetpointCheck(state, start_timeout);
 
-                    if (reg_mode == 0)
+                    switch (*state)
                     {
-                        USER_AOUT_SET(DAC1,0.0);
-                    }
-                    else if (reg_mode == 4)
-                    {
-                        USER_AOUT_SET(DAC1,10.0);
-                    }
-                    else
-                    {
-                       switch (reg_mode)
-                       {
+                        case 0:
+                            USER_AOUT_SET(DAC1,0.0);
+                            break;
+                        case 4:
+                            USER_AOUT_SET(DAC1,10.0);
+                            break;
                            case 1:
-                               SET_POINT = getRegFloat(SETTING_MIN);
+                               SET_POINT = (float)getReg16(SETTING_MIN);
                                break;
                            case 2:
-                               SET_POINT = getRegFloat(SETTING_MID);
+                               SET_POINT = (float)getReg16(SETTING_MID);
                                break;
                            case 3:
-                               SET_POINT = getRegFloat(SETTING_MAX);
+                               SET_POINT = (float)getReg16(SETTING_MAX);
                                break;
                            default:
                                SET_POINT = PID_FirstOut;
                                break;
 
-                       }
+                      }
+                      if ((*state>=1) && (*state<=3))
+                      {
                         PID_Compute(&TPID,getAIN(SENS1));
                         float PID_Out = PIDOut/1000.0;
                         USER_AOUT_SET(DAC1,PID_Out);
-
-                    }
-
+                      }
+                      else
+                      {
+                          PID_Compute(&TPID,getAIN(SENS1));
+                          float PID_Out = PIDOut/1000.0;
+                          USER_AOUT_SET(DAC1,PID_Out);
+                      }
                     if (getReg8(CDV_BP_CH_COUNT) == 2)
                     {
-                        switch (reg_mode)
+                        switch (*state)
                         {
                               case 0:
                                   USER_AOUT_SET(DAC2,0.0);
@@ -460,8 +525,15 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag)
                                   USER_AOUT_SET(DAC1,10.0);
                                   break;
                               default:
-                                  SET_POINT1  = SET_POINT + getRegFloat(OFFSET_CH2);
-                                  PID_Compute(&TPID2,getAIN(SENS2));
+                                  SET_POINT1  = SET_POINT + (float)getReg16(OFFSET_CH2);
+                                  if ((*state>=1) && (*state<=3))
+                                  {
+                                      PID_Compute(&TPID2,getAIN(SENS2));
+                                  }
+                                  else
+                                  {
+
+                                  }
                                   float PID_Out = PIDOut2/1000.0;
                                   USER_AOUT_SET(DAC2,PID_Out);
                         }
@@ -483,6 +555,7 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag)
                     {
                         if (CalibrationZeroWhait())
                         {
+                            *start_timeout = 0;
                             task_fsm = USER_RROCCES_WORK;
                         }
                     }
@@ -512,6 +585,7 @@ void user_process_task(void *pvParameters)
    static u8 high_voltage_timeout = 0;
    static u8 flag = 0;
    uint8_t ac_voltage;
+   u8 state;
    u8 set_point_old = 2;
    u32 pid_counter = 0;
    u32 start_timeout = 0;
@@ -604,7 +678,7 @@ void user_process_task(void *pvParameters)
                    vFMCH_FSM(&start_timeout, &pid_counter, &HEPA_CONTROL_ON , &set_point_old, ac_voltage);
                    break;
                case 1:
-                   vCDV_FSM(&start_timeout,&pid_counter,&flag);
+                   vCDV_FSM(&start_timeout,&pid_counter,&flag,&state);
                    break;
                case 2:
                    break;

@@ -15,7 +15,7 @@
 
 #define SW_V                 2
 #define SW_V2                0
-#define SW_V3               6
+#define SW_V3                7
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -70,7 +70,8 @@
 #define CDV_BP_CH_COUNT       ( MEASERING_UNIT     + sizeof(uint8_t) )
 #define PRIOR_SENSOR          ( CDV_BP_CH_COUNT    + sizeof(uint8_t) )
 #define CLEAN_TIMER           ( PRIOR_SENSOR       + sizeof(uint8_t) )
-#define ZERO_POINT_TIMEOUT    ( CLEAN_TIMER        + sizeof(uint8_t) )
+#define SETTING_TIMER         ( CLEAN_TIMER        + sizeof(uint8_t) )
+#define ZERO_POINT_TIMEOUT    ( SETTING_TIMER        + sizeof(uint8_t) )
 #define TEMP_MIN_SET          ( ZERO_POINT_TIMEOUT  + sizeof(uint16_t) )
 #define TEMP_MAX_SET          ( TEMP_MIN_SET  + sizeof(uint16_t) )
 #define CO2_MIN_SET           ( TEMP_MAX_SET  + sizeof(uint16_t) )
@@ -172,7 +173,7 @@ typedef enum
   SETTING_ERROR   =3
 } FMCH_ERROR_t;
 
-
+float DataModelGetCDVSettings( u16 pressure);
 u16 DataModel_SetLToPressere(float L);
 u16 DataModel_SetVToPressere(float V);
 float  DataModel_GetPressureToL(u16 pressure);

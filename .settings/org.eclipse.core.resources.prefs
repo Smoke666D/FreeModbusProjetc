@@ -56,6 +56,7 @@ encoding//Peripheral/inc/ch32v30x.h=GBK
 encoding//Peripheral/inc/ch32v30x_iwdg.h=GBK
 encoding//Peripheral/src/ch32v30x_i2c.c=GBK
 encoding//Peripheral/src/ch32v30x_misc.c=GBK
+encoding//Peripheral/src/ch32v30x_rcc.c=GBK
 encoding//Peripheral/src/ch32v30x_usart.c=GBK
 encoding//Startup/startup_ch32v30x_D8.S=GBK
 encoding//Startup/startup_ch32v30x_D8C.S=GBK

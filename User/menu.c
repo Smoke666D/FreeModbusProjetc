@@ -1042,19 +1042,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 switch (command)
                 {
                      case CMD_START_EDIT:
-                         temp_float  =(float) getReg16(reg_id);
-                          switch ( getReg8(MEASERING_UNIT) )
-                           {
-                               case 0:
-                                       temp_float = DataModel_GetPressureToL(temp_float);
-                                       break;
-                               case 1:
-                                       temp_float = DataModel_GetPressureToV(temp_float);
-                                       break;
-                               default:
-                                        break;
-                           }
-                           edit_data_buffer_float= temp_float;
+                           edit_data_buffer_float= DataModelGetCDVSettings( getReg16(reg_id));
                            start_edit_flag = 1;
                            cur_edit_index = 2;
                            break;
@@ -1076,33 +1064,14 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                         start_edit_flag = 0;
                         break;
                  case CMD_READ:
-                        temp_float  = getRegFloat(reg_id);
-                        switch ( getReg8(MEASERING_UNIT) )
-                        {
-                            case 0:
-                                  temp_float = DataModel_GetPressureToL(temp_float);
-                                  break;
-                            case 1:
-                                  temp_float = DataModel_GetPressureToV(temp_float);
-                                  break;
-                            default:
-                                  break;
-                        }
+                        temp_float  = DataModelGetCDVSettings(getRegFloat(reg_id));
                         sprintf(str,"%06.1f",temp_float);
                         break;
                  case CMD_EDIT_READ:
                       sprintf(str,"%06.1f",edit_data_buffer_float );
                       break;
                 default:
-                      switch (getReg8(MEASERING_UNIT))
-                      {
-                          case 0: temp_float = DataModel_GetPressureToL(2500);
-                                  break;
-                          case 1: temp_float = DataModel_GetPressureToV(2500);
-                                  break;
-                          default: temp_float = 2500.0;
-                                  break;
-                      }
+                      temp_float  = DataModelGetCDVSettings(2500);
                       vFloatDataEdit(reg_id, command,5,1,temp_float ,0);
                       break;
             }

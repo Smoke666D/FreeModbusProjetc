@@ -306,6 +306,24 @@ float  DataModel_GetPressureToV(u16 pressure)
             else
     return  L/F/3600.0 ;
 }
+
+float DataModelGetCDVSettings( u16 pressure)
+{
+    float res = (float)pressure;
+    switch ( getReg8(MEASERING_UNIT) )
+                      {
+                           case 0:
+                               res = DataModel_GetPressureToL( res);
+                               break;
+                           case 1:
+                               res = DataModel_GetPressureToV( res);
+                               break;
+                           default:
+
+                               break;
+                      }
+  return (res);
+}
 /*
  *   §±§à§Ý§å§é§Ú§ä§î §Ù§Ñ§á§Ú§ã§î §Ú§Ù §Ø§å§â§ß§Ñ§Ý§Ñ
  */

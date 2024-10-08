@@ -107,6 +107,7 @@ int main(void)
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 	SystemCoreClockUpdate();
 	Delay_Init();
+	vRTC_Init();
 	vSYSqueueInit ( );
     vSYSeventInit ( );
     vSYStaskInit ( );

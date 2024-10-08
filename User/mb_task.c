@@ -149,7 +149,12 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define CDV_CO2_SENSOR_TYPE     227
 #define CDV_H_SENSOR_TYPE       228
 #define INPUT_SENSOR_TYPE_MB    229
-#define CDV_F_CHANNEL           230
+#define CDV_SETTING_MIN_MB      230
+#define CDV_SETTING_MID_MB      232
+#define CDV_SETTING_MAX_MB      234
+#define CDV_SETTING_ERROR1_MB   236
+#define CDV_SETTING_ERROR2_MB   238
+#define CDV_F_CHANNEL           240
 
 #define CDV_COUNT             ( CDV_F_CHANNEL - CDV_KOOF_K_MP +2)
 
@@ -322,9 +327,20 @@ static const u16 CDV_REGS_MAP[] = {
                                                CO2_SENSOR_TYPE,   //27
                                                H_SENSOR_TYPE,     //28
                                                INPUT_SENSOR_TYPE, //29
-                                               F_CHANNEL,         //30
-                                               F_CHANNEL,         //31
+                                               SETTING_MIN,       //30
+                                               SETTING_MIN,       //31
+                                               SETTING_MID,       //32
+                                               SETTING_MID,       //33
+                                               SETTING_MAX,       //34
+                                               SETTING_MAX,       //35
+                                               CH1_SETTING,       //36
+                                               CH1_SETTING,       //37
+                                               CH2_SETTING,       //38
+                                               CH2_SETTING,       //39
+                                               F_CHANNEL,         //40
+                                               F_CHANNEL,         //41
 };
+
 
 static const u16 BP_REGS_MAP[] = {
 
@@ -735,6 +751,7 @@ void UpdateFMCHHoldings()
 
 }
 
+static const u8 SettingRegsMap[]={CDV_OFFSET_CH2,CDV_SETTING_MIN_MB,CDV_SETTING_MID_MB,CDV_SETTING_MAX_MB,CDV_SETTING_ERROR1_MB,CDV_SETTING_ERROR2_MB};
 
 void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
 {
@@ -766,6 +783,7 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
     else
     {
         u16 reg_offet;
+        float temp_float;
         switch ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE))
         {
             case DEV_CDV:
@@ -789,8 +807,16 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
                   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P3_MB-CDV_OFFSET]);
                   tempdata =(int32_t) (getRegFloat(COOF_I3)*1000);
                   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-CDV_OFFSET]);
-                // tempdata =(int32_t) (getRegFloat(OFFSET_CH2)*1000);
-                 // convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_OFFSET_CH2-reg_offet]);
+
+
+
+
+                  for (u8 i = 0; i < 6; i++)
+                  {
+                      temp_float  =  DataModelGetCDVSettings(getReg16(CDV_REGS_MAP[SettingRegsMap[i]-reg_offet]));
+                      convert_float_to_int((float)temp_float, &usRegHoldingBuf[SettingRegsMap[i]-CDV_OFFSET]);
+                  }
+
                   for (u8 i=0;i<CDV_BP_REG8_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
                   {
                        usRegHoldingBuf[CDV_BP_REGS8[i] -CDV_OFFSET ]      = getReg8(CDV_REGS_MAP[CDV_BP_REGS8[i] -reg_offet]);
