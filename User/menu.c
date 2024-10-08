@@ -1039,11 +1039,10 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
         case SETTING_MAX_ID:
         case FAIL_SET_CH1_ID:
         case FAIL_SET_CH2_ID:
-
                 switch (command)
                 {
                      case CMD_START_EDIT:
-                         temp_float  = getRegFloat(reg_id);
+                         temp_float  =(float) getReg16(reg_id);
                           switch ( getReg8(MEASERING_UNIT) )
                            {
                                case 0:
@@ -1054,9 +1053,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                                        break;
                                default:
                                         break;
-                              }
-
-
+                           }
                            edit_data_buffer_float= temp_float;
                            start_edit_flag = 1;
                            cur_edit_index = 2;
@@ -1075,7 +1072,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                                  break;
                          }
 
-                        saveRegFloat( reg_id, temp_float);
+                        saveReg16( reg_id, (u16)temp_float);
                         start_edit_flag = 0;
                         break;
                  case CMD_READ:

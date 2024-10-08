@@ -62,11 +62,14 @@ DATA_MODEL_INIT_t DataModel_Init()
                setReg16(IP_PORT,502);
                setReg16( FILTER_LOW, 150);
                setReg16( FILTER_HIGH, 300);
-               setRegFloat(SETTING_MIN , 10.1);
-               setRegFloat(SETTING_MID , 12.3);
-               setRegFloat(SETTING_MAX , 14.4);
-               setRegFloat(CH1_SETTING  , 10.0);
-               setRegFloat(CH2_SETTING  , 13.5);
+               setReg16(SETTING_MIN , 150);
+               setReg16(SETTING_MID , 300);
+               setReg16(SETTING_MAX , 600);
+               setReg16(CH1_SETTING  , 700);
+               setReg16(CH2_SETTING  , 800);
+
+
+
 
 
 

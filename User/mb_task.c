@@ -789,8 +789,8 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
                   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P3_MB-CDV_OFFSET]);
                   tempdata =(int32_t) (getRegFloat(COOF_I3)*1000);
                   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-CDV_OFFSET]);
-                 tempdata =(int32_t) (getRegFloat(OFFSET_CH2)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_OFFSET_CH2-reg_offet]);
+                // tempdata =(int32_t) (getRegFloat(OFFSET_CH2)*1000);
+                 // convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_OFFSET_CH2-reg_offet]);
                   for (u8 i=0;i<CDV_BP_REG8_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
                   {
                        usRegHoldingBuf[CDV_BP_REGS8[i] -CDV_OFFSET ]      = getReg8(CDV_REGS_MAP[CDV_BP_REGS8[i] -reg_offet]);
