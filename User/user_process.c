@@ -5,6 +5,7 @@
  *      Author: i.dymov
  */
 #include "user_process.h"
+#include "user_process_service.h"
 #include "string.h"
 #include "pid.h"
 #include "hw_lib_din.h"
@@ -15,18 +16,13 @@
 #include "math.h"
 
 #define FILTER_WARNINR_VALUE 98
-#define FILTER_ERROR  0x01
-#define SETTING_ERROR 0x02
-#define LOW_VOLTAGE_ERROR 0x04
-#define HIGH_VOLTAGE_ERROR 0x08
-#define DIN_ERROR          0x10
+
 
 
 
 
 static  PID_TypeDef TPID;
 static  PID_TypeDef TPID2;
-static  PID_TypeDef InputTPID;
 static u8 setting_change_flag =0;    //Флаг измения значения устаки, нужен для изменения отображения на индикаторе текущей уставки
 static TaskHandle_t processTaskHandle;
 static USER_PROCESS_FSM_t task_fsm;
@@ -36,7 +32,6 @@ static long temp_counter;
 static long mb_time_out = 0;
 static float SET_POINT;
 static float SET_POINT1;
-static float SET_POINT_INPUT;
 static u8 error_state;
 
 TaskHandle_t * getUserProcessTaskHandle()
@@ -204,7 +199,6 @@ u16 testdata[10]={700,680,670,660,650,670,685,500,550,625};
 static float Temp;
 static float PIDOut;
 static float PIDOut2;
-static float PID_FirstOut;
 
 static u16 counterpid = 0;
 
@@ -226,7 +220,7 @@ float setTestDta(float input)
 }
 
 
-void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u8 * set_point_old, uint8_t ac_voltage)
+void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u8 * set_point_old, uint16_t ac_voltage)
 {
     u8 ss;
     u8 c_type  =getReg8( CONTROL_TYPE );
@@ -246,18 +240,8 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                 error_state |=FILTER_ERROR;
           }
      }
-     //Ecли есть ошибка включаем реле и зажигаем светодиод
-     if ( error_state  & ~SETTING_ERROR)
-     {
-         HAL_ResetBit(CRACH_Port,  CRACH_Pin);
-         eSetDUT(OUT_3,TRUE);
-     }
-     else
-     {
-         HAL_SetBit(CRACH_Port,  CRACH_Pin);
-         eSetDUT(OUT_3,FALSE);
-      }
-               //Свет
+
+        //Свет
       if (MB_TASK_GetMode() && (task_fsm != USER_PROCCES_IDLE))
       {
            task_fsm = USER_PROCCES_IDLE;
@@ -318,7 +302,7 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                        eSetDUT(OUT_1,TRUE);
                        break;
                    case USER_PROCESS_ALARM:
-                       if  ((ac_voltage <= getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  getReg8(LOW_VOLTAGE_OFF)))
+                       if  ((ac_voltage <= (uint16_t)getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  (uint16_t)getReg8(LOW_VOLTAGE_OFF)))
                        {
                            task_fsm = USER_PROCCES_IDLE;
                        }
@@ -339,12 +323,14 @@ void SystemCalibraionStop()
    task_fsm = USER_RROCCES_WORK;
 }
 
-static u32 clean_timer = 0;
-static u8 din_mask = 0;
-static u8 clean_state = 0;
-static u8 clear_timer_flag =0;
 
-void vCDV_SetpointCheck( u8 * state, u32 * timeout )
+static u8 din_mask = 0;
+
+
+
+
+
+void vCDV_SetpointCheck( u8 * state, u32 * timeout  )
 {
     error_state &=~DIN_ERROR;  //Сбрасываем ошибку дискретных входов
     if ( getReg8(INPUT_SENSOR_TYPE) == 0 )
@@ -374,7 +360,6 @@ void vCDV_SetpointCheck( u8 * state, u32 * timeout )
                 temp_state = 4;
                 break;
             default:
-                *state = 0;
                 error_state |=DIN_ERROR;
                 return;
             break;
@@ -385,79 +370,7 @@ void vCDV_SetpointCheck( u8 * state, u32 * timeout )
                    *state = temp_state;
         }
     }
-
-
-
-
-    if (clear_timer_flag == 0 )
-    {
-        u8 clean_state =  getReg8( CONTROL_TYPE ) ==  MKV_MB_DIN ? ucDinGet(INPUT_5) : getReg8(LIGTH );
-        if ( clean_state == 1)
-        {
-            clear_timer_flag = 1;
-        }
-    }
-    else
-    {
-       if (++clean_timer >= getReg8(CLEAN_TIMER)*600)
-       {
-           clear_timer_flag = 0;
-           setReg8(LIGTH, 0 );
-       }
-       else
-           *state = 4;
-           return;
-    }
-
-   /* if (din_mask & 0x01)return 0;
-    if (din_mask & 0x10)
-    {
-       u32 clean_timer_time_out = getReg8(CLEAN_TIMER)*600;
-        if (++clean_timer >= clean_timer_time_out)
-        {
-            clean_timer = clean_timer_time_out;
-            return 4;
-        }
-    }
-    else
-        clean_timer = 0;
-    switch (getReg8(INPUT_SENSOR_TYPE))
-    {
-      case 0:
-          if ((getReg8(CONTROL_TYPE))==0 )
-          {
-              u8 din_mask = (u8)uiGetDinMask();
-              switch (din_mask & 0xE)
-              {
-                  case 0x02:
-                      return (1);
-                      break;
-                  case 0x04:
-                      return (2);
-                      break;
-                  case 0x08:
-                      return (3);
-                      break;
-                  default:
-
-                      return (0);
-                      break;
-              }
-          }
-          break;
-      case 1:
-          break;
-      case 2:
-          break;
-      case 3:
-          break;
-
-
-
-    }*/
-   // SET_POINT =
-   //                 SET_POINT1 = getRegFloat(OFFSET_CH2);
-
+    CleanTimerFuncton(state);
     return ;
 }
 
@@ -479,71 +392,69 @@ float ComputeSetPoint()
     return (temp_float);
 }
 
-void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag, u8 * state)
+static u8 state = 0;
+
+u8 getStateDCV()
 {
+    return state;
+}
+
+void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag,  uint16_t ac_voltage)
+{
+    vCDV_SetpointCheck(&state, start_timeout);
+    vCheckDoubleChannelAlarm(&error_state);
     switch (task_fsm)
     {
             case USER_PROCCES_IDLE:
+                error_state = 0;
                 *start_timeout = 0;
+                InitCleanTimer();
                 task_fsm =USER_RROCCES_WORK;
                 break;
             case USER_RROCCES_WORK:
-
                 *cal_flag = 0;
-                if (++*pid_counter >=10)
+                if (error_state & DIN_ERROR)
                 {
-                    *pid_counter = 0;
-
-                   vCDV_SetpointCheck(state, start_timeout);
-
-                    switch (*state)
+                   task_fsm  = USER_PROCESS_ALARM;
+                }
+                else if (error_state & ( FIRST_CHANNEL_ERROR | SECOND_CHANNEL_ERROR ))
+                {
+                    task_fsm  = USER_PROCESS_DOUBLE_CHANNEL_ERROR;
+                }
+                else
+                {
+                    if (++*pid_counter >=10)
                     {
-                        case 0:
-                            USER_AOUT_SET(DAC1,0.0);
-                            break;
-                        case 4:
-                            USER_AOUT_SET(DAC1,10.0);
-                            break;
-                           case 1:
-                               SET_POINT = (float)getReg16(SETTING_MIN);
-                               break;
-                           case 2:
-                               SET_POINT = (float)getReg16(SETTING_MID);
-                               break;
-                           case 3:
-                               SET_POINT = (float)getReg16(SETTING_MAX);
-                               break;
-                           default:
-
-                               break;
-
-                      }
-                      if ((*state>=1) && (*state<=3))
-                      {
-                        PID_Compute(&TPID,getAIN(SENS1));
-                        float PID_Out = PIDOut/1000.0;
-                        USER_AOUT_SET(DAC1,PID_Out);
-                      }
-                      else if (*state > 4)
+                        *pid_counter = 0;
+                        switch (state)
                         {
-                         if ( getReg8(INPUT_SENSOR_TYPE) == 0 )
-                         {
-                          PID_Compute(&TPID,getAIN(SENS1));
-                          float PID_Out = PIDOut/1000.0;
-                          USER_AOUT_SET(DAC1,PID_Out);
-                         }
-                         else if (getReg8(INPUT_SENSOR_TYPE) == 1)
-                         {
-                             SET_POINT = ComputeSetPoint();
-                             PID_Compute(&TPID,getAIN(SENS1));
-                             float PID_Out = PIDOut/1000.0;
-                             USER_AOUT_SET(DAC1,PID_Out);
-                         }
-                      }
-                    if (getReg8(CDV_BP_CH_COUNT) == 2)
-                    {
-                        switch (*state)
+                            case 4:
+                                USER_AOUT_SET(DAC1,10.0);
+                                break;
+                            case 1:
+                                SET_POINT = (float)getReg16(SETTING_MIN);
+                                break;
+                            case 2:
+                                SET_POINT = (float)getReg16(SETTING_MID);
+                                break;
+                            case 3:
+                                SET_POINT = (float)getReg16(SETTING_MAX);
+                                break;
+                            default:
+                                USER_AOUT_SET(DAC1,0.0);
+                                break;
+
+                        }
+                        if ((state>=1) && (state<=3))
                         {
+                            PID_Compute(&TPID,getAIN(SENS1));
+                            float PID_Out = PIDOut/1000.0;
+                            USER_AOUT_SET(DAC1,PID_Out);
+                        }
+                        if (getReg8(CDV_BP_CH_COUNT) == 2)
+                        {
+                            switch (state)
+                            {
                               case 0:
                                   USER_AOUT_SET(DAC2,0.0);
                                   break;
@@ -552,23 +463,15 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag, u8 * state
                                   break;
                               default:
                                   SET_POINT1  = SET_POINT + (float)getReg16(OFFSET_CH2);
-                                  switch ((getReg8(INPUT_SENSOR_TYPE)))
-                                  {
-                                  case 0:
-                                  case 1:
-                                      PID_Compute(&TPID2,getAIN(SENS2));
-                                      break;
-                                  }
-
+                                  PID_Compute(&TPID2,getAIN(SENS2));
                                   float PID_Out = PIDOut2/1000.0;
                                   USER_AOUT_SET(DAC2,PID_Out);
+                            }
                         }
-
                     }
                 }
                 break;
             case USER_PEOCESS_ZERO_CALIB:
-
                 if ((*start_timeout) >= ( getReg16(ZERO_POINT_TIMEOUT)*6000) )
                 {
                     printf("start \r\n");
@@ -594,15 +497,40 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag, u8 * state
                 }
                 break;
             case USER_PROCESS_ALARM:
+                if  ((ac_voltage <= (uint16_t)getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  (uint16_t)getReg8(LOW_VOLTAGE_OFF)))
+                {
+                    task_fsm = USER_PROCCES_IDLE;
+                }
+                USER_AOUT_SET(DAC1,0.0);
+                USER_AOUT_SET(DAC2,0.0);
+                break;
+            case USER_PROCESS_DOUBLE_CHANNEL_ERROR:
+                if (error_state & FIRST_CHANNEL_ERROR)
+                {
+                    USER_AOUT_SET(DAC2,0.0);
+                    USER_AOUT_SET(DAC1,10.0);
+                }
+                else if (error_state & SECOND_CHANNEL_ERROR)
+                {
+                    USER_AOUT_SET(DAC1,0.0);
+                    USER_AOUT_SET(DAC2,10.0);
+
+                }
+                else
+                {
+                    task_fsm = USER_PROCCES_IDLE;
+                }
                 break;
 
     }
-
-
 }
+
+
+
 
 void user_process_task(void *pvParameters)
 {
+
    static u8 power_on = 0;
    static u8 power_off_filter = 0;
    static u8 HEPA_CONTROL_ON = 0;
@@ -610,8 +538,7 @@ void user_process_task(void *pvParameters)
    static u8 power_off_flag = 0;
    static u8 high_voltage_timeout = 0;
    static u8 flag = 0;
-   uint8_t ac_voltage;
-   u8 state;
+   uint16_t ac_voltage;
    u8 set_point_old = 2;
    u32 pid_counter = 0;
    u32 start_timeout = 0;
@@ -620,41 +547,35 @@ void user_process_task(void *pvParameters)
    task_fsm = USER_PROCCES_IDLE;
    FilterState = 0;
    PID(&TPID,  &PIDOut, &SET_POINT, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
-   if (process_mode == 0)
-       PID_SetOutputLimits(&TPID,(float)1000.0,(float)10000.0);
-   else
-   {
-       PID_SetOutputLimits(&TPID,(float)0000.0,(float)10000.0);
-   }
+   PID_SetOutputLimits(&TPID,(float)1000.0,(float)10000.0);
+
    PID(&TPID2, &PIDOut2, &SET_POINT1, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
    PID_SetOutputLimits(&TPID2,(float)0000.0,(float)10000.0);
 
-   PID(&InputTPID, &PID_FirstOut, &SET_POINT_INPUT, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
-   PID_SetOutputLimits(&InputTPID,(float)0000.0,(float)250000.0);
    while(1)
    {
        vTaskDelay(10);
        if (MB_TASK_GetMode()!=2)
        {
-           ac_voltage = (uint8_t)getAIN(AC220);
+           ac_voltage = (uint16_t)getAIN(AC220);
 
 
-           if  (ac_voltage >= getReg8(HIGH_VOLTAGE_ON))
+           if  (ac_voltage >= (uint16_t)getReg8(HIGH_VOLTAGE_ON))
            {
                if (task_fsm != USER_PROCESS_ALARM)
                {
                    high_voltage_timeout++;
                    if  (high_voltage_timeout>100)
                    {
-                   error_state |= HIGH_VOLTAGE_ERROR;
-                   vADDRecord(HIGH_VOLTAGE_ERROR);
-                   task_fsm = USER_PROCESS_ALARM;
+                       error_state |= HIGH_VOLTAGE_ERROR;
+                       vADDRecord(HIGH_VOLTAGE_ERROR);
+                       task_fsm = USER_PROCESS_ALARM;
                    }
                }
            }
            else
                high_voltage_timeout = 0;
-           if ( ac_voltage <=  getReg8(LOW_VOLTAGE_ON))
+           if ( ac_voltage <=  (uint16_t)getReg8(LOW_VOLTAGE_ON))
            {
                if ((task_fsm != USER_PROCESS_ALARM) && (power_off_flag==0))
                {
@@ -704,10 +625,21 @@ void user_process_task(void *pvParameters)
                    vFMCH_FSM(&start_timeout, &pid_counter, &HEPA_CONTROL_ON , &set_point_old, ac_voltage);
                    break;
                case 1:
-                   vCDV_FSM(&start_timeout,&pid_counter,&flag,&state);
+                   vCDV_FSM(&start_timeout,&pid_counter,&flag, ac_voltage );
                    break;
                case 2:
                    break;
+           }
+           //Ecли есть ошибка включаем реле и зажигаем светодиод
+           if ( error_state  & ~SETTING_ERROR)
+           {
+                 HAL_ResetBit(CRACH_Port,  CRACH_Pin);
+                 eSetDUT(OUT_3,TRUE);
+           }
+           else
+           {
+                 HAL_SetBit(CRACH_Port,  CRACH_Pin);
+                 eSetDUT(OUT_3,FALSE);
            }
        }
    }

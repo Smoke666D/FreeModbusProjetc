@@ -53,11 +53,15 @@
 #define I2C_TASK_PRIO                   6
 #define I2C_STK_SIZE                    256
 
+
+
 typedef enum
 {
   DEV_FMCH = 0,
-  DEV_CDV  = 1,
-  DEV_BP   = 2,
+  DEV_DCV  = 1,
+  DEV_CAV   = 2,
+  DEV_VAV   = 3,
+  DEV_BP   =4,
 } DEVICE_TYPE_t;
 
 

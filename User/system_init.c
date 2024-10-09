@@ -149,7 +149,6 @@ static u8 TCP_STOP = 0;
 
 void vDefaultTask( void  * argument )
 {
-    static const char * DevString[3]={"Режим ФМЧ","CAV/VAV/DCV","Режим BP"};
     QueueHandle_t     pKeyboard        = *( xKeyboardQueue());
     static KeyEvent          TempEvent        = { 0U };
     char temp_str[50];
@@ -190,7 +189,7 @@ void vDefaultTask( void  * argument )
                     if (k==2000)
                     {
                         MENU_ClearScreen();
-                        MENU_DrawString(40, 20, DevString[device]);
+                        MENU_DrawString(40, 20,getModeString(device));
                         MenuSetDevice();
                         sprintf(temp_str, "Версия ПО %02i.%02i.%02i",getReg8(SOFT_V1 ),getReg8(SOFT_V2 ),getReg8(SOFT_V3 ));
                         MENU_DrawString(10, 40, temp_str);

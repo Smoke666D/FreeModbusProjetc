@@ -10,6 +10,8 @@
 
 #include "system_init.h"
 
+
+
 typedef enum
 {
     USER_PROCCES_IDLE,
@@ -20,13 +22,23 @@ typedef enum
     USER_PEOCESS_WORK_TIME_OUT,
     USER_PEOCESS_ZERO_CALIB,
     USER_PROCESS_POWER_OFF,
+    USER_PROCESS_DOUBLE_CHANNEL_ERROR,
 } USER_PROCESS_FSM_t;
 
+
+typedef struct
+{
+  u32 timer_counter;
+  u8 tumer_on;
+  u8 control_state;
+  u8 old_control_state;
+} CLEAN_TIMER_t;
 
 #define WORK_CODE      2
 #define CALIBRATE_CODE 1
 #define STOP_CODE      0
 
+u8 getStateDCV();
 void SystemCalibraionStop();
 void SystemCalibraionStart();
 u8 getProcessStateCode();

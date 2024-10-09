@@ -72,11 +72,11 @@
 
 
 
-#define CVD_SETTING1_ID         ( MODE_STATE_ID           +1 )   //0
-#define CVD_FACT1_ID            ( CVD_SETTING1_ID       + 1 )    //1
-#define CVD_SETTING2_ID         ( CVD_FACT1_ID          + 1 )    //2
-#define CVD_FACT2_ID            ( CVD_SETTING2_ID       + 1 )    //3
-#define TEMPERATURE_AIT_ID      ( CVD_FACT2_ID          + 1 )    //4
+#define DCV_SETTING1_ID         ( MODE_STATE_ID           +1 )   //0
+#define DCV_FACT1_ID            ( DCV_SETTING1_ID       + 1 )    //1
+#define DCV_SETTING2_ID         ( DCV_FACT1_ID          + 1 )    //2
+#define DCV_FACT2_ID            ( DCV_SETTING2_ID       + 1 )    //3
+#define TEMPERATURE_AIT_ID      ( DCV_FACT2_ID          + 1 )    //4
 #define TEMPERATURE_ID          ( TEMPERATURE_AIT_ID    + 1 )    //5
 #define CO2_ID                  ( TEMPERATURE_ID        + 1 )    //6
 #define CDV_HUMMANITY_ID        ( CO2_ID                + 1 )    //7
@@ -112,20 +112,18 @@
 #define OFFSET2_ID              ( H_SENSOR_TYPE_ID      + 1 )    //37
 #define COOF_P_1_ID             ( OFFSET2_ID            + 1 )    //38
 #define COOF_I_1_ID             ( COOF_P_1_ID           + 1 )    //39
-#define COOF_P_2_ID             ( COOF_I_1_ID           + 1 )    //40
-#define COOF_I_2_ID             ( COOF_P_2_ID           + 1 )    //41
-#define COOF_P_3_ID             ( COOF_I_2_ID           + 1 )    //42
-#define COOF_I_3_ID             ( COOF_P_3_ID           + 1 )    //43
-#define BP_SETTING1_ID          ( COOF_I_3_ID           + 1 )    //44
-#define BP_FACT_ID              ( BP_SETTING1_ID        + 1 )    //45
-#define BP_SIZE_ID              ( BP_FACT_ID            + 1 )    //46
-#define BP_REGULATION_TYPE_ID  ( BP_SIZE_ID            + 1 )    //47
-#define CH1_ERROR_ID            ( BP_REGULATION_TYPE_ID + 1 )    //48
-#define CH2_ERROR_ID            ( CH1_ERROR_ID          + 1 )    //49
-#define SETTING_BP_MIN_ID       ( CH2_ERROR_ID          + 1 )    //50
-#define SETTING_BP_AVER_ID      ( SETTING_BP_MIN_ID     + 1 )    //51
-#define SETTING_BP_MAX_ID       ( SETTING_BP_AVER_ID    + 1 )    //52
-#define ZERO_CAL_COMMAND        ( SETTING_BP_MAX_ID      + 1 )   //53
+#define BP_SETTING1_ID          ( COOF_I_1_ID           + 1 )    //40
+#define BP_FACT_ID              ( BP_SETTING1_ID        + 1 )    //41
+#define BP_SIZE_ID              ( BP_FACT_ID            + 1 )    //42
+#define BP_REGULATION_TYPE_ID  ( BP_SIZE_ID            + 1 )    //43
+#define CH1_ERROR_ID            ( BP_REGULATION_TYPE_ID + 1 )    //44
+#define CH2_ERROR_ID            ( CH1_ERROR_ID          + 1 )    //45
+#define SETTING_BP_MIN_ID       ( CH2_ERROR_ID          + 1 )    //46
+#define SETTING_BP_AVER_ID      ( SETTING_BP_MIN_ID     + 1 )    //47
+#define SETTING_BP_MAX_ID       ( SETTING_BP_AVER_ID    + 1 )    //48
+#define CDV_MODE_ID             (SETTING_BP_MAX_ID      + 1 )    //49
+#define ZERO_CAL_COMMAND        ( CDV_MODE_ID      + 1 )        //50
+
 
 
 #define VOLTAG_SCREEN_TITLE_ID  ( ZERO_CAL_COMMAND       + 1 )
@@ -141,7 +139,7 @@
 #define FMCH_FIRST          FACT_RASH_ID
 #define FMCH_LAST           MODE_STATE_ID
 
-#define CDV_BP_FIRST        CVD_SETTING1_ID
+#define CDV_BP_FIRST        DCV_SETTING1_ID
 #define CDV_BP_LAST         ZERO_CAL_COMMAND
 
 typedef enum
@@ -200,6 +198,7 @@ typedef struct
  // void          ( *pFunc )( void*, char );
 } xScreenType;
 
+const char * getModeString(u8 mode);
 void MenuSetDeviceMenu();
 void MenuSetDevice();
 void MENU_DrawString(u8 x, u8 y, char const * str);

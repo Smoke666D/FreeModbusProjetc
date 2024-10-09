@@ -108,9 +108,9 @@ static uint8_t error_flag;
 static u8 * SENSOR_COUNT_STRING[]={"0.1","0.5","1.0","2.0","3.0","5.0","10.0"};
 static u8 * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
 static u8 * AfterZoneStrig[]={"Tканала<Tпомещения","Tканала>Tпомещения","Автомат"};
-static u8 * MUnitStrig[] = {"м^3/ч","м/c","Па"};
+static u8 * MUnitStrig[] = {"м^3/ч","м/c ","Па "};
 static u8 * PriorSentStrig[]= {"T","CO2","H"};
-static const char * DevString[3]={"Режим ФМЧ","CAV/VAV/DCV","Режим BP"};
+static const char * DevString[5]={"Режим ФМЧ","Режим DCV","Режим CAV","Режим VAV" ,"Режим BP"};
 static u8 * SensorTypeStrig[]= {"0-10 В","2-10 В","4-20 мA"};
 static u8 * IniputSignalTypeStrig[]= {"Дискретные входы","Пассивный датчик T","Комнатный контроллер","Датчики 0-10В/4-20 мA"};
 static xScreenType * pMenu;
@@ -128,6 +128,12 @@ static u8 cur_max_stirng = 0;
 
 #define  DateFormatString  "%02i.%02i.%02i"
 #define  TimeFormatString  "%02i:%02i:%02i"
+
+
+const char * getModeString(u8 mode)
+{
+    return (DevString[mode]);
+}
 
 static void vDraw( xScreenObjet * pScreenDraw);
 u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len);
@@ -369,6 +375,8 @@ void vMenuTask ( void )
 
 
 
+
+
 void MenuSetDevice()
 {
     switch  ( SystemInitGetDevType())
@@ -376,8 +384,9 @@ void MenuSetDevice()
         case DEV_FMCH:
             pMenu = xScreenFMCH;
             break;
-        case DEV_CDV:
-            pMenu = xScreenCVD;
+        case DEV_DCV:
+
+            pMenu = xScreenDCV;
             break;
         case DEV_BP:
             pMenu = xScreenBP;
@@ -849,20 +858,16 @@ static const u16 MenuCDV_BPRegMap[54]=
                                  OFFSET_CH2,    //37
                                  COOF_P1,    //38
                                  COOF_I1,    //39
-                                 COOF_P2,    //40
-                                 COOF_I2,    //41
-                                 COOF_P3,    //42
-                                 COOF_I3,    //43
+                                 0,    //40
+                                 0,    //41
+                                 0,    //42
+                                 0,    //43
                                  0,    //44
                                  0,    //45
                                  0,    //46
                                  0,    //47
                                  0,    //48
                                  0,    //49
-                                 0,    //50
-                                 0,    //51
-                                 0,    //52
-                                 0,    //53
 
                          };
 
@@ -877,11 +882,11 @@ static const u16 MenuCDV_BPRegMap[54]=
 
 static u8 error_shif = 0;
 static u8 const *  ErrorString[]={"HEPA Фильтр засорен","Невозможно","Низкое напряжение","Высокое напряжение"};
-static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение"};
-static u8 const *  SettingTilteStirnf[]={"1/9","1/19","1/18"};
-static u8 const *  Setting2TilteStirnf[]={"2/9","2/19","2/18"};
-static u8 const *  VoltageTilteStirnf[] ={"5/9","18/19","17/18"};
-static u8 const *  CalTilteStirnf[] ={"7/9","19/19","20/20"};
+static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение","Неспр. дискрные вх.","Неспр канал 1","Неиспр канал 2"};
+static u8 const *  SettingTilteStirnf[]={"1/9","1/11","1/18"};
+static u8 const *  Setting2TilteStirnf[]={"2/9","2/11","2/18"};
+static u8 const *  VoltageTilteStirnf[] ={"5/9","10/11","17/18"};
+static u8 const *  CalTilteStirnf[] ={"7/9","11/11","20/20"};
 
 void vSetTitle(u16 data_id, u8 * str )
 {
@@ -903,12 +908,84 @@ void vSetTitle(u16 data_id, u8 * str )
     }
 
 }
+const char * CDV_MODE_STRING[]={"Закрыто","Минимальная","Средняя","Максимальная","Открыто"};
+
 void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 * res)
 {
     static float temp_float;
-    u16 reg_id = MenuCDV_BPRegMap[data_id - CVD_SETTING1_ID];
+    u16 reg_id = MenuCDV_BPRegMap[data_id - DCV_SETTING1_ID];
     switch (data_id)
     {
+
+        case CDV_MODE_ID:
+            strcpy(str,CDV_MODE_STRING[getStateDCV()]);
+
+
+              break;
+        case DCV_SETTING1_ID:
+            switch ( getStateDCV())
+            {
+                case 0:
+                    strcpy(str,"----");
+                    break;
+                case 1:
+                    temp_float = DataModelGetCDVSettings( getReg16(SETTING_MIN));
+                    sprintf(str,"%06.1f",temp_float);
+                    break;
+                case 2:
+                    temp_float = DataModelGetCDVSettings( getReg16(SETTING_MID));
+                    sprintf(str,"%06.1f",temp_float);
+                    break;
+                case 3:
+                    temp_float = DataModelGetCDVSettings( getReg16(SETTING_MAX));
+                    sprintf(str,"%06.1f",temp_float);
+                    break;
+                case 4:
+                    strcpy(str,"-----");
+                    break;
+            }
+            break;
+        case DCV_FACT1_ID:
+            temp_float = DataModelGetCDVSettings( getAIN(SENS1));
+            sprintf(str,"%06.1f",temp_float);
+            break;
+        case DCV_SETTING2_ID:
+            if (getReg8(CDV_BP_CH_COUNT) == 1 )
+                strcpy(str,"----");
+            else
+            {
+                switch ( getStateDCV())
+                           {
+                               case 0:
+                                   strcpy(str,"Закрыто");
+                                   break;
+                               case 1:
+                                   temp_float = DataModelGetCDVSettings( getReg16(SETTING_MIN)+getReg16(OFFSET_CH2));
+                                   sprintf(str,"%06.1f",temp_float);
+                                   break;
+                               case 2:
+                                   temp_float = DataModelGetCDVSettings( getReg16(SETTING_MID)+getReg16(OFFSET_CH2));
+                                   sprintf(str,"%06.1f",temp_float);
+                                   break;
+                               case 3:
+                                   temp_float = DataModelGetCDVSettings( getReg16(SETTING_MAX)+getReg16(OFFSET_CH2));
+                                   sprintf(str,"%06.1f",temp_float);
+                                   break;
+                               case 4:
+                                   strcpy(str,"Открыто");
+                                   break;
+                           }
+            }
+            break;
+        case DCV_FACT2_ID:
+            if (getReg8(CDV_BP_CH_COUNT) == 1 )
+                strcpy(str,"----");
+            else
+            {
+              temp_float = DataModelGetCDVSettings( getAIN(SENS2));
+              sprintf(str,"%06.1f",temp_float);
+            }
+            break;
         case SENSOR_TYPE_ID:
                 *len = 0;
                 switch (command)
@@ -926,10 +1003,6 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 break;
     case COOF_P_1_ID:
     case COOF_I_1_ID:
-    case COOF_P_2_ID:
-    case COOF_I_2_ID:
-    case COOF_P_3_ID:
-    case COOF_I_3_ID:
         switch (command)
                   {
                       case CMD_READ:
@@ -1357,7 +1430,7 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                           strcpy(str, DevString[ getReg8( reg_id)] );
                           break;
                       default:
-                          vByteDataEdit(0,reg_id,command,0,2 , 0);
+                          vByteDataEdit(0,reg_id,command,0,4 , 0);
                           break;
                 }
                 break;
@@ -1377,9 +1450,9 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                {
                    if ((blink_counter ==0) || ((temp_byte>>error_shif) & 0x01)==0)
                    {
-                     for (u8 i=0;i<5;i++)
+                     for (u8 i=0;i<7;i++)
                      {
-                          if (++error_shif>3) error_shif = 0;
+                          if (++error_shif >6) error_shif = 0;
 
                            if ((temp_byte>>error_shif) & 0x01)
                            {
@@ -1630,26 +1703,28 @@ static void vDraw( xScreenObjet * pScreenDraw)
     for (u8 i=0;i<MAX_STRING_NUMBER;i++)
     {
 
-
+        x = pScreenDraw[i].x;
+        y = pScreenDraw[i].y;
         switch (pScreenDraw[i].xType)
         {
         case TEXT_STRING:
-            x = pScreenDraw[i].x;
-            y = pScreenDraw[i].y;
+
             u8g2_DrawUTF8(&u8g2,x,y,pScreenDraw[i].pStringParametr);
             break;
         case READ_DATA:
-            x = pScreenDraw[i].x;
-            y = pScreenDraw[i].y;
+
+            if (pScreenDraw[i].x_data!=0)
+                offset = pScreenDraw[i].x_data;
+            else
+                offset = 0;
             u8g2_DrawUTF8(&u8g2,x,y,pScreenDraw[i].pStringParametr);
             x = pScreenDraw[i].x_data;
             vGetData(pScreenDraw[i].DataID,str,CMD_READ,&edit_index,&box_len);
             len = u8g2_GetUTF8Width(&u8g2,str);
-            u8g2_DrawUTF8(&u8g2,128-len,y,str);
+            u8g2_DrawUTF8(&u8g2,128-len-offset,y,str);
             break;
         case WRITE_DATA:
-            x = pScreenDraw[i].x;
-            y = pScreenDraw[i].y;
+
             u8g2_DrawUTF8(&u8g2,x,y,pScreenDraw[i].pStringParametr);
             vGetData(pScreenDraw[i].DataID,str,edit_data[i]==3 ? CMD_EDIT_READ : CMD_READ,&edit_index,&box_len);
             len = u8g2_GetUTF8Width(&u8g2,str);

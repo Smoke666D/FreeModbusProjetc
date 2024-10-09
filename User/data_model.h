@@ -14,8 +14,8 @@
 
 
 #define SW_V                 2
-#define SW_V2                0
-#define SW_V3                7
+#define SW_V2                1
+#define SW_V3                2
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -58,11 +58,7 @@
 #define COOF_P                ( COOF_I + sizeof(uint32_t) )
 #define COOF_I1               ( COOF_P + sizeof(uint32_t))
 #define COOF_P1               ( COOF_I1 + sizeof(uint32_t) )
-#define COOF_I2               ( COOF_P1 + sizeof(uint32_t))
-#define COOF_P2               ( COOF_I2 + sizeof(uint32_t) )
-#define COOF_I3               ( COOF_P2 + sizeof(uint32_t))
-#define COOF_P3               ( COOF_I3 + sizeof(uint32_t) )
-#define KOOFKPS               ( COOF_P3 + sizeof(uint32_t))
+#define KOOFKPS               ( COOF_P1 + sizeof(uint32_t))
 #define SETTING1              ( KOOFKPS + sizeof(uint32_t))
 #define SETTING2              ( SETTING1 + sizeof(uint16_t) )
 #define AFTER_ZONE_SETTING    ( SETTING2 + sizeof(uint16_t) )

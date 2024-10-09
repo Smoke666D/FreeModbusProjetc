@@ -24,6 +24,8 @@
 #define CDV_SCREENS_COUNT 26
 #define BP_SCREENS_COUNT 25
 
+
+extern xScreenType  xScreenDCV[];
 extern xScreenType  xDeiceInit[];
 extern xScreenType  xScreenFMCH[];
 extern xScreenType  xScreenCVD[];

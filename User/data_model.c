@@ -53,10 +53,6 @@ DATA_MODEL_INIT_t DataModel_Init()
                setRegFloat(COOF_P,5.0);
                setRegFloat(COOF_I1,15.0);
                setRegFloat(COOF_P1,5.0);
-               setRegFloat(COOF_I2,15.0);
-               setRegFloat(COOF_P2,5.0);
-               setRegFloat(COOF_I3,15.0);
-               setRegFloat(COOF_P3,5.0);
                setReg16(SETTING1, 900);
                setReg16(SETTING2, 600);
                setReg16(IP_PORT,502);
@@ -67,11 +63,6 @@ DATA_MODEL_INIT_t DataModel_Init()
                setReg16(SETTING_MAX , 600);
                setReg16(CH1_SETTING  , 700);
                setReg16(CH2_SETTING  , 800);
-
-
-
-
-
 
                setReg16(TEMP_MIN_SET, 10);
                setReg16(TEMP_MAX_SET,11);

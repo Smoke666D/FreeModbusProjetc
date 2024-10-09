@@ -134,27 +134,23 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define CDV_KOOF_P_MB           204
 #define CDV_KOOF_I1_MB          206
 #define CDV_KOOF_P1_MB          208
-#define CDV_KOOF_I2_MB          210
-#define CDV_KOOF_P2_MB          212
-#define CDV_KOOF_I3_MB          214
-#define CDV_KOOF_P3_MB          216
-#define CDV_AFZONE_SETTING_MB   218
-#define CDV_CH_COUNT_MB         219
-#define CDV_MEASERING_UNIT      220
-#define CDV_OFFSET_CH2          221
-#define CDV_PRIOR_SENS          223
-#define CDV_CLEAN_TIMER         224
-#define CDV_ZERO_POINT_TIMEOUT  225
-#define CDV_KK_SENSOR_TYPE      226
-#define CDV_CO2_SENSOR_TYPE     227
-#define CDV_H_SENSOR_TYPE       228
-#define INPUT_SENSOR_TYPE_MB    229
-#define CDV_SETTING_MIN_MB      230
-#define CDV_SETTING_MID_MB      232
-#define CDV_SETTING_MAX_MB      234
-#define CDV_SETTING_ERROR1_MB   236
-#define CDV_SETTING_ERROR2_MB   238
-#define CDV_F_CHANNEL           240
+#define CDV_AFZONE_SETTING_MB   210
+#define CDV_CH_COUNT_MB         211
+#define CDV_MEASERING_UNIT      212
+#define CDV_OFFSET_CH2          213
+#define CDV_PRIOR_SENS          215
+#define CDV_CLEAN_TIMER         216
+#define CDV_ZERO_POINT_TIMEOUT  217
+#define CDV_KK_SENSOR_TYPE      218
+#define CDV_CO2_SENSOR_TYPE     219
+#define CDV_H_SENSOR_TYPE       220
+#define INPUT_SENSOR_TYPE_MB    221
+#define CDV_SETTING_MIN_MB      222
+#define CDV_SETTING_MID_MB      223
+#define CDV_SETTING_MAX_MB      224
+#define CDV_SETTING_ERROR1_MB   225
+#define CDV_SETTING_ERROR2_MB   226
+#define CDV_F_CHANNEL           227
 
 #define CDV_COUNT             ( CDV_F_CHANNEL - CDV_KOOF_K_MP +2)
 
@@ -307,14 +303,7 @@ static const u16 CDV_REGS_MAP[] = {
                                                COOF_I1,          //7
                                                COOF_P1,          //8
                                                COOF_P1,          //9
-                                               COOF_I2,          //10
-                                               COOF_I2,          //11
-                                               COOF_P2,          //12
-                                               COOF_P2,          //13
-                                               COOF_I3,          //14
-                                               COOF_I3,          //15
-                                               COOF_P3,          //16
-                                               COOF_P3,          //17
+
                                                AFTER_ZONE_SETTING,//18
                                                CDV_BP_CH_COUNT,   //19
                                                MEASERING_UNIT,    //20
@@ -354,14 +343,6 @@ static const u16 BP_REGS_MAP[] = {
         COOF_I1,          //7
         COOF_P1,          //8
         COOF_P1,          //9
-        COOF_I2,          //10
-        COOF_I2,          //11
-        COOF_P2,          //12
-        COOF_P2,          //13
-        COOF_I3,          //14
-        COOF_I3,          //15
-        COOF_P3,          //16
-        COOF_P3,          //17
         AFTER_ZONE_SETTING,//18
         CDV_BP_CH_COUNT,   //19
         MEASERING_UNIT,    //20
@@ -556,7 +537,7 @@ void vSetRegData( u16 adress)
                                       break;
                        }
                        break;
-                  case  DEV_CDV:
+                  case  DEV_DCV:
                       reg_addr = CDV_REGS_MAP[adress- 200];
                       switch (adress)
                       {
@@ -565,10 +546,6 @@ void vSetRegData( u16 adress)
                             case (CDV_KOOF_P_MB+1):
                             case (CDV_KOOF_I1_MB+1):
                             case (CDV_KOOF_P1_MB+1):
-                            case (CDV_KOOF_I2_MB+1):
-                            case (CDV_KOOF_P2_MB+1):
-                            case (CDV_KOOF_I3_MB+1):
-                            case (CDV_KOOF_P3_MB+1):
                             case (CDV_OFFSET_CH2+1):
                             case (CDV_F_CHANNEL+1):
                                                 data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
@@ -786,9 +763,9 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
         float temp_float;
         switch ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE))
         {
-            case DEV_CDV:
+            case DEV_DCV:
             case DEV_BP:
-                  reg_offet  =  (getReg8(DEVICE_TYPE) == DEV_CDV) ? 200 : 300;
+                  reg_offet  =  (getReg8(DEVICE_TYPE) == DEV_BP) ? 300 : 200;
                   tempdata =(int32_t) (getRegFloat(COOF_P)*1000);
                   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P_MB-CDV_OFFSET]);
                   tempdata =(int32_t) (getRegFloat(COOF_I)*1000);
@@ -799,14 +776,7 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
                   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P1_MB-CDV_OFFSET]);
                   tempdata =(int32_t) (getRegFloat(COOF_I1)*1000);
                   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I1_MB-CDV_OFFSET]);
-                  tempdata =(int32_t) (getRegFloat(COOF_P2)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P2_MB-CDV_OFFSET]);
-                  tempdata =(int32_t) (getRegFloat(COOF_I2)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I2_MB-CDV_OFFSET]);
-                  tempdata =(int32_t) (getRegFloat(COOF_P3)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P3_MB-CDV_OFFSET]);
-                  tempdata =(int32_t) (getRegFloat(COOF_I3)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I3_MB-CDV_OFFSET]);
+
 
 
 

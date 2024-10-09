@@ -178,66 +178,71 @@ xScreenType  xScreenFMCH[FMCH_SCREEN_COUNT] =
 
 static  xScreenObjet const CDVInfoScreen1[]=
 {
-        {0,0,LINE1,0,  READ_DATA,"Уставка 1",  CVD_SETTING1_ID},
-        {0,0,25,0,     READ_DATA,"Факт 1",     CVD_FACT1_ID },
-        {0,0,37,0,     READ_DATA,"Уставка 2",  CVD_SETTING2_ID},
-        {1,0,50,0,     READ_DATA,"Факт 2",     CVD_FACT2_ID },
+        {0,0,LINE1,32, READ_DATA,"Уставка 1",  DCV_SETTING1_ID},
+        {0,100,LINE1,0, READ_DATA,"",          MEASERING_UNIT_ID},
+        {0,0,25,32,    READ_DATA,"Факт 1",     DCV_FACT1_ID },
+        {0,100,25,0,    READ_DATA,"",          MEASERING_UNIT_ID},
+        {0,0,37,32,     READ_DATA,"Уставка 2", DCV_SETTING2_ID},
+        {0,100,37,0,    READ_DATA,"",          MEASERING_UNIT_ID},
+        {0,0,50,32,     READ_DATA,"Факт 2",    DCV_FACT2_ID },
+        {0,100,50,0,    READ_DATA,"",          MEASERING_UNIT_ID},
+        {1,10,62,0,     READ_DATA,"Режим:",    CDV_MODE_ID},
 };
 
-static  xScreenObjet const CDVInfoScreen2[]=
+/*static  xScreenObjet const CDVInfoScreen2[]=
 {
         {0,0,LINE1,0,  TEXT_STRING,"Показания датчиков",0},
         {0,0,25,0,     READ_DATA,"Температура AIT",     TEMPERATURE_AIT_ID },
         {0,0,37,0,     READ_DATA,"Температура",         TEMPERATURE_ID},
         {0,0,50,0,     READ_DATA,"CO2",                 CO2_ID },
         {1,2,62,0,     READ_DATA,"Влажность",           CDV_HUMMANITY_ID},
-};
+};*/
 
 
-static  xScreenObjet const CDVInfoScreen3[]=
+/*static  xScreenObjet const CDVInfoScreen3[]=
 {
         {0,0,LINE1,0,  TEXT_STRING,"Датчик",0},
         {0,0,25,0,     READ_DATA,"",                   SENSOR_ID },
         {0,0,37,0,     READ_DATA,"Кол-во каналов",     CDV_CH_COUNT_ID},
         {1,2,50,0,     READ_DATA,"Напяжение",          AC_VOLTAGE_ID },
 };
-
+*/
 
 static xScreenObjet const CDVSettingsScreen3[]=
 {
-        {0,15,LINE1,0,TEXT_STRING,"Настройки      3/19",    0},
+        {0,15,LINE1,0,TEXT_STRING,"Настройки      3/11",    0},
         {0,2,25,0,TEXT_STRING,"Еденицы измерения",          0},
         {0,2,37,0,WRITE_DATA,"",                            MEASERING_UNIT_ID},
         {0,2,50,0,WRITE_DATA,"Кол-во каналов",              CDV_CH_COUNT_ID},
         {0,2,62,30,WRITE_DATA,"Смещ 2",                      OFFSET2_ID},
-        {1,100,62,20,READ_DATA,"",                     MEASERING_UNIT_ID},
+        {1,100,62,0,READ_DATA,"",                           MEASERING_UNIT_ID},
 };
 
 static xScreenObjet const CDVSettingsScreen4[]=
 {
-        {0,10,LINE1,0,TEXT_STRING,"Настройки      4/19",    0},
+        {0,15,LINE1,0,TEXT_STRING,"Настройки      4/11",    0},
         {0,2,25,0,TEXT_STRING,"Уставки",          0},
         {0,2,37,30,WRITE_DATA,"Мин.",               SETTING_MIN_ID},
-        {0,100,37,20,READ_DATA,"",                  MEASERING_UNIT_ID},
+        {0,100,37,0,READ_DATA,"",                  MEASERING_UNIT_ID},
         {0,2,50,30,WRITE_DATA,"Сред.",              SETTING_AVER_ID},
-        {0,100,50,20,READ_DATA,"",                  MEASERING_UNIT_ID},
-        {0,100,62,20,READ_DATA,"",                  MEASERING_UNIT_ID},
+        {0,100,50,0,READ_DATA,"",                  MEASERING_UNIT_ID},
+        {0,100,62,0,READ_DATA,"",                  MEASERING_UNIT_ID},
         {1,2,62,30,WRITE_DATA,"Макс.",              SETTING_MAX_ID},
 };
 
 static xScreenObjet const CDVSettingsScreen5[]=
 {
-        {0,10,LINE1,0,TEXT_STRING,"Настройки      5/19",    0},
+        {0,15,LINE1,0,TEXT_STRING,"Настройки      5/11",    0},
         {0,2,25,0,TEXT_STRING,"Аваринайя уставка",          0},
-        {0,100,37,20,READ_DATA,"",                  MEASERING_UNIT_ID},
+        {0,100,37,0,READ_DATA,"",                  MEASERING_UNIT_ID},
         {0,2,37,30,WRITE_DATA,"Канал 1",              FAIL_SET_CH1_ID},
-        {0,100,50,20,READ_DATA,"",                  MEASERING_UNIT_ID},
+        {0,100,50,0,READ_DATA,"",                  MEASERING_UNIT_ID},
         {1,2,50,30,WRITE_DATA,"Канал 2",              FAIL_SET_CH2_ID},
 };
 
 static xScreenObjet const CDVSettingsScreen6[]=
 {
-        {0,10,LINE1,0,TEXT_STRING,"Настройки      6/19",    0},
+        {0,15,LINE1,0,TEXT_STRING,"Настройки      6/11",    0},
         {0,2,25,0,TEXT_STRING,"Расчет потока",          0},
         {0,2,37,0,WRITE_DATA,(char*)KOOFKPS_TEXT,       KOOFKPS_ID},
         {1,2,50,0,WRITE_DATA,"F канала, м^2",           F_CHANNEL_ID},
@@ -245,38 +250,32 @@ static xScreenObjet const CDVSettingsScreen6[]=
 
 static xScreenObjet const CDVSettingsScreen7[]=
 {
-        {0,10,LINE1,00,TEXT_STRING,"Настройки      7/19",    0},
+        {0,15,LINE1,00,TEXT_STRING,"Настройки      7/11",    0},
         {0,2,25,0,TEXT_STRING,"Таймеры",          0},
         {0,2,37,0,WRITE_DATA,"Уборка (DI4) мин",                CLEAN_TIMER_ID},
         {0,2,50,00,TEXT_STRING,"Калибровка 0 точки ожид.",          0},
         {1,2,62,00,WRITE_DATA,"закрытия клапана, сек.",          ZERO_POINT_TIMEOUT_ID},
 };
 
-static xScreenObjet const CDVSettingsScreen8[]=
-{
-        {0,10,LINE1,00,TEXT_STRING,"Настройки      8/19",    0},
-        {0,2,25,70,TEXT_STRING,"Выбор датчика:",          0},
-        {1,2,37,00,WRITE_DATA,"",              SENSOR_TYPE_ID},
 
-};
 
 static xScreenObjet const CDVSettingsScreen9[]=
 {
-        {0,10,LINE1,00,TEXT_STRING,"Настройки      9/19",    0},
+        {0,15,LINE1,00,TEXT_STRING,"Настройки      8/11",    0},
         {0,2,25,0,TEXT_STRING,"Выбор сигнала AI",          0},
         {0,2,37,0,WRITE_DATA,"KK/T",          KK_SENSOR_TYPE_ID},
         {0,2,50,0,WRITE_DATA,"CO2",           CO2_SENSOR_TYPE_ID},
         {1,2,62,0,WRITE_DATA,"H",             H_SENSOR_TYPE_ID},
 };
 
-static xScreenObjet const CDVSettingsScreen10[]=
+/*static xScreenObjet const CDVSettingsScreen10[]=
 {
         {0,10,LINE1,0,TEXT_STRING,"Настройки     10/19",    0},
         {0,2,25,0,TEXT_STRING,"Приоритет рег.",          0},
         {0,2,37,0,WRITE_DATA,"",              PRIOR_SENSOR_ID},
         {0,2,50,0,TEXT_STRING,"Послезонное регулирование", 0},
         {1,2,62,0,WRITE_DATA,"",AFTER_ZONE_SETTING_ID},
-};
+};*/
 
 static xScreenObjet const CDVSettingsScreen11[]=
 {
@@ -290,6 +289,7 @@ static xScreenObjet const CDVSettingsScreen11[]=
         {1,90,62,0,WRITE_DATA,"до",H_SENSOR_MAX_ID},
 
 };
+
 
 static xScreenObjet const CDVSettingsScreen13[]=
 {
@@ -312,21 +312,21 @@ static xScreenObjet const CDVSettingsScreen14[]=
 
 static xScreenObjet const CDVSettingsScreen16[]=
 {
-        {0,10,LINE1,0,TEXT_STRING,"Настройки     14/19",    0},
-        {0,2,25,0,TEXT_STRING,"ПИ регулятор", 0},
-        {0,2,37,0,TEXT_STRING,"Пассив T,Т преобраз.",0},
+        {0,15,LINE1,0,TEXT_STRING,"Настройки     8/11",    0},
+        {0,2,25,0,TEXT_STRING,"ПИ регулятор ", 0},
+        {0,2,37,0,TEXT_STRING,"Ведуший канал 1.",0},
         {0,2,50,0,WRITE_DATA,"Кооф. П",COOF_P_ID },
         {1,2,62,0,WRITE_DATA,"Кооф. И",COOF_I_ID },
 };
 static xScreenObjet const CDVSettingsScreen17[]=
 {
-        {0,10,LINE1,0,TEXT_STRING,"Настройки     15/19",    0},
+        {0,15,LINE1,0,TEXT_STRING,"Настройки     9/11",    0},
         {0,2,25,0,TEXT_STRING,"ПИ регулятор", 0},
-        {0,2,37,0,TEXT_STRING,"Датчик конц СO2.",0},
+        {0,2,37,0,TEXT_STRING,"Ведомый канал 2.",0},
         {0,2,50,0,WRITE_DATA,"Кооф. П",COOF_P_1_ID },
         {1,2,62,0,WRITE_DATA,"Кооф. И",COOF_I_1_ID },
 };
-
+/*
 static xScreenObjet const CDVSettingsScreen18[]=
 {
         {0,10,LINE1,0,TEXT_STRING,"Настройки     16/19",    0},
@@ -344,7 +344,7 @@ static xScreenObjet const CDVSettingsScreen19[]=
         {0,2,50,0,WRITE_DATA,"Кооф. П",COOF_P_3_ID },
         {1,2,62,0,WRITE_DATA,"Кооф. И",COOF_I_3_ID },
 };
-
+*/
 static xScreenObjet const CDVSettingsScreen20[]=
 {
         {0,10,LINE1,00,READ_DATA,"Настройки",               CALIBRATION_TITLE_ID},
@@ -366,14 +366,40 @@ xScreenType  xDeiceInit[] =
 };
 
 
+static xScreenObjet const InfoScreen2DCV[]=
+{
+        {0,2,LINE1,0,READ_DATA,"Текущих аварий:",ALARM_COUNT_ID},
+        {0,2,25,0,READ_DATA,"",CURRENT_ALARM_COUNT_ID},
+        {0,0,37,0,     READ_DATA,"Кол-во каналов",     CDV_CH_COUNT_ID},
+        {1,2,50,0,     READ_DATA,"Напяжение",          AC_VOLTAGE_ID },
+};
 
+
+xScreenType  xScreenDCV[] =
+{
+  {1,CDVInfoScreen1,       3,   2,  0,   0,   0, 0  },
+  {2,InfoScreen2DCV,       1,   3,  0,   0 ,  0, 1 },
+  {3,InfoScreen3,          2,   1,  0,   0,   4  , 1  },
+  {4,SettingsScreen1,      0,   0,  15,  5,     ENTER_COMMNAD , 3  },
+  {5,SettingsScreen2,      0,   0,  4,   6,     ENTER_COMMNAD , 3 },
+  {6,CDVSettingsScreen3,   0,   0,  5,   7,     ENTER_COMMNAD , 3 },
+  {7,CDVSettingsScreen4,   0,   0,  6,   8,     ENTER_COMMNAD , 3  },
+  {8,CDVSettingsScreen5,   0,   0,  7,   9,    ENTER_COMMNAD , 3  },
+  {9,CDVSettingsScreen6,  0,   0,   8,   10,    ENTER_COMMNAD,  3 },
+  {10,CDVSettingsScreen7,  0,   0,  9,   11,   ENTER_COMMNAD,  3 },
+  {11,CDVSettingsScreen16, 0,   0,  10,   12,   ENTER_COMMNAD, 3 },
+  {12,CDVSettingsScreen17, 0,   0,  11,   13,   ENTER_COMMNAD, 3 },
+  {13,SettingsScreen5,     0,   0,  12,   14,   ENTER_COMMNAD, 3 },
+  {14,CDVSettingsScreen20, 0,   0,  13,   15,   ENTER_COMMNAD, 3 },
+  {15, ResetScreen    ,    0,   0,  14,    4,   ENTER_COMMNAD ,3 },
+};
 
 
 
 xScreenType  xScreenCVD[CDV_SCREENS_COUNT] =
 {
   {1,CDVInfoScreen1,   4,   2,  12,  12,  0, 0 },
-  {2,CDVInfoScreen3,   1,   3,  0,   0 ,  0, 1 },
+
   {3,InfoScreen2,      2,   4,  0,   0 ,  12 | JOURNAL_VIEW_COMMAND, 1 },
   {4,InfoScreen3,      3,   1,  0,   0,  5  , 1  },
   {5,SettingsScreen1,  0,   0,  25,  6,   ENTER_COMMNAD , 4  },
@@ -383,17 +409,17 @@ xScreenType  xScreenCVD[CDV_SCREENS_COUNT] =
   {9,CDVSettingsScreen5,  0,   0,  8,  10,  ENTER_COMMNAD , 4  },
   {10,CDVSettingsScreen6, 0,   0,  9,  11, ENTER_COMMNAD,  4 },
   {11,CDVSettingsScreen7, 0,   0,  10,  13, ENTER_COMMNAD,  4 },
-  {12,CDVInfoScreen2,     0,   0,  1,  1, 0, 1},
-  {13,CDVSettingsScreen8, 0,   0,   11,   14,    ENTER_COMMNAD,  4 },
-  {14,CDVSettingsScreen9, 0,   0,   13,   15,   ENTER_COMMNAD, 4 },
-  {15,CDVSettingsScreen10, 0,   0,  14,   16,   ENTER_COMMNAD, 4 },
-  {16,CDVSettingsScreen11, 0,   0,  15,   17,   ENTER_COMMNAD, 4 },
-  {17,CDVSettingsScreen13, 0,   0,  16,   18,   ENTER_COMMNAD, 4 },
-  {18,CDVSettingsScreen14, 0,   0,  17,   19,   ENTER_COMMNAD, 4 },
+ // {12,CDVInfoScreen2,     0,   0,  1,  1, 0, 1},
+ // {13,CDVSettingsScreen8, 0,   0,   11,   14,    ENTER_COMMNAD,  4 },
+  //{14,CDVSettingsScreen9, 0,   0,   13,   15,   ENTER_COMMNAD, 4 },
+  //{15,CDVSettingsScreen10, 0,   0,  14,   16,   ENTER_COMMNAD, 4 },
+  //{16,CDVSettingsScreen11, 0,   0,  15,   17,   ENTER_COMMNAD, 4 },
+  //{17,CDVSettingsScreen13, 0,   0,  16,   18,   ENTER_COMMNAD, 4 },
+  //{18,CDVSettingsScreen14, 0,   0,  17,   19,   ENTER_COMMNAD, 4 },
   {19,CDVSettingsScreen16, 0,   0,  18,   20,   ENTER_COMMNAD, 4 },
   {20,CDVSettingsScreen17, 0,   0,  19,   21,   ENTER_COMMNAD, 4 },
-  {21,CDVSettingsScreen18, 0,   0,  20,   22,   ENTER_COMMNAD, 4 },
-  {22,CDVSettingsScreen19, 0,   0,  21,   23,   ENTER_COMMNAD, 4 },
+ // {21,CDVSettingsScreen18, 0,   0,  20,   22,   ENTER_COMMNAD, 4 },
+ // {22,CDVSettingsScreen19, 0,   0,  21,   23,   ENTER_COMMNAD, 4 },
   {23,SettingsScreen5,     0,   0,  22,   24,   ENTER_COMMNAD, 4 },
   {24,CDVSettingsScreen20, 0,   0,  23,   25,   ENTER_COMMNAD, 4 },
   {25, ResetScreen    ,    0,   0,  24,    5,   ENTER_COMMNAD ,4 },
@@ -462,17 +488,17 @@ xScreenType  xScreenBP[BP_SCREENS_COUNT] =
   {9,PBSettingsScreen5,  0,   0,  7,  9,  ENTER_COMMNAD , 3  },
   {10,CDVSettingsScreen7,  0,   0,  8,  10, ENTER_COMMNAD,  3 },
   {11,CDVSettingsScreen14, 0,   0,  9,  12, ENTER_COMMNAD,  3 },
-  {12,CDVInfoScreen2,      0,   0,  1,  1, 0, 0 },
+ // {12,CDVInfoScreen2,      0,   0,  1,  1, 0, 0 },
   {13,CDVSettingsScreen13, 0,   0, JOURNAL_NEXT , JOURNAL_PREV, 0,  2 },
   {14,CDVSettingsScreen11, 0,   0,  10,   14,   ENTER_COMMNAD, 3 },
-  {15,CDVSettingsScreen10, 0,   0,  14,   16,   ENTER_COMMNAD, 3 },
+ // {15,CDVSettingsScreen10, 0,   0,  14,   16,   ENTER_COMMNAD, 3 },
   {16,CDVSettingsScreen9, 0,   0,  15,   17,   ENTER_COMMNAD, 3 },
-  {17,CDVSettingsScreen8, 0,   0,  16,   18,   ENTER_COMMNAD, 3 },
+//  {17,CDVSettingsScreen8, 0,   0,  16,   18,   ENTER_COMMNAD, 3 },
 
   {19,CDVSettingsScreen16, 0,   0,  18,   20,   ENTER_COMMNAD, 3 },
   {20,CDVSettingsScreen17, 0,   0,  19,   21,   ENTER_COMMNAD, 3 },
-  {21,CDVSettingsScreen18, 0,   0,  20,   22,   ENTER_COMMNAD, 3 },
-  {22,CDVSettingsScreen19, 0,   0,  21,   23,   ENTER_COMMNAD, 3 },
+  //{21,CDVSettingsScreen18, 0,   0,  20,   22,   ENTER_COMMNAD, 3 },
+//  {22,CDVSettingsScreen19, 0,   0,  21,   23,   ENTER_COMMNAD, 3 },
   {23,SettingsScreen5,     0,   0,  23,   25,   ENTER_COMMNAD, 3 },
   {24,CDVSettingsScreen20, 0,   0,  24,   4,    ENTER_COMMNAD, 3 },
 };
