@@ -129,30 +129,33 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define CDV_OFFSET          100
 
 //§²§Ö§Ô§Ú§ã§ä§â§í CDV
-#define CDV_KOOF_K_MP           200
-#define CDV_KOOF_I_MB           202
-#define CDV_KOOF_P_MB           204
-#define CDV_KOOF_I1_MB          206
-#define CDV_KOOF_P1_MB          208
-#define CDV_AFZONE_SETTING_MB   210
-#define CDV_CH_COUNT_MB         211
-#define CDV_MEASERING_UNIT      212
-#define CDV_OFFSET_CH2          213
-#define CDV_PRIOR_SENS          215
-#define CDV_CLEAN_TIMER         216
-#define CDV_ZERO_POINT_TIMEOUT  217
-#define CDV_KK_SENSOR_TYPE      218
-#define CDV_CO2_SENSOR_TYPE     219
-#define CDV_H_SENSOR_TYPE       220
-#define INPUT_SENSOR_TYPE_MB    221
-#define CDV_SETTING_MIN_MB      222
-#define CDV_SETTING_MID_MB      223
-#define CDV_SETTING_MAX_MB      224
-#define CDV_SETTING_ERROR1_MB   225
-#define CDV_SETTING_ERROR2_MB   226
-#define CDV_F_CHANNEL           227
+#define CDV_CH_COUNT_MB         200
+#define CDV_KOOF_K_MP           201
+#define CDV_KOOF_I_MB           203
+#define CDV_KOOF_P_MB           205
+#define CDV_KOOF_I1_MB          207
+#define CDV_KOOF_P1_MB          209
+#define CDV_SETTING_MIN_MB      211
+#define CDV_SETTING_MID_MB      213
+#define CDV_SETTING_MAX_MB      215
+#define CDV_SETTING_ERROR1_MB   217
+#define CDV_SETTING_ERROR2_MB   219
+#define CDV_F_CHANNEL           221
+#define CDV_OFFSET_CH2          223
+#define CDV_CLEAN_TIMER         225
+#define CDV_MEASERING_UNIT      226
+#define CDV_ZERO_POINT_TIMEOUT  227
+#define CDV_AFZONE_SETTING_MB   228
+#define CDV_PRIOR_SENS          229
+#define CDV_KK_SENSOR_TYPE      230
+#define CDV_CO2_SENSOR_TYPE     231
+#define CDV_H_SENSOR_TYPE       232
+#define INPUT_SENSOR_TYPE_MB    233
 
-#define CDV_COUNT             ( CDV_F_CHANNEL - CDV_KOOF_K_MP +2)
+
+
+
+#define CDV_COUNT             ( CDV_CH_COUNT_MB  - INPUT_SENSOR_TYPE_MB + 1)
 
 
 #define CDV_INPUTS_COUNT          0
@@ -292,42 +295,42 @@ static const u16 FMCH_REGS_MAP[] ={
 
 
 static const u16 CDV_REGS_MAP[] = {
-
-                                               KOOFKPS,          //0
+                                               CDV_BP_CH_COUNT,  //0
                                                KOOFKPS,          //1
-                                               COOF_P,           //2
+                                               KOOFKPS,          //2
                                                COOF_P,           //3
-                                               COOF_I,           //4
+                                               COOF_P,           //4
                                                COOF_I,           //5
-                                               COOF_I1,          //6
+                                               COOF_I,           //6
                                                COOF_I1,          //7
-                                               COOF_P1,          //8
+                                               COOF_I1,          //8
                                                COOF_P1,          //9
+                                               COOF_P1,          //10
+                                               SETTING_MIN,       //11
+                                               SETTING_MIN,       //12
+                                               SETTING_MID,       //13
+                                               SETTING_MID,       //14
+                                               SETTING_MAX,       //15
+                                               SETTING_MAX,       //16
+                                               CH1_SETTING,       //17
+                                               CH1_SETTING,       //18
+                                               CH2_SETTING,       //19
+                                               CH2_SETTING,       //20
+                                               F_CHANNEL,         //21
+                                               F_CHANNEL,         //22
+                                               OFFSET_CH2,        //23
+                                               OFFSET_CH2,        //24
+                                               CLEAN_TIMER,       //25
+                                               MEASERING_UNIT,    //26
+                                               ZERO_POINT_TIMEOUT,//27
+                                               AFTER_ZONE_SETTING,//28
+                                               PRIOR_SENSOR,      //29
+                                               KK_SENSOR_TYPE,    //30
+                                               CO2_SENSOR_TYPE,   //31
+                                               H_SENSOR_TYPE,     //32
+                                               INPUT_SENSOR_TYPE, //33
 
-                                               AFTER_ZONE_SETTING,//18
-                                               CDV_BP_CH_COUNT,   //19
-                                               MEASERING_UNIT,    //20
-                                               OFFSET_CH2,        //21
-                                               OFFSET_CH2,        //22
-                                               PRIOR_SENSOR,      //23
-                                               CLEAN_TIMER,       //24
-                                               ZERO_POINT_TIMEOUT,//25
-                                               KK_SENSOR_TYPE,    //26
-                                               CO2_SENSOR_TYPE,   //27
-                                               H_SENSOR_TYPE,     //28
-                                               INPUT_SENSOR_TYPE, //29
-                                               SETTING_MIN,       //30
-                                               SETTING_MIN,       //31
-                                               SETTING_MID,       //32
-                                               SETTING_MID,       //33
-                                               SETTING_MAX,       //34
-                                               SETTING_MAX,       //35
-                                               CH1_SETTING,       //36
-                                               CH1_SETTING,       //37
-                                               CH2_SETTING,       //38
-                                               CH2_SETTING,       //39
-                                               F_CHANNEL,         //40
-                                               F_CHANNEL,         //41
+
 };
 
 
