@@ -461,7 +461,23 @@ void vCDV_SetpointCheck( u8 * state, u32 * timeout )
     return ;
 }
 
-
+float ComputeSetPoint()
+{
+    float temp_float = 0;
+    switch (getReg8( KK_SENSOR_TYPE))
+    {
+        case 0:
+            temp_float =( getAIN(AIN1)/10.0*(getReg16(SETTING_MAX) - getReg16(SETTING_MIN))) + getReg16(SETTING_MIN);
+            break;
+        case 1:
+            temp_float =( (getAIN(AIN1)-2.0)/8.0*(getReg16(SETTING_MAX) - getReg16(SETTING_MIN))) + getReg16(SETTING_MIN);
+            break;
+        default:
+            temp_float =( (getAIN(AIN1)-4.0)/18.0*(getReg16(SETTING_MAX) - getReg16(SETTING_MIN))) + getReg16(SETTING_MIN);
+            break;
+    }
+    return (temp_float);
+}
 
 void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag, u8 * state)
 {
@@ -498,7 +514,7 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag, u8 * state
                                SET_POINT = (float)getReg16(SETTING_MAX);
                                break;
                            default:
-                               SET_POINT = PID_FirstOut;
+
                                break;
 
                       }
@@ -508,11 +524,21 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag, u8 * state
                         float PID_Out = PIDOut/1000.0;
                         USER_AOUT_SET(DAC1,PID_Out);
                       }
-                      else
-                      {
+                      else if (*state > 4)
+                        {
+                         if ( getReg8(INPUT_SENSOR_TYPE) == 0 )
+                         {
                           PID_Compute(&TPID,getAIN(SENS1));
                           float PID_Out = PIDOut/1000.0;
                           USER_AOUT_SET(DAC1,PID_Out);
+                         }
+                         else if (getReg8(INPUT_SENSOR_TYPE) == 1)
+                         {
+                             SET_POINT = ComputeSetPoint();
+                             PID_Compute(&TPID,getAIN(SENS1));
+                             float PID_Out = PIDOut/1000.0;
+                             USER_AOUT_SET(DAC1,PID_Out);
+                         }
                       }
                     if (getReg8(CDV_BP_CH_COUNT) == 2)
                     {
@@ -521,19 +547,19 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag, u8 * state
                               case 0:
                                   USER_AOUT_SET(DAC2,0.0);
                                   break;
-                              case 1:
+                              case 4:
                                   USER_AOUT_SET(DAC1,10.0);
                                   break;
                               default:
                                   SET_POINT1  = SET_POINT + (float)getReg16(OFFSET_CH2);
-                                  if ((*state>=1) && (*state<=3))
+                                  switch ((getReg8(INPUT_SENSOR_TYPE)))
                                   {
+                                  case 0:
+                                  case 1:
                                       PID_Compute(&TPID2,getAIN(SENS2));
+                                      break;
                                   }
-                                  else
-                                  {
 
-                                  }
                                   float PID_Out = PIDOut2/1000.0;
                                   USER_AOUT_SET(DAC2,PID_Out);
                         }
