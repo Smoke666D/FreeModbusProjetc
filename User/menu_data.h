@@ -24,7 +24,9 @@
 #define CDV_SCREENS_COUNT 26
 #define BP_SCREENS_COUNT 25
 
-
+void SetSnsorAnalog(  uint8_t state);
+extern xScreenType  xScreenVAV[];
+extern xScreenType  xScreenCAV[];
 extern xScreenType  xScreenDCV[];
 extern xScreenType  xDeiceInit[];
 extern xScreenType  xScreenFMCH[];

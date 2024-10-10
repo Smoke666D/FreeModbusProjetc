@@ -36,8 +36,11 @@ typedef struct
 
 #define WORK_CODE      2
 #define CALIBRATE_CODE 1
-#define STOP_CODE      0
+#define STOP_CODE  0
 
+
+void UPDATE_COOF();
+u8 getStateVAV();
 u8 getStateDCV();
 void SystemCalibraionStop();
 void SystemCalibraionStart();

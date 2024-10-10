@@ -112,7 +112,7 @@ static u8 * MUnitStrig[] = {"м^3/ч","м/c ","Па "};
 static u8 * PriorSentStrig[]= {"T","CO2","H"};
 static const char * DevString[5]={"Режим ФМЧ","Режим DCV","Режим CAV","Режим VAV" ,"Режим BP"};
 static u8 * SensorTypeStrig[]= {"0-10 В","2-10 В","4-20 мA"};
-static u8 * IniputSignalTypeStrig[]= {"Дискретные входы","Пассивный датчик T","Комнатный контроллер","Датчики 0-10В/4-20 мA"};
+static u8 * IniputSignalTypeStrig[]= {"Пассивный датчик T","Комнатный контроллер","Датчики 0-10В/4-20 мA"};
 static xScreenType * pMenu;
 static u8 journal_index =0;
 static uint16_t curr_edit_data_id = 0;
@@ -385,11 +385,13 @@ void MenuSetDevice()
             pMenu = xScreenFMCH;
             break;
         case DEV_DCV:
-
             pMenu = xScreenDCV;
             break;
-        case DEV_BP:
-            pMenu = xScreenBP;
+        case DEV_CAV:
+            pMenu = xScreenCAV;
+            break;
+        case DEV_VAV:
+            pMenu = xScreenVAV;
             break;
     }
 }
@@ -834,40 +836,34 @@ static const u16 MenuCDV_BPRegMap[54]=
                                  CH2_SETTING,    //13
                                  F_CHANNEL,    //14
                                  INPUT_SENSOR_TYPE , //15
-                                 TEMP_MIN_SET,    //16
-                                 TEMP_MAX_SET,    //17
-                                 CO2_MIN_SET,    //18
-                                 CO2_MAX_SET,    //19
-                                 H_MIN_SET,    //22
-                                 H_MAX_SET,    //21
-                                 0,    //22
-                                 0,    //23
-                                 0,    //24
-                                 0,    //25
-                                 0,    //26
-                                 0,    //27
-                                 AFTER_ZONE_SETTING,   //28
-                                 CDV_BP_CH_COUNT,    //29
-                                 MEASERING_UNIT,    //39
-                                 CLEAN_TIMER,    //31
-                                 ZERO_POINT_TIMEOUT,    //32
-                                 PRIOR_SENSOR ,    //33
-                                 KK_SENSOR_TYPE,    //34
-                                 CO2_SENSOR_TYPE,    //35
-                                 H_SENSOR_TYPE,    //36
-                                 OFFSET_CH2,    //37
-                                 COOF_P1,    //38
-                                 COOF_I1,    //39
+                                 MIN_SET,    //16
+                                 MAX_SET,    //17
+                                 0,    //18
+                                 0,    //19
+                                 AFTER_ZONE_SETTING,   //20
+                                 CDV_BP_CH_COUNT,    //22
+                                 MEASERING_UNIT,    //22
+                                 CLEAN_TIMER,    //23
+                                 ZERO_POINT_TIMEOUT,    //24
+                                 SETTING_TIMER,       //25
+                                 PRIOR_SENSOR ,    //26
+                                 KK_SENSOR_TYPE,    //27
+                                 CO2_SENSOR_TYPE,    //28
+                                 H_SENSOR_TYPE,    //29
+                                 OFFSET_CH2,    //30
+                                 COOF_P1,    //31
+                                 COOF_I1,    //32
+                                 0,    //33
+                                 0,    //34
+                                 0,    //35
+                                 0,    //36
+                                 0,    //37
+                                 0,    //38
+                                 0,    //39
                                  0,    //40
                                  0,    //41
                                  0,    //42
                                  0,    //43
-                                 0,    //44
-                                 0,    //45
-                                 0,    //46
-                                 0,    //47
-                                 0,    //48
-                                 0,    //49
 
                          };
 
@@ -883,10 +879,11 @@ static const u16 MenuCDV_BPRegMap[54]=
 static u8 error_shif = 0;
 static u8 const *  ErrorString[]={"HEPA Фильтр засорен","Невозможно","Низкое напряжение","Высокое напряжение"};
 static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение","Неспр. дискрные вх.","Неспр канал 1","Неиспр канал 2"};
-static u8 const *  SettingTilteStirnf[]={"1/9","1/11","1/18"};
-static u8 const *  Setting2TilteStirnf[]={"2/9","2/11","2/18"};
-static u8 const *  VoltageTilteStirnf[] ={"5/9","10/11","17/18"};
-static u8 const *  CalTilteStirnf[] ={"7/9","11/11","20/20"};
+static u8 const *  SettingTilteStirnf[]={"1/9","1/11","1/18","1/13","1/1","1/1"};
+static u8 const *  Setting2TilteStirnf[]={"2/9","2/11","2/18","2/13","1/1","1/1"};
+static u8 const *  Setting3TilteStirnf[]={"3/9","3/11","3/18","3/13","1/1","1/1"};
+static u8 const *  VoltageTilteStirnf[] ={"5/9","10/11","17/18","1/1","1/1","1/1"};
+static u8 const *  CalTilteStirnf[] ={"7/9","11/11","20/20","1/1","1/1","1/1"};
 
 void vSetTitle(u16 data_id, u8 * str )
 {
@@ -902,9 +899,27 @@ void vSetTitle(u16 data_id, u8 * str )
            case SETTING2_TITLE_ID:
                strcpy(str,Setting2TilteStirnf[dev_type]);
                break;
+           case SETTING3_TITLE_ID:
+                         strcpy(str,Setting3TilteStirnf[dev_type]);
+                         break;
            case VOLTAG_SCREEN_TITLE_ID:
                strcpy(str,VoltageTilteStirnf[dev_type]);
                break;
+           case SENSOR_TYPE_TITLE_ID:
+               if (getReg8(INPUT_SENSOR_TYPE) == 2)
+               strcpy(str,"Приоритет рег.:") ;
+               else
+                   str[0] = 0;
+
+               break;
+           case  SENSOR_TITLE_ID:
+               if (getReg8(INPUT_SENSOR_TYPE) == 2)
+                            strcpy(str,"Тип датчика.:") ;
+                            else
+                                str[0] = 0;
+
+                            break;
+
     }
 
 }
@@ -918,9 +933,17 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
     {
 
         case CDV_MODE_ID:
-            strcpy(str,CDV_MODE_STRING[getStateDCV()]);
+            switch (getReg8(DEVICE_TYPE))
+            {
+            case DEV_DCV:
+               strcpy(str,CDV_MODE_STRING[getStateDCV()]);
+               break;
 
+            case DEV_VAV:
+                strcpy(str,CDV_MODE_STRING[getStateVAV()]);
+                break;
 
+            }
               break;
         case DCV_SETTING1_ID:
             switch ( getStateDCV())
@@ -996,11 +1019,62 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                             case CMD_READ:
                                 strcpy(str, IniputSignalTypeStrig[ getReg8( reg_id)] );
                                 break;
+                            case CMD_SAVE_EDIT:
+                                  if (edit_data_buffer_byte==2)
+                                    SetSnsorAnalog(  1 );
+                                  else
+                                    SetSnsorAnalog(  0 );
+                                  SetFirtsEditString();
                             default:
-                                vByteDataEdit(0,reg_id,command,0,3, 0);
+                                vByteDataEdit(0,reg_id,command,0,2, 0);
                                 break;
                         }
                 break;
+    case PRIOR_SENSOR_ID:
+        *len = 0;
+        if (getReg8(INPUT_SENSOR_TYPE) == 2)
+        {
+         switch (command)
+         {
+             case CMD_EDIT_READ:
+                strcpy(str, PriorSentStrig[ edit_data_buffer_byte ] );
+                break;
+            case CMD_READ:
+                 strcpy(str, PriorSentStrig[ getReg8( reg_id)] );
+                 break;
+             default:
+                 vByteDataEdit(0,reg_id,command,0,2, 0);
+                 break;
+         }
+        }
+        else {
+            str[0]=0;
+        }
+                break;
+    case KK_SENSOR_TYPE_ID:
+
+                *len = 0;
+                if (getReg8(INPUT_SENSOR_TYPE) == 2)
+                {
+                switch (command)
+                {
+                    case CMD_EDIT_READ:
+                        strcpy(str, SensorTypeStrig[ edit_data_buffer_byte ] );
+                        break;
+                    case CMD_READ:
+                        strcpy(str, SensorTypeStrig[ getReg8( reg_id)] );
+                        break;
+                    default:
+                        vByteDataEdit(0,reg_id,command,0,T4_20, T0_10 );
+                        break;
+                }
+    }
+    else
+        str[0]= 0;
+                break;
+
+
+
     case COOF_P_1_ID:
     case COOF_I_1_ID:
         switch (command)
@@ -1016,24 +1090,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                          break;
                   }
                   break;
-        case KK_SENSOR_TYPE_ID:
-        case CO2_SENSOR_TYPE_ID:
-        case H_SENSOR_TYPE_ID:
-            *len = 0;
-            switch (command)
-            {
-                case CMD_EDIT_READ:
-                    strcpy(str, SensorTypeStrig[ edit_data_buffer_byte ] );
-                    break;
-                case CMD_READ:
-                    strcpy(str, SensorTypeStrig[ getReg8( reg_id)] );
-                    break;
-                default:
-                    vByteDataEdit(0,reg_id,command,0,T4_20, T0_10 );
-                    break;
-            }
 
-            break;
         case ZERO_POINT_TIMEOUT_ID:
             switch (command)
             {
@@ -1106,6 +1163,21 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                       break;
              }
             break;
+        case SETTING_TIMER_ID:
+            switch (command)
+                                      {
+                                           case CMD_READ:
+                                                sprintf(str,"%03i",getReg8(reg_id) );
+                                                break;
+                                           case CMD_EDIT_READ:
+                                                sprintf(str,"%03i",edit_data_buffer_byte );
+                                                break;
+                                           default:
+                                                vByteDataEdit(0,reg_id,command,0,250,0);
+                                                break;
+                                     }
+                                     break;
+            break;
         case OFFSET2_ID:
         case SETTING_MIN_ID:
         case SETTING_AVER_ID:
@@ -1137,7 +1209,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                         start_edit_flag = 0;
                         break;
                  case CMD_READ:
-                        temp_float  = DataModelGetCDVSettings(getRegFloat(reg_id));
+                        temp_float  = DataModelGetCDVSettings(getReg16(reg_id));
                         sprintf(str,"%06.1f",temp_float);
                         break;
                  case CMD_EDIT_READ:
@@ -1145,25 +1217,11 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                       break;
                 default:
                       temp_float  = DataModelGetCDVSettings(2500);
-                      vFloatDataEdit(reg_id, command,5,1,temp_float ,0);
+                      vFloatDataEdit(reg_id, command,4,1,temp_float ,0);
                       break;
             }
             break;
-        case PRIOR_SENSOR_ID:
-             *len = 0;
-              switch (command)
-              {
-                   case CMD_EDIT_READ:
-                        strcpy(str,PriorSentStrig[ edit_data_buffer_byte ] );
-                        break;
-                   case CMD_READ:
-                        strcpy(str, PriorSentStrig[ getReg8( reg_id)] );
-                        break;
-                   default:
-                        vByteDataEdit(0,reg_id,command,0,H_PRIOR , TEM_PRIOR );
-                        break;
-             }
-             break;
+
         case F_CHANNEL_ID:
             switch (command)
             {
@@ -1178,10 +1236,9 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                       break;
             }
             break;
-            case T_SENSOR_MIN_ID:
-            case T_SENSOR_MAX_ID:
-            case H_SENSOR_MIN_ID:
-            case H_SENSOR_MAX_ID:
+
+            case SENSOR_MIN_ID:
+            case SENSOR_MAX_ID:
                           switch (command)
                           {
                                case CMD_READ:
@@ -1195,23 +1252,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                                     break;
                          }
                          break;
-            case CO2_SENSOR_MIN_ID:
-            case CO2_SENSOR_MAX_ID:
-                           switch (command)
-                                       {
-                                            case CMD_READ:
-                                                 sprintf(str,"%04i",getReg16(reg_id) );
-                                                 break;
-                                            case CMD_EDIT_READ:
-                                                 sprintf(str,"%04i",edit_data_buffer_byte );
-                                                 break;
-                                            default:
-                                                 vByteDataEdit(1,reg_id,command,3,9999,0);
-                                                 break;
-                                      }
-                                      break;
 
-                break;
                 case ZERO_CAL_COMMAND:
                     switch (command)
                     {

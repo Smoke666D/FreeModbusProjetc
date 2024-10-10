@@ -53,6 +53,7 @@ DATA_MODEL_INIT_t DataModel_Init()
                setRegFloat(COOF_P,5.0);
                setRegFloat(COOF_I1,15.0);
                setRegFloat(COOF_P1,5.0);
+               setRegFloat(F_CHANNEL,0.0314);
                setReg16(SETTING1, 900);
                setReg16(SETTING2, 600);
                setReg16(IP_PORT,502);
@@ -63,13 +64,9 @@ DATA_MODEL_INIT_t DataModel_Init()
                setReg16(SETTING_MAX , 600);
                setReg16(CH1_SETTING  , 700);
                setReg16(CH2_SETTING  , 800);
+               setReg16(MIN_SET, 10);
+               setReg16(MAX_SET,11);
 
-               setReg16(TEMP_MIN_SET, 10);
-               setReg16(TEMP_MAX_SET,11);
-               setReg16(CO2_MIN_SET,12);
-               setReg16(CO2_MAX_SET,13);
-               setReg16(H_MIN_SET  ,14);
-               setReg16(H_MAX_SET  ,15);
                DATA_MODEL_REGISTER[SENSOR_COUNT]        = TIME_1_0;
                if (WriteEEPROM(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 1000 ,2) == EEPROM_OK) printf("EEPROMwtiye\r\n");
                ReadEEPROMData(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ,2);
@@ -131,7 +128,7 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
 
              break;
         case CDV_BP_CH_COUNT:
-            if (data > 1) temp_data = 1;
+            if (data > 2) temp_data = 2;
 
              break;
         case LIGTH:
@@ -146,6 +143,11 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
              if ((data >100) && (data==0)) return (0);
 
              break;
+        case CDV_CONTOROL :
+            printf(" new_state = %i\r\n", data);
+            if  ( data > 4 )
+                return 0;
+            break;
         case CONTROL_TYPE:
              if (data >3 ) return 0;
              if ( data > 0)

@@ -88,48 +88,44 @@
 #define FAIL_SET_CH2_ID         ( FAIL_SET_CH1_ID       + 1 )    //13
 #define F_CHANNEL_ID            ( FAIL_SET_CH2_ID       + 1 )    //14
 #define SENSOR_TYPE_ID          ( F_CHANNEL_ID          + 1 )    //15
-#define T_SENSOR_MIN_ID         ( SENSOR_TYPE_ID      + 1 )      //16
-#define T_SENSOR_MAX_ID         ( T_SENSOR_MIN_ID       + 1 )    //17
-#define CO2_SENSOR_MIN_ID       ( T_SENSOR_MAX_ID       + 1 )    //18
-#define CO2_SENSOR_MAX_ID       ( CO2_SENSOR_MIN_ID     + 1 )    //19
-#define H_SENSOR_MIN_ID         ( CO2_SENSOR_MAX_ID     + 1 )    //20
-#define H_SENSOR_MAX_ID         ( H_SENSOR_MIN_ID       + 1 )    //21
-#define T_SENSOR_OFFSET_ID      ( H_SENSOR_MAX_ID       + 1 )    //22
-#define CO2_SENSOR_OFFSET_ID    ( T_SENSOR_OFFSET_ID    + 1 )    //23
-#define H_SENSOR_OFFSET_ID      ( CO2_SENSOR_OFFSET_ID  + 1 )    //24
-#define T_SENSOR_SETTING_ID     ( H_SENSOR_OFFSET_ID    + 1 )    //25
-#define CO2_SENSOR_SETTING_ID   ( T_SENSOR_SETTING_ID   + 1 )    //26
-#define H_SENSOR_SETTING_ID     ( CO2_SENSOR_SETTING_ID + 1 )    //27
-#define AFTER_ZONE_SETTING_ID   ( H_SENSOR_SETTING_ID   + 1 )    //28
-#define CDV_CH_COUNT_ID         ( AFTER_ZONE_SETTING_ID + 1 )    //29
-#define MEASERING_UNIT_ID       ( CDV_CH_COUNT_ID       + 1 )    //30
-#define CLEAN_TIMER_ID          ( MEASERING_UNIT_ID     + 1 )    //31
-#define ZERO_POINT_TIMEOUT_ID   ( CLEAN_TIMER_ID        + 1 )    //32
-#define PRIOR_SENSOR_ID         ( ZERO_POINT_TIMEOUT_ID + 1 )    //33
-#define KK_SENSOR_TYPE_ID       ( PRIOR_SENSOR_ID       + 1 )    //34
-#define CO2_SENSOR_TYPE_ID      ( KK_SENSOR_TYPE_ID     + 1 )    //35
-#define H_SENSOR_TYPE_ID        ( CO2_SENSOR_TYPE_ID    + 1 )    //36
-#define OFFSET2_ID              ( H_SENSOR_TYPE_ID      + 1 )    //37
-#define COOF_P_1_ID             ( OFFSET2_ID            + 1 )    //38
-#define COOF_I_1_ID             ( COOF_P_1_ID           + 1 )    //39
-#define BP_SETTING1_ID          ( COOF_I_1_ID           + 1 )    //40
-#define BP_FACT_ID              ( BP_SETTING1_ID        + 1 )    //41
-#define BP_SIZE_ID              ( BP_FACT_ID            + 1 )    //42
-#define BP_REGULATION_TYPE_ID  ( BP_SIZE_ID            + 1 )    //43
-#define CH1_ERROR_ID            ( BP_REGULATION_TYPE_ID + 1 )    //44
-#define CH2_ERROR_ID            ( CH1_ERROR_ID          + 1 )    //45
-#define SETTING_BP_MIN_ID       ( CH2_ERROR_ID          + 1 )    //46
-#define SETTING_BP_AVER_ID      ( SETTING_BP_MIN_ID     + 1 )    //47
-#define SETTING_BP_MAX_ID       ( SETTING_BP_AVER_ID    + 1 )    //48
-#define CDV_MODE_ID             (SETTING_BP_MAX_ID      + 1 )    //49
-#define ZERO_CAL_COMMAND        ( CDV_MODE_ID      + 1 )        //50
+#define SENSOR_MIN_ID           ( SENSOR_TYPE_ID      + 1 )      //16
+#define SENSOR_MAX_ID           ( SENSOR_MIN_ID       + 1 )    //17
+#define SENSOR_OFFSET_ID        ( SENSOR_MAX_ID       + 1 )    //18
+#define SENSOR_SETTING_ID       ( SENSOR_OFFSET_ID    + 1 )    //19
+#define AFTER_ZONE_SETTING_ID   ( SENSOR_SETTING_ID   + 1 )    //20
+#define CDV_CH_COUNT_ID         ( AFTER_ZONE_SETTING_ID + 1 )    //21
+#define MEASERING_UNIT_ID       ( CDV_CH_COUNT_ID       + 1 )    //22
+#define CLEAN_TIMER_ID          ( MEASERING_UNIT_ID     + 1 )    //23
+#define ZERO_POINT_TIMEOUT_ID   ( CLEAN_TIMER_ID        + 1 )    //24
+#define SETTING_TIMER_ID        ( ZERO_POINT_TIMEOUT_ID + 1 )    //25
+#define PRIOR_SENSOR_ID         ( SETTING_TIMER_ID       + 1 )    //26
+#define KK_SENSOR_TYPE_ID       ( PRIOR_SENSOR_ID       + 1 )    //27
+#define CO2_SENSOR_TYPE_ID      ( KK_SENSOR_TYPE_ID     + 1 )    //28
+#define H_SENSOR_TYPE_ID        ( CO2_SENSOR_TYPE_ID    + 1 )    //29
+#define OFFSET2_ID              ( H_SENSOR_TYPE_ID      + 1 )    //30
+#define COOF_P_1_ID             ( OFFSET2_ID            + 1 )    //31
+#define COOF_I_1_ID             ( COOF_P_1_ID           + 1 )    //32
+#define BP_SETTING1_ID          ( COOF_I_1_ID           + 1 )    //33
+#define BP_FACT_ID              ( BP_SETTING1_ID        + 1 )    //34
+#define BP_SIZE_ID              ( BP_FACT_ID            + 1 )    //35
+#define BP_REGULATION_TYPE_ID  ( BP_SIZE_ID            + 1 )    //36
+#define CH1_ERROR_ID            ( BP_REGULATION_TYPE_ID + 1 )    //37
+#define CH2_ERROR_ID            ( CH1_ERROR_ID          + 1 )    //38
+#define SETTING_BP_MIN_ID       ( CH2_ERROR_ID          + 1 )    //39
+#define SETTING_BP_AVER_ID      ( SETTING_BP_MIN_ID     + 1 )    //40
+#define SETTING_BP_MAX_ID       ( SETTING_BP_AVER_ID    + 1 )    //41
+#define CDV_MODE_ID             (SETTING_BP_MAX_ID      + 1 )    //42
+#define ZERO_CAL_COMMAND        ( CDV_MODE_ID      + 1 )        //43
 
 
 
 #define VOLTAG_SCREEN_TITLE_ID  ( ZERO_CAL_COMMAND       + 1 )
 #define SETTING1_TITLE_ID       ( VOLTAG_SCREEN_TITLE_ID + 1 )
 #define SETTING2_TITLE_ID       ( SETTING1_TITLE_ID      + 1 )
-#define CALIBRATION_TITLE_ID    ( SETTING2_TITLE_ID      + 1 )
+#define SETTING3_TITLE_ID       ( SETTING2_TITLE_ID      + 1 )
+#define SENSOR_TYPE_TITLE_ID    ( SETTING3_TITLE_ID      + 1 )
+#define SENSOR_TITLE_ID         ( SENSOR_TYPE_TITLE_ID   + 1 )
+#define CALIBRATION_TITLE_ID    ( SENSOR_TITLE_ID   + 1 )
 
 
 

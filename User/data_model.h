@@ -15,7 +15,7 @@
 
 #define SW_V                 2
 #define SW_V2                1
-#define SW_V3                2
+#define SW_V3               4
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -68,13 +68,9 @@
 #define CLEAN_TIMER           ( PRIOR_SENSOR       + sizeof(uint8_t) )
 #define SETTING_TIMER         ( CLEAN_TIMER        + sizeof(uint8_t) )
 #define ZERO_POINT_TIMEOUT    ( SETTING_TIMER        + sizeof(uint8_t) )
-#define TEMP_MIN_SET          ( ZERO_POINT_TIMEOUT  + sizeof(uint16_t) )
-#define TEMP_MAX_SET          ( TEMP_MIN_SET  + sizeof(uint16_t) )
-#define CO2_MIN_SET           ( TEMP_MAX_SET  + sizeof(uint16_t) )
-#define CO2_MAX_SET           ( CO2_MIN_SET  + sizeof(uint16_t) )
-#define H_MIN_SET             ( CO2_MAX_SET  + sizeof(uint16_t) )
-#define H_MAX_SET             ( H_MIN_SET  + sizeof(uint16_t) )
-#define KK_SENSOR_TYPE        ( H_MAX_SET  + sizeof(uint16_t) )
+#define MIN_SET               ( ZERO_POINT_TIMEOUT  + sizeof(uint16_t) )
+#define MAX_SET               ( MIN_SET  + sizeof(uint16_t) )
+#define KK_SENSOR_TYPE        ( MAX_SET  + sizeof(uint16_t) )
 #define CO2_SENSOR_TYPE       ( KK_SENSOR_TYPE + sizeof(uint8_t) )
 #define H_SENSOR_TYPE         ( CO2_SENSOR_TYPE + sizeof(uint8_t) )
 #define F_CHANNEL             ( H_SENSOR_TYPE   + sizeof(uint8_t) )
@@ -95,6 +91,7 @@
 #define LIGTH                 ( SYSTEM_START + sizeof(uint8_t) )
 #define MODE                  ( LIGTH    + sizeof(uint8_t) )
 #define SENSOR_ERROR          ( MODE  + sizeof(uint8_t) )
+#define CDV_CONTOROL          ( SENSOR_ERROR +  sizeof(uint8_t) )
 
 
 
@@ -157,7 +154,7 @@ typedef enum
 
 //#define EEPROM_REGISTER_COUNT   20
 //#define  EEPROM_REGISTER_COUNT  20
-#define RAM_REGISTER_COUNT     4
+#define RAM_REGISTER_COUNT     6
 #define DATA_MODEL_REGISTERS   EEPROM_REGISTER_COUNT + RAM_REGISTER_COUNT
 #define TOTAL_REGISTER_COUNT   DATA_MODEL_REGISTERS
 

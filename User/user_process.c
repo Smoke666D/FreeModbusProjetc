@@ -188,6 +188,12 @@ void UPDATE_COOF()
     PID_SetTunings2(&TPID,getRegFloat(COOF_P), getRegFloat(COOF_I), 0);
 }
 
+void UPDATE_COOFCAV()
+{
+    PID_SetTunings2(&TPID,getRegFloat(COOF_P), getRegFloat(COOF_I), 0);
+    PID_SetTunings2(&TPID2,getRegFloat(COOF_P1), getRegFloat(COOF_I1), 0);
+}
+
 static float DAC1_OUT = 0;
 
 float getDAC1_Out()
@@ -332,44 +338,60 @@ static u8 din_mask = 0;
 
 void vCDV_SetpointCheck( u8 * state, u32 * timeout  )
 {
-    error_state &=~DIN_ERROR;  //Сбрасываем ошибку дискретных входов
-    if ( getReg8(INPUT_SENSOR_TYPE) == 0 )
+      //Сбрасываем ошибку дискретных входов
+    error_state &=~DIN_ERROR;
+    u8 new_state = ( getReg8( CONTROL_TYPE )==  MKV_MB_DIN)? ( (u8)uiGetDinMask() & 0x0F ) : getReg8(CDV_CONTOROL);
+    if ( din_mask != new_state )
     {
-        u8 new_state = ( getReg8( CONTROL_TYPE )==  MKV_MB_DIN)? ( (u8)uiGetDinMask() & 0x0F ) : getReg8(SYSTEM_START);
-        if ( din_mask != new_state )
-        {
-            din_mask = new_state ;
-            *timeout = 0;
-        }
-        u8 temp_state;
-        switch (din_mask)
-        {
-            case 0:
-                temp_state = 0;
-                break;
-            case 1:
-                temp_state = 1;
-                break;
-            case 3:
-                temp_state = 2;
-                break;
-            case 7:
-                temp_state = 3;
-                break;
-            case 0xFF:
-                temp_state = 4;
-                break;
-            default:
-                error_state |=DIN_ERROR;
-                return;
-            break;
-        }
-        if (*state!=temp_state)
-        {
-            if ( ++(*timeout) >= getReg8(SETTING_TIMER)*10 )
-                   *state = temp_state;
-        }
+         din_mask = new_state ;
+          *timeout = 0;
     }
+    u8 temp_state;
+    if ( getReg8( CONTROL_TYPE )==  MKV_MB_DIN )
+    {
+        switch (din_mask)
+            {
+                    case 0:
+
+                        temp_state = 0;
+                        break;
+                    case 1:
+
+                        temp_state = 1;
+                        break;
+                    case 3:
+
+                        temp_state = 2;
+                        break;
+                    case 7:
+
+                        temp_state = 3;
+                        break;
+                    case 0xF:
+
+                        temp_state = 4;
+                        break;
+                    default:
+                        error_state |=DIN_ERROR;
+                        return;
+                    break;
+                }
+    }
+    else
+    {
+        temp_state = din_mask;
+
+    }
+
+    if (*state!=temp_state)
+    {
+            if ( ++(*timeout) >= getReg8(SETTING_TIMER)*100 )
+            {
+                   *state = temp_state;
+                   setReg8(CDV_CONTOROL,temp_state);
+            }
+        }
+
     CleanTimerFuncton(state);
     return ;
 }
@@ -395,6 +417,11 @@ float ComputeSetPoint()
 static u8 state = 0;
 
 u8 getStateDCV()
+{
+    return state;
+}
+
+u8 getStateVAV()
 {
     return state;
 }
@@ -425,6 +452,7 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag,  uint16_t 
                 {
                     if (++*pid_counter >=10)
                     {
+                        UPDATE_COOFCAV();
                         *pid_counter = 0;
                         switch (state)
                         {
@@ -497,10 +525,15 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag,  uint16_t 
                 }
                 break;
             case USER_PROCESS_ALARM:
+
                 if  ((ac_voltage <= (uint16_t)getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  (uint16_t)getReg8(LOW_VOLTAGE_OFF)))
                 {
-                    task_fsm = USER_PROCCES_IDLE;
+                    error_state &= ~(HIGH_VOLTAGE_ERROR | LOW_VOLTAGE_ERROR);
+
                 }
+                if (error_state & (HIGH_VOLTAGE_ERROR | LOW_VOLTAGE_ERROR | DIN_ERROR ) == 0) task_fsm = USER_PROCCES_IDLE;
+
+
                 USER_AOUT_SET(DAC1,0.0);
                 USER_AOUT_SET(DAC2,0.0);
                 break;
@@ -548,7 +581,6 @@ void user_process_task(void *pvParameters)
    FilterState = 0;
    PID(&TPID,  &PIDOut, &SET_POINT, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
    PID_SetOutputLimits(&TPID,(float)1000.0,(float)10000.0);
-
    PID(&TPID2, &PIDOut2, &SET_POINT1, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
    PID_SetOutputLimits(&TPID2,(float)0000.0,(float)10000.0);
 
@@ -562,7 +594,7 @@ void user_process_task(void *pvParameters)
 
            if  (ac_voltage >= (uint16_t)getReg8(HIGH_VOLTAGE_ON))
            {
-               if (task_fsm != USER_PROCESS_ALARM)
+               if ((error_state & HIGH_VOLTAGE_ERROR) == 0)
                {
                    high_voltage_timeout++;
                    if  (high_voltage_timeout>100)
@@ -577,7 +609,7 @@ void user_process_task(void *pvParameters)
                high_voltage_timeout = 0;
            if ( ac_voltage <=  (uint16_t)getReg8(LOW_VOLTAGE_ON))
            {
-               if ((task_fsm != USER_PROCESS_ALARM) && (power_off_flag==0))
+               if (((error_state & LOW_VOLTAGE_ERROR) == 0) && (power_off_flag==0))
                {
                    low_voltage_alarm_timer++;
                    if (low_voltage_alarm_timer >100)
@@ -621,13 +653,15 @@ void user_process_task(void *pvParameters)
            }
            switch (process_mode )
            {
-               case 0:
+               case DEV_FMCH:
                    vFMCH_FSM(&start_timeout, &pid_counter, &HEPA_CONTROL_ON , &set_point_old, ac_voltage);
                    break;
-               case 1:
+               case DEV_DCV:
                    vCDV_FSM(&start_timeout,&pid_counter,&flag, ac_voltage );
                    break;
-               case 2:
+               case DEV_CAV:
+                   break;
+               case DEV_VAV:
                    break;
            }
            //Ecли есть ошибка включаем реле и зажигаем светодиод

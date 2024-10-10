@@ -412,7 +412,6 @@ void xGetDins( uint8_t * data_mask)
     uint8_t mask = 0x01;
     for (uint8_t i = 0; i< DIN_COUNT;i++)
     {
-
         if (xDinConfig[i].ucValue !=0)
             data_mask[ i /8] |= mask;
         else
