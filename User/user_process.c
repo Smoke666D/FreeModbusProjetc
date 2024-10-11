@@ -116,7 +116,6 @@ static void USER_SETTING_CHECK(u8 control_type, u8 * point_old)
           if ( mb_time_out>= getReg8(MOD_BUS_TIMEOUT)*100)
           {
               setReg8(SYSTEM_START, 0);
-
           }
       }
       else
@@ -651,19 +650,12 @@ void user_process_task(void *pvParameters)
            {
               if ( ac_voltage >190)  power_on = 1;
            }
-           switch (process_mode )
-           {
-               case DEV_FMCH:
+           if (process_mode == DEV_FMCH )
+
                    vFMCH_FSM(&start_timeout, &pid_counter, &HEPA_CONTROL_ON , &set_point_old, ac_voltage);
-                   break;
-               case DEV_DCV:
+           else
                    vCDV_FSM(&start_timeout,&pid_counter,&flag, ac_voltage );
-                   break;
-               case DEV_CAV:
-                   break;
-               case DEV_VAV:
-                   break;
-           }
+
            //Ecли есть ошибка включаем реле и зажигаем светодиод
            if ( error_state  & ~SETTING_ERROR)
            {

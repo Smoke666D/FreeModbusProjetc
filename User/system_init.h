@@ -58,10 +58,7 @@
 typedef enum
 {
   DEV_FMCH = 0,
-  DEV_DCV  = 1,
-  DEV_CAV   = 2,
-  DEV_VAV   = 3,
-  DEV_BP   =4,
+  DEV_CAV_VAV_BP = 1,
 } DEVICE_TYPE_t;
 
 

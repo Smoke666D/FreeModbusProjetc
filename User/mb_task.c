@@ -551,8 +551,8 @@ void vSetRegData( u16 adress)
                                       break;
                        }
                        break;
-                  case  DEV_DCV:
-                  case  DEV_CAV:
+                  case DEV_CAV_VAV_BP:
+
                       reg_addr = CDV_REGS_MAP[adress- 200];
                       switch (adress)
                       {
@@ -711,17 +711,14 @@ static void MB_TASK_INPUTS_UDATE(u16 start_reg_index )
     }
     else                                              //§¦§ã§Ý§Ú §á§Ö§â§Ó§í§Û §Ñ§Õ§â§Ö§ã §Ó §Õ§Ú§Ñ§á§Ñ§Ù§à§ß§Ö §ã§á§Ö§è§Ú§æ§Ú§é§Ö§ã§Ü§Ú§ç §Õ§Ý§ñ §å§ã§ä§â§à§Û§ã§ä§Ó§Ñ §â§Ö§Ô§ã§Ú§ä§â§à§Ó
     {
-        switch ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE))
-        {
-            case DEV_FMCH:
-                UodateFMCHInputs();
-                break;
-            case DEV_DCV:
-                UpdateDCVInputs();
-                break;
-            default:
-                break;
-        }
+       if ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE) == DEV_FMCH )
+       {
+            UodateFMCHInputs();
+       }
+       else
+       {
+           UpdateDCVInputs();
+       }
     }
 }
 #define CDV_BP_REG8_SEQ_COUNT 11
@@ -750,12 +747,6 @@ static const u8 REGS8[REG8_SEQ_COUNT]={
                                        AIN3_TYPE_MB,};
 
 static const u8 REGS[REG_SEQ_COUNT]={SET_MOD1_MB,SET_MOD2_MB,FILTER_LOW_MB,FILTER_HIGH_MB};
-
-
-
-
-
-
 
 
 
@@ -813,10 +804,8 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
         float temp_float;
         switch ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE))
         {
-            case DEV_DCV:
-            case DEV_CAV:
-            case DEV_BP:
-                  reg_offet  =  (getReg8(DEVICE_TYPE) == DEV_BP) ? 300 : 200;
+            case DEV_CAV_VAV_BP:
+                  reg_offet  =   200;
                   tempdata =(int32_t) (getRegFloat(COOF_P)*1000);
                   convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P_MB-CDV_OFFSET]);
                   tempdata =(int32_t) (getRegFloat(COOF_I)*1000);

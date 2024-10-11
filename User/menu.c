@@ -384,15 +384,15 @@ void MenuSetDevice()
         case DEV_FMCH:
             pMenu = xScreenFMCH;
             break;
-        case DEV_DCV:
+        case DEV_CAV_VAV_BP:
             pMenu = xScreenDCV;
             break;
-        case DEV_CAV:
-            pMenu = xScreenCAV;
-            break;
-        case DEV_VAV:
-            pMenu = xScreenVAV;
-            break;
+        //case DEV_CAV:
+         //   pMenu = xScreenCAV;
+        //    break;
+       // case DEV_VAV:
+       //     pMenu = xScreenVAV;
+         //   break;
     }
 }
 
@@ -935,13 +935,13 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
         case CDV_MODE_ID:
             switch (getReg8(DEVICE_TYPE))
             {
-            case DEV_DCV:
+          //  case DEV_DCV:
                strcpy(str,CDV_MODE_STRING[getStateDCV()]);
                break;
 
-            case DEV_VAV:
-                strcpy(str,CDV_MODE_STRING[getStateVAV()]);
-                break;
+          //  case DEV_VAV:
+            //    strcpy(str,CDV_MODE_STRING[getStateVAV()]);
+            //    break;
 
             }
               break;
