@@ -147,8 +147,12 @@ DEVICE_TYPE_t SystemInitGetDevType()
 
 static u8 TCP_STOP = 0;
 
+#define EXIT_KEY_PRESS 0x01
+#define LEFT_KEY_PRESS 0x02
+
 void vDefaultTask( void  * argument )
 {
+    u8 init_menu_state = 0;
     QueueHandle_t     pKeyboard        = *( xKeyboardQueue());
     static KeyEvent          TempEvent        = { 0U };
     char temp_str[50];
@@ -177,11 +181,27 @@ void vDefaultTask( void  * argument )
                     {
                         if ( xQueueReceive(pKeyboard, &TempEvent, 0U ) == pdPASS )
                         {
-                              if (( TempEvent.Status == MAKECODE ) &&  (TempEvent.KeyCode ==ENTER_KEY))
-                              {
+
+
+                            if (TempEvent.KeyCode ==EXIT_KEY)
+                            {
+                                if ( TempEvent.Status == MAKECODE ) init_menu_state |=EXIT_KEY_PRESS ;
+                                else
+                                    init_menu_state &= ~EXIT_KEY_PRESS ;
+
+                            }
+                            if (TempEvent.KeyCode ==LEFT_KEY)
+                            {
+                                if ( TempEvent.Status == MAKECODE ) init_menu_state |=LEFT_KEY_PRESS ;
+                                else
+                                    init_menu_state &= ~LEFT_KEY_PRESS ;
+                            }
+                            if (init_menu_state == (LEFT_KEY_PRESS | EXIT_KEY_PRESS )  )
+                            {
                                   MenuSetDeviceMenu();
                                   main_task_fsm  = STATE_RUN;
-                              }
+                                  break;
+                            }
                         }
                     }
                     HAL_WDTReset();
@@ -189,16 +209,21 @@ void vDefaultTask( void  * argument )
                     if (k==2000)
                     {
                         MENU_ClearScreen();
-                        MENU_DrawString(40, 20,getModeString(device));
+                        strcpy(temp_str,getModeString(device));
+                        u8 len = u8g2_GetUTF8Width(&u8g2,temp_str);
+                        MENU_DrawString((128-len)/2, 20,temp_str);
                         MenuSetDevice();
-                        sprintf(temp_str, "Версия ПО %02i.%02i.%02i",getReg8(SOFT_V1 ),getReg8(SOFT_V2 ),getReg8(SOFT_V3 ));
-                        MENU_DrawString(10, 40, temp_str);
+                        sprintf(temp_str,"Версия ПО %02i.%02i.%02i",getReg8(SOFT_V1 ),getReg8(SOFT_V2 ),getReg8(SOFT_V3 ));
+                        len = u8g2_GetUTF8Width(&u8g2,temp_str);
+                        MENU_DrawString((128-len)/2, 40, temp_str);
                         xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
                         vTaskResume(*getUserProcessTaskHandle());
                         vTaskResume(*getI2CTaskHandle());
                     }
                 }
+                if  (main_task_fsm  != STATE_RUN)
                 main_task_fsm =  STATE_WHAIT_TO_RAEDY;
+                printf("menu_run\r\n");
                 break;
             case STATE_WHAIT_TO_RAEDY:
                 if (getReg8(MB_PROTOCOL_TYPE) == MKV_MB_RTU)

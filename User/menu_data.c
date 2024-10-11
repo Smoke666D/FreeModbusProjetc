@@ -9,6 +9,7 @@
 
 #include "menu_data.h"
 #include "menu.h"
+#include "data_model.h"
 
 static const char SETTING_TEXT[] = "Уставка";
 static const char VOLTAGE_TEXT[] = "Напряжение";
@@ -133,7 +134,7 @@ static xScreenObjet const SettingsScreen9[]=
 };
 
 
-static xScreenObjet const ResetScreen[]=
+static xScreenObjet  ResetScreen[]=
 {
         {0,10,LINE1,0,TEXT_STRING,"Перезагрузка модуля",    0},
         {0,2,25,0,TEXT_STRING,"  Для перезагрузки ",  0},
@@ -201,53 +202,77 @@ static  xScreenObjet const CDVInfoScreen1[]=
 };
 */
 
-static xScreenObjet const CDVSettingsScreen3[]=
+static xScreenObjet  CDVSettingsScreen3[]=
 {
         {0,15,LINE1,0,READ_DATA,"Настройки      ",       SETTING3_TITLE_ID },
         {0,2,25,0,TEXT_STRING,"Еденицы измерения",          0},
         {0,2,37,0,WRITE_DATA,"",                            MEASERING_UNIT_ID},
         {0,2,50,0,WRITE_DATA,"Кол-во каналов",              CDV_CH_COUNT_ID},
-        {0,2,62,30,WRITE_DATA,"Смещ 2",                      OFFSET2_ID},
-        {1,100,62,0,READ_DATA,"",                           MEASERING_UNIT_ID},
+        {1,2,62,0,WRITE_DATA,"Вход:",                       SENSOR_TYPE_ID},
+
 };
 
-static xScreenObjet const CDVSettingsScreen4[]=
+static xScreenObjet  CDVSettingsScreen4[]=
 {
-        {0,15,LINE1,0,TEXT_STRING,"Настройки      4/11",    0},
+        {0,15,LINE1,0,READ_DATA,"Настройки      ",   SETTING6_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"Уставки",          0},
         {0,2,37,30,WRITE_DATA,"Мин.",               SETTING_MIN_ID},
         {0,100,37,0,READ_DATA,"",                  MEASERING_UNIT_ID},
-        {0,2,50,30,WRITE_DATA,"Сред.",              SETTING_AVER_ID},
+        {0,2,50,30,WRITE_DATA,"Макс.",              SETTING_MAX_ID},
         {0,100,50,0,READ_DATA,"",                  MEASERING_UNIT_ID},
         {0,100,62,0,READ_DATA,"",                  MEASERING_UNIT_ID},
-        {1,2,62,30,WRITE_DATA,"Макс.",              SETTING_MAX_ID},
+        {1,2,62,30,WRITE_DATA,"Сред.",              SETTING_AVER_ID},
 };
 
-static xScreenObjet const CDVSettingsScreen5[]=
+
+
+static xScreenObjet  CDVSettingsScreen5[]=
 {
-        {0,15,LINE1,0,TEXT_STRING,"Настройки      5/11",    0},
+        {0,15,LINE1,0,READ_DATA,"Настройки      ",   SETTING7_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"Аваринайя уставка",          0},
         {0,100,37,0,READ_DATA,"",                  MEASERING_UNIT_ID},
         {0,2,37,30,WRITE_DATA,"Канал 1",              FAIL_SET_CH1_ID},
         {0,100,50,0,READ_DATA,"",                  MEASERING_UNIT_ID},
-        {1,2,50,30,WRITE_DATA,"Канал 2",              FAIL_SET_CH2_ID},
+        {0,2,50,30,WRITE_DATA,"Канал 2",              FAIL_SET_CH2_ID},
+        {0,2,62,30,WRITE_DATA,"Смещ 2",                      OFFSET2_ID},
+        {1,100,62,0,READ_DATA,"",                           MEASERING_UNIT_ID},
 };
 
-static xScreenObjet const CDVSettingsScreen6[]=
+static xScreenObjet  CDVSettingsScreen6[]=
 {
-        {0,15,LINE1,0,TEXT_STRING,"Настройки      6/11",    0},
+        {0,15,LINE1,0,READ_DATA,"Настройки      ",    SETTING8_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"Расчет потока",          0},
         {0,2,37,0,WRITE_DATA,(char*)KOOFKPS_TEXT,       KOOFKPS_ID},
         {1,2,50,0,WRITE_DATA,"F канала, м^2",           F_CHANNEL_ID},
 };
 
-static xScreenObjet const CDVSettingsScreen7[]=
+void SetBPSetting(u8 set)
 {
-        {0,15,LINE1,00,TEXT_STRING,"Настройки      7/11",    0},
+    if (set)
+    {
+
+            setReg8(MEASERING_UNIT,0);
+            CDVSettingsScreen6[2].last = 1;
+
+
+    }
+    else
+    {
+
+
+            CDVSettingsScreen6[2].last = 0;
+
+    }
+
+}
+
+static xScreenObjet  CDVSettingsScreen7[]=
+{
+        {0,15,LINE1,00,READ_DATA,"Настройки      ",  SETTING9_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"Таймеры",          0},
         {0,2,37,0,WRITE_DATA,"Уборка (DI4) мин",                CLEAN_TIMER_ID},
-        {0,2,50,00,WRITE_DATA,"Задержка уст. с.",          SETTING_TIMER_ID},
-        {1,2,62,00,WRITE_DATA,"Калибр. 0, с.:",          ZERO_POINT_TIMEOUT_ID},
+        {0,2,50,00,WRITE_DATA,"Калибр. 0, с.:",          ZERO_POINT_TIMEOUT_ID},
+        {1,2,62,00,WRITE_DATA,"Задержка уст. с.",          SETTING_TIMER_ID},
 };
 
 
@@ -311,22 +336,32 @@ static xScreenObjet const CDVSettingsScreen9[]=
 
 
 
-static xScreenObjet const CDVSettingsScreen16[]=
+static xScreenObjet  CDVSettingsPI1[]=
 {
-        {0,15,LINE1,0,TEXT_STRING,"Настройки     8/11",    0},
+        {0,15,LINE1,0,READ_DATA,"Настройки     ",  SETTING10_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"ПИ регулятор ", 0},
         {0,2,37,0,TEXT_STRING,"Ведуший канал 1.",0},
         {0,2,50,0,WRITE_DATA,"Кооф. П",COOF_P_ID },
         {1,2,62,0,WRITE_DATA,"Кооф. И",COOF_I_ID },
 };
-static xScreenObjet const CDVSettingsScreen17[]=
+static xScreenObjet const CDVSettingsPI2[]=
 {
-        {0,15,LINE1,0,TEXT_STRING,"Настройки     9/11",    0},
+        {0,15,LINE1,0,READ_DATA,"Настройки     ", SETTING11_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"ПИ регулятор", 0},
         {0,2,37,0,TEXT_STRING,"Ведомый канал 2.",0},
         {0,2,50,0,WRITE_DATA,"Кооф. П",COOF_P_1_ID },
         {1,2,62,0,WRITE_DATA,"Кооф. И",COOF_I_1_ID },
 };
+
+
+static xScreenObjet const CDVSettingsPB[]=
+{
+        {0,15,LINE1,0,READ_DATA,"Настройки     ", SETTING11_TITLE_ID},
+        {0,2,25,0,TEXT_STRING,"Типоразмер", 0},
+        {1,2,37,0,TEXT_STRING,"Тип регулирования.",0},
+
+};
+
 
 
 static xScreenObjet const CDVSettingsScreen20[]=
@@ -341,7 +376,7 @@ static xScreenObjet const CDVSettingsScreen20[]=
 static xScreenObjet const DeviceInit[]=
 {
         {0,10,LINE1,70,TEXT_STRING,"Тип усртойства:",            0},
-        {1,2,37,45,WRITE_DATA,"",                       DEVICE_TYPE_ID },
+        {1,2,37,20,WRITE_DATA,"",                       DEVICE_TYPE_ID },
 };
 
 xScreenType  xDeiceInit[] =
@@ -359,6 +394,8 @@ static xScreenObjet const InfoScreen2DCV[]=
 };
 
 
+
+
 xScreenType  xScreenDCV[] =
 {
   {1,CDVInfoScreen1,       3,   2,  0,   0,   0, 0  },
@@ -366,21 +403,62 @@ xScreenType  xScreenDCV[] =
   {3,InfoScreen3,          2,   1,  0,   0,   4  , 1  },
   {4,SettingsScreen1,      0,   0,  15,  5,     ENTER_COMMNAD , 3  },
   {5,SettingsScreen2,      0,   0,  4,   6,     ENTER_COMMNAD , 3 },
-  {6,CDVSettingsScreen3,   0,   0,  5,   7,     ENTER_COMMNAD , 3 },
-  {7,CDVSettingsScreen4,   0,   0,  6,   8,     ENTER_COMMNAD , 3  },
-  {8,CDVSettingsScreen5,   0,   0,  7,   9,     ENTER_COMMNAD , 3  },
-  {9,CDVSettingsScreen6,  0,   0,   8,   10,    ENTER_COMMNAD,  3 },
-  {10,CDVSettingsScreen7,  0,   0,  9,   11,    ENTER_COMMNAD,  3 },
-  {11,CDVSettingsScreen16, 0,   0,  10,   12,   ENTER_COMMNAD, 3 },
-  {12,CDVSettingsScreen17, 0,   0,  11,   13,   ENTER_COMMNAD, 3 },
-  {13,SettingsScreen5,     0,   0,  12,   14,   ENTER_COMMNAD, 3 },
-  {14,CDVSettingsScreen20, 0,   0,  13,   15,   ENTER_COMMNAD, 3 },
-  {15, ResetScreen    ,    0,   0,  14,    4,   ENTER_COMMNAD ,3 },
+  {6,SettingsScreen5,     0,   0,   5,   7,   ENTER_COMMNAD, 3 },
+  {7,CDVSettingsScreen20, 0,   0,  6,   8,   ENTER_COMMNAD, 3 },
+  {8,CDVSettingsScreen3,   0,   0,  7,   9,     ENTER_COMMNAD , 3 },
+  {9,CDVSettingsScreen4,   0,   0,  8,   10,     ENTER_COMMNAD , 3  },
+  {10,CDVSettingsScreen5,   0,   0,  9,   11,     ENTER_COMMNAD , 3  },
+  {11,CDVSettingsScreen6,  0,   0,   10,   12,    ENTER_COMMNAD,  3 },
+  {12,CDVSettingsScreen7,  0,   0,  11,   13,    ENTER_COMMNAD,  3 },
+  {13,CDVSettingsPI1,        0,   0,   12,   14,   ENTER_COMMNAD, 3 },
+  {14,CDVSettingsPI2,        0,   0,   13,   15,   ENTER_COMMNAD, 3 },
+  {15, ResetScreen  ,         0,   0,  14,    4,   ENTER_COMMNAD ,3 },
 };
 
+void SetPID2Screen(u8 state)
+{
 
+    switch (state)
+    {
+    case 0:
+        printf("two \r\n");
+        xScreenDCV[12].pDownScreenSet = 14;
+        xScreenDCV[14].pUpScreenSet  = 14;
+        CDVSettingsScreen5[5].last = 1;
+        xScreenDCV[13].pScreenCurObjets = CDVSettingsPB;
+        break;
 
+    case 1:
+        printf("one \r\n");
+        xScreenDCV[13].pScreenCurObjets = CDVSettingsPI2;
+        xScreenDCV[12].pDownScreenSet  = 15;
+        xScreenDCV[14].pUpScreenSet  = 13;
+        CDVSettingsScreen5[5].last = 1;
+        break;
+    case 2:
+        printf("two \r\n");
+        xScreenDCV[12].pDownScreenSet = 14;
+        xScreenDCV[14].pUpScreenSet  = 14;
+        CDVSettingsScreen5[5].last = 0;
+        xScreenDCV[13].pScreenCurObjets = CDVSettingsPI2;
+        break;
+    }
+}
 
+void vSettingCoountCondfig( u8 setting)
+{
+    if (setting)
+    {
+        CDVSettingsScreen7[3].last = 0;
+        CDVSettingsScreen4[5].last = 0;
+    }
+    else
+    {
+        CDVSettingsScreen7[3].last = 1;
+        CDVSettingsScreen4[5].last = 1;
+    }
+
+}
 
 
 

@@ -110,9 +110,9 @@ static u8 * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
 static u8 * AfterZoneStrig[]={"Tканала<Tпомещения","Tканала>Tпомещения","Автомат"};
 static u8 * MUnitStrig[] = {"м^3/ч","м/c ","Па "};
 static u8 * PriorSentStrig[]= {"T","CO2","H"};
-static const char * DevString[5]={"Режим ФМЧ","Режим DCV","Режим CAV","Режим VAV" ,"Режим BP"};
+static const char * DevString[5]={"Режим ФМЧ","Режим CAV/VAV-BP"};
 static u8 * SensorTypeStrig[]= {"0-10 В","2-10 В","4-20 мA"};
-static u8 * IniputSignalTypeStrig[]= {"Пассивный датчик T","Комнатный контроллер","Датчики 0-10В/4-20 мA"};
+static u8 * IniputSignalTypeStrig[]= {"Диск. вход","Пас. датчик T","Комн. контр.","Аналог датчики"};
 static xScreenType * pMenu;
 static u8 journal_index =0;
 static uint16_t curr_edit_data_id = 0;
@@ -159,21 +159,25 @@ u8 GetID( u8 id)
     return (1);
 }
 
-static void SetFirtsEditString( )
+ u8 SetFirtsEditString( )
 {
+     u8 res = 0;
     memset(edit_data,0,MAX_STRING_NUMBER);
     u8 edit_flag = 0;
     for (u8 i=0;i<MAX_STRING_NUMBER;i++)
     {
         if ( pMenu[pCurrMenu].pScreenCurObjets[i].xType == WRITE_DATA)
         {
+            res++;
             if( edit_flag == 0)
             {
+
                  edit_flag    = 1;
                  edit_data[i] = 2;
             }
             else
             {
+
                 edit_data[i] = 1;
             }
         }
@@ -183,6 +187,7 @@ static void SetFirtsEditString( )
             break;
         }
      }
+    return res;
 }
 
 void ViewScreenCallback( u8 key_code)
@@ -274,6 +279,7 @@ static void vSelect( u8 direction)
 
 u8 vSetEdit()
 {
+
     u8 res= 1;
     for (u8 i =0; i < cur_max_stirng ;i ++)
     {
@@ -285,6 +291,7 @@ u8 vSetEdit()
               break;
         }
     }
+
     SelectEditFlag = 1;
     return (res);
 
@@ -306,6 +313,8 @@ void vSetCommnad( DATA_VIEW_COMMAND_t cmd )
 
 
 static DATA_VIEW_COMMAND_t const COMMNAD_MAP_ARRAY[]={CMD_NEXT_EDIT,CMD_PREV_EDIT,CMD_INC,CMD_DEC};
+static u8 mask=0;
+
 
 void vMenuTask ( void )
 {
@@ -313,6 +322,27 @@ void vMenuTask ( void )
        {
            if ( xQueueReceive(pKeyboard, &TempEvent, 0U ) == pdPASS )
            {
+              if (( TempEvent.Status == BRAKECODE ) && (menu_mode == 4))
+              {
+
+                  switch ( TempEvent.KeyCode )
+                  {
+                      case EXIT_KEY:
+                          mask|=0x1;
+                          break;
+                      case LEFT_KEY:
+                          mask|=0x2;
+                          break;
+                  }
+                  if (mask == 0x03)
+                  {
+                      menu_mode = 5;
+                      SelectEditFlag  = 1;
+                      SetFirtsEditString();
+                  }
+
+              }
+
               if ( TempEvent.Status == MAKECODE )
               {
                   switch (menu_mode)
@@ -365,6 +395,16 @@ void vMenuTask ( void )
                          else
                              vSetCommnad(( TempEvent.KeyCode == ENTER_KEY ) ? CMD_SAVE_EDIT : CMD_EXIT_EDIT);
                          break;
+                     case 5:
+                         if ( TempEvent.KeyCode  <=  UP_KEY )
+                               vGetData( curr_edit_data_id, 0,COMMNAD_MAP_ARRAY[TempEvent.KeyCode],0,0);
+                           else
+                              vSetCommnad(( TempEvent.KeyCode == ENTER_KEY ) ? CMD_SAVE_EDIT : CMD_EXIT_EDIT);
+                           break;
+                         break;
+                     case 4:
+                         break;
+
                   }
               }
             }
@@ -386,19 +426,47 @@ void MenuSetDevice()
             break;
         case DEV_CAV_VAV_BP:
             pMenu = xScreenDCV;
+
+                SetPID2Screen(getReg8(CDV_BP_CH_COUNT));
+
+
+            if (getReg8(CDV_BP_CH_COUNT) == 0)
+                                     SetBPSetting( 1);
+                                 else
+                                     SetBPSetting(0);
+            switch (getReg8(INPUT_SENSOR_TYPE))
+                                                         {
+                                                             case 0:
+                                                                 vSettingCoountCondfig(1);
+                                                                 SetSnsorAnalog(  0 );
+                                                                 break;
+                                                             case 1:
+                                                                 vSettingCoountCondfig(0);
+                                                                 SetSnsorAnalog(  0 );
+                                                                 break;
+                                                             case 2:
+                                                                 vSettingCoountCondfig(0);
+                                                                 SetSnsorAnalog(  1 );
+                                                                 break;
+                                                             case 3:
+                                                                 vSettingCoountCondfig(0);
+                                                                 SetSnsorAnalog(  0 );
+                                                                 break;
+
+                                                         }
             break;
-        //case DEV_CAV:
-         //   pMenu = xScreenCAV;
-        //    break;
-       // case DEV_VAV:
-       //     pMenu = xScreenVAV;
-         //   break;
+
+
+
     }
+
 }
 
 void MenuSetDeviceMenu()
 {
     pMenu = xDeiceInit;
+
+    menu_mode = 4;
 }
 
 
@@ -879,11 +947,33 @@ static const u16 MenuCDV_BPRegMap[54]=
 static u8 error_shif = 0;
 static u8 const *  ErrorString[]={"HEPA Фильтр засорен","Невозможно","Низкое напряжение","Высокое напряжение"};
 static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение","Неспр. дискрные вх.","Неспр канал 1","Неиспр канал 2"};
-static u8 const *  SettingTilteStirnf[]={"1/9","1/11","1/18","1/13","1/1","1/1"};
-static u8 const *  Setting2TilteStirnf[]={"2/9","2/11","2/18","2/13","1/1","1/1"};
-static u8 const *  Setting3TilteStirnf[]={"3/9","3/11","3/18","3/13","1/1","1/1"};
-static u8 const *  VoltageTilteStirnf[] ={"5/9","10/11","17/18","1/1","1/1","1/1"};
-static u8 const *  CalTilteStirnf[] ={"7/9","11/11","20/20","1/1","1/1","1/1"};
+static u8 const *  CH_STRING[] = { "ВР","1","2"};
+
+
+
+#define base_screen_count 10
+u8 getScreenCount()
+{
+    u8 screen_count = base_screen_count;
+    switch ( getReg8(CDV_BP_CH_COUNT))
+    {
+        case 1:
+            break;
+        default:
+            screen_count+=1;
+            break;
+    }
+    switch ( getReg8(SENSOR_TYPE_ID))
+       {
+           default:
+               break;
+           case 3:
+               screen_count+=2;
+               break;
+
+       }
+    return (screen_count);
+}
 
 void vSetTitle(u16 data_id, u8 * str )
 {
@@ -891,20 +981,50 @@ void vSetTitle(u16 data_id, u8 * str )
     switch (data_id)
     {
            case CALIBRATION_TITLE_ID:
-               strcpy(str,CalTilteStirnf[dev_type]);
-               break;
+               if (dev_type == DEV_FMCH)
+                   strcpy(str,"7/9");
+               else
+                   sprintf(str,"4/%i",getScreenCount());
+                   break;
            case SETTING1_TITLE_ID:
-               strcpy(str,SettingTilteStirnf[dev_type]);
+               if (dev_type == DEV_FMCH)
+                   strcpy(str,"1/9");
+               else
+                   sprintf(str,"1/%i",getScreenCount());
                break;
            case SETTING2_TITLE_ID:
-               strcpy(str,Setting2TilteStirnf[dev_type]);
-               break;
+               if (dev_type == DEV_FMCH)
+                   strcpy(str,"2/9");
+               else
+                   sprintf(str,"2/%i",getScreenCount());
+                break;
            case SETTING3_TITLE_ID:
-                         strcpy(str,Setting3TilteStirnf[dev_type]);
-                         break;
+                   sprintf(str,"5/%i",getScreenCount());
+                   break;
+           case SETTING6_TITLE_ID:
+                   sprintf(str,"6/%i",getScreenCount());
+                   break;
+           case SETTING7_TITLE_ID:
+                   sprintf(str,"7/%i",getScreenCount());
+                   break;
+           case SETTING8_TITLE_ID:
+                   sprintf(str,"8/%i",getScreenCount());
+                  break;
+           case SETTING9_TITLE_ID:
+                 sprintf(str,"9/%i",getScreenCount());
+                  break;
+           case SETTING10_TITLE_ID:
+                            sprintf(str,"10/%i",getScreenCount());
+                             break;
+           case SETTING11_TITLE_ID:
+                                     sprintf(str,"11/%i",getScreenCount());
+                                      break;
            case VOLTAG_SCREEN_TITLE_ID:
-               strcpy(str,VoltageTilteStirnf[dev_type]);
-               break;
+               if (dev_type == DEV_FMCH)
+                      strcpy(str,"5/9");
+                else
+                     sprintf(str,"3/%i",getScreenCount());
+                    break;
            case SENSOR_TYPE_TITLE_ID:
                if (getReg8(INPUT_SENSOR_TYPE) == 2)
                strcpy(str,"Приоритет рег.:") ;
@@ -1020,13 +1140,31 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                                 strcpy(str, IniputSignalTypeStrig[ getReg8( reg_id)] );
                                 break;
                             case CMD_SAVE_EDIT:
-                                  if (edit_data_buffer_byte==2)
-                                    SetSnsorAnalog(  1 );
-                                  else
-                                    SetSnsorAnalog(  0 );
+                                switch (edit_data_buffer_byte)
+                                {
+                                    case 0:
+
+                                        vSettingCoountCondfig(1);
+                                        SetSnsorAnalog(  0 );
+                                        break;
+                                    case 1:
+                                        vSettingCoountCondfig(0);
+                                        SetSnsorAnalog(  0 );
+                                        break;
+                                    case 2:
+                                        vSettingCoountCondfig(0);
+                                        SetSnsorAnalog(  1 );
+                                        break;
+                                    case 3:
+                                        vSettingCoountCondfig(0);
+                                        SetSnsorAnalog(  0 );
+                                        break;
+
+                                }
+
                                   SetFirtsEditString();
                             default:
-                                vByteDataEdit(0,reg_id,command,0,2, 0);
+                                vByteDataEdit(0,reg_id,command,0,3, 0);
                                 break;
                         }
                 break;
@@ -1135,16 +1273,27 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             }
             break;
         case CDV_CH_COUNT_ID:
+            *len = 0;
             switch (command)
               {
                   case CMD_READ:
-                      sprintf(str,"%01i",getReg8(reg_id) );
+                      strcpy(str,CH_STRING[getReg8(reg_id)] );
                       break;
                   case CMD_EDIT_READ:
-                      sprintf(str,"%01i",edit_data_buffer_byte );
+                      strcpy(str,CH_STRING[edit_data_buffer_byte] );
                       break;
+                  case CMD_SAVE_EDIT:
+                     // if (edit_data_buffer_byte == 2)
+                          SetPID2Screen(edit_data_buffer_byte);
+                     // else
+                      //    SetPID2Screen(0);
+                      if (edit_data_buffer_byte == 0)
+                          SetBPSetting( 1);
+                      else
+                          SetBPSetting(0);
+
                   default:
-                      vByteDataEdit(0,reg_id,command,0,2,1);
+                      vByteDataEdit(0,reg_id,command,0,2,0);
                       break;
               }
             break;
@@ -1159,7 +1308,8 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                       strcpy(str, MUnitStrig[ getReg8( reg_id)] );
                       break;
                  default:
-                      vByteDataEdit(0,reg_id,command,0,PA_U , M3_CH_U );
+                      if (getReg8(CDV_BP_CH_COUNT)!=0)
+                          vByteDataEdit(0,reg_id,command,0,PA_U , M3_CH_U );
                       break;
              }
             break;
@@ -1471,7 +1621,7 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                           strcpy(str, DevString[ getReg8( reg_id)] );
                           break;
                       default:
-                          vByteDataEdit(0,reg_id,command,0,4 , 0);
+                          vByteDataEdit(0,reg_id,command,0,1 , 0);
                           break;
                 }
                 break;

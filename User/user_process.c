@@ -425,6 +425,68 @@ u8 getStateVAV()
     return state;
 }
 
+
+void vBP()
+{
+
+
+}
+
+void vCAVFSM( u8 state)
+{
+    switch (state)
+    {
+        case 4:
+             USER_AOUT_SET(DAC1,10.0);
+             break;
+        case 1:
+             SET_POINT = (float)getReg16(SETTING_MIN);
+             break;
+        case 2:
+             SET_POINT = (float)getReg16(SETTING_MID);
+             break;
+        case 3:
+             SET_POINT = (float)getReg16(SETTING_MAX);
+             break;
+        default:
+             USER_AOUT_SET(DAC1,0.0);
+             break;
+
+     }
+    if ((state>=1) && (state<=3))
+    {
+          PID_Compute(&TPID,getAIN(SENS1));
+          float PID_Out = PIDOut/1000.0;
+          USER_AOUT_SET(DAC1,PID_Out);
+     }
+     switch (getReg8(CDV_BP_CH_COUNT))
+     {
+         case 0:
+             vBP();
+             break;
+         case 2:
+         {
+             switch (state)
+             {
+                 case 0:
+                     USER_AOUT_SET(DAC2,0.0);
+                     break;
+                 case 4:
+                     USER_AOUT_SET(DAC1,10.0);
+                     break;
+                 default:
+                   SET_POINT1  = SET_POINT + (float)getReg16(OFFSET_CH2);
+                   PID_Compute(&TPID2,getAIN(SENS2));
+                   float PID_Out = PIDOut2/1000.0;
+                   USER_AOUT_SET(DAC2,PID_Out);
+             }
+             break;
+             default:
+                 break;
+         }
+     }
+}
+
 void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag,  uint16_t ac_voltage)
 {
     vCDV_SetpointCheck(&state, start_timeout);
@@ -453,48 +515,8 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag,  uint16_t 
                     {
                         UPDATE_COOFCAV();
                         *pid_counter = 0;
-                        switch (state)
-                        {
-                            case 4:
-                                USER_AOUT_SET(DAC1,10.0);
-                                break;
-                            case 1:
-                                SET_POINT = (float)getReg16(SETTING_MIN);
-                                break;
-                            case 2:
-                                SET_POINT = (float)getReg16(SETTING_MID);
-                                break;
-                            case 3:
-                                SET_POINT = (float)getReg16(SETTING_MAX);
-                                break;
-                            default:
-                                USER_AOUT_SET(DAC1,0.0);
-                                break;
-
-                        }
-                        if ((state>=1) && (state<=3))
-                        {
-                            PID_Compute(&TPID,getAIN(SENS1));
-                            float PID_Out = PIDOut/1000.0;
-                            USER_AOUT_SET(DAC1,PID_Out);
-                        }
-                        if (getReg8(CDV_BP_CH_COUNT) == 2)
-                        {
-                            switch (state)
-                            {
-                              case 0:
-                                  USER_AOUT_SET(DAC2,0.0);
-                                  break;
-                              case 4:
-                                  USER_AOUT_SET(DAC1,10.0);
-                                  break;
-                              default:
-                                  SET_POINT1  = SET_POINT + (float)getReg16(OFFSET_CH2);
-                                  PID_Compute(&TPID2,getAIN(SENS2));
-                                  float PID_Out = PIDOut2/1000.0;
-                                  USER_AOUT_SET(DAC2,PID_Out);
-                            }
-                        }
+                        if ( getReg8(SENSOR_TYPE_ID) == 0 )
+                                vCAVFSM(state);
                     }
                 }
                 break;
@@ -528,13 +550,14 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag,  uint16_t 
                 if  ((ac_voltage <= (uint16_t)getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  (uint16_t)getReg8(LOW_VOLTAGE_OFF)))
                 {
                     error_state &= ~(HIGH_VOLTAGE_ERROR | LOW_VOLTAGE_ERROR);
-
                 }
                 if (error_state & (HIGH_VOLTAGE_ERROR | LOW_VOLTAGE_ERROR | DIN_ERROR ) == 0) task_fsm = USER_PROCCES_IDLE;
 
-
-                USER_AOUT_SET(DAC1,0.0);
-                USER_AOUT_SET(DAC2,0.0);
+                if (error_state & DIN_ERROR )
+                {
+                    USER_AOUT_SET(DAC1,0.0);
+                    USER_AOUT_SET(DAC2,0.0);
+                }
                 break;
             case USER_PROCESS_DOUBLE_CHANNEL_ERROR:
                 if (error_state & FIRST_CHANNEL_ERROR)
