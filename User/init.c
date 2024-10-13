@@ -13,7 +13,7 @@
 #include "hal_dac.h"
 #include "hal_i2c.h"
 #include "led.h"
-
+#include "hal_wdt.h"
 
 
 void InitI2C()

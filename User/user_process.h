@@ -11,7 +11,6 @@
 #include "system_init.h"
 
 
-
 typedef enum
 {
     USER_PROCCES_IDLE,
@@ -24,6 +23,7 @@ typedef enum
     USER_PROCESS_POWER_OFF,
     USER_PROCESS_DOUBLE_CHANNEL_ERROR,
 } USER_PROCESS_FSM_t;
+
 
 
 typedef struct

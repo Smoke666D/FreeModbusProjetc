@@ -366,7 +366,7 @@ xScreenType  xScreenDCV[] =
   {13,CDVSettingsPI1            , 0,   0,  12,  14,   ENTER_COMMNAD, 3 }, //12
   {14,CDVSettingsPI2            , 0,   0,  13,  15,   ENTER_COMMNAD, 3 }, //13
   {15,CDVSettingsAnalogScreen1  , 0,   0,  14,  16,   ENTER_COMMNAD ,3 },  //14
-  {16,CDVSettingsAnalogScreen1  , 0,   0,  15,  17,   ENTER_COMMNAD ,3 },  //15
+  {16,CDVSettingsAnalogScreen2  , 0,   0,  15,  17,   ENTER_COMMNAD ,3 },  //15
   {17, ResetScreen              , 0,   0,  16,  4,   ENTER_COMMNAD ,3 },   //16
 };
 

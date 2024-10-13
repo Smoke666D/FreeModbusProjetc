@@ -1090,17 +1090,9 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
 
               break;
         case CDV_MODE_ID:
-            switch (getReg8(DEVICE_TYPE))
-            {
-          //  case DEV_DCV:
+
                strcpy(str,CDV_MODE_STRING[getStateDCV()]);
                break;
-
-          //  case DEV_VAV:
-            //    strcpy(str,CDV_MODE_STRING[getStateVAV()]);
-            //    break;
-
-            }
               break;
         case DCV_SETTING1_ID:
             switch (getReg8(SENSOR_TYPE_ID) )

@@ -18,8 +18,6 @@
 
 static TaskHandle_t pADCTaskHandle;
 static TaskHandle_t pI2CTaskHandle;
-static int16_t calib_offset    = 0;
-static int16_t calib_offset1   = 0;
 static float PressSens[2]={0,0};
 float AC_220_VALUE;
 float AC_220_VALUE_CONTROL;
@@ -270,11 +268,11 @@ void ADC1_Init()
     }
     vDacInit();
     eDacCalDataConfig(DAC1,DAC_CAL_POINT);
-    eSetDacCalPoint(DAC1,  DACCAL, DAC_CAL_POINT );
+    eSetDacCalPoint(DAC1,  (POINT_t *)DACCAL, DAC_CAL_POINT );
     eDacCalDataConfig(DAC2,DAC_CAL_POINT);
-    eSetDacCalPoint(DAC2,  DACCAL, DAC_CAL_POINT );
+    eSetDacCalPoint(DAC2,  (POINT_t *)DACCAL, DAC_CAL_POINT );
     eDacCalDataConfig(DAC3,DAC_CAL_POINT);
-    eSetDacCalPoint(DAC3,  DACCAL, DAC_CAL_POINT );
+    eSetDacCalPoint(DAC3,  (POINT_t *)DACCAL, DAC_CAL_POINT );
     DMA_INIT_t init;
     uint8_t ADC1_CHANNEL[ADC1_CH_COUNT] = { ADC_CH_0,  ADC_CH_1 };
     HAL_ADC_ContiniusScanTrigCinvertionDMA( ADC_1, ADC1_CH_COUNT, ADC1_CHANNEL, ADC_ExternalTrigConv_T3_TRGO);

@@ -240,8 +240,8 @@ void saveRegFloat(u16 reg_adress, float data )
 float convert_int_to_float( u16 * data)
 {
 
-    u32 temp_int = (data[0]<<16 | data[1]);
-    float * ftemp = &temp_int;
+    u32 temp_int =( data[0]<<16 | data[1]);
+    float * ftemp = (float *) &temp_int;
     return (*ftemp);
 
 }
@@ -249,7 +249,7 @@ float convert_int_to_float( u16 * data)
 void convert_float_to_int(float fdata, u16 * data)
 {
     float temp = fdata;
-    u32 * temp_int = &temp;
+    u32 * temp_int =(u32*) &temp;
     data[0]= ((*temp_int) >>16 ) & 0xFFFF;
     data[1]= ((*temp_int) >> 0) & 0xFFFF ;
 }
