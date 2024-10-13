@@ -18,6 +18,7 @@
 #define DIN_ERROR            0x10
 #define FIRST_CHANNEL_ERROR  0x20
 #define SECOND_CHANNEL_ERROR 0x40
+#define ANALOG_SENSOR_ERROR  0x80
 
 void vCheckDoubleChannelAlarm( u8 *error_state );
 void InitCleanTimer();

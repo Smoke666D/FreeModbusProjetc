@@ -334,41 +334,15 @@ static const u16 CDV_REGS_MAP[] = {
                                                CDV_CONTOROL,      //29
                                                AFTER_ZONE_SETTING,//30
                                                PRIOR_SENSOR,      //31
-                                               KK_SENSOR_TYPE,    //32
-                                               CO2_SENSOR_TYPE,   //33
-                                               H_SENSOR_TYPE,     //34
+                                               INPUT_SENSOR_MODE,    //32
+
                                                INPUT_SENSOR_TYPE, //35
 
 
 };
 
 
-static const u16 BP_REGS_MAP[] = {
 
-        COOF_P,           //0
-        COOF_P,           //1
-        COOF_I,           //2
-        COOF_I,           //3
-        KOOFKPS,          //4
-        KOOFKPS,          //5
-        COOF_I1,          //6
-        COOF_I1,          //7
-        COOF_P1,          //8
-        COOF_P1,          //9
-        AFTER_ZONE_SETTING,//18
-        CDV_BP_CH_COUNT,   //19
-        MEASERING_UNIT,    //20
-        OFFSET_CH2,        //21
-        OFFSET_CH2,        //22
-        PRIOR_SENSOR,      //23
-        CLEAN_TIMER,       //24
-        ZERO_POINT_TIMEOUT,//25
-        KK_SENSOR_TYPE,    //26
-        CO2_SENSOR_TYPE,   //27
-        H_SENSOR_TYPE,      //28
-        F_CHANNEL,         //29
-        F_CHANNEL,         //30
-};
 
 void vSetRegData( u16 adress)
 {
@@ -609,41 +583,7 @@ void vSetRegData( u16 adress)
 
 
                   default:
-                      reg_addr = BP_REGS_MAP[adress- 300];
-                      switch (adress)
-                             {
-                                   case (BP_KOOF_I_MB+1):
-                                   case (BP_KOOF_K_MB+1):
-                                   case (BP_KOOF_P_MB+1):
-                                   case (BP_KOOF_I1_MB+1):
-                                   case (BP_KOOF_P1_MB+1):
-                                   case (BP_KOOF_I2_MB+1):
-                                   case (BP_KOOF_P2_MB+1):
-                                   case (BP_KOOF_I3_MB+1):
-                                   case (BP_KOOF_P3_MB+1):
-                                   case (BP_OFFSET_CH2+1):
-                                   case (PB_F_CHANNEL+1):
-                                           data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
-                                           saveRegFloat(reg_addr, data);
-                                           break;
-                                   case BP_AFZONE_SETTING_MB:
-                                   case BP_CH_COUNT_MB:
-                                   case BP_MEASERING_UNIT:
-                                   case BP_PRIOR_SENS:
-                                   case BP_KK_SENSOR_TYPE:
-                                   case BP_H_SENSOR_TYPE:
-                                   case BP_CO2_SENSOR_TYPE:
-                                           VerifyAndSetReg8(reg_addr, (uint8_t) byte_data );
-                                           break;
 
-
-                                   case BP_ZERO_POINT_TIMEOUT:
-                                       saveReg16(reg_addr, usRegHoldingBuf[adress]);
-                                       break;
-                                   case BP_CLEAN_TIMER:
-                                       SaveReg8(reg_addr,byte_data);
-                                       break;
-                               }
                       break;
        }
     }

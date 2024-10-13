@@ -15,7 +15,7 @@
 
 #define SW_V                 2
 #define SW_V2                1
-#define SW_V3                5
+#define SW_V3                6
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -69,12 +69,14 @@
 #define SETTING_TIMER         ( CLEAN_TIMER        + sizeof(uint8_t) )
 #define ZERO_POINT_TIMEOUT    ( SETTING_TIMER        + sizeof(uint8_t) )
 #define MIN_SET               ( ZERO_POINT_TIMEOUT  + sizeof(uint16_t) )
-#define MAX_SET               ( MIN_SET  + sizeof(uint16_t) )
-#define KK_SENSOR_TYPE        ( MAX_SET  + sizeof(uint16_t) )
-#define CO2_SENSOR_TYPE       ( KK_SENSOR_TYPE + sizeof(uint8_t) )
-#define H_SENSOR_TYPE         ( CO2_SENSOR_TYPE + sizeof(uint8_t) )
-#define F_CHANNEL             ( H_SENSOR_TYPE   + sizeof(uint8_t) )
-#define SETTING_MAX           ( F_CHANNEL       + sizeof(uint32_t) )
+#define MAX_SET               ( MIN_SET  + sizeof(uint32_t) )
+#define SENS_OFS              ( MAX_SET  + sizeof(uint32_t) )
+#define SENS_SETTING          ( SENS_OFS  + sizeof(uint32_t) )
+#define INPUT_SENSOR_MODE     ( SENS_SETTING  + sizeof(uint32_t) )
+#define F_CHANNEL             ( INPUT_SENSOR_MODE  + sizeof(uint8_t) )
+#define BP_REG_TYPE           ( F_CHANNEL       + sizeof(uint32_t) )
+#define BP_SIZE               ( BP_REG_TYPE      + sizeof(uint8_t) )
+#define SETTING_MAX           ( BP_SIZE      + sizeof(uint8_t) )
 #define SETTING_MIN           ( SETTING_MAX       + sizeof(uint16_t) )
 #define SETTING_MID           ( SETTING_MIN       + sizeof(uint16_t) )
 #define INPUT_SENSOR_TYPE     ( SETTING_MID       + sizeof(uint16_t) )
@@ -99,6 +101,24 @@
 
 #define RECORD_SIZE 7
 #define RECORD_DATA_SIZE      50
+
+typedef enum
+{
+  DISCRETE_INPUT   = 0,
+  STATIC_TERMSENSOR =1,
+  ROOM_CONTROLLER  = 2,
+  ANALOG_SENSOR    = 3,
+} INPUT_SENSOR_t;
+
+typedef enum
+{
+  SETTING_CLOSE   = 0,
+  SETTING_MINIMUM = 1,
+  SETTING_MIDIUM  = 2,
+  SETTING_MAXIMUN = 3,
+  SETTING_OPEN    = 4,
+} DISCRET_STATE_t;
+
 
 typedef enum
 {

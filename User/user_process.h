@@ -38,7 +38,7 @@ typedef struct
 #define CALIBRATE_CODE 1
 #define STOP_CODE  0
 
-
+float ComputeSetPoint();
 void UPDATE_COOF();
 u8 getStateVAV();
 u8 getStateDCV();

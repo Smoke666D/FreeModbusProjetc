@@ -109,10 +109,13 @@ static u8 * SENSOR_COUNT_STRING[]={"0.1","0.5","1.0","2.0","3.0","5.0","10.0"};
 static u8 * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
 static u8 * AfterZoneStrig[]={"Tканала<Tпомещения","Tканала>Tпомещения","Автомат"};
 static u8 * MUnitStrig[] = {"м^3/ч","м/c ","Па "};
+static u8 *  SensUnitString[]={"T","ppm","%"};
 static u8 * PriorSentStrig[]= {"T","CO2","H"};
 static const char * DevString[5]={"Режим ФМЧ","Режим CAV/VAV-BP"};
 static u8 * SensorTypeStrig[]= {"0-10 В","2-10 В","4-20 мA"};
 static u8 * IniputSignalTypeStrig[]= {"Диск. вход","Пас. датчик T","Комн. контр.","Аналог датчики"};
+const char * CDV_MODE_STRING[]={"Закрыто","Минимальная","Средняя","Максимальная","Открыто"};
+const char * BP_REG_TYPE_STRING[] = {"VAV","Const L0,2","VAV + Const L0,2"};
 static xScreenType * pMenu;
 static u8 journal_index =0;
 static uint16_t curr_edit_data_id = 0;
@@ -427,7 +430,7 @@ void MenuSetDevice()
         case DEV_CAV_VAV_BP:
             pMenu = xScreenDCV;
 
-                SetPID2Screen(getReg8(CDV_BP_CH_COUNT));
+                SetPID2Screen(getReg8(CDV_BP_CH_COUNT),getReg8(INPUT_SENSOR_TYPE));
 
 
             if (getReg8(CDV_BP_CH_COUNT) == 0)
@@ -438,19 +441,19 @@ void MenuSetDevice()
                                                          {
                                                              case 0:
                                                                  vSettingCoountCondfig(1);
-                                                                 SetSnsorAnalog(  0 );
+
                                                                  break;
                                                              case 1:
                                                                  vSettingCoountCondfig(0);
-                                                                 SetSnsorAnalog(  0 );
+
                                                                  break;
                                                              case 2:
                                                                  vSettingCoountCondfig(0);
-                                                                 SetSnsorAnalog(  1 );
+
                                                                  break;
                                                              case 3:
                                                                  vSettingCoountCondfig(0);
-                                                                 SetSnsorAnalog(  0 );
+
                                                                  break;
 
                                                          }
@@ -906,8 +909,8 @@ static const u16 MenuCDV_BPRegMap[54]=
                                  INPUT_SENSOR_TYPE , //15
                                  MIN_SET,    //16
                                  MAX_SET,    //17
-                                 0,    //18
-                                 0,    //19
+                                 SENS_OFS,    //18
+                                 SENS_SETTING,    //19
                                  AFTER_ZONE_SETTING,   //20
                                  CDV_BP_CH_COUNT,    //22
                                  MEASERING_UNIT,    //22
@@ -915,12 +918,12 @@ static const u16 MenuCDV_BPRegMap[54]=
                                  ZERO_POINT_TIMEOUT,    //24
                                  SETTING_TIMER,       //25
                                  PRIOR_SENSOR ,    //26
-                                 KK_SENSOR_TYPE,    //27
-                                 CO2_SENSOR_TYPE,    //28
-                                 H_SENSOR_TYPE,    //29
-                                 OFFSET_CH2,    //30
-                                 COOF_P1,    //31
-                                 COOF_I1,    //32
+                                 INPUT_SENSOR_MODE,    //27
+                                 OFFSET_CH2,    //28
+                                 COOF_P1,    //29
+                                 COOF_I1,    //30
+                                 0,    //31
+                                 0,    //32
                                  0,    //33
                                  0,    //34
                                  0,    //35
@@ -929,9 +932,10 @@ static const u16 MenuCDV_BPRegMap[54]=
                                  0,    //38
                                  0,    //39
                                  0,    //40
-                                 0,    //41
-                                 0,    //42
-                                 0,    //43
+                                 BP_REG_TYPE,    //41
+                                 BP_SIZE,       //42
+                                 MEASERING_UNIT, //43
+                                 0,              //44
 
                          };
 
@@ -951,29 +955,7 @@ static u8 const *  CH_STRING[] = { "ВР","1","2"};
 
 
 
-#define base_screen_count 10
-u8 getScreenCount()
-{
-    u8 screen_count = base_screen_count;
-    switch ( getReg8(CDV_BP_CH_COUNT))
-    {
-        case 1:
-            break;
-        default:
-            screen_count+=1;
-            break;
-    }
-    switch ( getReg8(SENSOR_TYPE_ID))
-       {
-           default:
-               break;
-           case 3:
-               screen_count+=2;
-               break;
 
-       }
-    return (screen_count);
-}
 
 void vSetTitle(u16 data_id, u8 * str )
 {
@@ -1014,17 +996,30 @@ void vSetTitle(u16 data_id, u8 * str )
                  sprintf(str,"9/%i",getScreenCount());
                   break;
            case SETTING10_TITLE_ID:
-                            sprintf(str,"10/%i",getScreenCount());
-                             break;
+                  sprintf(str,"10/%i",getScreenCount());
+                  break;
            case SETTING11_TITLE_ID:
-                                     sprintf(str,"11/%i",getScreenCount());
-                                      break;
+                  sprintf(str,"11/%i",getScreenCount());
+                  break;
            case VOLTAG_SCREEN_TITLE_ID:
                if (dev_type == DEV_FMCH)
                       strcpy(str,"5/9");
                 else
                      sprintf(str,"3/%i",getScreenCount());
                     break;
+           case SETTINGANALOG1_TITLE_ID:
+               if ((getReg8(CDV_BP_CH_COUNT))==1)
+                   sprintf(str,"11/%i",getScreenCount());
+               else
+                   sprintf(str,"12/%i",getScreenCount());
+               break;
+           case SETTINGANALOG2_TITLE_ID:
+               if ((getReg8(CDV_BP_CH_COUNT))==1)
+                   sprintf(str,"12/%i",getScreenCount());
+               else
+                   sprintf(str,"13/%i",getScreenCount());
+               break;
+               break;
            case SENSOR_TYPE_TITLE_ID:
                if (getReg8(INPUT_SENSOR_TYPE) == 2)
                strcpy(str,"Приоритет рег.:") ;
@@ -1043,7 +1038,33 @@ void vSetTitle(u16 data_id, u8 * str )
     }
 
 }
-const char * CDV_MODE_STRING[]={"Закрыто","Минимальная","Средняя","Максимальная","Открыто"};
+
+
+void DinModeSettingView(u8 channel, char * str)
+{
+    static float temp_float;
+    switch ( getStateDCV())
+    {
+                   case 0:
+                       strcpy(str,"----");
+                       break;
+                   case 1:
+                       temp_float = DataModelGetCDVSettings( getReg16(SETTING_MIN)+ getReg16(OFFSET_CH2)*channel);
+                       sprintf(str,"%06.1f",temp_float);
+                       break;
+                   case 2:
+                       temp_float = DataModelGetCDVSettings( getReg16(SETTING_MID)+ getReg16(OFFSET_CH2)*channel);
+                       sprintf(str,"%06.1f",temp_float);
+                       break;
+                   case 3:
+                       temp_float = DataModelGetCDVSettings( getReg16(SETTING_MAX)+ getReg16(OFFSET_CH2)*channel);
+                       sprintf(str,"%06.1f",temp_float);
+                       break;
+                   case 4:
+                       strcpy(str,"-----");
+     }
+}
+
 
 void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 * res)
 {
@@ -1051,7 +1072,23 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
     u16 reg_id = MenuCDV_BPRegMap[data_id - DCV_SETTING1_ID];
     switch (data_id)
     {
+        case  BP_SZIE_ID:
+            if ( command <= CMD_EDIT_READ )
+                sprintf(str,"%03i",( command == CMD_READ ) ? getReg16(reg_id) : edit_data_buffer_byte );
+            else
+                vByteDataEdit(1,reg_id,command,2,999,0);
+            break;
+         case BP_REG_TYPE_ID:
+             *len = 0;
+              if (command <= CMD_EDIT_READ)
+              {
+                  u8 sring_index = (command == CMD_EDIT_READ) ? edit_data_buffer_byte :getReg8( reg_id);
+                  strcpy(str, BP_REG_TYPE_STRING[  sring_index ] );
+              }
+              else
+                  vByteDataEdit(0,reg_id,command,0,2, 0);
 
+              break;
         case CDV_MODE_ID:
             switch (getReg8(DEVICE_TYPE))
             {
@@ -1066,25 +1103,32 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             }
               break;
         case DCV_SETTING1_ID:
-            switch ( getStateDCV())
+            switch (getReg8(SENSOR_TYPE_ID) )
             {
                 case 0:
-                    strcpy(str,"----");
-                    break;
-                case 1:
-                    temp_float = DataModelGetCDVSettings( getReg16(SETTING_MIN));
-                    sprintf(str,"%06.1f",temp_float);
+                    DinModeSettingView(0,str);
                     break;
                 case 2:
-                    temp_float = DataModelGetCDVSettings( getReg16(SETTING_MID));
-                    sprintf(str,"%06.1f",temp_float);
+                    sprintf(str,"%i4",ComputeSetPoint());
                     break;
                 case 3:
-                    temp_float = DataModelGetCDVSettings( getReg16(SETTING_MAX));
-                    sprintf(str,"%06.1f",temp_float);
+                case 1:
+                    sprintf(str,"%f3.1",getRegFloat(SENS_SETTING));
                     break;
-                case 4:
-                    strcpy(str,"-----");
+            }
+            break;
+        case DRAW_UNIT_ID:
+            switch (getReg8(SENSOR_TYPE_ID) )
+            {
+                case 0:
+                case 2:
+                    strcpy(str, MUnitStrig[ getReg8( reg_id)] );
+                    break;
+                case 1:
+                    strcpy(str, "T" );
+                    break;
+                case 3:
+                    strcpy(str, SensUnitString[ getReg8(PRIOR_SENSOR)] );
                     break;
             }
             break;
@@ -1097,27 +1141,11 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 strcpy(str,"----");
             else
             {
-                switch ( getStateDCV())
-                           {
-                               case 0:
-                                   strcpy(str,"Закрыто");
-                                   break;
-                               case 1:
-                                   temp_float = DataModelGetCDVSettings( getReg16(SETTING_MIN)+getReg16(OFFSET_CH2));
-                                   sprintf(str,"%06.1f",temp_float);
-                                   break;
-                               case 2:
-                                   temp_float = DataModelGetCDVSettings( getReg16(SETTING_MID)+getReg16(OFFSET_CH2));
-                                   sprintf(str,"%06.1f",temp_float);
-                                   break;
-                               case 3:
-                                   temp_float = DataModelGetCDVSettings( getReg16(SETTING_MAX)+getReg16(OFFSET_CH2));
-                                   sprintf(str,"%06.1f",temp_float);
-                                   break;
-                               case 4:
-                                   strcpy(str,"Открыто");
-                                   break;
-                           }
+                if (getReg8(SENSOR_TYPE_ID)==0)
+                     DinModeSettingView(1,str);
+                else
+                     sprintf(str,"%i4", getAIN(SENS1)+getReg16(OFFSET_CH2));
+
             }
             break;
         case DCV_FACT2_ID:
@@ -1140,28 +1168,28 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                                 strcpy(str, IniputSignalTypeStrig[ getReg8( reg_id)] );
                                 break;
                             case CMD_SAVE_EDIT:
+                                SetPID2Screen(getReg8(CDV_BP_CH_COUNT),edit_data_buffer_byte);
                                 switch (edit_data_buffer_byte)
                                 {
                                     case 0:
 
                                         vSettingCoountCondfig(1);
-                                        SetSnsorAnalog(  0 );
+
                                         break;
                                     case 1:
                                         vSettingCoountCondfig(0);
-                                        SetSnsorAnalog(  0 );
+
                                         break;
                                     case 2:
                                         vSettingCoountCondfig(0);
-                                        SetSnsorAnalog(  1 );
+
                                         break;
                                     case 3:
                                         vSettingCoountCondfig(0);
-                                        SetSnsorAnalog(  0 );
+
                                         break;
 
                                 }
-
                                   SetFirtsEditString();
                             default:
                                 vByteDataEdit(0,reg_id,command,0,3, 0);
@@ -1180,6 +1208,8 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             case CMD_READ:
                  strcpy(str, PriorSentStrig[ getReg8( reg_id)] );
                  break;
+            case CMD_SAVE_EDIT:
+                 vSetAfterZone( (edit_data_buffer_byte == 0) ? 1 : 0);
              default:
                  vByteDataEdit(0,reg_id,command,0,2, 0);
                  break;
@@ -1189,7 +1219,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             str[0]=0;
         }
                 break;
-    case KK_SENSOR_TYPE_ID:
+    case INPUT_SENSOR_TYPE_ID:
 
                 *len = 0;
                 if (getReg8(INPUT_SENSOR_TYPE) == 2)
@@ -1283,8 +1313,9 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                       strcpy(str,CH_STRING[edit_data_buffer_byte] );
                       break;
                   case CMD_SAVE_EDIT:
+
                      // if (edit_data_buffer_byte == 2)
-                          SetPID2Screen(edit_data_buffer_byte);
+                          SetPID2Screen(edit_data_buffer_byte,getReg8(INPUT_SENSOR_TYPE));
                      // else
                       //    SetPID2Screen(0);
                       if (edit_data_buffer_byte == 0)
@@ -1386,23 +1417,23 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                       break;
             }
             break;
-
             case SENSOR_MIN_ID:
             case SENSOR_MAX_ID:
+            case SENSOR_OFFSET_ID:
+            case SENSOR_SETTING_ID:
                           switch (command)
                           {
                                case CMD_READ:
-                                    sprintf(str,"%03i",getReg16(reg_id) );
+                                    sprintf(str,"%5.1f",getRegFloat(reg_id) );
                                     break;
                                case CMD_EDIT_READ:
-                                    sprintf(str,"%03i",edit_data_buffer_byte );
+                                    sprintf(str,"%5.1f",edit_data_buffer_float );
                                     break;
                                default:
-                                    vByteDataEdit(1,reg_id,command,2,999,0);
+                                    vFloatDataEdit(reg_id, command,5,1,9999.9,0.0);
                                     break;
                          }
                          break;
-
                 case ZERO_CAL_COMMAND:
                     switch (command)
                     {
@@ -1491,18 +1522,10 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                  break;
            case FILTER_HIGH_ID:
            case FILTER_LOW_ID:
-               switch (command)
-               {
-                    case CMD_READ:
-                         sprintf(str,"%03i",getReg16(reg_id) );
-                         break;
-                    case CMD_EDIT_READ:
-                         sprintf(str,"%03i",edit_data_buffer_byte );
-                         break;
-                    default:
-                         vByteDataEdit(1,reg_id,command,2,999,0);
-                         break;
-              }
+                if ( command > CMD_EDIT_READ )
+                    vByteDataEdit(1,reg_id,command,2,999,0);
+                else
+                    sprintf(str,"%03i",( command == CMD_READ ) ? getReg16(reg_id) : edit_data_buffer_byte);
               break;
            case SETTING1_ID:
            case SETTING2_ID:
@@ -1612,19 +1635,48 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
         {
             case DEVICE_TYPE_ID:
                 *len = 0;
-                switch (command)
-                {
-                      case CMD_EDIT_READ:
-                          strcpy(str, DevString[ edit_data_buffer_byte ] );
-                          break;
-                      case CMD_READ:
-                          strcpy(str, DevString[ getReg8( reg_id)] );
-                          break;
-                      default:
-                          vByteDataEdit(0,reg_id,command,0,1 , 0);
-                          break;
-                }
+                if ( command > CMD_EDIT_READ )
+                    vByteDataEdit(0,reg_id,command,0,1 , 0);
+                else
+                    strcpy(str, DevString[ (command == CMD_READ)?  getReg8( reg_id) : edit_data_buffer_byte ] );
                 break;
+            case CONTROL_MODE_ID:
+                *len = 0;
+                 if ( command > CMD_EDIT_READ )
+                        vByteDataEdit(0,reg_id,command,0,MKV_MB_TCP, MKV_MB_DIN );
+                 else
+                     strcpy(str, ControlModeStrig[ ( command == CMD_READ ) ? getReg8( reg_id) : edit_data_buffer_byte ]);
+                 break;
+            case PROTOCOL_ID:
+                *len = 0;
+                if ( command > CMD_EDIT_READ )
+                {
+                    if ( getReg8(MB_PROTOCOL_TYPE)== MKV_MB_DIN)
+                    {
+                       vByteDataEdit(0,reg_id,command,0,MKV_MB_TCP, MKV_MB_RTU);
+                    }
+                }
+                else
+                    strcpy(str, ControlModeStrig[ ( command == CMD_READ ) ? getReg8( reg_id) : edit_data_buffer_byte ]);
+
+                break;
+            case CONTRAST_ID:
+            case MB_RTU_ADDR_ID :
+            case MOD_BUS_TIMEOUT_ID:
+                           switch (command)
+                           {
+                               case CMD_READ:
+                                   sprintf(str,"%02i",getReg8(reg_id) );
+                                   break;
+                               case CMD_EDIT_READ:
+                                   if ( data_id == CONTRAST_ID ) setReg8(reg_id,edit_data_buffer_byte);
+                                   sprintf(str,"%02i",edit_data_buffer_byte );
+                                   break;
+                               default:
+                                   vByteDataEdit(0,reg_id,command,1,99,1);
+                                   break;
+                           }
+                    break;
            case ALARM_COUNT_ID:
                temp_state =0;
                temp_byte =  USER_GerErrorState();
@@ -1657,18 +1709,10 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
         case COOF_P_ID:
         case COOF_I_ID:
         case KOOFKPS_ID:
-            switch (command)
-            {
-                case CMD_READ:
-                    sprintf(str,"%+07.2f",getRegFloat(reg_id));
-                    break;
-                case CMD_EDIT_READ:
-                    sprintf(str,"%+07.2f",edit_data_buffer_float );
-                    break;
-               default:
-                   vFloatDataEdit(reg_id, command,6,2,999.99,-999.99);
-                   break;
-            }
+            if ( command > CMD_EDIT_READ )
+                vFloatDataEdit(reg_id, command,6,2,999.99,-999.99);
+            else
+                sprintf(str,"%+07.2f", ( command == CMD_READ ) ? getRegFloat(reg_id) :  edit_data_buffer_float );
             break;
         case SENS_1_RAW_ID:
         case SENS_2_RAW_ID:
@@ -1708,18 +1752,11 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
             }
             break;
         case IP_PORT_ID:
-            switch (command)
-            {
-                case CMD_READ:
-                    sprintf(str,"%03i",getReg16(reg_id) );
-                    break;
-                case CMD_EDIT_READ:
-                    sprintf(str,"%03i",edit_data_buffer_byte );
-                     break;
-                default:
-                    vByteDataEdit(1,reg_id,command,2,999,0);
-                    break;
-            }
+            if ( command > CMD_EDIT_READ )
+                vByteDataEdit(1,reg_id,command,2,999,0);
+            else
+                sprintf(str,"%03i", (command == CMD_READ) ? getReg16(reg_id) : edit_data_buffer_byte );
+
             break;
         case AC_VOLTAGE_ID:
             sprintf(str,"%i В",(uint16_t)getAIN(reg_id));
@@ -1734,15 +1771,8 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
         case VOLTAGE_MIN_OFF_ID:
         case VOLTAGE_MAX_ON_ID:
         case VOLTAGE_MAX_OFF_ID:
-            switch (command)
+            if ( command > CMD_EDIT_READ )
             {
-                case CMD_READ:
-                    sprintf(str,"%03i",getReg8(reg_id) );
-                    break;
-                case CMD_EDIT_READ:
-                    sprintf(str,"%03i",edit_data_buffer_byte );
-                    break;
-               default:
                     if ( data_id == VOLTAGE_MIN_ON_ID)
                     {
                         max = getReg8(MenuRegMap[VOLTAGE_MIN_OFF_ID])-1;
@@ -1767,8 +1797,10 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                         max =255;
                     }
                     vByteDataEdit(0,reg_id,command,2,max,min);
-                    break;
             }
+            else
+                  sprintf(str,"%03i", (command == CMD_READ )? getReg8(reg_id) :edit_data_buffer_byte );
+
             break;
         case ZERO_CALIBRATE_ID:
             if (command == CMD_READ )
@@ -1809,73 +1841,17 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                         break;
                }
                break;
-           case CONTRAST_ID:
-           case MB_RTU_ADDR_ID :
-           case MOD_BUS_TIMEOUT_ID:
-               switch (command)
-               {
-                   case CMD_READ:
-                       sprintf(str,"%02i",getReg8(reg_id) );
-                       break;
-                   case CMD_EDIT_READ:
-                       if ( data_id == CONTRAST_ID ) setReg8(reg_id,edit_data_buffer_byte);
-                       sprintf(str,"%02i",edit_data_buffer_byte );
-                       break;
-                   default:
-                       vByteDataEdit(0,reg_id,command,1,99,1);
-                       break;
-               }
-        break;
-    case CONTROL_MODE_ID:
-        *len = 0;
-         switch (command)
-         {
-            case CMD_EDIT_READ:
-                 strcpy(str, ControlModeStrig[ edit_data_buffer_byte ] );
-                 break;
-            case CMD_READ:
-                 strcpy(str, ControlModeStrig[ getReg8( reg_id)] );
-                 break;
-             default:
-                vByteDataEdit(0,reg_id,command,0,MKV_MB_TCP, MKV_MB_DIN );
-                break;
-         }
-         break;
-    case PROTOCOL_ID:
-        *len = 0;
-        switch (command)
-        {
-            case CMD_EDIT_READ:
-                strcpy(str, ControlModeStrig[ edit_data_buffer_byte ] );
-                break;
-            case CMD_READ:
-                strcpy(str, ControlModeStrig[ getReg8( reg_id)] );
-                break;
-            default:
-                if ( getReg8(MB_PROTOCOL_TYPE)== MKV_MB_DIN)
-                {
-                    vByteDataEdit(0,reg_id,command,0,MKV_MB_TCP, MKV_MB_RTU);
-                }
-                break;
-        }
-        break;
+
+
     case HOURE_COUNTER_ID:
         sprintf(str,"%000000i часов %00i минут",vRTC_TASK_GetHoure(), vRTC_TASK_GetMinute( ));
         break;
     case SENS_COUNT_ID:
         *len = 0;
-        switch (command)
-        {
-             case CMD_READ:
-                 strcpy(str,SENSOR_COUNT_STRING[getReg8(reg_id)]);
-                 break;
-             case CMD_EDIT_READ:
-                 strcpy(str,SENSOR_COUNT_STRING[edit_data_buffer_byte ]);
-                 break;
-            default:
-                vByteDataEdit(0,reg_id,command,0,6,0);
-                break;
-         }
+        if ( command > CMD_EDIT_READ)
+            vByteDataEdit(0,reg_id,command,0,6,0);
+        else
+            strcpy(str,SENSOR_COUNT_STRING[ (command == CMD_READ) ? getReg8(reg_id):edit_data_buffer_byte ]);
         break;
     default:
         break;

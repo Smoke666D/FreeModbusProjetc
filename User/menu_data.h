@@ -26,8 +26,9 @@
 
 void SetBPSetting(u8 set);
 void vSettingCoountCondfig( u8 setting);
-void SetPID2Screen(u8 state);
-void SetSnsorAnalog(  uint8_t state);
+void SetPID2Screen(u8 state, u8 analog_state);
+u8 getScreenCount();
+void vSetAfterZone( uint8_t enable);
 extern xScreenType  xScreenVAV[];
 extern xScreenType  xScreenCAV[];
 extern xScreenType  xScreenDCV[];

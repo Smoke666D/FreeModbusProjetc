@@ -99,23 +99,24 @@
 #define ZERO_POINT_TIMEOUT_ID   ( CLEAN_TIMER_ID        + 1 )    //24
 #define SETTING_TIMER_ID        ( ZERO_POINT_TIMEOUT_ID + 1 )    //25
 #define PRIOR_SENSOR_ID         ( SETTING_TIMER_ID       + 1 )    //26
-#define KK_SENSOR_TYPE_ID       ( PRIOR_SENSOR_ID       + 1 )    //27
-#define CO2_SENSOR_TYPE_ID      ( KK_SENSOR_TYPE_ID     + 1 )    //28
-#define H_SENSOR_TYPE_ID        ( CO2_SENSOR_TYPE_ID    + 1 )    //29
-#define OFFSET2_ID              ( H_SENSOR_TYPE_ID      + 1 )    //30
-#define COOF_P_1_ID             ( OFFSET2_ID            + 1 )    //31
-#define COOF_I_1_ID             ( COOF_P_1_ID           + 1 )    //32
-#define BP_SETTING1_ID          ( COOF_I_1_ID           + 1 )    //33
-#define BP_FACT_ID              ( BP_SETTING1_ID        + 1 )    //34
-#define BP_SIZE_ID              ( BP_FACT_ID            + 1 )    //35
-#define BP_REGULATION_TYPE_ID  ( BP_SIZE_ID            + 1 )    //36
-#define CH1_ERROR_ID            ( BP_REGULATION_TYPE_ID + 1 )    //37
-#define CH2_ERROR_ID            ( CH1_ERROR_ID          + 1 )    //38
-#define SETTING_BP_MIN_ID       ( CH2_ERROR_ID          + 1 )    //39
-#define SETTING_BP_AVER_ID      ( SETTING_BP_MIN_ID     + 1 )    //40
-#define SETTING_BP_MAX_ID       ( SETTING_BP_AVER_ID    + 1 )    //41
-#define CDV_MODE_ID             (SETTING_BP_MAX_ID      + 1 )    //42
-#define ZERO_CAL_COMMAND        ( CDV_MODE_ID      + 1 )        //43
+#define INPUT_SENSOR_TYPE_ID    ( PRIOR_SENSOR_ID       + 1 )    //27
+#define OFFSET2_ID              (INPUT_SENSOR_TYPE_ID      + 1 )    //28
+#define COOF_P_1_ID             ( OFFSET2_ID            + 1 )    //29
+#define COOF_I_1_ID             ( COOF_P_1_ID           + 1 )    //30
+#define BP_SETTING1_ID          ( COOF_I_1_ID           + 1 )    //31
+#define BP_FACT_ID              ( BP_SETTING1_ID        + 1 )    //32
+#define BP_SIZE_ID              ( BP_FACT_ID            + 1 )    //33
+#define BP_REGULATION_TYPE_ID  ( BP_SIZE_ID            + 1 )    //34
+#define CH1_ERROR_ID            ( BP_REGULATION_TYPE_ID + 1 )    //35
+#define CH2_ERROR_ID            ( CH1_ERROR_ID          + 1 )    //36
+#define SETTING_BP_MIN_ID       ( CH2_ERROR_ID          + 1 )    //37
+#define SETTING_BP_AVER_ID      ( SETTING_BP_MIN_ID     + 1 )    //38
+#define SETTING_BP_MAX_ID       ( SETTING_BP_AVER_ID    + 1 )    //39
+#define CDV_MODE_ID             (SETTING_BP_MAX_ID      + 1 )    //40
+#define BP_REG_TYPE_ID          ( CDV_MODE_ID      + 1 )          //41
+#define BP_SZIE_ID              ( BP_REG_TYPE_ID      + 1 )        //42
+#define DRAW_UNIT_ID            ( BP_SZIE_ID      + 1 )           //43
+#define ZERO_CAL_COMMAND        ( DRAW_UNIT_ID      + 1 )        //44
 
 
 
@@ -129,7 +130,9 @@
 #define SETTING9_TITLE_ID       ( SETTING8_TITLE_ID      + 1 )
 #define SETTING10_TITLE_ID      ( SETTING9_TITLE_ID      + 1 )
 #define SETTING11_TITLE_ID      ( SETTING10_TITLE_ID      + 1 )
-#define SENSOR_TYPE_TITLE_ID    ( SETTING11_TITLE_ID      + 1 )
+#define SETTINGANALOG1_TITLE_ID ( SETTING11_TITLE_ID      + 1 )
+#define SETTINGANALOG2_TITLE_ID ( SETTINGANALOG1_TITLE_ID      + 1 )
+#define SENSOR_TYPE_TITLE_ID    ( SETTINGANALOG2_TITLE_ID      + 1 )
 #define SENSOR_TITLE_ID         ( SENSOR_TYPE_TITLE_ID   + 1 )
 #define CALIBRATION_TITLE_ID    ( SENSOR_TITLE_ID   + 1 )
 
@@ -164,9 +167,9 @@ typedef struct
 
 typedef enum
 {
-  CMD_EDIT_READ = 8,
   CMD_READ = 0,
-  CMD_INC  = 1,
+  CMD_EDIT_READ = 1,
+  CMD_INC  = 8,
   CMD_DEC  = 2,
   CMD_START_EDIT = 3,
   CMD_NEXT_EDIT =4,

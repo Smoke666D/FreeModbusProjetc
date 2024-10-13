@@ -398,7 +398,7 @@ void vCDV_SetpointCheck( u8 * state, u32 * timeout  )
 float ComputeSetPoint()
 {
     float temp_float = 0;
-    switch (getReg8( KK_SENSOR_TYPE))
+    switch (getReg8( INPUT_SENSOR_MODE))
     {
         case 0:
             temp_float =( getAIN(AIN1)/10.0*(getReg16(SETTING_MAX) - getReg16(SETTING_MIN))) + getReg16(SETTING_MIN);
@@ -413,7 +413,7 @@ float ComputeSetPoint()
     return (temp_float);
 }
 
-static u8 state = 0;
+static DISCRET_STATE_t state = SETTING_CLOSE;
 
 u8 getStateDCV()
 {
@@ -432,20 +432,220 @@ void vBP()
 
 }
 
-void vCAVFSM( u8 state)
+
+
+
+
+void vRoomContollerFSM( u8 state)
+{
+    if ( state == 4 ) USER_AOUT_SET(DAC1,10.0);
+    else if (state == 0) USER_AOUT_SET(DAC1,0.0);
+    else
+    {
+        SET_POINT = ComputeSetPoint();
+        PID_Compute(&TPID,getAIN(SENS1));
+        float PID_Out = PIDOut/1000.0;
+        USER_AOUT_SET(DAC1,PID_Out);
+    }
+    switch (getReg8(CDV_BP_CH_COUNT))
+        {
+            case 0:
+                vBP();
+                break;
+            case 2:
+            {
+                switch (state)
+                {
+                    case 0:
+                        USER_AOUT_SET(DAC2,0.0);
+                        break;
+                    case 4:
+                        USER_AOUT_SET(DAC1,10.0);
+                        break;
+                    default:
+                      SET_POINT1  = SET_POINT + (float)getReg16(OFFSET_CH2);
+                      PID_Compute(&TPID2,getAIN(SENS2));
+                      float PID_Out = PIDOut2/1000.0;
+                      USER_AOUT_SET(DAC2,PID_Out);
+                }
+                break;
+                default:
+                    break;
+            }
+        }
+}
+
+
+AIN_NAME_t const SENSOR_NAME[]={DCAIN1,DCAIN2,DCAIN3};
+
+
+
+
+void ErrorSensorCheck()
+{
+    AIN_NAME_t sensor_name;
+    switch ((INPUT_SENSOR_t)getReg8(SENSOR_TYPE_ID))
+    {
+        case ANALOG_SENSOR:
+        case ROOM_CONTROLLER:
+
+            sensor_name = SENSOR_NAME[getReg8(PRIOR_SENSOR)];
+            switch (getReg8( INPUT_SENSOR_MODE))
+            {
+                case T2_10:
+                    if (getAIN(sensor_name) < 2.0 ) error_state |= ANALOG_SENSOR_ERROR;
+                    else error_state &= ~ANALOG_SENSOR_ERROR;
+                    break;
+                case T4_20:
+                    if (getAIN(sensor_name) < 4.0 ) error_state |= ANALOG_SENSOR_ERROR;
+                    else error_state &= ~ANALOG_SENSOR_ERROR;
+                    break;
+                default:
+                    error_state &= ~ANALOG_SENSOR_ERROR;
+                    break;
+            }
+            break;
+        case STATIC_TERMSENSOR:
+            break;
+        default:
+            break;
+
+    }
+
+
+
+}
+
+
+float GetSensor(u8 * after_zone)
+{
+   float temp_float = 0;
+
+   if (getReg8(SENSOR_TYPE_ID) == STATIC_TERMSENSOR)
+   {
+       temp_float = getAIN(DCAIN4);
+       *after_zone = 1;
+   }
+   else
+   {
+       AIN_NAME_t sensor_name = SENSOR_NAME[getReg8(PRIOR_SENSOR)];
+       if ( sensor_name == DCAIN1 ) *after_zone = 1;
+       float min_data = getRegFloat(MIN_SET);
+       float max_data = getRegFloat(MAX_SET);
+       float offset   = getRegFloat(SENS_OFS);
+       switch (getReg8( INPUT_SENSOR_MODE))
+       {
+          case T0_10:
+              temp_float =( getAIN(sensor_name)/10.0*(max_data - min_data)) + min_data;
+              break;
+          case T2_10:
+              temp_float =( (getAIN(sensor_name)-2.0)/8.0*(max_data - min_data)) + min_data;
+              break;
+          default:
+              temp_float =( (getAIN(sensor_name)-4.0)/18.0*(max_data - min_data)) + min_data;
+              break;
+      }
+      temp_float +=offset;
+   }
+  return (temp_float);
+
+}
+
+//PID_SetControllerDirection''
+
+
+
+
+
+
+void vAnalogSensorFSM( DISCRET_STATE_t state)
+{
+
+    float PID_Out;
+    if ( state == 4 ) USER_AOUT_SET(DAC1,10.0);
+    else if (state == 0) USER_AOUT_SET(DAC1,0.0);
+    else
+    {
+            float temp_float = getAIN(SENS1);
+            if (temp_float <= getReg16(SETTING_MIN))
+            {
+                PID_SetOutputLimits(&TPID, USER_AOUT_GET(DAC1),TPID.OutMax);
+            }
+            if (temp_float >= getReg16(SETTING_MAX))
+            {
+                  PID_SetOutputLimits(&TPID, TPID.OutMin, USER_AOUT_GET(DAC1));
+            }
+            SET_POINT = getRegFloat(SENS_SETTING);
+            u8 after_zone = 0;
+            float input_data = GetSensor(&after_zone);
+            if ( after_zone )
+            {
+
+                switch ( getReg8(AFTER_ZONE_SETTING ))
+                {
+                    case 0:
+                        PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
+                        break;
+                    case 1:
+                        PID_SetControllerDirection(&TPID,_PID_CD_REVERSE );
+                        break;
+                    default:
+                        if (input_data < getAIN(DCAIN4))
+                            PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
+                        else
+                            PID_SetControllerDirection(&TPID,_PID_CD_REVERSE);
+                        break;
+                }
+            }
+            else PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
+            PID_Compute(&TPID,input_data);
+            float PID_Out = PIDOut/1000.0;
+            USER_AOUT_SET(DAC1,PID_Out);
+
+     }
+
+     switch (getReg8(CDV_BP_CH_COUNT))
+     {
+           case 0:
+                    vBP();
+                    break;
+                case 2:
+                {
+                   if (state == SETTING_CLOSE)  PID_Out = 0.0;
+                   else if (state == SETTING_OPEN) PID_Out = 10.0;
+                   else
+                   {
+                          SET_POINT1  = getAIN(SENS1)+ (float)getReg16(OFFSET_CH2);
+                          PID_Compute(&TPID2,getAIN(SENS2));
+                          PID_Out = PIDOut2/1000.0;
+
+                    }
+                    USER_AOUT_SET(DAC2,PID_Out);
+                    break;
+                    default:
+                        break;
+            }
+      }
+}
+
+
+
+
+
+void vDiscreteInputFSM( DISCRET_STATE_t state)
 {
     switch (state)
     {
-        case 4:
+        case SETTING_OPEN:
              USER_AOUT_SET(DAC1,10.0);
              break;
-        case 1:
+        case SETTING_MINIMUM:
              SET_POINT = (float)getReg16(SETTING_MIN);
              break;
-        case 2:
+        case SETTING_MIDIUM:
              SET_POINT = (float)getReg16(SETTING_MID);
              break;
-        case 3:
+        case SETTING_MAXIMUN:
              SET_POINT = (float)getReg16(SETTING_MAX);
              break;
         default:
@@ -490,6 +690,11 @@ void vCAVFSM( u8 state)
 void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag,  uint16_t ac_voltage)
 {
     vCDV_SetpointCheck(&state, start_timeout);
+    if  ((ac_voltage <= (uint16_t)getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  (uint16_t)getReg8(LOW_VOLTAGE_OFF)))
+    {
+        error_state &= ~(HIGH_VOLTAGE_ERROR | LOW_VOLTAGE_ERROR);
+    }
+    ErrorSensorCheck();
     vCheckDoubleChannelAlarm(&error_state);
     switch (task_fsm)
     {
@@ -501,7 +706,7 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag,  uint16_t 
                 break;
             case USER_RROCCES_WORK:
                 *cal_flag = 0;
-                if (error_state & DIN_ERROR)
+                if ((error_state & DIN_ERROR) || (error_state & ANALOG_SENSOR_ERROR))
                 {
                    task_fsm  = USER_PROCESS_ALARM;
                 }
@@ -511,12 +716,24 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag,  uint16_t 
                 }
                 else
                 {
+
                     if (++*pid_counter >=10)
                     {
                         UPDATE_COOFCAV();
                         *pid_counter = 0;
-                        if ( getReg8(SENSOR_TYPE_ID) == 0 )
-                                vCAVFSM(state);
+                        switch ((INPUT_SENSOR_t)getReg8(SENSOR_TYPE_ID))
+                        {
+                            case DISCRETE_INPUT:
+                                vDiscreteInputFSM(state);
+                                break;
+                            case ROOM_CONTROLLER:
+                                vRoomContollerFSM(state);
+                                break;
+                            case ANALOG_SENSOR:
+                            case STATIC_TERMSENSOR:
+                                vAnalogSensorFSM(state);
+                                break;
+                        }
                     }
                 }
                 break;
@@ -547,13 +764,9 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag,  uint16_t 
                 break;
             case USER_PROCESS_ALARM:
 
-                if  ((ac_voltage <= (uint16_t)getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  (uint16_t)getReg8(LOW_VOLTAGE_OFF)))
-                {
-                    error_state &= ~(HIGH_VOLTAGE_ERROR | LOW_VOLTAGE_ERROR);
-                }
-                if (error_state & (HIGH_VOLTAGE_ERROR | LOW_VOLTAGE_ERROR | DIN_ERROR ) == 0) task_fsm = USER_PROCCES_IDLE;
+                if (error_state & (HIGH_VOLTAGE_ERROR | LOW_VOLTAGE_ERROR | DIN_ERROR | ANALOG_SENSOR_ERROR) == 0) task_fsm = USER_PROCCES_IDLE;
 
-                if (error_state & DIN_ERROR )
+                if (error_state & ( DIN_ERROR  | ANALOG_SENSOR_ERROR))
                 {
                     USER_AOUT_SET(DAC1,0.0);
                     USER_AOUT_SET(DAC2,0.0);
