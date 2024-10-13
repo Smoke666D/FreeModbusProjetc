@@ -20,7 +20,7 @@ static CLEAN_TIMER_t CleanTimer;
     return;
 }
 
- void CleanTimerFuncton( u8 * state)
+ void CleanTimerFuncton(  DISCRET_STATE_t * state)
 {
     CleanTimer.control_state =  getReg8( CONTROL_TYPE ) ==  MKV_MB_DIN ? ucDinGet(INPUT_5) : getReg8(LIGTH );
     if (CleanTimer.tumer_on == 0 )

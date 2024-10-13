@@ -102,6 +102,10 @@
 #define RECORD_SIZE 7
 #define RECORD_DATA_SIZE      50
 
+
+
+
+
 typedef enum
 {
   DISCRETE_INPUT   = 0,

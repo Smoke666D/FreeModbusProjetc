@@ -22,6 +22,6 @@
 
 void vCheckDoubleChannelAlarm( u8 *error_state );
 void InitCleanTimer();
-void CleanTimerFuncton( u8 * state);
+void CleanTimerFuncton(  DISCRET_STATE_t * state);
 
 #endif /* USER_USER_PROCESS_SERVICE_H_ */

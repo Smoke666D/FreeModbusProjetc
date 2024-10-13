@@ -28,7 +28,7 @@
 #include "hal_rtc.h"
 #include "rtc_task.h"
 #include "EEPROM_25C.h"
-#include "user_process.h"
+
 
 #define __SECTION(x)
 
@@ -52,6 +52,8 @@
 #define USER_STK_SIZE                   512
 #define I2C_TASK_PRIO                   6
 #define I2C_STK_SIZE                    256
+
+
 
 
 

@@ -235,6 +235,12 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
     }
     USER_SETTING_CHECK(c_type, set_point_old);
 
+
+    if ( error_state & (LOW_VOLTAGE_ERROR | HIGH_VOLTAGE_ERROR))
+    {
+        task_fsm = USER_PROCESS_ALARM;
+    }
+
     // Если засоренность фильта больше значения устваки, то выставляем предупрежние и делаем запись в журнал
      FilterState = USER_FilterState(&ss);
      if ( *HEPA_CONTROL_ON)
@@ -254,9 +260,11 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
            eSetDUT(OUT_3,FALSE);
       }
 
+
+
     switch (task_fsm)
                {
-                   case USER_PROCCES_IDLE:
+                   case USER_PROCCES_IDLE: // @suppress("Symbol is not resolved")
 
                        eSetDUT(OUT_1,FALSE);
                        PIDOut = 0;
@@ -279,7 +287,6 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
 
                        if (CalibrationZeroWhait())
                        {
-                           printf("end calib\r\n");
                            PIDOut = 0;
                            Temp = testdata[0];
                            UPDATE_COOF();
@@ -307,10 +314,7 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                        eSetDUT(OUT_1,TRUE);
                        break;
                    case USER_PROCESS_ALARM:
-                       if  ((ac_voltage <= (uint16_t)getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  (uint16_t)getReg8(LOW_VOLTAGE_OFF)))
-                       {
-                           task_fsm = USER_PROCCES_IDLE;
-                       }
+                       if ( ( error_state & (LOW_VOLTAGE_ERROR | HIGH_VOLTAGE_ERROR)) == 0 )  task_fsm = USER_PROCCES_IDLE;
                        PIDOut = 0;
                        USER_AOUT_SET(DAC2,0);
                        eSetDUT(OUT_1,FALSE);
@@ -335,7 +339,7 @@ static u8 din_mask = 0;
 
 
 
-void vCDV_SetpointCheck( u8 * state, u32 * timeout  )
+void vCDV_SetpointCheck(  DISCRET_STATE_t * state, u32 * timeout  )
 {
       //Сбрасываем ошибку дискретных входов
     error_state &=~DIN_ERROR;
@@ -550,11 +554,6 @@ float GetSensor(u8 * after_zone)
   return (temp_float);
 
 }
-
-//PID_SetControllerDirection''
-
-
-
 
 
 
@@ -836,7 +835,7 @@ void user_process_task(void *pvParameters)
                    {
                        error_state |= HIGH_VOLTAGE_ERROR;
                        vADDRecord(HIGH_VOLTAGE_ERROR);
-                       task_fsm = USER_PROCESS_ALARM;
+
                    }
                }
            }
@@ -851,13 +850,15 @@ void user_process_task(void *pvParameters)
                    {
                        error_state |= LOW_VOLTAGE_ERROR;
                        vADDRecord(LOW_VOLTAGE_ERROR);
-                       task_fsm = USER_PROCESS_ALARM;
                    }
                }
            }
            else
                low_voltage_alarm_timer = 0;
-
+           if  ((ac_voltage <= (uint16_t)getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  (uint16_t)getReg8(LOW_VOLTAGE_OFF)))
+           {
+               error_state &= ~(LOW_VOLTAGE_ERROR | HIGH_VOLTAGE_ERROR );
+           }
            if (power_on)
            {
                if ((ac_voltage < 20.0))
