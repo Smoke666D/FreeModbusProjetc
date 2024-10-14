@@ -47,7 +47,7 @@
 #define ADC_TASK_PRIO                   6
 #define ADC_STK_SIZE                    256
 #define DEFAULT_TASK_PRIOR              5
-#define DEFAULT_TASK_STACK_SIZE         512U
+#define DEFAULT_TASK_STACK_SIZE         700U
 #define USER_TASK_PRIO                  8
 #define USER_STK_SIZE                   512
 #define I2C_TASK_PRIO                   6

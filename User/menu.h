@@ -67,7 +67,8 @@
 #define JOURNAL_RESET_ID        43
 #define FAN_START_TIMEOUT_ID    44
 #define FILTER_STATE_ID         45
-#define MODE_STATE_ID           46   //§¬§°§¯§¦§¸
+#define SENS_FILTER_ID          46
+#define MODE_STATE_ID           47   //§¬§°§¯§¦§¸
 
 
 
@@ -133,7 +134,8 @@
 #define SETTINGANALOG1_TITLE_ID ( SETTING11_TITLE_ID      + 1 )
 #define SETTINGANALOG2_TITLE_ID ( SETTINGANALOG1_TITLE_ID      + 1 )
 #define SENSOR_TYPE_TITLE_ID    ( SETTINGANALOG2_TITLE_ID      + 1 )
-#define SENSOR_TITLE_ID         ( SENSOR_TYPE_TITLE_ID   + 1 )
+#define RESET_TITLE_ID           ( SENSOR_TYPE_TITLE_ID   + 1 )
+#define SENSOR_TITLE_ID         ( RESET_TITLE_ID  + 1 )
 #define CALIBRATION_TITLE_ID    ( SENSOR_TITLE_ID   + 1 )
 
 

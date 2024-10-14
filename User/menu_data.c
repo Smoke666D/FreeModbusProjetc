@@ -21,6 +21,7 @@ static  xScreenObjet const InfoScreen1[]=
         {0,0,25,0,READ_DATA,(char*)SETTING_TEXT,SETTING_ID },
         {0,0,37,0,READ_DATA,"Факт. расх.",FACT_RASH_ID},
         {0,0,50,0,READ_DATA,"Фильтр",FILTER_STATE_ID },
+        {0,0,50,40,READ_DATA,"",SENS_FILTER_ID},
         {1,0,62,0,READ_DATA,"Режим",MODE_STATE_ID },
 };
 
@@ -70,7 +71,7 @@ static xScreenObjet const SettingsScreen2[]=
 
 static xScreenObjet const SettingsScreen3[]=
 {
-        {0,15,LINE1,0,TEXT_STRING,"Настройки       3/9",    0},
+        {0,15,LINE1,0,TEXT_STRING,"Настройки      3/10",    0},
         {0,2,25,0,TEXT_STRING,"Уставки реж.  м^3/ч",    0},
         {0,2,37,0,WRITE_DATA,"Режим 1 (Осн.)",                SETTING1_ID},
         {0,2,50,0,WRITE_DATA,"Режим 2 (Доп.)",                SETTING2_ID},
@@ -79,7 +80,7 @@ static xScreenObjet const SettingsScreen3[]=
 };
 static xScreenObjet const SettingsScreen4[]=
 {
-        {0,15,LINE1,0,TEXT_STRING,"Настройки       4/9",0},
+        {0,15,LINE1,0,TEXT_STRING,"Настройки      4/10",0},
         {0,2,25,0,TEXT_STRING,"Нач. сопр. фильтра",0},
         {0,2,37,20,WRITE_DATA,"",                       FILTER_LOW_ID},
         {0,115,37,0,TEXT_STRING,"Па",0},
@@ -97,7 +98,7 @@ static xScreenObjet const SettingsScreen5[]=
 };
 static xScreenObjet const SettingsScreen6[]=
 {
-        {0,15,LINE1,0,TEXT_STRING,"Настройки       6/9",0},
+        {0,15,LINE1,0,TEXT_STRING,"Настройки      6/10",0},
         {0,2,25,0,TEXT_STRING,"ПИ регулятор",0},
         {0,2,37,0,WRITE_DATA,"Коэф. П",                COOF_P_ID },
         {0,2,50,0,WRITE_DATA,"Коэф. И",                COOF_I_ID },
@@ -115,7 +116,7 @@ static xScreenObjet const SettingsScreen7[]=
 
 static xScreenObjet const SettingsScreen8[]=
 {
-        {0,15,LINE1,0,TEXT_STRING,"Настройки       8/9",    0},
+        {0,15,LINE1,0,TEXT_STRING,"Настройки      8/10",    0},
         {0,2,25,0,WRITE_DATA,"Контрастность", CONTRAST_ID},
         {0,2,37,0,WRITE_DATA,"Ост. вент с.", FAN_START_TIMEOUT_ID},
         {0,2,50,0,WRITE_DATA,"Дата:",       CURENT_DATE_ADDR  },
@@ -126,7 +127,7 @@ static xScreenObjet const SettingsScreen8[]=
 
 static xScreenObjet const SettingsScreen9[]=
 {
-        {0,15,LINE1,0,TEXT_STRING,"Настройки       9/9",    0},
+        {0,15,LINE1,0,TEXT_STRING,"Настройки      9/10",    0},
         {0,2,25,0,TEXT_STRING,"  Для сброса журнала",  0},
         {0,2,37,0,TEXT_STRING,"      нажмите ВВОД",        0},
         {0,2,50,0,READ_DATA,"Записей:",JOURNAL_COUNT_ID},
@@ -136,7 +137,7 @@ static xScreenObjet const SettingsScreen9[]=
 
 static xScreenObjet  ResetScreen[]=
 {
-        {0,10,LINE1,0,TEXT_STRING,"Перезагрузка модуля",    0},
+        {0,15,LINE1,0,READ_DATA,"Настройки",  RESET_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"  Для перезагрузки ",  0},
         {0,2,37,0,TEXT_STRING,"    нажмите ВВОД",        0},
         {1,2,62,0,WRITE_DATA,"",         DEVICE_RESET_ID },

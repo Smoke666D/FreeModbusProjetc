@@ -116,6 +116,7 @@ static u8 * SensorTypeStrig[]= {"0-10 В","2-10 В","4-20 мA"};
 static u8 * IniputSignalTypeStrig[]= {"Диск. вход","Пас. датчик T","Комн. контр.","Аналог датчики"};
 const char * CDV_MODE_STRING[]={"Закрыто","Минимальная","Средняя","Максимальная","Открыто"};
 const char * BP_REG_TYPE_STRING[] = {"VAV","Const L0,2","VAV + Const L0,2"};
+static char * const FMCH_MODE_STRING[]= {"1 (Основной)","2 (Доп.)"};
 static xScreenType * pMenu;
 static u8 journal_index =0;
 static uint16_t curr_edit_data_id = 0;
@@ -887,6 +888,7 @@ static const u16 MenuFMCHRegMap[]={
                              0,      //44
                              0,      //45
                              0,       //46
+                             0,
 };
 
 static const u16 MenuCDV_BPRegMap[54]=
@@ -964,19 +966,19 @@ void vSetTitle(u16 data_id, u8 * str )
     {
            case CALIBRATION_TITLE_ID:
                if (dev_type == DEV_FMCH)
-                   strcpy(str,"7/9");
+                   strcpy(str,"7/10");
                else
                    sprintf(str,"4/%i",getScreenCount());
                    break;
            case SETTING1_TITLE_ID:
                if (dev_type == DEV_FMCH)
-                   strcpy(str,"1/9");
+                   strcpy(str,"1/10");
                else
                    sprintf(str,"1/%i",getScreenCount());
                break;
            case SETTING2_TITLE_ID:
                if (dev_type == DEV_FMCH)
-                   strcpy(str,"2/9");
+                   strcpy(str,"2/10");
                else
                    sprintf(str,"2/%i",getScreenCount());
                 break;
@@ -1001,9 +1003,15 @@ void vSetTitle(u16 data_id, u8 * str )
            case SETTING11_TITLE_ID:
                   sprintf(str,"11/%i",getScreenCount());
                   break;
+           case RESET_TITLE_ID:
+               if (dev_type == DEV_FMCH)
+                                    strcpy(str,"10/10");
+                              else
+                                   sprintf(str,"3/%i",getScreenCount());
+                                  break;
            case VOLTAG_SCREEN_TITLE_ID:
                if (dev_type == DEV_FMCH)
-                      strcpy(str,"5/9");
+                      strcpy(str,"5/10");
                 else
                      sprintf(str,"3/%i",getScreenCount());
                     break;
@@ -1456,7 +1464,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
     }
 }
 
-static char * const FMCH_MODE_STRING[]= {"1 (Основной)","2 (Доп.)"};
+
 
 void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 * res)
 {
@@ -1518,43 +1526,27 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                     vByteDataEdit(1,reg_id,command,2,999,0);
                 else
                     sprintf(str,"%03i",( command == CMD_READ ) ? getReg16(reg_id) : edit_data_buffer_byte);
-              break;
+                break;
            case SETTING1_ID:
            case SETTING2_ID:
-               switch (command)
-               {
-                   case CMD_READ:
-                       sprintf(str,"%04i",getReg16(reg_id) );
-                       break;
-                 case CMD_EDIT_READ:
-                       sprintf(str,"%04i",edit_data_buffer_byte );
-                       break;
-                 default:
-                      vByteDataEdit(1,reg_id,command,3,(u16)DataModel_GetPressureToL(2500),0);
-                      break;
-             }
-             break;
-               case FACT_RASH_ID:
-                       temp_int = USER_GetFact(&temp_state);
-                       if (temp_state)
+                if (command > CMD_EDIT_READ)
+                    vByteDataEdit(1,reg_id,command,3,(u16)DataModel_GetPressureToL(2500),0);
+                else
+                    sprintf(str,"%04i",( command == CMD_READ) ? getReg16(reg_id) : edit_data_buffer_byte  );
+
+                break;
+           case FACT_RASH_ID:
+                 temp_int = USER_GetFact(&temp_state);
+                 if (temp_state)
                            sprintf(str,"%04i м^3/ч", temp_int);
-                       else {
+                 else
                            sprintf(str,"---- м^3/ч");
-                       }
-                       break;
+                 break;
            case FAN_START_TIMEOUT_ID:
-               switch (command)
-               {
-                       case CMD_READ:
-                           sprintf(str,"%02i",getReg8(reg_id) );
-                           break;
-                       case CMD_EDIT_READ:
-                           sprintf(str,"%02i",edit_data_buffer_byte );
-                           break;
-                       default:
-                           vByteDataEdit(0,reg_id,command,2,99,1);
-                           break;
-                }
+                if ( command > CMD_EDIT_READ)
+                    vByteDataEdit(0,reg_id,command,2,99,1);
+                else
+                    sprintf(str,"%02i", ( command == CMD_READ ) ? getReg8(reg_id) : edit_data_buffer_byte  );
                 break;
                case JOURNAL_RESET_ID:
                    switch (command )
@@ -1578,21 +1570,26 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                    }
                    break;
                case CUR_TEMP_ID:
-                      sprintf(str, "%i C",(u8)getAIN(DCAIN5));
-                      break;
+                     sprintf(str, "%i C",(u8)getAIN(DCAIN5));
+                     break;
                case SETTING_ID:
                      sprintf(str,"%04i м^3/ч", USER_GetSetting());
                      break;
+               case SENS_FILTER_ID:
+                   USER_FilterState(&temp_state);
+                   if (temp_state)
+                       sprintf(str,"%04i Па",getAIN(SENS2));
+                   else
+                       sprintf(str,"--- Па");
+
+                   break;
                case FILTER_STATE_ID:
                    temp_byte = USER_FilterState(&temp_state);
-                   if (temp_state)
-                   {
-                       sprintf(str,"%i Па %03i %%",getAIN(SENS2),temp_byte);
-                   }
-                   else
-                   {
-                       sprintf(str,"%i Па ---%%",getAIN(SENS2));
-                   }
+
+
+
+                    sprintf(str,"%i %%",temp_byte);
+
                    break;
     }
 }
@@ -1643,10 +1640,7 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                 *len = 0;
                 if ( command > CMD_EDIT_READ )
                 {
-                    if ( getReg8(MB_PROTOCOL_TYPE)== MKV_MB_DIN)
-                    {
                        vByteDataEdit(0,reg_id,command,0,MKV_MB_TCP, MKV_MB_RTU);
-                    }
                 }
                 else
                     strcpy(str, ControlModeStrig[ ( command == CMD_READ ) ? getReg8( reg_id) : edit_data_buffer_byte ]);
@@ -1655,93 +1649,89 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
             case CONTRAST_ID:
             case MB_RTU_ADDR_ID :
             case MOD_BUS_TIMEOUT_ID:
-                           switch (command)
-                           {
-                               case CMD_READ:
-                                   sprintf(str,"%02i",getReg8(reg_id) );
-                                   break;
-                               case CMD_EDIT_READ:
-                                   if ( data_id == CONTRAST_ID ) setReg8(reg_id,edit_data_buffer_byte);
-                                   sprintf(str,"%02i",edit_data_buffer_byte );
-                                   break;
-                               default:
-                                   vByteDataEdit(0,reg_id,command,1,99,1);
-                                   break;
-                           }
+                  switch (command)
+                  {
+                     case CMD_READ:
+                            sprintf(str,"%02i",getReg8(reg_id) );
+                            break;
+                     case CMD_EDIT_READ:
+                            if ( data_id == CONTRAST_ID ) setReg8(reg_id,edit_data_buffer_byte);
+                            sprintf(str,"%02i",edit_data_buffer_byte );
+                            break;
+                     default:
+                             vByteDataEdit(0,reg_id,command,1,99,1);
+                             break;
+                    }
                     break;
-           case ALARM_COUNT_ID:
-               temp_state =0;
-               temp_byte =  USER_GerErrorState();
-               for (u8 i=0;i<8;i++)
-               {
-                   if (temp_byte & 0x01) temp_state++;
-                   temp_byte = temp_byte>>1;
-               }
-               sprintf(str,"%02i",temp_state);
-               break;
-          case CURRENT_ALARM_COUNT_ID:
-               temp_byte =  USER_GerErrorState();
-               if (temp_byte != 0)
-               {
-                   if ((blink_counter ==0) || ((temp_byte>>error_shif) & 0x01)==0)
-                   {
-                     for (u8 i=0;i<7;i++)
+             case ALARM_COUNT_ID:
+                 temp_state =0;
+                 temp_byte =  USER_GerErrorState();
+                 for (u8 i=0;i<8;i++)
+                 {
+                     if (temp_byte & 0x01) temp_state++;
+                     temp_byte = temp_byte>>1;
+                 }
+                 sprintf(str,"%02i",temp_state);
+                 break;
+             case CURRENT_ALARM_COUNT_ID:
+                 temp_byte =  USER_GerErrorState();
+                 if (temp_byte != 0)
+                 {
+                     if ((blink_counter ==0) || ((temp_byte>>error_shif) & 0x01)==0)
                      {
-                          if (++error_shif >6) error_shif = 0;
-
-                           if ((temp_byte>>error_shif) & 0x01)
-                           {
-                               break;
-                           }
+                         for (u8 i=0;i<7;i++)
+                         {
+                             if (++error_shif >6) error_shif = 0;
+                             if ((temp_byte>>error_shif) & 0x01) break;
+                         }
                      }
-                   }
-                   strcpy(str,ViewErrorString[error_shif]);
-               }
-               break;
-        case COOF_P_ID:
-        case COOF_I_ID:
-        case KOOFKPS_ID:
-            if ( command > CMD_EDIT_READ )
-                vFloatDataEdit(reg_id, command,6,2,999.99,-999.99);
-            else
-                sprintf(str,"%+07.2f", ( command == CMD_READ ) ? getRegFloat(reg_id) :  edit_data_buffer_float );
-            break;
-        case SENS_1_RAW_ID:
-        case SENS_2_RAW_ID:
-            sprintf(str, "%i Па",(int)getAIN(reg_id) );
-            break;
-        case MAC_ADRESS_ID:
-            WCHNET_GetMacAddr(MACAddr);
-            sprintf(str,"%x%x%x%x%x%x",MACAddr[0],MACAddr[1],MACAddr[2],MACAddr[3],MACAddr[4],MACAddr[5]);
-            break;
-        case PROCESS_STATE_ID:
-            switch( getProcessStateCode() )
-            {
-                 default:
-                    strcpy(str,"Остановлен");
-                    break;
-                case CALIBRATE_CODE:
-                    strcpy(str,"Калибровка");
-                    break;
-                case WORK_CODE:
-                    strcpy(str,"Работа");
-                    break;
-            }
-            break;
-        case IP_ADRESS_DATA_ID:
-        case IP_GATE_ID:
-        case IP_SUBNETMASK_ID:
-            switch (command)
-            {
-                case CMD_READ:
-                    sprintf(str,"%03i.%03i.%03i.%03i",getReg8(reg_id),getReg8(reg_id+1),getReg8(reg_id+2),getReg8(reg_id+3));
-                    break;
-                case CMD_EDIT_READ:
-                    sprintf(str,"%03i.%03i.%03i.%03i",edit_ip_addres[0],edit_ip_addres[1],edit_ip_addres[2],edit_ip_addres[3]);
-                    break;
-                default:
-                    vIPDataEdit(reg_id,command);
-            }
+                     strcpy(str,ViewErrorString[error_shif]);
+                 }
+                 break;
+             case COOF_P_ID:
+             case COOF_I_ID:
+             case KOOFKPS_ID:
+                 if ( command > CMD_EDIT_READ )
+                     vFloatDataEdit(reg_id, command,6,2,999.99,-999.99);
+                 else
+                     sprintf(str,"%+07.2f", ( command == CMD_READ ) ? getRegFloat(reg_id) :  edit_data_buffer_float );
+                 break;
+             case SENS_1_RAW_ID:
+             case SENS_2_RAW_ID:
+                 sprintf(str, "%i Па",(int)getAIN(reg_id) );
+                 break;
+             case MAC_ADRESS_ID:
+                 WCHNET_GetMacAddr(MACAddr);
+                 sprintf(str,"%x%x%x%x%x%x",MACAddr[0],MACAddr[1],MACAddr[2],MACAddr[3],MACAddr[4],MACAddr[5]);
+                 break;
+             case PROCESS_STATE_ID:
+                 switch( getProcessStateCode() )
+                 {
+                     default:
+                         strcpy(str,"Остановлен");
+                         break;
+                     case CALIBRATE_CODE:
+                         strcpy(str,"Калибровка");
+                         break;
+                     case WORK_CODE:
+                         strcpy(str,"Работа");
+                         break;
+                 }
+                 break;
+            case IP_ADRESS_DATA_ID:
+            case IP_GATE_ID:
+            case IP_SUBNETMASK_ID:
+                switch (command)
+                {
+                    case CMD_READ:
+                        sprintf(str,"%03i.%03i.%03i.%03i",getReg8(reg_id),getReg8(reg_id+1),getReg8(reg_id+2),getReg8(reg_id+3));
+                        break;
+                    case CMD_EDIT_READ:
+                        sprintf(str,"%03i.%03i.%03i.%03i",edit_ip_addres[0],edit_ip_addres[1],edit_ip_addres[2],edit_ip_addres[3]);
+                        break;
+                    default:
+                        vIPDataEdit(reg_id,command);
+                }
             break;
         case IP_PORT_ID:
             if ( command > CMD_EDIT_READ )
@@ -1833,32 +1823,30 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                         break;
                }
                break;
-
-
-    case HOURE_COUNTER_ID:
-        sprintf(str,"%000000i часов %00i минут",vRTC_TASK_GetHoure(), vRTC_TASK_GetMinute( ));
-        break;
-    case SENS_COUNT_ID:
-        *len = 0;
-        if ( command > CMD_EDIT_READ)
-            vByteDataEdit(0,reg_id,command,0,6,0);
-        else
-            strcpy(str,SENSOR_COUNT_STRING[ (command == CMD_READ) ? getReg8(reg_id):edit_data_buffer_byte ]);
-        break;
-    default:
-        break;
+         case HOURE_COUNTER_ID:
+             sprintf(str,"%000000i часов %00i минут",vRTC_TASK_GetHoure(), vRTC_TASK_GetMinute( ));
+             break;
+         case SENS_COUNT_ID:
+             *len = 0;
+             if ( command > CMD_EDIT_READ)
+                 vByteDataEdit(0,reg_id,command,0,6,0);
+             else
+                 strcpy(str,SENSOR_COUNT_STRING[ (command == CMD_READ) ? getReg8(reg_id):edit_data_buffer_byte ]);
+             break;
+         default:
+             break;
     }
-
     }
     return (res);
 }
+
 
 static void vDraw( xScreenObjet * pScreenDraw)
 {
     MENU_ClearScreen();
     u8 x,y,offset;
     u8 len,edit_index,box_len;
-    u8 str[50];
+    u8 str[100];
     for (u8 i=0;i<MAX_STRING_NUMBER;i++)
     {
 

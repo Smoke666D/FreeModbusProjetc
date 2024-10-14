@@ -155,29 +155,27 @@ u8 USER_FilterState( u8 * state)
         u16 temp;
         if (getReg8(MODE )==0)
         {
-            u16 sensor_data = getAIN(SENS2);
+            u16 sensor_data = 200;//getAIN(SENS2);
+
+          //  printf("sen =%i min = %i max = %i\r\n",sensor_data,getReg16(FILTER_LOW),getReg16(FILTER_HIGH));
             if (sensor_data  <= getReg16(FILTER_LOW))
                     return (0);
             if (sensor_data  >= getReg16(FILTER_HIGH))
                     return (100);
             temp = sensor_data - getReg16(FILTER_LOW);
-            temp = temp/(getReg16(FILTER_HIGH) - getReg16(FILTER_LOW));
+            temp = ((float)temp/(getReg16(FILTER_HIGH) - getReg16(FILTER_LOW)))*100;
 
-            if (temp != (u8)getReg32(RESURSE))
-            {
-                setReg32(RESURSE, temp);
-            }
-        }
-        else
-        {
-            temp = (u8)getReg32(RESURSE);
+           // if (temp != (u8)getReg8(RESURSE))
+           // {
+            setReg8(RESURSE, (u8)temp);
+          //  }
         }
 
-        return (temp);
     }
     else
         *state = 0;
-        return (u8)getReg32(RESURSE);
+
+    return getReg8(RESURSE);
 
 
 }
@@ -225,9 +223,9 @@ float setTestDta(float input)
 }
 
 
-void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u8 * set_point_old, uint16_t ac_voltage)
+void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u8 * set_point_old)
 {
-    u8 ss;
+
     u8 c_type  =getReg8( CONTROL_TYPE );
     if (MB_TASK_GetMode()!=2)
     {
@@ -242,7 +240,7 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
     }
 
     // Если засоренность фильта больше значения устваки, то выставляем предупрежние и делаем запись в журнал
-     FilterState = USER_FilterState(&ss);
+     FilterState = USER_FilterState(HEPA_CONTROL_ON);
      if ( *HEPA_CONTROL_ON)
      {
           if  ((FilterState >=FILTER_WARNINR_VALUE) && ((error_state & FILTER_ERROR) == 0))
@@ -686,13 +684,9 @@ void vDiscreteInputFSM( DISCRET_STATE_t state)
      }
 }
 
-void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag,  uint16_t ac_voltage)
+void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag)
 {
     vCDV_SetpointCheck(&state, start_timeout);
-    if  ((ac_voltage <= (uint16_t)getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  (uint16_t)getReg8(LOW_VOLTAGE_OFF)))
-    {
-        error_state &= ~(HIGH_VOLTAGE_ERROR | LOW_VOLTAGE_ERROR);
-    }
     ErrorSensorCheck();
     vCheckDoubleChannelAlarm(&error_state);
     switch (task_fsm)
@@ -853,26 +847,27 @@ void VoltageControlCheck( AC_VOLTAGE_CONTROL_t * ac_control)
          }
          if ( ac_control->Voltage < 20 )
          {
-             if   ( (! ac_control->power_off_flag ) && (++ac_control->power_off_timeout> 2))
-             {
-                 HAL_ResetBit(LDCDATA_2_3_E_REW_CD_LED_Port,  LCDLED_Pin);
-                 SaveBeforePowerOff();
-                 ac_control->power_off_flag = 1;
-                 task_fsm = USER_PROCCES_IDLE;
-             }
-             else
-                 ac_control->power_off_timeout = 0;
-             if ((ac_control->Voltage >40) && (ac_control->power_off_flag))
-             {
-                printf("reset\r\n");
-                vTaskDelay(10);
-                NVIC_SystemReset();
-             }
+             if    (++ac_control->power_off_timeout> 2)
+              {
+                     HAL_ResetBit(LDCDATA_2_3_E_REW_CD_LED_Port,  LCDLED_Pin);
+                     SaveBeforePowerOff();
+                     ac_control->power_on_flag = 0;
+                     ac_control->power_off_flag = 1;
+                     task_fsm = USER_PROCCES_IDLE;
+              }
          }
+         else {
+             ac_control->power_off_timeout = 0;
+        }
     }
     else
     {
         if  ( ac_control->Voltage >= (uint16_t)getReg8(LOW_VOLTAGE_OFF) ) ac_control->power_on_flag = 1;
+        if ((ac_control->Voltage >40) && (ac_control->power_off_flag))
+        {
+              vTaskDelay(10);
+              NVIC_SystemReset();
+        }
     }
 
 }
@@ -902,12 +897,10 @@ void user_process_task(void *pvParameters)
        {
            ac_contorl.Voltage = (uint16_t)getAIN(AC220);
            VoltageControlCheck(&ac_contorl);
-
            if (process_mode == DEV_FMCH )
-
-                   vFMCH_FSM(&start_timeout, &pid_counter, &HEPA_CONTROL_ON , &set_point_old, ac_contorl.Voltage);
+                   vFMCH_FSM(&start_timeout, &pid_counter, &HEPA_CONTROL_ON , &set_point_old);
            else
-                   vCDV_FSM(&start_timeout,&pid_counter,&flag, ac_contorl.Voltage );
+                   vCDV_FSM(&start_timeout,&pid_counter,&flag );
 
            //Ecли есть ошибка включаем реле и зажигаем светодиод
            if ( error_state  & ~SETTING_ERROR)

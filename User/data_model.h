@@ -15,7 +15,7 @@
 
 #define SW_V                 2
 #define SW_V2                1
-#define SW_V3                6
+#define SW_V3                9
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -54,7 +54,7 @@
 #define SENSOR1_ZERO          ( IP_PORT +sizeof(uint16_t) )
 #define SENSOR2_ZERO          ( SENSOR1_ZERO + sizeof(uint16_t) )
 #define RESURSE               ( SENSOR2_ZERO + sizeof(uint16_t) )
-#define COOF_I                ( RESURSE + sizeof(uint32_t)  )
+#define COOF_I                ( RESURSE + sizeof(uint8_t)  )
 #define COOF_P                ( COOF_I + sizeof(uint32_t) )
 #define COOF_I1               ( COOF_P + sizeof(uint32_t))
 #define COOF_P1               ( COOF_I1 + sizeof(uint32_t) )

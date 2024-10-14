@@ -48,8 +48,9 @@ DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[FAN_START_TIMEOUT ] =  20;
                DATA_MODEL_REGISTER[CLEAN_TIMER]        =  20;
                DATA_MODEL_REGISTER[CDV_BP_CH_COUNT]    =  1;
+               DATA_MODEL_REGISTER[SENSOR_COUNT]       =  TIME_5_0;
                setRegFloat(KOOFKPS , 36.0);
-               setRegFloat(COOF_I,15.0);
+               setRegFloat(COOF_I,10.0);
                setRegFloat(COOF_P,5.0);
                setRegFloat(COOF_I1,15.0);
                setRegFloat(COOF_P1,5.0);
@@ -66,8 +67,6 @@ DATA_MODEL_INIT_t DataModel_Init()
                setReg16(CH2_SETTING  , 800);
                setReg16(MIN_SET, 10);
                setReg16(MAX_SET,11);
-
-               DATA_MODEL_REGISTER[SENSOR_COUNT]        = TIME_1_0;
                if (WriteEEPROM(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 1000 ,2) == EEPROM_OK) printf("EEPROMwtiye\r\n");
                ReadEEPROMData(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ,2);
                return (NEW_INIT);
@@ -156,8 +155,7 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
              }
              break;
         case MB_PROTOCOL_TYPE:
-            if ( (data!=2) || (data!=3) || (getReg8(CONTROL_TYPE)!=0)) return 0;
-
+            if ((getReg8(CONTROL_TYPE)!=MKV_MB_DIN)) return 0;
             break;
         case AIN1_TYPE:
         case AIN2_TYPE:
@@ -407,7 +405,7 @@ void SaveBeforePowerOff()
 {
 
     WriteEEPROM(MOTO_HOURS , &DATA_MODEL_REGISTER[MOTO_HOURS], 4,10, 2 );
-    WriteEEPROM(RESURSE  ,   &DATA_MODEL_REGISTER[RESURSE ],   4,10, 2 );
+    WriteEEPROM(RESURSE  ,   &DATA_MODEL_REGISTER[RESURSE ],   1,10, 2 );
     WriteEEPROM(SENSOR1_ZERO, &DATA_MODEL_REGISTER[SENSOR1_ZERO],   2,10, 2 );
     WriteEEPROM(SENSOR2_ZERO, &DATA_MODEL_REGISTER[SENSOR2_ZERO],   2,10, 2 );
 }
