@@ -155,22 +155,16 @@ u8 USER_FilterState( u8 * state)
         u16 temp;
         if (getReg8(MODE )==0)
         {
-            u16 sensor_data = 200;//getAIN(SENS2);
+            u16 sensor_data = getAIN(SENS2);
 
-          //  printf("sen =%i min = %i max = %i\r\n",sensor_data,getReg16(FILTER_LOW),getReg16(FILTER_HIGH));
             if (sensor_data  <= getReg16(FILTER_LOW))
                     return (0);
             if (sensor_data  >= getReg16(FILTER_HIGH))
                     return (100);
             temp = sensor_data - getReg16(FILTER_LOW);
             temp = ((float)temp/(getReg16(FILTER_HIGH) - getReg16(FILTER_LOW)))*100;
-
-           // if (temp != (u8)getReg8(RESURSE))
-           // {
             setReg8(RESURSE, (u8)temp);
-          //  }
         }
-
     }
     else
         *state = 0;
@@ -435,46 +429,41 @@ void vBP()
 }
 
 
+void Channel2Reg( u8 state, float setpoint )
+{
+    float PID_Out;
+    u8 ch_count = getReg8(CDV_BP_CH_COUNT);
+    if (ch_count  == 2)
+    {
+         if (state == SETTING_CLOSE) PID_Out = 0.0;
+         else if (state == SETTING_OPEN ) PID_Out = 10.0;
+         else
+         {
 
+            SET_POINT1  = setpoint + (float)getReg16(OFFSET_CH2);
+            PID_Compute(&TPID2,getAIN(SENS2));
+            PID_Out = PIDOut2/1000.0;
+         }
+
+        USER_AOUT_SET(DAC2,PID_Out);
+    }
+    else if (ch_count  == 0) vBP();
+}
 
 
 void vRoomContollerFSM( u8 state)
 {
-    if ( state == 4 ) USER_AOUT_SET(DAC1,10.0);
-    else if (state == 0) USER_AOUT_SET(DAC1,0.0);
+    float PID_Out;
+    if ( state == SETTING_OPEN ) PID_Out = 10.0;
+    else if (state == SETTING_CLOSE) PID_Out = 0.0;
     else
     {
         SET_POINT = ComputeSetPoint();
         PID_Compute(&TPID,getAIN(SENS1));
-        float PID_Out = PIDOut/1000.0;
-        USER_AOUT_SET(DAC1,PID_Out);
+        PID_Out = PIDOut/1000.0;
     }
-    switch (getReg8(CDV_BP_CH_COUNT))
-        {
-            case 0:
-                vBP();
-                break;
-            case 2:
-            {
-                switch (state)
-                {
-                    case 0:
-                        USER_AOUT_SET(DAC2,0.0);
-                        break;
-                    case 4:
-                        USER_AOUT_SET(DAC1,10.0);
-                        break;
-                    default:
-                      SET_POINT1  = SET_POINT + (float)getReg16(OFFSET_CH2);
-                      PID_Compute(&TPID2,getAIN(SENS2));
-                      float PID_Out = PIDOut2/1000.0;
-                      USER_AOUT_SET(DAC2,PID_Out);
-                }
-                break;
-                default:
-                    break;
-            }
-        }
+    USER_AOUT_SET(DAC1,PID_Out);
+    Channel2Reg(state,getAIN(SENS1) );
 }
 
 
@@ -557,10 +546,9 @@ float GetSensor(u8 * after_zone)
 
 void vAnalogSensorFSM( DISCRET_STATE_t state)
 {
-
     float PID_Out;
-    if ( state == 4 ) USER_AOUT_SET(DAC1,10.0);
-    else if (state == 0) USER_AOUT_SET(DAC1,0.0);
+    if ( state == 4 ) PID_Out =10.0;
+    else if (state == 0) PID_Out =0.0;
     else
     {
             float temp_float = getAIN(SENS1);
@@ -596,33 +584,11 @@ void vAnalogSensorFSM( DISCRET_STATE_t state)
             }
             else PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
             PID_Compute(&TPID,input_data);
-            float PID_Out = PIDOut/1000.0;
-            USER_AOUT_SET(DAC1,PID_Out);
+            PID_Out = PIDOut/1000.0;
+    }
+    USER_AOUT_SET(DAC1,PID_Out);
+    Channel2Reg(state,getAIN(SENS1));
 
-     }
-
-     switch (getReg8(CDV_BP_CH_COUNT))
-     {
-           case 0:
-                    vBP();
-                    break;
-                case 2:
-                {
-                   if (state == SETTING_CLOSE)  PID_Out = 0.0;
-                   else if (state == SETTING_OPEN) PID_Out = 10.0;
-                   else
-                   {
-                          SET_POINT1  = getAIN(SENS1)+ (float)getReg16(OFFSET_CH2);
-                          PID_Compute(&TPID2,getAIN(SENS2));
-                          PID_Out = PIDOut2/1000.0;
-
-                    }
-                    USER_AOUT_SET(DAC2,PID_Out);
-                    break;
-                    default:
-                        break;
-            }
-      }
 }
 
 
@@ -656,32 +622,8 @@ void vDiscreteInputFSM( DISCRET_STATE_t state)
           float PID_Out = PIDOut/1000.0;
           USER_AOUT_SET(DAC1,PID_Out);
      }
-     switch (getReg8(CDV_BP_CH_COUNT))
-     {
-         case 0:
-             vBP();
-             break;
-         case 2:
-         {
-             switch (state)
-             {
-                 case 0:
-                     USER_AOUT_SET(DAC2,0.0);
-                     break;
-                 case 4:
-                     USER_AOUT_SET(DAC1,10.0);
-                     break;
-                 default:
-                   SET_POINT1  = SET_POINT + (float)getReg16(OFFSET_CH2);
-                   PID_Compute(&TPID2,getAIN(SENS2));
-                   float PID_Out = PIDOut2/1000.0;
-                   USER_AOUT_SET(DAC2,PID_Out);
-             }
-             break;
-             default:
-                 break;
-         }
-     }
+    Channel2Reg(state,SET_POINT);
+
 }
 
 void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag)

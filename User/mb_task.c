@@ -123,7 +123,8 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define JOURNAL_CUR_MIN_MB     ( JOURNAL_CUR_HOUR_MB        + 1 )
 #define JOURNAL_CUR_SEC_MB     ( JOURNAL_CUR_MIN_MB         + 1 )
 #define JOURNAL_CUR_E_CODE_MB  ( JOURNAL_CUR_SEC_MB         + 1 )
-#define FMCH_INPUTS_COUNT      ( JOURNAL_CUR_E_CODE_MB - FACT_RASH_MB   + 1 )
+#define FILTER_STATE_MB        ( JOURNAL_CUR_E_CODE_MB      + 1 )
+#define FMCH_INPUTS_COUNT      ( FILTER_STATE_MB - FACT_RASH_MB   + 1 )
 
 
 #define CDV_OFFSET          100
@@ -601,6 +602,7 @@ void UodateFMCHInputs()
     if (!temp_state) temp_int = 0;
     usRegInputBuf[ FACT_RASH_MB  ] = temp_int;
     usRegInputBuf[PROCESS_STATE]          = getProcessStateCode();
+    usRegInputBuf[FILTER_STATE_MB]        = getReg8(RESURSE);
     usRegInputBuf[JOURNAL_ERROR_COUNT_MB] = getReg16(RECORD_COUNT); //§£§í§Ó§à§Õ §Ü§à§Ý-§Ó§à §Ù§Ñ§á§Ú§ã§Ö§Û §Ó §Ø§å§â§ß§Ñ§Ý§Ö
     u8 cur_journal_rec = usRegHoldingBuf[JOURNAL_SELECT_MB];
     if (usRegHoldingBuf[JOURNAL_SELECT_MB]==0)

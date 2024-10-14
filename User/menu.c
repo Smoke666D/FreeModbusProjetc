@@ -1159,42 +1159,21 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             break;
         case SENSOR_TYPE_ID:
                 *len = 0;
-                switch (command)
-                        {
-                            case CMD_EDIT_READ:
-                                strcpy(str, IniputSignalTypeStrig[ edit_data_buffer_byte ] );
-                                break;
-                            case CMD_READ:
-                                strcpy(str, IniputSignalTypeStrig[ getReg8( reg_id)] );
-                                break;
-                            case CMD_SAVE_EDIT:
-                                SetPID2Screen(getReg8(CDV_BP_CH_COUNT),edit_data_buffer_byte);
-                                switch (edit_data_buffer_byte)
-                                {
-                                    case 0:
+                if ( command > CMD_EDIT_READ )
+                {
+                   if ( command == CMD_SAVE_EDIT )
+                   {
+                       SetPID2Screen(getReg8(CDV_BP_CH_COUNT),edit_data_buffer_byte);
+                       if ( edit_data_buffer_byte == 0 )
+                           vSettingCoountCondfig(1);
+                       else vSettingCoountCondfig(0);
+                       SetFirtsEditString();
+                   }
+                   vByteDataEdit(0,reg_id,command,0,3, 0);
+                }
+                else
+                    strcpy(str, IniputSignalTypeStrig[ ( command == CMD_READ )? getReg8( reg_id) : edit_data_buffer_byte ] );
 
-                                        vSettingCoountCondfig(1);
-
-                                        break;
-                                    case 1:
-                                        vSettingCoountCondfig(0);
-
-                                        break;
-                                    case 2:
-                                        vSettingCoountCondfig(0);
-
-                                        break;
-                                    case 3:
-                                        vSettingCoountCondfig(0);
-
-                                        break;
-
-                                }
-                                  SetFirtsEditString();
-                            default:
-                                vByteDataEdit(0,reg_id,command,0,3, 0);
-                                break;
-                        }
                 break;
     case PRIOR_SENSOR_ID:
         *len = 0;
@@ -1421,18 +1400,10 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             case SENSOR_MAX_ID:
             case SENSOR_OFFSET_ID:
             case SENSOR_SETTING_ID:
-                          switch (command)
-                          {
-                               case CMD_READ:
-                                    sprintf(str,"%5.1f",getRegFloat(reg_id) );
-                                    break;
-                               case CMD_EDIT_READ:
-                                    sprintf(str,"%5.1f",edit_data_buffer_float );
-                                    break;
-                               default:
-                                    vFloatDataEdit(reg_id, command,5,1,9999.9,0.0);
-                                    break;
-                         }
+                      if ( command > CMD_EDIT_READ )
+                          vFloatDataEdit(reg_id, command,5,1,9999.9,0.0);
+                      else
+                          sprintf(str,"%5.1f",( command == CMD_READ ) ? getRegFloat(reg_id) : edit_data_buffer_float );
                          break;
                 case ZERO_CAL_COMMAND:
                     switch (command)
@@ -1533,7 +1504,6 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                     vByteDataEdit(1,reg_id,command,3,(u16)DataModel_GetPressureToL(2500),0);
                 else
                     sprintf(str,"%04i",( command == CMD_READ) ? getReg16(reg_id) : edit_data_buffer_byte  );
-
                 break;
            case FACT_RASH_ID:
                  temp_int = USER_GetFact(&temp_state);
@@ -1585,11 +1555,7 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                    break;
                case FILTER_STATE_ID:
                    temp_byte = USER_FilterState(&temp_state);
-
-
-
-                    sprintf(str,"%i %%",temp_byte);
-
+                   sprintf(str,"%i %%",temp_byte);
                    break;
     }
 }
