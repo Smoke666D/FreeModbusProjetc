@@ -795,17 +795,94 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag,  uint16_t 
 
 
 
+typedef struct
+{
+ uint16_t Voltage;
+ uint8_t high_voltage_timeout;
+ uint8_t low_voltage_timeout;
+ uint8_t power_on_flag;
+ uint8_t power_off_flag;
+ uint8_t power_off_timeout;
+} AC_VOLTAGE_CONTROL_t;
+
+
+void InitVoltageControl( AC_VOLTAGE_CONTROL_t * ac_control )
+{
+    ac_control->high_voltage_timeout = 0;
+    ac_control->low_voltage_timeout = 0;
+    ac_control->power_on_flag = 0;
+    ac_control->power_off_flag = 0;
+    ac_control->power_off_timeout = 0;
+
+}
+
+void VoltageControlCheck( AC_VOLTAGE_CONTROL_t * ac_control)
+{
+    if ( ac_control->power_on_flag)
+    {
+         if ( ac_control->Voltage >= (uint16_t)getReg8(HIGH_VOLTAGE_ON))
+         {
+             if ((error_state & HIGH_VOLTAGE_ERROR) == 0)
+             {
+                 if  (++ac_control->high_voltage_timeout>100)
+                 {
+                     error_state |= HIGH_VOLTAGE_ERROR;
+                     vADDRecord(HIGH_VOLTAGE_ERROR);
+                 }
+             }
+         }
+         else
+             ac_control->high_voltage_timeout = 0;
+
+         if ( ac_control->Voltage <= (uint16_t)getReg8(LOW_VOLTAGE_ON))
+         {
+             if ((error_state & LOW_VOLTAGE_ERROR) == 0)
+             {
+                 if  (++ac_control->low_voltage_timeout>100)
+                 {
+                     error_state |= LOW_VOLTAGE_ERROR;
+                     vADDRecord(LOW_VOLTAGE_ERROR);
+                 }
+             }
+         }
+         else
+             ac_control->low_voltage_timeout = 0;
+         if  ((ac_control->Voltage <= (uint16_t)getReg8(HIGH_VOLTAGE_OFF)) && ( ac_control->Voltage >=  (uint16_t)getReg8(LOW_VOLTAGE_OFF)))
+         {
+             error_state &= ~(LOW_VOLTAGE_ERROR | HIGH_VOLTAGE_ERROR );
+         }
+         if ( ac_control->Voltage < 20 )
+         {
+             if   ( (! ac_control->power_off_flag ) && (++ac_control->power_off_timeout> 2))
+             {
+                 HAL_ResetBit(LDCDATA_2_3_E_REW_CD_LED_Port,  LCDLED_Pin);
+                 SaveBeforePowerOff();
+                 ac_control->power_off_flag = 1;
+                 task_fsm = USER_PROCCES_IDLE;
+             }
+             else
+                 ac_control->power_off_timeout = 0;
+             if ((ac_control->Voltage >40) && (ac_control->power_off_flag))
+             {
+                printf("reset\r\n");
+                vTaskDelay(10);
+                NVIC_SystemReset();
+             }
+         }
+    }
+    else
+    {
+        if  ( ac_control->Voltage >= (uint16_t)getReg8(LOW_VOLTAGE_OFF) ) ac_control->power_on_flag = 1;
+    }
+
+}
+
+
 void user_process_task(void *pvParameters)
 {
-
-   static u8 power_on = 0;
-   static u8 power_off_filter = 0;
+   static AC_VOLTAGE_CONTROL_t ac_contorl;
    static u8 HEPA_CONTROL_ON = 0;
-   static u8 low_voltage_alarm_timer =0;
-   static u8 power_off_flag = 0;
-   static u8 high_voltage_timeout = 0;
    static u8 flag = 0;
-   uint16_t ac_voltage;
    u8 set_point_old = 2;
    u32 pid_counter = 0;
    u32 start_timeout = 0;
@@ -817,81 +894,20 @@ void user_process_task(void *pvParameters)
    PID_SetOutputLimits(&TPID,(float)1000.0,(float)10000.0);
    PID(&TPID2, &PIDOut2, &SET_POINT1, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
    PID_SetOutputLimits(&TPID2,(float)0000.0,(float)10000.0);
-
+   InitVoltageControl(&ac_contorl);
    while(1)
    {
        vTaskDelay(10);
        if (MB_TASK_GetMode()!=2)
        {
-           ac_voltage = (uint16_t)getAIN(AC220);
+           ac_contorl.Voltage = (uint16_t)getAIN(AC220);
+           VoltageControlCheck(&ac_contorl);
 
-
-           if  (ac_voltage >= (uint16_t)getReg8(HIGH_VOLTAGE_ON))
-           {
-               if ((error_state & HIGH_VOLTAGE_ERROR) == 0)
-               {
-                   high_voltage_timeout++;
-                   if  (high_voltage_timeout>100)
-                   {
-                       error_state |= HIGH_VOLTAGE_ERROR;
-                       vADDRecord(HIGH_VOLTAGE_ERROR);
-
-                   }
-               }
-           }
-           else
-               high_voltage_timeout = 0;
-           if ( ac_voltage <=  (uint16_t)getReg8(LOW_VOLTAGE_ON))
-           {
-               if (((error_state & LOW_VOLTAGE_ERROR) == 0) && (power_off_flag==0))
-               {
-                   low_voltage_alarm_timer++;
-                   if (low_voltage_alarm_timer >100)
-                   {
-                       error_state |= LOW_VOLTAGE_ERROR;
-                       vADDRecord(LOW_VOLTAGE_ERROR);
-                   }
-               }
-           }
-           else
-               low_voltage_alarm_timer = 0;
-           if  ((ac_voltage <= (uint16_t)getReg8(HIGH_VOLTAGE_OFF)) && ( ac_voltage >=  (uint16_t)getReg8(LOW_VOLTAGE_OFF)))
-           {
-               error_state &= ~(LOW_VOLTAGE_ERROR | HIGH_VOLTAGE_ERROR );
-           }
-           if (power_on)
-           {
-               if ((ac_voltage < 20.0))
-               {
-                   power_off_filter++;
-                   if ((power_off_flag==0) && (power_off_filter>2))
-                   {
-                       HAL_ResetBit(LDCDATA_2_3_E_REW_CD_LED_Port,  LCDLED_Pin);
-                       SaveBeforePowerOff();
-                       power_off_flag = 1;
-                       task_fsm = USER_PROCCES_IDLE;
-                   }
-               }
-               else
-                   power_off_filter = 0;
-
-               if ((ac_voltage >40) && (power_off_flag))
-               {
-                   printf("reset\r\n");
-                   vTaskDelay(10);
-                   NVIC_SystemReset();
-                   power_off_flag = 0;
-               }
-           }
-           else
-           {
-              if ( ac_voltage >190)  power_on = 1;
-           }
            if (process_mode == DEV_FMCH )
 
-                   vFMCH_FSM(&start_timeout, &pid_counter, &HEPA_CONTROL_ON , &set_point_old, ac_voltage);
+                   vFMCH_FSM(&start_timeout, &pid_counter, &HEPA_CONTROL_ON , &set_point_old, ac_contorl.Voltage);
            else
-                   vCDV_FSM(&start_timeout,&pid_counter,&flag, ac_voltage );
+                   vCDV_FSM(&start_timeout,&pid_counter,&flag, ac_contorl.Voltage );
 
            //Ecли есть ошибка включаем реле и зажигаем светодиод
            if ( error_state  & ~SETTING_ERROR)
