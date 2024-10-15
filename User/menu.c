@@ -1466,7 +1466,7 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                case SENS_FILTER_ID:
                    USER_FilterState(&temp_state);
                    if (temp_state)
-                       sprintf(str,"%04i Па",getAIN(SENS2));
+                       sprintf(str,"%03i Па",getAIN(SENS2));
                    else
                        sprintf(str,"--- Па");
 

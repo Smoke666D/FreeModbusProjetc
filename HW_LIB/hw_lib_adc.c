@@ -86,15 +86,21 @@ uint16_t ucGetRawData( uint8_t ch, uint8_t filter)
 static float fConvertCalData( AIN_NAME_t name, float in_data )
 {
     float out_data = 0;
-    for (uint16_t i =  xAinData[ name ].index; i < (xAinData[ name ].index + xAinData[ name ].coof_count ); i++ )
+    for (uint16_t i = (xAinData[ name ].index +  xAinData[ name ].coof_count -1); i >= xAinData[ name ].index ; i-- )
     {
-        if ( (i ==  (xAinData[ name ].index + xAinData[ name ].coof_count)) || (in_data <= xKoofData[i].data ) )
+        if ( (i ==  (xAinData[ name ].index )) || (in_data >= xKoofData[i].data ) )
         {
             out_data = xKoofData[i].k * in_data + xKoofData[i].b;
+            break;
         }
     }
     return ( out_data );
 }
+
+
+
+
+
 /*
  *
  */
@@ -137,9 +143,9 @@ CAL_ERROR_CODE  eAinCalDataConfig(AIN_NAME_t name, uint8_t cal_point_count )
             }
             else
             {
-                xAinData[ name ].coof_count = cal_point_count;
+                xAinData[ name ].coof_count = cal_point_count-1;
                 xAinData[ name ].index = usCurMaxIndex;
-                usCurMaxIndex += cal_point_count;
+                usCurMaxIndex += cal_point_count-1;
             }
         }
         else
@@ -190,27 +196,7 @@ CAL_ERROR_CODE  eDacCalDataConfig(DAC_NAME_t name, uint8_t cal_point_count )
 }
 
 
-CAL_ERROR_CODE  eSetDacCalPoint(DAC_NAME_t name, POINT_t * cal_point, uint16_t PointNumber )
-{
-    CAL_ERROR_CODE res = CAL_SUCCESS;
 
-    if ( PointNumber <= xDacData[ name ].coof_count + 1)
-    {
-        for (uint8_t i = 0; i < (PointNumber-1); i++)
-        {
-            uint16_t index = i + xDacData[ name ].index;
-            vABLineKoofFinde ( &xDacKoofData[index].k, &xDacKoofData[index].b,
-                                                cal_point[i ].X, cal_point[ i+1 ].X, cal_point[i].Y,cal_point[i+1].Y);
-            xDacKoofData[index].data = cal_point[ i ].X;
-        }
-
-    }
-    else
-    {
-        res = CAL_OVERWRITE_ERROR;
-    }
-    return (res);
-}
 
 /*
  * Функция преобразования данных аналогово канала по клаиборвочым коофициентам
@@ -269,6 +255,28 @@ CAL_ERROR_CODE  eSetAinCalPoint(AIN_NAME_t name, POINT_t * cal_point, uint16_t P
 	return (res);
 }
 
+
+CAL_ERROR_CODE  eSetDacCalPoint(DAC_NAME_t name, POINT_t * cal_point, uint16_t PointNumber )
+{
+    CAL_ERROR_CODE res = CAL_SUCCESS;
+
+    if ( PointNumber <= xDacData[ name ].coof_count + 1)
+    {
+        for (uint8_t i = 0; i < (PointNumber-1); i++)
+        {
+            uint16_t index = i + xDacData[ name ].index;
+            vABLineKoofFinde ( &xDacKoofData[index].k, &xDacKoofData[index].b,
+                                                cal_point[i ].X, cal_point[ i+1 ].X, cal_point[i].Y,cal_point[i+1].Y);
+            xDacKoofData[index].data = cal_point[ i ].X;
+        }
+
+    }
+    else
+    {
+        res = CAL_OVERWRITE_ERROR;
+    }
+    return (res);
+}
 /*
  *
  */
