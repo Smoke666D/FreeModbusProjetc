@@ -961,6 +961,7 @@ static u8 const *  CH_STRING[] = { "ВР","1","2"};
 
 void vSetTitle(u16 data_id, u8 * str )
 {
+    u8 screen_count = getScreenCount();
     u8 dev_type = getReg8(DEVICE_TYPE);
     switch (data_id)
     {
@@ -968,64 +969,64 @@ void vSetTitle(u16 data_id, u8 * str )
                if (dev_type == DEV_FMCH)
                    strcpy(str,"7/10");
                else
-                   sprintf(str,"4/%i",getScreenCount());
+                   sprintf(str,"4/%i",screen_count);
                    break;
            case SETTING1_TITLE_ID:
                if (dev_type == DEV_FMCH)
                    strcpy(str,"1/10");
                else
-                   sprintf(str,"1/%i",getScreenCount());
+                   sprintf(str,"1/%i",screen_count);
                break;
            case SETTING2_TITLE_ID:
                if (dev_type == DEV_FMCH)
                    strcpy(str,"2/10");
                else
-                   sprintf(str,"2/%i",getScreenCount());
+                   sprintf(str,"2/%i",screen_count);
                 break;
            case SETTING3_TITLE_ID:
-                   sprintf(str,"5/%i",getScreenCount());
+                   sprintf(str,"5/%i",screen_count);
                    break;
            case SETTING6_TITLE_ID:
-                   sprintf(str,"6/%i",getScreenCount());
+                   sprintf(str,"6/%i",screen_count);
                    break;
            case SETTING7_TITLE_ID:
-                   sprintf(str,"7/%i",getScreenCount());
+                   sprintf(str,"7/%i",screen_count);
                    break;
            case SETTING8_TITLE_ID:
-                   sprintf(str,"8/%i",getScreenCount());
+                   sprintf(str,"8/%i",screen_count);
                   break;
            case SETTING9_TITLE_ID:
-                 sprintf(str,"9/%i",getScreenCount());
+                 sprintf(str,"9/%i",screen_count);
                   break;
            case SETTING10_TITLE_ID:
-                  sprintf(str,"10/%i",getScreenCount());
+                  sprintf(str,"10/%i",screen_count);
                   break;
            case SETTING11_TITLE_ID:
-                  sprintf(str,"11/%i",getScreenCount());
+                  sprintf(str,"11/%i",screen_count);
                   break;
            case RESET_TITLE_ID:
                if (dev_type == DEV_FMCH)
                                     strcpy(str,"10/10");
                               else
-                                   sprintf(str,"3/%i",getScreenCount());
+                                   sprintf(str,"3/%i",screen_count);
                                   break;
            case VOLTAG_SCREEN_TITLE_ID:
                if (dev_type == DEV_FMCH)
                       strcpy(str,"5/10");
                 else
-                     sprintf(str,"3/%i",getScreenCount());
+                     sprintf(str,"3/%i",screen_count);
                     break;
            case SETTINGANALOG1_TITLE_ID:
                if ((getReg8(CDV_BP_CH_COUNT))==1)
-                   sprintf(str,"11/%i",getScreenCount());
+                   sprintf(str,"11/%i",screen_count);
                else
-                   sprintf(str,"12/%i",getScreenCount());
+                   sprintf(str,"12/%i",screen_count);
                break;
            case SETTINGANALOG2_TITLE_ID:
                if ((getReg8(CDV_BP_CH_COUNT))==1)
-                   sprintf(str,"12/%i",getScreenCount());
+                   sprintf(str,"12/%i",screen_count);
                else
-                   sprintf(str,"13/%i",getScreenCount());
+                   sprintf(str,"13/%i",screen_count);
                break;
                break;
            case SENSOR_TYPE_TITLE_ID:
@@ -1042,9 +1043,7 @@ void vSetTitle(u16 data_id, u8 * str )
                                 str[0] = 0;
 
                             break;
-
     }
-
 }
 
 
@@ -1095,11 +1094,9 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
               }
               else
                   vByteDataEdit(0,reg_id,command,0,2, 0);
-
               break;
         case CDV_MODE_ID:
-
-               strcpy(str,CDV_MODE_STRING[getStateDCV()]);
+              strcpy(str,CDV_MODE_STRING[getStateDCV()]);
                break;
               break;
         case DCV_SETTING1_ID:
@@ -1145,7 +1142,6 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                      DinModeSettingView(1,str);
                 else
                      sprintf(str,"%i4", getAIN(SENS1)+getReg16(OFFSET_CH2));
-
             }
             break;
         case DCV_FACT2_ID:
@@ -1175,168 +1171,90 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                     strcpy(str, IniputSignalTypeStrig[ ( command == CMD_READ )? getReg8( reg_id) : edit_data_buffer_byte ] );
 
                 break;
-    case PRIOR_SENSOR_ID:
-        *len = 0;
-        if (getReg8(INPUT_SENSOR_TYPE) == 2)
-        {
-         switch (command)
-         {
-             case CMD_EDIT_READ:
-                strcpy(str, PriorSentStrig[ edit_data_buffer_byte ] );
-                break;
-            case CMD_READ:
-                 strcpy(str, PriorSentStrig[ getReg8( reg_id)] );
-                 break;
-            case CMD_SAVE_EDIT:
-                 vSetAfterZone( (edit_data_buffer_byte == 0) ? 1 : 0);
-             default:
-                 vByteDataEdit(0,reg_id,command,0,2, 0);
-                 break;
-         }
-        }
-        else {
-            str[0]=0;
-        }
-                break;
-    case INPUT_SENSOR_TYPE_ID:
+        case PRIOR_SENSOR_ID:
+            *len = 0;
+            if (getReg8(INPUT_SENSOR_TYPE) == 2)
+            {
+                if ( command > CMD_EDIT_READ )
+                {
+                    if ( command == CMD_SAVE_EDIT ) vSetAfterZone( (edit_data_buffer_byte == 0) ? 1 : 0);
+                    vByteDataEdit(0,reg_id,command,0,2, 0);
+                }
+                else
+                    strcpy(str, PriorSentStrig[ ( command == CMD_READ )? getReg8( reg_id) : edit_data_buffer_byte  ] );
+            }
+            else
+                str[0]=0;
 
+                break;
+        case INPUT_SENSOR_TYPE_ID:
                 *len = 0;
                 if (getReg8(INPUT_SENSOR_TYPE) == 2)
                 {
-                switch (command)
-                {
-                    case CMD_EDIT_READ:
-                        strcpy(str, SensorTypeStrig[ edit_data_buffer_byte ] );
-                        break;
-                    case CMD_READ:
-                        strcpy(str, SensorTypeStrig[ getReg8( reg_id)] );
-                        break;
-                    default:
+                    if ( command > CMD_EDIT_READ )
                         vByteDataEdit(0,reg_id,command,0,T4_20, T0_10 );
-                        break;
-                }
-    }
-    else
-        str[0]= 0;
+                    else
+                        strcpy(str, SensorTypeStrig[ ( command == CMD_READ )? getReg8( reg_id) : edit_data_buffer_byte  ] );
+                 }
+                else
+                    str[0]= 0;
                 break;
-
-
-
-    case COOF_P_1_ID:
-    case COOF_I_1_ID:
-        switch (command)
-                  {
-                      case CMD_READ:
-                          sprintf(str,"%+07.2f",getRegFloat(reg_id));
-                          break;
-                      case CMD_EDIT_READ:
-                          sprintf(str,"%+07.2f",edit_data_buffer_float );
-                          break;
-                     default:
-                         vFloatDataEdit(reg_id, command,6,2,999.99,-999.99);
-                         break;
-                  }
-                  break;
-
+        case COOF_P_1_ID:
+        case COOF_I_1_ID:
+          if ( command > CMD_EDIT_READ )
+              vFloatDataEdit(reg_id, command,6,2,999.99,-999.99);
+          else
+              sprintf(str,"%+07.2f", ( command == CMD_READ )? getRegFloat(reg_id): edit_data_buffer_float );
+              break;
         case ZERO_POINT_TIMEOUT_ID:
-            switch (command)
-            {
-                case CMD_READ:
-                     sprintf(str,"%03i",getReg16(reg_id) );
-                     break;
-               case CMD_EDIT_READ:
-                     sprintf(str,"%03i",edit_data_buffer_byte );
-                     break;
-               default:
-                    vByteDataEdit(1,reg_id,command,2,999,0);
-                    break;
-            }
+            if ( command > CMD_EDIT_READ )
+                vByteDataEdit(1,reg_id,command,2,999,0);
+            else
+                sprintf(str,"%03i",( command == CMD_READ )? getReg16( reg_id) : edit_data_buffer_byte );
+
             break;
         case CLEAN_TIMER_ID:
-            switch (command)
-            {
-                 case CMD_READ:
-                       sprintf(str,"%02i",getReg8(reg_id) );
-                       break;
-                 case CMD_EDIT_READ:
-                       sprintf(str,"%02i",edit_data_buffer_byte );
-                       break;
-                default:
-                      vByteDataEdit(0,reg_id,command,2,99,0);
-                      break;
-            }
+            if ( command > CMD_EDIT_READ )
+                vByteDataEdit(0,reg_id,command,2,99,0);
+            else
+                sprintf(str,"%02i", ( command == CMD_READ ) ? getReg8(reg_id) : edit_data_buffer_byte );
+
             break;
         case AFTER_ZONE_SETTING_ID:
             *len = 0;
-            switch (command)
-            {
-                case CMD_EDIT_READ:
-                    strcpy(str, AfterZoneStrig[ edit_data_buffer_byte ] );
-                    break;
-                case CMD_READ:
-                    strcpy(str, AfterZoneStrig[ getReg8( reg_id)] );
-                    break;
-                default:
-                    vByteDataEdit(0,reg_id,command,0,T_AUTO , TCH_TROOM );
-                    break;
-            }
+            if ( command > CMD_EDIT_READ )
+                vByteDataEdit(0,reg_id,command,0,T_AUTO , TCH_TROOM );
+            else
+                strcpy(str, AfterZoneStrig[( command == CMD_READ ) ? getReg8(reg_id) : edit_data_buffer_byte ] );
             break;
         case CDV_CH_COUNT_ID:
             *len = 0;
-            switch (command)
-              {
-                  case CMD_READ:
-                      strcpy(str,CH_STRING[getReg8(reg_id)] );
-                      break;
-                  case CMD_EDIT_READ:
-                      strcpy(str,CH_STRING[edit_data_buffer_byte] );
-                      break;
-                  case CMD_SAVE_EDIT:
-
-                     // if (edit_data_buffer_byte == 2)
-                          SetPID2Screen(edit_data_buffer_byte,getReg8(INPUT_SENSOR_TYPE));
-                     // else
-                      //    SetPID2Screen(0);
-                      if (edit_data_buffer_byte == 0)
-                          SetBPSetting( 1);
-                      else
-                          SetBPSetting(0);
-
-                  default:
-                      vByteDataEdit(0,reg_id,command,0,2,0);
-                      break;
-              }
+            if ( command > CMD_EDIT_READ )
+            {
+                if ( command == CMD_SAVE_EDIT )
+                {
+                    SetPID2Screen(edit_data_buffer_byte,getReg8(INPUT_SENSOR_TYPE));
+                    SetBPSetting((edit_data_buffer_byte == 0) ? 1 : 0);
+                }
+                vByteDataEdit(0,reg_id,command,0,2,0);
+            }
+            else
+                strcpy(str,CH_STRING[( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte] );
             break;
         case MEASERING_UNIT_ID:
             *len = 0;
-             switch (command)
-             {
-                  case CMD_EDIT_READ:
-                      strcpy(str,MUnitStrig[ edit_data_buffer_byte ] );
-                      break;
-                 case CMD_READ:
-                      strcpy(str, MUnitStrig[ getReg8( reg_id)] );
-                      break;
-                 default:
-                      if (getReg8(CDV_BP_CH_COUNT)!=0)
-                          vByteDataEdit(0,reg_id,command,0,PA_U , M3_CH_U );
-                      break;
-             }
+            if ( command > CMD_EDIT_READ )
+            {
+                if (getReg8(CDV_BP_CH_COUNT)!=0)  vByteDataEdit(0,reg_id,command,0,PA_U , M3_CH_U );
+            }
+            else
+                strcpy(str, MUnitStrig[ ( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte ] );
             break;
         case SETTING_TIMER_ID:
-            switch (command)
-                                      {
-                                           case CMD_READ:
-                                                sprintf(str,"%03i",getReg8(reg_id) );
-                                                break;
-                                           case CMD_EDIT_READ:
-                                                sprintf(str,"%03i",edit_data_buffer_byte );
-                                                break;
-                                           default:
-                                                vByteDataEdit(0,reg_id,command,0,250,0);
-                                                break;
-                                     }
-                                     break;
+            if ( command > CMD_EDIT_READ )
+                vByteDataEdit(0,reg_id,command,0,250,0);
+            else
+                sprintf(str,"%03i",( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte);
             break;
         case OFFSET2_ID:
         case SETTING_MIN_ID:
