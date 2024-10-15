@@ -19,7 +19,7 @@ static uint32_t getTimerFreq( TimerName_t TimerName );
 static TMR_T * timers[TIMERS_COUNT] = { TMR1,TMR2,TMR3,TMR4,TMR5,TMR6,TMR7,TMR8,TMR9,TMR10,TMR11,TMR12,TMR13,TMR14};
 #endif
 
-#if MCU == CH32V3
+#if MCU == CH32V3 ||  MCU == CH32V3_C
 static TIM_TypeDef * timers[TIMERS_COUNT] = { TIM1,TIM2,TIM3,TIM4,TIM5,TIM6,TIM7,TIM8,TIM9};
 
 

@@ -150,6 +150,7 @@ u32 hepa_counter = 0;
 
 u8 USER_FilterState( u8 * state)
 {
+    u8 res ;
     if (task_fsm == USER_RROCCES_WORK)
     {
         *state = 1;
@@ -158,30 +159,31 @@ u8 USER_FilterState( u8 * state)
         {
             if (hepa_counter == 0)
             {
-            u16 sensor_data = getAIN(SENS2);
-
-            if (sensor_data  <= getReg16(FILTER_LOW))
-                    return (0);
-            if (sensor_data  >= getReg16(FILTER_HIGH))
-                    return (100);
-            temp = sensor_data - getReg16(FILTER_LOW);
-            temp = ((float)temp/(getReg16(FILTER_HIGH) - getReg16(FILTER_LOW)))*100;
-            setReg8(RESURSE, (u8)temp);
+                u16 sensor_data = getAIN(SENS2);
+                if (sensor_data  <= getReg16(FILTER_LOW))
+                    res = 0;
+                else
+                    if (sensor_data  >= getReg16(FILTER_HIGH))
+                        res = 100;
+                    else
+                    {
+                        temp = sensor_data - getReg16(FILTER_LOW);
+                        temp = ((float)temp/(getReg16(FILTER_HIGH) - getReg16(FILTER_LOW)))*100;
+                        res = (u8)temp;
+                    }
+                setReg8(RESURSE, res );
             }
-
             hepa_counter++;
             if (hepa_counter == 100*600) hepa_counter = 0;
-
-
         }
     }
     else
     {
         hepa_counter = 0;
         *state = 0;
-    }
-    return getReg8(RESURSE);
 
+    }
+    return (getReg8(RESURSE));
 
 }
 

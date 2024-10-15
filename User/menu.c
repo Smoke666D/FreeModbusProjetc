@@ -877,7 +877,7 @@ static const u16 MenuFMCHRegMap[]={
                              FILTER_HIGH,          //32
                              SETTING1,           //34
                              SETTING2,           //35
-                             FAN_START_TIMEOUT, //36
+                             0, //36
                              0,                    //37
                              0,                    //38
                              0,                    //39
@@ -885,7 +885,7 @@ static const u16 MenuFMCHRegMap[]={
                              0,                    //41
                              0,                    //42
                              0,                    //43
-                             0,      //44
+                             FAN_START_TIMEOUT,      //44
                              0,      //45
                              0,       //46
                              0,
@@ -1357,7 +1357,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
 void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 * res)
 {
     int16_t temp_int;
-    u8 temp_byte,temp_state = 0;
+    u8 temp_state = 0;
     u16   reg_id = MenuFMCHRegMap[data_id- FMCH_FIRST];
     switch (data_id)
     {
