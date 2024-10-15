@@ -52,17 +52,17 @@ POINT_t const DACCAL[DAC_CAL_POINT]={ {0,0},
 
 #define K10 10000
 const uint16_t B57164CalPoint[11][2] = {
-        {50,K10*0.33363},
-        {45,K10*0.41026},
-        {40,K10*0.5074},
-        {35,K10*0.63268},
-        {30,K10*0.7942},
-        {25,K10},
-        {20,K10*1.2683},
-        {15,K10*1.6204},
-        {10,K10*2.086},
-        {5,K10*2.7119},
-        {0,K10*3.5563},
+                                    {50,K10*0.33363},
+                                    {45,K10*0.41026},
+                                    {40,K10*0.5074},
+                                    {35,K10*0.63268},
+                                    {30,K10*0.7942},
+                                    {25,K10},
+                                    {20,K10*1.2683},
+                                    {15,K10*1.6204},
+                                    {10,K10*2.086},
+                                    {5,K10*2.7119},
+                                    {0,K10*3.5563},
 
 
 };
@@ -194,6 +194,7 @@ float getAINConver( u8 ch)
 float getAIN( AIN_CHANNEL_t channel)
 {
     u16 temp_data;
+    float temp_float;
     switch (channel)
     {
         case SENS1:
@@ -210,10 +211,16 @@ float getAIN( AIN_CHANNEL_t channel)
             return  getAINConver(2);
        case DCAIN4:
             temp_data = (u16)GetConversional(&DataBuffer[6]);
-            return  fGetAinCalData(AIN4,(float)(temp_data*K10)/(4095-temp_data));
+            temp_float =fGetAinCalData(AIN4,(float)(temp_data*K10)/(4095-temp_data));
+            if (temp_float < -55.0 ) return (-55.0);
+                        else
+                        return (temp_float);
        case DCAIN5:
             temp_data = (u16)GetConversional(&DataBuffer[7]);
-            return  fGetAinCalData(AIN5,(float)(temp_data*K10)/(4095-temp_data));
+            temp_float = fGetAinCalData(AIN5,(float)(temp_data*K10)/(4095-temp_data));
+            if (temp_float < -55.0 ) return (-55.0);
+            else
+            return (temp_float);
        case DIG_TEMP:
            return ((float)GetConversional(&DataBuffer[8])/256);
        case DIG_PRES:

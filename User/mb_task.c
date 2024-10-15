@@ -699,6 +699,8 @@ void UpdateFMCHHoldings()
     for (u8 i=0;i<4;i++)
        usRegHoldingBuf[REGS[i]]      = getReg16(FMCH_REGS_MAP[REGS[i]- 100]);
    usRegHoldingBuf[COMMAND_REG] = getReg8(SYSTEM_START);
+   usRegHoldingBuf[MODE_REG_MB ] = getReg8(MODE);
+   usRegHoldingBuf[LIGTH_REG_MB] = getReg8(LIGTH);
    usRegHoldingBuf[TIME_FAN_STOP_MB] = getReg8(FAN_START_TIMEOUT);
    tempdata =(int32_t) (getRegFloat(COOF_P)*1000);
    convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_P_MB]);

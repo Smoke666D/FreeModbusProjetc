@@ -146,6 +146,7 @@ static void USER_SETTING_CHECK(u8 control_type, u8 * point_old)
 
 }
 
+u32 hepa_counter = 0;
 
 u8 USER_FilterState( u8 * state)
 {
@@ -155,6 +156,8 @@ u8 USER_FilterState( u8 * state)
         u16 temp;
         if (getReg8(MODE )==0)
         {
+            if (hepa_counter == 0)
+            {
             u16 sensor_data = getAIN(SENS2);
 
             if (sensor_data  <= getReg16(FILTER_LOW))
@@ -164,11 +167,19 @@ u8 USER_FilterState( u8 * state)
             temp = sensor_data - getReg16(FILTER_LOW);
             temp = ((float)temp/(getReg16(FILTER_HIGH) - getReg16(FILTER_LOW)))*100;
             setReg8(RESURSE, (u8)temp);
+            }
+
+            hepa_counter++;
+            if (hepa_counter == 100*600) hepa_counter = 0;
+
+
         }
     }
     else
+    {
+        hepa_counter = 0;
         *state = 0;
-
+    }
     return getReg8(RESURSE);
 
 
@@ -217,13 +228,15 @@ float setTestDta(float input)
 }
 
 
+
 void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u8 * set_point_old)
 {
 
     u8 c_type  =getReg8( CONTROL_TYPE );
     if (MB_TASK_GetMode()!=2)
     {
-       eSetDUT(OUT_2, (c_type == MKV_MB_DIN )? ucDinGet(INPUT_2) : getReg8(LIGTH) );
+       if (c_type == MKV_MB_DIN ) setReg8(LIGTH, ucDinGet(INPUT_2));
+       eSetDUT(OUT_2, getReg8(LIGTH));
     }
     USER_SETTING_CHECK(c_type, set_point_old);
 

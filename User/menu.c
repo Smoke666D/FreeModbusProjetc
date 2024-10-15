@@ -1347,7 +1347,6 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                         default:
                             start_edit_flag = 0;
                             break;
-
                     }
                     break;
     }
@@ -1464,16 +1463,15 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                      sprintf(str,"%04i м^3/ч", USER_GetSetting());
                      break;
                case SENS_FILTER_ID:
-                   USER_FilterState(&temp_state);
-                   if (temp_state)
-                       sprintf(str,"%03i Па",getAIN(SENS2));
+                   if (USER_GetProccesState() == USER_RROCCES_WORK)
+
+                       sprintf(str,"%03i Па",(u16)getAIN(SENS2));
                    else
                        sprintf(str,"--- Па");
 
                    break;
                case FILTER_STATE_ID:
-                   temp_byte = USER_FilterState(&temp_state);
-                   sprintf(str,"%i %%",temp_byte);
+                   sprintf(str,"%i %%",getReg8(RESURSE));
                    break;
     }
 }
