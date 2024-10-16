@@ -27,6 +27,7 @@
 #define SWITCHONDELAY      30U
 #define DefaultDelay       600U
 #define DefaultRepeatRate  400U
+#define KEY_TIME_OUT       0x20U
 #define BRAKECODE          0x40U
 #define MAKECODE           0x80U
 #define KEY_OFF            0x00U
@@ -45,7 +46,7 @@
 
 #define USE_KEY_TIME_OUT       0
 
-#define  KEY_TIME_OUT      1000U
+//#define  KEY_TIME_OUT      1000U
 
 
 typedef struct
@@ -65,6 +66,7 @@ typedef struct
   uint8_t REPEAT_TIME;
   uint8_t KEYDOWN_HOLD_TIME;
   uint8_t KEYDOWN_DELAY;
+  uint16_t KEYBOARD_TIME_OUT;
   BitState_t (*getPortCallback)(uint8_t);
 } KeybaordStruct_t;
 

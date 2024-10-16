@@ -326,6 +326,15 @@ void vMenuTask ( void )
        {
            if ( xQueueReceive(pKeyboard, &TempEvent, 0U ) == pdPASS )
            {
+              if (TempEvent.Status == KEY_TIME_OUT)
+              {
+                  HAL_ResetBit(LDCDATA_2_3_E_REW_CD_LED_Port,  LCDLED_Pin);
+              }
+              else
+              {
+                  HAL_SetBit(LDCDATA_2_3_E_REW_CD_LED_Port,  LCDLED_Pin);
+              }
+
               if (( TempEvent.Status == BRAKECODE ) && (menu_mode == 4))
               {
 
@@ -1471,6 +1480,7 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
 
                    break;
                case FILTER_STATE_ID:
+
                    sprintf(str,"%i %%",getReg8(RESURSE));
                    break;
     }

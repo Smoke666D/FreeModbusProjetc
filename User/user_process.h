@@ -50,7 +50,7 @@ float USER_AOUT_GET(u8 channel);
 float getDAC1_Out();
 void USER_SetSettingChange();
 u8 USER_GerErrorState();
-u8 USER_FilterState( u8 * state);
+void USER_FilterState( u8 on_state );
 void USER_SetControlState(u8 state);
 uint16_t USER_GetSetting();
 uint16_t USER_GetFact(u8 * state);

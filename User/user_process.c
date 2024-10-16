@@ -148,42 +148,40 @@ static void USER_SETTING_CHECK(u8 control_type, u8 * point_old)
 
 u32 hepa_counter = 0;
 
-u8 USER_FilterState( u8 * state)
+
+
+
+void USER_FilterState( u8 on_state)
 {
-    u8 res ;
-    if (task_fsm == USER_RROCCES_WORK)
-    {
-        *state = 1;
-        u16 temp;
-        if (getReg8(MODE )==0)
-        {
-            if (hepa_counter == 0)
-            {
+
+     if (on_state)
+     {
+         if (hepa_counter == 6000)
+         {
                 u16 sensor_data = getAIN(SENS2);
                 if (sensor_data  <= getReg16(FILTER_LOW))
-                    res = 0;
+                    FilterState = 0;
                 else
                     if (sensor_data  >= getReg16(FILTER_HIGH))
-                        res = 100;
+                        FilterState = 100;
                     else
                     {
-                        temp = sensor_data - getReg16(FILTER_LOW);
+                        u16 temp = sensor_data - getReg16(FILTER_LOW);
                         temp = ((float)temp/(getReg16(FILTER_HIGH) - getReg16(FILTER_LOW)))*100;
-                        res = (u8)temp;
+                        FilterState = (u8)temp;
                     }
-                setReg8(RESURSE, res );
-            }
-            hepa_counter++;
-            if (hepa_counter == 100*600) hepa_counter = 0;
-        }
-    }
-    else
-    {
-        hepa_counter = 0;
-        *state = 0;
+                if (getReg8(MODE) == 0)
+                {
+                    setReg8(RESURSE, FilterState );
+                }
+         }
+         hepa_counter++;
+         if (hepa_counter > 6000) hepa_counter = 0;
+     }
+     else
+        hepa_counter =0;
 
-    }
-    return (getReg8(RESURSE));
+
 
 }
 
@@ -249,9 +247,10 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
     }
 
     // Если засоренность фильта больше значения устваки, то выставляем предупрежние и делаем запись в журнал
-     FilterState = USER_FilterState(HEPA_CONTROL_ON);
+     USER_FilterState(*HEPA_CONTROL_ON);
      if ( *HEPA_CONTROL_ON)
      {
+
           if  ((FilterState >=FILTER_WARNINR_VALUE) && ((error_state & FILTER_ERROR) == 0))
           {
                 vADDRecord(FILTER_ERROR);
@@ -266,13 +265,10 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
            HAL_SetBit(CRACH_Port,  CRACH_Pin);
            eSetDUT(OUT_3,FALSE);
       }
-
-
-
     switch (task_fsm)
                {
                    case USER_PROCCES_IDLE: // @suppress("Symbol is not resolved")
-
+                       *HEPA_CONTROL_ON = 0;
                        eSetDUT(OUT_1,FALSE);
                        PIDOut = 0;
                        USER_AOUT_SET(DAC1,0);
@@ -283,7 +279,7 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                        error_state = 0;
                        break;
                    case USER_PEOCESS_WORK_TIME_OUT:
-
+                       *HEPA_CONTROL_ON = 0;
                        if ( (++*start_timeout)> ( getReg8(FAN_START_TIMEOUT)*100))
                        {
                            task_fsm = USER_PEOCESS_ZERO_CALIB;
@@ -295,7 +291,7 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                        if (CalibrationZeroWhait())
                        {
                            PIDOut = 0;
-                           Temp = testdata[0];
+
                            UPDATE_COOF();
                            PID_Init(&TPID,0,setTestDta( PIDOut));
                            task_fsm = USER_RROCCES_WORK;
@@ -305,17 +301,22 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                        if (++*pid_counter >=10)
                        {
                            *pid_counter = 0;
+                           Temp = getAIN(SENS1);
                            PID_Compute(&TPID,getAIN(SENS1));
                            float PID_Out = PIDOut/1000.0;
                            USER_AOUT_SET(DAC2,PID_Out);
-                           if ( ( fabs(SET_POINT-Temp) > ( SET_POINT*0.05) ) && ((PID_Out) >=9.5) && ((error_state & SETTING_ERROR )==0))
+                           if ( ((PID_Out) >=9.5) && (Temp < SET_POINT ) && ((error_state & SETTING_ERROR )==0))
                            {
                                vADDRecord(SETTING_ERROR);
                                error_state |= SETTING_ERROR;
                            }
-                           if (fabs(SET_POINT-Temp) > ( SET_POINT*0.02) )
+                           if (fabs(SET_POINT-Temp) <= ( SET_POINT*0.02) )
                            {
                                *HEPA_CONTROL_ON = 1;
+                           }
+                           else
+                           {
+                               *HEPA_CONTROL_ON = 0;
                            }
                        }
                        eSetDUT(OUT_1,TRUE);
@@ -325,6 +326,7 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                        PIDOut = 0;
                        USER_AOUT_SET(DAC2,0);
                        eSetDUT(OUT_1,FALSE);
+                       *HEPA_CONTROL_ON = 0;
                        break;
                }
 

@@ -28,6 +28,7 @@ uint16_t HW_LIB_GetKeyboardPeriod()
 KEYBOARD_INIT_CODES eKeyboardInit( KeybaordStruct_t * kis )
 {
     KEYBOARD_INIT_CODES res = KEYBORAD_PARAM_ERROR;
+    Keyboard.KEYBOARD_TIME_OUT   =kis->KEYBOARD_TIME_OUT;
     Keyboard.KEYBOARD_COUNT      = kis->KEYBOARD_COUNT;
     Keyboard.REPEAT_TIME         = kis->REPEAT_TIME;
     Keyboard.KEYDOWN_HOLD_TIME   = kis->KEYDOWN_HOLD_TIME;
@@ -43,6 +44,8 @@ KEYBOARD_INIT_CODES eKeyboardInit( KeybaordStruct_t * kis )
     return (res);
 }
 
+static u32 delay_timeout = 0;
+
 static void vPostState( uint8_t key, uint8_t state)
 {
     KeyEvent      TEvent;
@@ -50,6 +53,7 @@ static void vPostState( uint8_t key, uint8_t state)
     TEvent.Status  = state;
     Keyboard.COUNTERS[key]    = 0U;
     xQueueSend( pKeyboardQueue, &TEvent, portMAX_DELAY );
+    if ( state == MAKECODE ) delay_timeout = 0;
 }
 
 void HW_LIB_KeyboradFSM()
@@ -87,4 +91,14 @@ void HW_LIB_KeyboradFSM()
                }
             }
          }
+    if (Keyboard.KEYBOARD_TIME_OUT)
+    {
+        if  (++delay_timeout  > Keyboard.KEYBOARD_TIME_OUT)
+        {
+            delay_timeout= 0;
+            vPostState( 0 , KEY_TIME_OUT);
+
+        }
+    }
+
 }

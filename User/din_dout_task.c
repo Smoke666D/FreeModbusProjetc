@@ -128,6 +128,7 @@ void vKeyboarInit()
     KeyboardInit.KEYDOWN_HOLD_TIME = 100;
     KeyboardInit.KEYDOWN_DELAY     = 2;
     KeyboardInit.KEYBOARD_PERIOD   = 20;
+    KeyboardInit.KEYBOARD_TIME_OUT = (1000/KeyboardInit.KEYBOARD_PERIOD)*60;
     KeyboardInit.getPortCallback = &fPortState;
     eKeyboardInit(&KeyboardInit);
 }
