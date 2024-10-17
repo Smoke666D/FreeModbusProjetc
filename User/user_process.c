@@ -227,7 +227,7 @@ float setTestDta(float input)
   return out;
 }
 
-
+static u32 filter_warning_timer =0;
 
 void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u8 * set_point_old)
 {
@@ -253,10 +253,25 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
 
           if  ((FilterState >=FILTER_WARNINR_VALUE) && ((error_state & FILTER_ERROR) == 0))
           {
-                vADDRecord(FILTER_ERROR);
-                error_state |=FILTER_ERROR;
+              if (++ filter_warning_timer >= 18000)
+              {
+                 vADDRecord(FILTER_ERROR);
+                 error_state |=FILTER_ERROR;
+              }
           }
+          else
+          {
+              error_state &=~FILTER_ERROR;
+              filter_warning_timer = 0;
+          }
+
      }
+     else
+         error_state &=~FILTER_ERROR;
+
+
+
+
 
         //Свет
       if (MB_TASK_GetMode() && (task_fsm != USER_PROCCES_IDLE))

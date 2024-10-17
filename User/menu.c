@@ -440,7 +440,7 @@ void MenuSetDevice()
         case DEV_CAV_VAV_BP:
             pMenu = xScreenDCV;
 
-                SetPID2Screen(getReg8(CDV_BP_CH_COUNT),getReg8(INPUT_SENSOR_TYPE));
+                SetPID2Screen((CHANNEL_COUNT_t)getReg8(CDV_BP_CH_COUNT),getReg8(INPUT_SENSOR_TYPE));
 
 
             if (getReg8(CDV_BP_CH_COUNT) == 0)
@@ -1017,7 +1017,7 @@ void vSetTitle(u16 data_id, u8 * str )
                if (dev_type == DEV_FMCH)
                                     strcpy(str,"10/10");
                               else
-                                   sprintf(str,"3/%i",screen_count);
+                                   sprintf(str,"%i/%i",screen_count,screen_count);
                                   break;
            case VOLTAG_SCREEN_TITLE_ID:
                if (dev_type == DEV_FMCH)
@@ -1096,13 +1096,15 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             break;
          case BP_REG_TYPE_ID:
              *len = 0;
-              if (command <= CMD_EDIT_READ)
+              if (command > CMD_EDIT_READ)
+                  vByteDataEdit(0,reg_id,command,0,2, 0);
+              else
               {
                   u8 sring_index = (command == CMD_EDIT_READ) ? edit_data_buffer_byte :getReg8( reg_id);
                   strcpy(str, BP_REG_TYPE_STRING[  sring_index ] );
               }
-              else
-                  vByteDataEdit(0,reg_id,command,0,2, 0);
+
+
               break;
         case CDV_MODE_ID:
               strcpy(str,CDV_MODE_STRING[getStateDCV()]);
@@ -1168,7 +1170,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 {
                    if ( command == CMD_SAVE_EDIT )
                    {
-                       SetPID2Screen(getReg8(CDV_BP_CH_COUNT),edit_data_buffer_byte);
+                       SetPID2Screen((CHANNEL_COUNT_t)getReg8(CDV_BP_CH_COUNT),edit_data_buffer_byte);
                        if ( edit_data_buffer_byte == 0 )
                            vSettingCoountCondfig(1);
                        else vSettingCoountCondfig(0);
@@ -1242,7 +1244,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             {
                 if ( command == CMD_SAVE_EDIT )
                 {
-                    SetPID2Screen(edit_data_buffer_byte,getReg8(INPUT_SENSOR_TYPE));
+                    SetPID2Screen((CHANNEL_COUNT_t)edit_data_buffer_byte,getReg8(INPUT_SENSOR_TYPE));
                     SetBPSetting((edit_data_buffer_byte == 0) ? 1 : 0);
                 }
                 vByteDataEdit(0,reg_id,command,0,2,0);
