@@ -347,8 +347,12 @@ static xScreenObjet const InfoScreen2DCV[]=
         {1,2,50,0,     READ_DATA,"Напяжение",          AC_VOLTAGE_ID },
 };
 
-
-
+#define LAST_SET_SCREEN 11
+#define PI1_SCREEN   12
+#define PI2_SCREEN   13
+#define RESET_SCREEN 16
+#define ANALOG1_SCREEN 14
+#define ANALOG2_SCREEN 15
 
 xScreenType  xScreenDCV[] =
 {
@@ -394,85 +398,93 @@ void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_TYPE_t analog_state)
     switch (state)
     {
         case BP_CONFIG :
-        //Режим ВР
-         switch (analog_state)
-         {
-             case INP_DISCRETE_INPUT:
-             case INP_ROOM_CONTROLLER:
-                 seting_sting_count =12;
-                 xScreenDCV[12].pDownScreenSet = 14;   // Исключаем из ципочки экраны Аналоговых уставок для дискретов и комнатного контроллера
-                 xScreenDCV[12].pUpScreenSet   = 12;
-                 xScreenDCV[13].pDownScreenSet = 17;
-                 xScreenDCV[13].pUpScreenSet   = 13;
-                 xScreenDCV[16].pUpScreenSet   = 14;
-                 break;
-             case INP_PASSIVE_T_SENSOR:
-                 seting_sting_count =13;
-                 xScreenDCV[12].pDownScreenSet = 14;   // Исключаем из ципочки экран2 Аналоговых уставок для пассивного датчика
-                 xScreenDCV[13].pDownScreenSet = 15;
-                 xScreenDCV[14].pDownScreenSet = 17;
-                 xScreenDCV[16].pUpScreenSet   = 15;
-                 break;
-             case INP_ANALOG_SENSOR:
-                 seting_sting_count =14;
-                 xScreenDCV[12].pDownScreenSet = 14;
-                 xScreenDCV[13].pDownScreenSet = 15;
-                 xScreenDCV[16].pUpScreenSet   = 16;
-                 break;
-         }
-        CDVSettingsScreen5[3].last =   1;
-        xScreenDCV[13].pScreenCurObjets = CDVSettingsPB;
-        break;
-
-    case ONE_CH:
-        printf("one \r\n");
-        xScreenDCV[13].pScreenCurObjets = CDVSettingsPI2;
-
-        switch (analog_state)
-                {
-                    case 0:
-                    case 2:
+            //Режим ВР
+            xScreenDCV[PI1_SCREEN].pDownScreenSet = PI2_SCREEN + 1;
+            xScreenDCV[PI1_SCREEN].pUpScreenSet   = LAST_SET_SCREEN  + 1;
+            switch (analog_state)
+            {
+                 case INP_DISCRETE_INPUT:
+                 case INP_ROOM_CONTROLLER:
+                     seting_sting_count =12;
+                     xScreenDCV[PI2_SCREEN].pDownScreenSet = RESET_SCREEN + 1;
+                     xScreenDCV[PI2_SCREEN].pUpScreenSet   = PI1_SCREEN+ 1;
+                     xScreenDCV[RESET_SCREEN].pUpScreenSet = PI2_SCREEN+1;
+                     break;
+                 case INP_PASSIVE_T_SENSOR:
+                     seting_sting_count =13;
+                     xScreenDCV[PI2_SCREEN].pDownScreenSet =  ANALOG1_SCREEN +1;
+                     xScreenDCV[PI2_SCREEN].pUpScreenSet   = PI1_SCREEN+ 1;
+                     xScreenDCV[ANALOG1_SCREEN].pDownScreenSet = RESET_SCREEN+1;
+                     xScreenDCV[ANALOG1_SCREEN].pUpScreenSet   = PI2_SCREEN+1;
+                     xScreenDCV[RESET_SCREEN].pUpScreenSet   = ANALOG1_SCREEN +1;
+                     break;
+                 case INP_ANALOG_SENSOR:
+                     seting_sting_count =14;
+                     xScreenDCV[PI2_SCREEN].pDownScreenSet =  ANALOG1_SCREEN +1;
+                     xScreenDCV[PI2_SCREEN].pUpScreenSet   = PI1_SCREEN+ 1;
+                     xScreenDCV[ANALOG1_SCREEN].pDownScreenSet = ANALOG2_SCREEN +1;
+                     xScreenDCV[ANALOG1_SCREEN].pUpScreenSet   = PI2_SCREEN+1;
+                     xScreenDCV[RESET_SCREEN].pUpScreenSet   =  ANALOG2_SCREEN +1;
+                     break;
+            }
+            CDVSettingsScreen5[3].last =   1;
+            xScreenDCV[13].pScreenCurObjets = CDVSettingsPB;
+            break;
+       case ONE_CH:
+           xScreenDCV[PI1_SCREEN].pUpScreenSet   = LAST_SET_SCREEN  + 1;
+           switch (analog_state)
+           {
+               case INP_DISCRETE_INPUT:
+               case INP_ROOM_CONTROLLER:
                         seting_sting_count =11;
-                        xScreenDCV[12].pDownScreenSet = 17;   // Исключаем из ципочки экраны Аналоговых уставок для дискретов и комнатного контроллера
-                        xScreenDCV[17].pUpScreenSet   = 13;
+                        xScreenDCV[PI1_SCREEN].pDownScreenSet = RESET_SCREEN + 1;
+                        xScreenDCV[RESET_SCREEN].pUpScreenSet = PI1_SCREEN+1;
                         break;
-                    case 1:
-                        seting_sting_count =10;
-                        xScreenDCV[12].pDownScreenSet = 15;   // Исключаем из ципочки экран2 Аналоговых уставок для пассивного датчика
-                        xScreenDCV[14].pDownScreenSet = 17;
-                        xScreenDCV[16].pUpScreenSet   = 15;
+               case INP_PASSIVE_T_SENSOR:
+                        seting_sting_count =12;
+                        xScreenDCV[PI1_SCREEN].pDownScreenSet = ANALOG1_SCREEN +1;
+                        xScreenDCV[ANALOG1_SCREEN].pDownScreenSet = RESET_SCREEN+1;
+                        xScreenDCV[ANALOG1_SCREEN].pUpScreenSet   = PI1_SCREEN+1;
+                        xScreenDCV[RESET_SCREEN].pUpScreenSet   = ANALOG1_SCREEN +1;
                         break;
-                    case 3:
-                        seting_sting_count =11;
-                        xScreenDCV[12].pDownScreenSet = 15;
-                        xScreenDCV[14].pDownScreenSet = 16;
-                        xScreenDCV[15].pDownScreenSet = 17;
-                        xScreenDCV[16].pUpScreenSet   = 16;
+               case INP_ANALOG_SENSOR:
+                        seting_sting_count =13;
+                        xScreenDCV[PI1_SCREEN].pDownScreenSet = ANALOG1_SCREEN +1;
+                        xScreenDCV[ANALOG1_SCREEN].pDownScreenSet = ANALOG2_SCREEN +1;
+                        xScreenDCV[ANALOG1_SCREEN].pUpScreenSet   = PI1_SCREEN+1;
+                        xScreenDCV[RESET_SCREEN].pUpScreenSet   =  ANALOG2_SCREEN +1;
                         break;
                 }
-        CDVSettingsScreen5[3].last = 1;
-        break;
+           CDVSettingsScreen5[3].last = 1;
+           break;
     case TWO_CH:
+        xScreenDCV[PI1_SCREEN].pDownScreenSet = PI2_SCREEN + 1;
+        xScreenDCV[PI1_SCREEN].pUpScreenSet   = LAST_SET_SCREEN  + 1;
         switch (analog_state)
                  {
-                     case 0:
-                     case 2:
-                         seting_sting_count =11;
-                         xScreenDCV[12].pDownScreenSet = 14;   // Исключаем из ципочки экраны Аналоговых уставок для дискретов и комнатного контроллера
-                         xScreenDCV[13].pDownScreenSet = 17;
-                         xScreenDCV[16].pUpScreenSet   = 14;
+
+                case INP_DISCRETE_INPUT:
+                case INP_ROOM_CONTROLLER:
+                        seting_sting_count =12;
+                        xScreenDCV[PI2_SCREEN].pDownScreenSet = RESET_SCREEN + 1;
+                        xScreenDCV[PI2_SCREEN].pUpScreenSet   = PI1_SCREEN+ 1;
+                        xScreenDCV[RESET_SCREEN].pUpScreenSet = PI2_SCREEN+1;
                          break;
-                     case 1:
-                         seting_sting_count =12;
-                         xScreenDCV[12].pDownScreenSet = 14;   // Исключаем из ципочки экран2 Аналоговых уставок для пассивного датчика
-                         xScreenDCV[13].pDownScreenSet = 16;
-                         xScreenDCV[16].pUpScreenSet   = 15;
+                case INP_PASSIVE_T_SENSOR:
+                    seting_sting_count =13;
+                    xScreenDCV[PI2_SCREEN].pDownScreenSet =  ANALOG1_SCREEN +1;
+                    xScreenDCV[PI2_SCREEN].pUpScreenSet   = PI1_SCREEN+ 1;
+                    xScreenDCV[ANALOG1_SCREEN].pDownScreenSet = RESET_SCREEN+1;
+                    xScreenDCV[ANALOG1_SCREEN].pUpScreenSet   = PI2_SCREEN+1;
+                    xScreenDCV[RESET_SCREEN].pUpScreenSet   = ANALOG1_SCREEN +1;
                          break;
-                     case 3:
-                         seting_sting_count =13;
-                         xScreenDCV[12].pDownScreenSet = 14;
-                         xScreenDCV[13].pDownScreenSet = 16;
-                         xScreenDCV[16].pUpScreenSet   = 16;
+                case INP_ANALOG_SENSOR:
+                    seting_sting_count =14;
+                    xScreenDCV[PI2_SCREEN].pDownScreenSet =  ANALOG1_SCREEN +1;
+                    xScreenDCV[PI2_SCREEN].pUpScreenSet   = PI1_SCREEN+ 1;
+                    xScreenDCV[ANALOG1_SCREEN].pDownScreenSet = ANALOG2_SCREEN +1;
+                    xScreenDCV[ANALOG1_SCREEN].pUpScreenSet   = PI2_SCREEN+1;
+                    xScreenDCV[RESET_SCREEN].pUpScreenSet   =  ANALOG2_SCREEN +1;
                          break;
                  }
         CDVSettingsScreen5[3].last = 0;
