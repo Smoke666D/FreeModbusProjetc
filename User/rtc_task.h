@@ -16,5 +16,5 @@ void vRTC_Init();
 void vRTC_TASK_Init();
 u16 vRTC_TASK_GetMinute( void );
 u32 vRTC_TASK_GetHoure( void );
-
+void ResetMotorHour();
 #endif /* USER_RTC_TASK_H_ */

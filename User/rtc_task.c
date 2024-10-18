@@ -31,6 +31,12 @@ static void vRTCTaskITCallback( void )
   return;
 }
 
+void ResetMotorHour()
+{
+    hour_counter = 0;
+
+}
+
 u16 vRTC_TASK_GetMinute( void )
 {
     return (hour_counter % 60);

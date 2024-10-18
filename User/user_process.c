@@ -228,6 +228,7 @@ float setTestDta(float input)
 }
 
 static u32 filter_warning_timer =0;
+static u32 setting_wrning_timer = 0;
 
 void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u8 * set_point_old)
 {
@@ -284,6 +285,7 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                {
                    case USER_PROCCES_IDLE: // @suppress("Symbol is not resolved")
                        *HEPA_CONTROL_ON = 0;
+                       error_state &= ~SETTING_ERROR;
                        eSetDUT(OUT_1,FALSE);
                        PIDOut = 0;
                        USER_AOUT_SET(DAC1,0);
@@ -320,10 +322,23 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                            PID_Compute(&TPID,getAIN(SENS1));
                            float PID_Out = PIDOut/1000.0;
                            USER_AOUT_SET(DAC2,PID_Out);
-                           if ( ((PID_Out) >=9.5) && (Temp < SET_POINT ) && ((error_state & SETTING_ERROR )==0))
+                           if ( ((PID_Out) >=9.5) && (Temp < SET_POINT ) )
                            {
-                               vADDRecord(SETTING_ERROR);
-                               error_state |= SETTING_ERROR;
+                              if  ((error_state & SETTING_ERROR )==0 )
+                              {
+                                  setting_wrning_timer++;
+                                  if ( setting_wrning_timer >= 18000 )
+                                  {
+                                      vADDRecord(SETTING_ERROR);
+                                      error_state |= SETTING_ERROR;
+                                      setting_wrning_timer = 0;
+                                  }
+                              }
+                           }
+                           else
+                           {
+                               setting_wrning_timer = 0;
+                               error_state &= ~SETTING_ERROR;
                            }
                            if (fabs(SET_POINT-Temp) <= ( SET_POINT*0.02) )
                            {
@@ -341,6 +356,7 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                        PIDOut = 0;
                        USER_AOUT_SET(DAC2,0);
                        eSetDUT(OUT_1,FALSE);
+                       error_state &= ~SETTING_ERROR;
                        *HEPA_CONTROL_ON = 0;
                        break;
                }

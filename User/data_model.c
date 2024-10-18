@@ -44,7 +44,7 @@ DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[MASK_3]              = 255;
                DATA_MODEL_REGISTER[MASK_4]              = 0;
                DATA_MODEL_REGISTER[CONTRAST]            = 50;
-               DATA_MODEL_REGISTER[MOD_BUS_TIMEOUT ]    = 25;
+               DATA_MODEL_REGISTER[MOD_BUS_TIMEOUT ]    = 5;
                DATA_MODEL_REGISTER[FAN_START_TIMEOUT ] =  20;
                DATA_MODEL_REGISTER[CLEAN_TIMER]        =  20;
                DATA_MODEL_REGISTER[CDV_BP_CH_COUNT]    =  1;
@@ -73,6 +73,7 @@ DATA_MODEL_INIT_t DataModel_Init()
            }
            else
            {
+               setWorkMode();
                return (NORMAL_INIT);
            }
    }

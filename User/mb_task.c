@@ -231,6 +231,14 @@ uint16_t GetSensCoof()
 
 static u8 WORK_MODE =0;
 
+void  setWorkMode(  )
+{
+    if (getReg8(TEST_MODE)) WORK_MODE = 0;
+    else {
+        WORK_MODE = 2;
+    }
+}
+
 
 u8 MB_TASK_GetMode()
 {
@@ -379,15 +387,19 @@ void vSetRegData( u16 adress)
                  if (byte_data  > 3)
                      {
                         if (0x55) vDataModelResetJournal();
+                        if (0xAA) ResetMotorHour();
                          usRegHoldingBuf[adress] = WORK_MODE;
                      }
                  else
                  {
+
                      WORK_MODE = byte_data ;
                      if (WORK_MODE ==3 )
                      {
                          NVIC_SystemReset();
                      }
+                     if ((WORK_MODE == 0 ) && (getReg8(TEST_MODE) == 1 )) SaveReg8(TEST_MODE,1);
+                     if ((WORK_MODE == 2 ) && (getReg8(TEST_MODE) == 0 )) SaveReg8(TEST_MODE,0);
                  }
                  break;
              case AOUT1_C_MB+1:
