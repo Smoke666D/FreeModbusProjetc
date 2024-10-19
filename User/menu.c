@@ -111,7 +111,8 @@ static u8 * AfterZoneStrig[]={"Tканала<Tпомещения","Tканала
 static u8 * MUnitStrig[] = {"м^3/ч","м/c ","Па "};
 static u8 *  SensUnitString[]={"T","ppm","%"};
 static u8 * PriorSentStrig[]= {"T","CO2","H"};
-static const char * DevString[5]={"Режим ФМЧ","Режим CAV/VAV-BP"};
+static const char * DevString[]={"Режим ФМЧ","Режим CAV/VAV-BP"};
+static const char * TestModeString[]={"Выкл","Вкл"};
 static u8 * SensorTypeStrig[]= {"0-10 В","2-10 В","4-20 мA"};
 static u8 * IniputSignalTypeStrig[]= {"Диск. вход","Пас. датчик T","Комн. контр.","Аналог датчики"};
 const char * CDV_MODE_STRING[]={"Закрыто","Минимальная","Средняя","Максимальная","Открыто"};
@@ -845,7 +846,8 @@ static void vDateDataEdit(DATA_VIEW_COMMAND_t command, char * str)
 
 
 
-static const u16 MenuRegMap[]={ DEVICE_TYPE,
+static const u16 MenuRegMap[]={ TEST_MODE,
+                                DEVICE_TYPE,
                                 0,   //1
                                 0,   //2
                                 0,   //3
@@ -1516,6 +1518,14 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
         u16 reg_id = MenuRegMap[data_id];
         switch (data_id)
         {
+            case TEST_MODE_ID:
+                *len = 0;
+                 if ( command > CMD_EDIT_READ )
+                                    vByteDataEdit(0,reg_id,command,0,1 , 0);
+                else
+                                    strcpy(str, TestModeString[ (command == CMD_READ)?  getReg8( reg_id) : edit_data_buffer_byte ] );
+
+                 break;
             case DEVICE_TYPE_ID:
                 *len = 0;
                 if ( command > CMD_EDIT_READ )

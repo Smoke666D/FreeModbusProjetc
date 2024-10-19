@@ -233,9 +233,9 @@ static u8 WORK_MODE =0;
 
 void  setWorkMode(  )
 {
-    if (getReg8(TEST_MODE)) WORK_MODE = 0;
+    if (getReg8(TEST_MODE)) WORK_MODE = 2;
     else {
-        WORK_MODE = 2;
+        WORK_MODE = 0;
     }
 }
 
@@ -398,8 +398,9 @@ void vSetRegData( u16 adress)
                      {
                          NVIC_SystemReset();
                      }
-                     if ((WORK_MODE == 0 ) && (getReg8(TEST_MODE) == 1 )) SaveReg8(TEST_MODE,1);
-                     if ((WORK_MODE == 2 ) && (getReg8(TEST_MODE) == 0 )) SaveReg8(TEST_MODE,0);
+                     if ((WORK_MODE == 0 ) && (getReg8(TEST_MODE) == 1 )) SaveReg8(TEST_MODE,0);
+                     else
+                     if ((WORK_MODE == 2 ) && (getReg8(TEST_MODE) == 0 )) SaveReg8(TEST_MODE,1);
                  }
                  break;
              case AOUT1_C_MB+1:

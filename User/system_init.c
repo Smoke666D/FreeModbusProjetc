@@ -231,6 +231,7 @@ void vDefaultTask( void  * argument )
                     vTaskResume(* getSerialTask());
                     TCP_STOP = 1;
                 }
+                setWorkMode();
                 vTaskResume( MPTCPTask_Handler  );
                 main_task_fsm  = STATE_RUN;
                 break;

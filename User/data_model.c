@@ -73,7 +73,7 @@ DATA_MODEL_INIT_t DataModel_Init()
            }
            else
            {
-               setWorkMode();
+
                return (NORMAL_INIT);
            }
    }

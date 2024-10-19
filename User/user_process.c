@@ -15,7 +15,7 @@
 #include "stdlib.h"
 #include "math.h"
 
-#define FILTER_WARNINR_VALUE 98
+#define FILTER_WARNINR_VALUE 90
 
 
 
@@ -252,24 +252,33 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
      if ( *HEPA_CONTROL_ON)
      {
 
-          if  ((FilterState >=FILTER_WARNINR_VALUE) && ((error_state & FILTER_ERROR) == 0))
+          if  ((FilterState >=FILTER_WARNINR_VALUE) )
           {
-              if (++ filter_warning_timer >= 18000)
+              if ((error_state & FILTER_ERROR) == 0)
               {
-                 vADDRecord(FILTER_ERROR);
-                 error_state |=FILTER_ERROR;
+                  if (++ filter_warning_timer >= 18000)
+                  {
+                      vADDRecord(FILTER_ERROR);
+                      error_state |=FILTER_ERROR;
+
+                  }
+
               }
           }
           else
           {
               error_state &=~FILTER_ERROR;
               filter_warning_timer = 0;
+
           }
 
      }
      else
+     {
          error_state &=~FILTER_ERROR;
+         filter_warning_timer = 0;
 
+     }
 
 
 
@@ -285,7 +294,6 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                {
                    case USER_PROCCES_IDLE: // @suppress("Symbol is not resolved")
                        *HEPA_CONTROL_ON = 0;
-                       error_state &= ~SETTING_ERROR;
                        eSetDUT(OUT_1,FALSE);
                        PIDOut = 0;
                        USER_AOUT_SET(DAC1,0);
@@ -327,7 +335,7 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                               if  ((error_state & SETTING_ERROR )==0 )
                               {
                                   setting_wrning_timer++;
-                                  if ( setting_wrning_timer >= 18000 )
+                                  if ( setting_wrning_timer >= 1800 )
                                   {
                                       vADDRecord(SETTING_ERROR);
                                       error_state |= SETTING_ERROR;
@@ -833,7 +841,7 @@ void VoltageControlCheck( AC_VOLTAGE_CONTROL_t * ac_control)
              ac_control->low_voltage_timeout = 0;
          if  ((ac_control->Voltage <= (uint16_t)getReg8(HIGH_VOLTAGE_OFF)) && ( ac_control->Voltage >=  (uint16_t)getReg8(LOW_VOLTAGE_OFF)))
          {
-             error_state &= ~(LOW_VOLTAGE_ERROR | HIGH_VOLTAGE_ERROR );
+             error_state &= (~(LOW_VOLTAGE_ERROR | HIGH_VOLTAGE_ERROR ));
          }
          if ( ac_control->Voltage < 20 )
          {
@@ -893,7 +901,7 @@ void user_process_task(void *pvParameters)
                    vCDV_FSM(&start_timeout,&pid_counter,&flag );
 
            //Ecли есть ошибка включаем реле и зажигаем светодиод
-           if ( error_state  & ~SETTING_ERROR)
+           if ( error_state  & (~SETTING_ERROR))
            {
                  HAL_ResetBit(CRACH_Port,  CRACH_Pin);
                  eSetDUT(OUT_3,TRUE);

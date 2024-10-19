@@ -21,54 +21,55 @@
 
 #define MAX_STRING_NUMBER 10
 
-#define DEVICE_TYPE_ID          0
-#define PROCESS_STATE_ID        1
-#define CURENT_DATE_ADDR        2
-#define CURENT_TIME_ADDR        3
-#define AC_VOLTAGE_ID           4
-#define IP_ADRESS_DATA_ID       5
-#define MB_RTU_ADDR_ID          6
-#define CONTROL_MODE_ID         7
-#define HOURE_COUNTER_ID        8
-#define IP_SUBNETMASK_ID        9
-#define VOLTAGE_MIN_OFF_ID      10
-#define VOLTAGE_MIN_ON_ID       11
-#define CONTRAST_ID             12
-#define MOD_BUS_TIMEOUT_ID      13
-#define SENS_COUNT_ID           14
-#define KOOFKPS_ID              15
-#define PROTOCOL_ID             16
-#define MAC_ADRESS_ID           17
-#define SENS_1_RAW_ID           18
-#define SENS_2_RAW_ID           19
-#define COOF_P_ID               20
-#define COOF_I_ID               21
-#define IP_PORT_ID              22
-#define IP_GATE_ID              23
-#define VOLTAGE_MAX_ON_ID       24
-#define ALARM_COUNT_ID          25
-#define CURRENT_ALARM_COUNT_ID  26
-#define ZERO_CALIBRATE_ID       27
-#define DEVICE_RESET_ID         28
-#define VOLTAGE_MAX_OFF_ID      29
-#define FACT_RASH_ID            30   //§¯§¡§¹§¡§­§°
-#define SETTING_ID              31
-#define FILTER_LOW_ID           32
-#define FILTER_HIGH_ID          33
-#define SETTING1_ID             34
-#define SETTING2_ID             35
-#define CUR_TEMP_ID             36
-#define JOURNAL_COUNT_ID        37
-#define JURNAL_RECORD_ID        38
-#define JOURNAL_TIME_ID         39
-#define JOURNAL_DATE_ID         40
-#define JOURNAL_INFO1_ID        41
-#define JOURNAL_INFO2_ID        42
-#define JOURNAL_RESET_ID        43
-#define FAN_START_TIMEOUT_ID    44
-#define FILTER_STATE_ID         45
-#define SENS_FILTER_ID          46
-#define MODE_STATE_ID           47   //§¬§°§¯§¦§¸
+#define TEST_MODE_ID            0
+#define DEVICE_TYPE_ID          1
+#define PROCESS_STATE_ID        2
+#define CURENT_DATE_ADDR        3
+#define CURENT_TIME_ADDR        4
+#define AC_VOLTAGE_ID           5
+#define IP_ADRESS_DATA_ID       6
+#define MB_RTU_ADDR_ID          7
+#define CONTROL_MODE_ID         8
+#define HOURE_COUNTER_ID        9
+#define IP_SUBNETMASK_ID        10
+#define VOLTAGE_MIN_OFF_ID      11
+#define VOLTAGE_MIN_ON_ID       12
+#define CONTRAST_ID             13
+#define MOD_BUS_TIMEOUT_ID      14
+#define SENS_COUNT_ID           15
+#define KOOFKPS_ID              16
+#define PROTOCOL_ID             17
+#define MAC_ADRESS_ID           18
+#define SENS_1_RAW_ID           19
+#define SENS_2_RAW_ID           20
+#define COOF_P_ID               21
+#define COOF_I_ID               22
+#define IP_PORT_ID              23
+#define IP_GATE_ID              24
+#define VOLTAGE_MAX_ON_ID       25
+#define ALARM_COUNT_ID          26
+#define CURRENT_ALARM_COUNT_ID  27
+#define ZERO_CALIBRATE_ID       28
+#define DEVICE_RESET_ID         29
+#define VOLTAGE_MAX_OFF_ID      30
+#define FACT_RASH_ID            31   //§¯§¡§¹§¡§­§°
+#define SETTING_ID              32
+#define FILTER_LOW_ID           33
+#define FILTER_HIGH_ID          34
+#define SETTING1_ID             35
+#define SETTING2_ID             36
+#define CUR_TEMP_ID             37
+#define JOURNAL_COUNT_ID        38
+#define JURNAL_RECORD_ID        39
+#define JOURNAL_TIME_ID         40
+#define JOURNAL_DATE_ID         41
+#define JOURNAL_INFO1_ID        42
+#define JOURNAL_INFO2_ID        43
+#define JOURNAL_RESET_ID        44
+#define FAN_START_TIMEOUT_ID    45
+#define FILTER_STATE_ID         46
+#define SENS_FILTER_ID          47
+#define MODE_STATE_ID           48   //§¬§°§¯§¦§¸
 
 
 

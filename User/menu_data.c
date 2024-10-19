@@ -330,7 +330,8 @@ static xScreenObjet const CDVSettingsScreen20[]=
 static xScreenObjet const DeviceInit[]=
 {
         {0,10,LINE1,70,TEXT_STRING,"Тип усртойства:",            0},
-        {1,2,37,20,WRITE_DATA,"",                       DEVICE_TYPE_ID },
+        {0,2,37,20,WRITE_DATA,"",                       DEVICE_TYPE_ID },
+        {1,2,50,00,WRITE_DATA,"Тестовый режим:",        TEST_MODE_ID},
 };
 
 xScreenType  xDeiceInit[] =
