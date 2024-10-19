@@ -7,7 +7,6 @@
 C_SRCS += \
 ../User/AC_ConvertLib.c \
 ../User/ADC.c \
-../User/adc_task.c \
 ../User/ch32v30x_it.c \
 ../User/data_model.c \
 ../User/din_dout_task.c \
@@ -28,7 +27,6 @@ C_SRCS += \
 OBJS += \
 ./User/AC_ConvertLib.o \
 ./User/ADC.o \
-./User/adc_task.o \
 ./User/ch32v30x_it.o \
 ./User/data_model.o \
 ./User/din_dout_task.o \
@@ -49,7 +47,6 @@ OBJS += \
 C_DEPS += \
 ./User/AC_ConvertLib.d \
 ./User/ADC.d \
-./User/adc_task.d \
 ./User/ch32v30x_it.d \
 ./User/data_model.d \
 ./User/din_dout_task.d \

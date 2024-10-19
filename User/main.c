@@ -114,10 +114,7 @@ int main(void)
     vSYSeventInit ( );
     vSYStaskInit ( );
     vNetInit();
-
-
     printf("System start\n");
-
     vTaskStartScheduler();
 	while(1)
 	{

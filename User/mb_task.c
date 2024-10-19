@@ -357,9 +357,6 @@ void vSetRegData( u16 adress)
 {
    float data;
    u8 dev_type = getReg8(DEVICE_TYPE);
-
-
-   printf("dev1 = %i\r\n",getReg8(DEVICE_TYPE));
    if (adress < DEVICE_SPECIFIC_ADDRES)
    {
        u16 byte_data =(u16)usRegHoldingBuf[adress];
@@ -392,7 +389,6 @@ void vSetRegData( u16 adress)
                      }
                  else
                  {
-
                      WORK_MODE = byte_data ;
                      if (WORK_MODE ==3 )
                      {

@@ -105,8 +105,6 @@ uint16_t USER_GetFact(u8 * state)
 
 
 
-
-
 static void USER_SETTING_CHECK(u8 control_type, u8 * point_old)
 {
       u8 start;
@@ -146,16 +144,13 @@ static void USER_SETTING_CHECK(u8 control_type, u8 * point_old)
 
 }
 
-u32 hepa_counter = 0;
-
-
+static u32 hepa_counter = 0;
 
 
 void USER_FilterState( u8 on_state)
 {
-
-     if (on_state)
-     {
+    if (on_state)
+    {
          if (hepa_counter == 6000)
          {
                 u16 sensor_data = getAIN(SENS2);
@@ -180,9 +175,6 @@ void USER_FilterState( u8 on_state)
      }
      else
         hepa_counter =0;
-
-
-
 }
 
 void UPDATE_COOF()
@@ -230,9 +222,14 @@ float setTestDta(float input)
 static u32 filter_warning_timer =0;
 static u32 setting_wrning_timer = 0;
 
+void vResetFilterError()
+{
+    error_state &=~FILTER_ERROR;
+    filter_warning_timer = 0;
+}
+
 void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u8 * set_point_old)
 {
-
     u8 c_type  =getReg8( CONTROL_TYPE );
     if (MB_TASK_GetMode()!=2)
     {
@@ -240,49 +237,25 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
        eSetDUT(OUT_2, getReg8(LIGTH));
     }
     USER_SETTING_CHECK(c_type, set_point_old);
-
-
     if ( error_state & (LOW_VOLTAGE_ERROR | HIGH_VOLTAGE_ERROR))
     {
         task_fsm = USER_PROCESS_ALARM;
     }
-
     // Если засоренность фильта больше значения устваки, то выставляем предупрежние и делаем запись в журнал
      USER_FilterState(*HEPA_CONTROL_ON);
-     if ( *HEPA_CONTROL_ON)
+     if  ((FilterState >=FILTER_WARNINR_VALUE) && ( *HEPA_CONTROL_ON))
      {
-
-          if  ((FilterState >=FILTER_WARNINR_VALUE) )
+          if ((error_state & FILTER_ERROR) == 0)
           {
-              if ((error_state & FILTER_ERROR) == 0)
-              {
-                  if (++ filter_warning_timer >= 18000)
-                  {
-                      vADDRecord(FILTER_ERROR);
-                      error_state |=FILTER_ERROR;
-
-                  }
-
-              }
-          }
-          else
-          {
-              error_state &=~FILTER_ERROR;
-              filter_warning_timer = 0;
-
-          }
-
-     }
-     else
-     {
-         error_state &=~FILTER_ERROR;
-         filter_warning_timer = 0;
-
-     }
-
-
-
-
+               if (++ filter_warning_timer >= 18000)
+               {
+                   vADDRecord(FILTER_ERROR);
+                   error_state |=FILTER_ERROR;
+               }
+         }
+      }
+      else
+          vResetFilterError();
         //Свет
       if (MB_TASK_GetMode() && (task_fsm != USER_PROCCES_IDLE))
       {
@@ -316,7 +289,6 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                        if (CalibrationZeroWhait())
                        {
                            PIDOut = 0;
-
                            UPDATE_COOF();
                            PID_Init(&TPID,0,setTestDta( PIDOut));
                            task_fsm = USER_RROCCES_WORK;
@@ -334,12 +306,10 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                            {
                               if  ((error_state & SETTING_ERROR )==0 )
                               {
-                                  setting_wrning_timer++;
-                                  if ( setting_wrning_timer >= 1800 )
+                                  if ( ++setting_wrning_timer >= 1800 )
                                   {
                                       vADDRecord(SETTING_ERROR);
                                       error_state |= SETTING_ERROR;
-                                      setting_wrning_timer = 0;
                                   }
                               }
                            }
