@@ -389,6 +389,7 @@ void vSetRegData( u16 adress)
                      }
                  else
                  {
+
                      WORK_MODE = byte_data ;
                      if (WORK_MODE ==3 )
                      {
@@ -431,10 +432,10 @@ void vSetRegData( u16 adress)
                  if ((byte_data > usRegHoldingBuf[V_MIN_ON] ) && (byte_data < usRegHoldingBuf[V_MAX_OFF] ) )  SaveReg8(LOW_VOLTAGE_OFF,byte_data);
                   break;
              case V_MAX_OFF:
-                 if ((byte_data > usRegHoldingBuf[V_MIN_OFF] ) && (byte_data < usRegHoldingBuf[V_MAX_ON] ) )  SaveReg8(HIGH_VOLTAGE_ON,byte_data);
+                 if ((byte_data > usRegHoldingBuf[V_MIN_OFF] ) && (byte_data < usRegHoldingBuf[V_MAX_ON] ) )  SaveReg8(HIGH_VOLTAGE_OFF,byte_data);
                  break;
              case V_MAX_ON:
-                 if ( byte_data > usRegHoldingBuf[V_MAX_OFF] ) SaveReg8(HIGH_VOLTAGE_OFF,byte_data);
+                 if ( byte_data > usRegHoldingBuf[V_MAX_OFF] ) SaveReg8(HIGH_VOLTAGE_ON,byte_data);
                  break;
              case MB_ADDRES_MB:
              case CONTROL_TYPE_MB:

@@ -103,9 +103,7 @@ uint16_t USER_GetFact(u8 * state)
  }
 
 
-
-
-static void USER_SETTING_CHECK(u8 control_type, u8 * point_old)
+static void USER_SETTING_CHECK(u8 control_type, FMCH_Device_t * dev)
 {
       u8 start;
       if (control_type !=   MKV_MB_DIN)
@@ -120,28 +118,23 @@ static void USER_SETTING_CHECK(u8 control_type, u8 * point_old)
       {
           mb_time_out =0;
       }
-       start = (control_type ==   MKV_MB_DIN) ? ucDinGet(INPUT_1) : getReg8(SYSTEM_START) ;
+      start = (control_type ==   MKV_MB_DIN) ? ucDinGet(INPUT_1) : getReg8(SYSTEM_START) ;
       if ( start && (task_fsm == USER_PROCCES_IDLE))
       {
-
           task_fsm = USER_PEOCESS_WORK_TIME_OUT;
       }
-      if ( (start==0) && (task_fsm != USER_PROCCES_IDLE) &&  (task_fsm != USER_PROCESS_ALARM))
+      if ( (start==0) && (task_fsm != USER_PROCCES_IDLE) && (task_fsm != USER_PROCESS_ALARM))
       {
-
            task_fsm = USER_PROCCES_IDLE;
       }
-    if ( control_type == MKV_MB_DIN) setReg8(MODE,ucDinGet(INPUT_3));
-
-    if ((getReg8(MODE ) != *point_old) || (setting_change_flag))
-    {
-        setting_change_flag  = 0;
-        *point_old = getReg8(MODE );
-        setpoint = getReg16((*point_old ==0)? SETTING1 : SETTING2);
-        SET_POINT =pow(setpoint/getRegFloat(KOOFKPS),2);
-
-    }
-
+      if ( control_type == MKV_MB_DIN) setReg8(MODE,ucDinGet(INPUT_3));
+      if ((getReg8(MODE ) != dev->Setting_old) || (setting_change_flag))
+      {
+          setting_change_flag  = 0;
+          dev->Setting_old = getReg8(MODE );
+          setpoint = getReg16((dev->Setting_old==0)? SETTING1 : SETTING2);
+          SET_POINT =pow(setpoint/getRegFloat(KOOFKPS),2);
+      }
 }
 
 static u32 hepa_counter = 0;
@@ -199,7 +192,6 @@ u16 testdata[10]={700,680,670,660,650,670,685,500,550,625};
 static float Temp;
 static float PIDOut;
 static float PIDOut2;
-
 static u16 counterpid = 0;
 
 float setTestDta(float input)
@@ -219,16 +211,10 @@ float setTestDta(float input)
   return out;
 }
 
-static u32 filter_warning_timer =0;
-static u32 setting_wrning_timer = 0;
 
-void vResetFilterError()
-{
-    error_state &=~FILTER_ERROR;
-    filter_warning_timer = 0;
-}
 
-void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u8 * set_point_old)
+
+void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter,   FMCH_Device_t * dev)
 {
     u8 c_type  =getReg8( CONTROL_TYPE );
     if (MB_TASK_GetMode()!=2)
@@ -236,18 +222,18 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
        if (c_type == MKV_MB_DIN ) setReg8(LIGTH, ucDinGet(INPUT_2));
        eSetDUT(OUT_2, getReg8(LIGTH));
     }
-    USER_SETTING_CHECK(c_type, set_point_old);
+    USER_SETTING_CHECK(c_type,  dev);
     if ( error_state & (LOW_VOLTAGE_ERROR | HIGH_VOLTAGE_ERROR))
     {
         task_fsm = USER_PROCESS_ALARM;
     }
     // Если засоренность фильта больше значения устваки, то выставляем предупрежние и делаем запись в журнал
-     USER_FilterState(*HEPA_CONTROL_ON);
-     if  ((FilterState >=FILTER_WARNINR_VALUE) && ( *HEPA_CONTROL_ON))
+     USER_FilterState(dev->HEPA_CONTROL_FLAG);
+     if  ((FilterState >=FILTER_WARNINR_VALUE) && ( dev->HEPA_CONTROL_FLAG))
      {
           if ((error_state & FILTER_ERROR) == 0)
           {
-               if (++ filter_warning_timer >= 18000)
+               if (++ (dev->Filter_Warning_Timeout) >= 18000)
                {
                    vADDRecord(FILTER_ERROR);
                    error_state |=FILTER_ERROR;
@@ -255,7 +241,10 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
          }
       }
       else
-          vResetFilterError();
+      {
+          error_state &=~FILTER_ERROR;
+          dev->Filter_Warning_Timeout = 0;
+      }
         //Свет
       if (MB_TASK_GetMode() && (task_fsm != USER_PROCCES_IDLE))
       {
@@ -263,10 +252,27 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
            HAL_SetBit(CRACH_Port,  CRACH_Pin);
            eSetDUT(OUT_3,FALSE);
       }
+      if ((task_fsm != USER_PROCESS_ALARM) && (task_fsm != USER_PROCCES_IDLE) && ucDinGet(INPUT_3))
+      {
+          if ((error_state &  PRE_FILTER_ERROR) == 0)
+          {
+              if (++ (dev->PreFilter_Warning_Timeout) >= 18000)
+              {
+                   vADDRecord( PRE_FILTER_ERROR);
+                   error_state |= PRE_FILTER_ERROR;
+              }
+          }
+      }
+      else
+      {
+          error_state &= ~PRE_FILTER_ERROR;
+          dev->PreFilter_Warning_Timeout = 0;
+     }
+
     switch (task_fsm)
                {
                    case USER_PROCCES_IDLE: // @suppress("Symbol is not resolved")
-                       *HEPA_CONTROL_ON = 0;
+                       dev->HEPA_CONTROL_FLAG= 0;
                        eSetDUT(OUT_1,FALSE);
                        PIDOut = 0;
                        USER_AOUT_SET(DAC1,0);
@@ -277,7 +283,7 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                        error_state = 0;
                        break;
                    case USER_PEOCESS_WORK_TIME_OUT:
-                       *HEPA_CONTROL_ON = 0;
+                       dev->HEPA_CONTROL_FLAG= 0;
                        if ( (++*start_timeout)> ( getReg8(FAN_START_TIMEOUT)*100))
                        {
                            task_fsm = USER_PEOCESS_ZERO_CALIB;
@@ -285,7 +291,6 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                        }
                        break;
                    case USER_PEOCESS_ZERO_CALIB:
-
                        if (CalibrationZeroWhait())
                        {
                            PIDOut = 0;
@@ -306,7 +311,7 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                            {
                               if  ((error_state & SETTING_ERROR )==0 )
                               {
-                                  if ( ++setting_wrning_timer >= 1800 )
+                                  if ( ++(dev->Setting_Warning_Timeout) >= 1800 )
                                   {
                                       vADDRecord(SETTING_ERROR);
                                       error_state |= SETTING_ERROR;
@@ -315,17 +320,10 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                            }
                            else
                            {
-                               setting_wrning_timer = 0;
+                               dev->Setting_Warning_Timeout = 0;
                                error_state &= ~SETTING_ERROR;
                            }
-                           if (fabs(SET_POINT-Temp) <= ( SET_POINT*0.02) )
-                           {
-                               *HEPA_CONTROL_ON = 1;
-                           }
-                           else
-                           {
-                               *HEPA_CONTROL_ON = 0;
-                           }
+                           dev->HEPA_CONTROL_FLAG = (fabs(SET_POINT-Temp) <= ( SET_POINT*0.02) ) ? 1 : 0 ;
                        }
                        eSetDUT(OUT_1,TRUE);
                        break;
@@ -335,10 +333,9 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter, u8 * HEPA_CONTROL_ON,  u
                        USER_AOUT_SET(DAC2,0);
                        eSetDUT(OUT_1,FALSE);
                        error_state &= ~SETTING_ERROR;
-                       *HEPA_CONTROL_ON = 0;
+                       dev->HEPA_CONTROL_FLAG = 0;
                        break;
                }
-
 }
 
 void SystemCalibraionStart()
@@ -841,12 +838,13 @@ void VoltageControlCheck( AC_VOLTAGE_CONTROL_t * ac_control)
 }
 
 
+
 void user_process_task(void *pvParameters)
 {
+
+   FMCH_Device_t  FMCH_Dev= {2,0,0,0,0};
    static AC_VOLTAGE_CONTROL_t ac_contorl;
-   static u8 HEPA_CONTROL_ON = 0;
    static u8 flag = 0;
-   u8 set_point_old = 2;
    u32 pid_counter = 0;
    u32 start_timeout = 0;
    u8 process_mode = getReg8(DEVICE_TYPE);
@@ -854,7 +852,10 @@ void user_process_task(void *pvParameters)
    task_fsm = USER_PROCCES_IDLE;
    FilterState = 0;
    PID(&TPID,  &PIDOut, &SET_POINT, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
-   PID_SetOutputLimits(&TPID,(float)1000.0,(float)10000.0);
+   if ( process_mode == DEV_FMCH )
+       PID_SetOutputLimits(&TPID,(float)1000.0,(float)10000.0);
+   else
+       PID_SetOutputLimits(&TPID,(float)0.0,(float)10000.0);
    PID(&TPID2, &PIDOut2, &SET_POINT1, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
    PID_SetOutputLimits(&TPID2,(float)0000.0,(float)10000.0);
    InitVoltageControl(&ac_contorl);
@@ -866,12 +867,12 @@ void user_process_task(void *pvParameters)
            ac_contorl.Voltage = (uint16_t)getAIN(AC220);
            VoltageControlCheck(&ac_contorl);
            if (process_mode == DEV_FMCH )
-                   vFMCH_FSM(&start_timeout, &pid_counter, &HEPA_CONTROL_ON , &set_point_old);
+                   vFMCH_FSM(&start_timeout, &pid_counter,  &FMCH_Dev );
            else
                    vCDV_FSM(&start_timeout,&pid_counter,&flag );
 
            //Ecли есть ошибка включаем реле и зажигаем светодиод
-           if ( error_state  & (~SETTING_ERROR))
+           if ( error_state )
            {
                  HAL_ResetBit(CRACH_Port,  CRACH_Pin);
                  eSetDUT(OUT_3,TRUE);

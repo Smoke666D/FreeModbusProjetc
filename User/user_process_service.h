@@ -15,6 +15,7 @@
 #define SETTING_ERROR        0x02
 #define LOW_VOLTAGE_ERROR    0x04
 #define HIGH_VOLTAGE_ERROR   0x08
+#define PRE_FILTER_ERROR     0x10
 #define DIN_ERROR            0x10
 #define FIRST_CHANNEL_ERROR  0x20
 #define SECOND_CHANNEL_ERROR 0x40

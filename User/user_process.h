@@ -25,6 +25,18 @@ typedef enum
 } USER_PROCESS_FSM_t;
 
 
+
+typedef struct
+{
+  u8 Setting_old;
+  u8 HEPA_CONTROL_FLAG;
+  u32 Setting_Warning_Timeout;
+  u32 Filter_Warning_Timeout;
+  u32 PreFilter_Warning_Timeout;
+
+
+} FMCH_Device_t;
+
 typedef enum
 {
   BP_CONFIG = 0,

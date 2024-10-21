@@ -125,7 +125,6 @@ static u8 cur_edit_index = 0;
 static uint8_t start_edit_flag =0;
 static uint16_t edit_data_buffer_byte;
 static const uint32_t coof[]={1,10,100,1000};
-
 static HAL_DateConfig_T date;
 static u8 edit_ip_addres[4];
 
@@ -963,7 +962,7 @@ static const u16 MenuCDV_BPRegMap[54]=
 
 static u8 error_shif = 0;
 static u8 const *  ErrorString[]={"HEPA Фильтр засорен","Невозможно","Низкое напряжение","Высокое напряжение"};
-static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение","Неспр. дискрные вх.","Неспр канал 1","Неиспр канал 2"};
+static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение","Засорен предфильтр","Неспр канал 1","Неиспр канал 2"};
 static u8 const *  CH_STRING[] = { "ВР","1","2"};
 
 
@@ -1083,7 +1082,6 @@ void DinModeSettingView(u8 channel, char * str)
      }
 }
 
-
 void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 * res)
 {
     static float temp_float;
@@ -1105,8 +1103,6 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                   u8 sring_index = (command == CMD_EDIT_READ) ? edit_data_buffer_byte :getReg8( reg_id);
                   strcpy(str, BP_REG_TYPE_STRING[  sring_index ] );
               }
-
-
               break;
         case CDV_MODE_ID:
               strcpy(str,CDV_MODE_STRING[getStateDCV()]);
@@ -1717,7 +1713,7 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                        break;
                    case CMD_READ:
                        if ( SelectEditFlag )
-                           strcpy(str,"     Перегрузить?    ");
+                           strcpy(str,"    Перезагрузить?    ");
                        break;
                    case CMD_START_EDIT:
                         NVIC_SystemReset();

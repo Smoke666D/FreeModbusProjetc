@@ -102,9 +102,8 @@ static u8 * recive_byte;
 
 void HAL_RecieveByte_IT(HAL_USART_t usart , u8 * rb)
 {
-    recive_byte = rb;
+   recive_byte = rb;
    USART[usart]->CTLR1 |= USART_IT_RXNE_MASK;
-
 }
 
 
@@ -118,18 +117,16 @@ void HAL_UASRT_IRQ( HAL_USART_t usart)
 {
 
     if ( USART_GetITStatus(USART[usart],USART_IT_TC  ) == SET )
-        {
-            USART_GetITStatus(USART[usart],USART_IT_TC);
-
-            USART[usart]->CTLR1 &=  ~USART_IT_TC_MASK;
-            CallBackFunction[usart].tx();
-        }
-
-        if ( USART_GetITStatus(USART[usart],USART_IT_RXNE ) == SET )
-        {
-            *recive_byte = (uint16_t)(USART[usart]->DATAR & (uint16_t)0x01FF);
-            CallBackFunction[usart].rx();
-       }
+    {
+         USART_GetITStatus(USART[usart],USART_IT_TC);
+         USART[usart]->CTLR1 &=  ~USART_IT_TC_MASK;
+         CallBackFunction[usart].tx();
+   }
+    if ( USART_GetITStatus(USART[usart],USART_IT_RXNE ) == SET )
+    {
+         *recive_byte = (uint16_t)(USART[usart]->DATAR & (uint16_t)0x01FF);
+         CallBackFunction[usart].rx();
+    }
 }
 
 

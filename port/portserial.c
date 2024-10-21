@@ -144,7 +144,8 @@ void vMBPortSerialEnable(BOOL xRxEnable, BOOL xTxEnable)
     else
     {
         /* stop serial transmit */
-    	xEventGroupWaitBits( xSerialEventGroupHandle,  EVENT_SERIAL_TRANS_START,  pdTRUE, pdFALSE, 0 );
+        xEventGroupClearBits(xSerialEventGroupHandle,EVENT_SERIAL_TRANS_START);
+    	//xEventGroupWaitBits( xSerialEventGroupHandle,  EVENT_SERIAL_TRANS_START,  pdTRUE, pdFALSE, 0 );
         //rt_event_recv(&event_serial, EVENT_SERIAL_TRANS_START,
         //        RT_EVENT_FLAG_OR | RT_EVENT_FLAG_CLEAR, 0,
          //       &recved_event);
@@ -197,7 +198,6 @@ static void HAL_UART_TxCpltCallback()
 void StartUARTTask(void *argument)
 {
 	  EventBits_t uxBits;	  /* Attempt to create the event group. */
-
 	  while(1)
 	  {
 		  uxBits = xEventGroupWaitBits( xSerialEventGroupHandle,  EVENT_SERIAL_TRANS_START,  pdTRUE, pdFALSE, portMAX_DELAY );
