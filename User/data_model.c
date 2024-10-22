@@ -60,11 +60,12 @@ DATA_MODEL_INIT_t DataModel_Init()
                setReg16(IP_PORT,502);
                setReg16( FILTER_LOW, 150);
                setReg16( FILTER_HIGH, 300);
-               setReg16(SETTING_MIN , 150);
-               setReg16(SETTING_MID , 300);
-               setReg16(SETTING_MAX , 600);
-               setReg16(CH1_SETTING  , 700);
-               setReg16(CH2_SETTING  , 800);
+               setRegFloat(SETTING_MIN , 150);
+               setRegFloat(SETTING_MID , 300);
+               setRegFloat(SETTING_MAX , 600);
+               setRegFloat(CH1_SETTING  , 700);
+               setRegFloat(CH2_SETTING  , 800);
+               setRegFloat(OFFSET_CH2  ,  100);
                setReg16(MIN_SET, 10);
                setReg16(MAX_SET,11);
                if (WriteEEPROM(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 1000 ,2) == EEPROM_OK) printf("EEPROMwtiye\r\n");

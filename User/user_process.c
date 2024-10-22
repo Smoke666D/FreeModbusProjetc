@@ -53,7 +53,6 @@ void USER_SetControlState(u8 state)
 {
     mb_time_out = 0;
     setReg8(SYSTEM_START,state);
-
 }
 
 
@@ -214,7 +213,7 @@ float setTestDta(float input)
 
 
 
-void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter,   FMCH_Device_t * dev)
+void vFMCH_FSM( FMCH_Device_t * dev)
 {
     u8 c_type  =getReg8( CONTROL_TYPE );
     if (MB_TASK_GetMode()!=2)
@@ -278,13 +277,13 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter,   FMCH_Device_t * dev)
                        USER_AOUT_SET(DAC1,0);
                        USER_AOUT_SET(DAC2,0);
                        USER_AOUT_SET(DAC3,0);
-                       *start_timeout = 0;
+                       dev->start_timeout = 0;
                        temp_counter = 0;
                        error_state = 0;
                        break;
                    case USER_PEOCESS_WORK_TIME_OUT:
                        dev->HEPA_CONTROL_FLAG= 0;
-                       if ( (++*start_timeout)> ( getReg8(FAN_START_TIMEOUT)*100))
+                       if ( (++dev->start_timeout)> ( getReg8(FAN_START_TIMEOUT)*100))
                        {
                            task_fsm = USER_PEOCESS_ZERO_CALIB;
                            CalibrateZeroStart();
@@ -300,9 +299,9 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter,   FMCH_Device_t * dev)
                        }
                        break;
                    case USER_RROCCES_WORK:
-                       if (++*pid_counter >=10)
+                       if (++dev->pid_counter >=10)
                        {
-                           *pid_counter = 0;
+                           dev->pid_counter = 0;
                            Temp = getAIN(SENS1);
                            PID_Compute(&TPID,getAIN(SENS1));
                            float PID_Out = PIDOut/1000.0;
@@ -505,7 +504,6 @@ void ErrorSensorCheck()
             switch (getReg8( INPUT_SENSOR_MODE))
             {
                 case T2_10:
-
                     if (getAIN(sensor_name) < 2.0 ) error_state |= ANALOG_SENSOR_ERROR;
                     else error_state &= ~ANALOG_SENSOR_ERROR;
                     break;
@@ -649,16 +647,16 @@ void vDiscreteInputFSM( DISCRET_STATE_t state)
 
 }
 
-void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag)
+void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
 {
-    vCDV_SetpointCheck(&state, start_timeout);
+    vCDV_SetpointCheck(&state, &dev->start_timeout);
     ErrorSensorCheck();
     vCheckDoubleChannelAlarm(&error_state);
     switch (task_fsm)
     {
             case USER_PROCCES_IDLE:
                 error_state = 0;
-                *start_timeout = 0;
+                dev->start_timeout = 0;
                 InitCleanTimer();
                 task_fsm =USER_RROCCES_WORK;
                 break;
@@ -675,10 +673,10 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag)
                 else
                 {
 
-                    if (++*pid_counter >=10)
+                    if (++dev->pid_counter >=10)
                     {
                         UPDATE_COOFCAV();
-                        *pid_counter = 0;
+                        dev->pid_counter = 0;
                         switch ((INPUT_SENSOR_t)getReg8(SENSOR_TYPE_ID))
                         {
                             case DISCRETE_INPUT:
@@ -696,7 +694,7 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag)
                 }
                 break;
             case USER_PEOCESS_ZERO_CALIB:
-                if ((*start_timeout) >= ( getReg16(ZERO_POINT_TIMEOUT)*6000) )
+                if ((dev->start_timeout) >= ( getReg16(ZERO_POINT_TIMEOUT)*6000) )
                 {
                     printf("start \r\n");
                     if (*cal_flag == 0)
@@ -708,14 +706,14 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag)
                     {
                         if (CalibrationZeroWhait())
                         {
-                            *start_timeout = 0;
+                            dev->start_timeout = 0;
                             task_fsm = USER_RROCCES_WORK;
                         }
                     }
                 }
                 else
                 {
-                    (*start_timeout)++;
+                    (dev->start_timeout)++;
                     if (getReg8(CDV_BP_CH_COUNT) >1 )  USER_AOUT_SET(DAC1,0);
                     USER_AOUT_SET(DAC2,0);
                 }
@@ -753,26 +751,10 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag)
 
 
 
-typedef struct
-{
- uint16_t Voltage;
- uint8_t high_voltage_timeout;
- uint8_t low_voltage_timeout;
- uint8_t power_on_flag;
- uint8_t power_off_flag;
- uint8_t power_off_timeout;
-} AC_VOLTAGE_CONTROL_t;
 
 
-void InitVoltageControl( AC_VOLTAGE_CONTROL_t * ac_control )
-{
-    ac_control->high_voltage_timeout = 0;
-    ac_control->low_voltage_timeout = 0;
-    ac_control->power_on_flag = 0;
-    ac_control->power_off_flag = 0;
-    ac_control->power_off_timeout = 0;
 
-}
+
 
 void VoltageControlCheck( AC_VOLTAGE_CONTROL_t * ac_control)
 {
@@ -840,12 +822,9 @@ void VoltageControlCheck( AC_VOLTAGE_CONTROL_t * ac_control)
 
 void user_process_task(void *pvParameters)
 {
-
-   FMCH_Device_t  FMCH_Dev= {2,0,0,0,0};
-   static AC_VOLTAGE_CONTROL_t ac_contorl;
+   FMCH_Device_t  Dev= {2,0,0,0,0,.pid_counter = 0,.start_timeout = 0};
+   static AC_VOLTAGE_CONTROL_t ac_contorl = {0,0,0,0,0,0 };
    static u8 flag = 0;
-   u32 pid_counter = 0;
-   u32 start_timeout = 0;
    u8 process_mode = getReg8(DEVICE_TYPE);
    error_state = 0;
    task_fsm = USER_PROCCES_IDLE;
@@ -857,7 +836,7 @@ void user_process_task(void *pvParameters)
        PID_SetOutputLimits(&TPID,(float)0.0,(float)10000.0);
    PID(&TPID2, &PIDOut2, &SET_POINT1, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
    PID_SetOutputLimits(&TPID2,(float)0000.0,(float)10000.0);
-   InitVoltageControl(&ac_contorl);
+
    while(1)
    {
        vTaskDelay(10);
@@ -866,10 +845,9 @@ void user_process_task(void *pvParameters)
            ac_contorl.Voltage = (uint16_t)getAIN(AC220);
            VoltageControlCheck(&ac_contorl);
            if (process_mode == DEV_FMCH )
-                   vFMCH_FSM(&start_timeout, &pid_counter,  &FMCH_Dev );
+                   vFMCH_FSM(  &Dev );
            else
-                   vCDV_FSM(&start_timeout,&pid_counter,&flag );
-
+                   vCDV_FSM(&flag, &Dev  );
            //Ecли есть ошибка включаем реле и зажигаем светодиод
            if ( error_state )
            {

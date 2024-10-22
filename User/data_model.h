@@ -15,7 +15,7 @@
 
 #define SW_V                 2
 #define SW_V2                1
-#define SW_V3                21
+#define SW_V3                22
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -75,16 +75,16 @@
 #define SENS_SETTING          ( SENS_OFS  + sizeof(uint32_t) )
 #define INPUT_SENSOR_MODE     ( SENS_SETTING  + sizeof(uint32_t) )
 #define F_CHANNEL             ( INPUT_SENSOR_MODE  + sizeof(uint8_t) )
-#define BP_REG_TYPE           ( F_CHANNEL       + sizeof(uint32_t) )
-#define BP_SIZE               ( BP_REG_TYPE      + sizeof(uint8_t) )
-#define SETTING_MAX           ( BP_SIZE      + sizeof(uint8_t) )
-#define SETTING_MIN           ( SETTING_MAX       + sizeof(uint16_t) )
-#define SETTING_MID           ( SETTING_MIN       + sizeof(uint16_t) )
-#define INPUT_SENSOR_TYPE     ( SETTING_MID       + sizeof(uint16_t) )
+#define BP_REG_TYPE           ( F_CHANNEL         + sizeof(uint32_t) )
+#define BP_SIZE               ( BP_REG_TYPE       + sizeof(uint8_t) )
+#define SETTING_MAX           ( BP_SIZE           + sizeof(uint8_t) )
+#define SETTING_MIN           ( SETTING_MAX       + sizeof(uint32_t) )
+#define SETTING_MID           ( SETTING_MIN       + sizeof(uint32_t) )
+#define INPUT_SENSOR_TYPE     ( SETTING_MID       + sizeof(uint32_t) )
 #define OFFSET_CH2            ( INPUT_SENSOR_TYPE       + sizeof(uint8_t) )
-#define CH1_SETTING           ( OFFSET_CH2         + sizeof(uint16_t) )
-#define CH2_SETTING           ( CH1_SETTING         + sizeof(uint16_t) )
-#define FILTER_LOW            ( CH2_SETTING         + sizeof(uint16_t) )
+#define CH1_SETTING           ( OFFSET_CH2         + sizeof(uint32_t) )
+#define CH2_SETTING           ( CH1_SETTING         + sizeof(uint32_t) )
+#define FILTER_LOW            ( CH2_SETTING         + sizeof(uint32_t) )
 #define FILTER_HIGH           ( FILTER_LOW + sizeof(uint16_t) )
 #define MOTO_HOURS            ( FILTER_HIGH + sizeof(uint16_t) )
 #define RECORD_COUNT          ( MOTO_HOURS  + sizeof(uint32_t)  )

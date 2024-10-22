@@ -53,7 +53,7 @@ static u32 double_channel2_counter = 0;
 void vCheckDoubleChannelAlarm( u8 *error_state )
 {
 
-    if (getReg8(CDV_BP_CH_COUNT) == 2)    //§¦§ã§Ý§Ú §Ó§í§Ò§â§Ñ§ß §à§Õ§Ú§ß §Ü§Ñ§ß§Ñ§Ý, §ä§à §ã§Ò§â§Ñ§ã§í§Ó§Ñ§Ö§Þ §æ§Ý§Ñ§Ô§Ú §à§ê§Ú§Ò§à§Ü, §Ñ§Ý§Ô§à§â§Ú§ä§Þ §ß§Ö §â§Ñ§Ò§à§ä§Ñ§ä§Ö
+    if (getReg8(CDV_BP_CH_COUNT) != 2)    //§¦§ã§Ý§Ú §Ó§í§Ò§â§Ñ§ß §à§Õ§Ú§ß §Ü§Ñ§ß§Ñ§Ý, §ä§à §ã§Ò§â§Ñ§ã§í§Ó§Ñ§Ö§Þ §æ§Ý§Ñ§Ô§Ú §à§ê§Ú§Ò§à§Ü, §Ñ§Ý§Ô§à§â§Ú§ä§Þ §ß§Ö §â§Ñ§Ò§à§ä§Ñ§ä§Ö
     {
         (*error_state) &=  ~( FIRST_CHANNEL_ERROR | SECOND_CHANNEL_ERROR );
     }

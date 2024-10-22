@@ -949,14 +949,6 @@ static const u16 MenuCDV_BPRegMap[54]=
                          };
 
 
-
-/*
-#define FILTER_ERROR  0x01
-#define SETTING_ERROR 0x02
-#define LOW_VOLTAGE_ERROR 0x04
-#define HIGH_VOLTAGE_ERROR 0x08
-*/
-
 static u8 error_shif = 0;
 static u8 const *  ErrorString[]={"HEPA Фильтр засорен","Невозможно","Низкое напряжение","Высокое напряжение","Засорен предфильтр"};
 static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение","Засорен предфильтр","Неспр канал 1","Неиспр канал 2"};
@@ -1271,7 +1263,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 switch (command)
                 {
                      case CMD_START_EDIT:
-                           edit_data_buffer_float= DataModelGetCDVSettings( getReg16(reg_id));
+                           edit_data_buffer_float= DataModelGetCDVSettings( getRegFloat(reg_id));
                            start_edit_flag = 1;
                            cur_edit_index = 2;
                            break;
@@ -1289,11 +1281,11 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                                  break;
                          }
 
-                        saveReg16( reg_id, (u16)temp_float);
+                        saveRegFloat( reg_id, temp_float);
                         start_edit_flag = 0;
                         break;
                  case CMD_READ:
-                        temp_float  = DataModelGetCDVSettings(getReg16(reg_id));
+                        temp_float  = DataModelGetCDVSettings(getRegFloat(reg_id));
                         sprintf(str,"%06.1f",temp_float);
                         break;
                  case CMD_EDIT_READ:

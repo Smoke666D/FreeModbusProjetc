@@ -13,6 +13,14 @@
 
 typedef enum
 {
+  L_UNIT = 0,
+  V_UNIT = 1,
+  P_UNIT = 2,
+} MES_UNIT_t;
+
+
+typedef enum
+{
     USER_PROCCES_IDLE,
     USER_PROCCES_STOP,
     USER_RROCCES_WORK,
@@ -24,6 +32,16 @@ typedef enum
     USER_PROCESS_DOUBLE_CHANNEL_ERROR,
 } USER_PROCESS_FSM_t;
 
+typedef struct
+{
+ uint16_t Voltage;
+ uint8_t high_voltage_timeout;
+ uint8_t low_voltage_timeout;
+ uint8_t power_on_flag;
+ uint8_t power_off_flag;
+ uint8_t power_off_timeout;
+} AC_VOLTAGE_CONTROL_t;
+
 
 
 typedef struct
@@ -33,7 +51,8 @@ typedef struct
   u32 Setting_Warning_Timeout;
   u32 Filter_Warning_Timeout;
   u32 PreFilter_Warning_Timeout;
-
+  u32 pid_counter;
+  u32 start_timeout;
 
 } FMCH_Device_t;
 

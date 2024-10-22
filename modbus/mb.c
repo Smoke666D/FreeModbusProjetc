@@ -213,14 +213,14 @@ eMBTCPInit( USHORT ucTCPPort )
     }
     else
     {
-        pvMBFrameStartCur = eMBTCPStart;
-        pvMBFrameStopCur = eMBTCPStop;
+        pvMBFrameStartCur   = eMBTCPStart;
+        pvMBFrameStopCur    = eMBTCPStop;
         peMBFrameReceiveCur = eMBTCPReceive;
-        peMBFrameSendCur = eMBTCPSend;
-        pvMBFrameCloseCur = MB_PORT_HAS_CLOSE ? vMBTCPPortClose : NULL;
-        ucMBAddress = MB_TCP_PSEUDO_ADDRESS;
-        eMBCurrentMode = MB_TCP;
-        eMBState = STATE_DISABLED;
+        peMBFrameSendCur    = eMBTCPSend;
+        pvMBFrameCloseCur   = MB_PORT_HAS_CLOSE ? vMBTCPPortClose : NULL;
+        ucMBAddress         = MB_TCP_PSEUDO_ADDRESS;
+        eMBCurrentMode      = MB_TCP;
+        eMBState            = STATE_DISABLED;
     }
     return eStatus;
 }
