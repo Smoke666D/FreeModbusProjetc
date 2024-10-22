@@ -236,6 +236,7 @@ void vDefaultTask( void  * argument )
                 main_task_fsm  = STATE_RUN;
                 break;
             case STATE_RUN:
+                HAL_WDTReset();
                 vMenuTask();
                 if (++buffer_draw_counter>2)
                 {
@@ -282,9 +283,8 @@ void WCHNET_task(void *pvParameters)
             {
                 WCHNET_HandleGlobalInt();
             }
-
         }
-        HAL_WDTReset();
+      //  HAL_WDTReset();
         vTaskDelay(1);
     }
 }

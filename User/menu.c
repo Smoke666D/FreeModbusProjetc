@@ -175,13 +175,11 @@ u8 GetID( u8 id)
             res++;
             if( edit_flag == 0)
             {
-
                  edit_flag    = 1;
                  edit_data[i] = 2;
             }
             else
             {
-
                 edit_data[i] = 1;
             }
         }
@@ -200,7 +198,6 @@ void ViewScreenCallback( u8 key_code)
     switch ( key_code )
     {
         case EXIT_KEY:
-
            pscreen =  pMenu[pCurrMenu].pBack ;
            break;
         case ENTER_KEY:
@@ -483,7 +480,7 @@ void MenuSetDeviceMenu()
 }
 
 
-void vByteDataEdit(u8 size, u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , uint16_t max_data, uint16_t min_data )
+void vByteDataEdit(u8 size, u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , uint16_t max_data, uint16_t min_data, u8 cerculr )
 {
     switch (command)
     {
@@ -509,13 +506,13 @@ void vByteDataEdit(u8 size, u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_ind
              if ((edit_data_buffer_byte + coof[cur_edit_index]) <=  max_data )
                  edit_data_buffer_byte=edit_data_buffer_byte+coof[cur_edit_index];
              else
-                 edit_data_buffer_byte = max_data;
+                 edit_data_buffer_byte = (cerculr) ? min_data : max_data;
              break;
        case CMD_DEC:
              if (  (edit_data_buffer_byte - min_data) >=  coof[cur_edit_index] )
                  edit_data_buffer_byte=edit_data_buffer_byte-coof[cur_edit_index];
              else
-                  edit_data_buffer_byte = min_data;
+                 edit_data_buffer_byte = (cerculr) ? max_data : min_data;
              break;
        default:
              start_edit_flag = 0;
@@ -953,15 +950,15 @@ static const u16 MenuCDV_BPRegMap[54]=
 
 
 
-
+/*
 #define FILTER_ERROR  0x01
 #define SETTING_ERROR 0x02
 #define LOW_VOLTAGE_ERROR 0x04
 #define HIGH_VOLTAGE_ERROR 0x08
-
+*/
 
 static u8 error_shif = 0;
-static u8 const *  ErrorString[]={"HEPA Фильтр засорен","Невозможно","Низкое напряжение","Высокое напряжение"};
+static u8 const *  ErrorString[]={"HEPA Фильтр засорен","Невозможно","Низкое напряжение","Высокое напряжение","Засорен предфильтр"};
 static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение","Засорен предфильтр","Неспр канал 1","Неиспр канал 2"};
 static u8 const *  CH_STRING[] = { "ВР","1","2"};
 
@@ -1092,12 +1089,12 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             if ( command <= CMD_EDIT_READ )
                 sprintf(str,"%03i",( command == CMD_READ ) ? getReg16(reg_id) : edit_data_buffer_byte );
             else
-                vByteDataEdit(1,reg_id,command,2,999,0);
+                vByteDataEdit(1,reg_id,command,2,999,0,0);
             break;
          case BP_REG_TYPE_ID:
              *len = 0;
               if (command > CMD_EDIT_READ)
-                  vByteDataEdit(0,reg_id,command,0,2, 0);
+                  vByteDataEdit(0,reg_id,command,0,2, 0,1);
               else
               {
                   u8 sring_index = (command == CMD_EDIT_READ) ? edit_data_buffer_byte :getReg8( reg_id);
@@ -1174,7 +1171,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                        else vSettingCoountCondfig(0);
                        SetFirtsEditString();
                    }
-                   vByteDataEdit(0,reg_id,command,0,3, 0);
+                   vByteDataEdit(0,reg_id,command,0,3, 0,1);
                 }
                 else
                     strcpy(str, IniputSignalTypeStrig[ ( command == CMD_READ )? getReg8( reg_id) : edit_data_buffer_byte ] );
@@ -1187,7 +1184,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 if ( command > CMD_EDIT_READ )
                 {
                     if ( command == CMD_SAVE_EDIT ) vSetAfterZone( (edit_data_buffer_byte == 0) ? 1 : 0);
-                    vByteDataEdit(0,reg_id,command,0,2, 0);
+                    vByteDataEdit(0,reg_id,command,0,2, 0,1);
                 }
                 else
                     strcpy(str, PriorSentStrig[ ( command == CMD_READ )? getReg8( reg_id) : edit_data_buffer_byte  ] );
@@ -1198,10 +1195,10 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 break;
         case INPUT_SENSOR_TYPE_ID:
                 *len = 0;
-                if (getReg8(INPUT_SENSOR_TYPE) == 2)
+                if (getReg8(INPUT_SENSOR_TYPE) == 3)
                 {
                     if ( command > CMD_EDIT_READ )
-                        vByteDataEdit(0,reg_id,command,0,T4_20, T0_10 );
+                        vByteDataEdit(0,reg_id,command,0,T4_20, T0_10,1 );
                     else
                         strcpy(str, SensorTypeStrig[ ( command == CMD_READ )? getReg8( reg_id) : edit_data_buffer_byte  ] );
                  }
@@ -1217,14 +1214,14 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
               break;
         case ZERO_POINT_TIMEOUT_ID:
             if ( command > CMD_EDIT_READ )
-                vByteDataEdit(1,reg_id,command,2,999,0);
+                vByteDataEdit(1,reg_id,command,2,999,0,0);
             else
                 sprintf(str,"%03i",( command == CMD_READ )? getReg16( reg_id) : edit_data_buffer_byte );
 
             break;
         case CLEAN_TIMER_ID:
             if ( command > CMD_EDIT_READ )
-                vByteDataEdit(0,reg_id,command,2,99,0);
+                vByteDataEdit(0,reg_id,command,2,99,0,0);
             else
                 sprintf(str,"%02i", ( command == CMD_READ ) ? getReg8(reg_id) : edit_data_buffer_byte );
 
@@ -1232,7 +1229,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
         case AFTER_ZONE_SETTING_ID:
             *len = 0;
             if ( command > CMD_EDIT_READ )
-                vByteDataEdit(0,reg_id,command,0,T_AUTO , TCH_TROOM );
+                vByteDataEdit(0,reg_id,command,0,T_AUTO , TCH_TROOM ,1);
             else
                 strcpy(str, AfterZoneStrig[( command == CMD_READ ) ? getReg8(reg_id) : edit_data_buffer_byte ] );
             break;
@@ -1245,7 +1242,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                     SetPID2Screen((CHANNEL_COUNT_t)edit_data_buffer_byte,getReg8(INPUT_SENSOR_TYPE));
                     SetBPSetting((edit_data_buffer_byte == 0) ? 1 : 0);
                 }
-                vByteDataEdit(0,reg_id,command,0,2,0);
+                vByteDataEdit(0,reg_id,command,0,2,0,0);
             }
             else
                 strcpy(str,CH_STRING[( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte] );
@@ -1254,14 +1251,14 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             *len = 0;
             if ( command > CMD_EDIT_READ )
             {
-                if (getReg8(CDV_BP_CH_COUNT)!=0)  vByteDataEdit(0,reg_id,command,0,PA_U , M3_CH_U );
+                if (getReg8(CDV_BP_CH_COUNT)!=0)  vByteDataEdit(0,reg_id,command,0,PA_U , M3_CH_U,1 );
             }
             else
                 strcpy(str, MUnitStrig[ ( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte ] );
             break;
         case SETTING_TIMER_ID:
             if ( command > CMD_EDIT_READ )
-                vByteDataEdit(0,reg_id,command,0,250,0);
+                vByteDataEdit(0,reg_id,command,0,250,0,0);
             else
                 sprintf(str,"%03i",( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte);
             break;
@@ -1328,9 +1325,9 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             case SENSOR_OFFSET_ID:
             case SENSOR_SETTING_ID:
                       if ( command > CMD_EDIT_READ )
-                          vFloatDataEdit(reg_id, command,5,1,9999.9,0.0);
+                          vFloatDataEdit(reg_id, command,3,1,9999.9,0.0);
                       else
-                          sprintf(str,"%5.1f",( command == CMD_READ ) ? getRegFloat(reg_id) : edit_data_buffer_float );
+                          sprintf(str,"%05.1f",( command == CMD_READ ) ? getRegFloat(reg_id) : edit_data_buffer_float );
                          break;
                 case ZERO_CAL_COMMAND:
                     switch (command)
@@ -1390,7 +1387,7 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                {
                    switch (error_flag)
                    {
-                       case 0:
+                       case 1:
                            strcpy(str,"более 90%");
                            break;
                        case 2:
@@ -1399,8 +1396,11 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                        case 3:
                            sprintf(str,"сети > %i В",getReg8(HIGH_VOLTAGE_ON));
                            break;
-                       default:
+                       case 0:
                            strcpy(str,"поддерживать уставку");
+                           break;
+                       default:
+
                            break;
                    }
                }
@@ -1420,14 +1420,14 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
            case FILTER_HIGH_ID:
            case FILTER_LOW_ID:
                 if ( command > CMD_EDIT_READ )
-                    vByteDataEdit(1,reg_id,command,2,999,0);
+                    vByteDataEdit(1,reg_id,command,2,999,0,0);
                 else
                     sprintf(str,"%03i",( command == CMD_READ ) ? getReg16(reg_id) : edit_data_buffer_byte);
                 break;
            case SETTING1_ID:
            case SETTING2_ID:
                 if (command > CMD_EDIT_READ)
-                    vByteDataEdit(1,reg_id,command,3,(u16)DataModel_GetPressureToL(2500),0);
+                    vByteDataEdit(1,reg_id,command,3,(u16)DataModel_GetPressureToL(2500),0,0);
                 else
                     sprintf(str,"%04i",( command == CMD_READ) ? getReg16(reg_id) : edit_data_buffer_byte  );
                 break;
@@ -1440,7 +1440,7 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                  break;
            case FAN_START_TIMEOUT_ID:
                 if ( command > CMD_EDIT_READ)
-                    vByteDataEdit(0,reg_id,command,2,99,1);
+                    vByteDataEdit(0,reg_id,command,2,99,1,0);
                 else
                     sprintf(str,"%02i", ( command == CMD_READ ) ? getReg8(reg_id) : edit_data_buffer_byte  );
                 break;
@@ -1517,7 +1517,7 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
             case TEST_MODE_ID:
                 *len = 0;
                  if ( command > CMD_EDIT_READ )
-                                    vByteDataEdit(0,reg_id,command,0,1 , 0);
+                                    vByteDataEdit(0,reg_id,command,0,1 , 0,1);
                 else
                                     strcpy(str, TestModeString[ (command == CMD_READ)?  getReg8( reg_id) : edit_data_buffer_byte ] );
 
@@ -1525,14 +1525,14 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
             case DEVICE_TYPE_ID:
                 *len = 0;
                 if ( command > CMD_EDIT_READ )
-                    vByteDataEdit(0,reg_id,command,0,1 , 0);
+                    vByteDataEdit(0,reg_id,command,0,1 , 0,1);
                 else
                     strcpy(str, DevString[ (command == CMD_READ)?  getReg8( reg_id) : edit_data_buffer_byte ] );
                 break;
             case CONTROL_MODE_ID:
                 *len = 0;
                  if ( command > CMD_EDIT_READ )
-                        vByteDataEdit(0,reg_id,command,0,MKV_MB_TCP, MKV_MB_DIN );
+                        vByteDataEdit(0,reg_id,command,0,MKV_MB_TCP, MKV_MB_DIN ,1);
                  else
                      strcpy(str, ControlModeStrig[ ( command == CMD_READ ) ? getReg8( reg_id) : edit_data_buffer_byte ]);
                  break;
@@ -1540,7 +1540,7 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                 *len = 0;
                 if ( command > CMD_EDIT_READ )
                 {
-                       vByteDataEdit(0,reg_id,command,0,MKV_MB_TCP, MKV_MB_RTU);
+                       vByteDataEdit(0,reg_id,command,0,MKV_MB_TCP, MKV_MB_RTU,1);
                 }
                 else
                     strcpy(str, ControlModeStrig[ ( command == CMD_READ ) ? getReg8( reg_id) : edit_data_buffer_byte ]);
@@ -1559,7 +1559,7 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                             sprintf(str,"%02i",edit_data_buffer_byte );
                             break;
                      default:
-                             vByteDataEdit(0,reg_id,command,1,99,1);
+                             vByteDataEdit(0,reg_id,command,1,99,1,0);
                              break;
                     }
                     break;
@@ -1635,7 +1635,7 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
             break;
         case IP_PORT_ID:
             if ( command > CMD_EDIT_READ )
-                vByteDataEdit(1,reg_id,command,2,999,0);
+                vByteDataEdit(1,reg_id,command,2,999,0,0);
             else
                 sprintf(str,"%03i", (command == CMD_READ) ? getReg16(reg_id) : edit_data_buffer_byte );
 
@@ -1678,7 +1678,7 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                         min = getReg8(MenuRegMap[VOLTAGE_MAX_OFF_ID])+1;
                         max =255;
                     }
-                    vByteDataEdit(0,reg_id,command,2,max,min);
+                    vByteDataEdit(0,reg_id,command,2,max,min,0);
             }
             else
                   sprintf(str,"%03i", (command == CMD_READ )? getReg8(reg_id) :edit_data_buffer_byte );
@@ -1729,7 +1729,7 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
          case SENS_COUNT_ID:
              *len = 0;
              if ( command > CMD_EDIT_READ)
-                 vByteDataEdit(0,reg_id,command,0,6,0);
+                 vByteDataEdit(0,reg_id,command,0,6,0,1);
              else
                  strcpy(str,SENSOR_COUNT_STRING[ (command == CMD_READ) ? getReg8(reg_id):edit_data_buffer_byte ]);
              break;

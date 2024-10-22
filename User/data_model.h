@@ -15,7 +15,7 @@
 
 #define SW_V                 2
 #define SW_V2                1
-#define SW_V3                17
+#define SW_V3                21
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -183,13 +183,7 @@ typedef enum
 #define DATA_MODEL_REGISTERS   EEPROM_REGISTER_COUNT + RAM_REGISTER_COUNT
 #define TOTAL_REGISTER_COUNT   DATA_MODEL_REGISTERS
 
-typedef enum
-{
-  FILTER_ERROR = 0,
-  LOW_VOLTAGE_ERROR = 1,
-  HIGH_VOLTAGE_ERROR = 2,
-  SETTING_ERROR   =3
-} FMCH_ERROR_t;
+
 
 float DataModelGetCDVSettings( u16 pressure);
 u16 DataModel_SetLToPressere(float L);

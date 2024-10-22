@@ -778,8 +778,6 @@ void I2C_task(void *pvParameters)
                     HAL_I2C_STOP(I2C_2);
                     fsm = I2C_GET_BUSY;
                 }
-
-
                 if (SENS2_FSM !=SENSOR_IDLE)
                 {
                     //i2c1_error_counter++;
@@ -797,11 +795,9 @@ void I2C_task(void *pvParameters)
                 {
                     SENS1_FSM = SENSOR_TIME_OUT;
                 }
-
                 if (SENS2_FSM ==SENSOR_START_CONVERSION)
                 {
                     SENS2_FSM = SENSOR_TIME_OUT;
-
                 }
             }
             vSensFSM(0,&SENS1_FSM,&fsm,  &sens_press );

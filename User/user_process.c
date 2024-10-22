@@ -252,7 +252,7 @@ void vFMCH_FSM( u32 * start_timeout, u32 * pid_counter,   FMCH_Device_t * dev)
            HAL_SetBit(CRACH_Port,  CRACH_Pin);
            eSetDUT(OUT_3,FALSE);
       }
-      if ((task_fsm != USER_PROCESS_ALARM) && (task_fsm != USER_PROCCES_IDLE) && ucDinGet(INPUT_3))
+      if ((task_fsm != USER_PROCESS_ALARM) && (task_fsm != USER_PROCCES_IDLE) && ucDinGet(INPUT_4))
       {
           if ((error_state &  PRE_FILTER_ERROR) == 0)
           {
@@ -349,8 +349,6 @@ void SystemCalibraionStop()
 
 
 static u8 din_mask = 0;
-
-
 
 
 
@@ -498,15 +496,16 @@ AIN_NAME_t const SENSOR_NAME[]={DCAIN1,DCAIN2,DCAIN3};
 void ErrorSensorCheck()
 {
     AIN_NAME_t sensor_name;
-    switch ((INPUT_SENSOR_t)getReg8(SENSOR_TYPE_ID))
+
+    switch ((INPUT_SENSOR_t)getReg8(INPUT_SENSOR_TYPE))
     {
         case ANALOG_SENSOR:
         case ROOM_CONTROLLER:
-
             sensor_name = SENSOR_NAME[getReg8(PRIOR_SENSOR)];
             switch (getReg8( INPUT_SENSOR_MODE))
             {
                 case T2_10:
+
                     if (getAIN(sensor_name) < 2.0 ) error_state |= ANALOG_SENSOR_ERROR;
                     else error_state &= ~ANALOG_SENSOR_ERROR;
                     break;
@@ -525,6 +524,7 @@ void ErrorSensorCheck()
             break;
 
     }
+
 
 
 
@@ -721,7 +721,6 @@ void vCDV_FSM( u32 * start_timeout, u32 * pid_counter, u8 * cal_flag)
                 }
                 break;
             case USER_PROCESS_ALARM:
-
                 if (error_state & (HIGH_VOLTAGE_ERROR | LOW_VOLTAGE_ERROR | DIN_ERROR | ANALOG_SENSOR_ERROR) == 0) task_fsm = USER_PROCCES_IDLE;
 
                 if (error_state & ( DIN_ERROR  | ANALOG_SENSOR_ERROR))

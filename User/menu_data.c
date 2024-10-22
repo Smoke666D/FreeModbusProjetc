@@ -265,8 +265,8 @@ static xScreenObjet const CDVSettingsAnalogScreen2[]=
 {
         {0,10,LINE1,0,READ_DATA,"Настройки     ",  SETTINGANALOG2_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"Диапазон датчика",          0},
-        {0,2,37,50,WRITE_DATA,"от", SENSOR_MIN_ID},
-        {0,90,37,0,WRITE_DATA,"до" , SENSOR_MAX_ID},
+        {0,2,37,70,WRITE_DATA,"от", SENSOR_MIN_ID},
+        {0,70,37,0,WRITE_DATA,"до" , SENSOR_MAX_ID},
         {0,2,50,0,WRITE_DATA,"Тип",INPUT_SENSOR_TYPE_ID},
         {1,2,62,0,WRITE_DATA,"Смещение",SENSOR_OFFSET_ID},
 

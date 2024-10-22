@@ -132,10 +132,10 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 //§²§Ö§Ô§Ú§ã§ä§â§í CDV
 #define CDV_CH_COUNT_MB         200
 #define CDV_KOOF_K_MP           201
-#define CDV_KOOF_I_MB           203
-#define CDV_KOOF_P_MB           205
-#define CDV_KOOF_I1_MB          207
-#define CDV_KOOF_P1_MB          209
+#define CDV_KOOF_I_MB           205
+#define CDV_KOOF_P_MB           203
+#define CDV_KOOF_I1_MB          209
+#define CDV_KOOF_P1_MB          207
 #define CDV_SETTING_MIN_MB      211
 #define CDV_SETTING_MID_MB      213
 #define CDV_SETTING_MAX_MB      215
@@ -537,7 +537,6 @@ void vSetRegData( u16 adress)
                        }
                        break;
                   case DEV_CAV_VAV_BP:
-
                       reg_addr = CDV_REGS_MAP[adress- 200];
                       switch (adress)
                       {
@@ -583,18 +582,12 @@ void vSetRegData( u16 adress)
 
                                                 SaveReg8(reg_addr,byte_data);
                                                 break;
-
-
                             case CDV_ZERO_POINT_TIMEOUT:
                                          saveReg16(reg_addr, usRegHoldingBuf[adress]);
                                          break;
-
-                                                     }
+                      }
                       break;
-
-
                   default:
-
                       break;
        }
     }

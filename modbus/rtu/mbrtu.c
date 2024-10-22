@@ -307,8 +307,9 @@ xMBRTUTransmitFSM( void )
                 xNeedPoll = xMBPortEventPost( EV_FRAME_SENT );
                 /* Disable transmitter. This prevents another transmit buffer
                  * empty interrupt. */
-                vMBPortSerialEnable( TRUE, FALSE );
                 eSndState = STATE_TX_IDLE;
+                vMBPortSerialEnable( TRUE, FALSE );
+
             }
             break;
     }
@@ -342,9 +343,9 @@ xMBRTUTimerT35Expired( void )
         assert( ( eRcvState == STATE_RX_INIT ) ||
                 ( eRcvState == STATE_RX_RCV ) || ( eRcvState == STATE_RX_ERROR ) );
     }
-
-    vMBPortTimersDisable(  );
     eRcvState = STATE_RX_IDLE;
+    vMBPortTimersDisable(  );
+
 
     return xNeedPoll;
 }
