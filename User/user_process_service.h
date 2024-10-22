@@ -10,6 +10,7 @@
 
 #include "system_init.h"
 #include "hw_lib_din.h"
+#include "system_types.h"
 
 #define FILTER_ERROR         0x01
 #define SETTING_ERROR        0x02
@@ -21,6 +22,7 @@
 #define SECOND_CHANNEL_ERROR 0x40
 #define ANALOG_SENSOR_ERROR  0x80
 
+void USER_FilterState( FMCH_Device_t * dev);
 void vCheckDoubleChannelAlarm( u8 *error_state );
 void InitCleanTimer();
 void CleanTimerFuncton(  DISCRET_STATE_t * state);

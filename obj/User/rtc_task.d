@@ -69,7 +69,7 @@ User/rtc_task.o: ../User/rtc_task.c ../User/rtc_task.h ../User/main.h \
  ../User/adc.h ../User/led.h ../User/din_dout_task.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_gpio.h \
- ../User/mb_task.h ../User/user_process.h ../User/menu.h \
+ ../User/mb_task.h ../User/menu.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_spi.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/EEPROM_25C.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_dma.h \
@@ -226,8 +226,6 @@ C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h:
 C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_gpio.h:
 
 ../User/mb_task.h:
-
-../User/user_process.h:
 
 ../User/menu.h:
 

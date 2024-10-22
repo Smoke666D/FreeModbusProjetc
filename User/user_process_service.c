@@ -7,6 +7,47 @@
 
 
 #include "user_process_service.h"
+#include "system_types.h"
+
+
+
+
+
+
+
+
+void USER_FilterState( FMCH_Device_t * dev)
+{
+    if (dev->HEPA_CONTROL_FLAG)
+    {
+         if (dev->hepa_counter == 6000)
+         {
+                u16 sensor_data = getAIN(SENS2);
+                if (sensor_data  <= getReg16(FILTER_LOW))
+                    dev->FilterState = 0;
+                else
+                    if (sensor_data  >= getReg16(FILTER_HIGH))
+                        dev->FilterState = 100;
+                    else
+                    {
+                        u16 temp = sensor_data - getReg16(FILTER_LOW);
+                        temp = ((float)temp/(getReg16(FILTER_HIGH) - getReg16(FILTER_LOW)))*100;
+                        dev->FilterState = (u8)temp;
+                    }
+                if (getReg8(MODE) == 0)
+                {
+                    setReg8(RESURSE, dev->FilterState );
+                }
+         }
+         if (++dev->hepa_counter > 6000) dev->hepa_counter = 0;
+     }
+     else
+         dev->hepa_counter =0;
+}
+
+
+
+
 
 
 

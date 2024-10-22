@@ -5,7 +5,7 @@
  *      Author: i.dymov
  */
 #include "menu.h"
-#include "system_init.h"
+//#include "system_init.h"
 #include "hw_lib_keyboard.h"
 #include "menu_data.h"
 #include "u8g2.h"
@@ -13,6 +13,7 @@
 #include "hal_rtc.h"
 #include "data_model.h"
 #include "hw_lib_din.h"
+#include "system_types.h"
 
 
 static const unsigned char rcp0606536715761_bits[] = {
@@ -1325,7 +1326,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                     switch (command)
                     {
                         case CMD_READ:
-                            if ((USER_GetProccesState() == USER_RROCCES_WORK))
+                            if ((USER_GetProccesState() == USER_PROCCES_WORK))
                                   strcpy(str,"Откалибравать 0?");
                             else
                             {
@@ -1336,7 +1337,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                             break;
 
                         case CMD_START_EDIT:
-                            if ((USER_GetProccesState() == USER_RROCCES_WORK))
+                            if ((USER_GetProccesState() == USER_PROCCES_WORK))
                                 SystemCalibraionStart();
                             else
                                 SystemCalibraionStop();
@@ -1464,7 +1465,7 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                      sprintf(str,"%04i м^3/ч", USER_GetSetting());
                      break;
                case SENS_FILTER_ID:
-                   if (USER_GetProccesState() == USER_RROCCES_WORK)
+                   if (USER_GetProccesState() == USER_PROCCES_WORK)
 
                        sprintf(str,"%03i Па",(u16)getAIN(SENS2));
                    else

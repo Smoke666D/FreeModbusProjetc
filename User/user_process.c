@@ -14,11 +14,9 @@
 #include "data_model.h"
 #include "stdlib.h"
 #include "math.h"
+#include "system_types.h"
 
 #define FILTER_WARNINR_VALUE 90
-
-
-
 
 
 static  PID_TypeDef TPID;
@@ -26,13 +24,15 @@ static  PID_TypeDef TPID2;
 static u8 setting_change_flag =0;    //Флаг измения значения устаки, нужен для изменения отображения на индикаторе текущей уставки
 static TaskHandle_t processTaskHandle;
 static USER_PROCESS_FSM_t task_fsm;
-static u8 FilterState;
 static float setpoint;
 static long temp_counter;
 static long mb_time_out = 0;
 static float SET_POINT;
 static float SET_POINT1;
 static u8 error_state;
+static float Temp;
+static float PIDOut;
+static float PIDOut2;
 
 TaskHandle_t * getUserProcessTaskHandle()
 {
@@ -56,15 +56,11 @@ void USER_SetControlState(u8 state)
 }
 
 
-
 uint16_t USER_GetSetting()
 {
     return (u16)(setpoint);
 }
-uint16_t USER_GetFilterState()
-{
-    return ( FilterState);
-}
+
 
 USER_PROCESS_FSM_t USER_GetProccesState()
 {
@@ -79,17 +75,17 @@ u8 getProcessStateCode()
     {
         default:
             return (STOP_CODE);
-        case USER_PEOCESS_WORK_TIME_OUT:
-        case USER_PEOCESS_ZERO_CALIB:
+        case USER_PROCESS_WORK_TIME_OUT:
+        case USER_PROCESS_ZERO_CALIB:
            return (CALIBRATE_CODE);
-       case USER_RROCCES_WORK:
+       case USER_PROCCES_WORK:
            return (WORK_CODE);
      }
 }
 
 uint16_t USER_GetFact(u8 * state)
 {
- if (task_fsm == USER_RROCCES_WORK)
+ if ( task_fsm == USER_PROCCES_WORK )
  {
      *state = 1;
     return (u16)( sqrt((float)getAIN(SENS1))*getRegFloat(KOOFKPS)) ;
@@ -120,7 +116,7 @@ static void USER_SETTING_CHECK(u8 control_type, FMCH_Device_t * dev)
       start = (control_type ==   MKV_MB_DIN) ? ucDinGet(INPUT_1) : getReg8(SYSTEM_START) ;
       if ( start && (task_fsm == USER_PROCCES_IDLE))
       {
-          task_fsm = USER_PEOCESS_WORK_TIME_OUT;
+          task_fsm = USER_PROCESS_WORK_TIME_OUT;
       }
       if ( (start==0) && (task_fsm != USER_PROCCES_IDLE) && (task_fsm != USER_PROCESS_ALARM))
       {
@@ -136,38 +132,8 @@ static void USER_SETTING_CHECK(u8 control_type, FMCH_Device_t * dev)
       }
 }
 
-static u32 hepa_counter = 0;
 
 
-void USER_FilterState( u8 on_state)
-{
-    if (on_state)
-    {
-         if (hepa_counter == 6000)
-         {
-                u16 sensor_data = getAIN(SENS2);
-                if (sensor_data  <= getReg16(FILTER_LOW))
-                    FilterState = 0;
-                else
-                    if (sensor_data  >= getReg16(FILTER_HIGH))
-                        FilterState = 100;
-                    else
-                    {
-                        u16 temp = sensor_data - getReg16(FILTER_LOW);
-                        temp = ((float)temp/(getReg16(FILTER_HIGH) - getReg16(FILTER_LOW)))*100;
-                        FilterState = (u8)temp;
-                    }
-                if (getReg8(MODE) == 0)
-                {
-                    setReg8(RESURSE, FilterState );
-                }
-         }
-         hepa_counter++;
-         if (hepa_counter > 6000) hepa_counter = 0;
-     }
-     else
-        hepa_counter =0;
-}
 
 void UPDATE_COOF()
 {
@@ -187,29 +153,6 @@ float getDAC1_Out()
     return (DAC1_OUT);
 }
 
-u16 testdata[10]={700,680,670,660,650,670,685,500,550,625};
-static float Temp;
-static float PIDOut;
-static float PIDOut2;
-static u16 counterpid = 0;
-
-float setTestDta(float input)
-{
-  counterpid ++;
-  counterpid  =  counterpid %10;
-  float out = 625;
-  if (input ==0) return 10;
-  if (input == 5.5) out = 625.0;
-  else
-  if (input < 5.5)  out = 600;
-  else
-  if (input > 5.5 ) out =  670;
-//  printf("data %f %f\r\n",input,out);
-
-
-  return out;
-}
-
 
 
 
@@ -227,8 +170,8 @@ void vFMCH_FSM( FMCH_Device_t * dev)
         task_fsm = USER_PROCESS_ALARM;
     }
     // Если засоренность фильта больше значения устваки, то выставляем предупрежние и делаем запись в журнал
-     USER_FilterState(dev->HEPA_CONTROL_FLAG);
-     if  ((FilterState >=FILTER_WARNINR_VALUE) && ( dev->HEPA_CONTROL_FLAG))
+     USER_FilterState(dev);
+     if  ((dev->FilterState >=FILTER_WARNINR_VALUE) && ( dev->HEPA_CONTROL_FLAG))
      {
           if ((error_state & FILTER_ERROR) == 0)
           {
@@ -281,24 +224,24 @@ void vFMCH_FSM( FMCH_Device_t * dev)
                        temp_counter = 0;
                        error_state = 0;
                        break;
-                   case USER_PEOCESS_WORK_TIME_OUT:
+                   case USER_PROCESS_WORK_TIME_OUT:
                        dev->HEPA_CONTROL_FLAG= 0;
                        if ( (++dev->start_timeout)> ( getReg8(FAN_START_TIMEOUT)*100))
                        {
-                           task_fsm = USER_PEOCESS_ZERO_CALIB;
+                           task_fsm = USER_PROCESS_ZERO_CALIB;
                            CalibrateZeroStart();
                        }
                        break;
-                   case USER_PEOCESS_ZERO_CALIB:
+                   case USER_PROCESS_ZERO_CALIB:
                        if (CalibrationZeroWhait())
                        {
                            PIDOut = 0;
                            UPDATE_COOF();
-                           PID_Init(&TPID,0,setTestDta( PIDOut));
-                           task_fsm = USER_RROCCES_WORK;
+                           PID_Init(&TPID,0,0);
+                           task_fsm = USER_PROCCES_WORK;
                        }
                        break;
-                   case USER_RROCCES_WORK:
+                   case USER_PROCCES_WORK:
                        if (++dev->pid_counter >=10)
                        {
                            dev->pid_counter = 0;
@@ -339,11 +282,11 @@ void vFMCH_FSM( FMCH_Device_t * dev)
 
 void SystemCalibraionStart()
 {
-   task_fsm = USER_PEOCESS_ZERO_CALIB;
+   task_fsm = USER_PROCESS_ZERO_CALIB;
 }
 void SystemCalibraionStop()
 {
-   task_fsm = USER_RROCCES_WORK;
+   task_fsm = USER_PROCCES_WORK;
 }
 
 
@@ -658,9 +601,9 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 error_state = 0;
                 dev->start_timeout = 0;
                 InitCleanTimer();
-                task_fsm =USER_RROCCES_WORK;
+                task_fsm =USER_PROCCES_WORK;
                 break;
-            case USER_RROCCES_WORK:
+            case USER_PROCCES_WORK:
                 *cal_flag = 0;
                 if ((error_state & DIN_ERROR) || (error_state & ANALOG_SENSOR_ERROR))
                 {
@@ -693,7 +636,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                     }
                 }
                 break;
-            case USER_PEOCESS_ZERO_CALIB:
+            case USER_PROCESS_ZERO_CALIB:
                 if ((dev->start_timeout) >= ( getReg16(ZERO_POINT_TIMEOUT)*6000) )
                 {
                     printf("start \r\n");
@@ -707,7 +650,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                         if (CalibrationZeroWhait())
                         {
                             dev->start_timeout = 0;
-                            task_fsm = USER_RROCCES_WORK;
+                            task_fsm = USER_PROCCES_WORK;
                         }
                     }
                 }
@@ -822,13 +765,12 @@ void VoltageControlCheck( AC_VOLTAGE_CONTROL_t * ac_control)
 
 void user_process_task(void *pvParameters)
 {
-   FMCH_Device_t  Dev= {2,0,0,0,0,.pid_counter = 0,.start_timeout = 0};
+   FMCH_Device_t  Dev= {2,0,0,0,0,.pid_counter = 0,.start_timeout = 0, . hepa_counter = 0, .FilterState = 0};
    static AC_VOLTAGE_CONTROL_t ac_contorl = {0,0,0,0,0,0 };
    static u8 flag = 0;
    u8 process_mode = getReg8(DEVICE_TYPE);
    error_state = 0;
    task_fsm = USER_PROCCES_IDLE;
-   FilterState = 0;
    PID(&TPID,  &PIDOut, &SET_POINT, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
    if ( process_mode == DEV_FMCH )
        PID_SetOutputLimits(&TPID,(float)1000.0,(float)10000.0);

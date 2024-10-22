@@ -6,6 +6,7 @@
  */
 #include "system_init.h"
 #include "hal_wdt.h"
+#include "user_process.h"
 
 static void vDefaultTask( void  * argument );
 static void WCHNET_task(void *pvParameters);
@@ -250,8 +251,6 @@ void vDefaultTask( void  * argument )
                 break;
         }
   }
-
-
 }
 
 

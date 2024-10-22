@@ -8,6 +8,7 @@
 #include "EEPROM_25C.h"
 #include "stdlib.h"
 #include "math.h"
+#include "user_process.h"
 
 u8 DATA_MODEL_REGISTER[DATA_MODEL_REGISTERS];
 
@@ -105,7 +106,6 @@ void saveReg16( u16 reg_adress, u16 data)
             break;
     }
     setReg16(reg_adress,data);
-    printf("set_reg\r\n");
     WriteEEPROM(reg_adress, &DATA_MODEL_REGISTER[ reg_adress], 2, 10, 2);
 }
 

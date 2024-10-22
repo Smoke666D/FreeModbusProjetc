@@ -67,13 +67,13 @@ User/system_init.o: ../User/system_init.c ../User/system_init.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_gpio.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\User/main.h ../User/mb_task.h \
- ../User/user_process.h ../User/menu.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_spi.h \
+ ../User/menu.h C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_spi.h \
  ../User/rtc_task.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/EEPROM_25C.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_dma.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\User/system_init.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_wdt.h
+ C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_wdt.h \
+ ../User/user_process.h ../User/system_types.h
 
 ../User/system_init.h:
 
@@ -217,8 +217,6 @@ C:\Users\smoke\Documents\FreeModbusProjetc\User/main.h:
 
 ../User/mb_task.h:
 
-../User/user_process.h:
-
 ../User/menu.h:
 
 C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_spi.h:
@@ -232,3 +230,7 @@ C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_dma.h:
 C:\Users\smoke\Documents\FreeModbusProjetc\User/system_init.h:
 
 C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_wdt.h:
+
+../User/user_process.h:
+
+../User/system_types.h:

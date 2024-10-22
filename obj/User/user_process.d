@@ -1,5 +1,5 @@
 User/user_process.o: ../User/user_process.c ../User/user_process.h \
- ../User/system_init.h ../User/main.h \
+ ../User/main.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\NetLib/eth_driver.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\Debug/debug.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\Peripheral\inc/ch32v30x.h \
@@ -53,6 +53,8 @@ User/user_process.o: ../User/user_process.c ../User/user_process.h \
  ../User/ADC.H \
  C:\Users\smoke\Documents\FreeModbusProjetc\u8g2-master\csrc/u8g2.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\u8g2-master\csrc/u8x8.h \
+ ../User/system_types.h ../User/user_process_service.h \
+ ../User/system_init.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\include/queue.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\include/list.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\include/semphr.h \
@@ -72,7 +74,6 @@ User/user_process.o: ../User/user_process.c ../User/user_process.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/EEPROM_25C.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_dma.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\User/system_init.h \
- ../User/user_process_service.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_din.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\User/init.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/filters.h \
@@ -82,8 +83,6 @@ User/user_process.o: ../User/user_process.c ../User/user_process.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_timers.h
 
 ../User/user_process.h:
-
-../User/system_init.h:
 
 ../User/main.h:
 
@@ -193,6 +192,12 @@ C:\Users\smoke\Documents\FreeModbusProjetc\u8g2-master\csrc/u8g2.h:
 
 C:\Users\smoke\Documents\FreeModbusProjetc\u8g2-master\csrc/u8x8.h:
 
+../User/system_types.h:
+
+../User/user_process_service.h:
+
+../User/system_init.h:
+
 C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\include/queue.h:
 
 C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\include/list.h:
@@ -238,8 +243,6 @@ C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/EEPROM_25C.h:
 C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_dma.h:
 
 C:\Users\smoke\Documents\FreeModbusProjetc\User/system_init.h:
-
-../User/user_process_service.h:
 
 C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_din.h:
 

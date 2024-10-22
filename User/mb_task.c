@@ -19,7 +19,8 @@
 #include "hw_lib_adc.h"
 #include "hal_usart.h"
 #include "data_model.h"
-
+#include "user_process.h"
+#include "system_types.h"
 
 #if REG_COILS_NREGS%8 && REG_COILS_NREGS>8
 UCHAR    ucSCoilBuf[REG_COILS_NREGS/8+1];
@@ -548,7 +549,6 @@ void vSetRegData( u16 adress)
                                  SaveReg8(reg_addr, (uint8_t) byte_data);
                                  break;
                              case CDV_MODE_CONTROL:
-
                                                  VerifyAndSetReg8(reg_addr, (uint8_t) byte_data );
                                                  break;
                             case CDV_CLEAN_TIMER:
@@ -632,7 +632,7 @@ static void MB_TASK_INPUTS_UDATE(u16 start_reg_index )
     {
        if ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE) == DEV_FMCH )
        {
-            UodateFMCHInputs();
+           UodateFMCHInputs();
        }
        else
        {
@@ -700,10 +700,57 @@ void UpdateFMCHHoldings()
 }
 
 static const u8 SettingRegsMap[]={CDV_OFFSET_CH2,CDV_SETTING_MIN_MB,CDV_SETTING_MID_MB,CDV_SETTING_MAX_MB,CDV_SETTING_ERROR1_MB,CDV_SETTING_ERROR2_MB};
+static const u8 REGS_CVB_FLOAT[]={ CDV_KOOF_P_MB, CDV_KOOF_I_MB, CDV_KOOF_K_MP ,CDV_KOOF_P1_MB ,CDV_KOOF_I1_MB,CDV_F_CHANNEL};
+
+
+
+void UpdateCAV_VAV_BPHoldign()
+{
+    int32_t tempdata;
+    u16 reg_offet = 200;
+    float temp_float;
+
+    for (u8 i=0;i<6;i++)
+    {
+        u16 reg_addr = REGS_CVB_FLOAT[i];
+        tempdata =(int32_t) (getRegFloat(CDV_REGS_MAP[reg_addr-100])*1000);
+
+    }
+
+    tempdata =(int32_t) (getRegFloat(COOF_P)*1000);
+    convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P_MB-CDV_OFFSET]);
+     tempdata =(int32_t) (getRegFloat(COOF_I)*1000);
+     convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I_MB-CDV_OFFSET]);
+                      tempdata =(int32_t) (getRegFloat(KOOFKPS)*1000);
+                      convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_K_MP-CDV_OFFSET]);
+                      tempdata =(int32_t) (getRegFloat(COOF_P1)*1000);
+                      convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P1_MB-CDV_OFFSET]);
+                      tempdata =(int32_t) (getRegFloat(COOF_I1)*1000);
+                      convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I1_MB-CDV_OFFSET]);
+
+                      tempdata =(int32_t) (getRegFloat(F_CHANNEL)*1000);
+                      convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_F_CHANNEL-CDV_OFFSET]);
+                      for (u8 i = 0; i < 6; i++)
+                      {
+                          temp_float  =  DataModelGetCDVSettings(getRegFloat(CDV_REGS_MAP[SettingRegsMap[i]-reg_offet]));
+                          convert_float_to_int(temp_float, &usRegHoldingBuf[SettingRegsMap[i]-CDV_OFFSET]);
+                      }
+                      for (u8 i=0;i<CDV_BP_REG8_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
+                      {
+                           usRegHoldingBuf[CDV_BP_REGS8[i] -CDV_OFFSET ]      = getReg8(CDV_REGS_MAP[CDV_BP_REGS8[i] -reg_offet]);
+                      }
+                      for (u8 i=0;i<CDV_BP_REG_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  16 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
+                      {
+                           usRegHoldingBuf[CDV_BP_REGS[i]  -CDV_OFFSET  ]      = getReg16(CDV_REGS_MAP[CDV_BP_REGS[i] -reg_offet]);
+                      }
+
+
+}
+
+
 
 void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
 {
-    int32_t tempdata;
     if (start_reg_index < DEVICE_SPECIFIC_ADDRES)
     {
         static HAL_TimeConfig_T time;
@@ -730,40 +777,12 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
     }
     else
     {
-        u16 reg_offet;
-        float temp_float;
+
         switch ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE))
         {
             case DEV_CAV_VAV_BP:
-                  reg_offet  =   200;
-                  tempdata =(int32_t) (getRegFloat(COOF_P)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P_MB-CDV_OFFSET]);
-                  tempdata =(int32_t) (getRegFloat(COOF_I)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I_MB-CDV_OFFSET]);
-                  tempdata =(int32_t) (getRegFloat(KOOFKPS)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_K_MP-CDV_OFFSET]);
-                  tempdata =(int32_t) (getRegFloat(COOF_P1)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P1_MB-CDV_OFFSET]);
-                  tempdata =(int32_t) (getRegFloat(COOF_I1)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I1_MB-CDV_OFFSET]);
-                  tempdata =(int32_t) (getRegFloat(COOF_I1)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_F_CHANNEL-CDV_OFFSET]);
-                  tempdata =(int32_t) (getRegFloat(F_CHANNEL)*1000);
-                  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_F_CHANNEL-CDV_OFFSET]);
-                  for (u8 i = 0; i < 6; i++)
-                  {
-                      temp_float  =  DataModelGetCDVSettings(getRegFloat(CDV_REGS_MAP[SettingRegsMap[i]-reg_offet]));
-                      convert_float_to_int(temp_float, &usRegHoldingBuf[SettingRegsMap[i]-CDV_OFFSET]);
-                  }
-                  for (u8 i=0;i<CDV_BP_REG8_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
-                  {
-                       usRegHoldingBuf[CDV_BP_REGS8[i] -CDV_OFFSET ]      = getReg8(CDV_REGS_MAP[CDV_BP_REGS8[i] -reg_offet]);
-                  }
-                  for (u8 i=0;i<CDV_BP_REG_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  16 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
-                  {
-                       usRegHoldingBuf[CDV_BP_REGS[i]  -CDV_OFFSET  ]      = getReg16(CDV_REGS_MAP[CDV_BP_REGS[i] -reg_offet]);
-                  }
-                  break;
+                UpdateCAV_VAV_BPHoldign();
+                break;
             case DEV_FMCH:
                 UpdateFMCHHoldings();
                 break;
