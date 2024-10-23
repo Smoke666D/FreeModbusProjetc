@@ -1377,8 +1377,8 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                           vFloatDataEdit(reg_id, command,3,1,9999.9,0.0);
                       else
                           sprintf(str,"%05.1f",( command == CMD_READ ) ? getRegFloat(reg_id) : edit_data_buffer_float );
-                         break;
-                case ZERO_CAL_COMMAND:
+                      break;
+           case ZERO_CAL_COMMAND:
                     switch (command)
                     {
                         case CMD_READ:

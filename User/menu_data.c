@@ -319,7 +319,6 @@ void vSetAfterZone( uint8_t enable)
 }
 
 
-
 static xScreenObjet  CDVSettingsPI1[]=
 {
         {0,15,LINE1,0,READ_DATA,"Настройки     ",  SETTING10_TITLE_ID},
@@ -337,13 +336,11 @@ static xScreenObjet const CDVSettingsPI2[]=
         {1,2,62,0,WRITE_DATA,"Кооф. И",COOF_I_1_ID },
 };
 
-
 static xScreenObjet const CDVSettingsPB[]=
 {
         {0,15,LINE1,0,READ_DATA,"Настройки     ", SETTING11_TITLE_ID},
         {0,2,25,0,WRITE_DATA,"Типоразмер", BP_SZIE_ID},
         {1,2,37,0,WRITE_DATA,"Тип регул.",BP_REG_TYPE_ID},
-
 };
 
 static xScreenObjet const CDVSettingsScreen20[]=
@@ -366,7 +363,6 @@ xScreenType  xDeiceInit[] =
 {
         {1,DeviceInit,   0,   0,  0,  0, ENTER_COMMNAD, EXIT_COMMAND | 1 },
 };
-
 
 static xScreenObjet const InfoScreen2DCV[]=
 {

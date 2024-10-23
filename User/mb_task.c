@@ -39,7 +39,7 @@ UCHAR ucSDiscInBuf[REG_DISCRETE_NREGS/8];
 
 
 #define REG_HOLDING_START 0x01
-#define REG_HOLDING_NREGS 151
+#define REG_HOLDING_NREGS 160
 #define REG_INPUTS_NREGS  151
 
 static USHORT usRegInputStart = REG_INPUT_START;
@@ -135,22 +135,35 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define CDV_KOOF_K_MP           201
 #define CDV_KOOF_I_MB           205
 #define CDV_KOOF_P_MB           203
-#define CDV_KOOF_I1_MB          209
 #define CDV_KOOF_P1_MB          207
-#define CDV_SETTING_MIN_MB      211
-#define CDV_SETTING_MID_MB      213
-#define CDV_SETTING_MAX_MB      215
-#define CDV_SETTING_ERROR1_MB   217
-#define CDV_SETTING_ERROR2_MB   219
-#define CDV_F_CHANNEL           221
-#define CDV_OFFSET_CH2          223
-#define CDV_CLEAN_TIMER         225
-#define CDV_MEASERING_UNIT      226
-#define CDV_ZERO_POINT_TIMEOUT  227
-#define CDV_SETTING_TIMEOUT_MB  228
-#define CDV_MODE_CONTROL        229
-#define CDV_AFZONE_SETTING_MB   230
-#define CDV_PRIOR_SENS          231
+#define CDV_KOOF_I1_MB          209
+#define CDV_INPUT_SENS_MB       211
+#define CDV_SETTING_MIN_MB      213
+#define CDV_SETTING_MID_MB      215
+#define CDV_SETTING_MAX_MB      217
+#define CDV_SETTING_ERROR1_MB   219
+#define CDV_SETTING_ERROR2_MB   221
+#define CDV_F_CHANNEL           223
+#define CDV_OFFSET_CH2          225
+#define CDV_CLEAN_TIMER         227
+#define CDV_MEASERING_UNIT      228
+#define CDV_ZERO_POINT_TIMEOUT  229
+#define CDV_SETTING_TIMEOUT_MB  230
+#define CDV_MODE_CONTROL        231
+#define CDV_AFZONE_SETTING_MB   232
+#define CDV_SENSOR1_MIN         233
+#define CDV_SENSOR1_MAX         235
+#define CDV_SENSOR2_MIN         237
+#define CDV_SENSOR2_MAX         239
+#define CDV_SENSOR3_MIN         241
+#define CDV_SENSOR3_MAX         243
+#define CDV_SENSOR1_OFS         245
+#define CDV_SENSOR2_OFS         247
+#define CDV_SENSOR3_OFS         249
+#define CDV_SENSOR1_SET         251
+#define CDV_SENSOR2_SET         253
+#define CDV_SENSOR3_SET         255
+#define CDV_PRIOR_SENS          257
 
 
 
@@ -296,31 +309,55 @@ static const u16 CDV_REGS_MAP[] = {
                                                COOF_I1,          //8
                                                COOF_P1,          //9
                                                COOF_P1,          //10
-                                               SETTING_MIN,       //11
+                                               INPUT_CONTROL_TYPE,  //11
                                                SETTING_MIN,       //12
-                                               SETTING_MID,       //13
+                                               SETTING_MIN,       //13
                                                SETTING_MID,       //14
-                                               SETTING_MAX,       //15
+                                               SETTING_MID,       //15
                                                SETTING_MAX,       //16
-                                               CH1_SETTING,       //17
+                                               SETTING_MAX,       //17
                                                CH1_SETTING,       //18
-                                               CH2_SETTING,       //19
+                                               CH1_SETTING,       //19
                                                CH2_SETTING,       //20
-                                               F_CHANNEL,         //21
+                                               CH2_SETTING,       //21
                                                F_CHANNEL,         //22
-                                               OFFSET_CH2,        //23
+                                               F_CHANNEL,         //23
                                                OFFSET_CH2,        //24
-                                               CLEAN_TIMER,       //25
-                                               MEASERING_UNIT,    //26
-                                               ZERO_POINT_TIMEOUT,//27
-                                               SETTING_TIMER,     //28
-                                               CDV_CONTOROL,      //29
-                                               AFTER_ZONE_SETTING,//30
-                                               PRIOR_SENSOR,      //31
-                                               INPUT_CONTROL_TYPE, //32
-
-
+                                               OFFSET_CH2,        //25
+                                               CLEAN_TIMER,       //26
+                                               MEASERING_UNIT,    //27
+                                               ZERO_POINT_TIMEOUT,//28
+                                               SETTING_TIMER,     //29
+                                               CDV_CONTOROL,      //30
+                                               AFTER_ZONE_SETTING,//31
+                                               MIN_SET1,          //32
+                                               MIN_SET1,          //33
+                                               MAX_SET1,          //34
+                                               MAX_SET1,          //35
+                                               MIN_SET2,          //37
+                                               MIN_SET2,          //38
+                                               MAX_SET2,          //39
+                                               MAX_SET2,          //40
+                                               MIN_SET3,          //41
+                                               MIN_SET3,          //42
+                                               MAX_SET3,          //43
+                                               MAX_SET3,          //44
+                                               SENS_OFS1,         //45
+                                               SENS_OFS1,         //46
+                                               SENS_OFS2,         //47
+                                               SENS_OFS2,         //48
+                                               SENS_OFS3,         //49
+                                               SENS_OFS3,         //50
+                                               SENS_SETTING1,     //51
+                                               SENS_SETTING1,     //52
+                                               SENS_SETTING2,     //53
+                                               SENS_SETTING2,     //54
+                                               SENS_SETTING3,     //55
+                                               SENS_SETTING3,     //56
+                                               PRIOR_SENSOR,      //57
 };
+
+
 
 
 
@@ -512,6 +549,18 @@ void vSetRegData( u16 adress)
                       reg_addr = CDV_REGS_MAP[adress- 200];
                       switch (adress)
                       {
+                            case (CDV_SENSOR1_MIN+1):
+                            case (CDV_SENSOR1_MAX+1):
+                            case (CDV_SENSOR2_MIN+1):
+                            case (CDV_SENSOR2_MAX+1):
+                            case (CDV_SENSOR3_MIN+1):
+                            case (CDV_SENSOR3_MAX+1):
+                            case (CDV_SENSOR1_OFS+1):
+                            case (CDV_SENSOR2_OFS+1):
+                            case (CDV_SENSOR3_OFS+1):
+                            case (CDV_SENSOR1_SET+1):
+                            case (CDV_SENSOR2_SET+1):
+                            case (CDV_SENSOR3_SET+1):
                             case (CDV_KOOF_I_MB+1):
                             case (CDV_KOOF_K_MP+1):
                             case (CDV_KOOF_P_MB+1):
@@ -645,9 +694,8 @@ static void MB_TASK_INPUTS_UDATE(u16 start_reg_index )
 #define REG8_SEQ_COUNT 13
 
 
-static const u8 CDV_BP_REGS8[CDV_BP_REG8_SEQ_COUNT]={CDV_MODE_CONTROL,CDV_SETTING_TIMEOUT_MB,CDV_AFZONE_SETTING_MB,CDV_CH_COUNT_MB ,CDV_MEASERING_UNIT,CDV_PRIOR_SENS,CDV_CLEAN_TIMER};
-static const u8 CDV_BP_REGS[CDV_BP_REG_SEQ_COUNT]={CDV_ZERO_POINT_TIMEOUT};
-
+static const u16 CDV_BP_REGS8[CDV_BP_REG8_SEQ_COUNT]={CDV_MODE_CONTROL,CDV_SETTING_TIMEOUT_MB,CDV_AFZONE_SETTING_MB,CDV_CH_COUNT_MB ,CDV_MEASERING_UNIT,CDV_PRIOR_SENS,CDV_CLEAN_TIMER};
+static const u16 CDV_BP_REGS[CDV_BP_REG_SEQ_COUNT]={CDV_ZERO_POINT_TIMEOUT};
 static const u8 REGS8[REG8_SEQ_COUNT]={
                                        TIME_SENS_MB,
                                        V_MIN_ON,
@@ -663,9 +711,9 @@ static const u8 REGS8[REG8_SEQ_COUNT]={
                                        AIN2_TYPE_MB,
                                        AIN3_TYPE_MB,};
 
-static const u16 REGS[]     = { SET_MOD1_MB, SET_MOD2_MB, FILTER_LOW_MB, FILTER_HIGH_MB};
-static const u16 REGS_FMCH_16[]  = { COMMAND_REG, MODE_REG_MB, LIGTH_REG_MB, TIME_FAN_STOP_MB};
-static const u16 REGS_FMCH_FLOAT[] = { KOOF_P_MB, KOOF_I_MB , KOOF_K_MP };
+static const u16 REGS[]             = { SET_MOD1_MB, SET_MOD2_MB, FILTER_LOW_MB, FILTER_HIGH_MB};
+static const u16 REGS_FMCH_16[]     = { COMMAND_REG, MODE_REG_MB, LIGTH_REG_MB, TIME_FAN_STOP_MB};
+static const u16 REGS_FMCH_FLOAT[]  = { KOOF_P_MB, KOOF_I_MB , KOOF_K_MP };
 
 
 void UpdateFMCHHoldings()
@@ -682,25 +730,27 @@ void UpdateFMCHHoldings()
        tempdata =(int32_t) (getRegFloat( FMCH_REGS_MAP[  reg_addr- 100 ] )*1000);
        convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[reg_addr]);
    }
-  // usRegHoldingBuf[COMMAND_REG]      = getReg8(SYSTEM_START);
-  // usRegHoldingBuf[MODE_REG_MB ]     = getReg8(MODE);
- //  usRegHoldingBuf[LIGTH_REG_MB]     = getReg8(LIGTH);
-  // usRegHoldingBuf[TIME_FAN_STOP_MB] = getReg8(FAN_START_TIMEOUT);
- //  tempdata =(int32_t) (getRegFloat(COOF_P)*1000);
-  // convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_P_MB]);
- //  tempdata =(int32_t) (getRegFloat(COOF_I)*1000);
- //  convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_I_MB]);
- //  tempdata =(int32_t) (getRegFloat(KOOFKPS)*1000);
-  // convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[KOOF_K_MP]);
    if  (usRegHoldingBuf[JOURNAL_SELECT_MB] > getReg16(RECORD_COUNT))
             usRegHoldingBuf[JOURNAL_SELECT_MB] = getReg16(RECORD_COUNT);
 
 }
 
-static const u8 SettingRegsMap[]={CDV_OFFSET_CH2,CDV_SETTING_MIN_MB,CDV_SETTING_MID_MB,CDV_SETTING_MAX_MB,CDV_SETTING_ERROR1_MB,CDV_SETTING_ERROR2_MB};
-static const u8 REGS_CVB_FLOAT[]={ CDV_KOOF_P_MB, CDV_KOOF_I_MB, CDV_KOOF_K_MP ,CDV_KOOF_P1_MB ,CDV_KOOF_I1_MB,CDV_F_CHANNEL};
-
-
+static const u16 SettingRegsMap[]={CDV_OFFSET_CH2,CDV_SETTING_MIN_MB,CDV_SETTING_MID_MB,CDV_SETTING_MAX_MB,CDV_SETTING_ERROR1_MB,CDV_SETTING_ERROR2_MB};
+static const u16 REGS_CVB_FLOAT[]={ CDV_KOOF_P_MB, CDV_KOOF_I_MB, CDV_KOOF_K_MP ,CDV_KOOF_P1_MB ,CDV_KOOF_I1_MB,CDV_F_CHANNEL};
+static const u16 REGS_CDV_SENS_FLOAT[]={
+        CDV_SENSOR1_MIN,
+        CDV_SENSOR1_MAX,
+        CDV_SENSOR2_MIN,
+        CDV_SENSOR2_MAX,
+        CDV_SENSOR3_MIN,
+        CDV_SENSOR3_MAX,
+        CDV_SENSOR1_OFS,
+        CDV_SENSOR2_OFS,
+        CDV_SENSOR3_OFS,
+        CDV_SENSOR1_SET,
+        CDV_SENSOR2_SET,
+        CDV_SENSOR3_SET,
+} ;
 
 void UpdateCAV_VAV_BPHoldign()
 {
@@ -714,7 +764,12 @@ void UpdateCAV_VAV_BPHoldign()
         tempdata =(int32_t) (getRegFloat(CDV_REGS_MAP[reg_addr-200])*1000);
         convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[reg_addr-100]);
     }
-
+    for (u8 i=0;i<12;i++)
+    {
+        u16 reg_addr =REGS_CDV_SENS_FLOAT[i];
+        tempdata =(int32_t) (getRegFloat(CDV_REGS_MAP[reg_addr-200])*10);
+        convert_float_to_int((float)tempdata/10.0, &usRegHoldingBuf[reg_addr-100]);
+    }
 
 
 
@@ -727,10 +782,10 @@ void UpdateCAV_VAV_BPHoldign()
     {
          usRegHoldingBuf[CDV_BP_REGS8[i] -CDV_OFFSET ]      = getReg8(CDV_REGS_MAP[CDV_BP_REGS8[i] -200]);
      }
-                      for (u8 i=0;i<CDV_BP_REG_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  16 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
-                      {
+    for (u8 i=0;i<CDV_BP_REG_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  16 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
+    {
                            usRegHoldingBuf[CDV_BP_REGS[i]  -CDV_OFFSET  ]      = getReg16(CDV_REGS_MAP[CDV_BP_REGS[i] -200]);
-                      }
+      }
 
 
 }
