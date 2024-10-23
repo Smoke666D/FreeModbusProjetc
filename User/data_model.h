@@ -14,8 +14,8 @@
 
 
 #define SW_V                 2
-#define SW_V2                1
-#define SW_V3                22
+#define SW_V2                2
+#define SW_V3                1
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -69,19 +69,26 @@
 #define CLEAN_TIMER           ( PRIOR_SENSOR       + sizeof(uint8_t) )
 #define SETTING_TIMER         ( CLEAN_TIMER        + sizeof(uint8_t) )
 #define ZERO_POINT_TIMEOUT    ( SETTING_TIMER        + sizeof(uint8_t) )
-#define MIN_SET               ( ZERO_POINT_TIMEOUT  + sizeof(uint16_t) )
-#define MAX_SET               ( MIN_SET  + sizeof(uint32_t) )
-#define SENS_OFS              ( MAX_SET  + sizeof(uint32_t) )
-#define SENS_SETTING          ( SENS_OFS  + sizeof(uint32_t) )
-#define INPUT_SENSOR_MODE     ( SENS_SETTING  + sizeof(uint32_t) )
-#define F_CHANNEL             ( INPUT_SENSOR_MODE  + sizeof(uint8_t) )
+#define MIN_SET1               ( ZERO_POINT_TIMEOUT  + sizeof(uint16_t) )
+#define MAX_SET1               ( MIN_SET1  + sizeof(uint32_t) )
+#define SENS_OFS1              ( MAX_SET1  + sizeof(uint32_t) )
+#define SENS_SETTING1          ( SENS_OFS1  + sizeof(uint32_t) )
+#define MIN_SET2               ( SENS_SETTING1  + sizeof(uint32_t) )
+#define MAX_SET2               ( MIN_SET2  + sizeof(uint32_t) )
+#define SENS_OFS2              ( MAX_SET2  + sizeof(uint32_t) )
+#define SENS_SETTING2          ( SENS_OFS2  + sizeof(uint32_t) )
+#define MIN_SET3               ( SENS_SETTING2  + sizeof(uint32_t) )
+#define MAX_SET3               ( MIN_SET3  + sizeof(uint32_t) )
+#define SENS_OFS3              ( MAX_SET3  + sizeof(uint32_t) )
+#define SENS_SETTING3          ( SENS_OFS1  + sizeof(uint32_t) )
+#define F_CHANNEL             ( SENS_SETTING3  + sizeof(uint32_t) )
 #define BP_REG_TYPE           ( F_CHANNEL         + sizeof(uint32_t) )
 #define BP_SIZE               ( BP_REG_TYPE       + sizeof(uint8_t) )
 #define SETTING_MAX           ( BP_SIZE           + sizeof(uint8_t) )
 #define SETTING_MIN           ( SETTING_MAX       + sizeof(uint32_t) )
 #define SETTING_MID           ( SETTING_MIN       + sizeof(uint32_t) )
-#define INPUT_SENSOR_TYPE     ( SETTING_MID       + sizeof(uint32_t) )
-#define OFFSET_CH2            ( INPUT_SENSOR_TYPE       + sizeof(uint8_t) )
+#define INPUT_CONTROL_TYPE    ( SETTING_MID       + sizeof(uint32_t) )
+#define OFFSET_CH2            ( INPUT_CONTROL_TYPE       + sizeof(uint8_t) )
 #define CH1_SETTING           ( OFFSET_CH2         + sizeof(uint32_t) )
 #define CH2_SETTING           ( CH1_SETTING         + sizeof(uint32_t) )
 #define FILTER_LOW            ( CH2_SETTING         + sizeof(uint32_t) )
@@ -166,12 +173,7 @@ typedef enum
  PA_U    = 2,
 } MESURING_UNIT_t;
 
-typedef enum
-{
-  TEM_PRIOR = 0,
-  CO2_PRIOR = 1,
-  H_PRIOR   = 2,
-} PRIOR_SENSOR_t;
+
 
 #define MKV_MB_DIN 0
 #define MKV_MB_RTU 1
@@ -185,11 +187,11 @@ typedef enum
 
 
 
-float DataModelGetCDVSettings( u16 pressure);
-u16 DataModel_SetLToPressere(float L);
-u16 DataModel_SetVToPressere(float V);
-float  DataModel_GetPressureToL(u16 pressure);
-float  DataModel_GetPressureToV(u16 pressure);
+float DataModelGetCDVSettings( float pressure);
+float DataModel_SetLToPressere(float L);
+float DataModel_SetVToPressere(float V);
+float  DataModel_GetPressureToL(float pressure);
+float  DataModel_GetPressureToV(float pressure);
 int16_t getRegi16(u16 reg_adress );
 void vDataModelResetJournal();
 float convert_int_to_float( u16 * data);

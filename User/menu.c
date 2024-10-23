@@ -438,14 +438,14 @@ void MenuSetDevice()
         case DEV_CAV_VAV_BP:
             pMenu = xScreenDCV;
 
-                SetPID2Screen((CHANNEL_COUNT_t)getReg8(CDV_BP_CH_COUNT),getReg8(INPUT_SENSOR_TYPE));
+                SetPID2Screen((CHANNEL_COUNT_t)getReg8(CDV_BP_CH_COUNT),getReg8(INPUT_CONTROL_TYPE));
 
 
             if (getReg8(CDV_BP_CH_COUNT) == 0)
                                      SetBPSetting( 1);
                                  else
                                      SetBPSetting(0);
-            switch (getReg8(INPUT_SENSOR_TYPE))
+            switch (getReg8(INPUT_CONTROL_TYPE))
                                                          {
                                                              case 0:
                                                                  vSettingCoountCondfig(1);
@@ -899,7 +899,7 @@ static const u16 MenuFMCHRegMap[]={
                              0,
 };
 
-static const u16 MenuCDV_BPRegMap[54]=
+static const u16 MenuCDV_BPRegMap[]=
                         {
                                  0,    //0
                                  0,    //1
@@ -916,36 +916,46 @@ static const u16 MenuCDV_BPRegMap[54]=
                                  CH1_SETTING,    //12
                                  CH2_SETTING,    //13
                                  F_CHANNEL,    //14
-                                 INPUT_SENSOR_TYPE , //15
-                                 MIN_SET,    //16
-                                 MAX_SET,    //17
-                                 SENS_OFS,    //18
-                                 SENS_SETTING,    //19
-                                 AFTER_ZONE_SETTING,   //20
-                                 CDV_BP_CH_COUNT,    //22
-                                 MEASERING_UNIT,    //22
-                                 CLEAN_TIMER,    //23
-                                 ZERO_POINT_TIMEOUT,    //24
-                                 SETTING_TIMER,       //25
-                                 PRIOR_SENSOR ,    //26
-                                 INPUT_SENSOR_MODE,    //27
-                                 OFFSET_CH2,    //28
-                                 COOF_P1,    //29
-                                 COOF_I1,    //30
-                                 0,    //31
-                                 0,    //32
-                                 0,    //33
-                                 0,    //34
-                                 0,    //35
-                                 0,    //36
-                                 0,    //37
-                                 0,    //38
-                                 0,    //39
+                                 AIN1_TYPE , //15
+                                 MIN_SET1,    //16
+                                 MAX_SET1,    //17
+                                 SENS_OFS1,    //18
+                                 SENS_SETTING1,    //19
+                                 AIN2_TYPE , //20
+                                 MIN_SET2,    //21
+                                 MAX_SET2,    //22
+                                 SENS_OFS2,    //23
+                                 SENS_SETTING2,    //24
+                                 AIN3_TYPE , //25
+                                 MIN_SET3,    //26
+                                 MAX_SET3,    //27
+                                 SENS_OFS3,    //28
+                                 SENS_SETTING3,    //29
+                                 AFTER_ZONE_SETTING,   //30
+                                 CDV_BP_CH_COUNT,    //31
+                                 MEASERING_UNIT,    //32
+                                 CLEAN_TIMER,    //33
+                                 ZERO_POINT_TIMEOUT,    //34
+                                 SETTING_TIMER,       //35
+                                 PRIOR_SENSOR ,    //36
+                                 OFFSET_CH2,    //37
+                                 COOF_P1,    //38
+                                 COOF_I1,    //39
                                  0,    //40
-                                 BP_REG_TYPE,    //41
-                                 BP_SIZE,       //42
-                                 MEASERING_UNIT, //43
-                                 0,              //44
+                                 0,    //41
+                                 0,    //42
+                                 0,    //43
+                                 0,    //44
+                                 0,    //45
+                                 0,    //46
+                                 0,    //47
+                                 0,    //48
+                                 0,    //49
+                                 BP_REG_TYPE,    //50
+                                 BP_SIZE,       //51
+                                 MEASERING_UNIT, //52
+                                 INPUT_CONTROL_TYPE,//53
+                                 0,              //54
 
                          };
 
@@ -1028,16 +1038,33 @@ void vSetTitle(u16 data_id, u8 * str )
                else
                    sprintf(str,"13/%i",screen_count);
                break;
+           case SETTINGANALOG3_TITLE_ID:
+               if ((getReg8(CDV_BP_CH_COUNT))==1)
+                   sprintf(str,"13/%i",screen_count);
+               else
+                   sprintf(str,"14/%i",screen_count);
+               break;
+           case SETTINGANALOG4_TITLE_ID:
+               if ((getReg8(CDV_BP_CH_COUNT))==1)
+                   sprintf(str,"14/%i",screen_count);
+               else
+                   sprintf(str,"15/%i",screen_count);
+               break;
+           case SETTINGANALOG5_TITLE_ID:
+               if ((getReg8(CDV_BP_CH_COUNT))==1)
+                   sprintf(str,"15/%i",screen_count);
+               else
+                   sprintf(str,"16/%i",screen_count);
                break;
            case SENSOR_TYPE_TITLE_ID:
-               if (getReg8(INPUT_SENSOR_TYPE) == 2)
+               if (getReg8(INPUT_CONTROL_TYPE) == 2)
                strcpy(str,"Приоритет рег.:") ;
                else
                    str[0] = 0;
 
                break;
            case  SENSOR_TITLE_ID:
-               if (getReg8(INPUT_SENSOR_TYPE) == 2)
+               if (getReg8(INPUT_CONTROL_TYPE) == 2)
                             strcpy(str,"Тип датчика.:") ;
                             else
                                 str[0] = 0;
@@ -1075,6 +1102,7 @@ void DinModeSettingView(u8 channel, char * str)
 void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 * res)
 {
     static float temp_float;
+    static  INPUT_SENSOR_t sensor_type;
     u16 reg_id = MenuCDV_BPRegMap[data_id - DCV_SETTING1_ID];
     switch (data_id)
     {
@@ -1099,7 +1127,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                break;
               break;
         case DCV_SETTING1_ID:
-            switch (getReg8(SENSOR_TYPE_ID) )
+            /*switch (getReg8(SENSOR_TYPE_ID) )
             {
                 case 0:
                     DinModeSettingView(0,str);
@@ -1109,12 +1137,12 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                     break;
                 case 3:
                 case 1:
-                    sprintf(str,"%f3.1",getRegFloat(SENS_SETTING));
+                    sprintf(str,"%f3.1",getRegFloat(SENS_SETTING1));
                     break;
-            }
+            }*/
             break;
         case DRAW_UNIT_ID:
-            switch (getReg8(SENSOR_TYPE_ID) )
+            /*switch (getReg8(SENSOR_TYPE_ID) )
             {
                 case 0:
                 case 2:
@@ -1126,7 +1154,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 case 3:
                     strcpy(str, SensUnitString[ getReg8(PRIOR_SENSOR)] );
                     break;
-            }
+            }*/
             break;
         case DCV_FACT1_ID:
             temp_float = DataModelGetCDVSettings( getAIN(SENS1));
@@ -1137,11 +1165,11 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 strcpy(str,"----");
             else
             {
-                if (getReg8(SENSOR_TYPE_ID)==0)
+              /*  if (getReg8(SENSOR_TYPE_ID)==0)
                      DinModeSettingView(1,str);
                 else
                      sprintf(str,"%i4", getAIN(SENS1)+getReg16(OFFSET_CH2));
-            }
+           */ }
             break;
         case DCV_FACT2_ID:
             if (getReg8(CDV_BP_CH_COUNT) == 1 )
@@ -1152,7 +1180,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
               sprintf(str,"%06.1f",temp_float);
             }
             break;
-        case SENSOR_TYPE_ID:
+        case INPUT_SIGNAL_MODE_ID:
                 *len = 0;
                 if ( command > CMD_EDIT_READ )
                 {
@@ -1172,11 +1200,12 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 break;
         case PRIOR_SENSOR_ID:
             *len = 0;
-            if (getReg8(INPUT_SENSOR_TYPE) == 2)
+            sensor_type  = getReg8(INPUT_CONTROL_TYPE);
+            if ((sensor_type == ANALOG_SENSOR) || (sensor_type == ROOM_CONTROLLER))
             {
                 if ( command > CMD_EDIT_READ )
                 {
-                    if ( command == CMD_SAVE_EDIT ) vSetAfterZone( (edit_data_buffer_byte == 0) ? 1 : 0);
+                    if ( command == CMD_SAVE_EDIT ) vSetAfterZone( (edit_data_buffer_byte == T_PRIOR) ? 1 : 0);
                     vByteDataEdit(0,reg_id,command,0,2, 0,1);
                 }
                 else
@@ -1186,10 +1215,29 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 str[0]=0;
 
                 break;
-        case INPUT_SENSOR_TYPE_ID:
+        /*case INPUT_SIGNAL_MODE_ID:
                 *len = 0;
-                if (getReg8(INPUT_SENSOR_TYPE) == 3)
+                sensor_type  = getReg8(INPUT_CONTROL_TYPE);
+                if (( sensor_type == ANALOG_SENSOR) || ( sensor_type == ROOM_CONTROLLER))
                 {
+                    if (sensor_type == ANALOG_SENSOR)
+                    {
+                        switch (getReg8(PRIOR_SENSOR))
+                        {
+                            case T_PRIOR:
+                                reg_id = AIN1_TYPE;
+                                break;
+                            case CO2_PRIOR:
+                                reg_id = AIN2_TYPE;
+                                break;
+                            case H_PRIOR:
+                            default:
+                                reg_id = AIN3_TYPE;
+                                break;
+                        }
+                    }
+                    else
+                        reg_id = AIN1_TYPE;
                     if ( command > CMD_EDIT_READ )
                         vByteDataEdit(0,reg_id,command,0,T4_20, T0_10,1 );
                     else
@@ -1197,7 +1245,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                  }
                 else
                     str[0]= 0;
-                break;
+                break;*/
         case COOF_P_1_ID:
         case COOF_I_1_ID:
           if ( command > CMD_EDIT_READ )
@@ -1232,7 +1280,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             {
                 if ( command == CMD_SAVE_EDIT )
                 {
-                    SetPID2Screen((CHANNEL_COUNT_t)edit_data_buffer_byte,getReg8(INPUT_SENSOR_TYPE));
+                    SetPID2Screen((CHANNEL_COUNT_t)edit_data_buffer_byte,getReg8(INPUT_CONTROL_TYPE));
                     SetBPSetting((edit_data_buffer_byte == 0) ? 1 : 0);
                 }
                 vByteDataEdit(0,reg_id,command,0,2,0,0);
@@ -1313,10 +1361,18 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                       break;
             }
             break;
-            case SENSOR_MIN_ID:
-            case SENSOR_MAX_ID:
-            case SENSOR_OFFSET_ID:
-            case SENSOR_SETTING_ID:
+            case SENSOR1_MIN_ID:
+            case SENSOR1_MAX_ID:
+            case SENSOR1_OFFSET_ID:
+            case SENSOR1_SETTING_ID:
+            case SENSOR2_MIN_ID:
+            case SENSOR2_MAX_ID:
+            case SENSOR2_OFFSET_ID:
+            case SENSOR2_SETTING_ID:
+            case SENSOR3_MIN_ID:
+            case SENSOR3_MAX_ID:
+            case SENSOR3_OFFSET_ID:
+            case SENSOR3_SETTING_ID:
                       if ( command > CMD_EDIT_READ )
                           vFloatDataEdit(reg_id, command,3,1,9999.9,0.0);
                       else

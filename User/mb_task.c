@@ -151,14 +151,14 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define CDV_MODE_CONTROL        229
 #define CDV_AFZONE_SETTING_MB   230
 #define CDV_PRIOR_SENS          231
-#define INPUT_SENSOR_TYPE_MB    232
+
 
 
 #define CDV_FACT_1              200
 #define CDV_FACT_2              202
 #define CDV_CUR_STATE           204
 
-#define CDV_COUNT             ( CDV_CH_COUNT_MB  - INPUT_SENSOR_TYPE_MB + 1)
+#define CDV_COUNT             ( CDV_CH_COUNT_MB  - CDV_PRIOR_SENS  + 1)
 
 
 #define CDV_INPUTS_COUNT         ( CDV_CUR_STATE - CDV_FACT_1   + 1 )
@@ -317,9 +317,7 @@ static const u16 CDV_REGS_MAP[] = {
                                                CDV_CONTOROL,      //29
                                                AFTER_ZONE_SETTING,//30
                                                PRIOR_SENSOR,      //31
-                                               INPUT_SENSOR_MODE,    //32
-
-                                               INPUT_SENSOR_TYPE, //35
+                                               INPUT_CONTROL_TYPE, //32
 
 
 };
@@ -647,7 +645,7 @@ static void MB_TASK_INPUTS_UDATE(u16 start_reg_index )
 #define REG8_SEQ_COUNT 13
 
 
-static const u8 CDV_BP_REGS8[CDV_BP_REG8_SEQ_COUNT]={CDV_MODE_CONTROL,CDV_SETTING_TIMEOUT_MB,CDV_AFZONE_SETTING_MB,CDV_CH_COUNT_MB ,CDV_MEASERING_UNIT,CDV_PRIOR_SENS,CDV_CLEAN_TIMER,INPUT_SENSOR_TYPE_MB};
+static const u8 CDV_BP_REGS8[CDV_BP_REG8_SEQ_COUNT]={CDV_MODE_CONTROL,CDV_SETTING_TIMEOUT_MB,CDV_AFZONE_SETTING_MB,CDV_CH_COUNT_MB ,CDV_MEASERING_UNIT,CDV_PRIOR_SENS,CDV_CLEAN_TIMER};
 static const u8 CDV_BP_REGS[CDV_BP_REG_SEQ_COUNT]={CDV_ZERO_POINT_TIMEOUT};
 
 static const u8 REGS8[REG8_SEQ_COUNT]={
@@ -707,41 +705,31 @@ static const u8 REGS_CVB_FLOAT[]={ CDV_KOOF_P_MB, CDV_KOOF_I_MB, CDV_KOOF_K_MP ,
 void UpdateCAV_VAV_BPHoldign()
 {
     int32_t tempdata;
-    u16 reg_offet = 200;
+
     float temp_float;
 
     for (u8 i=0;i<6;i++)
     {
         u16 reg_addr = REGS_CVB_FLOAT[i];
-        tempdata =(int32_t) (getRegFloat(CDV_REGS_MAP[reg_addr-100])*1000);
-
+        tempdata =(int32_t) (getRegFloat(CDV_REGS_MAP[reg_addr-200])*1000);
+        convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[reg_addr-100]);
     }
 
-    tempdata =(int32_t) (getRegFloat(COOF_P)*1000);
-    convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P_MB-CDV_OFFSET]);
-     tempdata =(int32_t) (getRegFloat(COOF_I)*1000);
-     convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I_MB-CDV_OFFSET]);
-                      tempdata =(int32_t) (getRegFloat(KOOFKPS)*1000);
-                      convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_K_MP-CDV_OFFSET]);
-                      tempdata =(int32_t) (getRegFloat(COOF_P1)*1000);
-                      convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_P1_MB-CDV_OFFSET]);
-                      tempdata =(int32_t) (getRegFloat(COOF_I1)*1000);
-                      convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_KOOF_I1_MB-CDV_OFFSET]);
 
-                      tempdata =(int32_t) (getRegFloat(F_CHANNEL)*1000);
-                      convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[CDV_F_CHANNEL-CDV_OFFSET]);
-                      for (u8 i = 0; i < 6; i++)
-                      {
-                          temp_float  =  DataModelGetCDVSettings(getRegFloat(CDV_REGS_MAP[SettingRegsMap[i]-reg_offet]));
-                          convert_float_to_int(temp_float, &usRegHoldingBuf[SettingRegsMap[i]-CDV_OFFSET]);
-                      }
-                      for (u8 i=0;i<CDV_BP_REG8_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
-                      {
-                           usRegHoldingBuf[CDV_BP_REGS8[i] -CDV_OFFSET ]      = getReg8(CDV_REGS_MAP[CDV_BP_REGS8[i] -reg_offet]);
-                      }
+
+
+    for (u8 i = 0; i < 6; i++)
+    {
+         temp_float  =  DataModelGetCDVSettings(getRegFloat(CDV_REGS_MAP[SettingRegsMap[i]-200]));
+         convert_float_to_int(temp_float, &usRegHoldingBuf[SettingRegsMap[i]-100]);
+   }
+    for (u8 i=0;i<CDV_BP_REG8_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
+    {
+         usRegHoldingBuf[CDV_BP_REGS8[i] -CDV_OFFSET ]      = getReg8(CDV_REGS_MAP[CDV_BP_REGS8[i] -200]);
+     }
                       for (u8 i=0;i<CDV_BP_REG_SEQ_COUNT;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  16 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
                       {
-                           usRegHoldingBuf[CDV_BP_REGS[i]  -CDV_OFFSET  ]      = getReg16(CDV_REGS_MAP[CDV_BP_REGS[i] -reg_offet]);
+                           usRegHoldingBuf[CDV_BP_REGS[i]  -CDV_OFFSET  ]      = getReg16(CDV_REGS_MAP[CDV_BP_REGS[i] -200]);
                       }
 
 

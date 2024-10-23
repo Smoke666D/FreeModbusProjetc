@@ -49,6 +49,14 @@ typedef struct
   u8 FilterState;
 } FMCH_Device_t;
 
+typedef enum
+{
+   T_PRIOR = 0,
+   CO2_PRIOR = 1,
+   H_PRIOR   = 2,
+} PRIOR_SENSOR_t;
+
+
 
 typedef struct
 {

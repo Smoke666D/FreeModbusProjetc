@@ -67,8 +67,18 @@ DATA_MODEL_INIT_t DataModel_Init()
                setRegFloat(CH1_SETTING  , 700);
                setRegFloat(CH2_SETTING  , 800);
                setRegFloat(OFFSET_CH2  ,  100);
-               setReg16(MIN_SET, 10);
-               setReg16(MAX_SET,11);
+               setRegFloat(MIN_SET1, 0);
+               setRegFloat(MAX_SET1,40);
+               setRegFloat(SENS_OFS1, 1);
+               setRegFloat(SENS_SETTING1,20);
+               setRegFloat(MIN_SET2, 0);
+               setRegFloat(MAX_SET2,40);
+               setRegFloat(SENS_OFS2, 1);
+               setRegFloat(SENS_SETTING2,20);
+               setRegFloat(MIN_SET3, 0);
+               setRegFloat(MAX_SET3,40);
+               setRegFloat(SENS_OFS3, 1);
+               setRegFloat(SENS_SETTING3,20);
                if (WriteEEPROM(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 1000 ,2) == EEPROM_OK) printf("EEPROMwtiye\r\n");
                ReadEEPROMData(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ,2);
                return (NEW_INIT);
@@ -115,7 +125,7 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
     u8 temp_data = data;
     switch (reg_adress)
     {
-        case INPUT_SENSOR_MODE:
+
 
         case MEASERING_UNIT:
         case AFTER_ZONE_SETTING:
@@ -267,17 +277,17 @@ float getRegFloat(u16 reg_adress )
 }
 
 
-u16 DataModel_SetLToPressere(float L)
+float DataModel_SetLToPressere(float L)
 {
    float K = getRegFloat(KOOFKPS);
-  if ( ( L!=0 ) && ( K!=0 ) )
-   return pow(L/K,2);
+   if ( ( L!=0 ) && ( K!=0 ) )
+       return pow(L/K,2);
   else
-    return 0;
+      return 0;
 
 }
 
-u16 DataModel_SetVToPressere(float V)
+float DataModel_SetVToPressere(float V)
 {
   float F = getRegFloat(F_CHANNEL);
   if ( V!=0 )
@@ -288,12 +298,12 @@ u16 DataModel_SetVToPressere(float V)
 }
 
 
-float  DataModel_GetPressureToL(u16 pressure)
+float  DataModel_GetPressureToL(float pressure)
 {
     return (float) sqrt((float)pressure)*getRegFloat(KOOFKPS) ;
 }
 
-float  DataModel_GetPressureToV(u16 pressure)
+float  DataModel_GetPressureToV(float pressure)
 {
     float L = DataModel_GetPressureToL(pressure);
     float F = getRegFloat(F_CHANNEL);
@@ -302,7 +312,7 @@ float  DataModel_GetPressureToV(u16 pressure)
     return  L/F/3600.0 ;
 }
 
-float DataModelGetCDVSettings( u16 pressure)
+float DataModelGetCDVSettings( float pressure)
 {
     float res = (float)pressure;
     switch ( getReg8(MEASERING_UNIT) )

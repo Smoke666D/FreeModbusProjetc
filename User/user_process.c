@@ -357,7 +357,7 @@ void vCDV_SetpointCheck(  DISCRET_STATE_t * state, u32 * timeout  )
 float ComputeSetPoint()
 {
     float temp_float = 0;
-    switch (getReg8( INPUT_SENSOR_MODE))
+   /* switch (getReg8( INPUT_SENSOR_MODE))
     {
         case 0:
             temp_float =( getAIN(AIN1)/10.0*(getReg16(SETTING_MAX) - getReg16(SETTING_MIN))) + getReg16(SETTING_MIN);
@@ -368,7 +368,7 @@ float ComputeSetPoint()
         default:
             temp_float =( (getAIN(AIN1)-4.0)/18.0*(getReg16(SETTING_MAX) - getReg16(SETTING_MIN))) + getReg16(SETTING_MIN);
             break;
-    }
+    }*/
     return (temp_float);
 }
 
@@ -438,13 +438,26 @@ AIN_NAME_t const SENSOR_NAME[]={DCAIN1,DCAIN2,DCAIN3};
 void ErrorSensorCheck()
 {
     AIN_NAME_t sensor_name;
-
-    switch ((INPUT_SENSOR_t)getReg8(INPUT_SENSOR_TYPE))
+    SENSOR_TYPE_t sensor_type;
+    switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
     {
         case ANALOG_SENSOR:
         case ROOM_CONTROLLER:
             sensor_name = SENSOR_NAME[getReg8(PRIOR_SENSOR)];
-            switch (getReg8( INPUT_SENSOR_MODE))
+            switch (sensor_name)
+            {
+                case DCAIN1:
+                    sensor_type = getReg8(AIN1_TYPE);
+                    break;
+                case DCAIN2:
+                    sensor_type = getReg8(AIN2_TYPE);
+                    break;
+                case DCAIN3:
+                default:
+                    sensor_type = getReg8(AIN3_TYPE);
+                    break;
+            }
+            switch (sensor_type)
             {
                 case T2_10:
                     if (getAIN(sensor_name) < 2.0 ) error_state |= ANALOG_SENSOR_ERROR;
@@ -476,7 +489,7 @@ float GetSensor(u8 * after_zone)
 {
    float temp_float = 0;
 
-   if (getReg8(SENSOR_TYPE_ID) == STATIC_TERMSENSOR)
+ /*  if (getReg8(SENSOR_TYPE_ID) == STATIC_TERMSENSOR)
    {
        temp_float = getAIN(DCAIN4);
        *after_zone = 1;
@@ -485,10 +498,10 @@ float GetSensor(u8 * after_zone)
    {
        AIN_NAME_t sensor_name = SENSOR_NAME[getReg8(PRIOR_SENSOR)];
        if ( sensor_name == DCAIN1 ) *after_zone = 1;
-       float min_data = getRegFloat(MIN_SET);
-       float max_data = getRegFloat(MAX_SET);
-       float offset   = getRegFloat(SENS_OFS);
-       switch (getReg8( INPUT_SENSOR_MODE))
+       //float min_data = getRegFloat(MIN_SET);
+      // float max_data = getRegFloat(MAX_SET);
+       //float offset   = getRegFloat(SENS_OFS);
+       /*switch (getReg8( INPUT_SENSOR_MODE))
        {
           case T0_10:
               temp_float =( getAIN(sensor_name)/10.0*(max_data - min_data)) + min_data;
@@ -501,7 +514,7 @@ float GetSensor(u8 * after_zone)
               break;
       }
       temp_float +=offset;
-   }
+   }*/
   return (temp_float);
 
 }
@@ -524,7 +537,7 @@ void vAnalogSensorFSM( DISCRET_STATE_t state)
             {
                   PID_SetOutputLimits(&TPID, TPID.OutMin, USER_AOUT_GET(DAC1));
             }
-            SET_POINT = getRegFloat(SENS_SETTING);
+            SET_POINT = getRegFloat(SENS_SETTING1);
             u8 after_zone = 0;
             float input_data = GetSensor(&after_zone);
             if ( after_zone )
@@ -620,7 +633,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                     {
                         UPDATE_COOFCAV();
                         dev->pid_counter = 0;
-                        switch ((INPUT_SENSOR_t)getReg8(SENSOR_TYPE_ID))
+                        switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
                         {
                             case DISCRETE_INPUT:
                                 vDiscreteInputFSM(state);
@@ -662,7 +675,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 }
                 break;
             case USER_PROCESS_ALARM:
-                if (error_state & (HIGH_VOLTAGE_ERROR | LOW_VOLTAGE_ERROR | DIN_ERROR | ANALOG_SENSOR_ERROR) == 0) task_fsm = USER_PROCCES_IDLE;
+                if (error_state & (DIN_ERROR | ANALOG_SENSOR_ERROR) == 0) task_fsm = USER_PROCCES_IDLE;
 
                 if (error_state & ( DIN_ERROR  | ANALOG_SENSOR_ERROR))
                 {
