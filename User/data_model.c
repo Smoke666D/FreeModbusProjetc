@@ -140,7 +140,6 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
              break;
         case CDV_BP_CH_COUNT:
             if (data > 2) temp_data = 2;
-
              break;
         case LIGTH:
         case MODE:
@@ -317,10 +316,10 @@ float DataModelGetCDVSettings( float pressure)
 {
     float res = (float)pressure;
     switch ( getReg8(MEASERING_UNIT) )
-                      {
-                           case 0:
-                               res = DataModel_GetPressureToL( res);
-                               break;
+    {
+        case 0:
+             res = DataModel_GetPressureToL( res);
+              break;
                            case 1:
                                res = DataModel_GetPressureToV( res);
                                break;

@@ -1004,16 +1004,32 @@ void vSetTitle(u16 data_id, u8 * str )
                    sprintf(str,"7/%i",screen_count);
                    break;
            case SETTING8_TITLE_ID:
+                if((getReg8(CDV_BP_CH_COUNT))==2)
                    sprintf(str,"8/%i",screen_count);
+                else
+                    sprintf(str,"7/%i",screen_count);
+
                   break;
            case SETTING9_TITLE_ID:
+               if((getReg8(CDV_BP_CH_COUNT))==2)
                  sprintf(str,"9/%i",screen_count);
+               else
+                   sprintf(str,"8/%i",screen_count);
+
                   break;
            case SETTING10_TITLE_ID:
+               if((getReg8(CDV_BP_CH_COUNT))==2)
                   sprintf(str,"10/%i",screen_count);
+               else {
+                   sprintf(str,"9/%i",screen_count);
+            }
                   break;
            case SETTING11_TITLE_ID:
+               if((getReg8(CDV_BP_CH_COUNT))==2)
                   sprintf(str,"11/%i",screen_count);
+               else {
+                   sprintf(str,"10/%i",screen_count);
+            }
                   break;
            case AFTER_ZONE_TITLE_ID:
                  if (getReg8(INPUT_CONTROL_TYPE) == ANALOG_SENSOR)
@@ -1034,34 +1050,35 @@ void vSetTitle(u16 data_id, u8 * str )
                      sprintf(str,"3/%i",screen_count);
                     break;
            case SETTINGANALOG1_TITLE_ID:
-               if ((getReg8(CDV_BP_CH_COUNT))==1)
-                   sprintf(str,"11/%i",screen_count);
-               else
+               if ((getReg8(CDV_BP_CH_COUNT))==2)
                    sprintf(str,"12/%i",screen_count);
+               else
+                   sprintf(str,"10/%i",screen_count);
                break;
            case SETTINGANALOG2_TITLE_ID:
-               if ((getReg8(CDV_BP_CH_COUNT))==1)
-                   sprintf(str,"12/%i",screen_count);
-               else
+               if ((getReg8(CDV_BP_CH_COUNT))==2)
                    sprintf(str,"13/%i",screen_count);
+               else
+                   sprintf(str,"11/%i",screen_count);
                break;
            case SETTINGANALOG3_TITLE_ID:
-               if ((getReg8(CDV_BP_CH_COUNT))==1)
-                   sprintf(str,"13/%i",screen_count);
-               else
+               if ((getReg8(CDV_BP_CH_COUNT))==2)
                    sprintf(str,"14/%i",screen_count);
+               else
+                   sprintf(str,"12/%i",screen_count);
                break;
            case SETTINGANALOG4_TITLE_ID:
-               if ((getReg8(CDV_BP_CH_COUNT))==1)
-                   sprintf(str,"14/%i",screen_count);
-               else
+               if ((getReg8(CDV_BP_CH_COUNT))==2)
                    sprintf(str,"15/%i",screen_count);
+               else
+                   sprintf(str,"13/%i",screen_count);
                break;
            case SETTINGANALOG5_TITLE_ID:
-               if ((getReg8(CDV_BP_CH_COUNT))==1)
-                   sprintf(str,"15/%i",screen_count);
-               else
+
+               if ((getReg8(CDV_BP_CH_COUNT))==2)
                    sprintf(str,"16/%i",screen_count);
+               else
+                   sprintf(str,"14/%i",screen_count);
                break;
            case SENSOR_TYPE_TITLE_ID:
                if (getReg8(INPUT_CONTROL_TYPE) == 2)
@@ -1110,7 +1127,7 @@ void DinModeSettingView(u8 channel, char * str)
 void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 * res)
 {
     static float temp_float;
-    static  u8 room_sensor_number;
+    static int32_t temp_int;
     u16 reg_id = MenuCDV_BPRegMap[data_id - DCV_SETTING1_ID];
     switch (data_id)
     {
@@ -1328,11 +1345,12 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                         start_edit_flag = 0;
                         break;
                  case CMD_READ:
-                        temp_float  = DataModelGetCDVSettings(getRegFloat(reg_id));
-                        sprintf(str,"%06.1f",temp_float);
+                        temp_int  = (int32_t)(DataModelGetCDVSettings(getRegFloat(reg_id))*10.0);
+                        sprintf(str,"%06.1f",temp_int/10.0);
                         break;
                  case CMD_EDIT_READ:
-                      sprintf(str,"%06.1f",edit_data_buffer_float );
+                      temp_int = (int32_t)(edit_data_buffer_float*10.0);
+                      sprintf(str,"%06.1f",temp_int/10.0 );
                       break;
                 default:
                       temp_float  = DataModelGetCDVSettings(2500);
