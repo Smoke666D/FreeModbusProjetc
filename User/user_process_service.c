@@ -10,11 +10,69 @@
 #include "system_types.h"
 
 
+static const u16 MinRegAddr[]={MIN_SET1,MIN_SET2,MIN_SET3};
+static const u16 MaxRegAddr[]={MAX_SET1,MAX_SET2,MAX_SET3};
+static const u8  SensName[] ={ DCAIN1,DCAIN2,DCAIN3};
+static const u16 SensTypeAddr[]={AIN1_TYPE,AIN2_TYPE,AIN2_TYPE};
+static const u16 SensOfsAddr[]={SENS_OFS1,SENS_OFS2,SENS_OFS3};
+
+float SensorConver( u8 channel)
+{
+    float min_data = getRegFloat(MinRegAddr[channel]);
+    float max_data = getRegFloat(MaxRegAddr[channel]);
+    float sens_data = getAIN(SensName[channel]);
+    float data;
+    switch (getReg8( SensTypeAddr[channel]))
+       {
+               default:
+            case T0_10:
+                    data =(sens_data/10.0*(max_data - min_data)) + min_data;
+                    break;
+            case T2_10:
+                    if ( sens_data > 2 )
+                        data =( (sens_data-2.0)/8.0*(max_data - min_data)) + min_data;
+                    else
+                      return (0);
+                    break;
+            case T4_20:
+                    if ( sens_data > 4 )
+                     data =( (sens_data-4.0)/18.0*(max_data - min_data)) + min_data;
+                    else
+                      return(0);
+                    break;
+       }
+       data +=getRegFloat(SensOfsAddr[channel]);
+       return data;
+
+}
+
+uint8_t getHumanitySensor()
+{
+    if  (getReg8(INPUT_CONTROL_TYPE) == INP_ANALOG_SENSOR)
+    {
+    float data =  SensorConver(2);
+    if (data > 100) data = 100;
+    return (uint8_t)data;
+
+    }
+    else
+      return 0;
+
+
+}
+
+float getCO2Sensor()
+{
+    return SensorConver(1);
+}
 
 
 
+float getTSensor()
+{
 
-
+    return SensorConver(0);
+}
 
 void USER_FilterState( FMCH_Device_t * dev)
 {

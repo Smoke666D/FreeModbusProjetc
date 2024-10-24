@@ -36,6 +36,14 @@ typedef enum
     USER_PROCESS_DOUBLE_CHANNEL_ERROR,
 } USER_PROCESS_FSM_t;
 
+typedef enum
+{
+  INP_DISCRETE_INPUT = 0,
+  INP_PASSIVE_T_SENSOR = 1,
+  INP_ROOM_CONTROLLER  = 2,
+  INP_ANALOG_SENSOR  = 3,
+} INPUT_SENSOR_TYPE_t;
+
 typedef struct
 {
   u8 Setting_old;

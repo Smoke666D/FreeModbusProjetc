@@ -130,7 +130,12 @@
 #define INPUT_SIGNAL_MODE_ID    ( DRAW_UNIT_ID      + 1 )         //53
 #define ROOM_ACTIVE_CHANNEL_ID  ( INPUT_SIGNAL_MODE_ID     + 1 )  //54
 #define ROOM_SENSOR_TYPE_ID     ( ROOM_ACTIVE_CHANNEL_ID     + 1 )//55
-#define ZERO_CAL_COMMAND        ( ROOM_SENSOR_TYPE_ID      + 1 )  //56
+#define AIT1_TEMP_ID            ( ROOM_SENSOR_TYPE_ID      + 1 )  //56
+#define AIT2_TEMP_ID            ( AIT1_TEMP_ID      + 1 )         //57
+#define T_SENSOR_ID             ( AIT2_TEMP_ID      + 1 )        //58
+#define CO2_SENSOR_ID           ( T_SENSOR_ID       + 1 )  //59
+#define HUMANITY_SENSOR_ID       ( CO2_SENSOR_ID     + 1 )       //60
+#define ZERO_CAL_COMMAND        ( HUMANITY_SENSOR_ID      + 1 )  //61
 
 
 

@@ -14,6 +14,7 @@
 #include "data_model.h"
 #include "hw_lib_din.h"
 #include "system_types.h"
+#include "user_process_service.h"
 
 
 static const unsigned char rcp0606536715761_bits[] = {
@@ -956,7 +957,12 @@ static const u16 MenuCDV_BPRegMap[]=
                                  MEASERING_UNIT, //52
                                  INPUT_CONTROL_TYPE,//53
                                  ROOM_CHANNEL,              //54
-                                 AIN1_TYPE,
+                                 AIN1_TYPE, //55
+                                 0, //56
+                                 0, //57
+                                 0,  //58
+                                 0,  //59
+                                 0,
                                  0,
                          };
 
@@ -1123,6 +1129,7 @@ void DinModeSettingView(u8 channel, char * str)
                        strcpy(str,"-----");
      }
 }
+static const char NorAvalivaleString[]="Не доступен";
 
 void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 * res)
 {
@@ -1131,6 +1138,36 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
     u16 reg_id = MenuCDV_BPRegMap[data_id - DCV_SETTING1_ID];
     switch (data_id)
     {
+        case HUMANITY_SENSOR_ID:
+               if  (getReg8(INPUT_CONTROL_TYPE) == INP_ANALOG_SENSOR)
+                   printf(str,"%03i", getHumanitySensor());
+               else
+                   strcpy(str,NorAvalivaleString);
+               break;
+        case CO2_SENSOR_ID:
+                if  (getReg8(INPUT_CONTROL_TYPE) == INP_ANALOG_SENSOR)
+                   printf(str,"%03i", getCO2Sensor());
+                else
+                    strcpy(str,NorAvalivaleString);
+                break;
+        case T_SENSOR_ID:
+            if  (getReg8(INPUT_CONTROL_TYPE) == INP_ANALOG_SENSOR)
+                     printf(str,"%02.1f", getTSensor());
+                else
+                     strcpy(str,NorAvalivaleString);
+                break;
+        case AIT1_TEMP_ID :
+             if ( getReg8(AFTER_ZONE_SETTING) == 1)
+                 printf(str,"%2.1f",getAIN(DCAIN5));
+             else
+                 strcpy(str,NorAvalivaleString);
+            break;
+        case AIT2_TEMP_ID :
+            if  (getReg8(INPUT_CONTROL_TYPE) == INP_PASSIVE_T_SENSOR)
+                 printf(str,"%2.1f",getAIN(DCAIN4));
+             else
+                 strcpy(str,NorAvalivaleString);
+            break;
         case  BP_SZIE_ID:
             if ( command <= CMD_EDIT_READ )
                 sprintf(str,"%03i",( command == CMD_READ ) ? getReg16(reg_id) : edit_data_buffer_byte );
