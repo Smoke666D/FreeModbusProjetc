@@ -128,7 +128,9 @@
 #define BP_SZIE_ID              ( BP_REG_TYPE_ID      + 1 )        //51
 #define DRAW_UNIT_ID            ( BP_SZIE_ID      + 1 )           //52
 #define INPUT_SIGNAL_MODE_ID    ( DRAW_UNIT_ID      + 1 )         //53
-#define ZERO_CAL_COMMAND        ( INPUT_SIGNAL_MODE_ID     + 1 )        //54
+#define ROOM_ACTIVE_CHANNEL_ID  ( INPUT_SIGNAL_MODE_ID     + 1 )  //54
+#define ROOM_SENSOR_TYPE_ID     ( ROOM_ACTIVE_CHANNEL_ID     + 1 )//55
+#define ZERO_CAL_COMMAND        ( ROOM_SENSOR_TYPE_ID      + 1 )  //56
 
 
 
@@ -148,7 +150,8 @@
 #define SETTINGANALOG4_TITLE_ID ( SETTINGANALOG3_TITLE_ID      + 1 )
 #define SETTINGANALOG5_TITLE_ID ( SETTINGANALOG4_TITLE_ID      + 1 )
 #define SENSOR_TYPE_TITLE_ID    ( SETTINGANALOG5_TITLE_ID      + 1 )
-#define RESET_TITLE_ID           ( SENSOR_TYPE_TITLE_ID   + 1 )
+#define AFTER_ZONE_TITLE_ID      ( SENSOR_TYPE_TITLE_ID   + 1 )
+#define RESET_TITLE_ID           ( AFTER_ZONE_TITLE_ID   + 1 )
 #define SENSOR_TITLE_ID         ( RESET_TITLE_ID  + 1 )
 #define CALIBRATION_TITLE_ID    ( SENSOR_TITLE_ID   + 1 )
 

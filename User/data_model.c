@@ -50,6 +50,7 @@ DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[CLEAN_TIMER]        =  20;
                DATA_MODEL_REGISTER[CDV_BP_CH_COUNT]    =  1;
                DATA_MODEL_REGISTER[SENSOR_COUNT]       =  TIME_5_0;
+               DATA_MODEL_REGISTER[ROOM_CHANNEL]       =  1;
                setRegFloat(KOOFKPS , 36.0);
                setRegFloat(COOF_I,10.0);
                setRegFloat(COOF_P,5.0);

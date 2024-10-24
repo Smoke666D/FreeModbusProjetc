@@ -955,8 +955,9 @@ static const u16 MenuCDV_BPRegMap[]=
                                  BP_SIZE,       //51
                                  MEASERING_UNIT, //52
                                  INPUT_CONTROL_TYPE,//53
-                                 0,              //54
-
+                                 ROOM_CHANNEL,              //54
+                                 AIN1_TYPE,
+                                 0,
                          };
 
 
@@ -1014,6 +1015,12 @@ void vSetTitle(u16 data_id, u8 * str )
            case SETTING11_TITLE_ID:
                   sprintf(str,"11/%i",screen_count);
                   break;
+           case AFTER_ZONE_TITLE_ID:
+                 if (getReg8(INPUT_CONTROL_TYPE) == ANALOG_SENSOR)
+                     strcpy(str,"Приор. регул.");
+                 else
+                    str[0] =0;
+                 break;
            case RESET_TITLE_ID:
                if (dev_type == DEV_FMCH)
                                     strcpy(str,"10/10");
@@ -1073,6 +1080,7 @@ void vSetTitle(u16 data_id, u8 * str )
     }
 }
 
+static const u16 ROOM_CHANNEL_SELETC[]={AIN1_TYPE,AIN2_TYPE,AIN3_TYPE};
 
 void DinModeSettingView(u8 channel, char * str)
 {
@@ -1102,7 +1110,7 @@ void DinModeSettingView(u8 channel, char * str)
 void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 * res)
 {
     static float temp_float;
-    static  INPUT_SENSOR_t sensor_type;
+    static  u8 room_sensor_number;
     u16 reg_id = MenuCDV_BPRegMap[data_id - DCV_SETTING1_ID];
     switch (data_id)
     {
@@ -1200,8 +1208,8 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 break;
         case PRIOR_SENSOR_ID:
             *len = 0;
-            sensor_type  = getReg8(INPUT_CONTROL_TYPE);
-            if ((sensor_type == ANALOG_SENSOR) || (sensor_type == ROOM_CONTROLLER))
+
+            if ((getReg8(INPUT_CONTROL_TYPE) == ANALOG_SENSOR) )
             {
                 if ( command > CMD_EDIT_READ )
                 {
@@ -1213,39 +1221,25 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             }
             else
                 str[0]=0;
-
                 break;
-        /*case INPUT_SIGNAL_MODE_ID:
-                *len = 0;
-                sensor_type  = getReg8(INPUT_CONTROL_TYPE);
-                if (( sensor_type == ANALOG_SENSOR) || ( sensor_type == ROOM_CONTROLLER))
-                {
-                    if (sensor_type == ANALOG_SENSOR)
-                    {
-                        switch (getReg8(PRIOR_SENSOR))
-                        {
-                            case T_PRIOR:
-                                reg_id = AIN1_TYPE;
-                                break;
-                            case CO2_PRIOR:
-                                reg_id = AIN2_TYPE;
-                                break;
-                            case H_PRIOR:
-                            default:
-                                reg_id = AIN3_TYPE;
-                                break;
-                        }
-                    }
-                    else
-                        reg_id = AIN1_TYPE;
-                    if ( command > CMD_EDIT_READ )
-                        vByteDataEdit(0,reg_id,command,0,T4_20, T0_10,1 );
-                    else
-                        strcpy(str, SensorTypeStrig[ ( command == CMD_READ )? getReg8( reg_id) : edit_data_buffer_byte  ] );
-                 }
-                else
-                    str[0]= 0;
-                break;*/
+
+        case ROOM_ACTIVE_CHANNEL_ID:
+            if ( command > CMD_EDIT_READ )
+                   vByteDataEdit(0,reg_id,command,0,3,1,0);
+            else
+                  sprintf(str,"%1i",( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte);
+            break;
+        case SENSOR1_TYPE_ID:
+        case SENSOR2_TYPE_ID:
+        case SENSOR3_TYPE_ID:
+        case ROOM_SENSOR_TYPE_ID:
+            if (data_id == ROOM_SENSOR_TYPE_ID ) reg_id = ROOM_CHANNEL_SELETC[getReg8(ROOM_CHANNEL)-1];
+            *len = 0;
+            if ( command > CMD_EDIT_READ )
+                vByteDataEdit(0,reg_id,command,0,T4_20, T0_10,1 );
+            else
+                strcpy(str, SensorTypeStrig[ ( command == CMD_READ )? getReg8( reg_id) : edit_data_buffer_byte  ] );
+            break;
         case COOF_P_1_ID:
         case COOF_I_1_ID:
           if ( command > CMD_EDIT_READ )

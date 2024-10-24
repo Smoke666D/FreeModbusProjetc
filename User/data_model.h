@@ -15,7 +15,7 @@
 
 #define SW_V                 2
 #define SW_V2                2
-#define SW_V3                1
+#define SW_V3                2
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -88,7 +88,8 @@
 #define SETTING_MIN           ( SETTING_MAX       + sizeof(uint32_t) )
 #define SETTING_MID           ( SETTING_MIN       + sizeof(uint32_t) )
 #define INPUT_CONTROL_TYPE    ( SETTING_MID       + sizeof(uint32_t) )
-#define OFFSET_CH2            ( INPUT_CONTROL_TYPE       + sizeof(uint8_t) )
+#define ROOM_CHANNEL          ( INPUT_CONTROL_TYPE       + sizeof(uint8_t) )
+#define OFFSET_CH2            ( ROOM_CHANNEL        + sizeof(uint8_t) )
 #define CH1_SETTING           ( OFFSET_CH2         + sizeof(uint32_t) )
 #define CH2_SETTING           ( CH1_SETTING         + sizeof(uint32_t) )
 #define FILTER_LOW            ( CH2_SETTING         + sizeof(uint32_t) )
