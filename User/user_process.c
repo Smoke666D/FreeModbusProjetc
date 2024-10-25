@@ -67,8 +67,6 @@ USER_PROCESS_FSM_t USER_GetProccesState()
     return (task_fsm);
 }
 
-
-
 u8 getProcessStateCode()
 {
     switch( task_fsm )
@@ -310,11 +308,9 @@ void vCDV_SetpointCheck(  DISCRET_STATE_t * state, u32 * timeout  )
         switch (din_mask)
             {
                     case 0:
-
                         temp_state = 0;
                         break;
                     case 1:
-
                         temp_state = 1;
                         break;
                     case 3:
@@ -322,11 +318,9 @@ void vCDV_SetpointCheck(  DISCRET_STATE_t * state, u32 * timeout  )
                         temp_state = 2;
                         break;
                     case 7:
-
                         temp_state = 3;
                         break;
                     case 0xF:
-
                         temp_state = 4;
                         break;
                     default:
@@ -354,21 +348,29 @@ void vCDV_SetpointCheck(  DISCRET_STATE_t * state, u32 * timeout  )
     return ;
 }
 
+
+AIN_NAME_t const SENSOR_NAME[]={DCAIN1,DCAIN2,DCAIN3};
+u8         const SensTypeRegMap[]={AIN1_TYPE,AIN2_TYPE,AIN3_TYPE};
+
 float ComputeSetPoint()
 {
     float temp_float = 0;
-   /* switch (getReg8( INPUT_SENSOR_MODE))
+    uint16_t min = getReg16(SETTING_MIN);
+    uint16_t delta = getReg16(SETTING_MAX) - min;
+    u8 channel = getReg8(ROOM_CHANNEL)-1;
+    float data = getAIN(SENSOR_NAME[channel]);
+    switch (getReg8( SensTypeRegMap[channel]))
     {
         case 0:
-            temp_float =( getAIN(AIN1)/10.0*(getReg16(SETTING_MAX) - getReg16(SETTING_MIN))) + getReg16(SETTING_MIN);
+            temp_float =( data /10.0*delta) + min;
             break;
         case 1:
-            temp_float =( (getAIN(AIN1)-2.0)/8.0*(getReg16(SETTING_MAX) - getReg16(SETTING_MIN))) + getReg16(SETTING_MIN);
+            temp_float =( (data -2.0)/8.0*delta) + min;
             break;
         default:
-            temp_float =( (getAIN(AIN1)-4.0)/18.0*(getReg16(SETTING_MAX) - getReg16(SETTING_MIN))) + getReg16(SETTING_MIN);
+            temp_float =( (data -4.0)/18.0*delta) + min;
             break;
-    }*/
+    }
     return (temp_float);
 }
 
@@ -430,96 +432,39 @@ void vRoomContollerFSM( u8 state)
 }
 
 
-AIN_NAME_t const SENSOR_NAME[]={DCAIN1,DCAIN2,DCAIN3};
-
 
 
 
 void ErrorSensorCheck()
 {
-    AIN_NAME_t sensor_name;
-    SENSOR_TYPE_t sensor_type;
+    error_state &= ~ANALOG_SENSOR_ERROR;
+  u8 sensor_channel;
     switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
     {
         case ANALOG_SENSOR:
-        case ROOM_CONTROLLER:
-            sensor_name = SENSOR_NAME[getReg8(PRIOR_SENSOR)];
-            switch (sensor_name)
-            {
-                case DCAIN1:
-                    sensor_type = getReg8(AIN1_TYPE);
-                    break;
-                case DCAIN2:
-                    sensor_type = getReg8(AIN2_TYPE);
-                    break;
-                case DCAIN3:
-                default:
-                    sensor_type = getReg8(AIN3_TYPE);
-                    break;
-            }
-            switch (sensor_type)
-            {
-                case T2_10:
-                    if (getAIN(sensor_name) < 2.0 ) error_state |= ANALOG_SENSOR_ERROR;
-                    else error_state &= ~ANALOG_SENSOR_ERROR;
-                    break;
-                case T4_20:
-                    if (getAIN(sensor_name) < 4.0 ) error_state |= ANALOG_SENSOR_ERROR;
-                    else error_state &= ~ANALOG_SENSOR_ERROR;
-                    break;
-                default:
-                    error_state &= ~ANALOG_SENSOR_ERROR;
-                    break;
-            }
+           for (u8 i=0;i<3;i++)
+           {
+               if (vSensorErrorCheck(SENSOR_NAME[i],getReg8(SensTypeRegMap[i]) ))
+               {
+                   error_state |= ANALOG_SENSOR_ERROR;
+                   break;
+               }
+           }
             break;
-        case STATIC_TERMSENSOR:
+        case ROOM_CONTROLLER:
+            sensor_channel = getReg8(ROOM_CHANNEL)-1;
+            if (vSensorErrorCheck(SENSOR_NAME[sensor_channel],getReg8(SensTypeRegMap[sensor_channel]) ))
+                error_state |= ANALOG_SENSOR_ERROR;
             break;
         default:
             break;
 
     }
-
-
-
-
 }
 
 
-float GetSensor(u8 * after_zone)
-{
-   float temp_float = 0;
 
- /*  if (getReg8(SENSOR_TYPE_ID) == STATIC_TERMSENSOR)
-   {
-       temp_float = getAIN(DCAIN4);
-       *after_zone = 1;
-   }
-   else
-   {
-       AIN_NAME_t sensor_name = SENSOR_NAME[getReg8(PRIOR_SENSOR)];
-       if ( sensor_name == DCAIN1 ) *after_zone = 1;
-       //float min_data = getRegFloat(MIN_SET);
-      // float max_data = getRegFloat(MAX_SET);
-       //float offset   = getRegFloat(SENS_OFS);
-       /*switch (getReg8( INPUT_SENSOR_MODE))
-       {
-          case T0_10:
-              temp_float =( getAIN(sensor_name)/10.0*(max_data - min_data)) + min_data;
-              break;
-          case T2_10:
-              temp_float =( (getAIN(sensor_name)-2.0)/8.0*(max_data - min_data)) + min_data;
-              break;
-          default:
-              temp_float =( (getAIN(sensor_name)-4.0)/18.0*(max_data - min_data)) + min_data;
-              break;
-      }
-      temp_float +=offset;
-   }*/
-  return (temp_float);
-
-}
-
-
+static const uint16_t SettingRegMap[]={SENS_SETTING1,SENS_SETTING2,SENS_SETTING3};
 
 void vAnalogSensorFSM( DISCRET_STATE_t state)
 {
@@ -528,6 +473,7 @@ void vAnalogSensorFSM( DISCRET_STATE_t state)
     else if (state == 0) PID_Out =0.0;
     else
     {
+
             float temp_float = getAIN(SENS1);
             if (temp_float <= getReg16(SETTING_MIN))
             {
@@ -537,12 +483,11 @@ void vAnalogSensorFSM( DISCRET_STATE_t state)
             {
                   PID_SetOutputLimits(&TPID, TPID.OutMin, USER_AOUT_GET(DAC1));
             }
-            SET_POINT = getRegFloat(SENS_SETTING1);
+            SET_POINT = getRegFloat(SettingRegMap[getReg8(PRIOR_SENSOR)]);
             u8 after_zone = 0;
             float input_data = GetSensor(&after_zone);
             if ( after_zone )
             {
-
                 switch ( getReg8(AFTER_ZONE_SETTING ))
                 {
                     case 0:

@@ -21,6 +21,7 @@
 #include "data_model.h"
 #include "user_process.h"
 #include "system_types.h"
+#include "user_process_service.h"
 
 #if REG_COILS_NREGS%8 && REG_COILS_NREGS>8
 UCHAR    ucSCoilBuf[REG_COILS_NREGS/8+1];
@@ -170,7 +171,10 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 
 #define CDV_FACT_1              200
 #define CDV_FACT_2              202
-#define CDV_CUR_STATE           204
+#define CDV_T_SENSOR_MB         204
+#define CDV_CO2_SENSOR_MB       206
+#define CDV_H_SENSOR_MB         207
+#define CDV_CUR_STATE           208
 
 #define CDV_COUNT             ( CDV_CH_COUNT_MB  - CDV_PRIOR_SENS  + 1)
 
@@ -661,11 +665,16 @@ void UodateFMCHInputs()
 
 void UpdateDCVInputs()
 {
-    float temp_float;
-    temp_float  =  DataModelGetCDVSettings(getAIN(SENS1));
-    convert_float_to_int((float)temp_float, &usRegHoldingBuf[CDV_FACT_1-CDV_OFFSET]);
-    temp_float  =  DataModelGetCDVSettings(getAIN(SENS2));
-    convert_float_to_int((float)temp_float, &usRegHoldingBuf[CDV_FACT_2-CDV_OFFSET]);
+
+    int16_t temp_int;
+    temp_int  =  DataModelGetCDVSettings(getAIN(SENS1))*10;
+    convert_float_to_int((float)temp_int/10, &usRegInputBuf[CDV_FACT_1-CDV_OFFSET]);
+    temp_int  =  DataModelGetCDVSettings(getAIN(SENS2))*10;
+    convert_float_to_int((float)temp_int/10, &usRegInputBuf[CDV_FACT_2-CDV_OFFSET]);
+    temp_int  =  (int16_t)(getTSensor()*10);
+    convert_float_to_int((float)temp_int/10.0, &usRegInputBuf[CDV_T_SENSOR_MB-CDV_OFFSET]);
+    usRegInputBuf[CDV_CO2_SENSOR_MB-CDV_OFFSET] = (uint16_t)getCO2Sensor();
+    usRegInputBuf[CDV_H_SENSOR_MB-CDV_OFFSET] = getHumanitySensor();
     usRegInputBuf[CDV_CUR_STATE  - CDV_OFFSET ] = getStateDCV();
 
 }

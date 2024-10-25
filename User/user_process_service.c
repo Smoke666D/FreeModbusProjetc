@@ -48,21 +48,20 @@ float SensorConver( u8 channel)
 
 uint8_t getHumanitySensor()
 {
-    if  (getReg8(INPUT_CONTROL_TYPE) == INP_ANALOG_SENSOR)
-    {
     float data =  SensorConver(2);
     if (data > 100) data = 100;
-    return (uint8_t)data;
-
-    }
     else
-      return 0;
-
+    if (data < 0 )  data = 0;
+    return (uint8_t)data;
 
 }
 
 float getCO2Sensor()
 {
+    float temp  =SensorConver(1);
+    if ( temp < 0 ) temp = 0;
+    else
+    if (temp >5000) temp = 5000;
     return SensorConver(1);
 }
 
@@ -70,8 +69,11 @@ float getCO2Sensor()
 
 float getTSensor()
 {
-
-    return SensorConver(0);
+    float temp = SensorConver(0);
+    if (temp <-100 ) temp = 0;
+    else
+    if (temp > 100) temp  = 100;
+    return (temp);
 }
 
 void USER_FilterState( FMCH_Device_t * dev)
@@ -104,9 +106,56 @@ void USER_FilterState( FMCH_Device_t * dev)
 }
 
 
+u8 vSensorErrorCheck( u8 sensor_name, SENSOR_TYPE_t sensor_type)
+{
+    u8 error = 0;
+    switch (sensor_type)
+    {
+                    case T2_10:
+                        if (getAIN(sensor_name) < 2.0 ) error = 1;
+                        break;
+                    case T4_20:
+                        if (getAIN(sensor_name) < 4.0 ) error = 1;
+                        break;
+                    default:
+
+                        break;
+                }
+  return (error);
+}
 
 
+float GetSensor(u8 * after_zone)
+{
+   float temp_float = 0;
 
+   if ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE) == STATIC_TERMSENSOR)
+   {
+       temp_float = getAIN(DCAIN4);
+       *after_zone = 1;
+   }
+   else
+   {
+       switch (getReg8(PRIOR_SENSOR))
+       {
+           default:
+           case T_PRIOR:
+               *after_zone = 1;
+               temp_float = getTSensor();
+               break;
+           case CO2_PRIOR:
+               *after_zone = 0;
+               temp_float = getCO2Sensor();
+               break;
+           case H_PRIOR:
+               *after_zone = 0;
+               temp_float = getHumanitySensor();
+               break;
+       }
+   }
+  return (temp_float);
+
+}
 
 
 /* §¶§å§ß§Ü§è§Ú§Ú §ä§Ñ§Û§Þ§Ö§â§Ñ §à§é§Ú§ã§ä§Ü§Ú*/

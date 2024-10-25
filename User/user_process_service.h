@@ -29,4 +29,6 @@ void CleanTimerFuncton(  DISCRET_STATE_t * state);
 uint8_t getHumanitySensor();
 float getTSensor();
 float getCO2Sensor();
+u8 vSensorErrorCheck( u8 sensor_name, SENSOR_TYPE_t sensor_type);
+float GetSensor(u8 * after_zone);
 #endif /* USER_USER_PROCESS_SERVICE_H_ */

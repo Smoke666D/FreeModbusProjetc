@@ -1129,7 +1129,7 @@ void DinModeSettingView(u8 channel, char * str)
                        strcpy(str,"-----");
      }
 }
-static const char NorAvalivaleString[]="Не доступен";
+static const char NorAvalivaleString[]="----";
 
 void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 * res)
 {
@@ -1140,31 +1140,35 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
     {
         case HUMANITY_SENSOR_ID:
                if  (getReg8(INPUT_CONTROL_TYPE) == INP_ANALOG_SENSOR)
-                   printf(str,"%03i", getHumanitySensor());
+                   sprintf(str,"%03i %%", getHumanitySensor());
                else
                    strcpy(str,NorAvalivaleString);
                break;
         case CO2_SENSOR_ID:
                 if  (getReg8(INPUT_CONTROL_TYPE) == INP_ANALOG_SENSOR)
-                   printf(str,"%03i", getCO2Sensor());
+                {
+                   uint16_t temp = getCO2Sensor();
+                   sprintf(str,"%04i ppm", (temp > 9999 ) ? 9999 : temp);
+                }
                 else
                     strcpy(str,NorAvalivaleString);
                 break;
         case T_SENSOR_ID:
             if  (getReg8(INPUT_CONTROL_TYPE) == INP_ANALOG_SENSOR)
-                     printf(str,"%02.1f", getTSensor());
+
+                     sprintf(str,"%02.1f C", getTSensor());
                 else
                      strcpy(str,NorAvalivaleString);
                 break;
         case AIT1_TEMP_ID :
              if ( getReg8(AFTER_ZONE_SETTING) == 1)
-                 printf(str,"%2.1f",getAIN(DCAIN5));
+                 sprintf(str,"%2.1f C",getAIN(DCAIN4));
              else
                  strcpy(str,NorAvalivaleString);
             break;
         case AIT2_TEMP_ID :
-            if  (getReg8(INPUT_CONTROL_TYPE) == INP_PASSIVE_T_SENSOR)
-                 printf(str,"%2.1f",getAIN(DCAIN4));
+             if  (getReg8(INPUT_CONTROL_TYPE) == INP_PASSIVE_T_SENSOR)
+                 sprintf(str,"%2.1f C",getAIN(DCAIN5));
              else
                  strcpy(str,NorAvalivaleString);
             break;
@@ -1267,7 +1271,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             {
                 if ( command > CMD_EDIT_READ )
                 {
-                    if ( command == CMD_SAVE_EDIT ) vSetAfterZone( (edit_data_buffer_byte == T_PRIOR) ? 1 : 0);
+                    if ( command == CMD_SAVE_EDIT ) vSetAfterZone( (edit_data_buffer_byte == T_PRIOR) ? 1 : 0,getReg8(INPUT_CONTROL_TYPE));
                     vByteDataEdit(0,reg_id,command,0,2, 0,1);
                 }
                 else
