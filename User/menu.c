@@ -1080,7 +1080,6 @@ void vSetTitle(u16 data_id, u8 * str )
                    sprintf(str,"13/%i",screen_count);
                break;
            case SETTINGANALOG5_TITLE_ID:
-
                if ((getReg8(CDV_BP_CH_COUNT))==2)
                    sprintf(str,"16/%i",screen_count);
                else
@@ -1146,16 +1145,12 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                break;
         case CO2_SENSOR_ID:
                 if  (getReg8(INPUT_CONTROL_TYPE) == INP_ANALOG_SENSOR)
-                {
-                   uint16_t temp = getCO2Sensor();
-                   sprintf(str,"%04i ppm", (temp > 9999 ) ? 9999 : temp);
-                }
+                   sprintf(str,"%04i ppm", getCO2Sensor());
                 else
                     strcpy(str,NorAvalivaleString);
                 break;
         case T_SENSOR_ID:
-            if  (getReg8(INPUT_CONTROL_TYPE) == INP_ANALOG_SENSOR)
-
+               if  (getReg8(INPUT_CONTROL_TYPE) == INP_ANALOG_SENSOR)
                      sprintf(str,"%02.1f C", getTSensor());
                 else
                      strcpy(str,NorAvalivaleString);
@@ -1266,7 +1261,6 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 break;
         case PRIOR_SENSOR_ID:
             *len = 0;
-
             if ((getReg8(INPUT_CONTROL_TYPE) == ANALOG_SENSOR) )
             {
                 if ( command > CMD_EDIT_READ )
@@ -1310,7 +1304,6 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 vByteDataEdit(1,reg_id,command,2,999,0,0);
             else
                 sprintf(str,"%03i",( command == CMD_READ )? getReg16( reg_id) : edit_data_buffer_byte );
-
             break;
         case CLEAN_TIMER_ID:
             if ( command > CMD_EDIT_READ )
@@ -1381,7 +1374,6 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                                  default:
                                  break;
                          }
-
                         saveRegFloat( reg_id, temp_float);
                         start_edit_flag = 0;
                         break;
@@ -1399,20 +1391,12 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                       break;
             }
             break;
-
         case F_CHANNEL_ID:
-            switch (command)
-            {
-                 case CMD_READ:
-                       sprintf(str,"%6.4f",getRegFloat(reg_id));
-                       break;
-                 case CMD_EDIT_READ:
-                       sprintf(str,"%6.4f",edit_data_buffer_float );
-                       break;
-                 default:
-                      vFloatDataEdit(reg_id, command,1,4,9.999,0.0);
-                      break;
-            }
+            if ( command > CMD_EDIT_READ )
+                vFloatDataEdit(reg_id, command,1,4,9.999,0.0);
+            else
+                sprintf(str,"%6.4f",( command == CMD_READ ) ? getRegFloat(reg_id) : edit_data_buffer_float);
+
             break;
             case SENSOR1_MIN_ID:
             case SENSOR1_MAX_ID:
@@ -1444,7 +1428,6 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                                   strcpy(str,"Калиборвка...");
                             }
                             break;
-
                         case CMD_START_EDIT:
                             if ((USER_GetProccesState() == USER_PROCCES_WORK))
                                 SystemCalibraionStart();
@@ -1459,7 +1442,6 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                     break;
     }
 }
-
 
 
 void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 * res)
@@ -1502,7 +1484,6 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                            strcpy(str,"поддерживать уставку");
                            break;
                        default:
-
                            break;
                    }
                }
@@ -1740,7 +1721,6 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                 vByteDataEdit(1,reg_id,command,2,999,0,0);
             else
                 sprintf(str,"%03i", (command == CMD_READ) ? getReg16(reg_id) : edit_data_buffer_byte );
-
             break;
         case AC_VOLTAGE_ID:
             sprintf(str,"%i В",(uint16_t)getAIN(reg_id));
@@ -1851,13 +1831,11 @@ static void vDraw( xScreenObjet * pScreenDraw)
     u8 str[100];
     for (u8 i=0;i<MAX_STRING_NUMBER;i++)
     {
-
         x = pScreenDraw[i].x;
         y = pScreenDraw[i].y;
         switch (pScreenDraw[i].xType)
         {
         case TEXT_STRING:
-
             u8g2_DrawUTF8(&u8g2,x,y,pScreenDraw[i].pStringParametr);
             break;
         case READ_DATA:

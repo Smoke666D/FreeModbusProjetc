@@ -22,6 +22,10 @@
 #define SECOND_CHANNEL_ERROR 0x40
 #define ANALOG_SENSOR_ERROR  0x80
 
+void ErrorSensorCheck( u8 * error);
+float ComputeSetPoint();
+void USER_AOUT_SET(u8 channel, float data);
+float USER_AOUT_GET(u8 channel);
 void USER_FilterState( FMCH_Device_t * dev);
 void vCheckDoubleChannelAlarm( u8 *error_state );
 void InitCleanTimer();

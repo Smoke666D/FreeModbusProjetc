@@ -110,6 +110,8 @@ void HAL_RecieveByte_IT(HAL_USART_t usart , u8 * rb)
 void HAL_RecieveITDisable(HAL_USART_t usart)
 {
     USART[usart]->CTLR1 &= ~USART_IT_RXNE_MASK;
+
+
 }
 
 

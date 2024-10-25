@@ -8,6 +8,8 @@
 
 #include "user_process_service.h"
 #include "system_types.h"
+#include "hal_timers.h"
+#include "hw_lib_adc.h"
 
 
 static const u16 MinRegAddr[]={MIN_SET1,MIN_SET2,MIN_SET3};
@@ -240,3 +242,84 @@ void vCheckDoubleChannelAlarm( u8 *error_state )
         }
     }
 }
+
+
+
+
+
+
+
+void ErrorSensorCheck( u8 * error)
+{
+    (*error) &= ~ANALOG_SENSOR_ERROR;
+    u8 sensor_channel;
+    switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
+    {
+        case ANALOG_SENSOR:
+           for (u8 i=0;i<3;i++)
+           {
+               if (vSensorErrorCheck(SensName[i],getReg8(SensTypeAddr[i]) ))
+               {
+                   (*error) |= ANALOG_SENSOR_ERROR;
+                   break;
+               }
+           }
+            break;
+        case ROOM_CONTROLLER:
+            sensor_channel = getReg8(ROOM_CHANNEL)-1;
+            if (vSensorErrorCheck(SensName[sensor_channel],getReg8(SensTypeAddr[sensor_channel]) ))
+                (*error) |= ANALOG_SENSOR_ERROR;
+            break;
+        default:
+            break;
+
+    }
+}
+
+
+float ComputeSetPoint()
+{
+    float temp_float = 0;
+    uint16_t min = getReg16(SETTING_MIN);
+    uint16_t delta = getReg16(SETTING_MAX) - min;
+    u8 channel = getReg8(ROOM_CHANNEL)-1;
+    float data = getAIN(SensName[channel]);
+    switch (getReg8( SensTypeAddr[channel]))
+    {
+        case 0:
+            temp_float =( data /10.0*delta) + min;
+            break;
+        case 1:
+            temp_float =( (data -2.0)/8.0*delta) + min;
+            break;
+        default:
+            temp_float =( (data -4.0)/18.0*delta) + min;
+            break;
+    }
+    return (temp_float);
+}
+
+static float AOUTDATA[3]={0,0,0};
+void USER_AOUT_SET(u8 channel, float data)
+{
+    AOUTDATA[channel]= data;
+    u16 ref = (uint16_t)fGetDacCalData(channel,data);
+    switch (channel)
+    {
+        case DAC1:
+            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_1 ,ref );
+            break;
+        case DAC2:
+            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_2 ,ref  );
+            break;
+        case DAC3:
+            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_3 ,ref  );
+            break;
+    }
+}
+
+float USER_AOUT_GET(u8 channel)
+{
+    return (AOUTDATA[channel]);
+}
+

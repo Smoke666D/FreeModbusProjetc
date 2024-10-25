@@ -40,8 +40,6 @@ u8 getStateDCV();
 void SystemCalibraionStop();
 void SystemCalibraionStart();
 u8 getProcessStateCode();
-void USER_AOUT_SET(u8 channel, float data);
-float USER_AOUT_GET(u8 channel);
 float getDAC1_Out();
 void USER_SetSettingChange();
 u8 USER_GerErrorState();

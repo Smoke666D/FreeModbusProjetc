@@ -116,7 +116,6 @@ void vMBPortSerialEnable(BOOL xRxEnable, BOOL xTxEnable)
     if (xRxEnable)
     {
         HAL_RecieveByte_IT(MBPORT ,&rx_data_buf);
-
     	//HAL_HalfDuplex_EnableReceiver(&huart1);
         /* enable RX interrupt */
   //      serial->ops->control(serial, RT_DEVICE_CTRL_SET_INT, (void *)RT_DEVICE_FLAG_INT_RX);
@@ -127,10 +126,11 @@ void vMBPortSerialEnable(BOOL xRxEnable, BOOL xTxEnable)
     else
     {
         /* switch 485 to transmit mode */
+        HAL_RecieveITDisable(MBPORT);
     	vTransmitEnable();
         /* disable RX interrupt */
 
-    	HAL_RecieveITDisable(MBPORT);
+
      //   serial->ops->control(serial, RT_DEVICE_CTRL_CLR_INT, (void *)RT_DEVICE_FLAG_INT_RX);
     }
     if (xTxEnable)

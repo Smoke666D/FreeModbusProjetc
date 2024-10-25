@@ -198,9 +198,8 @@ float getAIN( AIN_CHANNEL_t channel)
     switch (channel)
     {
         case SENS1:
-            return   (PressSens[0]);
         case SENS2:
-            return  ( PressSens[1]);
+            return   (PressSens[ (channel == SENS1 ) ? 0 : 1 ]);
         case DC24:
              return  ((float)GetConversional(&DataBuffer[2])*KK*COOF_24V);
         case DCAIN1:
@@ -210,14 +209,9 @@ float getAIN( AIN_CHANNEL_t channel)
         case DCAIN3:
             return  getAINConver(2);
        case DCAIN4:
-            temp_data = (u16)GetConversional(&DataBuffer[6]);
-            temp_float =fGetAinCalData(AIN4,(float)(temp_data*K10)/(4095-temp_data));
-            if (temp_float < -55.0 ) return (-55.0);
-                        else
-                        return (temp_float);
        case DCAIN5:
-            temp_data = (u16)GetConversional(&DataBuffer[7]);
-            temp_float = fGetAinCalData(AIN5,(float)(temp_data*K10)/(4095-temp_data));
+            temp_data = (u16)GetConversional(&DataBuffer[ (channel ==DCAIN4)? 6 : 7 ]);
+            temp_float =fGetAinCalData((channel ==DCAIN4)? AIN4 : AIN5,(float)(temp_data*K10)/(4095-temp_data));
             if (temp_float < -55.0 ) return (-55.0);
             else
             return (temp_float);
@@ -424,7 +418,7 @@ void ADC_task(void *pvParameters)
                 case STATE_INIT:
                     ADC_SoftwareStartConvCmd(ADC2, ENABLE);
                     HAL_TiemrEneblae(TIMER3);
-                    ADC_TASK_FSM = STATE_WHAIT_TO_RAEDY;
+                    ADC_TASK_FSM = STATE_RUN;
                     break;
                 case STATE_WHAIT_TO_RAEDY:
                     ADC_TASK_FSM = STATE_RUN;

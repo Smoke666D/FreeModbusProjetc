@@ -17,8 +17,6 @@
 #include "system_types.h"
 
 #define FILTER_WARNINR_VALUE 90
-
-
 static  PID_TypeDef TPID;
 static  PID_TypeDef TPID2;
 static u8 setting_change_flag =0;    //Флаг измения значения устаки, нужен для изменения отображения на индикаторе текущей уставки
@@ -131,8 +129,6 @@ static void USER_SETTING_CHECK(u8 control_type, FMCH_Device_t * dev)
 }
 
 
-
-
 void UPDATE_COOF()
 {
     PID_SetTunings2(&TPID,getRegFloat(COOF_P), getRegFloat(COOF_I), 0);
@@ -209,73 +205,73 @@ void vFMCH_FSM( FMCH_Device_t * dev)
           dev->PreFilter_Warning_Timeout = 0;
      }
 
-    switch (task_fsm)
-               {
-                   case USER_PROCCES_IDLE: // @suppress("Symbol is not resolved")
-                       dev->HEPA_CONTROL_FLAG= 0;
-                       eSetDUT(OUT_1,FALSE);
-                       PIDOut = 0;
-                       USER_AOUT_SET(DAC1,0);
-                       USER_AOUT_SET(DAC2,0);
-                       USER_AOUT_SET(DAC3,0);
-                       dev->start_timeout = 0;
-                       temp_counter = 0;
-                       error_state = 0;
-                       break;
-                   case USER_PROCESS_WORK_TIME_OUT:
-                       dev->HEPA_CONTROL_FLAG= 0;
-                       if ( (++dev->start_timeout)> ( getReg8(FAN_START_TIMEOUT)*100))
-                       {
-                           task_fsm = USER_PROCESS_ZERO_CALIB;
-                           CalibrateZeroStart();
-                       }
-                       break;
-                   case USER_PROCESS_ZERO_CALIB:
-                       if (CalibrationZeroWhait())
-                       {
-                           PIDOut = 0;
-                           UPDATE_COOF();
-                           PID_Init(&TPID,0,0);
-                           task_fsm = USER_PROCCES_WORK;
-                       }
-                       break;
-                   case USER_PROCCES_WORK:
-                       if (++dev->pid_counter >=10)
-                       {
-                           dev->pid_counter = 0;
-                           Temp = getAIN(SENS1);
-                           PID_Compute(&TPID,getAIN(SENS1));
-                           float PID_Out = PIDOut/1000.0;
-                           USER_AOUT_SET(DAC2,PID_Out);
-                           if ( ((PID_Out) >=9.5) && (Temp < SET_POINT ) )
-                           {
-                              if  ((error_state & SETTING_ERROR )==0 )
-                              {
-                                  if ( ++(dev->Setting_Warning_Timeout) >= 1800 )
-                                  {
-                                      vADDRecord(SETTING_ERROR);
-                                      error_state |= SETTING_ERROR;
-                                  }
-                              }
-                           }
-                           else
-                           {
-                               dev->Setting_Warning_Timeout = 0;
-                               error_state &= ~SETTING_ERROR;
-                           }
-                           dev->HEPA_CONTROL_FLAG = (fabs(SET_POINT-Temp) <= ( SET_POINT*0.02) ) ? 1 : 0 ;
-                       }
-                       eSetDUT(OUT_1,TRUE);
-                       break;
-                   case USER_PROCESS_ALARM:
-                       if ( ( error_state & (LOW_VOLTAGE_ERROR | HIGH_VOLTAGE_ERROR)) == 0 )  task_fsm = USER_PROCCES_IDLE;
-                       PIDOut = 0;
-                       USER_AOUT_SET(DAC2,0);
-                       eSetDUT(OUT_1,FALSE);
-                       error_state &= ~SETTING_ERROR;
-                       dev->HEPA_CONTROL_FLAG = 0;
-                       break;
+      switch (task_fsm)
+      {
+          case USER_PROCCES_IDLE:
+              dev->HEPA_CONTROL_FLAG= 0;
+              eSetDUT(OUT_1,FALSE);
+              PIDOut = 0;
+              USER_AOUT_SET(DAC1,0);
+              USER_AOUT_SET(DAC2,0);
+              USER_AOUT_SET(DAC3,0);
+              dev->start_timeout = 0;
+              temp_counter = 0;
+              error_state = 0;
+              break;
+         case USER_PROCESS_WORK_TIME_OUT:   //Запускаем таймер остановки вентилятора
+              dev->HEPA_CONTROL_FLAG= 0;    //И запускаем автокалиборвку датчиков
+              if ( (++dev->start_timeout)> ( getReg8(FAN_START_TIMEOUT)*100))
+              {
+                  task_fsm = USER_PROCESS_ZERO_CALIB;
+                  CalibrateZeroStart();
+              }
+              break;
+         case USER_PROCESS_ZERO_CALIB:
+              if (CalibrationZeroWhait())   //Проверяем закончилась ли калиборвка
+              {
+                     PIDOut = 0;
+                     UPDATE_COOF();
+                     PID_Init(&TPID,0,0);
+                     task_fsm = USER_PROCCES_WORK;
+              }
+              break;
+        case USER_PROCCES_WORK:
+              if (++dev->pid_counter >=10)
+              {
+                  dev->pid_counter = 0;
+                  Temp = getAIN(SENS1);
+                  PID_Compute(&TPID,getAIN(SENS1));
+                  float PID_Out = PIDOut/1000.0;
+                  USER_AOUT_SET(DAC2,PID_Out);
+                  if ( ((PID_Out) >=9.5) && (Temp < SET_POINT ) )
+                  {
+                      if  ((error_state & SETTING_ERROR )==0 )
+                      {
+                          if ( ++(dev->Setting_Warning_Timeout) >= 1800 )
+                          {
+                              vADDRecord(SETTING_ERROR);
+                              error_state |= SETTING_ERROR;
+                          }
+                      }
+                  }
+                  else
+                  {
+                      dev->Setting_Warning_Timeout = 0;
+                      error_state &= ~SETTING_ERROR;
+                  }
+                  dev->HEPA_CONTROL_FLAG = (fabs(SET_POINT-Temp) <= ( SET_POINT*0.02) ) ? 1 : 0 ;
                }
+               eSetDUT(OUT_1,TRUE);
+               break;
+         case USER_PROCESS_ALARM:
+               if ( ( error_state & (LOW_VOLTAGE_ERROR | HIGH_VOLTAGE_ERROR)) == 0 )  task_fsm = USER_PROCCES_IDLE;
+               PIDOut = 0;
+               USER_AOUT_SET(DAC2,0);
+               eSetDUT(OUT_1,FALSE);
+               error_state &= ~SETTING_ERROR;
+               dev->HEPA_CONTROL_FLAG = 0;
+               break;
+     }
 }
 
 void SystemCalibraionStart()
@@ -349,30 +345,7 @@ void vCDV_SetpointCheck(  DISCRET_STATE_t * state, u32 * timeout  )
 }
 
 
-AIN_NAME_t const SENSOR_NAME[]={DCAIN1,DCAIN2,DCAIN3};
-u8         const SensTypeRegMap[]={AIN1_TYPE,AIN2_TYPE,AIN3_TYPE};
 
-float ComputeSetPoint()
-{
-    float temp_float = 0;
-    uint16_t min = getReg16(SETTING_MIN);
-    uint16_t delta = getReg16(SETTING_MAX) - min;
-    u8 channel = getReg8(ROOM_CHANNEL)-1;
-    float data = getAIN(SENSOR_NAME[channel]);
-    switch (getReg8( SensTypeRegMap[channel]))
-    {
-        case 0:
-            temp_float =( data /10.0*delta) + min;
-            break;
-        case 1:
-            temp_float =( (data -2.0)/8.0*delta) + min;
-            break;
-        default:
-            temp_float =( (data -4.0)/18.0*delta) + min;
-            break;
-    }
-    return (temp_float);
-}
 
 static DISCRET_STATE_t state = SETTING_CLOSE;
 
@@ -416,6 +389,10 @@ void Channel2Reg( u8 state, float setpoint )
 }
 
 
+
+
+
+
 void vRoomContollerFSM( u8 state)
 {
     float PID_Out;
@@ -431,36 +408,6 @@ void vRoomContollerFSM( u8 state)
     Channel2Reg(state,getAIN(SENS1) );
 }
 
-
-
-
-
-void ErrorSensorCheck()
-{
-    error_state &= ~ANALOG_SENSOR_ERROR;
-  u8 sensor_channel;
-    switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
-    {
-        case ANALOG_SENSOR:
-           for (u8 i=0;i<3;i++)
-           {
-               if (vSensorErrorCheck(SENSOR_NAME[i],getReg8(SensTypeRegMap[i]) ))
-               {
-                   error_state |= ANALOG_SENSOR_ERROR;
-                   break;
-               }
-           }
-            break;
-        case ROOM_CONTROLLER:
-            sensor_channel = getReg8(ROOM_CHANNEL)-1;
-            if (vSensorErrorCheck(SENSOR_NAME[sensor_channel],getReg8(SensTypeRegMap[sensor_channel]) ))
-                error_state |= ANALOG_SENSOR_ERROR;
-            break;
-        default:
-            break;
-
-    }
-}
 
 
 
@@ -551,7 +498,7 @@ void vDiscreteInputFSM( DISCRET_STATE_t state)
 void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
 {
     vCDV_SetpointCheck(&state, &dev->start_timeout);
-    ErrorSensorCheck();
+    ErrorSensorCheck(&error_state);
     vCheckDoubleChannelAlarm(&error_state);
     switch (task_fsm)
     {
@@ -573,7 +520,6 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 }
                 else
                 {
-
                     if (++dev->pid_counter >=10)
                     {
                         UPDATE_COOFCAV();
@@ -736,7 +682,6 @@ void user_process_task(void *pvParameters)
        PID_SetOutputLimits(&TPID,(float)0.0,(float)10000.0);
    PID(&TPID2, &PIDOut2, &SET_POINT1, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
    PID_SetOutputLimits(&TPID2,(float)0000.0,(float)10000.0);
-
    while(1)
    {
        vTaskDelay(10);
@@ -761,29 +706,5 @@ void user_process_task(void *pvParameters)
            }
        }
    }
-}
-
-static float AOUTDATA[3]={0,0,0};
-void USER_AOUT_SET(u8 channel, float data)
-{
-    AOUTDATA[channel]= data;
-    u16 ref = (uint16_t)fGetDacCalData(channel,data);
-    switch (channel)
-    {
-        case DAC1:
-            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_1 ,ref );
-            break;
-        case DAC2:
-            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_2 ,ref  );
-            break;
-        case DAC3:
-            HAL_TIMER_SetPWMPulse(TIMER9,TIM_CHANNEL_3 ,ref  );
-            break;
-    }
-}
-
-float USER_AOUT_GET(u8 channel)
-{
-    return (AOUTDATA[channel]);
 }
 

@@ -665,7 +665,6 @@ void UodateFMCHInputs()
 
 void UpdateDCVInputs()
 {
-
     int16_t temp_int;
     temp_int  =  DataModelGetCDVSettings(getAIN(SENS1))*10;
     convert_float_to_int((float)temp_int/10, &usRegInputBuf[CDV_FACT_1-CDV_OFFSET]);
@@ -1067,7 +1066,7 @@ void MBRTU_task(void *pvParameters)
              {
                 do
                 {
-                    vTaskDelay(1);
+                    //vTaskDelay(1);
                     xStatus = eMBPoll(  );
 
                 }
