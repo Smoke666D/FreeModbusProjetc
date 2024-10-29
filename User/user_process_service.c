@@ -180,7 +180,9 @@ static CLEAN_TIMER_t CleanTimer;
                 CleanTimer.tumer_on  = 1;
         }
         else
+        {
             setReg8(CDV_CONTOROL, SETTING_MIDIUM);
+        }
      }
      else
      {
@@ -194,7 +196,10 @@ static CLEAN_TIMER_t CleanTimer;
             setReg8(CDV_CONTOROL, SETTING_MIDIUM);
          }
          else
+         {
             setReg8(CDV_CONTOROL, SETTING_OPEN);
+            if (getReg8(LIGTH )== 0 ) setReg8(LIGTH,1);
+         }
       }
     CleanTimer.old_control_state = CleanTimer.control_state;
     return;

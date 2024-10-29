@@ -503,7 +503,7 @@ void vDiscreteInputFSM( )
 
 void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
 {
-    CleanTimerFuncton();
+
  //   ErrorSensorCheck(&error_state);
   //  vCheckDoubleChannelAlarm(&error_state);
     switch (task_fsm)
@@ -515,6 +515,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 task_fsm =USER_PROCCES_WORK;
                 break;
             case USER_PROCCES_WORK:
+                 CleanTimerFuncton();
                 *cal_flag = 0;
                 if ((error_state & DIN_ERROR) || (error_state & ANALOG_SENSOR_ERROR))
                 {
