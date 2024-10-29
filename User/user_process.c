@@ -285,14 +285,14 @@ void SystemCalibraionStop()
 
 
 static u8 din_mask = 0;
+static u8 old_state = 0;
 
 
-
-void vCDV_SetpointCheck(  DISCRET_STATE_t * state, u32 * timeout  )
+void vCDV_SetpointCheck(   u32 * timeout  )
 {
       //Сбрасываем ошибку дискретных входов
     error_state &=~DIN_ERROR;
-    u8 new_state = ( getReg8( CONTROL_TYPE )==  MKV_MB_DIN)? ( (u8)uiGetDinMask() & 0x0F ) : getReg8(CDV_CONTOROL);
+    u8 new_state = ( getReg8( CONTROL_TYPE )==  MKV_MB_DIN)? ( (u8)uiGetDinMask() & 0x0F ) : getReg8(MB_CDV_CONTROL);
     if ( din_mask != new_state )
     {
          din_mask = new_state ;
@@ -331,32 +331,33 @@ void vCDV_SetpointCheck(  DISCRET_STATE_t * state, u32 * timeout  )
 
     }
 
-    if (*state!=temp_state)
+    if (old_state!=temp_state)
     {
+
             if ( ++(*timeout) >= getReg8(SETTING_TIMER)*100 )
             {
-                   *state = temp_state;
+                   old_state = temp_state;
                    setReg8(CDV_CONTOROL,temp_state);
             }
-        }
+    }
 
-    CleanTimerFuncton(state);
+
     return ;
 }
 
 
 
 
-static DISCRET_STATE_t state = SETTING_CLOSE;
+//static DISCRET_STATE_t state = SETTING_CLOSE;
 
 u8 getStateDCV()
 {
-    return state;
+    return getReg8(CDV_CONTOROL);
 }
 
 u8 getStateVAV()
 {
-    return state;
+    return getReg8(CDV_CONTOROL);
 }
 
 
@@ -367,14 +368,17 @@ void vBP()
 }
 
 
-void Channel2Reg( u8 state, float setpoint )
+void Channel2Reg(  float setpoint )
 {
     float PID_Out;
+
+    DISCRET_STATE_t state = getReg8(CDV_CONTOROL);
     u8 ch_count = getReg8(CDV_BP_CH_COUNT);
     if (ch_count  == 2)
     {
+
          if (state == SETTING_CLOSE) PID_Out = 0.0;
-         else if (state == SETTING_OPEN ) PID_Out = 10.0;
+         else if (state== SETTING_OPEN ) PID_Out = 10.0;
          else
          {
 
@@ -393,9 +397,10 @@ void Channel2Reg( u8 state, float setpoint )
 
 
 
-void vRoomContollerFSM( u8 state)
+void vRoomContollerFSM( )
 {
     float PID_Out;
+    DISCRET_STATE_t state =  getReg8(CDV_CONTOROL);
     if ( state == SETTING_OPEN ) PID_Out = 10.0;
     else if (state == SETTING_CLOSE) PID_Out = 0.0;
     else
@@ -405,7 +410,7 @@ void vRoomContollerFSM( u8 state)
         PID_Out = PIDOut/1000.0;
     }
     USER_AOUT_SET(DAC1,PID_Out);
-    Channel2Reg(state,getAIN(SENS1) );
+    Channel2Reg(getAIN(SENS1) );
 }
 
 
@@ -413,11 +418,12 @@ void vRoomContollerFSM( u8 state)
 
 static const uint16_t SettingRegMap[]={SENS_SETTING1,SENS_SETTING2,SENS_SETTING3};
 
-void vAnalogSensorFSM( DISCRET_STATE_t state)
+void vAnalogSensorFSM( )
 {
     float PID_Out;
-    if ( state == 4 ) PID_Out =10.0;
-    else if (state == 0) PID_Out =0.0;
+    DISCRET_STATE_t state = getReg8(CDV_CONTOROL);
+    if ( state == SETTING_OPEN  ) PID_Out =10.0;
+    else if (state == SETTING_CLOSE) PID_Out =0.0;
     else
     {
 
@@ -456,7 +462,7 @@ void vAnalogSensorFSM( DISCRET_STATE_t state)
             PID_Out = PIDOut/1000.0;
     }
     USER_AOUT_SET(DAC1,PID_Out);
-    Channel2Reg(state,getAIN(SENS1));
+    Channel2Reg(getAIN(SENS1));
 
 }
 
@@ -464,9 +470,9 @@ void vAnalogSensorFSM( DISCRET_STATE_t state)
 
 
 
-void vDiscreteInputFSM( DISCRET_STATE_t state)
+void vDiscreteInputFSM( )
 {
-    switch (state)
+    switch (getReg8(CDV_CONTOROL))
     {
         case SETTING_OPEN:
              USER_AOUT_SET(DAC1,10.0);
@@ -485,21 +491,21 @@ void vDiscreteInputFSM( DISCRET_STATE_t state)
              break;
 
      }
-    if ((state>=1) && (state<=3))
+    if ((getReg8(CDV_CONTOROL)>=1) && (getReg8(CDV_CONTOROL)<=3))
     {
           PID_Compute(&TPID,getAIN(SENS1));
           float PID_Out = PIDOut/1000.0;
           USER_AOUT_SET(DAC1,PID_Out);
      }
-    Channel2Reg(state,SET_POINT);
+    Channel2Reg(SET_POINT);
 
 }
 
 void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
 {
-    vCDV_SetpointCheck(&state, &dev->start_timeout);
-    ErrorSensorCheck(&error_state);
-    vCheckDoubleChannelAlarm(&error_state);
+    CleanTimerFuncton();
+ //   ErrorSensorCheck(&error_state);
+  //  vCheckDoubleChannelAlarm(&error_state);
     switch (task_fsm)
     {
             case USER_PROCCES_IDLE:
@@ -527,14 +533,18 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                         switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
                         {
                             case DISCRETE_INPUT:
-                                vDiscreteInputFSM(state);
+                                vCDV_SetpointCheck( &dev->start_timeout);
+                                vDiscreteInputFSM();
                                 break;
                             case ROOM_CONTROLLER:
-                                vRoomContollerFSM(state);
+
+                                printf("room\r\n");
+                                vRoomContollerFSM();
                                 break;
                             case ANALOG_SENSOR:
                             case STATIC_TERMSENSOR:
-                                vAnalogSensorFSM(state);
+                                printf("analog\r\n");
+                                vAnalogSensorFSM();
                                 break;
                         }
                     }
@@ -566,6 +576,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 }
                 break;
             case USER_PROCESS_ALARM:
+                printf("alarm chaannel eerror\r\n");
                 if (error_state & (DIN_ERROR | ANALOG_SENSOR_ERROR) == 0) task_fsm = USER_PROCCES_IDLE;
 
                 if (error_state & ( DIN_ERROR  | ANALOG_SENSOR_ERROR))
@@ -575,6 +586,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 }
                 break;
             case USER_PROCESS_DOUBLE_CHANNEL_ERROR:
+                printf("d chaannel eerror\r\n");
                 if (error_state & FIRST_CHANNEL_ERROR)
                 {
                     USER_AOUT_SET(DAC2,0.0);

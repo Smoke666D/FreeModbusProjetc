@@ -970,7 +970,7 @@ static const u16 MenuCDV_BPRegMap[]=
 static u8 error_shif = 0;
 static u8 const *  ErrorString[]={"HEPA Фильтр засорен","Невозможно","Низкое напряжение","Высокое напряжение","Засорен предфильтр"};
 static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение","Засорен предфильтр","Неспр канал 1","Неиспр канал 2"};
-static u8 const *  CH_STRING[] = { "ВР","1","2"};
+static u8 const *  CH_STRING[] = { "ВР","1 канал","2 канала"};
 
 
 
@@ -1107,25 +1107,27 @@ static const u16 ROOM_CHANNEL_SELETC[]={AIN1_TYPE,AIN2_TYPE,AIN3_TYPE};
 void DinModeSettingView(u8 channel, char * str)
 {
     static float temp_float;
-    switch ( getStateDCV())
+    switch ( getReg8(CDV_CONTOROL))
     {
-                   case 0:
-                       strcpy(str,"----");
+                   case SETTING_OPEN:
+                       strcpy(str,"Откр.");
                        break;
-                   case 1:
+                   case SETTING_MINIMUM:
                        temp_float = DataModelGetCDVSettings( getReg16(SETTING_MIN)+ getReg16(OFFSET_CH2)*channel);
                        sprintf(str,"%06.1f",temp_float);
                        break;
-                   case 2:
+                   case SETTING_MIDIUM:
                        temp_float = DataModelGetCDVSettings( getReg16(SETTING_MID)+ getReg16(OFFSET_CH2)*channel);
                        sprintf(str,"%06.1f",temp_float);
                        break;
-                   case 3:
+                   case SETTING_MAXIMUN:
                        temp_float = DataModelGetCDVSettings( getReg16(SETTING_MAX)+ getReg16(OFFSET_CH2)*channel);
                        sprintf(str,"%06.1f",temp_float);
                        break;
-                   case 4:
-                       strcpy(str,"-----");
+                   default:
+                   case SETTING_CLOSE:
+                       strcpy(str,"Закр.");
+                       break;
      }
 }
 static const char NorAvalivaleString[]="----";
@@ -1188,9 +1190,9 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                break;
               break;
         case DCV_SETTING1_ID:
-            /*switch (getReg8(SENSOR_TYPE_ID) )
+            switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
             {
-                case 0:
+                case DISCRETE_INPUT:
                     DinModeSettingView(0,str);
                     break;
                 case 2:
@@ -1200,7 +1202,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 case 1:
                     sprintf(str,"%f3.1",getRegFloat(SENS_SETTING1));
                     break;
-            }*/
+            }
             break;
         case DRAW_UNIT_ID:
             /*switch (getReg8(SENSOR_TYPE_ID) )
@@ -1226,11 +1228,12 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 strcpy(str,"----");
             else
             {
-              /*  if (getReg8(SENSOR_TYPE_ID)==0)
-                     DinModeSettingView(1,str);
-                else
-                     sprintf(str,"%i4", getAIN(SENS1)+getReg16(OFFSET_CH2));
-           */ }
+                    DISCRET_STATE_t state = getReg8(CDV_CONTOROL);
+                    if ( state == SETTING_OPEN ) strcpy(str,"Откр.");
+                    else if ( state == SETTING_CLOSE ) strcpy(str,"Закр.");
+                    else
+                       sprintf(str,"%i4", getReg16(OFFSET_CH2));
+            }
             break;
         case DCV_FACT2_ID:
             if (getReg8(CDV_BP_CH_COUNT) == 1 )
@@ -1328,7 +1331,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                     SetPID2Screen((CHANNEL_COUNT_t)edit_data_buffer_byte,getReg8(INPUT_CONTROL_TYPE));
                     SetBPSetting((edit_data_buffer_byte == 0) ? 1 : 0);
                 }
-                vByteDataEdit(0,reg_id,command,0,2,0,0);
+                vByteDataEdit(0,reg_id,command,0,2,0,1);
             }
             else
                 strcpy(str,CH_STRING[( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte] );
@@ -1398,17 +1401,22 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 sprintf(str,"%6.4f",( command == CMD_READ ) ? getRegFloat(reg_id) : edit_data_buffer_float);
 
             break;
+            case SENSOR3_OFFSET_ID:
+            case SENSOR2_OFFSET_ID:
+            case SENSOR1_OFFSET_ID:
+                if ( command > CMD_EDIT_READ )
+                    vFloatDataEdit(reg_id, command,5,1,9999.9,-9999.9);
+                 else
+                    sprintf(str,"%+06.1f",( command == CMD_READ ) ? getRegFloat(reg_id) : edit_data_buffer_float );
+                 break;
             case SENSOR1_MIN_ID:
             case SENSOR1_MAX_ID:
-            case SENSOR1_OFFSET_ID:
             case SENSOR1_SETTING_ID:
             case SENSOR2_MIN_ID:
             case SENSOR2_MAX_ID:
-            case SENSOR2_OFFSET_ID:
             case SENSOR2_SETTING_ID:
             case SENSOR3_MIN_ID:
             case SENSOR3_MAX_ID:
-            case SENSOR3_OFFSET_ID:
             case SENSOR3_SETTING_ID:
                       if ( command > CMD_EDIT_READ )
                           vFloatDataEdit(reg_id, command,3,1,9999.9,0.0);
@@ -1429,7 +1437,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                             }
                             break;
                         case CMD_START_EDIT:
-                            if ((USER_GetProccesState() == USER_PROCCES_WORK))
+                            if ((USER_GetProccesState() == USER_PROCCES_WORK) && (MB_TASK_GetMode()==0))
                                 SystemCalibraionStart();
                             else
                                 SystemCalibraionStop();

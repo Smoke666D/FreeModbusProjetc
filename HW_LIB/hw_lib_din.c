@@ -114,7 +114,7 @@ DIN_FUNCTION_ERROR_t eSetDUT(OUT_NAME_TYPE ucCh, uint8_t state )
 void xSetOut( uint8_t * data_mask)
 {
     uint8_t mask = 0x01;
-    printf("data_mask %x\r\n",*data_mask);
+
     for (uint8_t i = 0;i < DOUT_COUNT;i++)
     {
 

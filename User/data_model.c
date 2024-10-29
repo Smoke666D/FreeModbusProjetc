@@ -70,15 +70,15 @@ DATA_MODEL_INIT_t DataModel_Init()
                setRegFloat(OFFSET_CH2  ,  100);
                setRegFloat(MIN_SET1, 0);
                setRegFloat(MAX_SET1,40);
-               setRegFloat(SENS_OFS1, 1);
+
                setRegFloat(SENS_SETTING1,20);
                setRegFloat(MIN_SET2, 0);
                setRegFloat(MAX_SET2,40);
-               setRegFloat(SENS_OFS2, 1);
+
                setRegFloat(SENS_SETTING2,20);
                setRegFloat(MIN_SET3, 0);
                setRegFloat(MAX_SET3,40);
-               setRegFloat(SENS_OFS3, 1);
+
                setRegFloat(SENS_SETTING3,20);
                if (WriteEEPROM(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 1000 ,2) == EEPROM_OK) printf("EEPROMwtiye\r\n");
                ReadEEPROMData(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ,2);
@@ -154,7 +154,8 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
 
              break;
         case CDV_CONTOROL :
-            printf(" new_state = %i\r\n", data);
+        case MB_CDV_CONTROL:
+
             if  ( data > 4 )
                 return 0;
             break;

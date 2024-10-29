@@ -333,7 +333,7 @@ static const u16 CDV_REGS_MAP[] = {
                                                MEASERING_UNIT,    //27
                                                ZERO_POINT_TIMEOUT,//28
                                                SETTING_TIMER,     //29
-                                               CDV_CONTOROL,      //30
+                                               MB_CDV_CONTROL,             //30
                                                AFTER_ZONE_SETTING,//31
                                                MIN_SET1,          //32
                                                MIN_SET1,          //33
@@ -390,7 +390,10 @@ void vSetRegData( u16 adress)
              case ZERO_MB:
                  if  (byte_data !=0)
                  {
-                     if (USER_GetProccesState() == USER_PROCCES_IDLE)
+                     if (WORK_MODE !=0)CalibrateZeroStart();
+                     else
+                     if (((USER_GetProccesState() == USER_PROCCES_IDLE) && (getReg8(DEVICE_TYPE)==DEV_FMCH)) ||
+                     ((USER_GetProccesState() == USER_PROCCES_WORK) && (getReg8(DEVICE_TYPE)==DEV_CAV_VAV_BP)))
                          CalibrateZeroStart();
                      else
                      {
@@ -427,7 +430,7 @@ void vSetRegData( u16 adress)
                 if (WORK_MODE ==2)
                 {
                      data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
-                     printf("set data %f\r\n",data);
+
                      USER_AOUT_SET(DAC1,data);
                 }
                 break;
@@ -612,9 +615,14 @@ void vSetRegData( u16 adress)
                                       break;
                              case CDV_MEASERING_UNIT:
                              case CDV_CH_COUNT_MB:
+
+
+                                         VerifyAndSetReg8(reg_addr, (uint8_t) byte_data );
+                                         break;
                              case CDV_MODE_CONTROL:
-                                                 VerifyAndSetReg8(reg_addr, (uint8_t) byte_data );
-                                                 break;
+                                 if (getReg8(INPUT_CONTROL_TYPE) ==DISCRETE_INPUT)
+                                     VerifyAndSetReg8(reg_addr, (uint8_t) byte_data );
+                                 break;
                             case CDV_CLEAN_TIMER:
                             case CDV_SETTING_TIMEOUT_MB:
 
@@ -755,7 +763,15 @@ void UpdateFMCHHoldings()
 
 }
 
-static const u16 CDV_BP_REGS8[]={CDV_INPUT_SENS_MB ,CDV_CH_COUNT_MB,CDV_SETTING_TIMEOUT_MB,CDV_AFZONE_SETTING_MB,CDV_CH_COUNT_MB ,CDV_MEASERING_UNIT,CDV_PRIOR_SENS,CDV_CLEAN_TIMER,CDV_ROOM_CHANNEL};
+static const u16 CDV_BP_REGS8[]={CDV_INPUT_SENS_MB ,
+                                  CDV_CH_COUNT_MB,
+                                  CDV_SETTING_TIMEOUT_MB,
+                                  CDV_AFZONE_SETTING_MB,
+                                  CDV_MODE_CONTROL,
+                                  CDV_MEASERING_UNIT,
+                                  CDV_PRIOR_SENS,
+                                  CDV_CLEAN_TIMER,
+                                  CDV_ROOM_CHANNEL};
 static const u16 CDV_BP_REGS[CDV_BP_REG_SEQ_COUNT]={CDV_ZERO_POINT_TIMEOUT};
 static const u16 SettingRegsMap[]={CDV_SETTING_MIN_MB,CDV_SETTING_MID_MB,CDV_SETTING_MAX_MB,CDV_SETTING_ERROR1_MB,CDV_SETTING_ERROR2_MB,CDV_OFFSET_CH2,};
 static const u16 REGS_CVB_FLOAT[]={ CDV_KOOF_P_MB, CDV_KOOF_I_MB, CDV_KOOF_K_MP ,CDV_KOOF_P1_MB ,CDV_KOOF_I1_MB};
@@ -951,7 +967,9 @@ eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCo
 
         if( ( usAddress >= REG_COILS_START) &&  ( usAddress + usNCoils <= REG_COILS_START + REG_COILS_NREGS ) )
         {
+
             iRegBitIndex = (USHORT) (usAddress - usCoilStart);
+
             switch ( eMode )
             {
             /* read current coil values from the protocol stack. */
@@ -960,6 +978,7 @@ eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCo
                 xGetOut( pucCoilBuf);
                 while ( usNCoils > 0)
                 {
+
                     UCHAR ucResult = xMBUtilGetBits( pucCoilBuf, iRegBitIndex, 1 );
                     xMBUtilSetBits( pucRegBuffer, iRegBitIndex, 1, ucResult );
                     iRegBitIndex++;

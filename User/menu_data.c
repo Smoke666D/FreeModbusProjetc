@@ -13,7 +13,7 @@
 
 static const char SETTING_TEXT[] = "Уставка";
 static const char VOLTAGE_TEXT[] = "Напряжение";
-static const char KOOFKPS_TEXT[] = "Кооэ к.п.с";
+static const char KOOFKPS_TEXT[] = "К.П.С";
 
 static  xScreenObjet const InfoScreen1[]=
 {
@@ -180,12 +180,12 @@ xScreenType  xScreenFMCH[FMCH_SCREEN_COUNT] =
 
 static  xScreenObjet  CDVInfoScreen1[]=
 {
-        {0,0,LINE1,32, READ_DATA,"Уставка 1",  DCV_SETTING1_ID},
-        {0,100,LINE1,0,    READ_DATA,"",          MEASERING_UNIT_ID},
+        {0,0,LINE1,32, READ_DATA,"Уставка",    DCV_SETTING1_ID},
+        {0,100,LINE1,0, READ_DATA,"",          MEASERING_UNIT_ID},
         {0,100,LINE1,0, READ_DATA,"",          DRAW_UNIT_ID},
         {0,0,25,32,    READ_DATA,"Факт 1",     DCV_FACT1_ID },
         {0,100,25,0,    READ_DATA,"",          MEASERING_UNIT_ID},
-        {0,0,37,32,     READ_DATA,"Уставка 2", DCV_SETTING2_ID},
+        {0,0,37,32,     READ_DATA,"Cмещение" , DCV_SETTING2_ID},
         {0,100,37,0,    READ_DATA,"",          MEASERING_UNIT_ID},
         {0,0,50,32,     READ_DATA,"Факт 2",    DCV_FACT2_ID },
         {1,100,50,0,    READ_DATA,"",          MEASERING_UNIT_ID},
@@ -207,10 +207,10 @@ static  xScreenObjet const CDVInfoScreen1_1[]=
 static xScreenObjet  CDVSettingsScreen3[]=
 {
         {0,15,LINE1,0,READ_DATA,"Настройки      ",       SETTING3_TITLE_ID },
-        {0,2,25,0,TEXT_STRING,"Еденицы измерения",          0},
+        {0,2,25,0,TEXT_STRING,"Единицы измерения",          0},
         {0,2,37,0,WRITE_DATA,"",                            MEASERING_UNIT_ID},
-        {0,2,50,0,WRITE_DATA,"Кол-во каналов",              CDV_CH_COUNT_ID},
-        {1,2,62,0,WRITE_DATA,"Вход:",                       INPUT_SIGNAL_MODE_ID},
+        {0,2,50,0,WRITE_DATA,"Режим",                       CDV_CH_COUNT_ID},
+        {1,2,62,0,WRITE_DATA,"Вход",                       INPUT_SIGNAL_MODE_ID},
 
 };
 
@@ -230,7 +230,7 @@ static xScreenObjet  CDVSettingsScreen4[]=
 static xScreenObjet  CDVSettingsScreen5[]=
 {
         {0,15,LINE1,0,READ_DATA,"Настройки      ",   SETTING7_TITLE_ID},
-        {0,2,25,0,TEXT_STRING,"Аваринайя уставка",          0},
+        {0,2,25,0,TEXT_STRING,"Аварийная уставка",          0},
         {0,100,37,0,READ_DATA,"",                  MEASERING_UNIT_ID},
         {0,2,37,30,WRITE_DATA,"Канал 1",              FAIL_SET_CH1_ID},
         {0,100,50,0,READ_DATA,"",                  MEASERING_UNIT_ID},
@@ -264,7 +264,7 @@ static xScreenObjet  CDVSettingsScreen7[]=
 
 static xScreenObjet const CDVSettingsAnalogScreen2[]=
 {
-        {0,10,LINE1,0,READ_DATA,"Настройки     ",  SETTINGANALOG2_TITLE_ID},
+        {0,15,LINE1,0,READ_DATA,"Настройки     ",  SETTINGANALOG2_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"Диапазон датчика T",          0},
         {0,2,37,70,WRITE_DATA,"от", SENSOR1_MIN_ID},
         {0,70,37,0,WRITE_DATA,"до" , SENSOR1_MAX_ID},
@@ -275,7 +275,7 @@ static xScreenObjet const CDVSettingsAnalogScreen2[]=
 
 static xScreenObjet const CDVSettingsAnalogScreen3[]=
 {
-        {0,10,LINE1,0,READ_DATA,"Настройки     ",  SETTINGANALOG3_TITLE_ID},
+        {0,15,LINE1,0,READ_DATA,"Настройки     ",  SETTINGANALOG3_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"Диапазон датчика CO2",          0},
         {0,2,37,70,WRITE_DATA,"от", SENSOR2_MIN_ID},
         {0,70,37,0,WRITE_DATA,"до" , SENSOR2_MAX_ID},
@@ -285,7 +285,7 @@ static xScreenObjet const CDVSettingsAnalogScreen3[]=
 
 static xScreenObjet const CDVSettingsAnalogScreen4[]=
 {
-        {0,10,LINE1,0,READ_DATA,"Настройки     ",  SETTINGANALOG4_TITLE_ID},
+        {0,15,LINE1,0,READ_DATA,"Настройки     ",  SETTINGANALOG4_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"Диапазон датчика H",          0},
         {0,2,37,70,WRITE_DATA,"от", SENSOR3_MIN_ID},
         {0,70,37,0,WRITE_DATA,"до" , SENSOR3_MAX_ID},
@@ -296,7 +296,7 @@ static xScreenObjet const CDVSettingsAnalogScreen4[]=
 
 static xScreenObjet const CDVSettingsAnalogScreen5[]=
 {
-        {0,10,LINE1,0,READ_DATA,"Настройки     ",  SETTINGANALOG5_TITLE_ID},
+        {0,15,LINE1,0,READ_DATA,"Настройки     ",  SETTINGANALOG5_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"Уставки датчиков",          0},
         {0,2,37,0,WRITE_DATA,"Уставка T",   SENSOR1_SETTING_ID},
         {0,2,50,0,WRITE_DATA,"Уставка CO2", SENSOR2_SETTING_ID},
@@ -305,17 +305,17 @@ static xScreenObjet const CDVSettingsAnalogScreen5[]=
 
 static xScreenObjet  CDVSettingsAnalogScreen1[]=
 {
-        {0,10,LINE1,0,READ_DATA,"Настройки     ",   SETTINGANALOG1_TITLE_ID},
+        {0,15,LINE1,0,READ_DATA,"Настройки     ",   SETTINGANALOG1_TITLE_ID},
         {0,2,25,0,WRITE_DATA, "" ,              PRIOR_SENSOR_ID},
         {0,2,25,40,READ_DATA,"", AFTER_ZONE_TITLE_ID},
-        {0,2,50,0,TEXT_STRING,"Послезонное регулирование", 0},
+        {0,2,50,0,TEXT_STRING,"Посезонное регулир.", 0},
         {1,2,62,0,WRITE_DATA,"",AFTER_ZONE_SETTING_ID},
         {1,2,37,0,WRITE_DATA,"Уставка дат. T ", SENSOR1_SETTING_ID},
 };
 
 static xScreenObjet  CDVSettingsRoomSensorScreen[]=
 {
-        {0,10,LINE1,0,READ_DATA,"Настройки     ",   SETTINGANALOG1_TITLE_ID},
+        {0,15,LINE1,0,READ_DATA,"Настройки     ",   SETTINGANALOG1_TITLE_ID},
         {0,2,25,0,WRITE_DATA,"Канал",   ROOM_ACTIVE_CHANNEL_ID},
         {1,2,37,0,WRITE_DATA,"Тип",ROOM_SENSOR_TYPE_ID},
 };
@@ -355,17 +355,17 @@ static xScreenObjet  CDVSettingsPI1[]=
 {
         {0,15,LINE1,0,READ_DATA,"Настройки     ",  SETTING10_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"ПИ регулятор ", 0},
-        {0,2,37,0,TEXT_STRING,"Ведуший канал 1.",0},
-        {0,2,50,0,WRITE_DATA,"Кооф. П",COOF_P_ID },
-        {1,2,62,0,WRITE_DATA,"Кооф. И",COOF_I_ID },
+        {0,2,37,0,TEXT_STRING,"Ведущий канал 1.",0},
+        {0,2,50,0,WRITE_DATA,"Коэф. П",COOF_P_ID },
+        {1,2,62,0,WRITE_DATA,"Коэф. И",COOF_I_ID },
 };
 static xScreenObjet const CDVSettingsPI2[]=
 {
         {0,15,LINE1,0,READ_DATA,"Настройки     ", SETTING11_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"ПИ регулятор", 0},
         {0,2,37,0,TEXT_STRING,"Ведомый канал 2.",0},
-        {0,2,50,0,WRITE_DATA,"Кооф. П",COOF_P_1_ID },
-        {1,2,62,0,WRITE_DATA,"Кооф. И",COOF_I_1_ID },
+        {0,2,50,0,WRITE_DATA,"Коэф. П",COOF_P_1_ID },
+        {1,2,62,0,WRITE_DATA,"Коэф. И",COOF_I_1_ID },
 };
 
 static xScreenObjet const CDVSettingsPB[]=
@@ -377,7 +377,7 @@ static xScreenObjet const CDVSettingsPB[]=
 
 static xScreenObjet const CDVSettingsScreen20[]=
 {
-        {0,10,LINE1,00,READ_DATA,"Настройки",               CALIBRATION_TITLE_ID},
+        {0,15,LINE1,00,READ_DATA,"Настройки",               CALIBRATION_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"Текущий перепад давл.",      0},
         {0,2,37,00,READ_DATA,"Канал 1",                     SENS_1_RAW_ID},
         {0,2,50,00,READ_DATA,"Канал 2",                     SENS_2_RAW_ID},
@@ -400,8 +400,8 @@ static xScreenObjet const InfoScreen2DCV[]=
 {
         {0,2,LINE1,0,READ_DATA,"Текущих аварий:",ALARM_COUNT_ID},
         {0,2,25,0,READ_DATA,"",CURRENT_ALARM_COUNT_ID},
-        {0,0,37,0,     READ_DATA,"Кол-во каналов",     CDV_CH_COUNT_ID},
-        {1,2,50,0,     READ_DATA,"Напяжение",          AC_VOLTAGE_ID },
+        {0,0,37,0,     READ_DATA,"Режим",     CDV_CH_COUNT_ID},
+        {1,2,50,0,     READ_DATA,"Напряжение",          AC_VOLTAGE_ID },
 };
 
 
@@ -556,7 +556,7 @@ void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_TYPE_t analog_state)
            CDVSettingsScreen5[3].last = 1;
            break;
     case TWO_CH:
-        CDVInfoScreen1[4].last =0;
+        CDVInfoScreen1[3].last =0;
         xScreenDCV[8].pDownScreenSet = 10;
         xScreenDCV[10].pUpScreenSet   = 10;
         xScreenDCV[PI1_SCREEN].pDownScreenSet = PI2_SCREEN + 1;

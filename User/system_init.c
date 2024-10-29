@@ -224,7 +224,7 @@ void vDefaultTask( void  * argument )
                 }
                 if  (main_task_fsm  != STATE_RUN)
                 main_task_fsm =  STATE_WHAIT_TO_RAEDY;
-                printf("menu_run\r\n");
+
                 break;
             case STATE_WHAIT_TO_RAEDY:
                 if (getReg8(MB_PROTOCOL_TYPE) == MKV_MB_RTU)

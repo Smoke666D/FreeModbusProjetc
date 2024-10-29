@@ -15,7 +15,7 @@
 
 #define SW_V                 2
 #define SW_V2                2
-#define SW_V3                5
+#define SW_V3                6
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -102,7 +102,8 @@
 #define LIGTH                 ( SYSTEM_START + sizeof(uint8_t) )
 #define MODE                  ( LIGTH    + sizeof(uint8_t) )
 #define SENSOR_ERROR          ( MODE  + sizeof(uint8_t) )
-#define CDV_CONTOROL          ( SENSOR_ERROR +  sizeof(uint8_t) )
+#define MB_CDV_CONTROL        ( SENSOR_ERROR +  sizeof(uint8_t) )
+#define CDV_CONTOROL          ( MB_CDV_CONTROL +  sizeof(uint8_t) )
 
 
 
@@ -182,7 +183,7 @@ typedef enum
 
 //#define EEPROM_REGISTER_COUNT   20
 //#define  EEPROM_REGISTER_COUNT  20
-#define RAM_REGISTER_COUNT     6
+#define RAM_REGISTER_COUNT     7
 #define DATA_MODEL_REGISTERS   EEPROM_REGISTER_COUNT + RAM_REGISTER_COUNT
 #define TOTAL_REGISTER_COUNT   DATA_MODEL_REGISTERS
 

@@ -10,7 +10,7 @@
 
 
 #include "mb.h"
-
+#include "hal_config.h"
 
 #define REG_COILS_START      0x0
 #ifndef REV2

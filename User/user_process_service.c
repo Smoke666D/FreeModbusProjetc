@@ -170,7 +170,7 @@ static CLEAN_TIMER_t CleanTimer;
     return;
 }
 
- void CleanTimerFuncton(  DISCRET_STATE_t * state)
+ void CleanTimerFuncton(  )
 {
     CleanTimer.control_state =  getReg8( CONTROL_TYPE ) ==  MKV_MB_DIN ? ucDinGet(INPUT_5) : getReg8(LIGTH );
     if (CleanTimer.tumer_on == 0 )
@@ -179,6 +179,8 @@ static CLEAN_TIMER_t CleanTimer;
         {
                 CleanTimer.tumer_on  = 1;
         }
+        else
+            setReg8(CDV_CONTOROL, SETTING_MIDIUM);
      }
      else
      {
@@ -189,9 +191,10 @@ static CLEAN_TIMER_t CleanTimer;
             CleanTimer.tumer_on = 0;
             CleanTimer.timer_counter = 0;
             setReg8(LIGTH, 0 );
+            setReg8(CDV_CONTOROL, SETTING_MIDIUM);
          }
          else
-            *state = 4;
+            setReg8(CDV_CONTOROL, SETTING_OPEN);
       }
     CleanTimer.old_control_state = CleanTimer.control_state;
     return;

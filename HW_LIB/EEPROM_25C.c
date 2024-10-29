@@ -131,11 +131,6 @@ EERPOM_ERROR_CODE_t GetEEPROMStatus( u32 timeout,u8 TASK_NOTIFICATION_INDEX)
 }
 
 
-
-
-
-
-
 EERPOM_ERROR_CODE_t ReadEEPROMData( u16 data_adress, u8 * data, u16 data_size, u32 timeout, u8 TASK_NOTIFICATION_INDEX)
 {
        SPI_EEPROM.data_addres =  data_adress;
