@@ -103,7 +103,8 @@
 #define MODE                  ( LIGTH    + sizeof(uint8_t) )
 #define SENSOR_ERROR          ( MODE  + sizeof(uint8_t) )
 #define MB_CDV_CONTROL        ( SENSOR_ERROR +  sizeof(uint8_t) )
-#define CDV_CONTOROL          ( MB_CDV_CONTROL +  sizeof(uint8_t) )
+#define CLEAR_TIMER_STATE     ( MB_CDV_CONTROL +  sizeof(uint8_t) )
+#define CDV_CONTOROL          ( CLEAR_TIMER_STATE +  sizeof(uint8_t) )
 
 
 
@@ -183,7 +184,7 @@ typedef enum
 
 //#define EEPROM_REGISTER_COUNT   20
 //#define  EEPROM_REGISTER_COUNT  20
-#define RAM_REGISTER_COUNT     7
+#define RAM_REGISTER_COUNT     8
 #define DATA_MODEL_REGISTERS   EEPROM_REGISTER_COUNT + RAM_REGISTER_COUNT
 #define TOTAL_REGISTER_COUNT   DATA_MODEL_REGISTERS
 

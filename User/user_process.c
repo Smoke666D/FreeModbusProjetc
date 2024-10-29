@@ -134,10 +134,32 @@ void UPDATE_COOF()
     PID_SetTunings2(&TPID,getRegFloat(COOF_P), getRegFloat(COOF_I), 0);
 }
 
-void UPDATE_COOFCAV()
+float UPDATE_COOFCAV( INPUT_SENSOR_t inp_sensor)
 {
     PID_SetTunings2(&TPID,getRegFloat(COOF_P), getRegFloat(COOF_I), 0);
     PID_SetTunings2(&TPID2,getRegFloat(COOF_P1), getRegFloat(COOF_I1), 0);
+    u8 after_zone = 0;
+    float input_data = GetSensor(&after_zone, inp_sensor);
+    if ( after_zone )
+    {
+         switch ( getReg8(AFTER_ZONE_SETTING ))
+         {
+                        case 0:
+                            PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
+                            break;
+                        case 1:
+                            PID_SetControllerDirection(&TPID,_PID_CD_REVERSE );
+                            break;
+                        default:
+                            if (input_data < getAIN(DCAIN4))
+                                PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
+                            else
+                                PID_SetControllerDirection(&TPID,_PID_CD_REVERSE);
+                            break;
+          }
+     }
+     else PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
+     return (input_data);
 }
 
 static float DAC1_OUT = 0;
@@ -284,64 +306,60 @@ void SystemCalibraionStop()
 }
 
 
-static u8 din_mask = 0;
-static u8 old_state = 0;
+static u8 cur_state = 0;
 
 
 void vCDV_SetpointCheck(   u32 * timeout  )
 {
       //Сбрасываем ошибку дискретных входов
     error_state &=~DIN_ERROR;
-    u8 new_state = ( getReg8( CONTROL_TYPE )==  MKV_MB_DIN)? ( (u8)uiGetDinMask() & 0x0F ) : getReg8(MB_CDV_CONTROL);
-    if ( din_mask != new_state )
+    u8 new_state = ( getReg8( CONTROL_TYPE )==  MKV_MB_DIN)? ( (u8)uiGetDinMask() & 0x0F ) : getReg8(MB_CDV_CONTROL);//Проверяем режим работы
+    if ( cur_state != new_state )
     {
-         din_mask = new_state ;
-          *timeout = 0;
+        cur_state = new_state ;
+        *timeout = 0;
     }
-    u8 temp_state;
     if ( getReg8( CONTROL_TYPE )==  MKV_MB_DIN )
     {
-        switch (din_mask)
+        switch (cur_state )
             {
                     case 0:
-                        temp_state = 0;
+                        cur_state = SETTING_CLOSE;
                         break;
                     case 1:
-                        temp_state = 1;
+                        cur_state = SETTING_MINIMUM;
                         break;
                     case 3:
-
-                        temp_state = 2;
+                        cur_state = SETTING_MIDIUM;
                         break;
                     case 7:
-                        temp_state = 3;
+                        cur_state = SETTING_MAXIMUN;
                         break;
                     case 0xF:
-                        temp_state = 4;
+                        cur_state =SETTING_OPEN;
                         break;
                     default:
                         error_state |=DIN_ERROR;
+                        setReg8(CDV_CONTOROL,SETTING_CLOSE);
                         return;
                     break;
                 }
     }
-    else
+    CleanTimerFuncton();
+    if ((getReg8(CLEAR_TIMER_STATE) == 1 ) &&  (getReg8(CDV_CONTOROL)!= SETTING_CLOSE)) //Если включился таймер уборки и состоние системы не выкл.
     {
-        temp_state = din_mask;
-
+        setReg8(CDV_CONTOROL,SETTING_MAXIMUN);  //То переводим системы в состния максимальной уставки
     }
-
-    if (old_state!=temp_state)
+    if ((getReg8(CLEAR_TIMER_STATE) == 0) || (cur_state == SETTING_CLOSE))
     {
-
+        if (getReg8(CDV_CONTOROL)!=cur_state)   //Тут проверяем
+        {
             if ( ++(*timeout) >= getReg8(SETTING_TIMER)*100 )
             {
-                   old_state = temp_state;
-                   setReg8(CDV_CONTOROL,temp_state);
+                setReg8(CDV_CONTOROL,cur_state);
             }
+        }
     }
-
-
     return ;
 }
 
@@ -397,115 +415,32 @@ void Channel2Reg(  float setpoint )
 
 
 
-void vRoomContollerFSM( )
-{
-    float PID_Out;
-    DISCRET_STATE_t state =  getReg8(CDV_CONTOROL);
-    if ( state == SETTING_OPEN ) PID_Out = 10.0;
-    else if (state == SETTING_CLOSE) PID_Out = 0.0;
-    else
-    {
-        SET_POINT = ComputeSetPoint();
-        PID_Compute(&TPID,getAIN(SENS1));
-        PID_Out = PIDOut/1000.0;
-    }
-    USER_AOUT_SET(DAC1,PID_Out);
-    Channel2Reg(getAIN(SENS1) );
-}
-
-
-
 
 static const uint16_t SettingRegMap[]={SENS_SETTING1,SENS_SETTING2,SENS_SETTING3};
 
-void vAnalogSensorFSM( )
+float vAnalogSensorFSM( )
 {
     float PID_Out;
-    DISCRET_STATE_t state = getReg8(CDV_CONTOROL);
-    if ( state == SETTING_OPEN  ) PID_Out =10.0;
-    else if (state == SETTING_CLOSE) PID_Out =0.0;
-    else
+    float temp_float = getAIN(SENS1);
+    if (temp_float <= getReg16(SETTING_MIN))
     {
-
-            float temp_float = getAIN(SENS1);
-            if (temp_float <= getReg16(SETTING_MIN))
-            {
-                PID_SetOutputLimits(&TPID, USER_AOUT_GET(DAC1),TPID.OutMax);
-            }
-            if (temp_float >= getReg16(SETTING_MAX))
-            {
-                  PID_SetOutputLimits(&TPID, TPID.OutMin, USER_AOUT_GET(DAC1));
-            }
-            SET_POINT = getRegFloat(SettingRegMap[getReg8(PRIOR_SENSOR)]);
-            u8 after_zone = 0;
-            float input_data = GetSensor(&after_zone);
-            if ( after_zone )
-            {
-                switch ( getReg8(AFTER_ZONE_SETTING ))
-                {
-                    case 0:
-                        PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
-                        break;
-                    case 1:
-                        PID_SetControllerDirection(&TPID,_PID_CD_REVERSE );
-                        break;
-                    default:
-                        if (input_data < getAIN(DCAIN4))
-                            PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
-                        else
-                            PID_SetControllerDirection(&TPID,_PID_CD_REVERSE);
-                        break;
-                }
-            }
-            else PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
-            PID_Compute(&TPID,input_data);
-            PID_Out = PIDOut/1000.0;
+          PID_SetOutputLimits(&TPID, USER_AOUT_GET(DAC1),TPID.OutMax);
     }
-    USER_AOUT_SET(DAC1,PID_Out);
-    Channel2Reg(getAIN(SENS1));
-
+    if (temp_float >= getReg16(SETTING_MAX))
+    {
+         PID_SetOutputLimits(&TPID, TPID.OutMin, USER_AOUT_GET(DAC1));
+    }
+    PID_Out = getRegFloat(SettingRegMap[getReg8(PRIOR_SENSOR)]);
+    return (PID_Out);
 }
 
 
-
-
-
-void vDiscreteInputFSM( )
-{
-    switch (getReg8(CDV_CONTOROL))
-    {
-        case SETTING_OPEN:
-             USER_AOUT_SET(DAC1,10.0);
-             break;
-        case SETTING_MINIMUM:
-             SET_POINT = (float)getReg16(SETTING_MIN);
-             break;
-        case SETTING_MIDIUM:
-             SET_POINT = (float)getReg16(SETTING_MID);
-             break;
-        case SETTING_MAXIMUN:
-             SET_POINT = (float)getReg16(SETTING_MAX);
-             break;
-        default:
-             USER_AOUT_SET(DAC1,0.0);
-             break;
-
-     }
-    if ((getReg8(CDV_CONTOROL)>=1) && (getReg8(CDV_CONTOROL)<=3))
-    {
-          PID_Compute(&TPID,getAIN(SENS1));
-          float PID_Out = PIDOut/1000.0;
-          USER_AOUT_SET(DAC1,PID_Out);
-     }
-    Channel2Reg(SET_POINT);
-
-}
 
 void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
 {
-
- //   ErrorSensorCheck(&error_state);
-  //  vCheckDoubleChannelAlarm(&error_state);
+    vCDV_SetpointCheck( &dev->start_timeout);
+   ErrorSensorCheck(&error_state);
+   vCheckDoubleChannelAlarm(&error_state);
     switch (task_fsm)
     {
             case USER_PROCCES_IDLE:
@@ -515,7 +450,6 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 task_fsm =USER_PROCCES_WORK;
                 break;
             case USER_PROCCES_WORK:
-                 CleanTimerFuncton();
                 *cal_flag = 0;
                 if ((error_state & DIN_ERROR) || (error_state & ANALOG_SENSOR_ERROR))
                 {
@@ -529,24 +463,54 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 {
                     if (++dev->pid_counter >=10)
                     {
-                        UPDATE_COOFCAV();
+                        INPUT_SENSOR_t  temp_inp_sens_type = getReg8(INPUT_CONTROL_TYPE);
+                        float pid_input = UPDATE_COOFCAV(temp_inp_sens_type );
                         dev->pid_counter = 0;
-                        switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
-                        {
-                            case DISCRETE_INPUT:
-                                vCDV_SetpointCheck( &dev->start_timeout);
-                                vDiscreteInputFSM();
-                                break;
-                            case ROOM_CONTROLLER:
+                        DISCRET_STATE_t temp_control_state = getReg8(CDV_CONTOROL);
 
-                                printf("room\r\n");
-                                vRoomContollerFSM();
-                                break;
-                            case ANALOG_SENSOR:
-                            case STATIC_TERMSENSOR:
-                                printf("analog\r\n");
-                                vAnalogSensorFSM();
-                                break;
+                        switch (temp_control_state)
+                        {
+                            case SETTING_OPEN:
+                                     USER_AOUT_SET(DAC1,10.0);
+                                     break;
+                            case SETTING_MINIMUM:
+                                     SET_POINT = (float)getReg16(SETTING_MIN);
+                                     break;
+                            case SETTING_MAXIMUN:
+                                     SET_POINT = (float)getReg16(SETTING_MAX);
+                                     break;
+                            default:
+                            case SETTING_CLOSE:
+                                 USER_AOUT_SET(DAC1,0.0);
+                                 break;
+                            case SETTING_MIDIUM:
+                                switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
+                                {
+                                    case DISCRETE_INPUT:
+                                        SET_POINT = (float)getReg16(SETTING_MID);
+                                        break;
+                                    case ROOM_CONTROLLER:
+                                        SET_POINT = ComputeSetPoint();
+                                        break;
+                                    case ANALOG_SENSOR:
+                                    case STATIC_TERMSENSOR:
+                                        SET_POINT = vAnalogSensorFSM( );
+                                        break;
+                                }
+                        }
+                        if ((temp_control_state!=SETTING_OPEN ) && (temp_control_state<=SETTING_CLOSE))
+                        {
+                              PID_Compute(&TPID,pid_input);
+                              float PID_Out = PIDOut/1000.0;
+                              USER_AOUT_SET(DAC1,PID_Out);
+                         }
+                        if  (temp_inp_sens_type == DISCRETE_INPUT)
+                        {
+                            Channel2Reg(SET_POINT);
+                        }
+                        else
+                        {
+                            Channel2Reg(getAIN(SENS1));
                         }
                     }
                 }

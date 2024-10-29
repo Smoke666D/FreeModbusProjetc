@@ -127,16 +127,15 @@ u8 vSensorErrorCheck( u8 sensor_name, SENSOR_TYPE_t sensor_type)
 }
 
 
-float GetSensor(u8 * after_zone)
+float GetSensor(u8 * after_zone, INPUT_SENSOR_t inp_sensor)
 {
    float temp_float = 0;
-
-   if ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE) == STATIC_TERMSENSOR)
+   if (inp_sensor == STATIC_TERMSENSOR)
    {
        temp_float = getAIN(DCAIN4);
        *after_zone = 1;
    }
-   else
+   else if (inp_sensor == ANALOG_SENSOR)
    {
        switch (getReg8(PRIOR_SENSOR))
        {
@@ -155,6 +154,11 @@ float GetSensor(u8 * after_zone)
                break;
        }
    }
+   else
+   {
+       temp_float = getAIN(getAIN(SENS1));
+   }
+
   return (temp_float);
 
 }
@@ -172,16 +176,13 @@ static CLEAN_TIMER_t CleanTimer;
 
  void CleanTimerFuncton(  )
 {
+    setReg8(CLEAR_TIMER_STATE, 0);
     CleanTimer.control_state =  getReg8( CONTROL_TYPE ) ==  MKV_MB_DIN ? ucDinGet(INPUT_5) : getReg8(LIGTH );
     if (CleanTimer.tumer_on == 0 )
     {
         if ( CleanTimer.control_state == 1)
         {
                 CleanTimer.tumer_on  = 1;
-        }
-        else
-        {
-            setReg8(CDV_CONTOROL, SETTING_MIDIUM);
         }
      }
      else
@@ -193,11 +194,11 @@ static CLEAN_TIMER_t CleanTimer;
             CleanTimer.tumer_on = 0;
             CleanTimer.timer_counter = 0;
             setReg8(LIGTH, 0 );
-            setReg8(CDV_CONTOROL, SETTING_MIDIUM);
+
          }
          else
          {
-            setReg8(CDV_CONTOROL, SETTING_OPEN);
+            setReg8(CLEAR_TIMER_STATE, 1);
             if (getReg8(LIGTH )== 0 ) setReg8(LIGTH,1);
          }
       }
