@@ -52,7 +52,9 @@
 #define ZERO_CALIBRATE_ID       28
 #define DEVICE_RESET_ID         29
 #define VOLTAGE_MAX_OFF_ID      30
-#define FACT_RASH_ID            31   //§¯§¡§¹§¡§­§°
+
+
+#define FAN_START_TIMEOUT_ID    31
 #define SETTING_ID              32
 #define FILTER_LOW_ID           33
 #define FILTER_HIGH_ID          34
@@ -66,7 +68,7 @@
 #define JOURNAL_INFO1_ID        42
 #define JOURNAL_INFO2_ID        43
 #define JOURNAL_RESET_ID        44
-#define FAN_START_TIMEOUT_ID    45
+#define FACT_RASH_ID            45   //§¯§¡§¹§¡§­§°
 #define FILTER_STATE_ID         46
 #define SENS_FILTER_ID          47
 #define MODE_STATE_ID           48   //§¬§°§¯§¦§¸
@@ -74,68 +76,61 @@
 
 
 
-#define DCV_SETTING1_ID         ( MODE_STATE_ID           +1 )   //0
-#define DCV_FACT1_ID            ( DCV_SETTING1_ID       + 1 )    //1
-#define DCV_SETTING2_ID         ( DCV_FACT1_ID          + 1 )    //2
-#define DCV_FACT2_ID            ( DCV_SETTING2_ID       + 1 )    //3
-#define TEMPERATURE_AIT_ID      ( DCV_FACT2_ID          + 1 )    //4
-#define TEMPERATURE_ID          ( TEMPERATURE_AIT_ID    + 1 )    //5
-#define CO2_ID                  ( TEMPERATURE_ID        + 1 )    //6
-#define CDV_HUMMANITY_ID        ( CO2_ID                + 1 )    //7
-#define SENSOR_ID               ( CDV_HUMMANITY_ID      + 1 )    //8
-#define SETTING_MIN_ID          ( SENSOR_ID             + 1 )    //9
-#define SETTING_AVER_ID         ( SETTING_MIN_ID        + 1 )    //10
-#define SETTING_MAX_ID          ( SETTING_AVER_ID       + 1 )    //11
-#define FAIL_SET_CH1_ID         ( SETTING_MAX_ID        + 1 )    //12
-#define FAIL_SET_CH2_ID         ( FAIL_SET_CH1_ID       + 1 )    //13
-#define F_CHANNEL_ID            ( FAIL_SET_CH2_ID       + 1 )    //14
-#define SENSOR1_TYPE_ID         ( F_CHANNEL_ID          + 1 )    //15
-#define SENSOR1_MIN_ID          ( SENSOR1_TYPE_ID      + 1 )    //16
-#define SENSOR1_MAX_ID          ( SENSOR1_MIN_ID       + 1 )    //17
-#define SENSOR1_OFFSET_ID       ( SENSOR1_MAX_ID       + 1 )    //18
-#define SENSOR1_SETTING_ID      ( SENSOR1_OFFSET_ID    + 1 )    //19
-#define SENSOR2_TYPE_ID         ( SENSOR1_SETTING_ID   + 1 )    //20
-#define SENSOR2_MIN_ID          ( SENSOR2_TYPE_ID      + 1 )    //21
-#define SENSOR2_MAX_ID          ( SENSOR2_MIN_ID       + 1 )    //22
-#define SENSOR2_OFFSET_ID       ( SENSOR2_MAX_ID       + 1 )    //23
-#define SENSOR2_SETTING_ID      ( SENSOR2_OFFSET_ID    + 1 )    //24
-#define SENSOR3_TYPE_ID         ( SENSOR2_SETTING_ID    + 1 )   //25
-#define SENSOR3_MIN_ID          ( SENSOR3_TYPE_ID      + 1 )    //26
-#define SENSOR3_MAX_ID          ( SENSOR3_MIN_ID       + 1 )    //27
-#define SENSOR3_OFFSET_ID       ( SENSOR3_MAX_ID       + 1 )    //28
-#define SENSOR3_SETTING_ID      ( SENSOR3_OFFSET_ID    + 1 )    //29
-#define AFTER_ZONE_SETTING_ID   ( SENSOR3_SETTING_ID   + 1 )    //30
-#define CDV_CH_COUNT_ID         ( AFTER_ZONE_SETTING_ID + 1 )    //31
-#define MEASERING_UNIT_ID       ( CDV_CH_COUNT_ID       + 1 )    //32
-#define CLEAN_TIMER_ID          ( MEASERING_UNIT_ID     + 1 )    //33
-#define ZERO_POINT_TIMEOUT_ID   ( CLEAN_TIMER_ID        + 1 )    //34
-#define SETTING_TIMER_ID        ( ZERO_POINT_TIMEOUT_ID + 1 )    //35
-#define PRIOR_SENSOR_ID         ( SETTING_TIMER_ID       + 1 )    //36
-#define OFFSET2_ID              (PRIOR_SENSOR_ID      + 1 )    //37
-#define COOF_P_1_ID             ( OFFSET2_ID            + 1 )    //38
-#define COOF_I_1_ID             ( COOF_P_1_ID           + 1 )    //39
-#define BP_SETTING1_ID          ( COOF_I_1_ID           + 1 )    //40
-#define BP_FACT_ID              ( BP_SETTING1_ID        + 1 )    //41
-#define BP_SIZE_ID              ( BP_FACT_ID            + 1 )    //42
-#define BP_REGULATION_TYPE_ID  ( BP_SIZE_ID            + 1 )    //43
-#define CH1_ERROR_ID            ( BP_REGULATION_TYPE_ID + 1 )    //44
-#define CH2_ERROR_ID            ( CH1_ERROR_ID          + 1 )    //45
-#define SETTING_BP_MIN_ID       ( CH2_ERROR_ID          + 1 )    //46
-#define SETTING_BP_AVER_ID      ( SETTING_BP_MIN_ID     + 1 )    //47
-#define SETTING_BP_MAX_ID       ( SETTING_BP_AVER_ID    + 1 )    //48
-#define CDV_MODE_ID             (SETTING_BP_MAX_ID      + 1 )    //49
-#define BP_REG_TYPE_ID          ( CDV_MODE_ID      + 1 )          //50
-#define BP_SZIE_ID              ( BP_REG_TYPE_ID      + 1 )        //51
-#define DRAW_UNIT_ID            ( BP_SZIE_ID      + 1 )           //52
-#define INPUT_SIGNAL_MODE_ID    ( DRAW_UNIT_ID      + 1 )         //53
-#define ROOM_ACTIVE_CHANNEL_ID  ( INPUT_SIGNAL_MODE_ID     + 1 )  //54
-#define ROOM_SENSOR_TYPE_ID     ( ROOM_ACTIVE_CHANNEL_ID     + 1 )//55
-#define AIT1_TEMP_ID            ( ROOM_SENSOR_TYPE_ID      + 1 )  //56
-#define AIT2_TEMP_ID            ( AIT1_TEMP_ID      + 1 )         //57
-#define T_SENSOR_ID             ( AIT2_TEMP_ID      + 1 )        //58
-#define CO2_SENSOR_ID           ( T_SENSOR_ID       + 1 )  //59
-#define HUMANITY_SENSOR_ID       ( CO2_SENSOR_ID     + 1 )       //60
-#define ZERO_CAL_COMMAND        ( HUMANITY_SENSOR_ID      + 1 )  //61
+
+#define SETTING_MIN_ID          ( MODE_STATE_ID            + 1 ) //0
+#define SETTING_AVER_ID         ( SETTING_MIN_ID        + 1 )    //1
+#define SETTING_MAX_ID          ( SETTING_AVER_ID       + 1 )    //2
+#define FAIL_SET_CH1_ID         ( SETTING_MAX_ID        + 1 )    //3
+#define FAIL_SET_CH2_ID         ( FAIL_SET_CH1_ID       + 1 )    //4
+#define F_CHANNEL_ID            ( FAIL_SET_CH2_ID       + 1 )    //5
+#define SENSOR1_TYPE_ID         ( F_CHANNEL_ID          + 1 )    //6
+#define SENSOR1_MIN_ID          ( SENSOR1_TYPE_ID      + 1 )    //7
+#define SENSOR1_MAX_ID          ( SENSOR1_MIN_ID       + 1 )    //8
+#define SENSOR1_OFFSET_ID       ( SENSOR1_MAX_ID       + 1 )    //9
+#define SENSOR1_SETTING_ID      ( SENSOR1_OFFSET_ID    + 1 )    //10
+#define SENSOR2_TYPE_ID         ( SENSOR1_SETTING_ID   + 1 )    //11
+#define SENSOR2_MIN_ID          ( SENSOR2_TYPE_ID      + 1 )    //12
+#define SENSOR2_MAX_ID          ( SENSOR2_MIN_ID       + 1 )    //13
+#define SENSOR2_OFFSET_ID       ( SENSOR2_MAX_ID       + 1 )    //14
+#define SENSOR2_SETTING_ID      ( SENSOR2_OFFSET_ID    + 1 )    //15
+#define SENSOR3_TYPE_ID         ( SENSOR2_SETTING_ID    + 1 )   //16
+#define SENSOR3_MIN_ID          ( SENSOR3_TYPE_ID      + 1 )    //17
+#define SENSOR3_MAX_ID          ( SENSOR3_MIN_ID       + 1 )    //18
+#define SENSOR3_OFFSET_ID       ( SENSOR3_MAX_ID       + 1 )    //19
+#define SENSOR3_SETTING_ID      ( SENSOR3_OFFSET_ID    + 1 )    //20
+#define AFTER_ZONE_SETTING_ID   ( SENSOR3_SETTING_ID   + 1 )    //21
+#define CDV_CH_COUNT_ID         ( AFTER_ZONE_SETTING_ID + 1 )   //22
+#define MEASERING_UNIT_ID       ( CDV_CH_COUNT_ID       + 1 )   //23
+#define SETTING_MEASERING_UNIT_ID ( MEASERING_UNIT_ID         + 1 )  //24
+#define CLEAN_TIMER_ID          ( SETTING_MEASERING_UNIT_ID     + 1 )//25
+#define ZERO_POINT_TIMEOUT_ID   ( CLEAN_TIMER_ID        + 1 )    //26
+#define SETTING_TIMER_ID        ( ZERO_POINT_TIMEOUT_ID + 1 )    //27
+#define PRIOR_SENSOR_ID         ( SETTING_TIMER_ID       + 1 )   //29
+#define OFFSET2_ID              (PRIOR_SENSOR_ID      + 1 )      //39
+#define COOF_P_1_ID             ( OFFSET2_ID            + 1 )    //31
+#define COOF_I_1_ID             ( COOF_P_1_ID           + 1 )    //32
+#define BP_REG_TYPE_ID          ( COOF_I_1_ID     + 1 )          //32
+#define BP_SZIE_ID              ( BP_REG_TYPE_ID      + 1 )        //33
+#define INPUT_SIGNAL_MODE_ID    ( BP_SZIE_ID     + 1 )         //34
+#define ROOM_ACTIVE_CHANNEL_ID  ( INPUT_SIGNAL_MODE_ID     + 1 )  //35
+#define ROOM_SENSOR_TYPE_ID     ( ROOM_ACTIVE_CHANNEL_ID     + 1 )//36
+
+
+#define COOF_P_SENS_ID          ( ROOM_SENSOR_TYPE_ID          + 1 )    //35
+#define COOF_I_SENS_ID          ( COOF_P_SENS_ID           + 1 ) //36
+#define CDV_MODE_ID             ( COOF_I_SENS_ID     + 1 )    //47
+#define SENS_REG_ID             ( CDV_MODE_ID           + 1 )
+#define AIT1_TEMP_ID            ( SENS_REG_ID      + 1 )
+#define AIT2_TEMP_ID            ( AIT1_TEMP_ID      + 1 )
+#define T_SENSOR_ID             ( AIT2_TEMP_ID      + 1 )
+#define CO2_SENSOR_ID           ( T_SENSOR_ID               + 1 )
+#define HUMANITY_SENSOR_ID      ( CO2_SENSOR_ID             + 1 )
+#define FACT_CH_DATA_ID         ( HUMANITY_SENSOR_ID        + 1 )
+#define DCV_FACT2_ID            (  FACT_CH_DATA_ID  + 1 )
+#define DCV_FACT1_ID            ( DCV_FACT2_ID              + 1 )
+#define DCV_SETTING2_ID         ( DCV_FACT1_ID              + 1 )
+#define DCV_SETTING1_ID         ( DCV_SETTING2_ID           + 1 )
+#define ZERO_CAL_COMMAND        ( DCV_SETTING1_ID           + 1 )
 
 
 
@@ -149,7 +144,8 @@
 #define SETTING9_TITLE_ID       ( SETTING8_TITLE_ID      + 1 )
 #define SETTING10_TITLE_ID      ( SETTING9_TITLE_ID      + 1 )
 #define SETTING11_TITLE_ID      ( SETTING10_TITLE_ID      + 1 )
-#define SETTINGANALOG1_TITLE_ID ( SETTING11_TITLE_ID      + 1 )
+#define SENS_PI_TITLE_ID        ( SETTING11_TITLE_ID      + 1 )
+#define SETTINGANALOG1_TITLE_ID ( SENS_PI_TITLE_ID     + 1 )
 #define SETTINGANALOG2_TITLE_ID ( SETTINGANALOG1_TITLE_ID      + 1 )
 #define SETTINGANALOG3_TITLE_ID ( SETTINGANALOG2_TITLE_ID      + 1 )
 #define SETTINGANALOG4_TITLE_ID ( SETTINGANALOG3_TITLE_ID      + 1 )
@@ -165,7 +161,7 @@
 #define TITLE_FIRST         VOLTAG_SCREEN_TITLE_ID
 #define TITLE_LAST          CALIBRATION_TITLE_ID
 
-#define FMCH_FIRST          FACT_RASH_ID
+#define FMCH_FIRST          FAN_START_TIMEOUT_ID
 #define FMCH_LAST           MODE_STATE_ID
 
 #define CDV_BP_FIRST        DCV_SETTING1_ID

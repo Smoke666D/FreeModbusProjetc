@@ -14,8 +14,8 @@
 
 
 #define SW_V                 2
-#define SW_V2                2
-#define SW_V3                6
+#define SW_V2                3
+#define SW_V3                0
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -59,7 +59,13 @@
 #define COOF_P                ( COOF_I + sizeof(uint32_t) )
 #define COOF_I1               ( COOF_P + sizeof(uint32_t))
 #define COOF_P1               ( COOF_I1 + sizeof(uint32_t) )
-#define KOOFKPS               ( COOF_P1 + sizeof(uint32_t))
+#define COOF_IT               ( COOF_P1 + sizeof(uint32_t))
+#define COOF_PT               ( COOF_I1 + sizeof(uint32_t) )
+#define COOF_ICO2              (COOF_PT + sizeof(uint32_t))
+#define COOF_PCO2             ( COOF_ICO2 + sizeof(uint32_t) )
+#define COOF_IH               ( COOF_PCO2 + sizeof(uint32_t))
+#define COOF_PH               ( COOF_IH + sizeof(uint32_t) )
+#define KOOFKPS               ( COOF_PH + sizeof(uint32_t))
 #define SETTING1              ( KOOFKPS + sizeof(uint32_t))
 #define SETTING2              ( SETTING1 + sizeof(uint16_t) )
 #define AFTER_ZONE_SETTING    ( SETTING2 + sizeof(uint16_t) )
@@ -117,13 +123,7 @@
 
 
 
-typedef enum
-{
-  DISCRETE_INPUT   = 0,
-  STATIC_TERMSENSOR =1,
-  ROOM_CONTROLLER  = 2,
-  ANALOG_SENSOR    = 3,
-} INPUT_SENSOR_t;
+
 
 typedef enum
 {

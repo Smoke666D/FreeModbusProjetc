@@ -134,9 +134,29 @@ void UPDATE_COOF()
     PID_SetTunings2(&TPID,getRegFloat(COOF_P), getRegFloat(COOF_I), 0);
 }
 
-float UPDATE_COOFCAV( INPUT_SENSOR_t inp_sensor)
+static const u16 PCOOFMAP[] ={COOF_P,COOF_PT,COOF_PCO2,COOF_PH};
+static const u16 ICOOFMAP[] ={COOF_I,COOF_IT,COOF_ICO2,COOF_IH};
+
+float UPDATE_COOFCAV( INPUT_SENSOR_t inp_sensor, DISCRET_STATE_t control_state)
 {
-    PID_SetTunings2(&TPID,getRegFloat(COOF_P), getRegFloat(COOF_I), 0);
+     u8 index =0;
+     if ((control_state==SETTING_MIDIUM) && ((inp_sensor == ANALOG_SENSOR) || (inp_sensor == STATIC_TERMSENSOR)))
+     {
+         PRIOR_SENSOR_t prior = getReg8(PRIOR_SENSOR);
+         if ((inp_sensor == STATIC_TERMSENSOR) || (prior==T_PRIOR))
+         {
+             index = 1;
+         }
+         else if (prior==H_PRIOR)
+         {
+             index = 3;
+         }
+         else
+         {
+             index = 2;
+         }
+     }
+    PID_SetTunings2(&TPID,getRegFloat(PCOOFMAP[index]),getRegFloat(ICOOFMAP[index]), 0);
     PID_SetTunings2(&TPID2,getRegFloat(COOF_P1), getRegFloat(COOF_I1), 0);
     u8 after_zone = 0;
     float input_data = GetSensor(&after_zone, inp_sensor);
@@ -413,9 +433,6 @@ void Channel2Reg(  float setpoint )
 
 
 
-
-
-
 static const uint16_t SettingRegMap[]={SENS_SETTING1,SENS_SETTING2,SENS_SETTING3};
 
 float vAnalogSensorFSM( )
@@ -439,8 +456,8 @@ float vAnalogSensorFSM( )
 void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
 {
     vCDV_SetpointCheck( &dev->start_timeout);
-   ErrorSensorCheck(&error_state);
-   vCheckDoubleChannelAlarm(&error_state);
+    ErrorSensorCheck(&error_state);
+    vCheckDoubleChannelAlarm(&error_state);
     switch (task_fsm)
     {
             case USER_PROCCES_IDLE:
@@ -464,14 +481,16 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                     if (++dev->pid_counter >=10)
                     {
                         INPUT_SENSOR_t  temp_inp_sens_type = getReg8(INPUT_CONTROL_TYPE);
-                        float pid_input = UPDATE_COOFCAV(temp_inp_sens_type );
-                        dev->pid_counter = 0;
                         DISCRET_STATE_t temp_control_state = getReg8(CDV_CONTOROL);
+                        float pid_input = UPDATE_COOFCAV(temp_inp_sens_type , temp_control_state);
+                        dev->pid_counter = 0;
 
+                        u8 compute_falg = 1;
                         switch (temp_control_state)
                         {
                             case SETTING_OPEN:
                                      USER_AOUT_SET(DAC1,10.0);
+                                     compute_falg = 0;
                                      break;
                             case SETTING_MINIMUM:
                                      SET_POINT = (float)getReg16(SETTING_MIN);
@@ -482,9 +501,10 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                             default:
                             case SETTING_CLOSE:
                                  USER_AOUT_SET(DAC1,0.0);
+                                 compute_falg = 0;
                                  break;
                             case SETTING_MIDIUM:
-                                switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
+                                switch (temp_inp_sens_type)
                                 {
                                     case DISCRETE_INPUT:
                                         SET_POINT = (float)getReg16(SETTING_MID);
@@ -498,7 +518,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                                         break;
                                 }
                         }
-                        if ((temp_control_state!=SETTING_OPEN ) && (temp_control_state<=SETTING_CLOSE))
+                        if (compute_falg)
                         {
                               PID_Compute(&TPID,pid_input);
                               float PID_Out = PIDOut/1000.0;

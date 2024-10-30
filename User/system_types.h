@@ -38,11 +38,11 @@ typedef enum
 
 typedef enum
 {
-  INP_DISCRETE_INPUT = 0,
-  INP_PASSIVE_T_SENSOR = 1,
-  INP_ROOM_CONTROLLER  = 2,
-  INP_ANALOG_SENSOR  = 3,
-} INPUT_SENSOR_TYPE_t;
+  DISCRETE_INPUT   = 0,
+  STATIC_TERMSENSOR =1,
+  ROOM_CONTROLLER  = 2,
+  ANALOG_SENSOR    = 3,
+} INPUT_SENSOR_t;
 
 typedef struct
 {

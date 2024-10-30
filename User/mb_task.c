@@ -138,34 +138,36 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define CDV_KOOF_P_MB           203
 #define CDV_KOOF_P1_MB          207
 #define CDV_KOOF_I1_MB          209
-#define CDV_INPUT_SENS_MB       211
-#define CDV_SETTING_MIN_MB      212
-#define CDV_SETTING_MID_MB      214
-#define CDV_SETTING_MAX_MB      216
-#define CDV_SETTING_ERROR1_MB   218
-#define CDV_SETTING_ERROR2_MB   220
-#define CDV_F_CHANNEL           222
-#define CDV_OFFSET_CH2          224
-#define CDV_CLEAN_TIMER         226
-#define CDV_MEASERING_UNIT      227
-#define CDV_ZERO_POINT_TIMEOUT  228
-#define CDV_SETTING_TIMEOUT_MB  229
-#define CDV_MODE_CONTROL        230
-#define CDV_AFZONE_SETTING_MB   231
-#define CDV_SENSOR1_MIN         232
-#define CDV_SENSOR1_MAX         234
-#define CDV_SENSOR2_MIN         236
-#define CDV_SENSOR2_MAX         238
-#define CDV_SENSOR3_MIN         240
-#define CDV_SENSOR3_MAX         242
-#define CDV_SENSOR1_OFS         244
-#define CDV_SENSOR2_OFS         246
-#define CDV_SENSOR3_OFS         248
-#define CDV_SENSOR1_SET         250
-#define CDV_SENSOR2_SET         252
-#define CDV_SENSOR3_SET         254
-#define CDV_ROOM_CHANNEL        256
-#define CDV_PRIOR_SENS          257
+#define CDV_KOOF_PSESN_MB       211
+#define CDV_KOOF_ISENS_MB       213
+#define CDV_INPUT_SENS_MB       215
+#define CDV_SETTING_MIN_MB      216
+#define CDV_SETTING_MID_MB      218
+#define CDV_SETTING_MAX_MB      220
+#define CDV_SETTING_ERROR1_MB   222
+#define CDV_SETTING_ERROR2_MB   224
+#define CDV_F_CHANNEL           226
+#define CDV_OFFSET_CH2          228
+#define CDV_CLEAN_TIMER         230
+#define CDV_MEASERING_UNIT      231
+#define CDV_ZERO_POINT_TIMEOUT  232
+#define CDV_SETTING_TIMEOUT_MB  233
+#define CDV_MODE_CONTROL        234
+#define CDV_AFZONE_SETTING_MB   235
+#define CDV_SENSOR1_MIN         236
+#define CDV_SENSOR1_MAX         238
+#define CDV_SENSOR2_MIN         240
+#define CDV_SENSOR2_MAX         242
+#define CDV_SENSOR3_MIN         244
+#define CDV_SENSOR3_MAX         246
+#define CDV_SENSOR1_OFS         248
+#define CDV_SENSOR2_OFS         250
+#define CDV_SENSOR3_OFS         252
+#define CDV_SENSOR1_SET         254
+#define CDV_SENSOR2_SET         256
+#define CDV_SENSOR3_SET         258
+#define CDV_ROOM_CHANNEL        260
+#define CDV_PRIOR_SENS          261
 
 
 
@@ -190,8 +192,10 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 
 
 
-static u16 const device_specific_reg_offset[] = { FMCH_OFFSET ,CDV_OFFSET, CDV_OFFSET};
+static u16 const device_specific_reg_offset[] = { FMCH_OFFSET ,CDV_OFFSET};
 static u16 const device_specific_reg_count[] =  { FMCH_COUNT  ,CDV_COUNT , CDV_COUNT };
+static const u16 SensorPRegMap[]={COOF_PT,COOF_PCO2,COOF_PH};
+static const u16 SensorIRegMap[]={COOF_IT,COOF_ICO2,COOF_IH};
 /*§¡§Õ§â§Ö§ã§Ñ INPUTS §â§Ö§Ô§Ú§ã§ä§à§â§Ó*/
 
 
@@ -314,65 +318,58 @@ static const u16 CDV_REGS_MAP[] = {
                                                COOF_P1,          //8
                                                COOF_I1,          //9
                                                COOF_I1,          //10
-                                               INPUT_CONTROL_TYPE,  //11
-                                               SETTING_MIN,       //12
-                                               SETTING_MIN,       //13
-                                               SETTING_MID,       //14
-                                               SETTING_MID,       //15
-                                               SETTING_MAX,       //16
-                                               SETTING_MAX,       //17
-                                               CH1_SETTING,       //18
-                                               CH1_SETTING,       //19
-                                               CH2_SETTING,       //20
-                                               CH2_SETTING,       //21
-                                               F_CHANNEL,         //22
-                                               F_CHANNEL,         //23
-                                               OFFSET_CH2,        //24
-                                               OFFSET_CH2,        //25
-                                               CLEAN_TIMER,       //26
-                                               MEASERING_UNIT,    //27
-                                               ZERO_POINT_TIMEOUT,//28
-                                               SETTING_TIMER,     //29
-                                               MB_CDV_CONTROL,             //30
-                                               AFTER_ZONE_SETTING,//31
-                                               MIN_SET1,          //32
-                                               MIN_SET1,          //33
-                                               MAX_SET1,          //34
-                                               MAX_SET1,          //35
-                                               MIN_SET2,          //36
-                                               MIN_SET2,          //37
-                                               MAX_SET2,          //38
-                                               MAX_SET2,          //39
-                                               MIN_SET3,          //40
-                                               MIN_SET3,          //41
-                                               MAX_SET3,          //42
-                                               MAX_SET3,          //43
-                                               SENS_OFS1,         //44
-                                               SENS_OFS1,         //45
-                                               SENS_OFS2,         //46
-                                               SENS_OFS2,         //47
-                                               SENS_OFS3,         //48
-                                               SENS_OFS3,         //49
-                                               SENS_SETTING1,     //50
-                                               SENS_SETTING1,     //51
-                                               SENS_SETTING2,     //52
-                                               SENS_SETTING2,     //53
-                                               SENS_SETTING3,     //54
-                                               SENS_SETTING3,     //55
-                                               ROOM_CHANNEL,      //56
-                                               PRIOR_SENSOR,      //57
-
-
+                                               0,                //11
+                                               0,                //12
+                                               0,                //13
+                                               0,                 //14
+                                               INPUT_CONTROL_TYPE,  //15
+                                               SETTING_MIN,       //16
+                                               SETTING_MIN,       //17
+                                               SETTING_MID,       //18
+                                               SETTING_MID,       //19
+                                               SETTING_MAX,       //20
+                                               SETTING_MAX,       //21
+                                               CH1_SETTING,       //22
+                                               CH1_SETTING,       //23
+                                               CH2_SETTING,       //24
+                                               CH2_SETTING,       //25
+                                               F_CHANNEL,         //26
+                                               F_CHANNEL,         //27
+                                               OFFSET_CH2,        //28
+                                               OFFSET_CH2,        //29
+                                               CLEAN_TIMER,       //30
+                                               MEASERING_UNIT,    //31
+                                               ZERO_POINT_TIMEOUT,//32
+                                               SETTING_TIMER,     //33
+                                               MB_CDV_CONTROL,             //34
+                                               AFTER_ZONE_SETTING,//35
+                                               MIN_SET1,          //36
+                                               MIN_SET1,          //37
+                                               MAX_SET1,          //38
+                                               MAX_SET1,          //39
+                                               MIN_SET2,          //40
+                                               MIN_SET2,          //41
+                                               MAX_SET2,          //42
+                                               MAX_SET2,          //43
+                                               MIN_SET3,          //44
+                                               MIN_SET3,          //45
+                                               MAX_SET3,          //46
+                                               MAX_SET3,          //47
+                                               SENS_OFS1,         //48
+                                               SENS_OFS1,         //49
+                                               SENS_OFS2,         //50
+                                               SENS_OFS2,         //51
+                                               SENS_OFS3,         //52
+                                               SENS_OFS3,         //53
+                                               SENS_SETTING1,     //54
+                                               SENS_SETTING1,     //55
+                                               SENS_SETTING2,     //56
+                                               SENS_SETTING2,     //57
+                                               SENS_SETTING3,     //58
+                                               SENS_SETTING3,     //59
+                                               ROOM_CHANNEL,      //60
+                                               PRIOR_SENSOR,      //61
 };
-
-
-
-
-
-
-
-
-
 
 
 
@@ -530,42 +527,65 @@ void vSetRegData( u16 adress)
    }
    else
    {
-       u16 byte_data =(u16)usRegHoldingBuf[adress-device_specific_reg_offset[dev_type]];
+       u16 byte_data;
        u16 reg_addr;
-       switch ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE))
+       INPUT_SENSOR_t sens_type;
+       if (dev_type == DEV_FMCH)
        {
-                  case DEV_FMCH:
-                      reg_addr = FMCH_REGS_MAP[adress- 100];
-                      switch (adress)
-                       {
-                            case LIGTH_REG_MB:
-                            case MODE_REG_MB:
-                                       VerifyAndSetReg8(reg_addr, (uint8_t) byte_data );
-                                       break;
-                           case COMMAND_REG:
-                                      USER_SetControlState( (uint8_t) byte_data );
-                                      break;
-                           case (KOOF_I_MB+1):
-                           case (KOOF_K_MP+1):
-                           case (KOOF_P_MB+1):
-                                      data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
-                                      saveRegFloat(reg_addr, data);
-                                      break;
-                           case  SET_MOD1_MB:
-                           case  SET_MOD2_MB:
-                           case  FILTER_LOW_MB:
-                           case  FILTER_HIGH_MB:
-                                      saveReg16(reg_addr, usRegHoldingBuf[adress]);
-                                      break;
-                           case TIME_FAN_STOP_MB:
-                                      SaveReg8(reg_addr,byte_data);
-                                      break;
-                       }
-                       break;
-                  case DEV_CAV_VAV_BP:
-                      reg_addr = CDV_REGS_MAP[adress- 200];
-                      switch (adress)
+               byte_data = (u16)usRegHoldingBuf[adress];
+               reg_addr = FMCH_REGS_MAP[adress- 100];
+               switch (adress)
+               {
+                    case LIGTH_REG_MB:
+                    case MODE_REG_MB:
+                         VerifyAndSetReg8(reg_addr, (uint8_t) byte_data );
+                         break;
+                    case COMMAND_REG:
+                         USER_SetControlState( (uint8_t) byte_data );
+                         break;
+                    case (KOOF_I_MB+1):
+                    case (KOOF_K_MP+1):
+                    case (KOOF_P_MB+1):
+                         data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
+                         saveRegFloat(reg_addr, data);
+                         break;
+                    case  SET_MOD1_MB:
+                    case  SET_MOD2_MB:
+                    case  FILTER_LOW_MB:
+                    case  FILTER_HIGH_MB:
+                          saveReg16(reg_addr, usRegHoldingBuf[adress]);
+                          break;
+                    case TIME_FAN_STOP_MB:
+                         SaveReg8(reg_addr,byte_data);
+                         break;
+                    default:
+                        break;
+                }
+       }
+       else
+       {
+                byte_data = (u16)usRegHoldingBuf[adress-CDV_OFFSET];
+                reg_addr = CDV_REGS_MAP[adress- 200];
+                switch (adress)
                       {
+                            case (CDV_KOOF_PSESN_MB+1):
+
+                                 if (IsPISendScreenNreed())
+                                 {
+                                     reg_addr = SensorPRegMap[GetPIDSensorIndex()];
+                                     data = convert_int_to_float( &usRegHoldingBuf[adress-CDV_OFFSET -1]);
+                                     saveRegFloat(reg_addr, data);
+                                 }
+                                 break;
+                            case (CDV_KOOF_ISENS_MB+1):
+
+                                            if (IsPISendScreenNreed())
+                                         {
+                                             reg_addr = SensorIRegMap[GetPIDSensorIndex()];
+                                                 data = convert_int_to_float( &usRegHoldingBuf[adress-CDV_OFFSET-1]);
+                                                 saveRegFloat(reg_addr, data);
+                                       }
+                                     break;
                             case (CDV_SENSOR1_MIN+1):
                             case (CDV_SENSOR1_MAX+1):
                             case (CDV_SENSOR2_MIN+1):
@@ -578,7 +598,7 @@ void vSetRegData( u16 adress)
                             case (CDV_SENSOR1_SET+1):
                             case (CDV_SENSOR2_SET+1):
                             case (CDV_SENSOR3_SET+1):
-                                data = convert_int_to_float( &usRegHoldingBuf[adress-device_specific_reg_offset[dev_type]-1]);
+                                data = convert_int_to_float( &usRegHoldingBuf[adress-CDV_OFFSET-1]);
                                 if (data <0) data  = 0;
                                 if (data > 9999.9 ) data = 9999.9;
                                 saveRegFloat(reg_addr, data);
@@ -589,7 +609,7 @@ void vSetRegData( u16 adress)
                             case (CDV_KOOF_I1_MB+1):
                             case (CDV_KOOF_P1_MB+1):
                             case (CDV_F_CHANNEL+1):
-                                     data = convert_int_to_float( &usRegHoldingBuf[adress-device_specific_reg_offset[dev_type]-1]);
+                                     data = convert_int_to_float( &usRegHoldingBuf[adress-CDV_OFFSET-1]);
                                      saveRegFloat(reg_addr, data);
                                      break;
                             case (CDV_OFFSET_CH2+1):
@@ -598,7 +618,7 @@ void vSetRegData( u16 adress)
                             case (CDV_SETTING_MAX_MB +1 ):
                             case (CDV_SETTING_ERROR1_MB + 1):
                             case (CDV_SETTING_ERROR2_MB + 1):
-                                     data = convert_int_to_float( &usRegHoldingBuf[adress-device_specific_reg_offset[dev_type]-1]);
+                                     data = convert_int_to_float( &usRegHoldingBuf[adress-CDV_OFFSET-1]);
                                      switch ( ( MES_UNIT_t)getReg8(MEASERING_UNIT) )
                                      {
                                             case L_UNIT:
@@ -632,14 +652,8 @@ void vSetRegData( u16 adress)
                                   saveReg16(reg_addr, usRegHoldingBuf[adress]);
                                   break;
                       }
-                      break;
-                  default:
-                      break;
+           }
        }
-    }
-
-
-
 }
 
 
@@ -681,7 +695,7 @@ void UpdateDCVInputs()
     temp_int  =  (int16_t)(getTSensor()*10);
     convert_float_to_int((float)temp_int/10.0, &usRegInputBuf[CDV_T_SENSOR_MB-CDV_OFFSET]);
     usRegInputBuf[CDV_CO2_SENSOR_MB-CDV_OFFSET] = (uint16_t)getCO2Sensor();
-    usRegInputBuf[CDV_H_SENSOR_MB-CDV_OFFSET] = getHumanitySensor();
+    usRegInputBuf[CDV_H_SENSOR_MB-CDV_OFFSET]   = getHumanitySensor();
     usRegInputBuf[CDV_CUR_STATE  - CDV_OFFSET ] = getStateDCV();
 
 }
@@ -707,13 +721,9 @@ static void MB_TASK_INPUTS_UDATE(u16 start_reg_index )
     else                                              //§¦§ã§Ý§Ú §á§Ö§â§Ó§í§Û §Ñ§Õ§â§Ö§ã §Ó §Õ§Ú§Ñ§á§Ñ§Ù§à§ß§Ö §ã§á§Ö§è§Ú§æ§Ú§é§Ö§ã§Ü§Ú§ç §Õ§Ý§ñ §å§ã§ä§â§à§Û§ã§ä§Ó§Ñ §â§Ö§Ô§ã§Ú§ä§â§à§Ó
     {
        if ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE) == DEV_FMCH )
-       {
            UodateFMCHInputs();
-       }
        else
-       {
            UpdateDCVInputs();
-       }
     }
 }
 #define CDV_BP_REG8_SEQ_COUNT 8
@@ -801,8 +811,19 @@ void UpdateCAV_VAV_BPHoldign()
         convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[reg_addr-100]);
     }
     temp_long =(long) (getRegFloat(CDV_REGS_MAP[CDV_F_CHANNEL-200])*10000);
-    convert_float_to_int((float)temp_long/10000.0, &usRegHoldingBuf[CDV_F_CHANNEL-1000]);
+    convert_float_to_int((float)temp_long/10000.0, &usRegHoldingBuf[CDV_F_CHANNEL-100]);
 
+     int32_t pdata = 0;
+     int32_t idata = 0;
+     INPUT_SENSOR_t sens_type = getReg8(INPUT_CONTROL_TYPE);
+    if (( sens_type==STATIC_TERMSENSOR ) || (sens_type==ANALOG_SENSOR))
+    {
+        u8 index = GetPIDSensorIndex();
+        pdata = (int32_t) (getRegFloat(SensorPRegMap[index ])*1000);
+        idata = (int32_t) (getRegFloat(SensorIRegMap[index ])*1000);
+    }
+    convert_float_to_int((float)pdata/10000.0, &usRegHoldingBuf[CDV_KOOF_PSESN_MB -100]);
+    convert_float_to_int((float)idata/10000.0, &usRegHoldingBuf[CDV_KOOF_ISENS_MB-100]);
    for (u8 i=0;i<12;i++)
     {
         u16 reg_addr =REGS_CDV_SENS_FLOAT[i];
@@ -856,17 +877,10 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
     }
     else
     {
-
-        switch ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE))
-        {
-            case DEV_CAV_VAV_BP:
-                UpdateCAV_VAV_BPHoldign();
-                break;
-            case DEV_FMCH:
-                UpdateFMCHHoldings();
-                break;
-            }
-
+        if  ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE) == DEV_FMCH)
+            UpdateFMCHHoldings();
+        else
+            UpdateCAV_VAV_BPHoldign();
     }
 
 }
@@ -1059,33 +1073,24 @@ eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT us
 
 void MBRTU_task(void *pvParameters)
 {
-     u8 mb_ready = 0;
      eMBErrorCode    xStatus;
      for( ;; )
      {
          if (getReg8(MB_PROTOCOL_TYPE)== MKV_MB_RTU)
          {
-
-             if (eMBInit(MB_RTU,getReg8(MB_RTU_ADDR),HAL_USART4,19200,MB_PAR_ODD ) == MB_ENOERR )
-             {
-                mb_ready = 1;
-             }
+             xStatus =  eMBInit(MB_RTU,getReg8(MB_RTU_ADDR),HAL_USART4,19200,MB_PAR_ODD );
          }
          else
          {
+             xStatus =  eMBTCPInit( MB_TCP_PORT_USE_DEFAULT );
 
-        if( eMBTCPInit( MB_TCP_PORT_USE_DEFAULT ) == MB_ENOERR )
-        {
-            mb_ready = 1;
-        }
          }
-         if (mb_ready)
+         if (xStatus == MB_ENOERR)
          {
              if( eMBEnable(  ) == MB_ENOERR )
              {
                 do
                 {
-                    //vTaskDelay(1);
                     xStatus = eMBPoll(  );
 
                 }

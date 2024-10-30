@@ -107,16 +107,16 @@ static u8 blink_counter = 0;
 static u8 SelectEditFlag = 0;
 static HAL_TimeConfig_T time;
 static uint8_t error_flag;
-static u8 * SENSOR_COUNT_STRING[]={"0.1","0.5","1.0","2.0","3.0","5.0","10.0"};
-static u8 * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
-static u8 * AfterZoneStrig[]={"Tканала<Tпомещения","Tканала>Tпомещения","Автомат"};
-static u8 * MUnitStrig[] = {"м^3/ч","м/c ","Па "};
-static u8 *  SensUnitString[]={"T","ppm","%"};
-static u8 * PriorSentStrig[]= {"T","CO2","H"};
+static const u8 * SENSOR_COUNT_STRING[]={"0.1","0.5","1.0","2.0","3.0","5.0","10.0"};
+static const u8 * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
+static const u8 * AfterZoneStrig[]={"Tканала<Tпомещения","Tканала>Tпомещения","Автомат"};
+static const u8 * MUnitStrig[] = {"м^3/ч","м/c ","Па "};
+static const u8 *  SensUnitString[]={"T","ppm","%"};
+static const u8 * PriorSentStrig[]= {"T","CO2","H"};
 static const char * DevString[]={"Режим ФМЧ","Режим CAV/VAV-BP"};
 static const char * TestModeString[]={"Выкл","Вкл"};
-static u8 * SensorTypeStrig[]= {"0-10 В","2-10 В","4-20 мA"};
-static u8 * IniputSignalTypeStrig[]= {"Диск. вход","Пас. датчик T","Комн. контр.","Аналог датчики"};
+static const u8 * SensorTypeStrig[]= {"0-10 В","2-10 В","4-20 мA"};
+static const u8 * IniputSignalTypeStrig[]= {"Диск. вход","Пас. датчик T","Комн. контр.","Аналог датчики"};
 const char * CDV_MODE_STRING[]={"Закрыто","Минимальная","Средняя","Максимальная","Открыто"};
 const char * BP_REG_TYPE_STRING[] = {"VAV","Const L0,2","VAV + Const L0,2"};
 static char * const FMCH_MODE_STRING[]= {"1 (Основной)","2 (Доп.)"};
@@ -879,91 +879,48 @@ static const u16 MenuRegMap[]={ TEST_MODE,
 
 
 };
-static const u16 MenuFMCHRegMap[]={
-0,                   //30
-                             0,                   //31
-                             FILTER_LOW,          //32
-                             FILTER_HIGH,          //32
-                             SETTING1,           //34
-                             SETTING2,           //35
-                             0, //36
-                             0,                    //37
-                             0,                    //38
-                             0,                    //39
-                             0,                    //40
-                             0,                    //41
-                             0,                    //42
-                             0,                    //43
-                             FAN_START_TIMEOUT,      //44
-                             0,      //45
-                             0,       //46
-                             0,
-};
+
 
 static const u16 MenuCDV_BPRegMap[]=
                         {
-                                 0,    //0
-                                 0,    //1
-                                 0,    //2
-                                 0,    //3
-                                 0,    //4
-                                 0,    //5
-                                 0,    //6
-                                 0,    //7
-                                 0,    //8
-                                 SETTING_MIN ,    //9
-                                 SETTING_MID ,    //10
-                                 SETTING_MAX,    //11
-                                 CH1_SETTING,    //12
-                                 CH2_SETTING,    //13
-                                 F_CHANNEL,    //14
-                                 AIN1_TYPE , //15
-                                 MIN_SET1,    //16
-                                 MAX_SET1,    //17
-                                 SENS_OFS1,    //18
-                                 SENS_SETTING1,    //19
-                                 AIN2_TYPE , //20
-                                 MIN_SET2,    //21
-                                 MAX_SET2,    //22
-                                 SENS_OFS2,    //23
-                                 SENS_SETTING2,    //24
-                                 AIN3_TYPE , //25
-                                 MIN_SET3,    //26
-                                 MAX_SET3,    //27
-                                 SENS_OFS3,    //28
-                                 SENS_SETTING3,    //29
-                                 AFTER_ZONE_SETTING,   //30
-                                 CDV_BP_CH_COUNT,    //31
-                                 MEASERING_UNIT,    //32
-                                 CLEAN_TIMER,    //33
-                                 ZERO_POINT_TIMEOUT,    //34
-                                 SETTING_TIMER,       //35
-                                 PRIOR_SENSOR ,    //36
-                                 OFFSET_CH2,    //37
-                                 COOF_P1,    //38
-                                 COOF_I1,    //39
-                                 0,    //40
-                                 0,    //41
-                                 0,    //42
-                                 0,    //43
-                                 0,    //44
-                                 0,    //45
-                                 0,    //46
-                                 0,    //47
-                                 0,    //48
-                                 0,    //49
-                                 BP_REG_TYPE,    //50
-                                 BP_SIZE,       //51
-                                 MEASERING_UNIT, //52
-                                 INPUT_CONTROL_TYPE,//53
-                                 ROOM_CHANNEL,              //54
-                                 AIN1_TYPE, //55
-                                 0, //56
-                                 0, //57
-                                 0,  //58
-                                 0,  //59
-                                 0,
-                                 0,
+                                 SETTING_MIN ,              //0
+                                 SETTING_MID ,              //1
+                                 SETTING_MAX,               //2
+                                 CH1_SETTING,               //3
+                                 CH2_SETTING,               //4
+                                 F_CHANNEL,                 //5
+                                 AIN1_TYPE ,                //6
+                                 MIN_SET1,                  //7
+                                 MAX_SET1,                  //8
+                                 SENS_OFS1,                 //9
+                                 SENS_SETTING1,             //10
+                                 AIN2_TYPE ,                //11
+                                 MIN_SET2,                  //12
+                                 MAX_SET2,                  //13
+                                 SENS_OFS2,                 //14
+                                 SENS_SETTING2,             //15
+                                 AIN3_TYPE ,                //16
+                                 MIN_SET3,                  //17
+                                 MAX_SET3,                  //18
+                                 SENS_OFS3,                 //19
+                                 SENS_SETTING3,             //20
+                                 AFTER_ZONE_SETTING,        //21
+                                 CDV_BP_CH_COUNT,           //22
+                                 MEASERING_UNIT,            //23
+                                 MEASERING_UNIT,            //24
+                                 CLEAN_TIMER,               //25
+                                 ZERO_POINT_TIMEOUT,        //26
+                                 SETTING_TIMER,             //27
+                                 PRIOR_SENSOR ,             //28
+                                 OFFSET_CH2,                //29
+                                 COOF_P1,                   //30
+                                 COOF_I1,                   //31
+                                 BP_REG_TYPE,               //32
+                                 BP_SIZE,                   //32
+                                 MEASERING_UNIT,            //33
+                                 INPUT_CONTROL_TYPE,        //32
+                                 ROOM_CHANNEL,              //35
+                                 AIN1_TYPE,                 //36
                          };
 
 
@@ -974,11 +931,11 @@ static u8 const *  CH_STRING[] = { "ВР","1 канал","2 канала"};
 
 
 
-
-
 void vSetTitle(u16 data_id, u8 * str )
 {
+    u8 temp_index;
     u8 screen_count = getScreenCount();
+    CHANNEL_COUNT_t channel_count = getReg8(CDV_BP_CH_COUNT);
     u8 dev_type = getReg8(DEVICE_TYPE);
     switch (data_id)
     {
@@ -1000,6 +957,12 @@ void vSetTitle(u16 data_id, u8 * str )
                else
                    sprintf(str,"2/%i",screen_count);
                 break;
+           case VOLTAG_SCREEN_TITLE_ID:
+               if (dev_type == DEV_FMCH)
+                     strcpy(str,"5/10");
+                  else
+                               sprintf(str,"3/%i",screen_count);
+                              break;
            case SETTING3_TITLE_ID:
                    sprintf(str,"5/%i",screen_count);
                    break;
@@ -1010,87 +973,102 @@ void vSetTitle(u16 data_id, u8 * str )
                    sprintf(str,"7/%i",screen_count);
                    break;
            case SETTING8_TITLE_ID:
-                if((getReg8(CDV_BP_CH_COUNT))==2)
+               if(channel_count ==TWO_CH)
                    sprintf(str,"8/%i",screen_count);
                 else
                     sprintf(str,"7/%i",screen_count);
 
                   break;
            case SETTING9_TITLE_ID:
-               if((getReg8(CDV_BP_CH_COUNT))==2)
+               if(channel_count ==TWO_CH)
                  sprintf(str,"9/%i",screen_count);
                else
                    sprintf(str,"8/%i",screen_count);
 
                   break;
            case SETTING10_TITLE_ID:
-               if((getReg8(CDV_BP_CH_COUNT))==2)
+               if(channel_count ==TWO_CH)
                   sprintf(str,"10/%i",screen_count);
                else {
                    sprintf(str,"9/%i",screen_count);
             }
                   break;
+           case SENS_PI_TITLE_ID:
+               if(channel_count ==TWO_CH)
+                                sprintf(str,"11/%i",screen_count);
+                             else {
+                                 sprintf(str,"10/%i",screen_count);
+                          }
+                                break;
+                break;
            case SETTING11_TITLE_ID:
-               if((getReg8(CDV_BP_CH_COUNT))==2)
-                  sprintf(str,"11/%i",screen_count);
-               else {
-                   sprintf(str,"10/%i",screen_count);
-            }
+               if(channel_count ==TWO_CH)
+                   temp_index=11;
+               else
+                   temp_index=10;
+                  temp_index =temp_index+ IsPISendScreenNreed();
+                  sprintf(str,"%i/%i",temp_index,screen_count);
                   break;
-           case AFTER_ZONE_TITLE_ID:
-                 if (getReg8(INPUT_CONTROL_TYPE) == ANALOG_SENSOR)
-                     strcpy(str,"Приор. регул.");
-                 else
-                    str[0] =0;
-                 break;
            case RESET_TITLE_ID:
                if (dev_type == DEV_FMCH)
                                     strcpy(str,"10/10");
                               else
                                    sprintf(str,"%i/%i",screen_count,screen_count);
                                   break;
-           case VOLTAG_SCREEN_TITLE_ID:
-               if (dev_type == DEV_FMCH)
-                      strcpy(str,"5/10");
-                else
-                     sprintf(str,"3/%i",screen_count);
-                    break;
+
+
            case SETTINGANALOG1_TITLE_ID:
-               if ((getReg8(CDV_BP_CH_COUNT))==2)
-                   sprintf(str,"12/%i",screen_count);
-               else
-                   sprintf(str,"10/%i",screen_count);
+               if(channel_count ==TWO_CH)
+                                 temp_index=12;
+                             else
+                                 temp_index=10;;
+               temp_index =temp_index+IsPISendScreenNreed();
+                sprintf(str,"%i/%i",temp_index,screen_count);
                break;
            case SETTINGANALOG2_TITLE_ID:
-               if ((getReg8(CDV_BP_CH_COUNT))==2)
-                   sprintf(str,"13/%i",screen_count);
-               else
-                   sprintf(str,"11/%i",screen_count);
+               if(channel_count ==TWO_CH)
+                                 temp_index=13;
+                             else
+                                 temp_index=11;
+               temp_index =temp_index+IsPISendScreenNreed();
+                sprintf(str,"%i/%i",temp_index,screen_count);
                break;
            case SETTINGANALOG3_TITLE_ID:
-               if ((getReg8(CDV_BP_CH_COUNT))==2)
-                   sprintf(str,"14/%i",screen_count);
-               else
-                   sprintf(str,"12/%i",screen_count);
+               if(channel_count ==TWO_CH)
+                                 temp_index=14;
+                             else
+                                 temp_index=12;
+               temp_index =temp_index+IsPISendScreenNreed();
+                sprintf(str,"%i/%i",temp_index,screen_count);
                break;
            case SETTINGANALOG4_TITLE_ID:
-               if ((getReg8(CDV_BP_CH_COUNT))==2)
-                   sprintf(str,"15/%i",screen_count);
-               else
-                   sprintf(str,"13/%i",screen_count);
+               if(channel_count ==TWO_CH)
+                                 temp_index=15;
+                             else
+                                 temp_index=13;
+               temp_index =temp_index+IsPISendScreenNreed();
+                sprintf(str,"%i/%i",temp_index,screen_count);
                break;
            case SETTINGANALOG5_TITLE_ID:
-               if ((getReg8(CDV_BP_CH_COUNT))==2)
-                   sprintf(str,"16/%i",screen_count);
-               else
-                   sprintf(str,"14/%i",screen_count);
+               if(channel_count ==TWO_CH)
+                                 temp_index=16;
+                             else
+                                 temp_index=14;
+               temp_index =temp_index+IsPISendScreenNreed();
+                sprintf(str,"%i/%i",temp_index,screen_count);
                break;
            case SENSOR_TYPE_TITLE_ID:
-               if (getReg8(INPUT_CONTROL_TYPE) == 2)
+               if(channel_count ==TWO_CH)
                strcpy(str,"Приоритет рег.:") ;
                else
                    str[0] = 0;
-
+               break;
+           case AFTER_ZONE_TITLE_ID:
+                           if (getReg8(INPUT_CONTROL_TYPE) == ANALOG_SENSOR)
+                               strcpy(str,"Приор. регул.");
+                           else
+                              str[0] =0;
+                           break;
                break;
            case  SENSOR_TITLE_ID:
                if (getReg8(INPUT_CONTROL_TYPE) == 2)
@@ -1131,44 +1109,162 @@ void DinModeSettingView(u8 channel, char * str)
      }
 }
 static const char NorAvalivaleString[]="----";
+static const u16 SensorPRegMap[]={COOF_PT,COOF_PCO2,COOF_PH};
+static const u16 SensorIRegMap[]={COOF_IT,COOF_ICO2,COOF_IH};
+static const char * SensorRegTypeMap[]={"T","CO2","H"};
+
 
 void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 * res)
 {
     static float temp_float;
     static int32_t temp_int;
-    u16 reg_id = MenuCDV_BPRegMap[data_id - DCV_SETTING1_ID];
+
+    if (data_id >= DCV_FACT2_ID )
+    {
+        static u16 reg_id;
+        INPUT_SENSOR_t sens_type = getReg8(INPUT_CONTROL_TYPE);
+        DISCRET_STATE_t state    = getReg8(CDV_CONTOROL);
+        switch (data_id)
+        {
+                case COOF_P_SENS_ID:
+                case COOF_I_SENS_ID:
+                    temp_int = GetPIDSensorIndex();
+                    reg_id = (data_id == COOF_P_SENS_ID) ? SensorPRegMap[temp_int] : SensorIRegMap[temp_int];
+                    if ( command > CMD_EDIT_READ )
+                        vFloatDataEdit(reg_id, command,6,2,999.99,-999.99);
+                    else
+                        sprintf(str,"%+07.2f", ( command == CMD_READ )? getRegFloat(reg_id): edit_data_buffer_float );
+            break;
+                case CDV_MODE_ID:
+                    strcpy(str,CDV_MODE_STRING[getStateDCV()]);
+                    break;
+                case SENS_REG_ID:
+                        strcpy(str,SensorRegTypeMap[GetPIDSensorIndex()]);
+                        break;
+                case AIT1_TEMP_ID :
+                         if ( getReg8(AFTER_ZONE_SETTING) == 1)
+                             sprintf(str,"%2.1f C",getAIN(DCAIN4));
+                         else
+                             strcpy(str,NorAvalivaleString);
+                         break;
+                case AIT2_TEMP_ID :
+                         if  (sens_type == STATIC_TERMSENSOR)
+                             sprintf(str,"%2.1f C",getAIN(DCAIN5));
+                         else
+                             strcpy(str,NorAvalivaleString);
+                         break;
+                case T_SENSOR_ID:
+                        if  (sens_type == ANALOG_SENSOR)
+                                sprintf(str,"%02.1f C", getTSensor());
+                        else
+                            strcpy(str,NorAvalivaleString);
+                        break;
+                case CO2_SENSOR_ID:
+                        if  (sens_type == ANALOG_SENSOR)
+                            sprintf(str,"%04i ppm", getCO2Sensor());
+                        else
+                            strcpy(str,NorAvalivaleString);
+                        break;
+                case HUMANITY_SENSOR_ID:
+                        if  (sens_type == ANALOG_SENSOR)
+                            sprintf(str,"%03i %%", getHumanitySensor());
+                        else
+                            strcpy(str,NorAvalivaleString);
+                        break;
+                case FACT_CH_DATA_ID:
+                       if  (sens_type == STATIC_TERMSENSOR)
+                           sprintf(str,"%2.1f C",getAIN(DCAIN5));
+                       else {
+                           switch (GetPIDSensorIndex())
+                           {
+                               case 0: sprintf(str,"%02.1f C", getTSensor()); break;
+                               case 1: sprintf(str,"%04i ppm", getCO2Sensor());break;
+                               default: sprintf(str,"%03i %%", getHumanitySensor());break;
+                           }
+                       }
+                       break;
+               case DCV_SETTING1_ID:
+                    switch (state)
+                    {
+                        case SETTING_OPEN:
+                              strcpy(str,"Откр.");
+                              break;
+                        case SETTING_CLOSE:
+                              strcpy(str,"Закп.");
+                              break;
+                        case SETTING_MINIMUM:
+                             temp_float = DataModelGetCDVSettings( getReg16(SETTING_MIN));
+                             sprintf(str,"%06.1f",temp_float);
+                              break;
+                        case SETTING_MAXIMUN:
+                             temp_float = DataModelGetCDVSettings( getReg16(SETTING_MAX));
+                             sprintf(str,"%06.1f",temp_float);
+                             break;
+                        case SETTING_MIDIUM:
+                              switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
+                              {
+                                  case DISCRETE_INPUT:
+                                       temp_float = DataModelGetCDVSettings( getReg16(SETTING_MID));
+                                       sprintf(str,"%06.1f",temp_float);
+                                       break;
+                                  case 2:
+                                       sprintf(str,"%i4",ComputeSetPoint());
+                                       break;
+                                  case 3:
+                                  case 1:
+                                       sprintf(str,"%f3.1",getRegFloat(SENS_SETTING1));
+                                       break;
+                               }
+                               break;
+                  }
+                  break;
+            case DCV_SETTING2_ID:
+                  if ( state == SETTING_OPEN ) strcpy(str,"Откр.");
+                  else if ( state == SETTING_CLOSE ) strcpy(str,"Закр.");
+                  else sprintf(str,"%i4", getReg16(OFFSET_CH2));
+                  break;
+            case DCV_FACT1_ID:
+                   temp_float = DataModelGetCDVSettings( getAIN(SENS1));
+                   sprintf(str,"%06.1f",temp_float);
+                   break;
+           case DCV_FACT2_ID:
+                  temp_float = DataModelGetCDVSettings( getAIN(SENS2));
+                  sprintf( str, "%06.1f", temp_float );
+                  break;
+           case ZERO_CAL_COMMAND:
+                  switch (command)
+                  {
+                       case CMD_READ:
+                            if ((USER_GetProccesState() == USER_PROCCES_WORK))
+                                 strcpy(str,"Откалибравать 0?");
+                            else
+                            {
+                                if (SelectEditFlag )  strcpy(str,"Отменить калиборвку?");
+                                else                  strcpy(str,"Калиборвка...");
+
+                            }
+                            break;
+                      case CMD_START_EDIT:
+                            if ((USER_GetProccesState() == USER_PROCCES_WORK) && (MB_TASK_GetMode()==0))
+                                 SystemCalibraionStart();
+                            else
+                                 SystemCalibraionStop();
+                            *res = 1;
+                            break;
+                     default:
+                            start_edit_flag = 0;
+                            break;
+                  }
+                  break;
+        }
+    }
+    else {
+
+       u16 reg_id = MenuCDV_BPRegMap[data_id - DCV_SETTING1_ID];
     switch (data_id)
     {
-        case HUMANITY_SENSOR_ID:
-               if  (getReg8(INPUT_CONTROL_TYPE) == INP_ANALOG_SENSOR)
-                   sprintf(str,"%03i %%", getHumanitySensor());
-               else
-                   strcpy(str,NorAvalivaleString);
-               break;
-        case CO2_SENSOR_ID:
-                if  (getReg8(INPUT_CONTROL_TYPE) == INP_ANALOG_SENSOR)
-                   sprintf(str,"%04i ppm", getCO2Sensor());
-                else
-                    strcpy(str,NorAvalivaleString);
-                break;
-        case T_SENSOR_ID:
-               if  (getReg8(INPUT_CONTROL_TYPE) == INP_ANALOG_SENSOR)
-                     sprintf(str,"%02.1f C", getTSensor());
-                else
-                     strcpy(str,NorAvalivaleString);
-                break;
-        case AIT1_TEMP_ID :
-             if ( getReg8(AFTER_ZONE_SETTING) == 1)
-                 sprintf(str,"%2.1f C",getAIN(DCAIN4));
-             else
-                 strcpy(str,NorAvalivaleString);
-            break;
-        case AIT2_TEMP_ID :
-             if  (getReg8(INPUT_CONTROL_TYPE) == INP_PASSIVE_T_SENSOR)
-                 sprintf(str,"%2.1f C",getAIN(DCAIN5));
-             else
-                 strcpy(str,NorAvalivaleString);
-            break;
+
+
         case  BP_SZIE_ID:
             if ( command <= CMD_EDIT_READ )
                 sprintf(str,"%03i",( command == CMD_READ ) ? getReg16(reg_id) : edit_data_buffer_byte );
@@ -1185,65 +1281,8 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                   strcpy(str, BP_REG_TYPE_STRING[  sring_index ] );
               }
               break;
-        case CDV_MODE_ID:
-              strcpy(str,CDV_MODE_STRING[getStateDCV()]);
-               break;
-              break;
-        case DCV_SETTING1_ID:
-            switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
-            {
-                case DISCRETE_INPUT:
-                    DinModeSettingView(0,str);
-                    break;
-                case 2:
-                    sprintf(str,"%i4",ComputeSetPoint());
-                    break;
-                case 3:
-                case 1:
-                    sprintf(str,"%f3.1",getRegFloat(SENS_SETTING1));
-                    break;
-            }
-            break;
-        case DRAW_UNIT_ID:
-            /*switch (getReg8(SENSOR_TYPE_ID) )
-            {
-                case 0:
-                case 2:
-                    strcpy(str, MUnitStrig[ getReg8( reg_id)] );
-                    break;
-                case 1:
-                    strcpy(str, "T" );
-                    break;
-                case 3:
-                    strcpy(str, SensUnitString[ getReg8(PRIOR_SENSOR)] );
-                    break;
-            }*/
-            break;
-        case DCV_FACT1_ID:
-            temp_float = DataModelGetCDVSettings( getAIN(SENS1));
-            sprintf(str,"%06.1f",temp_float);
-            break;
-        case DCV_SETTING2_ID:
-            if (getReg8(CDV_BP_CH_COUNT) == 1 )
-                strcpy(str,"----");
-            else
-            {
-                    DISCRET_STATE_t state = getReg8(CDV_CONTOROL);
-                    if ( state == SETTING_OPEN ) strcpy(str,"Откр.");
-                    else if ( state == SETTING_CLOSE ) strcpy(str,"Закр.");
-                    else
-                       sprintf(str,"%i4", getReg16(OFFSET_CH2));
-            }
-            break;
-        case DCV_FACT2_ID:
-            if (getReg8(CDV_BP_CH_COUNT) == 1 )
-                strcpy(str,"----");
-            else
-            {
-              temp_float = DataModelGetCDVSettings( getAIN(SENS2));
-              sprintf(str,"%06.1f",temp_float);
-            }
-            break;
+
+
         case INPUT_SIGNAL_MODE_ID:
                 *len = 0;
                 if ( command > CMD_EDIT_READ )
@@ -1336,27 +1375,37 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             else
                 strcpy(str,CH_STRING[( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte] );
             break;
-        case MEASERING_UNIT_ID:
-            *len = 0;
-            if ( command > CMD_EDIT_READ )
-            {
-                if (getReg8(CDV_BP_CH_COUNT)!=0)  vByteDataEdit(0,reg_id,command,0,PA_U , M3_CH_U,1 );
-            }
-            else
-                strcpy(str, MUnitStrig[ ( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte ] );
+            case  SETTING_MEASERING_UNIT_ID:
+                if ((IsPISendScreenNreed()==0 ) && (getReg8(CDV_CONTOROL)!= SETTING_CLOSE))
+                {
+                    strcpy(str, MUnitStrig[  getReg8(reg_id) ] );
+                }
+                else
+                {
+                    strcpy(str, SensUnitString[  IsPISendScreenNreed()] );
+                }
             break;
-        case SETTING_TIMER_ID:
-            if ( command > CMD_EDIT_READ )
-                vByteDataEdit(0,reg_id,command,0,250,0,0);
-            else
-                sprintf(str,"%03i",( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte);
+            case MEASERING_UNIT_ID:
+                *len = 0;
+                if ( command > CMD_EDIT_READ )
+                {
+                    if (getReg8(CDV_BP_CH_COUNT)!=0)  vByteDataEdit(0,reg_id,command,0,PA_U , M3_CH_U,1 );
+                }
+                else
+                    strcpy(str, MUnitStrig[ ( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte ] );
+                break;
+            case SETTING_TIMER_ID:
+                if ( command > CMD_EDIT_READ )
+                    vByteDataEdit(0,reg_id,command,0,250,0,0);
+                else
+                    sprintf(str,"%03i",( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte);
             break;
-        case OFFSET2_ID:
-        case SETTING_MIN_ID:
-        case SETTING_AVER_ID:
-        case SETTING_MAX_ID:
-        case FAIL_SET_CH1_ID:
-        case FAIL_SET_CH2_ID:
+            case OFFSET2_ID:
+            case SETTING_MIN_ID:
+            case SETTING_AVER_ID:
+            case SETTING_MAX_ID:
+            case FAIL_SET_CH1_ID:
+            case FAIL_SET_CH2_ID:
                 switch (command)
                 {
                      case CMD_START_EDIT:
@@ -1366,49 +1415,48 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                            break;
                     case CMD_SAVE_EDIT:
                         temp_float = edit_data_buffer_float;
-                        switch ( getReg8(MEASERING_UNIT) )
-                        {
+                            switch ( getReg8(MEASERING_UNIT) )
+                            {
                                 case 0:
-                                    temp_float = DataModel_SetLToPressere(temp_float);
-                                    break;
+                                        temp_float = DataModel_SetLToPressere(temp_float);
+                                        break;
                                 case 1:
-                                    temp_float = DataModel_SetVToPressere(temp_float);
-                                    break;
+                                        temp_float = DataModel_SetVToPressere(temp_float);
+                                        break;
                                  default:
-                                 break;
-                         }
-                        saveRegFloat( reg_id, temp_float);
-                        start_edit_flag = 0;
-                        break;
-                 case CMD_READ:
-                        temp_int  = (int32_t)(DataModelGetCDVSettings(getRegFloat(reg_id))*10.0);
-                        sprintf(str,"%06.1f",temp_int/10.0);
-                        break;
-                 case CMD_EDIT_READ:
-                      temp_int = (int32_t)(edit_data_buffer_float*10.0);
-                      sprintf(str,"%06.1f",temp_int/10.0 );
-                      break;
-                default:
-                      temp_float  = DataModelGetCDVSettings(2500);
-                      vFloatDataEdit(reg_id, command,4,1,temp_float ,0);
-                      break;
-            }
-            break;
-        case F_CHANNEL_ID:
-            if ( command > CMD_EDIT_READ )
-                vFloatDataEdit(reg_id, command,1,4,9.999,0.0);
-            else
-                sprintf(str,"%6.4f",( command == CMD_READ ) ? getRegFloat(reg_id) : edit_data_buffer_float);
-
-            break;
+                                     break;
+                             }
+                             saveRegFloat( reg_id, temp_float);
+                             start_edit_flag = 0;
+                             break;
+                        case CMD_READ:
+                             temp_int  = (int32_t)(DataModelGetCDVSettings(getRegFloat(reg_id))*10.0);
+                             sprintf(str,"%06.1f",temp_int/10.0);
+                             break;
+                        case CMD_EDIT_READ:
+                             temp_int = (int32_t)(edit_data_buffer_float*10.0);
+                             sprintf(str,"%06.1f",temp_int/10.0 );
+                             break;
+                        default:
+                             temp_float  = DataModelGetCDVSettings(2500);
+                             vFloatDataEdit(reg_id, command,4,1,temp_float ,0);
+                             break;
+                    }
+                    break;
+            case F_CHANNEL_ID:
+                    if ( command > CMD_EDIT_READ )
+                            vFloatDataEdit(reg_id, command,1,4,9.999,0.0);
+                    else
+                        sprintf(str,"%6.4f",( command == CMD_READ ) ? getRegFloat(reg_id) : edit_data_buffer_float);
+                    break;
             case SENSOR3_OFFSET_ID:
             case SENSOR2_OFFSET_ID:
             case SENSOR1_OFFSET_ID:
-                if ( command > CMD_EDIT_READ )
-                    vFloatDataEdit(reg_id, command,5,1,9999.9,-9999.9);
-                 else
-                    sprintf(str,"%+06.1f",( command == CMD_READ ) ? getRegFloat(reg_id) : edit_data_buffer_float );
-                 break;
+                    if ( command > CMD_EDIT_READ )
+                        vFloatDataEdit(reg_id, command,5,1,9999.9,-9999.9);
+                    else
+                        sprintf(str,"%+06.1f",( command == CMD_READ ) ? getRegFloat(reg_id) : edit_data_buffer_float );
+                    break;
             case SENSOR1_MIN_ID:
             case SENSOR1_MAX_ID:
             case SENSOR1_SETTING_ID:
@@ -1423,91 +1471,130 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                       else
                           sprintf(str,"%05.1f",( command == CMD_READ ) ? getRegFloat(reg_id) : edit_data_buffer_float );
                       break;
-           case ZERO_CAL_COMMAND:
-                    switch (command)
+
+    }
+    }
+}
+
+
+
+static const u16 MenuFMCHRegMap[]={
+                                 FAN_START_TIMEOUT,    //31
+                                 FILTER_LOW,          //32
+                                 FILTER_HIGH,          //32
+                                 SETTING1,           //34
+                                 SETTING2,           //35
+
+};
+
+void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 * res)
+{
+    int16_t temp_int;
+    if (data_id >= CUR_TEMP_ID)
+    {
+        u8  temp_state = 0;
+        u16 record_count = getReg16(RECORD_COUNT);
+        switch (data_id)
+        {
+            case JOURNAL_RESET_ID:
+                    switch (command )
                     {
+                        case CMD_EDIT_READ:
+                            break;
                         case CMD_READ:
-                            if ((USER_GetProccesState() == USER_PROCCES_WORK))
-                                  strcpy(str,"Откалибравать 0?");
+                            if ( SelectEditFlag )
+                                strcpy(str,"     Сбросить журнал?   ");
                             else
-                            {
-                                if (SelectEditFlag )  strcpy(str,"Отменить калиборвку?");
-                                else
-                                  strcpy(str,"Калиборвка...");
-                            }
+                                strcpy(str,"");
                             break;
                         case CMD_START_EDIT:
-                            if ((USER_GetProccesState() == USER_PROCCES_WORK) && (MB_TASK_GetMode()==0))
-                                SystemCalibraionStart();
-                            else
-                                SystemCalibraionStop();
-                             *res = 1;
-                             break;
+                            saveReg16(RECORD_INDEX, 0);
+                            saveReg16(RECORD_COUNT, 0);
+                            *res = 1;
+                            break;
                         default:
                             start_edit_flag = 0;
                             break;
                     }
                     break;
-    }
-}
-
-
-void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 * res)
-{
-    int16_t temp_int;
-    u8 temp_state = 0;
-    u16   reg_id = MenuFMCHRegMap[data_id- FMCH_FIRST];
-    switch (data_id)
-    {
-         case MODE_STATE_ID:
+            case SETTING_ID:
+                    sprintf(str,"%04i м^3/ч", USER_GetSetting());
+                    break;
+            case FACT_RASH_ID:
+                    temp_int = USER_GetFact(&temp_state);
+                    if (temp_state)
+                        sprintf(str,"%04i м^3/ч", temp_int);
+                    else
+                        sprintf(str,"---- м^3/ч");
+                    break;
+            case JOURNAL_TIME_ID:
+                    if (record_count!=0)
+                        sprintf(str,TimeFormatString,time.hours,time.minutes,time.seconds);
+                    break;
+            case JOURNAL_DATE_ID:
+                    if (record_count!=0)
+                        sprintf(str,DateFormatString,date.date,date.month,date.year);
+                    break;
+            case JOURNAL_INFO1_ID:
+                    if (record_count!=0)
+                        strcpy(str,ErrorString[error_flag]);
+                    break;
+            case JOURNAL_INFO2_ID:
+                     if (record_count!=0)
+                     {
+                          switch (error_flag)
+                          {
+                              case 1:
+                                  strcpy(str,"более 90%");
+                                  break;
+                              case 2:
+                                  sprintf(str,"сети < %i В",getReg8(LOW_VOLTAGE_ON));
+                                  break;
+                              case 3:
+                                  sprintf(str,"сети > %i В",getReg8(HIGH_VOLTAGE_ON));
+                                  break;
+                              case 0:
+                                  strcpy(str,"поддерживать уставку");
+                                  break;
+                              default:
+                                  break;
+                          }
+                    }
+                   break;
+            case JURNAL_RECORD_ID:
+                  if  (record_count == 0)
+                          strcpy(str,"00/00");
+                  else
+                  {
+                     sprintf(str,"%02i/%02i",journal_index+1, record_count);
+                     vGetRecord(journal_index,&error_flag,&time,&date);
+                  }
+                  break;
+            case JOURNAL_COUNT_ID:
+                 sprintf(str,"%02i",record_count );
+                 break;
+            case CUR_TEMP_ID:
+                 sprintf(str, "%i C",(u8)getAIN(DCAIN5));
+                 break;
+            case MODE_STATE_ID:
                  strcpy(str,FMCH_MODE_STRING[getReg8(MODE )]);
                  break;
-        case JOURNAL_TIME_ID:
-               if (getReg16(RECORD_COUNT)!=0)
-                   sprintf(str,TimeFormatString,time.hours,time.minutes,time.seconds);
-               break;
-           case JOURNAL_DATE_ID:
-               if (getReg16(RECORD_COUNT)!=0)
-                   sprintf(str,DateFormatString,date.date,date.month,date.year);
-               break;
-           case JOURNAL_INFO1_ID:
-               if (getReg16(RECORD_COUNT)!=0)
-                   strcpy(str,ErrorString[error_flag]);
-               break;
-           case JOURNAL_INFO2_ID:
-               if (getReg16(RECORD_COUNT)!=0)
-               {
-                   switch (error_flag)
-                   {
-                       case 1:
-                           strcpy(str,"более 90%");
-                           break;
-                       case 2:
-                           sprintf(str,"сети < %i В",getReg8(LOW_VOLTAGE_ON));
-                           break;
-                       case 3:
-                           sprintf(str,"сети > %i В",getReg8(HIGH_VOLTAGE_ON));
-                           break;
-                       case 0:
-                           strcpy(str,"поддерживать уставку");
-                           break;
-                       default:
-                           break;
-                   }
-               }
-                break;
-           case JURNAL_RECORD_ID:
-               if  (getReg16(RECORD_COUNT) == 0)
-                   strcpy(str,"00/00");
-               else
-               {
-                   sprintf(str,"%02i/%02i",journal_index+1, getReg16(RECORD_COUNT));
-                   vGetRecord(journal_index,&error_flag,&time,&date);
-               }
-               break;
-           case JOURNAL_COUNT_ID:
-                 sprintf(str,"%02i",getReg16(RECORD_COUNT) );
+            case SENS_FILTER_ID:
+                 if (USER_GetProccesState() == USER_PROCCES_WORK)
+                    sprintf(str,"%03i Па",(u16)getAIN(SENS2));
+                 else
+                    sprintf(str,"--- Па");
                  break;
+            case FILTER_STATE_ID:
+                 sprintf(str,"%i %%",getReg8(RESURSE));
+                 break;
+        }
+    }
+    else
+    {
+        u16 reg_id       = MenuFMCHRegMap[data_id- FMCH_FIRST];
+        switch (data_id)
+        {
            case FILTER_HIGH_ID:
            case FILTER_LOW_ID:
                 if ( command > CMD_EDIT_READ )
@@ -1522,58 +1609,14 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                 else
                     sprintf(str,"%04i",( command == CMD_READ) ? getReg16(reg_id) : edit_data_buffer_byte  );
                 break;
-           case FACT_RASH_ID:
-                 temp_int = USER_GetFact(&temp_state);
-                 if (temp_state)
-                           sprintf(str,"%04i м^3/ч", temp_int);
-                 else
-                           sprintf(str,"---- м^3/ч");
-                 break;
+
            case FAN_START_TIMEOUT_ID:
                 if ( command > CMD_EDIT_READ)
                     vByteDataEdit(0,reg_id,command,2,99,1,0);
                 else
                     sprintf(str,"%02i", ( command == CMD_READ ) ? getReg8(reg_id) : edit_data_buffer_byte  );
                 break;
-               case JOURNAL_RESET_ID:
-                   switch (command )
-                   {
-                       case CMD_EDIT_READ:
-                           break;
-                       case CMD_READ:
-                           if ( SelectEditFlag )
-                               strcpy(str,"     Сбросить журнал?   ");
-                           else
-                               strcpy(str,"");
-                           break;
-                       case CMD_START_EDIT:
-                            saveReg16(RECORD_INDEX, 0);
-                            saveReg16(RECORD_COUNT, 0);
-                            *res = 1;
-                            break;
-                      default:
-                          start_edit_flag = 0;
-                          break;
-                   }
-                   break;
-               case CUR_TEMP_ID:
-                     sprintf(str, "%i C",(u8)getAIN(DCAIN5));
-                     break;
-               case SETTING_ID:
-                     sprintf(str,"%04i м^3/ч", USER_GetSetting());
-                     break;
-               case SENS_FILTER_ID:
-                   if (USER_GetProccesState() == USER_PROCCES_WORK)
-
-                       sprintf(str,"%03i Па",(u16)getAIN(SENS2));
-                   else
-                       sprintf(str,"--- Па");
-
-                   break;
-               case FILTER_STATE_ID:
-
-                   sprintf(str,"%i %%",getReg8(RESURSE));
-                   break;
+        }
     }
 }
 

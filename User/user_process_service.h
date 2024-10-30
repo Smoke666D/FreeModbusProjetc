@@ -33,6 +33,8 @@ void CleanTimerFuncton(  );
 uint8_t getHumanitySensor();
 float getTSensor();
 float getCO2Sensor();
+u8 GetPIDSensorIndex();
+u8 IsPISendScreenNreed();
 u8 vSensorErrorCheck( u8 sensor_name, SENSOR_TYPE_t sensor_type);
 float GetSensor(u8 * after_zone, INPUT_SENSOR_t inp_sensor);
 #endif /* USER_USER_PROCESS_SERVICE_H_ */

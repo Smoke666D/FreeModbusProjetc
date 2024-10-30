@@ -56,6 +56,12 @@ DATA_MODEL_INIT_t DataModel_Init()
                setRegFloat(COOF_P,5.0);
                setRegFloat(COOF_I1,15.0);
                setRegFloat(COOF_P1,5.0);
+               setRegFloat(COOF_IT,15.0);
+               setRegFloat(COOF_PT,5.0);
+               setRegFloat(COOF_IH,15.0);
+               setRegFloat(COOF_PH,5.0);
+               setRegFloat(COOF_ICO2,15.0);
+               setRegFloat(COOF_PCO2,5.0);
                setRegFloat(F_CHANNEL,0.0314);
                setReg16(SETTING1, 900);
                setReg16(SETTING2, 600);

@@ -120,10 +120,34 @@ u8 vSensorErrorCheck( u8 sensor_name, SENSOR_TYPE_t sensor_type)
                         if (getAIN(sensor_name) < 4.0 ) error = 1;
                         break;
                     default:
-
                         break;
                 }
   return (error);
+}
+
+
+
+u8 IsPISendScreenNreed()
+{
+   INPUT_SENSOR_t sens_type = getReg8(INPUT_CONTROL_TYPE);
+   if (( sens_type==STATIC_TERMSENSOR ) || (sens_type==ANALOG_SENSOR))
+       return 1;
+   else
+      return 0;
+
+}
+
+u8 GetPIDSensorIndex()
+{
+    if ((getReg8(INPUT_CONTROL_TYPE) == STATIC_TERMSENSOR) ||( getReg8(PRIOR_SENSOR)==T_PRIOR))
+    {
+       return 0;
+    }
+    else if (getReg8(PRIOR_SENSOR)==H_PRIOR)
+    {
+       return 2;
+    }
+    return 1;
 }
 
 
