@@ -464,7 +464,7 @@ xScreenType  xScreenDCV[] =
   {19,CDVSettingsAnalogScreen4  , 0,   0,  18,  20,  ENTER_COMMNAD ,3 }, //18
   {20,CDVSettingsAnalogScreen5  , 0,   0,  19,  21,  ENTER_COMMNAD ,3 }, //19
   {21, ResetScreen              , 0,   0,  20,  4,   ENTER_COMMNAD ,3 },  //20
-  {22, Sensor_screen             , 0,   0,  1,  1,  0 ,3 },
+  {22, Sensor_screen            , 0,   0,  1,  1,  0 ,3 },
 };
 
 u8 seting_sting_count = 0;
@@ -484,7 +484,6 @@ void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state)
             //Режим ВР
             xScreenDCV[8].pDownScreenSet = 11;
             xScreenDCV[10].pUpScreenSet   = 9;
-
             switch (analog_state)
             {
                  case DISCRETE_INPUT:

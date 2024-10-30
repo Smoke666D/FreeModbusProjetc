@@ -246,11 +246,8 @@ void setRegFloat( u16 reg_adress, float data)
 }
 void saveRegFloat(u16 reg_adress, float data )
 {
-
     setRegFloat(reg_adress,data);
     WriteEEPROM(reg_adress, &DATA_MODEL_REGISTER[ reg_adress], 4,10, 2);
-    if ((reg_adress ==COOF_I ) || (reg_adress ==COOF_P))
-            UPDATE_COOF();
 }
 
 

@@ -31,13 +31,13 @@ float SensorConver( u8 channel)
                     data =(sens_data/10.0*(max_data - min_data)) + min_data;
                     break;
             case T2_10:
-                    if ( sens_data > 2 )
+                    if ( sens_data >= 2 )
                         data =( (sens_data-2.0)/8.0*(max_data - min_data)) + min_data;
                     else
                       return (0);
                     break;
             case T4_20:
-                    if ( sens_data > 4 )
+                    if ( sens_data >= 4 )
                      data =( (sens_data-4.0)/18.0*(max_data - min_data)) + min_data;
                     else
                       return(0);
@@ -275,8 +275,6 @@ void vCheckDoubleChannelAlarm( u8 *error_state )
         }
     }
 }
-
-
 
 
 

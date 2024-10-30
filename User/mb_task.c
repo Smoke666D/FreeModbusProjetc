@@ -529,7 +529,6 @@ void vSetRegData( u16 adress)
    {
        u16 byte_data;
        u16 reg_addr;
-       INPUT_SENSOR_t sens_type;
        if (dev_type == DEV_FMCH)
        {
                byte_data = (u16)usRegHoldingBuf[adress];
@@ -971,7 +970,6 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
 
 eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils, eMBRegisterMode eMode )
 {
-
         eMBErrorCode    eStatus = MB_ENOERR;
         USHORT          iRegBitIndex;
         UCHAR *         pucCoilBuf  = ucSCoilBuf;
@@ -981,25 +979,20 @@ eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCo
 
         if( ( usAddress >= REG_COILS_START) &&  ( usAddress + usNCoils <= REG_COILS_START + REG_COILS_NREGS ) )
         {
-
             iRegBitIndex = (USHORT) (usAddress - usCoilStart);
-
             switch ( eMode )
             {
             /* read current coil values from the protocol stack. */
             case MB_REG_READ:
-
                 xGetOut( pucCoilBuf);
                 while ( usNCoils > 0)
                 {
-
                     UCHAR ucResult = xMBUtilGetBits( pucCoilBuf, iRegBitIndex, 1 );
                     xMBUtilSetBits( pucRegBuffer, iRegBitIndex, 1, ucResult );
                     iRegBitIndex++;
                     usNCoils--;
                 }
                 break;
-
                 /* write current coil values with new values from the protocol stack. */
             case MB_REG_WRITE:
                 while ( usNCoils > 0 )
@@ -1037,9 +1030,7 @@ eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT us
     iNReg =  usNDiscrete / 8 + 1;
 
     pucDiscreteInputBuf = ucSDiscInBuf;
-
     usDiscreteInputStart = REG_DISCRETE_START;
-
     /* it already plus one in modbus function method. */
     usAddress--;
 
@@ -1087,7 +1078,7 @@ void MBRTU_task(void *pvParameters)
          }
          if (xStatus == MB_ENOERR)
          {
-             if( eMBEnable(  ) == MB_ENOERR )
+             if( eMBEnable() == MB_ENOERR )
              {
                 do
                 {

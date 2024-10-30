@@ -16,9 +16,13 @@
 #include "math.h"
 #include "system_types.h"
 
+static const u16 PCOOFMAP[] ={COOF_P,COOF_PT,COOF_PCO2,COOF_PH};
+static const u16 ICOOFMAP[] ={COOF_I,COOF_IT,COOF_ICO2,COOF_IH};
+
+
 #define FILTER_WARNINR_VALUE 90
-static  PID_TypeDef TPID;
-static  PID_TypeDef TPID2;
+static PID_TypeDef TPID;
+static PID_TypeDef TPID2;
 static u8 setting_change_flag =0;    //Флаг измения значения устаки, нужен для изменения отображения на индикаторе текущей уставки
 static TaskHandle_t processTaskHandle;
 static USER_PROCESS_FSM_t task_fsm;
@@ -129,14 +133,6 @@ static void USER_SETTING_CHECK(u8 control_type, FMCH_Device_t * dev)
 }
 
 
-void UPDATE_COOF()
-{
-    PID_SetTunings2(&TPID,getRegFloat(COOF_P), getRegFloat(COOF_I), 0);
-}
-
-static const u16 PCOOFMAP[] ={COOF_P,COOF_PT,COOF_PCO2,COOF_PH};
-static const u16 ICOOFMAP[] ={COOF_I,COOF_IT,COOF_ICO2,COOF_IH};
-
 float UPDATE_COOFCAV( INPUT_SENSOR_t inp_sensor, DISCRET_STATE_t control_state)
 {
      u8 index =0;
@@ -155,7 +151,7 @@ float UPDATE_COOFCAV( INPUT_SENSOR_t inp_sensor, DISCRET_STATE_t control_state)
          {
              index = 2;
          }
-     }
+    }
     PID_SetTunings2(&TPID,getRegFloat(PCOOFMAP[index]),getRegFloat(ICOOFMAP[index]), 0);
     PID_SetTunings2(&TPID2,getRegFloat(COOF_P1), getRegFloat(COOF_I1), 0);
     u8 after_zone = 0;
@@ -164,47 +160,39 @@ float UPDATE_COOFCAV( INPUT_SENSOR_t inp_sensor, DISCRET_STATE_t control_state)
     {
          switch ( getReg8(AFTER_ZONE_SETTING ))
          {
-                        case 0:
-                            PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
-                            break;
-                        case 1:
-                            PID_SetControllerDirection(&TPID,_PID_CD_REVERSE );
-                            break;
-                        default:
-                            if (input_data < getAIN(DCAIN4))
-                                PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
-                            else
-                                PID_SetControllerDirection(&TPID,_PID_CD_REVERSE);
-                            break;
+              case 0:
+                  PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
+                  break;
+              case 1:
+                  PID_SetControllerDirection(&TPID,_PID_CD_REVERSE );
+                  break;
+              default:
+                 if (input_data < getAIN(DCAIN4))
+                     PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
+                 else
+                     PID_SetControllerDirection(&TPID,_PID_CD_REVERSE);
+                 break;
           }
      }
      else PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
      return (input_data);
 }
 
-static float DAC1_OUT = 0;
-
-float getDAC1_Out()
-{
-    return (DAC1_OUT);
-}
-
-
 
 
 void vFMCH_FSM( FMCH_Device_t * dev)
 {
-    u8 c_type  =getReg8( CONTROL_TYPE );
-    if (MB_TASK_GetMode()!=2)
-    {
-       if (c_type == MKV_MB_DIN ) setReg8(LIGTH, ucDinGet(INPUT_2));
-       eSetDUT(OUT_2, getReg8(LIGTH));
-    }
+    u8 c_type  = getReg8( CONTROL_TYPE );
+
+
+    if (c_type == MKV_MB_DIN ) setReg8(LIGTH, ucDinGet(INPUT_2));  //Проверияем состояние сигнала включения света
+    eSetDUT(OUT_2, getReg8(LIGTH));                                //Закидываем его на реле света
     USER_SETTING_CHECK(c_type,  dev);
+
+
     if ( error_state & (LOW_VOLTAGE_ERROR | HIGH_VOLTAGE_ERROR))
-    {
-        task_fsm = USER_PROCESS_ALARM;
-    }
+        task_fsm = USER_PROCESS_ALARM; //Если ошибка напряжения сразу же накидываем аварийный режим
+
     // Если засоренность фильта больше значения устваки, то выставляем предупрежние и делаем запись в журнал
      USER_FilterState(dev);
      if  ((dev->FilterState >=FILTER_WARNINR_VALUE) && ( dev->HEPA_CONTROL_FLAG))
@@ -272,7 +260,7 @@ void vFMCH_FSM( FMCH_Device_t * dev)
               if (CalibrationZeroWhait())   //Проверяем закончилась ли калиборвка
               {
                      PIDOut = 0;
-                     UPDATE_COOF();
+                     PID_SetTunings2(&TPID,getRegFloat(COOF_P), getRegFloat(COOF_I), 0);
                      PID_Init(&TPID,0,0);
                      task_fsm = USER_PROCCES_WORK;
               }
@@ -282,7 +270,7 @@ void vFMCH_FSM( FMCH_Device_t * dev)
               {
                   dev->pid_counter = 0;
                   Temp = getAIN(SENS1);
-                  PID_Compute(&TPID,getAIN(SENS1));
+                  PID_Compute(&TPID,Temp);
                   float PID_Out = PIDOut/1000.0;
                   USER_AOUT_SET(DAC2,PID_Out);
                   if ( ((PID_Out) >=9.5) && (Temp < SET_POINT ) )
@@ -661,7 +649,6 @@ void VoltageControlCheck( AC_VOLTAGE_CONTROL_t * ac_control)
     }
 
 }
-
 
 
 void user_process_task(void *pvParameters)
