@@ -35,7 +35,7 @@ static void rvvTIMERExpiredISR();
 /* ----------------------- Start implementation -----------------------------*/
 BOOL xMBPortTimersInit(USHORT usTim1Timerout50us)
 {
-    HAL_TIMER_InitIt(TIMER4,19607,usTim1Timerout50us,&rvvTIMERExpiredISR,1,5);
+    HAL_TIMER_InitIt(TIMER4,20000,usTim1Timerout50us,&rvvTIMERExpiredISR,1,5);
     return TRUE;
 }
 

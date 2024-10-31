@@ -109,7 +109,8 @@ eMBRTUInit( UCHAR ucSlaveAddress, UCHAR ucPort, ULONG ulBaudRate, eMBParity ePar
              * The reload for t3.5 is 1.5 times this value and similary
              * for t3.5.
              */
-            usTimerT35_50us =  35000000/ ulBaudRate ;
+            usTimerT35_50us =  80;//(35000000/ ulBaudRate)/20 ;
+            printf("baunrd %i time= %i\r\n",ulBaudRate,usTimerT35_50us);
         }
 
         if( xMBPortTimersInit( ( USHORT ) usTimerT35_50us ) != TRUE )
