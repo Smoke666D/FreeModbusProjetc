@@ -50,7 +50,7 @@ DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[CLEAN_TIMER]        =  20;
                DATA_MODEL_REGISTER[CDV_BP_CH_COUNT]    =  1;
                DATA_MODEL_REGISTER[SENSOR_COUNT]       =  TIME_5_0;
-               DATA_MODEL_REGISTER[ROOM_CHANNEL]       =  1;
+
                setRegFloat(KOOFKPS , 36.0);
                setRegFloat(COOF_I,10.0);
                setRegFloat(COOF_P,5.0);
@@ -86,6 +86,7 @@ DATA_MODEL_INIT_t DataModel_Init()
                setRegFloat(MAX_SET3,40);
 
                setRegFloat(SENS_SETTING3,20);
+               DATA_MODEL_REGISTER[ROOM_CHANNEL]       =  1;
                if (WriteEEPROM(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 1000 ,2) == EEPROM_OK) printf("EEPROMwtiye\r\n");
                ReadEEPROMData(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ,2);
                return (NEW_INIT);
@@ -132,8 +133,10 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
     u8 temp_data = data;
     switch (reg_adress)
     {
-
-
+        case ROOM_CHANNEL:
+              if (data <1) data = 1;
+              else if (data>3) data =3;
+              break;
         case MEASERING_UNIT:
         case AFTER_ZONE_SETTING:
         case PRIOR_SENSOR:

@@ -116,7 +116,7 @@ static const u8 * PriorSentStrig[]= {"T","CO2","H"};
 static const char * DevString[]={"Режим ФМЧ","Режим CAV/VAV-BP"};
 static const char * TestModeString[]={"Выкл","Вкл"};
 static const u8 * SensorTypeStrig[]= {"0-10 В","2-10 В","4-20 мA"};
-static const u8 * IniputSignalTypeStrig[]= {"Диск. вход","Пас. датчик T","Комн. контр.","Аналог датчики"};
+static const u8 * IniputSignalTypeStrig[]= {"CAV","VAV Пассив. Т","VAV Комн. контр.","VAV Преобр. Т,СО2,НА"};
 const char * CDV_MODE_STRING[]={"Закрыто","Минимальная","Средняя","Максимальная","Открыто"};
 const char * BP_REG_TYPE_STRING[] = {"VAV","Const L0,2","VAV + Const L0,2"};
 static char * const FMCH_MODE_STRING[]= {"1 (Основной)","2 (Доп.)"};
@@ -916,9 +916,8 @@ static const u16 MenuCDV_BPRegMap[]=
                                  COOF_P1,                   //30
                                  COOF_I1,                   //31
                                  BP_REG_TYPE,               //32
-                                 BP_SIZE,                   //32
-                                 MEASERING_UNIT,            //33
-                                 INPUT_CONTROL_TYPE,        //32
+                                 BP_SIZE,                   //33
+                                 INPUT_CONTROL_TYPE,        //34
                                  ROOM_CHANNEL,              //35
                                  AIN1_TYPE,                 //36
                          };
@@ -1119,7 +1118,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
     static float temp_float;
     static int32_t temp_int;
 
-    if (data_id >= DCV_FACT2_ID )
+    if (data_id >= COOF_P_SENS_ID )
     {
         static u16 reg_id;
         INPUT_SENSOR_t sens_type = getReg8(INPUT_CONTROL_TYPE);
@@ -1142,7 +1141,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                         strcpy(str,SensorRegTypeMap[GetPIDSensorIndex()]);
                         break;
                 case AIT1_TEMP_ID :
-                         if ( getReg8(AFTER_ZONE_SETTING) == 1)
+                         if (IsPISendScreenNreed() && (GetPIDSensorIndex()==0))
                              sprintf(str,"%2.1f C",getAIN(DCAIN4));
                          else
                              strcpy(str,NorAvalivaleString);
@@ -1187,10 +1186,10 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                     switch (state)
                     {
                         case SETTING_OPEN:
-                              strcpy(str,"Откр.");
+                              strcpy(str,"Открыто.");
                               break;
                         case SETTING_CLOSE:
-                              strcpy(str,"Закп.");
+                              strcpy(str,"Закрыто.");
                               break;
                         case SETTING_MINIMUM:
                              temp_float = DataModelGetCDVSettings( getReg16(SETTING_MIN));
@@ -1260,7 +1259,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
     }
     else {
 
-       u16 reg_id = MenuCDV_BPRegMap[data_id - DCV_SETTING1_ID];
+       u16 reg_id = MenuCDV_BPRegMap[data_id - SETTING_MIN_ID];
     switch (data_id)
     {
 
@@ -1319,7 +1318,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
 
         case ROOM_ACTIVE_CHANNEL_ID:
             if ( command > CMD_EDIT_READ )
-                   vByteDataEdit(0,reg_id,command,0,3,1,0);
+                   vByteDataEdit(0,reg_id,command,0,3,1,1);
             else
                   sprintf(str,"%1i",( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte);
             break;
@@ -1580,6 +1579,7 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                  strcpy(str,FMCH_MODE_STRING[getReg8(MODE )]);
                  break;
             case SENS_FILTER_ID:
+
                  if (USER_GetProccesState() == USER_PROCCES_WORK)
                     sprintf(str,"%03i Па",(u16)getAIN(SENS2));
                  else

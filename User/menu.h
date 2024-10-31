@@ -54,13 +54,13 @@
 #define VOLTAGE_MAX_OFF_ID      30
 
 
-#define FAN_START_TIMEOUT_ID    31
-#define SETTING_ID              32
-#define FILTER_LOW_ID           33
-#define FILTER_HIGH_ID          34
-#define SETTING1_ID             35
-#define SETTING2_ID             36
-#define CUR_TEMP_ID             37
+#define FAN_START_TIMEOUT_ID    31  //§¯§¡§¹§¡§­§°
+#define FILTER_LOW_ID           32
+#define FILTER_HIGH_ID          33
+#define SETTING1_ID             34
+#define SETTING2_ID             35
+#define CUR_TEMP_ID             36
+#define SETTING_ID              37
 #define JOURNAL_COUNT_ID        38
 #define JURNAL_RECORD_ID        39
 #define JOURNAL_TIME_ID         40
@@ -68,7 +68,7 @@
 #define JOURNAL_INFO1_ID        42
 #define JOURNAL_INFO2_ID        43
 #define JOURNAL_RESET_ID        44
-#define FACT_RASH_ID            45   //§¯§¡§¹§¡§­§°
+#define FACT_RASH_ID            45
 #define FILTER_STATE_ID         46
 #define SENS_FILTER_ID          47
 #define MODE_STATE_ID           48   //§¬§°§¯§¦§¸
@@ -105,10 +105,10 @@
 #define CLEAN_TIMER_ID          ( SETTING_MEASERING_UNIT_ID     + 1 )//25
 #define ZERO_POINT_TIMEOUT_ID   ( CLEAN_TIMER_ID        + 1 )    //26
 #define SETTING_TIMER_ID        ( ZERO_POINT_TIMEOUT_ID + 1 )    //27
-#define PRIOR_SENSOR_ID         ( SETTING_TIMER_ID       + 1 )   //29
-#define OFFSET2_ID              (PRIOR_SENSOR_ID      + 1 )      //39
-#define COOF_P_1_ID             ( OFFSET2_ID            + 1 )    //31
-#define COOF_I_1_ID             ( COOF_P_1_ID           + 1 )    //32
+#define PRIOR_SENSOR_ID         ( SETTING_TIMER_ID       + 1 )   //28
+#define OFFSET2_ID              (PRIOR_SENSOR_ID      + 1 )      //29
+#define COOF_P_1_ID             ( OFFSET2_ID            + 1 )    //30
+#define COOF_I_1_ID             ( COOF_P_1_ID           + 1 )    //31
 #define BP_REG_TYPE_ID          ( COOF_I_1_ID     + 1 )          //32
 #define BP_SZIE_ID              ( BP_REG_TYPE_ID      + 1 )        //33
 #define INPUT_SIGNAL_MODE_ID    ( BP_SZIE_ID     + 1 )         //34
@@ -151,8 +151,8 @@
 #define SETTINGANALOG4_TITLE_ID ( SETTINGANALOG3_TITLE_ID      + 1 )
 #define SETTINGANALOG5_TITLE_ID ( SETTINGANALOG4_TITLE_ID      + 1 )
 #define SENSOR_TYPE_TITLE_ID    ( SETTINGANALOG5_TITLE_ID      + 1 )
-#define AFTER_ZONE_TITLE_ID      ( SENSOR_TYPE_TITLE_ID   + 1 )
-#define RESET_TITLE_ID           ( AFTER_ZONE_TITLE_ID   + 1 )
+#define AFTER_ZONE_TITLE_ID     ( SENSOR_TYPE_TITLE_ID   + 1 )
+#define RESET_TITLE_ID          ( AFTER_ZONE_TITLE_ID   + 1 )
 #define SENSOR_TITLE_ID         ( RESET_TITLE_ID  + 1 )
 #define CALIBRATION_TITLE_ID    ( SENSOR_TITLE_ID   + 1 )
 
@@ -164,7 +164,7 @@
 #define FMCH_FIRST          FAN_START_TIMEOUT_ID
 #define FMCH_LAST           MODE_STATE_ID
 
-#define CDV_BP_FIRST        DCV_SETTING1_ID
+#define CDV_BP_FIRST        SETTING_MIN_ID
 #define CDV_BP_LAST         ZERO_CAL_COMMAND
 
 typedef enum

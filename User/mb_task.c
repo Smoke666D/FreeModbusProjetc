@@ -821,8 +821,8 @@ void UpdateCAV_VAV_BPHoldign()
         pdata = (int32_t) (getRegFloat(SensorPRegMap[index ])*1000);
         idata = (int32_t) (getRegFloat(SensorIRegMap[index ])*1000);
     }
-    convert_float_to_int((float)pdata/10000.0, &usRegHoldingBuf[CDV_KOOF_PSESN_MB -100]);
-    convert_float_to_int((float)idata/10000.0, &usRegHoldingBuf[CDV_KOOF_ISENS_MB-100]);
+    convert_float_to_int((float)pdata/1000.0, &usRegHoldingBuf[CDV_KOOF_PSESN_MB -100]);
+    convert_float_to_int((float)idata/1000.0, &usRegHoldingBuf[CDV_KOOF_ISENS_MB-100]);
    for (u8 i=0;i<12;i++)
     {
         u16 reg_addr =REGS_CDV_SENS_FLOAT[i];
