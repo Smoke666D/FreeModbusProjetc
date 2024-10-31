@@ -624,11 +624,11 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  u1
                    uint32_t temp_data = (u32)i2cdata[index][0]<<16 | (u32)i2cdata[index][1]<<8 | i2cdata[index][2];
                    if (temp_data > 0x800000)
                    {
-                       *sens_press  = ((temp_data - 16777216)/GetSensCoof());
+                       *sens_press  = ((temp_data - 16777216)/2048);
                    }
                    else
                    {
-                       *sens_press  = temp_data/GetSensCoof();
+                       *sens_press  = temp_data/2048;
                    }
                    AddBufferDataI2C(&DataBuffer[index], *sens_press  );
                    *SENS_FSM = SENSOR_GET_TEMP_1;

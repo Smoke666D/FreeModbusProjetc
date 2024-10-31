@@ -152,6 +152,7 @@ void HAL_TIMER_InitIt( TimerName_t TimerName, uint32_t freq_in_hz, uint32_t Peri
     config[TimerName].Period = Period;
     config[TimerName].Div = ( 72000000U /freq_in_hz);
     config[TimerName].callback_function = f;
+    config[TimerName].ClockDiv = 0;
     HW_TIMER_BaseTimerInit(TimerName);
     timers[TimerName]->INTFR = (uint16_t)~TIM_IT_Update;
     timers[TimerName]->DMAINTENR |=  TIM_IT_Update;
@@ -264,9 +265,9 @@ void  HW_TIMER_BaseTimerInit(TimerName_t TimerName  )
     tmpcr1 |= (uint32_t)TIM_CounterMode_Up;
     tmpcr1 &= (uint16_t)(~((uint16_t)TIM_CTLR1_CKD));
     tmpcr1 |= (uint32_t)config[TimerName].ClockDiv;
-    timers[TimerName]->CTLR1 = tmpcr1;
-    timers[TimerName]->ATRLR = config[TimerName].Period;
-    timers[TimerName]->PSC = config[TimerName].Div;
+    timers[TimerName]->CTLR1   = tmpcr1;
+    timers[TimerName]->ATRLR   = config[TimerName].Period;
+    timers[TimerName]->PSC     = config[TimerName].Div;
     if((TimerName == TIMER1 ))  timers[TimerName]->RPTCR = 0x0000;
     timers[TimerName]->SWEVGR = TIM_PSCReloadMode_Immediate;
 }

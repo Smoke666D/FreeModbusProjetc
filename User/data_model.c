@@ -141,11 +141,9 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
         case AFTER_ZONE_SETTING:
         case PRIOR_SENSOR:
             if (data>3) return 0;
-
             break;
         case SENSOR_COUNT:
              if (data >6) return 0;
-
              break;
         case CDV_BP_CH_COUNT:
             if (data > 2) temp_data = 2;
@@ -156,15 +154,12 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
               break;
         case CONTRAST:
               if (data>100)  temp_data = 100;
-
               break;
         case MB_RTU_ADDR:
              if ((data >100) && (data==0)) return (0);
-
              break;
         case CDV_CONTOROL :
         case MB_CDV_CONTROL:
-
             if  ( data > 4 )
                 return 0;
             break;
@@ -188,7 +183,6 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
             break;
     }
     DATA_MODEL_REGISTER[ reg_adress] = temp_data ;
-
     return 1;
 }
 

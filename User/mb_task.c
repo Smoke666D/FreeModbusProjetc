@@ -34,18 +34,17 @@ UCHAR ucSDiscInBuf[REG_DISCRETE_NREGS/8+1];
 UCHAR ucSDiscInBuf[REG_DISCRETE_NREGS/8];
 #endif
 
-#define REG_INPUT_START 0x01
-
+#define REG_INPUT_START   0x01
+#define REG_HOLDING_START 0x01
 #define REG_HOLDING_START 0x01
 
-
-#define REG_HOLDING_START 0x01
 #define REG_HOLDING_NREGS 160
-#define REG_INPUTS_NREGS  151
+#define REG_INPUTS_NREGS  120
 
 static USHORT usRegInputStart = REG_INPUT_START;
-
 static USHORT usRegHoldingStart = REG_HOLDING_START;
+
+
 static USHORT usRegHoldingBuf[REG_HOLDING_NREGS];
 static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 
@@ -86,13 +85,16 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define AIN1_TYPE_MB     37
 #define AIN2_TYPE_MB     38
 #define AIN3_TYPE_MB     39
+
+#define COMMON_REG_COUNT (AIN3_TYPE_MB+3)
+
 #define INP_MH_H_MB      26
 #define INP_MH_M_MB      27
 #define SENSOR_ERROR_MB  28
 
 #define COMMON_REG_INPUT_NREGS ( SENSOR_ERROR_MB+1)
 
-#define COMMON_REG_COUNT (AIN3_TYPE_MB+3)
+
 
 #define DEVICE_SPECIFIC_ADDRES 100
 
@@ -126,6 +128,8 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define JOURNAL_CUR_SEC_MB     ( JOURNAL_CUR_MIN_MB         + 1 )
 #define JOURNAL_CUR_E_CODE_MB  ( JOURNAL_CUR_SEC_MB         + 1 )
 #define FILTER_STATE_MB        ( JOURNAL_CUR_E_CODE_MB      + 1 )
+
+
 #define FMCH_INPUTS_COUNT      ( FILTER_STATE_MB - FACT_RASH_MB   + 1 )
 
 
@@ -169,7 +173,7 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define CDV_ROOM_CHANNEL        260
 #define CDV_PRIOR_SENS          261
 
-
+#define CDV_COUNT             ( CDV_CH_COUNT_MB  - CDV_PRIOR_SENS  + 1)
 
 #define CDV_FACT_1              200
 #define CDV_FACT_2              202
@@ -177,9 +181,6 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define CDV_CO2_SENSOR_MB       206
 #define CDV_H_SENSOR_MB         207
 #define CDV_CUR_STATE           208
-
-#define CDV_COUNT             ( CDV_CH_COUNT_MB  - CDV_PRIOR_SENS  + 1)
-
 
 #define CDV_INPUTS_COUNT         ( CDV_CUR_STATE - CDV_FACT_1   + 1 )
 
@@ -191,41 +192,19 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define SENS_COUNT  59
 
 
+static u16 const device_specific_input_count[] =  { FMCH_INPUTS_COUNT  ,CDV_INPUTS_COUNT   };
+static u16 const device_specific_reg_offset[]  =  { FMCH_OFFSET + 100 ,CDV_OFFSET + 100};
+static u16 const device_specific_reg_count[]   =  { FMCH_COUNT  ,CDV_COUNT  };
+static u16 const SensorPRegMap[]={COOF_PT,COOF_PCO2,COOF_PH};
+static u16 const SensorIRegMap[]={COOF_IT,COOF_ICO2,COOF_IH};
 
-static u16 const device_specific_reg_offset[] = { FMCH_OFFSET ,CDV_OFFSET};
-static u16 const device_specific_reg_count[] =  { FMCH_COUNT  ,CDV_COUNT , CDV_COUNT };
-static const u16 SensorPRegMap[]={COOF_PT,COOF_PCO2,COOF_PH};
-static const u16 SensorIRegMap[]={COOF_IT,COOF_ICO2,COOF_IH};
-/*均忱把快扼忘 INPUTS 把快忍我扼找抉把志*/
+static u8 WORK_MODE =0;
 
-
-#define DAC_CAL_POINTS 10
-uint16_t point[DAC_CAL_POINTS][2] ={ {0,0},{ 140,100},
-        {230,200},
-        {350,300},
-        {450,400},
-        {570,500},
-        {680,600},
-        {800,700},
-        {915,800},
-        {1030,900}};
 
 uint16_t ConvertData( uint16_t input)
 {
-
-
    return ( input/(float)(1000.0/984.0));
-
-
 }
-uint16_t sens_coof = 2048;
-
-uint16_t GetSensCoof()
-{
-    return sens_coof;
-}
-
-static u8 WORK_MODE =0;
 
 void  setWorkMode(  )
 {
@@ -234,7 +213,6 @@ void  setWorkMode(  )
         WORK_MODE = 0;
     }
 }
-
 
 u8 MB_TASK_GetMode()
 {
@@ -260,27 +238,27 @@ static const u16 COMMON_REGS_MAP[] ={
                                         CONTRAST,               //13
                                         MB_RTU_ADDR,            //14
                                         MOD_BUS_TIMEOUT,        //15
-                                        IP_1,                      //16
-                                        IP_2,                      //17
-                                        IP_3,                      //18
-                                        IP_4,                      //19
-                                        GATE_1,                      //20
-                                        GATE_2,                      //21
-                                        GATE_3,                      //22
-                                        GATE_4,                      //23
-                                        MASK_1,                      //24
-                                        MASK_2,                      //25
+                                        IP_1,                   //16
+                                        IP_2,                   //17
+                                        IP_3,                   //18
+                                        IP_4,                   //19
+                                        GATE_1,                 //20
+                                        GATE_2,                 //21
+                                        GATE_3,                 //22
+                                        GATE_4,                 //23
+                                        MASK_1,                 //24
+                                        MASK_2,                 //25
                                         MASK_3,                      //26
                                         MASK_4,                      //27
                                         IP_PORT,                //28
                                         SENSOR_COUNT,           //29
                                         0,                      //30
-                                        0,                      //31
-                                        0,                      //32
-                                        0,                      //33
-                                        0,                      //34
-                                        0,                      //35
-                                        0,                      //36
+                                        DAC1,                      //31
+                                        DAC1,                      //32
+                                        DAC2,                      //33
+                                        DAC2,                      //34
+                                        DAC3,                      //35
+                                        DAC3,                      //36
                                         AIN1_TYPE,              //37
                                         AIN2_TYPE,              //38
                                         AIN3_TYPE               //39
@@ -377,20 +355,20 @@ void vSetRegData( u16 adress)
 {
    float data;
    u8 dev_type = getReg8(DEVICE_TYPE);
+   u16 byte_data;
+   u16 reg_addr;
    if (adress < DEVICE_SPECIFIC_ADDRES)
    {
-       u16 byte_data =(u16)usRegHoldingBuf[adress];
-       u8 set_time_flag = 0;
-       u8 set_date_flag = 0;
+       reg_addr  = COMMON_REGS_MAP[ adress];
+       byte_data = (u16)usRegHoldingBuf[adress];
+       u8 date_time_flag = 0;
        switch (adress)
        {
              case ZERO_MB:
                  if  (byte_data !=0)
                  {
-                     if (WORK_MODE !=0)CalibrateZeroStart();
-                     else
-                     if (((USER_GetProccesState() == USER_PROCCES_IDLE) && (getReg8(DEVICE_TYPE)==DEV_FMCH)) ||
-                     ((USER_GetProccesState() == USER_PROCCES_WORK) && (getReg8(DEVICE_TYPE)==DEV_CAV_VAV_BP)))
+                     if (((USER_GetProccesState() == USER_PROCCES_IDLE) && ( dev_type==DEV_FMCH)) ||
+                     ((USER_GetProccesState() == USER_PROCCES_WORK) && ( dev_type==DEV_CAV_VAV_BP)))
                          CalibrateZeroStart();
                      else
                      {
@@ -398,21 +376,16 @@ void vSetRegData( u16 adress)
                      }
                  }
                  break;
-             case AIN1_TYPE_MB:
-             case AIN2_TYPE_MB:
-             case AIN3_TYPE_MB:
-                  VerifyAndSetReg8(AIN1_TYPE + (AIN1_TYPE_MB - adress), (uint8_t) byte_data );
-                  break;
              case MODE_MB:
                  if (byte_data  > 3)
                      {
-                        if (0x55) vDataModelResetJournal();
-                        if (0xAA) ResetMotorHour();
+                        if (byte_data == 0x55) vDataModelResetJournal();
+                        else
+                        if (byte_data == 0xAA) ResetMotorHour();
                          usRegHoldingBuf[adress] = WORK_MODE;
                      }
                  else
                  {
-
                      WORK_MODE = byte_data ;
                      if (WORK_MODE ==3 )
                      {
@@ -424,41 +397,27 @@ void vSetRegData( u16 adress)
                  }
                  break;
              case AOUT1_C_MB+1:
-                if (WORK_MODE ==2)
-                {
-                     data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
-
-                     USER_AOUT_SET(DAC1,data);
-                }
-                break;
              case AOUT2_C_MB+1:
-             if (WORK_MODE ==2)
-                {
-                            data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
-                            USER_AOUT_SET(DAC2,data);
-                }
-                break;
              case AOUT3_C_MB+1:
              if (WORK_MODE ==2)
-                       {
-                            data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
-                            USER_AOUT_SET(DAC3,data);
-                      }
-             break;
+                {
+                    USER_AOUT_SET(reg_addr,convert_int_to_float( &usRegHoldingBuf[adress-1]));
+                }
+                break;
              case SENS_COUNT:
-                 vSetCount(usRegHoldingBuf[adress]);
+                 vSetCount(byte_data);
                  break;
              case V_MIN_ON:
-                 if (byte_data <usRegHoldingBuf[V_MIN_OFF] ) SaveReg8(LOW_VOLTAGE_ON,byte_data);
+                 if (byte_data <usRegHoldingBuf[V_MIN_OFF] ) SaveReg8(reg_addr,byte_data);
                  break;
              case V_MIN_OFF:
-                 if ((byte_data > usRegHoldingBuf[V_MIN_ON] ) && (byte_data < usRegHoldingBuf[V_MAX_OFF] ) )  SaveReg8(LOW_VOLTAGE_OFF,byte_data);
+                 if ((byte_data > usRegHoldingBuf[V_MIN_ON] ) && (byte_data < usRegHoldingBuf[V_MAX_OFF] ) )  SaveReg8(reg_addr,byte_data);
                   break;
              case V_MAX_OFF:
-                 if ((byte_data > usRegHoldingBuf[V_MIN_OFF] ) && (byte_data < usRegHoldingBuf[V_MAX_ON] ) )  SaveReg8(HIGH_VOLTAGE_OFF,byte_data);
+                 if ((byte_data > usRegHoldingBuf[V_MIN_OFF] ) && (byte_data < usRegHoldingBuf[V_MAX_ON] ) )  SaveReg8(reg_addr,byte_data);
                  break;
              case V_MAX_ON:
-                 if ( byte_data > usRegHoldingBuf[V_MAX_OFF] ) SaveReg8(HIGH_VOLTAGE_ON,byte_data);
+                 if ( byte_data > usRegHoldingBuf[V_MAX_OFF] ) SaveReg8(reg_addr,byte_data);
                  break;
              case MB_ADDRES_MB:
              case CONTROL_TYPE_MB:
@@ -477,46 +436,50 @@ void vSetRegData( u16 adress)
              case MASK_4_MB:
                  if (WORK_MODE)
                  {
-                      SaveReg8(COMMON_REGS_MAP[adress], byte_data);
+                      SaveReg8(reg_addr , byte_data);
                  }
                  break;
              case TIME_H_MB:
-                 if (byte_data <24) set_time_flag = 1;
+                 if (byte_data <24) date_time_flag = 1;
                  break;
              case TIME_M_MB:
              case TIME_S_MB:
-                 if (byte_data <60) set_time_flag = 1;
+                 if (byte_data <60) date_time_flag = 1;
                  break;
              case DATE_D_MB:
-                 if ((byte_data <32) && (byte_data>0)) set_date_flag = 1;
+                 if ((byte_data <32) && (byte_data>0)) date_time_flag = 2;
                  break;
              case DATE_M_MB:
-                 if ((byte_data <13) && (byte_data>0)) set_date_flag = 1;
+                 if ((byte_data <13) && (byte_data>0)) date_time_flag = 2;
                  break;
              case DATE_Y_MB:
-                 if (byte_data <99) set_date_flag = 1;
+                 if (byte_data <99) date_time_flag = 2;
                  break;
              case IP_PORT_MB:
                  if (WORK_MODE)
                  {
-                     saveReg16(COMMON_REGS_MAP[adress], usRegHoldingBuf[adress]);
+                     saveReg16(reg_addr, byte_data);
                  }
                  break;
              case CONTR_MB:
              case TIME_SENS_MB:
              case TIME_OUT_MB:
-                 SaveReg8(COMMON_REGS_MAP[adress],byte_data);
+             case AIN1_TYPE_MB:
+             case AIN2_TYPE_MB:
+             case AIN3_TYPE_MB:
+                 SaveReg8(reg_addr,byte_data);
                  break;
          }
-         if (set_time_flag)
+          if (date_time_flag == 1 )
           {
               HAL_TimeConfig_T time;
-              time.hours = usRegHoldingBuf[TIME_H_MB];
+              time.hours   = usRegHoldingBuf[TIME_H_MB];
               time.minutes = usRegHoldingBuf[TIME_M_MB];
               time.seconds = usRegHoldingBuf[TIME_S_MB];
               HAL_RTC_ConfigTime(&time);
           }
-          if (set_date_flag)
+          else
+          if (date_time_flag == 2 )
           {
               HAL_DateConfig_T date;
               date.date  = usRegHoldingBuf[DATE_D_MB];
@@ -527,8 +490,6 @@ void vSetRegData( u16 adress)
    }
    else
    {
-       u16 byte_data;
-       u16 reg_addr;
        if (dev_type == DEV_FMCH)
        {
                byte_data = (u16)usRegHoldingBuf[adress];
@@ -545,14 +506,13 @@ void vSetRegData( u16 adress)
                     case (KOOF_I_MB+1):
                     case (KOOF_K_MP+1):
                     case (KOOF_P_MB+1):
-                         data = convert_int_to_float( &usRegHoldingBuf[adress-1]);
-                         saveRegFloat(reg_addr, data);
+                         saveRegFloat(reg_addr, convert_int_to_float( &usRegHoldingBuf[adress-1]));
                          break;
                     case  SET_MOD1_MB:
                     case  SET_MOD2_MB:
                     case  FILTER_LOW_MB:
                     case  FILTER_HIGH_MB:
-                          saveReg16(reg_addr, usRegHoldingBuf[adress]);
+                          saveReg16(reg_addr, byte_data);
                           break;
                     case TIME_FAN_STOP_MB:
                          SaveReg8(reg_addr,byte_data);
@@ -565,25 +525,22 @@ void vSetRegData( u16 adress)
        {
                 byte_data = (u16)usRegHoldingBuf[adress-CDV_OFFSET];
                 reg_addr = CDV_REGS_MAP[adress- 200];
+                u16 * pFloatReg = &usRegHoldingBuf[adress-CDV_OFFSET -1];
                 switch (adress)
                       {
                             case (CDV_KOOF_PSESN_MB+1):
-
                                  if (IsPISendScreenNreed())
                                  {
                                      reg_addr = SensorPRegMap[GetPIDSensorIndex()];
-                                     data = convert_int_to_float( &usRegHoldingBuf[adress-CDV_OFFSET -1]);
-                                     saveRegFloat(reg_addr, data);
+                                     saveRegFloat(reg_addr, convert_int_to_float( pFloatReg));
                                  }
                                  break;
                             case (CDV_KOOF_ISENS_MB+1):
-
-                                            if (IsPISendScreenNreed())
-                                         {
-                                             reg_addr = SensorIRegMap[GetPIDSensorIndex()];
-                                                 data = convert_int_to_float( &usRegHoldingBuf[adress-CDV_OFFSET-1]);
-                                                 saveRegFloat(reg_addr, data);
-                                       }
+                                     if (IsPISendScreenNreed())
+                                     {
+                                         reg_addr = SensorIRegMap[GetPIDSensorIndex()];
+                                         saveRegFloat(reg_addr,convert_int_to_float( pFloatReg));
+                                     }
                                      break;
                             case (CDV_SENSOR1_MIN+1):
                             case (CDV_SENSOR1_MAX+1):
@@ -597,7 +554,7 @@ void vSetRegData( u16 adress)
                             case (CDV_SENSOR1_SET+1):
                             case (CDV_SENSOR2_SET+1):
                             case (CDV_SENSOR3_SET+1):
-                                data = convert_int_to_float( &usRegHoldingBuf[adress-CDV_OFFSET-1]);
+                                data = convert_int_to_float( pFloatReg);
                                 if (data <0) data  = 0;
                                 if (data > 9999.9 ) data = 9999.9;
                                 saveRegFloat(reg_addr, data);
@@ -608,8 +565,7 @@ void vSetRegData( u16 adress)
                             case (CDV_KOOF_I1_MB+1):
                             case (CDV_KOOF_P1_MB+1):
                             case (CDV_F_CHANNEL+1):
-                                     data = convert_int_to_float( &usRegHoldingBuf[adress-CDV_OFFSET-1]);
-                                     saveRegFloat(reg_addr, data);
+                                     saveRegFloat(reg_addr, convert_int_to_float( pFloatReg));
                                      break;
                             case (CDV_OFFSET_CH2+1):
                             case (CDV_SETTING_MIN_MB+1 ):
@@ -617,7 +573,7 @@ void vSetRegData( u16 adress)
                             case (CDV_SETTING_MAX_MB +1 ):
                             case (CDV_SETTING_ERROR1_MB + 1):
                             case (CDV_SETTING_ERROR2_MB + 1):
-                                     data = convert_int_to_float( &usRegHoldingBuf[adress-CDV_OFFSET-1]);
+                                     data = convert_int_to_float(pFloatReg);
                                      switch ( ( MES_UNIT_t)getReg8(MEASERING_UNIT) )
                                      {
                                             case L_UNIT:
@@ -632,23 +588,17 @@ void vSetRegData( u16 adress)
                                       }
                                       saveRegFloat( reg_addr , (data > 2500)? 2500 : data);
                                       break;
-                             case CDV_MEASERING_UNIT:
-                             case CDV_CH_COUNT_MB:
-
-
-                                         VerifyAndSetReg8(reg_addr, (uint8_t) byte_data );
-                                         break;
                              case CDV_MODE_CONTROL:
-                                 if (getReg8(INPUT_CONTROL_TYPE) ==DISCRETE_INPUT)
-                                     VerifyAndSetReg8(reg_addr, (uint8_t) byte_data );
+                                 VerifyAndSetReg8(reg_addr, (uint8_t) byte_data );
                                  break;
                             case CDV_CLEAN_TIMER:
                             case CDV_SETTING_TIMEOUT_MB:
-
-                                                SaveReg8(reg_addr,byte_data);
-                                                break;
+                            case CDV_MEASERING_UNIT:
+                            case CDV_CH_COUNT_MB:
+                                   SaveReg8(reg_addr,byte_data);
+                                   break;
                             case CDV_ZERO_POINT_TIMEOUT:
-                                  saveReg16(reg_addr, usRegHoldingBuf[adress]);
+                                  saveReg16(reg_addr, byte_data);
                                   break;
                       }
            }
@@ -758,8 +708,8 @@ void UpdateFMCHHoldings()
    int32_t tempdata;
    for (u8 i=0;i<4;i++)
    {
-       usRegHoldingBuf[REGS[i]]           = getReg16( FMCH_REGS_MAP [ REGS[i]- 100 ]);
-       usRegHoldingBuf[REGS_FMCH_16[i]]   = getReg8( FMCH_REGS_MAP [ REGS_FMCH_16[i]- 100 ]);
+       usRegHoldingBuf[REGS[i]]           = getReg16( FMCH_REGS_MAP [ REGS[i]        - 100 ]);
+       usRegHoldingBuf[REGS_FMCH_16[i]]   = getReg8 ( FMCH_REGS_MAP [ REGS_FMCH_16[i]- 100 ]);
    }
    for (u8 i =0;i<3;i++)
    {
@@ -814,15 +764,15 @@ void UpdateCAV_VAV_BPHoldign()
 
      int32_t pdata = 0;
      int32_t idata = 0;
-     INPUT_SENSOR_t sens_type = getReg8(INPUT_CONTROL_TYPE);
-    if (( sens_type==STATIC_TERMSENSOR ) || (sens_type==ANALOG_SENSOR))
+
+    if (IsPISendScreenNreed())
     {
         u8 index = GetPIDSensorIndex();
         pdata = (int32_t) (getRegFloat(SensorPRegMap[index ])*1000);
         idata = (int32_t) (getRegFloat(SensorIRegMap[index ])*1000);
     }
     convert_float_to_int((float)pdata/1000.0, &usRegHoldingBuf[CDV_KOOF_PSESN_MB -100]);
-    convert_float_to_int((float)idata/1000.0, &usRegHoldingBuf[CDV_KOOF_ISENS_MB-100]);
+    convert_float_to_int((float)idata/1000.0, &usRegHoldingBuf[CDV_KOOF_ISENS_MB- 100]);
    for (u8 i=0;i<12;i++)
     {
         u16 reg_addr =REGS_CDV_SENS_FLOAT[i];
@@ -831,15 +781,15 @@ void UpdateCAV_VAV_BPHoldign()
     }
 
     for (u8 i = 0; i < 6; i++)
-   {
+    {
          u16 reg_addr = SettingRegsMap[i];
          tempdata =(int32_t) (DataModelGetCDVSettings(getRegFloat(CDV_REGS_MAP[reg_addr-200]))*10);
          convert_float_to_int((float)tempdata/10.0, &usRegHoldingBuf[reg_addr -100]);
-   }
-   for (u8 i=0;i<9;i++)                                      //妝忘扭抉抖扶攸快技  8 忌我找扶抑快 把快忍我扼找把抑 扼扭快
+    }
+    for (u8 i=0;i<9;i++)                                      //妝忘扭抉抖扶攸快技  8 忌我找扶抑快 把快忍我扼找把抑 扼扭快
     {
          usRegHoldingBuf[CDV_BP_REGS8[i] -100 ]      = getReg8(CDV_REGS_MAP[CDV_BP_REGS8[i] -200]);
-     }
+    }
     for (u8 i=0;i<CDV_BP_REG_SEQ_COUNT;i++)                                      //妝忘扭抉抖扶攸快技  16 忌我找扶抑快 把快忍我扼找把抑 扼扭快
     {
         usRegHoldingBuf[CDV_BP_REGS[i]  -100  ]      = getReg16(CDV_REGS_MAP[CDV_BP_REGS[i] -200]);
@@ -871,7 +821,9 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
         for (u8 i=0;i<12;i++)
                  usRegHoldingBuf[IP_1_MB+i]      = getReg8(IP_1+i);
         for (u8 i=0;i<REG8_SEQ_COUNT;i++)
-                 usRegHoldingBuf[REGS8[i]]      = getReg8(COMMON_REGS_MAP[REGS8[i]]);
+        {
+            usRegHoldingBuf[REGS8[i]]      = getReg8(COMMON_REGS_MAP[REGS8[i]]);
+        }
 
     }
     else
@@ -885,7 +837,7 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
 }
 
 
-static u16 const  device_specific_input_count[] =  { FMCH_INPUTS_COUNT  ,CDV_INPUTS_COUNT   };
+
 
 
 eMBErrorCode eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
@@ -895,16 +847,16 @@ eMBErrorCode eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRe
   u16 reg_offet = device_specific_reg_offset[getReg8(DEVICE_TYPE)];
   u16 reg_count = device_specific_input_count[getReg8(DEVICE_TYPE)];
 
-  if ((( usAddress >= REG_INPUT_START ) && ( usAddress + usNRegs <= REG_INPUT_START + COMMON_REG_INPUT_NREGS ) )
+  if ((  usAddress + usNRegs <= REG_INPUT_START + COMMON_REG_INPUT_NREGS  )
 
-      ||  ( ( usAddress >= 100 + reg_offet ) && ( (usAddress + usNRegs) <= (reg_offet+ 100 + reg_count+1) ) ))
+      ||  ( ( usAddress >=  reg_offet ) && ( (usAddress + usNRegs) <= (reg_offet + reg_count+1) ) ))
   {
     iRegIndex = ( int )( usAddress - usRegInputStart );
     MB_TASK_INPUTS_UDATE(  iRegIndex  );
     u16 offset=0;
     while( usNRegs > 0 )
     {
-        if (iRegIndex >=(100+ reg_offet)) offset = reg_offet; else offset = 0;
+        if (iRegIndex >=(reg_offet)) offset = reg_offet-100; else offset = 0;
         *pucRegBuffer++ = ( unsigned char )( usRegInputBuf[iRegIndex-offset] >> 8 );
         *pucRegBuffer++ = ( unsigned char )( usRegInputBuf[iRegIndex-offset] & 0xFF );
         iRegIndex++;
@@ -924,32 +876,32 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
 {
   eMBErrorCode    eStatus = MB_ENOERR;
   int             iRegIndex;
+  u16 offset;
   u16 reg_offet = device_specific_reg_offset[getReg8(DEVICE_TYPE)];
   u16 reg_count = device_specific_reg_count[getReg8(DEVICE_TYPE)];
 
-  if (( ( usAddress >= REG_HOLDING_START ) && ( usAddress + usNRegs <= COMMON_REG_COUNT ) ) ||  ( ( usAddress >= 100 + reg_offet ) && ( (usAddress + usNRegs) <= (reg_offet+ 100 + reg_count+1) ) ))
+  if ( ( usAddress + usNRegs <= COMMON_REG_COUNT  )
+          ||  ( ( usAddress >=  reg_offet ) && ( (usAddress + usNRegs) <= (reg_offet+ reg_count+1) ) ))
   {
     iRegIndex = ( int )( usAddress - usRegHoldingStart );
     switch ( eMode )
     {
     case MB_REG_READ:
-
       MB_TASK_HOLDING_UDATE(  iRegIndex  );
-      u16 offset=0;
+
       while( usNRegs > 0 )
       {
-        if (iRegIndex >=(100+ reg_offet)) offset = reg_offet; else offset = 0;
+        if (iRegIndex >=(reg_offet)) offset = reg_offet-100; else offset = 0;
         *pucRegBuffer++ = ( unsigned char )( usRegHoldingBuf[iRegIndex-offset] >> 8 );
         *pucRegBuffer++ = ( unsigned char )( usRegHoldingBuf[iRegIndex-offset] & 0xFF );
         iRegIndex++;
         usNRegs--;
       }
       break;
-
     case MB_REG_WRITE:
        while( usNRegs > 0 )
       {
-        if (iRegIndex >=(100+ reg_offet)) offset = reg_offet; else offset = 0;
+        if (iRegIndex >= reg_offet) offset = reg_offet-100; else offset = 0;
         usRegHoldingBuf[iRegIndex-offset ] = *pucRegBuffer++ << 8;
         usRegHoldingBuf[iRegIndex-offset ] |= *pucRegBuffer++;
         vSetRegData(iRegIndex);
@@ -977,7 +929,7 @@ eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCo
         /* it already plus one in modbus function method. */
         usAddress--;
 
-        if( ( usAddress >= REG_COILS_START) &&  ( usAddress + usNCoils <= REG_COILS_START + REG_COILS_NREGS ) )
+        if(  ( usAddress + usNCoils <= REG_COILS_START + REG_COILS_NREGS ) )
         {
             iRegBitIndex = (USHORT) (usAddress - usCoilStart);
             switch ( eMode )
@@ -1034,8 +986,7 @@ eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT us
     /* it already plus one in modbus function method. */
     usAddress--;
 
-    if ((usAddress >= REG_DISCRETE_START )
-            && (usAddress + usNDiscrete    <= REG_DISCRETE_START  + REG_DISCRETE_NREGS))
+    if (usAddress + usNDiscrete    <= REG_DISCRETE_START  + REG_DISCRETE_NREGS)
     {
         iRegIndex = (USHORT) (usAddress - usDiscreteInputStart) / 8;
         iRegBitIndex = (USHORT) (usAddress - usDiscreteInputStart) % 8;
