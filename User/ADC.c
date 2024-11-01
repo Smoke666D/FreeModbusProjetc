@@ -67,7 +67,7 @@ const uint16_t B57164CalPoint[11][2] = {
 
 };
 
-ADC_Conversionl_Buf_t DataBuffer[DC_CHANNEL+4 + 1];
+ADC_Conversionl_Buf_t DataBuffer[DC_CHANNEL+4 ];
 
 
 static int16_t SenseBuffer1[ Sens_BufferSize_MAX ];
@@ -198,8 +198,9 @@ float getAIN( AIN_CHANNEL_t channel)
     float temp_float;
     switch (channel)
     {
+      // case DCAIN1:
         case EXT5:
-            temp_data = (u16)GetConversional(&DataBuffer[10 ]);
+            temp_data = (u16)GetConversional(&DataBuffer[8 ]);
             return (float)(temp_data*KK);
             break;
         case SENS1:
@@ -221,11 +222,11 @@ float getAIN( AIN_CHANNEL_t channel)
             else
             return (temp_float);
        case DIG_TEMP:
-           return ((float)GetConversional(&DataBuffer[8])/256);
+           return ((float)GetConversional(&DataBuffer[9])/256);
        case DIG_PRES:
            return (float)(sens_press);
        case DIG2_TEMP:
-           return ((float)GetConversional(&DataBuffer[9])/256);
+           return ((float)GetConversional(&DataBuffer[10])/256);
        case DIG2_PRES:
            return (float)(sens_press1);
         case AC220:
@@ -257,11 +258,8 @@ static void ADC2_Event()
 }
 
 
-
-
 void ADC1_Init()
 {
-
     POINT_t d[2];
     vAINInit();
     eAinCalDataConfig(AIN4,11);
@@ -328,14 +326,13 @@ void ADC1_Init()
     DataBuffer[7].pBuff = AIN5Buffer;
     DataBuffer[8].ConversionalSize = DC_AIN_BufferSize;
     DataBuffer[8].pIndex = 0;
-    DataBuffer[8].pBuff = SensTemoBuffer;
+    DataBuffer[8].pBuff = Extr5V;
     DataBuffer[9].ConversionalSize = DC_AIN_BufferSize;
     DataBuffer[9].pIndex = 0;
-    DataBuffer[9].pBuff = SensTemoBuffer1;
+    DataBuffer[9].pBuff = SensTemoBuffer;
     DataBuffer[10].ConversionalSize = DC_AIN_BufferSize;
     DataBuffer[10].pIndex = 0;
-    DataBuffer[10].pBuff = Extr5V;
-
+    DataBuffer[10].pBuff = SensTemoBuffer1;
 }
 
 void vDataBufferInit()
@@ -660,7 +657,7 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  u1
                              temperature = (sens_temp -65536);
                       else
                           temperature = sens_temp;
-                        AddBufferData(&DataBuffer[index?9:8],temperature);
+                        AddBufferData(&DataBuffer[index?10:9],temperature);
                         *SENS_FSM = SENSOR_IDLE;
                         *fsm = I2C_GET_BUSY;
                 }
