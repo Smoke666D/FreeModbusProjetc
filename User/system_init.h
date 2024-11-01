@@ -69,6 +69,7 @@ typedef enum
     STATE_IDLE,
     STATE_RUN,
     STATE_WHAIT_TO_RAEDY,
+    STATE_CONFIG,
     STATE_SAVE_DATA,
 } TaskFSM_t;
 

@@ -185,24 +185,34 @@ void vDefaultTask( void  * argument )
        }
        switch (main_task_fsm)
         {
+            case STATE_CONFIG:
+                 vTaskDelay(100);
+                 HAL_WDTReset();
+                 break;
             case STATE_INIT:
                 vDrawBitmap();
                 xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
                 device = getReg8(DEVICE_TYPE);
                 for (uint16_t k=0; k< 3000;k++)
                 {
+                    if  ( ( getAIN( EXT5 ) > 4.5 ) && ( getAIN(DC24) < 10.0 ) && ( getAIN(AC220) < 40.0 ) )
+                    {
+                        main_task_fsm  =STATE_CONFIG;
+                        sprintf(temp_str,"Режим онбонвления конфигурации");
+                        u8 len = u8g2_GetUTF8Width(&u8g2,temp_str);
+                        MENU_DrawString((128-len)/2, 40, temp_str);
+                        xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
+                        vTaskResume(*getI2CTaskHandle());
+                    }
                     if ( uxQueueMessagesWaiting(pKeyboard) != 0)
                     {
                         if ( xQueueReceive(pKeyboard, &TempEvent, 0U ) == pdPASS )
                         {
-
-
                             if (TempEvent.KeyCode ==EXIT_KEY)
                             {
                                 if ( TempEvent.Status == MAKECODE ) init_menu_state |=EXIT_KEY_PRESS ;
                                 else
                                     init_menu_state &= ~EXIT_KEY_PRESS ;
-
                             }
                             if (TempEvent.KeyCode ==LEFT_KEY)
                             {
