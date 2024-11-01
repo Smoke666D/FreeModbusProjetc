@@ -67,19 +67,20 @@ const uint16_t B57164CalPoint[11][2] = {
 
 };
 
-ADC_Conversionl_Buf_t DataBuffer[DC_CHANNEL+4];
+ADC_Conversionl_Buf_t DataBuffer[DC_CHANNEL+4 + 1];
 
 
-int16_t SenseBuffer1[ Sens_BufferSize_MAX ];
-int16_t SenseBuffer2[ Sens_BufferSize_MAX ];
-int16_t DC24Buffer[ DC_24_BufferSize];
-int16_t AIN1Buffer[ DC_AIN_BufferSize];
-int16_t AIN2Buffer[ DC_AIN_BufferSize];
-int16_t AIN3Buffer[ DC_AIN_BufferSize];
-int16_t AIN4Buffer[ DC_AIN_BufferSize];
-int16_t AIN5Buffer[ DC_AIN_BufferSize];
-int16_t SensTemoBuffer[ DC_AIN_BufferSize];
-int16_t SensTemoBuffer1[ DC_AIN_BufferSize];
+static int16_t SenseBuffer1[ Sens_BufferSize_MAX ];
+static int16_t SenseBuffer2[ Sens_BufferSize_MAX ];
+static int16_t DC24Buffer[ DC_24_BufferSize];
+static int16_t AIN1Buffer[ DC_AIN_BufferSize];
+static int16_t AIN2Buffer[ DC_AIN_BufferSize];
+static int16_t AIN3Buffer[ DC_AIN_BufferSize];
+static int16_t AIN4Buffer[ DC_AIN_BufferSize];
+static int16_t AIN5Buffer[ DC_AIN_BufferSize];
+static int16_t SensTemoBuffer[ DC_AIN_BufferSize];
+static int16_t SensTemoBuffer1[ DC_AIN_BufferSize];
+static int16_t Extr5V[DC_AIN_BufferSize];
 /*
  *
  */
@@ -318,15 +319,18 @@ void ADC1_Init()
     DataBuffer[6].ConversionalSize = DC_AIN_BufferSize;
     DataBuffer[6].pIndex = 0;
     DataBuffer[6].pBuff = AIN4Buffer;
+    DataBuffer[7].ConversionalSize = DC_AIN_BufferSize;
+    DataBuffer[7].pIndex = 0;
+    DataBuffer[7].pBuff = AIN5Buffer;
     DataBuffer[8].ConversionalSize = DC_AIN_BufferSize;
     DataBuffer[8].pIndex = 0;
     DataBuffer[8].pBuff = SensTemoBuffer;
     DataBuffer[9].ConversionalSize = DC_AIN_BufferSize;
     DataBuffer[9].pIndex = 0;
     DataBuffer[9].pBuff = SensTemoBuffer1;
-    DataBuffer[7].ConversionalSize = DC_AIN_BufferSize;
-    DataBuffer[7].pIndex = 0;
-    DataBuffer[7].pBuff = AIN5Buffer;
+    DataBuffer[10].ConversionalSize = DC_AIN_BufferSize;
+    DataBuffer[10].pIndex = 0;
+    DataBuffer[10].pBuff = Extr5V;
 
 }
 

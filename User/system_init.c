@@ -49,11 +49,19 @@ static StackType_t defaultTaskBuffer[DEFAULT_TASK_STACK_SIZE];
 static StaticTask_t defaultTaskControlBlock;
 static TaskHandle_t DefautTask_Handler;
 
+static StackType_t ConfigTaskBuffer[CONFIG_TASK_STACK_SIZE];
+static StaticTask_t ConfigTaskControlBlock;
+
+
+
 static StackType_t ADCTaskBuffer[ADC_STK_SIZE];
 static StaticTask_t ADCTaskControlBlock;
 
 uint8_t ucQueueStorageArea[  16U * sizeof( KeyEvent ) ];
 static StaticQueue_t xStaticQueue;
+
+uint8_t ucRXQueueStorageArea[  16U * sizeof( u8) ];
+static StaticQueue_t xRXStaticQueue;
 
 static StaticEventGroup_t xOSStateEventGroup;
 static StaticEventGroup_t xSerialStateEventGroup;
@@ -84,11 +92,15 @@ void TaskSuspend()
     vTaskSuspend(* getSerialTask());
     vTaskSuspend(* getUserProcessTaskHandle());
     vTaskSuspend(*getI2CTaskHandle());
-
+    vTaskSuspend(* getConfigTaskHandle());
 }
 
 void vSYStaskInit ( void )
 {
+
+    ( * getConfigTaskHandle())
+         =    xTaskCreateStatic( config_process_task, "Config", CONFIG_TASK_STACK_SIZE , ( void * ) 1, CONFIG_TASK_PRIO  ,
+                                              (StackType_t * const )ConfigTaskBuffer, &ConfigTaskControlBlock );
 
    (* getI2CTaskHandle())
                     =    xTaskCreateStatic( I2C_task, "I2C", I2C_STK_SIZE , ( void * ) 1, I2C_TASK_PRIO  ,
@@ -136,6 +148,7 @@ void vSYSeventInit ( void )
 void vSYSqueueInit ( void )
 {
      *( xKeyboardQueue()) = xQueueCreateStatic( 16U, sizeof( KeyEvent ),ucQueueStorageArea, &xStaticQueue );
+     * (xConfigSystemRxQueue()) = xQueueCreateStatic( 16U, sizeof( uint8_t ),ucRXQueueStorageArea, &xRXStaticQueue );
 }
 
 static DEVICE_TYPE_t device;

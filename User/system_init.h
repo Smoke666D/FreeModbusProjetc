@@ -26,6 +26,7 @@
 #include "menu.h"
 #include "hal_spi.h"
 #include "hal_rtc.h"
+#include "config_system.h"
 #include "rtc_task.h"
 #include "EEPROM_25C.h"
 
@@ -50,8 +51,8 @@
 #define USER_STK_SIZE                   512
 #define I2C_TASK_PRIO                   6
 #define I2C_STK_SIZE                    256
-
-
+#define CONFIG_TASK_PRIO                5
+#define CONFIG_TASK_STACK_SIZE          128
 
 
 

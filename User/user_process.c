@@ -549,7 +549,6 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 }
                 break;
             case USER_PROCESS_ALARM:
-                printf("alarm chaannel eerror\r\n");
                 if (error_state & (DIN_ERROR | ANALOG_SENSOR_ERROR) == 0) task_fsm = USER_PROCCES_IDLE;
 
                 if (error_state & ( DIN_ERROR  | ANALOG_SENSOR_ERROR))
