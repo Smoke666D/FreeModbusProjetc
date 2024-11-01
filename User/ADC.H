@@ -10,7 +10,7 @@
 
 #include "main.h"
 
-#define DC_CHANNEL 6
+#define DC_CHANNEL 7
 #define DC_CONVERSION_NUMBER 3
 #define AC_CONVERION_NUMBER 1500
 #define ADC_CHANNEL 2
@@ -65,6 +65,7 @@ typedef enum
   DIG2_PRES =11,
   DIG2_TEMP =12,
   AC220_CONTROL = 13,
+  EXT5 = 14,
 
 } AIN_CHANNEL_t;
 
@@ -84,6 +85,9 @@ typedef struct
 #define R1_24V 1000000.0
 #define R2_24V  150000.0
 #define COOF_24V ((R1_24V+R2_24V)/R2_24V)
+#define R1_5V  20000.0
+#define R2_5V  30000.0
+#define COOF_5V ((R1_5V+R2_5V)/R2_5V)
 #define R1_10V 56000.0
 #define R2_10V  10000.0
 #define RTC_COOF  10000

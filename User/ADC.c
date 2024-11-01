@@ -23,7 +23,7 @@ float AC_220_VALUE;
 float AC_220_VALUE_CONTROL;
 static uint16_t ADC2_Buffer[DC_CHANNEL];
 static int16_t  ADC1_DMABuffer[AC_CONVERION_NUMBER*ADC_CHANNEL];
-uint8_t ADC2_CHANNEL[DC_CHANNEL] = {  ADC_CH_2, ADC_CH_5,ADC_CH_6,ADC_CH_7,ADC_CH_14,ADC_CH_15};
+uint8_t ADC2_CHANNEL[DC_CHANNEL] = {  ADC_CH_2, ADC_CH_5,ADC_CH_6,ADC_CH_7,ADC_CH_14,ADC_CH_15, ADC_CH_8};
 #define ADC1_CH_COUNT 2
 #define ADC1_PRIOR 1
 #define ADC1_SUB_PRIOR 0
@@ -198,6 +198,10 @@ float getAIN( AIN_CHANNEL_t channel)
     float temp_float;
     switch (channel)
     {
+        case EXT5:
+            temp_data = (u16)GetConversional(&DataBuffer[10 ]);
+            return (float)(temp_data*KK);
+            break;
         case SENS1:
         case SENS2:
             return   (PressSens[ (channel == SENS1 ) ? 0 : 1 ]);
