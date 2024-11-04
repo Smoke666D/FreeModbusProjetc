@@ -65,20 +65,18 @@ User/user_process.o: ../User/user_process.c ../User/user_process.h \
  ../User/data_model.h \
  C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_rtc.h ../User/led.h \
  ../User/din_dout_task.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h \
+ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/hw_lib_keyboard.h \
  C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_gpio.h \
  C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_typedef.h \
  ../User/mb_task.h ../User/menu.h \
  C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_spi.h \
  ../User/config_system.h ../User/rtc_task.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/EEPROM_25C.h \
+ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/EEPROM_25C.h \
  C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_dma.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_din.h \
+ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/hw_lib_din.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\User/init.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/filters.h \
- ../User/pid.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_adc.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\User/drivers_config.h \
+ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/filters.h ../User/pid.h \
+ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/hw_lib_adc.h \
  C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_timers.h
 
 ../User/user_process.h:
@@ -221,7 +219,7 @@ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_rtc.h:
 
 ../User/din_dout_task.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h:
+C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/hw_lib_keyboard.h:
 
 C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_gpio.h:
 
@@ -237,20 +235,18 @@ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_spi.h:
 
 ../User/rtc_task.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/EEPROM_25C.h:
+C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/EEPROM_25C.h:
 
 C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_dma.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_din.h:
+C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/hw_lib_din.h:
 
 C:\Users\smoke\Documents\FreeModbusProjetc\User/init.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/filters.h:
+C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/filters.h:
 
 ../User/pid.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_adc.h:
-
-C:\Users\smoke\Documents\FreeModbusProjetc\User/drivers_config.h:
+C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/hw_lib_adc.h:
 
 C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_timers.h:

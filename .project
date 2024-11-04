@@ -20,6 +20,18 @@
     <nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
     <nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
   </natures>
+  <linkedResources>
+    <link>
+      <name>HAL_DRIVER</name>
+      <type>2</type>
+      <locationURI>PARENT-1-PROJECT_LOC/SYSTEM_LIB/HAL_DRIVER</locationURI>
+    </link>
+    <link>
+      <name>HAL_LIB</name>
+      <type>2</type>
+      <location>PARENT-1-PROJECT_LOC/SYSTEM_LIB/HAL_LIB</location>
+    </link>
+  </linkedResources>
   <filteredResources>
     <filter>
       <id>1730311327849</id>
@@ -31,11 +43,4 @@
       </matcher>
     </filter>
   </filteredResources>
-  <linkedResources>
-    <link>
-      <name>HAL_DRIVER</name>
-      <type>2</type>
-      <location>PARENT-1-PROJECT_LOC/SYSTEM_LIB/HAL_DRIVER</location>
-    </link>
-  </linkedResources>
 </projectDescription>

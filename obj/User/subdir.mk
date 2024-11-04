@@ -11,7 +11,6 @@ C_SRCS += \
 ../User/config_system.c \
 ../User/data_model.c \
 ../User/din_dout_task.c \
-../User/drivers.c \
 ../User/init.c \
 ../User/led.c \
 ../User/main.c \
@@ -32,7 +31,6 @@ OBJS += \
 ./User/config_system.o \
 ./User/data_model.o \
 ./User/din_dout_task.o \
-./User/drivers.o \
 ./User/init.o \
 ./User/led.o \
 ./User/main.o \
@@ -53,7 +51,6 @@ C_DEPS += \
 ./User/config_system.d \
 ./User/data_model.d \
 ./User/din_dout_task.d \
-./User/drivers.d \
 ./User/init.d \
 ./User/led.d \
 ./User/main.d \
@@ -70,6 +67,6 @@ C_DEPS += \
 
 # Each subdirectory must supply rules for building sources it contributes
 User/%.o: ../User/%.c
-	@	@	riscv-none-embed-gcc -march=rv32imafcxw -mabi=ilp32 -msmall-data-limit=8 -msave-restore -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -fno-common -Wunused -Wuninitialized  -g -I"C:\Users\smoke\Documents\FreeModbusProjetc\Debug" -I"C:\Users\smoke\Documents\FreeModbusProjetc\u8g2-master\csrc" -I"C:\Users\smoke\Documents\FreeModbusProjetc\port" -I"C:\Users\smoke\Documents\FreeModbusProjetc\modbus" -I"C:\Users\smoke\Documents\FreeModbusProjetc\modbus\functions" -I"C:\Users\smoke\Documents\FreeModbusProjetc\modbus\include" -I"C:\Users\smoke\Documents\FreeModbusProjetc\modbus\tcp" -I"C:\Users\smoke\Documents\FreeModbusProjetc\modbus\rtu" -I"C:\Users\smoke\Documents\FreeModbusProjetc\NetLib" -I"C:\Users\smoke\Documents\FreeModbusProjetc\Core" -I"C:\Users\smoke\Documents\FreeModbusProjetc\User" -I"C:\Users\smoke\Documents\FreeModbusProjetc\Peripheral\inc" -I"C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS" -I"C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\include" -I"C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\portable\Common" -I"C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\portable\GCC\RISC-V" -I"C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\portable\GCC\RISC-V\chip_specific_extensions\RV32I_PFIC_no_extensions" -I"C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\portable\MemMang" -I"C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB" -I"C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER" -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c -o "$@" "$<"
+	@	@	riscv-none-embed-gcc -march=rv32imafcxw -mabi=ilp32 -msmall-data-limit=8 -msave-restore -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -fno-common -Wunused -Wuninitialized  -g -I"C:\Users\smoke\Documents\FreeModbusProjetc\Debug" -I"C:\Users\smoke\Documents\FreeModbusProjetc\u8g2-master\csrc" -I"C:\Users\smoke\Documents\FreeModbusProjetc\port" -I"C:\Users\smoke\Documents\FreeModbusProjetc\modbus" -I"C:\Users\smoke\Documents\FreeModbusProjetc\modbus\functions" -I"C:\Users\smoke\Documents\FreeModbusProjetc\modbus\include" -I"C:\Users\smoke\Documents\FreeModbusProjetc\modbus\tcp" -I"C:\Users\smoke\Documents\FreeModbusProjetc\modbus\rtu" -I"C:\Users\smoke\Documents\FreeModbusProjetc\NetLib" -I"C:\Users\smoke\Documents\FreeModbusProjetc\Core" -I"C:\Users\smoke\Documents\FreeModbusProjetc\User" -I"C:\Users\smoke\Documents\FreeModbusProjetc\Peripheral\inc" -I"C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS" -I"C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\include" -I"C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\portable\Common" -I"C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\portable\GCC\RISC-V" -I"C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\portable\GCC\RISC-V\chip_specific_extensions\RV32I_PFIC_no_extensions" -I"C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\portable\MemMang" -I"C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB" -I"C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER" -I"C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB" -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -c -o "$@" "$<"
 	@	@
 

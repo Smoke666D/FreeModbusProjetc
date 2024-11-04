@@ -55,22 +55,22 @@ User/rtc_task.o: ../User/rtc_task.c ../User/rtc_task.h ../User/main.h \
  C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_rtc.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\User/main.h ../User/init.h \
  C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_typedef.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_din.h \
+ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/hw_lib_din.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\User/init.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/filters.h \
+ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/filters.h \
  ../User/data_model.h ../User/system_init.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\include/queue.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\include/list.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\include/semphr.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\include/queue.h \
  ../User/adc.h ../User/led.h ../User/din_dout_task.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h \
+ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/hw_lib_keyboard.h \
  C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_gpio.h \
  C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_typedef.h \
  ../User/mb_task.h ../User/menu.h \
  C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_spi.h \
  ../User/config_system.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/EEPROM_25C.h \
+ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/EEPROM_25C.h \
  C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_dma.h
 
 ../User/rtc_task.h:
@@ -191,11 +191,11 @@ C:\Users\smoke\Documents\FreeModbusProjetc\User/main.h:
 
 C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_typedef.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_din.h:
+C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/hw_lib_din.h:
 
 C:\Users\smoke\Documents\FreeModbusProjetc\User/init.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/filters.h:
+C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/filters.h:
 
 ../User/data_model.h:
 
@@ -215,7 +215,7 @@ C:\Users\smoke\Documents\FreeModbusProjetc\FreeRTOS\include/queue.h:
 
 ../User/din_dout_task.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h:
+C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/hw_lib_keyboard.h:
 
 C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_gpio.h:
 
@@ -229,6 +229,6 @@ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_spi.h:
 
 ../User/config_system.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/EEPROM_25C.h:
+C:\Users\smoke\Documents\SYSTEM_LIB\HAL_LIB/EEPROM_25C.h:
 
 C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_dma.h:

@@ -29,7 +29,7 @@ FreeRTOS \
 FreeRTOS/portable/GCC/RISC-V \
 FreeRTOS/portable/MemMang \
 HAL_DRIVER \
-HW_LIB \
+HAL_LIB \
 NetLib \
 Peripheral/src \
 Startup \
