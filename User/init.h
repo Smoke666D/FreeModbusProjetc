@@ -9,7 +9,7 @@
 #define USER_INIT_H_
 
 #include "main.h"
-#include "hal_config.h"
+#include "hal_typedef.h"
 
 #define CRACH_Port                  PORT_C
 #define CRACH_Pin                   GPIO_2
@@ -25,17 +25,7 @@
 #define AC_SENS2_                   GPIO_1
 #define AC_SENSE_PORT               PORT_B
 #define POWER_CONTROL               GPIO_2
-#ifndef REV2
-#define AIN1_Pin                    GPIO_6
-#define AIN2_Pin                    GPIO_7
-#define SEN1_POW_AIN1_2_PORT        PORT_A
-#define AIN3_Pin                    GPIO_4
-#define AIN4_Pin                    GPIO_5
-#define AIN3_4_PORT                 PORT_C
-#define AIN5_Pin                    GPIO_0
-#define AIN6_Pin                    GPIO_1
-#define AIN5_6_PORT                 PORT_A
-#else
+
 #define AIN1_Pin                    GPIO_5
 #define AIN2_Pin                    GPIO_6
 #define AIN3_Pin                    GPIO_7
@@ -47,23 +37,18 @@
 
 
 
-#endif
+
 #define DAC0_Pin                    GPIO_4
 #define DAC0_Port                   PORT_A
 
-#ifndef REV2
-#define DOUT_1_Pin                  GPIO_3
-#define DOUT_2_Pin                  GPIO_4
-#define DOUT_3_Pin                  GPIO_5
-#define DOUT_Port                   PORT_B
-#else
+
 #define DOUT_2_Pin                  GPIO_3
 #define DOUT_3_Pin                  GPIO_4
 #define DOUT_4_Pin                  GPIO_5
 #define DOUT_Port                   PORT_B
 #define DOUT_1_Pin                  GPIO_4
 #define DOUT1_Port                  PORT_D
-#endif
+
 #define DIN_1_Pin                   GPIO_11
 #define DIN_2_Pin                   GPIO_12
 #define DIN_3_Pin                   GPIO_13
@@ -86,10 +71,10 @@
 #define AOUT_Port                   PORT_D
 
 
-#ifdef REV2
+
 #define I2C_EN_PIN                   GPIO_15
 #define I2C_EN_PORT                  PORT_A
-#endif
+
 #define RX1_Pin                     GPIO_9
 #define TX1_Pin                     GPIO_10
 #define UART_Port                   PORT_A
@@ -134,11 +119,9 @@
 #define RPM_CHANNEL_COUNT     0
 #define DIN_CHANNEL_COUNT     5
 #define DIN_COUNT            ( RPM_CHANNEL_COUNT + DIN_CHANNEL_COUNT )
-#ifndef REV2
-#define DOUT_COUNT           3
-#else
+
 #define DOUT_COUNT           4
-#endif
+
 
 #define RTC_IT_PRIOR    1
 #define RTC_IT_SUBPRIOR 3

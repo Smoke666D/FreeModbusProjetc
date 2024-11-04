@@ -21,7 +21,6 @@ RM := rm -rf
 -include NetLib/subdir.mk
 -include HW_LIB/subdir.mk
 -include HAL_DRIVER/subdir.mk
--include HAL/subdir.mk
 -include FreeRTOS/portable/MemMang/subdir.mk
 -include FreeRTOS/portable/GCC/RISC-V/subdir.mk
 -include FreeRTOS/subdir.mk

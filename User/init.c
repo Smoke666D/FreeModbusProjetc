@@ -71,16 +71,11 @@ static void MX_GPIO_Init(void)
     HAL_InitGPO();
     HAL_InitGpioAF( DAC0_Port, DAC0_Pin, 0, GPIO_Mode_AF_OD );
     HAL_InitGpioAIN( AC_SENSE_PORT, AC_SENS1_| AC_SENS2_);
-#ifndef REV2
-    HAL_InitGpioAIN( AIN5_6_PORT , AIN5_Pin | AIN6_Pin );
-    HAL_InitGpioAIN( AIN3_4_PORT , AIN3_Pin | AIN4_Pin );
-    HAL_InitGpioAIN( SEN1_POW_AIN1_2_PORT  , POWER_CONTROL | AIN2_Pin | AIN1_Pin );
-#else
+
 
     HAL_InitGpioAIN( AIN4_5_PORT , AIN5_Pin | AIN4_Pin );
     HAL_InitGpioAIN( SEN1_POW_AIN1_3_PORT  , POWER_CONTROL | AIN3_Pin | AIN2_Pin | AIN1_Pin );
 
-#endif
     HAL_InitGpioOut(  LCDDATA_4_7_Port  ,  LCDDATA4_Pin | LCDDATA5_Pin | LCDDATA6_Pin | LCDDATA7_Pin );
     HAL_InitGpioOut(  LCDDATA_0_1_n_Port , LCDDATA1_Pin | LCDDATA0_Pin );
     HAL_InitGpioOut(  LCDRST_Port , LCDRST_Pin );

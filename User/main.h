@@ -40,6 +40,29 @@ EventGroupHandle_t * xGetOSEvent();
  */
 #define CORE WCH32V3
 
+
+#define __SECTION(x)
+
+/****************************DMA*******************************/
+#define DMA1_CH1_ENABLE
+#define DMA1_CH2_ENABLE
+//#define DMA1_CH3_ENABLE
+#define DMA1_CH4_ENABLE
+#define DMA1_CH5_ENABLE
+//#define DMA1_CH6_ENABLE
+//#define DMA1_CH7_ENABLE
+//#define DMA2_CH1_ENABLE
+//#define DMA2_CH2_ENABLE
+//#define DMA2_CH3_ENABLE
+//#define DMA2_CH4_ENABLE
+//#define DMA2_CH5_ENABLE
+//#define DMA2_CH6_ENABLE
+//#define DMA2_CH7_ENABLE
+/****************************ADC**********************************/
+#define ADC_1_ENABLE
+#define ADC_2_ENABLE
+#define ADC_1_IT_ENABLE
+#define ADC_2_IT_ENABLE
 /***************************watchdog***************************/
 //§¡§Ü§ä§Ú§Ó§Ú§â§à§Ó§Ñ§ä§î §Ó§Ñ§ä§é§Õ§à§Ô
 #define WDT_ENABLE
@@ -57,6 +80,18 @@ EventGroupHandle_t * xGetOSEvent();
 /************************I2C************************************/
 #define I2C1_IT_ENABLE
 #define I2C2_IT_ENABLE
+/***********************TIME**********************************/
+//#define TIM1_UP_ENABLE 0
+//#define TIM2_UP_ENABLE 0
+//#define TIM3_UP_ENABLE 0
+#define TIM4_UP_ENABLE
+#define TIM5_UP_ENABLE
+//#define TIM6_UP_ENABLE 0
+//#define TIM7_UP_ENABLE 0
+#define TIM8_UP_ENABLE
+//#define TIM9_UP_ENABLE 0
+
+
 
 
 #endif /* USER_MAIN_H_ */

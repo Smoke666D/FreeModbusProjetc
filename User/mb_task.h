@@ -10,14 +10,10 @@
 
 
 #include "mb.h"
-#include "hal_config.h"
+#include "hal_typedef.h"
 
 #define REG_COILS_START      0x0
-#ifndef REV2
-#define REG_COILS_NREGS      3
-#else
 #define REG_COILS_NREGS      4
-#endif
 #define REG_DISCRETE_START   0x00
 #define REG_DISCRETE_NREGS   5
 
