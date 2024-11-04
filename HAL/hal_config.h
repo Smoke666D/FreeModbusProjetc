@@ -132,7 +132,6 @@ typedef enum
 #define ADC_1_IT_ENABLE 1
 #define ADC_2_IT_ENABLE 1
 
-#define I2C1_ENABLE 1
-#define I2C2_ENABLE 1
+
 
 #endif /* HAL_HAL_CONFIG_H_ */

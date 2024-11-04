@@ -52,13 +52,12 @@ User/rtc_task.o: ../User/rtc_task.c ../User/rtc_task.h ../User/main.h \
  ../User/ADC.H \
  C:\Users\smoke\Documents\FreeModbusProjetc\u8g2-master\csrc/u8g2.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\u8g2-master\csrc/u8x8.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_rtc.h \
+ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_rtc.h \
+ C:\Users\smoke\Documents\FreeModbusProjetc\User/main.h ../User/init.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_config.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/board_define.h \
- ../User/init.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_config.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_din.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\User/main.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\User/init.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/filters.h \
  ../User/data_model.h ../User/system_init.h \
@@ -70,7 +69,7 @@ User/rtc_task.o: ../User/rtc_task.c ../User/rtc_task.h ../User/main.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_gpio.h \
  ../User/mb_task.h ../User/menu.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_spi.h \
+ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_spi.h \
  ../User/config_system.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/EEPROM_25C.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_dma.h \
@@ -186,19 +185,19 @@ C:\Users\smoke\Documents\FreeModbusProjetc\u8g2-master\csrc/u8g2.h:
 
 C:\Users\smoke\Documents\FreeModbusProjetc\u8g2-master\csrc/u8x8.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_rtc.h:
+C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_rtc.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_config.h:
-
-C:\Users\smoke\Documents\FreeModbusProjetc\HAL/board_define.h:
+C:\Users\smoke\Documents\FreeModbusProjetc\User/main.h:
 
 ../User/init.h:
 
 C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_config.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_din.h:
+C:\Users\smoke\Documents\FreeModbusProjetc\HAL/board_define.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\User/main.h:
+C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_config.h:
+
+C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_din.h:
 
 C:\Users\smoke\Documents\FreeModbusProjetc\User/init.h:
 
@@ -230,7 +229,7 @@ C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_gpio.h:
 
 ../User/menu.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_spi.h:
+C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_spi.h:
 
 ../User/config_system.h:
 

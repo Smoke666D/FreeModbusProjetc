@@ -27,4 +27,36 @@ EventGroupHandle_t * xGetOSEvent();
 #define KEYBOARD_START 0x04
 
 
+/****************************************************************/
+
+
+
+#define WCH32V3   2
+#define WCH32V2   1
+/*
+ *
+ * §¬§à§æ§Ú§ß§å§Ñ§è§Ú§ñ §ñ§Õ§â§Ñ
+ *
+ */
+#define CORE WCH32V3
+
+/***************************watchdog***************************/
+//§¡§Ü§ä§Ú§Ó§Ú§â§à§Ó§Ñ§ä§î §Ó§Ñ§ä§é§Õ§à§Ô
+#define WDT_ENABLE
+/****************************RTC**************************/
+#define RTC_IRQ_ENABLE
+/***************************SPI*****************************/
+//#define SPI1_IT_ENABLE
+#define SPI2_IT_ENABLE
+//#define SPI3_IT_ENABLE
+/************************USART**********************************/
+//#define USART1_IT_ENABLE
+#define USART2_IT_ENABLE
+//#define USART3_IT_ENABLE
+#define USART4_IT_ENABLE
+/************************I2C************************************/
+#define I2C1_IT_ENABLE
+#define I2C2_IT_ENABLE
+
+
 #endif /* USER_MAIN_H_ */

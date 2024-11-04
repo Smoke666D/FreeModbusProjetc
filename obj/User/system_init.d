@@ -62,17 +62,18 @@ User/system_init.o: ../User/system_init.c ../User/system_init.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/board_define.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_config.h \
  ../User/data_model.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_rtc.h ../User/led.h \
+ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_rtc.h \
+ C:\Users\smoke\Documents\FreeModbusProjetc\User/main.h ../User/led.h \
  ../User/din_dout_task.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_gpio.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\User/main.h ../User/mb_task.h \
- ../User/menu.h C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_spi.h \
+ ../User/mb_task.h ../User/menu.h \
+ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_spi.h \
  ../User/config_system.h ../User/rtc_task.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/EEPROM_25C.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_dma.h \
  C:\Users\smoke\Documents\FreeModbusProjetc\User/system_init.h \
- C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_wdt.h \
+ C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_wdt.h \
  ../User/user_process.h ../User/system_types.h
 
 ../User/system_init.h:
@@ -203,7 +204,9 @@ C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_config.h:
 
 ../User/data_model.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_rtc.h:
+C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_rtc.h:
+
+C:\Users\smoke\Documents\FreeModbusProjetc\User/main.h:
 
 ../User/led.h:
 
@@ -213,13 +216,11 @@ C:\Users\smoke\Documents\FreeModbusProjetc\HW_LIB/hw_lib_keyboard.h:
 
 C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_gpio.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\User/main.h:
-
 ../User/mb_task.h:
 
 ../User/menu.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_spi.h:
+C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_spi.h:
 
 ../User/config_system.h:
 
@@ -231,7 +232,7 @@ C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_dma.h:
 
 C:\Users\smoke\Documents\FreeModbusProjetc\User/system_init.h:
 
-C:\Users\smoke\Documents\FreeModbusProjetc\HAL/hal_wdt.h:
+C:\Users\smoke\Documents\SYSTEM_LIB\HAL_DRIVER/hal_wdt.h:
 
 ../User/user_process.h:
 
