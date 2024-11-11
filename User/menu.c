@@ -17,7 +17,7 @@
 #include "user_process_service.h"
 
 
-static const unsigned char rcp0606536715761_bits[] = {
+ __attribute__((section(".stext"))) static const unsigned char rcp0606536715761_bits[] = {
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0x1F, 0x00, 0x00,
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0xFF, 0xF9,
   0x07, 0x78, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -1192,18 +1192,19 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                               strcpy(str,"Закрыто.");
                               break;
                         case SETTING_MINIMUM:
-                             temp_float = DataModelGetCDVSettings( getReg16(SETTING_MIN));
+                             temp_float = DataModelGetCDVSettings( getRegFloat(SETTING_MIN));
+
                              sprintf(str,"%06.1f",temp_float);
                               break;
                         case SETTING_MAXIMUN:
-                             temp_float = DataModelGetCDVSettings( getReg16(SETTING_MAX));
+                             temp_float = DataModelGetCDVSettings( getRegFloat(SETTING_MAX));
                              sprintf(str,"%06.1f",temp_float);
                              break;
                         case SETTING_MIDIUM:
                               switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
                               {
                                   case DISCRETE_INPUT:
-                                       temp_float = DataModelGetCDVSettings( getReg16(SETTING_MID));
+                                       temp_float = DataModelGetCDVSettings( getRegFloat(SETTING_MID));
                                        sprintf(str,"%06.1f",temp_float);
                                        break;
                                   case 2:
@@ -1220,7 +1221,11 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             case DCV_SETTING2_ID:
                   if ( state == SETTING_OPEN ) strcpy(str,"Откр.");
                   else if ( state == SETTING_CLOSE ) strcpy(str,"Закр.");
-                  else sprintf(str,"%i4", getReg16(OFFSET_CH2));
+                  else
+                  {
+                      temp_float = DataModelGetCDVSettings(getRegFloat(OFFSET_CH2));
+                      sprintf(str,"%06.1f", temp_float);
+                  }
                   break;
             case DCV_FACT1_ID:
                    temp_float = DataModelGetCDVSettings( getAIN(SENS1));
@@ -1413,7 +1418,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                            cur_edit_index = 2;
                            break;
                     case CMD_SAVE_EDIT:
-                        temp_float = edit_data_buffer_float;
+                            temp_float = edit_data_buffer_float;
                             switch ( getReg8(MEASERING_UNIT) )
                             {
                                 case 0:
@@ -1425,11 +1430,12 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                                  default:
                                      break;
                              }
+                             printf("data %f\r\n",temp_float);
                              saveRegFloat( reg_id, temp_float);
                              start_edit_flag = 0;
                              break;
                         case CMD_READ:
-                             temp_int  = (int32_t)(DataModelGetCDVSettings(getRegFloat(reg_id))*10.0);
+                             temp_int  = (int32_t)(DataModelGetCDVSettings(getRegFloat(reg_id)))*10;
                              sprintf(str,"%06.1f",temp_int/10.0);
                              break;
                         case CMD_EDIT_READ:

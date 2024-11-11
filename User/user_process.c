@@ -408,7 +408,7 @@ void Channel2Reg(  float setpoint )
          else
          {
 
-            SET_POINT1  = setpoint + (float)getReg16(OFFSET_CH2);
+            SET_POINT1  = setpoint + getRegFloat(OFFSET_CH2);
             PID_Compute(&TPID2,getAIN(SENS2));
             PID_Out = PIDOut2/1000.0;
          }
@@ -427,7 +427,7 @@ float vAnalogSensorFSM( )
 {
     float PID_Out;
     float temp_float = getAIN(SENS1);
-    if (temp_float <= getReg16(SETTING_MIN))
+    if (temp_float <= getRegFloat(SETTING_MIN))
     {
           PID_SetOutputLimits(&TPID, USER_AOUT_GET(DAC1),TPID.OutMax);
     }
@@ -481,10 +481,10 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                                      compute_falg = 0;
                                      break;
                             case SETTING_MINIMUM:
-                                     SET_POINT = (float)getReg16(SETTING_MIN);
+                                     SET_POINT = getRegFloat(SETTING_MIN);
                                      break;
                             case SETTING_MAXIMUN:
-                                     SET_POINT = (float)getReg16(SETTING_MAX);
+                                     SET_POINT = getRegFloat(SETTING_MAX);
                                      break;
                             default:
                             case SETTING_CLOSE:
@@ -495,7 +495,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                                 switch (temp_inp_sens_type)
                                 {
                                     case DISCRETE_INPUT:
-                                        SET_POINT = (float)getReg16(SETTING_MID);
+                                        SET_POINT =getRegFloat(SETTING_MID);
                                         break;
                                     case ROOM_CONTROLLER:
                                         SET_POINT = ComputeSetPoint();

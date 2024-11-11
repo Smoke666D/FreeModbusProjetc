@@ -52,6 +52,7 @@ DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[SENSOR_COUNT]       =  TIME_5_0;
 
                setRegFloat(KOOFKPS , 36.0);
+               setRegFloat(KOOFKPS2 , 36.0);
                setRegFloat(COOF_I,10.0);
                setRegFloat(COOF_P,5.0);
                setRegFloat(COOF_I1,15.0);
@@ -63,6 +64,7 @@ DATA_MODEL_INIT_t DataModel_Init()
                setRegFloat(COOF_ICO2,15.0);
                setRegFloat(COOF_PCO2,5.0);
                setRegFloat(F_CHANNEL,0.0314);
+               setRegFloat(F_CHANNEL2,0.0314);
                setReg16(SETTING1, 900);
                setReg16(SETTING2, 600);
                setReg16(IP_PORT,502);
@@ -319,7 +321,10 @@ float DataModelGetCDVSettings( float pressure)
     switch ( getReg8(MEASERING_UNIT) )
     {
         case 0:
+
+
              res = DataModel_GetPressureToL( res);
+
               break;
                            case 1:
                                res = DataModel_GetPressureToV( res);

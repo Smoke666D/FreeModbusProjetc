@@ -16,7 +16,7 @@
 #include "hal_wdt.h"
 
 
-void InitI2C()
+  __attribute__((section(".stext"))) void InitI2C()
 {
     HAL_I2C_InitTypeDef  I2C_InitTSturcture = {0};
     HAL_InitGpioAF (  I2C2_Port , I2C2_SDA_Pin   | I2C2_SCL_Pin  , 0 , GPIO_Mode_AF_OD );

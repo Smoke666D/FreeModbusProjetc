@@ -14,8 +14,8 @@
 
 
 #define SW_V                 2
-#define SW_V2                3
-#define SW_V3                4
+#define SW_V2                4
+#define SW_V3                0
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -66,7 +66,8 @@
 #define COOF_IH               ( COOF_PCO2 + sizeof(uint32_t))
 #define COOF_PH               ( COOF_IH + sizeof(uint32_t) )
 #define KOOFKPS               ( COOF_PH + sizeof(uint32_t))
-#define SETTING1              ( KOOFKPS + sizeof(uint32_t))
+#define KOOFKPS2              ( KOOFKPS + sizeof(uint32_t))
+#define SETTING1              ( KOOFKPS2 + sizeof(uint32_t))
 #define SETTING2              ( SETTING1 + sizeof(uint16_t) )
 #define AFTER_ZONE_SETTING    ( SETTING2 + sizeof(uint16_t) )
 #define MEASERING_UNIT        ( AFTER_ZONE_SETTING + sizeof(uint8_t) )
@@ -88,7 +89,8 @@
 #define SENS_OFS3              ( MAX_SET3  + sizeof(uint32_t) )
 #define SENS_SETTING3          ( SENS_OFS1  + sizeof(uint32_t) )
 #define F_CHANNEL             ( SENS_SETTING3  + sizeof(uint32_t) )
-#define BP_REG_TYPE           ( F_CHANNEL         + sizeof(uint32_t) )
+#define F_CHANNEL2             ( F_CHANNEL  + sizeof(uint32_t) )
+#define BP_REG_TYPE           ( F_CHANNEL2         + sizeof(uint32_t) )
 #define BP_SIZE               ( BP_REG_TYPE       + sizeof(uint8_t) )
 #define SETTING_MAX           ( BP_SIZE           + sizeof(uint8_t) )
 #define SETTING_MIN           ( SETTING_MAX       + sizeof(uint32_t) )
