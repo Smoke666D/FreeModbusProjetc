@@ -35,9 +35,52 @@
 
 
 
-static void MX_GPIO_Init(void);
+  __attribute__((section(".stext"))) static void MX_GPIO_Init(void)
+ {
+     HAL_InitGPO();
+     HAL_InitGpioAF( DAC0_Port, DAC0_Pin, 0, GPIO_Mode_AF_OD );
+     HAL_InitGpioAIN( AC_SENSE_PORT, AC_SENS1_| AC_SENS2_);
 
-void vInit_DeviceConfig( void )
+     HAL_InitGpioAIN( AIN4_5_PORT , AIN5_Pin | AIN4_Pin );
+     HAL_InitGpioAIN( SEN1_POW_AIN1_3_PORT  , POWER_CONTROL | AIN3_Pin | AIN2_Pin | AIN1_Pin );
+
+     HAL_InitGpioOut(  LCDDATA_4_7_Port  ,  LCDDATA4_Pin | LCDDATA5_Pin | LCDDATA6_Pin | LCDDATA7_Pin );
+     HAL_InitGpioOut(  LCDDATA_0_1_n_Port , LCDDATA1_Pin | LCDDATA0_Pin );
+     HAL_InitGpioOut(  LCDRST_Port , LCDRST_Pin );
+     HAL_InitGpioOut(  LDCDATA_2_3_E_REW_CD_LED_Port , LCDDATA3_Pin | LCDDATA2_Pin );
+     HAL_InitGpioOut(  LDCDATA_2_3_E_REW_CD_LED_Port , LCDnRW_Pin | LCDCS_Pin | LCDLED_Pin );
+     HAL_InitGpioOut(  LDCDATA_2_3_E_REW_CD_LED_Port , LCDnE_Pin );
+     HAL_InitGpioOut(  LCDDATA_0_1_n_Port , LCDDni_Pin  );
+     HAL_InitGpioAF (  SPI2_Port , SPI2_SCK_Pin   | SPI2_MOSI_Pin  , 0 , GPIO_Mode_AF_PP );
+     GPIO_InitTypeDef GPIO_InitStructure = {0};
+     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14;
+     GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
+     GPIO_Init( GPIOB, &GPIO_InitStructure);
+     HAL_InitGpioOut( SPI2_Port,  SPI2_NSS_Pin);
+     HAL_InitGpioOut( CRACH_Port, CRACH_Pin);
+     HAL_InitGpioOut( LDCDATA_2_3_E_REW_CD_LED_Port,   LCDLED_Pin);
+     HAL_InitGpioAF(  AOUT_Port, AOUT1_Pin   | AOUT2_Pin | AOUT3_Pin , GPIO_FullRemap_TIM9, GPIO_Mode_AF_PP );
+     HAL_InitGpioOut( DOUT_Port, DOUT_2_Pin | DOUT_3_Pin | DOUT_4_Pin);
+     HAL_InitGpioOut( DOUT1_Port, DOUT_1_Pin );
+     HAL_InitGpioOut( ELED_Port,ELED1_Pin | ELED2_Pin);
+     HAL_InitGpioIn( KL_Port ,KL1_Pin | KL2_Pin |  KL3_Pin | KL4_Pin | KL5_Pin  );
+     HAL_InitGpioIn( KL6_Port ,KL6_Pin   );
+     HAL_InitGpioIn( DIN_1_5_Port, DIN_1_Pin | DIN_2_Pin |DIN_3_Pin |DIN_4_Pin| DIN_5_Pin    );
+     DAC_SetChannel1Data( DAC_Align_12b_R, 0x00 );
+     HAL_SetBit(LDCDATA_2_3_E_REW_CD_LED_Port,  LCDLED_Pin);
+     HAL_InitGpioOut(RS485_EN_Port,  RS485_EN_Pin);
+     HAL_InitGpioAF(  RS485_Port  , RS485_RX_Pin   ,GPIO_FullRemap_USART4 ,   GPIO_Mode_IN_FLOATING );
+     HAL_InitGpioAF(  RS485_Port ,  RS485_TX_Pin    ,GPIO_FullRemap_USART4 ,  GPIO_Mode_AF_PP );
+     HAL_InitGpioAF(  UART_Port , TX1_Pin   ,0 ,  GPIO_Mode_AF_PP );
+     HAL_InitGpioOut(  I2C_EN_PORT  ,I2C_EN_PIN);
+     HAL_ResetBit(I2C_EN_PORT, I2C_EN_PIN);
+
+
+ }
+
+
+
+ __attribute__((section(".stext"))) void vInit_DeviceConfig( void )
 {
 
      MX_GPIO_Init();
@@ -62,50 +105,11 @@ void vInit_DeviceConfig( void )
      vDIN_DOUT_Init();
      InitEEPROM( HAL_SPI2 );
      HAL_WDTInit();
+    // HAL_TIMER_InitIt(TIMER6,20000,200,&rvvTIMER,1,5);
+   //  HAL_TiemrEneblae(TIMER6);
+    // printf("intit timer\r\n");
 
 }
 
 
-static void MX_GPIO_Init(void)
-{
-    HAL_InitGPO();
-    HAL_InitGpioAF( DAC0_Port, DAC0_Pin, 0, GPIO_Mode_AF_OD );
-    HAL_InitGpioAIN( AC_SENSE_PORT, AC_SENS1_| AC_SENS2_);
 
-
-    HAL_InitGpioAIN( AIN4_5_PORT , AIN5_Pin | AIN4_Pin );
-    HAL_InitGpioAIN( SEN1_POW_AIN1_3_PORT  , POWER_CONTROL | AIN3_Pin | AIN2_Pin | AIN1_Pin );
-
-    HAL_InitGpioOut(  LCDDATA_4_7_Port  ,  LCDDATA4_Pin | LCDDATA5_Pin | LCDDATA6_Pin | LCDDATA7_Pin );
-    HAL_InitGpioOut(  LCDDATA_0_1_n_Port , LCDDATA1_Pin | LCDDATA0_Pin );
-    HAL_InitGpioOut(  LCDRST_Port , LCDRST_Pin );
-    HAL_InitGpioOut(  LDCDATA_2_3_E_REW_CD_LED_Port , LCDDATA3_Pin | LCDDATA2_Pin );
-    HAL_InitGpioOut(  LDCDATA_2_3_E_REW_CD_LED_Port , LCDnRW_Pin | LCDCS_Pin | LCDLED_Pin );
-    HAL_InitGpioOut(  LDCDATA_2_3_E_REW_CD_LED_Port , LCDnE_Pin );
-    HAL_InitGpioOut(  LCDDATA_0_1_n_Port , LCDDni_Pin  );
-    HAL_InitGpioAF (  SPI2_Port , SPI2_SCK_Pin   | SPI2_MOSI_Pin  , 0 , GPIO_Mode_AF_PP );
-    GPIO_InitTypeDef GPIO_InitStructure = {0};
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_14;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
-    GPIO_Init( GPIOB, &GPIO_InitStructure);
-    HAL_InitGpioOut( SPI2_Port,  SPI2_NSS_Pin);
-    HAL_InitGpioOut( CRACH_Port, CRACH_Pin);
-    HAL_InitGpioOut( LDCDATA_2_3_E_REW_CD_LED_Port,   LCDLED_Pin);
-    HAL_InitGpioAF(  AOUT_Port, AOUT1_Pin   | AOUT2_Pin | AOUT3_Pin , GPIO_FullRemap_TIM9, GPIO_Mode_AF_PP );
-    HAL_InitGpioOut( DOUT_Port, DOUT_2_Pin | DOUT_3_Pin | DOUT_4_Pin);
-    HAL_InitGpioOut( DOUT1_Port, DOUT_1_Pin );
-    HAL_InitGpioOut( ELED_Port,ELED1_Pin | ELED2_Pin);
-    HAL_InitGpioIn( KL_Port ,KL1_Pin | KL2_Pin |  KL3_Pin | KL4_Pin | KL5_Pin  );
-    HAL_InitGpioIn( KL6_Port ,KL6_Pin   );
-    HAL_InitGpioIn( DIN_1_5_Port, DIN_1_Pin | DIN_2_Pin |DIN_3_Pin |DIN_4_Pin| DIN_5_Pin    );
-    DAC_SetChannel1Data( DAC_Align_12b_R, 0x00 );
-    HAL_SetBit(LDCDATA_2_3_E_REW_CD_LED_Port,  LCDLED_Pin);
-    HAL_InitGpioOut(RS485_EN_Port,  RS485_EN_Pin);
-    HAL_InitGpioAF(  RS485_Port  , RS485_RX_Pin   ,GPIO_FullRemap_USART4 ,   GPIO_Mode_IN_FLOATING );
-    HAL_InitGpioAF(  RS485_Port ,  RS485_TX_Pin    ,GPIO_FullRemap_USART4 ,  GPIO_Mode_AF_PP );
-    HAL_InitGpioAF(  UART_Port , TX1_Pin   ,0 ,  GPIO_Mode_AF_PP );
-    HAL_InitGpioOut(  I2C_EN_PORT  ,I2C_EN_PIN);
-    HAL_ResetBit(I2C_EN_PORT, I2C_EN_PIN);
-
-
-}

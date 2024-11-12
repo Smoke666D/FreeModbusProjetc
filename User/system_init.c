@@ -7,6 +7,7 @@
 #include "system_init.h"
 #include "hal_wdt.h"
 #include "user_process.h"
+#include "hal_timers.h"
 
 static void vDefaultTask( void  * argument );
 static void WCHNET_task(void *pvParameters);
@@ -86,7 +87,7 @@ void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer,
 }
 
 
-void TaskSuspend()
+__attribute__((section(".stext"))) void TaskSuspend()
 {
     vTaskSuspend( MPTCPTask_Handler  );
     vTaskSuspend(* getSerialTask());
@@ -95,7 +96,7 @@ void TaskSuspend()
     vTaskSuspend(* getConfigTaskHandle());
 }
 
-void vSYStaskInit ( void )
+__attribute__((section(".stext"))) void vSYStaskInit ( void )
 {
 
     ( * getConfigTaskHandle())
@@ -138,14 +139,14 @@ void vSYStaskInit ( void )
   return;
 }
 
-void vSYSeventInit ( void )
+__attribute__((section(".stext"))) void vSYSeventInit ( void )
 {
   *(xGetOSEvent() ) = xEventGroupCreateStatic(&xOSStateEventGroup );
   *(getSerialEvenGroup()) = xEventGroupCreateStatic(&xSerialStateEventGroup );
 }
 
 
-void vSYSqueueInit ( void )
+__attribute__((section(".stext"))) void vSYSqueueInit ( void )
 {
      *( xKeyboardQueue()) = xQueueCreateStatic( 16U, sizeof( KeyEvent ),ucQueueStorageArea, &xStaticQueue );
      * (xConfigSystemRxQueue()) = xQueueCreateStatic( 16U, sizeof( uint8_t ),ucRXQueueStorageArea, &xRXStaticQueue );
@@ -288,12 +289,19 @@ void vDefaultTask( void  * argument )
  *
  * @return  none
  */
+void rvvTIMER()
+{
+
+    printf("1 sec timeout\r\n");
+}
+
 void WCHNET_task(void *pvParameters)
 {
     TCP_STOP  = 0;
     DataModel_Init();
     vRTC_TASK_Init();
     xTaskNotifyGive( DefautTask_Handler );
+
     while(1)
     {
         if (TCP_STOP==0)

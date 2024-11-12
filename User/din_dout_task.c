@@ -71,7 +71,7 @@ void  vSetDoutState( OUT_NAME_TYPE ucCh, u8 BitVal )
        }
 }
 
-void vDIN_DOUT_Init()
+__attribute__((section(".stext"))) void vDIN_DOUT_Init()
 {
     DoutCinfig_t  DOUT_CONFIG;
     DinConfig_t DIN_CONFIG;
@@ -84,7 +84,6 @@ void vDIN_DOUT_Init()
     eDinConfigWtihStruct(INPUT_3,&DIN_CONFIG);
     eDinConfigWtihStruct(INPUT_4,&DIN_CONFIG);
     eDinConfigWtihStruct(INPUT_5,&DIN_CONFIG);
-
     DOUT_CONFIG.setPortCallback =&vSetDoutState;
     DOUT_CONFIG.ucActiveLevel = DOUT_ACTIVE_CONFIG_NEGATIVE;
     eDOUTConfigWtihStruct( OUT_1, &DOUT_CONFIG);
@@ -118,7 +117,7 @@ BitState_t fPortState (uint8_t i)
 
 
 
-void vKeyboarInit()
+__attribute__((section(".stext"))) void vKeyboarInit()
 {
     KeybaordStruct_t KeyboardInit;
     KeyboardInit.KEYBOARD_COUNT    = KEY_COUNT;
@@ -136,7 +135,6 @@ void vKeyboarInit()
 void vKeyboardTask(void  * argument )
 {
     vKeyboarInit();
-
     for(;;)
     {
        vTaskDelay( HW_LIB_GetKeyboardPeriod() );

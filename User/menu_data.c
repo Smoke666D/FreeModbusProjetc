@@ -245,9 +245,10 @@ static xScreenObjet  CDVSettingsScreen5[]=
 static xScreenObjet  CDVSettingsScreen6[]=
 {
         {0,15,LINE1,0,READ_DATA,"Настройки      ",    SETTING8_TITLE_ID},
-        {0,2,25,0,TEXT_STRING,"Расчет потока",          0},
-        {0,2,37,0,WRITE_DATA,(char*)KOOFKPS_TEXT,       KOOFKPS_ID},
-        {1,2,50,0,WRITE_DATA,"F канала, м^2",           F_CHANNEL_ID},
+        {0,2,25,0,WRITE_DATA,"К.П.С канал 1",       KOOFKPS_ID},
+        {0,2,37,0,WRITE_DATA,"F кан. 1, м^2",     F_CHANNEL_ID},
+        {0,2,50,0,WRITE_DATA,"К.П.С канал 2",       KOOFKPS2_ID},
+        {1,2,62,0,WRITE_DATA,"F кан. 2, м^2",     F_CHANNEL2_ID},
 };
 
 
@@ -480,6 +481,7 @@ void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state)
     {
         case BP_CONFIG :
             //Режим ВР
+            CDVSettingsScreen6[2].last = 1;
             xScreenDCV[8].pDownScreenSet = 11;
             xScreenDCV[10].pUpScreenSet   = 9;
             switch (analog_state)
@@ -544,6 +546,7 @@ void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state)
             xScreenDCV[PI2_SCREEN].pScreenCurObjets = CDVSettingsPB;
             break;
        case ONE_CH:
+           CDVSettingsScreen6[2].last = 1;
            CDVInfoScreen1[3].last =1;
            xScreenDCV[8].pDownScreenSet = 11;
            xScreenDCV[10].pUpScreenSet   = 9;
@@ -594,6 +597,7 @@ void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state)
            CDVSettingsScreen5[3].last = 1;
            break;
     case TWO_CH:
+        CDVSettingsScreen6[2].last = 0;
         CDVInfoScreen1[3].last =0;
         xScreenDCV[8].pDownScreenSet  = 10;
         xScreenDCV[10].pUpScreenSet   = 10;

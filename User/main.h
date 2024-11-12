@@ -86,7 +86,7 @@ EventGroupHandle_t * xGetOSEvent();
 //#define TIM3_UP_ENABLE 0
 #define TIM4_UP_ENABLE
 #define TIM5_UP_ENABLE
-//#define TIM6_UP_ENABLE 0
+#define TIM6_UP_ENABLE 0
 //#define TIM7_UP_ENABLE 0
 #define TIM8_UP_ENABLE
 //#define TIM9_UP_ENABLE 0

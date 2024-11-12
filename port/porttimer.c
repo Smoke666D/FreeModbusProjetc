@@ -41,7 +41,9 @@ BOOL xMBPortTimersInit(USHORT usTim1Timerout50us)
 
 void vMBPortTimersEnable()
 {
+
 	HAL_TiemrEneblae(TIMER4);
+
 }
 
 

@@ -416,6 +416,8 @@ void Channel2Reg(  float setpoint )
         USER_AOUT_SET(DAC2,PID_Out);
     }
     else if (ch_count  == 0) vBP();
+    else
+        USER_AOUT_SET(DAC2,0);
 }
 
 

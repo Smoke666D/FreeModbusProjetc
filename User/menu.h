@@ -114,9 +114,10 @@
 #define INPUT_SIGNAL_MODE_ID    ( BP_SZIE_ID     + 1 )         //34
 #define ROOM_ACTIVE_CHANNEL_ID  ( INPUT_SIGNAL_MODE_ID     + 1 )  //35
 #define ROOM_SENSOR_TYPE_ID     ( ROOM_ACTIVE_CHANNEL_ID     + 1 )//36
+#define F_CHANNEL2_ID            (ROOM_SENSOR_TYPE_ID      + 1 )    //37
+#define KOOFKPS2_ID             ( F_CHANNEL2_ID          + 1 )    //38
 
-
-#define COOF_P_SENS_ID          ( ROOM_SENSOR_TYPE_ID          + 1 )    //35
+#define COOF_P_SENS_ID          ( KOOFKPS2_ID          + 1 )    //35
 #define COOF_I_SENS_ID          ( COOF_P_SENS_ID           + 1 ) //36
 #define CDV_MODE_ID             ( COOF_I_SENS_ID     + 1 )    //47
 #define SENS_REG_ID             ( CDV_MODE_ID           + 1 )

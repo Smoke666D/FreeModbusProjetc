@@ -15,7 +15,7 @@
 
 #define SW_V                 2
 #define SW_V2                4
-#define SW_V3                0
+#define SW_V3                5
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -88,9 +88,9 @@
 #define MAX_SET3               ( MIN_SET3  + sizeof(uint32_t) )
 #define SENS_OFS3              ( MAX_SET3  + sizeof(uint32_t) )
 #define SENS_SETTING3          ( SENS_OFS1  + sizeof(uint32_t) )
-#define F_CHANNEL             ( SENS_SETTING3  + sizeof(uint32_t) )
-#define F_CHANNEL2             ( F_CHANNEL  + sizeof(uint32_t) )
-#define BP_REG_TYPE           ( F_CHANNEL2         + sizeof(uint32_t) )
+#define F_CHANNEL              ( SENS_SETTING3  + sizeof(uint32_t) )
+#define F_CHANNEL2             ( F_CHANNEL        + sizeof(uint32_t) )
+#define BP_REG_TYPE            ( F_CHANNEL2       + sizeof(uint32_t) )
 #define BP_SIZE               ( BP_REG_TYPE       + sizeof(uint8_t) )
 #define SETTING_MAX           ( BP_SIZE           + sizeof(uint8_t) )
 #define SETTING_MIN           ( SETTING_MAX       + sizeof(uint32_t) )

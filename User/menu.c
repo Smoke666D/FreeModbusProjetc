@@ -438,14 +438,11 @@ void MenuSetDevice()
             break;
         case DEV_CAV_VAV_BP:
             pMenu = xScreenDCV;
-
-                SetPID2Screen((CHANNEL_COUNT_t)getReg8(CDV_BP_CH_COUNT),getReg8(INPUT_CONTROL_TYPE));
-
-
             if (getReg8(CDV_BP_CH_COUNT) == 0)
                                      SetBPSetting( 1);
                                  else
                                      SetBPSetting(0);
+            SetPID2Screen((CHANNEL_COUNT_t)getReg8(CDV_BP_CH_COUNT),getReg8(INPUT_CONTROL_TYPE));
             switch (getReg8(INPUT_CONTROL_TYPE))
                                                          {
                                                              case 0:
@@ -920,6 +917,8 @@ static const u16 MenuCDV_BPRegMap[]=
                                  INPUT_CONTROL_TYPE,        //34
                                  ROOM_CHANNEL,              //35
                                  AIN1_TYPE,                 //36
+                                 F_CHANNEL2,
+                                 KOOFKPS2,
                          };
 
 
@@ -1371,8 +1370,9 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             {
                 if ( command == CMD_SAVE_EDIT )
                 {
-                    SetPID2Screen((CHANNEL_COUNT_t)edit_data_buffer_byte,getReg8(INPUT_CONTROL_TYPE));
                     SetBPSetting((edit_data_buffer_byte == 0) ? 1 : 0);
+                    SetPID2Screen((CHANNEL_COUNT_t)edit_data_buffer_byte,getReg8(INPUT_CONTROL_TYPE));
+
                 }
                 vByteDataEdit(0,reg_id,command,0,2,0,1);
             }
@@ -1405,6 +1405,47 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                     sprintf(str,"%03i",( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte);
             break;
             case OFFSET2_ID:
+
+                switch (command)
+                                {
+                                     case CMD_START_EDIT:
+                                           edit_data_buffer_float= DataModelGetCDVSettings( getRegFloat(reg_id));
+                                           start_edit_flag = 1;
+                                           cur_edit_index = 2;
+                                           break;
+                                    case CMD_SAVE_EDIT:
+                                            temp_float = edit_data_buffer_float;
+                                            switch ( getReg8(MEASERING_UNIT) )
+                                            {
+                                                case 0:
+                                                        temp_float = DataModel_SetLToPressere(temp_float);
+                                                        break;
+                                                case 1:
+                                                        temp_float = DataModel_SetVToPressere(temp_float);
+                                                        break;
+                                                 default:
+                                                     break;
+                                             }
+                                             printf("data %f\r\n",temp_float);
+                                             saveRegFloat( reg_id, temp_float);
+                                             start_edit_flag = 0;
+                                             break;
+                                        case CMD_READ:
+                                            temp_float = (DataModelGetCDVSettings(getRegFloat(reg_id)));
+                                             sprintf(str,"%+07.1f",temp_float);
+                                             break;
+                                        case CMD_EDIT_READ:
+
+                                             sprintf(str,"%+07.1f",edit_data_buffer_float );
+                                             break;
+                                        default:
+                                             temp_float  = DataModelGetCDVSettings(2500);
+                                             vFloatDataEdit(reg_id, command,4,1,temp_float ,-temp_float);
+                                             break;
+                                    }
+
+                break;
+
             case SETTING_MIN_ID:
             case SETTING_AVER_ID:
             case SETTING_MAX_ID:
@@ -1435,12 +1476,12 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                              start_edit_flag = 0;
                              break;
                         case CMD_READ:
-                             temp_int  = (int32_t)(DataModelGetCDVSettings(getRegFloat(reg_id)))*10;
-                             sprintf(str,"%06.1f",temp_int/10.0);
+                            temp_float = (DataModelGetCDVSettings(getRegFloat(reg_id)));
+                             sprintf(str,"%06.1f",temp_float);
                              break;
                         case CMD_EDIT_READ:
-                             temp_int = (int32_t)(edit_data_buffer_float*10.0);
-                             sprintf(str,"%06.1f",temp_int/10.0 );
+                            // temp_int = (int32_t)(edit_data_buffer_float*10.0);
+                             sprintf(str,"%06.1f",edit_data_buffer_float );
                              break;
                         default:
                              temp_float  = DataModelGetCDVSettings(2500);
@@ -1449,11 +1490,18 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                     }
                     break;
             case F_CHANNEL_ID:
+            case F_CHANNEL2_ID:
                     if ( command > CMD_EDIT_READ )
-                            vFloatDataEdit(reg_id, command,1,4,9.999,0.0);
+                            vFloatDataEdit(reg_id, command,1,4,9.999,0);
                     else
                         sprintf(str,"%6.4f",( command == CMD_READ ) ? getRegFloat(reg_id) : edit_data_buffer_float);
                     break;
+            case KOOFKPS2_ID:
+                          if ( command > CMD_EDIT_READ )
+                              vFloatDataEdit(reg_id, command,6,2,999.99,0);
+                          else
+                              sprintf(str,"%07.2f", ( command == CMD_READ ) ? getRegFloat(reg_id) :  edit_data_buffer_float );
+                          break;
             case SENSOR3_OFFSET_ID:
             case SENSOR2_OFFSET_ID:
             case SENSOR1_OFFSET_ID:
@@ -1728,9 +1776,15 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                      strcpy(str,ViewErrorString[error_shif]);
                  }
                  break;
+             case KOOFKPS_ID:
+                              if ( command > CMD_EDIT_READ )
+                                  vFloatDataEdit(reg_id, command,6,2,999.99,0);
+                              else
+                                  sprintf(str,"%07.2f", ( command == CMD_READ ) ? getRegFloat(reg_id) :  edit_data_buffer_float );
+                              break;
              case COOF_P_ID:
              case COOF_I_ID:
-             case KOOFKPS_ID:
+
                  if ( command > CMD_EDIT_READ )
                      vFloatDataEdit(reg_id, command,6,2,999.99,-999.99);
                  else
@@ -1855,6 +1909,8 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                            strcpy(str,"    Перезагрузить?    ");
                        break;
                    case CMD_START_EDIT:
+                        SaveBeforePowerOff();
+                        vTaskDelay(100);
                         NVIC_SystemReset();
                         break;
                   default:

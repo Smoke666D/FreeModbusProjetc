@@ -13,7 +13,7 @@
 u8 DATA_MODEL_REGISTER[DATA_MODEL_REGISTERS];
 
 
-DATA_MODEL_INIT_t DataModel_Init()
+__attribute__((section(".stext"))) DATA_MODEL_INIT_t DataModel_Init()
 {
     memset(DATA_MODEL_REGISTER,0,EEPROM_REGISTER_COUNT);
     if (   ReadEEPROMData(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ,2) == EEPROM_OK)
@@ -52,7 +52,7 @@ DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[SENSOR_COUNT]       =  TIME_5_0;
 
                setRegFloat(KOOFKPS , 36.0);
-               setRegFloat(KOOFKPS2 , 36.0);
+               setRegFloat(KOOFKPS2 , 35.0);
                setRegFloat(COOF_I,10.0);
                setRegFloat(COOF_P,5.0);
                setRegFloat(COOF_I1,15.0);
@@ -63,8 +63,7 @@ DATA_MODEL_INIT_t DataModel_Init()
                setRegFloat(COOF_PH,5.0);
                setRegFloat(COOF_ICO2,15.0);
                setRegFloat(COOF_PCO2,5.0);
-               setRegFloat(F_CHANNEL,0.0314);
-               setRegFloat(F_CHANNEL2,0.0314);
+
                setReg16(SETTING1, 900);
                setReg16(SETTING2, 600);
                setReg16(IP_PORT,502);
@@ -86,9 +85,11 @@ DATA_MODEL_INIT_t DataModel_Init()
                setRegFloat(SENS_SETTING2,20);
                setRegFloat(MIN_SET3, 0);
                setRegFloat(MAX_SET3,40);
-
                setRegFloat(SENS_SETTING3,20);
+               setRegFloat(F_CHANNEL,0.0314);
+               setRegFloat(F_CHANNEL2,0.0314);
                DATA_MODEL_REGISTER[ROOM_CHANNEL]       =  1;
+               DATA_MODEL_REGISTER[INPUT_CONTROL_TYPE] = 0;
                if (WriteEEPROM(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 1000 ,2) == EEPROM_OK) printf("EEPROMwtiye\r\n");
                ReadEEPROMData(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ,2);
                return (NEW_INIT);
@@ -284,7 +285,10 @@ float DataModel_SetLToPressere(float L)
 {
    float K = getRegFloat(KOOFKPS);
    if ( ( L!=0 ) && ( K!=0 ) )
-       return pow(L/K,2);
+   {
+        K = pow(( L>0 ? L : L*-1)/K,2);
+       return L >= 0 ? K : K*-1;
+   }
   else
       return 0;
 
@@ -303,7 +307,19 @@ float DataModel_SetVToPressere(float V)
 
 float  DataModel_GetPressureToL(float pressure)
 {
-    return (float) sqrt((float)pressure)*getRegFloat(KOOFKPS) ;
+   uint8_t sign =0;
+   float temp_float;
+   if (pressure < 0)
+   {
+       sign = 1;
+
+   }
+    if (pressure != 0)
+    {
+        temp_float =(float) sqrt(  ( pressure > 0)? (float)pressure: pressure*-1)*getRegFloat(KOOFKPS) ;
+        return (sign)? temp_float*-1: temp_float;
+    }
+    else return 0;
 }
 
 float  DataModel_GetPressureToV(float pressure)

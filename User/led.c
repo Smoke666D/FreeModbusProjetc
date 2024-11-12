@@ -140,7 +140,7 @@ static void LEDCall()
 /*
  * Функция инициализации дилплея и бибилиотеки u8g2
  */
-void vLCDInit( TimerName_t TimerName )
+__attribute__((section(".stext"))) void vLCDInit( TimerName_t TimerName )
 {
     HAL_TIMER_InitIt(TimerName,700000,1,&LEDCall,0,1);
     HAL_ResetBit( LDCDATA_2_3_E_REW_CD_LED_Port , LCDnRW_Pin);
