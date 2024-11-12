@@ -44,25 +44,32 @@ u8 LED_BufferCompare()
    return (memcmp(screen_buufer,u8g2.tile_buf_ptr,SCREEN_BUFFER_SIZE ));
 }
 
-void LCD_task(void *pvParameters)
+
+__attribute__((section(".stext"))) static void vLCDHWInit()
 {
     RESET_ENABLE;
-    CS1_ENABLE;
-    HAL_ResetBit(LCDRST_Port,LCDRST_Pin);
-    vTaskDelay(10);
-    HAL_SetBit(LCDRST_Port,LCDRST_Pin);
-    vTaskDelay(10);
-    CS2_ENABLE;
-    HAL_ResetBit(LCDRST_Port,LCDRST_Pin);
-    vTaskDelay(10);
-    HAL_SetBit(LCDRST_Port,LCDRST_Pin);
-    vTaskDelay(10);
-    CS1_ENABLE;
-    WriteCommand(0x3F);
-    vTaskDelay(1);
-    CS2_ENABLE;
-    WriteCommand(0x3F);
-    vTaskDelay(1);
+       CS1_ENABLE;
+       HAL_ResetBit(LCDRST_Port,LCDRST_Pin);
+       vTaskDelay(10);
+       HAL_SetBit(LCDRST_Port,LCDRST_Pin);
+       vTaskDelay(10);
+       CS2_ENABLE;
+       HAL_ResetBit(LCDRST_Port,LCDRST_Pin);
+       vTaskDelay(10);
+       HAL_SetBit(LCDRST_Port,LCDRST_Pin);
+       vTaskDelay(10);
+       CS1_ENABLE;
+       WriteCommand(0x3F);
+       vTaskDelay(1);
+       CS2_ENABLE;
+       WriteCommand(0x3F);
+       vTaskDelay(1);
+
+}
+
+void LCD_task(void *pvParameters)
+{
+    vLCDHWInit();
     while (1)
     {
            ulTaskNotifyTakeIndexed( 0, pdTRUE, portMAX_DELAY );

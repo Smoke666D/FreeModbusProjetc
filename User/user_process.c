@@ -445,9 +445,12 @@ float vAnalogSensorFSM( )
 
 void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
 {
-    vCDV_SetpointCheck( &dev->start_timeout);
-    ErrorSensorCheck(&error_state);
-    vCheckDoubleChannelAlarm(&error_state);
+    if (task_fsm != USER_PROCESS_ZERO_CALIB)
+    {
+        vCDV_SetpointCheck( &dev->start_timeout);
+        ErrorSensorCheck(&error_state);
+        vCheckDoubleChannelAlarm(&error_state);
+    }
     switch (task_fsm)
     {
             case USER_PROCCES_IDLE:
@@ -540,14 +543,14 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                         {
                             dev->start_timeout = 0;
                             task_fsm = USER_PROCCES_WORK;
+                            eSetDUT(OUT_2, 0);
                         }
                     }
                 }
                 else
                 {
                     (dev->start_timeout)++;
-                    if (getReg8(CDV_BP_CH_COUNT) >1 )  USER_AOUT_SET(DAC1,0);
-                    USER_AOUT_SET(DAC2,0);
+                     eSetDUT(OUT_2, 1);
                 }
                 break;
             case USER_PROCESS_ALARM:
