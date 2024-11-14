@@ -180,7 +180,7 @@ float GetSensor(u8 * after_zone, INPUT_SENSOR_t inp_sensor)
    }
    else
    {
-       temp_float = getAIN(getAIN(SENS1));
+       temp_float = getAIN(SENS1);
    }
 
   return (temp_float);
@@ -310,11 +310,11 @@ void ErrorSensorCheck( u8 * error)
 
 float ComputeSetPoint()
 {
-    float temp_float = 0;
+    double temp_float = 0;
     uint16_t min = getReg16(SETTING_MIN);
     uint16_t delta = getReg16(SETTING_MAX) - min;
     u8 channel = getReg8(ROOM_CHANNEL)-1;
-    float data = getAIN(SensName[channel]);
+    double data = getAIN(SensName[channel]);
     switch (getReg8( SensTypeAddr[channel]))
     {
         case 0:
@@ -327,7 +327,7 @@ float ComputeSetPoint()
             temp_float =( (data -4.0)/18.0*delta) + min;
             break;
     }
-    return (temp_float);
+    return (float)(temp_float);
 }
 
 static float AOUTDATA[3]={0,0,0};

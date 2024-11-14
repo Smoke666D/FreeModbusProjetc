@@ -109,15 +109,18 @@
 #define OFFSET2_ID              (PRIOR_SENSOR_ID      + 1 )      //29
 #define COOF_P_1_ID             ( OFFSET2_ID            + 1 )    //30
 #define COOF_I_1_ID             ( COOF_P_1_ID           + 1 )    //31
-#define BP_REG_TYPE_ID          ( COOF_I_1_ID     + 1 )          //32
+#define COOF_P_CAV_ID           ( COOF_I_1_ID            + 1 )    //30
+#define COOF_I_CAV_ID           ( COOF_P_CAV_ID           + 1 )    //31
+#define BP_REG_TYPE_ID          ( COOF_I_CAV_ID     + 1 )          //32
 #define BP_SZIE_ID              ( BP_REG_TYPE_ID      + 1 )        //33
 #define INPUT_SIGNAL_MODE_ID    ( BP_SZIE_ID     + 1 )         //34
 #define ROOM_ACTIVE_CHANNEL_ID  ( INPUT_SIGNAL_MODE_ID     + 1 )  //35
 #define ROOM_SENSOR_TYPE_ID     ( ROOM_ACTIVE_CHANNEL_ID     + 1 )//36
 #define F_CHANNEL2_ID            (ROOM_SENSOR_TYPE_ID      + 1 )    //37
 #define KOOFKPS2_ID             ( F_CHANNEL2_ID          + 1 )    //38
+#define KOOFKPS1_ID             ( KOOFKPS2_ID          + 1 )    //35
 
-#define COOF_P_SENS_ID          ( KOOFKPS2_ID          + 1 )    //35
+#define COOF_P_SENS_ID          ( KOOFKPS1_ID          + 1 )    //35
 #define COOF_I_SENS_ID          ( COOF_P_SENS_ID           + 1 ) //36
 #define CDV_MODE_ID             ( COOF_I_SENS_ID     + 1 )    //47
 #define SENS_REG_ID             ( CDV_MODE_ID           + 1 )

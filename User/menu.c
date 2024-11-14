@@ -15,6 +15,7 @@
 #include "hw_lib_din.h"
 #include "system_types.h"
 #include "user_process_service.h"
+#include "math.h"
 
 
  __attribute__((section(".stext"))) static const unsigned char rcp0606536715761_bits[] = {
@@ -145,13 +146,12 @@ static void vDraw( xScreenObjet * pScreenDraw);
 u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 * len);
 
 
-void vDrawBitmap()
+ void vDrawBitmap()
 {
     u8g2_DrawXBM(&u8g2,0,0,128,58,rcp0606536715761_bits);
 }
 
-
-void vMenuInit(  )
+ void vMenuInit(  )
 {
    pKeyboard = *( xKeyboardQueue());
 }
@@ -521,12 +521,14 @@ void vByteDataEdit(u8 size, u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_ind
 }
 
 float edit_data_buffer_float;
-static const float coof_float[]={0.0001,0.001,0.01,0.1,1.0,10.0,100.0,1000.0,10000.0};
+static const float coof_float[]         ={0.0001,0.0010, 0.0100, 0.1000,  1.0000,  10.0,100.0,1000.0,10000.0};
+
 
 void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8 min_index, float max_data, float min_data )
 {
     u8 offset;
     u8 temp_index;
+
     switch ( min_index )
     {
        case 0:
@@ -545,7 +547,6 @@ void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8
            offset = 0;
            break;
     }
-
     switch (command)
     {
         case CMD_START_EDIT:
@@ -558,11 +559,11 @@ void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8
             start_edit_flag = 0;
              break;
         case CMD_NEXT_EDIT:
-             if (++cur_edit_index >=max_index + min_index) cur_edit_index = 0;
+             if (++cur_edit_index >= (max_index + min_index +1 )) cur_edit_index = 0;
              if (cur_edit_index == min_index) cur_edit_index++;
              break;
         case CMD_PREV_EDIT:
-            if (cur_edit_index == 0) cur_edit_index = max_index+1; else cur_edit_index--;
+            if (cur_edit_index == 0) cur_edit_index = max_index+ min_index ; else cur_edit_index--;
             if (cur_edit_index == min_index) cur_edit_index--;
                break;
         case CMD_INC:
@@ -570,7 +571,12 @@ void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8
             if (temp_index > min_index)  temp_index--;
 
             if ((edit_data_buffer_float + coof_float[temp_index]) <=  max_data )
-                 edit_data_buffer_float = edit_data_buffer_float+ coof_float [temp_index + offset];
+            {
+                double tf = edit_data_buffer_float;
+
+                tf = tf + coof_float[temp_index + offset];
+                edit_data_buffer_float = tf;
+            }
              else
                  edit_data_buffer_float = max_data;
              break;
@@ -578,7 +584,13 @@ void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8
             temp_index = cur_edit_index;
             if (temp_index > min_index)  temp_index--;
              if (  (edit_data_buffer_float - min_data) >=  coof_float[temp_index] )
-                 edit_data_buffer_float = edit_data_buffer_float-coof_float[temp_index + offset];
+             {
+                 double tf = edit_data_buffer_float;
+
+                 tf = tf- coof_float[temp_index + offset];
+                 edit_data_buffer_float = tf;
+
+             }
              else
                  edit_data_buffer_float = min_data;
              break;
@@ -912,6 +924,8 @@ static const u16 MenuCDV_BPRegMap[]=
                                  OFFSET_CH2,                //29
                                  COOF_P1,                   //30
                                  COOF_I1,                   //31
+                                 COOF_P_CAV,
+                                 COOF_I_CAV,
                                  BP_REG_TYPE,               //32
                                  BP_SIZE,                   //33
                                  INPUT_CONTROL_TYPE,        //34
@@ -919,6 +933,7 @@ static const u16 MenuCDV_BPRegMap[]=
                                  AIN1_TYPE,                 //36
                                  F_CHANNEL2,
                                  KOOFKPS2,
+                                 KOOFKPS1,
                          };
 
 
@@ -1129,9 +1144,9 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                     temp_int = GetPIDSensorIndex();
                     reg_id = (data_id == COOF_P_SENS_ID) ? SensorPRegMap[temp_int] : SensorIRegMap[temp_int];
                     if ( command > CMD_EDIT_READ )
-                        vFloatDataEdit(reg_id, command,6,2,999.99,-999.99);
+                        vFloatDataEdit(reg_id, command,6,2,999.99,0);
                     else
-                        sprintf(str,"%+07.2f", ( command == CMD_READ )? getRegFloat(reg_id): edit_data_buffer_float );
+                        sprintf(str,"%07.2f", ( command == CMD_READ )? getRegFloat(reg_id): edit_data_buffer_float );
             break;
                 case CDV_MODE_ID:
                     strcpy(str,CDV_MODE_STRING[getStateDCV()]);
@@ -1238,13 +1253,15 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                   switch (command)
                   {
                        case CMD_READ:
-                            if ((USER_GetProccesState() == USER_PROCCES_WORK))
-                                 strcpy(str,"Откалибравать 0?");
-                            else
+                            if (USER_GetProccesState() == USER_PROCESS_ZERO_CALIB)
                             {
                                 if (SelectEditFlag )  strcpy(str,"Отменить калиборвку?");
-                                else                  strcpy(str,"Калиборвка...");
+                                else                  strcpy(str,"Калибровка...");
 
+                            }
+                            else
+                            {
+                                strcpy(str,"Откалибровать 0?");
                             }
                             break;
                       case CMD_START_EDIT:
@@ -1339,10 +1356,12 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
             break;
         case COOF_P_1_ID:
         case COOF_I_1_ID:
-          if ( command > CMD_EDIT_READ )
-              vFloatDataEdit(reg_id, command,6,2,999.99,-999.99);
+        case COOF_P_CAV_ID:
+        case COOF_I_CAV_ID:
+            if ( command > CMD_EDIT_READ )
+              vFloatDataEdit(reg_id, command,4,2,999.99,0);
           else
-              sprintf(str,"%+07.2f", ( command == CMD_READ )? getRegFloat(reg_id): edit_data_buffer_float );
+              sprintf(str,"%07.2f", ( command == CMD_READ )? getRegFloat(reg_id): edit_data_buffer_float );
               break;
         case ZERO_POINT_TIMEOUT_ID:
             if ( command > CMD_EDIT_READ )
@@ -1476,7 +1495,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                              start_edit_flag = 0;
                              break;
                         case CMD_READ:
-                            temp_float = (DataModelGetCDVSettings(getRegFloat(reg_id)));
+                             temp_float = (DataModelGetCDVSettings(getRegFloat(reg_id)));
                              sprintf(str,"%06.1f",temp_float);
                              break;
                         case CMD_EDIT_READ:
@@ -1497,8 +1516,9 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                         sprintf(str,"%6.4f",( command == CMD_READ ) ? getRegFloat(reg_id) : edit_data_buffer_float);
                     break;
             case KOOFKPS2_ID:
+            case KOOFKPS1_ID:
                           if ( command > CMD_EDIT_READ )
-                              vFloatDataEdit(reg_id, command,6,2,999.99,0);
+                              vFloatDataEdit(reg_id, command,4,2,999.99,0);
                           else
                               sprintf(str,"%07.2f", ( command == CMD_READ ) ? getRegFloat(reg_id) :  edit_data_buffer_float );
                           break;
@@ -1777,18 +1797,17 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                  }
                  break;
              case KOOFKPS_ID:
-                              if ( command > CMD_EDIT_READ )
-                                  vFloatDataEdit(reg_id, command,6,2,999.99,0);
-                              else
-                                  sprintf(str,"%07.2f", ( command == CMD_READ ) ? getRegFloat(reg_id) :  edit_data_buffer_float );
-                              break;
+                 if ( command > CMD_EDIT_READ )
+                    vFloatDataEdit(reg_id, command,4,2,999.99,0);
+                 else
+                   sprintf(str,"%07.2f", ( command == CMD_READ ) ? getRegFloat(reg_id) :  edit_data_buffer_float );
+                   break;
              case COOF_P_ID:
              case COOF_I_ID:
-
                  if ( command > CMD_EDIT_READ )
-                     vFloatDataEdit(reg_id, command,6,2,999.99,-999.99);
+                     vFloatDataEdit(reg_id, command,4,2,999.99,-999.99);
                  else
-                     sprintf(str,"%+07.2f", ( command == CMD_READ ) ? getRegFloat(reg_id) :  edit_data_buffer_float );
+                     sprintf(str,"%+08.2f", ( command == CMD_READ ) ? getRegFloat(reg_id) :  edit_data_buffer_float );
                  break;
              case SENS_1_RAW_ID:
              case SENS_2_RAW_ID:

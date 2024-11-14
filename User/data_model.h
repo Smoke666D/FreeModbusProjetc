@@ -14,8 +14,8 @@
 
 
 #define SW_V                 2
-#define SW_V2                4
-#define SW_V3                5
+#define SW_V2                5
+#define SW_V3                0
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -57,7 +57,9 @@
 #define RESURSE               ( SENSOR2_ZERO + sizeof(uint16_t) )
 #define COOF_I                ( RESURSE + sizeof(uint8_t)  )
 #define COOF_P                ( COOF_I + sizeof(uint32_t) )
-#define COOF_I1               ( COOF_P + sizeof(uint32_t))
+#define COOF_I_CAV            ( COOF_P + sizeof(uint32_t)  )
+#define COOF_P_CAV            ( COOF_I_CAV + sizeof(uint32_t) )
+#define COOF_I1               ( COOF_P_CAV + sizeof(uint32_t))
 #define COOF_P1               ( COOF_I1 + sizeof(uint32_t) )
 #define COOF_IT               ( COOF_P1 + sizeof(uint32_t))
 #define COOF_PT               ( COOF_I1 + sizeof(uint32_t) )
@@ -66,7 +68,8 @@
 #define COOF_IH               ( COOF_PCO2 + sizeof(uint32_t))
 #define COOF_PH               ( COOF_IH + sizeof(uint32_t) )
 #define KOOFKPS               ( COOF_PH + sizeof(uint32_t))
-#define KOOFKPS2              ( KOOFKPS + sizeof(uint32_t))
+#define KOOFKPS1              ( KOOFKPS + sizeof(uint32_t))
+#define KOOFKPS2              ( KOOFKPS1 + sizeof(uint32_t))
 #define SETTING1              ( KOOFKPS2 + sizeof(uint32_t))
 #define SETTING2              ( SETTING1 + sizeof(uint16_t) )
 #define AFTER_ZONE_SETTING    ( SETTING2 + sizeof(uint16_t) )

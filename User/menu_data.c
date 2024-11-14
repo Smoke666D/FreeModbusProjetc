@@ -111,7 +111,7 @@ static xScreenObjet const SettingsScreen7[]=
         {0,2,25,0,TEXT_STRING,"Текущий перепад давл.",  0},
         {0,2,37,0,READ_DATA,"Вентилятор",               SENS_1_RAW_ID},
         {0,2,50,0,READ_DATA,"Фильтр",                   SENS_2_RAW_ID},
-        {1,2,62,0,WRITE_DATA,"Откалибравать 0",         ZERO_CALIBRATE_ID },
+        {1,2,62,0,WRITE_DATA,"Откалибровать 0",         ZERO_CALIBRATE_ID },
 };
 
 static xScreenObjet const SettingsScreen8[]=
@@ -245,7 +245,7 @@ static xScreenObjet  CDVSettingsScreen5[]=
 static xScreenObjet  CDVSettingsScreen6[]=
 {
         {0,15,LINE1,0,READ_DATA,"Настройки      ",    SETTING8_TITLE_ID},
-        {0,2,25,0,WRITE_DATA,"К.П.С канал 1",       KOOFKPS_ID},
+        {0,2,25,0,WRITE_DATA,"К.П.С канал 1",       KOOFKPS1_ID},
         {0,2,37,0,WRITE_DATA,"F кан. 1, м^2",     F_CHANNEL_ID},
         {0,2,50,0,WRITE_DATA,"К.П.С канал 2",       KOOFKPS2_ID},
         {1,2,62,0,WRITE_DATA,"F кан. 2, м^2",     F_CHANNEL2_ID},
@@ -360,8 +360,8 @@ static xScreenObjet  CDVSettingsPI1[]=
         {0,15,LINE1,0,READ_DATA,"Настройки     ",  SETTING10_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"ПИ регулятор ", 0},
         {0,2,37,0,TEXT_STRING,"Ведущий канал 1.",0},
-        {0,2,50,0,WRITE_DATA,"Коэф. П",COOF_P_ID },
-        {1,2,62,0,WRITE_DATA,"Коэф. И",COOF_I_ID },
+        {0,2,50,0,WRITE_DATA,"Коэф. П",COOF_P_CAV_ID },
+        {1,2,62,0,WRITE_DATA,"Коэф. И",COOF_I_CAV_ID },
 };
 static xScreenObjet const CDVSettingsPI2[]=
 {

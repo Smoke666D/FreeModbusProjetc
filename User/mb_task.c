@@ -175,6 +175,7 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define CDV_KOOF_K_2            262
 #define CDV_F_CHANNEL2          264
 
+
 #define CDV_COUNT             ( CDV_CH_COUNT_MB  - CDV_F_CHANNEL2  + 2)
 
 #define CDV_FACT_1              200
@@ -288,12 +289,12 @@ static const u16 FMCH_REGS_MAP[] ={
 
 static const u16 CDV_REGS_MAP[] = {
                                                CDV_BP_CH_COUNT,  //0
-                                               KOOFKPS,          //1
-                                               KOOFKPS,          //2
-                                               COOF_P,           //3
-                                               COOF_P,           //4
-                                               COOF_I,           //5
-                                               COOF_I,           //6
+                                               KOOFKPS1,          //1
+                                               KOOFKPS1,          //2
+                                               COOF_P_CAV,           //3
+                                               COOF_P_CAV,           //4
+                                               COOF_I_CAV,           //5
+                                               COOF_I_CAV,           //6
                                                COOF_P1,          //7
                                                COOF_P1,          //8
                                                COOF_I1,          //9
@@ -603,11 +604,14 @@ void vSetRegData( u16 adress)
                             case CDV_SETTING_TIMEOUT_MB:
                             case CDV_MEASERING_UNIT:
                             case CDV_CH_COUNT_MB:
+                            case CDV_INPUT_SENS_MB:
                                    SaveReg8(reg_addr,byte_data);
                                    break;
                             case CDV_ZERO_POINT_TIMEOUT:
                                   saveReg16(reg_addr, byte_data);
                                   break;
+
+
                       }
            }
        }
@@ -713,7 +717,6 @@ static const u16 REGS_FMCH_FLOAT[]  = { KOOF_P_MB, KOOF_I_MB , KOOF_K_MP };
 
 void UpdateFMCHHoldings()
 {
-   int32_t tempdata;
    for (u8 i=0;i<4;i++)
    {
        usRegHoldingBuf[REGS[i]]           = getReg16( FMCH_REGS_MAP [ REGS[i]        - 100 ]);
@@ -722,8 +725,7 @@ void UpdateFMCHHoldings()
    for (u8 i =0;i<3;i++)
    {
        u16 reg_addr = REGS_FMCH_FLOAT[i];
-       tempdata =(int32_t) (getRegFloat( FMCH_REGS_MAP[  reg_addr- 100 ] )*1000);
-       convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[reg_addr]);
+       convert_float_to_int(getRegFloat( FMCH_REGS_MAP[  reg_addr- 100 ] ), &usRegHoldingBuf[reg_addr]);
    }
    if  (usRegHoldingBuf[JOURNAL_SELECT_MB] > getReg16(RECORD_COUNT))
             usRegHoldingBuf[JOURNAL_SELECT_MB] = getReg16(RECORD_COUNT);
@@ -759,35 +761,30 @@ static const u16 REGS_CDV_SENS_FLOAT[]={
 
 void UpdateCAV_VAV_BPHoldign()
 {
-    int32_t tempdata;
-    long    temp_long;
     for (u8 i=0;i<6;i++)
     {
         u16 reg_addr = REGS_CVB_FLOAT[i];
-        tempdata =(int32_t) (getRegFloat(CDV_REGS_MAP[reg_addr-200])*1000);
-        convert_float_to_int((float)tempdata/1000.0, &usRegHoldingBuf[reg_addr-100]);
+        convert_float_to_int(getRegFloat(CDV_REGS_MAP[reg_addr-200]), &usRegHoldingBuf[reg_addr-100]);
     }
-    temp_long =(long) (getRegFloat(CDV_REGS_MAP[CDV_F_CHANNEL-200])*10000);
-    convert_float_to_int((float)temp_long/10000.0, &usRegHoldingBuf[CDV_F_CHANNEL-100]);
-    temp_long =(long) (getRegFloat(CDV_REGS_MAP[CDV_F_CHANNEL2-200])*10000);
-    convert_float_to_int((float)temp_long/10000.0, &usRegHoldingBuf[CDV_F_CHANNEL2-100]);
 
-     int32_t pdata = 0;
-     int32_t idata = 0;
+    convert_float_to_int(getRegFloat(CDV_REGS_MAP[CDV_F_CHANNEL-200]), &usRegHoldingBuf[CDV_F_CHANNEL-100]);
+    convert_float_to_int(getRegFloat(CDV_REGS_MAP[CDV_F_CHANNEL2-200]), &usRegHoldingBuf[CDV_F_CHANNEL2-100]);
+
+     float pdata = 0;
+     float idata = 0;
 
     if (IsPISendScreenNreed())
     {
         u8 index = GetPIDSensorIndex();
-        pdata = (int32_t) (getRegFloat(SensorPRegMap[index ])*1000);
-        idata = (int32_t) (getRegFloat(SensorIRegMap[index ])*1000);
+        pdata =  getRegFloat(SensorPRegMap[index ]);
+        idata =  getRegFloat(SensorIRegMap[index ]);
     }
-    convert_float_to_int((float)pdata/1000.0, &usRegHoldingBuf[CDV_KOOF_PSESN_MB -100]);
-    convert_float_to_int((float)idata/1000.0, &usRegHoldingBuf[CDV_KOOF_ISENS_MB- 100]);
+    convert_float_to_int(pdata, &usRegHoldingBuf[CDV_KOOF_PSESN_MB -100]);
+    convert_float_to_int(idata, &usRegHoldingBuf[CDV_KOOF_ISENS_MB- 100]);
    for (u8 i=0;i<12;i++)
     {
         u16 reg_addr =REGS_CDV_SENS_FLOAT[i];
-        tempdata =(int32_t) (getRegFloat(CDV_REGS_MAP[reg_addr-200])*10);
-        convert_float_to_int((float)tempdata/10.0, &usRegHoldingBuf[reg_addr-100]);
+        convert_float_to_int(getRegFloat(CDV_REGS_MAP[reg_addr-200]), &usRegHoldingBuf[reg_addr-100]);
     }
     float temp_float;
     for (u8 i = 0; i < 6; i++)

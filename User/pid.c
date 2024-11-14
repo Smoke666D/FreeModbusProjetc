@@ -67,9 +67,9 @@ void PID2(PID_TypeDef *uPID,  float *Output, float *Setpoint, float Kp, float Ki
 uint8_t PID_Compute(PID_TypeDef *uPID, float input)
 {
 	
-	float error;
-	float dInput;
-	float output;
+	double error;
+	double dInput;
+	double output;
 		/* ..... Compute all the working error variables ..... */
 	//	input   = *uPID->MyInput;
 

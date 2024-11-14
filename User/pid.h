@@ -186,7 +186,7 @@ typedef struct
 	float          *MyOutput;
 	float          *MySetpoint;
 
-	float          OutputSum;
+	double          OutputSum;
 	float          LastInput;
 	float          LastOutput;
 

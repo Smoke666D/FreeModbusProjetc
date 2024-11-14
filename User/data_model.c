@@ -51,10 +51,13 @@ __attribute__((section(".stext"))) DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[CDV_BP_CH_COUNT]    =  1;
                DATA_MODEL_REGISTER[SENSOR_COUNT]       =  TIME_5_0;
 
-               setRegFloat(KOOFKPS , 36.0);
+               setRegFloat(KOOFKPS ,  36.0);
+               setRegFloat(KOOFKPS1 , 35.0);
                setRegFloat(KOOFKPS2 , 35.0);
                setRegFloat(COOF_I,10.0);
                setRegFloat(COOF_P,5.0);
+               setRegFloat(COOF_I_CAV,11.0);
+               setRegFloat(COOF_P_CAV,6.0);
                setRegFloat(COOF_I1,15.0);
                setRegFloat(COOF_P1,5.0);
                setRegFloat(COOF_IT,15.0);
@@ -72,12 +75,8 @@ __attribute__((section(".stext"))) DATA_MODEL_INIT_t DataModel_Init()
                setRegFloat(SETTING_MIN , 150);
                setRegFloat(SETTING_MID , 300);
                setRegFloat(SETTING_MAX , 600);
-               setRegFloat(CH1_SETTING  , 700);
-               setRegFloat(CH2_SETTING  , 800);
-               setRegFloat(OFFSET_CH2  ,  100);
                setRegFloat(MIN_SET1, 0);
                setRegFloat(MAX_SET1,40);
-
                setRegFloat(SENS_SETTING1,20);
                setRegFloat(MIN_SET2, 0);
                setRegFloat(MAX_SET2,40);
@@ -136,14 +135,17 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
     u8 temp_data = data;
     switch (reg_adress)
     {
+        case INPUT_CONTROL_TYPE:
+                if (data>3) return 3;
+                        break;
         case ROOM_CHANNEL:
               if (data <1) data = 1;
               else if (data>3) data =3;
               break;
         case MEASERING_UNIT:
-        case AFTER_ZONE_SETTING:
         case PRIOR_SENSOR:
-            if (data>3) return 0;
+        case AFTER_ZONE_SETTING:
+            if (data>2) return 2;
             break;
         case SENSOR_COUNT:
              if (data >6) return 0;
@@ -283,7 +285,7 @@ float getRegFloat(u16 reg_adress )
 
 float DataModel_SetLToPressere(float L)
 {
-   float K = getRegFloat(KOOFKPS);
+   double K = getRegFloat(KOOFKPS);
    if ( ( L!=0 ) && ( K!=0 ) )
    {
         K = pow(( L>0 ? L : L*-1)/K,2);
@@ -296,9 +298,9 @@ float DataModel_SetLToPressere(float L)
 
 float DataModel_SetVToPressere(float V)
 {
-  float F = getRegFloat(F_CHANNEL);
+  double F = getRegFloat(F_CHANNEL);
   if ( V!=0 )
-   return  DataModel_SetLToPressere (V* F *3600.0);
+   return  DataModel_SetLToPressere ((float)((double)V*F *3600.0));
   else
     return 0;
 
@@ -316,7 +318,7 @@ float  DataModel_GetPressureToL(float pressure)
    }
     if (pressure != 0)
     {
-        temp_float =(float) sqrt(  ( pressure > 0)? (float)pressure: pressure*-1)*getRegFloat(KOOFKPS) ;
+        temp_float =(float) sqrt(  ( pressure > 0) ? (double)pressure: (double)pressure*-1)*(double)getRegFloat(KOOFKPS) ;
         return (sign)? temp_float*-1: temp_float;
     }
     else return 0;
@@ -324,16 +326,16 @@ float  DataModel_GetPressureToL(float pressure)
 
 float  DataModel_GetPressureToV(float pressure)
 {
-    float L = DataModel_GetPressureToL(pressure);
-    float F = getRegFloat(F_CHANNEL);
+    double L = DataModel_GetPressureToL(pressure);
+    double F = getRegFloat(F_CHANNEL);
     if (F == 0) return (0);
             else
-    return  L/F/3600.0 ;
+    return  (float)(L/F/3600.0) ;
 }
 
 float DataModelGetCDVSettings( float pressure)
 {
-    float res = (float)pressure;
+    float res = pressure;
     switch ( getReg8(MEASERING_UNIT) )
     {
         case 0:

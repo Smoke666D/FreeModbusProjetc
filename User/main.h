@@ -29,7 +29,7 @@ EventGroupHandle_t * xGetOSEvent();
 
 /****************************************************************/
 
-
+#define INIT_FUNC_LOC __attribute__((section(".stext")))
 
 #define WCH32V3   2
 #define WCH32V2   1
@@ -86,7 +86,7 @@ EventGroupHandle_t * xGetOSEvent();
 //#define TIM3_UP_ENABLE 0
 #define TIM4_UP_ENABLE
 #define TIM5_UP_ENABLE
-#define TIM6_UP_ENABLE 0
+//#define TIM6_UP_ENABLE 0
 //#define TIM7_UP_ENABLE 0
 #define TIM8_UP_ENABLE
 //#define TIM9_UP_ENABLE 0

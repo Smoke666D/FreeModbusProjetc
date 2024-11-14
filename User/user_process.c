@@ -529,7 +529,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 }
                 break;
             case USER_PROCESS_ZERO_CALIB:
-                if ((dev->start_timeout) >= ( getReg16(ZERO_POINT_TIMEOUT)*6000) )
+                if ((dev->start_timeout) >= ( getReg16(ZERO_POINT_TIMEOUT)*100) )
                 {
                     printf("start \r\n");
                     if (*cal_flag == 0)
@@ -563,7 +563,6 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 }
                 break;
             case USER_PROCESS_DOUBLE_CHANNEL_ERROR:
-                printf("d chaannel eerror\r\n");
                 if (error_state & FIRST_CHANNEL_ERROR)
                 {
                     USER_AOUT_SET(DAC2,0.0);

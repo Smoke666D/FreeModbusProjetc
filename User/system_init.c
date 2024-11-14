@@ -86,7 +86,6 @@ void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer,
    *pulTimerTaskStackSize = configTIMER_TASK_STACK_DEPTH;
 }
 
-
 __attribute__((section(".stext"))) void TaskSuspend()
 {
     vTaskSuspend( MPTCPTask_Handler  );
@@ -289,11 +288,7 @@ void vDefaultTask( void  * argument )
  *
  * @return  none
  */
-void rvvTIMER()
-{
 
-    printf("1 sec timeout\r\n");
-}
 
 void WCHNET_task(void *pvParameters)
 {
@@ -301,7 +296,6 @@ void WCHNET_task(void *pvParameters)
     DataModel_Init();
     vRTC_TASK_Init();
     xTaskNotifyGive( DefautTask_Handler );
-
     while(1)
     {
         if (TCP_STOP==0)
