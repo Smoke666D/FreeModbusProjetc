@@ -438,31 +438,9 @@ void MenuSetDevice()
             break;
         case DEV_CAV_VAV_BP:
             pMenu = xScreenDCV;
-            if (getReg8(CDV_BP_CH_COUNT) == 0)
-                                     SetBPSetting( 1);
-                                 else
-                                     SetBPSetting(0);
+
             SetPID2Screen((CHANNEL_COUNT_t)getReg8(CDV_BP_CH_COUNT),getReg8(INPUT_CONTROL_TYPE));
-            switch (getReg8(INPUT_CONTROL_TYPE))
-                                                         {
-                                                             case 0:
-                                                                 vSettingCoountCondfig(1);
 
-                                                                 break;
-                                                             case 1:
-                                                                 vSettingCoountCondfig(0);
-
-                                                                 break;
-                                                             case 2:
-                                                                 vSettingCoountCondfig(0);
-
-                                                                 break;
-                                                             case 3:
-                                                                 vSettingCoountCondfig(0);
-
-                                                                 break;
-
-                                                         }
             break;
 
 
@@ -1218,11 +1196,11 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                   break;
             case DCV_FACT1_ID:
                    temp_float = DataModelGetCDVSettings( getAIN(SENS1),CAV_VAV_CH1);
-                   sprintf(str,"%06.1f",temp_float);
+                   sprintf(str,"%06.1f %s",temp_float,MUnitStrig[getReg8(MEASERING_UNIT)]);
                    break;
            case DCV_FACT2_ID:
                   temp_float = DataModelGetCDVSettings( getAIN(SENS2),CAV_VAV_CH2);
-                  sprintf( str, "%06.1f", temp_float );
+                  sprintf( str, "%06.1f %s", temp_float,MUnitStrig[getReg8(MEASERING_UNIT)] );
                   break;
            case ZERO_CAL_COMMAND:
                   switch (command)
@@ -1258,8 +1236,6 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
        u16 reg_id = MenuCDV_BPRegMap[data_id - SETTING_MIN_ID];
     switch (data_id)
     {
-
-
         case  BP_SZIE_ID:
             if ( command <= CMD_EDIT_READ )
                 sprintf(str,"%03i",( command == CMD_READ ) ? getReg16(reg_id) : edit_data_buffer_byte );
@@ -1285,9 +1261,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                    if ( command == CMD_SAVE_EDIT )
                    {
                        SetPID2Screen((CHANNEL_COUNT_t)getReg8(CDV_BP_CH_COUNT),edit_data_buffer_byte);
-                       if ( edit_data_buffer_byte == 0 )
-                           vSettingCoountCondfig(1);
-                       else vSettingCoountCondfig(0);
+
                        SetFirtsEditString();
                    }
                    vByteDataEdit(0,reg_id,command,0,3, 0,1);

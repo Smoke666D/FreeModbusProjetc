@@ -170,9 +170,11 @@ float getAINConver( u8 ch)
         default:
             sensor_error &= ~SENSOR_ERROR_MASK[ch];
             temp_data =  raw_data*KK*COOF_10V;
+            if (temp_data <0.1) temp_data = 0;
             break;
         case 1:
             temp_data = raw_data*KK*COOF_10V;
+            if (temp_data <0.1) temp_data = 0;
             if ( temp_data < 2.0 )
                 sensor_error |=SENSOR_ERROR_MASK[ch];
             else
@@ -180,6 +182,7 @@ float getAINConver( u8 ch)
             break;
         case 2:
             temp_data = raw_data*KK*10.0;
+            if (temp_data <0.15) temp_data = 0;
             if (temp_data < 4.0)
                 sensor_error |=SENSOR_ERROR_MASK[ch];
                         else

@@ -374,8 +374,6 @@ void vSetRegData( u16 adress)
              case ZERO_MB:
                  if  (byte_data !=0)
                  {
-
-
                      if  ((USER_GetProccesState() == USER_PROCCES_WORK) && ( dev_type==DEV_CAV_VAV_BP))
                      {
                          SystemCalibraionStart();

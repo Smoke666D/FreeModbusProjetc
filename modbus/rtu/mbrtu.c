@@ -110,7 +110,6 @@ eMBRTUInit( UCHAR ucSlaveAddress, UCHAR ucPort, ULONG ulBaudRate, eMBParity ePar
              * for t3.5.
              */
             usTimerT35_50us =  40;//(35000000/ ulBaudRate)/20 ;
-            printf("baunrd %i time= %i\r\n",ulBaudRate,usTimerT35_50us);
         }
 
         if( xMBPortTimersInit( ( USHORT ) usTimerT35_50us ) != TRUE )

@@ -153,7 +153,8 @@ float UPDATE_COOFCAV( INPUT_SENSOR_t inp_sensor, DISCRET_STATE_t control_state)
          }
     }
     PID_SetTunings2(&TPID,getRegFloat(PCOOFMAP[index]),getRegFloat(ICOOFMAP[index]), 0);
-    PID(&TPID2, &PIDOut2, &SET_POINT1, getRegFloat(COOF_P1), getRegFloat(COOF_I1), 0, _PID_CD_DIRECT);
+    PID_SetTunings2(&TPID,getRegFloat(COOF_P1),getRegFloat(COOF_I1), 0);
+
     u8 after_zone = 0;
     float input_data = GetSensor(&after_zone, inp_sensor);
     if ( after_zone )
@@ -318,6 +319,7 @@ static u8 cur_state = 0;
 static u8 system_start =  MKV_MB_RTU;
 static u8 din_state_update = 0;
 
+
 void vCDV_SetpointCheck(   u32 * timeout  )
 {
     if ( getReg8( CONTROL_TYPE )==  MKV_MB_DIN)
@@ -331,7 +333,7 @@ void vCDV_SetpointCheck(   u32 * timeout  )
         }
 
         u8 new_state =( (u8)uiGetDinMask() & 0x0F ) ; //Проверяем режим работы
-        if ( new_state!= cur_state )
+        if (( new_state!= cur_state ) && (din_state_update ==0))
         {
             din_state_update = 1;
             *timeout = 0;
@@ -339,6 +341,7 @@ void vCDV_SetpointCheck(   u32 * timeout  )
 
         if (din_state_update)
         {
+            printf("%i  %i\r\n",*timeout,getReg8(SETTING_TIMER)*100 );
             if ( ++(*timeout) >= getReg8(SETTING_TIMER)*100 )
             {
                 error_state &=~DIN_ERROR;
@@ -413,6 +416,7 @@ void Channel2Reg(  float setpoint )
     static float temp_f;
     DISCRET_STATE_t state = getReg8(CDV_CONTOROL);
     u8 ch_count = getReg8(CDV_BP_CH_COUNT);
+
     if (ch_count  == 2)
     {
 
@@ -432,9 +436,12 @@ void Channel2Reg(  float setpoint )
                 case 2:
                     break;
             }
+
             SET_POINT1  = temp_f + getRegFloat(OFFSET_CH2);
             PID_Compute(&TPID2,getAIN(SENS2));
+
             PID_Out = PIDOut2/1000.0;
+
          }
 
         USER_AOUT_SET(DAC2,PID_Out);
@@ -478,12 +485,14 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
     switch (task_fsm)
     {
             case USER_PROCCES_IDLE:
+
                 error_state = 0;
                 dev->start_timeout = 0;
                 InitCleanTimer();
                 task_fsm =USER_PROCCES_WORK;
                 break;
             case USER_PROCCES_WORK:
+
                 *cal_flag = 0;
                 if ((error_state & DIN_ERROR) || (error_state & ANALOG_SENSOR_ERROR))
                 {
@@ -553,9 +562,10 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 }
                 break;
             case USER_PROCESS_ZERO_CALIB:
+
                 if ((dev->start_timeout) >= ( getReg16(ZERO_POINT_TIMEOUT)*100) )
                 {
-                    printf("start \r\n");
+
                     if (*cal_flag == 0)
                     {
                         CalibrateZeroStart();
@@ -578,15 +588,19 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 }
                 break;
             case USER_PROCESS_ALARM:
-                if (error_state & (DIN_ERROR | ANALOG_SENSOR_ERROR) == 0) task_fsm = USER_PROCCES_IDLE;
 
-                if (error_state & ( DIN_ERROR  | ANALOG_SENSOR_ERROR))
+                if ((error_state & (DIN_ERROR | ANALOG_SENSOR_ERROR)) == 0)
+                {
+                    task_fsm = USER_PROCCES_IDLE;
+                }
+                else
                 {
                     USER_AOUT_SET(DAC1,0.0);
                     USER_AOUT_SET(DAC2,0.0);
                 }
                 break;
             case USER_PROCESS_DOUBLE_CHANNEL_ERROR:
+                printf("dcherr\r\n");
                 if (error_state & FIRST_CHANNEL_ERROR)
                 {
                     USER_AOUT_SET(DAC2,0.0);
@@ -696,6 +710,7 @@ void user_process_task(void *pvParameters)
    while(1)
    {
        vTaskDelay(10);
+
        if (MB_TASK_GetMode()!=2)
        {
            ac_contorl.Voltage = (uint16_t)getAIN(AC220);
@@ -704,6 +719,7 @@ void user_process_task(void *pvParameters)
                    vFMCH_FSM(  &Dev );
            else
                    vCDV_FSM(&flag, &Dev  );
+
            //Ecли есть ошибка включаем реле и зажигаем светодиод
            if ( error_state )
            {

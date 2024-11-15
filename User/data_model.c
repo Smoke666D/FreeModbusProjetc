@@ -156,6 +156,7 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
              break;
         case CDV_BP_CH_COUNT:
             if (data > 2) temp_data = 2;
+
             SetPID2Screen( temp_data,getReg8(INPUT_CONTROL_TYPE));
              break;
         case LIGTH:

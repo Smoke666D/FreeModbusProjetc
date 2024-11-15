@@ -183,12 +183,12 @@ static  xScreenObjet  CDVInfoScreen1[]=
         {0,0,LINE1,0,  READ_DATA,"Уставка",   DCV_SETTING1_ID},
 
       //   {0,100,LINE1,0, TEXT_STRING,"",         },
-        {0,0,25,35,     READ_DATA,"Канал 1",   DCV_FACT1_ID },
-        {0,100,25,0,    READ_DATA,"",          MEASERING_UNIT_ID},
+        {0,0,25,00,     READ_DATA,"Канал 1",   DCV_FACT1_ID },
+        {0,100,25,0,    TEXT_STRING,"",         0},
         {0,0,50,0,     READ_DATA,"Cмещение" , DCV_SETTING2_ID},
         //{0,100,50,0,    TEXT_STRING,"",          0},
-        {0,0,62,35,     READ_DATA,"Канал 2",   DCV_FACT2_ID },
-        {1,100,62,0,    READ_DATA,"",         MEASERING_UNIT_ID},
+        {0,0,62,0,     READ_DATA,"Канал 2",   DCV_FACT2_ID },
+        {1,100,62,0,    TEXT_STRING,"",         0},
         {1,0,37,0,     READ_DATA,"Факт",      FACT_CH_DATA_ID },
 
 
@@ -198,10 +198,10 @@ static  xScreenObjet  CDVInfoScreen1[]=
 
 static  xScreenObjet  CDVInfoScreen1_1[]=
 {
-        {0,0,LINE1,32, READ_DATA,"Уставка",  DCV_SETTING1_ID},
-        {0,100,LINE1,0,READ_DATA,"",          SETTING_MEASERING_UNIT_ID},
-        {0,0,25,32,    READ_DATA,"Канал 1",     DCV_FACT1_ID },
-        {0,100,25,0,   READ_DATA,"",          MEASERING_UNIT_ID},
+        {0,0,LINE1,0, READ_DATA,"Уставка",  DCV_SETTING1_ID},
+        {0,100,LINE1,0,TEXT_STRING,"",        0  },
+        {0,0,25,0,    READ_DATA,"Канал 1",     DCV_FACT1_ID },
+        {0,100,25,0,   TEXT_STRING,"",          0},
         {0,0,50,0,     READ_DATA,"Типоразмер ВР", BP_SZIE_ID},
         {1,0,62,0,     READ_DATA,"Тип регул.", BP_REG_TYPE_ID },
         {1,0,50,32,    READ_DATA,"Факт",      FACT_CH_DATA_ID },
@@ -478,6 +478,13 @@ u8 getScreenCount()
 
 void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state)
 {
+
+    if (state == 0)
+                                     SetBPSetting( 1);
+                                 else
+                                     SetBPSetting(0);
+
+
     switch (state)
     {
         case BP_CONFIG :
@@ -661,6 +668,26 @@ void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state)
         xScreenDCV[PI2_SCREEN].pScreenCurObjets = CDVSettingsPI2;
         break;
     }
+    switch (analog_state)
+                                                               {
+                                                                   case 0:
+                                                                       vSettingCoountCondfig(1);
+
+                                                                       break;
+                                                                   case 1:
+                                                                       vSettingCoountCondfig(0);
+
+                                                                       break;
+                                                                   case 2:
+                                                                       vSettingCoountCondfig(0);
+
+                                                                       break;
+                                                                   case 3:
+                                                                       vSettingCoountCondfig(0);
+
+                                                                       break;
+
+                                                               }
 }
 
 
