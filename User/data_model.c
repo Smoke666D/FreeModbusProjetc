@@ -138,7 +138,9 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
     {
 
         case INPUT_CONTROL_TYPE:
-                if (data>3) return 3;
+                if (data>3) return temp_data = 3;
+
+                SetPID2Screen((CHANNEL_COUNT_t)getReg8(CDV_BP_CH_COUNT),temp_data);
                         break;
         case ROOM_CHANNEL:
               if (data <1) data = 1;

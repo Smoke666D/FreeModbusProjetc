@@ -1183,26 +1183,25 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                               break;
                         case SETTING_MINIMUM:
                              temp_float = DataModelGetCDVSettings( getRegFloat(SETTING_MIN),CAV_VAV_CH1);
-
-                             sprintf(str,"%06.1f",temp_float);
+                             sprintf(str,"%06.1f %s",temp_float,MUnitStrig[getReg8(MEASERING_UNIT)]);
                               break;
                         case SETTING_MAXIMUN:
                              temp_float = DataModelGetCDVSettings( getRegFloat(SETTING_MAX),CAV_VAV_CH1);
-                             sprintf(str,"%06.1f",temp_float);
+                             sprintf(str,"%06.1f %s",temp_float,MUnitStrig[getReg8(MEASERING_UNIT)]);
                              break;
                         case SETTING_MIDIUM:
                               switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
                               {
                                   case DISCRETE_INPUT:
                                        temp_float = DataModelGetCDVSettings( getRegFloat(SETTING_MID),CAV_VAV_CH1);
-                                       sprintf(str,"%06.1f",temp_float);
+                                       sprintf(str,"%06.1f %s",temp_float,MUnitStrig[getReg8(MEASERING_UNIT)]);
                                        break;
-                                  case 2:
-                                       sprintf(str,"%i4",ComputeSetPoint());
+                                  case ROOM_CONTROLLER:
+                                       sprintf(str,"%i4 %s",ComputeSetPoint(),MUnitStrig[getReg8(MEASERING_UNIT)]);
                                        break;
-                                  case 3:
-                                  case 1:
-                                       sprintf(str,"%f3.1",getRegFloat(SENS_SETTING1));
+                                  case ANALOG_SENSOR:
+                                  case STATIC_TERMSENSOR:
+                                       sprintf(str,"%6.1f %s",getRegFloat(SENS_SETTING1), SensUnitString[  GetPIDSensorIndex()]);
                                        break;
                                }
                                break;
@@ -1210,11 +1209,11 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                   break;
             case DCV_SETTING2_ID:
                   if ( state == SETTING_OPEN ) strcpy(str,"Откр.");
-                  else if ( state == SETTING_CLOSE ) strcpy(str,"Закр.");
+             else if ( state == SETTING_CLOSE ) strcpy(str,"Закр.");
                   else
                   {
                       temp_float = DataModelGetCDVSettings(getRegFloat(OFFSET_CH2),CAV_VAV_CH2);
-                      sprintf(str,"%06.1f", temp_float);
+                      sprintf(str,"%06.1f %s", temp_float,MUnitStrig[getReg8(MEASERING_UNIT)]);
                   }
                   break;
             case DCV_FACT1_ID:
