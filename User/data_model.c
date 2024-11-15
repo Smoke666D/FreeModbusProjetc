@@ -9,6 +9,7 @@
 #include "stdlib.h"
 #include "math.h"
 #include "user_process.h"
+#include "menu_data.h"
 
 u8 DATA_MODEL_REGISTER[DATA_MODEL_REGISTERS];
 
@@ -56,9 +57,9 @@ __attribute__((section(".stext"))) DATA_MODEL_INIT_t DataModel_Init()
                setRegFloat(KOOFKPS2 , 35.0);
                setRegFloat(COOF_I,10.0);
                setRegFloat(COOF_P,5.0);
-               setRegFloat(COOF_I_CAV,11.0);
-               setRegFloat(COOF_P_CAV,6.0);
-               setRegFloat(COOF_I1,15.0);
+               setRegFloat(COOF_I_CAV,10.0);
+               setRegFloat(COOF_P_CAV,5.0);
+               setRegFloat(COOF_I1,10.0);
                setRegFloat(COOF_P1,5.0);
                setRegFloat(COOF_IT,15.0);
                setRegFloat(COOF_PT,5.0);
@@ -135,6 +136,7 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
     u8 temp_data = data;
     switch (reg_adress)
     {
+
         case INPUT_CONTROL_TYPE:
                 if (data>3) return 3;
                         break;
@@ -152,6 +154,7 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
              break;
         case CDV_BP_CH_COUNT:
             if (data > 2) temp_data = 2;
+            SetPID2Screen( temp_data,getReg8(INPUT_CONTROL_TYPE));
              break;
         case LIGTH:
         case MODE:
@@ -283,9 +286,9 @@ float getRegFloat(u16 reg_adress )
 }
 
 
-float DataModel_SetLToPressere(float L)
+float DataModel_SetLToPressere(float L, CAV_VAV_CH_t channel)
 {
-   double K = getRegFloat(KOOFKPS);
+   double K = (channel == CAV_VAV_CH1 ) ? getRegFloat(KOOFKPS1) : getRegFloat(KOOFKPS2);
    if ( ( L!=0 ) && ( K!=0 ) )
    {
         K = pow(( L>0 ? L : L*-1)/K,2);
@@ -296,20 +299,21 @@ float DataModel_SetLToPressere(float L)
 
 }
 
-float DataModel_SetVToPressere(float V)
+float DataModel_SetVToPressere(float V, CAV_VAV_CH_t channel)
 {
-  double F = getRegFloat(F_CHANNEL);
+  double F = (channel == CAV_VAV_CH1 ) ? getRegFloat(F_CHANNEL) : getRegFloat(F_CHANNEL2);
   if ( V!=0 )
-   return  DataModel_SetLToPressere ((float)((double)V*F *3600.0));
+   return  DataModel_SetLToPressere ((float)((double)V*F *3600.0),channel);
   else
     return 0;
 
 }
 
 
-float  DataModel_GetPressureToL(float pressure)
+float  DataModel_GetPressureToL(float pressure, CAV_VAV_CH_t channel)
 {
    uint8_t sign =0;
+   float KOOF = (channel == CAV_VAV_CH1) ? getRegFloat(KOOFKPS1) : getRegFloat(KOOFKPS2) ;
    float temp_float;
    if (pressure < 0)
    {
@@ -318,39 +322,35 @@ float  DataModel_GetPressureToL(float pressure)
    }
     if (pressure != 0)
     {
-        temp_float =(float) sqrt(  ( pressure > 0) ? (double)pressure: (double)pressure*-1)*(double)getRegFloat(KOOFKPS) ;
+        temp_float =(float) sqrt(  ( pressure > 0) ? (double)pressure: (double)pressure*-1)*(double)KOOF ;
         return (sign)? temp_float*-1: temp_float;
     }
     else return 0;
 }
 
-float  DataModel_GetPressureToV(float pressure)
+float  DataModel_GetPressureToV(float pressure,CAV_VAV_CH_t channel)
 {
-    double L = DataModel_GetPressureToL(pressure);
-    double F = getRegFloat(F_CHANNEL);
+    double L = DataModel_GetPressureToL(pressure,channel);
+    double F = (channel == CAV_VAV_CH1 ) ? getRegFloat(F_CHANNEL) : getRegFloat(F_CHANNEL2);
     if (F == 0) return (0);
             else
     return  (float)(L/F/3600.0) ;
 }
 
-float DataModelGetCDVSettings( float pressure)
+float DataModelGetCDVSettings( float pressure, CAV_VAV_CH_t channel)
 {
     float res = pressure;
     switch ( getReg8(MEASERING_UNIT) )
     {
         case 0:
-
-
-             res = DataModel_GetPressureToL( res);
-
-              break;
-                           case 1:
-                               res = DataModel_GetPressureToV( res);
-                               break;
-                           default:
-
-                               break;
-                      }
+             res = DataModel_GetPressureToL( res,channel);
+             break;
+        case 1:
+             res = DataModel_GetPressureToV( res,channel);
+             break;
+       default:
+             break;
+     }
   return (res);
 }
 /*

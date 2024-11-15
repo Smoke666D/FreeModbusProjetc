@@ -259,7 +259,7 @@ static xScreenObjet  CDVSettingsScreen7[]=
         {0,2,25,0,TEXT_STRING,"Таймеры",          0},
         {0,2,37,0,WRITE_DATA,"Уборка (DI4) мин",                CLEAN_TIMER_ID},
         {0,2,50,00,WRITE_DATA,"Калибр. 0, с.:",          ZERO_POINT_TIMEOUT_ID},
-        {1,2,62,00,WRITE_DATA,"Задержка уст. с.",          SETTING_TIMER_ID},
+        {1,2,62,0,WRITE_DATA,"Время усред. с",         SENS_COUNT_ID },
 };
 
 

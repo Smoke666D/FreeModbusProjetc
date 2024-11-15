@@ -288,46 +288,46 @@ static const u16 FMCH_REGS_MAP[] ={
 
 
 static const u16 CDV_REGS_MAP[] = {
-                                               CDV_BP_CH_COUNT,  //0
-                                               KOOFKPS1,          //1
-                                               KOOFKPS1,          //2
-                                               COOF_P_CAV,           //3
-                                               COOF_P_CAV,           //4
-                                               COOF_I_CAV,           //5
-                                               COOF_I_CAV,           //6
-                                               COOF_P1,          //7
-                                               COOF_P1,          //8
-                                               COOF_I1,          //9
-                                               COOF_I1,          //10
-                                               0,                //11
-                                               0,                //12
-                                               0,                //13
-                                               0,                 //14
-                                               INPUT_CONTROL_TYPE,  //15
-                                               SETTING_MIN,       //16
-                                               SETTING_MIN,       //17
-                                               SETTING_MID,       //18
-                                               SETTING_MID,       //19
-                                               SETTING_MAX,       //20
-                                               SETTING_MAX,       //21
-                                               CH1_SETTING,       //22
-                                               CH1_SETTING,       //23
-                                               CH2_SETTING,       //24
-                                               CH2_SETTING,       //25
-                                               F_CHANNEL,         //26
-                                               F_CHANNEL,         //27
-                                               OFFSET_CH2,        //28
-                                               OFFSET_CH2,        //29
-                                               CLEAN_TIMER,       //30
-                                               MEASERING_UNIT,    //31
-                                               ZERO_POINT_TIMEOUT,//32
-                                               SETTING_TIMER,     //33
-                                               MB_CDV_CONTROL,             //34
-                                               AFTER_ZONE_SETTING,//35
-                                               MIN_SET1,          //36
-                                               MIN_SET1,          //37
-                                               MAX_SET1,          //38
-                                               MAX_SET1,          //39
+                                               CDV_BP_CH_COUNT,         //0
+                                               KOOFKPS1,                //1
+                                               KOOFKPS1,                //2
+                                               COOF_P_CAV,              //3
+                                               COOF_P_CAV,              //4
+                                               COOF_I_CAV,              //5
+                                               COOF_I_CAV,              //6
+                                               COOF_P1,                 //7
+                                               COOF_P1,                 //8
+                                               COOF_I1,                 //9
+                                               COOF_I1,                 //10
+                                               0,                       //11
+                                               0,                       //12
+                                               0,                       //13
+                                               0,                       //14
+                                               INPUT_CONTROL_TYPE,      //15
+                                               SETTING_MIN,             //16
+                                               SETTING_MIN,             //17
+                                               SETTING_MID,             //18
+                                               SETTING_MID,             //19
+                                               SETTING_MAX,             //20
+                                               SETTING_MAX,             //21
+                                               CH1_SETTING,             //22
+                                               CH1_SETTING,             //23
+                                               CH2_SETTING,             //24
+                                               CH2_SETTING,             //25
+                                               F_CHANNEL,               //26
+                                               F_CHANNEL,               //27
+                                               OFFSET_CH2,              //28
+                                               OFFSET_CH2,              //29
+                                               CLEAN_TIMER,             //30
+                                               MEASERING_UNIT,          //31
+                                               ZERO_POINT_TIMEOUT,      //32
+                                               SETTING_TIMER,           //33
+                                               MB_CDV_CONTROL,          //34
+                                               AFTER_ZONE_SETTING,      //35
+                                               MIN_SET1,                //36
+                                               MIN_SET1,                //37
+                                               MAX_SET1,                //38
+                                               MAX_SET1,                //39
                                                MIN_SET2,          //40
                                                MIN_SET2,          //41
                                                MAX_SET2,          //42
@@ -350,10 +350,10 @@ static const u16 CDV_REGS_MAP[] = {
                                                SENS_SETTING3,     //59
                                                ROOM_CHANNEL,      //60
                                                PRIOR_SENSOR,      //61
-                                               KOOFKPS2,
-                                               KOOFKPS2,
-                                               F_CHANNEL2,
-                                               F_CHANNEL2,
+                                               KOOFKPS2,          //62
+                                               KOOFKPS2,          //63
+                                               F_CHANNEL2,        //64
+                                               F_CHANNEL2,        //65
 };
 
 
@@ -374,9 +374,19 @@ void vSetRegData( u16 adress)
              case ZERO_MB:
                  if  (byte_data !=0)
                  {
-                     if (((USER_GetProccesState() == USER_PROCCES_IDLE) && ( dev_type==DEV_FMCH)) ||
-                     ((USER_GetProccesState() == USER_PROCCES_WORK) && ( dev_type==DEV_CAV_VAV_BP)))
+
+
+                     if  ((USER_GetProccesState() == USER_PROCCES_WORK) && ( dev_type==DEV_CAV_VAV_BP))
+                     {
+                         SystemCalibraionStart();
+                     }
+                     else
+
+                     if ((USER_GetProccesState() == USER_PROCCES_IDLE) && ( dev_type==DEV_FMCH))
+                    {
+
                          CalibrateZeroStart();
+                    }
                      else
                      {
                          usRegHoldingBuf[adress] = 0;
@@ -386,10 +396,21 @@ void vSetRegData( u16 adress)
              case MODE_MB:
                  if (byte_data  > 3)
                      {
+                       if ((WORK_MODE) && (byte_data == 0x7401))
+                       {
+                           SaveReg8(DEVICE_TYPE,0);
+                           NVIC_SystemReset();
+                       }
+                       if ((WORK_MODE) && (byte_data == 0x7402))
+                       {
+                            SaveReg8(DEVICE_TYPE,1);
+                            NVIC_SystemReset();
+                        }
                         if (byte_data == 0x55) vDataModelResetJournal();
                         else
                         if (byte_data == 0xAA) ResetMotorHour();
                          usRegHoldingBuf[adress] = WORK_MODE;
+
                      }
                  else
                  {
@@ -530,6 +551,7 @@ void vSetRegData( u16 adress)
        }
        else
        {
+                u8 ch;
                 byte_data = (u16)usRegHoldingBuf[adress-CDV_OFFSET];
                 reg_addr = CDV_REGS_MAP[adress- 200];
                 u16 * pFloatReg = &usRegHoldingBuf[adress-CDV_OFFSET -1];
@@ -582,14 +604,15 @@ void vSetRegData( u16 adress)
                             case (CDV_SETTING_MAX_MB +1 ):
                             case (CDV_SETTING_ERROR1_MB + 1):
                             case (CDV_SETTING_ERROR2_MB + 1):
+                                     ch = ((adress == CDV_OFFSET_CH2+1) || (adress == CDV_SETTING_ERROR2_MB +1))?1 : 0;
                                      data = convert_int_to_float(pFloatReg);
                                      switch ( ( MES_UNIT_t)getReg8(MEASERING_UNIT) )
                                      {
                                             case L_UNIT:
-                                                data = DataModel_SetLToPressere(data);
+                                                data = DataModel_SetLToPressere(data,ch);
                                                 break;
                                             case V_UNIT:
-                                                data = DataModel_SetVToPressere(data);
+                                                data = DataModel_SetVToPressere(data,ch);
                                                 break;
                                             case P_UNIT:
                                             default:
@@ -649,9 +672,9 @@ void UodateFMCHInputs()
 void UpdateDCVInputs()
 {
     int16_t temp_int;
-    temp_int  =  DataModelGetCDVSettings(getAIN(SENS1))*10;
+    temp_int  =  DataModelGetCDVSettings(getAIN(SENS1),CAV_VAV_CH1)*10;
     convert_float_to_int((float)temp_int/10, &usRegInputBuf[CDV_FACT_1-CDV_OFFSET]);
-    temp_int  =  DataModelGetCDVSettings(getAIN(SENS2))*10;
+    temp_int  =  DataModelGetCDVSettings(getAIN(SENS2),CAV_VAV_CH2)*10;
     convert_float_to_int((float)temp_int/10, &usRegInputBuf[CDV_FACT_2-CDV_OFFSET]);
     temp_int  =  (int16_t)(getTSensor()*10);
     convert_float_to_int((float)temp_int/10.0, &usRegInputBuf[CDV_T_SENSOR_MB-CDV_OFFSET]);
@@ -787,10 +810,12 @@ void UpdateCAV_VAV_BPHoldign()
         convert_float_to_int(getRegFloat(CDV_REGS_MAP[reg_addr-200]), &usRegHoldingBuf[reg_addr-100]);
     }
     float temp_float;
+    CAV_VAV_CH_t ch;
     for (u8 i = 0; i < 6; i++)
     {
          u16 reg_addr = SettingRegsMap[i];
-         temp_float =(DataModelGetCDVSettings(getRegFloat(CDV_REGS_MAP[reg_addr-200])));
+         ch = ((reg_addr == CDV_SETTING_ERROR2_MB) || (reg_addr == CDV_OFFSET_CH2)) ?CAV_VAV_CH2 :CAV_VAV_CH1;
+         temp_float =(DataModelGetCDVSettings(getRegFloat(CDV_REGS_MAP[reg_addr-200]),ch));
          convert_float_to_int(temp_float, &usRegHoldingBuf[reg_addr -100]);
     }
     for (u8 i=0;i<9;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
@@ -825,6 +850,7 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
         usRegHoldingBuf[DATE_M_MB]     = date.month;
         usRegHoldingBuf[DATE_Y_MB]     = date.year;
         usRegHoldingBuf[IP_PORT_MB] =  getReg16(IP_PORT);
+
         for (u8 i=0;i<12;i++)
                  usRegHoldingBuf[IP_1_MB+i]      = getReg8(IP_1+i);
         for (u8 i=0;i<REG8_SEQ_COUNT;i++)
@@ -840,7 +866,14 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
         else
             UpdateCAV_VAV_BPHoldign();
     }
-
+    if (getReg8(DEVICE_TYPE) == DEV_FMCH)
+    {
+        usRegHoldingBuf[ZERO_MB] = (CalibrationZeroWhait() == 1) ? 0 :1;
+    }
+    if (getReg8(DEVICE_TYPE) == DEV_CAV_VAV_BP)
+        {
+            usRegHoldingBuf[ZERO_MB] = (USER_GetProccesState() == USER_PROCESS_ZERO_CALIB) ? 1 :0;
+        }
 }
 
 

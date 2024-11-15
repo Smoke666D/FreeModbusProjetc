@@ -15,7 +15,7 @@
 
 #define SW_V                 2
 #define SW_V2                5
-#define SW_V3                0
+#define SW_V3                6
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -90,7 +90,7 @@
 #define MIN_SET3               ( SENS_SETTING2  + sizeof(uint32_t) )
 #define MAX_SET3               ( MIN_SET3  + sizeof(uint32_t) )
 #define SENS_OFS3              ( MAX_SET3  + sizeof(uint32_t) )
-#define SENS_SETTING3          ( SENS_OFS1  + sizeof(uint32_t) )
+#define SENS_SETTING3          ( SENS_OFS3  + sizeof(uint32_t) )
 #define F_CHANNEL              ( SENS_SETTING3  + sizeof(uint32_t) )
 #define F_CHANNEL2             ( F_CHANNEL        + sizeof(uint32_t) )
 #define BP_REG_TYPE            ( F_CHANNEL2       + sizeof(uint32_t) )
@@ -126,7 +126,11 @@
 
 
 
-
+typedef enum
+{
+    CAV_VAV_CH1 = 0,
+    CAV_VAV_CH2 = 1,
+} CAV_VAV_CH_t;
 
 
 
@@ -195,11 +199,11 @@ typedef enum
 
 
 
-float DataModelGetCDVSettings( float pressure);
-float DataModel_SetLToPressere(float L);
-float DataModel_SetVToPressere(float V);
-float  DataModel_GetPressureToL(float pressure);
-float  DataModel_GetPressureToV(float pressure);
+float DataModelGetCDVSettings( float pressure,CAV_VAV_CH_t channel);
+float DataModel_SetLToPressere(float L,CAV_VAV_CH_t channel);
+float DataModel_SetVToPressere(float V,CAV_VAV_CH_t channel);
+float  DataModel_GetPressureToL(float pressure,CAV_VAV_CH_t channel);
+float  DataModel_GetPressureToV(float pressure,CAV_VAV_CH_t channel);
 int16_t getRegi16(u16 reg_adress );
 void vDataModelResetJournal();
 float convert_int_to_float( u16 * data);

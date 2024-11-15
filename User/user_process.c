@@ -16,8 +16,8 @@
 #include "math.h"
 #include "system_types.h"
 
-static const u16 PCOOFMAP[] ={COOF_P,COOF_PT,COOF_PCO2,COOF_PH};
-static const u16 ICOOFMAP[] ={COOF_I,COOF_IT,COOF_ICO2,COOF_IH};
+static const u16 PCOOFMAP[] ={COOF_P_CAV,COOF_PT,COOF_PCO2,COOF_PH};
+static const u16 ICOOFMAP[] ={COOF_I_CAV,COOF_IT,COOF_ICO2,COOF_IH};
 
 
 #define FILTER_WARNINR_VALUE 90
@@ -153,7 +153,7 @@ float UPDATE_COOFCAV( INPUT_SENSOR_t inp_sensor, DISCRET_STATE_t control_state)
          }
     }
     PID_SetTunings2(&TPID,getRegFloat(PCOOFMAP[index]),getRegFloat(ICOOFMAP[index]), 0);
-    PID_SetTunings2(&TPID2,getRegFloat(COOF_P1), getRegFloat(COOF_I1), 0);
+    PID(&TPID2, &PIDOut2, &SET_POINT1, getRegFloat(COOF_P1), getRegFloat(COOF_I1), 0, _PID_CD_DIRECT);
     u8 after_zone = 0;
     float input_data = GetSensor(&after_zone, inp_sensor);
     if ( after_zone )
@@ -315,58 +315,71 @@ void SystemCalibraionStop()
 
 
 static u8 cur_state = 0;
-
+static u8 system_start =  MKV_MB_RTU;
+static u8 din_state_update = 0;
 
 void vCDV_SetpointCheck(   u32 * timeout  )
 {
-      //Сбрасываем ошибку дискретных входов
-    error_state &=~DIN_ERROR;
-    u8 new_state = ( getReg8( CONTROL_TYPE )==  MKV_MB_DIN)? ( (u8)uiGetDinMask() & 0x0F ) : getReg8(MB_CDV_CONTROL);//Проверяем режим работы
-    if ( cur_state != new_state )
+    if ( getReg8( CONTROL_TYPE )==  MKV_MB_DIN)
     {
-        cur_state = new_state ;
-        *timeout = 0;
-    }
-    if ( getReg8( CONTROL_TYPE )==  MKV_MB_DIN )
-    {
-        switch (cur_state )
+        if (system_start != MKV_MB_DIN)
+        {
+            setReg8(CDV_CONTOROL,SETTING_CLOSE);
+            system_start =  MKV_MB_DIN;
+            din_state_update = 0;
+            cur_state = 0;
+        }
+
+        u8 new_state =( (u8)uiGetDinMask() & 0x0F ) ; //Проверяем режим работы
+        if ( new_state!= cur_state )
+        {
+            din_state_update = 1;
+            *timeout = 0;
+        }
+
+        if (din_state_update)
+        {
+            if ( ++(*timeout) >= getReg8(SETTING_TIMER)*100 )
             {
-                    case 0:
-                        cur_state = SETTING_CLOSE;
-                        break;
-                    case 1:
-                        cur_state = SETTING_MINIMUM;
-                        break;
-                    case 3:
-                        cur_state = SETTING_MIDIUM;
-                        break;
-                    case 7:
-                        cur_state = SETTING_MAXIMUN;
-                        break;
-                    case 0xF:
-                        cur_state =SETTING_OPEN;
-                        break;
-                    default:
-                        error_state |=DIN_ERROR;
-                        setReg8(CDV_CONTOROL,SETTING_CLOSE);
-                        return;
-                    break;
-                }
+                error_state &=~DIN_ERROR;
+                din_state_update = 0;
+                cur_state = new_state;
+                switch (cur_state )
+                {
+                         case 0:
+                             setReg8(CDV_CONTOROL,SETTING_CLOSE);
+                             break;
+                         case 1:
+                             setReg8(CDV_CONTOROL,SETTING_MINIMUM);
+                             break;
+                         case 3:
+                             setReg8(CDV_CONTOROL,SETTING_MIDIUM);
+                             break;
+                         case 7:
+                             setReg8(CDV_CONTOROL,SETTING_MAXIMUN);
+                             break;
+                         case 0xF:
+                             setReg8(CDV_CONTOROL,SETTING_OPEN);
+                             break;
+                         default:
+                             error_state |=DIN_ERROR;
+                             setReg8(CDV_CONTOROL,SETTING_CLOSE);
+                             return;
+                         break;
+                     }
+            }
+        }
+    }
+    else
+    {
+        system_start =  MKV_MB_RTU;
+        error_state &=~DIN_ERROR; //Сбрасываем ошибку дискретных входов
+        setReg8(CDV_CONTOROL,getReg8(MB_CDV_CONTROL));
     }
     CleanTimerFuncton();
     if ((getReg8(CLEAR_TIMER_STATE) == 1 ) &&  (getReg8(CDV_CONTOROL)!= SETTING_CLOSE)) //Если включился таймер уборки и состоние системы не выкл.
     {
         setReg8(CDV_CONTOROL,SETTING_MAXIMUN);  //То переводим системы в состния максимальной уставки
-    }
-    if ((getReg8(CLEAR_TIMER_STATE) == 0) || (cur_state == SETTING_CLOSE))
-    {
-        if (getReg8(CDV_CONTOROL)!=cur_state)   //Тут проверяем
-        {
-            if ( ++(*timeout) >= getReg8(SETTING_TIMER)*100 )
-            {
-                setReg8(CDV_CONTOROL,cur_state);
-            }
-        }
     }
     return ;
 }
@@ -396,8 +409,8 @@ void vBP()
 
 void Channel2Reg(  float setpoint )
 {
-    float PID_Out;
-
+    static float PID_Out;
+    static float temp_f;
     DISCRET_STATE_t state = getReg8(CDV_CONTOROL);
     u8 ch_count = getReg8(CDV_BP_CH_COUNT);
     if (ch_count  == 2)
@@ -407,8 +420,19 @@ void Channel2Reg(  float setpoint )
          else if (state== SETTING_OPEN ) PID_Out = 10.0;
          else
          {
-
-            SET_POINT1  = setpoint + getRegFloat(OFFSET_CH2);
+            temp_f = DataModelGetCDVSettings(setpoint, CAV_VAV_CH1);
+            switch (getReg8(MEASERING_UNIT))
+            {
+                case 0:
+                    temp_f = DataModel_SetLToPressere(temp_f,CAV_VAV_CH2);
+                    break;
+                case 1:
+                    temp_f = DataModel_SetVToPressere(temp_f,CAV_VAV_CH2);
+                    break;
+                case 2:
+                    break;
+            }
+            SET_POINT1  = temp_f + getRegFloat(OFFSET_CH2);
             PID_Compute(&TPID2,getAIN(SENS2));
             PID_Out = PIDOut2/1000.0;
          }
@@ -667,7 +691,7 @@ void user_process_task(void *pvParameters)
        PID_SetOutputLimits(&TPID,(float)1000.0,(float)10000.0);
    else
        PID_SetOutputLimits(&TPID,(float)0.0,(float)10000.0);
-   PID(&TPID2, &PIDOut2, &SET_POINT1, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
+   PID(&TPID2, &PIDOut2, &SET_POINT1, getRegFloat(COOF_P1), getRegFloat(COOF_I1), 0, _PID_CD_DIRECT);
    PID_SetOutputLimits(&TPID2,(float)0000.0,(float)10000.0);
    while(1)
    {

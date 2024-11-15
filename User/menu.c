@@ -526,6 +526,7 @@ static const float coof_float[]         ={0.0001,0.0010, 0.0100, 0.1000,  1.0000
 
 void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8 min_index, float max_data, float min_data )
 {
+
     u8 offset;
     u8 temp_index;
 
@@ -1095,32 +1096,7 @@ void vSetTitle(u16 data_id, u8 * str )
 
 static const u16 ROOM_CHANNEL_SELETC[]={AIN1_TYPE,AIN2_TYPE,AIN3_TYPE};
 
-void DinModeSettingView(u8 channel, char * str)
-{
-    static float temp_float;
-    switch ( getReg8(CDV_CONTOROL))
-    {
-                   case SETTING_OPEN:
-                       strcpy(str,"Откр.");
-                       break;
-                   case SETTING_MINIMUM:
-                       temp_float = DataModelGetCDVSettings( getReg16(SETTING_MIN)+ getReg16(OFFSET_CH2)*channel);
-                       sprintf(str,"%06.1f",temp_float);
-                       break;
-                   case SETTING_MIDIUM:
-                       temp_float = DataModelGetCDVSettings( getReg16(SETTING_MID)+ getReg16(OFFSET_CH2)*channel);
-                       sprintf(str,"%06.1f",temp_float);
-                       break;
-                   case SETTING_MAXIMUN:
-                       temp_float = DataModelGetCDVSettings( getReg16(SETTING_MAX)+ getReg16(OFFSET_CH2)*channel);
-                       sprintf(str,"%06.1f",temp_float);
-                       break;
-                   default:
-                   case SETTING_CLOSE:
-                       strcpy(str,"Закр.");
-                       break;
-     }
-}
+
 static const char NorAvalivaleString[]="----";
 static const u16 SensorPRegMap[]={COOF_PT,COOF_PCO2,COOF_PH};
 static const u16 SensorIRegMap[]={COOF_IT,COOF_ICO2,COOF_IH};
@@ -1200,25 +1176,25 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                     switch (state)
                     {
                         case SETTING_OPEN:
-                              strcpy(str,"Открыто.");
+                              strcpy(str,"Откр.");
                               break;
                         case SETTING_CLOSE:
-                              strcpy(str,"Закрыто.");
+                              strcpy(str,"Закр.");
                               break;
                         case SETTING_MINIMUM:
-                             temp_float = DataModelGetCDVSettings( getRegFloat(SETTING_MIN));
+                             temp_float = DataModelGetCDVSettings( getRegFloat(SETTING_MIN),CAV_VAV_CH1);
 
                              sprintf(str,"%06.1f",temp_float);
                               break;
                         case SETTING_MAXIMUN:
-                             temp_float = DataModelGetCDVSettings( getRegFloat(SETTING_MAX));
+                             temp_float = DataModelGetCDVSettings( getRegFloat(SETTING_MAX),CAV_VAV_CH1);
                              sprintf(str,"%06.1f",temp_float);
                              break;
                         case SETTING_MIDIUM:
                               switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
                               {
                                   case DISCRETE_INPUT:
-                                       temp_float = DataModelGetCDVSettings( getRegFloat(SETTING_MID));
+                                       temp_float = DataModelGetCDVSettings( getRegFloat(SETTING_MID),CAV_VAV_CH1);
                                        sprintf(str,"%06.1f",temp_float);
                                        break;
                                   case 2:
@@ -1237,16 +1213,16 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                   else if ( state == SETTING_CLOSE ) strcpy(str,"Закр.");
                   else
                   {
-                      temp_float = DataModelGetCDVSettings(getRegFloat(OFFSET_CH2));
+                      temp_float = DataModelGetCDVSettings(getRegFloat(OFFSET_CH2),CAV_VAV_CH2);
                       sprintf(str,"%06.1f", temp_float);
                   }
                   break;
             case DCV_FACT1_ID:
-                   temp_float = DataModelGetCDVSettings( getAIN(SENS1));
+                   temp_float = DataModelGetCDVSettings( getAIN(SENS1),CAV_VAV_CH1);
                    sprintf(str,"%06.1f",temp_float);
                    break;
            case DCV_FACT2_ID:
-                  temp_float = DataModelGetCDVSettings( getAIN(SENS2));
+                  temp_float = DataModelGetCDVSettings( getAIN(SENS2),CAV_VAV_CH2);
                   sprintf( str, "%06.1f", temp_float );
                   break;
            case ZERO_CAL_COMMAND:
@@ -1257,7 +1233,6 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                             {
                                 if (SelectEditFlag )  strcpy(str,"Отменить калиборвку?");
                                 else                  strcpy(str,"Калибровка...");
-
                             }
                             else
                             {
@@ -1279,7 +1254,8 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
         }
     }
     else {
-
+        u8 ch;
+       long temp_long;
        u16 reg_id = MenuCDV_BPRegMap[data_id - SETTING_MIN_ID];
     switch (data_id)
     {
@@ -1428,7 +1404,9 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 switch (command)
                                 {
                                      case CMD_START_EDIT:
-                                           edit_data_buffer_float= DataModelGetCDVSettings( getRegFloat(reg_id));
+                                         temp_long = DataModelGetCDVSettings( getRegFloat(reg_id),CAV_VAV_CH2)*10;
+                                         edit_data_buffer_float= temp_long/10;
+                                           edit_data_buffer_float= DataModelGetCDVSettings( getRegFloat(reg_id),CAV_VAV_CH2);
                                            start_edit_flag = 1;
                                            cur_edit_index = 2;
                                            break;
@@ -1437,10 +1415,10 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                                             switch ( getReg8(MEASERING_UNIT) )
                                             {
                                                 case 0:
-                                                        temp_float = DataModel_SetLToPressere(temp_float);
+                                                        temp_float = DataModel_SetLToPressere(temp_float,CAV_VAV_CH2);
                                                         break;
                                                 case 1:
-                                                        temp_float = DataModel_SetVToPressere(temp_float);
+                                                        temp_float = DataModel_SetVToPressere(temp_float,CAV_VAV_CH2);
                                                         break;
                                                  default:
                                                      break;
@@ -1450,7 +1428,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                                              start_edit_flag = 0;
                                              break;
                                         case CMD_READ:
-                                            temp_float = (DataModelGetCDVSettings(getRegFloat(reg_id)));
+                                            temp_float = (DataModelGetCDVSettings(getRegFloat(reg_id),CAV_VAV_CH2));
                                              sprintf(str,"%+07.1f",temp_float);
                                              break;
                                         case CMD_EDIT_READ:
@@ -1458,22 +1436,22 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                                              sprintf(str,"%+07.1f",edit_data_buffer_float );
                                              break;
                                         default:
-                                             temp_float  = DataModelGetCDVSettings(2500);
+                                             temp_float  = DataModelGetCDVSettings(2500,CAV_VAV_CH2);
                                              vFloatDataEdit(reg_id, command,4,1,temp_float ,-temp_float);
                                              break;
                                     }
-
                 break;
-
             case SETTING_MIN_ID:
             case SETTING_AVER_ID:
             case SETTING_MAX_ID:
             case FAIL_SET_CH1_ID:
             case FAIL_SET_CH2_ID:
+                ch = (data_id == FAIL_SET_CH2_ID)? CAV_VAV_CH2 :CAV_VAV_CH1;
                 switch (command)
                 {
                      case CMD_START_EDIT:
-                           edit_data_buffer_float= DataModelGetCDVSettings( getRegFloat(reg_id));
+                          temp_long = DataModelGetCDVSettings( getRegFloat(reg_id),ch)*10;
+                          edit_data_buffer_float= temp_long/10;
                            start_edit_flag = 1;
                            cur_edit_index = 2;
                            break;
@@ -1482,28 +1460,26 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                             switch ( getReg8(MEASERING_UNIT) )
                             {
                                 case 0:
-                                        temp_float = DataModel_SetLToPressere(temp_float);
+                                        temp_float = DataModel_SetLToPressere(temp_float,ch);
                                         break;
                                 case 1:
-                                        temp_float = DataModel_SetVToPressere(temp_float);
+                                        temp_float = DataModel_SetVToPressere(temp_float,ch);
                                         break;
                                  default:
                                      break;
                              }
-                             printf("data %f\r\n",temp_float);
                              saveRegFloat( reg_id, temp_float);
                              start_edit_flag = 0;
                              break;
                         case CMD_READ:
-                             temp_float = (DataModelGetCDVSettings(getRegFloat(reg_id)));
+                             temp_float = (DataModelGetCDVSettings(getRegFloat(reg_id),ch));
                              sprintf(str,"%06.1f",temp_float);
                              break;
                         case CMD_EDIT_READ:
-                            // temp_int = (int32_t)(edit_data_buffer_float*10.0);
                              sprintf(str,"%06.1f",edit_data_buffer_float );
                              break;
                         default:
-                             temp_float  = DataModelGetCDVSettings(2500);
+                             temp_float  = DataModelGetCDVSettings(2500,ch);
                              vFloatDataEdit(reg_id, command,4,1,temp_float ,0);
                              break;
                     }
@@ -1679,7 +1655,7 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
            case SETTING1_ID:
            case SETTING2_ID:
                 if (command > CMD_EDIT_READ)
-                    vByteDataEdit(1,reg_id,command,3,(u16)DataModel_GetPressureToL(2500),0,0);
+                    vByteDataEdit(1,reg_id,command,3,(u16)DataModel_GetPressureToL(2500, (data_id == SETTING1_ID ) ? 0 : 1),0,0);
                 else
                     sprintf(str,"%04i",( command == CMD_READ) ? getReg16(reg_id) : edit_data_buffer_byte  );
                 break;
