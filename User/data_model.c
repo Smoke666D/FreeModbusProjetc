@@ -48,9 +48,10 @@ __attribute__((section(".stext"))) DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[CONTRAST]            = 50;
                DATA_MODEL_REGISTER[MOD_BUS_TIMEOUT ]    = 5;
                DATA_MODEL_REGISTER[FAN_START_TIMEOUT ] =  20;
-               DATA_MODEL_REGISTER[CLEAN_TIMER]        =  20;
+               DATA_MODEL_REGISTER[CLEAN_TIMER]        =  15;
                DATA_MODEL_REGISTER[CDV_BP_CH_COUNT]    =  1;
                DATA_MODEL_REGISTER[SENSOR_COUNT]       =  TIME_5_0;
+               DATA_MODEL_REGISTER[SETTING_TIMER]      = 3;
 
                setRegFloat(KOOFKPS ,  36.0);
                setRegFloat(KOOFKPS1 , 35.0);
@@ -81,6 +82,7 @@ __attribute__((section(".stext"))) DATA_MODEL_INIT_t DataModel_Init()
                setRegFloat(SENS_SETTING1,20);
                setRegFloat(MIN_SET2, 0);
                setRegFloat(MAX_SET2,40);
+               setReg16(ZERO_POINT_TIMEOUT, 3);
 
                setRegFloat(SENS_SETTING2,20);
                setRegFloat(MIN_SET3, 0);

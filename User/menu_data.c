@@ -52,7 +52,7 @@ static xScreenObjet const InfoScreen4[]=
 
 static xScreenObjet const SettingsScreen1[]=
 {
-        {0,10,LINE1,0,READ_DATA, "Настройки",          SETTING1_TITLE_ID },
+        {0,15,LINE1,0,READ_DATA, "Настройки",          SETTING1_TITLE_ID },
         {0,2,25,0,WRITE_DATA,"Режим управл.",          CONTROL_MODE_ID },
         {0,2,37,0,WRITE_DATA,"Протокол связи.",        PROTOCOL_ID },
         {0,2,50,0,WRITE_DATA,"Адрес ModBus",           MB_RTU_ADDR_ID},
@@ -62,7 +62,7 @@ static xScreenObjet const SettingsScreen1[]=
 
 static xScreenObjet const SettingsScreen2[]=
 {
-        {0,10,LINE1,0,READ_DATA, "Настройки      ",    SETTING2_TITLE_ID },
+        {0,15,LINE1,0,READ_DATA, "Настройки      ",    SETTING2_TITLE_ID },
         {0,2,25,0,WRITE_DATA,"IP",                     IP_ADRESS_DATA_ID},
         {0,2,37,0,WRITE_DATA,"IP Порт",                IP_PORT_ID},
         {0,2,50,0,WRITE_DATA,"Шлюз",                   IP_GATE_ID},
@@ -90,7 +90,7 @@ static xScreenObjet const SettingsScreen4[]=
 };
 static xScreenObjet const SettingsScreen5[]=
 {
-        {0,10,LINE1,0,READ_DATA,"Настройки      ",VOLTAG_SCREEN_TITLE_ID},
+        {0,15,LINE1,0,READ_DATA,"Настройки      ",VOLTAG_SCREEN_TITLE_ID},
         {0,2,25,0,WRITE_DATA,"Напряжение min",     VOLTAGE_MIN_ON_ID},
         {0,2,37,0,WRITE_DATA,"Сброс аварии min",   VOLTAGE_MIN_OFF_ID },
         {0,2,50,0,WRITE_DATA,"Напряжение max",     VOLTAGE_MAX_ON_ID},
@@ -181,18 +181,12 @@ xScreenType  xScreenFMCH[FMCH_SCREEN_COUNT] =
 static  xScreenObjet  CDVInfoScreen1[]=
 {
         {0,0,LINE1,0,  READ_DATA,"Уставка",   DCV_SETTING1_ID},
-
-      //   {0,100,LINE1,0, TEXT_STRING,"",         },
         {0,0,25,00,     READ_DATA,"Канал 1",   DCV_FACT1_ID },
         {0,100,25,0,    TEXT_STRING,"",         0},
         {0,0,50,0,     READ_DATA,"Cмещение" , DCV_SETTING2_ID},
-        //{0,100,50,0,    TEXT_STRING,"",          0},
         {0,0,62,0,     READ_DATA,"Канал 2",   DCV_FACT2_ID },
         {1,100,62,0,    TEXT_STRING,"",         0},
         {1,0,37,0,     READ_DATA,"Факт",      FACT_CH_DATA_ID },
-
-
-
       //  {1,10,62,0,     READ_DATA,"Режим:",    CDV_MODE_ID},
 };
 
@@ -358,7 +352,7 @@ void PriorRegulationEnable(uint8_t enable)
 
 static xScreenObjet  CDVSettingsPI1[]=
 {
-        {0,15,LINE1,0,READ_DATA,"Настройки     ",  SETTING10_TITLE_ID},
+        {0,15,LINE1,0,READ_DATA,"Настройки",  SETTING10_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"ПИ регулятор ", 0},
         {0,2,37,0,TEXT_STRING,"Ведущий канал 1.",0},
         {0,2,50,0,WRITE_DATA,"Коэф. П",COOF_P_CAV_ID },
@@ -366,7 +360,7 @@ static xScreenObjet  CDVSettingsPI1[]=
 };
 static xScreenObjet const CDVSettingsPI2[]=
 {
-        {0,15,LINE1,0,READ_DATA,"Настройки     ", SETTING11_TITLE_ID},
+        {0,15,LINE1,0,READ_DATA,"Настройки", SETTING11_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"ПИ регулятор", 0},
         {0,2,37,0,TEXT_STRING,"Ведомый канал 2.",0},
         {0,2,50,0,WRITE_DATA,"Коэф. П",COOF_P_1_ID },
@@ -376,7 +370,7 @@ static xScreenObjet const CDVSettingsPI2[]=
 
 static xScreenObjet const CDVSettingsPI1SENS[]=
 {
-        {0,15,LINE1,0,READ_DATA,"Настройки     ", SENS_PI_TITLE_ID},
+        {0,15,LINE1,0,READ_DATA,"Настройки", SENS_PI_TITLE_ID},
         {0,2,25,0,TEXT_STRING,"ПИ регулятор", 0},
         {0,2,37,0,READ_DATA,"Канала ",SENS_REG_ID},
         {0,2,50,0,WRITE_DATA,"Коэф. П",COOF_P_SENS_ID },
@@ -388,7 +382,7 @@ static xScreenObjet const CDVSettingsPI1SENS[]=
 
 static xScreenObjet const CDVSettingsPB[]=
 {
-        {0,15,LINE1,0,READ_DATA,"Настройки     ", SETTING11_TITLE_ID},
+        {0,15,LINE1,0,READ_DATA,"Настройки", SETTING11_TITLE_ID},
         {0,2,25,0,WRITE_DATA,"Типоразмер", BP_SZIE_ID},
         {1,2,37,0,WRITE_DATA,"Тип регул.",BP_REG_TYPE_ID},
 };
@@ -425,11 +419,11 @@ static xScreenObjet const InfoScreen2DCV[]=
 
 static xScreenObjet const Sensor_screen[]=
 {
-        {0,2,LINE1,00,READ_DATA,"AIT1",AIT1_TEMP_ID},
-        {0,2,25,00,READ_DATA,"AIT2",AIT2_TEMP_ID},
-        {0,2,37,00,READ_DATA,"Tемпер. T",T_SENSOR_ID},
-        {0,2,50,00,READ_DATA,"CO2",CO2_SENSOR_ID},
-        {1,2,62,00,READ_DATA,"Вдажность",HUMANITY_SENSOR_ID },
+        {0,2,LINE1,00,READ_DATA,"Т пасс. 1",AIT1_TEMP_ID},
+        {0,2,25,00,READ_DATA,"Т пасс. 2",AIT2_TEMP_ID},
+        {0,2,37,00,READ_DATA,"Т   (0-10/4-20)",T_SENSOR_ID},
+        {0,2,50,00,READ_DATA,"СО2 (0-10/4-20)",CO2_SENSOR_ID},
+        {1,2,62,00,READ_DATA,"Н   (0-10/4-20)",HUMANITY_SENSOR_ID },
 };
 
 #define LAST_SET_SCREEN 11

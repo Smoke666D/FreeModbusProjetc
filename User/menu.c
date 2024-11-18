@@ -348,9 +348,11 @@ void vMenuTask ( void )
                   }
                   if (mask == 0x03)
                   {
+                      printf(" key down\r\n");
                       menu_mode = 5;
                       SelectEditFlag  = 1;
                       SetFirtsEditString();
+                      vSetCommnad( CMD_SAVE_EDIT );
                   }
 
               }
@@ -407,13 +409,7 @@ void vMenuTask ( void )
                          else
                              vSetCommnad(( TempEvent.KeyCode == ENTER_KEY ) ? CMD_SAVE_EDIT : CMD_EXIT_EDIT);
                          break;
-                     case 5:
-                         if ( TempEvent.KeyCode  <=  UP_KEY )
-                               vGetData( curr_edit_data_id, 0,COMMNAD_MAP_ARRAY[TempEvent.KeyCode],0,0);
-                           else
-                              vSetCommnad(( TempEvent.KeyCode == ENTER_KEY ) ? CMD_SAVE_EDIT : CMD_EXIT_EDIT);
-                           break;
-                         break;
+
                      case 4:
                          break;
 
@@ -438,7 +434,6 @@ void MenuSetDevice()
             break;
         case DEV_CAV_VAV_BP:
             pMenu = xScreenDCV;
-
             SetPID2Screen((CHANNEL_COUNT_t)getReg8(CDV_BP_CH_COUNT),getReg8(INPUT_CONTROL_TYPE));
 
             break;
@@ -452,7 +447,6 @@ void MenuSetDevice()
 void MenuSetDeviceMenu()
 {
     pMenu = xDeiceInit;
-
     menu_mode = 4;
 }
 
@@ -931,6 +925,7 @@ void vSetTitle(u16 data_id, u8 * str )
     u8 dev_type = getReg8(DEVICE_TYPE);
     switch (data_id)
     {
+           default:
            case CALIBRATION_TITLE_ID:
                if (dev_type == DEV_FMCH)
                    strcpy(str,"7/10");
@@ -953,45 +948,40 @@ void vSetTitle(u16 data_id, u8 * str )
                if (dev_type == DEV_FMCH)
                      strcpy(str,"5/10");
                   else
-                               sprintf(str,"3/%i",screen_count);
-                              break;
+                     sprintf(str,"3/%i",screen_count);
+                  break;
            case SETTING3_TITLE_ID:
-                   sprintf(str,"5/%i",screen_count);
-                   break;
+                  sprintf(str,"5/%i",screen_count);
+                  break;
            case SETTING6_TITLE_ID:
-                   sprintf(str,"6/%i",screen_count);
-                   break;
+                  sprintf(str,"6/%i",screen_count);
+                  break;
            case SETTING7_TITLE_ID:
-                   sprintf(str,"7/%i",screen_count);
-                   break;
+                  sprintf(str,"7/%i",screen_count);
+                  break;
            case SETTING8_TITLE_ID:
-               if(channel_count ==TWO_CH)
+                if(channel_count ==TWO_CH)
                    sprintf(str,"8/%i",screen_count);
                 else
-                    sprintf(str,"7/%i",screen_count);
-
-                  break;
+                   sprintf(str,"7/%i",screen_count);
+                break;
            case SETTING9_TITLE_ID:
                if(channel_count ==TWO_CH)
                  sprintf(str,"9/%i",screen_count);
                else
-                   sprintf(str,"8/%i",screen_count);
-
-                  break;
+                 sprintf(str,"8/%i",screen_count);
+                break;
            case SETTING10_TITLE_ID:
                if(channel_count ==TWO_CH)
                   sprintf(str,"10/%i",screen_count);
-               else {
+               else
                    sprintf(str,"9/%i",screen_count);
-            }
                   break;
            case SENS_PI_TITLE_ID:
                if(channel_count ==TWO_CH)
-                                sprintf(str,"11/%i",screen_count);
-                             else {
-                                 sprintf(str,"10/%i",screen_count);
-                          }
-                                break;
+                   sprintf(str,"11/%i",screen_count);
+                else
+                   sprintf(str,"10/%i",screen_count);
                 break;
            case SETTING11_TITLE_ID:
                if(channel_count ==TWO_CH)
@@ -1003,78 +993,57 @@ void vSetTitle(u16 data_id, u8 * str )
                   break;
            case RESET_TITLE_ID:
                if (dev_type == DEV_FMCH)
-                                    strcpy(str,"10/10");
-                              else
-                                   sprintf(str,"%i/%i",screen_count,screen_count);
-                                  break;
-
-
+                   strcpy(str,"10/10");
+               else
+                   sprintf(str,"%i/%i",screen_count,screen_count);
+               break;
            case SETTINGANALOG1_TITLE_ID:
-               if(channel_count ==TWO_CH)
-                                 temp_index=12;
-                             else
-                                 temp_index=10;;
-               temp_index =temp_index+IsPISendScreenNreed();
-                sprintf(str,"%i/%i",temp_index,screen_count);
+               temp_index = ( channel_count == TWO_CH )? 12 : 10;
+               temp_index = temp_index + IsPISendScreenNreed();
+               sprintf(str,"%i/%i",temp_index,screen_count);
                break;
            case SETTINGANALOG2_TITLE_ID:
-               if(channel_count ==TWO_CH)
-                                 temp_index=13;
-                             else
-                                 temp_index=11;
-               temp_index =temp_index+IsPISendScreenNreed();
-                sprintf(str,"%i/%i",temp_index,screen_count);
+               temp_index = ( channel_count == TWO_CH ) ? 13 : 11;
+               temp_index = temp_index + IsPISendScreenNreed();
+               sprintf(str,"%i/%i",temp_index,screen_count);
                break;
            case SETTINGANALOG3_TITLE_ID:
-               if(channel_count ==TWO_CH)
-                                 temp_index=14;
-                             else
-                                 temp_index=12;
-               temp_index =temp_index+IsPISendScreenNreed();
-                sprintf(str,"%i/%i",temp_index,screen_count);
+               temp_index = ( channel_count == TWO_CH ) ? 14 : 12;
+               temp_index = temp_index + IsPISendScreenNreed();
+               sprintf(str,"%i/%i",temp_index,screen_count);
                break;
            case SETTINGANALOG4_TITLE_ID:
-               if(channel_count ==TWO_CH)
-                                 temp_index=15;
-                             else
-                                 temp_index=13;
+               temp_index = (channel_count ==TWO_CH) ? 15 : 13;
                temp_index =temp_index+IsPISendScreenNreed();
                 sprintf(str,"%i/%i",temp_index,screen_count);
                break;
            case SETTINGANALOG5_TITLE_ID:
-               if(channel_count ==TWO_CH)
-                                 temp_index=16;
-                             else
-                                 temp_index=14;
+               temp_index  =  (channel_count ==TWO_CH) ? 16 : 14;
                temp_index =temp_index+IsPISendScreenNreed();
                 sprintf(str,"%i/%i",temp_index,screen_count);
                break;
            case SENSOR_TYPE_TITLE_ID:
                if(channel_count ==TWO_CH)
-               strcpy(str,"Приоритет рег.:") ;
+                   strcpy(str,"Приоритет рег.:") ;
                else
                    str[0] = 0;
                break;
            case AFTER_ZONE_TITLE_ID:
-                           if (getReg8(INPUT_CONTROL_TYPE) == ANALOG_SENSOR)
-                               strcpy(str,"Приор. регул.");
-                           else
-                              str[0] =0;
-                           break;
+                if (getReg8(INPUT_CONTROL_TYPE) == ANALOG_SENSOR)
+                    strcpy(str,"Приор. регул.");
+                else
+                    str[0] =0;
                break;
            case  SENSOR_TITLE_ID:
                if (getReg8(INPUT_CONTROL_TYPE) == 2)
-                            strcpy(str,"Тип датчика.:") ;
-                            else
-                                str[0] = 0;
-
-                            break;
+                   strcpy(str,"Тип датчика.:") ;
+               else
+                   str[0] = 0;
+               break;
     }
 }
 
 static const u16 ROOM_CHANNEL_SELETC[]={AIN1_TYPE,AIN2_TYPE,AIN3_TYPE};
-
-
 static const char NorAvalivaleString[]="----";
 static const u16 SensorPRegMap[]={COOF_PT,COOF_PCO2,COOF_PH};
 static const u16 SensorIRegMap[]={COOF_IT,COOF_ICO2,COOF_IH};

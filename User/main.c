@@ -42,6 +42,16 @@ EventGroupHandle_t * xGetADCEvent()
 }
 
 
+float STestFuncton()
+{
+    float temp_float =0;
+    for (uint32_t i = 0;i<65000;i++)
+    {
+        temp_float = temp_float + 0.01234;
+    }
+    return (temp_float);
+}
+
 /*********************************************************************
  * @fn      main
  *

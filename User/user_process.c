@@ -153,8 +153,7 @@ float UPDATE_COOFCAV( INPUT_SENSOR_t inp_sensor, DISCRET_STATE_t control_state)
          }
     }
     PID_SetTunings2(&TPID,getRegFloat(PCOOFMAP[index]),getRegFloat(ICOOFMAP[index]), 0);
-    PID_SetTunings2(&TPID,getRegFloat(COOF_P1),getRegFloat(COOF_I1), 0);
-
+    PID_SetTunings2(&TPID2,getRegFloat(COOF_P1),getRegFloat(COOF_I1), 0);
     u8 after_zone = 0;
     float input_data = GetSensor(&after_zone, inp_sensor);
     if ( after_zone )
