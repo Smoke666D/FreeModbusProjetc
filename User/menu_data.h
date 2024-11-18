@@ -11,6 +11,7 @@
 #include "main.h"
 #include "menu.h"
 #include "user_process.h"
+#include "system_init.h"
 
 #define MENU_LEVEL1_COUNT      3U
 
@@ -28,7 +29,7 @@
 void SetBPSetting(u8 set);
 void vSettingCoountCondfig( u8 setting);
 void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state);
-u8 getScreenCount();
+u8 getScreenCount(DEVICE_TYPE_t dev);
 void vSetAfterZone( uint8_t enable, u8 analog_state);
 extern xScreenType  xScreenVAV[];
 extern xScreenType  xScreenCAV[];

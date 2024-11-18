@@ -36,6 +36,19 @@ static float Temp;
 static float PIDOut;
 static float PIDOut2;
 
+static float CumputeChannel2Setpoit( float setpoint);
+
+float GetChanne2Setting()
+{
+   static float setpoit;
+   if  (getReg8(INPUT_CONTROL_TYPE) == DISCRETE_INPUT)
+     setpoit = SET_POINT;
+   else
+     setpoit = getAIN(SENS1);
+
+   return (CumputeChannel2Setpoit(setpoit));
+}
+
 TaskHandle_t * getUserProcessTaskHandle()
 {
     return (&processTaskHandle);
@@ -409,21 +422,41 @@ void vBP()
 }
 
 
+
+
+static float CumputeChannel2Setpoit( float setpoint)
+{
+    float temp_f = DataModelGetCDVSettings(setpoint, CAV_VAV_CH1);
+    switch (getReg8(MEASERING_UNIT))
+    {
+        case 0:
+            temp_f = DataModel_SetLToPressere(temp_f,CAV_VAV_CH2);
+            break;
+       case 1:
+            temp_f = DataModel_SetVToPressere(temp_f,CAV_VAV_CH2);
+            break;
+       case 2:
+            break;
+    }
+    return (temp_f + getRegFloat(OFFSET_CH2));
+
+}
+
+
 void Channel2Reg(  float setpoint )
 {
     static float PID_Out;
-    static float temp_f;
+    //static float temp_f;
     DISCRET_STATE_t state = getReg8(CDV_CONTOROL);
     u8 ch_count = getReg8(CDV_BP_CH_COUNT);
 
     if (ch_count  == 2)
     {
-
          if (state == SETTING_CLOSE) PID_Out = 0.0;
          else if (state== SETTING_OPEN ) PID_Out = 10.0;
          else
          {
-            temp_f = DataModelGetCDVSettings(setpoint, CAV_VAV_CH1);
+            /*emp_f = DataModelGetCDVSettings(setpoint, CAV_VAV_CH1);
             switch (getReg8(MEASERING_UNIT))
             {
                 case 0:
@@ -434,13 +467,10 @@ void Channel2Reg(  float setpoint )
                     break;
                 case 2:
                     break;
-            }
-
-            SET_POINT1  = temp_f + getRegFloat(OFFSET_CH2);
+            }*/
+            SET_POINT1  =  CumputeChannel2Setpoit( setpoint );  //temp_f + getRegFloat(OFFSET_CH2);
             PID_Compute(&TPID2,getAIN(SENS2));
-
             PID_Out = PIDOut2/1000.0;
-
          }
 
         USER_AOUT_SET(DAC2,PID_Out);

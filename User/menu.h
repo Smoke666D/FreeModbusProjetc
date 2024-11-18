@@ -130,7 +130,7 @@
 #define CO2_SENSOR_ID           ( T_SENSOR_ID               + 1 )
 #define HUMANITY_SENSOR_ID      ( CO2_SENSOR_ID             + 1 )
 #define FACT_CH_DATA_ID         ( HUMANITY_SENSOR_ID        + 1 )
-#define DCV_FACT2_ID            (  FACT_CH_DATA_ID  + 1 )
+#define DCV_FACT2_ID            ( FACT_CH_DATA_ID  + 1 )
 #define DCV_FACT1_ID            ( DCV_FACT2_ID              + 1 )
 #define DCV_SETTING2_ID         ( DCV_FACT1_ID              + 1 )
 #define DCV_SETTING1_ID         ( DCV_SETTING2_ID           + 1 )
@@ -138,32 +138,31 @@
 
 
 
-#define VOLTAG_SCREEN_TITLE_ID  ( ZERO_CAL_COMMAND       + 1 )
-#define SETTING1_TITLE_ID       ( VOLTAG_SCREEN_TITLE_ID + 1 )
-#define SETTING2_TITLE_ID       ( SETTING1_TITLE_ID      + 1 )
-#define SETTING3_TITLE_ID       ( SETTING2_TITLE_ID      + 1 )
-#define SETTING6_TITLE_ID       ( SETTING3_TITLE_ID      + 1 )
-#define SETTING7_TITLE_ID       ( SETTING6_TITLE_ID      + 1 )
-#define SETTING8_TITLE_ID       ( SETTING7_TITLE_ID      + 1 )
-#define SETTING9_TITLE_ID       ( SETTING8_TITLE_ID      + 1 )
-#define SETTING10_TITLE_ID      ( SETTING9_TITLE_ID      + 1 )
-#define SETTING11_TITLE_ID      ( SETTING10_TITLE_ID      + 1 )
-#define SENS_PI_TITLE_ID        ( SETTING11_TITLE_ID      + 1 )
-#define SETTINGANALOG1_TITLE_ID ( SENS_PI_TITLE_ID     + 1 )
-#define SETTINGANALOG2_TITLE_ID ( SETTINGANALOG1_TITLE_ID      + 1 )
-#define SETTINGANALOG3_TITLE_ID ( SETTINGANALOG2_TITLE_ID      + 1 )
-#define SETTINGANALOG4_TITLE_ID ( SETTINGANALOG3_TITLE_ID      + 1 )
-#define SETTINGANALOG5_TITLE_ID ( SETTINGANALOG4_TITLE_ID      + 1 )
-#define SENSOR_TYPE_TITLE_ID    ( SETTINGANALOG5_TITLE_ID      + 1 )
-#define AFTER_ZONE_TITLE_ID     ( SENSOR_TYPE_TITLE_ID   + 1 )
-#define RESET_TITLE_ID          ( AFTER_ZONE_TITLE_ID   + 1 )
-#define SENSOR_TITLE_ID         ( RESET_TITLE_ID  + 1 )
-#define CALIBRATION_TITLE_ID    ( SENSOR_TITLE_ID   + 1 )
 
+#define SETTING1_TITLE_ID       ( ZERO_CAL_COMMAND          + 1 )
+#define SETTING2_TITLE_ID       ( SETTING1_TITLE_ID         + 1 )
+#define SETTING3_TITLE_ID       ( SETTING2_TITLE_ID         + 1 )
+#define SETTING6_TITLE_ID       ( SETTING3_TITLE_ID         + 1 )
+#define SETTING7_TITLE_ID       ( SETTING6_TITLE_ID         + 1 )
+#define RESET_TITLE_ID          ( SETTING7_TITLE_ID         + 1 )
+#define VOLTAG_SCREEN_TITLE_ID  ( RESET_TITLE_ID            + 1 )
+#define SETTING8_TITLE_ID       ( VOLTAG_SCREEN_TITLE_ID    + 1 )
+#define SETTING9_TITLE_ID       ( SETTING8_TITLE_ID         + 1 )
+#define SETTING10_TITLE_ID      ( SETTING9_TITLE_ID         + 1 )
+#define SETTING11_TITLE_ID      ( SETTING10_TITLE_ID        + 1 )
+#define SENS_PI_TITLE_ID        ( SETTING11_TITLE_ID        + 1 )
+#define SETTINGANALOG1_TITLE_ID ( SENS_PI_TITLE_ID          + 1 )
+#define SETTINGANALOG2_TITLE_ID ( SETTINGANALOG1_TITLE_ID   + 1 )
+#define SETTINGANALOG3_TITLE_ID ( SETTINGANALOG2_TITLE_ID   + 1 )
+#define SETTINGANALOG4_TITLE_ID ( SETTINGANALOG3_TITLE_ID   + 1 )
+#define SETTINGANALOG5_TITLE_ID ( SETTINGANALOG4_TITLE_ID   + 1 )
+#define CALIBRATION_TITLE_ID    ( SETTINGANALOG5_TITLE_ID   + 1 )
+#define SENSOR_TYPE_TITLE_ID    ( CALIBRATION_TITLE_ID      + 1 )
+#define AFTER_ZONE_TITLE_ID     ( SENSOR_TYPE_TITLE_ID      + 1 )
+#define SENSOR_TITLE_ID         ( AFTER_ZONE_TITLE_ID       + 1 )
 
-
-#define TITLE_FIRST         VOLTAG_SCREEN_TITLE_ID
-#define TITLE_LAST          CALIBRATION_TITLE_ID
+#define TITLE_FIRST         SETTING1_TITLE_ID
+#define TITLE_LAST          SENSOR_TITLE_ID
 
 #define FMCH_FIRST          FAN_START_TIMEOUT_ID
 #define FMCH_LAST           MODE_STATE_ID

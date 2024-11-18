@@ -180,10 +180,10 @@ xScreenType  xScreenFMCH[FMCH_SCREEN_COUNT] =
 
 static  xScreenObjet  CDVInfoScreen1[]=
 {
-        {0,0,LINE1,0,  READ_DATA,"Уставка",   DCV_SETTING1_ID},
+        {0,0,LINE1,0,  READ_DATA,"Уст. к 1",   DCV_SETTING1_ID},
         {0,0,25,00,     READ_DATA,"Канал 1",   DCV_FACT1_ID },
         {0,100,25,0,    TEXT_STRING,"",         0},
-        {0,0,50,0,     READ_DATA,"Cмещение" , DCV_SETTING2_ID},
+        {0,0,50,0,     READ_DATA,"Уст. к 2" , DCV_SETTING2_ID},
         {0,0,62,0,     READ_DATA,"Канал 2",   DCV_FACT2_ID },
         {1,100,62,0,    TEXT_STRING,"",         0},
         {1,0,37,0,     READ_DATA,"Факт",      FACT_CH_DATA_ID },
@@ -465,8 +465,11 @@ xScreenType  xScreenDCV[] =
 
 static u8 seting_sting_count = 0;
 
-u8 getScreenCount()
+u8 getScreenCount(DEVICE_TYPE_t dev)
 {
+  if (dev == DEV_FMCH)
+     return 10;
+  else
     return (seting_sting_count);
 }
 
