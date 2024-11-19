@@ -53,6 +53,7 @@ __attribute__((section(".stext"))) DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[SENSOR_COUNT]       =  TIME_5_0;
                DATA_MODEL_REGISTER[SETTING_TIMER]      = 3;
 
+
                setRegFloat(KOOFKPS ,  36.0);
                setRegFloat(KOOFKPS1 , 35.0);
                setRegFloat(KOOFKPS2 , 35.0);

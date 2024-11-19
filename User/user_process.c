@@ -438,7 +438,7 @@ static float CumputeChannel2Setpoit( float setpoint)
        case 2:
             break;
     }
-    return (temp_f + getRegFloat(OFFSET_CH2));
+    return (temp_f );
 
 }
 
@@ -468,7 +468,7 @@ void Channel2Reg(  float setpoint )
                 case 2:
                     break;
             }*/
-            SET_POINT1  =  CumputeChannel2Setpoit( setpoint );  //temp_f + getRegFloat(OFFSET_CH2);
+            SET_POINT1  =  CumputeChannel2Setpoit( setpoint ) + getRegFloat(OFFSET_CH2) ;  //temp_f + getRegFloat(OFFSET_CH2);
             PID_Compute(&TPID2,getAIN(SENS2));
             PID_Out = PIDOut2/1000.0;
          }

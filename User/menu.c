@@ -1122,7 +1122,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
              else if ( state == SETTING_CLOSE ) strcpy(str,"Закр.");
                   else
                   {
-                      temp_float = DataModelGetCDVSettings(GetChanne2Setting(),CAV_VAV_CH2);
+                      temp_float = DataModelGetCDVSettings(GetChanne2Setting(),CAV_VAV_CH2) + DataModelGetCDVSettings(getRegFloat(OFFSET_CH2),CAV_VAV_CH2);
                       sprintf(str,"%06.1f %s", temp_float,MUnitStrig[getReg8(MEASERING_UNIT)]);
                   }
                   break;

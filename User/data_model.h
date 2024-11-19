@@ -15,7 +15,7 @@
 
 #define SW_V                 2
 #define SW_V2                5
-#define SW_V3                10
+#define SW_V3                11
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -94,28 +94,28 @@
 #define F_CHANNEL              ( SENS_SETTING3  + sizeof(uint32_t) )
 #define F_CHANNEL2             ( F_CHANNEL        + sizeof(uint32_t) )
 #define BP_REG_TYPE            ( F_CHANNEL2       + sizeof(uint32_t) )
-#define BP_SIZE               ( BP_REG_TYPE       + sizeof(uint8_t) )
-#define SETTING_MAX           ( BP_SIZE           + sizeof(uint8_t) )
-#define SETTING_MIN           ( SETTING_MAX       + sizeof(uint32_t) )
-#define SETTING_MID           ( SETTING_MIN       + sizeof(uint32_t) )
-#define INPUT_CONTROL_TYPE    ( SETTING_MID       + sizeof(uint32_t) )
-#define ROOM_CHANNEL          ( INPUT_CONTROL_TYPE       + sizeof(uint8_t) )
-#define OFFSET_CH2            ( ROOM_CHANNEL        + sizeof(uint8_t) )
-#define CH1_SETTING           ( OFFSET_CH2         + sizeof(uint32_t) )
-#define CH2_SETTING           ( CH1_SETTING         + sizeof(uint32_t) )
-#define FILTER_LOW            ( CH2_SETTING         + sizeof(uint32_t) )
-#define FILTER_HIGH           ( FILTER_LOW + sizeof(uint16_t) )
-#define MOTO_HOURS            ( FILTER_HIGH + sizeof(uint16_t) )
-#define RECORD_COUNT          ( MOTO_HOURS  + sizeof(uint32_t)  )
-#define RECORD_INDEX          ( RECORD_COUNT + sizeof(uint16_t) )
-#define EEPROM_REGISTER_COUNT ( RECORD_INDEX  + sizeof(uint16_t) )
-#define SYSTEM_START          ( RECORD_INDEX  + sizeof(uint16_t) )
-#define LIGTH                 ( SYSTEM_START + sizeof(uint8_t) )
-#define MODE                  ( LIGTH    + sizeof(uint8_t) )
-#define SENSOR_ERROR          ( MODE  + sizeof(uint8_t) )
-#define MB_CDV_CONTROL        ( SENSOR_ERROR +  sizeof(uint8_t) )
-#define CLEAR_TIMER_STATE     ( MB_CDV_CONTROL +  sizeof(uint8_t) )
-#define CDV_CONTOROL          ( CLEAR_TIMER_STATE +  sizeof(uint8_t) )
+#define BP_SIZE                ( BP_REG_TYPE       + sizeof(uint8_t) )
+#define SETTING_MAX            ( BP_SIZE           + sizeof(uint8_t) )
+#define SETTING_MIN            ( SETTING_MAX       + sizeof(uint32_t) )
+#define SETTING_MID            ( SETTING_MIN       + sizeof(uint32_t) )
+#define INPUT_CONTROL_TYPE     ( SETTING_MID       + sizeof(uint32_t) )
+#define ROOM_CHANNEL           ( INPUT_CONTROL_TYPE       + sizeof(uint8_t) )
+#define OFFSET_CH2             ( ROOM_CHANNEL        + sizeof(uint8_t) )
+#define CH1_SETTING            ( OFFSET_CH2         + sizeof(uint32_t) )
+#define CH2_SETTING            ( CH1_SETTING         + sizeof(uint32_t) )
+#define FILTER_LOW             ( CH2_SETTING         + sizeof(uint32_t) )
+#define FILTER_HIGH            ( FILTER_LOW + sizeof(uint16_t) )
+#define MOTO_HOURS             ( FILTER_HIGH + sizeof(uint16_t) )
+#define RECORD_COUNT           ( MOTO_HOURS  + sizeof(uint32_t)  )
+#define RECORD_INDEX           ( RECORD_COUNT + sizeof(uint16_t) )
+#define EEPROM_REGISTER_COUNT  ( RECORD_INDEX  + sizeof(uint16_t) )
+#define SYSTEM_START           ( RECORD_INDEX  + sizeof(uint16_t) )
+#define LIGTH                  ( SYSTEM_START + sizeof(uint8_t) )
+#define MODE                   ( LIGTH    + sizeof(uint8_t) )
+#define SENSOR_ERROR           ( MODE  + sizeof(uint8_t) )
+#define MB_CDV_CONTROL         ( SENSOR_ERROR +  sizeof(uint8_t) )
+#define CLEAR_TIMER_STATE      ( MB_CDV_CONTROL +  sizeof(uint8_t) )
+#define CDV_CONTOROL           ( CLEAR_TIMER_STATE +  sizeof(uint8_t) )
 
 
 
