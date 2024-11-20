@@ -105,6 +105,15 @@ void vNetInit()
     struct _KEEP_CFG cfg;
     WCHNET_GetMacAddr(MACAddr);                                   //get the chip MAC address
     TIM2_Init();
+    for (uint8_t k = 0; k < 4; k++)
+    {
+        IPAddr[k] = getReg8(IP_1+k);
+        GWIPAddr[k] =getReg8( GATE_1 + k);
+        IPMask[k]  = getReg8( MASK_1 + k);
+    }
+
+
+
     i = ETH_LibInit(IPAddr, GWIPAddr, IPMask, MACAddr);           //Ethernet library initialize
     if (i == WCHNET_ERR_SUCCESS){};
     cfg.KLIdle = 20000;

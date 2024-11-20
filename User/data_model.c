@@ -14,10 +14,13 @@
 u8 DATA_MODEL_REGISTER[DATA_MODEL_REGISTERS];
 
 
+
+
+
 __attribute__((section(".stext"))) DATA_MODEL_INIT_t DataModel_Init()
 {
     memset(DATA_MODEL_REGISTER,0,EEPROM_REGISTER_COUNT);
-    if (   ReadEEPROMData(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ,2) == EEPROM_OK)
+    if (   ReadEEPROMDataPolling(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ) == EEPROM_OK)
     {
            if (DATA_MODEL_REGISTER[VALID_CODE_ADDRES]!=VALID_CODE )
            {
@@ -93,8 +96,9 @@ __attribute__((section(".stext"))) DATA_MODEL_INIT_t DataModel_Init()
                setRegFloat(F_CHANNEL2,0.0314);
                DATA_MODEL_REGISTER[ROOM_CHANNEL]       =  1;
                DATA_MODEL_REGISTER[INPUT_CONTROL_TYPE] = 0;
-               if (WriteEEPROM(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 1000 ,2) == EEPROM_OK) printf("EEPROMwtiye\r\n");
-               ReadEEPROMData(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ,2);
+               if (WriteEEPROMPolling(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 1000 ) == EEPROM_OK) printf("EEPROMwtiye\r\n");
+
+               ReadEEPROMDataPolling(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 );
                return (NEW_INIT);
            }
            else

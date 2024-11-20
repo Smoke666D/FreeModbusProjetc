@@ -293,7 +293,7 @@ void vDefaultTask( void  * argument )
 void WCHNET_task(void *pvParameters)
 {
     TCP_STOP  = 0;
-    DataModel_Init();
+
     vRTC_TASK_Init();
     xTaskNotifyGive( DefautTask_Handler );
     while(1)

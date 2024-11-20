@@ -15,7 +15,7 @@
 
 #define SW_V                 2
 #define SW_V2                5
-#define SW_V3                12
+#define SW_V3                16
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -224,5 +224,5 @@ void vADDRecord( uint8_t flag);
 void vGetRecord( uint16_t addr,uint8_t * flag, HAL_TimeConfig_T * time, HAL_DateConfig_T * date);
 u8 VerifyAndSetReg8(u16 reg_adress, u16 data );
 void SaveBeforePowerOff();
-
+void GetEEPROMData();
 #endif /* USER_DATA_MODEL_H_ */

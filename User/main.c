@@ -78,6 +78,8 @@ int main(void)
 	vInit_DeviceConfig();
 	USART_Printf_Init(115200);
 	vRTC_Init();
+
+	DataModel_Init();
 	vSYSqueueInit ( );
     vSYSeventInit ( );
     vSYStaskInit ( );
