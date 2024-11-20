@@ -15,7 +15,7 @@
 
 #define SW_V                 2
 #define SW_V2                5
-#define SW_V3                11
+#define SW_V3                12
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -198,7 +198,7 @@ typedef enum
 #define TOTAL_REGISTER_COUNT   DATA_MODEL_REGISTERS
 
 
-
+float DataModelGetPressureSettings( float setting, CAV_VAV_CH_t channel);
 float DataModelGetCDVSettings( float pressure,CAV_VAV_CH_t channel);
 float DataModel_SetLToPressere(float L,CAV_VAV_CH_t channel);
 float DataModel_SetVToPressere(float V,CAV_VAV_CH_t channel);

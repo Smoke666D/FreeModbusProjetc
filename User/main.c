@@ -73,6 +73,7 @@ int main(void)
 {
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 	SystemCoreClockUpdate();
+
 	Delay_Init();
 	vInit_DeviceConfig();
 	USART_Printf_Init(115200);
@@ -81,7 +82,8 @@ int main(void)
     vSYSeventInit ( );
     vSYStaskInit ( );
     vNetInit();
-    printf("System start\r\n");
+
+    printf("System start %i\r\n",SystemCoreClock);
     vTaskStartScheduler();
 	while(1)
 	{

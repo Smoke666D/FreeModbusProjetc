@@ -518,6 +518,7 @@ void vSetRegData( u16 adress)
    {
        if (dev_type == DEV_FMCH)
        {
+
                byte_data = (u16)usRegHoldingBuf[adress];
                reg_addr = FMCH_REGS_MAP[adress- 100];
                switch (adress)
@@ -550,6 +551,7 @@ void vSetRegData( u16 adress)
        else
        {
                 u8 ch;
+                float temp_float;
                 byte_data = (u16)usRegHoldingBuf[adress-CDV_OFFSET];
                 reg_addr = CDV_REGS_MAP[adress- 200];
                 u16 * pFloatReg = &usRegHoldingBuf[adress-CDV_OFFSET -1];
@@ -597,6 +599,11 @@ void vSetRegData( u16 adress)
                                      saveRegFloat(reg_addr, convert_int_to_float( pFloatReg));
                                      break;
                             case (CDV_OFFSET_CH2+1):
+                                         temp_float = convert_int_to_float( pFloatReg);
+                                        if ( temp_float > 100.0 ) temp_float = 100.0;
+                                        if ( temp_float < -100.0 ) temp_float = -100.0;
+                                        saveRegFloat(reg_addr, temp_float);
+                                        break;
                             case (CDV_SETTING_MIN_MB+1 ):
                             case (CDV_SETTING_MID_MB +1 ):
                             case (CDV_SETTING_MAX_MB +1 ):

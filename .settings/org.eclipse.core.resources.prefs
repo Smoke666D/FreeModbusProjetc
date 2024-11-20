@@ -118,6 +118,7 @@ encoding//modbus/rtu/mbrtu.c=GBK
 encoding//modbus/rtu/mbrtu.h=GBK
 encoding//modbus/tcp/mbtcp.c=GBK
 encoding//modbus/tcp/mbtcp.h=GBK
+encoding//obj/FreeModbus.lst=GBK
 encoding//obj/FreeModbus.map=GBK
 encoding//port/Peripheral/inc/ch32v30x.h=GBK
 encoding//port/Peripheral/inc/ch32v30x_adc.h=GBK

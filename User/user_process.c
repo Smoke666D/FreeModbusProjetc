@@ -46,7 +46,7 @@ float GetChanne2Setting()
    else
      setpoit = getAIN(SENS1);
 
-   return (CumputeChannel2Setpoit(setpoit));
+   return (setpoit);
 }
 
 TaskHandle_t * getUserProcessTaskHandle()
@@ -446,7 +446,7 @@ static float CumputeChannel2Setpoit( float setpoint)
 void Channel2Reg(  float setpoint )
 {
     static float PID_Out;
-    //static float temp_f;
+    static float temp_f;
     DISCRET_STATE_t state = getReg8(CDV_CONTOROL);
     u8 ch_count = getReg8(CDV_BP_CH_COUNT);
 
@@ -456,19 +456,9 @@ void Channel2Reg(  float setpoint )
          else if (state== SETTING_OPEN ) PID_Out = 10.0;
          else
          {
-            /*emp_f = DataModelGetCDVSettings(setpoint, CAV_VAV_CH1);
-            switch (getReg8(MEASERING_UNIT))
-            {
-                case 0:
-                    temp_f = DataModel_SetLToPressere(temp_f,CAV_VAV_CH2);
-                    break;
-                case 1:
-                    temp_f = DataModel_SetVToPressere(temp_f,CAV_VAV_CH2);
-                    break;
-                case 2:
-                    break;
-            }*/
-            SET_POINT1  =  CumputeChannel2Setpoit( setpoint ) + getRegFloat(OFFSET_CH2) ;  //temp_f + getRegFloat(OFFSET_CH2);
+            temp_f = DataModelGetCDVSettings(setpoint, CAV_VAV_CH1);
+            temp_f = temp_f + temp_f * ( getRegFloat(OFFSET_CH2)/100.0);
+            SET_POINT1  = DataModelGetPressureSettings( temp_f ,  CAV_VAV_CH2)  ;  //temp_f + getRegFloat(OFFSET_CH2);
             PID_Compute(&TPID2,getAIN(SENS2));
             PID_Out = PIDOut2/1000.0;
          }
@@ -579,14 +569,8 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                               float PID_Out = PIDOut/1000.0;
                               USER_AOUT_SET(DAC1,PID_Out);
                          }
-                        if  (temp_inp_sens_type == DISCRETE_INPUT)
-                        {
-                            Channel2Reg(SET_POINT);
-                        }
-                        else
-                        {
-                            Channel2Reg(getAIN(SENS1));
-                        }
+                         Channel2Reg(GetChanne2Setting());
+
                     }
                 }
                 break;

@@ -343,6 +343,24 @@ float  DataModel_GetPressureToV(float pressure,CAV_VAV_CH_t channel)
     return  (float)(L/F/3600.0) ;
 }
 
+
+float DataModelGetPressureSettings( float setting, CAV_VAV_CH_t channel)
+{
+    float res = setting;
+    switch ( getReg8(MEASERING_UNIT) )
+    {
+        case 0:
+             res = DataModel_SetLToPressere( res,channel);
+             break;
+        case 1:
+             res =  DataModel_SetVToPressere( res,channel);
+             break;
+       default:
+             break;
+     }
+  return (res);
+}
+
 float DataModelGetCDVSettings( float pressure, CAV_VAV_CH_t channel)
 {
     float res = pressure;

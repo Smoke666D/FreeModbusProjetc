@@ -767,7 +767,7 @@ void I2C_task(void *pvParameters)
                         xLastWakeTime =  xTaskGetTickCount ();
             }
 */
-            if ((SENS1_FSM ==SENSOR_IDLE) && (SENS2_FSM ==SENSOR_IDLE))
+            if (( (SENS1_FSM ==SENSOR_IDLE)  || ( SENS1_FSM ==SENSOR_TIME_OUT )    ) && ((SENS2_FSM ==SENSOR_IDLE) || ( SENS2_FSM ==SENSOR_TIME_OUT )) )
             {
                 vTaskDelay(1);
             }
