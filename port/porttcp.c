@@ -111,9 +111,6 @@ void vNetInit()
         GWIPAddr[k] =getReg8( GATE_1 + k);
         IPMask[k]  = getReg8( MASK_1 + k);
     }
-
-
-
     i = ETH_LibInit(IPAddr, GWIPAddr, IPMask, MACAddr);           //Ethernet library initialize
     if (i == WCHNET_ERR_SUCCESS){};
     cfg.KLIdle = 20000;

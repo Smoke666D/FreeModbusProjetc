@@ -101,7 +101,7 @@
      DAC_Cmd(DAC_Channel_1, ENABLE);
      DAC_SetChannel1Data(DAC_Align_12b_R, 1000);
      vDIN_DOUT_Init();
-     InitEEPROM( HAL_SPI2 );
+     InitEEPROM( HAL_SPI2 , TIMER8);
      HAL_WDTInit();
 }
 

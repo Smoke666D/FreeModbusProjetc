@@ -52,6 +52,7 @@ encoding//NetLib/eth_driver_10M.c=GBK
 encoding//NetLib/eth_driver_MII.c=GBK
 encoding//Peripheral/inc/ch32v30x.h=GBK
 encoding//Peripheral/inc/ch32v30x_iwdg.h=GBK
+encoding//Peripheral/inc/ch32v30x_misc.h=GBK
 encoding//Peripheral/inc/ch32v30x_rcc.h=GBK
 encoding//Peripheral/src/ch32v30x_can.c=GBK
 encoding//Peripheral/src/ch32v30x_crc.c=GBK
