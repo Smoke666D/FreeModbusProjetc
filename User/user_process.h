@@ -51,4 +51,5 @@ USER_PROCESS_FSM_t USER_GetProccesState( void  );
 TaskHandle_t * getUserProcessTaskHandle( void  );
 void user_process_task(void *pvParameters);
 
+float fGetAnalogSetting();
 #endif /* USER_USER_PROCESS_H_ */

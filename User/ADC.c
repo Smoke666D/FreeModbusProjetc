@@ -25,8 +25,7 @@ static uint16_t ADC2_Buffer[DC_CHANNEL];
 static int16_t  ADC1_DMABuffer[AC_CONVERION_NUMBER*ADC_CHANNEL];
 uint8_t ADC2_CHANNEL[DC_CHANNEL] = {  ADC_CH_2, ADC_CH_5,ADC_CH_6,ADC_CH_7,ADC_CH_14,ADC_CH_15, ADC_CH_8};
 #define ADC1_CH_COUNT 2
-#define ADC1_PRIOR 1
-#define ADC1_SUB_PRIOR 0
+
 static int16_t sens_press=0;
 static int16_t sens_press1=0;
 int16_t GetConversional(ADC_Conversionl_Buf_t * pBuf);
@@ -296,7 +295,7 @@ void ADC1_Init()
     init.prioroty = dma_Medium;
     HAL_DMAInitIT(init,  ADC1_PRIOR , ADC1_SUB_PRIOR, &ADC1_Event  );
     HAL_DMA_Enable(DMA1_CH1);
-    HAL_ADC_InitIT(ADC_2, ADC_ExternalTrigConv_None , 1, 0, &ADC2_Event );
+    HAL_ADC_InitIT(ADC_2, ADC_ExternalTrigConv_None , ADC2_PRIOR, ADC2_SUBPRIOR, &ADC2_Event );
     ADC_RegularChannelConfig(ADC2, ADC2_CHANNEL[0], 1, ADC_SampleTime_239Cycles5);
     ADC_TempSensorVrefintCmd(ENABLE);
     memset(SenseBuffer1,0,Sens_BufferSize_MAX*2);

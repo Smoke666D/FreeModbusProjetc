@@ -110,14 +110,14 @@ static HAL_TimeConfig_T time;
 static uint8_t error_flag;
 static const u8 * SENSOR_COUNT_STRING[]={"0.1","0.5","1.0","2.0","3.0","5.0","10.0"};
 static const u8 * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
-static const u8 * AfterZoneStrig[]={"Tканала<Tпомещения","Tканала>Tпомещения","Автомат"};
+static const u8 * AfterZoneStrig[]={"Отопление","Охлаждение","Автомат"};
 static const u8 * MUnitStrig[] = {"м^3/ч","м/c ","Па "};
 static const u8 * SensUnitString[]={"T","ppm","%"};
 static const u8 * PriorSentStrig[]= {"T","CO2","H"};
 static const char * DevString[]={"Режим ФМЧ","Режим CAV/VAV-BP"};
 static const char * TestModeString[]={"Выкл","Вкл"};
 static const u8 * SensorTypeStrig[]= {"0-10 В","2-10 В","4-20 мA"};
-static const u8 * IniputSignalTypeStrig[]= {"CAV","VAV Пассив. Т","VAV Комн. контр.","VAV Преобр. Т,СО2,НА"};
+static const u8 * IniputSignalTypeStrig[]= {"CAV","VAV Пассив. Т","VAV Комн. контр.","VAV Преобр. Т,СО2,Н"};
 static const char * CDV_MODE_STRING[]={"Закрыто","Минимальная","Средняя","Максимальная","Открыто"};
 static const char * BP_REG_TYPE_STRING[] = {"VAV","Const L0,2","VAV + Const L0,2"};
 static char * const FMCH_MODE_STRING[]= {"1 (Основной)","2 (Доп.)"};
@@ -537,21 +537,20 @@ void vFloatDataEdit( u16 data_id, DATA_VIEW_COMMAND_t command ,u8 max_index , u8
         case CMD_INC:
             temp_index = cur_edit_index;
             if (temp_index > min_index)  temp_index--;
-
             if ((edit_data_buffer_float + coof_float[temp_index]) <=  max_data )
             {
                 double tf = edit_data_buffer_float;
-
                 tf = tf + coof_float[temp_index + offset];
                 edit_data_buffer_float = tf;
             }
              else
                  edit_data_buffer_float = max_data;
+
              break;
        case CMD_DEC:
             temp_index = cur_edit_index;
             if (temp_index > min_index)  temp_index--;
-             if (  (edit_data_buffer_float - min_data) >=  coof_float[temp_index] )
+             if (  (edit_data_buffer_float - coof_float[temp_index]) >=  min_data )
              {
                  double tf = edit_data_buffer_float;
 
@@ -1077,7 +1076,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                            switch (GetPIDSensorIndex())
                            {
                                case 0: sprintf(str,"%02.1f C", getTSensor()); break;
-                               case 1: sprintf(str,"%04i ppm", getCO2Sensor());break;
+                               case 1: sprintf(str,"%04f ppm", getCO2Sensor());break;
                                default: sprintf(str,"%03i %%", getHumanitySensor());break;
                            }
                        }
@@ -1110,6 +1109,8 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                                        sprintf(str,"%i4 %s",ComputeSetPoint(),MUnitStrig[getReg8(MEASERING_UNIT)]);
                                        break;
                                   case ANALOG_SENSOR:
+                                      sprintf(str,"%6.1f %s",fGetAnalogSetting(),SensUnitString[  GetPIDSensorIndex()]);
+                                       break;
                                   case STATIC_TERMSENSOR:
                                        sprintf(str,"%6.1f %s",getRegFloat(SENS_SETTING1), SensUnitString[  GetPIDSensorIndex()]);
                                        break;
@@ -1259,7 +1260,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
         case AFTER_ZONE_SETTING_ID:
             *len = 0;
             if ( command > CMD_EDIT_READ )
-                vByteDataEdit(0,reg_id,command,0,T_AUTO , TCH_TROOM ,1);
+                vByteDataEdit(0,reg_id,command,0,TROOM_TCH  , TCH_TROOM ,1);
             else
                 strcpy(str, AfterZoneStrig[( command == CMD_READ ) ? getReg8(reg_id) : edit_data_buffer_byte ] );
             break;
@@ -1308,7 +1309,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                 if ( command > CMD_EDIT_READ )
                                             vFloatDataEdit(reg_id, command,3,1,100.0,-100.0);
                                         else
-                                            sprintf(str,"%+05.1f", ( command == CMD_READ ) ? getRegFloat(reg_id) :  edit_data_buffer_float );
+                                            sprintf(str,"%+06.1f", ( command == CMD_READ ) ? getRegFloat(reg_id) :  edit_data_buffer_float );
                                         break;
             case SETTING_MIN_ID:
             case SETTING_AVER_ID:

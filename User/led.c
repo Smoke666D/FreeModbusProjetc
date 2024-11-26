@@ -150,7 +150,7 @@ static void LEDCall()
  */
 __attribute__((section(".stext"))) void vLCDInit( TimerName_t TimerName )
 {
-    HAL_TIMER_InitIt(TimerName,700000,1,&LEDCall,0,1);
+    HAL_TIMER_InitIt(TimerName,700000,1,&LEDCall,LCD_TIMER5_PRIOR,LCD_TIMER5_SUBPRIOR);
     HAL_ResetBit( LDCDATA_2_3_E_REW_CD_LED_Port , LCDnRW_Pin);
     u8g2_Setup_ks0108_128x64_f(&u8g2, U8G2_R0, 0U, 0U );
     u8g2_SetFont( &u8g2, u8g2_font_6x13_t_cyrillic);

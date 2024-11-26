@@ -233,8 +233,8 @@ static xScreenObjet  CDVSettingsScreen5[]=
         {0,2,37,30,WRITE_DATA,"Канал 1",              FAIL_SET_CH1_ID},
         {0,100,50,0,READ_DATA,"",                  MEASERING_UNIT_ID},
         {0,2,50,30,WRITE_DATA,"Канал 2",              FAIL_SET_CH2_ID},
-        {0,2,62,30,WRITE_DATA,"Смещ 2",                      OFFSET2_ID},
-        {1,100,62,0,READ_DATA,"",                           MEASERING_UNIT_ID},
+        {0,2,62,10,WRITE_DATA,"Смещ 2",                      OFFSET2_ID},
+        {1,120,62,0,TEXT_STRING,"%",                           0},
 };
 
 static xScreenObjet  CDVSettingsScreen6[]=
@@ -421,9 +421,9 @@ static xScreenObjet const Sensor_screen[]=
 {
         {0,2,LINE1,00,READ_DATA,"Т пасс. 1",AIT1_TEMP_ID},
         {0,2,25,00,READ_DATA,"Т пасс. 2",AIT2_TEMP_ID},
-        {0,2,37,00,READ_DATA,"Т   (0-10/4-20)",T_SENSOR_ID},
-        {0,2,50,00,READ_DATA,"СО2 (0-10/4-20)",CO2_SENSOR_ID},
-        {1,2,62,00,READ_DATA,"Н   (0-10/4-20)",HUMANITY_SENSOR_ID },
+        {0,2,37,00,READ_DATA,"T,AI1",T_SENSOR_ID},
+        {0,2,50,00,READ_DATA,"CO2,AI2",CO2_SENSOR_ID},
+        {1,2,62,00,READ_DATA,"H,AI3",HUMANITY_SENSOR_ID },
 };
 
 #define LAST_SET_SCREEN 11
@@ -644,7 +644,7 @@ void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state)
                     xScreenDCV[ANALOG1_SCREEN].pScreenCurObjets = CDVSettingsRoomSensorScreen;
                     break;
                 case ANALOG_SENSOR:
-                    seting_sting_count =18;
+                    seting_sting_count =17;
                     PriorRegulationEnable(1);
                     CDVInfoScreen1[5].last=0;
                     vSetAfterZone(  1,analog_state);

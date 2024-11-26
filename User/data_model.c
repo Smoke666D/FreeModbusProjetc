@@ -85,13 +85,13 @@ __attribute__((section(".stext"))) DATA_MODEL_INIT_t DataModel_Init()
                setRegFloat(MAX_SET1,40);
                setRegFloat(SENS_SETTING1,20);
                setRegFloat(MIN_SET2, 0);
-               setRegFloat(MAX_SET2,40);
+               setRegFloat(MAX_SET2,2000);
                setReg16(ZERO_POINT_TIMEOUT, 3);
 
-               setRegFloat(SENS_SETTING2,20);
+               setRegFloat(SENS_SETTING2,1000);
                setRegFloat(MIN_SET3, 0);
-               setRegFloat(MAX_SET3,40);
-               setRegFloat(SENS_SETTING3,20);
+               setRegFloat(MAX_SET3,100);
+               setRegFloat(SENS_SETTING3,50);
                setRegFloat(F_CHANNEL,0.0314);
                setRegFloat(F_CHANNEL2,0.0314);
                DATA_MODEL_REGISTER[ROOM_CHANNEL]       =  1;
@@ -155,7 +155,6 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
               break;
         case MEASERING_UNIT:
         case PRIOR_SENSOR:
-        case AFTER_ZONE_SETTING:
             if (data>2) return 2;
             break;
         case SENSOR_COUNT:
@@ -168,6 +167,7 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
              break;
         case LIGTH:
         case MODE:
+        case AFTER_ZONE_SETTING:
               if (data > 1) temp_data = 1;
               break;
         case CONTRAST:

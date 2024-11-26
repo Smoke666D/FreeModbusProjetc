@@ -171,23 +171,24 @@ float UPDATE_COOFCAV( INPUT_SENSOR_t inp_sensor, DISCRET_STATE_t control_state)
     float input_data = GetSensor(&after_zone, inp_sensor);
     if ( after_zone )
     {
-         switch ( getReg8(AFTER_ZONE_SETTING ))
+        switch ( getReg8(AFTER_ZONE_SETTING ))
          {
+              default:
               case 0:
                   PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
                   break;
               case 1:
                   PID_SetControllerDirection(&TPID,_PID_CD_REVERSE );
                   break;
-              default:
-                 if (input_data < getAIN(DCAIN4))
-                     PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
-                 else
-                     PID_SetControllerDirection(&TPID,_PID_CD_REVERSE);
-                 break;
           }
      }
-     else PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
+     else
+     {
+         if ( (getReg8(INPUT_CONTROL_TYPE) == ANALOG_SENSOR ) &&  ( getReg8(PRIOR_SENSOR)!=T_PRIOR) )
+             PID_SetControllerDirection(&TPID,_PID_CD_REVERSE );
+         else
+             PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
+     }
      return (input_data);
 }
 
@@ -196,8 +197,6 @@ float UPDATE_COOFCAV( INPUT_SENSOR_t inp_sensor, DISCRET_STATE_t control_state)
 void vFMCH_FSM( FMCH_Device_t * dev)
 {
     u8 c_type  = getReg8( CONTROL_TYPE );
-
-
     if (c_type == MKV_MB_DIN ) setReg8(LIGTH, ucDinGet(INPUT_2));  //Проверияем состояние сигнала включения света
     eSetDUT(OUT_2, getReg8(LIGTH));                                //Закидываем его на реле света
     USER_SETTING_CHECK(c_type,  dev);
@@ -474,6 +473,16 @@ void Channel2Reg(  float setpoint )
 
 
 static const uint16_t SettingRegMap[]={SENS_SETTING1,SENS_SETTING2,SENS_SETTING3};
+
+
+
+float fGetAnalogSetting()
+{
+
+    return getRegFloat(SettingRegMap[getReg8(PRIOR_SENSOR)]);
+
+
+}
 
 float vAnalogSensorFSM( )
 {

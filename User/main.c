@@ -68,7 +68,20 @@ float STestFuncton()
 an array of StackType_t variables.  The size of StackType_t is dependent on
 the RTOS port. */
 //StackType_t xStack[  TASK2_STK_SIZE  ];
+uint8_t TestData[100];
 
+uint16_t TestFucn()
+{
+    uint16_t data;
+
+    for (uint8_t i = 0; i <10; i++ )
+    {
+        data = * (( uint16_t *)&TestData[i]);
+
+    }
+   return (data);
+
+}
 int main(void)
 {
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
@@ -76,7 +89,7 @@ int main(void)
 
 	Delay_Init();
 	vInit_DeviceConfig();
-	USART_Printf_Init(115200);
+	USART_Printf_Init(TestFucn());
 	vRTC_Init();
 
 	DataModel_Init();

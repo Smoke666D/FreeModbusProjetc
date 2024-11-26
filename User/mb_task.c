@@ -628,6 +628,7 @@ void vSetRegData( u16 adress)
                              case CDV_MODE_CONTROL:
                                  VerifyAndSetReg8(reg_addr, (uint8_t) byte_data );
                                  break;
+                            case CDV_PRIOR_SENS:
                             case CDV_CLEAN_TIMER:
                             case CDV_SETTING_TIMEOUT_MB:
                             case CDV_MEASERING_UNIT:
@@ -677,10 +678,10 @@ void UodateFMCHInputs()
 void UpdateDCVInputs()
 {
     int16_t temp_int;
-    temp_int  =  DataModelGetCDVSettings(getAIN(SENS1),CAV_VAV_CH1)*10;
-    convert_float_to_int((float)temp_int/10, &usRegInputBuf[CDV_FACT_1-CDV_OFFSET]);
-    temp_int  =  DataModelGetCDVSettings(getAIN(SENS2),CAV_VAV_CH2)*10;
-    convert_float_to_int((float)temp_int/10, &usRegInputBuf[CDV_FACT_2-CDV_OFFSET]);
+    //temp_int  =  DataModelGetCDVSettings(getAIN(SENS1),CAV_VAV_CH1)*10;
+    convert_float_to_int(DataModelGetCDVSettings(getAIN(SENS1),CAV_VAV_CH1), &usRegInputBuf[CDV_FACT_1-CDV_OFFSET]);
+    //temp_int  =  DataModelGetCDVSettings(getAIN(SENS2),CAV_VAV_CH2)*10;
+    convert_float_to_int(DataModelGetCDVSettings(getAIN(SENS2),CAV_VAV_CH2), &usRegInputBuf[CDV_FACT_2-CDV_OFFSET]);
     temp_int  =  (int16_t)(getTSensor()*10);
     convert_float_to_int((float)temp_int/10.0, &usRegInputBuf[CDV_T_SENSOR_MB-CDV_OFFSET]);
     usRegInputBuf[CDV_CO2_SENSOR_MB-CDV_OFFSET] = (uint16_t)getCO2Sensor();
@@ -770,7 +771,7 @@ static const u16 CDV_BP_REGS8[]={CDV_INPUT_SENS_MB ,
                                   CDV_CLEAN_TIMER,
                                   CDV_ROOM_CHANNEL};
 static const u16 CDV_BP_REGS[CDV_BP_REG_SEQ_COUNT]={CDV_ZERO_POINT_TIMEOUT};
-static const u16 SettingRegsMap[]={CDV_SETTING_MIN_MB,CDV_SETTING_MID_MB,CDV_SETTING_MAX_MB,CDV_SETTING_ERROR1_MB,CDV_SETTING_ERROR2_MB,CDV_OFFSET_CH2,};
+static const u16 SettingRegsMap[]={CDV_SETTING_MIN_MB,CDV_SETTING_MID_MB,CDV_SETTING_MAX_MB,CDV_SETTING_ERROR1_MB,CDV_SETTING_ERROR2_MB};
 static const u16 REGS_CVB_FLOAT[]={ CDV_KOOF_P_MB, CDV_KOOF_I_MB, CDV_KOOF_K_MP ,CDV_KOOF_P1_MB ,CDV_KOOF_I1_MB,CDV_KOOF_K_2};
 static const u16 REGS_CDV_SENS_FLOAT[]={
         CDV_SENSOR1_MIN,
@@ -785,6 +786,7 @@ static const u16 REGS_CDV_SENS_FLOAT[]={
         CDV_SENSOR1_SET,
         CDV_SENSOR2_SET,
         CDV_SENSOR3_SET,
+        CDV_OFFSET_CH2,
 } ;
 
 void UpdateCAV_VAV_BPHoldign()
@@ -809,20 +811,22 @@ void UpdateCAV_VAV_BPHoldign()
     }
     convert_float_to_int(pdata, &usRegHoldingBuf[CDV_KOOF_PSESN_MB -100]);
     convert_float_to_int(idata, &usRegHoldingBuf[CDV_KOOF_ISENS_MB- 100]);
-   for (u8 i=0;i<12;i++)
+   for (u8 i=0;i<13;i++)
     {
         u16 reg_addr =REGS_CDV_SENS_FLOAT[i];
         convert_float_to_int(getRegFloat(CDV_REGS_MAP[reg_addr-200]), &usRegHoldingBuf[reg_addr-100]);
     }
     float temp_float;
     CAV_VAV_CH_t ch;
-    for (u8 i = 0; i < 6; i++)
+    for (u8 i = 0; i < 5; i++)
     {
          u16 reg_addr = SettingRegsMap[i];
          ch = ((reg_addr == CDV_SETTING_ERROR2_MB) || (reg_addr == CDV_OFFSET_CH2)) ?CAV_VAV_CH2 :CAV_VAV_CH1;
          temp_float =(DataModelGetCDVSettings(getRegFloat(CDV_REGS_MAP[reg_addr-200]),ch));
          convert_float_to_int(temp_float, &usRegHoldingBuf[reg_addr -100]);
     }
+
+
     for (u8 i=0;i<9;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
     {
          usRegHoldingBuf[CDV_BP_REGS8[i] -100 ]      = getReg8(CDV_REGS_MAP[CDV_BP_REGS8[i] -200]);
