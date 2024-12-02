@@ -27,8 +27,8 @@
     I2C_InitTSturcture.I2C_OwnAddress1 = 0;
     I2C_InitTSturcture.I2C_Ack = I2C_Ack_Enable;
     I2C_InitTSturcture.I2C_AcknowledgedAddress = I2C_AcknowledgedAddress_7bit;
-    HAL_I2C_InitIT(I2C_1, &I2C_InitTSturcture,1,1);
-    HAL_I2C_InitIT(I2C_2, &I2C_InitTSturcture, 1,1);
+    HAL_I2C_Init(I2C_1, &I2C_InitTSturcture);
+    HAL_I2C_Init(I2C_2, &I2C_InitTSturcture);
     HAL_I2C_ENABLE( I2C_1 );
     HAL_I2C_ENABLE( I2C_2 );
 }

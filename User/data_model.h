@@ -15,7 +15,7 @@
 
 #define SW_V                 2
 #define SW_V2                5
-#define SW_V3                17
+#define SW_V3                19
 
 #define VALID_CODE            ((SW_V2<<4) | (SW_V3))
 #define VALID_CODE_ADDRES     0
@@ -62,7 +62,7 @@
 #define COOF_I1               ( COOF_P_CAV + sizeof(uint32_t))
 #define COOF_P1               ( COOF_I1 + sizeof(uint32_t) )
 #define COOF_IT               ( COOF_P1 + sizeof(uint32_t))
-#define COOF_PT               ( COOF_I1 + sizeof(uint32_t) )
+#define COOF_PT               ( COOF_IT + sizeof(uint32_t) )
 #define COOF_ICO2              (COOF_PT + sizeof(uint32_t))
 #define COOF_PCO2             ( COOF_ICO2 + sizeof(uint32_t) )
 #define COOF_IH               ( COOF_PCO2 + sizeof(uint32_t))
@@ -76,7 +76,8 @@
 #define MEASERING_UNIT        ( AFTER_ZONE_SETTING + sizeof(uint8_t) )
 #define CDV_BP_CH_COUNT       ( MEASERING_UNIT     + sizeof(uint8_t) )
 #define PRIOR_SENSOR          ( CDV_BP_CH_COUNT    + sizeof(uint8_t) )
-#define CLEAN_TIMER           ( PRIOR_SENSOR       + sizeof(uint8_t) )
+#define AUTO_CALIB_TIMER       ( PRIOR_SENSOR       + sizeof(uint8_t) )
+#define CLEAN_TIMER           ( AUTO_CALIB_TIMER       + sizeof(uint8_t) )
 #define SETTING_TIMER         ( CLEAN_TIMER        + sizeof(uint8_t) )
 #define ZERO_POINT_TIMEOUT    ( SETTING_TIMER        + sizeof(uint8_t) )
 #define MIN_SET1               ( ZERO_POINT_TIMEOUT  + sizeof(uint16_t) )
@@ -108,8 +109,9 @@
 #define MOTO_HOURS             ( FILTER_HIGH + sizeof(uint16_t) )
 #define RECORD_COUNT           ( MOTO_HOURS  + sizeof(uint32_t)  )
 #define RECORD_INDEX           ( RECORD_COUNT + sizeof(uint16_t) )
-#define EEPROM_REGISTER_COUNT  ( RECORD_INDEX  + sizeof(uint16_t) )
-#define SYSTEM_START           ( RECORD_INDEX  + sizeof(uint16_t) )
+#define CONTROL_MB_SETTING     ( RECORD_INDEX  + sizeof(uint8_t) )
+#define EEPROM_REGISTER_COUNT  ( CONTROL_MB_SETTING   + sizeof(uint16_t) )
+#define SYSTEM_START           ( CONTROL_MB_SETTING   + sizeof(uint16_t) )
 #define LIGTH                  ( SYSTEM_START + sizeof(uint8_t) )
 #define MODE                   ( LIGTH    + sizeof(uint8_t) )
 #define SENSOR_ERROR           ( MODE  + sizeof(uint8_t) )

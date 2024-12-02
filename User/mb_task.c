@@ -174,9 +174,10 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define CDV_PRIOR_SENS          261
 #define CDV_KOOF_K_2            262
 #define CDV_F_CHANNEL2          264
+#define AUTO_CALIB_TIMER_MB     266
 
 
-#define CDV_COUNT             ( CDV_CH_COUNT_MB  - CDV_F_CHANNEL2  + 2)
+#define CDV_COUNT             ( CDV_CH_COUNT_MB  - AUTO_CALIB_TIMER_MB  + 1)
 
 #define CDV_FACT_1              200
 #define CDV_FACT_2              202
@@ -200,7 +201,7 @@ static u16 const device_specific_reg_offset[]  =  { FMCH_OFFSET + 100 ,CDV_OFFSE
 static u16 const device_specific_reg_count[]   =  { FMCH_COUNT  ,CDV_COUNT  };
 static u16 const SensorPRegMap[]={COOF_PT,COOF_PCO2,COOF_PH};
 static u16 const SensorIRegMap[]={COOF_IT,COOF_ICO2,COOF_IH};
-
+static u8 first_start = 1;
 static u8 WORK_MODE =0;
 
 
@@ -354,6 +355,7 @@ static const u16 CDV_REGS_MAP[] = {
                                                KOOFKPS2,          //63
                                                F_CHANNEL2,        //64
                                                F_CHANNEL2,        //65
+                                               AUTO_CALIB_TIMER,
 };
 
 
@@ -629,16 +631,21 @@ void vSetRegData( u16 adress)
                                  VerifyAndSetReg8(reg_addr, (uint8_t) byte_data );
                                  break;
                             case CDV_PRIOR_SENS:
+                                    SaveReg8(reg_addr,byte_data);
+                                    vSetAfterZone( (byte_data == T_PRIOR) ? 1 : 0,getReg8(INPUT_CONTROL_TYPE));
+                                    break;
                             case CDV_CLEAN_TIMER:
                             case CDV_SETTING_TIMEOUT_MB:
                             case CDV_MEASERING_UNIT:
                             case CDV_CH_COUNT_MB:
                             case CDV_INPUT_SENS_MB:
+                            case AUTO_CALIB_TIMER_MB:
                                    SaveReg8(reg_addr,byte_data);
                                    break;
                             case CDV_ZERO_POINT_TIMEOUT:
                                   saveReg16(reg_addr, byte_data);
                                   break;
+
 
 
                       }
@@ -769,7 +776,8 @@ static const u16 CDV_BP_REGS8[]={CDV_INPUT_SENS_MB ,
                                   CDV_MEASERING_UNIT,
                                   CDV_PRIOR_SENS,
                                   CDV_CLEAN_TIMER,
-                                  CDV_ROOM_CHANNEL};
+                                  CDV_ROOM_CHANNEL,
+                                  AUTO_CALIB_TIMER_MB};
 static const u16 CDV_BP_REGS[CDV_BP_REG_SEQ_COUNT]={CDV_ZERO_POINT_TIMEOUT};
 static const u16 SettingRegsMap[]={CDV_SETTING_MIN_MB,CDV_SETTING_MID_MB,CDV_SETTING_MAX_MB,CDV_SETTING_ERROR1_MB,CDV_SETTING_ERROR2_MB};
 static const u16 REGS_CVB_FLOAT[]={ CDV_KOOF_P_MB, CDV_KOOF_I_MB, CDV_KOOF_K_MP ,CDV_KOOF_P1_MB ,CDV_KOOF_I1_MB,CDV_KOOF_K_2};
@@ -827,7 +835,7 @@ void UpdateCAV_VAV_BPHoldign()
     }
 
 
-    for (u8 i=0;i<9;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
+    for (u8 i=0;i<10;i++)                                      //§©§Ñ§á§à§Ý§ß§ñ§Ö§Þ  8 §Ò§Ú§ä§ß§í§Ö §â§Ö§Ô§Ú§ã§ä§â§í §ã§á§Ö
     {
          usRegHoldingBuf[CDV_BP_REGS8[i] -100 ]      = getReg8(CDV_REGS_MAP[CDV_BP_REGS8[i] -200]);
     }
@@ -837,7 +845,13 @@ void UpdateCAV_VAV_BPHoldign()
     }
 }
 
-
+void LoadMBControl()
+{
+    if (getReg8(DEVICE_TYPE) == DEV_CAV_VAV_BP)
+    {
+        setReg8(MB_CDV_CONTROL, getReg8(CONTROL_MB_SETTING));
+    }
+}
 
 void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
 {
@@ -873,7 +887,16 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
         if  ((DEVICE_TYPE_t)getReg8(DEVICE_TYPE) == DEV_FMCH)
             UpdateFMCHHoldings();
         else
+        {
+            if (first_start )
+                       {
+                           first_start = 0;
+                           LoadMBControl();
+                           printf("control %i\r\n",getReg8(CONTROL_MB_SETTING));
+                       }
             UpdateCAV_VAV_BPHoldign();
+        }
+
     }
     if (getReg8(DEVICE_TYPE) == DEV_FMCH)
     {
@@ -881,7 +904,8 @@ void MB_TASK_HOLDING_UDATE( u16 start_reg_index )
     }
     if (getReg8(DEVICE_TYPE) == DEV_CAV_VAV_BP)
         {
-            usRegHoldingBuf[ZERO_MB] = (USER_GetProccesState() == USER_PROCESS_ZERO_CALIB) ? 1 :0;
+
+                usRegHoldingBuf[ZERO_MB] = (USER_GetProccesState() == USER_PROCESS_ZERO_CALIB) ? 1 :0;
         }
 }
 
@@ -966,6 +990,10 @@ eMBErrorCode eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usN
 
   return eStatus;
 }
+
+
+
+
 
 #include "mbutils.h"
 
@@ -1080,6 +1108,7 @@ void MBRTU_task(void *pvParameters)
          {
              if( eMBEnable() == MB_ENOERR )
              {
+
                 do
                 {
                     xStatus = eMBPoll(  );

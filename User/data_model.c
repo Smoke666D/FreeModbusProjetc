@@ -55,7 +55,7 @@ __attribute__((section(".stext"))) DATA_MODEL_INIT_t DataModel_Init()
                DATA_MODEL_REGISTER[CDV_BP_CH_COUNT]    =  1;
                DATA_MODEL_REGISTER[SENSOR_COUNT]       =  TIME_5_0;
                DATA_MODEL_REGISTER[SETTING_TIMER]      = 3;
-
+               DATA_MODEL_REGISTER[AUTO_CALIB_TIMER]  = 1;
 
                setRegFloat(KOOFKPS ,  36.0);
                setRegFloat(KOOFKPS1 , 35.0);
@@ -165,6 +165,10 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
 
             SetPID2Screen( temp_data,getReg8(INPUT_CONTROL_TYPE));
              break;
+        case AUTO_CALIB_TIMER:
+              if (data > 24 ) temp_data = 24;
+              if ( data < 1 ) temp_data = 1;
+              break;
         case LIGTH:
         case MODE:
         case AFTER_ZONE_SETTING:
@@ -177,9 +181,13 @@ u8 VerifyAndSetReg8(u16 reg_adress, u16 data )
              if ((data >100) && (data==0)) return (0);
              break;
         case CDV_CONTOROL :
+            if  ( data > 4 )
+                           return 0;
+            break;
         case MB_CDV_CONTROL:
             if  ( data > 4 )
                 return 0;
+            DATA_MODEL_REGISTER[CONTROL_MB_SETTING] = data;
             break;
         case CONTROL_TYPE:
              if (data >3 ) return 0;
@@ -475,4 +483,5 @@ void SaveBeforePowerOff()
     WriteEEPROM(RESURSE  ,   &DATA_MODEL_REGISTER[RESURSE ],   1,10, 2 );
     WriteEEPROM(SENSOR1_ZERO, &DATA_MODEL_REGISTER[SENSOR1_ZERO],   2,10, 2 );
     WriteEEPROM(SENSOR2_ZERO, &DATA_MODEL_REGISTER[SENSOR2_ZERO],   2,10, 2 );
+    WriteEEPROM(CONTROL_MB_SETTING ,&DATA_MODEL_REGISTER[CONTROL_MB_SETTING], 1, 10, 2);
 }

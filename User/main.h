@@ -90,8 +90,10 @@ EventGroupHandle_t * xGetOSEvent();
 //#define USART3_IT_ENABLE
 #define USART4_IT_ENABLE
 /************************I2C************************************/
-#define I2C1_IT_ENABLE
-#define I2C2_IT_ENABLE
+#define I2C1_ENABLE
+#define I2C2_ENABLE
+//#define I2C1_IT_ENABLE
+//#define I2C2_IT_ENABLE
 /***********************TIME**********************************/
 //#define TIM1_UP_ENABLE 0
 //#define TIM2_UP_ENABLE 0

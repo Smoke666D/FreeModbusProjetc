@@ -38,6 +38,7 @@ encoding//HAL_DRIVER/hal_wdt_ch32.c=GBK
 encoding//HAL_DRIVER/system_config.h=GBK
 encoding//HAL_LIB/EEPROM_25C.c=GBK
 encoding//HAL_LIB/EEPROM_25C.h=GBK
+encoding//HAL_LIB/filters.c=GBK
 encoding//HAL_LIB/filters.h=GBK
 encoding//HAL_LIB/hw_lib_adc.c=UTF-8
 encoding//HAL_LIB/hw_lib_adc.h=UTF-8

@@ -168,26 +168,35 @@ float UPDATE_COOFCAV( INPUT_SENSOR_t inp_sensor, DISCRET_STATE_t control_state)
     PID_SetTunings2(&TPID,getRegFloat(PCOOFMAP[index]),getRegFloat(ICOOFMAP[index]), 0);
     PID_SetTunings2(&TPID2,getRegFloat(COOF_P1),getRegFloat(COOF_I1), 0);
     u8 after_zone = 0;
-    float input_data = GetSensor(&after_zone, inp_sensor);
-    if ( after_zone )
+    float input_data;
+    if ( control_state != SETTING_MIDIUM )
     {
-        switch ( getReg8(AFTER_ZONE_SETTING ))
-         {
-              default:
-              case 0:
-                  PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
-                  break;
-              case 1:
-                  PID_SetControllerDirection(&TPID,_PID_CD_REVERSE );
-                  break;
-          }
-     }
-     else
-     {
-         if ( (getReg8(INPUT_CONTROL_TYPE) == ANALOG_SENSOR ) &&  ( getReg8(PRIOR_SENSOR)!=T_PRIOR) )
-             PID_SetControllerDirection(&TPID,_PID_CD_REVERSE );
-         else
-             PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
+        PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
+        input_data = getAIN(SENS1);
+    }
+    else
+    {
+        input_data = GetSensor(&after_zone, inp_sensor);
+        if ( after_zone )
+        {
+            switch ( getReg8(AFTER_ZONE_SETTING ))
+            {
+                  default:
+                  case 0:
+                      PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
+                      break;
+                  case 1:
+                      PID_SetControllerDirection(&TPID,_PID_CD_REVERSE );
+                      break;
+            }
+        }
+        else
+        {
+            if ( (getReg8(INPUT_CONTROL_TYPE) == ANALOG_SENSOR ) &&  ( getReg8(PRIOR_SENSOR)!=T_PRIOR) )
+                PID_SetControllerDirection(&TPID,_PID_CD_REVERSE );
+            else
+                PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
+        }
      }
      return (input_data);
 }
@@ -501,6 +510,8 @@ float vAnalogSensorFSM( )
 }
 
 
+static uint32_t zero_calibration_timer = 0;
+
 
 void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
 {
@@ -520,6 +531,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 task_fsm =USER_PROCCES_WORK;
                 break;
             case USER_PROCCES_WORK:
+
 
                 *cal_flag = 0;
                 if ((error_state & DIN_ERROR) || (error_state & ANALOG_SENSOR_ERROR))
@@ -579,8 +591,12 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                               USER_AOUT_SET(DAC1,PID_Out);
                          }
                          Channel2Reg(GetChanne2Setting());
-
                     }
+                }
+                if ( ++zero_calibration_timer >= ( getReg8(AUTO_CALIB_TIMER)*3600*100))
+                {
+                    zero_calibration_timer = 0;
+                    task_fsm = USER_PROCESS_ZERO_CALIB;
                 }
                 break;
             case USER_PROCESS_ZERO_CALIB:

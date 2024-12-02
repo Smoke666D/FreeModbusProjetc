@@ -890,6 +890,7 @@ static const u16 MenuCDV_BPRegMap[]=
                                  COOF_I_CAV,
                                  BP_REG_TYPE,               //32
                                  BP_SIZE,                   //33
+                                 AUTO_CALIB_TIMER,
                                  INPUT_CONTROL_TYPE,        //34
                                  ROOM_CHANNEL,              //35
                                  AIN1_TYPE,                 //36
@@ -1076,7 +1077,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                            switch (GetPIDSensorIndex())
                            {
                                case 0: sprintf(str,"%02.1f C", getTSensor()); break;
-                               case 1: sprintf(str,"%04f ppm", getCO2Sensor());break;
+                               case 1: sprintf(str,"%04i ppm", (int32_t)getCO2Sensor());break;
                                default: sprintf(str,"%03i %%", getHumanitySensor());break;
                            }
                        }
@@ -1106,7 +1107,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                                        sprintf(str,"%06.1f %s",temp_float,MUnitStrig[getReg8(MEASERING_UNIT)]);
                                        break;
                                   case ROOM_CONTROLLER:
-                                       sprintf(str,"%i4 %s",ComputeSetPoint(),MUnitStrig[getReg8(MEASERING_UNIT)]);
+                                       sprintf(str,"%04,1f %s",ComputeSetPoint(),MUnitStrig[getReg8(MEASERING_UNIT)]);
                                        break;
                                   case ANALOG_SENSOR:
                                       sprintf(str,"%6.1f %s",fGetAnalogSetting(),SensUnitString[  GetPIDSensorIndex()]);
@@ -1170,6 +1171,13 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
        u16 reg_id = MenuCDV_BPRegMap[data_id - SETTING_MIN_ID];
     switch (data_id)
     {
+        case AUTO_CALIB_TIMER_ID:
+            if ( command <= CMD_EDIT_READ )
+                            sprintf(str,"%02i",( command == CMD_READ ) ? getReg8(reg_id) : edit_data_buffer_byte );
+                        else
+                            vByteDataEdit(0,reg_id,command,1,24,1,1);
+                        break;
+              break;
         case  BP_SZIE_ID:
             if ( command <= CMD_EDIT_READ )
                 sprintf(str,"%03i",( command == CMD_READ ) ? getReg16(reg_id) : edit_data_buffer_byte );

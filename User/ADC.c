@@ -142,6 +142,8 @@ u8 i2cdata[2][8] ={0};
 #define AIN2_ERROR 0x02
 #define AIN3_ERROR 0x04
 
+static u16 raw_ain_data[3];
+
 static u8 const SENSOR_ERROR_MASK[]={AIN1_ERROR,AIN2_ERROR,AIN3_ERROR};
 float getAINConver( u8 ch)
 {
@@ -153,15 +155,19 @@ float getAINConver( u8 ch)
     {
     default:
         raw_data = GetConversional(&DataBuffer[3]);
+
+        raw_data = vRCFilterConfig((uint16_t)raw_data, &raw_ain_data[0],100);
         type = getReg8(AIN1_TYPE);
        break;
     case 1:
         type = getReg8(AIN2_TYPE);
         raw_data = GetConversional(&DataBuffer[4]);
+        raw_data = vRCFilterConfig((uint16_t)raw_data, &raw_ain_data[1],100);
         break;
     case 2:
         type = getReg8(AIN3_TYPE);
         raw_data = GetConversional(&DataBuffer[5]);
+        raw_data = vRCFilterConfig((uint16_t)raw_data, &raw_ain_data[2],100);
         break;
     }
     switch (type)
@@ -191,6 +197,7 @@ float getAINConver( u8 ch)
    setReg8(SENSOR_ERROR,sensor_error );
    return (temp_data);
 }
+
 
 
 
@@ -266,6 +273,7 @@ void ADC1_Init()
     vAINInit();
     eAinCalDataConfig(AIN4,11);
     eAinCalDataConfig(AIN5,11);
+    memset(raw_ain_data,0,sizeof(uint16_t)*2);
     for (int i = 0;i<10;i++)
     {
           d[0].X = B57164CalPoint[i][1];
@@ -631,10 +639,12 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  u1
                    uint32_t temp_data = (u32)i2cdata[index][0]<<16 | (u32)i2cdata[index][1]<<8 | i2cdata[index][2];
                    if (temp_data > 0x800000)
                    {
+
                        *sens_press  = ((temp_data - 16777216)/2048);
                    }
                    else
                    {
+                     //  printf("sens %i data =%x\r\n",index,(temp_data));
                        *sens_press  = temp_data/2048;
                    }
                    AddBufferDataI2C(&DataBuffer[index], *sens_press  );

@@ -113,7 +113,8 @@
 #define COOF_I_CAV_ID           ( COOF_P_CAV_ID           + 1 )    //31
 #define BP_REG_TYPE_ID          ( COOF_I_CAV_ID     + 1 )          //32
 #define BP_SZIE_ID              ( BP_REG_TYPE_ID      + 1 )        //33
-#define INPUT_SIGNAL_MODE_ID    ( BP_SZIE_ID     + 1 )         //34
+#define AUTO_CALIB_TIMER_ID     ( BP_SZIE_ID     + 1 )
+#define INPUT_SIGNAL_MODE_ID    ( AUTO_CALIB_TIMER_ID     + 1 )         //34
 #define ROOM_ACTIVE_CHANNEL_ID  ( INPUT_SIGNAL_MODE_ID     + 1 )  //35
 #define ROOM_SENSOR_TYPE_ID     ( ROOM_ACTIVE_CHANNEL_ID     + 1 )//36
 #define F_CHANNEL2_ID            (ROOM_SENSOR_TYPE_ID      + 1 )    //37
