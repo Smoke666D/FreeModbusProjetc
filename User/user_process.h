@@ -11,7 +11,7 @@
 #include "main.h"
 #include "system_types.h"
 
-
+#include "data_model.h"
 
 
 
@@ -50,6 +50,6 @@ uint16_t USER_GetFact(u8 * state);
 USER_PROCESS_FSM_t USER_GetProccesState( void  );
 TaskHandle_t * getUserProcessTaskHandle( void  );
 void user_process_task(void *pvParameters);
-
+DISCRET_STATE_t getCurSettingState();
 float fGetAnalogSetting();
 #endif /* USER_USER_PROCESS_H_ */

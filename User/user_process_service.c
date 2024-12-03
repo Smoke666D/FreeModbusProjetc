@@ -198,14 +198,24 @@ static CLEAN_TIMER_t CleanTimer;
     return;
 }
 
- void CleanTimerFuncton(  )
+ void CleanTimerFuncton( u8 clear_timer )
 {
     setReg8(CLEAR_TIMER_STATE, 0);
-    CleanTimer.control_state =  getReg8( CONTROL_TYPE ) ==  MKV_MB_DIN ? ucDinGet(INPUT_5) : getReg8(LIGTH );
+    if (clear_timer)
+    {
+        InitCleanTimer();
+        setReg8(LIGTH, 0 );
+    }
+    else {
+
+
+    CleanTimer.control_state =  ucDinGet(INPUT_5) ;
     if (CleanTimer.tumer_on == 0 )
     {
+
         if ( CleanTimer.control_state == 1)
         {
+
                 CleanTimer.tumer_on  = 1;
         }
      }
@@ -213,19 +223,22 @@ static CLEAN_TIMER_t CleanTimer;
      {
          //§¦§ã§Ý§Ú §á§â§Ú§ê§Ö§Ý §ß§à§Ó§í§Û §á§à§Ý§à§Ø§Ú§ä§Ö§Ý§î§ß§í§Û §æ§â§à§ß§ä, §ä§à §á§Ö§â§Ö§Ù§Ñ§á§å§ã§Ü§Ñ§Ö§Þ §ä§Ñ§Û§Þ§Ö§â
         if ((CleanTimer.old_control_state == 0) && (CleanTimer.control_state ==1)) CleanTimer.timer_counter = 0;
-        if (++CleanTimer.timer_counter  >= getReg8(CLEAN_TIMER)*600)
+
+        if (++CleanTimer.timer_counter  >= getReg8(CLEAN_TIMER)*100*60)
         {
             CleanTimer.tumer_on = 0;
             CleanTimer.timer_counter = 0;
             setReg8(LIGTH, 0 );
-
          }
          else
          {
+
             setReg8(CLEAR_TIMER_STATE, 1);
             if (getReg8(LIGTH )== 0 ) setReg8(LIGTH,1);
          }
       }
+
+    }
     CleanTimer.old_control_state = CleanTimer.control_state;
     return;
 }

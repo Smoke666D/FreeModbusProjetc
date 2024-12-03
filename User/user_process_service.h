@@ -29,7 +29,7 @@ float USER_AOUT_GET(u8 channel);
 void USER_FilterState( FMCH_Device_t * dev);
 void vCheckDoubleChannelAlarm( u8 *error_state );
 void InitCleanTimer();
-void CleanTimerFuncton(  );
+void CleanTimerFuncton( u8 clear_timer );
 uint8_t getHumanitySensor();
 float getTSensor();
 float getCO2Sensor();

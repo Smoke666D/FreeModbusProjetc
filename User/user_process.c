@@ -11,7 +11,7 @@
 #include "hw_lib_din.h"
 #include "hw_lib_adc.h"
 #include "hal_timers.h"
-#include "data_model.h"
+
 #include "stdlib.h"
 #include "math.h"
 #include "system_types.h"
@@ -342,6 +342,7 @@ static u8 din_state_update = 0;
 
 void vCDV_SetpointCheck(   u32 * timeout  )
 {
+    DISCRET_STATE_t  current_state = getReg8(CDV_CONTOROL);
     if ( getReg8( CONTROL_TYPE )==  MKV_MB_DIN)
     {
         if (system_start != MKV_MB_DIN)
@@ -399,11 +400,8 @@ void vCDV_SetpointCheck(   u32 * timeout  )
         error_state &=~DIN_ERROR; //Сбрасываем ошибку дискретных входов
         setReg8(CDV_CONTOROL,getReg8(MB_CDV_CONTROL));
     }
-    CleanTimerFuncton();
-    if ((getReg8(CLEAR_TIMER_STATE) == 1 ) &&  (getReg8(CDV_CONTOROL)!= SETTING_CLOSE)) //Если включился таймер уборки и состоние системы не выкл.
-    {
-        setReg8(CDV_CONTOROL,SETTING_MAXIMUN);  //То переводим системы в состния максимальной уставки
-    }
+    CleanTimerFuncton((current_state !=getReg8(CDV_CONTOROL ) || getReg8(CDV_CONTOROL )==SETTING_CLOSE) );
+
     return ;
 }
 
@@ -511,6 +509,14 @@ float vAnalogSensorFSM( )
 
 
 static uint32_t zero_calibration_timer = 0;
+static  DISCRET_STATE_t temp_control_state = SETTING_CLOSE;
+
+DISCRET_STATE_t getCurSettingState()
+{
+
+
+    return temp_control_state;
+}
 
 
 void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
@@ -546,12 +552,17 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 {
                     if (++dev->pid_counter >=10)
                     {
+
                         INPUT_SENSOR_t  temp_inp_sens_type = getReg8(INPUT_CONTROL_TYPE);
-                        DISCRET_STATE_t temp_control_state = getReg8(CDV_CONTOROL);
+                        temp_control_state = getReg8(CDV_CONTOROL);
                         float pid_input = UPDATE_COOFCAV(temp_inp_sens_type , temp_control_state);
                         dev->pid_counter = 0;
 
                         u8 compute_falg = 1;
+                        if (getReg8(CLEAR_TIMER_STATE) == 1 )  //Если включился таймер уборки и состоние системы не выкл.
+                        {
+                            temp_control_state = SETTING_MAXIMUN;  //То переводим системы в состния максимальной уставки
+                        }
                         switch (temp_control_state)
                         {
                             case SETTING_OPEN:

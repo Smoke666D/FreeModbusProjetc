@@ -175,6 +175,7 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define CDV_KOOF_K_2            262
 #define CDV_F_CHANNEL2          264
 #define AUTO_CALIB_TIMER_MB     266
+//#define CLEAR_TIMER_ON
 
 
 #define CDV_COUNT             ( CDV_CH_COUNT_MB  - AUTO_CALIB_TIMER_MB  + 1)
@@ -693,7 +694,7 @@ void UpdateDCVInputs()
     convert_float_to_int((float)temp_int/10.0, &usRegInputBuf[CDV_T_SENSOR_MB-CDV_OFFSET]);
     usRegInputBuf[CDV_CO2_SENSOR_MB-CDV_OFFSET] = (uint16_t)getCO2Sensor();
     usRegInputBuf[CDV_H_SENSOR_MB-CDV_OFFSET]   = getHumanitySensor();
-    usRegInputBuf[CDV_CUR_STATE  - CDV_OFFSET ] = getStateDCV();
+    usRegInputBuf[CDV_CUR_STATE  - CDV_OFFSET ] = getCurSettingState();
 
 }
 

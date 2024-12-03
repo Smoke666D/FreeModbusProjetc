@@ -1022,7 +1022,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
     {
         static u16 reg_id;
         INPUT_SENSOR_t sens_type = getReg8(INPUT_CONTROL_TYPE);
-        DISCRET_STATE_t state    = getReg8(CDV_CONTOROL);
+        DISCRET_STATE_t state    =  getCurSettingState();//getReg8(CDV_CONTOROL);
         switch (data_id)
         {
                 case COOF_P_SENS_ID:
