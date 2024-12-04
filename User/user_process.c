@@ -150,60 +150,53 @@ static void USER_SETTING_CHECK(u8 control_type, FMCH_Device_t * dev)
       }
 }
 
+float UPDATE_PRES_COOFCAV()
+{
+    PID_SetTunings2(&TPID2,getRegFloat(COOF_P1),getRegFloat(COOF_I1), 0);
+    PID_SetTunings2(&TPID,getRegFloat(PCOOFMAP[0]),getRegFloat(ICOOFMAP[0]), 0);
+    return ( getAIN(SENS1) );
+}
 
 float UPDATE_COOFCAV( INPUT_SENSOR_t inp_sensor, DISCRET_STATE_t control_state)
 {
-     u8 index =0;
-     if ((control_state==SETTING_MIDIUM) && ((inp_sensor == ANALOG_SENSOR) || (inp_sensor == STATIC_TERMSENSOR)))
-     {
-         PRIOR_SENSOR_t prior = getReg8(PRIOR_SENSOR);
-         if ((inp_sensor == STATIC_TERMSENSOR) || (prior==T_PRIOR))
-         {
-             index = 1;
-         }
-         else if (prior==H_PRIOR)
-         {
-             index = 3;
-         }
-         else
-         {
-             index = 2;
-         }
-    }
-    PID_SetTunings2(&TPID,getRegFloat(PCOOFMAP[index]),getRegFloat(ICOOFMAP[index]), 0);
-    PID_SetTunings2(&TPID2,getRegFloat(COOF_P1),getRegFloat(COOF_I1), 0);
-    u8 after_zone = 0;
-    float input_data;
-    if ( control_state != SETTING_MIDIUM )
+   // vAnalogSensorFSM( );
+    u8 index =0;
+    PRIOR_SENSOR_t prior = getReg8(PRIOR_SENSOR);
+    if ((inp_sensor == STATIC_TERMSENSOR) || (prior==T_PRIOR))
     {
-        PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
-        input_data = getAIN(SENS1);
+        index = 1;
     }
-    else
+    else if (prior==H_PRIOR)
     {
-        input_data = GetSensor(&after_zone, inp_sensor);
-        if ( after_zone )
-        {
-            switch ( getReg8(AFTER_ZONE_SETTING ))
-            {
-                  default:
-                  case 0:
-                      PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
-                      break;
-                  case 1:
-                      PID_SetControllerDirection(&TPID,_PID_CD_REVERSE );
-                      break;
-            }
-        }
-        else
-        {
-            if ( (getReg8(INPUT_CONTROL_TYPE) == ANALOG_SENSOR ) &&  ( getReg8(PRIOR_SENSOR)!=T_PRIOR) )
-                PID_SetControllerDirection(&TPID,_PID_CD_REVERSE );
-            else
-                PID_SetControllerDirection(&TPID,_PID_CD_DIRECT );
-        }
+        index = 3;
      }
-     return (input_data);
+     else
+    {
+        index = 2;
+    }
+
+    PID_SetTunings2(&TPID3,getRegFloat(PCOOFMAP[index]),getRegFloat(ICOOFMAP[index]), 0);
+    PID_SetOutputLimits(&TPID3,(float)getRegFloat(SETTING_MIN),getRegFloat(SETTING_MAX));
+    u8 after_zone = 0;
+    float input_data = GetSensor(&after_zone, inp_sensor);
+    if ( after_zone )
+    {
+        switch ( getReg8(AFTER_ZONE_SETTING ))
+        {
+           default:
+               case 0:
+                PID_SetControllerDirection(&TPID3,_PID_CD_DIRECT );
+                   break;
+              case 1:
+                 PID_SetControllerDirection(&TPID3,_PID_CD_REVERSE );
+                 break;
+                }
+     }
+     else
+        PID_SetControllerDirection(&TPID3,_PID_CD_REVERSE );
+     SET_POINT3 = fGetAnalogSetting();
+     PID_Compute(&TPID3,input_data);
+     return (PIDOut3);
 }
 
 
@@ -562,7 +555,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
 
                         INPUT_SENSOR_t  temp_inp_sens_type = getReg8(INPUT_CONTROL_TYPE);
                         temp_control_state = getReg8(CDV_CONTOROL);
-                        float pid_input = UPDATE_COOFCAV(temp_inp_sens_type , temp_control_state);
+                        float pid_input = UPDATE_PRES_COOFCAV();   //)(temp_inp_sens_type , temp_control_state);
                         dev->pid_counter = 0;
 
                         u8 compute_falg = 1;
@@ -598,7 +591,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                                         break;
                                     case ANALOG_SENSOR:
                                     case STATIC_TERMSENSOR:
-                                        SET_POINT = vAnalogSensorFSM( );
+                                        SET_POINT = UPDATE_COOFCAV (temp_inp_sens_type , temp_control_state);
                                         break;
                                 }
                         }
@@ -763,6 +756,8 @@ void user_process_task(void *pvParameters)
        PID_SetOutputLimits(&TPID,(float)0.0,(float)10000.0);
    PID(&TPID2, &PIDOut2, &SET_POINT1, getRegFloat(COOF_P1), getRegFloat(COOF_I1), 0, _PID_CD_DIRECT);
    PID_SetOutputLimits(&TPID2,(float)0000.0,(float)10000.0);
+   PID(&TPID3,  &PIDOut3, &SET_POINT3, getRegFloat(COOF_P), getRegFloat(COOF_I), 0, _PID_CD_DIRECT);
+   PID_SetOutputLimits(&TPID3,(float)0000.0,(float)10000.0);
    while(1)
    {
        vTaskDelay(10);
