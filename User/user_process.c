@@ -1,4 +1,4 @@
-/*
+     /*
  * user_process.c
  *
  *  Created on: Aug 21, 2024
@@ -23,6 +23,7 @@ static const u16 ICOOFMAP[] ={COOF_I_CAV,COOF_IT,COOF_ICO2,COOF_IH};
 #define FILTER_WARNINR_VALUE 90
 static PID_TypeDef TPID;
 static PID_TypeDef TPID2;
+static PID_TypeDef TPID3;
 static u8 setting_change_flag =0;    //Флаг измения значения устаки, нужен для изменения отображения на индикаторе текущей уставки
 static TaskHandle_t processTaskHandle;
 static USER_PROCESS_FSM_t task_fsm;
@@ -31,10 +32,14 @@ static long temp_counter;
 static long mb_time_out = 0;
 static float SET_POINT;
 static float SET_POINT1;
+static float SET_POINT3;
 static u8 error_state;
 static float Temp;
 static float PIDOut;
 static float PIDOut2;
+static float PIDOut3;
+
+
 
 static float CumputeChannel2Setpoit( float setpoint);
 
