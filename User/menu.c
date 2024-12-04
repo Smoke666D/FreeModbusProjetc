@@ -901,7 +901,8 @@ static const u16 MenuCDV_BPRegMap[]=
 
 static u8 error_shif = 0;
 static u8 const *  ErrorString[]={"HEPA Фильтр засорен","Невозможно","Низкое напряжение","Высокое напряжение","Засорен предфильтр"};
-static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение","Засорен предфильтр","Неспр канал 1","Неиспр канал 2"};
+static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение","Засорен предфильтр","","",""};
+static u8 const *  ViewErrorStringCDV[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение","Неисп диск. вх.","Неспр канал 1","Неиспр канал 2","Неисп. датчика"};
 static u8 const *  CH_STRING[] = { "ВР","1 канал","2 канала"};
 
 
@@ -1022,7 +1023,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
     {
         static u16 reg_id;
         INPUT_SENSOR_t sens_type = getReg8(INPUT_CONTROL_TYPE);
-        DISCRET_STATE_t state    =  getCurSettingState();//getReg8(CDV_CONTOROL);
+        DISCRET_STATE_t state    =  getCurSettingState();
         switch (data_id)
         {
                 case COOF_P_SENS_ID:
@@ -1060,7 +1061,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                         break;
                 case CO2_SENSOR_ID:
                         if  (sens_type == ANALOG_SENSOR)
-                            sprintf(str,"%04i ppm", getCO2Sensor());
+                            sprintf(str,"%04i ppm", (int32_t)getCO2Sensor());
                         else
                             strcpy(str,NorAvalivaleString);
                         break;
@@ -1107,7 +1108,8 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                                        sprintf(str,"%06.1f %s",temp_float,MUnitStrig[getReg8(MEASERING_UNIT)]);
                                        break;
                                   case ROOM_CONTROLLER:
-                                       sprintf(str,"%04,1f %s",ComputeSetPoint(),MUnitStrig[getReg8(MEASERING_UNIT)]);
+                                       temp_float = DataModelGetCDVSettings(ComputeSetPoint(),CAV_VAV_CH1);
+                                       sprintf(str,"%06.1f %s", temp_float,MUnitStrig[getReg8(MEASERING_UNIT)]);
                                        break;
                                   case ANALOG_SENSOR:
                                       sprintf(str,"%6.1f %s",fGetAnalogSetting(),SensUnitString[  GetPIDSensorIndex()]);
@@ -1282,7 +1284,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                     SetPID2Screen((CHANNEL_COUNT_t)edit_data_buffer_byte,getReg8(INPUT_CONTROL_TYPE));
 
                 }
-                vByteDataEdit(0,reg_id,command,0,2,0,1);
+                vByteDataEdit(0,reg_id,command,0,2,1,1);
             }
             else
                 strcpy(str,CH_STRING[( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte] );
@@ -1639,13 +1641,20 @@ u8 vGetData(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command, u8 * index, u8 *
                  {
                      if ((blink_counter ==0) || ((temp_byte>>error_shif) & 0x01)==0)
                      {
-                         for (u8 i=0;i<7;i++)
+                         for (u8 i=0;i<8;i++)
                          {
-                             if (++error_shif >6) error_shif = 0;
+                             if (++error_shif >7) error_shif = 0;
                              if ((temp_byte>>error_shif) & 0x01) break;
                          }
                      }
-                     strcpy(str,ViewErrorString[error_shif]);
+                     if  (getReg8(DEVICE_TYPE) == DEV_FMCH)
+                     {
+                         strcpy(str,ViewErrorString[error_shif]);
+                     }
+                     else
+                     {
+                         strcpy(str,ViewErrorStringCDV[error_shif]);
+                    }
                  }
                  break;
              case KOOFKPS_ID:

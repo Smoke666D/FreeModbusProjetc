@@ -641,6 +641,7 @@ void vSetRegData( u16 adress)
                             case CDV_CH_COUNT_MB:
                             case CDV_INPUT_SENS_MB:
                             case AUTO_CALIB_TIMER_MB:
+                            case CDV_AFZONE_SETTING_MB:
                                    SaveReg8(reg_addr,byte_data);
                                    break;
                             case CDV_ZERO_POINT_TIMEOUT:

@@ -398,7 +398,9 @@ void vCDV_SetpointCheck(   u32 * timeout  )
     {
         system_start =  MKV_MB_RTU;
         error_state &=~DIN_ERROR; //Сбрасываем ошибку дискретных входов
+
         setReg8(CDV_CONTOROL,getReg8(MB_CDV_CONTROL));
+
     }
     CleanTimerFuncton((current_state !=getReg8(CDV_CONTOROL ) || getReg8(CDV_CONTOROL )==SETTING_CLOSE) );
 

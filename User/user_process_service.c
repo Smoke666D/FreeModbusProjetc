@@ -156,7 +156,7 @@ float GetSensor(u8 * after_zone, INPUT_SENSOR_t inp_sensor)
    float temp_float = 0;
    if (inp_sensor == STATIC_TERMSENSOR)
    {
-       temp_float = getAIN(DCAIN4);
+       temp_float = getAIN(DCAIN5);
        *after_zone = 1;
    }
    else if (inp_sensor == ANALOG_SENSOR)
@@ -206,40 +206,38 @@ static CLEAN_TIMER_t CleanTimer;
         InitCleanTimer();
         setReg8(LIGTH, 0 );
     }
-    else {
-
-
-    CleanTimer.control_state =  ucDinGet(INPUT_5) ;
-    if (CleanTimer.tumer_on == 0 )
+    else
     {
-
-        if ( CleanTimer.control_state == 1)
+        CleanTimer.control_state =  ucDinGet(INPUT_5)? 0 :1 ;
+        if (CleanTimer.tumer_on == 0 )
         {
 
+            if ( CleanTimer.control_state == 1)
+            {
                 CleanTimer.tumer_on  = 1;
+            }
         }
-     }
-     else
-     {
-         //§¦§ã§Ý§Ú §á§â§Ú§ê§Ö§Ý §ß§à§Ó§í§Û §á§à§Ý§à§Ø§Ú§ä§Ö§Ý§î§ß§í§Û §æ§â§à§ß§ä, §ä§à §á§Ö§â§Ö§Ù§Ñ§á§å§ã§Ü§Ñ§Ö§Þ §ä§Ñ§Û§Þ§Ö§â
-        if ((CleanTimer.old_control_state == 0) && (CleanTimer.control_state ==1)) CleanTimer.timer_counter = 0;
-
-        if (++CleanTimer.timer_counter  >= getReg8(CLEAN_TIMER)*100*60)
+        else
         {
-            CleanTimer.tumer_on = 0;
-            CleanTimer.timer_counter = 0;
-            setReg8(LIGTH, 0 );
-         }
-         else
-         {
+         //§¦§ã§Ý§Ú §á§â§Ú§ê§Ö§Ý §ß§à§Ó§í§Û §á§à§Ý§à§Ø§Ú§ä§Ö§Ý§î§ß§í§Û §æ§â§à§ß§ä, §ä§à §á§Ö§â§Ö§Ù§Ñ§á§å§ã§Ü§Ñ§Ö§Þ §ä§Ñ§Û§Þ§Ö§â
+            if ((CleanTimer.old_control_state == 0) && (CleanTimer.control_state ==1)) CleanTimer.timer_counter = 0;
 
-            setReg8(CLEAR_TIMER_STATE, 1);
-            if (getReg8(LIGTH )== 0 ) setReg8(LIGTH,1);
-         }
-      }
+            if (++CleanTimer.timer_counter  >= getReg8(CLEAN_TIMER)*100*60)
+            {
+                CleanTimer.tumer_on = 0;
+                CleanTimer.timer_counter = 0;
+                setReg8(LIGTH, 0 );
+            }
+            else
+            {
 
-    }
-    CleanTimer.old_control_state = CleanTimer.control_state;
+                setReg8(CLEAR_TIMER_STATE, 1);
+                if (getReg8(LIGTH )== 0 ) setReg8(LIGTH,1);
+            }
+        }
+
+        }
+        CleanTimer.old_control_state = CleanTimer.control_state;
     return;
 }
 
@@ -291,7 +289,7 @@ void vCheckDoubleChannelAlarm( u8 *error_state )
 
 
 
-
+static uint32_t sensor_timeout =0;
 
 void ErrorSensorCheck( u8 * error)
 {
@@ -300,19 +298,32 @@ void ErrorSensorCheck( u8 * error)
     switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
     {
         case ANALOG_SENSOR:
-           for (u8 i=0;i<3;i++)
-           {
-               if (vSensorErrorCheck(SensName[i],getReg8(SensTypeAddr[i]) ))
+               if (vSensorErrorCheck(SensName[getReg8(PRIOR_SENSOR)],getReg8(SensTypeAddr[getReg8(PRIOR_SENSOR)]) ))
                {
-                   (*error) |= ANALOG_SENSOR_ERROR;
-                   break;
+                   if (++sensor_timeout > 300 )
+                   {
+                       (*error) |= ANALOG_SENSOR_ERROR;
+                       sensor_timeout = 300;
+                   }
                }
-           }
+               else
+                   sensor_timeout = 0;
+
+
             break;
         case ROOM_CONTROLLER:
             sensor_channel = getReg8(ROOM_CHANNEL)-1;
             if (vSensorErrorCheck(SensName[sensor_channel],getReg8(SensTypeAddr[sensor_channel]) ))
-                (*error) |= ANALOG_SENSOR_ERROR;
+            {
+                if (++sensor_timeout > 300 )
+                {
+                    sensor_timeout = 300;
+                    (*error) |= ANALOG_SENSOR_ERROR;
+                }
+            }
+            else
+                sensor_timeout = 0;
+
             break;
         default:
             break;
@@ -324,8 +335,8 @@ void ErrorSensorCheck( u8 * error)
 float ComputeSetPoint()
 {
     double temp_float = 0;
-    uint16_t min = getReg16(SETTING_MIN);
-    uint16_t delta = getReg16(SETTING_MAX) - min;
+    float min = getRegFloat(SETTING_MIN);
+    float delta = getRegFloat(SETTING_MAX) - min;
     u8 channel = getReg8(ROOM_CHANNEL)-1;
     double data = getAIN(SensName[channel]);
     switch (getReg8( SensTypeAddr[channel]))
@@ -340,6 +351,7 @@ float ComputeSetPoint()
             temp_float =( (data -4.0)/18.0*delta) + min;
             break;
     }
+
     return (float)(temp_float);
 }
 
