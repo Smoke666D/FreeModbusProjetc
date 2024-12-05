@@ -135,7 +135,8 @@
 #define DCV_FACT1_ID            ( DCV_FACT2_ID              + 1 )
 #define DCV_SETTING2_ID         ( DCV_FACT1_ID              + 1 )
 #define DCV_SETTING1_ID         ( DCV_SETTING2_ID           + 1 )
-#define ZERO_CAL_COMMAND        ( DCV_SETTING1_ID           + 1 )
+#define FACT_DEV_SETTING_ID      ( DCV_SETTING1_ID           + 1 )
+#define ZERO_CAL_COMMAND        ( FACT_DEV_SETTING_ID            + 1 )
 
 
 

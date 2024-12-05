@@ -182,11 +182,12 @@ static  xScreenObjet  CDVInfoScreen1[]=
 {
         {0,0,LINE1,0,  READ_DATA,"Уст. к 1",   DCV_SETTING1_ID},
         {0,0,25,00,     READ_DATA,"Канал 1",   DCV_FACT1_ID },
-        {0,100,25,0,    TEXT_STRING,"",         0},
+        {0,0,37,105,    READ_DATA,"",        FACT_DEV_SETTING_ID},
+        {0,0,37,0,     READ_DATA,"",      FACT_CH_DATA_ID },
         {0,0,50,0,     READ_DATA,"Уст. к 2" , DCV_SETTING2_ID},
         {0,0,62,0,     READ_DATA,"Канал 2",   DCV_FACT2_ID },
         {1,100,62,0,    TEXT_STRING,"",         0},
-        {1,0,37,0,     READ_DATA,"Факт",      FACT_CH_DATA_ID },
+
       //  {1,10,62,0,     READ_DATA,"Режим:",    CDV_MODE_ID},
 };
 
@@ -207,8 +208,8 @@ static xScreenObjet  CDVSettingsScreen3[]=
         {0,15,LINE1,0,READ_DATA,"Настройки      ",       SETTING3_TITLE_ID },
         {0,2,25,0,TEXT_STRING,"Единицы измерения",          0},
         {0,2,37,0,WRITE_DATA,"",                            MEASERING_UNIT_ID},
-        {0,2,50,0,WRITE_DATA,"Режим",                       CDV_CH_COUNT_ID},
-        {1,2,62,0,WRITE_DATA,"",                       INPUT_SIGNAL_MODE_ID},
+        {0,2,50,0,READ_DATA,"Режим",                       CDV_CH_COUNT_ID},
+        {1,2,62,0,READ_DATA,"",                       INPUT_SIGNAL_MODE_ID},
 
 };
 
@@ -557,20 +558,20 @@ void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state)
             break;
        case ONE_CH:
            CDVSettingsScreen6[2].last = 1;
-           CDVInfoScreen1[2].last =1;
+           CDVInfoScreen1[3].last =1;
            xScreenDCV[8].pDownScreenSet = 11;
            xScreenDCV[10].pUpScreenSet   = 9;
            switch (analog_state)
            {
                case DISCRETE_INPUT:
-                        CDVInfoScreen1[5].last=1;
+
                         seting_sting_count =10;
                         xScreenDCV[PI1_SCREEN].pDownScreenSet = RESET_SCREEN + 1;
                         xScreenDCV[RESET_SCREEN].pUpScreenSet = PI1_SCREEN+1;
                         break;
                case STATIC_TERMSENSOR:
                         after_zone_enable = 1;
-                       CDVInfoScreen1[5].last=0;
+
                        seting_sting_count =12;
                        xScreenDCV[PI1_SCREEN].pDownScreenSet       = PISENS_SCREEN +1;
                        xScreenDCV[PISENS_SCREEN].pDownScreenSet    = ANALOG1_SCREEN  + 1;
@@ -582,7 +583,7 @@ void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state)
                        vSetAfterZone(  1,analog_state);
                        break;
                case ROOM_CONTROLLER:
-                        CDVInfoScreen1[5].last=1;
+
                         seting_sting_count =11;
                         xScreenDCV[PI1_SCREEN].pDownScreenSet       = ANALOG1_SCREEN +1;
                         xScreenDCV[ANALOG1_SCREEN].pDownScreenSet   = RESET_SCREEN+1;
@@ -592,7 +593,7 @@ void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state)
                         break;
                case ANALOG_SENSOR:
                    if ( getReg8(PRIOR_SENSOR)== T_PRIOR ) after_zone_enable = 1;
-                         CDVInfoScreen1[5].last=0;
+
                         vSetAfterZone(  1,analog_state);
                         xScreenDCV[ANALOG1_SCREEN].pScreenCurObjets = CDVSettingsAnalogScreen1;
                         PriorRegulationEnable(1);
@@ -604,19 +605,19 @@ void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state)
                         xScreenDCV[ANALOG2_SCREEN].pDownScreenSet = ANALOG3_SCREEN +1;
                         xScreenDCV[ANALOG2_SCREEN].pUpScreenSet   = ANALOG1_SCREEN +1;
                         xScreenDCV[RESET_SCREEN].pUpScreenSet     = ANALOG5_SCREEN +1;
-                        break;
+                       break;
                 }
            CDVSettingsScreen5[3].last = 1;
            break;
     case TWO_CH:
         CDVSettingsScreen6[2].last = 0;
-        CDVInfoScreen1[2].last =0;
+        CDVInfoScreen1[3].last =0;
         xScreenDCV[8].pDownScreenSet  = 10;
         xScreenDCV[10].pUpScreenSet   = 10;
         switch (analog_state)
         {
             case DISCRETE_INPUT:
-                CDVInfoScreen1[5].last=1;
+
                 seting_sting_count =12;
                 xScreenDCV[PI1_SCREEN].pDownScreenSet = PI2_SCREEN + 1;
                 xScreenDCV[PI2_SCREEN].pDownScreenSet = RESET_SCREEN + 1;
@@ -625,7 +626,7 @@ void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state)
                 break;
             case STATIC_TERMSENSOR:
                 after_zone_enable = 1;
-                CDVInfoScreen1[5].last=0;
+
                 seting_sting_count =13;
                 xScreenDCV[PI1_SCREEN].pDownScreenSet       = PISENS_SCREEN + 1;
                 xScreenDCV[PISENS_SCREEN].pDownScreenSet    = PI2_SCREEN +1;
@@ -642,7 +643,7 @@ void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state)
                  break;
             case ROOM_CONTROLLER:
 
-                    CDVInfoScreen1[5].last=1;
+
                     seting_sting_count =13;
                     xScreenDCV[PI1_SCREEN].pDownScreenSet      =  PI2_SCREEN + 1;
                     xScreenDCV[PI2_SCREEN].pDownScreenSet      =  ANALOG1_SCREEN +1;
@@ -656,7 +657,7 @@ void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state)
                     if ( getReg8(PRIOR_SENSOR)== T_PRIOR ) after_zone_enable = 1;
                     seting_sting_count =17;
                     PriorRegulationEnable(1);
-                    CDVInfoScreen1[5].last=0;
+
                     vSetAfterZone(  1,analog_state);
                     xScreenDCV[ANALOG1_SCREEN].pScreenCurObjets = CDVSettingsAnalogScreen1;
                     xScreenDCV[PI1_SCREEN].pDownScreenSet     = PISENS_SCREEN + 1;

@@ -953,6 +953,7 @@ void vSetTitle(u16 data_id, u8 * str )
                 case CALIBRATION_TITLE_ID:
                     temp_index = (dev_type == DEV_FMCH ) ?  7 : 4;
                     break;
+
                 case VOLTAG_SCREEN_TITLE_ID:
                     temp_index = (dev_type == DEV_FMCH ) ?  5 : 3;
                     break;
@@ -1072,9 +1073,11 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                             strcpy(str,NorAvalivaleString);
                         break;
                 case FACT_CH_DATA_ID:
+                        str[0]= 0;
                        if  (sens_type == STATIC_TERMSENSOR)
                            sprintf(str,"%2.1f C",getAIN(DCAIN5));
-                       else {
+                       else  if (sens_type == ANALOG_SENSOR )
+                       {
                            switch (GetPIDSensorIndex())
                            {
                                case 0: sprintf(str,"%02.1f C", getTSensor()); break;
@@ -1083,6 +1086,13 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                            }
                        }
                        break;
+                case FACT_DEV_SETTING_ID:
+                    str[0]= 0;
+                    if  ((sens_type == STATIC_TERMSENSOR) || (sens_type == ANALOG_SENSOR ))
+                    {
+                       strcpy(str,"Факт");
+                    }
+                    break;
                case DCV_SETTING1_ID:
                     switch (state)
                     {
@@ -1139,6 +1149,7 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                   temp_float = DataModelGetCDVSettings( getAIN(SENS2),CAV_VAV_CH2);
                   sprintf( str, "%06.1f %s", temp_float,MUnitStrig[getReg8(MEASERING_UNIT)] );
                   break;
+
            case ZERO_CAL_COMMAND:
                   switch (command)
                   {

@@ -166,9 +166,8 @@ static u8 TCP_STOP = 0;
 
 void vDefaultTask( void  * argument )
 {
-    u8 init_menu_state = 0;
-    QueueHandle_t     pKeyboard        = *( xKeyboardQueue());
-    static KeyEvent          TempEvent        = { 0U };
+
+
     char temp_str[50];
     u8 buffer_draw_counter = 0;
     TaskFSM_t main_task_fsm = STATE_INIT;
@@ -204,30 +203,7 @@ void vDefaultTask( void  * argument )
                         xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
                         vTaskResume(*getI2CTaskHandle());
                     }
-                    if ( uxQueueMessagesWaiting(pKeyboard) != 0)
-                    {
-                        if ( xQueueReceive(pKeyboard, &TempEvent, 0U ) == pdPASS )
-                        {
-                            if (TempEvent.KeyCode ==EXIT_KEY)
-                            {
-                                if ( TempEvent.Status == MAKECODE ) init_menu_state |=EXIT_KEY_PRESS ;
-                                else
-                                    init_menu_state &= ~EXIT_KEY_PRESS ;
-                            }
-                            if (TempEvent.KeyCode ==LEFT_KEY)
-                            {
-                                if ( TempEvent.Status == MAKECODE ) init_menu_state |=LEFT_KEY_PRESS ;
-                                else
-                                    init_menu_state &= ~LEFT_KEY_PRESS ;
-                            }
-                            if (init_menu_state == (LEFT_KEY_PRESS | EXIT_KEY_PRESS )  )
-                            {
-                                  MenuSetDeviceMenu();
-                                  main_task_fsm  = STATE_RUN;
-                                  break;
-                            }
-                        }
-                    }
+
                     HAL_WDTReset();
                     vTaskDelay(1);
                     if (k==2000)

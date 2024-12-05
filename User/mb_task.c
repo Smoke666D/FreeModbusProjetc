@@ -635,11 +635,33 @@ void vSetRegData( u16 adress)
                                     SaveReg8(reg_addr,byte_data);
                                     vSetAfterZone( (byte_data == T_PRIOR) ? 1 : 0,getReg8(INPUT_CONTROL_TYPE));
                                     break;
+                            case CDV_CH_COUNT_MB:
+                                  if (byte_data == 201 )
+                                   SaveReg8(reg_addr,1);
+                                  if (byte_data == 202)
+                                      SaveReg8(reg_addr,2);
+                                  break;
+                            case CDV_INPUT_SENS_MB :
+                                switch (byte_data)
+                                {
+                                    case 215:
+                                        SaveReg8(reg_addr,0);
+                                        break;
+                                    case 216:
+                                        SaveReg8(reg_addr,1);
+                                        break;
+                                    case 217:
+                                        SaveReg8(reg_addr,2);
+                                        break;
+                                    case 218:
+                                        SaveReg8(reg_addr,3);
+                                        break;
+                                }
+                                break;
                             case CDV_CLEAN_TIMER:
                             case CDV_SETTING_TIMEOUT_MB:
                             case CDV_MEASERING_UNIT:
-                            case CDV_CH_COUNT_MB:
-                            case CDV_INPUT_SENS_MB:
+
                             case AUTO_CALIB_TIMER_MB:
                             case CDV_AFZONE_SETTING_MB:
                                    SaveReg8(reg_addr,byte_data);
