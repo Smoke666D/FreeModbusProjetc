@@ -431,10 +431,12 @@ void MenuSetDevice()
         default:
         case DEV_FMCH:
             pMenu = xScreenFMCH;
+            SetMainMode( 1);
             break;
         case DEV_CAV_VAV_BP:
             pMenu = xScreenDCV;
             SetPID2Screen((CHANNEL_COUNT_t)getReg8(CDV_BP_CH_COUNT),getReg8(INPUT_CONTROL_TYPE));
+            SetMainMode( 0);
             break;
     }
 }
@@ -902,7 +904,7 @@ static const u16 MenuCDV_BPRegMap[]=
 static u8 error_shif = 0;
 static u8 const *  ErrorString[]={"HEPA Фильтр засорен","Невозможно","Низкое напряжение","Высокое напряжение","Засорен предфильтр"};
 static u8 const *  ViewErrorString[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение","Засорен предфильтр","","",""};
-static u8 const *  ViewErrorStringCDV[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение","Неисп диск. вх.","Неспр канал 1","Неиспр канал 2","Неисп. датчика"};
+static u8 const *  ViewErrorStringCDV[]={"HEPA Фильтр засорен","Невоз. поддер. устав!","Низкое напряжение","Высокое напряжение","Dinput","Неспр канал 1","Неиспр канал 2","Неисп. датчика"};
 static u8 const *  CH_STRING[] = { "ВР","1 канал","2 канала"};
 
 
@@ -1032,9 +1034,9 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                     temp_int = GetPIDSensorIndex();
                     reg_id = (data_id == COOF_P_SENS_ID) ? SensorPRegMap[temp_int] : SensorIRegMap[temp_int];
                     if ( command > CMD_EDIT_READ )
-                        vFloatDataEdit(reg_id, command,6,2,999.99,0);
+                        vFloatDataEdit(reg_id, command,3,3,999.999,0);
                     else
-                        sprintf(str,"%07.2f", ( command == CMD_READ )? getRegFloat(reg_id): edit_data_buffer_float );
+                        sprintf(str,"%07.3f", ( command == CMD_READ )? getRegFloat(reg_id): edit_data_buffer_float );
                     break;
                 case CDV_MODE_ID:
                     strcpy(str,CDV_MODE_STRING[getStateDCV()]);
@@ -1131,6 +1133,12 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                                break;
                   }
                   break;
+            case OFFSET2_UNIT_ID:
+                if ((getReg8(MEASERING_UNIT))!=2 ) strcpy(str,"%");
+                else {
+                    strcpy(str,"Па");
+                }
+                break;
             case DCV_SETTING2_ID:
                   if ( state == SETTING_OPEN ) strcpy(str,"Откр.");
              else if ( state == SETTING_CLOSE ) strcpy(str,"Закр.");
@@ -1326,12 +1334,22 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                     sprintf(str,"%03i",( command == CMD_READ )  ? getReg8(reg_id) : edit_data_buffer_byte);
             break;
             case OFFSET2_ID:
-
+                if ((getReg8(MEASERING_UNIT))!=2 )
+                {
                 if ( command > CMD_EDIT_READ )
                                             vFloatDataEdit(reg_id, command,3,1,100.0,-100.0);
                                         else
                                             sprintf(str,"%+06.1f", ( command == CMD_READ ) ? getRegFloat(reg_id) :  edit_data_buffer_float );
-                                        break;
+                }
+                else
+                {
+                    if ( command > CMD_EDIT_READ )
+                             vFloatDataEdit(OFFSET_CH2_PA, command,4,1,2500.0,-2500.0);
+                   else
+                         sprintf(str,"%+07.1f", ( command == CMD_READ ) ? getRegFloat(OFFSET_CH2_PA) :  edit_data_buffer_float );
+
+                }
+                  break;
             case SETTING_MIN_ID:
             case SETTING_AVER_ID:
             case SETTING_MAX_ID:

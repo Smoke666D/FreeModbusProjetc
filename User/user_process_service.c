@@ -15,9 +15,13 @@
 static const u16 MinRegAddr[]={MIN_SET1,MIN_SET2,MIN_SET3};
 static const u16 MaxRegAddr[]={MAX_SET1,MAX_SET2,MAX_SET3};
 static const u8  SensName[] ={ DCAIN1,DCAIN2,DCAIN3};
-static const u16 SensTypeAddr[]={AIN1_TYPE,AIN2_TYPE,AIN2_TYPE};
+static const u16 SensTypeAddr[]={AIN1_TYPE,AIN2_TYPE,AIN3_TYPE};
 static const u16 SensOfsAddr[]={SENS_OFS1,SENS_OFS2,SENS_OFS3};
 
+
+/*
+ * §¶§å§ß§Ü§Ú§ñ §á§â§à§Ò§â§Ñ§Ù§å§Ö§ä §Ñ§ß§Ñ§Ý§à§Ô§à§Ó§í§Û §Õ§Ñ§ä§é§Ú§Ü §å§Ü§Ñ§Ù§Ñ§ß§ß§à§Ô§à §Ü§Ñ§ß§Ñ§Ý§Ñ §Ú§ã§á§à§Ý§î§Ù§å§ñ §å§ã§ä§Ñ§Ó§Ü§Ú §Õ§Ñ§ä§é§Ú§Ü§à§Ó §Ú§Ù eeprom
+ */
 float SensorConver( u8 channel)
 {
     float min_data = getRegFloat(MinRegAddr[channel]);
@@ -205,15 +209,17 @@ static CLEAN_TIMER_t CleanTimer;
     {
         InitCleanTimer();
         setReg8(LIGTH, 0 );
+
     }
     else
     {
-        CleanTimer.control_state =  ucDinGet(INPUT_5)? 0 :1 ;
+        CleanTimer.control_state =  ucDinGet(INPUT_5) ;
         if (CleanTimer.tumer_on == 0 )
         {
 
-            if ( CleanTimer.control_state == 1)
+            if (( CleanTimer.control_state == 1) && (CleanTimer.old_control_state == 0))
             {
+
                 CleanTimer.tumer_on  = 1;
             }
         }
@@ -230,7 +236,7 @@ static CLEAN_TIMER_t CleanTimer;
             }
             else
             {
-
+              //  printf("run clear timer\r\n");
                 setReg8(CLEAR_TIMER_STATE, 1);
                 if (getReg8(LIGTH )== 0 ) setReg8(LIGTH,1);
             }

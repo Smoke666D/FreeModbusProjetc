@@ -33,6 +33,8 @@ typedef enum
 #define CALIBRATE_CODE 1
 #define STOP_CODE  0
 
+
+float getSETPOINT();
 float GetChanne2Setting();
 float ComputeSetPoint();
 void UPDATE_COOF();

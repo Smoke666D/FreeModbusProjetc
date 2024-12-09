@@ -336,7 +336,7 @@ void SystemCalibraionStop()
 static u8 cur_state = 0;
 static u8 system_start =  MKV_MB_RTU;
 static u8 din_state_update = 0;
-
+static u8 start_clear_timer =0;
 
 void vCDV_SetpointCheck(   u32 * timeout  )
 {
@@ -396,12 +396,14 @@ void vCDV_SetpointCheck(   u32 * timeout  )
     {
         system_start =  MKV_MB_RTU;
         error_state &=~DIN_ERROR; //Сбрасываем ошибку дискретных входов
-
         setReg8(CDV_CONTOROL,getReg8(MB_CDV_CONTROL));
 
     }
+  //  if (++start_clear_timer >100)
+   //        {
     CleanTimerFuncton((current_state !=getReg8(CDV_CONTOROL ) || getReg8(CDV_CONTOROL )==SETTING_CLOSE) );
-
+  //  start_clear_timer = 100;
+ //            }
     return ;
 }
 
@@ -462,9 +464,16 @@ void Channel2Reg(  float setpoint )
          else if (state== SETTING_OPEN ) PID_Out = 10.0;
          else
          {
-            temp_f = DataModelGetCDVSettings(setpoint, CAV_VAV_CH1);
-            temp_f = temp_f + temp_f * ( getRegFloat(OFFSET_CH2)/100.0);
-            SET_POINT1  = DataModelGetPressureSettings( temp_f ,  CAV_VAV_CH2)  ;  //temp_f + getRegFloat(OFFSET_CH2);
+            if ((getReg8(MEASERING_UNIT))!=2 )
+            {
+                temp_f = DataModelGetCDVSettings(setpoint, CAV_VAV_CH1);
+                temp_f = temp_f + temp_f * ( getRegFloat(OFFSET_CH2)/100.0);
+                SET_POINT1  = DataModelGetPressureSettings( temp_f ,  CAV_VAV_CH2) ;
+            }
+            else
+            {
+                SET_POINT1 = setpoint + getRegFloat(OFFSET_CH2_PA);
+            }//temp_f + getRegFloat(OFFSET_CH2);
             PID_Compute(&TPID2,getAIN(SENS2));
             PID_Out = PIDOut2/1000.0;
          }
@@ -518,6 +527,11 @@ DISCRET_STATE_t getCurSettingState()
     return temp_control_state;
 }
 
+
+float getSETPOINT()
+{
+    return (SET_POINT);
+}
 
 void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
 {
@@ -624,6 +638,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                     {
                         if (CalibrationZeroWhait())
                         {
+                            *cal_flag = 0;
                             dev->start_timeout = 0;
                             task_fsm = USER_PROCCES_WORK;
                             eSetDUT(OUT_2, 0);

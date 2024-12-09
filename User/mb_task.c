@@ -91,8 +91,9 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define INP_MH_H_MB      26
 #define INP_MH_M_MB      27
 #define SENSOR_ERROR_MB  28
+#define PID_OUT_MB       29
 
-#define COMMON_REG_INPUT_NREGS ( SENSOR_ERROR_MB+1)
+#define COMMON_REG_INPUT_NREGS ( PID_OUT_MB+2)
 
 
 
@@ -738,6 +739,10 @@ static void MB_TASK_INPUTS_UDATE(u16 start_reg_index )
         usRegInputBuf[INP_MH_M_MB ]     = vRTC_TASK_GetMinute();
         usRegInputBuf[ERROR_STATE_MB]   = USER_GerErrorState();
         usRegInputBuf[SENSOR_ERROR_MB]  = getReg8(SENSOR_ERROR);
+
+
+        convert_float_to_int(getSETPOINT(), &usRegInputBuf[PID_OUT_MB]);
+
     }
     else                                              //§¦§ã§Ý§Ú §á§Ö§â§Ó§í§Û §Ñ§Õ§â§Ö§ã §Ó §Õ§Ú§Ñ§á§Ñ§Ù§à§ß§Ö §ã§á§Ö§è§Ú§æ§Ú§é§Ö§ã§Ü§Ú§ç §Õ§Ý§ñ §å§ã§ä§â§à§Û§ã§ä§Ó§Ñ §â§Ö§Ô§ã§Ú§ä§â§à§Ó
     {

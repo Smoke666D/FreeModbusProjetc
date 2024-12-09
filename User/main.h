@@ -43,14 +43,14 @@ EventGroupHandle_t * xGetOSEvent();
 
 #define __SECTION(x)
 
-#define LCD_TIMER5_PRIOR    0
+#define LCD_TIMER5_PRIOR    1
 #define LCD_TIMER5_SUBPRIOR 0
 #define SPI2_PRIOR          2
 #define SPI2_SUBPRIOR       0
 #define ADC1_PRIOR          1
 #define ADC1_SUB_PRIOR      0
 #define ADC2_PRIOR          1
-#define ADC2_SUBPRIOR      0
+#define ADC2_SUBPRIOR       0
 #define RTC_IT_PRIOR        3
 #define RTC_IT_SUBPRIOR     0
 #define UART2_IT_PRIOR      2

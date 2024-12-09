@@ -26,6 +26,7 @@
 #define CDV_SCREENS_COUNT 26
 #define BP_SCREENS_COUNT 25
 
+void SetMainMode( uint8_t mode);
 void SetBPSetting(u8 set);
 void vSettingCoountCondfig( u8 setting);
 void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state);

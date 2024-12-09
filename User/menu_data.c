@@ -50,7 +50,7 @@ static xScreenObjet const InfoScreen4[]=
         {1,2,62,05,READ_DATA,"",HOURE_COUNTER_ID },
 };
 
-static xScreenObjet const SettingsScreen1[]=
+static xScreenObjet SettingsScreen1[]=
 {
         {0,15,LINE1,0,READ_DATA, "Настройки",          SETTING1_TITLE_ID },
         {0,2,25,0,WRITE_DATA,"Режим управл.",          CONTROL_MODE_ID },
@@ -234,8 +234,8 @@ static xScreenObjet  CDVSettingsScreen5[]=
         {0,2,37,30,WRITE_DATA,"Канал 1",              FAIL_SET_CH1_ID},
         {0,100,50,0,READ_DATA,"",                  MEASERING_UNIT_ID},
         {0,2,50,30,WRITE_DATA,"Канал 2",              FAIL_SET_CH2_ID},
-        {0,2,62,10,WRITE_DATA,"Смещ 2",                      OFFSET2_ID},
-        {1,120,62,0,TEXT_STRING,"%",                           0},
+        {0,2,62,14,WRITE_DATA,"Смещ 2",                      OFFSET2_ID},
+        {1,120,62,0,READ_DATA,"",                         OFFSET2_UNIT_ID},
 };
 
 static xScreenObjet  CDVSettingsScreen6[]=
@@ -475,6 +475,14 @@ u8 getScreenCount(DEVICE_TYPE_t dev)
      return 10;
   else
     return (seting_sting_count);
+}
+
+void SetMainMode( uint8_t mode)
+{
+    if (mode == 1)
+        SettingsScreen1[3].last = 0;
+    else
+        SettingsScreen1[3].last = 1;
 }
 
 void SetPID2Screen(CHANNEL_COUNT_t state, INPUT_SENSOR_t analog_state)
