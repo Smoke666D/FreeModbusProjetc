@@ -52,6 +52,7 @@ typedef struct
   u32 Filter_Warning_Timeout;
   u32 PreFilter_Warning_Timeout;
   u32 pid_counter;
+  u32 din_change_timeout;
   u32 start_timeout;
   u32 hepa_counter;
   u8 FilterState;

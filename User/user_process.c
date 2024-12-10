@@ -319,6 +319,7 @@ void vFMCH_FSM( FMCH_Device_t * dev)
                eSetDUT(OUT_1,FALSE);
                error_state &= ~SETTING_ERROR;
                dev->HEPA_CONTROL_FLAG = 0;
+               dev->start_timeout = 0;
                break;
      }
 }
@@ -336,7 +337,7 @@ void SystemCalibraionStop()
 static u8 cur_state = 0;
 static u8 system_start =  MKV_MB_RTU;
 static u8 din_state_update = 0;
-static u8 start_clear_timer =0;
+static u32 start_clear_timer =0;
 
 void vCDV_SetpointCheck(   u32 * timeout  )
 {
@@ -626,7 +627,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 break;
             case USER_PROCESS_ZERO_CALIB:
 
-                if ((dev->start_timeout) >= ( getReg16(ZERO_POINT_TIMEOUT)*100) )
+                if ((start_clear_timer) >= ( getReg16(ZERO_POINT_TIMEOUT)*100) )
                 {
 
                     if (*cal_flag == 0)
@@ -639,7 +640,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                         if (CalibrationZeroWhait())
                         {
                             *cal_flag = 0;
-                            dev->start_timeout = 0;
+                            start_clear_timer = 0;
                             task_fsm = USER_PROCCES_WORK;
                             eSetDUT(OUT_2, 0);
                         }
@@ -647,7 +648,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 }
                 else
                 {
-                    (dev->start_timeout)++;
+                    (start_clear_timer)++;
                      eSetDUT(OUT_2, 1);
                 }
                 break;

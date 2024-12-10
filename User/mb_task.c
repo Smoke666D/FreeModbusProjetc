@@ -179,7 +179,7 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 //#define CLEAR_TIMER_ON
 
 
-#define CDV_COUNT             ( CDV_CH_COUNT_MB  - AUTO_CALIB_TIMER_MB  + 1)
+#define CDV_COUNT              ( CDV_CH_COUNT_MB  - AUTO_CALIB_TIMER_MB  + 1)
 
 #define CDV_FACT_1              200
 #define CDV_FACT_2              202
@@ -187,8 +187,10 @@ static USHORT usRegInputBuf[REG_INPUTS_NREGS];
 #define CDV_CO2_SENSOR_MB       206
 #define CDV_H_SENSOR_MB         207
 #define CDV_CUR_STATE           208
+#define SETTING_FACT_CH1_MB     209
+#define SETTING_FACT_CH2_MB     211
 
-#define CDV_INPUTS_COUNT         ( CDV_CUR_STATE - CDV_FACT_1   + 1 )
+#define CDV_INPUTS_COUNT       ( SETTING_FACT_CH2_MB - CDV_FACT_1 + 2 )
 
 
 
@@ -419,6 +421,8 @@ void vSetRegData( u16 adress)
                      WORK_MODE = byte_data ;
                      if (WORK_MODE ==3 )
                      {
+                         SaveBeforePowerOff();
+                         vTaskDelay(100);
                          NVIC_SystemReset();
                      }
                      if ((WORK_MODE == 0 ) && (getReg8(TEST_MODE) == 1 )) SaveReg8(TEST_MODE,0);
@@ -575,15 +579,25 @@ void vSetRegData( u16 adress)
                                          saveRegFloat(reg_addr,convert_int_to_float( pFloatReg));
                                      }
                                      break;
+                            case (CDV_SENSOR1_OFS+1):
+                            case (CDV_SENSOR2_OFS+1):
+                            case (CDV_SENSOR3_OFS+1):
+                                data = convert_int_to_float( pFloatReg);
+                                if (data <-9999.9) data  = -9999.9;
+                                if (data > 9999.9 ) data = 9999.9;
+                                saveRegFloat(reg_addr, data);
+                                 break;
                             case (CDV_SENSOR1_MIN+1):
+                                          data = convert_int_to_float( pFloatReg);
+                                        if (data <-9999.9) data  = -9999.9;
+                                        if (data > 9999.9 ) data = 9999.9;
+                                        saveRegFloat(reg_addr, data);
+                                        break;
                             case (CDV_SENSOR1_MAX+1):
                             case (CDV_SENSOR2_MIN+1):
                             case (CDV_SENSOR2_MAX+1):
                             case (CDV_SENSOR3_MIN+1):
                             case (CDV_SENSOR3_MAX+1):
-                            case (CDV_SENSOR1_OFS+1):
-                            case (CDV_SENSOR2_OFS+1):
-                            case (CDV_SENSOR3_OFS+1):
                             case (CDV_SENSOR1_SET+1):
                             case (CDV_SENSOR2_SET+1):
                             case (CDV_SENSOR3_SET+1):
@@ -603,11 +617,22 @@ void vSetRegData( u16 adress)
                                      saveRegFloat(reg_addr, convert_int_to_float( pFloatReg));
                                      break;
                             case (CDV_OFFSET_CH2+1):
+
+                                    if ((getReg8(MEASERING_UNIT))!=2 )
+                                    {
                                          temp_float = convert_int_to_float( pFloatReg);
                                         if ( temp_float > 100.0 ) temp_float = 100.0;
                                         if ( temp_float < -100.0 ) temp_float = -100.0;
                                         saveRegFloat(reg_addr, temp_float);
-                                        break;
+                                    }
+                                    else
+                                    {
+                                        temp_float = convert_int_to_float( pFloatReg);
+                                        if ( temp_float > 2500.0 ) temp_float = 2500.0;
+                                        if ( temp_float < -2500.0 ) temp_float = -2500.0;
+                                        saveRegFloat(OFFSET_CH2_PA, temp_float);
+                                    }
+                                    break;
                             case (CDV_SETTING_MIN_MB+1 ):
                             case (CDV_SETTING_MID_MB +1 ):
                             case (CDV_SETTING_MAX_MB +1 ):
@@ -637,24 +662,24 @@ void vSetRegData( u16 adress)
                                     vSetAfterZone( (byte_data == T_PRIOR) ? 1 : 0,getReg8(INPUT_CONTROL_TYPE));
                                     break;
                             case CDV_CH_COUNT_MB:
-                                  if (byte_data == 201 )
+                                  if (byte_data == 24201 )
                                    SaveReg8(reg_addr,1);
-                                  if (byte_data == 202)
+                                  if (byte_data == 24202)
                                       SaveReg8(reg_addr,2);
                                   break;
                             case CDV_INPUT_SENS_MB :
                                 switch (byte_data)
                                 {
-                                    case 215:
+                                    case 24215:
                                         SaveReg8(reg_addr,0);
                                         break;
-                                    case 216:
+                                    case 24216:
                                         SaveReg8(reg_addr,1);
                                         break;
-                                    case 217:
+                                    case 24217:
                                         SaveReg8(reg_addr,2);
                                         break;
-                                    case 218:
+                                    case 24218:
                                         SaveReg8(reg_addr,3);
                                         break;
                                 }
@@ -670,9 +695,6 @@ void vSetRegData( u16 adress)
                             case CDV_ZERO_POINT_TIMEOUT:
                                   saveReg16(reg_addr, byte_data);
                                   break;
-
-
-
                       }
            }
        }
@@ -719,6 +741,61 @@ void UpdateDCVInputs()
     usRegInputBuf[CDV_CO2_SENSOR_MB-CDV_OFFSET] = (uint16_t)getCO2Sensor();
     usRegInputBuf[CDV_H_SENSOR_MB-CDV_OFFSET]   = getHumanitySensor();
     usRegInputBuf[CDV_CUR_STATE  - CDV_OFFSET ] = getCurSettingState();
+    float temp_float;
+    DISCRET_STATE_t state    =  getCurSettingState();
+    switch (state)
+    {
+        case SETTING_OPEN:
+            temp_float = 0;
+            break;
+        case SETTING_CLOSE:
+            temp_float = 0;
+            break;
+        case SETTING_MINIMUM:
+            temp_float = DataModelGetCDVSettings( getRegFloat(SETTING_MIN),CAV_VAV_CH1);
+            break;
+        case SETTING_MAXIMUN:
+            temp_float = DataModelGetCDVSettings( getRegFloat(SETTING_MAX),CAV_VAV_CH1);
+             break;
+        case SETTING_MIDIUM:
+                               switch ((INPUT_SENSOR_t)getReg8(INPUT_CONTROL_TYPE))
+                               {
+                                   case DISCRETE_INPUT:
+                                        temp_float = DataModelGetCDVSettings( getRegFloat(SETTING_MID),CAV_VAV_CH1);
+
+                                        break;
+                                   case ROOM_CONTROLLER:
+                                        temp_float = DataModelGetCDVSettings(ComputeSetPoint(),CAV_VAV_CH1);
+
+                                        break;
+                                   case ANALOG_SENSOR:
+                                       temp_float =fGetAnalogSetting();
+                                        break;
+                                   case STATIC_TERMSENSOR:
+                                       temp_float =getRegFloat(SENS_SETTING1);
+                                        break;
+                                }
+                                break;
+    }
+
+    convert_float_to_int( temp_float, &usRegInputBuf[SETTING_FACT_CH1_MB-CDV_OFFSET]);
+    if ( state == SETTING_OPEN )temp_float = 0;
+    else if ( state == SETTING_CLOSE ) temp_float = 0;
+     else
+     {
+         temp_float = DataModelGetCDVSettings(GetChanne2Setting(),CAV_VAV_CH1);
+                         if ((getReg8(MEASERING_UNIT))!=2 )
+                         {
+                             temp_float = temp_float + temp_float *( getRegFloat(OFFSET_CH2)/100.0);
+                         }
+                         else
+                             temp_float = temp_float + getRegFloat(OFFSET_CH2_PA);
+
+                     }
+
+
+
+    convert_float_to_int( temp_float, &usRegInputBuf[SETTING_FACT_CH2_MB-CDV_OFFSET]);
 
 }
 
@@ -848,17 +925,25 @@ void UpdateCAV_VAV_BPHoldign()
     }
     convert_float_to_int(pdata, &usRegHoldingBuf[CDV_KOOF_PSESN_MB -100]);
     convert_float_to_int(idata, &usRegHoldingBuf[CDV_KOOF_ISENS_MB- 100]);
+    float temp_float;
    for (u8 i=0;i<13;i++)
     {
         u16 reg_addr =REGS_CDV_SENS_FLOAT[i];
-        convert_float_to_int(getRegFloat(CDV_REGS_MAP[reg_addr-200]), &usRegHoldingBuf[reg_addr-100]);
+        if ((reg_addr == CDV_OFFSET_CH2) &&  (getReg8(MEASERING_UNIT)==2 ))
+                {
+                    temp_float = getRegFloat(OFFSET_CH2_PA);
+                }
+                else
+                    temp_float = getRegFloat(CDV_REGS_MAP[reg_addr-200]);
+        convert_float_to_int(temp_float, &usRegHoldingBuf[reg_addr-100]);
     }
-    float temp_float;
+
     CAV_VAV_CH_t ch;
     for (u8 i = 0; i < 5; i++)
     {
          u16 reg_addr = SettingRegsMap[i];
-         ch = ((reg_addr == CDV_SETTING_ERROR2_MB) || (reg_addr == CDV_OFFSET_CH2)) ?CAV_VAV_CH2 :CAV_VAV_CH1;
+         ch = ((reg_addr == CDV_SETTING_ERROR2_MB) || (reg_addr == CDV_OFFSET_CH2)) ? CAV_VAV_CH2 :CAV_VAV_CH1;
+
          temp_float =(DataModelGetCDVSettings(getRegFloat(CDV_REGS_MAP[reg_addr-200]),ch));
          convert_float_to_int(temp_float, &usRegHoldingBuf[reg_addr -100]);
     }

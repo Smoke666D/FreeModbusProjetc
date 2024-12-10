@@ -1145,7 +1145,12 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                   else
                   {
                       temp_float = DataModelGetCDVSettings(GetChanne2Setting(),CAV_VAV_CH1);
-                      temp_float = temp_float + temp_float *( getRegFloat(OFFSET_CH2)/100.0);
+                      if ((getReg8(MEASERING_UNIT))!=2 )
+                      {
+                          temp_float = temp_float + temp_float *( getRegFloat(OFFSET_CH2)/100.0);
+                      }
+                      else
+                          temp_float = temp_float + getRegFloat(OFFSET_CH2_PA);
                       sprintf(str,"%06.1f %s", temp_float,MUnitStrig[getReg8(MEASERING_UNIT)]);
                   }
                   break;
@@ -1416,6 +1421,12 @@ void vSetCDV_PB(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u
                         sprintf(str,"%+06.1f",( command == CMD_READ ) ? getRegFloat(reg_id) : edit_data_buffer_float );
                     break;
             case SENSOR1_MIN_ID:
+                if ( command > CMD_EDIT_READ )
+                                         vFloatDataEdit(reg_id, command,3,1,9999.9,-9999.9);
+                                     else
+                                         sprintf(str,"%+06.1f",( command == CMD_READ ) ? getRegFloat(reg_id) : edit_data_buffer_float );
+                                     break;
+
             case SENSOR1_MAX_ID:
             case SENSOR1_SETTING_ID:
             case SENSOR2_MIN_ID:
@@ -1502,7 +1513,7 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                      {
                           switch (error_flag)
                           {
-                              case 1:
+                              case 0:
                                   strcpy(str,"более 90%");
                                   break;
                               case 2:
@@ -1511,7 +1522,7 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                               case 3:
                                   sprintf(str,"сети > %i В",getReg8(HIGH_VOLTAGE_ON));
                                   break;
-                              case 0:
+                              case 1:
                                   strcpy(str,"поддерживать уставку");
                                   break;
                               default:
