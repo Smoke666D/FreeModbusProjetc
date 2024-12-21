@@ -71,7 +71,7 @@ void  vSetDoutState( OUT_NAME_TYPE ucCh, u8 BitVal )
        }
 }
 
-__attribute__((section(".stext"))) void vDIN_DOUT_Init()
+ void vDIN_DOUT_Init()
 {
     DoutCinfig_t  DOUT_CONFIG;
     DinConfig_t DIN_CONFIG;
@@ -117,7 +117,7 @@ BitState_t fPortState (uint8_t i)
 
 
 
-__attribute__((section(".stext"))) void vKeyboarInit()
+ void vKeyboarInit()
 {
     KeybaordStruct_t KeyboardInit;
     KeyboardInit.KEYBOARD_COUNT    = KEY_COUNT;

@@ -17,7 +17,7 @@ u8 DATA_MODEL_REGISTER[DATA_MODEL_REGISTERS];
 
 
 
-__attribute__((section(".stext"))) DATA_MODEL_INIT_t DataModel_Init()
+ DATA_MODEL_INIT_t DataModel_Init()
 {
     memset(DATA_MODEL_REGISTER,0,EEPROM_REGISTER_COUNT);
     if (   ReadEEPROMDataPolling(0x00 ,DATA_MODEL_REGISTER , EEPROM_REGISTER_COUNT, 100 ) == EEPROM_OK)

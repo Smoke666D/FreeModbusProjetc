@@ -86,7 +86,7 @@ void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer,
    *pulTimerTaskStackSize = configTIMER_TASK_STACK_DEPTH;
 }
 
-__attribute__((section(".stext"))) void TaskSuspend()
+ void TaskSuspend()
 {
     vTaskSuspend( MPTCPTask_Handler  );
     vTaskSuspend(* getSerialTask());
@@ -95,7 +95,7 @@ __attribute__((section(".stext"))) void TaskSuspend()
     vTaskSuspend(* getConfigTaskHandle());
 }
 
-__attribute__((section(".stext"))) void vSYStaskInit ( void )
+ void vSYStaskInit ( void )
 {
 
     ( * getConfigTaskHandle())
@@ -138,14 +138,14 @@ __attribute__((section(".stext"))) void vSYStaskInit ( void )
   return;
 }
 
-__attribute__((section(".stext"))) void vSYSeventInit ( void )
+ void vSYSeventInit ( void )
 {
   *(xGetOSEvent() ) = xEventGroupCreateStatic(&xOSStateEventGroup );
   *(getSerialEvenGroup()) = xEventGroupCreateStatic(&xSerialStateEventGroup );
 }
 
 
-__attribute__((section(".stext"))) void vSYSqueueInit ( void )
+ void vSYSqueueInit ( void )
 {
      *( xKeyboardQueue()) = xQueueCreateStatic( 16U, sizeof( KeyEvent ),ucQueueStorageArea, &xStaticQueue );
      * (xConfigSystemRxQueue()) = xQueueCreateStatic( 16U, sizeof( uint8_t ),ucRXQueueStorageArea, &xRXStaticQueue );

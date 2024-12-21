@@ -45,12 +45,12 @@ u32 vRTC_TASK_GetHoure( void )
 {
     return (hour_counter / 60);
 }
-__attribute__((section(".stext"))) void vRTC_Init()
+ void vRTC_Init()
 {
     HAL_RTC_IT_Init( &vRTCTaskITCallback, RTC_IT_PRIOR,RTC_IT_SUBPRIOR);
 }
 
-__attribute__((section(".stext"))) void vRTC_TASK_Init()
+ void vRTC_TASK_Init()
 {
     hour_counter = getReg32(MOTO_HOURS);
     return;

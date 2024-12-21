@@ -16,7 +16,7 @@
 #include "hal_wdt.h"
 
 
-  __attribute__((section(".stext"))) void InitI2C()
+ void InitI2C()
 {
     HAL_I2C_InitTypeDef  I2C_InitTSturcture = {0};
     HAL_InitGpioAF (  I2C2_Port , I2C2_SDA_Pin   | I2C2_SCL_Pin  , 0 , GPIO_Mode_AF_OD );
@@ -35,7 +35,7 @@
 
 
 
- __attribute__((section(".stext"))) static void MX_GPIO_Init(void)
+  static void MX_GPIO_Init(void)
  {
      HAL_InitGPO();
      HAL_InitGpioAF( DAC0_Port, DAC0_Pin, 0, GPIO_Mode_AF_OD );
@@ -78,7 +78,7 @@
 
 
 
- __attribute__((section(".stext"))) void vInit_DeviceConfig( void )
+ void vInit_DeviceConfig( void )
 {
 
      MX_GPIO_Init();

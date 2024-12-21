@@ -29,7 +29,7 @@ EventGroupHandle_t * xGetOSEvent();
 
 /****************************************************************/
 
-#define INIT_FUNC_LOC __attribute__((section(".stext")))
+#define INIT_FUNC_LOC
 
 #define WCH32V3   2
 #define WCH32V2   1

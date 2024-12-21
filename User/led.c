@@ -47,7 +47,7 @@ u8 LED_BufferCompare()
 /*
  * Функция инициалзиации инидкатора, размещаем в мдлеенном флеше, скорость старта индикатора не критична
  */
-__attribute__((section(".stext"))) static void vLCDHWInit()
+ static void vLCDHWInit()
 {
     RESET_ENABLE;
     CS1_ENABLE;
@@ -148,7 +148,7 @@ static void LEDCall()
 /*
  * Функция инициализации дилплея и бибилиотеки u8g2
  */
-__attribute__((section(".stext"))) void vLCDInit( TimerName_t TimerName )
+ void vLCDInit( TimerName_t TimerName )
 {
     HAL_TIMER_InitIt(TimerName,700000,1,&LEDCall,LCD_TIMER5_PRIOR,LCD_TIMER5_SUBPRIOR);
     HAL_ResetBit( LDCDATA_2_3_E_REW_CD_LED_Port , LCDnRW_Pin);

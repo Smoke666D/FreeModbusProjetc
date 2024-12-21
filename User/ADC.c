@@ -37,7 +37,7 @@ u16 sensor_timer[] = { 4,20,40,80,120,200,400};
 
 #define DAC_CAL_POINT 10
 
-__attribute__((section(".stext"))) POINT_t const DACCAL[DAC_CAL_POINT]={ {0,0},
+ POINT_t const DACCAL[DAC_CAL_POINT]={ {0,0},
                    {300,1.126},
                    {600,2.273},
                    {900,3.420},
@@ -50,7 +50,7 @@ __attribute__((section(".stext"))) POINT_t const DACCAL[DAC_CAL_POINT]={ {0,0},
 };
 
 #define K10 10000
-__attribute__((section(".stext")))const uint16_t B57164CalPoint[11][2] = {
+const uint16_t B57164CalPoint[11][2] = {
                                     {50,K10*0.33363},
                                     {45,K10*0.41026},
                                     {40,K10*0.5074},
