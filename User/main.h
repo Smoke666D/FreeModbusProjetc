@@ -8,6 +8,7 @@
 #ifndef USER_MAIN_H_
 #define USER_MAIN_H_
 
+
 #include "string.h"
 #include "eth_driver.h"
 #include "debug.h"
@@ -19,6 +20,7 @@
 #include "event_groups.h"
 #include "ADC.H"
 #include "u8g2.h"
+
 EventGroupHandle_t * xGetADCEvent();
 EventGroupHandle_t * xGetOSEvent();
 

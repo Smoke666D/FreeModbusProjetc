@@ -222,7 +222,7 @@
 					<sourceEntries>
 						<entry excluding="HAL_LIB|HAL_DRIVER|u8g2-master/sys|u8g2-master/pkg|NetLib/libwchnet_float.a|NetLib/eth_driver_RMII.c|NetLib/eth_driver_RGMII.c|NetLib/eth_driver_MII.c|FreeRTOS/portable/Common/mpu_wrappers.c|Startup|Ld" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 						<entry excluding="hal_flash_ch32.c|hal_can_ch32.c|hal_flash.h|hal_can.h" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="HAL_DRIVER"/>
-						<entry excluding="hw_lib_eeprom_i2c.h|hw_lib_eeprom_i2c.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="HAL_LIB"/>
+						<entry excluding="hw_data_model.c|hw_data_model.h|hw_lib_eeprom_i2c.h|hw_lib_eeprom_i2c.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="HAL_LIB"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Ld"/>
 						<entry excluding="startup_ch32v30x_D8.S" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Startup"/>
 					</sourceEntries>

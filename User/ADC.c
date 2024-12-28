@@ -9,6 +9,7 @@
 #include "hal_adc.h"
 #include "ADC.H"
 #include "main.h"
+#include "filters.h"
 #include "mb_task.h"
 #include "hw_lib_adc.h"
 #include "hal_timers.h"
@@ -363,28 +364,9 @@ void AddBufferDataI2C( ADC_Conversionl_Buf_t * pBuf, int16_t data )
 }
 
 
-void AddBufferData( ADC_Conversionl_Buf_t * pBuf, int16_t data )
-{
-    pBuf->pBuff[pBuf->pIndex] = data;
-    pBuf->pIndex++;
-    if (pBuf-> pIndex >= pBuf->ConversionalSize)  pBuf->pIndex = 0;
-}
 
-int16_t GetConversional(ADC_Conversionl_Buf_t * pBuf)
-{
-    int32_t tempdata = 0;
-    uint16_t index = pBuf-> pIndex;
-    for (uint16_t i = 0; i < pBuf->ConversionalSize; i++)
-    {
-        if (index == 0) index = (pBuf->ConversionalSize -1 );
-        index--;
-        tempdata+=  pBuf->pBuff[index];
-    }
-    tempdata = tempdata - (pBuf->offset*pBuf->ConversionalSize);
 
-    tempdata = tempdata/pBuf->ConversionalSize;
-    return (int16_t)tempdata;
-}
+
 
 
 int16_t GetConversionali2c(ADC_Conversionl_Buf_t * pBuf)
