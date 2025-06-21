@@ -12,6 +12,8 @@
 #include "hw_lib_adc.h"
 
 
+
+
 static const u16 MinRegAddr[]={MIN_SET1,MIN_SET2,MIN_SET3};
 static const u16 MaxRegAddr[]={MAX_SET1,MAX_SET2,MAX_SET3};
 static const u8  SensName[] ={ DCAIN1,DCAIN2,DCAIN3};
