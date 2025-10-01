@@ -328,6 +328,26 @@ float DataModel_SetVToPressere(float V, CAV_VAV_CH_t channel)
 }
 
 
+
+
+float  DataModel_GetPressureToLFMC(float pressure)
+{
+   uint8_t sign =0;
+   float KOOF =  getRegFloat(KOOFKPS)  ;
+   float temp_float;
+   if (pressure < 0)
+   {
+       sign = 1;
+
+   }
+    if (pressure != 0)
+    {
+        temp_float =(float) sqrt(  ( pressure > 0) ? (double)pressure: (double)pressure*-1)*(double)KOOF ;
+        return (sign)? temp_float*-1: temp_float;
+    }
+    else return 0;
+}
+
 float  DataModel_GetPressureToL(float pressure, CAV_VAV_CH_t channel)
 {
    uint8_t sign =0;

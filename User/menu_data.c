@@ -94,7 +94,7 @@ static xScreenObjet const SettingsScreen5[]=
         {0,2,25,0,WRITE_DATA,"Напряжение min",     VOLTAGE_MIN_ON_ID},
         {0,2,37,0,WRITE_DATA,"Сброс аварии min",   VOLTAGE_MIN_OFF_ID },
         {0,2,50,0,WRITE_DATA,"Напряжение max",     VOLTAGE_MAX_ON_ID},
-        {1,2,62,0,WRITE_DATA,"Cброс авари max",    VOLTAGE_MAX_OFF_ID },
+        {1,2,62,0,WRITE_DATA,"Cброс аварии max",    VOLTAGE_MAX_OFF_ID },
 };
 static xScreenObjet const SettingsScreen6[]=
 {

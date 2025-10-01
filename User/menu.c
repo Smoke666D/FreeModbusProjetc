@@ -1574,7 +1574,7 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
            case SETTING1_ID:
            case SETTING2_ID:
                 if (command > CMD_EDIT_READ)
-                    vByteDataEdit(1,reg_id,command,3,(u16)DataModel_GetPressureToL(2500, (data_id == SETTING1_ID ) ? 0 : 1),0,0);
+                    vByteDataEdit(1,reg_id,command,3,(u16)DataModel_GetPressureToLFMC(2500),0,0);
                 else
                     sprintf(str,"%04i",( command == CMD_READ) ? getReg16(reg_id) : edit_data_buffer_byte  );
                 break;
