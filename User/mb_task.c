@@ -23,16 +23,10 @@
 #include "system_types.h"
 #include "user_process_service.h"
 
-#if REG_COILS_NREGS%8 && REG_COILS_NREGS>8
-UCHAR    ucSCoilBuf[REG_COILS_NREGS/8+1];
-#else
-UCHAR    ucSCoilBuf[REG_COILS_NREGS/8];
-#endif
-#if REG_DISCRETE_NREGS%8 && REG_DISCRETE_NREGS>8
-UCHAR ucSDiscInBuf[REG_DISCRETE_NREGS/8+1];
-#else
-UCHAR ucSDiscInBuf[REG_DISCRETE_NREGS/8];
-#endif
+
+static UCHAR  ucSCoilBuf[REG_COILS_NREGS/8+1];
+static UCHAR  ucSDiscInBuf[REG_DISCRETE_NREGS/8+1];
+
 
 #define REG_INPUT_START   0x01
 #define REG_HOLDING_START 0x01
@@ -1167,33 +1161,21 @@ eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCo
 eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNDiscrete )
 {
     eMBErrorCode    eStatus = MB_ENOERR;
-    USHORT          iRegIndex , iRegBitIndex , iNReg;
-    UCHAR *         pucDiscreteInputBuf;
-    USHORT          usDiscreteInputStart;
-    iNReg =  usNDiscrete / 8 + 1;
-
-    pucDiscreteInputBuf = ucSDiscInBuf;
-    usDiscreteInputStart = REG_DISCRETE_START;
+    USHORT          iRegBitIndex; 
     /* it already plus one in modbus function method. */
     usAddress--;
 
     if (usAddress + usNDiscrete    <= REG_DISCRETE_START  + REG_DISCRETE_NREGS)
     {
-        iRegIndex = (USHORT) (usAddress - usDiscreteInputStart) / 8;
-        iRegBitIndex = (USHORT) (usAddress - usDiscreteInputStart) % 8;
+        iRegBitIndex = (USHORT) (usAddress -REG_DISCRETE_START);
         xGetDins(  ucSDiscInBuf);
-        while (iNReg > 0)
+        while (usNDiscrete > 0)
         {
-            *pucRegBuffer++ = xMBUtilGetBits(&pucDiscreteInputBuf[iRegIndex++],
-                    iRegBitIndex, 8);
-            iNReg--;
+            UCHAR ucResult = xMBUtilGetBits( ucSDiscInBuf, iRegBitIndex, 1 );
+            xMBUtilSetBits( pucRegBuffer, iRegBitIndex, 1, ucResult );
+            iRegBitIndex++;
+            usNDiscrete--;
         }
-        pucRegBuffer--;
-        /* last discrete */
-        usNDiscrete = usNDiscrete % 8;
-        /* filling zero to high bit */
-        *pucRegBuffer = *pucRegBuffer << (8 - usNDiscrete);
-        *pucRegBuffer = *pucRegBuffer >> (8 - usNDiscrete);
     }
     else
     {
