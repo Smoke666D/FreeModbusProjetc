@@ -14,16 +14,7 @@
 			"calibrateSupport": false,
 			"calibrateCommand": ""
 		},
-		"linkedFolders": [
-			{
-				"name": "HAL_DRIVER",
-				"location": "../SYSTEM_LIB/HAL_DRIVER"
-			},
-			{
-				"name": "HAL_LIB",
-				"location": "../SYSTEM_LIB/HAL_LIB"
-			}
-		],
+		"linkedFolders": [],
 		"removedResources": [
 			{
 				"parentLogicPath": "",
