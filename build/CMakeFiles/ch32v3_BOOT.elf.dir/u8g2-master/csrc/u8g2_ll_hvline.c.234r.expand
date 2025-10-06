@@ -1,0 +1,699 @@
+
+;; Function u8g2_ll_hvline_vertical_top_lsb (u8g2_ll_hvline_vertical_top_lsb, funcdef_no=0, decl_uid=8554, cgraph_uid=0, symbol_order=0)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+Edge 2->5 redirected to 17
+Edge 3->5 redirected to 18
+Edge 8->12 redirected to 20
+Edge 9->12 redirected to 21
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 10->11 to 21 failed.
+Redirecting jump 57 from 20 to 21.
+Forwarding edge 19->20 to 21 failed.
+Deleted label in block 20.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 10->11 to 21 failed.
+Forwarding edge 19->20 to 21 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 17 NOTE_INSN_DELETED)
+(note 17 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 17 3 2 (set (reg/v/f:SI 103 [ u8g2 ])
+        (reg:SI 10 a0 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":73 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 104 [ x ])
+        (reg:SI 11 a1 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":73 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 105 [ y ])
+        (reg:SI 12 a2 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":73 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SI 106 [ len ])
+        (reg:SI 13 a3 [ len ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":73 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/v:SI 107 [ dir ])
+        (reg:SI 14 a4 [ dir ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":73 -1
+     (nil))
+(note 7 6 19 2 NOTE_INSN_FUNCTION_BEG)
+(insn 19 7 20 2 (set (reg/v:SI 94 [ bit_pos ])
+        (zero_extend:SI (subreg:QI (reg/v:SI 105 [ y ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":88 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 108)
+        (and:SI (reg/v:SI 94 [ bit_pos ])
+            (const_int 7 [0x7]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":89 -1
+     (nil))
+(insn 21 20 22 2 (set (reg/v:SI 91 [ bit_pos ])
+        (zero_extend:SI (subreg:QI (reg:SI 108) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":89 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:SI 110)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":91 -1
+     (nil))
+(insn 23 22 24 2 (set (reg:SI 109)
+        (ashift:SI (reg:SI 110)
+            (subreg:QI (reg/v:SI 91 [ bit_pos ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":91 -1
+     (nil))
+(insn 24 23 25 2 (set (reg/v:SI 93 [ mask ])
+        (zero_extend:SI (subreg:QI (reg:SI 109) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":91 -1
+     (nil))
+(insn 25 24 26 2 (set (reg:SI 74 [ _3 ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 103 [ u8g2 ])
+                    (const_int 146 [0x92])) [0 u8g2_40(D)->draw_color+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":95 -1
+     (nil))
+(insn 26 25 27 2 (set (reg:SI 111)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":95 -1
+     (nil))
+(jump_insn 27 26 28 2 (set (pc)
+        (if_then_else (gtu (reg:SI 74 [ _3 ])
+                (reg:SI 111))
+            (label_ref:SI 102)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":95 180 {*branchsi}
+     (int_list:REG_BR_PROB 633507684 (nil))
+ -> 102)
+(note 28 27 29 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 29 28 30 4 (set (reg:SI 112)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":97 -1
+     (nil))
+(jump_insn 30 29 31 4 (set (pc)
+        (if_then_else (eq (reg:SI 74 [ _3 ])
+                (reg:SI 112))
+            (label_ref:SI 106)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":97 180 {*branchsi}
+     (int_list:REG_BR_PROB 890420068 (nil))
+ -> 106)
+(note 31 30 11 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 11 31 99 5 (set (reg/v:SI 92 [ or_mask ])
+        (reg/v:SI 93 [ mask ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":96 -1
+     (nil))
+(jump_insn 99 11 100 5 (set (pc)
+        (label_ref 32)) -1
+     (nil)
+ -> 32)
+(barrier 100 99 102)
+(code_label 102 100 101 6 8 (nil) [1 uses])
+(note 101 102 10 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 10 101 103 6 (set (reg/v:SI 92 [ or_mask ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":93 -1
+     (nil))
+(jump_insn 103 10 104 6 (set (pc)
+        (label_ref 32)) -1
+     (nil)
+ -> 32)
+(barrier 104 103 106)
+(code_label 106 104 105 7 9 (nil) [1 uses])
+(note 105 106 8 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 8 105 9 7 (set (reg/v:SI 92 [ or_mask ])
+        (reg/v:SI 93 [ mask ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":96 -1
+     (nil))
+(insn 9 8 32 7 (set (reg/v:SI 93 [ mask ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":94 -1
+     (nil))
+(code_label 32 9 33 8 2 (nil) [2 uses])
+(note 33 32 34 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 34 33 35 8 (set (reg:SI 113)
+        (and:SI (reg/v:SI 105 [ y ])
+            (const_int -8 [0xfffffffffffffff8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":102 -1
+     (nil))
+(insn 35 34 36 8 (set (reg/v:SI 96 [ offset ])
+        (zero_extend:SI (subreg:HI (reg:SI 113) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":102 -1
+     (nil))
+(insn 36 35 37 8 (set (reg/v/f:SI 98 [ ptr ])
+        (mem/f:SI (plus:SI (reg/v/f:SI 103 [ u8g2 ])
+                (const_int 52 [0x34])) [7 u8g2_40(D)->tile_buf_ptr+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":104 -1
+     (nil))
+(insn 37 36 38 8 (set (reg/f:SI 114)
+        (mem/f:SI (reg/v/f:SI 103 [ u8g2 ]) [3 MEM[(struct u8x8_t *)u8g2_40(D)].display_info+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":103 -1
+     (nil))
+(insn 38 37 39 8 (set (reg:HI 115)
+        (zero_extend:HI (mem:QI (plus:SI (reg/f:SI 114)
+                    (const_int 16 [0x10])) [0 _4->tile_width+0 S1 A32]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":103 -1
+     (nil))
+(insn 39 38 40 8 (set (reg:SI 116)
+        (mult:SI (reg/v:SI 96 [ offset ])
+            (subreg:SI (reg:HI 115) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":103 -1
+     (nil))
+(insn 40 39 41 8 (set (reg:SI 117)
+        (zero_extend:SI (subreg:HI (reg:SI 116) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":105 -1
+     (nil))
+(insn 41 40 42 8 (set (reg:SI 118)
+        (plus:SI (reg:SI 117)
+            (reg/v:SI 104 [ x ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":106 -1
+     (nil))
+(insn 42 41 43 8 (set (reg/v/f:SI 90 [ ptr ])
+        (plus:SI (reg/v/f:SI 98 [ ptr ])
+            (reg:SI 118))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":106 -1
+     (nil))
+(jump_insn 43 42 107 8 (set (pc)
+        (if_then_else (ne (reg/v:SI 107 [ dir ])
+                (const_int 0 [0]))
+            (label_ref 60)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":108 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 60)
+(note 107 43 12 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 12 107 51 9 (set (reg/v/f:SI 89 [ ptr ])
+        (reg/v/f:SI 90 [ ptr ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":106 -1
+     (nil))
+(code_label 51 12 44 10 4 (nil) [1 uses])
+(note 44 51 45 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 45 44 46 10 (set (reg:QI 119)
+        (mem:QI (reg/v/f:SI 89 [ ptr ]) [0 MEM[base: ptr_20, offset: 0B]+0 S1 A8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":115 -1
+     (nil))
+(insn 46 45 47 10 (set (reg:SI 120)
+        (ior:SI (reg/v:SI 92 [ or_mask ])
+            (subreg:SI (reg:QI 119) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":115 -1
+     (nil))
+(insn 47 46 48 10 (set (reg:QI 121)
+        (subreg:QI (reg:SI 120) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":116 -1
+     (nil))
+(insn 48 47 49 10 (set (reg:SI 122)
+        (xor:SI (reg/v:SI 93 [ mask ])
+            (subreg:SI (reg:QI 121) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":116 -1
+     (nil))
+(insn 49 48 50 10 (set (mem:QI (reg/v/f:SI 89 [ ptr ]) [0 MEM[base: ptr_20, offset: 0B]+0 S1 A8])
+        (subreg:QI (reg:SI 122) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":116 -1
+     (nil))
+(insn 50 49 52 10 (set (reg/v/f:SI 89 [ ptr ])
+        (plus:SI (reg/v/f:SI 89 [ ptr ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":117 -1
+     (nil))
+(insn 52 50 53 10 (set (reg:HI 123)
+        (subreg:HI (reg/v/f:SI 90 [ ptr ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":119 -1
+     (nil))
+(insn 53 52 54 10 (set (reg:SI 124)
+        (plus:SI (reg/v:SI 106 [ len ])
+            (subreg:SI (reg:HI 123) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":119 -1
+     (nil))
+(insn 54 53 55 10 (set (reg:SI 125)
+        (zero_extend:SI (subreg:HI (reg/v/f:SI 89 [ ptr ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":119 -1
+     (nil))
+(insn 55 54 56 10 (set (reg:SI 126)
+        (zero_extend:SI (subreg:HI (reg:SI 124) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":119 -1
+     (nil))
+(jump_insn 56 55 59 10 (set (pc)
+        (if_then_else (ne (reg:SI 125)
+                (reg:SI 126))
+            (label_ref 51)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":119 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 51)
+(note 59 56 57 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 57 59 58 11 (set (pc)
+        (label_ref:SI 97)) 250 {jump}
+     (nil)
+ -> 97)
+(barrier 58 57 60)
+(code_label 60 58 61 12 3 (nil) [2 uses])
+(note 61 60 62 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 62 61 63 12 (set (reg:QI 127)
+        (mem:QI (reg/v/f:SI 90 [ ptr ]) [0 *ptr_21+0 S1 A8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":128 -1
+     (nil))
+(insn 63 62 64 12 (set (reg:SI 128)
+        (ior:SI (reg/v:SI 92 [ or_mask ])
+            (subreg:SI (reg:QI 127) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":128 -1
+     (nil))
+(insn 64 63 65 12 (set (reg:QI 129)
+        (subreg:QI (reg:SI 128) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":129 -1
+     (nil))
+(insn 65 64 66 12 (set (reg:SI 130)
+        (xor:SI (reg/v:SI 93 [ mask ])
+            (subreg:SI (reg:QI 129) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":129 -1
+     (nil))
+(insn 66 65 67 12 (set (mem:QI (reg/v/f:SI 90 [ ptr ]) [0 *ptr_21+0 S1 A8])
+        (subreg:QI (reg:SI 130) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":129 -1
+     (nil))
+(insn 67 66 68 12 (set (reg:SI 131)
+        (plus:SI (reg/v:SI 91 [ bit_pos ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":131 -1
+     (nil))
+(insn 68 67 69 12 (set (reg/v:SI 99 [ bit_pos ])
+        (zero_extend:SI (subreg:QI (reg:SI 131) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":131 -1
+     (nil))
+(insn 69 68 70 12 (set (reg:SI 132)
+        (and:SI (reg/v:SI 99 [ bit_pos ])
+            (const_int 7 [0x7]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":132 -1
+     (nil))
+(insn 70 69 71 12 (set (reg/v:SI 91 [ bit_pos ])
+        (zero_extend:SI (subreg:QI (reg:SI 132) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":132 -1
+     (nil))
+(insn 71 70 72 12 (set (reg:SI 133)
+        (plus:SI (reg/v:SI 106 [ len ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":134 -1
+     (nil))
+(insn 72 71 73 12 (set (reg/v:SI 106 [ len ])
+        (zero_extend:SI (subreg:HI (reg:SI 133) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":134 -1
+     (nil))
+(jump_insn 73 72 74 12 (set (pc)
+        (if_then_else (ne (reg/v:SI 91 [ bit_pos ])
+                (const_int 0 [0]))
+            (label_ref 86)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":136 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 86)
+(note 74 73 75 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 75 74 76 13 (set (reg:SI 134)
+        (zero_extend:SI (mem:HI (plus:SI (reg/v/f:SI 103 [ u8g2 ])
+                    (const_int 58 [0x3a])) [8 u8g2_40(D)->pixel_buf_width+0 S2 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":138 -1
+     (nil))
+(insn 76 75 77 13 (set (reg/v/f:SI 90 [ ptr ])
+        (plus:SI (reg/v/f:SI 90 [ ptr ])
+            (reg:SI 134))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":138 -1
+     (nil))
+(insn 77 76 78 13 (set (reg:SI 88 [ _17 ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 103 [ u8g2 ])
+                    (const_int 146 [0x92])) [0 u8g2_40(D)->draw_color+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":140 -1
+     (nil))
+(insn 78 77 79 13 (set (reg:SI 135)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":140 -1
+     (nil))
+(jump_insn 79 78 80 13 (set (pc)
+        (if_then_else (gtu (reg:SI 88 [ _17 ])
+                (reg:SI 135))
+            (label_ref:SI 111)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":140 180 {*branchsi}
+     (int_list:REG_BR_PROB 633507684 (nil))
+ -> 111)
+(note 80 79 81 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 81 80 82 14 (set (reg:SI 136)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":142 -1
+     (nil))
+(jump_insn 82 81 83 14 (set (pc)
+        (if_then_else (eq (reg:SI 88 [ _17 ])
+                (reg:SI 136))
+            (label_ref:SI 115)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":142 180 {*branchsi}
+     (int_list:REG_BR_PROB 890420068 (nil))
+ -> 115)
+(note 83 82 15 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 15 83 16 15 (set (reg/v:SI 93 [ mask ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":143 -1
+     (nil))
+(insn 16 15 84 15 (set (reg/v:SI 92 [ or_mask ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":141 -1
+     (nil))
+(jump_insn 84 16 85 15 (set (pc)
+        (label_ref 92)) -1
+     (nil)
+ -> 92)
+(barrier 85 84 86)
+(code_label 86 85 87 16 6 (nil) [1 uses])
+(note 87 86 88 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 88 87 89 16 (set (reg:SI 137)
+        (ashift:SI (reg/v:SI 92 [ or_mask ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":147 -1
+     (nil))
+(insn 89 88 90 16 (set (reg/v:SI 92 [ or_mask ])
+        (zero_extend:SI (subreg:QI (reg:SI 137) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":147 -1
+     (nil))
+(insn 90 89 91 16 (set (reg:SI 138)
+        (ashift:SI (reg/v:SI 93 [ mask ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":148 -1
+     (nil))
+(insn 91 90 108 16 (set (reg/v:SI 93 [ mask ])
+        (zero_extend:SI (subreg:QI (reg:SI 138) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":148 -1
+     (nil))
+(jump_insn 108 91 109 16 (set (pc)
+        (label_ref 92)) -1
+     (nil)
+ -> 92)
+(barrier 109 108 111)
+(code_label 111 109 110 17 10 (nil) [1 uses])
+(note 110 111 13 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 13 110 112 17 (set (reg/v:SI 93 [ mask ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":143 -1
+     (nil))
+(jump_insn 112 13 113 17 (set (pc)
+        (label_ref 92)) -1
+     (nil)
+ -> 92)
+(barrier 113 112 115)
+(code_label 115 113 114 18 11 (nil) [1 uses])
+(note 114 115 14 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(insn 14 114 92 18 (set (reg/v:SI 92 [ or_mask ])
+        (reg:SI 88 [ _17 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":141 -1
+     (nil))
+(code_label 92 14 93 19 7 (nil) [3 uses])
+(note 93 92 94 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 94 93 96 19 (set (pc)
+        (if_then_else (ne (reg/v:SI 106 [ len ])
+                (const_int 0 [0]))
+            (label_ref 60)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":150 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 60)
+(note 96 94 97 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+(code_label 97 96 98 21 1 (nil) [1 uses])
+(note 98 97 0 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
+
+;; Function u8g2_ll_hvline_horizontal_right_lsb (u8g2_ll_hvline_horizontal_right_lsb, funcdef_no=1, decl_uid=8560, cgraph_uid=1, symbol_order=1)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 9->10 to 16 failed.
+Forwarding edge 14->15 to 16 failed.
+Removing jump 91.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 9->10 to 16 failed.
+Deleted label in block 10.
+Forwarding edge 14->15 to 16 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 9 NOTE_INSN_DELETED)
+(note 9 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 9 3 2 (set (reg/v/f:SI 99 [ u8g2 ])
+        (reg:SI 10 a0 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":245 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 100 [ x ])
+        (reg:SI 11 a1 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":245 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 101 [ y ])
+        (reg:SI 12 a2 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":245 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SI 102 [ len ])
+        (reg:SI 13 a3 [ len ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":245 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/v:SI 103 [ dir ])
+        (reg:SI 14 a4 [ dir ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":245 -1
+     (nil))
+(note 7 6 11 2 NOTE_INSN_FUNCTION_BEG)
+(insn 11 7 12 2 (set (reg/f:SI 104)
+        (mem/f:SI (reg/v/f:SI 99 [ u8g2 ]) [3 MEM[(struct u8x8_t *)u8g2_35(D)].display_info+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":250 -1
+     (nil))
+(insn 12 11 13 2 (set (reg/v:SI 92 [ tile_width ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/f:SI 104)
+                    (const_int 16 [0x10])) [0 _1->tile_width+0 S1 A32]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":250 -1
+     (nil))
+(insn 13 12 14 2 (set (reg/v:SI 93 [ bit_pos ])
+        (zero_extend:SI (subreg:QI (reg/v:SI 100 [ x ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":252 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 105)
+        (and:SI (reg/v:SI 93 [ bit_pos ])
+            (const_int 7 [0x7]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":253 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 106)
+        (zero_extend:SI (subreg:QI (reg:SI 105) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":255 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 108)
+        (const_int 128 [0x80])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":255 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 107)
+        (ashiftrt:SI (reg:SI 108)
+            (subreg:QI (reg:SI 106) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":255 -1
+     (nil))
+(insn 18 17 19 2 (set (reg/v:SI 90 [ mask ])
+        (zero_extend:SI (subreg:QI (reg:SI 107) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":255 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:HI 109)
+        (subreg:HI (reg/v:SI 92 [ tile_width ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":258 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 110)
+        (mult:SI (reg/v:SI 101 [ y ])
+            (subreg:SI (reg:HI 109) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":258 -1
+     (nil))
+(insn 21 20 22 2 (set (reg/v:SI 95 [ offset ])
+        (zero_extend:SI (subreg:HI (reg:SI 110) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":258 -1
+     (nil))
+(insn 22 21 23 2 (set (reg/v/f:SI 97 [ ptr ])
+        (mem/f:SI (plus:SI (reg/v/f:SI 99 [ u8g2 ])
+                (const_int 52 [0x34])) [7 u8g2_35(D)->tile_buf_ptr+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":260 -1
+     (nil))
+(insn 23 22 24 2 (set (reg:SI 111)
+        (lshiftrt:SI (reg/v:SI 100 [ x ])
+            (const_int 3 [0x3]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":259 -1
+     (nil))
+(insn 24 23 25 2 (set (reg:HI 112)
+        (subreg:HI (reg:SI 111) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":259 -1
+     (nil))
+(insn 25 24 26 2 (set (reg:SI 113)
+        (plus:SI (reg/v:SI 95 [ offset ])
+            (subreg:SI (reg:HI 112) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":259 -1
+     (nil))
+(insn 26 25 27 2 (set (reg:SI 114)
+        (zero_extend:SI (subreg:HI (reg:SI 113) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":261 -1
+     (nil))
+(insn 27 26 28 2 (set (reg/v/f:SI 89 [ ptr ])
+        (plus:SI (reg/v/f:SI 97 [ ptr ])
+            (reg:SI 114))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":261 -1
+     (nil))
+(jump_insn 28 27 59 2 (set (pc)
+        (if_then_else (ne (reg/v:SI 103 [ dir ])
+                (const_int 0 [0]))
+            (label_ref 64)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":263 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 64)
+(code_label 59 28 29 4 22 (nil) [1 uses])
+(note 29 59 30 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 30 29 31 4 (set (reg:SI 115)
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 99 [ u8g2 ])
+                    (const_int 146 [0x92])) [0 u8g2_35(D)->draw_color+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":269 -1
+     (nil))
+(insn 31 30 32 4 (set (reg:SI 116)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":269 -1
+     (nil))
+(jump_insn 32 31 44 4 (set (pc)
+        (if_then_else (leu (reg:SI 115)
+                (reg:SI 116))
+            (label_ref 39)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":269 -1
+     (int_list:REG_BR_PROB 440234148 (nil))
+ -> 39)
+(code_label 44 32 33 5 20 (nil) [1 uses])
+(note 33 44 34 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 34 33 35 5 (set (reg:QI 117)
+        (mem:QI (reg/v/f:SI 89 [ ptr ]) [0 *ptr_22+0 S1 A8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":272 -1
+     (nil))
+(insn 35 34 36 5 (set (reg:SI 118)
+        (xor:SI (reg/v:SI 90 [ mask ])
+            (subreg:SI (reg:QI 117) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":272 -1
+     (nil))
+(insn 36 35 37 5 (set (mem:QI (reg/v/f:SI 89 [ ptr ]) [0 *ptr_22+0 S1 A8])
+        (subreg:QI (reg:SI 118) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":272 -1
+     (nil))
+(jump_insn 37 36 38 5 (set (pc)
+        (label_ref 48)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":272 -1
+     (nil)
+ -> 48)
+(barrier 38 37 39)
+(code_label 39 38 40 6 18 (nil) [1 uses])
+(note 40 39 41 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 41 40 42 6 (set (reg:QI 119)
+        (mem:QI (reg/v/f:SI 89 [ ptr ]) [0 *ptr_22+0 S1 A8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":270 -1
+     (nil))
+(insn 42 41 43 6 (set (reg:SI 120)
+        (ior:SI (reg/v:SI 90 [ mask ])
+            (subreg:SI (reg:QI 119) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":270 -1
+     (nil))
+(insn 43 42 45 6 (set (mem:QI (reg/v/f:SI 89 [ ptr ]) [0 *ptr_22+0 S1 A8])
+        (subreg:QI (reg:SI 120) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":270 -1
+     (nil))
+(insn 45 43 46 6 (set (reg:SI 121)
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 99 [ u8g2 ])
+                    (const_int 146 [0x92])) [0 u8g2_35(D)->draw_color+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":271 -1
+     (nil))
+(insn 46 45 47 6 (set (reg:SI 122)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":271 -1
+     (nil))
+(jump_insn 47 46 48 6 (set (pc)
+        (if_then_else (ne (reg:SI 121)
+                (reg:SI 122))
+            (label_ref 44)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":271 -1
+     (int_list:REG_BR_PROB 183321764 (nil))
+ -> 44)
+(code_label 48 47 49 7 19 (nil) [1 uses])
+(note 49 48 50 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 50 49 51 7 (set (reg:SI 123)
+        (lshiftrt:SI (reg/v:SI 90 [ mask ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":274 -1
+     (nil))
+(insn 51 50 52 7 (set (reg/v:SI 90 [ mask ])
+        (zero_extend:SI (subreg:QI (reg:SI 123) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":274 -1
+     (nil))
+(jump_insn 52 51 53 7 (set (pc)
+        (if_then_else (ne (reg/v:SI 90 [ mask ])
+                (const_int 0 [0]))
+            (label_ref 55)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":275 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 55)
+(note 53 52 54 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 54 53 8 8 (set (reg/v/f:SI 89 [ ptr ])
+        (plus:SI (reg/v/f:SI 89 [ ptr ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":278 -1
+     (nil))
+(insn 8 54 55 8 (set (reg/v:SI 90 [ mask ])
+        (const_int 128 [0x80])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":277 -1
+     (nil))
+(code_label 55 8 56 9 21 (nil) [1 uses])
+(note 56 55 57 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 57 56 58 9 (set (reg:SI 124)
+        (plus:SI (reg/v:SI 102 [ len ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":282 -1
+     (nil))
+(insn 58 57 60 9 (set (reg/v:SI 102 [ len ])
+        (zero_extend:SI (subreg:HI (reg:SI 124) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":282 -1
+     (nil))
+(jump_insn 60 58 61 9 (set (pc)
+        (if_then_else (ne (reg/v:SI 102 [ len ])
+                (const_int 0 [0]))
+            (label_ref 59)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":283 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 59)
+(note 61 60 62 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 62 61 63 10 (set (pc)
+        (label_ref 94)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":299 -1
+     (nil)
+ -> 94)
+(barrier 63 62 64)
+(code_label 64 63 65 11 17 (nil) [2 uses])
+(note 65 64 66 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 66 65 67 11 (set (reg:SI 125)
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 99 [ u8g2 ])
+                    (const_int 146 [0x92])) [0 u8g2_35(D)->draw_color+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":289 -1
+     (nil))
+(insn 67 66 68 11 (set (reg:SI 126)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":289 -1
+     (nil))
+(jump_insn 68 67 80 11 (set (pc)
+        (if_then_else (leu (reg:SI 125)
+                (reg:SI 126))
+            (label_ref 75)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":289 -1
+     (int_list:REG_BR_PROB 440234148 (nil))
+ -> 75)
+(code_label 80 68 69 12 25 (nil) [1 uses])
+(note 69 80 70 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 70 69 71 12 (set (reg:QI 127)
+        (mem:QI (reg/v/f:SI 89 [ ptr ]) [0 MEM[base: ptr_24, offset: 0B]+0 S1 A8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":292 -1
+     (nil))
+(insn 71 70 72 12 (set (reg:SI 128)
+        (xor:SI (reg/v:SI 90 [ mask ])
+            (subreg:SI (reg:QI 127) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":292 -1
+     (nil))
+(insn 72 71 73 12 (set (mem:QI (reg/v/f:SI 89 [ ptr ]) [0 MEM[base: ptr_24, offset: 0B]+0 S1 A8])
+        (subreg:QI (reg:SI 128) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":292 -1
+     (nil))
+(jump_insn 73 72 74 12 (set (pc)
+        (label_ref 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":292 -1
+     (nil)
+ -> 84)
+(barrier 74 73 75)
+(code_label 75 74 76 13 23 (nil) [1 uses])
+(note 76 75 77 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 77 76 78 13 (set (reg:QI 129)
+        (mem:QI (reg/v/f:SI 89 [ ptr ]) [0 MEM[base: ptr_24, offset: 0B]+0 S1 A8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":290 -1
+     (nil))
+(insn 78 77 79 13 (set (reg:SI 130)
+        (ior:SI (reg/v:SI 90 [ mask ])
+            (subreg:SI (reg:QI 129) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":290 -1
+     (nil))
+(insn 79 78 81 13 (set (mem:QI (reg/v/f:SI 89 [ ptr ]) [0 MEM[base: ptr_24, offset: 0B]+0 S1 A8])
+        (subreg:QI (reg:SI 130) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":290 -1
+     (nil))
+(insn 81 79 82 13 (set (reg:SI 131)
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 99 [ u8g2 ])
+                    (const_int 146 [0x92])) [0 u8g2_35(D)->draw_color+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":291 -1
+     (nil))
+(insn 82 81 83 13 (set (reg:SI 132)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":291 -1
+     (nil))
+(jump_insn 83 82 84 13 (set (pc)
+        (if_then_else (ne (reg:SI 131)
+                (reg:SI 132))
+            (label_ref 80)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":291 -1
+     (int_list:REG_BR_PROB 183321764 (nil))
+ -> 80)
+(code_label 84 83 85 14 24 (nil) [1 uses])
+(note 85 84 86 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 86 85 87 14 (set (reg/v/f:SI 89 [ ptr ])
+        (plus:SI (reg/v/f:SI 89 [ ptr ])
+            (reg/v:SI 92 [ tile_width ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":294 -1
+     (nil))
+(insn 87 86 88 14 (set (reg:SI 133)
+        (plus:SI (reg/v:SI 102 [ len ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":296 -1
+     (nil))
+(insn 88 87 89 14 (set (reg/v:SI 102 [ len ])
+        (zero_extend:SI (subreg:HI (reg:SI 133) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":296 -1
+     (nil))
+(jump_insn 89 88 93 14 (set (pc)
+        (if_then_else (ne (reg/v:SI 102 [ len ])
+                (const_int 0 [0]))
+            (label_ref 64)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_ll_hvline.c":297 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 64)
+(note 93 89 94 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(code_label 94 93 95 16 16 (nil) [1 uses])
+(note 95 94 0 16 [bb 16] NOTE_INSN_BASIC_BLOCK)

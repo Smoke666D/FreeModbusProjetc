@@ -1,0 +1,3434 @@
+
+;; Function u8x8_upscale_buf (u8x8_upscale_buf, funcdef_no=4, decl_uid=3296, cgraph_uid=4, symbol_order=4)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 4->5 to 6 failed.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 76 [ src ])
+        (reg:SI 10 a0 [ src ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":169 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v/f:SI 77 [ dest ])
+        (reg:SI 11 a1 [ dest ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":169 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 14 2 (set (reg/f:SI 73 [ _14 ])
+        (plus:SI (reg/v/f:SI 76 [ src ])
+            (const_int 4 [0x4]))) -1
+     (nil))
+(code_label 14 7 8 4 2 (nil) [1 uses])
+(note 8 14 9 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 9 8 10 4 (set (reg:SI 72 [ _1 ])
+        (zero_extend:SI (mem:QI (reg/v/f:SI 76 [ src ]) [0 MEM[base: src_2, offset: 0B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":173 -1
+     (nil))
+(insn 10 9 11 4 (set (mem:QI (reg/v/f:SI 77 [ dest ]) [0 MEM[base: dest_3, offset: 0B]+0 S1 A8])
+        (subreg/s/v:QI (reg:SI 72 [ _1 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":173 -1
+     (nil))
+(insn 11 10 12 4 (set (reg/v/f:SI 76 [ src ])
+        (plus:SI (reg/v/f:SI 76 [ src ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":174 -1
+     (nil))
+(insn 12 11 13 4 (set (reg/v/f:SI 77 [ dest ])
+        (plus:SI (reg/v/f:SI 77 [ dest ])
+            (const_int 2 [0x2]))) -1
+     (nil))
+(insn 13 12 15 4 (set (mem:QI (plus:SI (reg/v/f:SI 77 [ dest ])
+                (const_int -1 [0xffffffffffffffff])) [0 MEM[base: _19, offset: 4294967295B]+0 S1 A8])
+        (subreg/s/v:QI (reg:SI 72 [ _1 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":174 -1
+     (nil))
+(jump_insn 15 13 16 4 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 76 [ src ])
+                (reg/f:SI 73 [ _14 ]))
+            (label_ref 14)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":176 -1
+     (int_list:REG_BR_PROB 805306372 (nil))
+ -> 14)
+(note 16 15 0 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+
+;; Function u8x8_ascii_next (u8x8_ascii_next, funcdef_no=10, decl_uid=2903, cgraph_uid=10, symbol_order=10)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+Edge 2->5 redirected to 8
+Edge 3->5 redirected to 9
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 20.
+Merging block 9 into block 8...
+Merged blocks 8 and 9.
+Merged 8 and 9 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 9 NOTE_INSN_DELETED)
+(note 9 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 9 3 2 (set (reg/v/f:SI 73 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":291 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 74 [ b ])
+        (reg:SI 11 a1 [ b ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":291 -1
+     (nil))
+(note 4 3 11 2 NOTE_INSN_FUNCTION_BEG)
+(jump_insn 11 4 12 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 74 [ b ])
+                (const_int 0 [0]))
+            (label_ref:SI 29)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":292 180 {*branchsi}
+     (int_list:REG_BR_PROB 233216732 (nil))
+ -> 29)
+(note 12 11 13 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 13 12 14 4 (set (reg:SI 77)
+        (const_int 10 [0xa])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":292 -1
+     (nil))
+(jump_insn 14 13 15 4 (set (pc)
+        (if_then_else (eq (reg/v:SI 74 [ b ])
+                (reg:SI 77))
+            (label_ref:SI 33)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":292 180 {*branchsi}
+     (int_list:REG_BR_PROB 134217732 (nil))
+ -> 33)
+(note 15 14 16 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 16 15 26 5 (set (reg:SI 72 [ <retval> ])
+        (zero_extend:SI (subreg:HI (reg/v:SI 74 [ b ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":294 -1
+     (nil))
+(jump_insn 26 16 27 5 (set (pc)
+        (label_ref 17)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":294 -1
+     (nil)
+ -> 17)
+(barrier 27 26 29)
+(code_label 29 27 28 6 6 (nil) [1 uses])
+(note 28 29 5 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 5 28 6 6 (set (reg:SI 75)
+        (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":293 -1
+     (nil))
+(insn 6 5 30 6 (set (reg:SI 72 [ <retval> ])
+        (plus:SI (reg:SI 75)
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":293 -1
+     (expr_list:REG_EQUAL (const_int 65535 [0xffff])
+        (nil)))
+(jump_insn 30 6 31 6 (set (pc)
+        (label_ref 17)) -1
+     (nil)
+ -> 17)
+(barrier 31 30 33)
+(code_label 33 31 32 7 7 (nil) [1 uses])
+(note 32 33 7 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 7 32 8 7 (set (reg:SI 76)
+        (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":293 -1
+     (nil))
+(insn 8 7 17 7 (set (reg:SI 72 [ <retval> ])
+        (plus:SI (reg:SI 76)
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":293 -1
+     (expr_list:REG_EQUAL (const_int 65535 [0xffff])
+        (nil)))
+(code_label 17 8 18 8 5 (nil) [2 uses])
+(note 18 17 19 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 19 18 23 8 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 72 [ <retval> ])) -1
+     (nil))
+(insn 23 19 24 8 (set (reg/i:SI 10 a0)
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":295 -1
+     (nil))
+(insn 24 23 0 8 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":295 -1
+     (nil))
+
+;; Function u8x8_utf8_next (u8x8_utf8_next, funcdef_no=11, decl_uid=2906, cgraph_uid=11, symbol_order=11)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+;; Generating RTL for gimple basic block 15
+
+;; Generating RTL for gimple basic block 16
+
+;; Generating RTL for gimple basic block 17
+
+;; Generating RTL for gimple basic block 18
+
+;; Generating RTL for gimple basic block 19
+Edge 2->19 redirected to 22
+Edge 3->19 redirected to 23
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 104.
+Merging block 23 into block 22...
+Merged blocks 22 and 23.
+Merged 22 and 23 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 13 NOTE_INSN_DELETED)
+(note 13 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 13 3 2 (set (reg/v/f:SI 81 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":305 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 82 [ b ])
+        (reg:SI 11 a1 [ b ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":305 -1
+     (nil))
+(note 4 3 15 2 NOTE_INSN_FUNCTION_BEG)
+(jump_insn 15 4 16 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 82 [ b ])
+                (const_int 0 [0]))
+            (label_ref:SI 113)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":306 180 {*branchsi}
+     (int_list:REG_BR_PROB 233216732 (nil))
+ -> 113)
+(note 16 15 17 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 17 16 18 4 (set (reg:SI 87)
+        (const_int 10 [0xa])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":306 -1
+     (nil))
+(jump_insn 18 17 19 4 (set (pc)
+        (if_then_else (eq (reg/v:SI 82 [ b ])
+                (reg:SI 87))
+            (label_ref:SI 117)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":306 180 {*branchsi}
+     (int_list:REG_BR_PROB 134217732 (nil))
+ -> 117)
+(note 19 18 20 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 20 19 21 5 (set (reg:SI 72 [ _1 ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 81 [ u8x8 ])
+                    (const_int 38 [0x26])) [0 u8x8_12(D)->utf8_state+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":308 -1
+     (nil))
+(jump_insn 21 20 22 5 (set (pc)
+        (if_then_else (ne (reg:SI 72 [ _1 ])
+                (const_int 0 [0]))
+            (label_ref 86)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":308 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 86)
+(note 22 21 23 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 6 (set (reg:SI 88)
+        (const_int 251 [0xfb])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":310 -1
+     (nil))
+(jump_insn 24 23 25 6 (set (pc)
+        (if_then_else (leu (reg/v:SI 82 [ b ])
+                (reg:SI 88))
+            (label_ref 32)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":310 -1
+     (int_list:REG_BR_PROB 840525100 (nil))
+ -> 32)
+(note 25 24 26 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 26 25 27 7 (set (reg:QI 89)
+        (const_int 5 [0x5])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":312 -1
+     (nil))
+(insn 27 26 28 7 (set (mem:QI (plus:SI (reg/v/f:SI 81 [ u8x8 ])
+                (const_int 38 [0x26])) [0 u8x8_12(D)->utf8_state+0 S1 A16])
+        (reg:QI 89)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":312 -1
+     (nil))
+(insn 28 27 29 7 (set (reg:SI 90)
+        (and:SI (reg/v:SI 82 [ b ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":313 -1
+     (nil))
+(insn 29 28 30 7 (set (reg/v:SI 78 [ b ])
+        (zero_extend:SI (subreg:QI (reg:SI 90) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":313 -1
+     (nil))
+(jump_insn 30 29 31 7 (set (pc)
+        (label_ref 81)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":313 -1
+     (nil)
+ -> 81)
+(barrier 31 30 32)
+(code_label 32 31 33 8 11 (nil) [1 uses])
+(note 33 32 34 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 34 33 35 8 (set (reg:SI 91)
+        (const_int 247 [0xf7])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":315 -1
+     (nil))
+(jump_insn 35 34 36 8 (set (pc)
+        (if_then_else (leu (reg/v:SI 82 [ b ])
+                (reg:SI 91))
+            (label_ref 43)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":315 -1
+     (int_list:REG_BR_PROB 840525100 (nil))
+ -> 43)
+(note 36 35 37 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 37 36 38 9 (set (reg:QI 92)
+        (const_int 4 [0x4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":317 -1
+     (nil))
+(insn 38 37 39 9 (set (mem:QI (plus:SI (reg/v/f:SI 81 [ u8x8 ])
+                (const_int 38 [0x26])) [0 u8x8_12(D)->utf8_state+0 S1 A16])
+        (reg:QI 92)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":317 -1
+     (nil))
+(insn 39 38 40 9 (set (reg:SI 93)
+        (and:SI (reg/v:SI 82 [ b ])
+            (const_int 3 [0x3]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":318 -1
+     (nil))
+(insn 40 39 41 9 (set (reg/v:SI 78 [ b ])
+        (zero_extend:SI (subreg:QI (reg:SI 93) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":318 -1
+     (nil))
+(jump_insn 41 40 42 9 (set (pc)
+        (label_ref 81)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":318 -1
+     (nil)
+ -> 81)
+(barrier 42 41 43)
+(code_label 43 42 44 10 13 (nil) [1 uses])
+(note 44 43 45 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 45 44 46 10 (set (reg:SI 94)
+        (const_int 239 [0xef])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":320 -1
+     (nil))
+(jump_insn 46 45 47 10 (set (pc)
+        (if_then_else (leu (reg/v:SI 82 [ b ])
+                (reg:SI 94))
+            (label_ref 54)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":320 -1
+     (int_list:REG_BR_PROB 840525100 (nil))
+ -> 54)
+(note 47 46 48 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 48 47 49 11 (set (reg:QI 95)
+        (const_int 3 [0x3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":322 -1
+     (nil))
+(insn 49 48 50 11 (set (mem:QI (plus:SI (reg/v/f:SI 81 [ u8x8 ])
+                (const_int 38 [0x26])) [0 u8x8_12(D)->utf8_state+0 S1 A16])
+        (reg:QI 95)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":322 -1
+     (nil))
+(insn 50 49 51 11 (set (reg:SI 96)
+        (and:SI (reg/v:SI 82 [ b ])
+            (const_int 7 [0x7]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":323 -1
+     (nil))
+(insn 51 50 52 11 (set (reg/v:SI 78 [ b ])
+        (zero_extend:SI (subreg:QI (reg:SI 96) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":323 -1
+     (nil))
+(jump_insn 52 51 53 11 (set (pc)
+        (label_ref 81)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":323 -1
+     (nil)
+ -> 81)
+(barrier 53 52 54)
+(code_label 54 53 55 12 14 (nil) [1 uses])
+(note 55 54 56 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 56 55 57 12 (set (reg:SI 97)
+        (const_int 223 [0xdf])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":325 -1
+     (nil))
+(jump_insn 57 56 58 12 (set (pc)
+        (if_then_else (leu (reg/v:SI 82 [ b ])
+                (reg:SI 97))
+            (label_ref 65)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":325 -1
+     (int_list:REG_BR_PROB 840525100 (nil))
+ -> 65)
+(note 58 57 59 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 59 58 60 13 (set (reg:QI 98)
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":327 -1
+     (nil))
+(insn 60 59 61 13 (set (mem:QI (plus:SI (reg/v/f:SI 81 [ u8x8 ])
+                (const_int 38 [0x26])) [0 u8x8_12(D)->utf8_state+0 S1 A16])
+        (reg:QI 98)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":327 -1
+     (nil))
+(insn 61 60 62 13 (set (reg:SI 99)
+        (and:SI (reg/v:SI 82 [ b ])
+            (const_int 15 [0xf]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":328 -1
+     (nil))
+(insn 62 61 63 13 (set (reg/v:SI 78 [ b ])
+        (zero_extend:SI (subreg:QI (reg:SI 99) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":328 -1
+     (nil))
+(jump_insn 63 62 64 13 (set (pc)
+        (label_ref 81)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":328 -1
+     (nil)
+ -> 81)
+(barrier 64 63 65)
+(code_label 65 64 66 14 15 (nil) [1 uses])
+(note 66 65 67 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 67 66 68 14 (set (reg:SI 100)
+        (const_int 191 [0xbf])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":330 -1
+     (nil))
+(jump_insn 68 67 69 14 (set (pc)
+        (if_then_else (leu (reg/v:SI 82 [ b ])
+                (reg:SI 100))
+            (label_ref 76)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":330 -1
+     (int_list:REG_BR_PROB 697932188 (nil))
+ -> 76)
+(note 69 68 70 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 70 69 71 15 (set (reg:QI 101)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":332 -1
+     (nil))
+(insn 71 70 72 15 (set (mem:QI (plus:SI (reg/v/f:SI 81 [ u8x8 ])
+                (const_int 38 [0x26])) [0 u8x8_12(D)->utf8_state+0 S1 A16])
+        (reg:QI 101)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":332 -1
+     (nil))
+(insn 72 71 73 15 (set (reg:SI 102)
+        (and:SI (reg/v:SI 82 [ b ])
+            (const_int 31 [0x1f]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":333 -1
+     (nil))
+(insn 73 72 74 15 (set (reg/v:SI 78 [ b ])
+        (zero_extend:SI (subreg:QI (reg:SI 102) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":333 -1
+     (nil))
+(jump_insn 74 73 75 15 (set (pc)
+        (label_ref 81)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":333 -1
+     (nil)
+ -> 81)
+(barrier 75 74 76)
+(code_label 76 75 77 16 16 (nil) [1 uses])
+(note 77 76 78 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 78 77 79 16 (set (reg:SI 80 [ <retval> ])
+        (zero_extend:SI (subreg:HI (reg/v:SI 82 [ b ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":338 -1
+     (nil))
+(jump_insn 79 78 80 16 (set (pc)
+        (label_ref 101)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":338 -1
+     (nil)
+ -> 101)
+(barrier 80 79 81)
+(code_label 81 80 82 17 12 (nil) [5 uses])
+(note 82 81 83 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 83 82 7 17 (set (mem:HI (plus:SI (reg/v/f:SI 81 [ u8x8 ])
+                (const_int 32 [0x20])) [7 u8x8_12(D)->encoding+0 S2 A32])
+        (subreg/s/v:HI (reg/v:SI 78 [ b ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":340 -1
+     (nil))
+(insn 7 83 8 17 (set (reg:SI 84)
+        (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":341 -1
+     (nil))
+(insn 8 7 84 17 (set (reg:SI 80 [ <retval> ])
+        (plus:SI (reg:SI 84)
+            (const_int -2 [0xfffffffffffffffe]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":341 -1
+     (expr_list:REG_EQUAL (const_int 65534 [0xfffe])
+        (nil)))
+(jump_insn 84 8 85 17 (set (pc)
+        (label_ref 101)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":340 -1
+     (nil)
+ -> 101)
+(barrier 85 84 86)
+(code_label 86 85 87 18 10 (nil) [1 uses])
+(note 87 86 88 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(insn 88 87 89 18 (set (reg:SI 103)
+        (plus:SI (reg:SI 72 [ _1 ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":345 -1
+     (nil))
+(insn 89 88 90 18 (set (reg:SI 73 [ _3 ])
+        (zero_extend:SI (subreg:QI (reg:SI 103) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":345 -1
+     (nil))
+(insn 90 89 91 18 (set (mem:QI (plus:SI (reg/v/f:SI 81 [ u8x8 ])
+                (const_int 38 [0x26])) [0 u8x8_12(D)->utf8_state+0 S1 A16])
+        (subreg/s/v:QI (reg:SI 73 [ _3 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":345 -1
+     (nil))
+(insn 91 90 92 18 (set (reg:HI 104)
+        (mem:HI (plus:SI (reg/v/f:SI 81 [ u8x8 ])
+                (const_int 32 [0x20])) [7 u8x8_12(D)->encoding+0 S2 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":347 -1
+     (nil))
+(insn 92 91 93 18 (set (reg:SI 105)
+        (ashift:SI (subreg:SI (reg:HI 104) 0)
+            (const_int 6 [0x6]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":347 -1
+     (nil))
+(insn 93 92 94 18 (set (reg:SI 106)
+        (and:SI (reg/v:SI 82 [ b ])
+            (const_int 63 [0x3f]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":348 -1
+     (nil))
+(insn 94 93 95 18 (set (reg:HI 107)
+        (zero_extend:HI (subreg:QI (reg:SI 106) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":349 -1
+     (nil))
+(insn 95 94 96 18 (set (reg:HI 108)
+        (subreg:HI (reg:SI 105) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":349 -1
+     (nil))
+(insn 96 95 97 18 (set (reg:SI 109)
+        (ior:SI (subreg:SI (reg:HI 108) 0)
+            (subreg:SI (reg:HI 107) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":349 -1
+     (nil))
+(insn 97 96 98 18 (set (reg:SI 80 [ <retval> ])
+        (zero_extend:SI (subreg:HI (reg:SI 109) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":349 -1
+     (nil))
+(insn 98 97 99 18 (set (mem:HI (plus:SI (reg/v/f:SI 81 [ u8x8 ])
+                (const_int 32 [0x20])) [7 u8x8_12(D)->encoding+0 S2 A32])
+        (subreg/s/v:HI (reg:SI 80 [ <retval> ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":349 -1
+     (nil))
+(jump_insn 99 98 100 18 (set (pc)
+        (if_then_else (eq (reg:SI 73 [ _3 ])
+                (const_int 0 [0]))
+            (label_ref 101)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":350 -1
+     (int_list:REG_BR_PROB 840525100 (nil))
+ -> 101)
+(note 100 99 11 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(insn 11 100 12 19 (set (reg:SI 86)
+        (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":351 -1
+     (nil))
+(insn 12 11 110 19 (set (reg:SI 80 [ <retval> ])
+        (plus:SI (reg:SI 86)
+            (const_int -2 [0xfffffffffffffffe]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":351 -1
+     (expr_list:REG_EQUAL (const_int 65534 [0xfffe])
+        (nil)))
+(jump_insn 110 12 111 19 (set (pc)
+        (label_ref 101)) -1
+     (nil)
+ -> 101)
+(barrier 111 110 113)
+(code_label 113 111 112 20 17 (nil) [1 uses])
+(note 112 113 5 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+(insn 5 112 6 20 (set (reg:SI 83)
+        (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":307 -1
+     (nil))
+(insn 6 5 114 20 (set (reg:SI 80 [ <retval> ])
+        (plus:SI (reg:SI 83)
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":307 -1
+     (expr_list:REG_EQUAL (const_int 65535 [0xffff])
+        (nil)))
+(jump_insn 114 6 115 20 (set (pc)
+        (label_ref 101)) -1
+     (nil)
+ -> 101)
+(barrier 115 114 117)
+(code_label 117 115 116 21 18 (nil) [1 uses])
+(note 116 117 9 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
+(insn 9 116 10 21 (set (reg:SI 85)
+        (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":307 -1
+     (nil))
+(insn 10 9 101 21 (set (reg:SI 80 [ <retval> ])
+        (plus:SI (reg:SI 85)
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":307 -1
+     (expr_list:REG_EQUAL (const_int 65535 [0xffff])
+        (nil)))
+(code_label 101 10 102 22 9 (nil) [5 uses])
+(note 102 101 103 22 [bb 22] NOTE_INSN_BASIC_BLOCK)
+(insn 103 102 107 22 (set (reg:SI 80 [ <retval> ])
+        (reg:SI 80 [ <retval> ])) -1
+     (nil))
+(insn 107 103 108 22 (set (reg/i:SI 10 a0)
+        (reg:SI 80 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":354 -1
+     (nil))
+(insn 108 107 0 22 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":354 -1
+     (nil))
+
+;; Function u8x8_SetFont (u8x8_SetFont, funcdef_no=0, decl_uid=2909, cgraph_uid=0, symbol_order=0)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 72 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":51 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v/f:SI 73 [ font_8x8 ])
+        (reg:SI 11 a1 [ font_8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":51 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 0 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 72 [ u8x8 ])
+                (const_int 28 [0x1c])) [6 u8x8_2(D)->font+0 S4 A32])
+        (reg/v/f:SI 73 [ font_8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":52 -1
+     (nil))
+
+;; Function u8x8_get_glyph_data (u8x8_get_glyph_data, funcdef_no=1, decl_uid=2898, cgraph_uid=1, symbol_order=1)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+Edge 2->6 redirected to 15
+Edge 3->6 redirected to 16
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 6->7 to 12 failed.
+Edge 12->15 redirected to 16
+Forwarding edge 14->15 to 16 failed.
+Deleted label in block 15.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 6->7 to 12 failed.
+Forwarding edge 14->15 to 16 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 10 NOTE_INSN_DELETED)
+(note 10 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 10 3 2 (set (reg/v/f:SI 103 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":63 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 104 [ encoding ])
+        (reg:SI 11 a1 [ encoding ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":63 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v/f:SI 105 [ buf ])
+        (reg:SI 12 a2 [ buf ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":63 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SI 106 [ tile_offset ])
+        (reg:SI 13 a3 [ tile_offset ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":63 -1
+     (nil))
+(note 6 5 12 2 NOTE_INSN_FUNCTION_BEG)
+(insn 12 6 13 2 (set (reg/f:SI 72 [ _1 ])
+        (mem/f:SI (plus:SI (reg/v/f:SI 103 [ u8x8 ])
+                (const_int 28 [0x1c])) [6 u8x8_29(D)->font+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":66 -1
+     (nil))
+(insn 13 12 14 2 (set (reg/v:SI 86 [ first ])
+        (zero_extend:SI (mem:QI (reg/f:SI 72 [ _1 ]) [0 *_1+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":66 -1
+     (nil))
+(jump_insn 14 13 15 2 (set (pc)
+        (if_then_else (gtu (reg/v:SI 86 [ first ])
+                (reg/v:SI 104 [ encoding ]))
+            (label_ref:SI 81)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":72 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 81)
+(note 15 14 16 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 16 15 17 4 (set (reg:SI 107)
+        (zero_extend:SI (mem:QI (plus:SI (reg/f:SI 72 [ _1 ])
+                    (const_int 1 [0x1])) [0 MEM[(const uint8_t *)_1 + 1B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":72 -1
+     (nil))
+(jump_insn 17 16 18 4 (set (pc)
+        (if_then_else (ltu (reg:SI 107)
+                (reg/v:SI 104 [ encoding ]))
+            (label_ref:SI 85)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":72 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 85)
+(note 18 17 19 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 19 18 20 5 (set (reg/v:SI 88 [ tiles ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/f:SI 72 [ _1 ])
+                    (const_int 2 [0x2])) [0 MEM[(const uint8_t *)_1 + 2B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":68 -1
+     (nil))
+(insn 20 19 21 5 (set (reg/v:SI 90 [ offset ])
+        (zero_extend:SI (subreg:HI (reg/v:SI 104 [ encoding ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":74 -1
+     (nil))
+(insn 21 20 22 5 (set (reg:HI 108)
+        (subreg:HI (reg/v:SI 86 [ first ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":75 -1
+     (nil))
+(insn 22 21 23 5 (set (reg:SI 109)
+        (minus:SI (reg/v:SI 90 [ offset ])
+            (subreg:SI (reg:HI 108) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":75 -1
+     (nil))
+(insn 23 22 24 5 (set (reg/v:SI 91 [ offset ])
+        (zero_extend:SI (subreg:HI (reg:SI 109) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":75 -1
+     (nil))
+(insn 24 23 25 5 (set (reg:QI 110)
+        (mem:QI (plus:SI (reg/f:SI 72 [ _1 ])
+                (const_int 3 [0x3])) [0 MEM[(const uint8_t *)_1 + 3B]+0 S1 A8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":69 -1
+     (nil))
+(insn 25 24 26 5 (set (reg:SI 111)
+        (mult:SI (reg/v:SI 88 [ tiles ])
+            (subreg:SI (reg:QI 110) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":69 -1
+     (nil))
+(insn 26 25 27 5 (set (reg:HI 112)
+        (zero_extend:HI (subreg:QI (reg:SI 111) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":76 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:SI 113)
+        (mult:SI (reg/v:SI 91 [ offset ])
+            (subreg:SI (reg:HI 112) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":76 -1
+     (nil))
+(insn 28 27 29 5 (set (reg/v:SI 92 [ offset ])
+        (zero_extend:SI (subreg:HI (reg:SI 113) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":76 -1
+     (nil))
+(insn 29 28 30 5 (set (reg:HI 114)
+        (subreg:HI (reg/v:SI 106 [ tile_offset ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":77 -1
+     (nil))
+(insn 30 29 31 5 (set (reg:SI 115)
+        (plus:SI (reg/v:SI 92 [ offset ])
+            (subreg:SI (reg:HI 114) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":77 -1
+     (nil))
+(insn 31 30 32 5 (set (reg/v:SI 93 [ offset ])
+        (zero_extend:SI (subreg:HI (reg:SI 115) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":77 -1
+     (nil))
+(insn 32 31 33 5 (set (reg:SI 116)
+        (ashift:SI (reg/v:SI 93 [ offset ])
+            (const_int 3 [0x3]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":78 -1
+     (nil))
+(insn 33 32 34 5 (set (reg/v:SI 94 [ offset ])
+        (zero_extend:SI (subreg:HI (reg:SI 116) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":78 -1
+     (nil))
+(insn 34 33 35 5 (set (reg:SI 117)
+        (plus:SI (reg/v:SI 94 [ offset ])
+            (const_int 4 [0x4]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":79 -1
+     (nil))
+(insn 35 34 7 5 (set (reg/v:SI 95 [ offset ])
+        (zero_extend:SI (subreg:HI (reg:SI 117) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":79 -1
+     (nil))
+(insn 7 35 46 5 (set (reg:SI 84 [ ivtmp.42 ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":79 -1
+     (nil))
+(code_label 46 7 36 6 26 (nil) [1 uses])
+(note 36 46 37 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 37 36 38 6 (set (reg:HI 118)
+        (subreg:HI (reg:SI 84 [ ivtmp.42 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":82 -1
+     (nil))
+(insn 38 37 39 6 (set (reg:SI 119)
+        (plus:SI (reg/v:SI 95 [ offset ])
+            (subreg:SI (reg:HI 118) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":82 -1
+     (nil))
+(insn 39 38 40 6 (set (reg:SI 120)
+        (zero_extend:SI (subreg:HI (reg:SI 119) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":82 -1
+     (nil))
+(insn 40 39 41 6 (set (reg/f:SI 121)
+        (mem/f:SI (plus:SI (reg/v/f:SI 103 [ u8x8 ])
+                (const_int 28 [0x1c])) [6 u8x8_29(D)->font+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":82 -1
+     (nil))
+(insn 41 40 42 6 (set (reg/f:SI 122)
+        (plus:SI (reg/f:SI 121)
+            (reg:SI 120))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":82 -1
+     (nil))
+(insn 42 41 43 6 (set (reg:SI 80 [ _11 ])
+        (zero_extend:SI (mem:QI (reg/f:SI 122) [0 *_8+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":82 -1
+     (nil))
+(insn 43 42 44 6 (set (reg:SI 123)
+        (plus:SI (reg/v/f:SI 105 [ buf ])
+            (reg:SI 84 [ ivtmp.42 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":82 -1
+     (nil))
+(insn 44 43 45 6 (set (mem:QI (reg:SI 123) [0 MEM[base: _54, offset: 0B]+0 S1 A8])
+        (subreg/s/v:QI (reg:SI 80 [ _11 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":82 -1
+     (nil))
+(insn 45 44 47 6 (set (reg:SI 84 [ ivtmp.42 ])
+        (plus:SI (reg:SI 84 [ ivtmp.42 ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(insn 47 45 48 6 (set (reg:SI 124)
+        (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":80 -1
+     (nil))
+(jump_insn 48 47 51 6 (set (pc)
+        (if_then_else (ne (reg:SI 84 [ ivtmp.42 ])
+                (reg:SI 124))
+            (label_ref 46)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":80 -1
+     (int_list:REG_BR_PROB 939539196 (nil))
+ -> 46)
+(note 51 48 49 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 49 51 50 7 (set (pc)
+        (label_ref 61)) -1
+     (nil)
+ -> 61)
+(barrier 50 49 81)
+(code_label 81 50 80 8 31 (nil) [1 uses])
+(note 80 81 8 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 8 80 82 8 (set (reg:SI 100 [ ivtmp.53 ])
+        (const_int 0 [0])) -1
+     (nil))
+(jump_insn 82 8 83 8 (set (pc)
+        (label_ref 52)) -1
+     (nil)
+ -> 52)
+(barrier 83 82 85)
+(code_label 85 83 84 9 32 (nil) [1 uses])
+(note 84 85 9 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 9 84 52 9 (set (reg:SI 100 [ ivtmp.53 ])
+        (const_int 0 [0])) -1
+     (nil))
+(code_label 52 9 53 10 25 (nil) [1 uses])
+(note 53 52 58 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(code_label 58 53 54 11 28 (nil) [1 uses])
+(note 54 58 55 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 55 54 56 11 (set (reg:SI 125)
+        (plus:SI (reg/v/f:SI 105 [ buf ])
+            (reg:SI 100 [ ivtmp.53 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":90 -1
+     (nil))
+(insn 56 55 57 11 (set (mem:QI (reg:SI 125) [0 MEM[base: _58, offset: 0B]+0 S1 A8])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":90 -1
+     (nil))
+(insn 57 56 59 11 (set (reg:SI 100 [ ivtmp.53 ])
+        (plus:SI (reg:SI 100 [ ivtmp.53 ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(insn 59 57 60 11 (set (reg:SI 126)
+        (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":88 -1
+     (nil))
+(jump_insn 60 59 61 11 (set (pc)
+        (if_then_else (ne (reg:SI 100 [ ivtmp.53 ])
+                (reg:SI 126))
+            (label_ref 58)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":88 -1
+     (int_list:REG_BR_PROB 939539196 (nil))
+ -> 58)
+(code_label 61 60 62 12 27 (nil) [1 uses])
+(note 62 61 63 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 63 62 64 12 (set (reg:SI 127)
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 103 [ u8x8 ])
+                    (const_int 35 [0x23])) [0 u8x8_29(D)->is_font_inverse_mode+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":95 -1
+     (nil))
+(jump_insn 64 63 65 12 (set (pc)
+        (if_then_else (eq (reg:SI 127)
+                (const_int 0 [0]))
+            (label_ref:SI 78)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":95 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 78)
+(note 65 64 66 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 66 65 67 13 (set (reg:SI 102 [ ivtmp.41 ])
+        (reg/v/f:SI 105 [ buf ])) -1
+     (nil))
+(insn 67 66 74 13 (set (reg:SI 85 [ _20 ])
+        (plus:SI (reg:SI 102 [ ivtmp.41 ])
+            (const_int 8 [0x8]))) -1
+     (nil))
+(code_label 74 67 68 14 30 (nil) [1 uses])
+(note 68 74 69 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 69 68 70 14 (set (reg/f:SI 101 [ _61 ])
+        (reg:SI 102 [ ivtmp.41 ])) -1
+     (nil))
+(insn 70 69 71 14 (set (reg:QI 128)
+        (mem:QI (reg/f:SI 101 [ _61 ]) [0 MEM[base: _61, offset: 0B]+0 S1 A8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":99 -1
+     (nil))
+(insn 71 70 72 14 (set (reg:SI 129)
+        (not:SI (subreg:SI (reg:QI 128) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":99 -1
+     (nil))
+(insn 72 71 73 14 (set (mem:QI (reg/f:SI 101 [ _61 ]) [0 MEM[base: _61, offset: 0B]+0 S1 A8])
+        (subreg:QI (reg:SI 129) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":99 -1
+     (nil))
+(insn 73 72 75 14 (set (reg:SI 102 [ ivtmp.41 ])
+        (plus:SI (reg:SI 102 [ ivtmp.41 ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(jump_insn 75 73 77 14 (set (pc)
+        (if_then_else (ne (reg:SI 85 [ _20 ])
+                (reg:SI 102 [ ivtmp.41 ]))
+            (label_ref 74)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":97 -1
+     (int_list:REG_BR_PROB 939539196 (nil))
+ -> 74)
+(note 77 75 78 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(code_label 78 77 79 16 24 (nil) [1 uses])
+(note 79 78 0 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+
+;; Function u8x8_DrawGlyph (u8x8_DrawGlyph, funcdef_no=2, decl_uid=2914, cgraph_uid=2, symbol_order=2)
+
+Partition 0: size 8 align 4
+	buf
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 6->7 to 8 failed.
+Merging block 8 into block 7...
+Merged blocks 7 and 8.
+Merged 7 and 8 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 9 NOTE_INSN_DELETED)
+(note 9 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 9 3 2 (set (reg/v/f:SI 79 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":106 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 80 [ x ])
+        (reg:SI 11 a1 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":106 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 81 [ y ])
+        (reg:SI 12 a2 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":106 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SI 82 [ encoding ])
+        (reg:SI 13 a3 [ encoding ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":106 -1
+     (nil))
+(note 6 5 11 2 NOTE_INSN_FUNCTION_BEG)
+(insn 11 6 12 2 (set (reg/f:SI 72 [ _1 ])
+        (mem/f:SI (plus:SI (reg/v/f:SI 79 [ u8x8 ])
+                (const_int 28 [0x1c])) [6 u8x8_10(D)->font+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":107 -1
+     (nil))
+(insn 12 11 13 2 (set (reg/v:SI 75 [ th ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/f:SI 72 [ _1 ])
+                    (const_int 2 [0x2])) [0 MEM[(const uint8_t *)_1 + 2B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":107 -1
+     (nil))
+(insn 13 12 14 2 (set (reg/v:SI 76 [ tv ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/f:SI 72 [ _1 ])
+                    (const_int 3 [0x3])) [0 MEM[(const uint8_t *)_1 + 3B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":108 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 83)
+        (plus:SI (reg/v:SI 75 [ th ])
+            (reg/v:SI 80 [ x ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":111 -1
+     (nil))
+(insn 15 14 16 2 (set (reg/v:SI 77 [ th ])
+        (zero_extend:SI (subreg:QI (reg:SI 83) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":111 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 84)
+        (plus:SI (reg/v:SI 76 [ tv ])
+            (reg/v:SI 81 [ y ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":112 -1
+     (nil))
+(insn 17 16 7 2 (set (reg/v:SI 78 [ tv ])
+        (zero_extend:SI (subreg:QI (reg:SI 84) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":112 -1
+     (nil))
+(insn 7 17 42 2 (set (reg/v:SI 74 [ tile ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":113 -1
+     (nil))
+(code_label 42 7 18 4 41 (nil) [1 uses])
+(note 18 42 8 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 8 18 37 4 (set (reg/v:SI 73 [ xx ])
+        (reg/v:SI 80 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":116 -1
+     (nil))
+(code_label 37 8 19 5 40 (nil) [1 uses])
+(note 19 37 20 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 20 19 21 5 (set (reg:SI 85)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -8 [0xfffffffffffffff8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":119 -1
+     (nil))
+(insn 21 20 22 5 (set (reg:SI 13 a3)
+        (reg/v:SI 74 [ tile ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":119 -1
+     (nil))
+(insn 22 21 23 5 (set (reg:SI 12 a2)
+        (reg:SI 85)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":119 -1
+     (nil))
+(insn 23 22 24 5 (set (reg:SI 11 a1)
+        (reg/v:SI 82 [ encoding ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":119 -1
+     (nil))
+(insn 24 23 25 5 (set (reg:SI 10 a0)
+        (reg/v/f:SI 79 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":119 -1
+     (nil))
+(call_insn 25 24 26 5 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_get_glyph_data") [flags 0x3] <function_decl 06340618 u8x8_get_glyph_data>) [0 u8x8_get_glyph_data S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":119 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_get_glyph_data") [flags 0x3] <function_decl 06340618 u8x8_get_glyph_data>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 26 25 27 5 (set (reg:SI 86)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -8 [0xfffffffffffffff8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":120 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:SI 14 a4)
+        (reg:SI 86)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":120 -1
+     (nil))
+(insn 28 27 29 5 (set (reg:SI 13 a3)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":120 -1
+     (nil))
+(insn 29 28 30 5 (set (reg:SI 12 a2)
+        (reg/v:SI 81 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":120 -1
+     (nil))
+(insn 30 29 31 5 (set (reg:SI 11 a1)
+        (reg/v:SI 73 [ xx ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":120 -1
+     (nil))
+(insn 31 30 32 5 (set (reg:SI 10 a0)
+        (reg/v/f:SI 79 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":120 -1
+     (nil))
+(call_insn 32 31 33 5 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 062bc7f8 u8x8_DrawTile>) [0 u8x8_DrawTile S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":120 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 062bc7f8 u8x8_DrawTile>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (expr_list:SI (use (reg:SI 14 a4))
+                        (nil)))))))
+(insn 33 32 34 5 (set (reg:SI 87)
+        (plus:SI (reg/v:SI 74 [ tile ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":121 -1
+     (nil))
+(insn 34 33 35 5 (set (reg/v:SI 74 [ tile ])
+        (zero_extend:SI (subreg:QI (reg:SI 87) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":121 -1
+     (nil))
+(insn 35 34 36 5 (set (reg:SI 88)
+        (plus:SI (reg/v:SI 73 [ xx ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":122 -1
+     (nil))
+(insn 36 35 38 5 (set (reg/v:SI 73 [ xx ])
+        (zero_extend:SI (subreg:QI (reg:SI 88) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":122 -1
+     (nil))
+(jump_insn 38 36 39 5 (set (pc)
+        (if_then_else (gtu (reg/v:SI 77 [ th ])
+                (reg/v:SI 73 [ xx ]))
+            (label_ref 37)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":123 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 37)
+(note 39 38 40 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 40 39 41 6 (set (reg:SI 89)
+        (plus:SI (reg/v:SI 81 [ y ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":124 -1
+     (nil))
+(insn 41 40 43 6 (set (reg/v:SI 81 [ y ])
+        (zero_extend:SI (subreg:QI (reg:SI 89) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":124 -1
+     (nil))
+(jump_insn 43 41 44 6 (set (pc)
+        (if_then_else (gtu (reg/v:SI 78 [ tv ])
+                (reg/v:SI 81 [ y ]))
+            (label_ref 42)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":125 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 42)
+(note 44 43 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+;; Function u8x8_draw_string (u8x8_draw_string, funcdef_no=12, decl_uid=3377, cgraph_uid=12, symbol_order=12)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 50.
+Merging block 9 into block 8...
+Merged blocks 8 and 9.
+Merged 8 and 9 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 8 NOTE_INSN_DELETED)
+(note 8 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 8 3 2 (set (reg/v/f:SI 80 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":360 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 81 [ x ])
+        (reg:SI 11 a1 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":360 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 82 [ y ])
+        (reg:SI 12 a2 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":360 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v/f:SI 83 [ s ])
+        (reg:SI 13 a3 [ s ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":360 -1
+     (nil))
+(note 6 5 10 2 NOTE_INSN_FUNCTION_BEG)
+(insn 10 6 11 2 (set (reg/f:SI 84)
+        (mem/f:SI (plus:SI (reg/v/f:SI 80 [ u8x8 ])
+                (const_int 28 [0x1c])) [6 u8x8_13(D)->font+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":363 -1
+     (nil))
+(insn 11 10 12 2 (set (reg/v:SI 77 [ th ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/f:SI 84)
+                    (const_int 2 [0x2])) [0 MEM[(const uint8_t *)_1 + 2B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":363 -1
+     (nil))
+(insn 12 11 7 2 (set (mem:QI (plus:SI (reg/v/f:SI 80 [ u8x8 ])
+                (const_int 38 [0x26])) [0 u8x8_13(D)->utf8_state+0 S1 A16])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":287 -1
+     (nil))
+(insn 7 12 13 2 (set (reg/v:SI 79 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":362 -1
+     (nil))
+(jump_insn 13 7 14 2 (set (pc)
+        (label_ref 16)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":287 -1
+     (nil)
+ -> 16)
+(barrier 14 13 30)
+(code_label 30 14 15 4 48 (nil) [2 uses])
+(note 15 30 16 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(code_label 16 15 17 5 46 (nil) [1 uses])
+(note 17 16 18 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 18 17 19 5 (set (reg:SI 85)
+        (zero_extend:SI (mem:QI (reg/v/f:SI 83 [ s ]) [0 MEM[base: s_8, offset: 0B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":368 -1
+     (nil))
+(insn 19 18 20 5 (set (reg/f:SI 86)
+        (mem/f:SI (plus:SI (reg/v/f:SI 80 [ u8x8 ])
+                (const_int 4 [0x4])) [3 u8x8_13(D)->next_cb+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":368 -1
+     (nil))
+(insn 20 19 21 5 (set (reg:SI 11 a1)
+        (reg:SI 85)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":368 -1
+     (nil))
+(insn 21 20 22 5 (set (reg:SI 10 a0)
+        (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":368 -1
+     (nil))
+(call_insn 22 21 23 5 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (reg/f:SI 86) [0 *_2 S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":368 -1
+     (expr_list:REG_CALL_DECL (nil)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 23 22 24 5 (set (reg:SI 87)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":368 -1
+     (nil))
+(insn 24 23 25 5 (set (reg/v:SI 78 [ e ])
+        (reg:SI 87)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":368 -1
+     (nil))
+(insn 25 24 26 5 (set (reg:SI 89)
+        (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":369 -1
+     (nil))
+(insn 26 25 27 5 (set (reg:SI 88)
+        (plus:SI (reg:SI 89)
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":369 -1
+     (expr_list:REG_EQUAL (const_int 65535 [0xffff])
+        (nil)))
+(jump_insn 27 26 28 5 (set (pc)
+        (if_then_else (eq (reg/v:SI 78 [ e ])
+                (reg:SI 88))
+            (label_ref 47)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":369 -1
+     (int_list:REG_BR_PROB 118111604 (nil))
+ -> 47)
+(note 28 27 29 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 29 28 31 6 (set (reg/v/f:SI 83 [ s ])
+        (plus:SI (reg/v/f:SI 83 [ s ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":371 -1
+     (nil))
+(insn 31 29 32 6 (set (reg:SI 91)
+        (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":372 -1
+     (nil))
+(insn 32 31 33 6 (set (reg:SI 90)
+        (plus:SI (reg:SI 91)
+            (const_int -2 [0xfffffffffffffffe]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":372 -1
+     (expr_list:REG_EQUAL (const_int 65534 [0xfffe])
+        (nil)))
+(jump_insn 33 32 34 6 (set (pc)
+        (if_then_else (eq (reg/v:SI 78 [ e ])
+                (reg:SI 90))
+            (label_ref 30)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":372 -1
+     (int_list:REG_BR_PROB 548896828 (nil))
+ -> 30)
+(note 34 33 35 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 35 34 36 7 (set (reg:SI 92)
+        (zero_extend:SI (subreg:QI (reg/v:SI 78 [ e ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":374 -1
+     (nil))
+(insn 36 35 37 7 (set (reg:SI 13 a3)
+        (reg:SI 92)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":374 -1
+     (nil))
+(insn 37 36 38 7 (set (reg:SI 12 a2)
+        (reg/v:SI 82 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":374 -1
+     (nil))
+(insn 38 37 39 7 (set (reg:SI 11 a1)
+        (reg/v:SI 81 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":374 -1
+     (nil))
+(insn 39 38 40 7 (set (reg:SI 10 a0)
+        (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":374 -1
+     (nil))
+(call_insn 40 39 41 7 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_DrawGlyph") [flags 0x3] <function_decl 06340870 u8x8_DrawGlyph>) [0 u8x8_DrawGlyph S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":374 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawGlyph") [flags 0x3] <function_decl 06340870 u8x8_DrawGlyph>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 41 40 42 7 (set (reg:SI 93)
+        (plus:SI (reg/v:SI 81 [ x ])
+            (reg/v:SI 77 [ th ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":375 -1
+     (nil))
+(insn 42 41 43 7 (set (reg/v:SI 81 [ x ])
+        (zero_extend:SI (subreg:QI (reg:SI 93) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":375 -1
+     (nil))
+(insn 43 42 44 7 (set (reg:SI 94)
+        (plus:SI (reg/v:SI 79 [ <retval> ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":376 -1
+     (nil))
+(insn 44 43 45 7 (set (reg/v:SI 79 [ <retval> ])
+        (zero_extend:SI (subreg:QI (reg:SI 94) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":376 -1
+     (nil))
+(jump_insn 45 44 46 7 (set (pc)
+        (label_ref 30)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":376 -1
+     (nil)
+ -> 30)
+(barrier 46 45 47)
+(code_label 47 46 48 8 47 (nil) [1 uses])
+(note 48 47 49 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 49 48 53 8 (set (reg/v:SI 79 [ <retval> ])
+        (reg/v:SI 79 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":379 -1
+     (nil))
+(insn 53 49 54 8 (set (reg/i:SI 10 a0)
+        (reg/v:SI 79 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":380 -1
+     (nil))
+(insn 54 53 0 8 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":380 -1
+     (nil))
+
+;; Function u8x8_upscale_byte (u8x8_upscale_byte, funcdef_no=3, decl_uid=2893, cgraph_uid=3, symbol_order=3)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 42.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 99 [ x ])
+        (reg:SI 10 a0 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":154 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SI 100)
+        (ashift:SI (reg/v:SI 99 [ x ])
+            (const_int 4 [0x4]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":156 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:HI 101)
+        (subreg:HI (reg:SI 100) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":156 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:HI 102)
+        (subreg:HI (reg/v:SI 99 [ x ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":156 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 103)
+        (ior:SI (subreg:SI (reg:HI 101) 0)
+            (subreg:SI (reg:HI 102) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":156 -1
+     (nil))
+(insn 10 9 11 2 (set (reg/v:SI 92 [ y ])
+        (zero_extend:SI (subreg:HI (reg:SI 103) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":156 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 106)
+        (const_int 4096 [0x1000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":157 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 105)
+        (plus:SI (reg:SI 106)
+            (const_int -241 [0xffffffffffffff0f]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":157 -1
+     (expr_list:REG_EQUAL (const_int 3855 [0xf0f])
+        (nil)))
+(insn 13 12 14 2 (set (reg:SI 104)
+        (and:SI (reg/v:SI 92 [ y ])
+            (reg:SI 105))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":157 -1
+     (nil))
+(insn 14 13 15 2 (set (reg/v:SI 93 [ y ])
+        (zero_extend:SI (subreg:HI (reg:SI 104) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":157 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 107)
+        (ashift:SI (reg/v:SI 93 [ y ])
+            (const_int 2 [0x2]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":158 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:HI 108)
+        (subreg:HI (reg:SI 107) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":158 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:HI 109)
+        (subreg/v:HI (reg/v:SI 93 [ y ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":158 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 110)
+        (ior:SI (subreg:SI (reg:HI 108) 0)
+            (subreg:SI (reg:HI 109) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":158 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:SI 81 [ _10 ])
+        (sign_extend:SI (subreg:HI (reg:SI 110) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":158 -1
+     (nil))
+(insn 20 19 21 2 (set (reg/v:SI 94 [ y ])
+        (zero_extend:SI (subreg/u:HI (reg:SI 81 [ _10 ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":158 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:SI 113)
+        (const_int 12288 [0x3000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":159 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:SI 112)
+        (plus:SI (reg:SI 113)
+            (const_int 819 [0x333]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":159 -1
+     (expr_list:REG_EQUAL (const_int 13107 [0x3333])
+        (nil)))
+(insn 23 22 24 2 (set (reg:SI 111)
+        (and:SI (reg/v:SI 94 [ y ])
+            (reg:SI 112))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":159 -1
+     (nil))
+(insn 24 23 25 2 (set (reg/v:SI 95 [ y ])
+        (zero_extend:SI (subreg:HI (reg:SI 111) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":159 -1
+     (nil))
+(insn 25 24 26 2 (set (reg:SI 114)
+        (ashift:SI (reg/v:SI 95 [ y ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":160 -1
+     (nil))
+(insn 26 25 27 2 (set (reg:HI 115)
+        (subreg:HI (reg:SI 114) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":160 -1
+     (nil))
+(insn 27 26 28 2 (set (reg:HI 116)
+        (subreg/v:HI (reg/v:SI 95 [ y ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":160 -1
+     (nil))
+(insn 28 27 29 2 (set (reg:SI 117)
+        (ior:SI (subreg:SI (reg:HI 115) 0)
+            (subreg:SI (reg:HI 116) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":160 -1
+     (nil))
+(insn 29 28 30 2 (set (reg:SI 86 [ _15 ])
+        (sign_extend:SI (subreg:HI (reg:SI 117) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":160 -1
+     (nil))
+(insn 30 29 31 2 (set (reg/v:SI 96 [ y ])
+        (zero_extend:SI (subreg/u:HI (reg:SI 86 [ _15 ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":160 -1
+     (nil))
+(insn 31 30 32 2 (set (reg:SI 120)
+        (const_int 20480 [0x5000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":161 -1
+     (nil))
+(insn 32 31 33 2 (set (reg:SI 119)
+        (plus:SI (reg:SI 120)
+            (const_int 1365 [0x555]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":161 -1
+     (expr_list:REG_EQUAL (const_int 21845 [0x5555])
+        (nil)))
+(insn 33 32 34 2 (set (reg:SI 118)
+        (and:SI (reg/v:SI 96 [ y ])
+            (reg:SI 119))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":161 -1
+     (nil))
+(insn 34 33 35 2 (set (reg/v:SI 97 [ y ])
+        (zero_extend:SI (subreg:HI (reg:SI 118) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":161 -1
+     (nil))
+(insn 35 34 36 2 (set (reg:SI 121)
+        (ashift:SI (reg/v:SI 97 [ y ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":163 -1
+     (nil))
+(insn 36 35 37 2 (set (reg:HI 122)
+        (subreg:HI (reg:SI 121) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":163 -1
+     (nil))
+(insn 37 36 38 2 (set (reg:HI 123)
+        (subreg/v:HI (reg/v:SI 97 [ y ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":163 -1
+     (nil))
+(insn 38 37 39 2 (set (reg:SI 124)
+        (ior:SI (subreg:SI (reg:HI 122) 0)
+            (subreg:SI (reg:HI 123) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":163 -1
+     (nil))
+(insn 39 38 40 2 (set (reg:SI 91 [ _20 ])
+        (sign_extend:SI (subreg:HI (reg:SI 124) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":163 -1
+     (nil))
+(insn 40 39 41 2 (set (reg:SI 126)
+        (zero_extend:SI (subreg/u:HI (reg:SI 91 [ _20 ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":164 -1
+     (nil))
+(insn 41 40 45 2 (set (reg/v:SI 98 [ <retval> ])
+        (reg:SI 126)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":164 -1
+     (nil))
+(insn 45 41 46 2 (set (reg/i:SI 10 a0)
+        (reg/v:SI 98 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":165 -1
+     (nil))
+(insn 46 45 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":165 -1
+     (nil))
+
+;; Function u8x8_Draw2x2Glyph (u8x8_Draw2x2Glyph, funcdef_no=6, decl_uid=2919, cgraph_uid=6, symbol_order=6)
+
+Partition 2: size 8 align 4
+	buf2
+Partition 1: size 8 align 4
+	buf1
+Partition 0: size 8 align 4
+	buf
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+Edge 7->3 redirected to 11
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 9->10 to 11 failed.
+Merging block 11 into block 10...
+Merged blocks 10 and 11.
+Merged 10 and 11 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 11 NOTE_INSN_DELETED)
+(note 11 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 11 3 2 (set (reg/v/f:SI 95 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":208 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 96 [ x ])
+        (reg:SI 11 a1 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":208 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 97 [ y ])
+        (reg:SI 12 a2 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":208 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SI 98 [ encoding ])
+        (reg:SI 13 a3 [ encoding ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":208 -1
+     (nil))
+(note 6 5 13 2 NOTE_INSN_FUNCTION_BEG)
+(insn 13 6 14 2 (set (reg/f:SI 72 [ _1 ])
+        (mem/f:SI (plus:SI (reg/v/f:SI 95 [ u8x8 ])
+                (const_int 28 [0x1c])) [6 u8x8_10(D)->font+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":209 -1
+     (nil))
+(insn 14 13 15 2 (set (reg/v:SI 76 [ th ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/f:SI 72 [ _1 ])
+                    (const_int 2 [0x2])) [0 MEM[(const uint8_t *)_1 + 2B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":209 -1
+     (nil))
+(insn 15 14 16 2 (set (reg/v:SI 77 [ tv ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/f:SI 72 [ _1 ])
+                    (const_int 3 [0x3])) [0 MEM[(const uint8_t *)_1 + 3B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":210 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 99)
+        (ashift:SI (reg/v:SI 76 [ th ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":212 -1
+     (nil))
+(insn 17 16 18 2 (set (reg/v:SI 78 [ th ])
+        (zero_extend:SI (subreg:QI (reg:SI 99) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":212 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 100)
+        (plus:SI (reg/v:SI 78 [ th ])
+            (reg/v:SI 96 [ x ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":213 -1
+     (nil))
+(insn 19 18 20 2 (set (reg/v:SI 79 [ th ])
+        (zero_extend:SI (subreg:QI (reg:SI 100) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":213 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 101)
+        (ashift:SI (reg/v:SI 77 [ tv ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":214 -1
+     (nil))
+(insn 21 20 22 2 (set (reg/v:SI 80 [ tv ])
+        (zero_extend:SI (subreg:QI (reg:SI 101) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":214 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:SI 102)
+        (plus:SI (reg/v:SI 80 [ tv ])
+            (reg/v:SI 97 [ y ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":215 -1
+     (nil))
+(insn 23 22 24 2 (set (reg/v:SI 81 [ tv ])
+        (zero_extend:SI (subreg:QI (reg:SI 102) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":215 -1
+     (nil))
+(insn 24 23 25 2 (set (reg:SI 103)
+        (plus:SI (reg/v:SI 97 [ y ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(insn 25 24 7 2 (set (reg:SI 90 [ ivtmp.94 ])
+        (zero_extend:SI (subreg:QI (reg:SI 103) 0))) -1
+     (nil))
+(insn 7 25 124 2 (set (reg/v:SI 75 [ tile ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":216 -1
+     (nil))
+(jump_insn 124 7 125 2 (set (pc)
+        (label_ref 117)) -1
+     (nil)
+ -> 117)
+(barrier 125 124 127)
+(code_label 127 125 126 4 55 (nil) [1 uses])
+(note 126 127 8 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 8 126 117 4 (set (reg:SI 90 [ ivtmp.94 ])
+        (reg:SI 92 [ ivtmp.94 ])) -1
+     (nil))
+(code_label 117 8 26 5 54 (nil) [1 uses])
+(note 26 117 27 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 27 26 28 5 (set (reg:SI 104)
+        (plus:SI (reg:SI 90 [ ivtmp.94 ])
+            (const_int -1 [0xffffffffffffffff]))) -1
+     (nil))
+(insn 28 27 9 5 (set (reg:SI 94 [ _60 ])
+        (zero_extend:SI (subreg:QI (reg:SI 104) 0))) -1
+     (nil))
+(insn 9 28 112 5 (set (reg/v:SI 74 [ xx ])
+        (reg/v:SI 96 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":219 -1
+     (nil))
+(code_label 112 9 29 6 53 (nil) [1 uses])
+(note 29 112 30 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 30 29 31 6 (set (reg:SI 105)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -24 [0xffffffffffffffe8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":186 -1
+     (nil))
+(insn 31 30 32 6 (set (reg:SI 13 a3)
+        (reg/v:SI 75 [ tile ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":186 -1
+     (nil))
+(insn 32 31 33 6 (set (reg:SI 12 a2)
+        (reg:SI 105)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":186 -1
+     (nil))
+(insn 33 32 34 6 (set (reg:SI 11 a1)
+        (reg/v:SI 98 [ encoding ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":186 -1
+     (nil))
+(insn 34 33 35 6 (set (reg:SI 10 a0)
+        (reg/v/f:SI 95 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":186 -1
+     (nil))
+(call_insn 35 34 10 6 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_get_glyph_data") [flags 0x3] <function_decl 06340618 u8x8_get_glyph_data>) [0 u8x8_get_glyph_data S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":186 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_get_glyph_data") [flags 0x3] <function_decl 06340618 u8x8_get_glyph_data>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 10 35 52 6 (set (reg:SI 89 [ ivtmp.73 ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":186 -1
+     (nil))
+(code_label 52 10 36 7 52 (nil) [1 uses])
+(note 36 52 37 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 37 36 38 7 (set (reg:SI 106)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -24 [0xffffffffffffffe8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":189 -1
+     (nil))
+(insn 38 37 39 7 (set (reg:SI 107)
+        (plus:SI (reg:SI 106)
+            (reg:SI 89 [ ivtmp.73 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":189 -1
+     (nil))
+(insn 39 38 40 7 (set (reg:SI 108)
+        (zero_extend:SI (mem:QI (reg:SI 107) [0 MEM[base: _24, offset: 0B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":189 -1
+     (nil))
+(insn 40 39 41 7 (set (reg:SI 10 a0)
+        (reg:SI 108)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":189 -1
+     (nil))
+(call_insn/u 41 40 42 7 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_upscale_byte") [flags 0x3] <function_decl 063405a0 u8x8_upscale_byte>) [0 u8x8_upscale_byte S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":189 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_upscale_byte") [flags 0x3] <function_decl 063405a0 u8x8_upscale_byte>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(insn 42 41 43 7 (set (reg:SI 109)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":189 -1
+     (nil))
+(insn 43 42 44 7 (set (reg/v:SI 85 [ t ])
+        (reg:SI 109)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":189 -1
+     (nil))
+(insn 44 43 45 7 (set (reg:SI 110)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -16 [0xfffffffffffffff0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":190 -1
+     (nil))
+(insn 45 44 46 7 (set (reg:SI 111)
+        (plus:SI (reg:SI 110)
+            (reg:SI 89 [ ivtmp.73 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":190 -1
+     (nil))
+(insn 46 45 47 7 (set (reg:SI 112)
+        (lshiftrt:SI (reg/v:SI 85 [ t ])
+            (const_int 8 [0x8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":190 -1
+     (nil))
+(insn 47 46 48 7 (set (mem:QI (reg:SI 111) [0 MEM[base: _2, offset: 0B]+0 S1 A8])
+        (subreg:QI (reg:SI 112) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":190 -1
+     (nil))
+(insn 48 47 49 7 (set (reg:SI 113)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -8 [0xfffffffffffffff8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":191 -1
+     (nil))
+(insn 49 48 50 7 (set (reg:SI 114)
+        (plus:SI (reg:SI 113)
+            (reg:SI 89 [ ivtmp.73 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":191 -1
+     (nil))
+(insn 50 49 51 7 (set (mem:QI (reg:SI 114) [0 MEM[base: _52, offset: 0B]+0 S1 A8])
+        (subreg:QI (reg/v:SI 85 [ t ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":191 -1
+     (nil))
+(insn 51 50 53 7 (set (reg:SI 89 [ ivtmp.73 ])
+        (plus:SI (reg:SI 89 [ ivtmp.73 ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(insn 53 51 54 7 (set (reg:SI 115)
+        (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":187 -1
+     (nil))
+(jump_insn 54 53 55 7 (set (pc)
+        (if_then_else (ne (reg:SI 89 [ ivtmp.73 ])
+                (reg:SI 115))
+            (label_ref 52)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":187 -1
+     (int_list:REG_BR_PROB 939539196 (nil))
+ -> 52)
+(note 55 54 56 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 56 55 57 8 (set (reg:SI 116)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -24 [0xffffffffffffffe8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":193 -1
+     (nil))
+(insn 57 56 58 8 (set (reg:SI 117)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -8 [0xfffffffffffffff8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":193 -1
+     (nil))
+(insn 58 57 59 8 (set (reg:SI 11 a1)
+        (reg:SI 116)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":193 -1
+     (nil))
+(insn 59 58 60 8 (set (reg:SI 10 a0)
+        (reg:SI 117)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":193 -1
+     (nil))
+(call_insn 60 59 61 8 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_upscale_buf") [flags 0x3] <function_decl 06346e88 u8x8_upscale_buf>) [0 u8x8_upscale_buf S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":193 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_upscale_buf") [flags 0x3] <function_decl 06346e88 u8x8_upscale_buf>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 61 60 62 8 (set (reg:SI 118)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -24 [0xffffffffffffffe8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":194 -1
+     (nil))
+(insn 62 61 63 8 (set (reg:SI 14 a4)
+        (reg:SI 118)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":194 -1
+     (nil))
+(insn 63 62 64 8 (set (reg:SI 13 a3)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":194 -1
+     (nil))
+(insn 64 63 65 8 (set (reg:SI 12 a2)
+        (reg:SI 94 [ _60 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":194 -1
+     (nil))
+(insn 65 64 66 8 (set (reg:SI 11 a1)
+        (reg/v:SI 74 [ xx ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":194 -1
+     (nil))
+(insn 66 65 67 8 (set (reg:SI 10 a0)
+        (reg/v/f:SI 95 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":194 -1
+     (nil))
+(call_insn 67 66 68 8 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 062bc7f8 u8x8_DrawTile>) [0 u8x8_DrawTile S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":194 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 062bc7f8 u8x8_DrawTile>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (expr_list:SI (use (reg:SI 14 a4))
+                        (nil)))))))
+(insn 68 67 69 8 (set (reg:SI 119)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -24 [0xffffffffffffffe8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":196 -1
+     (nil))
+(insn 69 68 70 8 (set (reg:SI 120)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -8 [0xfffffffffffffff8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":196 -1
+     (nil))
+(insn 70 69 71 8 (set (reg:SI 121)
+        (plus:SI (reg:SI 120)
+            (const_int 4 [0x4]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":196 -1
+     (nil))
+(insn 71 70 72 8 (set (reg:SI 11 a1)
+        (reg:SI 119)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":196 -1
+     (nil))
+(insn 72 71 73 8 (set (reg:SI 10 a0)
+        (reg:SI 121)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":196 -1
+     (nil))
+(call_insn 73 72 74 8 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_upscale_buf") [flags 0x3] <function_decl 06346e88 u8x8_upscale_buf>) [0 u8x8_upscale_buf S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":196 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_upscale_buf") [flags 0x3] <function_decl 06346e88 u8x8_upscale_buf>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 74 73 75 8 (set (reg:SI 122)
+        (plus:SI (reg/v:SI 74 [ xx ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(insn 75 74 76 8 (set (reg:SI 82 [ _20 ])
+        (zero_extend:SI (subreg:QI (reg:SI 122) 0))) -1
+     (nil))
+(insn 76 75 77 8 (set (reg:SI 123)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -24 [0xffffffffffffffe8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":197 -1
+     (nil))
+(insn 77 76 78 8 (set (reg:SI 14 a4)
+        (reg:SI 123)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":197 -1
+     (nil))
+(insn 78 77 79 8 (set (reg:SI 13 a3)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":197 -1
+     (nil))
+(insn 79 78 80 8 (set (reg:SI 12 a2)
+        (reg:SI 94 [ _60 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":197 -1
+     (nil))
+(insn 80 79 81 8 (set (reg:SI 11 a1)
+        (reg:SI 82 [ _20 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":197 -1
+     (nil))
+(insn 81 80 82 8 (set (reg:SI 10 a0)
+        (reg/v/f:SI 95 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":197 -1
+     (nil))
+(call_insn 82 81 83 8 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 062bc7f8 u8x8_DrawTile>) [0 u8x8_DrawTile S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":197 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 062bc7f8 u8x8_DrawTile>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (expr_list:SI (use (reg:SI 14 a4))
+                        (nil)))))))
+(insn 83 82 84 8 (set (reg:SI 124)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -24 [0xffffffffffffffe8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":199 -1
+     (nil))
+(insn 84 83 85 8 (set (reg:SI 125)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -16 [0xfffffffffffffff0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":199 -1
+     (nil))
+(insn 85 84 86 8 (set (reg:SI 11 a1)
+        (reg:SI 124)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":199 -1
+     (nil))
+(insn 86 85 87 8 (set (reg:SI 10 a0)
+        (reg:SI 125)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":199 -1
+     (nil))
+(call_insn 87 86 88 8 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_upscale_buf") [flags 0x3] <function_decl 06346e88 u8x8_upscale_buf>) [0 u8x8_upscale_buf S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":199 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_upscale_buf") [flags 0x3] <function_decl 06346e88 u8x8_upscale_buf>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 88 87 89 8 (set (reg:SI 126)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -24 [0xffffffffffffffe8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":200 -1
+     (nil))
+(insn 89 88 90 8 (set (reg:SI 14 a4)
+        (reg:SI 126)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":200 -1
+     (nil))
+(insn 90 89 91 8 (set (reg:SI 13 a3)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":200 -1
+     (nil))
+(insn 91 90 92 8 (set (reg:SI 12 a2)
+        (reg:SI 90 [ ivtmp.94 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":200 -1
+     (nil))
+(insn 92 91 93 8 (set (reg:SI 11 a1)
+        (reg/v:SI 74 [ xx ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":200 -1
+     (nil))
+(insn 93 92 94 8 (set (reg:SI 10 a0)
+        (reg/v/f:SI 95 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":200 -1
+     (nil))
+(call_insn 94 93 95 8 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 062bc7f8 u8x8_DrawTile>) [0 u8x8_DrawTile S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":200 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 062bc7f8 u8x8_DrawTile>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (expr_list:SI (use (reg:SI 14 a4))
+                        (nil)))))))
+(insn 95 94 96 8 (set (reg:SI 127)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -24 [0xffffffffffffffe8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":202 -1
+     (nil))
+(insn 96 95 97 8 (set (reg:SI 128)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -16 [0xfffffffffffffff0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":202 -1
+     (nil))
+(insn 97 96 98 8 (set (reg:SI 129)
+        (plus:SI (reg:SI 128)
+            (const_int 4 [0x4]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":202 -1
+     (nil))
+(insn 98 97 99 8 (set (reg:SI 11 a1)
+        (reg:SI 127)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":202 -1
+     (nil))
+(insn 99 98 100 8 (set (reg:SI 10 a0)
+        (reg:SI 129)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":202 -1
+     (nil))
+(call_insn 100 99 101 8 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_upscale_buf") [flags 0x3] <function_decl 06346e88 u8x8_upscale_buf>) [0 u8x8_upscale_buf S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":202 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_upscale_buf") [flags 0x3] <function_decl 06346e88 u8x8_upscale_buf>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 101 100 102 8 (set (reg:SI 130)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -24 [0xffffffffffffffe8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":203 -1
+     (nil))
+(insn 102 101 103 8 (set (reg:SI 14 a4)
+        (reg:SI 130)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":203 -1
+     (nil))
+(insn 103 102 104 8 (set (reg:SI 13 a3)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":203 -1
+     (nil))
+(insn 104 103 105 8 (set (reg:SI 12 a2)
+        (reg:SI 90 [ ivtmp.94 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":203 -1
+     (nil))
+(insn 105 104 106 8 (set (reg:SI 11 a1)
+        (reg:SI 82 [ _20 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":203 -1
+     (nil))
+(insn 106 105 107 8 (set (reg:SI 10 a0)
+        (reg/v/f:SI 95 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":203 -1
+     (nil))
+(call_insn 107 106 108 8 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 062bc7f8 u8x8_DrawTile>) [0 u8x8_DrawTile S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":203 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 062bc7f8 u8x8_DrawTile>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (expr_list:SI (use (reg:SI 14 a4))
+                        (nil)))))))
+(insn 108 107 109 8 (set (reg:SI 131)
+        (plus:SI (reg/v:SI 75 [ tile ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":223 -1
+     (nil))
+(insn 109 108 110 8 (set (reg/v:SI 75 [ tile ])
+        (zero_extend:SI (subreg:QI (reg:SI 131) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":223 -1
+     (nil))
+(insn 110 109 111 8 (set (reg:SI 132)
+        (plus:SI (reg/v:SI 74 [ xx ])
+            (const_int 2 [0x2]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":224 -1
+     (nil))
+(insn 111 110 113 8 (set (reg/v:SI 74 [ xx ])
+        (zero_extend:SI (subreg:QI (reg:SI 132) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":224 -1
+     (nil))
+(jump_insn 113 111 114 8 (set (pc)
+        (if_then_else (gtu (reg/v:SI 79 [ th ])
+                (reg/v:SI 74 [ xx ]))
+            (label_ref 112)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":225 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 112)
+(note 114 113 115 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 115 114 116 9 (set (reg:SI 133)
+        (plus:SI (reg:SI 90 [ ivtmp.94 ])
+            (const_int 2 [0x2]))) -1
+     (nil))
+(insn 116 115 118 9 (set (reg:SI 92 [ ivtmp.94 ])
+        (zero_extend:SI (subreg:QI (reg:SI 133) 0))) -1
+     (nil))
+(insn 118 116 119 9 (set (reg:SI 134)
+        (plus:SI (reg:SI 90 [ ivtmp.94 ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":227 -1
+     (nil))
+(insn 119 118 120 9 (set (reg:SI 135)
+        (zero_extend:SI (subreg:QI (reg:SI 134) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":227 -1
+     (nil))
+(jump_insn 120 119 121 9 (set (pc)
+        (if_then_else (gtu (reg/v:SI 81 [ tv ])
+                (reg:SI 135))
+            (label_ref:SI 127)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":227 180 {*branchsi}
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 127)
+(note 121 120 0 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+
+;; Function u8x8_draw_2x2_string (u8x8_draw_2x2_string, funcdef_no=15, decl_uid=3405, cgraph_uid=15, symbol_order=15)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 52.
+Merging block 9 into block 8...
+Merged blocks 8 and 9.
+Merged 8 and 9 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 8 NOTE_INSN_DELETED)
+(note 8 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 8 3 2 (set (reg/v/f:SI 81 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":399 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 82 [ x ])
+        (reg:SI 11 a1 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":399 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 83 [ y ])
+        (reg:SI 12 a2 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":399 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v/f:SI 84 [ s ])
+        (reg:SI 13 a3 [ s ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":399 -1
+     (nil))
+(note 6 5 10 2 NOTE_INSN_FUNCTION_BEG)
+(insn 10 6 11 2 (set (reg/f:SI 85)
+        (mem/f:SI (plus:SI (reg/v/f:SI 81 [ u8x8 ])
+                (const_int 28 [0x1c])) [6 u8x8_13(D)->font+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":402 -1
+     (nil))
+(insn 11 10 12 2 (set (reg/v:SI 77 [ th ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/f:SI 85)
+                    (const_int 2 [0x2])) [0 MEM[(const uint8_t *)_1 + 2B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":402 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 86)
+        (ashift:SI (reg/v:SI 77 [ th ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":404 -1
+     (nil))
+(insn 13 12 14 2 (set (reg/v:SI 78 [ th ])
+        (zero_extend:SI (subreg:QI (reg:SI 86) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":404 -1
+     (nil))
+(insn 14 13 7 2 (set (mem:QI (plus:SI (reg/v/f:SI 81 [ u8x8 ])
+                (const_int 38 [0x26])) [0 u8x8_13(D)->utf8_state+0 S1 A16])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":287 -1
+     (nil))
+(insn 7 14 15 2 (set (reg/v:SI 80 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":401 -1
+     (nil))
+(jump_insn 15 7 16 2 (set (pc)
+        (label_ref 18)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":287 -1
+     (nil)
+ -> 18)
+(barrier 16 15 32)
+(code_label 32 16 17 4 62 (nil) [2 uses])
+(note 17 32 18 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(code_label 18 17 19 5 60 (nil) [1 uses])
+(note 19 18 20 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 20 19 21 5 (set (reg:SI 87)
+        (zero_extend:SI (mem:QI (reg/v/f:SI 84 [ s ]) [0 MEM[base: s_8, offset: 0B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":409 -1
+     (nil))
+(insn 21 20 22 5 (set (reg/f:SI 88)
+        (mem/f:SI (plus:SI (reg/v/f:SI 81 [ u8x8 ])
+                (const_int 4 [0x4])) [3 u8x8_13(D)->next_cb+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":409 -1
+     (nil))
+(insn 22 21 23 5 (set (reg:SI 11 a1)
+        (reg:SI 87)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":409 -1
+     (nil))
+(insn 23 22 24 5 (set (reg:SI 10 a0)
+        (reg/v/f:SI 81 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":409 -1
+     (nil))
+(call_insn 24 23 25 5 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (reg/f:SI 88) [0 *_2 S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":409 -1
+     (expr_list:REG_CALL_DECL (nil)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 25 24 26 5 (set (reg:SI 89)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":409 -1
+     (nil))
+(insn 26 25 27 5 (set (reg/v:SI 79 [ e ])
+        (reg:SI 89)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":409 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:SI 91)
+        (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":410 -1
+     (nil))
+(insn 28 27 29 5 (set (reg:SI 90)
+        (plus:SI (reg:SI 91)
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":410 -1
+     (expr_list:REG_EQUAL (const_int 65535 [0xffff])
+        (nil)))
+(jump_insn 29 28 30 5 (set (pc)
+        (if_then_else (eq (reg/v:SI 79 [ e ])
+                (reg:SI 90))
+            (label_ref 49)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":410 -1
+     (int_list:REG_BR_PROB 118111604 (nil))
+ -> 49)
+(note 30 29 31 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 31 30 33 6 (set (reg/v/f:SI 84 [ s ])
+        (plus:SI (reg/v/f:SI 84 [ s ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":412 -1
+     (nil))
+(insn 33 31 34 6 (set (reg:SI 93)
+        (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":413 -1
+     (nil))
+(insn 34 33 35 6 (set (reg:SI 92)
+        (plus:SI (reg:SI 93)
+            (const_int -2 [0xfffffffffffffffe]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":413 -1
+     (expr_list:REG_EQUAL (const_int 65534 [0xfffe])
+        (nil)))
+(jump_insn 35 34 36 6 (set (pc)
+        (if_then_else (eq (reg/v:SI 79 [ e ])
+                (reg:SI 92))
+            (label_ref 32)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":413 -1
+     (int_list:REG_BR_PROB 548896828 (nil))
+ -> 32)
+(note 36 35 37 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 37 36 38 7 (set (reg:SI 94)
+        (zero_extend:SI (subreg:QI (reg/v:SI 79 [ e ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":415 -1
+     (nil))
+(insn 38 37 39 7 (set (reg:SI 13 a3)
+        (reg:SI 94)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":415 -1
+     (nil))
+(insn 39 38 40 7 (set (reg:SI 12 a2)
+        (reg/v:SI 83 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":415 -1
+     (nil))
+(insn 40 39 41 7 (set (reg:SI 11 a1)
+        (reg/v:SI 82 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":415 -1
+     (nil))
+(insn 41 40 42 7 (set (reg:SI 10 a0)
+        (reg/v/f:SI 81 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":415 -1
+     (nil))
+(call_insn 42 41 43 7 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_Draw2x2Glyph") [flags 0x3] <function_decl 063408e8 u8x8_Draw2x2Glyph>) [0 u8x8_Draw2x2Glyph S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":415 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_Draw2x2Glyph") [flags 0x3] <function_decl 063408e8 u8x8_Draw2x2Glyph>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 43 42 44 7 (set (reg:SI 95)
+        (plus:SI (reg/v:SI 82 [ x ])
+            (reg/v:SI 78 [ th ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":416 -1
+     (nil))
+(insn 44 43 45 7 (set (reg/v:SI 82 [ x ])
+        (zero_extend:SI (subreg:QI (reg:SI 95) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":416 -1
+     (nil))
+(insn 45 44 46 7 (set (reg:SI 96)
+        (plus:SI (reg/v:SI 80 [ <retval> ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":417 -1
+     (nil))
+(insn 46 45 47 7 (set (reg/v:SI 80 [ <retval> ])
+        (zero_extend:SI (subreg:QI (reg:SI 96) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":417 -1
+     (nil))
+(jump_insn 47 46 48 7 (set (pc)
+        (label_ref 32)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":417 -1
+     (nil)
+ -> 32)
+(barrier 48 47 49)
+(code_label 49 48 50 8 61 (nil) [1 uses])
+(note 50 49 51 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 51 50 55 8 (set (reg/v:SI 80 [ <retval> ])
+        (reg/v:SI 80 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":420 -1
+     (nil))
+(insn 55 51 56 8 (set (reg/i:SI 10 a0)
+        (reg/v:SI 80 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":421 -1
+     (nil))
+(insn 56 55 0 8 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":421 -1
+     (nil))
+
+;; Function u8x8_Draw1x2Glyph (u8x8_Draw1x2Glyph, funcdef_no=8, decl_uid=2924, cgraph_uid=8, symbol_order=8)
+
+Partition 2: size 8 align 4
+	buf2
+Partition 1: size 8 align 4
+	buf1
+Partition 0: size 8 align 4
+	buf
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+Edge 7->3 redirected to 11
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 9->10 to 11 failed.
+Merging block 11 into block 10...
+Merged blocks 10 and 11.
+Merged 10 and 11 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 11 NOTE_INSN_DELETED)
+(note 11 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 11 3 2 (set (reg/v/f:SI 93 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":250 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 94 [ x ])
+        (reg:SI 11 a1 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":250 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 95 [ y ])
+        (reg:SI 12 a2 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":250 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SI 96 [ encoding ])
+        (reg:SI 13 a3 [ encoding ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":250 -1
+     (nil))
+(note 6 5 13 2 NOTE_INSN_FUNCTION_BEG)
+(insn 13 6 14 2 (set (reg/f:SI 72 [ _1 ])
+        (mem/f:SI (plus:SI (reg/v/f:SI 93 [ u8x8 ])
+                (const_int 28 [0x1c])) [6 u8x8_10(D)->font+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":251 -1
+     (nil))
+(insn 14 13 15 2 (set (reg/v:SI 76 [ th ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/f:SI 72 [ _1 ])
+                    (const_int 2 [0x2])) [0 MEM[(const uint8_t *)_1 + 2B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":251 -1
+     (nil))
+(insn 15 14 16 2 (set (reg/v:SI 77 [ tv ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/f:SI 72 [ _1 ])
+                    (const_int 3 [0x3])) [0 MEM[(const uint8_t *)_1 + 3B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":252 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 97)
+        (plus:SI (reg/v:SI 76 [ th ])
+            (reg/v:SI 94 [ x ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":254 -1
+     (nil))
+(insn 17 16 18 2 (set (reg/v:SI 78 [ th ])
+        (zero_extend:SI (subreg:QI (reg:SI 97) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":254 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 98)
+        (ashift:SI (reg/v:SI 77 [ tv ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":255 -1
+     (nil))
+(insn 19 18 20 2 (set (reg/v:SI 79 [ tv ])
+        (zero_extend:SI (subreg:QI (reg:SI 98) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":255 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 99)
+        (plus:SI (reg/v:SI 79 [ tv ])
+            (reg/v:SI 95 [ y ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":256 -1
+     (nil))
+(insn 21 20 22 2 (set (reg/v:SI 80 [ tv ])
+        (zero_extend:SI (subreg:QI (reg:SI 99) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":256 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:SI 100)
+        (plus:SI (reg/v:SI 95 [ y ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(insn 23 22 7 2 (set (reg:SI 81 [ ivtmp.117 ])
+        (zero_extend:SI (subreg:QI (reg:SI 100) 0))) -1
+     (nil))
+(insn 7 23 84 2 (set (reg/v:SI 75 [ tile ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":257 -1
+     (nil))
+(jump_insn 84 7 85 2 (set (pc)
+        (label_ref 77)) -1
+     (nil)
+ -> 77)
+(barrier 85 84 87)
+(code_label 87 85 86 4 68 (nil) [1 uses])
+(note 86 87 8 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 8 86 77 4 (set (reg:SI 81 [ ivtmp.117 ])
+        (reg:SI 89 [ ivtmp.117 ])) -1
+     (nil))
+(code_label 77 8 24 5 67 (nil) [1 uses])
+(note 24 77 25 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 25 24 26 5 (set (reg:SI 101)
+        (plus:SI (reg:SI 81 [ ivtmp.117 ])
+            (const_int -1 [0xffffffffffffffff]))) -1
+     (nil))
+(insn 26 25 9 5 (set (reg:SI 92 [ _51 ])
+        (zero_extend:SI (subreg:QI (reg:SI 101) 0))) -1
+     (nil))
+(insn 9 26 72 5 (set (reg/v:SI 74 [ xx ])
+        (reg/v:SI 94 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":260 -1
+     (nil))
+(code_label 72 9 27 6 66 (nil) [1 uses])
+(note 27 72 28 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 28 27 29 6 (set (reg:SI 102)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -24 [0xffffffffffffffe8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":238 -1
+     (nil))
+(insn 29 28 30 6 (set (reg:SI 13 a3)
+        (reg/v:SI 75 [ tile ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":238 -1
+     (nil))
+(insn 30 29 31 6 (set (reg:SI 12 a2)
+        (reg:SI 102)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":238 -1
+     (nil))
+(insn 31 30 32 6 (set (reg:SI 11 a1)
+        (reg/v:SI 96 [ encoding ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":238 -1
+     (nil))
+(insn 32 31 33 6 (set (reg:SI 10 a0)
+        (reg/v/f:SI 93 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":238 -1
+     (nil))
+(call_insn 33 32 10 6 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_get_glyph_data") [flags 0x3] <function_decl 06340618 u8x8_get_glyph_data>) [0 u8x8_get_glyph_data S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":238 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_get_glyph_data") [flags 0x3] <function_decl 06340618 u8x8_get_glyph_data>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 10 33 50 6 (set (reg:SI 88 [ ivtmp.98 ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":238 -1
+     (nil))
+(code_label 50 10 34 7 65 (nil) [1 uses])
+(note 34 50 35 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 35 34 36 7 (set (reg:SI 103)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -24 [0xffffffffffffffe8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":241 -1
+     (nil))
+(insn 36 35 37 7 (set (reg:SI 104)
+        (plus:SI (reg:SI 103)
+            (reg:SI 88 [ ivtmp.98 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":241 -1
+     (nil))
+(insn 37 36 38 7 (set (reg:SI 105)
+        (zero_extend:SI (mem:QI (reg:SI 104) [0 MEM[base: _23, offset: 0B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":241 -1
+     (nil))
+(insn 38 37 39 7 (set (reg:SI 10 a0)
+        (reg:SI 105)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":241 -1
+     (nil))
+(call_insn/u 39 38 40 7 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_upscale_byte") [flags 0x3] <function_decl 063405a0 u8x8_upscale_byte>) [0 u8x8_upscale_byte S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":241 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_upscale_byte") [flags 0x3] <function_decl 063405a0 u8x8_upscale_byte>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(insn 40 39 41 7 (set (reg:SI 106)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":241 -1
+     (nil))
+(insn 41 40 42 7 (set (reg/v:SI 84 [ t ])
+        (reg:SI 106)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":241 -1
+     (nil))
+(insn 42 41 43 7 (set (reg:SI 107)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -16 [0xfffffffffffffff0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":242 -1
+     (nil))
+(insn 43 42 44 7 (set (reg:SI 108)
+        (plus:SI (reg:SI 107)
+            (reg:SI 88 [ ivtmp.98 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":242 -1
+     (nil))
+(insn 44 43 45 7 (set (reg:SI 109)
+        (lshiftrt:SI (reg/v:SI 84 [ t ])
+            (const_int 8 [0x8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":242 -1
+     (nil))
+(insn 45 44 46 7 (set (mem:QI (reg:SI 108) [0 MEM[base: _2, offset: 0B]+0 S1 A8])
+        (subreg:QI (reg:SI 109) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":242 -1
+     (nil))
+(insn 46 45 47 7 (set (reg:SI 110)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -8 [0xfffffffffffffff8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":243 -1
+     (nil))
+(insn 47 46 48 7 (set (reg:SI 111)
+        (plus:SI (reg:SI 110)
+            (reg:SI 88 [ ivtmp.98 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":243 -1
+     (nil))
+(insn 48 47 49 7 (set (mem:QI (reg:SI 111) [0 MEM[base: _44, offset: 0B]+0 S1 A8])
+        (subreg:QI (reg/v:SI 84 [ t ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":243 -1
+     (nil))
+(insn 49 48 51 7 (set (reg:SI 88 [ ivtmp.98 ])
+        (plus:SI (reg:SI 88 [ ivtmp.98 ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(insn 51 49 52 7 (set (reg:SI 112)
+        (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":239 -1
+     (nil))
+(jump_insn 52 51 53 7 (set (pc)
+        (if_then_else (ne (reg:SI 88 [ ivtmp.98 ])
+                (reg:SI 112))
+            (label_ref 50)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":239 -1
+     (int_list:REG_BR_PROB 939539196 (nil))
+ -> 50)
+(note 53 52 54 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 54 53 55 8 (set (reg:SI 113)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -8 [0xfffffffffffffff8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":245 -1
+     (nil))
+(insn 55 54 56 8 (set (reg:SI 14 a4)
+        (reg:SI 113)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":245 -1
+     (nil))
+(insn 56 55 57 8 (set (reg:SI 13 a3)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":245 -1
+     (nil))
+(insn 57 56 58 8 (set (reg:SI 12 a2)
+        (reg:SI 92 [ _51 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":245 -1
+     (nil))
+(insn 58 57 59 8 (set (reg:SI 11 a1)
+        (reg/v:SI 74 [ xx ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":245 -1
+     (nil))
+(insn 59 58 60 8 (set (reg:SI 10 a0)
+        (reg/v/f:SI 93 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":245 -1
+     (nil))
+(call_insn 60 59 61 8 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 062bc7f8 u8x8_DrawTile>) [0 u8x8_DrawTile S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":245 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 062bc7f8 u8x8_DrawTile>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (expr_list:SI (use (reg:SI 14 a4))
+                        (nil)))))))
+(insn 61 60 62 8 (set (reg:SI 114)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -16 [0xfffffffffffffff0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":246 -1
+     (nil))
+(insn 62 61 63 8 (set (reg:SI 14 a4)
+        (reg:SI 114)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":246 -1
+     (nil))
+(insn 63 62 64 8 (set (reg:SI 13 a3)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":246 -1
+     (nil))
+(insn 64 63 65 8 (set (reg:SI 12 a2)
+        (reg:SI 81 [ ivtmp.117 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":246 -1
+     (nil))
+(insn 65 64 66 8 (set (reg:SI 11 a1)
+        (reg/v:SI 74 [ xx ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":246 -1
+     (nil))
+(insn 66 65 67 8 (set (reg:SI 10 a0)
+        (reg/v/f:SI 93 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":246 -1
+     (nil))
+(call_insn 67 66 68 8 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 062bc7f8 u8x8_DrawTile>) [0 u8x8_DrawTile S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":246 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 062bc7f8 u8x8_DrawTile>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (expr_list:SI (use (reg:SI 14 a4))
+                        (nil)))))))
+(insn 68 67 69 8 (set (reg:SI 115)
+        (plus:SI (reg/v:SI 75 [ tile ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":264 -1
+     (nil))
+(insn 69 68 70 8 (set (reg/v:SI 75 [ tile ])
+        (zero_extend:SI (subreg:QI (reg:SI 115) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":264 -1
+     (nil))
+(insn 70 69 71 8 (set (reg:SI 116)
+        (plus:SI (reg/v:SI 74 [ xx ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":265 -1
+     (nil))
+(insn 71 70 73 8 (set (reg/v:SI 74 [ xx ])
+        (zero_extend:SI (subreg:QI (reg:SI 116) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":265 -1
+     (nil))
+(jump_insn 73 71 74 8 (set (pc)
+        (if_then_else (gtu (reg/v:SI 78 [ th ])
+                (reg/v:SI 74 [ xx ]))
+            (label_ref 72)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":266 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 72)
+(note 74 73 75 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 75 74 76 9 (set (reg:SI 117)
+        (plus:SI (reg:SI 81 [ ivtmp.117 ])
+            (const_int 2 [0x2]))) -1
+     (nil))
+(insn 76 75 78 9 (set (reg:SI 89 [ ivtmp.117 ])
+        (zero_extend:SI (subreg:QI (reg:SI 117) 0))) -1
+     (nil))
+(insn 78 76 79 9 (set (reg:SI 118)
+        (plus:SI (reg:SI 81 [ ivtmp.117 ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":268 -1
+     (nil))
+(insn 79 78 80 9 (set (reg:SI 119)
+        (zero_extend:SI (subreg:QI (reg:SI 118) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":268 -1
+     (nil))
+(jump_insn 80 79 81 9 (set (pc)
+        (if_then_else (gtu (reg/v:SI 80 [ tv ])
+                (reg:SI 119))
+            (label_ref:SI 87)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":268 180 {*branchsi}
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 87)
+(note 81 80 0 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+
+;; Function u8x8_draw_1x2_string (u8x8_draw_1x2_string, funcdef_no=18, decl_uid=3433, cgraph_uid=18, symbol_order=18)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 50.
+Merging block 9 into block 8...
+Merged blocks 8 and 9.
+Merged 8 and 9 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 8 NOTE_INSN_DELETED)
+(note 8 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 8 3 2 (set (reg/v/f:SI 80 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":440 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 81 [ x ])
+        (reg:SI 11 a1 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":440 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 82 [ y ])
+        (reg:SI 12 a2 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":440 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v/f:SI 83 [ s ])
+        (reg:SI 13 a3 [ s ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":440 -1
+     (nil))
+(note 6 5 10 2 NOTE_INSN_FUNCTION_BEG)
+(insn 10 6 11 2 (set (reg/f:SI 84)
+        (mem/f:SI (plus:SI (reg/v/f:SI 80 [ u8x8 ])
+                (const_int 28 [0x1c])) [6 u8x8_13(D)->font+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":443 -1
+     (nil))
+(insn 11 10 12 2 (set (reg/v:SI 77 [ th ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/f:SI 84)
+                    (const_int 2 [0x2])) [0 MEM[(const uint8_t *)_1 + 2B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":443 -1
+     (nil))
+(insn 12 11 7 2 (set (mem:QI (plus:SI (reg/v/f:SI 80 [ u8x8 ])
+                (const_int 38 [0x26])) [0 u8x8_13(D)->utf8_state+0 S1 A16])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":287 -1
+     (nil))
+(insn 7 12 13 2 (set (reg/v:SI 79 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":442 -1
+     (nil))
+(jump_insn 13 7 14 2 (set (pc)
+        (label_ref 16)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":287 -1
+     (nil)
+ -> 16)
+(barrier 14 13 30)
+(code_label 30 14 15 4 75 (nil) [2 uses])
+(note 15 30 16 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(code_label 16 15 17 5 73 (nil) [1 uses])
+(note 17 16 18 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 18 17 19 5 (set (reg:SI 85)
+        (zero_extend:SI (mem:QI (reg/v/f:SI 83 [ s ]) [0 MEM[base: s_8, offset: 0B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":447 -1
+     (nil))
+(insn 19 18 20 5 (set (reg/f:SI 86)
+        (mem/f:SI (plus:SI (reg/v/f:SI 80 [ u8x8 ])
+                (const_int 4 [0x4])) [3 u8x8_13(D)->next_cb+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":447 -1
+     (nil))
+(insn 20 19 21 5 (set (reg:SI 11 a1)
+        (reg:SI 85)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":447 -1
+     (nil))
+(insn 21 20 22 5 (set (reg:SI 10 a0)
+        (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":447 -1
+     (nil))
+(call_insn 22 21 23 5 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (reg/f:SI 86) [0 *_2 S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":447 -1
+     (expr_list:REG_CALL_DECL (nil)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 23 22 24 5 (set (reg:SI 87)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":447 -1
+     (nil))
+(insn 24 23 25 5 (set (reg/v:SI 78 [ e ])
+        (reg:SI 87)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":447 -1
+     (nil))
+(insn 25 24 26 5 (set (reg:SI 89)
+        (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":448 -1
+     (nil))
+(insn 26 25 27 5 (set (reg:SI 88)
+        (plus:SI (reg:SI 89)
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":448 -1
+     (expr_list:REG_EQUAL (const_int 65535 [0xffff])
+        (nil)))
+(jump_insn 27 26 28 5 (set (pc)
+        (if_then_else (eq (reg/v:SI 78 [ e ])
+                (reg:SI 88))
+            (label_ref 47)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":448 -1
+     (int_list:REG_BR_PROB 118111604 (nil))
+ -> 47)
+(note 28 27 29 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 29 28 31 6 (set (reg/v/f:SI 83 [ s ])
+        (plus:SI (reg/v/f:SI 83 [ s ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":450 -1
+     (nil))
+(insn 31 29 32 6 (set (reg:SI 91)
+        (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":451 -1
+     (nil))
+(insn 32 31 33 6 (set (reg:SI 90)
+        (plus:SI (reg:SI 91)
+            (const_int -2 [0xfffffffffffffffe]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":451 -1
+     (expr_list:REG_EQUAL (const_int 65534 [0xfffe])
+        (nil)))
+(jump_insn 33 32 34 6 (set (pc)
+        (if_then_else (eq (reg/v:SI 78 [ e ])
+                (reg:SI 90))
+            (label_ref 30)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":451 -1
+     (int_list:REG_BR_PROB 548896828 (nil))
+ -> 30)
+(note 34 33 35 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 35 34 36 7 (set (reg:SI 92)
+        (zero_extend:SI (subreg:QI (reg/v:SI 78 [ e ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":453 -1
+     (nil))
+(insn 36 35 37 7 (set (reg:SI 13 a3)
+        (reg:SI 92)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":453 -1
+     (nil))
+(insn 37 36 38 7 (set (reg:SI 12 a2)
+        (reg/v:SI 82 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":453 -1
+     (nil))
+(insn 38 37 39 7 (set (reg:SI 11 a1)
+        (reg/v:SI 81 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":453 -1
+     (nil))
+(insn 39 38 40 7 (set (reg:SI 10 a0)
+        (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":453 -1
+     (nil))
+(call_insn 40 39 41 7 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_Draw1x2Glyph") [flags 0x3] <function_decl 06340960 u8x8_Draw1x2Glyph>) [0 u8x8_Draw1x2Glyph S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":453 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_Draw1x2Glyph") [flags 0x3] <function_decl 06340960 u8x8_Draw1x2Glyph>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 41 40 42 7 (set (reg:SI 93)
+        (plus:SI (reg/v:SI 81 [ x ])
+            (reg/v:SI 77 [ th ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":454 -1
+     (nil))
+(insn 42 41 43 7 (set (reg/v:SI 81 [ x ])
+        (zero_extend:SI (subreg:QI (reg:SI 93) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":454 -1
+     (nil))
+(insn 43 42 44 7 (set (reg:SI 94)
+        (plus:SI (reg/v:SI 79 [ <retval> ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":455 -1
+     (nil))
+(insn 44 43 45 7 (set (reg/v:SI 79 [ <retval> ])
+        (zero_extend:SI (subreg:QI (reg:SI 94) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":455 -1
+     (nil))
+(jump_insn 45 44 46 7 (set (pc)
+        (label_ref 30)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":455 -1
+     (nil)
+ -> 30)
+(barrier 46 45 47)
+(code_label 47 46 48 8 74 (nil) [1 uses])
+(note 48 47 49 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 49 48 53 8 (set (reg/v:SI 79 [ <retval> ])
+        (reg/v:SI 79 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":458 -1
+     (nil))
+(insn 53 49 54 8 (set (reg/i:SI 10 a0)
+        (reg/v:SI 79 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":459 -1
+     (nil))
+(insn 54 53 0 8 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":459 -1
+     (nil))
+
+;; Function u8x8_utf8_init (u8x8_utf8_init, funcdef_no=9, decl_uid=2900, cgraph_uid=9, symbol_order=9)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 72 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":286 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 0 2 (set (mem:QI (plus:SI (reg/v/f:SI 72 [ u8x8 ])
+                (const_int 38 [0x26])) [0 u8x8_2(D)->utf8_state+0 S1 A16])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":287 -1
+     (nil))
+
+;; Function u8x8_DrawString (u8x8_DrawString, funcdef_no=13, decl_uid=2929, cgraph_uid=13, symbol_order=13)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 20.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 7 NOTE_INSN_DELETED)
+(note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (reg/v/f:SI 73 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":384 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 74 [ x ])
+        (reg:SI 11 a1 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":384 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 75 [ y ])
+        (reg:SI 12 a2 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":384 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v/f:SI 76 [ s ])
+        (reg:SI 13 a3 [ s ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":384 -1
+     (nil))
+(note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 6 10 2 (set (reg:SI 78)
+        (high:SI (symbol_ref:SI ("u8x8_ascii_next") [flags 0x3] <function_decl 06340708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":385 -1
+     (nil))
+(insn 10 9 11 2 (set (reg/f:SI 77)
+        (lo_sum:SI (reg:SI 78)
+            (symbol_ref:SI ("u8x8_ascii_next") [flags 0x3] <function_decl 06340708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":385 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_ascii_next") [flags 0x3] <function_decl 06340708 u8x8_ascii_next>)
+        (nil)))
+(insn 11 10 12 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 73 [ u8x8 ])
+                (const_int 4 [0x4])) [3 u8x8_2(D)->next_cb+0 S4 A32])
+        (reg/f:SI 77)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":385 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 13 a3)
+        (reg/v/f:SI 76 [ s ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":386 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 12 a2)
+        (reg/v:SI 75 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":386 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 11 a1)
+        (reg/v:SI 74 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":386 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":386 -1
+     (nil))
+(call_insn 16 15 17 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_draw_string") [flags 0x3] <function_decl 06346c30 u8x8_draw_string>) [0 u8x8_draw_string S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":386 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_draw_string") [flags 0x3] <function_decl 06346c30 u8x8_draw_string>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 17 16 18 2 (set (reg:SI 79)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":386 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 79)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":386 -1
+     (nil))
+(insn 19 18 23 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":386 -1
+     (nil))
+(insn 23 19 24 2 (set (reg/i:SI 10 a0)
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":387 -1
+     (nil))
+(insn 24 23 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":387 -1
+     (nil))
+
+;; Function u8x8_DrawUTF8 (u8x8_DrawUTF8, funcdef_no=14, decl_uid=2934, cgraph_uid=14, symbol_order=14)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 20.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 7 NOTE_INSN_DELETED)
+(note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (reg/v/f:SI 73 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":390 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 74 [ x ])
+        (reg:SI 11 a1 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":390 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 75 [ y ])
+        (reg:SI 12 a2 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":390 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v/f:SI 76 [ s ])
+        (reg:SI 13 a3 [ s ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":390 -1
+     (nil))
+(note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 6 10 2 (set (reg:SI 78)
+        (high:SI (symbol_ref:SI ("u8x8_utf8_next") [flags 0x3] <function_decl 06340780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":391 -1
+     (nil))
+(insn 10 9 11 2 (set (reg/f:SI 77)
+        (lo_sum:SI (reg:SI 78)
+            (symbol_ref:SI ("u8x8_utf8_next") [flags 0x3] <function_decl 06340780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":391 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_utf8_next") [flags 0x3] <function_decl 06340780 u8x8_utf8_next>)
+        (nil)))
+(insn 11 10 12 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 73 [ u8x8 ])
+                (const_int 4 [0x4])) [3 u8x8_2(D)->next_cb+0 S4 A32])
+        (reg/f:SI 77)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":391 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 13 a3)
+        (reg/v/f:SI 76 [ s ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":392 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 12 a2)
+        (reg/v:SI 75 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":392 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 11 a1)
+        (reg/v:SI 74 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":392 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":392 -1
+     (nil))
+(call_insn 16 15 17 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_draw_string") [flags 0x3] <function_decl 06346c30 u8x8_draw_string>) [0 u8x8_draw_string S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":392 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_draw_string") [flags 0x3] <function_decl 06346c30 u8x8_draw_string>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 17 16 18 2 (set (reg:SI 79)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":392 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 79)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":392 -1
+     (nil))
+(insn 19 18 23 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":392 -1
+     (nil))
+(insn 23 19 24 2 (set (reg/i:SI 10 a0)
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":393 -1
+     (nil))
+(insn 24 23 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":393 -1
+     (nil))
+
+;; Function u8x8_Draw2x2String (u8x8_Draw2x2String, funcdef_no=16, decl_uid=2939, cgraph_uid=16, symbol_order=16)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 20.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 7 NOTE_INSN_DELETED)
+(note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (reg/v/f:SI 73 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":425 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 74 [ x ])
+        (reg:SI 11 a1 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":425 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 75 [ y ])
+        (reg:SI 12 a2 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":425 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v/f:SI 76 [ s ])
+        (reg:SI 13 a3 [ s ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":425 -1
+     (nil))
+(note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 6 10 2 (set (reg:SI 78)
+        (high:SI (symbol_ref:SI ("u8x8_ascii_next") [flags 0x3] <function_decl 06340708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":426 -1
+     (nil))
+(insn 10 9 11 2 (set (reg/f:SI 77)
+        (lo_sum:SI (reg:SI 78)
+            (symbol_ref:SI ("u8x8_ascii_next") [flags 0x3] <function_decl 06340708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":426 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_ascii_next") [flags 0x3] <function_decl 06340708 u8x8_ascii_next>)
+        (nil)))
+(insn 11 10 12 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 73 [ u8x8 ])
+                (const_int 4 [0x4])) [3 u8x8_2(D)->next_cb+0 S4 A32])
+        (reg/f:SI 77)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":426 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 13 a3)
+        (reg/v/f:SI 76 [ s ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":427 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 12 a2)
+        (reg/v:SI 75 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":427 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 11 a1)
+        (reg/v:SI 74 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":427 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":427 -1
+     (nil))
+(call_insn 16 15 17 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_draw_2x2_string") [flags 0x3] <function_decl 06346d20 u8x8_draw_2x2_string>) [0 u8x8_draw_2x2_string S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":427 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_draw_2x2_string") [flags 0x3] <function_decl 06346d20 u8x8_draw_2x2_string>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 17 16 18 2 (set (reg:SI 79)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":427 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 79)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":427 -1
+     (nil))
+(insn 19 18 23 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":427 -1
+     (nil))
+(insn 23 19 24 2 (set (reg/i:SI 10 a0)
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":428 -1
+     (nil))
+(insn 24 23 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":428 -1
+     (nil))
+
+;; Function u8x8_Draw2x2UTF8 (u8x8_Draw2x2UTF8, funcdef_no=17, decl_uid=2944, cgraph_uid=17, symbol_order=17)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 20.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 7 NOTE_INSN_DELETED)
+(note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (reg/v/f:SI 73 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":431 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 74 [ x ])
+        (reg:SI 11 a1 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":431 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 75 [ y ])
+        (reg:SI 12 a2 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":431 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v/f:SI 76 [ s ])
+        (reg:SI 13 a3 [ s ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":431 -1
+     (nil))
+(note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 6 10 2 (set (reg:SI 78)
+        (high:SI (symbol_ref:SI ("u8x8_utf8_next") [flags 0x3] <function_decl 06340780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":432 -1
+     (nil))
+(insn 10 9 11 2 (set (reg/f:SI 77)
+        (lo_sum:SI (reg:SI 78)
+            (symbol_ref:SI ("u8x8_utf8_next") [flags 0x3] <function_decl 06340780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":432 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_utf8_next") [flags 0x3] <function_decl 06340780 u8x8_utf8_next>)
+        (nil)))
+(insn 11 10 12 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 73 [ u8x8 ])
+                (const_int 4 [0x4])) [3 u8x8_2(D)->next_cb+0 S4 A32])
+        (reg/f:SI 77)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":432 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 13 a3)
+        (reg/v/f:SI 76 [ s ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":433 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 12 a2)
+        (reg/v:SI 75 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":433 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 11 a1)
+        (reg/v:SI 74 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":433 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":433 -1
+     (nil))
+(call_insn 16 15 17 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_draw_2x2_string") [flags 0x3] <function_decl 06346d20 u8x8_draw_2x2_string>) [0 u8x8_draw_2x2_string S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":433 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_draw_2x2_string") [flags 0x3] <function_decl 06346d20 u8x8_draw_2x2_string>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 17 16 18 2 (set (reg:SI 79)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":433 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 79)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":433 -1
+     (nil))
+(insn 19 18 23 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":433 -1
+     (nil))
+(insn 23 19 24 2 (set (reg/i:SI 10 a0)
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":434 -1
+     (nil))
+(insn 24 23 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":434 -1
+     (nil))
+
+;; Function u8x8_Draw1x2String (u8x8_Draw1x2String, funcdef_no=19, decl_uid=2949, cgraph_uid=19, symbol_order=19)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 20.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 7 NOTE_INSN_DELETED)
+(note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (reg/v/f:SI 73 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":463 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 74 [ x ])
+        (reg:SI 11 a1 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":463 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 75 [ y ])
+        (reg:SI 12 a2 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":463 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v/f:SI 76 [ s ])
+        (reg:SI 13 a3 [ s ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":463 -1
+     (nil))
+(note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 6 10 2 (set (reg:SI 78)
+        (high:SI (symbol_ref:SI ("u8x8_ascii_next") [flags 0x3] <function_decl 06340708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":464 -1
+     (nil))
+(insn 10 9 11 2 (set (reg/f:SI 77)
+        (lo_sum:SI (reg:SI 78)
+            (symbol_ref:SI ("u8x8_ascii_next") [flags 0x3] <function_decl 06340708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":464 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_ascii_next") [flags 0x3] <function_decl 06340708 u8x8_ascii_next>)
+        (nil)))
+(insn 11 10 12 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 73 [ u8x8 ])
+                (const_int 4 [0x4])) [3 u8x8_2(D)->next_cb+0 S4 A32])
+        (reg/f:SI 77)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":464 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 13 a3)
+        (reg/v/f:SI 76 [ s ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":465 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 12 a2)
+        (reg/v:SI 75 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":465 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 11 a1)
+        (reg/v:SI 74 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":465 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":465 -1
+     (nil))
+(call_insn 16 15 17 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_draw_1x2_string") [flags 0x3] <function_decl 06346e10 u8x8_draw_1x2_string>) [0 u8x8_draw_1x2_string S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":465 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_draw_1x2_string") [flags 0x3] <function_decl 06346e10 u8x8_draw_1x2_string>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 17 16 18 2 (set (reg:SI 79)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":465 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 79)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":465 -1
+     (nil))
+(insn 19 18 23 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":465 -1
+     (nil))
+(insn 23 19 24 2 (set (reg/i:SI 10 a0)
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":466 -1
+     (nil))
+(insn 24 23 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":466 -1
+     (nil))
+
+;; Function u8x8_Draw1x2UTF8 (u8x8_Draw1x2UTF8, funcdef_no=20, decl_uid=2954, cgraph_uid=20, symbol_order=20)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 20.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 7 NOTE_INSN_DELETED)
+(note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (reg/v/f:SI 73 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":469 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 74 [ x ])
+        (reg:SI 11 a1 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":469 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 75 [ y ])
+        (reg:SI 12 a2 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":469 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v/f:SI 76 [ s ])
+        (reg:SI 13 a3 [ s ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":469 -1
+     (nil))
+(note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 6 10 2 (set (reg:SI 78)
+        (high:SI (symbol_ref:SI ("u8x8_utf8_next") [flags 0x3] <function_decl 06340780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":470 -1
+     (nil))
+(insn 10 9 11 2 (set (reg/f:SI 77)
+        (lo_sum:SI (reg:SI 78)
+            (symbol_ref:SI ("u8x8_utf8_next") [flags 0x3] <function_decl 06340780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":470 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_utf8_next") [flags 0x3] <function_decl 06340780 u8x8_utf8_next>)
+        (nil)))
+(insn 11 10 12 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 73 [ u8x8 ])
+                (const_int 4 [0x4])) [3 u8x8_2(D)->next_cb+0 S4 A32])
+        (reg/f:SI 77)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":470 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 13 a3)
+        (reg/v/f:SI 76 [ s ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":471 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 12 a2)
+        (reg/v:SI 75 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":471 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 11 a1)
+        (reg/v:SI 74 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":471 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":471 -1
+     (nil))
+(call_insn 16 15 17 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_draw_1x2_string") [flags 0x3] <function_decl 06346e10 u8x8_draw_1x2_string>) [0 u8x8_draw_1x2_string S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":471 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_draw_1x2_string") [flags 0x3] <function_decl 06346e10 u8x8_draw_1x2_string>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 17 16 18 2 (set (reg:SI 79)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":471 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 79)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":471 -1
+     (nil))
+(insn 19 18 23 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":471 -1
+     (nil))
+(insn 23 19 24 2 (set (reg/i:SI 10 a0)
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":472 -1
+     (nil))
+(insn 24 23 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":472 -1
+     (nil))
+
+;; Function u8x8_GetUTF8Len (u8x8_GetUTF8Len, funcdef_no=21, decl_uid=2957, cgraph_uid=21, symbol_order=21)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 37.
+Merging block 9 into block 8...
+Merged blocks 8 and 9.
+Merged 8 and 9 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 6 NOTE_INSN_DELETED)
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (reg/v/f:SI 76 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":477 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v/f:SI 77 [ s ])
+        (reg:SI 11 a1 [ s ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":477 -1
+     (nil))
+(note 4 3 8 2 NOTE_INSN_FUNCTION_BEG)
+(insn 8 4 5 2 (set (mem:QI (plus:SI (reg/v/f:SI 76 [ u8x8 ])
+                (const_int 38 [0x26])) [0 u8x8_8(D)->utf8_state+0 S1 A16])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":287 -1
+     (nil))
+(insn 5 8 9 2 (set (reg/v:SI 75 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":479 -1
+     (nil))
+(jump_insn 9 5 10 2 (set (pc)
+        (label_ref 12)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":287 -1
+     (nil)
+ -> 12)
+(barrier 10 9 25)
+(code_label 25 10 11 4 93 (nil) [2 uses])
+(note 11 25 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(code_label 12 11 13 5 91 (nil) [1 uses])
+(note 13 12 14 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 14 13 15 5 (set (reg:SI 78)
+        (zero_extend:SI (mem:QI (reg/v/f:SI 77 [ s ]) [0 MEM[base: s_3, offset: 0B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":483 -1
+     (nil))
+(insn 15 14 16 5 (set (reg:SI 11 a1)
+        (reg:SI 78)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":483 -1
+     (nil))
+(insn 16 15 17 5 (set (reg:SI 10 a0)
+        (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":483 -1
+     (nil))
+(call_insn 17 16 18 5 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_utf8_next") [flags 0x3] <function_decl 06340780 u8x8_utf8_next>) [0 u8x8_utf8_next S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":483 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_utf8_next") [flags 0x3] <function_decl 06340780 u8x8_utf8_next>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 18 17 19 5 (set (reg:SI 79)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":483 -1
+     (nil))
+(insn 19 18 20 5 (set (reg/v:SI 74 [ e ])
+        (reg:SI 79)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":483 -1
+     (nil))
+(insn 20 19 21 5 (set (reg:SI 81)
+        (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":484 -1
+     (nil))
+(insn 21 20 22 5 (set (reg:SI 80)
+        (plus:SI (reg:SI 81)
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":484 -1
+     (expr_list:REG_EQUAL (const_int 65535 [0xffff])
+        (nil)))
+(jump_insn 22 21 23 5 (set (pc)
+        (if_then_else (eq (reg/v:SI 74 [ e ])
+                (reg:SI 80))
+            (label_ref 34)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":484 -1
+     (int_list:REG_BR_PROB 118111604 (nil))
+ -> 34)
+(note 23 22 24 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 24 23 26 6 (set (reg/v/f:SI 77 [ s ])
+        (plus:SI (reg/v/f:SI 77 [ s ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":486 -1
+     (nil))
+(insn 26 24 27 6 (set (reg:SI 83)
+        (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":487 -1
+     (nil))
+(insn 27 26 28 6 (set (reg:SI 82)
+        (plus:SI (reg:SI 83)
+            (const_int -2 [0xfffffffffffffffe]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":487 -1
+     (expr_list:REG_EQUAL (const_int 65534 [0xfffe])
+        (nil)))
+(jump_insn 28 27 29 6 (set (pc)
+        (if_then_else (eq (reg/v:SI 74 [ e ])
+                (reg:SI 82))
+            (label_ref 25)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":487 -1
+     (int_list:REG_BR_PROB 365072228 (nil))
+ -> 25)
+(note 29 28 30 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 30 29 31 7 (set (reg:SI 84)
+        (plus:SI (reg/v:SI 75 [ <retval> ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":488 -1
+     (nil))
+(insn 31 30 32 7 (set (reg/v:SI 75 [ <retval> ])
+        (zero_extend:SI (subreg:QI (reg:SI 84) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":488 -1
+     (nil))
+(jump_insn 32 31 33 7 (set (pc)
+        (label_ref 25)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":488 -1
+     (nil)
+ -> 25)
+(barrier 33 32 34)
+(code_label 34 33 35 8 92 (nil) [1 uses])
+(note 35 34 36 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 36 35 40 8 (set (reg/v:SI 75 [ <retval> ])
+        (reg/v:SI 75 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":490 -1
+     (nil))
+(insn 40 36 41 8 (set (reg/i:SI 10 a0)
+        (reg/v:SI 75 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":491 -1
+     (nil))
+(insn 41 40 0 8 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_8x8.c":491 -1
+     (nil))

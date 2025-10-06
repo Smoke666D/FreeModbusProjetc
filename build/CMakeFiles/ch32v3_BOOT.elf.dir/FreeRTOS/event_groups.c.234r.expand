@@ -1,0 +1,2654 @@
+
+;; Function xEventGroupCreateStatic (xEventGroupCreateStatic, funcdef_no=29, decl_uid=6389, cgraph_uid=29, symbol_order=29)
+
+Partition 0: size 4 align 4
+	xSize
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 51.
+Merging block 10 into block 9...
+Merged blocks 9 and 10.
+Merged 9 and 10 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 75 [ pxEventGroupBuffer ])
+        (reg:SI 10 a0 [ pxEventGroupBuffer ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":97 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(jump_insn 6 3 7 2 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 75 [ pxEventGroupBuffer ])
+                (const_int 0 [0]))
+            (label_ref 21)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":101 -1
+     (int_list:REG_BR_PROB 886588628 (nil))
+ -> 21)
+(note 7 6 8 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 8 7 9 4 (set (reg:SI 77)
+        (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":101 -1
+     (nil))
+(insn 9 8 10 4 (set (reg:SI 76)
+        (plus:SI (reg:SI 77)
+            (const_int -2048 [0xfffffffffffff800]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":101 -1
+     (expr_list:REG_EQUAL (const_int 30720 [0x7800])
+        (nil)))
+(insn 10 9 11 4 (asm_operands/v ("csrw mstatus,%0") ("") 0 [
+            (reg:SI 76)
+        ]
+         [
+            (asm_input:SI ("r") C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:101)
+        ]
+         [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:101) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":101 -1
+     (nil))
+(insn 11 10 12 4 (set (reg:SI 78)
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":101 -1
+     (nil))
+(insn 12 11 13 4 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 78)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":101 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>)
+        (nil)))
+(insn 13 12 14 4 (set (reg:SI 11 a1)
+        (const_int 101 [0x65])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":101 -1
+     (nil))
+(insn 14 13 15 4 (set (reg:SI 79)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":101 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 79)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":101 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>)
+        (nil)))
+(call_insn 16 15 18 4 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>) [0 __builtin_printf S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":101 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(code_label 18 16 17 5 3 (nil) [1 uses])
+(note 17 18 19 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 19 17 20 5 (set (pc)
+        (label_ref 18)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":101 -1
+     (nil)
+ -> 18)
+(barrier 20 19 21)
+(code_label 21 20 22 6 2 (nil) [1 uses])
+(note 22 21 23 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 6 (set (reg:SI 80)
+        (const_int 28 [0x1c])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":108 -1
+     (nil))
+(insn 24 23 25 6 (set (mem/v/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [9 xSize+0 S4 A32])
+        (reg:SI 80)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":108 -1
+     (nil))
+(insn 25 24 26 6 (set (reg:SI 72 [ xSize.0_1 ])
+        (mem/v/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [9 xSize+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":109 -1
+     (nil))
+(insn 26 25 27 6 (set (reg:SI 81)
+        (const_int 28 [0x1c])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":109 -1
+     (nil))
+(jump_insn 27 26 28 6 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ xSize.0_1 ])
+                (reg:SI 81))
+            (label_ref 42)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":109 -1
+     (int_list:REG_BR_PROB 365072228 (nil))
+ -> 42)
+(note 28 27 29 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 29 28 30 7 (set (reg:SI 83)
+        (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":109 -1
+     (nil))
+(insn 30 29 31 7 (set (reg:SI 82)
+        (plus:SI (reg:SI 83)
+            (const_int -2048 [0xfffffffffffff800]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":109 -1
+     (expr_list:REG_EQUAL (const_int 30720 [0x7800])
+        (nil)))
+(insn 31 30 32 7 (asm_operands/v ("csrw mstatus,%0") ("") 0 [
+            (reg:SI 82)
+        ]
+         [
+            (asm_input:SI ("r") C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:109)
+        ]
+         [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:109) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":109 -1
+     (nil))
+(insn 32 31 33 7 (set (reg:SI 84)
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":109 -1
+     (nil))
+(insn 33 32 34 7 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 84)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":109 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>)
+        (nil)))
+(insn 34 33 35 7 (set (reg:SI 11 a1)
+        (const_int 109 [0x6d])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":109 -1
+     (nil))
+(insn 35 34 36 7 (set (reg:SI 85)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":109 -1
+     (nil))
+(insn 36 35 37 7 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 85)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":109 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>)
+        (nil)))
+(call_insn 37 36 39 7 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>) [0 __builtin_printf S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":109 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(code_label 39 37 38 8 5 (nil) [1 uses])
+(note 38 39 40 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 40 38 41 8 (set (pc)
+        (label_ref 39)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":109 -1
+     (nil)
+ -> 39)
+(barrier 41 40 42)
+(code_label 42 41 43 9 4 (nil) [1 uses])
+(note 43 42 44 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 44 43 45 9 (set (mem:SI (reg/v/f:SI 75 [ pxEventGroupBuffer ]) [2 MEM[(struct EventGroup_t *)pxEventGroupBuffer_3(D)].uxEventBits+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":118 -1
+     (nil))
+(insn 45 44 46 9 (set (reg:SI 86)
+        (plus:SI (reg/v/f:SI 75 [ pxEventGroupBuffer ])
+            (const_int 4 [0x4]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":119 -1
+     (nil))
+(insn 46 45 47 9 (set (reg:SI 10 a0)
+        (reg:SI 86)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":119 -1
+     (nil))
+(call_insn 47 46 48 9 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vListInitialise") [flags 0x41] <function_decl 06635a50 vListInitialise>) [0 vListInitialise S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":119 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vListInitialise") [flags 0x41] <function_decl 06635a50 vListInitialise>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 48 47 49 9 (set (reg:QI 87)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":126 -1
+     (nil))
+(insn 49 48 50 9 (set (mem:QI (plus:SI (reg/v/f:SI 75 [ pxEventGroupBuffer ])
+                (const_int 24 [0x18])) [0 MEM[(struct EventGroup_t *)pxEventGroupBuffer_3(D)].ucStaticallyAllocated+0 S1 A32])
+        (reg:QI 87)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":126 -1
+     (nil))
+(insn 50 49 54 9 (set (reg/f:SI 74 [ <retval> ])
+        (reg/v/f:SI 75 [ pxEventGroupBuffer ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":140 -1
+     (nil))
+(insn 54 50 55 9 (set (reg/i:SI 10 a0)
+        (reg/f:SI 74 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":141 -1
+     (nil))
+(insn 55 54 0 9 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":141 -1
+     (nil))
+
+;; Function xEventGroupCreate (xEventGroupCreate, funcdef_no=30, decl_uid=6387, cgraph_uid=30, symbol_order=30)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 2->5 redirected to 6
+Merging block 5 into block 4...
+Merged blocks 4 and 5.
+Merged 4 and 5 without moving.
+Removing jump 17.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 10 a0)
+        (const_int 28 [0x1c])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":165 -1
+     (nil))
+(call_insn 6 5 7 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("pvPortMalloc") [flags 0x41] <function_decl 06635708 pvPortMalloc>) [0 pvPortMalloc S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":165 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pvPortMalloc") [flags 0x41] <function_decl 06635708 pvPortMalloc>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 7 6 8 2 (set (reg/v/f:SI 73 [ <retval> ])
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":165 -1
+     (nil))
+(jump_insn 8 7 9 2 (set (pc)
+        (if_then_else (eq (reg/v/f:SI 73 [ <retval> ])
+                (const_int 0 [0]))
+            (label_ref:SI 19)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":167 180 {*branchsi}
+     (int_list:REG_BR_PROB 499612076 (nil))
+ -> 19)
+(note 9 8 10 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 10 9 11 4 (set (mem:SI (reg/v/f:SI 73 [ <retval> ]) [2 pxEventBits_5->uxEventBits+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":169 -1
+     (nil))
+(insn 11 10 12 4 (set (reg:SI 74)
+        (plus:SI (reg/v/f:SI 73 [ <retval> ])
+            (const_int 4 [0x4]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":170 -1
+     (nil))
+(insn 12 11 13 4 (set (reg:SI 10 a0)
+        (reg:SI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":170 -1
+     (nil))
+(call_insn 13 12 14 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vListInitialise") [flags 0x41] <function_decl 06635a50 vListInitialise>) [0 vListInitialise S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":170 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vListInitialise") [flags 0x41] <function_decl 06635a50 vListInitialise>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 14 13 19 4 (set (mem:QI (plus:SI (reg/v/f:SI 73 [ <retval> ])
+                (const_int 24 [0x18])) [0 pxEventBits_5->ucStaticallyAllocated+0 S1 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":177 -1
+     (nil))
+(code_label 19 14 22 6 7 (nil) [1 uses])
+(note 22 19 20 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 20 22 21 6 (set (reg/i:SI 10 a0)
+        (reg/v/f:SI 73 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":189 -1
+     (nil))
+(insn 21 20 0 6 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":189 -1
+     (nil))
+
+;; Function xEventGroupWaitBits (xEventGroupWaitBits, funcdef_no=32, decl_uid=6395, cgraph_uid=32, symbol_order=32)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+;; Generating RTL for gimple basic block 15
+
+;; Generating RTL for gimple basic block 16
+
+;; Generating RTL for gimple basic block 17
+
+;; Generating RTL for gimple basic block 18
+
+;; Generating RTL for gimple basic block 19
+
+;; Generating RTL for gimple basic block 20
+
+;; Generating RTL for gimple basic block 21
+
+;; Generating RTL for gimple basic block 22
+
+;; Generating RTL for gimple basic block 23
+
+;; Generating RTL for gimple basic block 24
+
+;; Generating RTL for gimple basic block 25
+
+;; Generating RTL for gimple basic block 26
+
+;; Generating RTL for gimple basic block 27
+
+;; Generating RTL for gimple basic block 28
+
+;; Generating RTL for gimple basic block 29
+
+;; Generating RTL for gimple basic block 30
+
+;; Generating RTL for gimple basic block 31
+
+;; Generating RTL for gimple basic block 32
+
+;; Generating RTL for gimple basic block 33
+
+;; Generating RTL for gimple basic block 34
+
+;; Generating RTL for gimple basic block 35
+
+;; Generating RTL for gimple basic block 36
+
+;; Generating RTL for gimple basic block 37
+Edge 20->26 redirected to 42
+Edge 21->23 redirected to 43
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 17->18 to 22 failed.
+Edge 30->42 redirected to 43
+Forwarding edge 35->36 to 40 failed.
+Merging block 42 into block 41...
+Merged blocks 41 and 42.
+Merged 41 and 42 without moving.
+Removing jump 180.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 17->18 to 22 failed.
+Forwarding edge 35->36 to 40 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 13 NOTE_INSN_DELETED)
+(note 13 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 13 3 2 (set (reg/v/f:SI 89 [ xEventGroup ])
+        (reg:SI 10 a0 [ xEventGroup ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":322 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 90 [ uxBitsToWaitFor ])
+        (reg:SI 11 a1 [ uxBitsToWaitFor ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":322 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 91 [ xClearOnExit ])
+        (reg:SI 12 a2 [ xClearOnExit ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":322 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SI 92 [ xWaitForAllBits ])
+        (reg:SI 13 a3 [ xWaitForAllBits ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":322 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/v:SI 93 [ xTicksToWait ])
+        (reg:SI 14 a4 [ xTicksToWait ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":322 -1
+     (nil))
+(note 7 6 15 2 NOTE_INSN_FUNCTION_BEG)
+(jump_insn 15 7 16 2 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 89 [ xEventGroup ])
+                (const_int 0 [0]))
+            (label_ref 30)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":330 -1
+     (int_list:REG_BR_PROB 886588628 (nil))
+ -> 30)
+(note 16 15 17 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 17 16 18 4 (set (reg:SI 95)
+        (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":330 -1
+     (nil))
+(insn 18 17 19 4 (set (reg:SI 94)
+        (plus:SI (reg:SI 95)
+            (const_int -2048 [0xfffffffffffff800]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":330 -1
+     (expr_list:REG_EQUAL (const_int 30720 [0x7800])
+        (nil)))
+(insn 19 18 20 4 (asm_operands/v ("csrw mstatus,%0") ("") 0 [
+            (reg:SI 94)
+        ]
+         [
+            (asm_input:SI ("r") C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:330)
+        ]
+         [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:330) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":330 -1
+     (nil))
+(insn 20 19 21 4 (set (reg:SI 96)
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":330 -1
+     (nil))
+(insn 21 20 22 4 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 96)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":330 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>)
+        (nil)))
+(insn 22 21 23 4 (set (reg:SI 11 a1)
+        (const_int 330 [0x14a])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":330 -1
+     (nil))
+(insn 23 22 24 4 (set (reg:SI 97)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":330 -1
+     (nil))
+(insn 24 23 25 4 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 97)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":330 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>)
+        (nil)))
+(call_insn 25 24 27 4 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>) [0 __builtin_printf S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":330 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(code_label 27 25 26 5 15 (nil) [1 uses])
+(note 26 27 28 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 28 26 29 5 (set (pc)
+        (label_ref 27)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":330 -1
+     (nil)
+ -> 27)
+(barrier 29 28 30)
+(code_label 30 29 31 6 14 (nil) [1 uses])
+(note 31 30 32 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 32 31 33 6 (set (reg:SI 98)
+        (const_int -16777216 [0xffffffffff000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":331 -1
+     (nil))
+(insn 33 32 34 6 (set (reg/v:SI 72 [ _1 ])
+        (and:SI (reg/v:SI 90 [ uxBitsToWaitFor ])
+            (reg:SI 98))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":331 -1
+     (nil))
+(jump_insn 34 33 35 6 (set (pc)
+        (if_then_else (eq (reg/v:SI 72 [ _1 ])
+                (const_int 0 [0]))
+            (label_ref 49)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":331 -1
+     (int_list:REG_BR_PROB 719407028 (nil))
+ -> 49)
+(note 35 34 36 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 36 35 37 7 (set (reg:SI 100)
+        (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":331 -1
+     (nil))
+(insn 37 36 38 7 (set (reg:SI 99)
+        (plus:SI (reg:SI 100)
+            (const_int -2048 [0xfffffffffffff800]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":331 -1
+     (expr_list:REG_EQUAL (const_int 30720 [0x7800])
+        (nil)))
+(insn 38 37 39 7 (asm_operands/v ("csrw mstatus,%0") ("") 0 [
+            (reg:SI 99)
+        ]
+         [
+            (asm_input:SI ("r") C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:331)
+        ]
+         [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:331) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":331 -1
+     (nil))
+(insn 39 38 40 7 (set (reg:SI 101)
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":331 -1
+     (nil))
+(insn 40 39 41 7 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 101)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":331 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>)
+        (nil)))
+(insn 41 40 42 7 (set (reg:SI 11 a1)
+        (const_int 331 [0x14b])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":331 -1
+     (nil))
+(insn 42 41 43 7 (set (reg:SI 102)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":331 -1
+     (nil))
+(insn 43 42 44 7 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 102)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":331 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>)
+        (nil)))
+(call_insn 44 43 46 7 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>) [0 __builtin_printf S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":331 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(code_label 46 44 45 8 17 (nil) [1 uses])
+(note 45 46 47 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 47 45 48 8 (set (pc)
+        (label_ref 46)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":331 -1
+     (nil)
+ -> 46)
+(barrier 48 47 49)
+(code_label 49 48 50 9 16 (nil) [1 uses])
+(note 50 49 51 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 51 50 52 9 (set (pc)
+        (if_then_else (ne (reg/v:SI 90 [ uxBitsToWaitFor ])
+                (const_int 0 [0]))
+            (label_ref 66)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":332 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 66)
+(note 52 51 53 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 53 52 54 10 (set (reg:SI 104)
+        (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":332 -1
+     (nil))
+(insn 54 53 55 10 (set (reg:SI 103)
+        (plus:SI (reg:SI 104)
+            (const_int -2048 [0xfffffffffffff800]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":332 -1
+     (expr_list:REG_EQUAL (const_int 30720 [0x7800])
+        (nil)))
+(insn 55 54 56 10 (asm_operands/v ("csrw mstatus,%0") ("") 0 [
+            (reg:SI 103)
+        ]
+         [
+            (asm_input:SI ("r") C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:332)
+        ]
+         [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:332) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":332 -1
+     (nil))
+(insn 56 55 57 10 (set (reg:SI 105)
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":332 -1
+     (nil))
+(insn 57 56 58 10 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 105)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":332 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>)
+        (nil)))
+(insn 58 57 59 10 (set (reg:SI 11 a1)
+        (const_int 332 [0x14c])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":332 -1
+     (nil))
+(insn 59 58 60 10 (set (reg:SI 106)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":332 -1
+     (nil))
+(insn 60 59 61 10 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 106)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":332 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>)
+        (nil)))
+(call_insn 61 60 63 10 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>) [0 __builtin_printf S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":332 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(code_label 63 61 62 11 19 (nil) [1 uses])
+(note 62 63 64 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 64 62 65 11 (set (pc)
+        (label_ref 63)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":332 -1
+     (nil)
+ -> 63)
+(barrier 65 64 66)
+(code_label 66 65 67 12 18 (nil) [1 uses])
+(note 67 66 68 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(call_insn 68 67 69 12 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xTaskGetSchedulerState") [flags 0x41] <function_decl 063e3618 xTaskGetSchedulerState>) [0 xTaskGetSchedulerState S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":335 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetSchedulerState") [flags 0x41] <function_decl 063e3618 xTaskGetSchedulerState>)
+        (nil))
+    (nil))
+(insn 69 68 70 12 (set (reg:SI 73 [ _2 ])
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":335 -1
+     (nil))
+(jump_insn 70 69 71 12 (set (pc)
+        (if_then_else (ne (reg:SI 73 [ _2 ])
+                (const_int 0 [0]))
+            (label_ref 87)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":335 -1
+     (int_list:REG_BR_PROB 354334804 (nil))
+ -> 87)
+(note 71 70 72 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 72 71 73 13 (set (pc)
+        (if_then_else (eq (reg/v:SI 93 [ xTicksToWait ])
+                (const_int 0 [0]))
+            (label_ref 87)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":335 -1
+     (int_list:REG_BR_PROB 719407028 (nil))
+ -> 87)
+(note 73 72 74 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 74 73 75 14 (set (reg:SI 108)
+        (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":335 -1
+     (nil))
+(insn 75 74 76 14 (set (reg:SI 107)
+        (plus:SI (reg:SI 108)
+            (const_int -2048 [0xfffffffffffff800]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":335 -1
+     (expr_list:REG_EQUAL (const_int 30720 [0x7800])
+        (nil)))
+(insn 76 75 77 14 (asm_operands/v ("csrw mstatus,%0") ("") 0 [
+            (reg:SI 107)
+        ]
+         [
+            (asm_input:SI ("r") C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:335)
+        ]
+         [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:335) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":335 -1
+     (nil))
+(insn 77 76 78 14 (set (reg:SI 109)
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":335 -1
+     (nil))
+(insn 78 77 79 14 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 109)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":335 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>)
+        (nil)))
+(insn 79 78 80 14 (set (reg:SI 11 a1)
+        (const_int 335 [0x14f])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":335 -1
+     (nil))
+(insn 80 79 81 14 (set (reg:SI 110)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":335 -1
+     (nil))
+(insn 81 80 82 14 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 110)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":335 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>)
+        (nil)))
+(call_insn 82 81 84 14 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>) [0 __builtin_printf S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":335 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(code_label 84 82 83 15 21 (nil) [1 uses])
+(note 83 84 85 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 85 83 86 15 (set (pc)
+        (label_ref 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":335 -1
+     (nil)
+ -> 84)
+(barrier 86 85 87)
+(code_label 87 86 88 16 20 (nil) [2 uses])
+(note 88 87 89 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(call_insn 89 88 90 16 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 063b54b0 vTaskSuspendAll>) [0 vTaskSuspendAll S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":339 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 063b54b0 vTaskSuspendAll>)
+        (nil))
+    (nil))
+(insn 90 89 91 16 (set (reg/v:SI 88 [ <retval> ])
+        (mem:SI (reg/v/f:SI 89 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_22(D)].uxEventBits+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":341 -1
+     (nil))
+(jump_insn 91 90 92 16 (set (pc)
+        (if_then_else (ne (reg/v:SI 92 [ xWaitForAllBits ])
+                (const_int 0 [0]))
+            (label_ref 98)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":698 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 98)
+(note 92 91 93 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 93 92 94 17 (set (reg:SI 111)
+        (and:SI (reg/v:SI 90 [ uxBitsToWaitFor ])
+            (reg/v:SI 88 [ <retval> ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":702 -1
+     (nil))
+(jump_insn 94 93 97 17 (set (pc)
+        (if_then_else (ne (reg:SI 111)
+                (const_int 0 [0]))
+            (label_ref 102)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":702 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 102)
+(note 97 94 95 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 95 97 96 18 (set (pc)
+        (label_ref 111)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":702 -1
+     (nil)
+ -> 111)
+(barrier 96 95 98)
+(code_label 98 96 99 19 22 (nil) [1 uses])
+(note 99 98 100 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(insn 100 99 101 19 (set (reg:SI 112)
+        (and:SI (reg/v:SI 90 [ uxBitsToWaitFor ])
+            (reg/v:SI 88 [ <retval> ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":715 -1
+     (nil))
+(jump_insn 101 100 102 19 (set (pc)
+        (if_then_else (ne (reg/v:SI 90 [ uxBitsToWaitFor ])
+                (reg:SI 112))
+            (label_ref 111)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":715 -1
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 111)
+(code_label 102 101 103 20 23 (nil) [1 uses])
+(note 103 102 104 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 104 103 105 20 (set (pc)
+        (if_then_else (eq (reg/v:SI 91 [ xClearOnExit ])
+                (const_int 0 [0]))
+            (label_ref 131)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":354 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 131)
+(note 105 104 106 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
+(insn 106 105 107 21 (set (reg:SI 113)
+        (not:SI (reg/v:SI 90 [ uxBitsToWaitFor ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":356 -1
+     (nil))
+(insn 107 106 108 21 (set (reg:SI 114)
+        (and:SI (reg:SI 113)
+            (reg/v:SI 88 [ <retval> ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":356 -1
+     (nil))
+(insn 108 107 109 21 (set (mem:SI (reg/v/f:SI 89 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_22(D)].uxEventBits+0 S4 A32])
+        (reg:SI 114)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":356 -1
+     (nil))
+(jump_insn 109 108 110 21 (set (pc)
+        (label_ref 131)) -1
+     (nil)
+ -> 131)
+(barrier 110 109 111)
+(code_label 111 110 112 22 24 (nil) [2 uses])
+(note 112 111 113 22 [bb 22] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 113 112 114 22 (set (pc)
+        (if_then_else (eq (reg/v:SI 93 [ xTicksToWait ])
+                (const_int 0 [0]))
+            (label_ref:SI 189)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":363 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 189)
+(note 114 113 115 23 [bb 23] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 115 114 116 23 (set (pc)
+        (if_then_else (eq (reg/v:SI 91 [ xClearOnExit ])
+                (const_int 0 [0]))
+            (label_ref:SI 193)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":376 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 193)
+(note 116 115 9 24 [bb 24] NOTE_INSN_BASIC_BLOCK)
+(insn 9 116 190 24 (set (reg/v:SI 82 [ uxControlBits ])
+        (const_int 16777216 [0x1000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":378 -1
+     (nil))
+(jump_insn 190 9 191 24 (set (pc)
+        (label_ref 117)) -1
+     (nil)
+ -> 117)
+(barrier 191 190 193)
+(code_label 193 191 192 25 35 (nil) [1 uses])
+(note 192 193 8 25 [bb 25] NOTE_INSN_BASIC_BLOCK)
+(insn 8 192 117 25 (set (reg/v:SI 82 [ uxControlBits ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":324 -1
+     (nil))
+(code_label 117 8 118 26 26 (nil) [1 uses])
+(note 118 117 119 26 [bb 26] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 119 118 120 26 (set (pc)
+        (if_then_else (eq (reg/v:SI 92 [ xWaitForAllBits ])
+                (const_int 0 [0]))
+            (label_ref 123)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":385 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 123)
+(note 120 119 121 27 [bb 27] NOTE_INSN_BASIC_BLOCK)
+(insn 121 120 122 27 (set (reg:SI 115)
+        (const_int 67108864 [0x4000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":387 -1
+     (nil))
+(insn 122 121 123 27 (set (reg/v:SI 82 [ uxControlBits ])
+        (ior:SI (reg/v:SI 82 [ uxControlBits ])
+            (reg:SI 115))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":387 -1
+     (nil))
+(code_label 123 122 124 28 27 (nil) [1 uses])
+(note 124 123 125 28 [bb 28] NOTE_INSN_BASIC_BLOCK)
+(insn 125 124 126 28 (set (reg:SI 116)
+        (ior:SI (reg/v:SI 82 [ uxControlBits ])
+            (reg/v:SI 90 [ uxBitsToWaitFor ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":397 -1
+     (nil))
+(insn 126 125 127 28 (set (reg:SI 117)
+        (plus:SI (reg/v/f:SI 89 [ xEventGroup ])
+            (const_int 4 [0x4]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":397 -1
+     (nil))
+(insn 127 126 128 28 (set (reg:SI 12 a2)
+        (reg/v:SI 93 [ xTicksToWait ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":397 -1
+     (nil))
+(insn 128 127 129 28 (set (reg:SI 11 a1)
+        (reg:SI 116)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":397 -1
+     (nil))
+(insn 129 128 130 28 (set (reg:SI 10 a0)
+        (reg:SI 117)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":397 -1
+     (nil))
+(call_insn 130 129 10 28 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vTaskPlaceOnUnorderedEventList") [flags 0x41] <function_decl 063e3258 vTaskPlaceOnUnorderedEventList>) [0 vTaskPlaceOnUnorderedEventList S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":397 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskPlaceOnUnorderedEventList") [flags 0x41] <function_decl 063e3258 vTaskPlaceOnUnorderedEventList>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(insn 10 130 11 28 (set (reg/v:SI 72 [ _1 ])
+        (reg/v:SI 93 [ xTicksToWait ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":397 -1
+     (nil))
+(insn 11 10 186 28 (set (reg/v:SI 88 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":402 -1
+     (nil))
+(jump_insn 186 11 187 28 (set (pc)
+        (label_ref 131)) -1
+     (nil)
+ -> 131)
+(barrier 187 186 189)
+(code_label 189 187 188 29 34 (nil) [1 uses])
+(note 188 189 12 29 [bb 29] NOTE_INSN_BASIC_BLOCK)
+(insn 12 188 131 29 (set (reg/v:SI 72 [ _1 ])
+        (reg/v:SI 93 [ xTicksToWait ])) -1
+     (nil))
+(code_label 131 12 132 30 25 (nil) [3 uses])
+(note 132 131 133 30 [bb 30] NOTE_INSN_BASIC_BLOCK)
+(call_insn 133 132 134 30 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 063b5528 xTaskResumeAll>) [0 xTaskResumeAll S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":407 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 063b5528 xTaskResumeAll>)
+        (nil))
+    (nil))
+(insn 134 133 135 30 (set (reg/v:SI 83 [ xAlreadyYielded ])
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":407 -1
+     (nil))
+(jump_insn 135 134 136 30 (set (pc)
+        (if_then_else (eq (reg/v:SI 72 [ _1 ])
+                (const_int 0 [0]))
+            (label_ref:SI 182)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":409 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 182)
+(note 136 135 137 31 [bb 31] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 137 136 138 31 (set (pc)
+        (if_then_else (ne (reg/v:SI 83 [ xAlreadyYielded ])
+                (const_int 0 [0]))
+            (label_ref 142)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":411 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 142)
+(note 138 137 139 32 [bb 32] NOTE_INSN_BASIC_BLOCK)
+(insn 139 138 140 32 (set (reg/f:SI 118)
+        (const_int -536813568 [0xffffffffe000e000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Core/core_riscv.h":227 -1
+     (nil))
+(insn 140 139 141 32 (set (reg:SI 119)
+        (const_int 16384 [0x4000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Core/core_riscv.h":227 -1
+     (nil))
+(insn 141 140 142 32 (set (mem/v:SI (plus:SI (reg/f:SI 118)
+                (const_int 512 [0x200])) [2 MEM[(struct PFIC_Type *)3758153728B].IPSR+0 S4 A128])
+        (reg:SI 119)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Core/core_riscv.h":227 -1
+     (nil))
+(code_label 142 141 143 33 29 (nil) [1 uses])
+(note 143 142 144 33 [bb 33] NOTE_INSN_BASIC_BLOCK)
+(call_insn 144 143 145 33 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("uxTaskResetEventItemValue") [flags 0x41] <function_decl 063e34b0 uxTaskResetEventItemValue>) [0 uxTaskResetEventItemValue S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":424 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("uxTaskResetEventItemValue") [flags 0x41] <function_decl 063e34b0 uxTaskResetEventItemValue>)
+        (nil))
+    (nil))
+(insn 145 144 146 33 (set (reg/v:SI 81 [ uxReturn ])
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":424 -1
+     (nil))
+(insn 146 145 147 33 (set (reg:SI 120)
+        (const_int 33554432 [0x2000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":426 -1
+     (nil))
+(insn 147 146 148 33 (set (reg:SI 121)
+        (and:SI (reg/v:SI 81 [ uxReturn ])
+            (reg:SI 120))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":426 -1
+     (nil))
+(jump_insn 148 147 149 33 (set (pc)
+        (if_then_else (ne (reg:SI 121)
+                (const_int 0 [0]))
+            (label_ref 173)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":426 -1
+     (int_list:REG_BR_PROB 719407028 (nil))
+ -> 173)
+(note 149 148 150 34 [bb 34] NOTE_INSN_BASIC_BLOCK)
+(call_insn 150 149 151 34 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 066353c0 vPortEnterCritical>) [0 vPortEnterCritical S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":428 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 066353c0 vPortEnterCritical>)
+        (nil))
+    (nil))
+(insn 151 150 152 34 (set (reg/v:SI 81 [ uxReturn ])
+        (mem:SI (reg/v/f:SI 89 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_22(D)].uxEventBits+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":431 -1
+     (nil))
+(jump_insn 152 151 153 34 (set (pc)
+        (if_then_else (ne (reg/v:SI 92 [ xWaitForAllBits ])
+                (const_int 0 [0]))
+            (label_ref 159)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":698 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 159)
+(note 153 152 154 35 [bb 35] NOTE_INSN_BASIC_BLOCK)
+(insn 154 153 155 35 (set (reg:SI 122)
+        (and:SI (reg/v:SI 90 [ uxBitsToWaitFor ])
+            (reg/v:SI 81 [ uxReturn ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":702 -1
+     (nil))
+(jump_insn 155 154 158 35 (set (pc)
+        (if_then_else (ne (reg:SI 122)
+                (const_int 0 [0]))
+            (label_ref 163)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":702 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 163)
+(note 158 155 156 36 [bb 36] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 156 158 157 36 (set (pc)
+        (label_ref 170)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":702 -1
+     (nil)
+ -> 170)
+(barrier 157 156 159)
+(code_label 159 157 160 37 31 (nil) [1 uses])
+(note 160 159 161 37 [bb 37] NOTE_INSN_BASIC_BLOCK)
+(insn 161 160 162 37 (set (reg:SI 123)
+        (and:SI (reg/v:SI 90 [ uxBitsToWaitFor ])
+            (reg/v:SI 81 [ uxReturn ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":715 -1
+     (nil))
+(jump_insn 162 161 163 37 (set (pc)
+        (if_then_else (ne (reg/v:SI 90 [ uxBitsToWaitFor ])
+                (reg:SI 123))
+            (label_ref 170)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":715 -1
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 170)
+(code_label 163 162 164 38 32 (nil) [1 uses])
+(note 164 163 165 38 [bb 38] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 165 164 166 38 (set (pc)
+        (if_then_else (eq (reg/v:SI 91 [ xClearOnExit ])
+                (const_int 0 [0]))
+            (label_ref 170)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":437 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 170)
+(note 166 165 167 39 [bb 39] NOTE_INSN_BASIC_BLOCK)
+(insn 167 166 168 39 (set (reg:SI 124)
+        (not:SI (reg/v:SI 90 [ uxBitsToWaitFor ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":439 -1
+     (nil))
+(insn 168 167 169 39 (set (reg:SI 125)
+        (and:SI (reg:SI 124)
+            (reg/v:SI 81 [ uxReturn ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":439 -1
+     (nil))
+(insn 169 168 170 39 (set (mem:SI (reg/v/f:SI 89 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_22(D)].uxEventBits+0 S4 A32])
+        (reg:SI 125)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":439 -1
+     (nil))
+(code_label 170 169 171 40 33 (nil) [3 uses])
+(note 171 170 172 40 [bb 40] NOTE_INSN_BASIC_BLOCK)
+(call_insn 172 171 173 40 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 06635438 vPortExitCritical>) [0 vPortExitCritical S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":453 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 06635438 vPortExitCritical>)
+        (nil))
+    (nil))
+(code_label 173 172 174 41 30 (nil) [1 uses])
+(note 174 173 175 41 [bb 41] NOTE_INSN_BASIC_BLOCK)
+(insn 175 174 176 41 (set (reg:SI 127)
+        (const_int 16777216 [0x1000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":461 -1
+     (nil))
+(insn 176 175 177 41 (set (reg:SI 126)
+        (plus:SI (reg:SI 127)
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":461 -1
+     (expr_list:REG_EQUAL (const_int 16777215 [0xffffff])
+        (nil)))
+(insn 177 176 182 41 (set (reg/v:SI 88 [ <retval> ])
+        (and:SI (reg/v:SI 81 [ uxReturn ])
+            (reg:SI 126))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":461 -1
+     (nil))
+(code_label 182 177 185 43 13 (nil) [1 uses])
+(note 185 182 183 43 [bb 43] NOTE_INSN_BASIC_BLOCK)
+(insn 183 185 184 43 (set (reg/i:SI 10 a0)
+        (reg/v:SI 88 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":470 -1
+     (nil))
+(insn 184 183 0 43 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":470 -1
+     (nil))
+
+;; Function xEventGroupClearBits (xEventGroupClearBits, funcdef_no=33, decl_uid=6398, cgraph_uid=33, symbol_order=33)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 49.
+Merging block 10 into block 9...
+Merged blocks 9 and 10.
+Merged 9 and 10 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 76 [ xEventGroup ])
+        (reg:SI 10 a0 [ xEventGroup ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":475 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 77 [ uxBitsToClear ])
+        (reg:SI 11 a1 [ uxBitsToClear ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":475 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(jump_insn 7 4 8 2 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 76 [ xEventGroup ])
+                (const_int 0 [0]))
+            (label_ref 22)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":481 -1
+     (int_list:REG_BR_PROB 886588628 (nil))
+ -> 22)
+(note 8 7 9 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 9 8 10 4 (set (reg:SI 79)
+        (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":481 -1
+     (nil))
+(insn 10 9 11 4 (set (reg:SI 78)
+        (plus:SI (reg:SI 79)
+            (const_int -2048 [0xfffffffffffff800]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":481 -1
+     (expr_list:REG_EQUAL (const_int 30720 [0x7800])
+        (nil)))
+(insn 11 10 12 4 (asm_operands/v ("csrw mstatus,%0") ("") 0 [
+            (reg:SI 78)
+        ]
+         [
+            (asm_input:SI ("r") C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:481)
+        ]
+         [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:481) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":481 -1
+     (nil))
+(insn 12 11 13 4 (set (reg:SI 80)
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":481 -1
+     (nil))
+(insn 13 12 14 4 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 80)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":481 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>)
+        (nil)))
+(insn 14 13 15 4 (set (reg:SI 11 a1)
+        (const_int 481 [0x1e1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":481 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 81)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":481 -1
+     (nil))
+(insn 16 15 17 4 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 81)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":481 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>)
+        (nil)))
+(call_insn 17 16 19 4 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>) [0 __builtin_printf S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":481 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(code_label 19 17 18 5 55 (nil) [1 uses])
+(note 18 19 20 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 20 18 21 5 (set (pc)
+        (label_ref 19)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":481 -1
+     (nil)
+ -> 19)
+(barrier 21 20 22)
+(code_label 22 21 23 6 54 (nil) [1 uses])
+(note 23 22 24 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 24 23 25 6 (set (reg:SI 82)
+        (const_int -16777216 [0xffffffffff000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":482 -1
+     (nil))
+(insn 25 24 26 6 (set (reg:SI 83)
+        (and:SI (reg/v:SI 77 [ uxBitsToClear ])
+            (reg:SI 82))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":482 -1
+     (nil))
+(jump_insn 26 25 27 6 (set (pc)
+        (if_then_else (eq (reg:SI 83)
+                (const_int 0 [0]))
+            (label_ref 41)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":482 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 41)
+(note 27 26 28 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 28 27 29 7 (set (reg:SI 85)
+        (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":482 -1
+     (nil))
+(insn 29 28 30 7 (set (reg:SI 84)
+        (plus:SI (reg:SI 85)
+            (const_int -2048 [0xfffffffffffff800]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":482 -1
+     (expr_list:REG_EQUAL (const_int 30720 [0x7800])
+        (nil)))
+(insn 30 29 31 7 (asm_operands/v ("csrw mstatus,%0") ("") 0 [
+            (reg:SI 84)
+        ]
+         [
+            (asm_input:SI ("r") C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:482)
+        ]
+         [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:482) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":482 -1
+     (nil))
+(insn 31 30 32 7 (set (reg:SI 86)
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":482 -1
+     (nil))
+(insn 32 31 33 7 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 86)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":482 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>)
+        (nil)))
+(insn 33 32 34 7 (set (reg:SI 11 a1)
+        (const_int 482 [0x1e2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":482 -1
+     (nil))
+(insn 34 33 35 7 (set (reg:SI 87)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":482 -1
+     (nil))
+(insn 35 34 36 7 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 87)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":482 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>)
+        (nil)))
+(call_insn 36 35 38 7 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>) [0 __builtin_printf S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":482 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(code_label 38 36 37 8 57 (nil) [1 uses])
+(note 37 38 39 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 39 37 40 8 (set (pc)
+        (label_ref 38)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":482 -1
+     (nil)
+ -> 38)
+(barrier 40 39 41)
+(code_label 41 40 42 9 56 (nil) [1 uses])
+(note 42 41 43 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(call_insn 43 42 44 9 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 066353c0 vPortEnterCritical>) [0 vPortEnterCritical S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":484 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 066353c0 vPortEnterCritical>)
+        (nil))
+    (nil))
+(insn 44 43 45 9 (set (reg/v:SI 75 [ <retval> ])
+        (mem:SI (reg/v/f:SI 76 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_5(D)].uxEventBits+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":490 -1
+     (nil))
+(insn 45 44 46 9 (set (reg:SI 88)
+        (not:SI (reg/v:SI 77 [ uxBitsToClear ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":493 -1
+     (nil))
+(insn 46 45 47 9 (set (reg:SI 89)
+        (and:SI (reg:SI 88)
+            (reg/v:SI 75 [ <retval> ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":493 -1
+     (nil))
+(insn 47 46 48 9 (set (mem:SI (reg/v/f:SI 76 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_5(D)].uxEventBits+0 S4 A32])
+        (reg:SI 89)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":493 -1
+     (nil))
+(call_insn 48 47 52 9 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 06635438 vPortExitCritical>) [0 vPortExitCritical S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":495 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 06635438 vPortExitCritical>)
+        (nil))
+    (nil))
+(insn 52 48 53 9 (set (reg/i:SI 10 a0)
+        (reg/v:SI 75 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":498 -1
+     (nil))
+(insn 53 52 0 9 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":498 -1
+     (nil))
+
+;; Function xEventGroupGetBitsFromISR (xEventGroupGetBitsFromISR, funcdef_no=34, decl_uid=6408, cgraph_uid=34, symbol_order=34)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 11.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 74 [ xEventGroup ])
+        (reg:SI 10 a0 [ xEventGroup ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":518 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(call_insn 6 3 7 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 066354b0 xPortSetInterruptMask>) [0 xPortSetInterruptMask S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":523 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 066354b0 xPortSetInterruptMask>)
+        (nil))
+    (nil))
+(insn 7 6 8 2 (set (reg/v:SI 72 [ uxSavedInterruptStatus ])
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":523 -1
+     (nil))
+(insn 8 7 9 2 (set (reg/v:SI 73 [ <retval> ])
+        (mem:SI (reg/v/f:SI 74 [ xEventGroup ]) [2 MEM[(const struct EventGroup_t *)xEventGroup_1(D)].uxEventBits+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":525 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 10 a0)
+        (reg/v:SI 72 [ uxSavedInterruptStatus ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":527 -1
+     (nil))
+(call_insn 10 9 14 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 06635528 vPortClearInterruptMask>) [0 vPortClearInterruptMask S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":527 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 06635528 vPortClearInterruptMask>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 14 10 15 2 (set (reg/i:SI 10 a0)
+        (reg/v:SI 73 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":530 -1
+     (nil))
+(insn 15 14 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":530 -1
+     (nil))
+
+;; Function xEventGroupSetBits (xEventGroupSetBits, funcdef_no=35, decl_uid=6401, cgraph_uid=35, symbol_order=35)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+;; Generating RTL for gimple basic block 15
+
+;; Generating RTL for gimple basic block 16
+
+;; Generating RTL for gimple basic block 17
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 11->12 to 17 failed.
+Removing jump 100.
+Merging block 20 into block 19...
+Merged blocks 19 and 20.
+Merged 19 and 20 without moving.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 11->12 to 17 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 7 NOTE_INSN_DELETED)
+(note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (reg/v/f:SI 89 [ xEventGroup ])
+        (reg:SI 10 a0 [ xEventGroup ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":535 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 90 [ uxBitsToSet ])
+        (reg:SI 11 a1 [ uxBitsToSet ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":535 -1
+     (nil))
+(note 4 3 9 2 NOTE_INSN_FUNCTION_BEG)
+(jump_insn 9 4 10 2 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 89 [ xEventGroup ])
+                (const_int 0 [0]))
+            (label_ref 24)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":545 -1
+     (int_list:REG_BR_PROB 886588628 (nil))
+ -> 24)
+(note 10 9 11 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 11 10 12 4 (set (reg:SI 92)
+        (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":545 -1
+     (nil))
+(insn 12 11 13 4 (set (reg:SI 91)
+        (plus:SI (reg:SI 92)
+            (const_int -2048 [0xfffffffffffff800]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":545 -1
+     (expr_list:REG_EQUAL (const_int 30720 [0x7800])
+        (nil)))
+(insn 13 12 14 4 (asm_operands/v ("csrw mstatus,%0") ("") 0 [
+            (reg:SI 91)
+        ]
+         [
+            (asm_input:SI ("r") C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:545)
+        ]
+         [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:545) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":545 -1
+     (nil))
+(insn 14 13 15 4 (set (reg:SI 93)
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":545 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 93)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":545 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>)
+        (nil)))
+(insn 16 15 17 4 (set (reg:SI 11 a1)
+        (const_int 545 [0x221])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":545 -1
+     (nil))
+(insn 17 16 18 4 (set (reg:SI 94)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":545 -1
+     (nil))
+(insn 18 17 19 4 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 94)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":545 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>)
+        (nil)))
+(call_insn 19 18 21 4 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>) [0 __builtin_printf S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":545 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(code_label 21 19 20 5 63 (nil) [1 uses])
+(note 20 21 22 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 22 20 23 5 (set (pc)
+        (label_ref 21)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":545 -1
+     (nil)
+ -> 21)
+(barrier 23 22 24)
+(code_label 24 23 25 6 62 (nil) [1 uses])
+(note 25 24 26 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 26 25 27 6 (set (reg:SI 95)
+        (const_int -16777216 [0xffffffffff000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":546 -1
+     (nil))
+(insn 27 26 28 6 (set (reg:SI 96)
+        (and:SI (reg/v:SI 90 [ uxBitsToSet ])
+            (reg:SI 95))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":546 -1
+     (nil))
+(jump_insn 28 27 29 6 (set (pc)
+        (if_then_else (eq (reg:SI 96)
+                (const_int 0 [0]))
+            (label_ref 43)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":546 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 43)
+(note 29 28 30 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 30 29 31 7 (set (reg:SI 98)
+        (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":546 -1
+     (nil))
+(insn 31 30 32 7 (set (reg:SI 97)
+        (plus:SI (reg:SI 98)
+            (const_int -2048 [0xfffffffffffff800]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":546 -1
+     (expr_list:REG_EQUAL (const_int 30720 [0x7800])
+        (nil)))
+(insn 32 31 33 7 (asm_operands/v ("csrw mstatus,%0") ("") 0 [
+            (reg:SI 97)
+        ]
+         [
+            (asm_input:SI ("r") C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:546)
+        ]
+         [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:546) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":546 -1
+     (nil))
+(insn 33 32 34 7 (set (reg:SI 99)
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":546 -1
+     (nil))
+(insn 34 33 35 7 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 99)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":546 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>)
+        (nil)))
+(insn 35 34 36 7 (set (reg:SI 11 a1)
+        (const_int 546 [0x222])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":546 -1
+     (nil))
+(insn 36 35 37 7 (set (reg:SI 100)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":546 -1
+     (nil))
+(insn 37 36 38 7 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 100)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":546 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>)
+        (nil)))
+(call_insn 38 37 40 7 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>) [0 __builtin_printf S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":546 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(code_label 40 38 39 8 65 (nil) [1 uses])
+(note 39 40 41 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 41 39 42 8 (set (pc)
+        (label_ref 40)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":546 -1
+     (nil)
+ -> 40)
+(barrier 42 41 43)
+(code_label 43 42 44 9 64 (nil) [1 uses])
+(note 44 43 45 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 45 44 46 9 (set (reg:SI 101)
+        (plus:SI (reg/v/f:SI 89 [ xEventGroup ])
+            (const_int 4 [0x4]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":549 -1
+     (nil))
+(insn 46 45 47 9 (set (reg/v/f:SI 73 [ pxListEnd ])
+        (plus:SI (reg:SI 101)
+            (const_int 8 [0x8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":549 -1
+     (nil))
+(call_insn 47 46 48 9 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 063b54b0 vTaskSuspendAll>) [0 vTaskSuspendAll S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":550 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 063b54b0 vTaskSuspendAll>)
+        (nil))
+    (nil))
+(insn 48 47 49 9 (set (reg/v/f:SI 76 [ pxListItem ])
+        (mem/f:SI (plus:SI (reg/v/f:SI 89 [ xEventGroup ])
+                (const_int 16 [0x10])) [4 MEM[(const struct List_t *)xEventGroup_3(D) + 4B].xListEnd.pxNext+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":554 -1
+     (nil))
+(insn 49 48 50 9 (set (reg:SI 103)
+        (mem:SI (reg/v/f:SI 89 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_3(D)].uxEventBits+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":557 -1
+     (nil))
+(insn 50 49 51 9 (set (reg:SI 102)
+        (ior:SI (reg:SI 103)
+            (reg/v:SI 90 [ uxBitsToSet ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":557 -1
+     (nil))
+(insn 51 50 6 9 (set (mem:SI (reg/v/f:SI 89 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_3(D)].uxEventBits+0 S4 A32])
+        (reg:SI 102)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":557 -1
+     (nil))
+(insn 6 51 52 9 (set (reg/v:SI 82 [ uxBitsToClear ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":539 -1
+     (nil))
+(jump_insn 52 6 53 9 (set (pc)
+        (label_ref 88)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":557 -1
+     (nil)
+ -> 88)
+(barrier 53 52 91)
+(code_label 91 53 54 10 71 (nil) [1 uses])
+(note 54 91 55 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 55 54 56 10 (set (reg/v/f:SI 77 [ pxNext ])
+        (mem/f:SI (plus:SI (reg/v/f:SI 76 [ pxListItem ])
+                (const_int 4 [0x4])) [4 pxListItem_13->pxNext+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":562 -1
+     (nil))
+(insn 56 55 57 10 (set (reg/v:SI 78 [ uxBitsWaitedFor ])
+        (mem:SI (reg/v/f:SI 76 [ pxListItem ]) [2 pxListItem_13->xItemValue+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":563 -1
+     (nil))
+(insn 57 56 58 10 (set (reg:SI 105)
+        (const_int 16777216 [0x1000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":568 -1
+     (nil))
+(insn 58 57 59 10 (set (reg:SI 104)
+        (plus:SI (reg:SI 105)
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":568 -1
+     (expr_list:REG_EQUAL (const_int 16777215 [0xffffff])
+        (nil)))
+(insn 59 58 60 10 (set (reg/v:SI 79 [ uxBitsWaitedFor ])
+        (and:SI (reg/v:SI 78 [ uxBitsWaitedFor ])
+            (reg:SI 104))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":568 -1
+     (nil))
+(insn 60 59 61 10 (set (reg:SI 86 [ _46 ])
+        (and:SI (reg/v:SI 79 [ uxBitsWaitedFor ])
+            (reg:SI 87 [ pretmp_50 ]))) -1
+     (nil))
+(insn 61 60 62 10 (set (reg:SI 106)
+        (const_int 67108864 [0x4000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":570 -1
+     (nil))
+(insn 62 61 63 10 (set (reg:SI 107)
+        (and:SI (reg/v:SI 78 [ uxBitsWaitedFor ])
+            (reg:SI 106))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":570 -1
+     (nil))
+(jump_insn 63 62 64 10 (set (pc)
+        (if_then_else (ne (reg:SI 107)
+                (const_int 0 [0]))
+            (label_ref 69)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":570 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 69)
+(note 64 63 65 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 65 64 68 11 (set (pc)
+        (if_then_else (ne (reg:SI 86 [ _46 ])
+                (const_int 0 [0]))
+            (label_ref 72)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":573 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 72)
+(note 68 65 66 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 66 68 67 12 (set (pc)
+        (label_ref 86)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":573 -1
+     (nil)
+ -> 86)
+(barrier 67 66 69)
+(code_label 69 67 70 13 67 (nil) [1 uses])
+(note 70 69 71 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 71 70 72 13 (set (pc)
+        (if_then_else (ne (reg/v:SI 79 [ uxBitsWaitedFor ])
+                (reg:SI 86 [ _46 ]))
+            (label_ref 86)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":582 -1
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 86)
+(code_label 72 71 73 14 68 (nil) [1 uses])
+(note 73 72 74 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 74 73 75 14 (set (reg:SI 108)
+        (const_int 16777216 [0x1000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":595 -1
+     (nil))
+(insn 75 74 76 14 (set (reg:SI 109)
+        (and:SI (reg/v:SI 78 [ uxBitsWaitedFor ])
+            (reg:SI 108))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":595 -1
+     (nil))
+(jump_insn 76 75 77 14 (set (pc)
+        (if_then_else (eq (reg:SI 109)
+                (const_int 0 [0]))
+            (label_ref 79)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":595 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 79)
+(note 77 76 78 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 78 77 79 15 (set (reg/v:SI 82 [ uxBitsToClear ])
+        (ior:SI (reg/v:SI 82 [ uxBitsToClear ])
+            (reg/v:SI 79 [ uxBitsWaitedFor ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":597 -1
+     (nil))
+(code_label 79 78 80 16 70 (nil) [1 uses])
+(note 80 79 81 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 81 80 82 16 (set (reg:SI 110)
+        (const_int 33554432 [0x2000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":609 -1
+     (nil))
+(insn 82 81 83 16 (set (reg:SI 111)
+        (ior:SI (reg:SI 87 [ pretmp_50 ])
+            (reg:SI 110))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":609 -1
+     (nil))
+(insn 83 82 84 16 (set (reg:SI 11 a1)
+        (reg:SI 111)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":609 -1
+     (nil))
+(insn 84 83 85 16 (set (reg:SI 10 a0)
+        (reg/v/f:SI 76 [ pxListItem ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":609 -1
+     (nil))
+(call_insn 85 84 86 16 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vTaskRemoveFromUnorderedEventList") [flags 0x41] <function_decl 063e33c0 vTaskRemoveFromUnorderedEventList>) [0 vTaskRemoveFromUnorderedEventList S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":609 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskRemoveFromUnorderedEventList") [flags 0x41] <function_decl 063e33c0 vTaskRemoveFromUnorderedEventList>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(code_label 86 85 87 17 69 (nil) [2 uses])
+(note 87 86 5 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 5 87 88 17 (set (reg/v/f:SI 76 [ pxListItem ])
+        (reg/v/f:SI 77 [ pxNext ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":535 -1
+     (nil))
+(code_label 88 5 89 18 66 (nil) [1 uses])
+(note 89 88 90 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(insn 90 89 92 18 (set (reg:SI 87 [ pretmp_50 ])
+        (mem:SI (reg/v/f:SI 89 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_3(D)].uxEventBits+0 S4 A32])) -1
+     (nil))
+(jump_insn 92 90 93 18 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 73 [ pxListEnd ])
+                (reg/v/f:SI 76 [ pxListItem ]))
+            (label_ref 91)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":560 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 91)
+(note 93 92 94 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(insn 94 93 95 19 (set (reg:SI 112)
+        (not:SI (reg/v:SI 82 [ uxBitsToClear ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":620 -1
+     (nil))
+(insn 95 94 96 19 (set (reg:SI 113)
+        (and:SI (reg:SI 112)
+            (reg:SI 87 [ pretmp_50 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":620 -1
+     (nil))
+(insn 96 95 97 19 (set (mem:SI (reg/v/f:SI 89 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_3(D)].uxEventBits+0 S4 A32])
+        (reg:SI 113)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":620 -1
+     (nil))
+(call_insn 97 96 98 19 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 063b5528 xTaskResumeAll>) [0 xTaskResumeAll S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":622 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 063b5528 xTaskResumeAll>)
+        (nil))
+    (nil))
+(insn 98 97 99 19 (set (reg:SI 115)
+        (mem:SI (reg/v/f:SI 89 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_3(D)].uxEventBits+0 S4 A32])) -1
+     (nil))
+(insn 99 98 103 19 (set (reg:SI 88 [ <retval> ])
+        (reg:SI 115)) -1
+     (nil))
+(insn 103 99 104 19 (set (reg/i:SI 10 a0)
+        (reg:SI 88 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":625 -1
+     (nil))
+(insn 104 103 0 19 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":625 -1
+     (nil))
+
+;; Function xEventGroupSync (xEventGroupSync, funcdef_no=31, decl_uid=6406, cgraph_uid=31, symbol_order=31)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+;; Generating RTL for gimple basic block 15
+
+;; Generating RTL for gimple basic block 16
+
+;; Generating RTL for gimple basic block 17
+
+;; Generating RTL for gimple basic block 18
+
+;; Generating RTL for gimple basic block 19
+
+;; Generating RTL for gimple basic block 20
+
+;; Generating RTL for gimple basic block 21
+
+;; Generating RTL for gimple basic block 22
+
+;; Generating RTL for gimple basic block 23
+
+;; Generating RTL for gimple basic block 24
+
+;; Generating RTL for gimple basic block 25
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 18->26 redirected to 27
+Merging block 26 into block 25...
+Merged blocks 25 and 26.
+Merged 25 and 26 without moving.
+Removing jump 136.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 9 NOTE_INSN_DELETED)
+(note 9 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 9 3 2 (set (reg/v/f:SI 88 [ xEventGroup ])
+        (reg:SI 10 a0 [ xEventGroup ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":198 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 89 [ uxBitsToSet ])
+        (reg:SI 11 a1 [ uxBitsToSet ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":198 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 90 [ uxBitsToWaitFor ])
+        (reg:SI 12 a2 [ uxBitsToWaitFor ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":198 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SI 91 [ xTicksToWait ])
+        (reg:SI 13 a3 [ xTicksToWait ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":198 -1
+     (nil))
+(note 6 5 11 2 NOTE_INSN_FUNCTION_BEG)
+(insn 11 6 12 2 (set (reg:SI 92)
+        (const_int -16777216 [0xffffffffff000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":204 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 93)
+        (and:SI (reg/v:SI 90 [ uxBitsToWaitFor ])
+            (reg:SI 92))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":204 -1
+     (nil))
+(jump_insn 13 12 14 2 (set (pc)
+        (if_then_else (eq (reg:SI 93)
+                (const_int 0 [0]))
+            (label_ref 28)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":204 -1
+     (int_list:REG_BR_PROB 719407028 (nil))
+ -> 28)
+(note 14 13 15 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 15 14 16 4 (set (reg:SI 95)
+        (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":204 -1
+     (nil))
+(insn 16 15 17 4 (set (reg:SI 94)
+        (plus:SI (reg:SI 95)
+            (const_int -2048 [0xfffffffffffff800]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":204 -1
+     (expr_list:REG_EQUAL (const_int 30720 [0x7800])
+        (nil)))
+(insn 17 16 18 4 (asm_operands/v ("csrw mstatus,%0") ("") 0 [
+            (reg:SI 94)
+        ]
+         [
+            (asm_input:SI ("r") C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:204)
+        ]
+         [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:204) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":204 -1
+     (nil))
+(insn 18 17 19 4 (set (reg:SI 96)
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":204 -1
+     (nil))
+(insn 19 18 20 4 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 96)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":204 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>)
+        (nil)))
+(insn 20 19 21 4 (set (reg:SI 11 a1)
+        (const_int 204 [0xcc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":204 -1
+     (nil))
+(insn 21 20 22 4 (set (reg:SI 97)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":204 -1
+     (nil))
+(insn 22 21 23 4 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 97)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":204 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>)
+        (nil)))
+(call_insn 23 22 25 4 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>) [0 __builtin_printf S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":204 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(code_label 25 23 24 5 78 (nil) [1 uses])
+(note 24 25 26 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 26 24 27 5 (set (pc)
+        (label_ref 25)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":204 -1
+     (nil)
+ -> 25)
+(barrier 27 26 28)
+(code_label 28 27 29 6 77 (nil) [1 uses])
+(note 29 28 30 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 30 29 31 6 (set (pc)
+        (if_then_else (ne (reg/v:SI 90 [ uxBitsToWaitFor ])
+                (const_int 0 [0]))
+            (label_ref 45)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":205 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 45)
+(note 31 30 32 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 32 31 33 7 (set (reg:SI 99)
+        (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":205 -1
+     (nil))
+(insn 33 32 34 7 (set (reg:SI 98)
+        (plus:SI (reg:SI 99)
+            (const_int -2048 [0xfffffffffffff800]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":205 -1
+     (expr_list:REG_EQUAL (const_int 30720 [0x7800])
+        (nil)))
+(insn 34 33 35 7 (asm_operands/v ("csrw mstatus,%0") ("") 0 [
+            (reg:SI 98)
+        ]
+         [
+            (asm_input:SI ("r") C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:205)
+        ]
+         [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:205) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":205 -1
+     (nil))
+(insn 35 34 36 7 (set (reg:SI 100)
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":205 -1
+     (nil))
+(insn 36 35 37 7 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 100)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":205 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>)
+        (nil)))
+(insn 37 36 38 7 (set (reg:SI 11 a1)
+        (const_int 205 [0xcd])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":205 -1
+     (nil))
+(insn 38 37 39 7 (set (reg:SI 101)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":205 -1
+     (nil))
+(insn 39 38 40 7 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 101)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":205 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>)
+        (nil)))
+(call_insn 40 39 42 7 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>) [0 __builtin_printf S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":205 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(code_label 42 40 41 8 80 (nil) [1 uses])
+(note 41 42 43 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 43 41 44 8 (set (pc)
+        (label_ref 42)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":205 -1
+     (nil)
+ -> 42)
+(barrier 44 43 45)
+(code_label 45 44 46 9 79 (nil) [1 uses])
+(note 46 45 47 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(call_insn 47 46 48 9 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xTaskGetSchedulerState") [flags 0x41] <function_decl 063e3618 xTaskGetSchedulerState>) [0 xTaskGetSchedulerState S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":208 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetSchedulerState") [flags 0x41] <function_decl 063e3618 xTaskGetSchedulerState>)
+        (nil))
+    (nil))
+(insn 48 47 49 9 (set (reg:SI 73 [ _2 ])
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":208 -1
+     (nil))
+(jump_insn 49 48 50 9 (set (pc)
+        (if_then_else (ne (reg:SI 73 [ _2 ])
+                (const_int 0 [0]))
+            (label_ref 66)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":208 -1
+     (int_list:REG_BR_PROB 354334804 (nil))
+ -> 66)
+(note 50 49 51 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 51 50 52 10 (set (pc)
+        (if_then_else (eq (reg/v:SI 91 [ xTicksToWait ])
+                (const_int 0 [0]))
+            (label_ref 66)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":208 -1
+     (int_list:REG_BR_PROB 719407028 (nil))
+ -> 66)
+(note 52 51 53 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 53 52 54 11 (set (reg:SI 103)
+        (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":208 -1
+     (nil))
+(insn 54 53 55 11 (set (reg:SI 102)
+        (plus:SI (reg:SI 103)
+            (const_int -2048 [0xfffffffffffff800]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":208 -1
+     (expr_list:REG_EQUAL (const_int 30720 [0x7800])
+        (nil)))
+(insn 55 54 56 11 (asm_operands/v ("csrw mstatus,%0") ("") 0 [
+            (reg:SI 102)
+        ]
+         [
+            (asm_input:SI ("r") C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:208)
+        ]
+         [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:208) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":208 -1
+     (nil))
+(insn 56 55 57 11 (set (reg:SI 104)
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":208 -1
+     (nil))
+(insn 57 56 58 11 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 104)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":208 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>)
+        (nil)))
+(insn 58 57 59 11 (set (reg:SI 11 a1)
+        (const_int 208 [0xd0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":208 -1
+     (nil))
+(insn 59 58 60 11 (set (reg:SI 105)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":208 -1
+     (nil))
+(insn 60 59 61 11 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 105)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":208 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>)
+        (nil)))
+(call_insn 61 60 63 11 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>) [0 __builtin_printf S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":208 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(code_label 63 61 62 12 82 (nil) [1 uses])
+(note 62 63 64 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 64 62 65 12 (set (pc)
+        (label_ref 63)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":208 -1
+     (nil)
+ -> 63)
+(barrier 65 64 66)
+(code_label 66 65 67 13 81 (nil) [2 uses])
+(note 67 66 68 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(call_insn 68 67 69 13 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 063b54b0 vTaskSuspendAll>) [0 vTaskSuspendAll S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":212 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 063b54b0 vTaskSuspendAll>)
+        (nil))
+    (nil))
+(insn 69 68 70 13 (set (reg/v:SI 85 [ uxOriginalBitValue ])
+        (mem:SI (reg/v/f:SI 88 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_23(D)].uxEventBits+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":214 -1
+     (nil))
+(insn 70 69 71 13 (set (reg:SI 11 a1)
+        (reg/v:SI 89 [ uxBitsToSet ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":216 -1
+     (nil))
+(insn 71 70 72 13 (set (reg:SI 10 a0)
+        (reg/v/f:SI 88 [ xEventGroup ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":216 -1
+     (nil))
+(call_insn 72 71 73 13 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xEventGroupSetBits") [flags 0x3] <function_decl 063bb3c0 xEventGroupSetBits>) [0 xEventGroupSetBits S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":216 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupSetBits") [flags 0x3] <function_decl 063bb3c0 xEventGroupSetBits>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 73 72 74 13 (set (reg/v:SI 87 [ <retval> ])
+        (ior:SI (reg/v:SI 85 [ uxOriginalBitValue ])
+            (reg/v:SI 89 [ uxBitsToSet ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":218 -1
+     (nil))
+(insn 74 73 75 13 (set (reg:SI 106)
+        (and:SI (reg/v:SI 87 [ <retval> ])
+            (reg/v:SI 90 [ uxBitsToWaitFor ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":218 -1
+     (nil))
+(jump_insn 75 74 76 13 (set (pc)
+        (if_then_else (ne (reg:SI 106)
+                (reg/v:SI 90 [ uxBitsToWaitFor ]))
+            (label_ref 83)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":218 -1
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 83)
+(note 76 75 77 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 77 76 78 14 (set (reg:SI 107)
+        (not:SI (reg/v:SI 90 [ uxBitsToWaitFor ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":225 -1
+     (nil))
+(insn 78 77 79 14 (set (reg:SI 109)
+        (mem:SI (reg/v/f:SI 88 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_23(D)].uxEventBits+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":225 -1
+     (nil))
+(insn 79 78 80 14 (set (reg:SI 108)
+        (and:SI (reg:SI 109)
+            (reg:SI 107))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":225 -1
+     (nil))
+(insn 80 79 7 14 (set (mem:SI (reg/v/f:SI 88 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_23(D)].uxEventBits+0 S4 A32])
+        (reg:SI 108)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":225 -1
+     (nil))
+(insn 7 80 81 14 (set (reg/v:SI 91 [ xTicksToWait ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":227 -1
+     (nil))
+(jump_insn 81 7 82 14 (set (pc)
+        (label_ref 99)) -1
+     (nil)
+ -> 99)
+(barrier 82 81 83)
+(code_label 83 82 84 15 83 (nil) [1 uses])
+(note 84 83 85 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 85 84 86 15 (set (pc)
+        (if_then_else (eq (reg/v:SI 91 [ xTicksToWait ])
+                (const_int 0 [0]))
+            (label_ref 96)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":231 -1
+     (int_list:REG_BR_PROB 719407028 (nil))
+ -> 96)
+(note 86 85 87 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 87 86 88 16 (set (reg:SI 110)
+        (const_int 83886080 [0x5000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":238 -1
+     (nil))
+(insn 88 87 89 16 (set (reg:SI 111)
+        (ior:SI (reg/v:SI 90 [ uxBitsToWaitFor ])
+            (reg:SI 110))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":238 -1
+     (nil))
+(insn 89 88 90 16 (set (reg:SI 112)
+        (plus:SI (reg/v/f:SI 88 [ xEventGroup ])
+            (const_int 4 [0x4]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":238 -1
+     (nil))
+(insn 90 89 91 16 (set (reg:SI 12 a2)
+        (reg/v:SI 91 [ xTicksToWait ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":238 -1
+     (nil))
+(insn 91 90 92 16 (set (reg:SI 11 a1)
+        (reg:SI 111)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":238 -1
+     (nil))
+(insn 92 91 93 16 (set (reg:SI 10 a0)
+        (reg:SI 112)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":238 -1
+     (nil))
+(call_insn 93 92 8 16 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vTaskPlaceOnUnorderedEventList") [flags 0x41] <function_decl 063e3258 vTaskPlaceOnUnorderedEventList>) [0 vTaskPlaceOnUnorderedEventList S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":238 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskPlaceOnUnorderedEventList") [flags 0x41] <function_decl 063e3258 vTaskPlaceOnUnorderedEventList>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(insn 8 93 94 16 (set (reg/v:SI 87 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":244 -1
+     (nil))
+(jump_insn 94 8 95 16 (set (pc)
+        (label_ref 99)) -1
+     (nil)
+ -> 99)
+(barrier 95 94 96)
+(code_label 96 95 97 17 85 (nil) [1 uses])
+(note 97 96 98 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 98 97 99 17 (set (reg/v:SI 87 [ <retval> ])
+        (mem:SI (reg/v/f:SI 88 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_23(D)].uxEventBits+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":250 -1
+     (nil))
+(code_label 99 98 100 18 84 (nil) [2 uses])
+(note 100 99 101 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(call_insn 101 100 102 18 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 063b5528 xTaskResumeAll>) [0 xTaskResumeAll S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":255 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 063b5528 xTaskResumeAll>)
+        (nil))
+    (nil))
+(insn 102 101 103 18 (set (reg/v:SI 86 [ xAlreadyYielded ])
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":255 -1
+     (nil))
+(jump_insn 103 102 104 18 (set (pc)
+        (if_then_else (eq (reg/v:SI 91 [ xTicksToWait ])
+                (const_int 0 [0]))
+            (label_ref:SI 138)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":257 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 138)
+(note 104 103 105 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 105 104 106 19 (set (pc)
+        (if_then_else (ne (reg/v:SI 86 [ xAlreadyYielded ])
+                (const_int 0 [0]))
+            (label_ref 110)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":259 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 110)
+(note 106 105 107 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+(insn 107 106 108 20 (set (reg/f:SI 113)
+        (const_int -536813568 [0xffffffffe000e000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Core/core_riscv.h":227 -1
+     (nil))
+(insn 108 107 109 20 (set (reg:SI 114)
+        (const_int 16384 [0x4000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Core/core_riscv.h":227 -1
+     (nil))
+(insn 109 108 110 20 (set (mem/v:SI (plus:SI (reg/f:SI 113)
+                (const_int 512 [0x200])) [2 MEM[(struct PFIC_Type *)3758153728B].IPSR+0 S4 A128])
+        (reg:SI 114)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Core/core_riscv.h":227 -1
+     (nil))
+(code_label 110 109 111 21 87 (nil) [1 uses])
+(note 111 110 112 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
+(call_insn 112 111 113 21 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("uxTaskResetEventItemValue") [flags 0x41] <function_decl 063e34b0 uxTaskResetEventItemValue>) [0 uxTaskResetEventItemValue S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":272 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("uxTaskResetEventItemValue") [flags 0x41] <function_decl 063e34b0 uxTaskResetEventItemValue>)
+        (nil))
+    (nil))
+(insn 113 112 114 21 (set (reg/v:SI 84 [ uxReturn ])
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":272 -1
+     (nil))
+(insn 114 113 115 21 (set (reg:SI 115)
+        (const_int 33554432 [0x2000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":274 -1
+     (nil))
+(insn 115 114 116 21 (set (reg:SI 116)
+        (and:SI (reg/v:SI 84 [ uxReturn ])
+            (reg:SI 115))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":274 -1
+     (nil))
+(jump_insn 116 115 117 21 (set (pc)
+        (if_then_else (ne (reg:SI 116)
+                (const_int 0 [0]))
+            (label_ref 129)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":274 -1
+     (int_list:REG_BR_PROB 719407028 (nil))
+ -> 129)
+(note 117 116 118 22 [bb 22] NOTE_INSN_BASIC_BLOCK)
+(call_insn 118 117 119 22 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 066353c0 vPortEnterCritical>) [0 vPortEnterCritical S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":277 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 066353c0 vPortEnterCritical>)
+        (nil))
+    (nil))
+(insn 119 118 120 22 (set (reg/v:SI 84 [ uxReturn ])
+        (mem:SI (reg/v/f:SI 88 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_23(D)].uxEventBits+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":279 -1
+     (nil))
+(insn 120 119 121 22 (set (reg:SI 117)
+        (and:SI (reg/v:SI 90 [ uxBitsToWaitFor ])
+            (reg/v:SI 84 [ uxReturn ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":285 -1
+     (nil))
+(jump_insn 121 120 122 22 (set (pc)
+        (if_then_else (ne (reg:SI 117)
+                (reg/v:SI 90 [ uxBitsToWaitFor ]))
+            (label_ref 126)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":285 -1
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 126)
+(note 122 121 123 23 [bb 23] NOTE_INSN_BASIC_BLOCK)
+(insn 123 122 124 23 (set (reg:SI 118)
+        (not:SI (reg/v:SI 90 [ uxBitsToWaitFor ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":287 -1
+     (nil))
+(insn 124 123 125 23 (set (reg:SI 119)
+        (and:SI (reg:SI 118)
+            (reg/v:SI 84 [ uxReturn ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":287 -1
+     (nil))
+(insn 125 124 126 23 (set (mem:SI (reg/v/f:SI 88 [ xEventGroup ]) [2 MEM[(struct EventGroup_t *)xEventGroup_23(D)].uxEventBits+0 S4 A32])
+        (reg:SI 119)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":287 -1
+     (nil))
+(code_label 126 125 127 24 89 (nil) [1 uses])
+(note 127 126 128 24 [bb 24] NOTE_INSN_BASIC_BLOCK)
+(call_insn 128 127 129 24 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 06635438 vPortExitCritical>) [0 vPortExitCritical S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":294 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 06635438 vPortExitCritical>)
+        (nil))
+    (nil))
+(code_label 129 128 130 25 88 (nil) [1 uses])
+(note 130 129 131 25 [bb 25] NOTE_INSN_BASIC_BLOCK)
+(insn 131 130 132 25 (set (reg:SI 121)
+        (const_int 16777216 [0x1000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":305 -1
+     (nil))
+(insn 132 131 133 25 (set (reg:SI 120)
+        (plus:SI (reg:SI 121)
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":305 -1
+     (expr_list:REG_EQUAL (const_int 16777215 [0xffffff])
+        (nil)))
+(insn 133 132 138 25 (set (reg/v:SI 87 [ <retval> ])
+        (and:SI (reg/v:SI 84 [ uxReturn ])
+            (reg:SI 120))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":305 -1
+     (nil))
+(code_label 138 133 141 27 76 (nil) [1 uses])
+(note 141 138 139 27 [bb 27] NOTE_INSN_BASIC_BLOCK)
+(insn 139 141 140 27 (set (reg/i:SI 10 a0)
+        (reg/v:SI 87 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":314 -1
+     (nil))
+(insn 140 139 0 27 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":314 -1
+     (nil))
+
+;; Function vEventGroupDelete (vEventGroupDelete, funcdef_no=36, decl_uid=6410, cgraph_uid=36, symbol_order=36)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 15 into block 14...
+Merged blocks 14 and 15.
+Merged 14 and 15 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 76 [ xEventGroup ])
+        (reg:SI 10 a0 [ xEventGroup ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":629 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(jump_insn 6 3 7 2 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 76 [ xEventGroup ])
+                (const_int 0 [0]))
+            (label_ref 21)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":633 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 21)
+(note 7 6 8 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 8 7 9 4 (set (reg:SI 78)
+        (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":633 -1
+     (nil))
+(insn 9 8 10 4 (set (reg:SI 77)
+        (plus:SI (reg:SI 78)
+            (const_int -2048 [0xfffffffffffff800]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":633 -1
+     (expr_list:REG_EQUAL (const_int 30720 [0x7800])
+        (nil)))
+(insn 10 9 11 4 (asm_operands/v ("csrw mstatus,%0") ("") 0 [
+            (reg:SI 77)
+        ]
+         [
+            (asm_input:SI ("r") C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:633)
+        ]
+         [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:633) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":633 -1
+     (nil))
+(insn 11 10 12 4 (set (reg:SI 79)
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":633 -1
+     (nil))
+(insn 12 11 13 4 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 79)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":633 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>)
+        (nil)))
+(insn 13 12 14 4 (set (reg:SI 11 a1)
+        (const_int 633 [0x279])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":633 -1
+     (nil))
+(insn 14 13 15 4 (set (reg:SI 80)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":633 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 80)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":633 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>)
+        (nil)))
+(call_insn 16 15 18 4 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>) [0 __builtin_printf S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":633 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(code_label 18 16 17 5 99 (nil) [1 uses])
+(note 17 18 19 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 19 17 20 5 (set (pc)
+        (label_ref 18)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":633 -1
+     (nil)
+ -> 18)
+(barrier 20 19 21)
+(code_label 21 20 22 6 98 (nil) [1 uses])
+(note 22 21 23 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(call_insn 23 22 24 6 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 063b54b0 vTaskSuspendAll>) [0 vTaskSuspendAll S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":637 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 063b54b0 vTaskSuspendAll>)
+        (nil))
+    (nil))
+(jump_insn 24 23 25 6 (set (pc)
+        (label_ref 50)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":641 -1
+     (nil)
+ -> 50)
+(barrier 25 24 53)
+(code_label 53 25 26 7 103 (nil) [1 uses])
+(note 26 53 27 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 27 26 28 7 (set (reg/f:SI 72 [ _1 ])
+        (mem/f:SI (plus:SI (reg/v/f:SI 76 [ xEventGroup ])
+                (const_int 16 [0x10])) [4 MEM[(const struct List_t *)xEventGroup_7(D) + 4B].xListEnd.pxNext+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":645 -1
+     (nil))
+(insn 28 27 29 7 (set (reg:SI 81)
+        (plus:SI (reg/v/f:SI 76 [ xEventGroup ])
+            (const_int 4 [0x4]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":645 -1
+     (nil))
+(insn 29 28 30 7 (set (reg:SI 82)
+        (plus:SI (reg:SI 81)
+            (const_int 8 [0x8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":645 -1
+     (nil))
+(jump_insn 30 29 31 7 (set (pc)
+        (if_then_else (ne (reg/f:SI 72 [ _1 ])
+                (reg:SI 82))
+            (label_ref 45)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":645 -1
+     (int_list:REG_BR_PROB 1014686028 (nil))
+ -> 45)
+(note 31 30 32 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 32 31 33 8 (set (reg:SI 84)
+        (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":645 -1
+     (nil))
+(insn 33 32 34 8 (set (reg:SI 83)
+        (plus:SI (reg:SI 84)
+            (const_int -2048 [0xfffffffffffff800]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":645 -1
+     (expr_list:REG_EQUAL (const_int 30720 [0x7800])
+        (nil)))
+(insn 34 33 35 8 (asm_operands/v ("csrw mstatus,%0") ("") 0 [
+            (reg:SI 83)
+        ]
+         [
+            (asm_input:SI ("r") C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:645)
+        ]
+         [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c:645) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":645 -1
+     (nil))
+(insn 35 34 36 8 (set (reg:SI 85)
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":645 -1
+     (nil))
+(insn 36 35 37 8 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 85)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":645 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066aee70 *.LC0>)
+        (nil)))
+(insn 37 36 38 8 (set (reg:SI 11 a1)
+        (const_int 645 [0x285])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":645 -1
+     (nil))
+(insn 38 37 39 8 (set (reg:SI 86)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":645 -1
+     (nil))
+(insn 39 38 40 8 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 86)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":645 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066aeec8 *.LC1>)
+        (nil)))
+(call_insn 40 39 42 8 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>) [0 __builtin_printf S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":645 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 0626af00 printf>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(code_label 42 40 41 9 102 (nil) [1 uses])
+(note 41 42 43 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 43 41 44 9 (set (pc)
+        (label_ref 42)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":645 -1
+     (nil)
+ -> 42)
+(barrier 44 43 45)
+(code_label 45 44 46 10 101 (nil) [1 uses])
+(note 46 45 47 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 47 46 48 10 (set (reg:SI 11 a1)
+        (const_int 33554432 [0x2000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":646 -1
+     (nil))
+(insn 48 47 49 10 (set (reg:SI 10 a0)
+        (reg/f:SI 72 [ _1 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":646 -1
+     (nil))
+(call_insn 49 48 50 10 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vTaskRemoveFromUnorderedEventList") [flags 0x41] <function_decl 063e33c0 vTaskRemoveFromUnorderedEventList>) [0 vTaskRemoveFromUnorderedEventList S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":646 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskRemoveFromUnorderedEventList") [flags 0x41] <function_decl 063e33c0 vTaskRemoveFromUnorderedEventList>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(code_label 50 49 51 11 100 (nil) [1 uses])
+(note 51 50 52 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 52 51 54 11 (set (reg:SI 74 [ _3 ])
+        (mem/v:SI (plus:SI (reg/v/f:SI 76 [ xEventGroup ])
+                (const_int 4 [0x4])) [2 MEM[(const struct List_t *)xEventGroup_7(D) + 4B].uxNumberOfItems+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":641 -1
+     (nil))
+(jump_insn 54 52 55 11 (set (pc)
+        (if_then_else (ne (reg:SI 74 [ _3 ])
+                (const_int 0 [0]))
+            (label_ref 53)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":641 -1
+     (int_list:REG_BR_PROB 1014686028 (nil))
+ -> 53)
+(note 55 54 56 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 56 55 57 12 (set (reg:SI 87)
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 76 [ xEventGroup ])
+                    (const_int 24 [0x18])) [0 MEM[(struct EventGroup_t *)xEventGroup_7(D)].ucStaticallyAllocated+0 S1 A32]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":659 -1
+     (nil))
+(jump_insn 57 56 58 12 (set (pc)
+        (if_then_else (ne (reg:SI 87)
+                (const_int 0 [0]))
+            (label_ref 61)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":659 -1
+     (int_list:REG_BR_PROB 719407028 (nil))
+ -> 61)
+(note 58 57 59 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 59 58 60 13 (set (reg:SI 10 a0)
+        (reg/v/f:SI 76 [ xEventGroup ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":661 -1
+     (nil))
+(call_insn 60 59 61 13 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vPortFree") [flags 0x41] <function_decl 06635780 vPortFree>) [0 vPortFree S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":661 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortFree") [flags 0x41] <function_decl 06635780 vPortFree>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(code_label 61 60 62 14 104 (nil) [1 uses])
+(note 62 61 63 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(call_insn 63 62 0 14 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 063b5528 xTaskResumeAll>) [0 xTaskResumeAll S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":670 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 063b5528 xTaskResumeAll>)
+        (nil))
+    (nil))
+
+;; Function vEventGroupSetBitsCallback (vEventGroupSetBitsCallback, funcdef_no=37, decl_uid=6413, cgraph_uid=37, symbol_order=37)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 72 [ pvEventGroup ])
+        (reg:SI 10 a0 [ pvEventGroup ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":678 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 73 [ ulBitsToSet ])
+        (reg:SI 11 a1 [ ulBitsToSet ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":678 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg:SI 11 a1)
+        (reg/v:SI 73 [ ulBitsToSet ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":679 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 72 [ pvEventGroup ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":679 -1
+     (nil))
+(call_insn 9 8 0 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xEventGroupSetBits") [flags 0x3] <function_decl 063bb3c0 xEventGroupSetBits>) [0 xEventGroupSetBits S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":679 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupSetBits") [flags 0x3] <function_decl 063bb3c0 xEventGroupSetBits>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+
+;; Function vEventGroupClearBitsCallback (vEventGroupClearBitsCallback, funcdef_no=38, decl_uid=6416, cgraph_uid=38, symbol_order=38)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 72 [ pvEventGroup ])
+        (reg:SI 10 a0 [ pvEventGroup ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":687 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 73 [ ulBitsToClear ])
+        (reg:SI 11 a1 [ ulBitsToClear ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":687 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg:SI 11 a1)
+        (reg/v:SI 73 [ ulBitsToClear ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":688 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 72 [ pvEventGroup ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":688 -1
+     (nil))
+(call_insn 9 8 0 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xEventGroupClearBits") [flags 0x3] <function_decl 063bb348 xEventGroupClearBits>) [0 xEventGroupClearBits S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/event_groups.c":688 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupClearBits") [flags 0x3] <function_decl 063bb348 xEventGroupClearBits>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))

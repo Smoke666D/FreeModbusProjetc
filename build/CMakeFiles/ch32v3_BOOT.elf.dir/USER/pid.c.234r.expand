@@ -1,0 +1,2196 @@
+
+;; Function PID_SetOutputLimits.part.0 (PID_SetOutputLimits.part.0, funcdef_no=14, decl_uid=2184, cgraph_uid=0, symbol_order=14)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+Purged non-fallthru edges from bb 14
+Purged non-fallthru edges from bb 16
+Purged non-fallthru edges from bb 18
+Purged non-fallthru edges from bb 20
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 2->5 redirected to 6
+Forwarding edge 2->4 to 7 failed.
+Forwarding edge 2->4 to 7 failed.
+deleting block 5
+Edge 7->9 redirected to 10
+Forwarding edge 7->8 to 11 failed.
+Forwarding edge 7->8 to 11 failed.
+deleting block 9
+Edge 11->13 redirected to 14
+Forwarding edge 11->12 to 15 failed.
+Forwarding edge 11->12 to 15 failed.
+deleting block 13
+Redirecting jump 46 from 19 to 20.
+Edge 15->17 redirected to 18
+Forwarding edge 15->16 to 20 failed.
+Forwarding edge 15->16 to 20 failed.
+Redirecting jump 58 from 19 to 20.
+deleting block 17
+Merging block 19 into block 18...
+Merged blocks 18 and 19.
+Merged 18 and 19 without moving.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 2->4 to 7 failed.
+Forwarding edge 7->8 to 11 failed.
+Forwarding edge 11->12 to 15 failed.
+Forwarding edge 15->16 to 20 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 6 NOTE_INSN_DELETED)
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (reg/v/f:SI 79 [ uPID ])
+        (reg:SI 10 a0 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":118 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SF 80 [ Min ])
+        (reg:SF 11 a1 [ Min ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":118 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SF 81 [ Max ])
+        (reg:SF 12 a2 [ Max ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":118 -1
+     (nil))
+(note 5 4 8 2 NOTE_INSN_FUNCTION_BEG)
+(insn 8 5 9 2 (set (mem:SF (plus:SI (reg/v/f:SI 79 [ uPID ])
+                (const_int 56 [0x38])) [4 uPID_2(D)->OutMin+0 S4 A64])
+        (reg/v:SF 80 [ Min ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":126 -1
+     (nil))
+(insn 9 8 10 2 (set (mem:SF (plus:SI (reg/v/f:SI 79 [ uPID ])
+                (const_int 60 [0x3c])) [4 uPID_2(D)->OutMax+0 S4 A32])
+        (reg/v:SF 81 [ Max ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":127 -1
+     (nil))
+(insn 10 9 11 2 (set (reg/f:SI 72 [ _4 ])
+        (mem/f:SI (plus:SI (reg/v/f:SI 79 [ uPID ])
+                (const_int 32 [0x20])) [5 uPID_2(D)->MyOutput+0 S4 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":133 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SF 73 [ _5 ])
+        (mem:SF (reg/f:SI 72 [ _4 ]) [4 *_4+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":133 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 82)
+        (lt:SI (reg/v:SF 81 [ Max ])
+            (reg:SF 73 [ _5 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":133 -1
+     (nil))
+(jump_insn 13 12 67 2 (set (pc)
+        (if_then_else (ne (reg:SI 82)
+                (const_int 0 [0]))
+            (label_ref:SI 75)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":133 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 75)
+(note 67 13 14 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 14 67 15 4 (set (pc)
+        (label_ref 21)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":133 -1
+     (nil)
+ -> 21)
+(barrier 15 14 75)
+(code_label 75 15 17 6 10 (nil) [1 uses])
+(note 17 75 18 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 18 17 19 6 (set (mem:SF (reg/f:SI 72 [ _4 ]) [4 *_4+0 S4 A32])
+        (reg/v:SF 81 [ Max ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":135 -1
+     (nil))
+(jump_insn 19 18 20 6 (set (pc)
+        (label_ref 30)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":135 -1
+     (nil)
+ -> 30)
+(barrier 20 19 21)
+(code_label 21 20 22 7 2 (nil) [1 uses])
+(note 22 21 23 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 7 (set (reg:SI 83)
+        (gt:SI (reg/v:SF 80 [ Min ])
+            (reg:SF 73 [ _5 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":137 -1
+     (nil))
+(jump_insn 24 23 69 7 (set (pc)
+        (if_then_else (ne (reg:SI 83)
+                (const_int 0 [0]))
+            (label_ref:SI 76)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":137 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 76)
+(note 69 24 25 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 25 69 26 8 (set (pc)
+        (label_ref 30)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":137 -1
+     (nil)
+ -> 30)
+(barrier 26 25 76)
+(code_label 76 26 28 10 11 (nil) [1 uses])
+(note 28 76 29 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 29 28 30 10 (set (mem:SF (reg/f:SI 72 [ _4 ]) [4 *_4+0 S4 A32])
+        (reg/v:SF 80 [ Min ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":139 -1
+     (nil))
+(code_label 30 29 31 11 4 (nil) [2 uses])
+(note 31 30 32 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 32 31 33 11 (set (reg:DF 74 [ _6 ])
+        (mem:DF (plus:SI (reg/v/f:SI 79 [ uPID ])
+                (const_int 40 [0x28])) [6 uPID_2(D)->OutputSum+0 S8 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":144 -1
+     (nil))
+(insn 33 32 34 11 (set (reg:SF 10 a0)
+        (mem:SF (plus:SI (reg/v/f:SI 79 [ uPID ])
+                (const_int 60 [0x3c])) [4 uPID_2(D)->OutMax+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":144 -1
+     (nil))
+(call_insn/u 34 33 35 11 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":144 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 35 34 36 11 (set (reg:DF 76 [ _8 ])
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":144 -1
+     (expr_list:REG_EQUAL (float_extend:DF (mem:SF (plus:SI (reg/v/f:SI 79 [ uPID ])
+                    (const_int 60 [0x3c])) [4 uPID_2(D)->OutMax+0 S4 A32]))
+        (nil)))
+(insn 36 35 37 11 (set (reg:DF 12 a2)
+        (reg:DF 76 [ _8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":144 -1
+     (nil))
+(insn 37 36 38 11 (set (reg:DF 10 a0)
+        (reg:DF 74 [ _6 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":144 -1
+     (nil))
+(call_insn/u 38 37 39 11 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__gtdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":144 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__gtdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 39 38 40 11 (set (reg:SI 84)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":144 -1
+     (expr_list:REG_EQUAL (gt:SI (reg:DF 74 [ _6 ])
+            (reg:DF 76 [ _8 ]))
+        (nil)))
+(jump_insn 40 39 71 11 (set (pc)
+        (if_then_else (gt (reg:SI 84)
+                (const_int 0 [0]))
+            (label_ref:SI 77)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":144 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 77)
+(note 71 40 41 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 41 71 42 12 (set (pc)
+        (label_ref 48)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":144 -1
+     (nil)
+ -> 48)
+(barrier 42 41 77)
+(code_label 77 42 44 14 12 (nil) [1 uses])
+(note 44 77 45 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 45 44 46 14 (set (mem:DF (plus:SI (reg/v/f:SI 79 [ uPID ])
+                (const_int 40 [0x28])) [6 uPID_2(D)->OutputSum+0 S8 A64])
+        (reg:DF 76 [ _8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":146 -1
+     (nil))
+(jump_insn 46 45 47 14 (set (pc)
+        (label_ref:SI 65)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":146 250 {jump}
+     (nil)
+ -> 65)
+(barrier 47 46 48)
+(code_label 48 47 49 15 6 (nil) [1 uses])
+(note 49 48 50 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 50 49 51 15 (set (reg:SF 10 a0)
+        (mem:SF (plus:SI (reg/v/f:SI 79 [ uPID ])
+                (const_int 56 [0x38])) [4 uPID_2(D)->OutMin+0 S4 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":148 -1
+     (nil))
+(call_insn/u 51 50 52 15 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":148 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 52 51 53 15 (set (reg:DF 78 [ _10 ])
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":148 -1
+     (expr_list:REG_EQUAL (float_extend:DF (mem:SF (plus:SI (reg/v/f:SI 79 [ uPID ])
+                    (const_int 56 [0x38])) [4 uPID_2(D)->OutMin+0 S4 A64]))
+        (nil)))
+(insn 53 52 54 15 (set (reg:DF 12 a2)
+        (reg:DF 78 [ _10 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":148 -1
+     (nil))
+(insn 54 53 55 15 (set (reg:DF 10 a0)
+        (reg:DF 74 [ _6 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":148 -1
+     (nil))
+(call_insn/u 55 54 56 15 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__ltdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":148 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__ltdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 56 55 57 15 (set (reg:SI 85)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":148 -1
+     (expr_list:REG_EQUAL (if_then_else:SI (lt:SI (reg:DF 74 [ _6 ])
+                (reg:DF 78 [ _10 ]))
+            (const_int -1 [0xffffffffffffffff])
+            (const_int 0 [0]))
+        (nil)))
+(jump_insn 57 56 73 15 (set (pc)
+        (if_then_else (lt (reg:SI 85)
+                (const_int 0 [0]))
+            (label_ref:SI 78)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":148 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 78)
+(note 73 57 58 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 58 73 59 16 (set (pc)
+        (label_ref:SI 65)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":148 250 {jump}
+     (nil)
+ -> 65)
+(barrier 59 58 78)
+(code_label 78 59 61 18 13 (nil) [1 uses])
+(note 61 78 62 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(insn 62 61 65 18 (set (mem:DF (plus:SI (reg/v/f:SI 79 [ uPID ])
+                (const_int 40 [0x28])) [6 uPID_2(D)->OutputSum+0 S8 A64])
+        (reg:DF 78 [ _10 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":150 -1
+     (nil))
+(code_label 65 62 66 20 1 (nil) [2 uses])
+(note 66 65 0 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+
+;; Function PID_Init (PID_Init, funcdef_no=1, decl_uid=1996, cgraph_uid=1, symbol_order=1)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+Purged non-fallthru edges from bb 10
+Purged non-fallthru edges from bb 12
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 2->5 redirected to 6
+Forwarding edge 2->4 to 7 failed.
+Forwarding edge 2->4 to 7 failed.
+deleting block 5
+Redirecting jump 24 from 11 to 12.
+Edge 7->9 redirected to 10
+Forwarding edge 7->8 to 12 failed.
+Forwarding edge 7->8 to 12 failed.
+Redirecting jump 31 from 11 to 12.
+deleting block 9
+Merging block 11 into block 10...
+Merged blocks 10 and 11.
+Merged 10 and 11 without moving.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 2->4 to 7 failed.
+Forwarding edge 7->8 to 12 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 6 NOTE_INSN_DELETED)
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (reg/v/f:SI 77 [ uPID ])
+        (reg:SI 10 a0 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":26 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SF 78 [ LastOut ])
+        (reg:SF 11 a1 [ LastOut ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":26 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SF 79 [ LastInput ])
+        (reg:SF 12 a2 [ LastInput ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":26 -1
+     (nil))
+(note 5 4 8 2 NOTE_INSN_FUNCTION_BEG)
+(insn 8 5 9 2 (set (reg:SF 10 a0)
+        (reg/v:SF 78 [ LastOut ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":28 -1
+     (nil))
+(call_insn/u 9 8 10 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":28 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 10 9 11 2 (set (reg:DF 80)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":28 -1
+     (expr_list:REG_EQUAL (float_extend:DF (reg/v:SF 78 [ LastOut ]))
+        (nil)))
+(insn 11 10 12 2 (set (mem:DF (plus:SI (reg/v/f:SI 77 [ uPID ])
+                (const_int 40 [0x28])) [6 uPID_9(D)->OutputSum+0 S8 A64])
+        (reg:DF 80)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":28 -1
+     (nil))
+(insn 12 11 13 2 (set (mem:SF (plus:SI (reg/v/f:SI 77 [ uPID ])
+                (const_int 48 [0x30])) [4 uPID_9(D)->LastInput+0 S4 A64])
+        (reg/v:SF 79 [ LastInput ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":29 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SF 73 [ _2 ])
+        (mem:SF (plus:SI (reg/v/f:SI 77 [ uPID ])
+                (const_int 60 [0x3c])) [4 uPID_9(D)->OutMax+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":31 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 81)
+        (lt:SI (reg:SF 73 [ _2 ])
+            (reg/v:SF 78 [ LastOut ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":31 -1
+     (nil))
+(jump_insn 15 14 43 2 (set (pc)
+        (if_then_else (ne (reg:SI 81)
+                (const_int 0 [0]))
+            (label_ref:SI 47)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":31 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 47)
+(note 43 15 16 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 16 43 17 4 (set (pc)
+        (label_ref 26)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":31 -1
+     (nil)
+ -> 26)
+(barrier 17 16 47)
+(code_label 47 17 19 6 23 (nil) [1 uses])
+(note 19 47 20 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 20 19 21 6 (set (reg:SF 10 a0)
+        (reg:SF 73 [ _2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":31 -1
+     (nil))
+(call_insn/u 21 20 22 6 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":31 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 22 21 23 6 (set (reg:DF 82)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":31 -1
+     (expr_list:REG_EQUAL (float_extend:DF (reg:SF 73 [ _2 ]))
+        (nil)))
+(insn 23 22 24 6 (set (mem:DF (plus:SI (reg/v/f:SI 77 [ uPID ])
+                (const_int 40 [0x28])) [6 uPID_9(D)->OutputSum+0 S8 A64])
+        (reg:DF 82)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":31 -1
+     (nil))
+(jump_insn 24 23 25 6 (set (pc)
+        (label_ref:SI 41)) 250 {jump}
+     (nil)
+ -> 41)
+(barrier 25 24 26)
+(code_label 26 25 27 7 19 (nil) [1 uses])
+(note 27 26 28 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 28 27 29 7 (set (reg:SF 75 [ _4 ])
+        (mem:SF (plus:SI (reg/v/f:SI 77 [ uPID ])
+                (const_int 56 [0x38])) [4 uPID_9(D)->OutMin+0 S4 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":35 -1
+     (nil))
+(insn 29 28 30 7 (set (reg:SI 83)
+        (gt:SI (reg:SF 75 [ _4 ])
+            (reg/v:SF 78 [ LastOut ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":35 -1
+     (nil))
+(jump_insn 30 29 45 7 (set (pc)
+        (if_then_else (ne (reg:SI 83)
+                (const_int 0 [0]))
+            (label_ref:SI 48)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":35 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 48)
+(note 45 30 31 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 31 45 32 8 (set (pc)
+        (label_ref:SI 41)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":35 250 {jump}
+     (nil)
+ -> 41)
+(barrier 32 31 48)
+(code_label 48 32 34 10 24 (nil) [1 uses])
+(note 34 48 35 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 35 34 36 10 (set (reg:SF 10 a0)
+        (reg:SF 75 [ _4 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":35 -1
+     (nil))
+(call_insn/u 36 35 37 10 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":35 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 37 36 38 10 (set (reg:DF 84)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":35 -1
+     (expr_list:REG_EQUAL (float_extend:DF (reg:SF 75 [ _4 ]))
+        (nil)))
+(insn 38 37 41 10 (set (mem:DF (plus:SI (reg/v/f:SI 77 [ uPID ])
+                (const_int 40 [0x28])) [6 uPID_9(D)->OutputSum+0 S8 A64])
+        (reg:DF 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":35 -1
+     (nil))
+(code_label 41 38 42 12 18 (nil) [2 uses])
+(note 42 41 0 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+
+;; Function PID_Compute (PID_Compute, funcdef_no=4, decl_uid=2015, cgraph_uid=4, symbol_order=4)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+Edge 7->9 redirected to 12
+Purged non-fallthru edges from bb 14
+Purged non-fallthru edges from bb 16
+Purged non-fallthru edges from bb 18
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 2->5 redirected to 6
+Forwarding edge 2->4 to 7 failed.
+Forwarding edge 2->4 to 7 failed.
+deleting block 5
+Edge 7->9 redirected to 10
+Forwarding edge 7->8 to 11 failed.
+Forwarding edge 7->8 to 11 failed.
+deleting block 9
+Edge 12->14 redirected to 17
+Forwarding edge 12->13 to 16 failed.
+Forwarding edge 12->13 to 16 failed.
+deleting block 14
+deleting block 15
+Removing jump 116.
+Merging block 16 into block 13...
+Merged blocks 13 and 16.
+Merged 13 and 16 without moving.
+Removing jump 129.
+Merging block 18 into block 17...
+Merged blocks 17 and 18.
+Merged 17 and 18 without moving.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 2->4 to 7 failed.
+Forwarding edge 7->8 to 11 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 6 NOTE_INSN_DELETED)
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (reg/v/f:SI 102 [ uPID ])
+        (reg:SI 10 a0 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":68 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SF 103 [ input ])
+        (reg:SF 11 a1 [ input ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":68 -1
+     (nil))
+(note 4 3 8 2 NOTE_INSN_FUNCTION_BEG)
+(insn 8 4 9 2 (set (reg/f:SI 104)
+        (mem/f:SI (plus:SI (reg/v/f:SI 102 [ uPID ])
+                (const_int 36 [0x24])) [5 uPID_31(D)->MySetpoint+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":76 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SF 106)
+        (mem:SF (reg/f:SI 104) [4 *_1+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":76 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SF 105)
+        (minus:SF (reg:SF 106)
+            (reg/v:SF 103 [ input ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":76 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SF 10 a0)
+        (reg:SF 105)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":76 -1
+     (nil))
+(call_insn/u 12 11 13 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":76 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 13 12 14 2 (set (reg:DF 107)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":76 -1
+     (expr_list:REG_EQUAL (float_extend:DF (reg:SF 105))
+        (nil)))
+(insn 14 13 15 2 (set (reg:SI 108)
+        (high:SI (symbol_ref/u:SI ("*.LC0") [flags 0x82]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":76 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:DF 12 a2)
+        (mem/u/c:DF (lo_sum:SI (reg:SI 108)
+                (symbol_ref/u:SI ("*.LC0") [flags 0x82])) [0  S8 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":76 -1
+     (expr_list:REG_EQUAL (const_double:DF 1.0e+1 [0x0.ap+4])
+        (nil)))
+(insn 16 15 17 2 (set (reg:DF 10 a0)
+        (reg:DF 107)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":76 -1
+     (nil))
+(call_insn/u 17 16 18 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__divdf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":76 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__divdf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 18 17 19 2 (set (reg:DF 109)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":76 -1
+     (expr_list:REG_EQUAL (div:DF (reg:DF 107)
+            (const_double:DF 1.0e+1 [0x0.ap+4]))
+        (nil)))
+(insn 19 18 20 2 (set (reg/v:DF 98 [ error ])
+        (reg:DF 109)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":76 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SF 10 a0)
+        (mem:SF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                (const_int 20 [0x14])) [4 uPID_31(D)->Kp+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":83 -1
+     (nil))
+(call_insn/u 21 20 22 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":83 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 22 21 23 2 (set (reg:DF 86 [ _15 ])
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":83 -1
+     (expr_list:REG_EQUAL (float_extend:DF (mem:SF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                    (const_int 20 [0x14])) [4 uPID_31(D)->Kp+0 S4 A32]))
+        (nil)))
+(insn 23 22 24 2 (set (reg:SI 110)
+        (high:SI (symbol_ref/u:SI ("*.LC1") [flags 0x82]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":80 -1
+     (nil))
+(insn 24 23 25 2 (set (reg:DF 12 a2)
+        (mem/u/c:DF (lo_sum:SI (reg:SI 110)
+                (symbol_ref/u:SI ("*.LC1") [flags 0x82])) [0  S8 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":80 -1
+     (expr_list:REG_EQUAL (const_double:DF 1.00000000000000005551115123125782702118158340454e-1 [0x0.ccccccccccccdp-3])
+        (nil)))
+(insn 25 24 26 2 (set (reg:DF 10 a0)
+        (reg/v:DF 98 [ error ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":80 -1
+     (nil))
+(call_insn/u 26 25 27 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__muldf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":80 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__muldf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 27 26 28 2 (set (reg:DF 111)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":80 -1
+     (expr_list:REG_EQUAL (mult:DF (reg/v:DF 98 [ error ])
+            (const_double:DF 1.00000000000000005551115123125782702118158340454e-1 [0x0.ccccccccccccdp-3]))
+        (nil)))
+(insn 28 27 29 2 (set (reg:SF 10 a0)
+        (mem:SF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                (const_int 24 [0x18])) [4 uPID_31(D)->Ki+0 S4 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":80 -1
+     (nil))
+(call_insn/u 29 28 30 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":80 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 30 29 31 2 (set (reg:DF 112)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":80 -1
+     (expr_list:REG_EQUAL (float_extend:DF (mem:SF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                    (const_int 24 [0x18])) [4 uPID_31(D)->Ki+0 S4 A64]))
+        (nil)))
+(insn 31 30 32 2 (set (reg:DF 12 a2)
+        (reg:DF 112)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":80 -1
+     (nil))
+(insn 32 31 33 2 (set (reg:DF 10 a0)
+        (reg:DF 111)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":80 -1
+     (nil))
+(call_insn/u 33 32 34 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__muldf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":80 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__muldf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 34 33 35 2 (set (reg:DF 113)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":80 -1
+     (expr_list:REG_EQUAL (mult:DF (reg:DF 111)
+            (reg:DF 112))
+        (nil)))
+(insn 35 34 36 2 (set (reg:DF 12 a2)
+        (mem:DF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                (const_int 40 [0x28])) [6 uPID_31(D)->OutputSum+0 S8 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":80 -1
+     (nil))
+(insn 36 35 37 2 (set (reg:DF 10 a0)
+        (reg:DF 113)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":80 -1
+     (nil))
+(call_insn/u 37 36 38 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__adddf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":80 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__adddf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 38 37 39 2 (set (reg:DF 114)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":80 -1
+     (expr_list:REG_EQUAL (plus:DF (reg:DF 113)
+            (mem:DF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                    (const_int 40 [0x28])) [6 uPID_31(D)->OutputSum+0 S8 A64]))
+        (nil)))
+(insn 39 38 40 2 (set (reg:SF 116)
+        (mem:SF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                (const_int 48 [0x30])) [4 uPID_31(D)->LastInput+0 S4 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":77 -1
+     (nil))
+(insn 40 39 41 2 (set (reg:SF 115)
+        (minus:SF (reg/v:SF 103 [ input ])
+            (reg:SF 116))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":77 -1
+     (nil))
+(insn 41 40 42 2 (set (reg:SF 10 a0)
+        (reg:SF 115)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":77 -1
+     (nil))
+(call_insn/u 42 41 43 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":77 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 43 42 44 2 (set (reg:DF 117)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":77 -1
+     (expr_list:REG_EQUAL (float_extend:DF (reg:SF 115))
+        (nil)))
+(insn 44 43 45 2 (set (reg:SI 118)
+        (high:SI (symbol_ref/u:SI ("*.LC0") [flags 0x82]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":77 -1
+     (nil))
+(insn 45 44 46 2 (set (reg:DF 12 a2)
+        (mem/u/c:DF (lo_sum:SI (reg:SI 118)
+                (symbol_ref/u:SI ("*.LC0") [flags 0x82])) [0  S8 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":77 -1
+     (expr_list:REG_EQUAL (const_double:DF 1.0e+1 [0x0.ap+4])
+        (nil)))
+(insn 46 45 47 2 (set (reg:DF 10 a0)
+        (reg:DF 117)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":77 -1
+     (nil))
+(call_insn/u 47 46 48 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__divdf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":77 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__divdf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 48 47 49 2 (set (reg:DF 119 [ dInput ])
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":77 -1
+     (expr_list:REG_EQUAL (div:DF (reg:DF 117)
+            (const_double:DF 1.0e+1 [0x0.ap+4]))
+        (nil)))
+(insn 49 48 50 2 (set (reg:DF 12 a2)
+        (reg:DF 86 [ _15 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":83 -1
+     (nil))
+(insn 50 49 51 2 (set (reg:DF 10 a0)
+        (reg:DF 119 [ dInput ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":83 -1
+     (nil))
+(call_insn/u 51 50 52 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__muldf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":83 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__muldf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 52 51 53 2 (set (reg:DF 120)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":83 -1
+     (expr_list:REG_EQUAL (mult:DF (reg:DF 119 [ dInput ])
+            (reg:DF 86 [ _15 ]))
+        (nil)))
+(insn 53 52 54 2 (set (reg:DF 12 a2)
+        (reg:DF 120)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":83 -1
+     (nil))
+(insn 54 53 55 2 (set (reg:DF 10 a0)
+        (reg:DF 114)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":83 -1
+     (nil))
+(call_insn/u 55 54 56 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__subdf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":83 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__subdf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 56 55 57 2 (set (reg:DF 121)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":83 -1
+     (expr_list:REG_EQUAL (minus:DF (reg:DF 114)
+            (reg:DF 120))
+        (nil)))
+(insn 57 56 58 2 (set (reg:DF 88 [ _17 ])
+        (reg:DF 121)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":83 -1
+     (nil))
+(insn 58 57 59 2 (set (mem:DF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                (const_int 40 [0x28])) [6 uPID_31(D)->OutputSum+0 S8 A64])
+        (reg:DF 88 [ _17 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":83 -1
+     (nil))
+(insn 59 58 60 2 (set (reg:SF 10 a0)
+        (mem:SF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                (const_int 60 [0x3c])) [4 uPID_31(D)->OutMax+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":86 -1
+     (nil))
+(call_insn/u 60 59 61 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":86 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 61 60 62 2 (set (reg:DF 122)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":86 -1
+     (expr_list:REG_EQUAL (float_extend:DF (mem:SF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                    (const_int 60 [0x3c])) [4 uPID_31(D)->OutMax+0 S4 A32]))
+        (nil)))
+(insn 62 61 63 2 (set (reg/v:DF 90 [ _19 ])
+        (reg:DF 122)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":86 -1
+     (nil))
+(insn 63 62 64 2 (set (reg:DF 12 a2)
+        (reg/v:DF 90 [ _19 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":86 -1
+     (nil))
+(insn 64 63 65 2 (set (reg:DF 10 a0)
+        (reg:DF 88 [ _17 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":86 -1
+     (nil))
+(call_insn/u 65 64 66 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__gtdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":86 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__gtdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 66 65 67 2 (set (reg:SI 123)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":86 -1
+     (expr_list:REG_EQUAL (gt:SI (reg:DF 88 [ _17 ])
+            (reg/v:DF 90 [ _19 ]))
+        (nil)))
+(jump_insn 67 66 139 2 (set (pc)
+        (if_then_else (gt (reg:SI 123)
+                (const_int 0 [0]))
+            (label_ref:SI 145)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":86 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 145)
+(note 139 67 68 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 68 139 69 4 (set (pc)
+        (label_ref 75)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":86 -1
+     (nil)
+ -> 75)
+(barrier 69 68 145)
+(code_label 145 69 71 6 36 (nil) [1 uses])
+(note 71 145 72 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 72 71 73 6 (set (mem:DF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                (const_int 40 [0x28])) [6 uPID_31(D)->OutputSum+0 S8 A64])
+        (reg/v:DF 90 [ _19 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":88 -1
+     (nil))
+(jump_insn 73 72 74 6 (set (pc)
+        (label_ref 90)) -1
+     (nil)
+ -> 90)
+(barrier 74 73 75)
+(code_label 75 74 76 7 29 (nil) [1 uses])
+(note 76 75 77 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 77 76 78 7 (set (reg:SF 10 a0)
+        (mem:SF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                (const_int 56 [0x38])) [4 uPID_31(D)->OutMin+0 S4 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":90 -1
+     (nil))
+(call_insn/u 78 77 79 7 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":90 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 79 78 80 7 (set (reg:DF 92 [ _21 ])
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":90 -1
+     (expr_list:REG_EQUAL (float_extend:DF (mem:SF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                    (const_int 56 [0x38])) [4 uPID_31(D)->OutMin+0 S4 A64]))
+        (nil)))
+(insn 80 79 81 7 (set (reg:DF 12 a2)
+        (reg:DF 92 [ _21 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":90 -1
+     (nil))
+(insn 81 80 82 7 (set (reg:DF 10 a0)
+        (reg:DF 88 [ _17 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":90 -1
+     (nil))
+(call_insn/u 82 81 83 7 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__ltdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":90 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__ltdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 83 82 84 7 (set (reg:SI 124)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":90 -1
+     (expr_list:REG_EQUAL (if_then_else:SI (lt:SI (reg:DF 88 [ _17 ])
+                (reg:DF 92 [ _21 ]))
+            (const_int -1 [0xffffffffffffffff])
+            (const_int 0 [0]))
+        (nil)))
+(jump_insn 84 83 141 7 (set (pc)
+        (if_then_else (lt (reg:SI 124)
+                (const_int 0 [0]))
+            (label_ref:SI 146)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":90 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 146)
+(note 141 84 85 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 85 141 86 8 (set (pc)
+        (label_ref 90)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":90 -1
+     (nil)
+ -> 90)
+(barrier 86 85 146)
+(code_label 146 86 88 10 37 (nil) [1 uses])
+(note 88 146 89 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 89 88 90 10 (set (mem:DF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                (const_int 40 [0x28])) [6 uPID_31(D)->OutputSum+0 S8 A64])
+        (reg:DF 92 [ _21 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":92 -1
+     (nil))
+(code_label 90 89 91 11 31 (nil) [2 uses])
+(note 91 90 92 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 92 91 93 11 (set (reg:DF 12 a2)
+        (reg/v:DF 98 [ error ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":97 -1
+     (nil))
+(insn 93 92 94 11 (set (reg:DF 10 a0)
+        (reg:DF 86 [ _15 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":97 -1
+     (nil))
+(call_insn/u 94 93 95 11 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__muldf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":97 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__muldf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 95 94 96 11 (set (reg:DF 125)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":97 -1
+     (expr_list:REG_EQUAL (mult:DF (reg:DF 86 [ _15 ])
+            (reg/v:DF 98 [ error ]))
+        (nil)))
+(insn 96 95 97 11 (set (reg:DF 12 a2)
+        (mem:DF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                (const_int 40 [0x28])) [6 uPID_31(D)->OutputSum+0 S8 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":97 -1
+     (nil))
+(insn 97 96 98 11 (set (reg:DF 10 a0)
+        (reg:DF 125)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":97 -1
+     (nil))
+(call_insn/u 98 97 99 11 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__adddf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":97 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__adddf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 99 98 100 11 (set (reg:DF 126)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":97 -1
+     (expr_list:REG_EQUAL (plus:DF (reg:DF 125)
+            (mem:DF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                    (const_int 40 [0x28])) [6 uPID_31(D)->OutputSum+0 S8 A64]))
+        (nil)))
+(insn 100 99 101 11 (set (reg/v:DF 100 [ output ])
+        (reg:DF 126)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":97 -1
+     (nil))
+(insn 101 100 102 11 (set (reg:DF 12 a2)
+        (reg/v:DF 100 [ output ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":99 -1
+     (nil))
+(insn 102 101 103 11 (set (reg:DF 10 a0)
+        (reg/v:DF 90 [ _19 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":99 -1
+     (nil))
+(call_insn/u 103 102 104 11 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__ltdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":99 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__ltdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 104 103 105 11 (set (reg:SI 127)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":99 -1
+     (expr_list:REG_EQUAL (if_then_else:SI (lt:SI (reg/v:DF 90 [ _19 ])
+                (reg/v:DF 100 [ output ]))
+            (const_int -1 [0xffffffffffffffff])
+            (const_int 0 [0]))
+        (nil)))
+(jump_insn 105 104 106 11 (set (pc)
+        (if_then_else (lt (reg:SI 127)
+                (const_int 0 [0]))
+            (label_ref 120)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":99 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 120)
+(note 106 105 107 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 107 106 108 12 (set (reg:SF 10 a0)
+        (mem:SF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                (const_int 56 [0x38])) [4 uPID_31(D)->OutMin+0 S4 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":103 -1
+     (nil))
+(call_insn/u 108 107 109 12 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":103 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 109 108 110 12 (set (reg:DF 128)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":103 -1
+     (expr_list:REG_EQUAL (float_extend:DF (mem:SF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                    (const_int 56 [0x38])) [4 uPID_31(D)->OutMin+0 S4 A64]))
+        (nil)))
+(insn 110 109 111 12 (set (reg/v:DF 90 [ _19 ])
+        (reg:DF 128)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":103 -1
+     (nil))
+(insn 111 110 112 12 (set (reg:DF 12 a2)
+        (reg/v:DF 100 [ output ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":103 -1
+     (nil))
+(insn 112 111 113 12 (set (reg:DF 10 a0)
+        (reg/v:DF 90 [ _19 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":103 -1
+     (nil))
+(call_insn/u 113 112 114 12 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__gtdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":103 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__gtdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 114 113 115 12 (set (reg:SI 129)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":103 -1
+     (expr_list:REG_EQUAL (gt:SI (reg/v:DF 90 [ _19 ])
+            (reg/v:DF 100 [ output ]))
+        (nil)))
+(jump_insn 115 114 143 12 (set (pc)
+        (if_then_else (gt (reg:SI 129)
+                (const_int 0 [0]))
+            (label_ref:SI 120)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":103 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 120)
+(note 143 115 5 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 5 143 120 13 (set (reg/v:DF 90 [ _19 ])
+        (reg/v:DF 100 [ output ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":97 -1
+     (nil))
+(code_label 120 5 121 17 33 (nil) [2 uses])
+(note 121 120 122 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 122 121 123 17 (set (reg/f:SI 130)
+        (mem/f:SI (plus:SI (reg/v/f:SI 102 [ uPID ])
+                (const_int 32 [0x20])) [5 uPID_31(D)->MyOutput+0 S4 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":109 -1
+     (nil))
+(insn 123 122 124 17 (set (reg:DF 10 a0)
+        (reg/v:DF 90 [ _19 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":109 -1
+     (nil))
+(call_insn/u 124 123 125 17 (parallel [
+            (set (reg:SF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__truncdfsf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":109 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__truncdfsf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 10 a0))
+        (nil)))
+(insn 125 124 126 17 (set (reg:SF 131)
+        (reg:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":109 -1
+     (expr_list:REG_EQUAL (float_truncate:SF (reg/v:DF 90 [ _19 ]))
+        (nil)))
+(insn 126 125 127 17 (set (mem:SF (reg/f:SI 130) [4 *_26+0 S4 A32])
+        (reg:SF 131)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":109 -1
+     (nil))
+(insn 127 126 128 17 (set (mem:SF (plus:SI (reg/v/f:SI 102 [ uPID ])
+                (const_int 48 [0x30])) [4 uPID_31(D)->LastInput+0 S4 A64])
+        (reg/v:SF 103 [ input ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":110 -1
+     (nil))
+(insn 128 127 132 17 (set (reg:SI 101 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":111 -1
+     (nil))
+(insn 132 128 133 17 (set (reg/i:SI 10 a0)
+        (reg:SI 101 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":112 -1
+     (nil))
+(insn 133 132 0 17 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":112 -1
+     (nil))
+
+;; Function PID_SetOutputLimits (PID_SetOutputLimits, funcdef_no=5, decl_uid=2019, cgraph_uid=5, symbol_order=5)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 2->5 redirected to 6
+Merging block 5 into block 4...
+Merged blocks 4 and 5.
+Merged 4 and 5 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 6 NOTE_INSN_DELETED)
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (reg/v/f:SI 72 [ uPID ])
+        (reg:SI 10 a0 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":119 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SF 73 [ Min ])
+        (reg:SF 11 a1 [ Min ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":119 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SF 74 [ Max ])
+        (reg:SF 12 a2 [ Max ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":119 -1
+     (nil))
+(note 5 4 8 2 NOTE_INSN_FUNCTION_BEG)
+(insn 8 5 9 2 (set (reg:SI 75)
+        (ge:SI (reg/v:SF 73 [ Min ])
+            (reg/v:SF 74 [ Max ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":121 -1
+     (nil))
+(jump_insn 9 8 10 2 (set (pc)
+        (if_then_else (ne (reg:SI 75)
+                (const_int 0 [0]))
+            (label_ref:SI 17)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":121 180 {*branchsi}
+     (int_list:REG_BR_PROB 365072228 (nil))
+ -> 17)
+(note 10 9 11 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 11 10 12 4 (set (reg:SF 12 a2)
+        (reg/v:SF 74 [ Max ])) -1
+     (nil))
+(insn 12 11 13 4 (set (reg:SF 11 a1)
+        (reg/v:SF 73 [ Min ])) -1
+     (nil))
+(insn 13 12 14 4 (set (reg:SI 10 a0)
+        (reg/v/f:SI 72 [ uPID ])) -1
+     (nil))
+(call_insn 14 13 17 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("PID_SetOutputLimits.part.0") [flags 0x3] <function_decl 0579d3c0 PID_SetOutputLimits.part.0>) [0 PID_SetOutputLimits.part.0 S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID_SetOutputLimits.part.0") [flags 0x3] <function_decl 0579d3c0 PID_SetOutputLimits.part.0>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SF (use (reg:SF 11 a1))
+            (expr_list:SF (use (reg:SF 12 a2))
+                (nil)))))
+(code_label 17 14 18 6 40 (nil) [1 uses])
+(note 18 17 0 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+;; Function PID_SetTunings2 (PID_SetTunings2, funcdef_no=7, decl_uid=2029, cgraph_uid=7, symbol_order=7)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+Purged non-fallthru edges from bb 12
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 2->5 redirected to 12
+Forwarding edge 2->4 to 7 failed.
+Forwarding edge 2->4 to 7 failed.
+deleting block 5
+Redirecting jump 16 from 11 to 12.
+Edge 7->6 redirected to 12
+Edge 8->6 redirected to 12
+Edge 9->6 redirected to 12
+Merging block 11 into block 10...
+Merged blocks 10 and 11.
+Merged 10 and 11 without moving.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 2->4 to 7 failed.
+deleting block 6
+Removing jump 12.
+Merging block 7 into block 4...
+Merged blocks 4 and 7.
+Merged 4 and 7 without moving.
+
+
+try_optimize_cfg iteration 3
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 7 NOTE_INSN_DELETED)
+(note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (reg/v/f:SI 80 [ uPID ])
+        (reg:SI 10 a0 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":164 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SF 81 [ Kp ])
+        (reg:SF 11 a1 [ Kp ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":164 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SF 82 [ Ki ])
+        (reg:SF 12 a2 [ Ki ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":164 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SF 83 [ Kd ])
+        (reg:SF 13 a3 [ Kd ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":164 -1
+     (nil))
+(note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 6 10 2 (set (reg:SF 84)
+        (const_double:SF 0.0 [0x0.0p+0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":169 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 85)
+        (lt:SI (reg/v:SF 81 [ Kp ])
+            (reg:SF 84))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":169 -1
+     (nil))
+(jump_insn 11 10 58 2 (set (pc)
+        (if_then_else (ne (reg:SI 85)
+                (const_int 0 [0]))
+            (label_ref:SI 56)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":169 180 {*branchsi}
+     (int_list:REG_BR_PROB 283038348 (nil))
+ -> 56)
+(note 58 11 21 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 21 58 22 4 (set (reg:SF 86)
+        (const_double:SF 0.0 [0x0.0p+0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":169 -1
+     (nil))
+(insn 22 21 23 4 (set (reg:SI 87)
+        (lt:SI (reg/v:SF 82 [ Ki ])
+            (reg:SF 86))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":169 -1
+     (nil))
+(jump_insn 23 22 24 4 (set (pc)
+        (if_then_else (ne (reg:SI 87)
+                (const_int 0 [0]))
+            (label_ref:SI 56)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":169 180 {*branchsi}
+     (int_list:REG_BR_PROB 283038348 (nil))
+ -> 56)
+(note 24 23 25 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 25 24 26 8 (set (reg:SF 88)
+        (const_double:SF 0.0 [0x0.0p+0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":169 -1
+     (nil))
+(insn 26 25 27 8 (set (reg:SI 89)
+        (lt:SI (reg/v:SF 83 [ Kd ])
+            (reg:SF 88))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":169 -1
+     (nil))
+(jump_insn 27 26 28 8 (set (pc)
+        (if_then_else (ne (reg:SI 89)
+                (const_int 0 [0]))
+            (label_ref:SI 56)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":169 180 {*branchsi}
+     (int_list:REG_BR_PROB 283038348 (nil))
+ -> 56)
+(note 28 27 29 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 29 28 30 9 (set (mem:SF (plus:SI (reg/v/f:SI 80 [ uPID ])
+                (const_int 8 [0x8])) [4 uPID_7(D)->DispKp+0 S4 A64])
+        (reg/v:SF 81 [ Kp ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":177 -1
+     (nil))
+(insn 30 29 31 9 (set (mem:SF (plus:SI (reg/v/f:SI 80 [ uPID ])
+                (const_int 12 [0xc])) [4 uPID_7(D)->DispKi+0 S4 A32])
+        (reg/v:SF 82 [ Ki ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":178 -1
+     (nil))
+(insn 31 30 32 9 (set (mem:SF (plus:SI (reg/v/f:SI 80 [ uPID ])
+                (const_int 16 [0x10])) [4 uPID_7(D)->DispKd+0 S4 A64])
+        (reg/v:SF 83 [ Kd ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":179 -1
+     (nil))
+(insn 32 31 33 9 (set (reg:SI 91)
+        (mem:SI (plus:SI (reg/v/f:SI 80 [ uPID ])
+                (const_int 4 [0x4])) [3 uPID_7(D)->SampleTime+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":182 -1
+     (nil))
+(insn 33 32 34 9 (set (reg:SF 90)
+        (unsigned_float:SF (reg:SI 91))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":182 -1
+     (nil))
+(insn 34 33 35 9 (set (reg:SI 93)
+        (high:SI (symbol_ref/u:SI ("*.LC2") [flags 0x82]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":182 -1
+     (nil))
+(insn 35 34 36 9 (set (reg:SF 92)
+        (mem/u/c:SF (lo_sum:SI (reg:SI 93)
+                (symbol_ref/u:SI ("*.LC2") [flags 0x82])) [0  S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":182 -1
+     (expr_list:REG_EQUAL (const_double:SF 1.0e+3 [0x0.fap+10])
+        (nil)))
+(insn 36 35 37 9 (set (reg/v:SF 74 [ SampleTimeInSec ])
+        (div:SF (reg:SF 90)
+            (reg:SF 92))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":182 -1
+     (nil))
+(insn 37 36 38 9 (set (mem:SF (plus:SI (reg/v/f:SI 80 [ uPID ])
+                (const_int 20 [0x14])) [4 uPID_7(D)->Kp+0 S4 A32])
+        (reg/v:SF 81 [ Kp ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":184 -1
+     (nil))
+(insn 38 37 39 9 (set (mem:SF (plus:SI (reg/v/f:SI 80 [ uPID ])
+                (const_int 24 [0x18])) [4 uPID_7(D)->Ki+0 S4 A64])
+        (reg/v:SF 82 [ Ki ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":185 -1
+     (nil))
+(insn 39 38 40 9 (set (reg:SF 75 [ _11 ])
+        (div:SF (reg/v:SF 83 [ Kd ])
+            (reg/v:SF 74 [ SampleTimeInSec ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":186 -1
+     (nil))
+(insn 40 39 41 9 (set (mem:SF (plus:SI (reg/v/f:SI 80 [ uPID ])
+                (const_int 28 [0x1c])) [4 uPID_7(D)->Kd+0 S4 A32])
+        (reg:SF 75 [ _11 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":186 -1
+     (nil))
+(insn 41 40 42 9 (set (reg:SI 94)
+        (mem:SI (reg/v/f:SI 80 [ uPID ]) [2 uPID_7(D)->ControllerDirection+0 S4 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":189 -1
+     (nil))
+(insn 42 41 43 9 (set (reg:SI 95)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":189 -1
+     (nil))
+(jump_insn 43 42 44 9 (set (pc)
+        (if_then_else (ne (reg:SI 94)
+                (reg:SI 95))
+            (label_ref:SI 56)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":189 180 {*branchsi}
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 56)
+(note 44 43 45 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 45 44 46 10 (set (reg:SF 96)
+        (const_double:SF 0.0 [0x0.0p+0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":192 -1
+     (nil))
+(insn 46 45 47 10 (set (reg:SF 97)
+        (minus:SF (reg:SF 96)
+            (reg/v:SF 81 [ Kp ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":192 -1
+     (nil))
+(insn 47 46 48 10 (set (mem:SF (plus:SI (reg/v/f:SI 80 [ uPID ])
+                (const_int 20 [0x14])) [4 uPID_7(D)->Kp+0 S4 A32])
+        (reg:SF 97)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":192 -1
+     (nil))
+(insn 48 47 49 10 (set (reg:SF 98)
+        (const_double:SF 0.0 [0x0.0p+0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":193 -1
+     (nil))
+(insn 49 48 50 10 (set (reg:SF 99)
+        (minus:SF (reg:SF 98)
+            (reg/v:SF 82 [ Ki ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":193 -1
+     (nil))
+(insn 50 49 51 10 (set (mem:SF (plus:SI (reg/v/f:SI 80 [ uPID ])
+                (const_int 24 [0x18])) [4 uPID_7(D)->Ki+0 S4 A64])
+        (reg:SF 99)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":193 -1
+     (nil))
+(insn 51 50 52 10 (set (reg:SF 100)
+        (const_double:SF 0.0 [0x0.0p+0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":194 -1
+     (nil))
+(insn 52 51 53 10 (set (reg:SF 101)
+        (minus:SF (reg:SF 100)
+            (reg:SF 75 [ _11 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":194 -1
+     (nil))
+(insn 53 52 56 10 (set (mem:SF (plus:SI (reg/v/f:SI 80 [ uPID ])
+                (const_int 28 [0x1c])) [4 uPID_7(D)->Kd+0 S4 A32])
+        (reg:SF 101)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":194 -1
+     (nil))
+(code_label 56 53 57 12 46 (nil) [4 uses])
+(note 57 56 0 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+
+;; Function PID_SetTunings (PID_SetTunings, funcdef_no=6, decl_uid=2024, cgraph_uid=6, symbol_order=6)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 7 NOTE_INSN_DELETED)
+(note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (reg/v/f:SI 72 [ uPID ])
+        (reg:SI 10 a0 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":160 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SF 73 [ Kp ])
+        (reg:SF 11 a1 [ Kp ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":160 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SF 74 [ Ki ])
+        (reg:SF 12 a2 [ Ki ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":160 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SF 75 [ Kd ])
+        (reg:SF 13 a3 [ Kd ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":160 -1
+     (nil))
+(note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 6 10 2 (set (reg:SF 13 a3)
+        (reg/v:SF 75 [ Kd ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":161 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SF 12 a2)
+        (reg/v:SF 74 [ Ki ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":161 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SF 11 a1)
+        (reg/v:SF 73 [ Kp ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":161 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 72 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":161 -1
+     (nil))
+(call_insn 13 12 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("PID_SetTunings2") [flags 0x3] <function_decl 0579dd98 PID_SetTunings2>) [0 PID_SetTunings2 S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":161 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID_SetTunings2") [flags 0x3] <function_decl 0579dd98 PID_SetTunings2>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SF (use (reg:SF 11 a1))
+            (expr_list:SF (use (reg:SF 12 a2))
+                (expr_list:SF (use (reg:SF 13 a3))
+                    (nil))))))
+
+;; Function PID_SetControllerDirection (PID_SetControllerDirection, funcdef_no=8, decl_uid=2032, cgraph_uid=8, symbol_order=8)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 79 [ uPID ])
+        (reg:SI 10 a0 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":202 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 80 [ Direction ])
+        (reg:SI 11 a1 [ Direction ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":202 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg:SI 81)
+        (mem:SI (reg/v/f:SI 79 [ uPID ]) [2 uPID_10(D)->ControllerDirection+0 S4 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":204 -1
+     (nil))
+(jump_insn 8 7 9 2 (set (pc)
+        (if_then_else (eq (reg:SI 81)
+                (reg/v:SI 80 [ Direction ]))
+            (label_ref 22)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":204 -1
+     (int_list:REG_BR_PROB 365072228 (nil))
+ -> 22)
+(note 9 8 10 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 10 9 11 4 (set (reg:SF 82)
+        (const_double:SF 0.0 [0x0.0p+0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":207 -1
+     (nil))
+(insn 11 10 12 4 (set (reg:SF 84)
+        (mem:SF (plus:SI (reg/v/f:SI 79 [ uPID ])
+                (const_int 20 [0x14])) [4 uPID_10(D)->Kp+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":207 -1
+     (nil))
+(insn 12 11 13 4 (set (reg:SF 83)
+        (minus:SF (reg:SF 82)
+            (reg:SF 84))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":207 -1
+     (nil))
+(insn 13 12 14 4 (set (mem:SF (plus:SI (reg/v/f:SI 79 [ uPID ])
+                (const_int 20 [0x14])) [4 uPID_10(D)->Kp+0 S4 A32])
+        (reg:SF 83)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":207 -1
+     (nil))
+(insn 14 13 15 4 (set (reg:SF 85)
+        (const_double:SF 0.0 [0x0.0p+0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":208 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SF 87)
+        (mem:SF (plus:SI (reg/v/f:SI 79 [ uPID ])
+                (const_int 24 [0x18])) [4 uPID_10(D)->Ki+0 S4 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":208 -1
+     (nil))
+(insn 16 15 17 4 (set (reg:SF 86)
+        (minus:SF (reg:SF 85)
+            (reg:SF 87))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":208 -1
+     (nil))
+(insn 17 16 18 4 (set (mem:SF (plus:SI (reg/v/f:SI 79 [ uPID ])
+                (const_int 24 [0x18])) [4 uPID_10(D)->Ki+0 S4 A64])
+        (reg:SF 86)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":208 -1
+     (nil))
+(insn 18 17 19 4 (set (reg:SF 88)
+        (const_double:SF 0.0 [0x0.0p+0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":209 -1
+     (nil))
+(insn 19 18 20 4 (set (reg:SF 90)
+        (mem:SF (plus:SI (reg/v/f:SI 79 [ uPID ])
+                (const_int 28 [0x1c])) [4 uPID_10(D)->Kd+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":209 -1
+     (nil))
+(insn 20 19 21 4 (set (reg:SF 89)
+        (minus:SF (reg:SF 88)
+            (reg:SF 90))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":209 -1
+     (nil))
+(insn 21 20 22 4 (set (mem:SF (plus:SI (reg/v/f:SI 79 [ uPID ])
+                (const_int 28 [0x1c])) [4 uPID_10(D)->Kd+0 S4 A32])
+        (reg:SF 89)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":209 -1
+     (nil))
+(code_label 22 21 23 5 54 (nil) [1 uses])
+(note 23 22 24 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 24 23 0 5 (set (mem:SI (reg/v/f:SI 79 [ uPID ]) [2 uPID_10(D)->ControllerDirection+0 S4 A64])
+        (reg/v:SI 80 [ Direction ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":213 -1
+     (nil))
+
+;; Function PID (PID, funcdef_no=2, decl_uid=2004, cgraph_uid=2, symbol_order=2)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 10 NOTE_INSN_DELETED)
+(note 10 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 10 3 2 (set (reg/v/f:SI 72 [ uPID ])
+        (reg:SI 10 a0 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":44 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v/f:SI 73 [ Output ])
+        (reg:SI 11 a1 [ Output ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":44 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v/f:SI 74 [ Setpoint ])
+        (reg:SI 12 a2 [ Setpoint ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":44 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SF 75 [ Kp ])
+        (reg:SF 13 a3 [ Kp ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":44 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/v:SF 76 [ Ki ])
+        (reg:SF 14 a4 [ Ki ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":44 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/v:SF 77 [ Kd ])
+        (reg:SF 15 a5 [ Kd ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":44 -1
+     (nil))
+(insn 8 7 9 2 (set (reg/v:SI 78 [ ControllerDirection ])
+        (reg:SI 16 a6 [ ControllerDirection ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":44 -1
+     (nil))
+(note 9 8 12 2 NOTE_INSN_FUNCTION_BEG)
+(insn 12 9 13 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 72 [ uPID ])
+                (const_int 32 [0x20])) [5 uPID_2(D)->MyOutput+0 S4 A64])
+        (reg/v/f:SI 73 [ Output ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":46 -1
+     (nil))
+(insn 13 12 14 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 72 [ uPID ])
+                (const_int 36 [0x24])) [5 uPID_2(D)->MySetpoint+0 S4 A32])
+        (reg/v/f:SI 74 [ Setpoint ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":47 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 80)
+        (high:SI (symbol_ref/u:SI ("*.LC3") [flags 0x82]))) -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SF 79)
+        (mem/u/c:SF (lo_sum:SI (reg:SI 80)
+                (symbol_ref/u:SI ("*.LC3") [flags 0x82])) [0  S4 A32])) -1
+     (expr_list:REG_EQUAL (const_double:SF 2.55e+2 [0x0.ffp+8])
+        (nil)))
+(insn 16 15 17 2 (set (reg:SF 12 a2)
+        (reg:SF 79)) -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SF 11 a1)
+        (const_double:SF 0.0 [0x0.0p+0])) -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 72 [ uPID ])) -1
+     (nil))
+(call_insn 19 18 20 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("PID_SetOutputLimits.part.0") [flags 0x3] <function_decl 0579d3c0 PID_SetOutputLimits.part.0>) [0 PID_SetOutputLimits.part.0 S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID_SetOutputLimits.part.0") [flags 0x3] <function_decl 0579d3c0 PID_SetOutputLimits.part.0>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SF (use (reg:SF 11 a1))
+            (expr_list:SF (use (reg:SF 12 a2))
+                (nil)))))
+(insn 20 19 21 2 (set (reg:SI 81)
+        (const_int 100 [0x64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":52 -1
+     (nil))
+(insn 21 20 22 2 (set (mem:SI (plus:SI (reg/v/f:SI 72 [ uPID ])
+                (const_int 4 [0x4])) [3 uPID_2(D)->SampleTime+0 S4 A32])
+        (reg:SI 81)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":52 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:SI 11 a1)
+        (reg/v:SI 78 [ ControllerDirection ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":54 -1
+     (nil))
+(insn 23 22 24 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 72 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":54 -1
+     (nil))
+(call_insn 24 23 25 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("PID_SetControllerDirection") [flags 0x3] <function_decl 0579de10 PID_SetControllerDirection>) [0 PID_SetControllerDirection S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":54 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID_SetControllerDirection") [flags 0x3] <function_decl 0579de10 PID_SetControllerDirection>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 25 24 26 2 (set (reg:SF 13 a3)
+        (reg/v:SF 77 [ Kd ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":55 -1
+     (nil))
+(insn 26 25 27 2 (set (reg:SF 12 a2)
+        (reg/v:SF 76 [ Ki ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":55 -1
+     (nil))
+(insn 27 26 28 2 (set (reg:SF 11 a1)
+        (reg/v:SF 75 [ Kp ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":55 -1
+     (nil))
+(insn 28 27 29 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 72 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":55 -1
+     (nil))
+(call_insn 29 28 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("PID_SetTunings2") [flags 0x3] <function_decl 0579dd98 PID_SetTunings2>) [0 PID_SetTunings2 S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":55 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID_SetTunings2") [flags 0x3] <function_decl 0579dd98 PID_SetTunings2>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SF (use (reg:SF 11 a1))
+            (expr_list:SF (use (reg:SF 12 a2))
+                (expr_list:SF (use (reg:SF 13 a3))
+                    (nil))))))
+
+;; Function PID2 (PID2, funcdef_no=3, decl_uid=2012, cgraph_uid=3, symbol_order=3)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 10 NOTE_INSN_DELETED)
+(note 10 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 10 3 2 (set (reg/v/f:SI 72 [ uPID ])
+        (reg:SI 10 a0 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":62 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v/f:SI 73 [ Output ])
+        (reg:SI 11 a1 [ Output ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":62 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v/f:SI 74 [ Setpoint ])
+        (reg:SI 12 a2 [ Setpoint ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":62 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SF 75 [ Kp ])
+        (reg:SF 13 a3 [ Kp ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":62 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/v:SF 76 [ Ki ])
+        (reg:SF 14 a4 [ Ki ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":62 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/v:SF 77 [ Kd ])
+        (reg:SF 15 a5 [ Kd ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":62 -1
+     (nil))
+(insn 8 7 9 2 (set (reg/v:SI 78 [ ControllerDirection ])
+        (reg:SI 16 a6 [ ControllerDirection ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":62 -1
+     (nil))
+(note 9 8 12 2 NOTE_INSN_FUNCTION_BEG)
+(insn 12 9 13 2 (set (reg:SI 16 a6)
+        (reg/v:SI 78 [ ControllerDirection ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":63 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SF 15 a5)
+        (reg/v:SF 77 [ Kd ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":63 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SF 14 a4)
+        (reg/v:SF 76 [ Ki ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":63 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SF 13 a3)
+        (reg/v:SF 75 [ Kp ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":63 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 12 a2)
+        (reg/v/f:SI 74 [ Setpoint ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":63 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 11 a1)
+        (reg/v/f:SI 73 [ Output ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":63 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 72 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":63 -1
+     (nil))
+(call_insn 19 18 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("PID") [flags 0x3] <function_decl 0579db40 PID>) [0 PID S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":63 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID") [flags 0x3] <function_decl 0579db40 PID>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (expr_list:SF (use (reg:SF 13 a3))
+                    (expr_list:SF (use (reg:SF 14 a4))
+                        (expr_list:SF (use (reg:SF 15 a5))
+                            (expr_list:SI (use (reg:SI 16 a6))
+                                (nil)))))))))
+
+;; Function PID_GetDirection (PID_GetDirection, funcdef_no=9, decl_uid=2034, cgraph_uid=9, symbol_order=9)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 8.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 73 [ uPID ])
+        (reg:SI 10 a0 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":217 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SI 75)
+        (mem:SI (reg/v/f:SI 73 [ uPID ]) [2 uPID_2(D)->ControllerDirection+0 S4 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":218 -1
+     (nil))
+(insn 7 6 11 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 75)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":218 -1
+     (nil))
+(insn 11 7 12 2 (set (reg/i:SI 10 a0)
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":219 -1
+     (nil))
+(insn 12 11 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":219 -1
+     (nil))
+
+;; Function PID_SetSampleTime (PID_SetSampleTime, funcdef_no=10, decl_uid=2037, cgraph_uid=10, symbol_order=10)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 2->5 redirected to 6
+Merging block 5 into block 4...
+Merged blocks 4 and 5.
+Merged 4 and 5 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 86 [ uPID ])
+        (reg:SI 10 a0 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":223 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 87 [ NewSampleTime ])
+        (reg:SI 11 a1 [ NewSampleTime ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":223 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(jump_insn 7 4 8 2 (set (pc)
+        (if_then_else (le (reg/v:SI 87 [ NewSampleTime ])
+                (const_int 0 [0]))
+            (label_ref:SI 42)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":228 180 {*branchsi}
+     (int_list:REG_BR_PROB 440234148 (nil))
+ -> 42)
+(note 8 7 9 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 9 8 10 4 (set (reg:SF 88)
+        (float:SF (reg/v:SI 87 [ NewSampleTime ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":231 -1
+     (nil))
+(insn 10 9 11 4 (set (reg:SI 90)
+        (mem:SI (plus:SI (reg/v/f:SI 86 [ uPID ])
+                (const_int 4 [0x4])) [3 uPID_17(D)->SampleTime+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":231 -1
+     (nil))
+(insn 11 10 12 4 (set (reg:SF 89)
+        (unsigned_float:SF (reg:SI 90))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":231 -1
+     (nil))
+(insn 12 11 13 4 (set (reg:SF 91)
+        (div:SF (reg:SF 88)
+            (reg:SF 89))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":231 -1
+     (nil))
+(insn 13 12 14 4 (set (reg:SF 10 a0)
+        (reg:SF 91)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":231 -1
+     (nil))
+(call_insn/u 14 13 15 4 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":231 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 15 14 16 4 (set (reg:DF 92)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":231 -1
+     (expr_list:REG_EQUAL (float_extend:DF (reg:SF 91))
+        (nil)))
+(insn 16 15 17 4 (set (reg/v:DF 85 [ ratio ])
+        (reg:DF 92)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":231 -1
+     (nil))
+(insn 17 16 18 4 (set (reg:SF 10 a0)
+        (mem:SF (plus:SI (reg/v/f:SI 86 [ uPID ])
+                (const_int 24 [0x18])) [4 uPID_17(D)->Ki+0 S4 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":233 -1
+     (nil))
+(call_insn/u 18 17 19 4 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":233 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 19 18 20 4 (set (reg:DF 93)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":233 -1
+     (expr_list:REG_EQUAL (float_extend:DF (mem:SF (plus:SI (reg/v/f:SI 86 [ uPID ])
+                    (const_int 24 [0x18])) [4 uPID_17(D)->Ki+0 S4 A64]))
+        (nil)))
+(insn 20 19 21 4 (set (reg:DF 12 a2)
+        (reg/v:DF 85 [ ratio ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":233 -1
+     (nil))
+(insn 21 20 22 4 (set (reg:DF 10 a0)
+        (reg:DF 93)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":233 -1
+     (nil))
+(call_insn/u 22 21 23 4 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__muldf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":233 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__muldf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 23 22 24 4 (set (reg:DF 94)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":233 -1
+     (expr_list:REG_EQUAL (mult:DF (reg:DF 93)
+            (reg/v:DF 85 [ ratio ]))
+        (nil)))
+(insn 24 23 25 4 (set (reg:DF 10 a0)
+        (reg:DF 94)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":233 -1
+     (nil))
+(call_insn/u 25 24 26 4 (parallel [
+            (set (reg:SF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__truncdfsf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":233 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__truncdfsf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 10 a0))
+        (nil)))
+(insn 26 25 27 4 (set (reg:SF 95)
+        (reg:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":233 -1
+     (expr_list:REG_EQUAL (float_truncate:SF (reg:DF 94))
+        (nil)))
+(insn 27 26 28 4 (set (mem:SF (plus:SI (reg/v/f:SI 86 [ uPID ])
+                (const_int 24 [0x18])) [4 uPID_17(D)->Ki+0 S4 A64])
+        (reg:SF 95)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":233 -1
+     (nil))
+(insn 28 27 29 4 (set (reg:SF 10 a0)
+        (mem:SF (plus:SI (reg/v/f:SI 86 [ uPID ])
+                (const_int 28 [0x1c])) [4 uPID_17(D)->Kd+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":234 -1
+     (nil))
+(call_insn/u 29 28 30 4 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":234 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 30 29 31 4 (set (reg:DF 96)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":234 -1
+     (expr_list:REG_EQUAL (float_extend:DF (mem:SF (plus:SI (reg/v/f:SI 86 [ uPID ])
+                    (const_int 28 [0x1c])) [4 uPID_17(D)->Kd+0 S4 A32]))
+        (nil)))
+(insn 31 30 32 4 (set (reg:DF 12 a2)
+        (reg/v:DF 85 [ ratio ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":234 -1
+     (nil))
+(insn 32 31 33 4 (set (reg:DF 10 a0)
+        (reg:DF 96)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":234 -1
+     (nil))
+(call_insn/u 33 32 34 4 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__divdf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":234 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__divdf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 34 33 35 4 (set (reg:DF 97)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":234 -1
+     (expr_list:REG_EQUAL (div:DF (reg:DF 96)
+            (reg/v:DF 85 [ ratio ]))
+        (nil)))
+(insn 35 34 36 4 (set (reg:DF 10 a0)
+        (reg:DF 97)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":234 -1
+     (nil))
+(call_insn/u 36 35 37 4 (parallel [
+            (set (reg:SF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__truncdfsf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":234 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__truncdfsf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 10 a0))
+        (nil)))
+(insn 37 36 38 4 (set (reg:SF 98)
+        (reg:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":234 -1
+     (expr_list:REG_EQUAL (float_truncate:SF (reg:DF 97))
+        (nil)))
+(insn 38 37 39 4 (set (mem:SF (plus:SI (reg/v/f:SI 86 [ uPID ])
+                (const_int 28 [0x1c])) [4 uPID_17(D)->Kd+0 S4 A32])
+        (reg:SF 98)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":234 -1
+     (nil))
+(insn 39 38 42 4 (set (mem:SI (plus:SI (reg/v/f:SI 86 [ uPID ])
+                (const_int 4 [0x4])) [3 uPID_17(D)->SampleTime+0 S4 A32])
+        (reg/v:SI 87 [ NewSampleTime ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":235 -1
+     (nil))
+(code_label 42 39 43 6 60 (nil) [1 uses])
+(note 43 42 0 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+;; Function PID_GetKp (PID_GetKp, funcdef_no=11, decl_uid=2039, cgraph_uid=11, symbol_order=11)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 8.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 73 [ uPID ])
+        (reg:SI 10 a0 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":243 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SF 75)
+        (mem:SF (plus:SI (reg/v/f:SI 73 [ uPID ])
+                (const_int 8 [0x8])) [4 uPID_2(D)->DispKp+0 S4 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":244 -1
+     (nil))
+(insn 7 6 11 2 (set (reg:SF 72 [ <retval> ])
+        (reg:SF 75)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":244 -1
+     (nil))
+(insn 11 7 12 2 (set (reg/i:SF 10 a0)
+        (reg:SF 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":245 -1
+     (nil))
+(insn 12 11 0 2 (use (reg/i:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":245 -1
+     (nil))
+
+;; Function PID_GetKi (PID_GetKi, funcdef_no=12, decl_uid=2041, cgraph_uid=12, symbol_order=12)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 8.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 73 [ uPID ])
+        (reg:SI 10 a0 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":247 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SF 75)
+        (mem:SF (plus:SI (reg/v/f:SI 73 [ uPID ])
+                (const_int 12 [0xc])) [4 uPID_2(D)->DispKi+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":248 -1
+     (nil))
+(insn 7 6 11 2 (set (reg:SF 72 [ <retval> ])
+        (reg:SF 75)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":248 -1
+     (nil))
+(insn 11 7 12 2 (set (reg/i:SF 10 a0)
+        (reg:SF 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":249 -1
+     (nil))
+(insn 12 11 0 2 (use (reg/i:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":249 -1
+     (nil))
+
+;; Function PID_GetKd (PID_GetKd, funcdef_no=13, decl_uid=2043, cgraph_uid=13, symbol_order=13)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 8.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 73 [ uPID ])
+        (reg:SI 10 a0 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":251 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SF 75)
+        (mem:SF (plus:SI (reg/v/f:SI 73 [ uPID ])
+                (const_int 16 [0x10])) [4 uPID_2(D)->DispKd+0 S4 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":252 -1
+     (nil))
+(insn 7 6 11 2 (set (reg:SF 72 [ <retval> ])
+        (reg:SF 75)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":252 -1
+     (nil))
+(insn 11 7 12 2 (set (reg/i:SF 10 a0)
+        (reg:SF 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":253 -1
+     (nil))
+(insn 12 11 0 2 (use (reg/i:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":253 -1
+     (nil))

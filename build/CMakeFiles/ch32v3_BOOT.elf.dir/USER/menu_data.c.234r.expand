@@ -1,0 +1,2907 @@
+
+;; Function vSetAfterZone.part.0 (vSetAfterZone.part.0, funcdef_no=37, decl_uid=17035, cgraph_uid=0, symbol_order=82)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 19 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 72 [ analog_state ])
+        (reg:SI 10 a0 [ analog_state ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":324 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SI 74)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":331 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/f:SI 73)
+        (lo_sum:SI (reg:SI 74)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":331 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 8 7 9 2 (set (mem/c:QI (plus:SI (reg/f:SI 73)
+                (const_int 32 [0x20])) [0 CDVSettingsAnalogScreen1[2].last+0 S1 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":331 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 75)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":332 -1
+     (nil))
+(jump_insn 10 9 11 2 (set (pc)
+        (if_then_else (ne (reg/v:SI 72 [ analog_state ])
+                (reg:SI 75))
+            (label_ref 21)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":332 -1
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 21)
+(note 11 10 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 12 11 13 4 (set (reg:SI 77)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":335 -1
+     (nil))
+(insn 13 12 14 4 (set (reg/f:SI 76)
+        (lo_sum:SI (reg:SI 77)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":335 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 14 13 15 4 (set (mem/c:QI (plus:SI (reg/f:SI 76)
+                (const_int 64 [0x40])) [0 CDVSettingsAnalogScreen1[4].last+0 S1 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":335 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 79)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":336 -1
+     (nil))
+(insn 16 15 17 4 (set (reg/f:SI 78)
+        (lo_sum:SI (reg:SI 79)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":336 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 17 16 18 4 (set (reg:QI 80)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":336 -1
+     (nil))
+(insn 18 17 19 4 (set (mem/c:QI (plus:SI (reg/f:SI 78)
+                (const_int 80 [0x50])) [0 CDVSettingsAnalogScreen1[5].last+0 S1 A32])
+        (reg:QI 80)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":336 -1
+     (nil))
+(jump_insn 19 18 20 4 (set (pc)
+        (label_ref:SI 29)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":336 250 {jump}
+     (nil)
+ -> 29)
+(barrier 20 19 21)
+(code_label 21 20 22 5 2 (nil) [1 uses])
+(note 22 21 23 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 5 (set (reg:SI 82)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":341 -1
+     (nil))
+(insn 24 23 25 5 (set (reg/f:SI 81)
+        (lo_sum:SI (reg:SI 82)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":341 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 25 24 26 5 (set (reg:QI 83)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":341 -1
+     (nil))
+(insn 26 25 29 5 (set (mem/c:QI (plus:SI (reg/f:SI 81)
+                (const_int 64 [0x40])) [0 CDVSettingsAnalogScreen1[4].last+0 S1 A32])
+        (reg:QI 83)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":341 -1
+     (nil))
+(code_label 29 26 30 7 1 (nil) [1 uses])
+(note 30 29 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+;; Function vSetAfterZone (vSetAfterZone, funcdef_no=30, decl_uid=16891, cgraph_uid=30, symbol_order=62)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 11 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v:SI 72 [ enable ])
+        (reg:SI 10 a0 [ enable ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":325 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 73 [ analog_state ])
+        (reg:SI 11 a1 [ analog_state ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":325 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(jump_insn 7 4 8 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 72 [ enable ])
+                (const_int 0 [0]))
+            (label_ref 13)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":328 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 13)
+(note 8 7 9 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 9 8 10 4 (set (reg:SI 10 a0)
+        (reg/v:SI 73 [ analog_state ])) -1
+     (nil))
+(call_insn 10 9 11 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(jump_insn 11 10 12 4 (set (pc)
+        (label_ref:SI 21)) 250 {jump}
+     (nil)
+ -> 21)
+(barrier 12 11 13)
+(code_label 13 12 14 5 5 (nil) [1 uses])
+(note 14 13 15 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 15 14 16 5 (set (reg:SI 75)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":345 -1
+     (nil))
+(insn 16 15 17 5 (set (reg/f:SI 74)
+        (lo_sum:SI (reg:SI 75)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":345 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 17 16 18 5 (set (reg:QI 76)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":345 -1
+     (nil))
+(insn 18 17 21 5 (set (mem/c:QI (plus:SI (reg/f:SI 74)
+                (const_int 32 [0x20])) [0 CDVSettingsAnalogScreen1[2].last+0 S1 A32])
+        (reg:QI 76)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":345 -1
+     (nil))
+(code_label 21 18 22 7 4 (nil) [1 uses])
+(note 22 21 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+;; Function PriorRegulationEnable (PriorRegulationEnable, funcdef_no=31, decl_uid=16936, cgraph_uid=31, symbol_order=63)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+Edge 2->4 redirected to 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 7 into block 6...
+Merged blocks 6 and 7.
+Merged 6 and 7 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 6 NOTE_INSN_DELETED)
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (reg/v:SI 73 [ enable ])
+        (reg:SI 10 a0 [ enable ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":349 -1
+     (nil))
+(note 3 2 8 2 NOTE_INSN_FUNCTION_BEG)
+(jump_insn 8 3 9 2 (set (pc)
+        (if_then_else (ne (reg/v:SI 73 [ enable ])
+                (const_int 0 [0]))
+            (label_ref:SI 20)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":350 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 20)
+(note 9 8 5 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 5 9 17 4 (set (reg:SI 72 [ cstore_6 ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":353 -1
+     (nil))
+(jump_insn 17 5 18 4 (set (pc)
+        (label_ref 10)) -1
+     (nil)
+ -> 10)
+(barrier 18 17 20)
+(code_label 20 18 19 5 13 (nil) [1 uses])
+(note 19 20 4 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 4 19 10 5 (set (reg:SI 72 [ cstore_6 ])
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":351 -1
+     (nil))
+(code_label 10 4 11 6 12 (nil) [1 uses])
+(note 11 10 12 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 12 11 13 6 (set (reg:SI 75)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) -1
+     (nil))
+(insn 13 12 14 6 (set (reg/f:SI 74)
+        (lo_sum:SI (reg:SI 75)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 14 13 0 6 (set (mem/c:SI (plus:SI (reg/f:SI 74)
+                (const_int 20 [0x14])) [2 CDVSettingsAnalogScreen1[1].xType+0 S4 A32])
+        (reg:SI 72 [ cstore_6 ])) -1
+     (nil))
+
+;; Function getScreenCount (getScreenCount, funcdef_no=32, decl_uid=16888, cgraph_uid=32, symbol_order=75)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+Edge 2->4 redirected to 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 15.
+Merging block 7 into block 6...
+Merged blocks 6 and 7.
+Merged 6 and 7 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v:SI 73 [ dev ])
+        (reg:SI 10 a0 [ dev ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":473 -1
+     (nil))
+(note 3 2 7 2 NOTE_INSN_FUNCTION_BEG)
+(jump_insn 7 3 8 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 73 [ dev ])
+                (const_int 0 [0]))
+            (label_ref:SI 24)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":474 180 {*branchsi}
+     (int_list:REG_BR_PROB 375809644 (nil))
+ -> 24)
+(note 8 7 9 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 9 8 10 4 (set (reg:SI 75)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":477 -1
+     (nil))
+(insn 10 9 11 4 (set (reg/f:SI 74)
+        (lo_sum:SI (reg:SI 75)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":477 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 11 10 21 4 (set (reg:SI 72 [ <retval> ])
+        (zero_extend:SI (mem/c:QI (reg/f:SI 74) [0 seting_sting_count+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":477 -1
+     (nil))
+(jump_insn 21 11 22 4 (set (pc)
+        (label_ref 12)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":477 -1
+     (nil)
+ -> 12)
+(barrier 22 21 24)
+(code_label 24 22 23 5 16 (nil) [1 uses])
+(note 23 24 4 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 4 23 12 5 (set (reg:SI 72 [ <retval> ])
+        (const_int 10 [0xa])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":475 -1
+     (nil))
+(code_label 12 4 13 6 15 (nil) [1 uses])
+(note 13 12 14 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 14 13 18 6 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 72 [ <retval> ])) -1
+     (nil))
+(insn 18 14 19 6 (set (reg/i:SI 10 a0)
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":478 -1
+     (nil))
+(insn 19 18 0 6 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":478 -1
+     (nil))
+
+;; Function SetMainMode (SetMainMode, funcdef_no=33, decl_uid=16879, cgraph_uid=33, symbol_order=76)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 74 [ mode ])
+        (reg:SI 10 a0 [ mode ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":481 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SI 76)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) -1
+     (nil))
+(insn 7 6 8 2 (set (reg/f:SI 75)
+        (lo_sum:SI (reg:SI 76)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 8 7 9 2 (set (reg:SI 78)
+        (plus:SI (reg/v:SI 74 [ mode ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":482 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 77)
+        (ne:SI (reg:SI 78)
+            (const_int 0 [0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":482 -1
+     (nil))
+(insn 10 9 0 2 (set (mem/c:QI (plus:SI (reg/f:SI 75)
+                (const_int 48 [0x30])) [0 SettingsScreen1[3].last+0 S1 A32])
+        (subreg:QI (reg:SI 77) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":482 -1
+     (nil))
+
+;; Function SetPID2Screen (SetPID2Screen, funcdef_no=34, decl_uid=16886, cgraph_uid=34, symbol_order=77)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+;; Generating RTL for gimple basic block 15
+
+;; Generating RTL for gimple basic block 16
+
+;; Generating RTL for gimple basic block 17
+
+;; Generating RTL for gimple basic block 18
+
+;; Generating RTL for gimple basic block 19
+
+;; Generating RTL for gimple basic block 20
+
+;; Generating RTL for gimple basic block 21
+
+;; Generating RTL for gimple basic block 22
+
+;; Generating RTL for gimple basic block 23
+
+;; Generating RTL for gimple basic block 24
+
+;; Generating RTL for gimple basic block 25
+
+;; Generating RTL for gimple basic block 26
+
+;; Generating RTL for gimple basic block 27
+
+;; Generating RTL for gimple basic block 28
+
+;; Generating RTL for gimple basic block 29
+
+;; Generating RTL for gimple basic block 30
+
+;; Generating RTL for gimple basic block 31
+
+;; Generating RTL for gimple basic block 32
+
+;; Generating RTL for gimple basic block 33
+
+;; Generating RTL for gimple basic block 34
+
+;; Generating RTL for gimple basic block 35
+
+;; Generating RTL for gimple basic block 36
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 38->39 to 41 failed.
+Edge 38->42 redirected to 43
+Forwarding edge 38->39 to 41 failed.
+Redirecting jump 612 from 42 to 43.
+Merging block 42 into block 41...
+Merged blocks 41 and 42.
+Merged 41 and 42 without moving.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 38->39 to 41 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 18 NOTE_INSN_DELETED)
+(note 18 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 18 3 2 (set (reg/v:SI 80 [ state ])
+        (reg:SI 10 a0 [ state ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":489 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 81 [ analog_state ])
+        (reg:SI 11 a1 [ analog_state ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":489 -1
+     (nil))
+(note 4 3 20 2 NOTE_INSN_FUNCTION_BEG)
+(jump_insn 20 4 21 2 (set (pc)
+        (if_then_else (ne (reg/v:SI 80 [ state ])
+                (const_int 0 [0]))
+            (label_ref 55)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":491 -1
+     (int_list:REG_BR_PROB 719407028 (nil))
+ -> 55)
+(note 21 20 22 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 22 21 23 4 (set (reg:SI 11 a1)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":730 -1
+     (nil))
+(insn 23 22 24 4 (set (reg:SI 10 a0)
+        (const_int 104 [0x68])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":730 -1
+     (nil))
+(call_insn 24 23 25 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 068a92d0 setReg8>) [0 setReg8 S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":730 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 068a92d0 setReg8>)
+        (nil))
+    (expr_list:HI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 25 24 26 4 (set (reg:SI 83)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":732 -1
+     (nil))
+(insn 26 25 27 4 (set (reg/f:SI 82)
+        (lo_sum:SI (reg:SI 83)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":732 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 27 26 28 4 (set (reg:SI 85)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":732 -1
+     (nil))
+(insn 28 27 29 4 (set (reg/f:SI 84)
+        (lo_sum:SI (reg:SI 85)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":732 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 29 28 30 4 (set (mem/f/c:SI (plus:SI (reg/f:SI 82)
+                (const_int 4 [0x4])) [6 xScreenDCV[0].pScreenCurObjets+0 S4 A32])
+        (reg/f:SI 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":732 -1
+     (nil))
+(insn 30 29 31 4 (set (reg:SI 87)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":501 -1
+     (nil))
+(insn 31 30 32 4 (set (reg/f:SI 86)
+        (lo_sum:SI (reg:SI 87)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":501 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 32 31 33 4 (set (reg:QI 88)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":501 -1
+     (nil))
+(insn 33 32 34 4 (set (mem/c:QI (plus:SI (reg/f:SI 86)
+                (const_int 32 [0x20])) [0 CDVSettingsScreen6[2].last+0 S1 A32])
+        (reg:QI 88)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":501 -1
+     (nil))
+(insn 34 33 35 4 (set (reg:SI 90)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":502 -1
+     (nil))
+(insn 35 34 36 4 (set (reg/f:SI 89)
+        (lo_sum:SI (reg:SI 90)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":502 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 36 35 37 4 (set (reg:HI 91)
+        (const_int 11 [0xb])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":502 -1
+     (nil))
+(insn 37 36 38 4 (set (mem/c:HI (plus:SI (reg/f:SI 89)
+                (const_int 174 [0xae])) [4 xScreenDCV[8].pDownScreenSet+0 S2 A16])
+        (reg:HI 91)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":502 -1
+     (nil))
+(insn 38 37 39 4 (set (reg:SI 93)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":503 -1
+     (nil))
+(insn 39 38 40 4 (set (reg/f:SI 92)
+        (lo_sum:SI (reg:SI 93)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":503 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 40 39 41 4 (set (reg:HI 94)
+        (const_int 9 [0x9])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":503 -1
+     (nil))
+(insn 41 40 42 4 (set (mem/c:HI (plus:SI (reg/f:SI 92)
+                (const_int 212 [0xd4])) [4 xScreenDCV[10].pUpScreenSet+0 S2 A32])
+        (reg:HI 94)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":503 -1
+     (nil))
+(insn 42 41 43 4 (set (reg:SI 95)
+        (const_int 1 [0x1])) -1
+     (nil))
+(jump_insn 43 42 44 4 (set (pc)
+        (if_then_else (eq (reg/v:SI 81 [ analog_state ])
+                (reg:SI 95))
+            (label_ref 99)
+            (pc))) -1
+     (int_list:REG_BR_PROB 214748372 (nil))
+ -> 99)
+(note 44 43 45 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 45 44 46 5 (set (pc)
+        (if_then_else (eq (reg/v:SI 81 [ analog_state ])
+                (const_int 0 [0]))
+            (label_ref 73)
+            (pc))) -1
+     (int_list:REG_BR_PROB 268435460 (nil))
+ -> 73)
+(note 46 45 47 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 47 46 48 6 (set (reg:SI 96)
+        (const_int 2 [0x2])) -1
+     (nil))
+(jump_insn 48 47 49 6 (set (pc)
+        (if_then_else (eq (reg/v:SI 81 [ analog_state ])
+                (reg:SI 96))
+            (label_ref 144)
+            (pc))) -1
+     (int_list:REG_BR_PROB 357913948 (nil))
+ -> 144)
+(note 49 48 50 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 50 49 51 7 (set (reg:SI 97)
+        (const_int 3 [0x3])) -1
+     (nil))
+(jump_insn 51 50 54 7 (set (pc)
+        (if_then_else (eq (reg/v:SI 81 [ analog_state ])
+                (reg:SI 97))
+            (label_ref 180)
+            (pc))) -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 180)
+(note 54 51 8 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 8 54 52 8 (set (reg/v:SI 76 [ after_zone_enable ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":490 -1
+     (nil))
+(jump_insn 52 8 53 8 (set (pc)
+        (label_ref 235)) -1
+     (nil)
+ -> 235)
+(barrier 53 52 55)
+(code_label 55 53 56 9 19 (nil) [1 uses])
+(note 56 55 57 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 57 56 58 9 (set (reg:SI 99)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":737 -1
+     (nil))
+(insn 58 57 59 9 (set (reg/f:SI 98)
+        (lo_sum:SI (reg:SI 99)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":737 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 59 58 60 9 (set (mem/c:QI (plus:SI (reg/f:SI 98)
+                (const_int 32 [0x20])) [0 CDVSettingsScreen6[2].last+0 S1 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":737 -1
+     (nil))
+(insn 60 59 61 9 (set (reg:SI 101)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":738 -1
+     (nil))
+(insn 61 60 62 9 (set (reg/f:SI 100)
+        (lo_sum:SI (reg:SI 101)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":738 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 62 61 63 9 (set (reg:SI 103)
+        (high:SI (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":738 -1
+     (nil))
+(insn 63 62 64 9 (set (reg/f:SI 102)
+        (lo_sum:SI (reg:SI 103)
+            (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":738 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR6") [flags 0x182])
+        (nil)))
+(insn 64 63 65 9 (set (mem/f/c:SI (plus:SI (reg/f:SI 100)
+                (const_int 4 [0x4])) [6 xScreenDCV[0].pScreenCurObjets+0 S4 A32])
+        (reg/f:SI 102)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":738 -1
+     (nil))
+(insn 65 64 66 9 (set (reg:SI 104)
+        (const_int 1 [0x1])) -1
+     (nil))
+(jump_insn 66 65 67 9 (set (pc)
+        (if_then_else (eq (reg/v:SI 80 [ state ])
+                (reg:SI 104))
+            (label_ref 248)
+            (pc))) -1
+     (int_list:REG_BR_PROB 357913948 (nil))
+ -> 248)
+(note 67 66 68 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 68 67 69 10 (set (reg:SI 105)
+        (const_int 2 [0x2])) -1
+     (nil))
+(jump_insn 69 68 72 10 (set (pc)
+        (if_then_else (eq (reg/v:SI 80 [ state ])
+                (reg:SI 105))
+            (label_ref 411)
+            (pc))) -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 411)
+(note 72 69 17 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 17 72 70 11 (set (reg/v:SI 76 [ after_zone_enable ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":490 -1
+     (nil))
+(jump_insn 70 17 71 11 (set (pc)
+        (label_ref 591)) -1
+     (nil)
+ -> 591)
+(barrier 71 70 73)
+(code_label 73 71 74 12 21 (nil) [1 uses])
+(note 74 73 75 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 75 74 76 12 (set (reg:SI 107)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":507 -1
+     (nil))
+(insn 76 75 77 12 (set (reg/f:SI 106)
+        (lo_sum:SI (reg:SI 107)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":507 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 77 76 78 12 (set (reg:QI 108)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":507 -1
+     (nil))
+(insn 78 77 79 12 (set (mem/c:QI (plus:SI (reg/f:SI 106)
+                (const_int 80 [0x50])) [0 CDVInfoScreen1_1[5].last+0 S1 A32])
+        (reg:QI 108)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":507 -1
+     (nil))
+(insn 79 78 80 12 (set (reg:SI 110)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":508 -1
+     (nil))
+(insn 80 79 81 12 (set (reg/f:SI 109)
+        (lo_sum:SI (reg:SI 110)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":508 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 81 80 82 12 (set (reg:QI 111)
+        (const_int 11 [0xb])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":508 -1
+     (nil))
+(insn 82 81 83 12 (set (mem/c:QI (reg/f:SI 109) [0 seting_sting_count+0 S1 A8])
+        (reg:QI 111)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":508 -1
+     (nil))
+(insn 83 82 84 12 (set (reg:SI 113)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":510 -1
+     (nil))
+(insn 84 83 85 12 (set (reg/f:SI 112)
+        (lo_sum:SI (reg:SI 113)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":510 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 85 84 86 12 (set (reg:SI 115)
+        (const_int 983040 [0xf0000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":510 -1
+     (nil))
+(insn 86 85 87 12 (set (reg:SI 114)
+        (plus:SI (reg:SI 115)
+            (const_int 12 [0xc]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":510 -1
+     (expr_list:REG_EQUAL (const_int 983052 [0xf000c])
+        (nil)))
+(insn 87 86 88 12 (set (mem/c:SI (plus:SI (reg/f:SI 112)
+                (const_int 252 [0xfc])) [4 MEM[(short unsigned int *)&xScreenDCV + 252B]+0 S4 A32])
+        (reg:SI 114)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":510 -1
+     (nil))
+(insn 88 87 89 12 (set (reg:SI 117)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":512 -1
+     (nil))
+(insn 89 88 90 12 (set (reg/f:SI 116)
+        (lo_sum:SI (reg:SI 117)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":512 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 90 89 91 12 (set (reg:SI 119)
+        (const_int 1376256 [0x150000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":512 -1
+     (nil))
+(insn 91 90 92 12 (set (reg:SI 118)
+        (plus:SI (reg:SI 119)
+            (const_int 13 [0xd]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":512 -1
+     (expr_list:REG_EQUAL (const_int 1376269 [0x15000d])
+        (nil)))
+(insn 92 91 93 12 (set (mem/c:SI (plus:SI (reg/f:SI 116)
+                (const_int 292 [0x124])) [4 MEM[(short unsigned int *)&xScreenDCV + 292B]+0 S4 A32])
+        (reg:SI 118)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":512 -1
+     (nil))
+(insn 93 92 94 12 (set (reg:SI 121)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":513 -1
+     (nil))
+(insn 94 93 95 12 (set (reg/f:SI 120)
+        (lo_sum:SI (reg:SI 121)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":513 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 95 94 96 12 (set (reg:HI 122)
+        (const_int 15 [0xf])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":513 -1
+     (nil))
+(insn 96 95 5 12 (set (mem/c:HI (plus:SI (reg/f:SI 120)
+                (const_int 412 [0x19c])) [4 xScreenDCV[20].pUpScreenSet+0 S2 A32])
+        (reg:HI 122)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":513 -1
+     (nil))
+(insn 5 96 97 12 (set (reg/v:SI 76 [ after_zone_enable ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":490 -1
+     (nil))
+(jump_insn 97 5 98 12 (set (pc)
+        (label_ref 235)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":514 -1
+     (nil)
+ -> 235)
+(barrier 98 97 99)
+(code_label 99 98 100 13 20 (nil) [1 uses])
+(note 100 99 101 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 101 100 102 13 (set (reg:SI 124)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":517 -1
+     (nil))
+(insn 102 101 103 13 (set (reg/f:SI 123)
+        (lo_sum:SI (reg:SI 124)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":517 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 103 102 104 13 (set (mem/c:QI (plus:SI (reg/f:SI 123)
+                (const_int 80 [0x50])) [0 CDVInfoScreen1_1[5].last+0 S1 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":517 -1
+     (nil))
+(insn 104 103 105 13 (set (reg:SI 126)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":518 -1
+     (nil))
+(insn 105 104 106 13 (set (reg/f:SI 125)
+        (lo_sum:SI (reg:SI 126)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":518 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 106 105 107 13 (set (reg:QI 127)
+        (const_int 13 [0xd])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":518 -1
+     (nil))
+(insn 107 106 108 13 (set (mem/c:QI (reg/f:SI 125) [0 seting_sting_count+0 S1 A8])
+        (reg:QI 127)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":518 -1
+     (nil))
+(insn 108 107 109 13 (set (reg:SI 129)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":520 -1
+     (nil))
+(insn 109 108 110 13 (set (reg/f:SI 128)
+        (lo_sum:SI (reg:SI 129)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":520 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 110 109 111 13 (set (reg:SI 131)
+        (const_int 1048576 [0x100000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":520 -1
+     (nil))
+(insn 111 110 112 13 (set (reg:SI 130)
+        (plus:SI (reg:SI 131)
+            (const_int 14 [0xe]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":520 -1
+     (expr_list:REG_EQUAL (const_int 1048590 [0x10000e])
+        (nil)))
+(insn 112 111 113 13 (set (mem/c:SI (plus:SI (reg/f:SI 128)
+                (const_int 292 [0x124])) [4 MEM[(short unsigned int *)&xScreenDCV + 292B]+0 S4 A32])
+        (reg:SI 130)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":520 -1
+     (nil))
+(insn 113 112 114 13 (set (reg:SI 133)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":521 -1
+     (nil))
+(insn 114 113 115 13 (set (reg/f:SI 132)
+        (lo_sum:SI (reg:SI 133)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":521 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 115 114 116 13 (set (reg:HI 134)
+        (const_int 15 [0xf])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":521 -1
+     (nil))
+(insn 116 115 117 13 (set (mem/c:HI (plus:SI (reg/f:SI 132)
+                (const_int 274 [0x112])) [4 xScreenDCV[13].pDownScreenSet+0 S2 A16])
+        (reg:HI 134)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":521 -1
+     (nil))
+(insn 117 116 118 13 (set (reg:SI 136)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":523 -1
+     (nil))
+(insn 118 117 119 13 (set (reg/f:SI 135)
+        (lo_sum:SI (reg:SI 136)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":523 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 119 118 120 13 (set (reg:SI 138)
+        (const_int 917504 [0xe0000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":523 -1
+     (nil))
+(insn 120 119 121 13 (set (reg:SI 137)
+        (plus:SI (reg:SI 138)
+            (const_int 12 [0xc]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":523 -1
+     (expr_list:REG_EQUAL (const_int 917516 [0xe000c])
+        (nil)))
+(insn 121 120 122 13 (set (mem/c:SI (plus:SI (reg/f:SI 135)
+                (const_int 252 [0xfc])) [4 MEM[(short unsigned int *)&xScreenDCV + 252B]+0 S4 A32])
+        (reg:SI 137)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":523 -1
+     (nil))
+(insn 122 121 123 13 (set (reg:SI 140)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":525 -1
+     (nil))
+(insn 123 122 124 13 (set (reg/f:SI 139)
+        (lo_sum:SI (reg:SI 140)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":525 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 124 123 125 13 (set (reg:SI 142)
+        (const_int 1376256 [0x150000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":525 -1
+     (nil))
+(insn 125 124 126 13 (set (reg:SI 141)
+        (plus:SI (reg:SI 142)
+            (const_int 15 [0xf]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":525 -1
+     (expr_list:REG_EQUAL (const_int 1376271 [0x15000f])
+        (nil)))
+(insn 126 125 127 13 (set (mem/c:SI (plus:SI (reg/f:SI 139)
+                (const_int 312 [0x138])) [4 MEM[(short unsigned int *)&xScreenDCV + 312B]+0 S4 A32])
+        (reg:SI 141)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":525 -1
+     (nil))
+(insn 127 126 128 13 (set (reg:SI 144)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":526 -1
+     (nil))
+(insn 128 127 129 13 (set (reg/f:SI 143)
+        (lo_sum:SI (reg:SI 144)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":526 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 129 128 130 13 (set (reg:HI 145)
+        (const_int 16 [0x10])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":526 -1
+     (nil))
+(insn 130 129 131 13 (set (mem/c:HI (plus:SI (reg/f:SI 143)
+                (const_int 412 [0x19c])) [4 xScreenDCV[20].pUpScreenSet+0 S2 A32])
+        (reg:HI 145)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":526 -1
+     (nil))
+(insn 131 130 132 13 (set (reg:SI 147)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":527 -1
+     (nil))
+(insn 132 131 133 13 (set (reg/f:SI 146)
+        (lo_sum:SI (reg:SI 147)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":527 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 133 132 134 13 (set (reg:SI 149)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":527 -1
+     (nil))
+(insn 134 133 135 13 (set (reg/f:SI 148)
+        (lo_sum:SI (reg:SI 149)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":527 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 135 134 136 13 (set (mem/f/c:SI (plus:SI (reg/f:SI 146)
+                (const_int 304 [0x130])) [6 xScreenDCV[15].pScreenCurObjets+0 S4 A32])
+        (reg/f:SI 148)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":527 -1
+     (nil))
+(insn 136 135 137 13 (set (reg:SI 151)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":353 -1
+     (nil))
+(insn 137 136 138 13 (set (reg/f:SI 150)
+        (lo_sum:SI (reg:SI 151)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":353 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 138 137 139 13 (set (reg:SI 152)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":353 -1
+     (nil))
+(insn 139 138 140 13 (set (mem/c:SI (plus:SI (reg/f:SI 150)
+                (const_int 20 [0x14])) [2 CDVSettingsAnalogScreen1[1].xType+0 S4 A32])
+        (reg:SI 152)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":353 -1
+     (nil))
+(insn 140 139 141 13 (set (reg:SI 10 a0)
+        (const_int 1 [0x1])) -1
+     (nil))
+(call_insn 141 140 6 13 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(insn 6 141 142 13 (set (reg/v:SI 76 [ after_zone_enable ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":516 -1
+     (nil))
+(jump_insn 142 6 143 13 (set (pc)
+        (label_ref 235)) -1
+     (nil)
+ -> 235)
+(barrier 143 142 144)
+(code_label 144 143 145 14 22 (nil) [1 uses])
+(note 145 144 146 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 146 145 147 14 (set (reg:SI 154)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":533 -1
+     (nil))
+(insn 147 146 148 14 (set (reg/f:SI 153)
+        (lo_sum:SI (reg:SI 154)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":533 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 148 147 149 14 (set (reg:QI 155)
+        (const_int 12 [0xc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":533 -1
+     (nil))
+(insn 149 148 150 14 (set (mem/c:QI (reg/f:SI 153) [0 seting_sting_count+0 S1 A8])
+        (reg:QI 155)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":533 -1
+     (nil))
+(insn 150 149 151 14 (set (reg:SI 157)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":534 -1
+     (nil))
+(insn 151 150 152 14 (set (reg/f:SI 156)
+        (lo_sum:SI (reg:SI 157)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":534 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 152 151 153 14 (set (reg:QI 158)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":534 -1
+     (nil))
+(insn 153 152 154 14 (set (mem/c:QI (plus:SI (reg/f:SI 156)
+                (const_int 80 [0x50])) [0 CDVInfoScreen1_1[5].last+0 S1 A32])
+        (reg:QI 158)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":534 -1
+     (nil))
+(insn 154 153 155 14 (set (reg:SI 160)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":536 -1
+     (nil))
+(insn 155 154 156 14 (set (reg/f:SI 159)
+        (lo_sum:SI (reg:SI 160)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":536 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 156 155 157 14 (set (reg:SI 162)
+        (const_int 917504 [0xe0000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":536 -1
+     (nil))
+(insn 157 156 158 14 (set (reg:SI 161)
+        (plus:SI (reg:SI 162)
+            (const_int 12 [0xc]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":536 -1
+     (expr_list:REG_EQUAL (const_int 917516 [0xe000c])
+        (nil)))
+(insn 158 157 159 14 (set (mem/c:SI (plus:SI (reg/f:SI 159)
+                (const_int 252 [0xfc])) [4 MEM[(short unsigned int *)&xScreenDCV + 252B]+0 S4 A32])
+        (reg:SI 161)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":536 -1
+     (nil))
+(insn 159 158 160 14 (set (reg:SI 164)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":538 -1
+     (nil))
+(insn 160 159 161 14 (set (reg/f:SI 163)
+        (lo_sum:SI (reg:SI 164)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":538 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 161 160 162 14 (set (reg:SI 166)
+        (const_int 1048576 [0x100000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":538 -1
+     (nil))
+(insn 162 161 163 14 (set (reg:SI 165)
+        (plus:SI (reg:SI 166)
+            (const_int 14 [0xe]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":538 -1
+     (expr_list:REG_EQUAL (const_int 1048590 [0x10000e])
+        (nil)))
+(insn 163 162 164 14 (set (mem/c:SI (plus:SI (reg/f:SI 163)
+                (const_int 292 [0x124])) [4 MEM[(short unsigned int *)&xScreenDCV + 292B]+0 S4 A32])
+        (reg:SI 165)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":538 -1
+     (nil))
+(insn 164 163 165 14 (set (reg:SI 168)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":540 -1
+     (nil))
+(insn 165 164 166 14 (set (reg/f:SI 167)
+        (lo_sum:SI (reg:SI 168)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":540 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 166 165 167 14 (set (reg:SI 170)
+        (const_int 1376256 [0x150000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":540 -1
+     (nil))
+(insn 167 166 168 14 (set (reg:SI 169)
+        (plus:SI (reg:SI 170)
+            (const_int 15 [0xf]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":540 -1
+     (expr_list:REG_EQUAL (const_int 1376271 [0x15000f])
+        (nil)))
+(insn 168 167 169 14 (set (mem/c:SI (plus:SI (reg/f:SI 167)
+                (const_int 312 [0x138])) [4 MEM[(short unsigned int *)&xScreenDCV + 312B]+0 S4 A32])
+        (reg:SI 169)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":540 -1
+     (nil))
+(insn 169 168 170 14 (set (reg:SI 172)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":541 -1
+     (nil))
+(insn 170 169 171 14 (set (reg/f:SI 171)
+        (lo_sum:SI (reg:SI 172)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":541 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 171 170 172 14 (set (reg:HI 173)
+        (const_int 16 [0x10])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":541 -1
+     (nil))
+(insn 172 171 173 14 (set (mem/c:HI (plus:SI (reg/f:SI 171)
+                (const_int 412 [0x19c])) [4 xScreenDCV[20].pUpScreenSet+0 S2 A32])
+        (reg:HI 173)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":541 -1
+     (nil))
+(insn 173 172 174 14 (set (reg:SI 175)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":542 -1
+     (nil))
+(insn 174 173 175 14 (set (reg/f:SI 174)
+        (lo_sum:SI (reg:SI 175)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":542 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 175 174 176 14 (set (reg:SI 177)
+        (high:SI (symbol_ref:SI ("*.LANCHOR7") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":542 -1
+     (nil))
+(insn 176 175 177 14 (set (reg/f:SI 176)
+        (lo_sum:SI (reg:SI 177)
+            (symbol_ref:SI ("*.LANCHOR7") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":542 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR7") [flags 0x182])
+        (nil)))
+(insn 177 176 7 14 (set (mem/f/c:SI (plus:SI (reg/f:SI 174)
+                (const_int 304 [0x130])) [6 xScreenDCV[15].pScreenCurObjets+0 S4 A32])
+        (reg/f:SI 176)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":542 -1
+     (nil))
+(insn 7 177 178 14 (set (reg/v:SI 76 [ after_zone_enable ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":490 -1
+     (nil))
+(jump_insn 178 7 179 14 (set (pc)
+        (label_ref 235)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":543 -1
+     (nil)
+ -> 235)
+(barrier 179 178 180)
+(code_label 180 179 181 15 23 (nil) [1 uses])
+(note 181 180 182 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 182 181 183 15 (set (reg:SI 10 a0)
+        (const_int 106 [0x6a])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":545 -1
+     (nil))
+(call_insn 183 182 184 15 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068a94b0 getReg8>) [0 getReg8 S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":545 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068a94b0 getReg8>)
+        (nil))
+    (expr_list:HI (use (reg:SI 10 a0))
+        (nil)))
+(insn 184 183 185 15 (set (reg:SI 178)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":545 -1
+     (nil))
+(insn 185 184 186 15 (set (reg:SI 72 [ _2 ])
+        (reg:SI 178)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":545 -1
+     (nil))
+(insn 186 185 187 15 (set (reg:SI 180)
+        (eq:SI (reg:SI 72 [ _2 ])
+            (const_int 0 [0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":545 -1
+     (nil))
+(insn 187 186 188 15 (set (reg:QI 179)
+        (subreg:QI (reg:SI 180) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":545 -1
+     (nil))
+(insn 188 187 189 15 (set (reg/v:SI 76 [ after_zone_enable ])
+        (zero_extend:SI (reg:QI 179))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":490 -1
+     (nil))
+(insn 189 188 190 15 (set (reg:SI 182)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":546 -1
+     (nil))
+(insn 190 189 191 15 (set (reg/f:SI 181)
+        (lo_sum:SI (reg:SI 182)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":546 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 191 190 192 15 (set (mem/c:QI (plus:SI (reg/f:SI 181)
+                (const_int 80 [0x50])) [0 CDVInfoScreen1_1[5].last+0 S1 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":546 -1
+     (nil))
+(insn 192 191 193 15 (set (reg:SI 10 a0)
+        (const_int 3 [0x3])) -1
+     (nil))
+(call_insn 193 192 194 15 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(insn 194 193 195 15 (set (reg:SI 184)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":548 -1
+     (nil))
+(insn 195 194 196 15 (set (reg/f:SI 183)
+        (lo_sum:SI (reg:SI 184)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":548 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 196 195 197 15 (set (reg:SI 186)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":548 -1
+     (nil))
+(insn 197 196 198 15 (set (reg/f:SI 185)
+        (lo_sum:SI (reg:SI 186)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":548 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 198 197 199 15 (set (mem/f/c:SI (plus:SI (reg/f:SI 183)
+                (const_int 304 [0x130])) [6 xScreenDCV[15].pScreenCurObjets+0 S4 A32])
+        (reg/f:SI 185)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":548 -1
+     (nil))
+(insn 199 198 200 15 (set (reg:SI 188)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":351 -1
+     (nil))
+(insn 200 199 201 15 (set (reg/f:SI 187)
+        (lo_sum:SI (reg:SI 188)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":351 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 201 200 202 15 (set (reg:SI 189)
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":351 -1
+     (nil))
+(insn 202 201 203 15 (set (mem/c:SI (plus:SI (reg/f:SI 187)
+                (const_int 20 [0x14])) [2 CDVSettingsAnalogScreen1[1].xType+0 S4 A32])
+        (reg:SI 189)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":351 -1
+     (nil))
+(insn 203 202 204 15 (set (reg:SI 191)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":550 -1
+     (nil))
+(insn 204 203 205 15 (set (reg/f:SI 190)
+        (lo_sum:SI (reg:SI 191)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":550 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 205 204 206 15 (set (reg:QI 192)
+        (const_int 17 [0x11])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":550 -1
+     (nil))
+(insn 206 205 207 15 (set (mem/c:QI (reg/f:SI 190) [0 seting_sting_count+0 S1 A8])
+        (reg:QI 192)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":550 -1
+     (nil))
+(insn 207 206 208 15 (set (reg:SI 194)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":551 -1
+     (nil))
+(insn 208 207 209 15 (set (reg/f:SI 193)
+        (lo_sum:SI (reg:SI 194)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":551 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 209 208 210 15 (set (reg:HI 195)
+        (const_int 15 [0xf])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":551 -1
+     (nil))
+(insn 210 209 211 15 (set (mem/c:HI (plus:SI (reg/f:SI 193)
+                (const_int 274 [0x112])) [4 xScreenDCV[13].pDownScreenSet+0 S2 A16])
+        (reg:HI 195)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":551 -1
+     (nil))
+(insn 211 210 212 15 (set (reg:SI 197)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":553 -1
+     (nil))
+(insn 212 211 213 15 (set (reg/f:SI 196)
+        (lo_sum:SI (reg:SI 197)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":553 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 213 212 214 15 (set (reg:SI 199)
+        (const_int 917504 [0xe0000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":553 -1
+     (nil))
+(insn 214 213 215 15 (set (reg:SI 198)
+        (plus:SI (reg:SI 199)
+            (const_int 12 [0xc]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":553 -1
+     (expr_list:REG_EQUAL (const_int 917516 [0xe000c])
+        (nil)))
+(insn 215 214 216 15 (set (mem/c:SI (plus:SI (reg/f:SI 196)
+                (const_int 252 [0xfc])) [4 MEM[(short unsigned int *)&xScreenDCV + 252B]+0 S4 A32])
+        (reg:SI 198)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":553 -1
+     (nil))
+(insn 216 215 217 15 (set (reg:SI 201)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":555 -1
+     (nil))
+(insn 217 216 218 15 (set (reg/f:SI 200)
+        (lo_sum:SI (reg:SI 201)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":555 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 218 217 219 15 (set (reg:SI 203)
+        (const_int 1048576 [0x100000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":555 -1
+     (nil))
+(insn 219 218 220 15 (set (reg:SI 202)
+        (plus:SI (reg:SI 203)
+            (const_int 14 [0xe]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":555 -1
+     (expr_list:REG_EQUAL (const_int 1048590 [0x10000e])
+        (nil)))
+(insn 220 219 221 15 (set (mem/c:SI (plus:SI (reg/f:SI 200)
+                (const_int 292 [0x124])) [4 MEM[(short unsigned int *)&xScreenDCV + 292B]+0 S4 A32])
+        (reg:SI 202)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":555 -1
+     (nil))
+(insn 221 220 222 15 (set (reg:SI 205)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":557 -1
+     (nil))
+(insn 222 221 223 15 (set (reg/f:SI 204)
+        (lo_sum:SI (reg:SI 205)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":557 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 223 222 224 15 (set (reg:SI 207)
+        (const_int 1114112 [0x110000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":557 -1
+     (nil))
+(insn 224 223 225 15 (set (reg:SI 206)
+        (plus:SI (reg:SI 207)
+            (const_int 15 [0xf]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":557 -1
+     (expr_list:REG_EQUAL (const_int 1114127 [0x11000f])
+        (nil)))
+(insn 225 224 226 15 (set (mem/c:SI (plus:SI (reg/f:SI 204)
+                (const_int 312 [0x138])) [4 MEM[(short unsigned int *)&xScreenDCV + 312B]+0 S4 A32])
+        (reg:SI 206)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":557 -1
+     (nil))
+(insn 226 225 227 15 (set (reg:SI 209)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":559 -1
+     (nil))
+(insn 227 226 228 15 (set (reg/f:SI 208)
+        (lo_sum:SI (reg:SI 209)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":559 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 228 227 229 15 (set (reg:SI 211)
+        (const_int 1179648 [0x120000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":559 -1
+     (nil))
+(insn 229 228 230 15 (set (reg:SI 210)
+        (plus:SI (reg:SI 211)
+            (const_int 16 [0x10]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":559 -1
+     (expr_list:REG_EQUAL (const_int 1179664 [0x120010])
+        (nil)))
+(insn 230 229 231 15 (set (mem/c:SI (plus:SI (reg/f:SI 208)
+                (const_int 332 [0x14c])) [4 MEM[(short unsigned int *)&xScreenDCV + 332B]+0 S4 A32])
+        (reg:SI 210)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":559 -1
+     (nil))
+(insn 231 230 232 15 (set (reg:SI 213)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":560 -1
+     (nil))
+(insn 232 231 233 15 (set (reg/f:SI 212)
+        (lo_sum:SI (reg:SI 213)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":560 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 233 232 234 15 (set (reg:HI 214)
+        (const_int 20 [0x14])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":560 -1
+     (nil))
+(insn 234 233 235 15 (set (mem/c:HI (plus:SI (reg/f:SI 212)
+                (const_int 412 [0x19c])) [4 xScreenDCV[20].pUpScreenSet+0 S2 A32])
+        (reg:HI 214)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":560 -1
+     (nil))
+(code_label 235 234 236 16 24 (nil) [4 uses])
+(note 236 235 237 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 237 236 238 16 (set (reg:SI 216)
+        (high:SI (symbol_ref:SI ("*.LANCHOR8") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":564 -1
+     (nil))
+(insn 238 237 239 16 (set (reg/f:SI 215)
+        (lo_sum:SI (reg:SI 216)
+            (symbol_ref:SI ("*.LANCHOR8") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":564 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR8") [flags 0x182])
+        (nil)))
+(insn 239 238 240 16 (set (reg:QI 217)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":564 -1
+     (nil))
+(insn 240 239 241 16 (set (mem/c:QI (plus:SI (reg/f:SI 215)
+                (const_int 48 [0x30])) [0 CDVSettingsScreen5[3].last+0 S1 A32])
+        (reg:QI 217)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":564 -1
+     (nil))
+(insn 241 240 242 16 (set (reg:SI 219)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":565 -1
+     (nil))
+(insn 242 241 243 16 (set (reg/f:SI 218)
+        (lo_sum:SI (reg:SI 219)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":565 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 243 242 244 16 (set (reg:SI 221)
+        (high:SI (symbol_ref:SI ("*.LANCHOR9") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":565 -1
+     (nil))
+(insn 244 243 245 16 (set (reg/f:SI 220)
+        (lo_sum:SI (reg:SI 221)
+            (symbol_ref:SI ("*.LANCHOR9") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":565 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR9") [flags 0x182])
+        (nil)))
+(insn 245 244 246 16 (set (mem/f/c:SI (plus:SI (reg/f:SI 218)
+                (const_int 284 [0x11c])) [6 xScreenDCV[14].pScreenCurObjets+0 S4 A32])
+        (reg/f:SI 220)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":565 -1
+     (nil))
+(jump_insn 246 245 247 16 (set (pc)
+        (label_ref 591)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":566 -1
+     (nil)
+ -> 591)
+(barrier 247 246 248)
+(code_label 248 247 249 17 25 (nil) [1 uses])
+(note 249 248 250 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 250 249 251 17 (set (reg:SI 223)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":568 -1
+     (nil))
+(insn 251 250 252 17 (set (reg/f:SI 222)
+        (lo_sum:SI (reg:SI 223)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":568 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 252 251 253 17 (set (reg:QI 224)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":568 -1
+     (nil))
+(insn 253 252 254 17 (set (mem/c:QI (plus:SI (reg/f:SI 222)
+                (const_int 32 [0x20])) [0 CDVSettingsScreen6[2].last+0 S1 A32])
+        (reg:QI 224)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":568 -1
+     (nil))
+(insn 254 253 255 17 (set (reg:SI 226)
+        (high:SI (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":569 -1
+     (nil))
+(insn 255 254 256 17 (set (reg/f:SI 225)
+        (lo_sum:SI (reg:SI 226)
+            (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":569 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR6") [flags 0x182])
+        (nil)))
+(insn 256 255 257 17 (set (reg:QI 227)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":569 -1
+     (nil))
+(insn 257 256 258 17 (set (mem/c:QI (plus:SI (reg/f:SI 225)
+                (const_int 48 [0x30])) [0 CDVInfoScreen1[3].last+0 S1 A32])
+        (reg:QI 227)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":569 -1
+     (nil))
+(insn 258 257 259 17 (set (reg:SI 229)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":570 -1
+     (nil))
+(insn 259 258 260 17 (set (reg/f:SI 228)
+        (lo_sum:SI (reg:SI 229)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":570 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 260 259 261 17 (set (reg:HI 230)
+        (const_int 11 [0xb])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":570 -1
+     (nil))
+(insn 261 260 262 17 (set (mem/c:HI (plus:SI (reg/f:SI 228)
+                (const_int 174 [0xae])) [4 xScreenDCV[8].pDownScreenSet+0 S2 A16])
+        (reg:HI 230)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":570 -1
+     (nil))
+(insn 262 261 263 17 (set (reg:SI 232)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":571 -1
+     (nil))
+(insn 263 262 264 17 (set (reg/f:SI 231)
+        (lo_sum:SI (reg:SI 232)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":571 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 264 263 265 17 (set (reg:HI 233)
+        (const_int 9 [0x9])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":571 -1
+     (nil))
+(insn 265 264 266 17 (set (mem/c:HI (plus:SI (reg/f:SI 231)
+                (const_int 212 [0xd4])) [4 xScreenDCV[10].pUpScreenSet+0 S2 A32])
+        (reg:HI 233)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":571 -1
+     (nil))
+(insn 266 265 267 17 (set (reg:SI 234)
+        (const_int 1 [0x1])) -1
+     (nil))
+(jump_insn 267 266 268 17 (set (pc)
+        (if_then_else (eq (reg/v:SI 81 [ analog_state ])
+                (reg:SI 234))
+            (label_ref 295)
+            (pc))) -1
+     (int_list:REG_BR_PROB 214748372 (nil))
+ -> 295)
+(note 268 267 269 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 269 268 270 18 (set (pc)
+        (if_then_else (eq (reg/v:SI 81 [ analog_state ])
+                (const_int 0 [0]))
+            (label_ref 279)
+            (pc))) -1
+     (int_list:REG_BR_PROB 268435460 (nil))
+ -> 279)
+(note 270 269 271 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(insn 271 270 272 19 (set (reg:SI 235)
+        (const_int 2 [0x2])) -1
+     (nil))
+(jump_insn 272 271 273 19 (set (pc)
+        (if_then_else (eq (reg/v:SI 81 [ analog_state ])
+                (reg:SI 235))
+            (label_ref 331)
+            (pc))) -1
+     (int_list:REG_BR_PROB 357913948 (nil))
+ -> 331)
+(note 273 272 274 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+(insn 274 273 275 20 (set (reg:SI 236)
+        (const_int 3 [0x3])) -1
+     (nil))
+(jump_insn 275 274 278 20 (set (pc)
+        (if_then_else (eq (reg/v:SI 81 [ analog_state ])
+                (reg:SI 236))
+            (label_ref 357)
+            (pc))) -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 357)
+(note 278 275 12 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
+(insn 12 278 276 21 (set (reg/v:SI 76 [ after_zone_enable ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":490 -1
+     (nil))
+(jump_insn 276 12 277 21 (set (pc)
+        (label_ref 403)) -1
+     (nil)
+ -> 403)
+(barrier 277 276 279)
+(code_label 279 277 280 22 29 (nil) [1 uses])
+(note 280 279 281 22 [bb 22] NOTE_INSN_BASIC_BLOCK)
+(insn 281 280 282 22 (set (reg:SI 238)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":576 -1
+     (nil))
+(insn 282 281 283 22 (set (reg/f:SI 237)
+        (lo_sum:SI (reg:SI 238)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":576 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 283 282 284 22 (set (reg:QI 239)
+        (const_int 10 [0xa])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":576 -1
+     (nil))
+(insn 284 283 285 22 (set (mem/c:QI (reg/f:SI 237) [0 seting_sting_count+0 S1 A8])
+        (reg:QI 239)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":576 -1
+     (nil))
+(insn 285 284 286 22 (set (reg:SI 241)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":577 -1
+     (nil))
+(insn 286 285 287 22 (set (reg/f:SI 240)
+        (lo_sum:SI (reg:SI 241)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":577 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 287 286 288 22 (set (reg:HI 242)
+        (const_int 21 [0x15])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":577 -1
+     (nil))
+(insn 288 287 289 22 (set (mem/c:HI (plus:SI (reg/f:SI 240)
+                (const_int 254 [0xfe])) [4 xScreenDCV[12].pDownScreenSet+0 S2 A16])
+        (reg:HI 242)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":577 -1
+     (nil))
+(insn 289 288 290 22 (set (reg:SI 244)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":578 -1
+     (nil))
+(insn 290 289 291 22 (set (reg/f:SI 243)
+        (lo_sum:SI (reg:SI 244)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":578 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 291 290 292 22 (set (reg:HI 245)
+        (const_int 13 [0xd])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":578 -1
+     (nil))
+(insn 292 291 9 22 (set (mem/c:HI (plus:SI (reg/f:SI 243)
+                (const_int 412 [0x19c])) [4 xScreenDCV[20].pUpScreenSet+0 S2 A32])
+        (reg:HI 245)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":578 -1
+     (nil))
+(insn 9 292 293 22 (set (reg/v:SI 76 [ after_zone_enable ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":490 -1
+     (nil))
+(jump_insn 293 9 294 22 (set (pc)
+        (label_ref 403)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":579 -1
+     (nil)
+ -> 403)
+(barrier 294 293 295)
+(code_label 295 294 296 23 28 (nil) [1 uses])
+(note 296 295 297 23 [bb 23] NOTE_INSN_BASIC_BLOCK)
+(insn 297 296 298 23 (set (reg:SI 247)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":583 -1
+     (nil))
+(insn 298 297 299 23 (set (reg/f:SI 246)
+        (lo_sum:SI (reg:SI 247)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":583 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 299 298 300 23 (set (reg:QI 248)
+        (const_int 12 [0xc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":583 -1
+     (nil))
+(insn 300 299 301 23 (set (mem/c:QI (reg/f:SI 246) [0 seting_sting_count+0 S1 A8])
+        (reg:QI 248)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":583 -1
+     (nil))
+(insn 301 300 302 23 (set (reg:SI 250)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":584 -1
+     (nil))
+(insn 302 301 303 23 (set (reg/f:SI 249)
+        (lo_sum:SI (reg:SI 250)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":584 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 303 302 304 23 (set (reg:HI 251)
+        (const_int 14 [0xe])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":584 -1
+     (nil))
+(insn 304 303 305 23 (set (mem/c:HI (plus:SI (reg/f:SI 249)
+                (const_int 254 [0xfe])) [4 xScreenDCV[12].pDownScreenSet+0 S2 A16])
+        (reg:HI 251)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":584 -1
+     (nil))
+(insn 305 304 306 23 (set (reg:SI 253)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":585 -1
+     (nil))
+(insn 306 305 307 23 (set (reg/f:SI 252)
+        (lo_sum:SI (reg:SI 253)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":585 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 307 306 308 23 (set (reg:HI 254)
+        (const_int 16 [0x10])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":585 -1
+     (nil))
+(insn 308 307 309 23 (set (mem/c:HI (plus:SI (reg/f:SI 252)
+                (const_int 274 [0x112])) [4 xScreenDCV[13].pDownScreenSet+0 S2 A16])
+        (reg:HI 254)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":585 -1
+     (nil))
+(insn 309 308 310 23 (set (reg:SI 256)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":587 -1
+     (nil))
+(insn 310 309 311 23 (set (reg/f:SI 255)
+        (lo_sum:SI (reg:SI 256)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":587 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 311 310 312 23 (set (reg:SI 258)
+        (const_int 1376256 [0x150000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":587 -1
+     (nil))
+(insn 312 311 313 23 (set (reg:SI 257)
+        (plus:SI (reg:SI 258)
+            (const_int 14 [0xe]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":587 -1
+     (expr_list:REG_EQUAL (const_int 1376270 [0x15000e])
+        (nil)))
+(insn 313 312 314 23 (set (mem/c:SI (plus:SI (reg/f:SI 255)
+                (const_int 312 [0x138])) [4 MEM[(short unsigned int *)&xScreenDCV + 312B]+0 S4 A32])
+        (reg:SI 257)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":587 -1
+     (nil))
+(insn 314 313 315 23 (set (reg:SI 260)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":588 -1
+     (nil))
+(insn 315 314 316 23 (set (reg/f:SI 259)
+        (lo_sum:SI (reg:SI 260)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":588 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 316 315 317 23 (set (reg:HI 261)
+        (const_int 16 [0x10])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":588 -1
+     (nil))
+(insn 317 316 318 23 (set (mem/c:HI (plus:SI (reg/f:SI 259)
+                (const_int 412 [0x19c])) [4 xScreenDCV[20].pUpScreenSet+0 S2 A32])
+        (reg:HI 261)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":588 -1
+     (nil))
+(insn 318 317 319 23 (set (reg:SI 263)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":589 -1
+     (nil))
+(insn 319 318 320 23 (set (reg/f:SI 262)
+        (lo_sum:SI (reg:SI 263)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":589 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 320 319 321 23 (set (reg:SI 265)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":589 -1
+     (nil))
+(insn 321 320 322 23 (set (reg/f:SI 264)
+        (lo_sum:SI (reg:SI 265)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":589 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 322 321 323 23 (set (mem/f/c:SI (plus:SI (reg/f:SI 262)
+                (const_int 304 [0x130])) [6 xScreenDCV[15].pScreenCurObjets+0 S4 A32])
+        (reg/f:SI 264)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":589 -1
+     (nil))
+(insn 323 322 324 23 (set (reg:SI 267)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":353 -1
+     (nil))
+(insn 324 323 325 23 (set (reg/f:SI 266)
+        (lo_sum:SI (reg:SI 267)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":353 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 325 324 326 23 (set (reg:SI 268)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":353 -1
+     (nil))
+(insn 326 325 327 23 (set (mem/c:SI (plus:SI (reg/f:SI 266)
+                (const_int 20 [0x14])) [2 CDVSettingsAnalogScreen1[1].xType+0 S4 A32])
+        (reg:SI 268)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":353 -1
+     (nil))
+(insn 327 326 328 23 (set (reg:SI 10 a0)
+        (const_int 1 [0x1])) -1
+     (nil))
+(call_insn 328 327 10 23 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(insn 10 328 329 23 (set (reg/v:SI 76 [ after_zone_enable ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":581 -1
+     (nil))
+(jump_insn 329 10 330 23 (set (pc)
+        (label_ref 403)) -1
+     (nil)
+ -> 403)
+(barrier 330 329 331)
+(code_label 331 330 332 24 30 (nil) [1 uses])
+(note 332 331 333 24 [bb 24] NOTE_INSN_BASIC_BLOCK)
+(insn 333 332 334 24 (set (reg:SI 270)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":595 -1
+     (nil))
+(insn 334 333 335 24 (set (reg/f:SI 269)
+        (lo_sum:SI (reg:SI 270)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":595 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 335 334 336 24 (set (reg:QI 271)
+        (const_int 11 [0xb])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":595 -1
+     (nil))
+(insn 336 335 337 24 (set (mem/c:QI (reg/f:SI 269) [0 seting_sting_count+0 S1 A8])
+        (reg:QI 271)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":595 -1
+     (nil))
+(insn 337 336 338 24 (set (reg:SI 273)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":596 -1
+     (nil))
+(insn 338 337 339 24 (set (reg/f:SI 272)
+        (lo_sum:SI (reg:SI 273)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":596 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 339 338 340 24 (set (reg:HI 274)
+        (const_int 16 [0x10])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":596 -1
+     (nil))
+(insn 340 339 341 24 (set (mem/c:HI (plus:SI (reg/f:SI 272)
+                (const_int 254 [0xfe])) [4 xScreenDCV[12].pDownScreenSet+0 S2 A16])
+        (reg:HI 274)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":596 -1
+     (nil))
+(insn 341 340 342 24 (set (reg:SI 276)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":598 -1
+     (nil))
+(insn 342 341 343 24 (set (reg/f:SI 275)
+        (lo_sum:SI (reg:SI 276)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":598 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 343 342 344 24 (set (reg:SI 278)
+        (const_int 1376256 [0x150000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":598 -1
+     (nil))
+(insn 344 343 345 24 (set (reg:SI 277)
+        (plus:SI (reg:SI 278)
+            (const_int 13 [0xd]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":598 -1
+     (expr_list:REG_EQUAL (const_int 1376269 [0x15000d])
+        (nil)))
+(insn 345 344 346 24 (set (mem/c:SI (plus:SI (reg/f:SI 275)
+                (const_int 312 [0x138])) [4 MEM[(short unsigned int *)&xScreenDCV + 312B]+0 S4 A32])
+        (reg:SI 277)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":598 -1
+     (nil))
+(insn 346 345 347 24 (set (reg:SI 280)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":599 -1
+     (nil))
+(insn 347 346 348 24 (set (reg/f:SI 279)
+        (lo_sum:SI (reg:SI 280)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":599 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 348 347 349 24 (set (reg:HI 281)
+        (const_int 16 [0x10])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":599 -1
+     (nil))
+(insn 349 348 350 24 (set (mem/c:HI (plus:SI (reg/f:SI 279)
+                (const_int 412 [0x19c])) [4 xScreenDCV[20].pUpScreenSet+0 S2 A32])
+        (reg:HI 281)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":599 -1
+     (nil))
+(insn 350 349 351 24 (set (reg:SI 283)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":600 -1
+     (nil))
+(insn 351 350 352 24 (set (reg/f:SI 282)
+        (lo_sum:SI (reg:SI 283)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":600 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 352 351 353 24 (set (reg:SI 285)
+        (high:SI (symbol_ref:SI ("*.LANCHOR7") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":600 -1
+     (nil))
+(insn 353 352 354 24 (set (reg/f:SI 284)
+        (lo_sum:SI (reg:SI 285)
+            (symbol_ref:SI ("*.LANCHOR7") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":600 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR7") [flags 0x182])
+        (nil)))
+(insn 354 353 11 24 (set (mem/f/c:SI (plus:SI (reg/f:SI 282)
+                (const_int 304 [0x130])) [6 xScreenDCV[15].pScreenCurObjets+0 S4 A32])
+        (reg/f:SI 284)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":600 -1
+     (nil))
+(insn 11 354 355 24 (set (reg/v:SI 76 [ after_zone_enable ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":490 -1
+     (nil))
+(jump_insn 355 11 356 24 (set (pc)
+        (label_ref 403)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":601 -1
+     (nil)
+ -> 403)
+(barrier 356 355 357)
+(code_label 357 356 358 25 31 (nil) [1 uses])
+(note 358 357 359 25 [bb 25] NOTE_INSN_BASIC_BLOCK)
+(insn 359 358 360 25 (set (reg:SI 10 a0)
+        (const_int 106 [0x6a])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":603 -1
+     (nil))
+(call_insn 360 359 361 25 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068a94b0 getReg8>) [0 getReg8 S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":603 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068a94b0 getReg8>)
+        (nil))
+    (expr_list:HI (use (reg:SI 10 a0))
+        (nil)))
+(insn 361 360 362 25 (set (reg:SI 286)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":603 -1
+     (nil))
+(insn 362 361 363 25 (set (reg:SI 73 [ _5 ])
+        (reg:SI 286)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":603 -1
+     (nil))
+(insn 363 362 364 25 (set (reg:SI 288)
+        (eq:SI (reg:SI 73 [ _5 ])
+            (const_int 0 [0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":603 -1
+     (nil))
+(insn 364 363 365 25 (set (reg:QI 287)
+        (subreg:QI (reg:SI 288) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":603 -1
+     (nil))
+(insn 365 364 366 25 (set (reg/v:SI 76 [ after_zone_enable ])
+        (zero_extend:SI (reg:QI 287))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":490 -1
+     (nil))
+(insn 366 365 367 25 (set (reg:SI 10 a0)
+        (const_int 3 [0x3])) -1
+     (nil))
+(call_insn 367 366 368 25 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(insn 368 367 369 25 (set (reg:SI 290)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":606 -1
+     (nil))
+(insn 369 368 370 25 (set (reg/f:SI 289)
+        (lo_sum:SI (reg:SI 290)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":606 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 370 369 371 25 (set (reg:SI 292)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":606 -1
+     (nil))
+(insn 371 370 372 25 (set (reg/f:SI 291)
+        (lo_sum:SI (reg:SI 292)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":606 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 372 371 373 25 (set (mem/f/c:SI (plus:SI (reg/f:SI 289)
+                (const_int 304 [0x130])) [6 xScreenDCV[15].pScreenCurObjets+0 S4 A32])
+        (reg/f:SI 291)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":606 -1
+     (nil))
+(insn 373 372 374 25 (set (reg:SI 294)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":351 -1
+     (nil))
+(insn 374 373 375 25 (set (reg/f:SI 293)
+        (lo_sum:SI (reg:SI 294)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":351 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 375 374 376 25 (set (reg:SI 295)
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":351 -1
+     (nil))
+(insn 376 375 377 25 (set (mem/c:SI (plus:SI (reg/f:SI 293)
+                (const_int 20 [0x14])) [2 CDVSettingsAnalogScreen1[1].xType+0 S4 A32])
+        (reg:SI 295)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":351 -1
+     (nil))
+(insn 377 376 378 25 (set (reg:SI 297)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":608 -1
+     (nil))
+(insn 378 377 379 25 (set (reg/f:SI 296)
+        (lo_sum:SI (reg:SI 297)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":608 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 379 378 380 25 (set (reg:QI 298)
+        (const_int 16 [0x10])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":608 -1
+     (nil))
+(insn 380 379 381 25 (set (mem/c:QI (reg/f:SI 296) [0 seting_sting_count+0 S1 A8])
+        (reg:QI 298)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":608 -1
+     (nil))
+(insn 381 380 382 25 (set (reg:SI 300)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":609 -1
+     (nil))
+(insn 382 381 383 25 (set (reg/f:SI 299)
+        (lo_sum:SI (reg:SI 300)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":609 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 383 382 384 25 (set (reg:HI 301)
+        (const_int 16 [0x10])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":609 -1
+     (nil))
+(insn 384 383 385 25 (set (mem/c:HI (plus:SI (reg/f:SI 299)
+                (const_int 274 [0x112])) [4 xScreenDCV[13].pDownScreenSet+0 S2 A16])
+        (reg:HI 301)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":609 -1
+     (nil))
+(insn 385 384 386 25 (set (reg:SI 303)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":610 -1
+     (nil))
+(insn 386 385 387 25 (set (reg/f:SI 302)
+        (lo_sum:SI (reg:SI 303)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":610 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 387 386 388 25 (set (reg:HI 304)
+        (const_int 14 [0xe])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":610 -1
+     (nil))
+(insn 388 387 389 25 (set (mem/c:HI (plus:SI (reg/f:SI 302)
+                (const_int 254 [0xfe])) [4 xScreenDCV[12].pDownScreenSet+0 S2 A16])
+        (reg:HI 304)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":610 -1
+     (nil))
+(insn 389 388 390 25 (set (reg:SI 306)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":612 -1
+     (nil))
+(insn 390 389 391 25 (set (reg/f:SI 305)
+        (lo_sum:SI (reg:SI 306)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":612 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 391 390 392 25 (set (reg:SI 308)
+        (const_int 1114112 [0x110000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":612 -1
+     (nil))
+(insn 392 391 393 25 (set (reg:SI 307)
+        (plus:SI (reg:SI 308)
+            (const_int 14 [0xe]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":612 -1
+     (expr_list:REG_EQUAL (const_int 1114126 [0x11000e])
+        (nil)))
+(insn 393 392 394 25 (set (mem/c:SI (plus:SI (reg/f:SI 305)
+                (const_int 312 [0x138])) [4 MEM[(short unsigned int *)&xScreenDCV + 312B]+0 S4 A32])
+        (reg:SI 307)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":612 -1
+     (nil))
+(insn 394 393 395 25 (set (reg:SI 310)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":614 -1
+     (nil))
+(insn 395 394 396 25 (set (reg/f:SI 309)
+        (lo_sum:SI (reg:SI 310)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":614 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 396 395 397 25 (set (reg:SI 312)
+        (const_int 1179648 [0x120000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":614 -1
+     (nil))
+(insn 397 396 398 25 (set (reg:SI 311)
+        (plus:SI (reg:SI 312)
+            (const_int 16 [0x10]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":614 -1
+     (expr_list:REG_EQUAL (const_int 1179664 [0x120010])
+        (nil)))
+(insn 398 397 399 25 (set (mem/c:SI (plus:SI (reg/f:SI 309)
+                (const_int 332 [0x14c])) [4 MEM[(short unsigned int *)&xScreenDCV + 332B]+0 S4 A32])
+        (reg:SI 311)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":614 -1
+     (nil))
+(insn 399 398 400 25 (set (reg:SI 314)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":615 -1
+     (nil))
+(insn 400 399 401 25 (set (reg/f:SI 313)
+        (lo_sum:SI (reg:SI 314)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":615 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 401 400 402 25 (set (reg:HI 315)
+        (const_int 20 [0x14])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":615 -1
+     (nil))
+(insn 402 401 403 25 (set (mem/c:HI (plus:SI (reg/f:SI 313)
+                (const_int 412 [0x19c])) [4 xScreenDCV[20].pUpScreenSet+0 S2 A32])
+        (reg:HI 315)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":615 -1
+     (nil))
+(code_label 403 402 404 26 32 (nil) [4 uses])
+(note 404 403 405 26 [bb 26] NOTE_INSN_BASIC_BLOCK)
+(insn 405 404 406 26 (set (reg:SI 317)
+        (high:SI (symbol_ref:SI ("*.LANCHOR8") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":618 -1
+     (nil))
+(insn 406 405 407 26 (set (reg/f:SI 316)
+        (lo_sum:SI (reg:SI 317)
+            (symbol_ref:SI ("*.LANCHOR8") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":618 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR8") [flags 0x182])
+        (nil)))
+(insn 407 406 408 26 (set (reg:QI 318)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":618 -1
+     (nil))
+(insn 408 407 409 26 (set (mem/c:QI (plus:SI (reg/f:SI 316)
+                (const_int 48 [0x30])) [0 CDVSettingsScreen5[3].last+0 S1 A32])
+        (reg:QI 318)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":618 -1
+     (nil))
+(jump_insn 409 408 410 26 (set (pc)
+        (label_ref 591)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":619 -1
+     (nil)
+ -> 591)
+(barrier 410 409 411)
+(code_label 411 410 412 27 26 (nil) [1 uses])
+(note 412 411 413 27 [bb 27] NOTE_INSN_BASIC_BLOCK)
+(insn 413 412 414 27 (set (reg:SI 320)
+        (high:SI (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":622 -1
+     (nil))
+(insn 414 413 415 27 (set (reg/f:SI 319)
+        (lo_sum:SI (reg:SI 320)
+            (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":622 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR6") [flags 0x182])
+        (nil)))
+(insn 415 414 416 27 (set (mem/c:QI (plus:SI (reg/f:SI 319)
+                (const_int 48 [0x30])) [0 CDVInfoScreen1[3].last+0 S1 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":622 -1
+     (nil))
+(insn 416 415 417 27 (set (reg:SI 322)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":623 -1
+     (nil))
+(insn 417 416 418 27 (set (reg/f:SI 321)
+        (lo_sum:SI (reg:SI 322)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":623 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 418 417 419 27 (set (reg:HI 323)
+        (const_int 10 [0xa])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":623 -1
+     (nil))
+(insn 419 418 420 27 (set (mem/c:HI (plus:SI (reg/f:SI 321)
+                (const_int 174 [0xae])) [4 xScreenDCV[8].pDownScreenSet+0 S2 A16])
+        (reg:HI 323)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":623 -1
+     (nil))
+(insn 420 419 421 27 (set (reg:SI 325)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":624 -1
+     (nil))
+(insn 421 420 422 27 (set (reg/f:SI 324)
+        (lo_sum:SI (reg:SI 325)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":624 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 422 421 423 27 (set (reg:HI 326)
+        (const_int 10 [0xa])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":624 -1
+     (nil))
+(insn 423 422 424 27 (set (mem/c:HI (plus:SI (reg/f:SI 324)
+                (const_int 212 [0xd4])) [4 xScreenDCV[10].pUpScreenSet+0 S2 A32])
+        (reg:HI 326)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":624 -1
+     (nil))
+(insn 424 423 425 27 (set (reg:SI 327)
+        (const_int 1 [0x1])) -1
+     (nil))
+(jump_insn 425 424 426 27 (set (pc)
+        (if_then_else (eq (reg/v:SI 81 [ analog_state ])
+                (reg:SI 327))
+            (label_ref 458)
+            (pc))) -1
+     (int_list:REG_BR_PROB 214748372 (nil))
+ -> 458)
+(note 426 425 427 28 [bb 28] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 427 426 428 28 (set (pc)
+        (if_then_else (eq (reg/v:SI 81 [ analog_state ])
+                (const_int 0 [0]))
+            (label_ref 437)
+            (pc))) -1
+     (int_list:REG_BR_PROB 268435460 (nil))
+ -> 437)
+(note 428 427 429 29 [bb 29] NOTE_INSN_BASIC_BLOCK)
+(insn 429 428 430 29 (set (reg:SI 328)
+        (const_int 2 [0x2])) -1
+     (nil))
+(jump_insn 430 429 431 29 (set (pc)
+        (if_then_else (eq (reg/v:SI 81 [ analog_state ])
+                (reg:SI 328))
+            (label_ref 499)
+            (pc))) -1
+     (int_list:REG_BR_PROB 357913948 (nil))
+ -> 499)
+(note 431 430 432 30 [bb 30] NOTE_INSN_BASIC_BLOCK)
+(insn 432 431 433 30 (set (reg:SI 329)
+        (const_int 3 [0x3])) -1
+     (nil))
+(jump_insn 433 432 436 30 (set (pc)
+        (if_then_else (eq (reg/v:SI 81 [ analog_state ])
+                (reg:SI 329))
+            (label_ref 530)
+            (pc))) -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 530)
+(note 436 433 16 31 [bb 31] NOTE_INSN_BASIC_BLOCK)
+(insn 16 436 434 31 (set (reg/v:SI 76 [ after_zone_enable ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":490 -1
+     (nil))
+(jump_insn 434 16 435 31 (set (pc)
+        (label_ref 581)) -1
+     (nil)
+ -> 581)
+(barrier 435 434 437)
+(code_label 437 435 438 32 34 (nil) [1 uses])
+(note 438 437 439 32 [bb 32] NOTE_INSN_BASIC_BLOCK)
+(insn 439 438 440 32 (set (reg:SI 331)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":629 -1
+     (nil))
+(insn 440 439 441 32 (set (reg/f:SI 330)
+        (lo_sum:SI (reg:SI 331)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":629 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 441 440 442 32 (set (reg:QI 332)
+        (const_int 12 [0xc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":629 -1
+     (nil))
+(insn 442 441 443 32 (set (mem/c:QI (reg/f:SI 330) [0 seting_sting_count+0 S1 A8])
+        (reg:QI 332)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":629 -1
+     (nil))
+(insn 443 442 444 32 (set (reg:SI 334)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":630 -1
+     (nil))
+(insn 444 443 445 32 (set (reg/f:SI 333)
+        (lo_sum:SI (reg:SI 334)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":630 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 445 444 446 32 (set (reg:HI 335)
+        (const_int 15 [0xf])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":630 -1
+     (nil))
+(insn 446 445 447 32 (set (mem/c:HI (plus:SI (reg/f:SI 333)
+                (const_int 254 [0xfe])) [4 xScreenDCV[12].pDownScreenSet+0 S2 A16])
+        (reg:HI 335)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":630 -1
+     (nil))
+(insn 447 446 448 32 (set (reg:SI 337)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":632 -1
+     (nil))
+(insn 448 447 449 32 (set (reg/f:SI 336)
+        (lo_sum:SI (reg:SI 337)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":632 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 449 448 450 32 (set (reg:SI 339)
+        (const_int 1376256 [0x150000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":632 -1
+     (nil))
+(insn 450 449 451 32 (set (reg:SI 338)
+        (plus:SI (reg:SI 339)
+            (const_int 13 [0xd]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":632 -1
+     (expr_list:REG_EQUAL (const_int 1376269 [0x15000d])
+        (nil)))
+(insn 451 450 452 32 (set (mem/c:SI (plus:SI (reg/f:SI 336)
+                (const_int 292 [0x124])) [4 MEM[(short unsigned int *)&xScreenDCV + 292B]+0 S4 A32])
+        (reg:SI 338)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":632 -1
+     (nil))
+(insn 452 451 453 32 (set (reg:SI 341)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":633 -1
+     (nil))
+(insn 453 452 454 32 (set (reg/f:SI 340)
+        (lo_sum:SI (reg:SI 341)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":633 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 454 453 455 32 (set (reg:HI 342)
+        (const_int 15 [0xf])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":633 -1
+     (nil))
+(insn 455 454 13 32 (set (mem/c:HI (plus:SI (reg/f:SI 340)
+                (const_int 412 [0x19c])) [4 xScreenDCV[20].pUpScreenSet+0 S2 A32])
+        (reg:HI 342)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":633 -1
+     (nil))
+(insn 13 455 456 32 (set (reg/v:SI 76 [ after_zone_enable ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":490 -1
+     (nil))
+(jump_insn 456 13 457 32 (set (pc)
+        (label_ref 581)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":634 -1
+     (nil)
+ -> 581)
+(barrier 457 456 458)
+(code_label 458 457 459 33 33 (nil) [1 uses])
+(note 459 458 460 33 [bb 33] NOTE_INSN_BASIC_BLOCK)
+(insn 460 459 461 33 (set (reg:SI 344)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":638 -1
+     (nil))
+(insn 461 460 462 33 (set (reg/f:SI 343)
+        (lo_sum:SI (reg:SI 344)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":638 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 462 461 463 33 (set (reg:QI 345)
+        (const_int 13 [0xd])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":638 -1
+     (nil))
+(insn 463 462 464 33 (set (mem/c:QI (reg/f:SI 343) [0 seting_sting_count+0 S1 A8])
+        (reg:QI 345)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":638 -1
+     (nil))
+(insn 464 463 465 33 (set (reg:SI 347)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":639 -1
+     (nil))
+(insn 465 464 466 33 (set (reg/f:SI 346)
+        (lo_sum:SI (reg:SI 347)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":639 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 466 465 467 33 (set (reg:HI 348)
+        (const_int 14 [0xe])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":639 -1
+     (nil))
+(insn 467 466 468 33 (set (mem/c:HI (plus:SI (reg/f:SI 346)
+                (const_int 254 [0xfe])) [4 xScreenDCV[12].pDownScreenSet+0 S2 A16])
+        (reg:HI 348)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":639 -1
+     (nil))
+(insn 468 467 469 33 (set (reg:SI 350)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":640 -1
+     (nil))
+(insn 469 468 470 33 (set (reg/f:SI 349)
+        (lo_sum:SI (reg:SI 350)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":640 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 470 469 471 33 (set (reg:HI 351)
+        (const_int 15 [0xf])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":640 -1
+     (nil))
+(insn 471 470 472 33 (set (mem/c:HI (plus:SI (reg/f:SI 349)
+                (const_int 274 [0x112])) [4 xScreenDCV[13].pDownScreenSet+0 S2 A16])
+        (reg:HI 351)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":640 -1
+     (nil))
+(insn 472 471 473 33 (set (reg:SI 353)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":642 -1
+     (nil))
+(insn 473 472 474 33 (set (reg/f:SI 352)
+        (lo_sum:SI (reg:SI 353)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":642 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 474 473 475 33 (set (reg:SI 355)
+        (const_int 1048576 [0x100000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":642 -1
+     (nil))
+(insn 475 474 476 33 (set (reg:SI 354)
+        (plus:SI (reg:SI 355)
+            (const_int 14 [0xe]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":642 -1
+     (expr_list:REG_EQUAL (const_int 1048590 [0x10000e])
+        (nil)))
+(insn 476 475 477 33 (set (mem/c:SI (plus:SI (reg/f:SI 352)
+                (const_int 292 [0x124])) [4 MEM[(short unsigned int *)&xScreenDCV + 292B]+0 S4 A32])
+        (reg:SI 354)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":642 -1
+     (nil))
+(insn 477 476 478 33 (set (reg:SI 357)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":644 -1
+     (nil))
+(insn 478 477 479 33 (set (reg/f:SI 356)
+        (lo_sum:SI (reg:SI 357)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":644 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 479 478 480 33 (set (reg:SI 359)
+        (const_int 1376256 [0x150000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":644 -1
+     (nil))
+(insn 480 479 481 33 (set (reg:SI 358)
+        (plus:SI (reg:SI 359)
+            (const_int 15 [0xf]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":644 -1
+     (expr_list:REG_EQUAL (const_int 1376271 [0x15000f])
+        (nil)))
+(insn 481 480 482 33 (set (mem/c:SI (plus:SI (reg/f:SI 356)
+                (const_int 312 [0x138])) [4 MEM[(short unsigned int *)&xScreenDCV + 312B]+0 S4 A32])
+        (reg:SI 358)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":644 -1
+     (nil))
+(insn 482 481 483 33 (set (reg:SI 361)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":645 -1
+     (nil))
+(insn 483 482 484 33 (set (reg/f:SI 360)
+        (lo_sum:SI (reg:SI 361)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":645 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 484 483 485 33 (set (reg:HI 362)
+        (const_int 16 [0x10])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":645 -1
+     (nil))
+(insn 485 484 486 33 (set (mem/c:HI (plus:SI (reg/f:SI 360)
+                (const_int 412 [0x19c])) [4 xScreenDCV[20].pUpScreenSet+0 S2 A32])
+        (reg:HI 362)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":645 -1
+     (nil))
+(insn 486 485 487 33 (set (reg:SI 364)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":646 -1
+     (nil))
+(insn 487 486 488 33 (set (reg/f:SI 363)
+        (lo_sum:SI (reg:SI 364)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":646 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 488 487 489 33 (set (reg:SI 366)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":646 -1
+     (nil))
+(insn 489 488 490 33 (set (reg/f:SI 365)
+        (lo_sum:SI (reg:SI 366)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":646 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 490 489 491 33 (set (mem/f/c:SI (plus:SI (reg/f:SI 363)
+                (const_int 304 [0x130])) [6 xScreenDCV[15].pScreenCurObjets+0 S4 A32])
+        (reg/f:SI 365)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":646 -1
+     (nil))
+(insn 491 490 492 33 (set (reg:SI 368)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":353 -1
+     (nil))
+(insn 492 491 493 33 (set (reg/f:SI 367)
+        (lo_sum:SI (reg:SI 368)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":353 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 493 492 494 33 (set (reg:SI 369)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":353 -1
+     (nil))
+(insn 494 493 495 33 (set (mem/c:SI (plus:SI (reg/f:SI 367)
+                (const_int 20 [0x14])) [2 CDVSettingsAnalogScreen1[1].xType+0 S4 A32])
+        (reg:SI 369)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":353 -1
+     (nil))
+(insn 495 494 496 33 (set (reg:SI 10 a0)
+        (const_int 1 [0x1])) -1
+     (nil))
+(call_insn 496 495 14 33 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(insn 14 496 497 33 (set (reg/v:SI 76 [ after_zone_enable ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":636 -1
+     (nil))
+(jump_insn 497 14 498 33 (set (pc)
+        (label_ref 581)) -1
+     (nil)
+ -> 581)
+(barrier 498 497 499)
+(code_label 499 498 500 34 35 (nil) [1 uses])
+(note 500 499 501 34 [bb 34] NOTE_INSN_BASIC_BLOCK)
+(insn 501 500 502 34 (set (reg:SI 371)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":655 -1
+     (nil))
+(insn 502 501 503 34 (set (reg/f:SI 370)
+        (lo_sum:SI (reg:SI 371)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":655 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 503 502 504 34 (set (reg:QI 372)
+        (const_int 13 [0xd])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":655 -1
+     (nil))
+(insn 504 503 505 34 (set (mem/c:QI (reg/f:SI 370) [0 seting_sting_count+0 S1 A8])
+        (reg:QI 372)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":655 -1
+     (nil))
+(insn 505 504 506 34 (set (reg:SI 374)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":656 -1
+     (nil))
+(insn 506 505 507 34 (set (reg/f:SI 373)
+        (lo_sum:SI (reg:SI 374)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":656 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 507 506 508 34 (set (reg:HI 375)
+        (const_int 15 [0xf])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":656 -1
+     (nil))
+(insn 508 507 509 34 (set (mem/c:HI (plus:SI (reg/f:SI 373)
+                (const_int 254 [0xfe])) [4 xScreenDCV[12].pDownScreenSet+0 S2 A16])
+        (reg:HI 375)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":656 -1
+     (nil))
+(insn 509 508 510 34 (set (reg:SI 377)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":658 -1
+     (nil))
+(insn 510 509 511 34 (set (reg/f:SI 376)
+        (lo_sum:SI (reg:SI 377)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":658 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 511 510 512 34 (set (reg:SI 379)
+        (const_int 1048576 [0x100000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":658 -1
+     (nil))
+(insn 512 511 513 34 (set (reg:SI 378)
+        (plus:SI (reg:SI 379)
+            (const_int 13 [0xd]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":658 -1
+     (expr_list:REG_EQUAL (const_int 1048589 [0x10000d])
+        (nil)))
+(insn 513 512 514 34 (set (mem/c:SI (plus:SI (reg/f:SI 376)
+                (const_int 292 [0x124])) [4 MEM[(short unsigned int *)&xScreenDCV + 292B]+0 S4 A32])
+        (reg:SI 378)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":658 -1
+     (nil))
+(insn 514 513 515 34 (set (reg:SI 381)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":660 -1
+     (nil))
+(insn 515 514 516 34 (set (reg/f:SI 380)
+        (lo_sum:SI (reg:SI 381)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":660 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 516 515 517 34 (set (reg:SI 383)
+        (const_int 1376256 [0x150000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":660 -1
+     (nil))
+(insn 517 516 518 34 (set (reg:SI 382)
+        (plus:SI (reg:SI 383)
+            (const_int 15 [0xf]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":660 -1
+     (expr_list:REG_EQUAL (const_int 1376271 [0x15000f])
+        (nil)))
+(insn 518 517 519 34 (set (mem/c:SI (plus:SI (reg/f:SI 380)
+                (const_int 312 [0x138])) [4 MEM[(short unsigned int *)&xScreenDCV + 312B]+0 S4 A32])
+        (reg:SI 382)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":660 -1
+     (nil))
+(insn 519 518 520 34 (set (reg:SI 385)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":661 -1
+     (nil))
+(insn 520 519 521 34 (set (reg/f:SI 384)
+        (lo_sum:SI (reg:SI 385)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":661 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 521 520 522 34 (set (reg:HI 386)
+        (const_int 16 [0x10])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":661 -1
+     (nil))
+(insn 522 521 523 34 (set (mem/c:HI (plus:SI (reg/f:SI 384)
+                (const_int 412 [0x19c])) [4 xScreenDCV[20].pUpScreenSet+0 S2 A32])
+        (reg:HI 386)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":661 -1
+     (nil))
+(insn 523 522 524 34 (set (reg:SI 388)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":662 -1
+     (nil))
+(insn 524 523 525 34 (set (reg/f:SI 387)
+        (lo_sum:SI (reg:SI 388)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":662 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 525 524 526 34 (set (reg:SI 390)
+        (high:SI (symbol_ref:SI ("*.LANCHOR7") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":662 -1
+     (nil))
+(insn 526 525 527 34 (set (reg/f:SI 389)
+        (lo_sum:SI (reg:SI 390)
+            (symbol_ref:SI ("*.LANCHOR7") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":662 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR7") [flags 0x182])
+        (nil)))
+(insn 527 526 15 34 (set (mem/f/c:SI (plus:SI (reg/f:SI 387)
+                (const_int 304 [0x130])) [6 xScreenDCV[15].pScreenCurObjets+0 S4 A32])
+        (reg/f:SI 389)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":662 -1
+     (nil))
+(insn 15 527 528 34 (set (reg/v:SI 76 [ after_zone_enable ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":490 -1
+     (nil))
+(jump_insn 528 15 529 34 (set (pc)
+        (label_ref 581)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":663 -1
+     (nil)
+ -> 581)
+(barrier 529 528 530)
+(code_label 530 529 531 35 36 (nil) [1 uses])
+(note 531 530 532 35 [bb 35] NOTE_INSN_BASIC_BLOCK)
+(insn 532 531 533 35 (set (reg:SI 10 a0)
+        (const_int 106 [0x6a])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":665 -1
+     (nil))
+(call_insn 533 532 534 35 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068a94b0 getReg8>) [0 getReg8 S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":665 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068a94b0 getReg8>)
+        (nil))
+    (expr_list:HI (use (reg:SI 10 a0))
+        (nil)))
+(insn 534 533 535 35 (set (reg:SI 391)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":665 -1
+     (nil))
+(insn 535 534 536 35 (set (reg:SI 74 [ _8 ])
+        (reg:SI 391)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":665 -1
+     (nil))
+(insn 536 535 537 35 (set (reg:SI 393)
+        (eq:SI (reg:SI 74 [ _8 ])
+            (const_int 0 [0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":665 -1
+     (nil))
+(insn 537 536 538 35 (set (reg:QI 392)
+        (subreg:QI (reg:SI 393) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":665 -1
+     (nil))
+(insn 538 537 539 35 (set (reg/v:SI 76 [ after_zone_enable ])
+        (zero_extend:SI (reg:QI 392))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":490 -1
+     (nil))
+(insn 539 538 540 35 (set (reg:SI 395)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":666 -1
+     (nil))
+(insn 540 539 541 35 (set (reg/f:SI 394)
+        (lo_sum:SI (reg:SI 395)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":666 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 541 540 542 35 (set (reg:QI 396)
+        (const_int 17 [0x11])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":666 -1
+     (nil))
+(insn 542 541 543 35 (set (mem/c:QI (reg/f:SI 394) [0 seting_sting_count+0 S1 A8])
+        (reg:QI 396)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":666 -1
+     (nil))
+(insn 543 542 544 35 (set (reg:SI 398)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":351 -1
+     (nil))
+(insn 544 543 545 35 (set (reg/f:SI 397)
+        (lo_sum:SI (reg:SI 398)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":351 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 545 544 546 35 (set (reg:SI 399)
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":351 -1
+     (nil))
+(insn 546 545 547 35 (set (mem/c:SI (plus:SI (reg/f:SI 397)
+                (const_int 20 [0x14])) [2 CDVSettingsAnalogScreen1[1].xType+0 S4 A32])
+        (reg:SI 399)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":351 -1
+     (nil))
+(insn 547 546 548 35 (set (reg:SI 10 a0)
+        (const_int 3 [0x3])) -1
+     (nil))
+(call_insn 548 547 549 35 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(insn 549 548 550 35 (set (reg:SI 401)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":670 -1
+     (nil))
+(insn 550 549 551 35 (set (reg/f:SI 400)
+        (lo_sum:SI (reg:SI 401)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":670 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 551 550 552 35 (set (reg:SI 403)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":670 -1
+     (nil))
+(insn 552 551 553 35 (set (reg/f:SI 402)
+        (lo_sum:SI (reg:SI 403)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":670 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 553 552 554 35 (set (mem/f/c:SI (plus:SI (reg/f:SI 400)
+                (const_int 304 [0x130])) [6 xScreenDCV[15].pScreenCurObjets+0 S4 A32])
+        (reg/f:SI 402)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":670 -1
+     (nil))
+(insn 554 553 555 35 (set (reg:SI 405)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":671 -1
+     (nil))
+(insn 555 554 556 35 (set (reg/f:SI 404)
+        (lo_sum:SI (reg:SI 405)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":671 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 556 555 557 35 (set (reg:HI 406)
+        (const_int 14 [0xe])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":671 -1
+     (nil))
+(insn 557 556 558 35 (set (mem/c:HI (plus:SI (reg/f:SI 404)
+                (const_int 254 [0xfe])) [4 xScreenDCV[12].pDownScreenSet+0 S2 A16])
+        (reg:HI 406)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":671 -1
+     (nil))
+(insn 558 557 559 35 (set (reg:SI 408)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":672 -1
+     (nil))
+(insn 559 558 560 35 (set (reg/f:SI 407)
+        (lo_sum:SI (reg:SI 408)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":672 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 560 559 561 35 (set (reg:SI 410)
+        (const_int 1048576 [0x100000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":672 -1
+     (nil))
+(insn 561 560 562 35 (set (reg:SI 409)
+        (plus:SI (reg:SI 410)
+            (const_int 14 [0xe]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":672 -1
+     (expr_list:REG_EQUAL (const_int 1048590 [0x10000e])
+        (nil)))
+(insn 562 561 563 35 (set (mem/c:SI (plus:SI (reg/f:SI 407)
+                (const_int 292 [0x124])) [4 MEM[(short unsigned int *)&xScreenDCV + 292B]+0 S4 A32])
+        (reg:SI 409)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":672 -1
+     (nil))
+(insn 563 562 564 35 (set (reg:SI 412)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":674 -1
+     (nil))
+(insn 564 563 565 35 (set (reg/f:SI 411)
+        (lo_sum:SI (reg:SI 412)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":674 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 565 564 566 35 (set (reg:HI 413)
+        (const_int 15 [0xf])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":674 -1
+     (nil))
+(insn 566 565 567 35 (set (mem/c:HI (plus:SI (reg/f:SI 411)
+                (const_int 274 [0x112])) [4 xScreenDCV[13].pDownScreenSet+0 S2 A16])
+        (reg:HI 413)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":674 -1
+     (nil))
+(insn 567 566 568 35 (set (reg:SI 415)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":676 -1
+     (nil))
+(insn 568 567 569 35 (set (reg/f:SI 414)
+        (lo_sum:SI (reg:SI 415)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":676 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 569 568 570 35 (set (reg:SI 417)
+        (const_int 1114112 [0x110000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":676 -1
+     (nil))
+(insn 570 569 571 35 (set (reg:SI 416)
+        (plus:SI (reg:SI 417)
+            (const_int 15 [0xf]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":676 -1
+     (expr_list:REG_EQUAL (const_int 1114127 [0x11000f])
+        (nil)))
+(insn 571 570 572 35 (set (mem/c:SI (plus:SI (reg/f:SI 414)
+                (const_int 312 [0x138])) [4 MEM[(short unsigned int *)&xScreenDCV + 312B]+0 S4 A32])
+        (reg:SI 416)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":676 -1
+     (nil))
+(insn 572 571 573 35 (set (reg:SI 419)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":678 -1
+     (nil))
+(insn 573 572 574 35 (set (reg/f:SI 418)
+        (lo_sum:SI (reg:SI 419)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":678 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 574 573 575 35 (set (reg:SI 421)
+        (const_int 1179648 [0x120000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":678 -1
+     (nil))
+(insn 575 574 576 35 (set (reg:SI 420)
+        (plus:SI (reg:SI 421)
+            (const_int 16 [0x10]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":678 -1
+     (expr_list:REG_EQUAL (const_int 1179664 [0x120010])
+        (nil)))
+(insn 576 575 577 35 (set (mem/c:SI (plus:SI (reg/f:SI 418)
+                (const_int 332 [0x14c])) [4 MEM[(short unsigned int *)&xScreenDCV + 332B]+0 S4 A32])
+        (reg:SI 420)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":678 -1
+     (nil))
+(insn 577 576 578 35 (set (reg:SI 423)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":679 -1
+     (nil))
+(insn 578 577 579 35 (set (reg/f:SI 422)
+        (lo_sum:SI (reg:SI 423)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":679 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 579 578 580 35 (set (reg:HI 424)
+        (const_int 20 [0x14])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":679 -1
+     (nil))
+(insn 580 579 581 35 (set (mem/c:HI (plus:SI (reg/f:SI 422)
+                (const_int 412 [0x19c])) [4 xScreenDCV[20].pUpScreenSet+0 S2 A32])
+        (reg:HI 424)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":679 -1
+     (nil))
+(code_label 581 580 582 36 37 (nil) [4 uses])
+(note 582 581 583 36 [bb 36] NOTE_INSN_BASIC_BLOCK)
+(insn 583 582 584 36 (set (reg:SI 426)
+        (high:SI (symbol_ref:SI ("*.LANCHOR8") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":683 -1
+     (nil))
+(insn 584 583 585 36 (set (reg/f:SI 425)
+        (lo_sum:SI (reg:SI 426)
+            (symbol_ref:SI ("*.LANCHOR8") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":683 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR8") [flags 0x182])
+        (nil)))
+(insn 585 584 586 36 (set (mem/c:QI (plus:SI (reg/f:SI 425)
+                (const_int 48 [0x30])) [0 CDVSettingsScreen5[3].last+0 S1 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":683 -1
+     (nil))
+(insn 586 585 587 36 (set (reg:SI 428)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":684 -1
+     (nil))
+(insn 587 586 588 36 (set (reg/f:SI 427)
+        (lo_sum:SI (reg:SI 428)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":684 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 588 587 589 36 (set (reg:SI 430)
+        (high:SI (symbol_ref:SI ("*.LANCHOR10") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":684 -1
+     (nil))
+(insn 589 588 590 36 (set (reg/f:SI 429)
+        (lo_sum:SI (reg:SI 430)
+            (symbol_ref:SI ("*.LANCHOR10") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":684 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR10") [flags 0x182])
+        (nil)))
+(insn 590 589 591 36 (set (mem/f/c:SI (plus:SI (reg/f:SI 427)
+                (const_int 284 [0x11c])) [6 xScreenDCV[14].pScreenCurObjets+0 S4 A32])
+        (reg/f:SI 429)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":684 -1
+     (nil))
+(code_label 591 590 592 37 27 (nil) [3 uses])
+(note 592 591 593 37 [bb 37] NOTE_INSN_BASIC_BLOCK)
+(insn 593 592 594 37 (set (reg:SI 10 a0)
+        (const_int 182 [0xb6])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":687 -1
+     (nil))
+(call_insn 594 593 595 37 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068a94b0 getReg8>) [0 getReg8 S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":687 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068a94b0 getReg8>)
+        (nil))
+    (expr_list:HI (use (reg:SI 10 a0))
+        (nil)))
+(insn 595 594 596 37 (set (reg:SI 431)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":687 -1
+     (nil))
+(insn 596 595 597 37 (set (reg:SI 75 [ _10 ])
+        (reg:SI 431)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":687 -1
+     (nil))
+(insn 597 596 598 37 (set (reg:SI 11 a1)
+        (reg:SI 75 [ _10 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":687 -1
+     (nil))
+(insn 598 597 599 37 (set (reg:SI 10 a0)
+        (reg/v:SI 76 [ after_zone_enable ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":687 -1
+     (nil))
+(call_insn 599 598 600 37 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vSetAfterZone") [flags 0x3] <function_decl 068ac438 vSetAfterZone>) [0 vSetAfterZone S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":687 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone") [flags 0x3] <function_decl 068ac438 vSetAfterZone>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(jump_insn 600 599 601 37 (set (pc)
+        (if_then_else (eq (reg/v:SI 81 [ analog_state ])
+                (const_int 0 [0]))
+            (label_ref 607)
+            (pc))) -1
+     (int_list:REG_BR_PROB 214748372 (nil))
+ -> 607)
+(note 601 600 602 38 [bb 38] NOTE_INSN_BASIC_BLOCK)
+(insn 602 601 603 38 (set (reg:SI 432)
+        (const_int 3 [0x3])) -1
+     (nil))
+(jump_insn 603 602 606 38 (set (pc)
+        (if_then_else (gtu (reg/v:SI 81 [ analog_state ])
+                (reg:SI 432))
+            (label_ref:SI 622)
+            (pc))) 180 {*branchsi}
+     (int_list:REG_BR_PROB 268435460 (nil))
+ -> 622)
+(note 606 603 604 39 [bb 39] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 604 606 605 39 (set (pc)
+        (label_ref 614)) -1
+     (nil)
+ -> 614)
+(barrier 605 604 607)
+(code_label 607 605 608 40 38 (nil) [1 uses])
+(note 608 607 609 40 [bb 40] NOTE_INSN_BASIC_BLOCK)
+(insn 609 608 610 40 (set (reg:SI 434)
+        (high:SI (symbol_ref:SI ("*.LANCHOR11") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":716 -1
+     (nil))
+(insn 610 609 611 40 (set (reg/f:SI 433)
+        (lo_sum:SI (reg:SI 434)
+            (symbol_ref:SI ("*.LANCHOR11") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":716 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR11") [flags 0x182])
+        (nil)))
+(insn 611 610 612 40 (set (mem/c:QI (plus:SI (reg/f:SI 433)
+                (const_int 80 [0x50])) [0 CDVSettingsScreen4[5].last+0 S1 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":716 -1
+     (nil))
+(jump_insn 612 611 613 40 (set (pc)
+        (label_ref:SI 622)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":716 250 {jump}
+     (nil)
+ -> 622)
+(barrier 613 612 614)
+(code_label 614 613 615 41 40 (nil) [1 uses])
+(note 615 614 616 41 [bb 41] NOTE_INSN_BASIC_BLOCK)
+(insn 616 615 617 41 (set (reg:SI 436)
+        (high:SI (symbol_ref:SI ("*.LANCHOR11") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":721 -1
+     (nil))
+(insn 617 616 618 41 (set (reg/f:SI 435)
+        (lo_sum:SI (reg:SI 436)
+            (symbol_ref:SI ("*.LANCHOR11") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":721 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR11") [flags 0x182])
+        (nil)))
+(insn 618 617 619 41 (set (reg:QI 437)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":721 -1
+     (nil))
+(insn 619 618 622 41 (set (mem/c:QI (plus:SI (reg/f:SI 435)
+                (const_int 80 [0x50])) [0 CDVSettingsScreen4[5].last+0 S1 A32])
+        (reg:QI 437)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":721 -1
+     (nil))
+(code_label 622 619 623 43 18 (nil) [2 uses])
+(note 623 622 0 43 [bb 43] NOTE_INSN_BASIC_BLOCK)
+
+;; Function vSettingCoountCondfig (vSettingCoountCondfig, funcdef_no=35, decl_uid=16883, cgraph_uid=35, symbol_order=78)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 74 [ setting ])
+        (reg:SI 10 a0 [ setting ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":712 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SI 76)
+        (high:SI (symbol_ref:SI ("*.LANCHOR11") [flags 0x182]))) -1
+     (nil))
+(insn 7 6 8 2 (set (reg/f:SI 75)
+        (lo_sum:SI (reg:SI 76)
+            (symbol_ref:SI ("*.LANCHOR11") [flags 0x182]))) -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR11") [flags 0x182])
+        (nil)))
+(insn 8 7 9 2 (set (reg:SI 77)
+        (eq:SI (reg/v:SI 74 [ setting ])
+            (const_int 0 [0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":713 -1
+     (nil))
+(insn 9 8 0 2 (set (mem/c:QI (plus:SI (reg/f:SI 75)
+                (const_int 80 [0x50])) [0 CDVSettingsScreen4[5].last+0 S1 A32])
+        (subreg:QI (reg:SI 77) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":713 -1
+     (nil))
+
+;; Function SetBPSetting (SetBPSetting, funcdef_no=36, decl_uid=16881, cgraph_uid=36, symbol_order=79)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 20 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 72 [ set ])
+        (reg:SI 10 a0 [ set ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":727 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(jump_insn 6 3 7 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 72 [ set ])
+                (const_int 0 [0]))
+            (label_ref 22)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":728 -1
+     (int_list:REG_BR_PROB 719407028 (nil))
+ -> 22)
+(note 7 6 8 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 8 7 9 4 (set (reg:SI 11 a1)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":730 -1
+     (nil))
+(insn 9 8 10 4 (set (reg:SI 10 a0)
+        (const_int 104 [0x68])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":730 -1
+     (nil))
+(call_insn 10 9 11 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 068a92d0 setReg8>) [0 setReg8 S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":730 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 068a92d0 setReg8>)
+        (nil))
+    (expr_list:HI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 11 10 12 4 (set (reg:SI 74)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":731 -1
+     (nil))
+(insn 12 11 13 4 (set (reg/f:SI 73)
+        (lo_sum:SI (reg:SI 74)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":731 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 13 12 14 4 (set (reg:QI 75)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":731 -1
+     (nil))
+(insn 14 13 15 4 (set (mem/c:QI (plus:SI (reg/f:SI 73)
+                (const_int 32 [0x20])) [0 CDVSettingsScreen6[2].last+0 S1 A32])
+        (reg:QI 75)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":731 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 77)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":732 -1
+     (nil))
+(insn 16 15 17 4 (set (reg/f:SI 76)
+        (lo_sum:SI (reg:SI 77)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":732 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 17 16 18 4 (set (reg:SI 79)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":732 -1
+     (nil))
+(insn 18 17 19 4 (set (reg/f:SI 78)
+        (lo_sum:SI (reg:SI 79)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":732 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 19 18 20 4 (set (mem/f/c:SI (plus:SI (reg/f:SI 76)
+                (const_int 4 [0x4])) [6 xScreenDCV[0].pScreenCurObjets+0 S4 A32])
+        (reg/f:SI 78)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":732 -1
+     (nil))
+(jump_insn 20 19 21 4 (set (pc)
+        (label_ref:SI 34)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":732 250 {jump}
+     (nil)
+ -> 34)
+(barrier 21 20 22)
+(code_label 22 21 23 5 49 (nil) [1 uses])
+(note 23 22 24 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 24 23 25 5 (set (reg:SI 81)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":737 -1
+     (nil))
+(insn 25 24 26 5 (set (reg/f:SI 80)
+        (lo_sum:SI (reg:SI 81)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":737 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 26 25 27 5 (set (mem/c:QI (plus:SI (reg/f:SI 80)
+                (const_int 32 [0x20])) [0 CDVSettingsScreen6[2].last+0 S1 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":737 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:SI 83)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":738 -1
+     (nil))
+(insn 28 27 29 5 (set (reg/f:SI 82)
+        (lo_sum:SI (reg:SI 83)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":738 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 29 28 30 5 (set (reg:SI 85)
+        (high:SI (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":738 -1
+     (nil))
+(insn 30 29 31 5 (set (reg/f:SI 84)
+        (lo_sum:SI (reg:SI 85)
+            (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":738 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR6") [flags 0x182])
+        (nil)))
+(insn 31 30 34 5 (set (mem/f/c:SI (plus:SI (reg/f:SI 82)
+                (const_int 4 [0x4])) [6 xScreenDCV[0].pScreenCurObjets+0 S4 A32])
+        (reg/f:SI 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":738 -1
+     (nil))
+(code_label 34 31 35 7 48 (nil) [1 uses])
+(note 35 34 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)

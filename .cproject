@@ -293,7 +293,7 @@
             </toolChain>
           </folderInfo>
           <sourceEntries>
-            <entry excluding="HAL_LIB/hw_lib_eeprom_i2c.c|HAL_LIB/hw_lib_eeprom_i2c.h|HAL_DRIVER/hal_can.h|HAL_DRIVER/hal_flash.h|HAL_DRIVER/hal_can_ch32.c|HAL_DRIVER/hal_flash_ch32.c|u8g2-master/sys|u8g2-master/pkg|NetLib/libwchnet_float.a|NetLib/eth_driver_RMII.c|NetLib/eth_driver_RGMII.c|NetLib/eth_driver_MII.c|FreeRTOS/portable/Common/mpu_wrappers.c|Startup/startup_ch32v30x_D8.S" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+            <entry excluding="HAL_LIB/hw_lib_eeprom_i2c.c|HAL_LIB/hw_lib_eeprom_i2c.h|HAL_DRIVER/hal_can.h|HAL_DRIVER/hal_flash.h|HAL_DRIVER/hal_can_ch32.c|HAL_DRIVER/hal_flash_ch32.c|u8g2-master/sys|u8g2-master/pkg|NetLib/libwchnet_float.a|NetLib/eth_driver_RMII.c|NetLib/eth_driver_RGMII.c|NetLib/eth_driver_MII.c|FreeRTOS/portable/Common/mpu_wrappers.c|Startup/startup_ch32v30x_D8.S|cmake|build" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
           </sourceEntries>
         </configuration>
       </storageModule>

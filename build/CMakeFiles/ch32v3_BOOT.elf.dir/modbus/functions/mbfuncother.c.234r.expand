@@ -1,0 +1,317 @@
+
+;; Function eMBSetSlaveID (eMBSetSlaveID, funcdef_no=30, decl_uid=6419, cgraph_uid=30, symbol_order=32)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+Edge 2->5 redirected to 8
+Edge 3->5 redirected to 9
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 53 from 8 to 9.
+Redirecting jump 57 from 8 to 9.
+Merging block 8 into block 7...
+Merged blocks 7 and 8.
+Merged 7 and 8 without moving.
+Removing jump 47.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 10 NOTE_INSN_DELETED)
+(note 10 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 10 3 2 (set (reg/v:SI 78 [ ucSlaveID ])
+        (reg:SI 10 a0 [ ucSlaveID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":55 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 79 [ xIsRunning ])
+        (reg:SI 11 a1 [ xIsRunning ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":55 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v/f:SI 80 [ pucAdditional ])
+        (reg:SI 12 a2 [ pucAdditional ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":55 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SI 81 [ usAdditionalLen ])
+        (reg:SI 13 a3 [ usAdditionalLen ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":55 -1
+     (nil))
+(note 6 5 12 2 NOTE_INSN_FUNCTION_BEG)
+(insn 12 6 13 2 (set (reg:SI 82)
+        (const_int 29 [0x1d])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":61 -1
+     (nil))
+(jump_insn 13 12 14 2 (set (pc)
+        (if_then_else (gtu (reg/v:SI 81 [ usAdditionalLen ])
+                (reg:SI 82))
+            (label_ref:SI 56)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":61 180 {*branchsi}
+     (int_list:REG_BR_PROB 375809644 (nil))
+ -> 56)
+(note 14 13 15 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 15 14 16 4 (set (reg:SI 84)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":64 -1
+     (nil))
+(insn 16 15 17 4 (set (reg/f:SI 83)
+        (lo_sum:SI (reg:SI 84)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":64 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 17 16 18 4 (set (mem/j/c:QI (reg/f:SI 83) [0 ucMBSlaveID+0 S1 A32])
+        (subreg/s/v:QI (reg/v:SI 78 [ ucSlaveID ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":64 -1
+     (nil))
+(insn 18 17 19 4 (set (reg:SI 86)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":65 -1
+     (nil))
+(insn 19 18 20 4 (set (reg/f:SI 85)
+        (lo_sum:SI (reg:SI 86)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":65 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 20 19 21 4 (set (reg:HI 87)
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":65 -1
+     (nil))
+(insn 21 20 22 4 (set (mem/c:HI (reg/f:SI 85) [1 usMBSlaveIDLen+0 S2 A16])
+        (reg:HI 87)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":65 -1
+     (nil))
+(insn 22 21 23 4 (set (reg:SI 89)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":65 -1
+     (nil))
+(insn 23 22 24 4 (set (reg/f:SI 88)
+        (lo_sum:SI (reg:SI 89)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":65 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 24 23 25 4 (set (reg:SI 91)
+        (ne:SI (reg/v:SI 79 [ xIsRunning ])
+            (const_int 0 [0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":65 -1
+     (nil))
+(insn 25 24 26 4 (set (reg:QI 90)
+        (subreg:QI (reg:SI 91) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":65 -1
+     (nil))
+(insn 26 25 27 4 (set (reg:SI 92)
+        (neg:SI (subreg:SI (reg:QI 90) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":65 -1
+     (nil))
+(insn 27 26 28 4 (set (mem/j/c:QI (plus:SI (reg/f:SI 88)
+                (const_int 1 [0x1])) [0 ucMBSlaveID+1 S1 A8])
+        (subreg:QI (reg:SI 92) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":65 -1
+     (nil))
+(jump_insn 28 27 29 4 (set (pc)
+        (if_then_else (eq (reg/v:SI 81 [ usAdditionalLen ])
+                (const_int 0 [0]))
+            (label_ref:SI 60)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":66 180 {*branchsi}
+     (int_list:REG_BR_PROB 719407028 (nil))
+ -> 60)
+(note 29 28 30 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 30 29 31 5 (set (reg:SI 94)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":68 -1
+     (nil))
+(insn 31 30 32 5 (set (reg/f:SI 93)
+        (lo_sum:SI (reg:SI 94)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":68 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 32 31 33 5 (set (reg:SI 95)
+        (plus:SI (reg/f:SI 93)
+            (const_int 2 [0x2]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":68 -1
+     (nil))
+(insn 33 32 34 5 (set (reg:SI 96)
+        (reg:SI 95)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":68 -1
+     (nil))
+(insn 34 33 35 5 (set (reg:SI 97)
+        (reg/v/f:SI 80 [ pucAdditional ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":68 -1
+     (nil))
+(insn 35 34 36 5 (set (reg:SI 98)
+        (reg/v:SI 81 [ usAdditionalLen ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":68 -1
+     (nil))
+(insn 36 35 37 5 (set (reg:SI 12 a2)
+        (reg:SI 98)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":68 -1
+     (nil))
+(insn 37 36 38 5 (set (reg:SI 11 a1)
+        (reg:SI 97)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":68 -1
+     (nil))
+(insn 38 37 39 5 (set (reg:SI 10 a0)
+        (reg:SI 96)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":68 -1
+     (nil))
+(call_insn 39 38 40 5 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0625cd98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":68 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0625cd98 __builtin_memcpy>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (set (reg:SI 10 a0)
+            (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 10 a0))
+            (expr_list:SI (use (reg:SI 11 a1))
+                (expr_list:SI (use (reg:SI 12 a2))
+                    (nil))))))
+(insn 40 39 41 5 (set (reg:SI 99)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":68 -1
+     (nil))
+(insn 41 40 42 5 (set (reg:SI 101)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":70 -1
+     (nil))
+(insn 42 41 43 5 (set (reg/f:SI 100)
+        (lo_sum:SI (reg:SI 101)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":70 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 43 42 44 5 (set (reg:SI 102)
+        (plus:SI (reg/v:SI 81 [ usAdditionalLen ])
+            (const_int 2 [0x2]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":70 -1
+     (nil))
+(insn 44 43 7 5 (set (mem/c:HI (reg/f:SI 100) [1 usMBSlaveIDLen+0 S2 A16])
+        (subreg:HI (reg:SI 102) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":70 -1
+     (nil))
+(insn 7 44 53 5 (set (reg/v:SI 77 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":56 -1
+     (nil))
+(jump_insn 53 7 54 5 (set (pc)
+        (label_ref:SI 49)) 250 {jump}
+     (nil)
+ -> 49)
+(barrier 54 53 56)
+(code_label 56 54 55 6 3 (nil) [1 uses])
+(note 55 56 8 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 8 55 57 6 (set (reg/v:SI 77 [ <retval> ])
+        (const_int 4 [0x4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":75 -1
+     (nil))
+(jump_insn 57 8 58 6 (set (pc)
+        (label_ref:SI 49)) 250 {jump}
+     (nil)
+ -> 49)
+(barrier 58 57 60)
+(code_label 60 58 59 7 4 (nil) [1 uses])
+(note 59 60 9 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 9 59 49 7 (set (reg/v:SI 77 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":56 -1
+     (nil))
+(code_label 49 9 52 9 1 (nil) [2 uses])
+(note 52 49 50 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 50 52 51 9 (set (reg/i:SI 10 a0)
+        (reg/v:SI 77 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":78 -1
+     (nil))
+(insn 51 50 0 9 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":78 -1
+     (nil))
+
+;; Function eMBFuncReportSlaveID (eMBFuncReportSlaveID, funcdef_no=31, decl_uid=6466, cgraph_uid=31, symbol_order=33)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 24.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 77 [ pucFrame ])
+        (reg:SI 10 a0 [ pucFrame ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":82 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v/f:SI 78 [ usLen ])
+        (reg:SI 11 a1 [ usLen ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":82 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg:SI 80)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":83 -1
+     (nil))
+(insn 8 7 9 2 (set (reg/f:SI 79)
+        (lo_sum:SI (reg:SI 80)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":83 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 9 8 10 2 (set (reg:SI 73 [ usMBSlaveIDLen.7_2 ])
+        (zero_extend:SI (mem/c:HI (reg/f:SI 79) [1 usMBSlaveIDLen+0 S2 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":83 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 81)
+        (plus:SI (reg/v/f:SI 77 [ pucFrame ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":83 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 83)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":83 -1
+     (nil))
+(insn 12 11 13 2 (set (reg/f:SI 82)
+        (lo_sum:SI (reg:SI 83)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":83 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 13 12 14 2 (set (reg:SI 84)
+        (reg:SI 81)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":83 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 85)
+        (reg/f:SI 82)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":83 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 86)
+        (reg:SI 73 [ usMBSlaveIDLen.7_2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":83 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 12 a2)
+        (reg:SI 86)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":83 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 11 a1)
+        (reg:SI 85)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":83 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 10 a0)
+        (reg:SI 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":83 -1
+     (nil))
+(call_insn 19 18 20 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0625cd98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":83 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0625cd98 __builtin_memcpy>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (set (reg:SI 10 a0)
+            (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 10 a0))
+            (expr_list:SI (use (reg:SI 11 a1))
+                (expr_list:SI (use (reg:SI 12 a2))
+                    (nil))))))
+(insn 20 19 21 2 (set (reg:SI 87)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":83 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:SI 88)
+        (plus:SI (reg:SI 73 [ usMBSlaveIDLen.7_2 ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":84 -1
+     (nil))
+(insn 22 21 23 2 (set (mem:HI (reg/v/f:SI 78 [ usLen ]) [1 *usLen_8(D)+0 S2 A16])
+        (subreg:HI (reg:SI 88) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":84 -1
+     (nil))
+(insn 23 22 27 2 (set (reg:SI 76 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":85 -1
+     (nil))
+(insn 27 23 28 2 (set (reg/i:SI 10 a0)
+        (reg:SI 76 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":86 -1
+     (nil))
+(insn 28 27 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":86 -1
+     (nil))

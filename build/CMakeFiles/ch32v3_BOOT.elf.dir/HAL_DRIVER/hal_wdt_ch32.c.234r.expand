@@ -1,0 +1,363 @@
+
+;; Function HAL_WDT_Init (HAL_WDT_Init, funcdef_no=30, decl_uid=15931, cgraph_uid=30, symbol_order=30)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 8 into block 7...
+Merged blocks 7 and 8.
+Merged 7 and 8 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 76 [ period_in_3_2ms ])
+        (reg:SI 10 a0 [ period_in_3_2ms ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":27 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg/f:SI 77)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":29 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 79)
+        (const_int 20480 [0x5000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":29 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 78)
+        (plus:SI (reg:SI 79)
+            (const_int 1365 [0x555]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":29 -1
+     (expr_list:REG_EQUAL (const_int 21845 [0x5555])
+        (nil)))
+(insn 9 8 13 2 (set (mem/v:SI (reg/f:SI 77) [2 MEM[(struct IWDG_TypeDef *)1073754112B].CTLR+0 S4 A128])
+        (reg:SI 78)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":29 -1
+     (nil))
+(code_label 13 9 10 4 2 (nil) [1 uses])
+(note 10 13 11 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 11 10 12 4 (set (reg/f:SI 80)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":30 -1
+     (nil))
+(insn 12 11 14 4 (set (reg:SI 72 [ _1 ])
+        (mem/v:SI (plus:SI (reg/f:SI 80)
+                (const_int 12 [0xc])) [2 MEM[(struct IWDG_TypeDef *)1073754112B].STATR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":30 -1
+     (nil))
+(insn 14 12 15 4 (set (reg:SI 81)
+        (and:SI (reg:SI 72 [ _1 ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":30 -1
+     (nil))
+(jump_insn 15 14 16 4 (set (pc)
+        (if_then_else (ne (reg:SI 81)
+                (const_int 0 [0]))
+            (label_ref 13)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":30 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 13)
+(note 16 15 17 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 17 16 18 5 (set (reg/f:SI 82)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":31 -1
+     (nil))
+(insn 18 17 19 5 (set (reg:SI 83)
+        (const_int 4 [0x4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":31 -1
+     (nil))
+(insn 19 18 23 5 (set (mem/v:SI (plus:SI (reg/f:SI 82)
+                (const_int 4 [0x4])) [2 MEM[(struct IWDG_TypeDef *)1073754112B].PSCR+0 S4 A32])
+        (reg:SI 83)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":31 -1
+     (nil))
+(code_label 23 19 20 6 3 (nil) [1 uses])
+(note 20 23 21 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 21 20 22 6 (set (reg/f:SI 84)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":32 -1
+     (nil))
+(insn 22 21 24 6 (set (reg:SI 74 [ _3 ])
+        (mem/v:SI (plus:SI (reg/f:SI 84)
+                (const_int 12 [0xc])) [2 MEM[(struct IWDG_TypeDef *)1073754112B].STATR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":32 -1
+     (nil))
+(insn 24 22 25 6 (set (reg:SI 85)
+        (and:SI (reg:SI 74 [ _3 ])
+            (const_int 2 [0x2]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":32 -1
+     (nil))
+(jump_insn 25 24 26 6 (set (pc)
+        (if_then_else (ne (reg:SI 85)
+                (const_int 0 [0]))
+            (label_ref 23)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":32 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 23)
+(note 26 25 27 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 27 26 28 7 (set (reg/f:SI 86)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":33 -1
+     (nil))
+(insn 28 27 29 7 (set (mem/v:SI (plus:SI (reg/f:SI 86)
+                (const_int 8 [0x8])) [2 MEM[(struct IWDG_TypeDef *)1073754112B].RLDR+0 S4 A64])
+        (reg/v:SI 76 [ period_in_3_2ms ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":33 -1
+     (nil))
+(insn 29 28 30 7 (set (reg/f:SI 87)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":34 -1
+     (nil))
+(insn 30 29 31 7 (set (reg:SI 89)
+        (const_int 45056 [0xb000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":34 -1
+     (nil))
+(insn 31 30 32 7 (set (reg:SI 88)
+        (plus:SI (reg:SI 89)
+            (const_int -1366 [0xfffffffffffffaaa]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":34 -1
+     (expr_list:REG_EQUAL (const_int 43690 [0xaaaa])
+        (nil)))
+(insn 32 31 33 7 (set (mem/v:SI (reg/f:SI 87) [2 MEM[(struct IWDG_TypeDef *)1073754112B].CTLR+0 S4 A128])
+        (reg:SI 88)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":34 -1
+     (nil))
+(insn 33 32 34 7 (set (reg/f:SI 90)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":35 -1
+     (nil))
+(insn 34 33 35 7 (set (reg:SI 92)
+        (const_int 53248 [0xd000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":35 -1
+     (nil))
+(insn 35 34 36 7 (set (reg:SI 91)
+        (plus:SI (reg:SI 92)
+            (const_int -820 [0xfffffffffffffccc]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":35 -1
+     (expr_list:REG_EQUAL (const_int 52428 [0xcccc])
+        (nil)))
+(insn 36 35 0 7 (set (mem/v:SI (reg/f:SI 90) [2 MEM[(struct IWDG_TypeDef *)1073754112B].CTLR+0 S4 A128])
+        (reg:SI 91)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":35 -1
+     (nil))
+
+;; Function HAL_WDTInit (HAL_WDTInit, funcdef_no=31, decl_uid=15927, cgraph_uid=31, symbol_order=31)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg/f:SI 72)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":44 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 74)
+        (const_int 20480 [0x5000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":44 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 73)
+        (plus:SI (reg:SI 74)
+            (const_int 1365 [0x555]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":44 -1
+     (expr_list:REG_EQUAL (const_int 21845 [0x5555])
+        (nil)))
+(insn 8 7 9 2 (set (mem/v:SI (reg/f:SI 72) [2 MEM[(struct IWDG_TypeDef *)1073754112B].CTLR+0 S4 A128])
+        (reg:SI 73)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":44 -1
+     (nil))
+(insn 9 8 10 2 (set (reg/f:SI 75)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":45 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 76)
+        (const_int 4 [0x4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":45 -1
+     (nil))
+(insn 11 10 12 2 (set (mem/v:SI (plus:SI (reg/f:SI 75)
+                (const_int 4 [0x4])) [2 MEM[(struct IWDG_TypeDef *)1073754112B].PSCR+0 S4 A32])
+        (reg:SI 76)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":45 -1
+     (nil))
+(insn 12 11 13 2 (set (reg/f:SI 77)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":46 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 79)
+        (const_int 4096 [0x1000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":46 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 78)
+        (plus:SI (reg:SI 79)
+            (const_int -96 [0xffffffffffffffa0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":46 -1
+     (expr_list:REG_EQUAL (const_int 4000 [0xfa0])
+        (nil)))
+(insn 15 14 16 2 (set (mem/v:SI (plus:SI (reg/f:SI 77)
+                (const_int 8 [0x8])) [2 MEM[(struct IWDG_TypeDef *)1073754112B].RLDR+0 S4 A64])
+        (reg:SI 78)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":46 -1
+     (nil))
+(insn 16 15 17 2 (set (reg/f:SI 80)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":47 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 82)
+        (const_int 45056 [0xb000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":47 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 81)
+        (plus:SI (reg:SI 82)
+            (const_int -1366 [0xfffffffffffffaaa]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":47 -1
+     (expr_list:REG_EQUAL (const_int 43690 [0xaaaa])
+        (nil)))
+(insn 19 18 20 2 (set (mem/v:SI (reg/f:SI 80) [2 MEM[(struct IWDG_TypeDef *)1073754112B].CTLR+0 S4 A128])
+        (reg:SI 81)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":47 -1
+     (nil))
+(insn 20 19 21 2 (set (reg/f:SI 83)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":48 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:SI 85)
+        (const_int 53248 [0xd000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":48 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:SI 84)
+        (plus:SI (reg:SI 85)
+            (const_int -820 [0xfffffffffffffccc]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":48 -1
+     (expr_list:REG_EQUAL (const_int 52428 [0xcccc])
+        (nil)))
+(insn 23 22 0 2 (set (mem/v:SI (reg/f:SI 83) [2 MEM[(struct IWDG_TypeDef *)1073754112B].CTLR+0 S4 A128])
+        (reg:SI 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":48 -1
+     (nil))
+
+;; Function HAL_WDTReset (HAL_WDTReset, funcdef_no=32, decl_uid=15928, cgraph_uid=32, symbol_order=32)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg/f:SI 72)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":55 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 74)
+        (const_int 45056 [0xb000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":55 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 73)
+        (plus:SI (reg:SI 74)
+            (const_int -1366 [0xfffffffffffffaaa]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":55 -1
+     (expr_list:REG_EQUAL (const_int 43690 [0xaaaa])
+        (nil)))
+(insn 8 7 0 2 (set (mem/v:SI (reg/f:SI 72) [2 MEM[(struct IWDG_TypeDef *)1073754112B].CTLR+0 S4 A128])
+        (reg:SI 73)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":55 -1
+     (nil))
+
+;; Function HAL_WDT_Init1s (HAL_WDT_Init1s, funcdef_no=33, decl_uid=15929, cgraph_uid=33, symbol_order=33)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg/f:SI 72)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":65 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 74)
+        (const_int 20480 [0x5000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":65 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 73)
+        (plus:SI (reg:SI 74)
+            (const_int 1365 [0x555]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":65 -1
+     (expr_list:REG_EQUAL (const_int 21845 [0x5555])
+        (nil)))
+(insn 8 7 9 2 (set (mem/v:SI (reg/f:SI 72) [2 MEM[(struct IWDG_TypeDef *)1073754112B].CTLR+0 S4 A128])
+        (reg:SI 73)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":65 -1
+     (nil))
+(insn 9 8 10 2 (set (reg/f:SI 75)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":66 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 76)
+        (const_int 4 [0x4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":66 -1
+     (nil))
+(insn 11 10 12 2 (set (mem/v:SI (plus:SI (reg/f:SI 75)
+                (const_int 4 [0x4])) [2 MEM[(struct IWDG_TypeDef *)1073754112B].PSCR+0 S4 A32])
+        (reg:SI 76)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":66 -1
+     (nil))
+(insn 12 11 13 2 (set (reg/f:SI 77)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":67 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 78)
+        (const_int 625 [0x271])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":67 -1
+     (nil))
+(insn 14 13 15 2 (set (mem/v:SI (plus:SI (reg/f:SI 77)
+                (const_int 8 [0x8])) [2 MEM[(struct IWDG_TypeDef *)1073754112B].RLDR+0 S4 A64])
+        (reg:SI 78)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":67 -1
+     (nil))
+(insn 15 14 16 2 (set (reg/f:SI 79)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":68 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 81)
+        (const_int 45056 [0xb000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":68 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 80)
+        (plus:SI (reg:SI 81)
+            (const_int -1366 [0xfffffffffffffaaa]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":68 -1
+     (expr_list:REG_EQUAL (const_int 43690 [0xaaaa])
+        (nil)))
+(insn 18 17 19 2 (set (mem/v:SI (reg/f:SI 79) [2 MEM[(struct IWDG_TypeDef *)1073754112B].CTLR+0 S4 A128])
+        (reg:SI 80)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":68 -1
+     (nil))
+(insn 19 18 20 2 (set (reg/f:SI 82)
+        (const_int 1073754112 [0x40003000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":69 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 84)
+        (const_int 53248 [0xd000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":69 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:SI 83)
+        (plus:SI (reg:SI 84)
+            (const_int -820 [0xfffffffffffffccc]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":69 -1
+     (expr_list:REG_EQUAL (const_int 52428 [0xcccc])
+        (nil)))
+(insn 22 21 0 2 (set (mem/v:SI (reg/f:SI 82) [2 MEM[(struct IWDG_TypeDef *)1073754112B].CTLR+0 S4 A128])
+        (reg:SI 83)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_wdt_ch32.c":69 -1
+     (nil))

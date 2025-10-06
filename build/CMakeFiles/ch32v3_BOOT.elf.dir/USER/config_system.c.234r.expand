@@ -1,0 +1,1474 @@
+
+;; Function HAL_UART_TxCpltCallback (HAL_UART_TxCpltCallback, funcdef_no=34, decl_uid=16867, cgraph_uid=34, symbol_order=38)
+
+Partition 0: size 4 align 4
+	xHigherPriorityTaskWoken
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 2->5 redirected to 6
+Merging block 5 into block 4...
+Merged blocks 4 and 5.
+Merged 4 and 5 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 74)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -4 [0xfffffffffffffffc]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":73 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 76)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":73 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/f:SI 75)
+        (lo_sum:SI (reg:SI 76)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":73 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 8 7 9 2 (set (reg:SI 77)
+        (mem/f/c:SI (reg/f:SI 75) [7 processTaskHandle+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":73 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 12 a2)
+        (reg:SI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":73 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 11 a1)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":73 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 10 a0)
+        (reg:SI 77)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":73 -1
+     (nil))
+(call_insn 12 11 13 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vTaskGenericNotifyGiveFromISR") [flags 0x41] <function_decl 06627c30 vTaskGenericNotifyGiveFromISR>) [0 vTaskGenericNotifyGiveFromISR S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":73 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskGenericNotifyGiveFromISR") [flags 0x41] <function_decl 06627c30 vTaskGenericNotifyGiveFromISR>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(insn 13 12 14 2 (set (reg:SI 78)
+        (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 xHigherPriorityTaskWoken+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":74 -1
+     (nil))
+(jump_insn 14 13 15 2 (set (pc)
+        (if_then_else (eq (reg:SI 78)
+                (const_int 0 [0]))
+            (label_ref:SI 21)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":74 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 21)
+(note 15 14 16 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 16 15 17 4 (set (reg/f:SI 79)
+        (const_int -536813568 [0xffffffffe000e000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Core/core_riscv.h":227 -1
+     (nil))
+(insn 17 16 18 4 (set (reg:SI 80)
+        (const_int 16384 [0x4000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Core/core_riscv.h":227 -1
+     (nil))
+(insn 18 17 21 4 (set (mem/v:SI (plus:SI (reg/f:SI 79)
+                (const_int 512 [0x200])) [2 MEM[(struct PFIC_Type *)3758153728B].IPSR+0 S4 A128])
+        (reg:SI 80)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Core/core_riscv.h":227 -1
+     (nil))
+(code_label 21 18 22 6 1 (nil) [1 uses])
+(note 22 21 0 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+;; Function HAL_UART_RxCpltCallback (HAL_UART_RxCpltCallback, funcdef_no=33, decl_uid=16864, cgraph_uid=33, symbol_order=37)
+
+Partition 0: size 4 align 4
+	xHigherPriorityTaskWoken
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 2->5 redirected to 6
+Merging block 5 into block 4...
+Merged blocks 4 and 5.
+Merged 4 and 5 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 75)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":65 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 74)
+        (lo_sum:SI (reg:SI 75)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":65 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 7 6 8 2 (set (mem/c:QI (reg/f:SI 74) [0 rx_data+0 S1 A8])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":65 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 76)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -4 [0xfffffffffffffffc]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":66 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 78)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":66 -1
+     (nil))
+(insn 10 9 11 2 (set (reg/f:SI 77)
+        (lo_sum:SI (reg:SI 78)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":66 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 11 10 12 2 (set (reg:SI 80)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":66 -1
+     (nil))
+(insn 12 11 13 2 (set (reg/f:SI 79)
+        (lo_sum:SI (reg:SI 80)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":66 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 13 12 14 2 (set (reg:SI 81)
+        (mem/f/c:SI (reg/f:SI 79) [8 pRXQueue+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":66 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 13 a3)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":66 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 12 a2)
+        (reg:SI 76)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":66 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 11 a1)
+        (reg/f:SI 77)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":66 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 10 a0)
+        (reg:SI 81)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":66 -1
+     (nil))
+(call_insn 18 17 19 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xQueueGenericSendFromISR") [flags 0x41] <function_decl 06841ca8 xQueueGenericSendFromISR>) [0 xQueueGenericSendFromISR S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":66 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xQueueGenericSendFromISR") [flags 0x41] <function_decl 06841ca8 xQueueGenericSendFromISR>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 19 18 20 2 (set (reg:SI 82)
+        (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 xHigherPriorityTaskWoken+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":67 -1
+     (nil))
+(jump_insn 20 19 21 2 (set (pc)
+        (if_then_else (eq (reg:SI 82)
+                (const_int 0 [0]))
+            (label_ref:SI 27)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":67 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 27)
+(note 21 20 22 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 22 21 23 4 (set (reg/f:SI 83)
+        (const_int -536813568 [0xffffffffe000e000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Core/core_riscv.h":227 -1
+     (nil))
+(insn 23 22 24 4 (set (reg:SI 84)
+        (const_int 16384 [0x4000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Core/core_riscv.h":227 -1
+     (nil))
+(insn 24 23 27 4 (set (mem/v:SI (plus:SI (reg/f:SI 83)
+                (const_int 512 [0x200])) [2 MEM[(struct PFIC_Type *)3758153728B].IPSR+0 S4 A128])
+        (reg:SI 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Core/core_riscv.h":227 -1
+     (nil))
+(code_label 27 24 28 6 7 (nil) [1 uses])
+(note 28 27 0 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+
+;; Function xConfigSystemRxQueue (xConfigSystemRxQueue, funcdef_no=30, decl_uid=16792, cgraph_uid=30, symbol_order=32)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 8.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 75)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":19 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 74)
+        (lo_sum:SI (reg:SI 75)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":19 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 7 6 11 2 (set (reg/f:SI 72 [ <retval> ])
+        (reg/f:SI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":19 -1
+     (nil))
+(insn 11 7 12 2 (set (reg/i:SI 10 a0)
+        (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":20 -1
+     (nil))
+(insn 12 11 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":20 -1
+     (nil))
+
+;; Function getConfigTaskHandle (getConfigTaskHandle, funcdef_no=31, decl_uid=16790, cgraph_uid=31, symbol_order=33)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 8.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 75)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":24 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 74)
+        (lo_sum:SI (reg:SI 75)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":24 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 7 6 11 2 (set (reg/f:SI 72 [ <retval> ])
+        (reg/f:SI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":24 -1
+     (nil))
+(insn 11 7 12 2 (set (reg/i:SI 10 a0)
+        (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":25 -1
+     (nil))
+(insn 12 11 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":25 -1
+     (nil))
+
+;; Function SetConfigData (SetConfigData, funcdef_no=32, decl_uid=16856, cgraph_uid=32, symbol_order=36)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+Edge 2->11 redirected to 15
+Edge 7->9 redirected to 16
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 26 from 15 to 16.
+Redirecting jump 34 from 15 to 16.
+Redirecting jump 49 from 15 to 16.
+Redirecting jump 72 from 15 to 16.
+Merging block 15 into block 14...
+Merged blocks 14 and 15.
+Merged 14 and 15 without moving.
+Removing jump 66.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 10 NOTE_INSN_DELETED)
+(note 10 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 10 3 2 (set (reg/v/f:SI 93)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":32 -1
+     (nil))
+(note 3 2 12 2 NOTE_INSN_FUNCTION_BEG)
+(insn 12 3 13 2 (set (reg:SI 90 [ data$reg_addres ])
+        (zero_extend:SI (mem/c:HI (reg/v/f:SI 93) [4 MEM[(struct  *)&data]+0 S2 A32]))) -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 94)
+        (const_int 213 [0xd5])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":36 -1
+     (nil))
+(jump_insn 14 13 15 2 (set (pc)
+        (if_then_else (gtu (reg:SI 90 [ data$reg_addres ])
+                (reg:SI 94))
+            (label_ref:SI 75)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":36 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 75)
+(note 15 14 16 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 16 15 17 4 (set (reg:SI 88 [ data$data$0 ])
+        (zero_extend:SI (mem/c:QI (plus:SI (reg/v/f:SI 93)
+                    (const_int 2 [0x2])) [4 MEM[(struct  *)&data + 2B]+0 S1 A16]))) -1
+     (nil))
+(insn 17 16 18 4 (set (reg:SI 89 [ data$data$1 ])
+        (zero_extend:SI (mem/c:QI (plus:SI (reg/v/f:SI 93)
+                    (const_int 3 [0x3])) [4 MEM[(struct  *)&data + 3B]+0 S1 A8]))) -1
+     (nil))
+(insn 18 17 19 4 (set (reg:SI 72 [ _1 ])
+        (mem/c:SI (plus:SI (reg/v/f:SI 93)
+                (const_int 8 [0x8])) [6 data.type+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":38 -1
+     (nil))
+(insn 19 18 20 4 (set (reg:SI 95)
+        (const_int 1 [0x1])) -1
+     (nil))
+(jump_insn 20 19 21 4 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ _1 ])
+                (reg:SI 95))
+            (label_ref 36)
+            (pc))) -1
+     (int_list:REG_BR_PROB 268435460 (nil))
+ -> 36)
+(note 21 20 22 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 22 21 23 5 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ _1 ])
+                (const_int 0 [0]))
+            (label_ref 29)
+            (pc))) -1
+     (int_list:REG_BR_PROB 357913948 (nil))
+ -> 29)
+(note 23 22 24 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 24 23 25 6 (set (reg:SI 96)
+        (const_int 2 [0x2])) -1
+     (nil))
+(jump_insn 25 24 28 6 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ _1 ])
+                (reg:SI 96))
+            (label_ref 51)
+            (pc))) -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 51)
+(note 28 25 9 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 9 28 26 7 (set (reg:SI 92 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":52 -1
+     (nil))
+(jump_insn 26 9 27 7 (set (pc)
+        (label_ref:SI 68)) 250 {jump}
+     (nil)
+ -> 68)
+(barrier 27 26 29)
+(code_label 29 27 30 8 18 (nil) [1 uses])
+(note 30 29 31 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 31 30 32 8 (set (reg:SI 11 a1)
+        (reg:SI 88 [ data$data$0 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":41 -1
+     (nil))
+(insn 32 31 33 8 (set (reg:SI 10 a0)
+        (reg:SI 90 [ data$reg_addres ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":41 -1
+     (nil))
+(call_insn 33 32 5 8 (parallel [
+            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 068d6168 setReg8>) [0 setReg8 S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":41 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 068d6168 setReg8>)
+        (nil))
+    (expr_list:HI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 5 33 34 8 (set (reg:SI 92 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":52 -1
+     (nil))
+(jump_insn 34 5 35 8 (set (pc)
+        (label_ref:SI 68)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":42 250 {jump}
+     (nil)
+ -> 68)
+(barrier 35 34 36)
+(code_label 36 35 37 9 17 (nil) [1 uses])
+(note 37 36 38 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 38 37 39 9 (set (reg:SI 97)
+        (ashift:SI (reg:SI 88 [ data$data$0 ])
+            (const_int 8 [0x8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":44 -1
+     (nil))
+(jump_insn 39 38 40 9 (set (pc)
+        (if_then_else (ne (reg:SI 97)
+                (const_int 0 [0]))
+            (label_ref:SI 79)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":44 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 79)
+(note 40 39 41 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 41 40 42 10 (set (reg:SI 99)
+        (ne:SI (reg:SI 89 [ data$data$1 ])
+            (const_int 0 [0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":44 -1
+     (nil))
+(insn 42 41 76 10 (set (reg:SI 86 [ iftmp.0_16 ])
+        (reg:SI 99)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":44 -1
+     (nil))
+(jump_insn 76 42 77 10 (set (pc)
+        (label_ref 43)) -1
+     (nil)
+ -> 43)
+(barrier 77 76 79)
+(code_label 79 77 78 11 22 (nil) [1 uses])
+(note 78 79 4 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 4 78 43 11 (set (reg:SI 86 [ iftmp.0_16 ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":44 -1
+     (nil))
+(code_label 43 4 44 12 20 (nil) [1 uses])
+(note 44 43 45 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 45 44 46 12 (set (reg:SI 100)
+        (zero_extend:SI (subreg:HI (reg:SI 86 [ iftmp.0_16 ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":44 -1
+     (nil))
+(insn 46 45 47 12 (set (reg:SI 11 a1)
+        (reg:SI 100)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":44 -1
+     (nil))
+(insn 47 46 48 12 (set (reg:SI 10 a0)
+        (reg:SI 90 [ data$reg_addres ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":44 -1
+     (nil))
+(call_insn 48 47 6 12 (parallel [
+            (call (mem:SI (symbol_ref:SI ("setReg16") [flags 0x41] <function_decl 068d60f0 setReg16>) [0 setReg16 S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":44 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg16") [flags 0x41] <function_decl 068d60f0 setReg16>)
+        (nil))
+    (expr_list:HI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(insn 6 48 49 12 (set (reg:SI 92 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":52 -1
+     (nil))
+(jump_insn 49 6 50 12 (set (pc)
+        (label_ref:SI 68)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":45 250 {jump}
+     (nil)
+ -> 68)
+(barrier 50 49 51)
+(code_label 51 50 52 13 19 (nil) [1 uses])
+(note 52 51 53 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 53 52 54 13 (set (reg:SI 76 [ _5 ])
+        (reg:SI 88 [ data$data$0 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":47 -1
+     (nil))
+(insn 54 53 55 13 (set (reg:SI 101)
+        (ashift:SI (reg:SI 76 [ _5 ])
+            (const_int 24 [0x18]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":47 -1
+     (nil))
+(insn 55 54 56 13 (set (reg:SI 102)
+        (ashift:SI (reg:SI 89 [ data$data$1 ])
+            (const_int 16 [0x10]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":47 -1
+     (nil))
+(insn 56 55 57 13 (set (reg:SI 103)
+        (ior:SI (reg:SI 101)
+            (reg:SI 102))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":47 -1
+     (nil))
+(insn 57 56 58 13 (set (reg:SI 104)
+        (ior:SI (reg:SI 103)
+            (reg:SI 76 [ _5 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":47 -1
+     (nil))
+(insn 58 57 59 13 (set (reg:SI 105)
+        (zero_extend:SI (mem/j/c:QI (plus:SI (reg/v/f:SI 93)
+                    (const_int 4 [0x4])) [0 data.data+2 S1 A32]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":47 -1
+     (nil))
+(insn 59 58 60 13 (set (reg:SI 106)
+        (ashift:SI (reg:SI 105)
+            (const_int 8 [0x8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":47 -1
+     (nil))
+(insn 60 59 61 13 (set (reg:SI 107)
+        (ior:SI (reg:SI 104)
+            (reg:SI 106))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":47 -1
+     (nil))
+(insn 61 60 62 13 (set (reg:SF 11 a1)
+        (subreg:SF (reg:SI 107) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":49 -1
+     (nil))
+(insn 62 61 63 13 (set (reg:SI 10 a0)
+        (reg:SI 90 [ data$reg_addres ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":49 -1
+     (nil))
+(call_insn 63 62 8 13 (parallel [
+            (call (mem:SI (symbol_ref:SI ("saveRegFloat") [flags 0x41] <function_decl 068d63c0 saveRegFloat>) [0 saveRegFloat S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":49 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("saveRegFloat") [flags 0x41] <function_decl 068d63c0 saveRegFloat>)
+        (nil))
+    (expr_list:HI (use (reg:SI 10 a0))
+        (expr_list:SF (use (reg:SF 11 a1))
+            (nil))))
+(insn 8 63 72 13 (set (reg:SI 92 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":52 -1
+     (nil))
+(jump_insn 72 8 73 13 (set (pc)
+        (label_ref:SI 68)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":50 250 {jump}
+     (nil)
+ -> 68)
+(barrier 73 72 75)
+(code_label 75 73 74 14 21 (nil) [1 uses])
+(note 74 75 7 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 7 74 68 14 (set (reg:SI 92 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":56 -1
+     (nil))
+(code_label 68 7 71 16 15 (nil) [4 uses])
+(note 71 68 69 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 69 71 70 16 (set (reg/i:SI 10 a0)
+        (reg:SI 92 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":59 -1
+     (nil))
+(insn 70 69 0 16 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":59 -1
+     (nil))
+
+;; Function SendAnswer (SendAnswer, funcdef_no=35, decl_uid=16871, cgraph_uid=35, symbol_order=39)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+Edge 2->4 redirected to 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 7 into block 6...
+Merged blocks 6 and 7.
+Merged 6 and 7 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 6 NOTE_INSN_DELETED)
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (reg/v:SI 73 [ status ])
+        (reg:SI 10 a0 [ status ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":79 -1
+     (nil))
+(note 3 2 8 2 NOTE_INSN_FUNCTION_BEG)
+(jump_insn 8 3 9 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 73 [ status ])
+                (const_int 0 [0]))
+            (label_ref:SI 24)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":80 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 24)
+(note 9 8 5 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 5 9 21 4 (set (reg:SI 72 [ iftmp.1_1 ])
+        (const_int 85 [0x55])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":80 -1
+     (nil))
+(jump_insn 21 5 22 4 (set (pc)
+        (label_ref 10)) -1
+     (nil)
+ -> 10)
+(barrier 22 21 24)
+(code_label 24 22 23 5 30 (nil) [1 uses])
+(note 23 24 4 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 4 23 10 5 (set (reg:SI 72 [ iftmp.1_1 ])
+        (const_int 68 [0x44])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":80 -1
+     (nil))
+(code_label 10 4 11 6 29 (nil) [1 uses])
+(note 11 10 12 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 12 11 13 6 (set (reg:SI 11 a1)
+        (reg:SI 72 [ iftmp.1_1 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":80 -1
+     (nil))
+(insn 13 12 14 6 (set (reg:SI 10 a0)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":80 -1
+     (nil))
+(call_insn 14 13 15 6 (parallel [
+            (call (mem:SI (symbol_ref:SI ("HAL_SendByte_IT") [flags 0x41] <function_decl 068d69d8 HAL_SendByte_IT>) [0 HAL_SendByte_IT S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":80 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SendByte_IT") [flags 0x41] <function_decl 068d69d8 HAL_SendByte_IT>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 15 14 16 6 (set (reg:SI 12 a2)
+        (const_int -1 [0xffffffffffffffff])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":81 -1
+     (nil))
+(insn 16 15 17 6 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":81 -1
+     (nil))
+(insn 17 16 18 6 (set (reg:SI 10 a0)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":81 -1
+     (nil))
+(call_insn 18 17 0 6 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06627ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":81 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06627ca8 ulTaskGenericNotifyTake>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+
+;; Function config_process_task (config_process_task, funcdef_no=36, decl_uid=16794, cgraph_uid=36, symbol_order=40) (executed once)
+
+Partition 1: size 12 align 4
+	pcket
+Partition 0: size 12 align 4
+	sdata
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+;; Generating RTL for gimple basic block 15
+
+;; Generating RTL for gimple basic block 16
+
+;; Generating RTL for gimple basic block 17
+
+;; Generating RTL for gimple basic block 18
+
+;; Generating RTL for gimple basic block 19
+
+;; Generating RTL for gimple basic block 20
+
+;; Generating RTL for gimple basic block 21
+
+;; Generating RTL for gimple basic block 22
+
+;; Generating RTL for gimple basic block 23
+
+;; Generating RTL for gimple basic block 24
+deleting block 26
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 186 from 24 to 26.
+Merging block 24 into block 23...
+Merged blocks 23 and 24.
+Merged 23 and 24 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 11 NOTE_INSN_DELETED)
+(note 11 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 11 3 2 (set (reg/v/f:SI 97 [ pvParameters ])
+        (reg:SI 10 a0 [ pvParameters ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":85 -1
+     (nil))
+(note 3 2 13 2 NOTE_INSN_FUNCTION_BEG)
+(insn 13 3 14 2 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":89 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 10 a0)
+        (const_int 64 [0x40])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":89 -1
+     (nil))
+(call_insn 15 14 16 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("RCC_AHBPeriphClockCmd") [flags 0x41] <function_decl 0659f078 RCC_AHBPeriphClockCmd>) [0 RCC_AHBPeriphClockCmd S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":89 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_AHBPeriphClockCmd") [flags 0x41] <function_decl 0659f078 RCC_AHBPeriphClockCmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 16 15 17 2 (set (reg:SI 14 a4)
+        (const_int 4096 [0x1000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":90 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 13 a3)
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":90 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 12 a2)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":90 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:SI 98)
+        (const_int 114688 [0x1c000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":90 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 11 a1)
+        (plus:SI (reg:SI 98)
+            (const_int 512 [0x200]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":90 -1
+     (expr_list:REG_EQUAL (const_int 115200 [0x1c200])
+        (nil)))
+(insn 21 20 22 2 (set (reg:SI 10 a0)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":90 -1
+     (nil))
+(call_insn 22 21 23 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("HALUSARTInit") [flags 0x41] <function_decl 068d6870 HALUSARTInit>) [0 HALUSARTInit S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":90 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTInit") [flags 0x41] <function_decl 068d6870 HALUSARTInit>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (expr_list:SI (use (reg:SI 14 a4))
+                        (nil)))))))
+(insn 23 22 24 2 (set (reg:SI 14 a4)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
+     (nil))
+(insn 24 23 25 2 (set (reg:SI 13 a3)
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
+     (nil))
+(insn 25 24 26 2 (set (reg:SI 99)
+        (high:SI (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 068d6d20 HAL_UART_TxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
+     (nil))
+(insn 26 25 27 2 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 99)
+            (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 068d6d20 HAL_UART_TxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 068d6d20 HAL_UART_TxCpltCallback>)
+        (nil)))
+(insn 27 26 28 2 (set (reg:SI 100)
+        (high:SI (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 068d6ca8 HAL_UART_RxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
+     (nil))
+(insn 28 27 29 2 (set (reg:SI 11 a1)
+        (lo_sum:SI (reg:SI 100)
+            (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 068d6ca8 HAL_UART_RxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 068d6ca8 HAL_UART_RxCpltCallback>)
+        (nil)))
+(insn 29 28 30 2 (set (reg:SI 10 a0)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
+     (nil))
+(call_insn 30 29 31 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("HALUSARTInitIT") [flags 0x41] <function_decl 068d6960 HALUSARTInitIT>) [0 HALUSARTInitIT S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTInitIT") [flags 0x41] <function_decl 068d6960 HALUSARTInitIT>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (expr_list:QI (use (reg:SI 14 a4))
+                        (nil)))))))
+(insn 31 30 32 2 (set (reg:SI 10 a0)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":92 -1
+     (nil))
+(call_insn 32 31 9 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("HALUSARTEnable") [flags 0x41] <function_decl 068d68e8 HALUSARTEnable>) [0 HALUSARTEnable S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":92 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTEnable") [flags 0x41] <function_decl 068d68e8 HALUSARTEnable>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 9 32 33 2 (set (reg/v:SI 85 [ recive_index ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":86 -1
+     (nil))
+(jump_insn 33 9 34 2 (set (pc)
+        (label_ref 37)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":92 -1
+     (nil)
+ -> 37)
+(barrier 34 33 35)
+(code_label 35 34 36 4 36 (nil) [11 uses])
+(note 36 35 37 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(code_label 37 36 38 5 35 (nil) [1 uses])
+(note 38 37 39 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 39 38 40 5 (set (reg:SI 101)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -24 [0xffffffffffffffe8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":97 -1
+     (nil))
+(insn 40 39 41 5 (set (reg/f:SI 74 [ _3 ])
+        (plus:SI (reg:SI 101)
+            (reg/v:SI 85 [ recive_index ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":97 -1
+     (nil))
+(insn 41 40 42 5 (set (reg:SI 103)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":97 -1
+     (nil))
+(insn 42 41 43 5 (set (reg/f:SI 102)
+        (lo_sum:SI (reg:SI 103)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":97 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 43 42 44 5 (set (reg:SI 104)
+        (mem/f/c:SI (reg/f:SI 102) [8 pRXQueue+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":97 -1
+     (nil))
+(insn 44 43 45 5 (set (reg:SI 12 a2)
+        (const_int 10 [0xa])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":97 -1
+     (nil))
+(insn 45 44 46 5 (set (reg:SI 11 a1)
+        (reg/f:SI 74 [ _3 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":97 -1
+     (nil))
+(insn 46 45 47 5 (set (reg:SI 10 a0)
+        (reg:SI 104)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":97 -1
+     (nil))
+(call_insn 47 46 48 5 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xQueueReceive") [flags 0x41] <function_decl 06841ac8 xQueueReceive>) [0 xQueueReceive S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":97 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xQueueReceive") [flags 0x41] <function_decl 06841ac8 xQueueReceive>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(insn 48 47 49 5 (set (reg/v:SI 94 [ RES ])
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":97 -1
+     (nil))
+(jump_insn 49 48 50 5 (set (pc)
+        (if_then_else (ne (reg/v:SI 94 [ RES ])
+                (const_int 0 [0]))
+            (label_ref 57)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":98 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 57)
+(note 50 49 51 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 51 50 52 6 (set (reg:SI 106)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":100 -1
+     (nil))
+(insn 52 51 53 6 (set (reg/f:SI 105)
+        (lo_sum:SI (reg:SI 106)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":100 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 53 52 54 6 (set (reg:SI 107)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":100 -1
+     (nil))
+(insn 54 53 10 6 (set (mem/c:SI (reg/f:SI 105) [3 CONFIG_FSM+0 S4 A32])
+        (reg:SI 107)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":100 -1
+     (nil))
+(insn 10 54 55 6 (set (reg/v:SI 85 [ recive_index ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":101 -1
+     (nil))
+(jump_insn 55 10 56 6 (set (pc)
+        (label_ref 75)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":100 -1
+     (nil)
+ -> 75)
+(barrier 56 55 57)
+(code_label 57 56 58 7 37 (nil) [1 uses])
+(note 58 57 59 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 59 58 60 7 (set (reg:SI 109)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":103 -1
+     (nil))
+(insn 60 59 61 7 (set (reg/f:SI 108)
+        (lo_sum:SI (reg:SI 109)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":103 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 61 60 62 7 (set (reg:SI 111)
+        (mem/c:SI (reg/f:SI 108) [3 CONFIG_FSM+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":103 -1
+     (nil))
+(insn 62 61 63 7 (set (reg:SI 110)
+        (plus:SI (reg:SI 111)
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":103 -1
+     (nil))
+(insn 63 62 64 7 (set (reg:SI 112)
+        (const_int 4 [0x4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":103 -1
+     (nil))
+(jump_insn 64 63 210 7 (set (pc)
+        (if_then_else (gtu (reg:SI 110)
+                (reg:SI 112))
+            (label_ref 35)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":103 -1
+     (int_list:REG_BR_PROB 214748372 (nil))
+ -> 35)
+(note 210 64 65 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 65 210 66 8 (set (reg:SI 113)
+        (ashift:SI (reg:SI 110)
+            (const_int 2 [0x2]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":103 -1
+     (nil))
+(insn 66 65 67 8 (set (reg:SI 116)
+        (high:SI (label_ref:SI 72))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":103 -1
+     (insn_list:REG_LABEL_OPERAND 72 (nil)))
+(insn 67 66 68 8 (set (reg:SI 115)
+        (lo_sum:SI (reg:SI 116)
+            (label_ref:SI 72))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":103 -1
+     (insn_list:REG_LABEL_OPERAND 72 (expr_list:REG_EQUAL (label_ref:SI 72)
+            (nil))))
+(insn 68 67 69 8 (set (reg/f:SI 114)
+        (plus:SI (reg:SI 113)
+            (reg:SI 115))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":103 -1
+     (nil))
+(insn 69 68 70 8 (set (reg:SI 117)
+        (mem/u/c:SI (reg/f:SI 114) [0  S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":103 -1
+     (nil))
+(jump_insn 70 69 71 8 (parallel [
+            (set (pc)
+                (reg:SI 117))
+            (use (label_ref 72))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":103 -1
+     (nil)
+ -> 72)
+(barrier 71 70 72)
+(code_label 72 71 73 40 (nil) [3 uses])
+(jump_table_data 73 72 74 (addr_vec:SI [
+            (label_ref:SI 75)
+            (label_ref:SI 94)
+            (label_ref:SI 116)
+            (label_ref:SI 129)
+            (label_ref:SI 142)
+        ]))
+(barrier 74 73 75)
+(code_label 75 74 76 9 38 (nil) [2 uses])
+(note 76 75 77 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 77 76 78 9 (set (reg/f:SI 118)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (reg/v:SI 85 [ recive_index ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":107 -1
+     (nil))
+(insn 78 77 79 9 (set (reg:SI 119)
+        (zero_extend:SI (mem:QI (plus:SI (reg/f:SI 118)
+                    (const_int -24 [0xffffffffffffffe8])) [0 *_6+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":107 -1
+     (nil))
+(insn 79 78 80 9 (set (reg:SI 120)
+        (const_int 85 [0x55])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":107 -1
+     (nil))
+(jump_insn 80 79 81 9 (set (pc)
+        (if_then_else (ne (reg:SI 119)
+                (reg:SI 120))
+            (label_ref 88)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":107 -1
+     (int_list:REG_BR_PROB 524845004 (nil))
+ -> 88)
+(note 81 80 82 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 82 81 83 10 (set (reg:SI 122)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":109 -1
+     (nil))
+(insn 83 82 84 10 (set (reg/f:SI 121)
+        (lo_sum:SI (reg:SI 122)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":109 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 84 83 85 10 (set (reg:SI 123)
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":109 -1
+     (nil))
+(insn 85 84 7 10 (set (mem/c:SI (reg/f:SI 121) [3 CONFIG_FSM+0 S4 A32])
+        (reg:SI 123)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":109 -1
+     (nil))
+(insn 7 85 86 10 (set (reg/v:SI 85 [ recive_index ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":110 -1
+     (nil))
+(jump_insn 86 7 87 10 (set (pc)
+        (label_ref 35)) -1
+     (nil)
+ -> 35)
+(barrier 87 86 88)
+(code_label 88 87 89 11 44 (nil) [1 uses])
+(note 89 88 90 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 90 89 91 11 (set (reg:SI 10 a0)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":114 -1
+     (nil))
+(call_insn 91 90 5 11 (parallel [
+            (call (mem:SI (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>) [0 SendAnswer S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":114 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 5 91 92 11 (set (reg/v:SI 85 [ recive_index ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":115 -1
+     (nil))
+(jump_insn 92 5 93 11 (set (pc)
+        (label_ref 35)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":114 -1
+     (nil)
+ -> 35)
+(barrier 93 92 94)
+(code_label 94 93 95 12 43 (nil) [1 uses])
+(note 95 94 96 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 96 95 97 12 (set (reg:SI 124)
+        (zero_extend:SI (mem:QI (reg/f:SI 74 [ _3 ]) [0 *_3+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":119 -1
+     (nil))
+(insn 97 96 98 12 (set (reg:SI 125)
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":119 -1
+     (nil))
+(jump_insn 98 97 99 12 (set (pc)
+        (if_then_else (leu (reg:SI 124)
+                (reg:SI 125))
+            (label_ref 108)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":119 -1
+     (int_list:REG_BR_PROB 719407028 (nil))
+ -> 108)
+(note 99 98 100 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 100 99 101 13 (set (reg:SI 10 a0)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":121 -1
+     (nil))
+(call_insn 101 100 102 13 (parallel [
+            (call (mem:SI (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>) [0 SendAnswer S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":121 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 102 101 103 13 (set (reg:SI 127)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":122 -1
+     (nil))
+(insn 103 102 104 13 (set (reg/f:SI 126)
+        (lo_sum:SI (reg:SI 127)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":122 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 104 103 105 13 (set (reg:SI 128)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":122 -1
+     (nil))
+(insn 105 104 8 13 (set (mem/c:SI (reg/f:SI 126) [3 CONFIG_FSM+0 S4 A32])
+        (reg:SI 128)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":122 -1
+     (nil))
+(insn 8 105 106 13 (set (reg/v:SI 85 [ recive_index ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":123 -1
+     (nil))
+(jump_insn 106 8 107 13 (set (pc)
+        (label_ref 35)) -1
+     (nil)
+ -> 35)
+(barrier 107 106 108)
+(code_label 108 107 109 14 45 (nil) [1 uses])
+(note 109 108 110 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 110 109 111 14 (set (reg:SI 130)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":127 -1
+     (nil))
+(insn 111 110 112 14 (set (reg/f:SI 129)
+        (lo_sum:SI (reg:SI 130)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":127 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 112 111 113 14 (set (reg:SI 131)
+        (const_int 3 [0x3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":127 -1
+     (nil))
+(insn 113 112 4 14 (set (mem/c:SI (reg/f:SI 129) [3 CONFIG_FSM+0 S4 A32])
+        (reg:SI 131)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":127 -1
+     (nil))
+(insn 4 113 114 14 (set (reg/v:SI 85 [ recive_index ])
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":128 -1
+     (nil))
+(jump_insn 114 4 115 14 (set (pc)
+        (label_ref 35)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":127 -1
+     (nil)
+ -> 35)
+(barrier 115 114 116)
+(code_label 116 115 117 15 42 (nil) [1 uses])
+(note 117 116 118 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 118 117 119 15 (set (reg:SI 132)
+        (plus:SI (reg/v:SI 85 [ recive_index ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":132 -1
+     (nil))
+(insn 119 118 120 15 (set (reg/v:SI 85 [ recive_index ])
+        (zero_extend:SI (subreg:QI (reg:SI 132) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":132 -1
+     (nil))
+(insn 120 119 121 15 (set (reg:SI 133)
+        (const_int 4 [0x4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":133 -1
+     (nil))
+(jump_insn 121 120 122 15 (set (pc)
+        (if_then_else (leu (reg/v:SI 85 [ recive_index ])
+                (reg:SI 133))
+            (label_ref 35)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":133 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 35)
+(note 122 121 123 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 123 122 124 16 (set (reg:SI 135)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":135 -1
+     (nil))
+(insn 124 123 125 16 (set (reg/f:SI 134)
+        (lo_sum:SI (reg:SI 135)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":135 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 125 124 126 16 (set (reg:SI 136)
+        (const_int 4 [0x4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":135 -1
+     (nil))
+(insn 126 125 127 16 (set (mem/c:SI (reg/f:SI 134) [3 CONFIG_FSM+0 S4 A32])
+        (reg:SI 136)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":135 -1
+     (nil))
+(jump_insn 127 126 128 16 (set (pc)
+        (label_ref 35)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":135 -1
+     (nil)
+ -> 35)
+(barrier 128 127 129)
+(code_label 129 128 130 17 41 (nil) [1 uses])
+(note 130 129 131 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 131 130 132 17 (set (reg:SI 137)
+        (plus:SI (reg/v:SI 85 [ recive_index ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":139 -1
+     (nil))
+(insn 132 131 133 17 (set (reg/v:SI 85 [ recive_index ])
+        (zero_extend:SI (subreg:QI (reg:SI 137) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":139 -1
+     (nil))
+(insn 133 132 134 17 (set (reg:SI 138)
+        (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":140 -1
+     (nil))
+(jump_insn 134 133 135 17 (set (pc)
+        (if_then_else (leu (reg/v:SI 85 [ recive_index ])
+                (reg:SI 138))
+            (label_ref 35)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":140 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 35)
+(note 135 134 136 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(insn 136 135 137 18 (set (reg:SI 140)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":142 -1
+     (nil))
+(insn 137 136 138 18 (set (reg/f:SI 139)
+        (lo_sum:SI (reg:SI 140)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":142 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 138 137 139 18 (set (reg:SI 141)
+        (const_int 5 [0x5])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":142 -1
+     (nil))
+(insn 139 138 140 18 (set (mem/c:SI (reg/f:SI 139) [3 CONFIG_FSM+0 S4 A32])
+        (reg:SI 141)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":142 -1
+     (nil))
+(jump_insn 140 139 141 18 (set (pc)
+        (label_ref 35)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":142 -1
+     (nil)
+ -> 35)
+(barrier 141 140 142)
+(code_label 142 141 143 19 39 (nil) [1 uses])
+(note 143 142 144 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(insn 144 143 145 19 (set (reg:SI 142)
+        (plus:SI (reg/v:SI 85 [ recive_index ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":146 -1
+     (nil))
+(insn 145 144 146 19 (set (reg/v:SI 85 [ recive_index ])
+        (zero_extend:SI (subreg:QI (reg:SI 142) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":146 -1
+     (nil))
+(insn 146 145 147 19 (set (reg:SI 143)
+        (const_int 12 [0xc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":147 -1
+     (nil))
+(jump_insn 147 146 148 19 (set (pc)
+        (if_then_else (leu (reg/v:SI 85 [ recive_index ])
+                (reg:SI 143))
+            (label_ref 35)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":147 -1
+     (int_list:REG_BR_PROB 719407028 (nil))
+ -> 35)
+(note 148 147 149 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+(call_insn 149 148 150 20 (parallel [
+            (call (mem:SI (symbol_ref:SI ("CRC_ResetDR") [flags 0x41] <function_decl 0652abb8 CRC_ResetDR>) [0 CRC_ResetDR S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":149 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("CRC_ResetDR") [flags 0x41] <function_decl 0652abb8 CRC_ResetDR>)
+        (nil))
+    (nil))
+(insn 150 149 151 20 (set (reg:SI 144)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -24 [0xffffffffffffffe8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":150 -1
+     (nil))
+(insn 151 150 152 20 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":150 -1
+     (nil))
+(insn 152 151 153 20 (set (reg:SI 10 a0)
+        (reg:SI 144)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":150 -1
+     (nil))
+(call_insn 153 152 154 20 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("CRC_CalcBlockCRC") [flags 0x41] <function_decl 0652aca8 CRC_CalcBlockCRC>) [0 CRC_CalcBlockCRC S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":150 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("CRC_CalcBlockCRC") [flags 0x41] <function_decl 0652aca8 CRC_CalcBlockCRC>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(call_insn 154 153 155 20 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("CRC_GetCRC") [flags 0x41] <function_decl 0652ad20 CRC_GetCRC>) [0 CRC_GetCRC S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":151 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("CRC_GetCRC") [flags 0x41] <function_decl 0652ad20 CRC_GetCRC>)
+        (nil))
+    (nil))
+(insn 155 154 156 20 (set (reg:SI 80 [ _12 ])
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":151 -1
+     (nil))
+(insn 156 155 157 20 (set (reg:SI 81 [ _13 ])
+        (zero_extend:SI (mem/c:QI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                    (const_int -22 [0xffffffffffffffea])) [0 MEM[(u8 *)&sdata + 2B]+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":151 -1
+     (nil))
+(jump_insn 157 156 158 20 (set (pc)
+        (if_then_else (ne (reg:SI 80 [ _12 ])
+                (reg:SI 81 [ _13 ]))
+            (label_ref 196)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":151 -1
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 196)
+(note 158 157 159 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
+(insn 159 158 160 21 (set (reg:SI 145)
+        (zero_extend:SI (mem/c:QI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                    (const_int -23 [0xffffffffffffffe9])) [0 MEM[(u8 *)&sdata + 1B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":154 -1
+     (nil))
+(insn 160 159 161 21 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [6 pcket.type+0 S4 A32])
+        (reg:SI 145)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":154 -1
+     (nil))
+(insn 161 160 162 21 (set (reg:SI 146)
+        (ashift:SI (reg:SI 81 [ _13 ])
+            (const_int 8 [0x8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":155 -1
+     (nil))
+(insn 162 161 163 21 (set (reg:HI 147)
+        (zero_extend:HI (mem/c:QI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                    (const_int -21 [0xffffffffffffffeb])) [0 MEM[(u8 *)&sdata + 3B]+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":155 -1
+     (nil))
+(insn 163 162 164 21 (set (reg:HI 148)
+        (subreg:HI (reg:SI 146) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":155 -1
+     (nil))
+(insn 164 163 165 21 (set (reg:SI 149)
+        (ior:SI (subreg:SI (reg:HI 148) 0)
+            (subreg:SI (reg:HI 147) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":155 -1
+     (nil))
+(insn 165 164 166 21 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [5 pcket.reg_addres+0 S2 A32])
+        (subreg:HI (reg:SI 149) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":155 -1
+     (nil))
+(insn 166 165 167 21 (set (reg:HI 150)
+        (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [0 MEM[(u8 *)&sdata + 4B]+0 S2 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":156 -1
+     (nil))
+(insn 167 166 168 21 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -10 [0xfffffffffffffff6])) [0 MEM[(u8[4] *)&pcket + 2B]+0 S2 A16])
+        (reg:HI 150)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":156 -1
+     (nil))
+(insn 168 167 169 21 (set (reg:HI 151)
+        (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -18 [0xffffffffffffffee])) [0 MEM[(u8 *)&sdata + 6B]+0 S2 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":158 -1
+     (nil))
+(insn 169 168 170 21 (set (mem/c:HI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [0 MEM[(u8[4] *)&pcket + 4B]+0 S2 A32])
+        (reg:HI 151)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":158 -1
+     (nil))
+(insn 170 169 171 21 (set (reg:SI 152)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -48 [0xffffffffffffffd0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":160 -1
+     (nil))
+(insn 171 170 172 21 (set (reg:SI 153)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -12 [0xfffffffffffffff4]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":160 -1
+     (nil))
+(insn 172 171 173 21 (set (reg:SI 154)
+        (const_int 12 [0xc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":160 -1
+     (nil))
+(insn 173 172 174 21 (set (reg:SI 12 a2)
+        (reg:SI 154)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":160 -1
+     (nil))
+(insn 174 173 175 21 (set (reg:SI 11 a1)
+        (reg:SI 153)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":160 -1
+     (nil))
+(insn 175 174 176 21 (set (reg:SI 10 a0)
+        (reg:SI 152)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":160 -1
+     (nil))
+(call_insn 176 175 177 21 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0625cd98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":160 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0625cd98 __builtin_memcpy>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (set (reg:SI 10 a0)
+            (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 10 a0))
+            (expr_list:SI (use (reg:SI 11 a1))
+                (expr_list:SI (use (reg:SI 12 a2))
+                    (nil))))))
+(insn 177 176 178 21 (set (reg:SI 155)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":160 -1
+     (nil))
+(insn 178 177 179 21 (set (reg:SI 156)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -48 [0xffffffffffffffd0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":160 -1
+     (nil))
+(insn 179 178 180 21 (set (reg:SI 10 a0)
+        (reg:SI 156)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":160 -1
+     (nil))
+(call_insn 180 179 181 21 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("SetConfigData") [flags 0x3] <function_decl 068d6c30 SetConfigData>) [0 SetConfigData S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":160 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SetConfigData") [flags 0x3] <function_decl 068d6c30 SetConfigData>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 181 180 182 21 (set (reg:SI 93 [ _29 ])
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":160 -1
+     (nil))
+(jump_insn 182 181 183 21 (set (pc)
+        (if_then_else (ne (reg:SI 93 [ _29 ])
+                (const_int 0 [0]))
+            (label_ref 188)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":160 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 188)
+(note 183 182 184 22 [bb 22] NOTE_INSN_BASIC_BLOCK)
+(insn 184 183 185 22 (set (reg:SI 10 a0)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":161 -1
+     (nil))
+(call_insn 185 184 186 22 (parallel [
+            (call (mem:SI (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>) [0 SendAnswer S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":161 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(jump_insn 186 185 187 22 (set (pc)
+        (label_ref:SI 200)) 250 {jump}
+     (nil)
+ -> 200)
+(barrier 187 186 188)
+(code_label 188 187 189 23 47 (nil) [1 uses])
+(note 189 188 190 23 [bb 23] NOTE_INSN_BASIC_BLOCK)
+(insn 190 189 191 23 (set (reg:SI 10 a0)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":163 -1
+     (nil))
+(call_insn 191 190 194 23 (parallel [
+            (call (mem:SI (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>) [0 SendAnswer S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":163 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(jump_insn 194 191 195 23 (set (pc)
+        (label_ref 200)) -1
+     (nil)
+ -> 200)
+(barrier 195 194 196)
+(code_label 196 195 197 25 46 (nil) [1 uses])
+(note 197 196 198 25 [bb 25] NOTE_INSN_BASIC_BLOCK)
+(insn 198 197 199 25 (set (reg:SI 10 a0)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":166 -1
+     (nil))
+(call_insn 199 198 200 25 (parallel [
+            (call (mem:SI (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>) [0 SendAnswer S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":166 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(code_label 200 199 201 26 49 (nil) [2 uses])
+(note 201 200 202 26 [bb 26] NOTE_INSN_BASIC_BLOCK)
+(insn 202 201 203 26 (set (reg:SI 158)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":167 -1
+     (nil))
+(insn 203 202 204 26 (set (reg/f:SI 157)
+        (lo_sum:SI (reg:SI 158)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":167 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 204 203 205 26 (set (reg:SI 159)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":167 -1
+     (nil))
+(insn 205 204 6 26 (set (mem/c:SI (reg/f:SI 157) [3 CONFIG_FSM+0 S4 A32])
+        (reg:SI 159)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":167 -1
+     (nil))
+(insn 6 205 206 26 (set (reg/v:SI 85 [ recive_index ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":168 -1
+     (nil))
+(jump_insn 206 6 207 26 (set (pc)
+        (label_ref 35)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":167 -1
+     (nil)
+ -> 35)
+(barrier 207 206 0)

@@ -1,0 +1,469 @@
+
+;; Function u8x8_GetMenuEvent (u8x8_GetMenuEvent, funcdef_no=2, decl_uid=1853, cgraph_uid=2, symbol_order=2)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+;; Generating RTL for gimple basic block 15
+
+;; Generating RTL for gimple basic block 16
+
+;; Generating RTL for gimple basic block 17
+
+;; Generating RTL for gimple basic block 18
+
+;; Generating RTL for gimple basic block 19
+
+;; Generating RTL for gimple basic block 20
+
+;; Generating RTL for gimple basic block 21
+
+;; Generating RTL for gimple basic block 22
+Edge 9->22 redirected to 27
+Edge 16->22 redirected to 28
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Forwarding edge 7->8 to 25 failed.
+Forwarding edge 10->11 to 25 failed.
+Removing jump 128.
+Merging block 29 into block 28...
+Merged blocks 28 and 29.
+Merged 28 and 29 without moving.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 7->8 to 25 failed.
+Forwarding edge 10->11 to 25 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 16 NOTE_INSN_DELETED)
+(note 16 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 16 3 2 (set (reg/v/f:SI 92 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":143 -1
+     (nil))
+(note 3 2 4 2 NOTE_INSN_FUNCTION_BEG)
+(insn 4 3 5 2 (set (reg:SI 90 [ ivtmp.14 ])
+        (const_int 80 [0x50])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":143 -1
+     (nil))
+(insn 5 4 35 2 (set (reg/v:SI 85 [ pin_state ])
+        (const_int 255 [0xff])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":45 -1
+     (nil))
+(code_label 35 5 18 4 2 (nil) [1 uses])
+(note 18 35 19 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 19 18 20 4 (set (reg:QI 93)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":51 -1
+     (nil))
+(insn 20 19 21 4 (set (mem:QI (plus:SI (reg/v/f:SI 92 [ u8x8 ])
+                (const_int 39 [0x27])) [0 u8x8_12(D)->gpio_result+0 S1 A8])
+        (reg:QI 93)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":51 -1
+     (nil))
+(insn 21 20 22 4 (set (reg:SI 12 a2)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":52 -1
+     (nil))
+(insn 22 21 23 4 (set (reg:SI 11 a1)
+        (reg:SI 90 [ ivtmp.14 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":52 -1
+     (nil))
+(insn 23 22 24 4 (set (reg:SI 10 a0)
+        (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":52 -1
+     (nil))
+(call_insn 24 23 25 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 062eaf00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":52 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 062eaf00 u8x8_gpio_call>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (nil)))))
+(insn 25 24 26 4 (set (reg:QI 94)
+        (mem:QI (plus:SI (reg/v/f:SI 92 [ u8x8 ])
+                (const_int 39 [0x27])) [0 u8x8_12(D)->gpio_result+0 S1 A8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":53 -1
+     (nil))
+(insn 26 25 27 4 (set (reg:SI 95)
+        (and:SI (subreg:SI (reg:QI 94) 0)
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":53 -1
+     (nil))
+(insn 27 26 28 4 (set (reg:SI 96)
+        (ashift:SI (reg/v:SI 85 [ pin_state ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":48 -1
+     (nil))
+(insn 28 27 29 4 (set (reg:QI 97)
+        (subreg:QI (reg:SI 95) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":53 -1
+     (nil))
+(insn 29 28 30 4 (set (reg:QI 98)
+        (subreg:QI (reg:SI 96) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":53 -1
+     (nil))
+(insn 30 29 31 4 (set (reg:SI 99)
+        (ior:SI (subreg:SI (reg:QI 97) 0)
+            (subreg:SI (reg:QI 98) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":53 -1
+     (nil))
+(insn 31 30 32 4 (set (reg:SI 84 [ _32 ])
+        (sign_extend:SI (subreg:QI (reg:SI 99) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":53 -1
+     (nil))
+(insn 32 31 33 4 (set (reg/v:SI 85 [ pin_state ])
+        (zero_extend:SI (subreg/u:QI (reg:SI 84 [ _32 ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":53 -1
+     (nil))
+(insn 33 32 34 4 (set (reg:SI 100)
+        (plus:SI (reg:SI 90 [ ivtmp.14 ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(insn 34 33 36 4 (set (reg:SI 90 [ ivtmp.14 ])
+        (zero_extend:SI (subreg:QI (reg:SI 100) 0))) -1
+     (nil))
+(insn 36 34 37 4 (set (reg:SI 101)
+        (const_int 86 [0x56])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":46 -1
+     (nil))
+(jump_insn 37 36 38 4 (set (pc)
+        (if_then_else (ne (reg:SI 90 [ ivtmp.14 ])
+                (reg:SI 101))
+            (label_ref 35)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":46 -1
+     (int_list:REG_BR_PROB 894722220 (nil))
+ -> 35)
+(note 38 37 39 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 39 38 40 5 (set (reg:SI 72 [ _1 ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 92 [ u8x8 ])
+                    (const_int 42 [0x2a])) [0 u8x8_12(D)->debounce_state+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":150 -1
+     (nil))
+(insn 40 39 41 5 (set (reg:SI 102)
+        (const_int 16 [0x10])) -1
+     (nil))
+(jump_insn 41 40 42 5 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ _1 ])
+                (reg:SI 102))
+            (label_ref 69)
+            (pc))) -1
+     (int_list:REG_BR_PROB 214748372 (nil))
+ -> 69)
+(note 42 41 43 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 43 42 44 6 (set (reg:SI 103)
+        (const_int 16 [0x10])) -1
+     (nil))
+(jump_insn 44 43 45 6 (set (pc)
+        (if_then_else (gtu (reg:SI 72 [ _1 ])
+                (reg:SI 103))
+            (label_ref 50)
+            (pc))) -1
+     (int_list:REG_BR_PROB 671088644 (nil))
+ -> 50)
+(note 45 44 46 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 46 45 49 7 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ _1 ])
+                (const_int 0 [0]))
+            (label_ref 60)
+            (pc))) -1
+     (int_list:REG_BR_PROB 715827884 (nil))
+ -> 60)
+(note 49 46 47 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 47 49 48 8 (set (pc)
+        (label_ref 121)) -1
+     (nil)
+ -> 121)
+(barrier 48 47 50)
+(code_label 50 48 51 9 4 (nil) [1 uses])
+(note 51 50 52 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 52 51 53 9 (set (reg:SI 104)
+        (const_int 32 [0x20])) -1
+     (nil))
+(jump_insn 53 52 54 9 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ _1 ])
+                (reg:SI 104))
+            (label_ref 84)
+            (pc))) -1
+     (int_list:REG_BR_PROB 429496732 (nil))
+ -> 84)
+(note 54 53 55 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 55 54 56 10 (set (reg:SI 105)
+        (const_int 48 [0x30])) -1
+     (nil))
+(jump_insn 56 55 59 10 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ _1 ])
+                (reg:SI 105))
+            (label_ref 94)
+            (pc))) -1
+     (int_list:REG_BR_PROB 715827884 (nil))
+ -> 94)
+(note 59 56 57 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 57 59 58 11 (set (pc)
+        (label_ref 121)) -1
+     (nil)
+ -> 121)
+(barrier 58 57 60)
+(code_label 60 58 61 12 5 (nil) [1 uses])
+(note 61 60 62 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 62 61 63 12 (set (reg:SI 106)
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 92 [ u8x8 ])
+                    (const_int 40 [0x28])) [0 u8x8_12(D)->debounce_default_pin_state+0 S1 A32]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":153 -1
+     (nil))
+(jump_insn 63 62 64 12 (set (pc)
+        (if_then_else (eq (reg:SI 106)
+                (reg/v:SI 85 [ pin_state ]))
+            (label_ref:SI 137)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":153 180 {*branchsi}
+     (int_list:REG_BR_PROB 365072228 (nil))
+ -> 137)
+(note 64 63 65 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 65 64 66 13 (set (reg:QI 107)
+        (const_int 18 [0x12])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":156 -1
+     (nil))
+(insn 66 65 9 13 (set (mem:QI (plus:SI (reg/v/f:SI 92 [ u8x8 ])
+                (const_int 42 [0x2a])) [0 u8x8_12(D)->debounce_state+0 S1 A16])
+        (reg:QI 107)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":156 -1
+     (nil))
+(insn 9 66 67 13 (set (reg/v:SI 91 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":145 -1
+     (nil))
+(jump_insn 67 9 68 13 (set (pc)
+        (label_ref 125)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":156 -1
+     (nil)
+ -> 125)
+(barrier 68 67 69)
+(code_label 69 68 70 14 3 (nil) [1 uses])
+(note 70 69 71 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 71 70 72 14 (set (reg:SI 108)
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 92 [ u8x8 ])
+                    (const_int 40 [0x28])) [0 u8x8_12(D)->debounce_default_pin_state+0 S1 A32]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":161 -1
+     (nil))
+(jump_insn 72 71 86 14 (set (pc)
+        (if_then_else (ne (reg:SI 108)
+                (reg/v:SI 85 [ pin_state ]))
+            (label_ref 77)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":161 -1
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 77)
+(code_label 86 72 73 15 11 (nil) [1 uses])
+(note 73 86 74 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 74 73 14 15 (set (mem:QI (plus:SI (reg/v/f:SI 92 [ u8x8 ])
+                (const_int 42 [0x2a])) [0 u8x8_12(D)->debounce_state+0 S1 A16])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":163 -1
+     (nil))
+(insn 14 74 75 15 (set (reg/v:SI 91 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":145 -1
+     (nil))
+(jump_insn 75 14 76 15 (set (pc)
+        (label_ref 125)) -1
+     (nil)
+ -> 125)
+(barrier 76 75 77)
+(code_label 77 76 78 16 10 (nil) [1 uses])
+(note 78 77 79 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 79 78 80 16 (set (mem:QI (plus:SI (reg/v/f:SI 92 [ u8x8 ])
+                (const_int 41 [0x29])) [0 u8x8_12(D)->debounce_last_pin_state+0 S1 A8])
+        (subreg/s/v:QI (reg/v:SI 85 [ pin_state ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":168 -1
+     (nil))
+(insn 80 79 81 16 (set (reg:QI 109)
+        (const_int 34 [0x22])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":170 -1
+     (nil))
+(insn 81 80 10 16 (set (mem:QI (plus:SI (reg/v/f:SI 92 [ u8x8 ])
+                (const_int 42 [0x2a])) [0 u8x8_12(D)->debounce_state+0 S1 A16])
+        (reg:QI 109)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":170 -1
+     (nil))
+(insn 10 81 82 16 (set (reg/v:SI 91 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":145 -1
+     (nil))
+(jump_insn 82 10 83 16 (set (pc)
+        (label_ref 125)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":170 -1
+     (nil)
+ -> 125)
+(barrier 83 82 84)
+(code_label 84 83 85 17 7 (nil) [1 uses])
+(note 85 84 87 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 87 85 88 17 (set (reg:SI 110)
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 92 [ u8x8 ])
+                    (const_int 41 [0x29])) [0 u8x8_12(D)->debounce_last_pin_state+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":175 -1
+     (nil))
+(jump_insn 88 87 89 17 (set (pc)
+        (if_then_else (ne (reg:SI 110)
+                (reg/v:SI 85 [ pin_state ]))
+            (label_ref 86)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":175 -1
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 86)
+(note 89 88 90 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(insn 90 89 91 18 (set (reg:QI 111)
+        (const_int 48 [0x30])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":181 -1
+     (nil))
+(insn 91 90 11 18 (set (mem:QI (plus:SI (reg/v/f:SI 92 [ u8x8 ])
+                (const_int 42 [0x2a])) [0 u8x8_12(D)->debounce_state+0 S1 A16])
+        (reg:QI 111)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":181 -1
+     (nil))
+(insn 11 91 92 18 (set (reg/v:SI 91 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":145 -1
+     (nil))
+(jump_insn 92 11 93 18 (set (pc)
+        (label_ref 125)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":181 -1
+     (nil)
+ -> 125)
+(barrier 93 92 94)
+(code_label 94 93 95 19 8 (nil) [1 uses])
+(note 95 94 96 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(insn 96 95 97 19 (set (reg:SI 112)
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 92 [ u8x8 ])
+                    (const_int 40 [0x28])) [0 u8x8_12(D)->debounce_default_pin_state+0 S1 A32]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":187 -1
+     (nil))
+(jump_insn 97 96 98 19 (set (pc)
+        (if_then_else (ne (reg:SI 112)
+                (reg/v:SI 85 [ pin_state ]))
+            (label_ref:SI 141)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":187 180 {*branchsi}
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 141)
+(note 98 97 99 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+(insn 99 98 100 20 (set (mem:QI (plus:SI (reg/v/f:SI 92 [ u8x8 ])
+                (const_int 42 [0x2a])) [0 u8x8_12(D)->debounce_state+0 S1 A16])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":189 -1
+     (nil))
+(insn 100 99 6 20 (set (reg:SI 77 [ _6 ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 92 [ u8x8 ])
+                    (const_int 41 [0x29])) [0 u8x8_12(D)->debounce_last_pin_state+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":190 -1
+     (nil))
+(insn 6 100 7 20 (set (reg/v:SI 86 [ i ])
+        (const_int 6 [0x6])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":68 -1
+     (nil))
+(insn 7 6 113 20 (set (reg/v:SI 88 [ mask ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":67 -1
+     (nil))
+(code_label 113 7 101 21 13 (nil) [1 uses])
+(note 101 113 102 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
+(insn 102 101 103 21 (set (reg:SI 113)
+        (plus:SI (reg/v:SI 86 [ i ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":71 -1
+     (nil))
+(insn 103 102 104 21 (set (reg/v:SI 86 [ i ])
+        (zero_extend:SI (subreg:QI (reg:SI 113) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":71 -1
+     (nil))
+(insn 104 103 105 21 (set (reg:SI 114)
+        (xor:SI (reg:SI 77 [ _6 ])
+            (reg/v:SI 85 [ pin_state ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":72 -1
+     (nil))
+(insn 105 104 106 21 (set (reg:QI 115)
+        (subreg:QI (reg:SI 114) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":72 -1
+     (nil))
+(insn 106 105 107 21 (set (reg:SI 116)
+        (and:SI (reg/v:SI 88 [ mask ])
+            (subreg:SI (reg:QI 115) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":72 -1
+     (nil))
+(insn 107 106 108 21 (set (reg:QI 117)
+        (subreg:QI (reg:SI 116) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":72 -1
+     (nil))
+(insn 108 107 109 21 (set (reg:SI 118)
+        (zero_extend:SI (reg:QI 117))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":72 -1
+     (nil))
+(jump_insn 109 108 110 21 (set (pc)
+        (if_then_else (ne (reg:SI 118)
+                (const_int 0 [0]))
+            (label_ref 115)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":72 -1
+     (int_list:REG_BR_PROB 59055804 (nil))
+ -> 115)
+(note 110 109 111 22 [bb 22] NOTE_INSN_BASIC_BLOCK)
+(insn 111 110 112 22 (set (reg:SI 119)
+        (ashift:SI (reg/v:SI 88 [ mask ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":74 -1
+     (nil))
+(insn 112 111 114 22 (set (reg/v:SI 88 [ mask ])
+        (zero_extend:SI (subreg:QI (reg:SI 119) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":74 -1
+     (nil))
+(jump_insn 114 112 142 22 (set (pc)
+        (if_then_else (ne (reg/v:SI 86 [ i ])
+                (const_int 0 [0]))
+            (label_ref 113)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":75 -1
+     (int_list:REG_BR_PROB 894749068 (nil))
+ -> 113)
+(note 142 114 8 23 [bb 23] NOTE_INSN_BASIC_BLOCK)
+(insn 8 142 115 23 (set (reg/v:SI 86 [ i ])
+        (const_int 6 [0x6])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":76 -1
+     (nil))
+(code_label 115 8 116 24 12 (nil) [1 uses])
+(note 116 115 117 24 [bb 24] NOTE_INSN_BASIC_BLOCK)
+(insn 117 116 118 24 (set (reg:SI 120)
+        (plus:SI (reg/v:SI 86 [ i ])
+            (const_int 80 [0x50]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":190 -1
+     (nil))
+(insn 118 117 119 24 (set (reg/v:SI 91 [ <retval> ])
+        (zero_extend:SI (subreg:QI (reg:SI 120) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":190 -1
+     (nil))
+(jump_insn 119 118 120 24 (set (pc)
+        (label_ref 125)) -1
+     (nil)
+ -> 125)
+(barrier 120 119 121)
+(code_label 121 120 122 25 6 (nil) [2 uses])
+(note 122 121 123 25 [bb 25] NOTE_INSN_BASIC_BLOCK)
+(insn 123 122 124 25 (set (reg:SI 121)
+        (plus:SI (reg:SI 72 [ _1 ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":199 -1
+     (nil))
+(insn 124 123 12 25 (set (mem:QI (plus:SI (reg/v/f:SI 92 [ u8x8 ])
+                (const_int 42 [0x2a])) [0 u8x8_12(D)->debounce_state+0 S1 A16])
+        (subreg:QI (reg:SI 121) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":199 -1
+     (nil))
+(insn 12 124 134 25 (set (reg/v:SI 91 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":145 -1
+     (nil))
+(jump_insn 134 12 135 25 (set (pc)
+        (label_ref 125)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":200 -1
+     (nil)
+ -> 125)
+(barrier 135 134 137)
+(code_label 137 135 136 26 14 (nil) [1 uses])
+(note 136 137 13 26 [bb 26] NOTE_INSN_BASIC_BLOCK)
+(insn 13 136 138 26 (set (reg/v:SI 91 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":145 -1
+     (nil))
+(jump_insn 138 13 139 26 (set (pc)
+        (label_ref 125)) -1
+     (nil)
+ -> 125)
+(barrier 139 138 141)
+(code_label 141 139 140 27 15 (nil) [1 uses])
+(note 140 141 15 27 [bb 27] NOTE_INSN_BASIC_BLOCK)
+(insn 15 140 125 27 (set (reg/v:SI 91 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":145 -1
+     (nil))
+(code_label 125 15 126 28 9 (nil) [7 uses])
+(note 126 125 127 28 [bb 28] NOTE_INSN_BASIC_BLOCK)
+(insn 127 126 131 28 (set (reg/v:SI 91 [ <retval> ])
+        (reg/v:SI 91 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":202 -1
+     (nil))
+(insn 131 127 132 28 (set (reg/i:SI 10 a0)
+        (reg/v:SI 91 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":203 -1
+     (nil))
+(insn 132 131 0 28 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":203 -1
+     (nil))

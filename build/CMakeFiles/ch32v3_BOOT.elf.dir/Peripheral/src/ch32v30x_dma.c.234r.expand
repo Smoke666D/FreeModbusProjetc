@@ -1,0 +1,1861 @@
+
+;; Function DMA_DeInit (DMA_DeInit, funcdef_no=29, decl_uid=5521, cgraph_uid=29, symbol_order=29)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+;; Generating RTL for gimple basic block 15
+
+;; Generating RTL for gimple basic block 16
+
+;; Generating RTL for gimple basic block 17
+
+;; Generating RTL for gimple basic block 18
+
+;; Generating RTL for gimple basic block 19
+
+;; Generating RTL for gimple basic block 20
+
+;; Generating RTL for gimple basic block 21
+
+;; Generating RTL for gimple basic block 22
+
+;; Generating RTL for gimple basic block 23
+
+;; Generating RTL for gimple basic block 24
+
+;; Generating RTL for gimple basic block 25
+
+;; Generating RTL for gimple basic block 26
+
+;; Generating RTL for gimple basic block 27
+
+;; Generating RTL for gimple basic block 28
+
+;; Generating RTL for gimple basic block 29
+
+;; Generating RTL for gimple basic block 30
+
+;; Generating RTL for gimple basic block 31
+
+;; Generating RTL for gimple basic block 32
+
+;; Generating RTL for gimple basic block 33
+
+;; Generating RTL for gimple basic block 34
+
+;; Generating RTL for gimple basic block 35
+
+;; Generating RTL for gimple basic block 36
+
+;; Generating RTL for gimple basic block 37
+
+;; Generating RTL for gimple basic block 38
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 24 from 39 to 40.
+Redirecting jump 37 from 39 to 40.
+Redirecting jump 52 from 39 to 40.
+Redirecting jump 66 from 39 to 40.
+Redirecting jump 80 from 39 to 40.
+Redirecting jump 94 from 39 to 40.
+Redirecting jump 108 from 39 to 40.
+Redirecting jump 123 from 39 to 40.
+Redirecting jump 138 from 39 to 40.
+Redirecting jump 155 from 39 to 40.
+Redirecting jump 171 from 39 to 40.
+Redirecting jump 187 from 39 to 40.
+Redirecting jump 203 from 39 to 40.
+Redirecting jump 219 from 39 to 40.
+Redirecting jump 234 from 39 to 40.
+Redirecting jump 249 from 39 to 40.
+Redirecting jump 266 from 39 to 40.
+Edge 37->39 redirected to 40
+Merging block 39 into block 38...
+Merged blocks 38 and 39.
+Merged 38 and 39 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 110 [ DMAy_Channelx ])
+        (reg:SI 10 a0 [ DMAy_Channelx ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":56 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SI 72 [ _1 ])
+        (mem/v:SI (reg/v/f:SI 110 [ DMAy_Channelx ]) [2 DMAy_Channelx_41(D)->CFGR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":57 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 112)
+        (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":57 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 111)
+        (plus:SI (reg:SI 112)
+            (const_int -2 [0xfffffffffffffffe]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":57 -1
+     (expr_list:REG_EQUAL (const_int 65534 [0xfffe])
+        (nil)))
+(insn 9 8 10 2 (set (reg:SI 73 [ _2 ])
+        (and:SI (reg:SI 72 [ _1 ])
+            (reg:SI 111))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":57 -1
+     (nil))
+(insn 10 9 11 2 (set (mem/v:SI (reg/v/f:SI 110 [ DMAy_Channelx ]) [2 DMAy_Channelx_41(D)->CFGR+0 S4 A32])
+        (reg:SI 73 [ _2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":57 -1
+     (nil))
+(insn 11 10 12 2 (set (mem/v:SI (reg/v/f:SI 110 [ DMAy_Channelx ]) [2 DMAy_Channelx_41(D)->CFGR+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":58 -1
+     (nil))
+(insn 12 11 13 2 (set (mem/v:SI (plus:SI (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (const_int 4 [0x4])) [2 DMAy_Channelx_41(D)->CNTR+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":59 -1
+     (nil))
+(insn 13 12 14 2 (set (mem/v:SI (plus:SI (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (const_int 8 [0x8])) [2 DMAy_Channelx_41(D)->PADDR+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":60 -1
+     (nil))
+(insn 14 13 15 2 (set (mem/v:SI (plus:SI (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (const_int 12 [0xc])) [2 DMAy_Channelx_41(D)->MADDR+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":61 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 114)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":62 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 113)
+        (plus:SI (reg:SI 114)
+            (const_int 8 [0x8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":62 -1
+     (expr_list:REG_EQUAL (const_int 1073872904 [0x40020008])
+        (nil)))
+(jump_insn 17 16 18 2 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 113))
+            (label_ref 26)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":62 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 26)
+(note 18 17 19 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 19 18 20 4 (set (reg/f:SI 115)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":64 -1
+     (nil))
+(insn 20 19 21 4 (set (reg:SI 74 [ _3 ])
+        (mem/v:SI (plus:SI (reg/f:SI 115)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073872896B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":64 -1
+     (nil))
+(insn 21 20 22 4 (set (reg:SI 75 [ _4 ])
+        (ior:SI (reg:SI 74 [ _3 ])
+            (const_int 15 [0xf]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":64 -1
+     (nil))
+(insn 22 21 23 4 (set (reg/f:SI 116)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":64 -1
+     (nil))
+(insn 23 22 24 4 (set (mem/v:SI (plus:SI (reg/f:SI 116)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073872896B].INTFCR+0 S4 A32])
+        (reg:SI 75 [ _4 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":64 -1
+     (nil))
+(jump_insn 24 23 25 4 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 25 24 26)
+(code_label 26 25 27 5 2 (nil) [1 uses])
+(note 27 26 28 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 28 27 29 5 (set (reg:SI 118)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":66 -1
+     (nil))
+(insn 29 28 30 5 (set (reg:SI 117)
+        (plus:SI (reg:SI 118)
+            (const_int 28 [0x1c]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":66 -1
+     (expr_list:REG_EQUAL (const_int 1073872924 [0x4002001c])
+        (nil)))
+(jump_insn 30 29 31 5 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 117))
+            (label_ref 39)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":66 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 39)
+(note 31 30 32 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 32 31 33 6 (set (reg/f:SI 119)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":68 -1
+     (nil))
+(insn 33 32 34 6 (set (reg:SI 76 [ _5 ])
+        (mem/v:SI (plus:SI (reg/f:SI 119)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073872896B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":68 -1
+     (nil))
+(insn 34 33 35 6 (set (reg:SI 77 [ _6 ])
+        (ior:SI (reg:SI 76 [ _5 ])
+            (const_int 240 [0xf0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":68 -1
+     (nil))
+(insn 35 34 36 6 (set (reg/f:SI 120)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":68 -1
+     (nil))
+(insn 36 35 37 6 (set (mem/v:SI (plus:SI (reg/f:SI 120)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073872896B].INTFCR+0 S4 A32])
+        (reg:SI 77 [ _6 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":68 -1
+     (nil))
+(jump_insn 37 36 38 6 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 38 37 39)
+(code_label 39 38 40 7 4 (nil) [1 uses])
+(note 40 39 41 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 41 40 42 7 (set (reg:SI 122)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":70 -1
+     (nil))
+(insn 42 41 43 7 (set (reg:SI 121)
+        (plus:SI (reg:SI 122)
+            (const_int 48 [0x30]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":70 -1
+     (expr_list:REG_EQUAL (const_int 1073872944 [0x40020030])
+        (nil)))
+(jump_insn 43 42 44 7 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 121))
+            (label_ref 54)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":70 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 54)
+(note 44 43 45 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 45 44 46 8 (set (reg/f:SI 123)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":72 -1
+     (nil))
+(insn 46 45 47 8 (set (reg:SI 78 [ _7 ])
+        (mem/v:SI (plus:SI (reg/f:SI 123)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073872896B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":72 -1
+     (nil))
+(insn 47 46 48 8 (set (reg:SI 125)
+        (const_int 4096 [0x1000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":72 -1
+     (nil))
+(insn 48 47 49 8 (set (reg:SI 124)
+        (plus:SI (reg:SI 125)
+            (const_int -256 [0xffffffffffffff00]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":72 -1
+     (expr_list:REG_EQUAL (const_int 3840 [0xf00])
+        (nil)))
+(insn 49 48 50 8 (set (reg:SI 79 [ _8 ])
+        (ior:SI (reg:SI 78 [ _7 ])
+            (reg:SI 124))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":72 -1
+     (nil))
+(insn 50 49 51 8 (set (reg/f:SI 126)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":72 -1
+     (nil))
+(insn 51 50 52 8 (set (mem/v:SI (plus:SI (reg/f:SI 126)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073872896B].INTFCR+0 S4 A32])
+        (reg:SI 79 [ _8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":72 -1
+     (nil))
+(jump_insn 52 51 53 8 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 53 52 54)
+(code_label 54 53 55 9 5 (nil) [1 uses])
+(note 55 54 56 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 56 55 57 9 (set (reg:SI 128)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":74 -1
+     (nil))
+(insn 57 56 58 9 (set (reg:SI 127)
+        (plus:SI (reg:SI 128)
+            (const_int 68 [0x44]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":74 -1
+     (expr_list:REG_EQUAL (const_int 1073872964 [0x40020044])
+        (nil)))
+(jump_insn 58 57 59 9 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 127))
+            (label_ref 68)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":74 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 68)
+(note 59 58 60 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 60 59 61 10 (set (reg/f:SI 129)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":76 -1
+     (nil))
+(insn 61 60 62 10 (set (reg:SI 80 [ _9 ])
+        (mem/v:SI (plus:SI (reg/f:SI 129)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073872896B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":76 -1
+     (nil))
+(insn 62 61 63 10 (set (reg:SI 130)
+        (const_int 61440 [0xf000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":76 -1
+     (nil))
+(insn 63 62 64 10 (set (reg:SI 81 [ _10 ])
+        (ior:SI (reg:SI 80 [ _9 ])
+            (reg:SI 130))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":76 -1
+     (nil))
+(insn 64 63 65 10 (set (reg/f:SI 131)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":76 -1
+     (nil))
+(insn 65 64 66 10 (set (mem/v:SI (plus:SI (reg/f:SI 131)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073872896B].INTFCR+0 S4 A32])
+        (reg:SI 81 [ _10 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":76 -1
+     (nil))
+(jump_insn 66 65 67 10 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 67 66 68)
+(code_label 68 67 69 11 6 (nil) [1 uses])
+(note 69 68 70 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 70 69 71 11 (set (reg:SI 133)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":78 -1
+     (nil))
+(insn 71 70 72 11 (set (reg:SI 132)
+        (plus:SI (reg:SI 133)
+            (const_int 88 [0x58]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":78 -1
+     (expr_list:REG_EQUAL (const_int 1073872984 [0x40020058])
+        (nil)))
+(jump_insn 72 71 73 11 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 132))
+            (label_ref 82)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":78 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 82)
+(note 73 72 74 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 74 73 75 12 (set (reg/f:SI 134)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":80 -1
+     (nil))
+(insn 75 74 76 12 (set (reg:SI 82 [ _11 ])
+        (mem/v:SI (plus:SI (reg/f:SI 134)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073872896B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":80 -1
+     (nil))
+(insn 76 75 77 12 (set (reg:SI 135)
+        (const_int 983040 [0xf0000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":80 -1
+     (nil))
+(insn 77 76 78 12 (set (reg:SI 83 [ _12 ])
+        (ior:SI (reg:SI 82 [ _11 ])
+            (reg:SI 135))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":80 -1
+     (nil))
+(insn 78 77 79 12 (set (reg/f:SI 136)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":80 -1
+     (nil))
+(insn 79 78 80 12 (set (mem/v:SI (plus:SI (reg/f:SI 136)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073872896B].INTFCR+0 S4 A32])
+        (reg:SI 83 [ _12 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":80 -1
+     (nil))
+(jump_insn 80 79 81 12 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 81 80 82)
+(code_label 82 81 83 13 7 (nil) [1 uses])
+(note 83 82 84 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 84 83 85 13 (set (reg:SI 138)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":82 -1
+     (nil))
+(insn 85 84 86 13 (set (reg:SI 137)
+        (plus:SI (reg:SI 138)
+            (const_int 108 [0x6c]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":82 -1
+     (expr_list:REG_EQUAL (const_int 1073873004 [0x4002006c])
+        (nil)))
+(jump_insn 86 85 87 13 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 137))
+            (label_ref 96)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":82 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 96)
+(note 87 86 88 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 88 87 89 14 (set (reg/f:SI 139)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":84 -1
+     (nil))
+(insn 89 88 90 14 (set (reg:SI 84 [ _13 ])
+        (mem/v:SI (plus:SI (reg/f:SI 139)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073872896B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":84 -1
+     (nil))
+(insn 90 89 91 14 (set (reg:SI 140)
+        (const_int 15728640 [0xf00000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":84 -1
+     (nil))
+(insn 91 90 92 14 (set (reg:SI 85 [ _14 ])
+        (ior:SI (reg:SI 84 [ _13 ])
+            (reg:SI 140))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":84 -1
+     (nil))
+(insn 92 91 93 14 (set (reg/f:SI 141)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":84 -1
+     (nil))
+(insn 93 92 94 14 (set (mem/v:SI (plus:SI (reg/f:SI 141)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073872896B].INTFCR+0 S4 A32])
+        (reg:SI 85 [ _14 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":84 -1
+     (nil))
+(jump_insn 94 93 95 14 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 95 94 96)
+(code_label 96 95 97 15 8 (nil) [1 uses])
+(note 97 96 98 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 98 97 99 15 (set (reg:SI 143)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":86 -1
+     (nil))
+(insn 99 98 100 15 (set (reg:SI 142)
+        (plus:SI (reg:SI 143)
+            (const_int 128 [0x80]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":86 -1
+     (expr_list:REG_EQUAL (const_int 1073873024 [0x40020080])
+        (nil)))
+(jump_insn 100 99 101 15 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 142))
+            (label_ref 110)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":86 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 110)
+(note 101 100 102 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 102 101 103 16 (set (reg/f:SI 144)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":88 -1
+     (nil))
+(insn 103 102 104 16 (set (reg:SI 86 [ _15 ])
+        (mem/v:SI (plus:SI (reg/f:SI 144)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073872896B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":88 -1
+     (nil))
+(insn 104 103 105 16 (set (reg:SI 145)
+        (const_int 251658240 [0xf000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":88 -1
+     (nil))
+(insn 105 104 106 16 (set (reg:SI 87 [ _16 ])
+        (ior:SI (reg:SI 86 [ _15 ])
+            (reg:SI 145))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":88 -1
+     (nil))
+(insn 106 105 107 16 (set (reg/f:SI 146)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":88 -1
+     (nil))
+(insn 107 106 108 16 (set (mem/v:SI (plus:SI (reg/f:SI 146)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073872896B].INTFCR+0 S4 A32])
+        (reg:SI 87 [ _16 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":88 -1
+     (nil))
+(jump_insn 108 107 109 16 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 109 108 110)
+(code_label 110 109 111 17 9 (nil) [1 uses])
+(note 111 110 112 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 112 111 113 17 (set (reg:SI 148)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":90 -1
+     (nil))
+(insn 113 112 114 17 (set (reg:SI 147)
+        (plus:SI (reg:SI 148)
+            (const_int 1032 [0x408]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":90 -1
+     (expr_list:REG_EQUAL (const_int 1073873928 [0x40020408])
+        (nil)))
+(jump_insn 114 113 115 17 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 147))
+            (label_ref 125)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":90 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 125)
+(note 115 114 116 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(insn 116 115 117 18 (set (reg:SI 150)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":92 -1
+     (nil))
+(insn 117 116 118 18 (set (reg/f:SI 149)
+        (plus:SI (reg:SI 150)
+            (const_int 1024 [0x400]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":92 -1
+     (expr_list:REG_EQUAL (const_int 1073873920 [0x40020400])
+        (nil)))
+(insn 118 117 119 18 (set (reg:SI 88 [ _17 ])
+        (mem/v:SI (plus:SI (reg/f:SI 149)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073873920B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":92 -1
+     (nil))
+(insn 119 118 120 18 (set (reg:SI 89 [ _18 ])
+        (ior:SI (reg:SI 88 [ _17 ])
+            (const_int 15 [0xf]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":92 -1
+     (nil))
+(insn 120 119 121 18 (set (reg:SI 152)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":92 -1
+     (nil))
+(insn 121 120 122 18 (set (reg/f:SI 151)
+        (plus:SI (reg:SI 152)
+            (const_int 1024 [0x400]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":92 -1
+     (expr_list:REG_EQUAL (const_int 1073873920 [0x40020400])
+        (nil)))
+(insn 122 121 123 18 (set (mem/v:SI (plus:SI (reg/f:SI 151)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073873920B].INTFCR+0 S4 A32])
+        (reg:SI 89 [ _18 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":92 -1
+     (nil))
+(jump_insn 123 122 124 18 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 124 123 125)
+(code_label 125 124 126 19 10 (nil) [1 uses])
+(note 126 125 127 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(insn 127 126 128 19 (set (reg:SI 154)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":94 -1
+     (nil))
+(insn 128 127 129 19 (set (reg:SI 153)
+        (plus:SI (reg:SI 154)
+            (const_int 1052 [0x41c]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":94 -1
+     (expr_list:REG_EQUAL (const_int 1073873948 [0x4002041c])
+        (nil)))
+(jump_insn 129 128 130 19 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 153))
+            (label_ref 140)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":94 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 140)
+(note 130 129 131 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+(insn 131 130 132 20 (set (reg:SI 156)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":96 -1
+     (nil))
+(insn 132 131 133 20 (set (reg/f:SI 155)
+        (plus:SI (reg:SI 156)
+            (const_int 1024 [0x400]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":96 -1
+     (expr_list:REG_EQUAL (const_int 1073873920 [0x40020400])
+        (nil)))
+(insn 133 132 134 20 (set (reg:SI 90 [ _19 ])
+        (mem/v:SI (plus:SI (reg/f:SI 155)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073873920B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":96 -1
+     (nil))
+(insn 134 133 135 20 (set (reg:SI 91 [ _20 ])
+        (ior:SI (reg:SI 90 [ _19 ])
+            (const_int 240 [0xf0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":96 -1
+     (nil))
+(insn 135 134 136 20 (set (reg:SI 158)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":96 -1
+     (nil))
+(insn 136 135 137 20 (set (reg/f:SI 157)
+        (plus:SI (reg:SI 158)
+            (const_int 1024 [0x400]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":96 -1
+     (expr_list:REG_EQUAL (const_int 1073873920 [0x40020400])
+        (nil)))
+(insn 137 136 138 20 (set (mem/v:SI (plus:SI (reg/f:SI 157)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073873920B].INTFCR+0 S4 A32])
+        (reg:SI 91 [ _20 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":96 -1
+     (nil))
+(jump_insn 138 137 139 20 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 139 138 140)
+(code_label 140 139 141 21 11 (nil) [1 uses])
+(note 141 140 142 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
+(insn 142 141 143 21 (set (reg:SI 160)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":98 -1
+     (nil))
+(insn 143 142 144 21 (set (reg:SI 159)
+        (plus:SI (reg:SI 160)
+            (const_int 1072 [0x430]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":98 -1
+     (expr_list:REG_EQUAL (const_int 1073873968 [0x40020430])
+        (nil)))
+(jump_insn 144 143 145 21 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 159))
+            (label_ref 157)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":98 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 157)
+(note 145 144 146 22 [bb 22] NOTE_INSN_BASIC_BLOCK)
+(insn 146 145 147 22 (set (reg:SI 162)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":100 -1
+     (nil))
+(insn 147 146 148 22 (set (reg/f:SI 161)
+        (plus:SI (reg:SI 162)
+            (const_int 1024 [0x400]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":100 -1
+     (expr_list:REG_EQUAL (const_int 1073873920 [0x40020400])
+        (nil)))
+(insn 148 147 149 22 (set (reg:SI 92 [ _21 ])
+        (mem/v:SI (plus:SI (reg/f:SI 161)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073873920B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":100 -1
+     (nil))
+(insn 149 148 150 22 (set (reg:SI 164)
+        (const_int 4096 [0x1000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":100 -1
+     (nil))
+(insn 150 149 151 22 (set (reg:SI 163)
+        (plus:SI (reg:SI 164)
+            (const_int -256 [0xffffffffffffff00]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":100 -1
+     (expr_list:REG_EQUAL (const_int 3840 [0xf00])
+        (nil)))
+(insn 151 150 152 22 (set (reg:SI 93 [ _22 ])
+        (ior:SI (reg:SI 92 [ _21 ])
+            (reg:SI 163))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":100 -1
+     (nil))
+(insn 152 151 153 22 (set (reg:SI 166)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":100 -1
+     (nil))
+(insn 153 152 154 22 (set (reg/f:SI 165)
+        (plus:SI (reg:SI 166)
+            (const_int 1024 [0x400]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":100 -1
+     (expr_list:REG_EQUAL (const_int 1073873920 [0x40020400])
+        (nil)))
+(insn 154 153 155 22 (set (mem/v:SI (plus:SI (reg/f:SI 165)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073873920B].INTFCR+0 S4 A32])
+        (reg:SI 93 [ _22 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":100 -1
+     (nil))
+(jump_insn 155 154 156 22 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 156 155 157)
+(code_label 157 156 158 23 12 (nil) [1 uses])
+(note 158 157 159 23 [bb 23] NOTE_INSN_BASIC_BLOCK)
+(insn 159 158 160 23 (set (reg:SI 168)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":102 -1
+     (nil))
+(insn 160 159 161 23 (set (reg:SI 167)
+        (plus:SI (reg:SI 168)
+            (const_int 1092 [0x444]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":102 -1
+     (expr_list:REG_EQUAL (const_int 1073873988 [0x40020444])
+        (nil)))
+(jump_insn 161 160 162 23 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 167))
+            (label_ref 173)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":102 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 173)
+(note 162 161 163 24 [bb 24] NOTE_INSN_BASIC_BLOCK)
+(insn 163 162 164 24 (set (reg:SI 170)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":104 -1
+     (nil))
+(insn 164 163 165 24 (set (reg/f:SI 169)
+        (plus:SI (reg:SI 170)
+            (const_int 1024 [0x400]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":104 -1
+     (expr_list:REG_EQUAL (const_int 1073873920 [0x40020400])
+        (nil)))
+(insn 165 164 166 24 (set (reg:SI 94 [ _23 ])
+        (mem/v:SI (plus:SI (reg/f:SI 169)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073873920B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":104 -1
+     (nil))
+(insn 166 165 167 24 (set (reg:SI 171)
+        (const_int 61440 [0xf000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":104 -1
+     (nil))
+(insn 167 166 168 24 (set (reg:SI 95 [ _24 ])
+        (ior:SI (reg:SI 94 [ _23 ])
+            (reg:SI 171))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":104 -1
+     (nil))
+(insn 168 167 169 24 (set (reg:SI 173)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":104 -1
+     (nil))
+(insn 169 168 170 24 (set (reg/f:SI 172)
+        (plus:SI (reg:SI 173)
+            (const_int 1024 [0x400]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":104 -1
+     (expr_list:REG_EQUAL (const_int 1073873920 [0x40020400])
+        (nil)))
+(insn 170 169 171 24 (set (mem/v:SI (plus:SI (reg/f:SI 172)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073873920B].INTFCR+0 S4 A32])
+        (reg:SI 95 [ _24 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":104 -1
+     (nil))
+(jump_insn 171 170 172 24 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 172 171 173)
+(code_label 173 172 174 25 13 (nil) [1 uses])
+(note 174 173 175 25 [bb 25] NOTE_INSN_BASIC_BLOCK)
+(insn 175 174 176 25 (set (reg:SI 175)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":106 -1
+     (nil))
+(insn 176 175 177 25 (set (reg:SI 174)
+        (plus:SI (reg:SI 175)
+            (const_int 1112 [0x458]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":106 -1
+     (expr_list:REG_EQUAL (const_int 1073874008 [0x40020458])
+        (nil)))
+(jump_insn 177 176 178 25 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 174))
+            (label_ref 189)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":106 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 189)
+(note 178 177 179 26 [bb 26] NOTE_INSN_BASIC_BLOCK)
+(insn 179 178 180 26 (set (reg:SI 177)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":108 -1
+     (nil))
+(insn 180 179 181 26 (set (reg/f:SI 176)
+        (plus:SI (reg:SI 177)
+            (const_int 1024 [0x400]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":108 -1
+     (expr_list:REG_EQUAL (const_int 1073873920 [0x40020400])
+        (nil)))
+(insn 181 180 182 26 (set (reg:SI 96 [ _25 ])
+        (mem/v:SI (plus:SI (reg/f:SI 176)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073873920B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":108 -1
+     (nil))
+(insn 182 181 183 26 (set (reg:SI 178)
+        (const_int 983040 [0xf0000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":108 -1
+     (nil))
+(insn 183 182 184 26 (set (reg:SI 97 [ _26 ])
+        (ior:SI (reg:SI 96 [ _25 ])
+            (reg:SI 178))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":108 -1
+     (nil))
+(insn 184 183 185 26 (set (reg:SI 180)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":108 -1
+     (nil))
+(insn 185 184 186 26 (set (reg/f:SI 179)
+        (plus:SI (reg:SI 180)
+            (const_int 1024 [0x400]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":108 -1
+     (expr_list:REG_EQUAL (const_int 1073873920 [0x40020400])
+        (nil)))
+(insn 186 185 187 26 (set (mem/v:SI (plus:SI (reg/f:SI 179)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073873920B].INTFCR+0 S4 A32])
+        (reg:SI 97 [ _26 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":108 -1
+     (nil))
+(jump_insn 187 186 188 26 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 188 187 189)
+(code_label 189 188 190 27 14 (nil) [1 uses])
+(note 190 189 191 27 [bb 27] NOTE_INSN_BASIC_BLOCK)
+(insn 191 190 192 27 (set (reg:SI 182)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":110 -1
+     (nil))
+(insn 192 191 193 27 (set (reg:SI 181)
+        (plus:SI (reg:SI 182)
+            (const_int 1132 [0x46c]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":110 -1
+     (expr_list:REG_EQUAL (const_int 1073874028 [0x4002046c])
+        (nil)))
+(jump_insn 193 192 194 27 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 181))
+            (label_ref 205)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":110 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 205)
+(note 194 193 195 28 [bb 28] NOTE_INSN_BASIC_BLOCK)
+(insn 195 194 196 28 (set (reg:SI 184)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":112 -1
+     (nil))
+(insn 196 195 197 28 (set (reg/f:SI 183)
+        (plus:SI (reg:SI 184)
+            (const_int 1024 [0x400]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":112 -1
+     (expr_list:REG_EQUAL (const_int 1073873920 [0x40020400])
+        (nil)))
+(insn 197 196 198 28 (set (reg:SI 98 [ _27 ])
+        (mem/v:SI (plus:SI (reg/f:SI 183)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073873920B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":112 -1
+     (nil))
+(insn 198 197 199 28 (set (reg:SI 185)
+        (const_int 15728640 [0xf00000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":112 -1
+     (nil))
+(insn 199 198 200 28 (set (reg:SI 99 [ _28 ])
+        (ior:SI (reg:SI 98 [ _27 ])
+            (reg:SI 185))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":112 -1
+     (nil))
+(insn 200 199 201 28 (set (reg:SI 187)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":112 -1
+     (nil))
+(insn 201 200 202 28 (set (reg/f:SI 186)
+        (plus:SI (reg:SI 187)
+            (const_int 1024 [0x400]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":112 -1
+     (expr_list:REG_EQUAL (const_int 1073873920 [0x40020400])
+        (nil)))
+(insn 202 201 203 28 (set (mem/v:SI (plus:SI (reg/f:SI 186)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073873920B].INTFCR+0 S4 A32])
+        (reg:SI 99 [ _28 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":112 -1
+     (nil))
+(jump_insn 203 202 204 28 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 204 203 205)
+(code_label 205 204 206 29 15 (nil) [1 uses])
+(note 206 205 207 29 [bb 29] NOTE_INSN_BASIC_BLOCK)
+(insn 207 206 208 29 (set (reg:SI 189)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":114 -1
+     (nil))
+(insn 208 207 209 29 (set (reg:SI 188)
+        (plus:SI (reg:SI 189)
+            (const_int 1152 [0x480]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":114 -1
+     (expr_list:REG_EQUAL (const_int 1073874048 [0x40020480])
+        (nil)))
+(jump_insn 209 208 210 29 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 188))
+            (label_ref 221)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":114 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 221)
+(note 210 209 211 30 [bb 30] NOTE_INSN_BASIC_BLOCK)
+(insn 211 210 212 30 (set (reg:SI 191)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":116 -1
+     (nil))
+(insn 212 211 213 30 (set (reg/f:SI 190)
+        (plus:SI (reg:SI 191)
+            (const_int 1024 [0x400]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":116 -1
+     (expr_list:REG_EQUAL (const_int 1073873920 [0x40020400])
+        (nil)))
+(insn 213 212 214 30 (set (reg:SI 100 [ _29 ])
+        (mem/v:SI (plus:SI (reg/f:SI 190)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073873920B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":116 -1
+     (nil))
+(insn 214 213 215 30 (set (reg:SI 192)
+        (const_int 251658240 [0xf000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":116 -1
+     (nil))
+(insn 215 214 216 30 (set (reg:SI 101 [ _30 ])
+        (ior:SI (reg:SI 100 [ _29 ])
+            (reg:SI 192))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":116 -1
+     (nil))
+(insn 216 215 217 30 (set (reg:SI 194)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":116 -1
+     (nil))
+(insn 217 216 218 30 (set (reg/f:SI 193)
+        (plus:SI (reg:SI 194)
+            (const_int 1024 [0x400]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":116 -1
+     (expr_list:REG_EQUAL (const_int 1073873920 [0x40020400])
+        (nil)))
+(insn 218 217 219 30 (set (mem/v:SI (plus:SI (reg/f:SI 193)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073873920B].INTFCR+0 S4 A32])
+        (reg:SI 101 [ _30 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":116 -1
+     (nil))
+(jump_insn 219 218 220 30 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 220 219 221)
+(code_label 221 220 222 31 16 (nil) [1 uses])
+(note 222 221 223 31 [bb 31] NOTE_INSN_BASIC_BLOCK)
+(insn 223 222 224 31 (set (reg:SI 196)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":118 -1
+     (nil))
+(insn 224 223 225 31 (set (reg:SI 195)
+        (plus:SI (reg:SI 196)
+            (const_int 1168 [0x490]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":118 -1
+     (expr_list:REG_EQUAL (const_int 1073874064 [0x40020490])
+        (nil)))
+(jump_insn 225 224 226 31 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 195))
+            (label_ref 236)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":118 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 236)
+(note 226 225 227 32 [bb 32] NOTE_INSN_BASIC_BLOCK)
+(insn 227 226 228 32 (set (reg:SI 198)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":120 -1
+     (nil))
+(insn 228 227 229 32 (set (reg/f:SI 197)
+        (plus:SI (reg:SI 198)
+            (const_int 1232 [0x4d0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":120 -1
+     (expr_list:REG_EQUAL (const_int 1073874128 [0x400204d0])
+        (nil)))
+(insn 229 228 230 32 (set (reg:SI 102 [ _31 ])
+        (mem/v:SI (plus:SI (reg/f:SI 197)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073874128B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":120 -1
+     (nil))
+(insn 230 229 231 32 (set (reg:SI 103 [ _32 ])
+        (ior:SI (reg:SI 102 [ _31 ])
+            (const_int 15 [0xf]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":120 -1
+     (nil))
+(insn 231 230 232 32 (set (reg:SI 200)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":120 -1
+     (nil))
+(insn 232 231 233 32 (set (reg/f:SI 199)
+        (plus:SI (reg:SI 200)
+            (const_int 1232 [0x4d0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":120 -1
+     (expr_list:REG_EQUAL (const_int 1073874128 [0x400204d0])
+        (nil)))
+(insn 233 232 234 32 (set (mem/v:SI (plus:SI (reg/f:SI 199)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073874128B].INTFCR+0 S4 A32])
+        (reg:SI 103 [ _32 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":120 -1
+     (nil))
+(jump_insn 234 233 235 32 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 235 234 236)
+(code_label 236 235 237 33 17 (nil) [1 uses])
+(note 237 236 238 33 [bb 33] NOTE_INSN_BASIC_BLOCK)
+(insn 238 237 239 33 (set (reg:SI 202)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":122 -1
+     (nil))
+(insn 239 238 240 33 (set (reg:SI 201)
+        (plus:SI (reg:SI 202)
+            (const_int 1184 [0x4a0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":122 -1
+     (expr_list:REG_EQUAL (const_int 1073874080 [0x400204a0])
+        (nil)))
+(jump_insn 240 239 241 33 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 201))
+            (label_ref 251)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":122 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 251)
+(note 241 240 242 34 [bb 34] NOTE_INSN_BASIC_BLOCK)
+(insn 242 241 243 34 (set (reg:SI 204)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":124 -1
+     (nil))
+(insn 243 242 244 34 (set (reg/f:SI 203)
+        (plus:SI (reg:SI 204)
+            (const_int 1232 [0x4d0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":124 -1
+     (expr_list:REG_EQUAL (const_int 1073874128 [0x400204d0])
+        (nil)))
+(insn 244 243 245 34 (set (reg:SI 104 [ _33 ])
+        (mem/v:SI (plus:SI (reg/f:SI 203)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073874128B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":124 -1
+     (nil))
+(insn 245 244 246 34 (set (reg:SI 105 [ _34 ])
+        (ior:SI (reg:SI 104 [ _33 ])
+            (const_int 240 [0xf0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":124 -1
+     (nil))
+(insn 246 245 247 34 (set (reg:SI 206)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":124 -1
+     (nil))
+(insn 247 246 248 34 (set (reg/f:SI 205)
+        (plus:SI (reg:SI 206)
+            (const_int 1232 [0x4d0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":124 -1
+     (expr_list:REG_EQUAL (const_int 1073874128 [0x400204d0])
+        (nil)))
+(insn 248 247 249 34 (set (mem/v:SI (plus:SI (reg/f:SI 205)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073874128B].INTFCR+0 S4 A32])
+        (reg:SI 105 [ _34 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":124 -1
+     (nil))
+(jump_insn 249 248 250 34 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 250 249 251)
+(code_label 251 250 252 35 18 (nil) [1 uses])
+(note 252 251 253 35 [bb 35] NOTE_INSN_BASIC_BLOCK)
+(insn 253 252 254 35 (set (reg:SI 208)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":126 -1
+     (nil))
+(insn 254 253 255 35 (set (reg:SI 207)
+        (plus:SI (reg:SI 208)
+            (const_int 1200 [0x4b0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":126 -1
+     (expr_list:REG_EQUAL (const_int 1073874096 [0x400204b0])
+        (nil)))
+(jump_insn 255 254 256 35 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 207))
+            (label_ref 268)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":126 -1
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 268)
+(note 256 255 257 36 [bb 36] NOTE_INSN_BASIC_BLOCK)
+(insn 257 256 258 36 (set (reg:SI 210)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":128 -1
+     (nil))
+(insn 258 257 259 36 (set (reg/f:SI 209)
+        (plus:SI (reg:SI 210)
+            (const_int 1232 [0x4d0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":128 -1
+     (expr_list:REG_EQUAL (const_int 1073874128 [0x400204d0])
+        (nil)))
+(insn 259 258 260 36 (set (reg:SI 106 [ _35 ])
+        (mem/v:SI (plus:SI (reg/f:SI 209)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073874128B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":128 -1
+     (nil))
+(insn 260 259 261 36 (set (reg:SI 212)
+        (const_int 4096 [0x1000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":128 -1
+     (nil))
+(insn 261 260 262 36 (set (reg:SI 211)
+        (plus:SI (reg:SI 212)
+            (const_int -256 [0xffffffffffffff00]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":128 -1
+     (expr_list:REG_EQUAL (const_int 3840 [0xf00])
+        (nil)))
+(insn 262 261 263 36 (set (reg:SI 107 [ _36 ])
+        (ior:SI (reg:SI 106 [ _35 ])
+            (reg:SI 211))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":128 -1
+     (nil))
+(insn 263 262 264 36 (set (reg:SI 214)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":128 -1
+     (nil))
+(insn 264 263 265 36 (set (reg/f:SI 213)
+        (plus:SI (reg:SI 214)
+            (const_int 1232 [0x4d0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":128 -1
+     (expr_list:REG_EQUAL (const_int 1073874128 [0x400204d0])
+        (nil)))
+(insn 265 264 266 36 (set (mem/v:SI (plus:SI (reg/f:SI 213)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073874128B].INTFCR+0 S4 A32])
+        (reg:SI 107 [ _36 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":128 -1
+     (nil))
+(jump_insn 266 265 267 36 (set (pc)
+        (label_ref:SI 284)) 250 {jump}
+     (nil)
+ -> 284)
+(barrier 267 266 268)
+(code_label 268 267 269 37 19 (nil) [1 uses])
+(note 269 268 270 37 [bb 37] NOTE_INSN_BASIC_BLOCK)
+(insn 270 269 271 37 (set (reg:SI 216)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":130 -1
+     (nil))
+(insn 271 270 272 37 (set (reg:SI 215)
+        (plus:SI (reg:SI 216)
+            (const_int 1216 [0x4c0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":130 -1
+     (expr_list:REG_EQUAL (const_int 1073874112 [0x400204c0])
+        (nil)))
+(jump_insn 272 271 273 37 (set (pc)
+        (if_then_else (ne (reg/v/f:SI 110 [ DMAy_Channelx ])
+                (reg:SI 215))
+            (label_ref:SI 284)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":130 180 {*branchsi}
+     (int_list:REG_BR_PROB 751619284 (nil))
+ -> 284)
+(note 273 272 274 38 [bb 38] NOTE_INSN_BASIC_BLOCK)
+(insn 274 273 275 38 (set (reg:SI 218)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":132 -1
+     (nil))
+(insn 275 274 276 38 (set (reg/f:SI 217)
+        (plus:SI (reg:SI 218)
+            (const_int 1232 [0x4d0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":132 -1
+     (expr_list:REG_EQUAL (const_int 1073874128 [0x400204d0])
+        (nil)))
+(insn 276 275 277 38 (set (reg:SI 108 [ _37 ])
+        (mem/v:SI (plus:SI (reg/f:SI 217)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073874128B].INTFCR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":132 -1
+     (nil))
+(insn 277 276 278 38 (set (reg:SI 219)
+        (const_int 61440 [0xf000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":132 -1
+     (nil))
+(insn 278 277 279 38 (set (reg:SI 109 [ _38 ])
+        (ior:SI (reg:SI 108 [ _37 ])
+            (reg:SI 219))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":132 -1
+     (nil))
+(insn 279 278 280 38 (set (reg:SI 221)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":132 -1
+     (nil))
+(insn 280 279 281 38 (set (reg/f:SI 220)
+        (plus:SI (reg:SI 221)
+            (const_int 1232 [0x4d0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":132 -1
+     (expr_list:REG_EQUAL (const_int 1073874128 [0x400204d0])
+        (nil)))
+(insn 281 280 284 38 (set (mem/v:SI (plus:SI (reg/f:SI 220)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073874128B].INTFCR+0 S4 A32])
+        (reg:SI 109 [ _38 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":132 -1
+     (nil))
+(code_label 284 281 285 40 1 (nil) [18 uses])
+(note 285 284 0 40 [bb 40] NOTE_INSN_BASIC_BLOCK)
+
+;; Function DMA_Init (DMA_Init, funcdef_no=30, decl_uid=5524, cgraph_uid=30, symbol_order=30)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 93 [ DMAy_Channelx ])
+        (reg:SI 10 a0 [ DMAy_Channelx ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":150 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v/f:SI 94 [ DMA_InitStruct ])
+        (reg:SI 11 a1 [ DMA_InitStruct ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":150 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg/v:SI 90 [ tmpreg ])
+        (mem/v:SI (reg/v/f:SI 93 [ DMAy_Channelx ]) [2 DMAy_Channelx_20(D)->CFGR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":153 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 96)
+        (const_int -32768 [0xffffffffffff8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":154 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 95)
+        (plus:SI (reg:SI 96)
+            (const_int 15 [0xf]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":154 -1
+     (expr_list:REG_EQUAL (const_int -32753 [0xffffffffffff800f])
+        (nil)))
+(insn 10 9 11 2 (set (reg/v:SI 91 [ tmpreg ])
+        (and:SI (reg/v:SI 90 [ tmpreg ])
+            (reg:SI 95))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":154 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 98)
+        (mem:SI (plus:SI (reg/v/f:SI 94 [ DMA_InitStruct ])
+                (const_int 8 [0x8])) [2 DMA_InitStruct_23(D)->DMA_DIR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":155 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 99)
+        (mem:SI (plus:SI (reg/v/f:SI 94 [ DMA_InitStruct ])
+                (const_int 32 [0x20])) [2 DMA_InitStruct_23(D)->DMA_Mode+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":155 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 97)
+        (ior:SI (reg:SI 98)
+            (reg:SI 99))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":155 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 101)
+        (mem:SI (plus:SI (reg/v/f:SI 94 [ DMA_InitStruct ])
+                (const_int 16 [0x10])) [2 DMA_InitStruct_23(D)->DMA_PeripheralInc+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":155 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 100)
+        (ior:SI (reg:SI 97)
+            (reg:SI 101))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":155 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 103)
+        (mem:SI (plus:SI (reg/v/f:SI 94 [ DMA_InitStruct ])
+                (const_int 20 [0x14])) [2 DMA_InitStruct_23(D)->DMA_MemoryInc+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":156 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 102)
+        (ior:SI (reg:SI 100)
+            (reg:SI 103))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":156 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 105)
+        (mem:SI (plus:SI (reg/v/f:SI 94 [ DMA_InitStruct ])
+                (const_int 24 [0x18])) [2 DMA_InitStruct_23(D)->DMA_PeripheralDataSize+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":156 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:SI 104)
+        (ior:SI (reg:SI 102)
+            (reg:SI 105))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":156 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 107)
+        (mem:SI (plus:SI (reg/v/f:SI 94 [ DMA_InitStruct ])
+                (const_int 28 [0x1c])) [2 DMA_InitStruct_23(D)->DMA_MemoryDataSize+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":157 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:SI 106)
+        (ior:SI (reg:SI 104)
+            (reg:SI 107))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":157 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:SI 109)
+        (mem:SI (plus:SI (reg/v/f:SI 94 [ DMA_InitStruct ])
+                (const_int 36 [0x24])) [2 DMA_InitStruct_23(D)->DMA_Priority+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":157 -1
+     (nil))
+(insn 23 22 24 2 (set (reg:SI 108)
+        (ior:SI (reg:SI 106)
+            (reg:SI 109))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":157 -1
+     (nil))
+(insn 24 23 25 2 (set (reg:SI 111)
+        (mem:SI (plus:SI (reg/v/f:SI 94 [ DMA_InitStruct ])
+                (const_int 40 [0x28])) [2 DMA_InitStruct_23(D)->DMA_M2M+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":158 -1
+     (nil))
+(insn 25 24 26 2 (set (reg:SI 110)
+        (ior:SI (reg:SI 108)
+            (reg:SI 111))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":158 -1
+     (nil))
+(insn 26 25 27 2 (set (reg/v:SI 92 [ tmpreg ])
+        (ior:SI (reg:SI 110)
+            (reg/v:SI 91 [ tmpreg ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":155 -1
+     (nil))
+(insn 27 26 28 2 (set (mem/v:SI (reg/v/f:SI 93 [ DMAy_Channelx ]) [2 DMAy_Channelx_20(D)->CFGR+0 S4 A32])
+        (reg/v:SI 92 [ tmpreg ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":160 -1
+     (nil))
+(insn 28 27 29 2 (set (reg:SI 87 [ _16 ])
+        (mem:SI (plus:SI (reg/v/f:SI 94 [ DMA_InitStruct ])
+                (const_int 12 [0xc])) [2 DMA_InitStruct_23(D)->DMA_BufferSize+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":161 -1
+     (nil))
+(insn 29 28 30 2 (set (mem/v:SI (plus:SI (reg/v/f:SI 93 [ DMAy_Channelx ])
+                (const_int 4 [0x4])) [2 DMAy_Channelx_20(D)->CNTR+0 S4 A32])
+        (reg:SI 87 [ _16 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":161 -1
+     (nil))
+(insn 30 29 31 2 (set (reg:SI 88 [ _17 ])
+        (mem:SI (reg/v/f:SI 94 [ DMA_InitStruct ]) [2 DMA_InitStruct_23(D)->DMA_PeripheralBaseAddr+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":162 -1
+     (nil))
+(insn 31 30 32 2 (set (mem/v:SI (plus:SI (reg/v/f:SI 93 [ DMAy_Channelx ])
+                (const_int 8 [0x8])) [2 DMAy_Channelx_20(D)->PADDR+0 S4 A32])
+        (reg:SI 88 [ _17 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":162 -1
+     (nil))
+(insn 32 31 33 2 (set (reg:SI 89 [ _18 ])
+        (mem:SI (plus:SI (reg/v/f:SI 94 [ DMA_InitStruct ])
+                (const_int 4 [0x4])) [2 DMA_InitStruct_23(D)->DMA_MemoryBaseAddr+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":163 -1
+     (nil))
+(insn 33 32 0 2 (set (mem/v:SI (plus:SI (reg/v/f:SI 93 [ DMAy_Channelx ])
+                (const_int 12 [0xc])) [2 DMAy_Channelx_20(D)->MADDR+0 S4 A32])
+        (reg:SI 89 [ _18 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":163 -1
+     (nil))
+
+;; Function DMA_StructInit (DMA_StructInit, funcdef_no=31, decl_uid=5526, cgraph_uid=31, symbol_order=31)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 72 [ DMA_InitStruct ])
+        (reg:SI 10 a0 [ DMA_InitStruct ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":179 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (mem:SI (reg/v/f:SI 72 [ DMA_InitStruct ]) [2 DMA_InitStruct_2(D)->DMA_PeripheralBaseAddr+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":180 -1
+     (nil))
+(insn 7 6 8 2 (set (mem:SI (plus:SI (reg/v/f:SI 72 [ DMA_InitStruct ])
+                (const_int 4 [0x4])) [2 DMA_InitStruct_2(D)->DMA_MemoryBaseAddr+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":181 -1
+     (nil))
+(insn 8 7 9 2 (set (mem:SI (plus:SI (reg/v/f:SI 72 [ DMA_InitStruct ])
+                (const_int 8 [0x8])) [2 DMA_InitStruct_2(D)->DMA_DIR+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":182 -1
+     (nil))
+(insn 9 8 10 2 (set (mem:SI (plus:SI (reg/v/f:SI 72 [ DMA_InitStruct ])
+                (const_int 12 [0xc])) [2 DMA_InitStruct_2(D)->DMA_BufferSize+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":183 -1
+     (nil))
+(insn 10 9 11 2 (set (mem:SI (plus:SI (reg/v/f:SI 72 [ DMA_InitStruct ])
+                (const_int 16 [0x10])) [2 DMA_InitStruct_2(D)->DMA_PeripheralInc+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":184 -1
+     (nil))
+(insn 11 10 12 2 (set (mem:SI (plus:SI (reg/v/f:SI 72 [ DMA_InitStruct ])
+                (const_int 20 [0x14])) [2 DMA_InitStruct_2(D)->DMA_MemoryInc+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":185 -1
+     (nil))
+(insn 12 11 13 2 (set (mem:SI (plus:SI (reg/v/f:SI 72 [ DMA_InitStruct ])
+                (const_int 24 [0x18])) [2 DMA_InitStruct_2(D)->DMA_PeripheralDataSize+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":186 -1
+     (nil))
+(insn 13 12 14 2 (set (mem:SI (plus:SI (reg/v/f:SI 72 [ DMA_InitStruct ])
+                (const_int 28 [0x1c])) [2 DMA_InitStruct_2(D)->DMA_MemoryDataSize+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":187 -1
+     (nil))
+(insn 14 13 15 2 (set (mem:SI (plus:SI (reg/v/f:SI 72 [ DMA_InitStruct ])
+                (const_int 32 [0x20])) [2 DMA_InitStruct_2(D)->DMA_Mode+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":188 -1
+     (nil))
+(insn 15 14 16 2 (set (mem:SI (plus:SI (reg/v/f:SI 72 [ DMA_InitStruct ])
+                (const_int 36 [0x24])) [2 DMA_InitStruct_2(D)->DMA_Priority+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":189 -1
+     (nil))
+(insn 16 15 0 2 (set (mem:SI (plus:SI (reg/v/f:SI 72 [ DMA_InitStruct ])
+                (const_int 40 [0x28])) [2 DMA_InitStruct_2(D)->DMA_M2M+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":190 -1
+     (nil))
+
+;; Function DMA_Cmd (DMA_Cmd, funcdef_no=32, decl_uid=5529, cgraph_uid=32, symbol_order=32)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 12 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 76 [ DMAy_Channelx ])
+        (reg:SI 10 a0 [ DMAy_Channelx ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":205 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 77 [ NewState ])
+        (reg:SI 11 a1 [ NewState ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":205 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(jump_insn 7 4 8 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 77 [ NewState ])
+                (const_int 0 [0]))
+            (label_ref 14)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":206 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 14)
+(note 8 7 9 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 9 8 10 4 (set (reg:SI 72 [ _1 ])
+        (mem/v:SI (reg/v/f:SI 76 [ DMAy_Channelx ]) [2 DMAy_Channelx_8(D)->CFGR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":208 -1
+     (nil))
+(insn 10 9 11 4 (set (reg:SI 73 [ _2 ])
+        (ior:SI (reg:SI 72 [ _1 ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":208 -1
+     (nil))
+(insn 11 10 12 4 (set (mem/v:SI (reg/v/f:SI 76 [ DMAy_Channelx ]) [2 DMAy_Channelx_8(D)->CFGR+0 S4 A32])
+        (reg:SI 73 [ _2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":208 -1
+     (nil))
+(jump_insn 12 11 13 4 (set (pc)
+        (label_ref:SI 23)) 250 {jump}
+     (nil)
+ -> 23)
+(barrier 13 12 14)
+(code_label 14 13 15 5 29 (nil) [1 uses])
+(note 15 14 16 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 16 15 17 5 (set (reg:SI 74 [ _3 ])
+        (mem/v:SI (reg/v/f:SI 76 [ DMAy_Channelx ]) [2 DMAy_Channelx_8(D)->CFGR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":212 -1
+     (nil))
+(insn 17 16 18 5 (set (reg:SI 79)
+        (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":212 -1
+     (nil))
+(insn 18 17 19 5 (set (reg:SI 78)
+        (plus:SI (reg:SI 79)
+            (const_int -2 [0xfffffffffffffffe]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":212 -1
+     (expr_list:REG_EQUAL (const_int 65534 [0xfffe])
+        (nil)))
+(insn 19 18 20 5 (set (reg:SI 75 [ _4 ])
+        (and:SI (reg:SI 74 [ _3 ])
+            (reg:SI 78))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":212 -1
+     (nil))
+(insn 20 19 23 5 (set (mem/v:SI (reg/v/f:SI 76 [ DMAy_Channelx ]) [2 DMAy_Channelx_8(D)->CFGR+0 S4 A32])
+        (reg:SI 75 [ _4 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":212 -1
+     (nil))
+(code_label 23 20 24 7 28 (nil) [1 uses])
+(note 24 23 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+;; Function DMA_ITConfig (DMA_ITConfig, funcdef_no=33, decl_uid=5533, cgraph_uid=33, symbol_order=33)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 13 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 6 NOTE_INSN_DELETED)
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 6 3 2 (set (reg/v/f:SI 77 [ DMAy_Channelx ])
+        (reg:SI 10 a0 [ DMAy_Channelx ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":233 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 78 [ DMA_IT ])
+        (reg:SI 11 a1 [ DMA_IT ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":233 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 79 [ NewState ])
+        (reg:SI 12 a2 [ NewState ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":233 -1
+     (nil))
+(note 5 4 8 2 NOTE_INSN_FUNCTION_BEG)
+(jump_insn 8 5 9 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 79 [ NewState ])
+                (const_int 0 [0]))
+            (label_ref 15)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":234 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 15)
+(note 9 8 10 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 10 9 11 4 (set (reg:SI 72 [ _1 ])
+        (mem/v:SI (reg/v/f:SI 77 [ DMAy_Channelx ]) [2 DMAy_Channelx_9(D)->CFGR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":236 -1
+     (nil))
+(insn 11 10 12 4 (set (reg:SI 73 [ _2 ])
+        (ior:SI (reg:SI 72 [ _1 ])
+            (reg/v:SI 78 [ DMA_IT ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":236 -1
+     (nil))
+(insn 12 11 13 4 (set (mem/v:SI (reg/v/f:SI 77 [ DMAy_Channelx ]) [2 DMAy_Channelx_9(D)->CFGR+0 S4 A32])
+        (reg:SI 73 [ _2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":236 -1
+     (nil))
+(jump_insn 13 12 14 4 (set (pc)
+        (label_ref:SI 23)) 250 {jump}
+     (nil)
+ -> 23)
+(barrier 14 13 15)
+(code_label 15 14 16 5 33 (nil) [1 uses])
+(note 16 15 17 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 17 16 18 5 (set (reg:SI 74 [ _3 ])
+        (mem/v:SI (reg/v/f:SI 77 [ DMAy_Channelx ]) [2 DMAy_Channelx_9(D)->CFGR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":240 -1
+     (nil))
+(insn 18 17 19 5 (set (reg:SI 80)
+        (not:SI (reg/v:SI 78 [ DMA_IT ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":240 -1
+     (nil))
+(insn 19 18 20 5 (set (reg:SI 76 [ _5 ])
+        (and:SI (reg:SI 80)
+            (reg:SI 74 [ _3 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":240 -1
+     (nil))
+(insn 20 19 23 5 (set (mem/v:SI (reg/v/f:SI 77 [ DMAy_Channelx ]) [2 DMAy_Channelx_9(D)->CFGR+0 S4 A32])
+        (reg:SI 76 [ _5 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":240 -1
+     (nil))
+(code_label 23 20 24 7 32 (nil) [1 uses])
+(note 24 23 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+;; Function DMA_SetCurrDataCounter (DMA_SetCurrDataCounter, funcdef_no=34, decl_uid=5536, cgraph_uid=34, symbol_order=34)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v/f:SI 73 [ DMAy_Channelx ])
+        (reg:SI 10 a0 [ DMAy_Channelx ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":257 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 74 [ DataNumber ])
+        (reg:SI 11 a1 [ DataNumber ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":257 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg:SI 72 [ _1 ])
+        (reg/v:SI 74 [ DataNumber ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":258 -1
+     (nil))
+(insn 8 7 0 2 (set (mem/v:SI (plus:SI (reg/v/f:SI 73 [ DMAy_Channelx ])
+                (const_int 4 [0x4])) [2 DMAy_Channelx_4(D)->CNTR+0 S4 A32])
+        (reg:SI 72 [ _1 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":258 -1
+     (nil))
+
+;; Function DMA_GetCurrDataCounter (DMA_GetCurrDataCounter, funcdef_no=35, decl_uid=5538, cgraph_uid=35, symbol_order=35)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 10.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 74 [ DMAy_Channelx ])
+        (reg:SI 10 a0 [ DMAy_Channelx ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":274 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SI 72 [ _1 ])
+        (mem/v:SI (plus:SI (reg/v/f:SI 74 [ DMAy_Channelx ])
+                (const_int 4 [0x4])) [2 DMAy_Channelx_3(D)->CNTR+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":275 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:HI 75)
+        (subreg:HI (reg:SI 72 [ _1 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":275 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 76)
+        (zero_extend:SI (reg:HI 75))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":275 -1
+     (nil))
+(insn 9 8 13 2 (set (reg:SI 73 [ <retval> ])
+        (reg:SI 76)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":275 -1
+     (nil))
+(insn 13 9 14 2 (set (reg/i:SI 10 a0)
+        (reg:SI 73 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":276 -1
+     (nil))
+(insn 14 13 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":276 -1
+     (nil))
+
+;; Function DMA_GetFlagStatus (DMA_GetFlagStatus, funcdef_no=36, decl_uid=5540, cgraph_uid=36, symbol_order=36)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 35.
+Merging block 9 into block 8...
+Merged blocks 8 and 9.
+Merged 8 and 9 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 78 [ DMAy_FLAG ])
+        (reg:SI 10 a0 [ DMAy_FLAG ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":360 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SI 79)
+        (const_int 268435456 [0x10000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":364 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 80)
+        (and:SI (reg/v:SI 78 [ DMAy_FLAG ])
+            (reg:SI 79))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":364 -1
+     (nil))
+(jump_insn 8 7 9 2 (set (pc)
+        (if_then_else (eq (reg:SI 80)
+                (const_int 0 [0]))
+            (label_ref 15)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":364 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 15)
+(note 9 8 10 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 10 9 11 4 (set (reg:SI 82)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":366 -1
+     (nil))
+(insn 11 10 12 4 (set (reg/f:SI 81)
+        (plus:SI (reg:SI 82)
+            (const_int 1024 [0x400]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":366 -1
+     (expr_list:REG_EQUAL (const_int 1073873920 [0x40020400])
+        (nil)))
+(insn 12 11 13 4 (set (reg/v:SI 75 [ tmpreg ])
+        (mem/v:SI (reg/f:SI 81) [2 MEM[(struct DMA_TypeDef *)1073873920B].INTFR+0 S4 A128])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":366 -1
+     (nil))
+(jump_insn 13 12 14 4 (set (pc)
+        (label_ref 30)) -1
+     (nil)
+ -> 30)
+(barrier 14 13 15)
+(code_label 15 14 16 5 39 (nil) [1 uses])
+(note 16 15 17 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 17 16 18 5 (set (reg:SI 83)
+        (const_int 536870912 [0x20000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":368 -1
+     (nil))
+(insn 18 17 19 5 (set (reg:SI 84)
+        (and:SI (reg/v:SI 78 [ DMAy_FLAG ])
+            (reg:SI 83))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":368 -1
+     (nil))
+(jump_insn 19 18 20 5 (set (pc)
+        (if_then_else (eq (reg:SI 84)
+                (const_int 0 [0]))
+            (label_ref 26)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":368 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 26)
+(note 20 19 21 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 21 20 22 6 (set (reg:SI 86)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":370 -1
+     (nil))
+(insn 22 21 23 6 (set (reg/f:SI 85)
+        (plus:SI (reg:SI 86)
+            (const_int 1232 [0x4d0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":370 -1
+     (expr_list:REG_EQUAL (const_int 1073874128 [0x400204d0])
+        (nil)))
+(insn 23 22 24 6 (set (reg/v:SI 75 [ tmpreg ])
+        (mem/v:SI (reg/f:SI 85) [2 MEM[(struct DMA_TypeDef *)1073874128B].INTFR+0 S4 A128])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":370 -1
+     (nil))
+(jump_insn 24 23 25 6 (set (pc)
+        (label_ref 30)) -1
+     (nil)
+ -> 30)
+(barrier 25 24 26)
+(code_label 26 25 27 7 41 (nil) [1 uses])
+(note 27 26 28 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 28 27 29 7 (set (reg/f:SI 87)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":374 -1
+     (nil))
+(insn 29 28 30 7 (set (reg/v:SI 75 [ tmpreg ])
+        (mem/v:SI (reg/f:SI 87) [2 MEM[(struct DMA_TypeDef *)1073872896B].INTFR+0 S4 A128])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":374 -1
+     (nil))
+(code_label 30 29 31 8 40 (nil) [2 uses])
+(note 31 30 32 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 32 31 33 8 (set (reg:SI 89)
+        (and:SI (reg/v:SI 75 [ tmpreg ])
+            (reg/v:SI 78 [ DMAy_FLAG ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":377 -1
+     (nil))
+(insn 33 32 34 8 (set (reg:SI 91)
+        (ne:SI (reg:SI 89)
+            (const_int 0 [0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":377 -1
+     (nil))
+(insn 34 33 38 8 (set (reg:SI 77 [ <retval> ])
+        (reg:SI 91)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":386 -1
+     (nil))
+(insn 38 34 39 8 (set (reg/i:SI 10 a0)
+        (reg:SI 77 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":387 -1
+     (nil))
+(insn 39 38 0 8 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":387 -1
+     (nil))
+
+;; Function DMA_ClearFlag (DMA_ClearFlag, funcdef_no=37, decl_uid=5542, cgraph_uid=37, symbol_order=37)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 13 from 8 to 9.
+Redirecting jump 24 from 8 to 9.
+Merging block 8 into block 7...
+Merged blocks 7 and 8.
+Merged 7 and 8 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 74 [ DMAy_FLAG ])
+        (reg:SI 10 a0 [ DMAy_FLAG ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":471 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SI 75)
+        (const_int 268435456 [0x10000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":472 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 76)
+        (and:SI (reg/v:SI 74 [ DMAy_FLAG ])
+            (reg:SI 75))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":472 -1
+     (nil))
+(jump_insn 8 7 9 2 (set (pc)
+        (if_then_else (eq (reg:SI 76)
+                (const_int 0 [0]))
+            (label_ref 15)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":472 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 15)
+(note 9 8 10 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 10 9 11 4 (set (reg:SI 78)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":474 -1
+     (nil))
+(insn 11 10 12 4 (set (reg/f:SI 77)
+        (plus:SI (reg:SI 78)
+            (const_int 1024 [0x400]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":474 -1
+     (expr_list:REG_EQUAL (const_int 1073873920 [0x40020400])
+        (nil)))
+(insn 12 11 13 4 (set (mem/v:SI (plus:SI (reg/f:SI 77)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073873920B].INTFCR+0 S4 A32])
+        (reg/v:SI 74 [ DMAy_FLAG ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":474 -1
+     (nil))
+(jump_insn 13 12 14 4 (set (pc)
+        (label_ref:SI 32)) 250 {jump}
+     (nil)
+ -> 32)
+(barrier 14 13 15)
+(code_label 15 14 16 5 43 (nil) [1 uses])
+(note 16 15 17 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 17 16 18 5 (set (reg:SI 79)
+        (const_int 536870912 [0x20000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":476 -1
+     (nil))
+(insn 18 17 19 5 (set (reg:SI 80)
+        (and:SI (reg/v:SI 74 [ DMAy_FLAG ])
+            (reg:SI 79))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":476 -1
+     (nil))
+(jump_insn 19 18 20 5 (set (pc)
+        (if_then_else (eq (reg:SI 80)
+                (const_int 0 [0]))
+            (label_ref 26)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":476 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 26)
+(note 20 19 21 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 21 20 22 6 (set (reg:SI 82)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":478 -1
+     (nil))
+(insn 22 21 23 6 (set (reg/f:SI 81)
+        (plus:SI (reg:SI 82)
+            (const_int 1232 [0x4d0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":478 -1
+     (expr_list:REG_EQUAL (const_int 1073874128 [0x400204d0])
+        (nil)))
+(insn 23 22 24 6 (set (mem/v:SI (plus:SI (reg/f:SI 81)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073874128B].INTFCR+0 S4 A32])
+        (reg/v:SI 74 [ DMAy_FLAG ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":478 -1
+     (nil))
+(jump_insn 24 23 25 6 (set (pc)
+        (label_ref:SI 32)) 250 {jump}
+     (nil)
+ -> 32)
+(barrier 25 24 26)
+(code_label 26 25 27 7 45 (nil) [1 uses])
+(note 27 26 28 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 28 27 29 7 (set (reg/f:SI 83)
+        (const_int 1073872896 [0x40020000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":482 -1
+     (nil))
+(insn 29 28 32 7 (set (mem/v:SI (plus:SI (reg/f:SI 83)
+                (const_int 4 [0x4])) [2 MEM[(struct DMA_TypeDef *)1073872896B].INTFCR+0 S4 A32])
+        (reg/v:SI 74 [ DMAy_FLAG ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":482 -1
+     (nil))
+(code_label 32 29 33 9 42 (nil) [2 uses])
+(note 33 32 0 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+
+;; Function DMA_GetITStatus (DMA_GetITStatus, funcdef_no=41, decl_uid=5544, cgraph_uid=38, symbol_order=38)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 9.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 73 [ DMAy_IT ])
+        (reg:SI 10 a0 [ DMAy_IT ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":568 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SI 10 a0)
+        (reg/v:SI 73 [ DMAy_IT ])) -1
+     (nil))
+(call_insn 7 6 8 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("DMA_GetFlagStatus") [flags 0x3] <function_decl 0658ed20 DMA_GetFlagStatus>) [0 DMA_GetFlagStatus S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_GetFlagStatus") [flags 0x3] <function_decl 0658ed20 DMA_GetFlagStatus>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 8 7 12 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 10 a0)) -1
+     (nil))
+(insn 12 8 13 2 (set (reg/i:SI 10 a0)
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":568 -1
+     (nil))
+(insn 13 12 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":568 -1
+     (nil))
+
+;; Function DMA_ClearITPendingBit (DMA_ClearITPendingBit, funcdef_no=43, decl_uid=5546, cgraph_uid=39, symbol_order=39)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 72 [ DMAy_IT ])
+        (reg:SI 10 a0 [ DMAy_IT ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_dma.c":678 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SI 10 a0)
+        (reg/v:SI 72 [ DMAy_IT ])) -1
+     (nil))
+(call_insn 7 6 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("DMA_ClearFlag") [flags 0x3] <function_decl 0658ed98 DMA_ClearFlag>) [0 DMA_ClearFlag S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_ClearFlag") [flags 0x3] <function_decl 0658ed98 DMA_ClearFlag>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))

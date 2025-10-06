@@ -1,0 +1,997 @@
+
+;; Function u8x8_d_ssd1316_generic (u8x8_d_ssd1316_generic, funcdef_no=0, decl_uid=3250, cgraph_uid=0, symbol_order=4)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+;; Generating RTL for gimple basic block 15
+
+;; Generating RTL for gimple basic block 16
+
+;; Generating RTL for gimple basic block 17
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 145.
+Merging block 21 into block 20...
+Merged blocks 20 and 21.
+Merged 20 and 21 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 15 NOTE_INSN_DELETED)
+(note 15 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 15 3 2 (set (reg/v/f:SI 89 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":80 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 90 [ msg ])
+        (reg:SI 11 a1 [ msg ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":80 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 91 [ arg_int ])
+        (reg:SI 12 a2 [ arg_int ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":80 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v/f:SI 92 [ arg_ptr ])
+        (reg:SI 13 a3 [ arg_ptr ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":80 -1
+     (nil))
+(note 6 5 17 2 NOTE_INSN_FUNCTION_BEG)
+(insn 17 6 18 2 (set (reg:SI 93)
+        (const_int 13 [0xd])) -1
+     (nil))
+(jump_insn 18 17 19 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 90 [ msg ])
+                (reg:SI 93))
+            (label_ref 58)
+            (pc))) -1
+     (int_list:REG_BR_PROB 214748372 (nil))
+ -> 58)
+(note 19 18 20 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 20 19 21 4 (set (reg:SI 94)
+        (const_int 13 [0xd])) -1
+     (nil))
+(jump_insn 21 20 22 4 (set (pc)
+        (if_then_else (gtu (reg/v:SI 90 [ msg ])
+                (reg:SI 94))
+            (label_ref 28)
+            (pc))) -1
+     (int_list:REG_BR_PROB 671088644 (nil))
+ -> 28)
+(note 22 21 23 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 5 (set (reg:SI 95)
+        (const_int 11 [0xb])) -1
+     (nil))
+(jump_insn 24 23 27 5 (set (pc)
+        (if_then_else (eq (reg/v:SI 90 [ msg ])
+                (reg:SI 95))
+            (label_ref 38)
+            (pc))) -1
+     (int_list:REG_BR_PROB 715827884 (nil))
+ -> 38)
+(note 27 24 13 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 13 27 25 6 (set (reg:SI 88 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":144 -1
+     (nil))
+(jump_insn 25 13 26 6 (set (pc)
+        (label_ref 142)) -1
+     (nil)
+ -> 142)
+(barrier 26 25 28)
+(code_label 28 26 29 7 3 (nil) [1 uses])
+(note 29 28 30 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 30 29 31 7 (set (reg:SI 96)
+        (const_int 14 [0xe])) -1
+     (nil))
+(jump_insn 31 30 32 7 (set (pc)
+        (if_then_else (eq (reg/v:SI 90 [ msg ])
+                (reg:SI 96))
+            (label_ref 84)
+            (pc))) -1
+     (int_list:REG_BR_PROB 429496732 (nil))
+ -> 84)
+(note 32 31 33 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 33 32 34 8 (set (reg:SI 97)
+        (const_int 15 [0xf])) -1
+     (nil))
+(jump_insn 34 33 37 8 (set (pc)
+        (if_then_else (eq (reg/v:SI 90 [ msg ])
+                (reg:SI 97))
+            (label_ref 98)
+            (pc))) -1
+     (int_list:REG_BR_PROB 715827884 (nil))
+ -> 98)
+(note 37 34 14 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 14 37 35 9 (set (reg:SI 88 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":144 -1
+     (nil))
+(jump_insn 35 14 36 9 (set (pc)
+        (label_ref 142)) -1
+     (nil)
+ -> 142)
+(barrier 36 35 38)
+(code_label 38 36 39 10 4 (nil) [1 uses])
+(note 39 38 40 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 40 39 41 10 (set (pc)
+        (if_then_else (ne (reg/v:SI 91 [ arg_int ])
+                (const_int 0 [0]))
+            (label_ref 49)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":97 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 49)
+(note 41 40 42 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 42 41 43 11 (set (reg:SI 99)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":98 -1
+     (nil))
+(insn 43 42 44 11 (set (reg/f:SI 98)
+        (lo_sum:SI (reg:SI 99)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":98 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 44 43 45 11 (set (reg:SI 11 a1)
+        (reg/f:SI 98)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":98 -1
+     (nil))
+(insn 45 44 46 11 (set (reg:SI 10 a0)
+        (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":98 -1
+     (nil))
+(call_insn 46 45 11 11 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0629c168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":98 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0629c168 u8x8_cad_SendSequence>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 11 46 47 11 (set (reg:SI 88 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":146 -1
+     (nil))
+(jump_insn 47 11 48 11 (set (pc)
+        (label_ref 142)) -1
+     (nil)
+ -> 142)
+(barrier 48 47 49)
+(code_label 49 48 50 12 8 (nil) [1 uses])
+(note 50 49 51 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 51 50 52 12 (set (reg:SI 101)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":100 -1
+     (nil))
+(insn 52 51 53 12 (set (reg/f:SI 100)
+        (lo_sum:SI (reg:SI 101)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":100 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 53 52 54 12 (set (reg:SI 11 a1)
+        (reg/f:SI 100)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":100 -1
+     (nil))
+(insn 54 53 55 12 (set (reg:SI 10 a0)
+        (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":100 -1
+     (nil))
+(call_insn 55 54 9 12 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0629c168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":100 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0629c168 u8x8_cad_SendSequence>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 9 55 56 12 (set (reg:SI 88 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":146 -1
+     (nil))
+(jump_insn 56 9 57 12 (set (pc)
+        (label_ref 142)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":100 -1
+     (nil)
+ -> 142)
+(barrier 57 56 58)
+(code_label 58 57 59 13 2 (nil) [1 uses])
+(note 59 58 60 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 60 59 61 13 (set (pc)
+        (if_then_else (ne (reg/v:SI 91 [ arg_int ])
+                (const_int 0 [0]))
+            (label_ref 72)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":103 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 72)
+(note 61 60 62 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 62 61 63 14 (set (reg:SI 103)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":105 -1
+     (nil))
+(insn 63 62 64 14 (set (reg/f:SI 102)
+        (lo_sum:SI (reg:SI 103)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":105 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 64 63 65 14 (set (reg:SI 11 a1)
+        (reg/f:SI 102)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":105 -1
+     (nil))
+(insn 65 64 66 14 (set (reg:SI 10 a0)
+        (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":105 -1
+     (nil))
+(call_insn 66 65 67 14 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0629c168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":105 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0629c168 u8x8_cad_SendSequence>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 67 66 68 14 (set (reg/f:SI 104)
+        (mem/f:SI (reg/v/f:SI 89 [ u8x8 ]) [4 u8x8_19(D)->display_info+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":106 -1
+     (nil))
+(insn 68 67 69 14 (set (reg:QI 105)
+        (mem:QI (plus:SI (reg/f:SI 104)
+                (const_int 18 [0x12])) [0 _1->default_x_offset+0 S1 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":106 -1
+     (nil))
+(insn 69 68 10 14 (set (mem:QI (plus:SI (reg/v/f:SI 89 [ u8x8 ])
+                (const_int 34 [0x22])) [0 u8x8_19(D)->x_offset+0 S1 A16])
+        (reg:QI 105)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":106 -1
+     (nil))
+(insn 10 69 70 14 (set (reg:SI 88 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":146 -1
+     (nil))
+(jump_insn 70 10 71 14 (set (pc)
+        (label_ref 142)) -1
+     (nil)
+ -> 142)
+(barrier 71 70 72)
+(code_label 72 71 73 15 9 (nil) [1 uses])
+(note 73 72 74 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 74 73 75 15 (set (reg:SI 107)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":110 -1
+     (nil))
+(insn 75 74 76 15 (set (reg/f:SI 106)
+        (lo_sum:SI (reg:SI 107)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":110 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 76 75 77 15 (set (reg:SI 11 a1)
+        (reg/f:SI 106)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":110 -1
+     (nil))
+(insn 77 76 78 15 (set (reg:SI 10 a0)
+        (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":110 -1
+     (nil))
+(call_insn 78 77 79 15 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0629c168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":110 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0629c168 u8x8_cad_SendSequence>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 79 78 80 15 (set (reg/f:SI 108)
+        (mem/f:SI (reg/v/f:SI 89 [ u8x8 ]) [4 u8x8_19(D)->display_info+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":111 -1
+     (nil))
+(insn 80 79 81 15 (set (reg:QI 109)
+        (mem:QI (plus:SI (reg/f:SI 108)
+                (const_int 19 [0x13])) [0 _3->flipmode_x_offset+0 S1 A8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":111 -1
+     (nil))
+(insn 81 80 8 15 (set (mem:QI (plus:SI (reg/v/f:SI 89 [ u8x8 ])
+                (const_int 34 [0x22])) [0 u8x8_19(D)->x_offset+0 S1 A16])
+        (reg:QI 109)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":111 -1
+     (nil))
+(insn 8 81 82 15 (set (reg:SI 88 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":146 -1
+     (nil))
+(jump_insn 82 8 83 15 (set (pc)
+        (label_ref 142)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":111 -1
+     (nil)
+ -> 142)
+(barrier 83 82 84)
+(code_label 84 83 85 16 6 (nil) [1 uses])
+(note 85 84 86 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 86 85 87 16 (set (reg:SI 10 a0)
+        (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":116 -1
+     (nil))
+(call_insn 87 86 88 16 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0624cf78 u8x8_cad_StartTransfer>) [0 u8x8_cad_StartTransfer S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":116 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0624cf78 u8x8_cad_StartTransfer>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 88 87 89 16 (set (reg:SI 11 a1)
+        (const_int 129 [0x81])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":117 -1
+     (nil))
+(insn 89 88 90 16 (set (reg:SI 10 a0)
+        (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":117 -1
+     (nil))
+(call_insn 90 89 91 16 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0624cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":117 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0624cd98 u8x8_cad_SendCmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 91 90 92 16 (set (reg:SI 11 a1)
+        (reg/v:SI 91 [ arg_int ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":118 -1
+     (nil))
+(insn 92 91 93 16 (set (reg:SI 10 a0)
+        (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":118 -1
+     (nil))
+(call_insn 93 92 94 16 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0624ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":118 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0624ce10 u8x8_cad_SendArg>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 94 93 95 16 (set (reg:SI 10 a0)
+        (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":119 -1
+     (nil))
+(call_insn 95 94 7 16 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 0629c000 u8x8_cad_EndTransfer>) [0 u8x8_cad_EndTransfer S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":119 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 0629c000 u8x8_cad_EndTransfer>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 7 95 96 16 (set (reg:SI 88 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":146 -1
+     (nil))
+(jump_insn 96 7 97 16 (set (pc)
+        (label_ref 142)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":120 -1
+     (nil)
+ -> 142)
+(barrier 97 96 98)
+(code_label 98 97 99 17 7 (nil) [1 uses])
+(note 99 98 100 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 100 99 101 17 (set (reg/v:SI 83 [ x ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 92 [ arg_ptr ])
+                    (const_int 5 [0x5])) [0 MEM[(struct u8x8_tile_t *)arg_ptr_30(D)].x_pos+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":123 -1
+     (nil))
+(insn 101 100 102 17 (set (reg:SI 110)
+        (ashift:SI (reg/v:SI 83 [ x ])
+            (const_int 3 [0x3]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":124 -1
+     (nil))
+(insn 102 101 103 17 (set (reg/v:SI 84 [ x ])
+        (zero_extend:SI (subreg:QI (reg:SI 110) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":124 -1
+     (nil))
+(insn 103 102 104 17 (set (reg:QI 111)
+        (mem:QI (plus:SI (reg/v/f:SI 89 [ u8x8 ])
+                (const_int 34 [0x22])) [0 u8x8_19(D)->x_offset+0 S1 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":125 -1
+     (nil))
+(insn 104 103 105 17 (set (reg:SI 112)
+        (plus:SI (reg/v:SI 84 [ x ])
+            (subreg:SI (reg:QI 111) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":125 -1
+     (nil))
+(insn 105 104 106 17 (set (reg/v:SI 85 [ x ])
+        (zero_extend:SI (subreg:QI (reg:SI 112) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":125 -1
+     (nil))
+(insn 106 105 107 17 (set (reg:SI 10 a0)
+        (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":127 -1
+     (nil))
+(call_insn 107 106 108 17 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0624cf78 u8x8_cad_StartTransfer>) [0 u8x8_cad_StartTransfer S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":127 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0624cf78 u8x8_cad_StartTransfer>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 108 107 109 17 (set (reg:SI 113)
+        (lshiftrt:SI (reg/v:SI 85 [ x ])
+            (const_int 4 [0x4]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":129 -1
+     (nil))
+(insn 109 108 110 17 (set (reg:QI 114)
+        (subreg:QI (reg:SI 113) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":129 -1
+     (nil))
+(insn 110 109 111 17 (set (reg:SI 115)
+        (ior:SI (subreg:SI (reg:QI 114) 0)
+            (const_int 16 [0x10]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":129 -1
+     (nil))
+(insn 111 110 112 17 (set (reg:SI 116)
+        (zero_extend:SI (subreg:QI (reg:SI 115) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":129 -1
+     (nil))
+(insn 112 111 113 17 (set (reg:SI 11 a1)
+        (reg:SI 116)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":129 -1
+     (nil))
+(insn 113 112 114 17 (set (reg:SI 10 a0)
+        (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":129 -1
+     (nil))
+(call_insn 114 113 115 17 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0624cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":129 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0624cd98 u8x8_cad_SendCmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 115 114 116 17 (set (reg:SI 117)
+        (and:SI (reg/v:SI 85 [ x ])
+            (const_int 15 [0xf]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":130 -1
+     (nil))
+(insn 116 115 117 17 (set (reg:SI 118)
+        (zero_extend:SI (subreg:QI (reg:SI 117) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":130 -1
+     (nil))
+(insn 117 116 118 17 (set (reg:SI 11 a1)
+        (reg:SI 118)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":130 -1
+     (nil))
+(insn 118 117 119 17 (set (reg:SI 10 a0)
+        (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":130 -1
+     (nil))
+(call_insn 119 118 120 17 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0624cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":130 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0624cd98 u8x8_cad_SendCmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 120 119 121 17 (set (reg:QI 119)
+        (mem:QI (plus:SI (reg/v/f:SI 92 [ arg_ptr ])
+                (const_int 6 [0x6])) [0 MEM[(struct u8x8_tile_t *)arg_ptr_30(D)].y_pos+0 S1 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":131 -1
+     (nil))
+(insn 121 120 122 17 (set (reg:SI 120)
+        (ior:SI (subreg:SI (reg:QI 119) 0)
+            (const_int -80 [0xffffffffffffffb0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":131 -1
+     (nil))
+(insn 122 121 123 17 (set (reg:SI 121)
+        (zero_extend:SI (subreg:QI (reg:SI 120) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":131 -1
+     (nil))
+(insn 123 122 124 17 (set (reg:SI 11 a1)
+        (reg:SI 121)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":131 -1
+     (nil))
+(insn 124 123 125 17 (set (reg:SI 10 a0)
+        (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":131 -1
+     (nil))
+(call_insn 125 124 137 17 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0624cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":131 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0624cd98 u8x8_cad_SendCmd>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(code_label 137 125 126 18 10 (nil) [1 uses])
+(note 126 137 127 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(insn 127 126 128 18 (set (reg:SI 122)
+        (mem/f:SI (reg/v/f:SI 92 [ arg_ptr ]) [2 MEM[(struct u8x8_tile_t *)arg_ptr_30(D)].tile_ptr+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":137 -1
+     (nil))
+(insn 128 127 129 18 (set (reg:QI 123)
+        (mem:QI (plus:SI (reg/v/f:SI 92 [ arg_ptr ])
+                (const_int 4 [0x4])) [0 MEM[(struct u8x8_tile_t *)arg_ptr_30(D)].cnt+0 S1 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":137 -1
+     (nil))
+(insn 129 128 130 18 (set (reg:SI 124)
+        (ashift:SI (subreg:SI (reg:QI 123) 0)
+            (const_int 3 [0x3]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":137 -1
+     (nil))
+(insn 130 129 131 18 (set (reg:SI 125)
+        (zero_extend:SI (subreg:QI (reg:SI 124) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":137 -1
+     (nil))
+(insn 131 130 132 18 (set (reg:SI 12 a2)
+        (reg:SI 122)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":137 -1
+     (nil))
+(insn 132 131 133 18 (set (reg:SI 11 a1)
+        (reg:SI 125)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":137 -1
+     (nil))
+(insn 133 132 134 18 (set (reg:SI 10 a0)
+        (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":137 -1
+     (nil))
+(call_insn 134 133 135 18 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 0624cf00 u8x8_cad_SendData>) [0 u8x8_cad_SendData S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":137 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 0624cf00 u8x8_cad_SendData>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (nil)))))
+(insn 135 134 136 18 (set (reg:SI 126)
+        (plus:SI (reg/v:SI 91 [ arg_int ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":138 -1
+     (nil))
+(insn 136 135 138 18 (set (reg/v:SI 91 [ arg_int ])
+        (zero_extend:SI (subreg:QI (reg:SI 126) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":138 -1
+     (nil))
+(jump_insn 138 136 139 18 (set (pc)
+        (if_then_else (ne (reg/v:SI 91 [ arg_int ])
+                (const_int 0 [0]))
+            (label_ref 137)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":139 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 137)
+(note 139 138 140 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(insn 140 139 141 19 (set (reg:SI 10 a0)
+        (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":141 -1
+     (nil))
+(call_insn 141 140 12 19 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 0629c000 u8x8_cad_EndTransfer>) [0 u8x8_cad_EndTransfer S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":141 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 0629c000 u8x8_cad_EndTransfer>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 12 141 142 19 (set (reg:SI 88 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":146 -1
+     (nil))
+(code_label 142 12 143 20 5 (nil) [7 uses])
+(note 143 142 144 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+(insn 144 143 148 20 (set (reg:SI 88 [ <retval> ])
+        (reg:SI 88 [ <retval> ])) -1
+     (nil))
+(insn 148 144 149 20 (set (reg/i:SI 10 a0)
+        (reg:SI 88 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":147 -1
+     (nil))
+(insn 149 148 0 20 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":147 -1
+     (nil))
+
+;; Function u8x8_d_ssd1316_128x32 (u8x8_d_ssd1316_128x32, funcdef_no=1, decl_uid=2451, cgraph_uid=1, symbol_order=7)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+Edge 2->7 redirected to 10
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 46.
+Merging block 10 into block 9...
+Merged blocks 9 and 10.
+Merged 9 and 10 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 10 NOTE_INSN_DELETED)
+(note 10 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 10 3 2 (set (reg/v/f:SI 73 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":218 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 74 [ msg ])
+        (reg:SI 11 a1 [ msg ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":218 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 75 [ arg_int ])
+        (reg:SI 12 a2 [ arg_int ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":218 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v/f:SI 76 [ arg_ptr ])
+        (reg:SI 13 a3 [ arg_ptr ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":218 -1
+     (nil))
+(note 6 5 12 2 NOTE_INSN_FUNCTION_BEG)
+(insn 12 6 13 2 (set (reg:SI 13 a3)
+        (reg/v/f:SI 76 [ arg_ptr ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":220 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 12 a2)
+        (reg/v:SI 75 [ arg_int ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":220 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 11 a1)
+        (reg/v:SI 74 [ msg ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":220 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":220 -1
+     (nil))
+(call_insn 16 15 17 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_d_ssd1316_generic") [flags 0x3] <function_decl 062ddc30 u8x8_d_ssd1316_generic>) [0 u8x8_d_ssd1316_generic S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":220 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_ssd1316_generic") [flags 0x3] <function_decl 062ddc30 u8x8_d_ssd1316_generic>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 17 16 18 2 (set (reg:SI 77)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":220 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 77)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":220 -1
+     (nil))
+(jump_insn 19 18 20 2 (set (pc)
+        (if_then_else (ne (reg:SI 72 [ <retval> ])
+                (const_int 0 [0]))
+            (label_ref:SI 55)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":220 180 {*branchsi}
+     (int_list:REG_BR_PROB 365072228 (nil))
+ -> 55)
+(note 20 19 21 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 21 20 22 4 (set (reg:SI 78)
+        (const_int 9 [0x9])) -1
+     (nil))
+(jump_insn 22 21 23 4 (set (pc)
+        (if_then_else (eq (reg/v:SI 74 [ msg ])
+                (reg:SI 78))
+            (label_ref 36)
+            (pc))) -1
+     (int_list:REG_BR_PROB 357913948 (nil))
+ -> 36)
+(note 23 22 24 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 24 23 25 5 (set (reg:SI 79)
+        (const_int 10 [0xa])) -1
+     (nil))
+(jump_insn 25 24 26 5 (set (pc)
+        (if_then_else (ne (reg/v:SI 74 [ msg ])
+                (reg:SI 79))
+            (label_ref 43)
+            (pc))) -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 43)
+(note 26 25 27 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 27 26 28 6 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":226 -1
+     (nil))
+(call_insn 28 27 29 6 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 0624c618 u8x8_d_helper_display_init>) [0 u8x8_d_helper_display_init S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":226 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 0624c618 u8x8_d_helper_display_init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 29 28 30 6 (set (reg:SI 81)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":227 -1
+     (nil))
+(insn 30 29 31 6 (set (reg/f:SI 80)
+        (lo_sum:SI (reg:SI 81)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":227 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 31 30 32 6 (set (reg:SI 11 a1)
+        (reg/f:SI 80)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":227 -1
+     (nil))
+(insn 32 31 33 6 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":227 -1
+     (nil))
+(call_insn 33 32 7 6 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0629c168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":227 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0629c168 u8x8_cad_SendSequence>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 7 33 34 6 (set (reg:SI 72 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":235 -1
+     (nil))
+(jump_insn 34 7 35 6 (set (pc)
+        (label_ref 43)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":228 -1
+     (nil)
+ -> 43)
+(barrier 35 34 36)
+(code_label 36 35 37 7 20 (nil) [1 uses])
+(note 37 36 38 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 38 37 39 7 (set (reg:SI 83)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":230 -1
+     (nil))
+(insn 39 38 40 7 (set (reg/f:SI 82)
+        (lo_sum:SI (reg:SI 83)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":230 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 40 39 41 7 (set (reg:SI 11 a1)
+        (reg/f:SI 82)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":230 -1
+     (nil))
+(insn 41 40 42 7 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":230 -1
+     (nil))
+(call_insn 42 41 9 7 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 0624c5a0 u8x8_d_helper_display_setup_memory>) [0 u8x8_d_helper_display_setup_memory S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":230 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 0624c5a0 u8x8_d_helper_display_setup_memory>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 9 42 52 7 (set (reg:SI 72 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":235 -1
+     (nil))
+(jump_insn 52 9 53 7 (set (pc)
+        (label_ref 43)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":231 -1
+     (nil)
+ -> 43)
+(barrier 53 52 55)
+(code_label 55 53 54 8 21 (nil) [1 uses])
+(note 54 55 8 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 8 54 43 8 (set (reg:SI 72 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":221 -1
+     (nil))
+(code_label 43 8 44 9 19 (nil) [3 uses])
+(note 44 43 45 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 45 44 49 9 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 72 [ <retval> ])) -1
+     (nil))
+(insn 49 45 50 9 (set (reg/i:SI 10 a0)
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":236 -1
+     (nil))
+(insn 50 49 0 9 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":236 -1
+     (nil))
+
+;; Function u8x8_d_ssd1316_96x32 (u8x8_d_ssd1316_96x32, funcdef_no=2, decl_uid=2456, cgraph_uid=2, symbol_order=10)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+Edge 2->7 redirected to 10
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 46.
+Merging block 10 into block 9...
+Merged blocks 9 and 10.
+Merged 9 and 10 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 10 NOTE_INSN_DELETED)
+(note 10 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 10 3 2 (set (reg/v/f:SI 73 [ u8x8 ])
+        (reg:SI 10 a0 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":313 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 74 [ msg ])
+        (reg:SI 11 a1 [ msg ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":313 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 75 [ arg_int ])
+        (reg:SI 12 a2 [ arg_int ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":313 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v/f:SI 76 [ arg_ptr ])
+        (reg:SI 13 a3 [ arg_ptr ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":313 -1
+     (nil))
+(note 6 5 12 2 NOTE_INSN_FUNCTION_BEG)
+(insn 12 6 13 2 (set (reg:SI 13 a3)
+        (reg/v/f:SI 76 [ arg_ptr ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":315 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 12 a2)
+        (reg/v:SI 75 [ arg_int ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":315 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 11 a1)
+        (reg/v:SI 74 [ msg ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":315 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":315 -1
+     (nil))
+(call_insn 16 15 17 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8x8_d_ssd1316_generic") [flags 0x3] <function_decl 062ddc30 u8x8_d_ssd1316_generic>) [0 u8x8_d_ssd1316_generic S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":315 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_ssd1316_generic") [flags 0x3] <function_decl 062ddc30 u8x8_d_ssd1316_generic>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 17 16 18 2 (set (reg:SI 77)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":315 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 77)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":315 -1
+     (nil))
+(jump_insn 19 18 20 2 (set (pc)
+        (if_then_else (ne (reg:SI 72 [ <retval> ])
+                (const_int 0 [0]))
+            (label_ref:SI 55)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":315 180 {*branchsi}
+     (int_list:REG_BR_PROB 365072228 (nil))
+ -> 55)
+(note 20 19 21 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 21 20 22 4 (set (reg:SI 78)
+        (const_int 9 [0x9])) -1
+     (nil))
+(jump_insn 22 21 23 4 (set (pc)
+        (if_then_else (eq (reg/v:SI 74 [ msg ])
+                (reg:SI 78))
+            (label_ref 36)
+            (pc))) -1
+     (int_list:REG_BR_PROB 357913948 (nil))
+ -> 36)
+(note 23 22 24 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 24 23 25 5 (set (reg:SI 79)
+        (const_int 10 [0xa])) -1
+     (nil))
+(jump_insn 25 24 26 5 (set (pc)
+        (if_then_else (ne (reg/v:SI 74 [ msg ])
+                (reg:SI 79))
+            (label_ref 43)
+            (pc))) -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 43)
+(note 26 25 27 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 27 26 28 6 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":321 -1
+     (nil))
+(call_insn 28 27 29 6 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 0624c618 u8x8_d_helper_display_init>) [0 u8x8_d_helper_display_init S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":321 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 0624c618 u8x8_d_helper_display_init>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 29 28 30 6 (set (reg:SI 81)
+        (high:SI (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":322 -1
+     (nil))
+(insn 30 29 31 6 (set (reg/f:SI 80)
+        (lo_sum:SI (reg:SI 81)
+            (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":322 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR6") [flags 0x182])
+        (nil)))
+(insn 31 30 32 6 (set (reg:SI 11 a1)
+        (reg/f:SI 80)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":322 -1
+     (nil))
+(insn 32 31 33 6 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":322 -1
+     (nil))
+(call_insn 33 32 7 6 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0629c168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":322 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0629c168 u8x8_cad_SendSequence>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 7 33 34 6 (set (reg:SI 72 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":330 -1
+     (nil))
+(jump_insn 34 7 35 6 (set (pc)
+        (label_ref 43)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":323 -1
+     (nil)
+ -> 43)
+(barrier 35 34 36)
+(code_label 36 35 37 7 25 (nil) [1 uses])
+(note 37 36 38 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 38 37 39 7 (set (reg:SI 83)
+        (high:SI (symbol_ref:SI ("*.LANCHOR7") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":325 -1
+     (nil))
+(insn 39 38 40 7 (set (reg/f:SI 82)
+        (lo_sum:SI (reg:SI 83)
+            (symbol_ref:SI ("*.LANCHOR7") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":325 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR7") [flags 0x182])
+        (nil)))
+(insn 40 39 41 7 (set (reg:SI 11 a1)
+        (reg/f:SI 82)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":325 -1
+     (nil))
+(insn 41 40 42 7 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":325 -1
+     (nil))
+(call_insn 42 41 9 7 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 0624c5a0 u8x8_d_helper_display_setup_memory>) [0 u8x8_d_helper_display_setup_memory S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":325 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 0624c5a0 u8x8_d_helper_display_setup_memory>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 9 42 52 7 (set (reg:SI 72 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":330 -1
+     (nil))
+(jump_insn 52 9 53 7 (set (pc)
+        (label_ref 43)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":326 -1
+     (nil)
+ -> 43)
+(barrier 53 52 55)
+(code_label 55 53 54 8 26 (nil) [1 uses])
+(note 54 55 8 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 8 54 43 8 (set (reg:SI 72 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":316 -1
+     (nil))
+(code_label 43 8 44 9 24 (nil) [3 uses])
+(note 44 43 45 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 45 44 49 9 (set (reg:SI 72 [ <retval> ])
+        (reg:SI 72 [ <retval> ])) -1
+     (nil))
+(insn 49 45 50 9 (set (reg/i:SI 10 a0)
+        (reg:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":331 -1
+     (nil))
+(insn 50 49 0 9 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1316.c":331 -1
+     (nil))

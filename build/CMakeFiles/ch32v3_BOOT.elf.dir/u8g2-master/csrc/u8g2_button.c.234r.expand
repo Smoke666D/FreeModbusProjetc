@@ -1,0 +1,1033 @@
+
+;; Function u8g2_DrawButtonFrame (u8g2_DrawButtonFrame, funcdef_no=0, decl_uid=8692, cgraph_uid=0, symbol_order=0)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+Edge 2->4 redirected to 17
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 15->17 redirected to 18
+Merging block 17 into block 16...
+Merged blocks 16 and 17.
+Merged 16 and 17 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 14 NOTE_INSN_DELETED)
+(note 14 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 14 3 2 (set (reg/v/f:SI 132 [ u8g2 ])
+        (reg:SI 10 a0 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":99 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 133 [ x ])
+        (reg:SI 11 a1 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":99 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 134 [ y ])
+        (reg:SI 12 a2 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":99 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SI 135 [ flags ])
+        (reg:SI 13 a3 [ flags ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":99 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/v:SI 136 [ text_width ])
+        (reg:SI 14 a4 [ text_width ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":99 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/v:SI 137 [ padding_h ])
+        (reg:SI 15 a5 [ padding_h ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":99 -1
+     (nil))
+(insn 8 7 9 2 (set (reg/v:SI 138 [ padding_v ])
+        (reg:SI 16 a6 [ padding_v ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":99 -1
+     (nil))
+(note 9 8 16 2 NOTE_INSN_FUNCTION_BEG)
+(insn 16 9 17 2 (set (reg:SI 139)
+        (and:SI (reg/v:SI 135 [ flags ])
+            (const_int 7 [0x7]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":106 -1
+     (nil))
+(insn 17 16 18 2 (set (reg/v:SI 94 [ border_width ])
+        (zero_extend:SI (subreg:HI (reg:SI 139) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":106 -1
+     (nil))
+(insn 18 17 19 2 (set (reg/v:SI 95 [ a ])
+        (sign_extend:SI (mem:QI (plus:SI (reg/v/f:SI 132 [ u8g2 ])
+                    (const_int 142 [0x8e])) [0 u8g2_40(D)->font_ref_ascent+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":108 -1
+     (nil))
+(insn 19 18 20 2 (set (reg/v:SI 96 [ d ])
+        (sign_extend:SI (mem:QI (plus:SI (reg/v/f:SI 132 [ u8g2 ])
+                    (const_int 143 [0x8f])) [0 u8g2_40(D)->font_ref_descent+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":109 -1
+     (nil))
+(insn 20 19 21 2 (set (reg/v:SI 97 [ color_backup ])
+        (zero_extend:SI (mem:QI (plus:SI (reg/v/f:SI 132 [ u8g2 ])
+                    (const_int 146 [0x92])) [0 u8g2_40(D)->draw_color+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":111 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:SI 72 [ _1 ])
+        (reg/v:SI 135 [ flags ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":114 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:SI 140)
+        (and:SI (reg/v:SI 135 [ flags ])
+            (const_int 128 [0x80]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":114 -1
+     (nil))
+(insn 23 22 24 2 (set (reg:HI 141)
+        (subreg:HI (reg:SI 140) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":114 -1
+     (nil))
+(insn 24 23 25 2 (set (reg:SI 142)
+        (zero_extend:SI (reg:HI 141))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":114 -1
+     (nil))
+(jump_insn 25 24 26 2 (set (pc)
+        (if_then_else (eq (reg:SI 142)
+                (const_int 0 [0]))
+            (label_ref:SI 196)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":114 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 196)
+(note 26 25 27 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 27 26 28 4 (set (reg:SI 143)
+        (plus:SI (reg/v:SI 94 [ border_width ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":116 -1
+     (nil))
+(insn 28 27 29 4 (set (reg/v:SI 106 [ gap_frame ])
+        (zero_extend:SI (subreg:HI (reg:SI 143) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":116 -1
+     (nil))
+(insn 29 28 30 4 (set (reg:SI 144)
+        (plus:SI (reg/v:SI 94 [ border_width ])
+            (const_int 2 [0x2]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":118 -1
+     (nil))
+(insn 30 29 193 4 (set (reg/v:SI 107 [ border_width ])
+        (zero_extend:SI (subreg:HI (reg:SI 144) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":118 -1
+     (nil))
+(jump_insn 193 30 194 4 (set (pc)
+        (label_ref 31)) -1
+     (nil)
+ -> 31)
+(barrier 194 193 196)
+(code_label 196 194 195 5 9 (nil) [1 uses])
+(note 195 196 10 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 10 195 11 5 (set (reg/v:SI 107 [ border_width ])
+        (reg/v:SI 94 [ border_width ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":106 -1
+     (nil))
+(insn 11 10 31 5 (set (reg/v:SI 106 [ gap_frame ])
+        (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":104 -1
+     (nil))
+(code_label 31 11 32 6 2 (nil) [1 uses])
+(note 32 31 33 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 33 32 34 6 (set (reg:SI 145)
+        (ashiftrt:SI (reg:SI 72 [ _1 ])
+            (const_int 3 [0x3]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":151 -1
+     (nil))
+(insn 34 33 35 6 (set (reg:HI 146)
+        (subreg:HI (reg:SI 145) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":151 -1
+     (nil))
+(insn 35 34 36 6 (set (reg:SI 147)
+        (and:SI (subreg:SI (reg:HI 146) 0)
+            (const_int 3 [0x3]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":151 -1
+     (nil))
+(insn 36 35 37 6 (set (reg/v:SI 103 [ shadow_gap ])
+        (zero_extend:SI (subreg:HI (reg:SI 147) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":151 -1
+     (nil))
+(insn 37 36 38 6 (set (reg:SI 148)
+        (plus:SI (reg/v:SI 103 [ shadow_gap ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":152 -1
+     (nil))
+(insn 38 37 39 6 (set (reg/v:SI 104 [ shadow_gap ])
+        (zero_extend:SI (subreg:HI (reg:SI 148) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":152 -1
+     (nil))
+(insn 39 38 40 6 (set (reg:SI 149)
+        (ashift:SI (reg/v:SI 137 [ padding_h ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(insn 40 39 41 6 (set (reg:HI 150)
+        (subreg:HI (reg:SI 149) 0)) -1
+     (nil))
+(insn 41 40 42 6 (set (reg:SI 151)
+        (plus:SI (reg/v:SI 136 [ text_width ])
+            (subreg:SI (reg:HI 150) 0))) -1
+     (nil))
+(insn 42 41 43 6 (set (reg:SI 119 [ _100 ])
+        (zero_extend:SI (subreg:HI (reg:SI 151) 0))) -1
+     (nil))
+(insn 43 42 44 6 (set (reg:SI 122 [ _103 ])
+        (zero_extend:SI (subreg:HI (reg/v:SI 95 [ a ]) 0))) -1
+     (nil))
+(insn 44 43 45 6 (set (reg:SI 152)
+        (ashift:SI (reg/v:SI 138 [ padding_v ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(insn 45 44 46 6 (set (reg:HI 153)
+        (subreg:HI (reg:SI 152) 0)) -1
+     (nil))
+(insn 46 45 47 6 (set (reg:SI 154)
+        (plus:SI (reg:SI 122 [ _103 ])
+            (subreg:SI (reg:HI 153) 0))) -1
+     (nil))
+(insn 47 46 48 6 (set (reg:HI 155)
+        (subreg:HI (reg:SI 154) 0)) -1
+     (nil))
+(insn 48 47 49 6 (set (reg:HI 156)
+        (subreg:HI (reg/v:SI 96 [ d ]) 0)) -1
+     (nil))
+(insn 49 48 50 6 (set (reg:SI 157)
+        (minus:SI (subreg:SI (reg:HI 155) 0)
+            (subreg:SI (reg:HI 156) 0))) -1
+     (nil))
+(insn 50 49 12 6 (set (reg:SI 125 [ _107 ])
+        (zero_extend:SI (subreg:HI (reg:SI 157) 0))) -1
+     (nil))
+(insn 12 50 147 6 (set (reg/v:SI 90 [ border_width ])
+        (reg/v:SI 107 [ border_width ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":152 -1
+     (nil))
+(code_label 147 12 51 7 7 (nil) [1 uses])
+(note 51 147 52 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 52 51 53 7 (set (reg:SI 158)
+        (minus:SI (reg/v:SI 133 [ x ])
+            (reg/v:SI 137 [ padding_h ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":127 -1
+     (nil))
+(insn 53 52 54 7 (set (reg/v:SI 98 [ xx ])
+        (zero_extend:SI (subreg:HI (reg:SI 158) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":127 -1
+     (nil))
+(insn 54 53 55 7 (set (reg:SI 159)
+        (minus:SI (reg/v:SI 98 [ xx ])
+            (reg/v:SI 90 [ border_width ]))) -1
+     (nil))
+(insn 55 54 56 7 (set (reg:SI 117 [ _98 ])
+        (zero_extend:SI (subreg:HI (reg:SI 159) 0))) -1
+     (nil))
+(insn 56 55 57 7 (set (reg:SI 160)
+        (ashift:SI (reg/v:SI 90 [ border_width ])
+            (const_int 1 [0x1]))) -1
+     (nil))
+(insn 57 56 58 7 (set (reg:SI 120 [ _101 ])
+        (zero_extend:SI (subreg:HI (reg:SI 160) 0))) -1
+     (nil))
+(insn 58 57 59 7 (set (reg:SI 161)
+        (plus:SI (reg:SI 119 [ _100 ])
+            (reg:SI 120 [ _101 ]))) -1
+     (nil))
+(insn 59 58 60 7 (set (reg:SI 121 [ _102 ])
+        (zero_extend:SI (subreg:HI (reg:SI 161) 0))) -1
+     (nil))
+(insn 60 59 61 7 (set (reg/f:SI 162)
+        (mem/f:SI (plus:SI (reg/v/f:SI 132 [ u8g2 ])
+                (const_int 92 [0x5c])) [11 u8g2_40(D)->font_calc_vref+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":132 -1
+     (nil))
+(insn 61 60 62 7 (set (reg:SI 10 a0)
+        (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":132 -1
+     (nil))
+(call_insn 62 61 63 7 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (reg/f:SI 162) [0 *_6 S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":132 -1
+     (expr_list:REG_CALL_DECL (nil)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 63 62 64 7 (set (reg:SI 163)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":132 -1
+     (nil))
+(insn 64 63 65 7 (set (reg:SI 100 [ _55 ])
+        (reg:SI 163)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":132 -1
+     (nil))
+(insn 65 64 66 7 (set (reg:SI 164)
+        (minus:SI (reg/v:SI 134 [ y ])
+            (reg/v:SI 138 [ padding_v ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":134 -1
+     (nil))
+(insn 66 65 67 7 (set (reg:HI 165)
+        (subreg:HI (reg:SI 164) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":134 -1
+     (nil))
+(insn 67 66 68 7 (set (reg:SI 166)
+        (minus:SI (subreg:SI (reg:HI 165) 0)
+            (reg:SI 122 [ _103 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":134 -1
+     (nil))
+(insn 68 67 69 7 (set (reg:HI 167)
+        (subreg:HI (reg:SI 166) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":134 -1
+     (nil))
+(insn 69 68 70 7 (set (reg:SI 168)
+        (plus:SI (reg:SI 100 [ _55 ])
+            (subreg:SI (reg:HI 167) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":134 -1
+     (nil))
+(insn 70 69 71 7 (set (reg/v:SI 101 [ yy ])
+        (zero_extend:SI (subreg:HI (reg:SI 168) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":134 -1
+     (nil))
+(insn 71 70 72 7 (set (reg:SI 169)
+        (minus:SI (reg/v:SI 101 [ yy ])
+            (reg/v:SI 90 [ border_width ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":135 -1
+     (nil))
+(insn 72 71 73 7 (set (reg/v:SI 102 [ yy ])
+        (zero_extend:SI (subreg:HI (reg:SI 169) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":135 -1
+     (nil))
+(insn 73 72 74 7 (set (reg:HI 170)
+        (subreg:HI (reg/v:SI 95 [ a ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":136 -1
+     (nil))
+(insn 74 73 75 7 (set (reg:HI 171)
+        (subreg:HI (reg/v:SI 96 [ d ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":136 -1
+     (nil))
+(insn 75 74 76 7 (set (reg:SI 172)
+        (minus:SI (subreg:SI (reg:HI 170) 0)
+            (subreg:SI (reg:HI 171) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":136 -1
+     (nil))
+(insn 76 75 77 7 (set (reg:SI 79 [ _11 ])
+        (zero_extend:SI (subreg:HI (reg:SI 172) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":136 -1
+     (nil))
+(insn 77 76 78 7 (set (reg:SI 173)
+        (plus:SI (reg:SI 120 [ _101 ])
+            (reg:SI 125 [ _107 ]))) -1
+     (nil))
+(insn 78 77 79 7 (set (reg:SI 126 [ _109 ])
+        (zero_extend:SI (subreg:HI (reg:SI 173) 0))) -1
+     (nil))
+(jump_insn 79 78 80 7 (set (pc)
+        (if_then_else (eq (reg/v:SI 90 [ border_width ])
+                (const_int 0 [0]))
+            (label_ref 150)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":137 -1
+     (int_list:REG_BR_PROB 118111604 (nil))
+ -> 150)
+(note 80 79 81 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 81 80 82 8 (set (pc)
+        (if_then_else (ne (reg/v:SI 90 [ border_width ])
+                (reg/v:SI 106 [ gap_frame ]))
+            (label_ref 89)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":139 -1
+     (int_list:REG_BR_PROB 939631476 (nil))
+ -> 89)
+(note 82 81 83 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 83 82 84 9 (set (reg:SI 175)
+        (eq:SI (reg/v:SI 97 [ color_backup ])
+            (const_int 0 [0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":141 -1
+     (nil))
+(insn 84 83 85 9 (set (reg:QI 174)
+        (subreg:QI (reg:SI 175) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":141 -1
+     (nil))
+(insn 85 84 86 9 (set (reg:SI 176)
+        (zero_extend:SI (reg:QI 174))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":141 -1
+     (nil))
+(insn 86 85 87 9 (set (reg:SI 11 a1)
+        (reg:SI 176)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":141 -1
+     (nil))
+(insn 87 86 88 9 (set (reg:SI 10 a0)
+        (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":141 -1
+     (nil))
+(call_insn 88 87 89 9 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 05841078 u8g2_SetDrawColor>) [0 u8g2_SetDrawColor S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":141 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 05841078 u8g2_SetDrawColor>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(code_label 89 88 90 10 4 (nil) [1 uses])
+(note 90 89 91 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 91 90 92 10 (set (reg:SI 14 a4)
+        (reg:SI 126 [ _109 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":143 -1
+     (nil))
+(insn 92 91 93 10 (set (reg:SI 13 a3)
+        (reg:SI 121 [ _102 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":143 -1
+     (nil))
+(insn 93 92 94 10 (set (reg:SI 12 a2)
+        (reg/v:SI 102 [ yy ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":143 -1
+     (nil))
+(insn 94 93 95 10 (set (reg:SI 11 a1)
+        (reg:SI 117 [ _98 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":143 -1
+     (nil))
+(insn 95 94 96 10 (set (reg:SI 10 a0)
+        (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":143 -1
+     (nil))
+(call_insn 96 95 97 10 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawFrame") [flags 0x41] <function_decl 05841708 u8g2_DrawFrame>) [0 u8g2_DrawFrame S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":143 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawFrame") [flags 0x41] <function_decl 05841708 u8g2_DrawFrame>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (expr_list:HI (use (reg:SI 12 a2))
+                (expr_list:HI (use (reg:SI 13 a3))
+                    (expr_list:HI (use (reg:SI 14 a4))
+                        (nil)))))))
+(insn 97 96 98 10 (set (reg:SI 11 a1)
+        (reg/v:SI 97 [ color_backup ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":144 -1
+     (nil))
+(insn 98 97 99 10 (set (reg:SI 10 a0)
+        (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":144 -1
+     (nil))
+(call_insn 99 98 100 10 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 05841078 u8g2_SetDrawColor>) [0 u8g2_SetDrawColor S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":144 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 05841078 u8g2_SetDrawColor>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 100 99 101 10 (set (reg:SI 177)
+        (and:SI (reg/v:SI 135 [ flags ])
+            (const_int 24 [0x18]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":146 -1
+     (nil))
+(insn 101 100 102 10 (set (reg:HI 178)
+        (subreg:HI (reg:SI 177) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":146 -1
+     (nil))
+(insn 102 101 103 10 (set (reg:SI 179)
+        (zero_extend:SI (reg:HI 178))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":146 -1
+     (nil))
+(jump_insn 103 102 104 10 (set (pc)
+        (if_then_else (eq (reg:SI 179)
+                (const_int 0 [0]))
+            (label_ref 143)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":146 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 143)
+(note 104 103 105 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 105 104 197 11 (set (pc)
+        (if_then_else (ne (reg/v:SI 90 [ border_width ])
+                (reg/v:SI 94 [ border_width ]))
+            (label_ref 143)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":148 -1
+     (int_list:REG_BR_PROB 969803620 (nil))
+ -> 143)
+(note 197 105 13 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 13 197 141 12 (set (reg/v:SI 105 [ i ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":153 -1
+     (nil))
+(code_label 141 13 106 13 6 (nil) [1 uses])
+(note 106 141 107 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 107 106 108 13 (set (reg:SI 180)
+        (plus:SI (reg/v:SI 102 [ yy ])
+            (reg/v:SI 104 [ shadow_gap ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":155 -1
+     (nil))
+(insn 108 107 109 13 (set (reg:HI 181)
+        (subreg:HI (reg:SI 180) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":155 -1
+     (nil))
+(insn 109 108 110 13 (set (reg:SI 182)
+        (plus:SI (reg:SI 126 [ _109 ])
+            (subreg:SI (reg:HI 181) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":155 -1
+     (nil))
+(insn 110 109 111 13 (set (reg:HI 183)
+        (subreg:HI (reg:SI 182) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":155 -1
+     (nil))
+(insn 111 110 112 13 (set (reg:SI 184)
+        (plus:SI (reg/v:SI 105 [ i ])
+            (subreg:SI (reg:HI 183) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":155 -1
+     (nil))
+(insn 112 111 113 13 (set (reg:SI 185)
+        (zero_extend:SI (subreg:HI (reg:SI 184) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":155 -1
+     (nil))
+(insn 113 112 114 13 (set (reg:SI 186)
+        (plus:SI (reg/v:SI 98 [ xx ])
+            (reg/v:SI 104 [ shadow_gap ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":155 -1
+     (nil))
+(insn 114 113 115 13 (set (reg:SI 187)
+        (zero_extend:SI (subreg:HI (reg:SI 186) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":155 -1
+     (nil))
+(insn 115 114 116 13 (set (reg:SI 13 a3)
+        (reg:SI 121 [ _102 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":155 -1
+     (nil))
+(insn 116 115 117 13 (set (reg:SI 12 a2)
+        (reg:SI 185)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":155 -1
+     (nil))
+(insn 117 116 118 13 (set (reg:SI 11 a1)
+        (reg:SI 187)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":155 -1
+     (nil))
+(insn 118 117 119 13 (set (reg:SI 10 a0)
+        (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":155 -1
+     (nil))
+(call_insn 119 118 120 13 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 05839f00 u8g2_DrawHLine>) [0 u8g2_DrawHLine S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":155 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 05839f00 u8g2_DrawHLine>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (expr_list:HI (use (reg:SI 12 a2))
+                (expr_list:HI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 120 119 121 13 (set (reg:SI 188)
+        (plus:SI (reg/v:SI 101 [ yy ])
+            (reg/v:SI 104 [ shadow_gap ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 121 120 122 13 (set (reg:SI 189)
+        (zero_extend:SI (subreg:HI (reg:SI 188) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 122 121 123 13 (set (reg:SI 190)
+        (plus:SI (reg/v:SI 133 [ x ])
+            (reg/v:SI 137 [ padding_h ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 123 122 124 13 (set (reg:HI 191)
+        (subreg:HI (reg:SI 190) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 124 123 125 13 (set (reg:SI 192)
+        (plus:SI (reg/v:SI 136 [ text_width ])
+            (subreg:SI (reg:HI 191) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 125 124 126 13 (set (reg:HI 193)
+        (subreg:HI (reg:SI 192) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 126 125 127 13 (set (reg:SI 194)
+        (plus:SI (reg/v:SI 103 [ shadow_gap ])
+            (subreg:SI (reg:HI 193) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 127 126 128 13 (set (reg:HI 195)
+        (subreg:HI (reg:SI 194) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 128 127 129 13 (set (reg:SI 196)
+        (plus:SI (reg/v:SI 90 [ border_width ])
+            (subreg:SI (reg:HI 195) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 129 128 130 13 (set (reg:HI 197)
+        (subreg:HI (reg:SI 196) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 130 129 131 13 (set (reg:SI 198)
+        (plus:SI (subreg:SI (reg:HI 197) 0)
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 131 130 132 13 (set (reg:HI 199)
+        (subreg:HI (reg:SI 198) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 132 131 133 13 (set (reg:SI 200)
+        (plus:SI (reg/v:SI 105 [ i ])
+            (subreg:SI (reg:HI 199) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 133 132 134 13 (set (reg:SI 201)
+        (zero_extend:SI (subreg:HI (reg:SI 200) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 134 133 135 13 (set (reg:SI 13 a3)
+        (reg:SI 126 [ _109 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 135 134 136 13 (set (reg:SI 12 a2)
+        (reg:SI 189)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 136 135 137 13 (set (reg:SI 11 a1)
+        (reg:SI 201)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(insn 137 136 138 13 (set (reg:SI 10 a0)
+        (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (nil))
+(call_insn 138 137 139 13 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawVLine") [flags 0x41] <function_decl 05839f78 u8g2_DrawVLine>) [0 u8g2_DrawVLine S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawVLine") [flags 0x41] <function_decl 05839f78 u8g2_DrawVLine>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (expr_list:HI (use (reg:SI 12 a2))
+                (expr_list:HI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 139 138 140 13 (set (reg:SI 202)
+        (plus:SI (reg/v:SI 105 [ i ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":153 -1
+     (nil))
+(insn 140 139 142 13 (set (reg/v:SI 105 [ i ])
+        (zero_extend:SI (subreg:HI (reg:SI 202) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":153 -1
+     (nil))
+(jump_insn 142 140 143 13 (set (pc)
+        (if_then_else (ne (reg/v:SI 90 [ border_width ])
+                (reg/v:SI 105 [ i ]))
+            (label_ref 141)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":153 -1
+     (int_list:REG_BR_PROB 941032164 (nil))
+ -> 141)
+(code_label 143 142 144 14 5 (nil) [2 uses])
+(note 144 143 145 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 145 144 146 14 (set (reg:SI 203)
+        (plus:SI (reg/v:SI 90 [ border_width ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":160 -1
+     (nil))
+(insn 146 145 148 14 (set (reg/v:SI 90 [ border_width ])
+        (zero_extend:SI (subreg:HI (reg:SI 203) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":160 -1
+     (nil))
+(jump_insn 148 146 149 14 (set (pc)
+        (label_ref 147)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":126 -1
+     (nil)
+ -> 147)
+(barrier 149 148 150)
+(code_label 150 149 151 15 3 (nil) [1 uses])
+(note 151 150 152 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 152 151 153 15 (set (reg:SI 206)
+        (const_int 32768 [0x8000])) -1
+     (nil))
+(insn 153 152 154 15 (set (reg:SI 205)
+        (plus:SI (reg:SI 206)
+            (const_int -1 [0xffffffffffffffff]))) -1
+     (expr_list:REG_EQUAL (const_int 32767 [0x7fff])
+        (nil)))
+(insn 154 153 155 15 (set (reg:SI 204)
+        (mult:SI (reg/v:SI 107 [ border_width ])
+            (reg:SI 205))) -1
+     (nil))
+(insn 155 154 156 15 (set (reg:SI 110 [ _78 ])
+        (zero_extend:SI (subreg:HI (reg:SI 204) 0))) -1
+     (nil))
+(insn 156 155 157 15 (set (reg:SI 207)
+        (plus:SI (reg/v:SI 137 [ padding_h ])
+            (reg/v:SI 107 [ border_width ]))) -1
+     (nil))
+(insn 157 156 158 15 (set (reg:HI 208)
+        (subreg:HI (reg:SI 207) 0)) -1
+     (nil))
+(insn 158 157 159 15 (set (reg:SI 209)
+        (plus:SI (reg:SI 110 [ _78 ])
+            (subreg:SI (reg:HI 208) 0))) -1
+     (nil))
+(insn 159 158 160 15 (set (reg:HI 210)
+        (subreg:HI (reg:SI 209) 0)) -1
+     (nil))
+(insn 160 159 161 15 (set (reg:SI 211)
+        (ashift:SI (subreg:SI (reg:HI 210) 0)
+            (const_int 1 [0x1]))) -1
+     (nil))
+(insn 161 160 162 15 (set (reg:HI 212)
+        (subreg:HI (reg:SI 211) 0)) -1
+     (nil))
+(insn 162 161 163 15 (set (reg:SI 213)
+        (plus:SI (reg/v:SI 136 [ text_width ])
+            (subreg:SI (reg:HI 212) 0))) -1
+     (nil))
+(insn 163 162 164 15 (set (reg/v:SI 113 [ ww ])
+        (zero_extend:SI (subreg:HI (reg:SI 213) 0))) -1
+     (nil))
+(insn 164 163 165 15 (set (reg:SI 214)
+        (plus:SI (reg/v:SI 138 [ padding_v ])
+            (reg/v:SI 107 [ border_width ]))) -1
+     (nil))
+(insn 165 164 166 15 (set (reg:HI 215)
+        (subreg:HI (reg:SI 214) 0)) -1
+     (nil))
+(insn 166 165 167 15 (set (reg:SI 216)
+        (plus:SI (reg:SI 110 [ _78 ])
+            (subreg:SI (reg:HI 215) 0))) -1
+     (nil))
+(insn 167 166 168 15 (set (reg:HI 217)
+        (subreg:HI (reg:SI 216) 0)) -1
+     (nil))
+(insn 168 167 169 15 (set (reg:SI 218)
+        (ashift:SI (subreg:SI (reg:HI 217) 0)
+            (const_int 1 [0x1]))) -1
+     (nil))
+(insn 169 168 170 15 (set (reg:HI 219)
+        (subreg:HI (reg:SI 218) 0)) -1
+     (nil))
+(insn 170 169 171 15 (set (reg:SI 220)
+        (plus:SI (reg:SI 79 [ _11 ])
+            (subreg:SI (reg:HI 219) 0))) -1
+     (nil))
+(insn 171 170 172 15 (set (reg/v:SI 112 [ hh ])
+        (zero_extend:SI (subreg:HI (reg:SI 220) 0))) -1
+     (nil))
+(insn 172 171 173 15 (set (reg:SI 221)
+        (and:SI (reg/v:SI 135 [ flags ])
+            (const_int 32 [0x20]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":163 -1
+     (nil))
+(insn 173 172 174 15 (set (reg:HI 222)
+        (subreg:HI (reg:SI 221) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":163 -1
+     (nil))
+(insn 174 173 175 15 (set (reg:SI 223)
+        (zero_extend:SI (reg:HI 222))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":163 -1
+     (nil))
+(jump_insn 175 174 176 15 (set (pc)
+        (if_then_else (eq (reg:SI 223)
+                (const_int 0 [0]))
+            (label_ref:SI 191)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":163 180 {*branchsi}
+     (int_list:REG_BR_PROB 719407028 (nil))
+ -> 191)
+(note 176 175 177 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 177 176 178 16 (set (reg:SI 11 a1)
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":165 -1
+     (nil))
+(insn 178 177 179 16 (set (reg:SI 10 a0)
+        (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":165 -1
+     (nil))
+(call_insn 179 178 180 16 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 05841078 u8g2_SetDrawColor>) [0 u8g2_SetDrawColor S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":165 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 05841078 u8g2_SetDrawColor>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 180 179 181 16 (set (reg:SI 14 a4)
+        (reg/v:SI 112 [ hh ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":166 -1
+     (nil))
+(insn 181 180 182 16 (set (reg:SI 13 a3)
+        (reg/v:SI 113 [ ww ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":166 -1
+     (nil))
+(insn 182 181 183 16 (set (reg:SI 12 a2)
+        (reg/v:SI 102 [ yy ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":166 -1
+     (nil))
+(insn 183 182 184 16 (set (reg:SI 11 a1)
+        (reg:SI 117 [ _98 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":166 -1
+     (nil))
+(insn 184 183 185 16 (set (reg:SI 10 a0)
+        (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":166 -1
+     (nil))
+(call_insn 185 184 186 16 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawBox") [flags 0x41] <function_decl 05841690 u8g2_DrawBox>) [0 u8g2_DrawBox S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":166 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawBox") [flags 0x41] <function_decl 05841690 u8g2_DrawBox>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (expr_list:HI (use (reg:SI 12 a2))
+                (expr_list:HI (use (reg:SI 13 a3))
+                    (expr_list:HI (use (reg:SI 14 a4))
+                        (nil)))))))
+(insn 186 185 187 16 (set (reg:SI 11 a1)
+        (reg/v:SI 97 [ color_backup ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":167 -1
+     (nil))
+(insn 187 186 188 16 (set (reg:SI 10 a0)
+        (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":167 -1
+     (nil))
+(call_insn 188 187 191 16 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 05841078 u8g2_SetDrawColor>) [0 u8g2_SetDrawColor S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":167 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 05841078 u8g2_SetDrawColor>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(code_label 191 188 192 18 1 (nil) [1 uses])
+(note 192 191 0 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+
+;; Function u8g2_DrawButtonUTF8 (u8g2_DrawButtonUTF8, funcdef_no=1, decl_uid=8701, cgraph_uid=1, symbol_order=1)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+Edge 3->5 redirected to 9
+Predictions for insn 68 bb 6
+  no prediction heuristics: 50.0%  exec 536870913 (estimated locally) hit 1073741822 (estimated locally) (200.0%)
+  combined heuristics: 50.0%  exec 536870913 (estimated locally) hit 1073741822 (estimated locally) (200.0%)
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 14 NOTE_INSN_DELETED)
+(note 14 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 14 3 2 (set (reg/v/f:SI 83 [ u8g2 ])
+        (reg:SI 10 a0 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":172 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 84 [ x ])
+        (reg:SI 11 a1 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":172 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 85 [ y ])
+        (reg:SI 12 a2 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":172 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SI 86 [ flags ])
+        (reg:SI 13 a3 [ flags ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":172 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/v:SI 87 [ width ])
+        (reg:SI 14 a4 [ width ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":172 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/v:SI 88 [ padding_h ])
+        (reg:SI 15 a5 [ padding_h ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":172 -1
+     (nil))
+(insn 8 7 9 2 (set (reg/v:SI 89 [ padding_v ])
+        (reg:SI 16 a6 [ padding_v ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":172 -1
+     (nil))
+(insn 9 8 10 2 (set (reg/v/f:SI 90 [ text ])
+        (reg:SI 17 a7 [ text ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":172 -1
+     (nil))
+(note 10 9 16 2 NOTE_INSN_FUNCTION_BEG)
+(insn 16 10 17 2 (set (reg:SI 11 a1)
+        (reg/v/f:SI 90 [ text ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":173 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 83 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":173 -1
+     (nil))
+(call_insn 18 17 19 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 05849528 u8g2_GetUTF8Width>) [0 u8g2_GetUTF8Width S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":173 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 05849528 u8g2_GetUTF8Width>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 19 18 20 2 (set (reg:SI 91)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":173 -1
+     (nil))
+(insn 20 19 21 2 (set (reg/v:SI 80 [ w ])
+        (reg:SI 91)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":173 -1
+     (nil))
+(insn 21 20 22 2 (set (reg:SI 92)
+        (and:SI (reg/v:SI 86 [ flags ])
+            (const_int 64 [0x40]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":177 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:HI 93)
+        (subreg:HI (reg:SI 92) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":177 -1
+     (nil))
+(insn 23 22 24 2 (set (reg:SI 94)
+        (zero_extend:SI (reg:HI 93))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":177 -1
+     (nil))
+(jump_insn 24 23 25 2 (set (pc)
+        (if_then_else (eq (reg:SI 94)
+                (const_int 0 [0]))
+            (label_ref 62)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":177 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 62)
+(note 25 24 26 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 26 25 27 4 (set (reg:SI 72 [ _1 ])
+        (reg/v:SI 80 [ w ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":178 -1
+     (nil))
+(insn 27 26 28 4 (set (reg:SI 95)
+        (plus:SI (reg:SI 72 [ _1 ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":178 -1
+     (nil))
+(insn 28 27 29 4 (set (reg:SI 98)
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":178 -1
+     (nil))
+(insn 29 28 30 4 (set (reg:SI 99)
+        (div:SI (reg:SI 95)
+            (reg:SI 98))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":178 -1
+     (expr_list:REG_EQUAL (div:SI (reg:SI 95)
+            (const_int 2 [0x2]))
+        (nil)))
+(insn 30 29 31 4 (set (reg:SI 99)
+        (neg:SI (reg:SI 99))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":178 -1
+     (expr_list:REG_EQUAL (div:SI (reg:SI 95)
+            (const_int -2 [0xfffffffffffffffe]))
+        (nil)))
+(insn 31 30 32 4 (set (reg:HI 100)
+        (subreg:HI (reg:SI 99) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":178 -1
+     (nil))
+(insn 32 31 33 4 (set (reg:SI 101)
+        (plus:SI (reg/v:SI 84 [ x ])
+            (subreg:SI (reg:HI 100) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":178 -1
+     (nil))
+(insn 33 32 34 4 (set (reg/v:SI 84 [ x ])
+        (zero_extend:SI (subreg:HI (reg:SI 101) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":178 -1
+     (nil))
+(jump_insn 34 33 35 4 (set (pc)
+        (if_then_else (geu (reg/v:SI 80 [ w ])
+                (reg/v:SI 87 [ width ]))
+            (label_ref:SI 79)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":180 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 79)
+(note 35 34 36 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 36 35 37 5 (set (reg:SI 102)
+        (minus:SI (reg/v:SI 87 [ width ])
+            (reg:SI 72 [ _1 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":184 -1
+     (nil))
+(insn 37 36 38 5 (set (reg:SI 104)
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":184 -1
+     (nil))
+(insn 38 37 39 5 (set (reg:SI 105)
+        (div:SI (reg:SI 102)
+            (reg:SI 104))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":184 -1
+     (nil))
+(insn 39 38 12 5 (set (reg/v:SI 81 [ text_x_offset ])
+        (zero_extend:SI (subreg:HI (reg:SI 105) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":184 -1
+     (nil))
+(insn 12 39 76 5 (set (reg/v:SI 80 [ w ])
+        (reg/v:SI 87 [ width ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":184 -1
+     (nil))
+(jump_insn 76 12 77 5 (set (pc)
+        (label_ref 40)) -1
+     (nil)
+ -> 40)
+(barrier 77 76 79)
+(code_label 79 77 78 6 22 (nil) [1 uses])
+(note 78 79 13 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 13 78 40 6 (set (reg/v:SI 81 [ text_x_offset ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":175 -1
+     (nil))
+(code_label 40 13 41 7 20 (nil) [2 uses])
+(note 41 40 42 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 42 41 43 7 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":189 -1
+     (nil))
+(insn 43 42 44 7 (set (reg:SI 10 a0)
+        (reg/v/f:SI 83 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":189 -1
+     (nil))
+(call_insn 44 43 45 7 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetFontMode") [flags 0x41] <function_decl 05841e10 u8g2_SetFontMode>) [0 u8g2_SetFontMode S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":189 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetFontMode") [flags 0x41] <function_decl 05841e10 u8g2_SetFontMode>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 45 44 46 7 (set (reg:SI 13 a3)
+        (reg/v/f:SI 90 [ text ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":190 -1
+     (nil))
+(insn 46 45 47 7 (set (reg:SI 12 a2)
+        (reg/v:SI 85 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":190 -1
+     (nil))
+(insn 47 46 48 7 (set (reg:SI 11 a1)
+        (reg/v:SI 84 [ x ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":190 -1
+     (nil))
+(insn 48 47 49 7 (set (reg:SI 10 a0)
+        (reg/v/f:SI 83 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":190 -1
+     (nil))
+(call_insn 49 48 50 7 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8g2_DrawUTF8") [flags 0x41] <function_decl 05849258 u8g2_DrawUTF8>) [0 u8g2_DrawUTF8 S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":190 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawUTF8") [flags 0x41] <function_decl 05849258 u8g2_DrawUTF8>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (expr_list:HI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 50 49 51 7 (set (reg:SI 106)
+        (minus:SI (reg/v:SI 84 [ x ])
+            (reg/v:SI 81 [ text_x_offset ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":191 -1
+     (nil))
+(insn 51 50 52 7 (set (reg:SI 107)
+        (zero_extend:SI (subreg:HI (reg:SI 106) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":191 -1
+     (nil))
+(insn 52 51 53 7 (set (reg:SI 16 a6)
+        (reg/v:SI 89 [ padding_v ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":191 -1
+     (nil))
+(insn 53 52 54 7 (set (reg:SI 15 a5)
+        (reg/v:SI 88 [ padding_h ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":191 -1
+     (nil))
+(insn 54 53 55 7 (set (reg:SI 14 a4)
+        (reg/v:SI 80 [ w ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":191 -1
+     (nil))
+(insn 55 54 56 7 (set (reg:SI 13 a3)
+        (reg/v:SI 86 [ flags ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":191 -1
+     (nil))
+(insn 56 55 57 7 (set (reg:SI 12 a2)
+        (reg/v:SI 85 [ y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":191 -1
+     (nil))
+(insn 57 56 58 7 (set (reg:SI 11 a1)
+        (reg:SI 107)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":191 -1
+     (nil))
+(insn 58 57 59 7 (set (reg:SI 10 a0)
+        (reg/v/f:SI 83 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":191 -1
+     (nil))
+(call_insn 59 58 60 7 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawButtonFrame") [flags 0x3] <function_decl 05841870 u8g2_DrawButtonFrame>) [0 u8g2_DrawButtonFrame S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":191 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawButtonFrame") [flags 0x3] <function_decl 05841870 u8g2_DrawButtonFrame>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (expr_list:HI (use (reg:SI 12 a2))
+                (expr_list:HI (use (reg:SI 13 a3))
+                    (expr_list:HI (use (reg:SI 14 a4))
+                        (expr_list:HI (use (reg:SI 15 a5))
+                            (expr_list:HI (use (reg:SI 16 a6))
+                                (nil)))))))))
+(jump_insn 60 59 61 7 (set (pc)
+        (label_ref 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":193 -1
+     (nil)
+ -> 74)
+(barrier 61 60 62)
+(code_label 62 61 63 8 19 (nil) [1 uses])
+(note 63 62 64 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 64 63 65 8 (set (reg:HI 109)
+        (subreg/s/v:HI (reg/v:SI 87 [ width ]) 0)) -1
+     (nil))
+(insn 65 64 66 8 (set (reg:HI 108)
+        (subreg/s/v:HI (reg/v:SI 80 [ w ]) 0)) -1
+     (nil))
+(insn 66 65 67 8 (set (reg:SI 110)
+        (zero_extend:SI (reg:HI 108))) -1
+     (nil))
+(insn 67 66 68 8 (set (reg:SI 111)
+        (zero_extend:SI (reg:HI 109))) -1
+     (nil))
+(jump_insn 68 67 80 8 (set (pc)
+        (if_then_else (geu (reg:SI 110)
+                (reg:SI 111))
+            (label_ref 70)
+            (pc))) -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 70)
+(note 80 68 69 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 69 80 70 9 (set (reg:HI 108)
+        (reg:HI 109)) -1
+     (nil))
+(code_label 70 69 81 10 21 (nil) [1 uses])
+(note 81 70 71 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 71 81 11 10 (set (reg/v:SI 80 [ w ])
+        (zero_extend:SI (reg:HI 108))) -1
+     (nil))
+(insn 11 71 72 10 (set (reg/v:SI 81 [ text_x_offset ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":175 -1
+     (nil))
+(jump_insn 72 11 73 10 (set (pc)
+        (label_ref 40)) -1
+     (nil)
+ -> 40)
+(barrier 73 72 74)
+(code_label 74 73 75 11 18 (nil) [1 uses])
+(note 75 74 0 11 [bb 11] NOTE_INSN_BASIC_BLOCK)

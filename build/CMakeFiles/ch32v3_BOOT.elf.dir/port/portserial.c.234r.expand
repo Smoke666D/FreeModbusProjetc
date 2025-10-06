@@ -1,0 +1,1032 @@
+
+;; Function HAL_UART_TxCpltCallback (HAL_UART_TxCpltCallback, funcdef_no=39, decl_uid=16060, cgraph_uid=39, symbol_order=44)
+
+Partition 0: size 4 align 4
+	xHigherPriorityTaskWoken
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 2->6 redirected to 7
+Edge 4->6 redirected to 7
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 xHigherPriorityTaskWoken+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":179 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 75)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -4 [0xfffffffffffffffc]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 77)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
+     (nil))
+(insn 8 7 9 2 (set (reg/f:SI 76)
+        (lo_sum:SI (reg:SI 77)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 9 8 10 2 (set (reg:SI 78)
+        (mem/f/c:SI (reg/f:SI 76) [2 xSerialEventGroupHandle+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 13 a3)
+        (reg:SI 75)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 12 a2)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 11 a1)
+        (reg:SI 78)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 79)
+        (high:SI (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066665a0 vEventGroupSetBitsCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 79)
+            (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066665a0 vEventGroupSetBitsCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066665a0 vEventGroupSetBitsCallback>)
+        (nil)))
+(call_insn 15 14 16 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xTimerPendFunctionCallFromISR") [flags 0x41] <function_decl 0618ed98 xTimerPendFunctionCallFromISR>) [0 xTimerPendFunctionCallFromISR S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTimerPendFunctionCallFromISR") [flags 0x41] <function_decl 0618ed98 xTimerPendFunctionCallFromISR>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 16 15 17 2 (set (reg/v:SI 74 [ xResult ])
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
+     (nil))
+(jump_insn 17 16 18 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 74 [ xResult ])
+                (const_int 0 [0]))
+            (label_ref:SI 27)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":188 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 27)
+(note 18 17 19 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 19 18 20 4 (set (reg:SI 80)
+        (mem/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 xHigherPriorityTaskWoken+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":194 -1
+     (nil))
+(jump_insn 20 19 21 4 (set (pc)
+        (if_then_else (eq (reg:SI 80)
+                (const_int 0 [0]))
+            (label_ref:SI 27)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":194 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 27)
+(note 21 20 22 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 22 21 23 5 (set (reg/f:SI 81)
+        (const_int -536813568 [0xffffffffe000e000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Core/core_riscv.h":227 -1
+     (nil))
+(insn 23 22 24 5 (set (reg:SI 82)
+        (const_int 16384 [0x4000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Core/core_riscv.h":227 -1
+     (nil))
+(insn 24 23 27 5 (set (mem/v:SI (plus:SI (reg/f:SI 81)
+                (const_int 512 [0x200])) [1 MEM[(struct PFIC_Type *)3758153728B].IPSR+0 S4 A128])
+        (reg:SI 82)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Core/core_riscv.h":227 -1
+     (nil))
+(code_label 27 24 28 7 1 (nil) [2 uses])
+(note 28 27 0 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+
+;; Function HAL_UART_RxCpltCallback (HAL_UART_RxCpltCallback, funcdef_no=41, decl_uid=16062, cgraph_uid=41, symbol_order=46)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 76)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":217 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 75)
+        (lo_sum:SI (reg:SI 76)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":217 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 7 6 8 2 (set (reg:SI 78)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":217 -1
+     (nil))
+(insn 8 7 9 2 (set (reg/f:SI 77)
+        (lo_sum:SI (reg:SI 78)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":217 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 9 8 10 2 (set (reg:QI 79)
+        (mem/c:QI (reg/f:SI 77) [0 rx_data_buf+0 S1 A8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":217 -1
+     (nil))
+(insn 10 9 11 2 (set (mem/c:QI (reg/f:SI 75) [0 rx_data+0 S1 A8])
+        (reg:QI 79)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":217 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 81)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":218 -1
+     (nil))
+(insn 12 11 13 2 (set (reg/f:SI 80)
+        (lo_sum:SI (reg:SI 81)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":218 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 13 12 14 2 (set (reg:SI 83)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":218 -1
+     (nil))
+(insn 14 13 15 2 (set (reg/f:SI 82)
+        (lo_sum:SI (reg:SI 83)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":218 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 15 14 16 2 (set (reg:SI 84)
+        (mem/c:SI (reg/f:SI 82) [3 MBPORT+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":218 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 11 a1)
+        (reg/f:SI 80)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":218 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 10 a0)
+        (reg:SI 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":218 -1
+     (nil))
+(call_insn 18 17 19 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("HAL_RecieveByte_IT") [flags 0x41] <function_decl 0679d348 HAL_RecieveByte_IT>) [0 HAL_RecieveByte_IT S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":218 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_RecieveByte_IT") [flags 0x41] <function_decl 0679d348 HAL_RecieveByte_IT>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 19 18 20 2 (set (reg:SI 85)
+        (high:SI (symbol_ref:SI ("pxMBFrameCBByteReceived") [flags 0xc4] <var_decl 065a7058 pxMBFrameCBByteReceived>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":219 -1
+     (nil))
+(insn 20 19 21 2 (set (reg/f:SI 86)
+        (mem/f/c:SI (lo_sum:SI (reg:SI 85)
+                (symbol_ref:SI ("pxMBFrameCBByteReceived") [flags 0xc4] <var_decl 065a7058 pxMBFrameCBByteReceived>)) [4 pxMBFrameCBByteReceived+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":219 -1
+     (nil))
+(call_insn 21 20 0 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (reg/f:SI 86) [0 *pxMBFrameCBByteReceived.7_3 S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":219 -1
+     (expr_list:REG_CALL_DECL (nil)
+        (nil))
+    (nil))
+
+;; Function getSerialEvenGroup (getSerialEvenGroup, funcdef_no=30, decl_uid=16004, cgraph_uid=30, symbol_order=32)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 8.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 75)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":40 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 74)
+        (lo_sum:SI (reg:SI 75)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":40 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 7 6 11 2 (set (reg/f:SI 72 [ <retval> ])
+        (reg/f:SI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":40 -1
+     (nil))
+(insn 11 7 12 2 (set (reg/i:SI 10 a0)
+        (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":41 -1
+     (nil))
+(insn 12 11 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":41 -1
+     (nil))
+
+;; Function getSerialTask (getSerialTask, funcdef_no=31, decl_uid=16005, cgraph_uid=31, symbol_order=33)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 8.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 75)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":45 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 74)
+        (lo_sum:SI (reg:SI 75)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":45 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 7 6 11 2 (set (reg/f:SI 72 [ <retval> ])
+        (reg/f:SI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":45 -1
+     (nil))
+(insn 11 7 12 2 (set (reg/i:SI 10 a0)
+        (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":46 -1
+     (nil))
+(insn 12 11 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":46 -1
+     (nil))
+
+;; Function xMBPortSerialInit (xMBPortSerialInit, funcdef_no=34, decl_uid=5708, cgraph_uid=34, symbol_order=39)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+Edge 2->5 redirected to 8
+Edge 3->5 redirected to 9
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 50.
+Merging block 9 into block 8...
+Merged blocks 8 and 9.
+Merged 8 and 9 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 13 NOTE_INSN_DELETED)
+(note 13 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 13 3 2 (set (reg/v:SI 78 [ ucPORT ])
+        (reg:SI 10 a0 [ ucPORT ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":87 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 79 [ ulBaudRate ])
+        (reg:SI 11 a1 [ ulBaudRate ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":87 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 80 [ ucDataBits ])
+        (reg:SI 12 a2 [ ucDataBits ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":87 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SI 81 [ eParity ])
+        (reg:SI 13 a3 [ eParity ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":87 -1
+     (nil))
+(note 6 5 15 2 NOTE_INSN_FUNCTION_BEG)
+(insn 15 6 16 2 (set (reg:SI 82)
+        (const_int 1 [0x1])) -1
+     (nil))
+(jump_insn 16 15 17 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 81 [ eParity ])
+                (reg:SI 82))
+            (label_ref:SI 59)
+            (pc))) 180 {*branchsi}
+     (int_list:REG_BR_PROB 357913948 (nil))
+ -> 59)
+(note 17 16 18 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 18 17 19 4 (set (reg:SI 83)
+        (const_int 2 [0x2])) -1
+     (nil))
+(jump_insn 19 18 20 4 (set (pc)
+        (if_then_else (eq (reg/v:SI 81 [ eParity ])
+                (reg:SI 83))
+            (label_ref:SI 63)
+            (pc))) 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 63)
+(note 20 19 7 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 7 20 8 5 (set (reg/v:SI 76 [ USART_wordlength ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":102 -1
+     (nil))
+(insn 8 7 56 5 (set (reg/v:SI 75 [ USART_Parity ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":103 -1
+     (nil))
+(jump_insn 56 8 57 5 (set (pc)
+        (label_ref 21)) -1
+     (nil)
+ -> 21)
+(barrier 57 56 59)
+(code_label 59 57 58 6 16 (nil) [1 uses])
+(note 58 59 9 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 9 58 10 6 (set (reg/v:SI 76 [ USART_wordlength ])
+        (const_int 4096 [0x1000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":94 -1
+     (nil))
+(insn 10 9 60 6 (set (reg/v:SI 75 [ USART_Parity ])
+        (const_int 1536 [0x600])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":95 -1
+     (nil))
+(jump_insn 60 10 61 6 (set (pc)
+        (label_ref 21)) -1
+     (nil)
+ -> 21)
+(barrier 61 60 63)
+(code_label 63 61 62 7 17 (nil) [1 uses])
+(note 62 63 11 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 11 62 12 7 (set (reg/v:SI 76 [ USART_wordlength ])
+        (const_int 4096 [0x1000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":98 -1
+     (nil))
+(insn 12 11 21 7 (set (reg/v:SI 75 [ USART_Parity ])
+        (const_int 1024 [0x400])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":99 -1
+     (nil))
+(code_label 21 12 22 8 15 (nil) [2 uses])
+(note 22 21 23 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 8 (set (reg:SI 72 [ _1 ])
+        (reg/v:SI 78 [ ucPORT ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":106 -1
+     (nil))
+(insn 24 23 25 8 (set (reg:SI 85)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":106 -1
+     (nil))
+(insn 25 24 26 8 (set (reg/f:SI 84)
+        (lo_sum:SI (reg:SI 85)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":106 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 26 25 27 8 (set (mem/c:SI (reg/f:SI 84) [3 MBPORT+0 S4 A32])
+        (reg:SI 72 [ _1 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":106 -1
+     (nil))
+(insn 27 26 28 8 (set (reg:SI 14 a4)
+        (reg/v:SI 76 [ USART_wordlength ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":107 -1
+     (nil))
+(insn 28 27 29 8 (set (reg:SI 13 a3)
+        (reg/v:SI 75 [ USART_Parity ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":107 -1
+     (nil))
+(insn 29 28 30 8 (set (reg:SI 12 a2)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":107 -1
+     (nil))
+(insn 30 29 31 8 (set (reg:SI 11 a1)
+        (reg/v:SI 79 [ ulBaudRate ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":107 -1
+     (nil))
+(insn 31 30 32 8 (set (reg:SI 10 a0)
+        (reg:SI 72 [ _1 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":107 -1
+     (nil))
+(call_insn 32 31 33 8 (parallel [
+            (call (mem:SI (symbol_ref:SI ("HALUSARTInit") [flags 0x41] <function_decl 0679d168 HALUSARTInit>) [0 HALUSARTInit S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":107 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTInit") [flags 0x41] <function_decl 0679d168 HALUSARTInit>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (expr_list:SI (use (reg:SI 14 a4))
+                        (nil)))))))
+(insn 33 32 34 8 (set (reg:SI 87)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
+     (nil))
+(insn 34 33 35 8 (set (reg/f:SI 86)
+        (lo_sum:SI (reg:SI 87)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 35 34 36 8 (set (reg:SI 88)
+        (mem/c:SI (reg/f:SI 86) [3 MBPORT+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
+     (nil))
+(insn 36 35 37 8 (set (reg:SI 14 a4)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
+     (nil))
+(insn 37 36 38 8 (set (reg:SI 13 a3)
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
+     (nil))
+(insn 38 37 39 8 (set (reg:SI 89)
+        (high:SI (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 0679d438 HAL_UART_TxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
+     (nil))
+(insn 39 38 40 8 (set (reg:SI 12 a2)
+        (lo_sum:SI (reg:SI 89)
+            (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 0679d438 HAL_UART_TxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 0679d438 HAL_UART_TxCpltCallback>)
+        (nil)))
+(insn 40 39 41 8 (set (reg:SI 90)
+        (high:SI (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 0679d4b0 HAL_UART_RxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
+     (nil))
+(insn 41 40 42 8 (set (reg:SI 11 a1)
+        (lo_sum:SI (reg:SI 90)
+            (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 0679d4b0 HAL_UART_RxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 0679d4b0 HAL_UART_RxCpltCallback>)
+        (nil)))
+(insn 42 41 43 8 (set (reg:SI 10 a0)
+        (reg:SI 88)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
+     (nil))
+(call_insn 43 42 44 8 (parallel [
+            (call (mem:SI (symbol_ref:SI ("HALUSARTInitIT") [flags 0x41] <function_decl 0679d258 HALUSARTInitIT>) [0 HALUSARTInitIT S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTInitIT") [flags 0x41] <function_decl 0679d258 HALUSARTInitIT>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (expr_list:QI (use (reg:SI 13 a3))
+                    (expr_list:QI (use (reg:SI 14 a4))
+                        (nil)))))))
+(insn 44 43 45 8 (set (reg:SI 92)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":109 -1
+     (nil))
+(insn 45 44 46 8 (set (reg/f:SI 91)
+        (lo_sum:SI (reg:SI 92)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":109 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 46 45 47 8 (set (reg:SI 93)
+        (mem/c:SI (reg/f:SI 91) [3 MBPORT+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":109 -1
+     (nil))
+(insn 47 46 48 8 (set (reg:SI 10 a0)
+        (reg:SI 93)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":109 -1
+     (nil))
+(call_insn 48 47 49 8 (parallel [
+            (call (mem:SI (symbol_ref:SI ("HALUSARTEnable") [flags 0x41] <function_decl 0679d1e0 HALUSARTEnable>) [0 HALUSARTEnable S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":109 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTEnable") [flags 0x41] <function_decl 0679d1e0 HALUSARTEnable>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 49 48 53 8 (set (reg:SI 77 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":110 -1
+     (nil))
+(insn 53 49 54 8 (set (reg/i:SI 10 a0)
+        (reg:SI 77 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":111 -1
+     (nil))
+(insn 54 53 0 8 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":111 -1
+     (nil))
+
+;; Function vMBPortSerialEnable (vMBPortSerialEnable, funcdef_no=35, decl_uid=5715, cgraph_uid=35, symbol_order=40)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 41 from 9 to 10.
+Merging block 9 into block 8...
+Merged blocks 8 and 9.
+Merged 8 and 9 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v:SI 74 [ xRxEnable ])
+        (reg:SI 10 a0 [ xRxEnable ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":114 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 75 [ xTxEnable ])
+        (reg:SI 11 a1 [ xTxEnable ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":114 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg:SI 77)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) -1
+     (nil))
+(insn 8 7 9 2 (set (reg/f:SI 76)
+        (lo_sum:SI (reg:SI 77)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 9 8 10 2 (set (reg:SI 73 [ pretmp_12 ])
+        (mem/c:SI (reg/f:SI 76) [3 MBPORT+0 S4 A32])) -1
+     (nil))
+(jump_insn 10 9 11 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 74 [ xRxEnable ])
+                (const_int 0 [0]))
+            (label_ref 23)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":116 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 23)
+(note 11 10 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 12 11 13 4 (set (reg:SI 79)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":118 -1
+     (nil))
+(insn 13 12 14 4 (set (reg/f:SI 78)
+        (lo_sum:SI (reg:SI 79)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":118 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 14 13 15 4 (set (reg:SI 11 a1)
+        (reg/f:SI 78)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":118 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 10 a0)
+        (reg:SI 73 [ pretmp_12 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":118 -1
+     (nil))
+(call_insn 16 15 17 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("HAL_RecieveByte_IT") [flags 0x41] <function_decl 0679d348 HAL_RecieveByte_IT>) [0 HAL_RecieveByte_IT S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":118 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_RecieveByte_IT") [flags 0x41] <function_decl 0679d348 HAL_RecieveByte_IT>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 17 16 18 4 (set (reg:SI 11 a1)
+        (const_int 512 [0x200])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":74 -1
+     (nil))
+(insn 18 17 19 4 (set (reg:SI 80)
+        (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":74 -1
+     (nil))
+(insn 19 18 20 4 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 80)
+            (const_int -1024 [0xfffffffffffffc00]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":74 -1
+     (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
+        (nil)))
+(call_insn 20 19 21 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 0684fc30 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":74 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 0684fc30 HAL_ResetBit>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(jump_insn 21 20 22 4 (set (pc)
+        (label_ref 31)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":74 -1
+     (nil)
+ -> 31)
+(barrier 22 21 23)
+(code_label 23 22 24 5 20 (nil) [1 uses])
+(note 24 23 25 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 25 24 26 5 (set (reg:SI 10 a0)
+        (reg:SI 73 [ pretmp_12 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":129 -1
+     (nil))
+(call_insn 26 25 27 5 (parallel [
+            (call (mem:SI (symbol_ref:SI ("HAL_RecieveITDisable") [flags 0x41] <function_decl 0679d3c0 HAL_RecieveITDisable>) [0 HAL_RecieveITDisable S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":129 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_RecieveITDisable") [flags 0x41] <function_decl 0679d3c0 HAL_RecieveITDisable>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 27 26 28 5 (set (reg:SI 11 a1)
+        (const_int 512 [0x200])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":79 -1
+     (nil))
+(insn 28 27 29 5 (set (reg:SI 81)
+        (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":79 -1
+     (nil))
+(insn 29 28 30 5 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 81)
+            (const_int -1024 [0xfffffffffffffc00]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":79 -1
+     (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
+        (nil)))
+(call_insn 30 29 31 5 (parallel [
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 0684fbb8 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":79 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 0684fbb8 HAL_SetBit>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(code_label 31 30 32 6 21 (nil) [1 uses])
+(note 32 31 33 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 33 32 34 6 (set (reg:SI 83)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) -1
+     (nil))
+(insn 34 33 35 6 (set (reg/f:SI 82)
+        (lo_sum:SI (reg:SI 83)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 35 34 36 6 (set (reg/f:SI 72 [ pretmp_10 ])
+        (mem/f/c:SI (reg/f:SI 82) [2 xSerialEventGroupHandle+0 S4 A32])) -1
+     (nil))
+(jump_insn 36 35 37 6 (set (pc)
+        (if_then_else (eq (reg/v:SI 75 [ xTxEnable ])
+                (const_int 0 [0]))
+            (label_ref 43)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":136 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 43)
+(note 37 36 38 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 38 37 39 7 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":140 -1
+     (nil))
+(insn 39 38 40 7 (set (reg:SI 10 a0)
+        (reg/f:SI 72 [ pretmp_10 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":140 -1
+     (nil))
+(call_insn 40 39 41 7 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xEventGroupSetBits") [flags 0x41] <function_decl 066663c0 xEventGroupSetBits>) [0 xEventGroupSetBits S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":140 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupSetBits") [flags 0x41] <function_decl 066663c0 xEventGroupSetBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(jump_insn 41 40 42 7 (set (pc)
+        (label_ref:SI 50)) 250 {jump}
+     (nil)
+ -> 50)
+(barrier 42 41 43)
+(code_label 43 42 44 8 22 (nil) [1 uses])
+(note 44 43 45 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 45 44 46 8 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":147 -1
+     (nil))
+(insn 46 45 47 8 (set (reg:SI 10 a0)
+        (reg/f:SI 72 [ pretmp_10 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":147 -1
+     (nil))
+(call_insn 47 46 50 8 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xEventGroupClearBits") [flags 0x41] <function_decl 06666348 xEventGroupClearBits>) [0 xEventGroupClearBits S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":147 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupClearBits") [flags 0x41] <function_decl 06666348 xEventGroupClearBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(code_label 50 47 51 10 19 (nil) [1 uses])
+(note 51 50 0 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+
+;; Function vMBPortClose (vMBPortClose, funcdef_no=36, decl_uid=5710, cgraph_uid=36, symbol_order=41)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 0 2 NOTE_INSN_FUNCTION_BEG)
+
+;; Function xMBPortSerialPutByte (xMBPortSerialPutByte, funcdef_no=37, decl_uid=5719, cgraph_uid=37, symbol_order=42)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 18.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 75 [ ucByte ])
+        (reg:SI 10 a0 [ ucByte ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":161 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SI 11 a1)
+        (const_int 512 [0x200])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":162 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 76)
+        (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":162 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 10 a0)
+        (plus:SI (reg:SI 76)
+            (const_int -1024 [0xfffffffffffffc00]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":162 -1
+     (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
+        (nil)))
+(call_insn 9 8 10 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 0684fbb8 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":162 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 0684fbb8 HAL_SetBit>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(insn 10 9 11 2 (set (reg:SI 77)
+        (zero_extend:SI (subreg/u:QI (reg/v:SI 75 [ ucByte ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":163 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 79)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":163 -1
+     (nil))
+(insn 12 11 13 2 (set (reg/f:SI 78)
+        (lo_sum:SI (reg:SI 79)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":163 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 13 12 14 2 (set (reg:SI 80)
+        (mem/c:SI (reg/f:SI 78) [3 MBPORT+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":163 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 11 a1)
+        (reg:SI 77)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":163 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 10 a0)
+        (reg:SI 80)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":163 -1
+     (nil))
+(call_insn 16 15 17 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("HAL_SendByte_IT") [flags 0x41] <function_decl 0679d2d0 HAL_SendByte_IT>) [0 HAL_SendByte_IT S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":163 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SendByte_IT") [flags 0x41] <function_decl 0679d2d0 HAL_SendByte_IT>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 17 16 21 2 (set (reg:SI 74 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":164 -1
+     (nil))
+(insn 21 17 22 2 (set (reg/i:SI 10 a0)
+        (reg:SI 74 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":165 -1
+     (nil))
+(insn 22 21 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":165 -1
+     (nil))
+
+;; Function xMBPortSerialGetByte (xMBPortSerialGetByte, funcdef_no=38, decl_uid=5717, cgraph_uid=38, symbol_order=43)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 11.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 75 [ pucByte ])
+        (reg:SI 10 a0 [ pucByte ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":168 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SI 77)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":169 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/f:SI 76)
+        (lo_sum:SI (reg:SI 77)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":169 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 8 7 9 2 (set (reg:QI 78)
+        (mem/c:QI (reg/f:SI 76) [0 rx_data+0 S1 A8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":169 -1
+     (nil))
+(insn 9 8 10 2 (set (mem:QI (reg/v/f:SI 75 [ pucByte ]) [0 *pucByte_4(D)+0 S1 A8])
+        (reg:QI 78)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":169 -1
+     (nil))
+(insn 10 9 14 2 (set (reg:SI 74 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":171 -1
+     (nil))
+(insn 14 10 15 2 (set (reg/i:SI 10 a0)
+        (reg:SI 74 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":172 -1
+     (nil))
+(insn 15 14 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":172 -1
+     (nil))
+
+;; Function StartUARTTask (StartUARTTask, funcdef_no=40, decl_uid=16007, cgraph_uid=40, symbol_order=45) (executed once)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+deleting block 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 75 [ argument ])
+        (reg:SI 10 a0 [ argument ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":199 -1
+     (nil))
+(note 3 2 25 2 NOTE_INSN_FUNCTION_BEG)
+(code_label 25 3 6 4 31 (nil) [1 uses])
+(note 6 25 18 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(code_label 18 6 7 5 30 (nil) [1 uses])
+(note 7 18 8 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 8 7 9 5 (set (reg:SI 77)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":203 -1
+     (nil))
+(insn 9 8 10 5 (set (reg/f:SI 76)
+        (lo_sum:SI (reg:SI 77)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":203 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 10 9 11 5 (set (reg:SI 78)
+        (mem/f/c:SI (reg/f:SI 76) [2 xSerialEventGroupHandle+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":203 -1
+     (nil))
+(insn 11 10 12 5 (set (reg:SI 14 a4)
+        (const_int -1 [0xffffffffffffffff])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":203 -1
+     (nil))
+(insn 12 11 13 5 (set (reg:SI 13 a3)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":203 -1
+     (nil))
+(insn 13 12 14 5 (set (reg:SI 12 a2)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":203 -1
+     (nil))
+(insn 14 13 15 5 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":203 -1
+     (nil))
+(insn 15 14 16 5 (set (reg:SI 10 a0)
+        (reg:SI 78)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":203 -1
+     (nil))
+(call_insn 16 15 17 5 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 066662d0 xEventGroupWaitBits>) [0 xEventGroupWaitBits S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":203 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 066662d0 xEventGroupWaitBits>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (expr_list:SI (use (reg:SI 14 a4))
+                        (nil)))))))
+(insn 17 16 19 5 (set (reg/v:SI 74 [ uxBits ])
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":203 -1
+     (nil))
+(insn 19 17 20 5 (set (reg:SI 79)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":204 -1
+     (nil))
+(jump_insn 20 19 21 5 (set (pc)
+        (if_then_else (ne (reg/v:SI 74 [ uxBits ])
+                (reg:SI 79))
+            (label_ref 18)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":204 -1
+     (int_list:REG_BR_PROB 708669604 (nil))
+ -> 18)
+(note 21 20 22 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 22 21 23 6 (set (reg:SI 80)
+        (high:SI (symbol_ref:SI ("pxMBFrameCBTransmitterEmpty") [flags 0xc4] <var_decl 065a70b0 pxMBFrameCBTransmitterEmpty>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":207 -1
+     (nil))
+(insn 23 22 24 6 (set (reg/f:SI 81)
+        (mem/f/c:SI (lo_sum:SI (reg:SI 80)
+                (symbol_ref:SI ("pxMBFrameCBTransmitterEmpty") [flags 0xc4] <var_decl 065a70b0 pxMBFrameCBTransmitterEmpty>)) [4 pxMBFrameCBTransmitterEmpty+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":207 -1
+     (nil))
+(call_insn 24 23 26 6 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (reg/f:SI 81) [0 *pxMBFrameCBTransmitterEmpty.17_2 S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":207 -1
+     (expr_list:REG_CALL_DECL (nil)
+        (nil))
+    (nil))
+(jump_insn 26 24 27 6 (set (pc)
+        (label_ref 25)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":208 -1
+     (nil)
+ -> 25)
+(barrier 27 26 0)

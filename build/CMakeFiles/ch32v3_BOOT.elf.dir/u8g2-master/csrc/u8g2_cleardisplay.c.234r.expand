@@ -1,0 +1,91 @@
+
+;; Function u8g2_ClearDisplay (u8g2_ClearDisplay, funcdef_no=0, decl_uid=3352, cgraph_uid=0, symbol_order=0)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v/f:SI 73 [ u8g2 ])
+        (reg:SI 10 a0 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_cleardisplay.c":40 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_cleardisplay.c":41 -1
+     (nil))
+(call_insn 7 6 13 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8g2_FirstPage") [flags 0x41] <function_decl 0645a9d8 u8g2_FirstPage>) [0 u8g2_FirstPage S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_cleardisplay.c":41 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_FirstPage") [flags 0x41] <function_decl 0645a9d8 u8g2_FirstPage>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(code_label 13 7 8 4 2 (nil) [1 uses])
+(note 8 13 9 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 9 8 10 4 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_cleardisplay.c":43 -1
+     (nil))
+(call_insn 10 9 11 4 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("u8g2_NextPage") [flags 0x41] <function_decl 0645aa50 u8g2_NextPage>) [0 u8g2_NextPage S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_cleardisplay.c":43 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_NextPage") [flags 0x41] <function_decl 0645aa50 u8g2_NextPage>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 11 10 12 4 (set (reg:SI 74)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_cleardisplay.c":43 -1
+     (nil))
+(insn 12 11 14 4 (set (reg:SI 72 [ _1 ])
+        (reg:SI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_cleardisplay.c":43 -1
+     (nil))
+(jump_insn 14 12 15 4 (set (pc)
+        (if_then_else (ne (reg:SI 72 [ _1 ])
+                (const_int 0 [0]))
+            (label_ref 13)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_cleardisplay.c":43 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 13)
+(note 15 14 16 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 16 15 17 5 (set (reg:SI 11 a1)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_cleardisplay.c":52 -1
+     (nil))
+(insn 17 16 18 5 (set (reg:SI 10 a0)
+        (reg/v/f:SI 73 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_cleardisplay.c":52 -1
+     (nil))
+(call_insn 18 17 0 5 (parallel [
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetBufferCurrTileRow") [flags 0x41] <function_decl 0645a960 u8g2_SetBufferCurrTileRow>) [0 u8g2_SetBufferCurrTileRow S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_cleardisplay.c":52 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetBufferCurrTileRow") [flags 0x41] <function_decl 0645a960 u8g2_SetBufferCurrTileRow>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))

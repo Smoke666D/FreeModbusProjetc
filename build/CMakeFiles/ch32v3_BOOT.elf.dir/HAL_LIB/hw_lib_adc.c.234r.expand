@@ -1,0 +1,2842 @@
+
+;; Function vAINInit (vAINInit, funcdef_no=30, decl_uid=16049, cgraph_uid=30, symbol_order=43)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 73)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":36 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 72)
+        (lo_sum:SI (reg:SI 73)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":36 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 7 6 8 2 (set (mem/c:SI (reg/f:SI 72) [0 MEM[(unsigned char *)&xAinData]+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":36 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 75)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":36 -1
+     (nil))
+(insn 9 8 10 2 (set (reg/f:SI 74)
+        (lo_sum:SI (reg:SI 75)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":36 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 10 9 11 2 (set (mem/c:SI (plus:SI (reg/f:SI 74)
+                (const_int 4 [0x4])) [0 MEM[(unsigned char *)&xAinData + 4B]+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":36 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 77)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":36 -1
+     (nil))
+(insn 12 11 13 2 (set (reg/f:SI 76)
+        (lo_sum:SI (reg:SI 77)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":36 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 13 12 14 2 (set (mem/c:HI (plus:SI (reg/f:SI 76)
+                (const_int 8 [0x8])) [0 MEM[(unsigned char *)&xAinData + 8B]+0 S2 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":36 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 79)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":48 -1
+     (nil))
+(insn 15 14 16 2 (set (reg/f:SI 78)
+        (lo_sum:SI (reg:SI 79)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":48 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 16 15 17 2 (set (mem/c:SI (reg/f:SI 78) [5 MEM[(short unsigned int *)&muRawVData]+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":48 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 81)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":48 -1
+     (nil))
+(insn 18 17 19 2 (set (reg/f:SI 80)
+        (lo_sum:SI (reg:SI 81)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":48 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 19 18 20 2 (set (mem/c:SI (plus:SI (reg/f:SI 80)
+                (const_int 4 [0x4])) [5 MEM[(short unsigned int *)&muRawVData + 4B]+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":48 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 83)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":48 -1
+     (nil))
+(insn 21 20 22 2 (set (reg/f:SI 82)
+        (lo_sum:SI (reg:SI 83)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":48 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 22 21 23 2 (set (mem/c:SI (plus:SI (reg/f:SI 82)
+                (const_int 8 [0x8])) [5 MEM[(short unsigned int *)&muRawVData + 8B]+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":48 -1
+     (nil))
+(insn 23 22 24 2 (set (reg:SI 85)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":48 -1
+     (nil))
+(insn 24 23 25 2 (set (reg/f:SI 84)
+        (lo_sum:SI (reg:SI 85)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":48 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 25 24 26 2 (set (mem/c:HI (plus:SI (reg/f:SI 84)
+                (const_int 12 [0xc])) [5 muRawVData+12 S2 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":48 -1
+     (nil))
+(insn 26 25 27 2 (set (reg:SI 87)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":51 -1
+     (nil))
+(insn 27 26 28 2 (set (reg/f:SI 86)
+        (lo_sum:SI (reg:SI 87)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":51 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 28 27 0 2 (set (mem/c:HI (reg/f:SI 86) [5 usCurMaxIndex+0 S2 A16])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":51 -1
+     (nil))
+
+;; Function vDacInit (vDacInit, funcdef_no=31, decl_uid=16058, cgraph_uid=31, symbol_order=44)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 73)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":59 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 72)
+        (lo_sum:SI (reg:SI 73)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":59 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 7 6 8 2 (set (mem/c:SI (reg/f:SI 72) [0 MEM[(unsigned char *)&xDacData]+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":59 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 75)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":59 -1
+     (nil))
+(insn 9 8 10 2 (set (reg/f:SI 74)
+        (lo_sum:SI (reg:SI 75)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":59 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 10 9 11 2 (set (mem/c:SI (plus:SI (reg/f:SI 74)
+                (const_int 4 [0x4])) [0 MEM[(unsigned char *)&xDacData + 4B]+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":59 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 77)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":68 -1
+     (nil))
+(insn 12 11 13 2 (set (reg/f:SI 76)
+        (lo_sum:SI (reg:SI 77)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":68 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 13 12 0 2 (set (mem/c:HI (reg/f:SI 76) [5 usDacMaxIndex+0 S2 A16])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":68 -1
+     (nil))
+
+;; Function fGetAinCalData (fGetAinCalData, funcdef_no=33, decl_uid=16048, cgraph_uid=33, symbol_order=46)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+Edge 2->10 redirected to 14
+Purged non-fallthru edges from bb 16
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 7->9 redirected to 10
+Forwarding edge 7->8 to 11 failed.
+Forwarding edge 7->8 to 11 failed.
+deleting block 9
+Removing jump 75.
+Merging block 16 into block 15...
+Merged blocks 15 and 16.
+Merged 15 and 16 without moving.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 7->8 to 11 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 7 NOTE_INSN_DELETED)
+(note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (reg/v:SI 83 [ name ])
+        (reg:SI 10 a0 [ name ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":108 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SF 84 [ raw_data ])
+        (reg:SF 11 a1 [ raw_data ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":108 -1
+     (nil))
+(note 4 3 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 4 10 2 (set (reg:SI 85)
+        (const_int 4 [0x4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":110 -1
+     (nil))
+(jump_insn 10 9 11 2 (set (pc)
+        (if_then_else (gtu (reg/v:SI 83 [ name ])
+                (reg:SI 85))
+            (label_ref:SI 85)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":110 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 85)
+(note 11 10 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 12 11 13 4 (set (reg:SI 87)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":112 -1
+     (nil))
+(insn 13 12 14 4 (set (reg/f:SI 86)
+        (lo_sum:SI (reg:SI 87)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":112 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 14 13 15 4 (set (reg:SI 88)
+        (ashift:SI (reg/v:SI 83 [ name ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":112 -1
+     (nil))
+(insn 15 14 16 4 (set (reg/f:SI 89)
+        (plus:SI (reg/f:SI 86)
+            (reg:SI 88))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":112 -1
+     (nil))
+(insn 16 15 17 4 (set (reg:SI 72 [ _6 ])
+        (zero_extend:SI (mem:QI (reg/f:SI 89) [0 xAinData[name_3(D)].coof_count+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":112 -1
+     (nil))
+(jump_insn 17 16 18 4 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ _6 ])
+                (const_int 0 [0]))
+            (label_ref 72)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":112 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 72)
+(note 18 17 19 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 19 18 20 5 (set (reg:SI 91)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":89 -1
+     (nil))
+(insn 20 19 21 5 (set (reg/f:SI 90)
+        (lo_sum:SI (reg:SI 91)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":89 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 21 20 22 5 (set (reg:SI 93)
+        (ashift:SI (reg/v:SI 83 [ name ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":89 -1
+     (nil))
+(insn 22 21 23 5 (set (reg/f:SI 92)
+        (plus:SI (reg/f:SI 90)
+            (reg:SI 93))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":89 -1
+     (nil))
+(insn 23 22 24 5 (set (reg:HI 94)
+        (zero_extend:HI (mem:QI (plus:SI (reg/f:SI 92)
+                    (const_int 1 [0x1])) [0 xAinData[name_3(D)].index+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":89 -1
+     (nil))
+(insn 24 23 25 5 (set (reg:SI 74 [ _10 ])
+        (zero_extend:SI (reg:HI 94))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":89 -1
+     (nil))
+(insn 25 24 26 5 (set (reg:HI 95)
+        (subreg:HI (reg:SI 72 [ _6 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":89 -1
+     (nil))
+(insn 26 25 27 5 (set (reg:SI 96)
+        (plus:SI (reg:SI 74 [ _10 ])
+            (subreg:SI (reg:HI 95) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":89 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:HI 97)
+        (subreg:HI (reg:SI 96) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":89 -1
+     (nil))
+(insn 28 27 29 5 (set (reg:SI 98)
+        (plus:SI (subreg:SI (reg:HI 97) 0)
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":89 -1
+     (nil))
+(insn 29 28 30 5 (set (reg/v:SI 77 [ i ])
+        (zero_extend:SI (subreg:HI (reg:SI 98) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":89 -1
+     (nil))
+(jump_insn 30 29 31 5 (set (pc)
+        (label_ref 68)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":89 -1
+     (nil)
+ -> 68)
+(barrier 31 30 70)
+(code_label 70 31 32 6 9 (nil) [1 uses])
+(note 32 70 33 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 33 32 34 6 (set (reg:SI 81 [ _25 ])
+        (reg/v:SI 77 [ i ])) -1
+     (nil))
+(jump_insn 34 33 35 6 (set (pc)
+        (if_then_else (eq (reg:SI 74 [ _10 ])
+                (reg/v:SI 77 [ i ]))
+            (label_ref 47)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":91 -1
+     (int_list:REG_BR_PROB 39298956 (nil))
+ -> 47)
+(note 35 34 36 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 36 35 37 7 (set (reg:SI 100)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":91 -1
+     (nil))
+(insn 37 36 38 7 (set (reg/f:SI 99)
+        (lo_sum:SI (reg:SI 100)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":91 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 38 37 39 7 (set (reg:SI 101)
+        (const_int 12 [0xc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":91 -1
+     (nil))
+(insn 39 38 40 7 (set (reg:SI 102)
+        (mult:SI (reg:SI 81 [ _25 ])
+            (reg:SI 101))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":91 -1
+     (nil))
+(insn 40 39 41 7 (set (reg/f:SI 103)
+        (plus:SI (reg/f:SI 99)
+            (reg:SI 102))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":91 -1
+     (nil))
+(insn 41 40 42 7 (set (reg:SF 104)
+        (mem:SF (reg/f:SI 103) [2 xKoofData[_25].data+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":91 -1
+     (nil))
+(insn 42 41 43 7 (set (reg:SI 105)
+        (ge:SI (reg/v:SF 84 [ raw_data ])
+            (reg:SF 104))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":91 -1
+     (nil))
+(jump_insn 43 42 86 7 (set (pc)
+        (if_then_else (ne (reg:SI 105)
+                (const_int 0 [0]))
+            (label_ref:SI 47)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":91 180 {*branchsi}
+     (int_list:REG_BR_PROB 39298956 (nil))
+ -> 47)
+(note 86 43 44 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 44 86 45 8 (set (pc)
+        (label_ref 64)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":91 -1
+     (nil)
+ -> 64)
+(barrier 45 44 47)
+(code_label 47 45 48 10 6 (nil) [2 uses])
+(note 48 47 49 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 49 48 50 10 (set (reg:SI 107)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":93 -1
+     (nil))
+(insn 50 49 51 10 (set (reg/f:SI 106)
+        (lo_sum:SI (reg:SI 107)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":93 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 51 50 52 10 (set (reg:SI 109)
+        (const_int 12 [0xc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":93 -1
+     (nil))
+(insn 52 51 53 10 (set (reg:SI 110)
+        (mult:SI (reg:SI 81 [ _25 ])
+            (reg:SI 109))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":93 -1
+     (nil))
+(insn 53 52 54 10 (set (reg/f:SI 108)
+        (plus:SI (reg/f:SI 106)
+            (reg:SI 110))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":93 -1
+     (nil))
+(insn 54 53 55 10 (set (reg:SI 112)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":93 -1
+     (nil))
+(insn 55 54 56 10 (set (reg/f:SI 111)
+        (lo_sum:SI (reg:SI 112)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":93 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 56 55 57 10 (set (reg:SI 114)
+        (const_int 12 [0xc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":93 -1
+     (nil))
+(insn 57 56 58 10 (set (reg:SI 115)
+        (mult:SI (reg:SI 81 [ _25 ])
+            (reg:SI 114))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":93 -1
+     (nil))
+(insn 58 57 59 10 (set (reg/f:SI 113)
+        (plus:SI (reg/f:SI 111)
+            (reg:SI 115))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":93 -1
+     (nil))
+(insn 59 58 60 10 (set (reg:SF 116)
+        (mem:SF (plus:SI (reg/f:SI 113)
+                (const_int 4 [0x4])) [2 xKoofData[_25].k+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":93 -1
+     (nil))
+(insn 60 59 61 10 (set (reg:SF 117)
+        (mem:SF (plus:SI (reg/f:SI 108)
+                (const_int 8 [0x8])) [2 xKoofData[_25].b+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":93 -1
+     (nil))
+(insn 61 60 62 10 (set (reg/v:SF 84 [ raw_data ])
+        (fma:SF (reg/v:SF 84 [ raw_data ])
+            (reg:SF 116)
+            (reg:SF 117))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":93 -1
+     (nil))
+(jump_insn 62 61 63 10 (set (pc)
+        (label_ref 72)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":93 -1
+     (nil)
+ -> 72)
+(barrier 63 62 64)
+(code_label 64 63 65 11 7 (nil) [1 uses])
+(note 65 64 66 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 66 65 67 11 (set (reg:SI 118)
+        (plus:SI (reg/v:SI 77 [ i ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":89 -1
+     (nil))
+(insn 67 66 68 11 (set (reg/v:SI 77 [ i ])
+        (zero_extend:SI (subreg:HI (reg:SI 118) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":89 -1
+     (nil))
+(code_label 68 67 69 12 5 (nil) [1 uses])
+(note 69 68 71 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 71 69 81 12 (set (pc)
+        (if_then_else (leu (reg:SI 74 [ _10 ])
+                (reg/v:SI 77 [ i ]))
+            (label_ref 70)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":89 -1
+     (int_list:REG_BR_PROB 1034442876 (nil))
+ -> 70)
+(note 81 71 6 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 6 81 82 13 (set (reg/v:SF 84 [ raw_data ])
+        (const_double:SF 0.0 [0x0.0p+0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":109 -1
+     (nil))
+(jump_insn 82 6 83 13 (set (pc)
+        (label_ref 72)) -1
+     (nil)
+ -> 72)
+(barrier 83 82 85)
+(code_label 85 83 84 14 10 (nil) [1 uses])
+(note 84 85 5 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 5 84 72 14 (set (reg/v:SF 84 [ raw_data ])
+        (const_double:SF 0.0 [0x0.0p+0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":109 -1
+     (nil))
+(code_label 72 5 73 15 4 (nil) [3 uses])
+(note 73 72 74 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 74 73 78 15 (set (reg:SF 82 [ <retval> ])
+        (reg/v:SF 84 [ raw_data ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":121 -1
+     (nil))
+(insn 78 74 79 15 (set (reg/i:SF 10 a0)
+        (reg:SF 82 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":122 -1
+     (nil))
+(insn 79 78 0 15 (use (reg/i:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":122 -1
+     (nil))
+
+;; Function eAinCalDataConfig (eAinCalDataConfig, funcdef_no=34, decl_uid=16030, cgraph_uid=34, symbol_order=47)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+Edge 2->8 redirected to 11
+Edge 4->8 redirected to 12
+Edge 6->8 redirected to 13
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 48 from 12 to 13.
+Redirecting jump 63 from 12 to 13.
+Redirecting jump 67 from 12 to 13.
+Redirecting jump 71 from 12 to 13.
+Merging block 12 into block 11...
+Merged blocks 11 and 12.
+Merged 11 and 12 without moving.
+Removing jump 57.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 10 NOTE_INSN_DELETED)
+(note 10 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 10 3 2 (set (reg/v:SI 85 [ name ])
+        (reg:SI 10 a0 [ name ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":130 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 86 [ cal_point_count ])
+        (reg:SI 11 a1 [ cal_point_count ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":130 -1
+     (nil))
+(note 4 3 12 2 NOTE_INSN_FUNCTION_BEG)
+(insn 12 4 13 2 (set (reg:SI 87)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":132 -1
+     (nil))
+(jump_insn 13 12 14 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 86 [ cal_point_count ])
+                (reg:SI 87))
+            (label_ref:SI 66)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":132 180 {*branchsi}
+     (int_list:REG_BR_PROB 233216732 (nil))
+ -> 66)
+(note 14 13 15 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 15 14 16 4 (set (reg:SI 89)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":138 -1
+     (nil))
+(insn 16 15 17 4 (set (reg/f:SI 88)
+        (lo_sum:SI (reg:SI 89)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":138 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 17 16 18 4 (set (reg:SI 90)
+        (ashift:SI (reg/v:SI 85 [ name ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":138 -1
+     (nil))
+(insn 18 17 19 4 (set (reg/f:SI 91)
+        (plus:SI (reg/f:SI 88)
+            (reg:SI 90))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":138 -1
+     (nil))
+(insn 19 18 20 4 (set (reg:SI 72 [ _1 ])
+        (zero_extend:SI (mem:QI (reg/f:SI 91) [0 xAinData[name_18(D)].coof_count+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":138 -1
+     (nil))
+(insn 20 19 21 4 (set (reg:SI 79 [ _9 ])
+        (reg/v:SI 86 [ cal_point_count ])) -1
+     (nil))
+(jump_insn 21 20 22 4 (set (pc)
+        (if_then_else (ne (reg:SI 72 [ _1 ])
+                (const_int 0 [0]))
+            (label_ref 50)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":138 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 50)
+(note 22 21 23 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 5 (set (reg:SI 93)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":140 -1
+     (nil))
+(insn 24 23 25 5 (set (reg/f:SI 92)
+        (lo_sum:SI (reg:SI 93)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":140 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 25 24 26 5 (set (reg:SI 73 [ usCurMaxIndex.5_3 ])
+        (zero_extend:SI (mem/c:HI (reg/f:SI 92) [5 usCurMaxIndex+0 S2 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":140 -1
+     (nil))
+(insn 26 25 27 5 (set (reg:SI 94)
+        (plus:SI (reg:SI 73 [ usCurMaxIndex.5_3 ])
+            (reg:SI 79 [ _9 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":140 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:SI 95)
+        (const_int 100 [0x64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":140 -1
+     (nil))
+(jump_insn 28 27 29 5 (set (pc)
+        (if_then_else (gt (reg:SI 94)
+                (reg:SI 95))
+            (label_ref:SI 70)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":140 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 70)
+(note 29 28 30 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 30 29 31 6 (set (reg:SI 97)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":146 -1
+     (nil))
+(insn 31 30 32 6 (set (reg/f:SI 96)
+        (lo_sum:SI (reg:SI 97)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":146 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 32 31 33 6 (set (reg:SI 98)
+        (ashift:SI (reg/v:SI 85 [ name ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":146 -1
+     (nil))
+(insn 33 32 34 6 (set (reg/f:SI 99)
+        (plus:SI (reg/f:SI 96)
+            (reg:SI 98))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":146 -1
+     (nil))
+(insn 34 33 35 6 (set (reg:SI 100)
+        (plus:SI (reg/v:SI 86 [ cal_point_count ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":146 -1
+     (nil))
+(insn 35 34 36 6 (set (mem:QI (reg/f:SI 99) [0 xAinData[name_18(D)].coof_count+0 S1 A16])
+        (subreg:QI (reg:SI 100) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":146 -1
+     (nil))
+(insn 36 35 37 6 (set (reg:SI 102)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":147 -1
+     (nil))
+(insn 37 36 38 6 (set (reg/f:SI 101)
+        (lo_sum:SI (reg:SI 102)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":147 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 38 37 39 6 (set (reg:SI 104)
+        (ashift:SI (reg/v:SI 85 [ name ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":147 -1
+     (nil))
+(insn 39 38 40 6 (set (reg/f:SI 103)
+        (plus:SI (reg/f:SI 101)
+            (reg:SI 104))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":147 -1
+     (nil))
+(insn 40 39 41 6 (set (mem:QI (plus:SI (reg/f:SI 103)
+                (const_int 1 [0x1])) [0 xAinData[name_18(D)].index+0 S1 A8])
+        (subreg:QI (reg:SI 73 [ usCurMaxIndex.5_3 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":147 -1
+     (nil))
+(insn 41 40 42 6 (set (reg:SI 106)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":148 -1
+     (nil))
+(insn 42 41 43 6 (set (reg/f:SI 105)
+        (lo_sum:SI (reg:SI 106)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":148 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 43 42 44 6 (set (reg:SI 107)
+        (plus:SI (reg:SI 73 [ usCurMaxIndex.5_3 ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":148 -1
+     (nil))
+(insn 44 43 45 6 (set (reg:HI 108)
+        (subreg:HI (reg:SI 107) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":148 -1
+     (nil))
+(insn 45 44 46 6 (set (reg:HI 109)
+        (subreg:HI (reg/v:SI 86 [ cal_point_count ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":148 -1
+     (nil))
+(insn 46 45 47 6 (set (reg:SI 110)
+        (plus:SI (subreg:SI (reg:HI 108) 0)
+            (subreg:SI (reg:HI 109) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":148 -1
+     (nil))
+(insn 47 46 6 6 (set (mem/c:HI (reg/f:SI 105) [5 usCurMaxIndex+0 S2 A16])
+        (subreg:HI (reg:SI 110) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":148 -1
+     (nil))
+(insn 6 47 48 6 (set (reg/v:SI 84 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":131 -1
+     (nil))
+(jump_insn 48 6 49 6 (set (pc)
+        (label_ref:SI 59)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":148 250 {jump}
+     (nil)
+ -> 59)
+(barrier 49 48 50)
+(code_label 50 49 51 7 17 (nil) [1 uses])
+(note 51 50 52 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 52 51 53 7 (set (reg:SI 111)
+        (plus:SI (reg:SI 79 [ _9 ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":153 -1
+     (nil))
+(jump_insn 53 52 54 7 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ _1 ])
+                (reg:SI 111))
+            (label_ref:SI 74)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":153 180 {*branchsi}
+     (int_list:REG_BR_PROB 524952380 (nil))
+ -> 74)
+(note 54 53 9 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 9 54 63 8 (set (reg/v:SI 84 [ <retval> ])
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":155 -1
+     (nil))
+(jump_insn 63 9 64 8 (set (pc)
+        (label_ref:SI 59)) 250 {jump}
+     (nil)
+ -> 59)
+(barrier 64 63 66)
+(code_label 66 64 65 9 18 (nil) [1 uses])
+(note 65 66 5 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 5 65 67 9 (set (reg/v:SI 84 [ <retval> ])
+        (const_int 3 [0x3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":134 -1
+     (nil))
+(jump_insn 67 5 68 9 (set (pc)
+        (label_ref:SI 59)) 250 {jump}
+     (nil)
+ -> 59)
+(barrier 68 67 70)
+(code_label 70 68 69 10 19 (nil) [1 uses])
+(note 69 70 7 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 7 69 71 10 (set (reg/v:SI 84 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":142 -1
+     (nil))
+(jump_insn 71 7 72 10 (set (pc)
+        (label_ref:SI 59)) 250 {jump}
+     (nil)
+ -> 59)
+(barrier 72 71 74)
+(code_label 74 72 73 11 20 (nil) [1 uses])
+(note 73 74 8 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 8 73 59 11 (set (reg/v:SI 84 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":131 -1
+     (nil))
+(code_label 59 8 62 13 15 (nil) [4 uses])
+(note 62 59 60 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 60 62 61 13 (set (reg/i:SI 10 a0)
+        (reg/v:SI 84 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":160 -1
+     (nil))
+(insn 61 60 0 13 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":160 -1
+     (nil))
+
+;; Function eDacCalDataConfig (eDacCalDataConfig, funcdef_no=35, decl_uid=16068, cgraph_uid=35, symbol_order=48)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+Edge 2->8 redirected to 11
+Edge 4->8 redirected to 12
+Edge 6->8 redirected to 13
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 51 from 12 to 13.
+Redirecting jump 66 from 12 to 13.
+Redirecting jump 70 from 12 to 13.
+Redirecting jump 74 from 12 to 13.
+Merging block 12 into block 11...
+Merged blocks 11 and 12.
+Merged 11 and 12 without moving.
+Removing jump 60.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 10 NOTE_INSN_DELETED)
+(note 10 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 10 3 2 (set (reg/v:SI 86 [ name ])
+        (reg:SI 10 a0 [ name ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":166 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 87 [ cal_point_count ])
+        (reg:SI 11 a1 [ cal_point_count ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":166 -1
+     (nil))
+(note 4 3 12 2 NOTE_INSN_FUNCTION_BEG)
+(insn 12 4 13 2 (set (reg:SI 88)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":168 -1
+     (nil))
+(jump_insn 13 12 14 2 (set (pc)
+        (if_then_else (eq (reg/v:SI 87 [ cal_point_count ])
+                (reg:SI 88))
+            (label_ref:SI 69)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":168 180 {*branchsi}
+     (int_list:REG_BR_PROB 233216732 (nil))
+ -> 69)
+(note 14 13 15 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 15 14 16 4 (set (reg:SI 90)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":174 -1
+     (nil))
+(insn 16 15 17 4 (set (reg/f:SI 89)
+        (lo_sum:SI (reg:SI 90)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":174 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 17 16 18 4 (set (reg:SI 91)
+        (ashift:SI (reg/v:SI 86 [ name ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":174 -1
+     (nil))
+(insn 18 17 19 4 (set (reg/f:SI 92)
+        (plus:SI (reg/f:SI 89)
+            (reg:SI 91))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":174 -1
+     (nil))
+(insn 19 18 20 4 (set (reg:SI 72 [ _1 ])
+        (zero_extend:SI (mem:QI (reg/f:SI 92) [0 xDacData[name_19(D)].coof_count+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":174 -1
+     (nil))
+(insn 20 19 21 4 (set (reg:SI 80 [ _10 ])
+        (reg/v:SI 87 [ cal_point_count ])) -1
+     (nil))
+(jump_insn 21 20 22 4 (set (pc)
+        (if_then_else (ne (reg:SI 72 [ _1 ])
+                (const_int 0 [0]))
+            (label_ref 53)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":174 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 53)
+(note 22 21 23 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 5 (set (reg:SI 94)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":176 -1
+     (nil))
+(insn 24 23 25 5 (set (reg/f:SI 93)
+        (lo_sum:SI (reg:SI 94)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":176 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 25 24 26 5 (set (reg:SI 95)
+        (zero_extend:SI (mem/c:HI (reg/f:SI 93) [5 usDacMaxIndex+0 S2 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":176 -1
+     (nil))
+(insn 26 25 27 5 (set (reg:SI 96)
+        (plus:SI (reg:SI 95)
+            (reg:SI 80 [ _10 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":176 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:SI 97)
+        (const_int 80 [0x50])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":176 -1
+     (nil))
+(jump_insn 28 27 29 5 (set (pc)
+        (if_then_else (gt (reg:SI 96)
+                (reg:SI 97))
+            (label_ref:SI 73)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":176 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 73)
+(note 29 28 30 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 30 29 31 6 (set (reg:SI 99)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":182 -1
+     (nil))
+(insn 31 30 32 6 (set (reg/f:SI 98)
+        (lo_sum:SI (reg:SI 99)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":182 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 32 31 33 6 (set (reg:SI 100)
+        (ashift:SI (reg/v:SI 86 [ name ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":182 -1
+     (nil))
+(insn 33 32 34 6 (set (reg/f:SI 101)
+        (plus:SI (reg/f:SI 98)
+            (reg:SI 100))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":182 -1
+     (nil))
+(insn 34 33 35 6 (set (reg:SI 102)
+        (plus:SI (reg/v:SI 87 [ cal_point_count ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":182 -1
+     (nil))
+(insn 35 34 36 6 (set (mem:QI (reg/f:SI 101) [0 xDacData[name_19(D)].coof_count+0 S1 A16])
+        (subreg:QI (reg:SI 102) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":182 -1
+     (nil))
+(insn 36 35 37 6 (set (reg:SI 104)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":183 -1
+     (nil))
+(insn 37 36 38 6 (set (reg/f:SI 103)
+        (lo_sum:SI (reg:SI 104)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":183 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 38 37 39 6 (set (reg:SI 77 [ usCurMaxIndex.9_7 ])
+        (zero_extend:SI (mem/c:HI (reg/f:SI 103) [5 usCurMaxIndex+0 S2 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":183 -1
+     (nil))
+(insn 39 38 40 6 (set (reg:SI 106)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":183 -1
+     (nil))
+(insn 40 39 41 6 (set (reg/f:SI 105)
+        (lo_sum:SI (reg:SI 106)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":183 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 41 40 42 6 (set (reg:SI 108)
+        (ashift:SI (reg/v:SI 86 [ name ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":183 -1
+     (nil))
+(insn 42 41 43 6 (set (reg/f:SI 107)
+        (plus:SI (reg/f:SI 105)
+            (reg:SI 108))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":183 -1
+     (nil))
+(insn 43 42 44 6 (set (mem:QI (plus:SI (reg/f:SI 107)
+                (const_int 1 [0x1])) [0 xDacData[name_19(D)].index+0 S1 A8])
+        (subreg:QI (reg:SI 77 [ usCurMaxIndex.9_7 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":183 -1
+     (nil))
+(insn 44 43 45 6 (set (reg:SI 110)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":184 -1
+     (nil))
+(insn 45 44 46 6 (set (reg/f:SI 109)
+        (lo_sum:SI (reg:SI 110)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":184 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 46 45 47 6 (set (reg:SI 111)
+        (plus:SI (reg:SI 77 [ usCurMaxIndex.9_7 ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":184 -1
+     (nil))
+(insn 47 46 48 6 (set (reg:HI 112)
+        (subreg:HI (reg:SI 111) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":184 -1
+     (nil))
+(insn 48 47 49 6 (set (reg:HI 113)
+        (subreg:HI (reg/v:SI 87 [ cal_point_count ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":184 -1
+     (nil))
+(insn 49 48 50 6 (set (reg:SI 114)
+        (plus:SI (subreg:SI (reg:HI 112) 0)
+            (subreg:SI (reg:HI 113) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":184 -1
+     (nil))
+(insn 50 49 6 6 (set (mem/c:HI (reg/f:SI 109) [5 usCurMaxIndex+0 S2 A16])
+        (subreg:HI (reg:SI 114) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":184 -1
+     (nil))
+(insn 6 50 51 6 (set (reg/v:SI 85 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":167 -1
+     (nil))
+(jump_insn 51 6 52 6 (set (pc)
+        (label_ref:SI 62)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":184 250 {jump}
+     (nil)
+ -> 62)
+(barrier 52 51 53)
+(code_label 53 52 54 7 23 (nil) [1 uses])
+(note 54 53 55 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 55 54 56 7 (set (reg:SI 115)
+        (plus:SI (reg:SI 80 [ _10 ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":189 -1
+     (nil))
+(jump_insn 56 55 57 7 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ _1 ])
+                (reg:SI 115))
+            (label_ref:SI 77)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":189 180 {*branchsi}
+     (int_list:REG_BR_PROB 524952380 (nil))
+ -> 77)
+(note 57 56 9 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 9 57 66 8 (set (reg/v:SI 85 [ <retval> ])
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":191 -1
+     (nil))
+(jump_insn 66 9 67 8 (set (pc)
+        (label_ref:SI 62)) 250 {jump}
+     (nil)
+ -> 62)
+(barrier 67 66 69)
+(code_label 69 67 68 9 24 (nil) [1 uses])
+(note 68 69 5 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 5 68 70 9 (set (reg/v:SI 85 [ <retval> ])
+        (const_int 3 [0x3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":170 -1
+     (nil))
+(jump_insn 70 5 71 9 (set (pc)
+        (label_ref:SI 62)) 250 {jump}
+     (nil)
+ -> 62)
+(barrier 71 70 73)
+(code_label 73 71 72 10 25 (nil) [1 uses])
+(note 72 73 7 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 7 72 74 10 (set (reg/v:SI 85 [ <retval> ])
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":178 -1
+     (nil))
+(jump_insn 74 7 75 10 (set (pc)
+        (label_ref:SI 62)) 250 {jump}
+     (nil)
+ -> 62)
+(barrier 75 74 77)
+(code_label 77 75 76 11 26 (nil) [1 uses])
+(note 76 77 8 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 8 76 62 11 (set (reg/v:SI 85 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":167 -1
+     (nil))
+(code_label 62 8 65 13 21 (nil) [4 uses])
+(note 65 62 63 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 63 65 64 13 (set (reg/i:SI 10 a0)
+        (reg/v:SI 85 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":196 -1
+     (nil))
+(insn 64 63 0 13 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":196 -1
+     (nil))
+
+;; Function fGetDacCalData (fGetDacCalData, funcdef_no=37, decl_uid=16061, cgraph_uid=37, symbol_order=50)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+Edge 2->10 redirected to 14
+Purged non-fallthru edges from bb 16
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 7->9 redirected to 10
+Forwarding edge 7->8 to 11 failed.
+Forwarding edge 7->8 to 11 failed.
+deleting block 9
+Removing jump 75.
+Merging block 16 into block 15...
+Merged blocks 15 and 16.
+Merged 15 and 16 without moving.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 7->8 to 11 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 7 NOTE_INSN_DELETED)
+(note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 7 3 2 (set (reg/v:SI 83 [ name ])
+        (reg:SI 10 a0 [ name ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":222 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SF 84 [ raw_data ])
+        (reg:SF 11 a1 [ raw_data ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":222 -1
+     (nil))
+(note 4 3 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 4 10 2 (set (reg:SI 85)
+        (const_int 3 [0x3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":224 -1
+     (nil))
+(jump_insn 10 9 11 2 (set (pc)
+        (if_then_else (gtu (reg/v:SI 83 [ name ])
+                (reg:SI 85))
+            (label_ref:SI 85)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":224 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 85)
+(note 11 10 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 12 11 13 4 (set (reg:SI 87)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":226 -1
+     (nil))
+(insn 13 12 14 4 (set (reg/f:SI 86)
+        (lo_sum:SI (reg:SI 87)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":226 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 14 13 15 4 (set (reg:SI 88)
+        (ashift:SI (reg/v:SI 83 [ name ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":226 -1
+     (nil))
+(insn 15 14 16 4 (set (reg/f:SI 89)
+        (plus:SI (reg/f:SI 86)
+            (reg:SI 88))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":226 -1
+     (nil))
+(insn 16 15 17 4 (set (reg:SI 72 [ _1 ])
+        (zero_extend:SI (mem:QI (reg/f:SI 89) [0 xDacData[name_3(D)].coof_count+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":226 -1
+     (nil))
+(jump_insn 17 16 18 4 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ _1 ])
+                (const_int 0 [0]))
+            (label_ref 72)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":226 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 72)
+(note 18 17 19 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 19 18 20 5 (set (reg:SI 91)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":207 -1
+     (nil))
+(insn 20 19 21 5 (set (reg/f:SI 90)
+        (lo_sum:SI (reg:SI 91)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":207 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 21 20 22 5 (set (reg:SI 93)
+        (ashift:SI (reg/v:SI 83 [ name ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":207 -1
+     (nil))
+(insn 22 21 23 5 (set (reg/f:SI 92)
+        (plus:SI (reg/f:SI 90)
+            (reg:SI 93))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":207 -1
+     (nil))
+(insn 23 22 24 5 (set (reg:HI 94)
+        (zero_extend:HI (mem:QI (plus:SI (reg/f:SI 92)
+                    (const_int 1 [0x1])) [0 xDacData[name_3(D)].index+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":207 -1
+     (nil))
+(insn 24 23 25 5 (set (reg:SI 74 [ _8 ])
+        (zero_extend:SI (reg:HI 94))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":207 -1
+     (nil))
+(insn 25 24 26 5 (set (reg:HI 95)
+        (subreg:HI (reg:SI 72 [ _1 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":207 -1
+     (nil))
+(insn 26 25 27 5 (set (reg:SI 96)
+        (plus:SI (reg:SI 74 [ _8 ])
+            (subreg:SI (reg:HI 95) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":207 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:HI 97)
+        (subreg:HI (reg:SI 96) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":207 -1
+     (nil))
+(insn 28 27 29 5 (set (reg:SI 98)
+        (plus:SI (subreg:SI (reg:HI 97) 0)
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":207 -1
+     (nil))
+(insn 29 28 30 5 (set (reg/v:SI 77 [ i ])
+        (zero_extend:SI (subreg:HI (reg:SI 98) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":207 -1
+     (nil))
+(jump_insn 30 29 31 5 (set (pc)
+        (label_ref 68)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":207 -1
+     (nil)
+ -> 68)
+(barrier 31 30 70)
+(code_label 70 31 32 6 33 (nil) [1 uses])
+(note 32 70 33 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 33 32 34 6 (set (reg:SI 81 [ _23 ])
+        (reg/v:SI 77 [ i ])) -1
+     (nil))
+(jump_insn 34 33 35 6 (set (pc)
+        (if_then_else (eq (reg:SI 74 [ _8 ])
+                (reg/v:SI 77 [ i ]))
+            (label_ref 47)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":209 -1
+     (int_list:REG_BR_PROB 39298956 (nil))
+ -> 47)
+(note 35 34 36 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 36 35 37 7 (set (reg:SI 100)
+        (high:SI (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":209 -1
+     (nil))
+(insn 37 36 38 7 (set (reg/f:SI 99)
+        (lo_sum:SI (reg:SI 100)
+            (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":209 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR6") [flags 0x182])
+        (nil)))
+(insn 38 37 39 7 (set (reg:SI 101)
+        (const_int 12 [0xc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":209 -1
+     (nil))
+(insn 39 38 40 7 (set (reg:SI 102)
+        (mult:SI (reg:SI 81 [ _23 ])
+            (reg:SI 101))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":209 -1
+     (nil))
+(insn 40 39 41 7 (set (reg/f:SI 103)
+        (plus:SI (reg/f:SI 99)
+            (reg:SI 102))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":209 -1
+     (nil))
+(insn 41 40 42 7 (set (reg:SF 104)
+        (mem:SF (reg/f:SI 103) [2 xDacKoofData[_23].data+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":209 -1
+     (nil))
+(insn 42 41 43 7 (set (reg:SI 105)
+        (ge:SI (reg/v:SF 84 [ raw_data ])
+            (reg:SF 104))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":209 -1
+     (nil))
+(jump_insn 43 42 86 7 (set (pc)
+        (if_then_else (ne (reg:SI 105)
+                (const_int 0 [0]))
+            (label_ref:SI 47)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":209 180 {*branchsi}
+     (int_list:REG_BR_PROB 39298956 (nil))
+ -> 47)
+(note 86 43 44 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 44 86 45 8 (set (pc)
+        (label_ref 64)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":209 -1
+     (nil)
+ -> 64)
+(barrier 45 44 47)
+(code_label 47 45 48 10 30 (nil) [2 uses])
+(note 48 47 49 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 49 48 50 10 (set (reg:SI 107)
+        (high:SI (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":211 -1
+     (nil))
+(insn 50 49 51 10 (set (reg/f:SI 106)
+        (lo_sum:SI (reg:SI 107)
+            (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":211 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR6") [flags 0x182])
+        (nil)))
+(insn 51 50 52 10 (set (reg:SI 109)
+        (const_int 12 [0xc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":211 -1
+     (nil))
+(insn 52 51 53 10 (set (reg:SI 110)
+        (mult:SI (reg:SI 81 [ _23 ])
+            (reg:SI 109))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":211 -1
+     (nil))
+(insn 53 52 54 10 (set (reg/f:SI 108)
+        (plus:SI (reg/f:SI 106)
+            (reg:SI 110))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":211 -1
+     (nil))
+(insn 54 53 55 10 (set (reg:SI 112)
+        (high:SI (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":211 -1
+     (nil))
+(insn 55 54 56 10 (set (reg/f:SI 111)
+        (lo_sum:SI (reg:SI 112)
+            (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":211 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR6") [flags 0x182])
+        (nil)))
+(insn 56 55 57 10 (set (reg:SI 114)
+        (const_int 12 [0xc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":211 -1
+     (nil))
+(insn 57 56 58 10 (set (reg:SI 115)
+        (mult:SI (reg:SI 81 [ _23 ])
+            (reg:SI 114))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":211 -1
+     (nil))
+(insn 58 57 59 10 (set (reg/f:SI 113)
+        (plus:SI (reg/f:SI 111)
+            (reg:SI 115))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":211 -1
+     (nil))
+(insn 59 58 60 10 (set (reg:SF 116)
+        (mem:SF (plus:SI (reg/f:SI 113)
+                (const_int 4 [0x4])) [2 xDacKoofData[_23].k+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":211 -1
+     (nil))
+(insn 60 59 61 10 (set (reg:SF 117)
+        (mem:SF (plus:SI (reg/f:SI 108)
+                (const_int 8 [0x8])) [2 xDacKoofData[_23].b+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":211 -1
+     (nil))
+(insn 61 60 62 10 (set (reg/v:SF 84 [ raw_data ])
+        (fma:SF (reg/v:SF 84 [ raw_data ])
+            (reg:SF 116)
+            (reg:SF 117))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":211 -1
+     (nil))
+(jump_insn 62 61 63 10 (set (pc)
+        (label_ref 72)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":211 -1
+     (nil)
+ -> 72)
+(barrier 63 62 64)
+(code_label 64 63 65 11 31 (nil) [1 uses])
+(note 65 64 66 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 66 65 67 11 (set (reg:SI 118)
+        (plus:SI (reg/v:SI 77 [ i ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":207 -1
+     (nil))
+(insn 67 66 68 11 (set (reg/v:SI 77 [ i ])
+        (zero_extend:SI (subreg:HI (reg:SI 118) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":207 -1
+     (nil))
+(code_label 68 67 69 12 29 (nil) [1 uses])
+(note 69 68 71 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 71 69 81 12 (set (pc)
+        (if_then_else (leu (reg:SI 74 [ _8 ])
+                (reg/v:SI 77 [ i ]))
+            (label_ref 70)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":207 -1
+     (int_list:REG_BR_PROB 1034442876 (nil))
+ -> 70)
+(note 81 71 6 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 6 81 82 13 (set (reg/v:SF 84 [ raw_data ])
+        (const_double:SF 0.0 [0x0.0p+0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":223 -1
+     (nil))
+(jump_insn 82 6 83 13 (set (pc)
+        (label_ref 72)) -1
+     (nil)
+ -> 72)
+(barrier 83 82 85)
+(code_label 85 83 84 14 34 (nil) [1 uses])
+(note 84 85 5 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 5 84 72 14 (set (reg/v:SF 84 [ raw_data ])
+        (const_double:SF 0.0 [0x0.0p+0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":223 -1
+     (nil))
+(code_label 72 5 73 15 28 (nil) [3 uses])
+(note 73 72 74 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 74 73 78 15 (set (reg:SF 82 [ <retval> ])
+        (reg/v:SF 84 [ raw_data ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":235 -1
+     (nil))
+(insn 78 74 79 15 (set (reg/i:SF 10 a0)
+        (reg:SF 82 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":236 -1
+     (nil))
+(insn 79 78 0 15 (use (reg/i:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":236 -1
+     (nil))
+
+;; Function vABLineKoofFinde (vABLineKoofFinde, funcdef_no=40, decl_uid=16045, cgraph_uid=40, symbol_order=53)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 9 NOTE_INSN_DELETED)
+(note 9 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 9 3 2 (set (reg/v/f:SI 80 [ k ])
+        (reg:SI 10 a0 [ k ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":284 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v/f:SI 81 [ b ])
+        (reg:SI 11 a1 [ b ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":284 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SF 82 [ x1 ])
+        (reg:SF 12 a2 [ x1 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":284 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SF 83 [ x2 ])
+        (reg:SF 13 a3 [ x2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":284 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/v:SF 84 [ y1 ])
+        (reg:SF 14 a4 [ y1 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":284 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/v:SF 85 [ y2 ])
+        (reg:SF 15 a5 [ y2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":284 -1
+     (nil))
+(note 8 7 11 2 NOTE_INSN_FUNCTION_BEG)
+(insn 11 8 12 2 (set (reg:SF 86)
+        (minus:SF (reg/v:SF 84 [ y1 ])
+            (reg/v:SF 85 [ y2 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":285 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SF 87)
+        (minus:SF (reg/v:SF 82 [ x1 ])
+            (reg/v:SF 83 [ x2 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":285 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SF 88)
+        (div:SF (reg:SF 86)
+            (reg:SF 87))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":285 -1
+     (nil))
+(insn 14 13 15 2 (set (mem:SF (reg/v/f:SI 80 [ k ]) [2 *k_14(D)+0 S4 A32])
+        (reg:SF 88)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":285 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SF 89)
+        (mult:SF (reg/v:SF 85 [ y2 ])
+            (reg/v:SF 82 [ x1 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":286 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SF 90)
+        (fma:SF (reg/v:SF 84 [ y1 ])
+            (reg/v:SF 83 [ x2 ])
+            (neg:SF (reg:SF 89)))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":286 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SF 91)
+        (minus:SF (reg/v:SF 83 [ x2 ])
+            (reg/v:SF 82 [ x1 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":286 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:SF 92)
+        (div:SF (reg:SF 90)
+            (reg:SF 91))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":286 -1
+     (nil))
+(insn 19 18 0 2 (set (mem:SF (reg/v/f:SI 81 [ b ]) [2 *b_16(D)+0 S4 A32])
+        (reg:SF 92)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":286 -1
+     (nil))
+
+;; Function eSetAinCalPoint (eSetAinCalPoint, funcdef_no=38, decl_uid=16034, cgraph_uid=38, symbol_order=51)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+Edge 2->4 redirected to 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 61 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+Removing jump 55.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 8 NOTE_INSN_DELETED)
+(note 8 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 8 3 2 (set (reg/v:SI 90 [ name ])
+        (reg:SI 10 a0 [ name ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":241 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v/f:SI 91 [ cal_point ])
+        (reg:SI 11 a1 [ cal_point ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":241 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 92 [ PointNumber ])
+        (reg:SI 12 a2 [ PointNumber ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":241 -1
+     (nil))
+(note 5 4 10 2 NOTE_INSN_FUNCTION_BEG)
+(insn 10 5 11 2 (set (reg:SI 94)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":244 -1
+     (nil))
+(insn 11 10 12 2 (set (reg/f:SI 93)
+        (lo_sum:SI (reg:SI 94)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":244 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 12 11 13 2 (set (reg:SI 95)
+        (ashift:SI (reg/v:SI 90 [ name ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":244 -1
+     (nil))
+(insn 13 12 14 2 (set (reg/f:SI 96)
+        (plus:SI (reg/f:SI 93)
+            (reg:SI 95))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":244 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:HI 97)
+        (zero_extend:HI (mem:QI (reg/f:SI 96) [0 xAinData[name_16(D)].coof_count+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":244 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 98)
+        (zero_extend:SI (reg:HI 97))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":244 -1
+     (nil))
+(jump_insn 16 15 17 2 (set (pc)
+        (if_then_else (leu (reg:SI 98)
+                (reg/v:SI 92 [ PointNumber ]))
+            (label_ref:SI 64)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":244 180 {*branchsi}
+     (int_list:REG_BR_PROB 560815356 (nil))
+ -> 64)
+(note 17 16 18 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 18 17 19 4 (set (reg:SI 100)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":246 -1
+     (nil))
+(insn 19 18 20 4 (set (reg/f:SI 99)
+        (lo_sum:SI (reg:SI 100)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":246 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 20 19 21 4 (set (reg:SI 102)
+        (ashift:SI (reg/v:SI 90 [ name ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":246 -1
+     (nil))
+(insn 21 20 22 4 (set (reg/f:SI 101)
+        (plus:SI (reg/f:SI 99)
+            (reg:SI 102))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":246 -1
+     (nil))
+(insn 22 21 23 4 (set (reg:HI 103)
+        (zero_extend:HI (mem:QI (plus:SI (reg/f:SI 101)
+                    (const_int 1 [0x1])) [0 xAinData[name_16(D)].index+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":246 -1
+     (nil))
+(insn 23 22 24 4 (set (reg:SI 104)
+        (plus:SI (reg/v:SI 92 [ PointNumber ])
+            (subreg:SI (reg:HI 103) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":246 -1
+     (nil))
+(insn 24 23 25 4 (set (reg/v:SI 84 [ index ])
+        (zero_extend:SI (subreg:HI (reg:SI 104) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":246 -1
+     (nil))
+(insn 25 24 26 4 (set (reg:SI 105)
+        (const_int 12 [0xc])) -1
+     (nil))
+(insn 26 25 27 4 (set (reg:SI 85 [ _22 ])
+        (mult:SI (reg/v:SI 84 [ index ])
+            (reg:SI 105))) -1
+     (nil))
+(insn 27 26 28 4 (set (reg:SF 106)
+        (mem:SF (plus:SI (reg/v/f:SI 91 [ cal_point ])
+                (const_int 8 [0x8])) [2 MEM[(struct POINT_t *)cal_point_19(D) + 8B].Y+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (nil))
+(insn 28 27 29 4 (set (reg:SF 107)
+        (mem:SF (reg/v/f:SI 91 [ cal_point ]) [2 cal_point_19(D)->Y+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (nil))
+(insn 29 28 30 4 (set (reg:SF 108)
+        (mem:SF (plus:SI (reg/v/f:SI 91 [ cal_point ])
+                (const_int 12 [0xc])) [2 MEM[(struct POINT_t *)cal_point_19(D) + 8B].X+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (nil))
+(insn 30 29 31 4 (set (reg:SF 109)
+        (mem:SF (plus:SI (reg/v/f:SI 91 [ cal_point ])
+                (const_int 4 [0x4])) [2 cal_point_19(D)->X+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (nil))
+(insn 31 30 32 4 (set (reg:SI 111)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (nil))
+(insn 32 31 33 4 (set (reg/f:SI 110)
+        (lo_sum:SI (reg:SI 111)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 33 32 34 4 (set (reg:SI 112)
+        (plus:SI (reg:SI 85 [ _22 ])
+            (const_int 8 [0x8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (nil))
+(insn 34 33 35 4 (set (reg:SI 113)
+        (plus:SI (reg/f:SI 110)
+            (reg:SI 112))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (nil))
+(insn 35 34 36 4 (set (reg:SI 115)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (nil))
+(insn 36 35 37 4 (set (reg/f:SI 114)
+        (lo_sum:SI (reg:SI 115)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 37 36 38 4 (set (reg:SI 116)
+        (plus:SI (reg:SI 85 [ _22 ])
+            (const_int 4 [0x4]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (nil))
+(insn 38 37 39 4 (set (reg:SI 117)
+        (plus:SI (reg/f:SI 114)
+            (reg:SI 116))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (nil))
+(insn 39 38 40 4 (set (reg:SF 15 a5)
+        (reg:SF 106)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (nil))
+(insn 40 39 41 4 (set (reg:SF 14 a4)
+        (reg:SF 107)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (nil))
+(insn 41 40 42 4 (set (reg:SF 13 a3)
+        (reg:SF 108)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (nil))
+(insn 42 41 43 4 (set (reg:SF 12 a2)
+        (reg:SF 109)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (nil))
+(insn 43 42 44 4 (set (reg:SI 11 a1)
+        (reg:SI 113)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (nil))
+(insn 44 43 45 4 (set (reg:SI 10 a0)
+        (reg:SI 117)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (nil))
+(call_insn 45 44 46 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vABLineKoofFinde") [flags 0x3] <function_decl 0675c000 vABLineKoofFinde>) [0 vABLineKoofFinde S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vABLineKoofFinde") [flags 0x3] <function_decl 0675c000 vABLineKoofFinde>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SF (use (reg:SF 12 a2))
+                (expr_list:SF (use (reg:SF 13 a3))
+                    (expr_list:SF (use (reg:SF 14 a4))
+                        (expr_list:SF (use (reg:SF 15 a5))
+                            (nil))))))))
+(insn 46 45 47 4 (set (reg:SI 119)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":249 -1
+     (nil))
+(insn 47 46 48 4 (set (reg/f:SI 118)
+        (lo_sum:SI (reg:SI 119)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":249 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 48 47 49 4 (set (reg:SI 120)
+        (const_int 12 [0xc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":249 -1
+     (nil))
+(insn 49 48 50 4 (set (reg:SI 121)
+        (mult:SI (reg/v:SI 84 [ index ])
+            (reg:SI 120))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":249 -1
+     (nil))
+(insn 50 49 51 4 (set (reg/f:SI 122)
+        (plus:SI (reg/f:SI 118)
+            (reg:SI 121))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":249 -1
+     (nil))
+(insn 51 50 52 4 (set (reg:SF 123)
+        (mem:SF (plus:SI (reg/v/f:SI 91 [ cal_point ])
+                (const_int 12 [0xc])) [2 MEM[(struct POINT_t *)cal_point_19(D) + 8B].X+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":249 -1
+     (nil))
+(insn 52 51 6 4 (set (mem:SF (reg/f:SI 122) [2 xKoofData[_5].data+0 S4 A32])
+        (reg:SF 123)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":249 -1
+     (nil))
+(insn 6 52 61 4 (set (reg/v:SI 89 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":242 -1
+     (nil))
+(jump_insn 61 6 62 4 (set (pc)
+        (label_ref:SI 57)) 250 {jump}
+     (nil)
+ -> 57)
+(barrier 62 61 64)
+(code_label 64 62 63 5 42 (nil) [1 uses])
+(note 63 64 7 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 7 63 57 5 (set (reg/v:SI 89 [ <retval> ])
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":253 -1
+     (nil))
+(code_label 57 7 60 7 40 (nil) [1 uses])
+(note 60 57 58 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 58 60 59 7 (set (reg/i:SI 10 a0)
+        (reg/v:SI 89 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":256 -1
+     (nil))
+(insn 59 58 0 7 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":256 -1
+     (nil))
+
+;; Function eSetDacCalPoint (eSetDacCalPoint, funcdef_no=39, decl_uid=16065, cgraph_uid=39, symbol_order=52)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+Edge 2->4 redirected to 9
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 19 from 9 to 10.
+Merging block 9 into block 8...
+Merged blocks 8 and 9.
+Merged 8 and 9 without moving.
+Removing jump 72.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 9 NOTE_INSN_DELETED)
+(note 9 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 9 3 2 (set (reg/v:SI 101 [ name ])
+        (reg:SI 10 a0 [ name ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":260 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v/f:SI 102 [ cal_point ])
+        (reg:SI 11 a1 [ cal_point ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":260 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 103 [ PointNumber ])
+        (reg:SI 12 a2 [ PointNumber ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":260 -1
+     (nil))
+(note 5 4 11 2 NOTE_INSN_FUNCTION_BEG)
+(insn 11 5 12 2 (set (reg:SI 72 [ _1 ])
+        (reg/v:SI 103 [ PointNumber ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":263 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 105)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":263 -1
+     (nil))
+(insn 13 12 14 2 (set (reg/f:SI 104)
+        (lo_sum:SI (reg:SI 105)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":263 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 14 13 15 2 (set (reg:SI 106)
+        (ashift:SI (reg/v:SI 101 [ name ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":263 -1
+     (nil))
+(insn 15 14 16 2 (set (reg/f:SI 107)
+        (plus:SI (reg/f:SI 104)
+            (reg:SI 106))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":263 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 108)
+        (zero_extend:SI (mem:QI (reg/f:SI 107) [0 xDacData[name_30(D)].coof_count+0 S1 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":263 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 109)
+        (plus:SI (reg:SI 108)
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":263 -1
+     (nil))
+(jump_insn 18 17 21 2 (set (pc)
+        (if_then_else (le (reg:SI 72 [ _1 ])
+                (reg:SI 109))
+            (label_ref:SI 81)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":263 180 {*branchsi}
+     (int_list:REG_BR_PROB 697932188 (nil))
+ -> 81)
+(note 21 18 7 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 7 21 19 4 (set (reg/v:SI 100 [ <retval> ])
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":276 -1
+     (nil))
+(jump_insn 19 7 20 4 (set (pc)
+        (label_ref:SI 74)) 250 {jump}
+     (nil)
+ -> 74)
+(barrier 20 19 67)
+(code_label 67 20 22 5 50 (nil) [1 uses])
+(note 22 67 23 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 5 (set (reg:SI 111)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":267 -1
+     (nil))
+(insn 24 23 25 5 (set (reg/f:SI 110)
+        (lo_sum:SI (reg:SI 111)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":267 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 25 24 26 5 (set (reg:SI 113)
+        (ashift:SI (reg/v:SI 101 [ name ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":267 -1
+     (nil))
+(insn 26 25 27 5 (set (reg/f:SI 112)
+        (plus:SI (reg/f:SI 110)
+            (reg:SI 113))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":267 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:HI 114)
+        (zero_extend:HI (mem:QI (plus:SI (reg/f:SI 112)
+                    (const_int 1 [0x1])) [0 xDacData[name_30(D)].index+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":267 -1
+     (nil))
+(insn 28 27 29 5 (set (reg:HI 115)
+        (subreg:HI (reg/v:SI 94 [ i ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":267 -1
+     (nil))
+(insn 29 28 30 5 (set (reg:SI 116)
+        (plus:SI (subreg:SI (reg:HI 114) 0)
+            (subreg:SI (reg:HI 115) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":267 -1
+     (nil))
+(insn 30 29 31 5 (set (reg/v:SI 95 [ index ])
+        (zero_extend:SI (subreg:HI (reg:SI 116) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":267 -1
+     (nil))
+(insn 31 30 32 5 (set (reg:SI 117)
+        (const_int 12 [0xc])) -1
+     (nil))
+(insn 32 31 33 5 (set (reg:SI 97 [ _37 ])
+        (mult:SI (reg/v:SI 95 [ index ])
+            (reg:SI 117))) -1
+     (nil))
+(insn 33 32 34 5 (set (reg:SI 83 [ _12 ])
+        (ashift:SI (reg/v:SI 94 [ i ])
+            (const_int 3 [0x3]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":269 -1
+     (nil))
+(insn 34 33 35 5 (set (reg/f:SI 84 [ _13 ])
+        (plus:SI (reg/v/f:SI 102 [ cal_point ])
+            (reg:SI 83 [ _12 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":269 -1
+     (nil))
+(insn 35 34 36 5 (set (reg:SI 118)
+        (plus:SI (reg:SI 83 [ _12 ])
+            (const_int 8 [0x8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":269 -1
+     (nil))
+(insn 36 35 37 5 (set (reg/f:SI 87 [ _17 ])
+        (plus:SI (reg/v/f:SI 102 [ cal_point ])
+            (reg:SI 118))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":269 -1
+     (nil))
+(insn 37 36 38 5 (set (reg:SF 119)
+        (mem:SF (reg/f:SI 87 [ _17 ]) [2 _17->Y+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (nil))
+(insn 38 37 39 5 (set (reg:SF 120)
+        (mem:SF (reg/f:SI 84 [ _13 ]) [2 _13->Y+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (nil))
+(insn 39 38 40 5 (set (reg:SF 121)
+        (mem:SF (plus:SI (reg/f:SI 87 [ _17 ])
+                (const_int 4 [0x4])) [2 _17->X+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (nil))
+(insn 40 39 41 5 (set (reg:SF 122)
+        (mem:SF (plus:SI (reg/f:SI 84 [ _13 ])
+                (const_int 4 [0x4])) [2 _13->X+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (nil))
+(insn 41 40 42 5 (set (reg:SI 124)
+        (high:SI (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (nil))
+(insn 42 41 43 5 (set (reg/f:SI 123)
+        (lo_sum:SI (reg:SI 124)
+            (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR6") [flags 0x182])
+        (nil)))
+(insn 43 42 44 5 (set (reg:SI 125)
+        (plus:SI (reg:SI 97 [ _37 ])
+            (const_int 8 [0x8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (nil))
+(insn 44 43 45 5 (set (reg:SI 126)
+        (plus:SI (reg/f:SI 123)
+            (reg:SI 125))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (nil))
+(insn 45 44 46 5 (set (reg:SI 128)
+        (high:SI (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (nil))
+(insn 46 45 47 5 (set (reg/f:SI 127)
+        (lo_sum:SI (reg:SI 128)
+            (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR6") [flags 0x182])
+        (nil)))
+(insn 47 46 48 5 (set (reg:SI 129)
+        (plus:SI (reg:SI 97 [ _37 ])
+            (const_int 4 [0x4]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (nil))
+(insn 48 47 49 5 (set (reg:SI 130)
+        (plus:SI (reg/f:SI 127)
+            (reg:SI 129))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (nil))
+(insn 49 48 50 5 (set (reg:SF 15 a5)
+        (reg:SF 119)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (nil))
+(insn 50 49 51 5 (set (reg:SF 14 a4)
+        (reg:SF 120)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (nil))
+(insn 51 50 52 5 (set (reg:SF 13 a3)
+        (reg:SF 121)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (nil))
+(insn 52 51 53 5 (set (reg:SF 12 a2)
+        (reg:SF 122)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (nil))
+(insn 53 52 54 5 (set (reg:SI 11 a1)
+        (reg:SI 126)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (nil))
+(insn 54 53 55 5 (set (reg:SI 10 a0)
+        (reg:SI 130)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (nil))
+(call_insn 55 54 56 5 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vABLineKoofFinde") [flags 0x3] <function_decl 0675c000 vABLineKoofFinde>) [0 vABLineKoofFinde S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vABLineKoofFinde") [flags 0x3] <function_decl 0675c000 vABLineKoofFinde>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SF (use (reg:SF 12 a2))
+                (expr_list:SF (use (reg:SF 13 a3))
+                    (expr_list:SF (use (reg:SF 14 a4))
+                        (expr_list:SF (use (reg:SF 15 a5))
+                            (nil))))))))
+(insn 56 55 57 5 (set (reg:SI 132)
+        (high:SI (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":270 -1
+     (nil))
+(insn 57 56 58 5 (set (reg/f:SI 131)
+        (lo_sum:SI (reg:SI 132)
+            (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":270 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR6") [flags 0x182])
+        (nil)))
+(insn 58 57 59 5 (set (reg:SI 133)
+        (const_int 12 [0xc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":270 -1
+     (nil))
+(insn 59 58 60 5 (set (reg:SI 134)
+        (mult:SI (reg/v:SI 95 [ index ])
+            (reg:SI 133))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":270 -1
+     (nil))
+(insn 60 59 61 5 (set (reg/f:SI 135)
+        (plus:SI (reg/f:SI 131)
+            (reg:SI 134))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":270 -1
+     (nil))
+(insn 61 60 62 5 (set (reg:SF 136)
+        (mem:SF (plus:SI (reg/f:SI 84 [ _13 ])
+                (const_int 4 [0x4])) [2 _13->X+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":270 -1
+     (nil))
+(insn 62 61 63 5 (set (mem:SF (reg/f:SI 135) [2 xDacKoofData[_8].data+0 S4 A32])
+        (reg:SF 136)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":270 -1
+     (nil))
+(insn 63 62 64 5 (set (reg:SI 137)
+        (plus:SI (reg/v:SI 94 [ i ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":265 -1
+     (nil))
+(insn 64 63 78 5 (set (reg/v:SI 94 [ i ])
+        (zero_extend:SI (subreg:QI (reg:SI 137) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":265 -1
+     (nil))
+(jump_insn 78 64 79 5 (set (pc)
+        (label_ref 65)) -1
+     (nil)
+ -> 65)
+(barrier 79 78 81)
+(code_label 81 79 80 6 51 (nil) [1 uses])
+(note 80 81 6 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 6 80 65 6 (set (reg/v:SI 94 [ i ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":265 -1
+     (nil))
+(code_label 65 6 66 7 48 (nil) [1 uses])
+(note 66 65 68 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 68 66 69 7 (set (reg:SI 138)
+        (plus:SI (reg:SI 72 [ _1 ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":265 -1
+     (nil))
+(jump_insn 69 68 82 7 (set (pc)
+        (if_then_else (lt (reg/v:SI 94 [ i ])
+                (reg:SI 138))
+            (label_ref 67)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":265 -1
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 67)
+(note 82 69 8 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 8 82 74 8 (set (reg/v:SI 100 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":261 -1
+     (nil))
+(code_label 74 8 77 10 47 (nil) [1 uses])
+(note 77 74 75 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 75 77 76 10 (set (reg/i:SI 10 a0)
+        (reg/v:SI 100 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":279 -1
+     (nil))
+(insn 76 75 0 10 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":279 -1
+     (nil))
+
+;; Function fAinGetState (fAinGetState, funcdef_no=41, decl_uid=16023, cgraph_uid=41, symbol_order=54)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 31.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 79 [ channel ])
+        (reg:SI 10 a0 [ channel ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":297 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SI 81)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/f:SI 80)
+        (lo_sum:SI (reg:SI 81)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 8 7 9 2 (set (reg:SI 82)
+        (ashift:SI (reg/v:SI 79 [ channel ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (nil))
+(insn 9 8 10 2 (set (reg/f:SI 83)
+        (plus:SI (reg/f:SI 80)
+            (reg:SI 82))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SI 85)
+        (zero_extend:SI (mem:HI (reg/f:SI 83) [5 muRawVData S2 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SF 84)
+        (unsigned_float:SF (reg:SI 85))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SF 10 a0)
+        (reg:SF 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (nil))
+(call_insn/u 13 12 14 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 14 13 15 2 (set (reg:DF 86)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (expr_list:REG_EQUAL (float_extend:DF (reg:SF 84))
+        (nil)))
+(insn 15 14 16 2 (set (reg:DF 12 a2)
+        (reg:DF 86)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:DF 10 a0)
+        (reg:DF 86)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (nil))
+(call_insn/u 17 16 18 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__adddf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__adddf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 18 17 19 2 (set (reg:DF 87)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (expr_list:REG_EQUAL (plus:DF (reg:DF 86)
+            (reg:DF 86))
+        (nil)))
+(insn 19 18 20 2 (set (reg:SI 88)
+        (high:SI (symbol_ref/u:SI ("*.LC0") [flags 0x82]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:DF 12 a2)
+        (mem/u/c:DF (lo_sum:SI (reg:SI 88)
+                (symbol_ref/u:SI ("*.LC0") [flags 0x82])) [0  S8 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (expr_list:REG_EQUAL (const_double:DF 8.05860805860805860106887976712641830090433359146e-4 [0x0.d3406739a6cdap-10])
+        (nil)))
+(insn 21 20 22 2 (set (reg:DF 10 a0)
+        (reg:DF 87)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (nil))
+(call_insn/u 22 21 23 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__muldf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__muldf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 23 22 24 2 (set (reg:DF 89)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (expr_list:REG_EQUAL (mult:DF (reg:DF 87)
+            (const_double:DF 8.05860805860805860106887976712641830090433359146e-4 [0x0.d3406739a6cdap-10]))
+        (nil)))
+(insn 24 23 25 2 (set (reg:DF 10 a0)
+        (reg:DF 89)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (nil))
+(call_insn/u 25 24 26 2 (parallel [
+            (set (reg:SF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__truncdfsf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__truncdfsf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 10 a0))
+        (nil)))
+(insn 26 25 27 2 (set (reg:SF 90)
+        (reg:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (expr_list:REG_EQUAL (float_truncate:SF (reg:DF 89))
+        (nil)))
+(insn 27 26 28 2 (set (reg:SF 11 a1)
+        (reg:SF 90)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (nil))
+(insn 28 27 29 2 (set (reg:SI 10 a0)
+        (reg/v:SI 79 [ channel ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (nil))
+(call_insn/i 29 28 30 2 (parallel [
+            (set (reg:SF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("fGetAinCalData") [flags 0x3] <function_decl 0675c078 fGetAinCalData>) [0 fGetAinCalData S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("fGetAinCalData") [flags 0x3] <function_decl 0675c078 fGetAinCalData>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SF (use (reg:SF 11 a1))
+            (nil))))
+(insn 30 29 34 2 (set (reg/v:SF 78 [ <retval> ])
+        (reg:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
+     (nil))
+(insn 34 30 35 2 (set (reg/i:SF 10 a0)
+        (reg/v:SF 78 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":302 -1
+     (nil))
+(insn 35 34 0 2 (use (reg/i:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":302 -1
+     (nil))
+
+;; Function fBatteryGet (fBatteryGet, funcdef_no=42, decl_uid=16025, cgraph_uid=42, symbol_order=55)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 31.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 81)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 80)
+        (lo_sum:SI (reg:SI 81)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 7 6 8 2 (set (reg:SI 83)
+        (zero_extend:SI (mem/c:HI (plus:SI (reg/f:SI 80)
+                    (const_int 8 [0x8])) [5 muRawVData+8 S2 A32]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SF 82)
+        (unsigned_float:SF (reg:SI 83))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SF 10 a0)
+        (reg:SF 82)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (nil))
+(call_insn/u 10 9 11 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 11 10 12 2 (set (reg:DF 84)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (expr_list:REG_EQUAL (float_extend:DF (reg:SF 82))
+        (nil)))
+(insn 12 11 13 2 (set (reg:SI 85)
+        (high:SI (symbol_ref/u:SI ("*.LC1") [flags 0x82]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:DF 12 a2)
+        (mem/u/c:DF (lo_sum:SI (reg:SI 85)
+                (symbol_ref/u:SI ("*.LC1") [flags 0x82])) [0  S8 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (expr_list:REG_EQUAL (const_double:DF 7.04000000000000003552713678800500929355621337891e+0 [0x0.e147ae147ae148p+3])
+        (nil)))
+(insn 14 13 15 2 (set (reg:DF 10 a0)
+        (reg:DF 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (nil))
+(call_insn/u 15 14 16 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__muldf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__muldf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 16 15 17 2 (set (reg:DF 86)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (expr_list:REG_EQUAL (mult:DF (reg:DF 84)
+            (const_double:DF 7.04000000000000003552713678800500929355621337891e+0 [0x0.e147ae147ae148p+3]))
+        (nil)))
+(insn 17 16 18 2 (set (reg:SI 87)
+        (high:SI (symbol_ref/u:SI ("*.LC0") [flags 0x82]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (nil))
+(insn 18 17 19 2 (set (reg:DF 12 a2)
+        (mem/u/c:DF (lo_sum:SI (reg:SI 87)
+                (symbol_ref/u:SI ("*.LC0") [flags 0x82])) [0  S8 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (expr_list:REG_EQUAL (const_double:DF 8.05860805860805860106887976712641830090433359146e-4 [0x0.d3406739a6cdap-10])
+        (nil)))
+(insn 19 18 20 2 (set (reg:DF 10 a0)
+        (reg:DF 86)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (nil))
+(call_insn/u 20 19 21 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__muldf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__muldf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 21 20 22 2 (set (reg:DF 88)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (expr_list:REG_EQUAL (mult:DF (reg:DF 86)
+            (const_double:DF 8.05860805860805860106887976712641830090433359146e-4 [0x0.d3406739a6cdap-10]))
+        (nil)))
+(insn 22 21 23 2 (set (reg:SI 89)
+        (high:SI (symbol_ref/u:SI ("*.LC2") [flags 0x82]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (nil))
+(insn 23 22 24 2 (set (reg:DF 12 a2)
+        (mem/u/c:DF (lo_sum:SI (reg:SI 89)
+                (symbol_ref/u:SI ("*.LC2") [flags 0x82])) [0  S8 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (expr_list:REG_EQUAL (const_double:DF 4.50000000000000011102230246251565404236316680908e-1 [0x0.e6666666666668p-1])
+        (nil)))
+(insn 24 23 25 2 (set (reg:DF 10 a0)
+        (reg:DF 88)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (nil))
+(call_insn/u 25 24 26 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__adddf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__adddf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 26 25 27 2 (set (reg:DF 90)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (expr_list:REG_EQUAL (plus:DF (reg:DF 88)
+            (const_double:DF 4.50000000000000011102230246251565404236316680908e-1 [0x0.e6666666666668p-1]))
+        (nil)))
+(insn 27 26 28 2 (set (reg:DF 10 a0)
+        (reg:DF 90)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (nil))
+(call_insn/u 28 27 29 2 (parallel [
+            (set (reg:SF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__truncdfsf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__truncdfsf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 10 a0))
+        (nil)))
+(insn 29 28 30 2 (set (reg:SF 79)
+        (reg:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (expr_list:REG_EQUAL (float_truncate:SF (reg:DF 90))
+        (nil)))
+(insn 30 29 34 2 (set (reg:SF 78 [ <retval> ])
+        (reg:SF 79)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":308 -1
+     (nil))
+(insn 34 30 35 2 (set (reg/i:SF 10 a0)
+        (reg:SF 78 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":309 -1
+     (nil))
+(insn 35 34 0 2 (use (reg/i:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":309 -1
+     (nil))
+
+;; Function fTemperatureGet (fTemperatureGet, funcdef_no=43, decl_uid=16027, cgraph_uid=43, symbol_order=56)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 37.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 4 3 2 (set (reg/v:SI 80 [ i ])
+        (reg:SI 10 a0 [ i ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":315 -1
+     (nil))
+(note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
+(insn 6 3 7 2 (set (reg:SI 83)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/f:SI 82)
+        (lo_sum:SI (reg:SI 83)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 8 7 9 2 (set (reg:SI 85)
+        (zero_extend:SI (mem/c:HI (plus:SI (reg/f:SI 82)
+                    (const_int 6 [0x6])) [5 muRawVData+6 S2 A16]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SF 84)
+        (unsigned_float:SF (reg:SI 85))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (nil))
+(insn 10 9 11 2 (set (reg:SF 10 a0)
+        (reg:SF 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (nil))
+(call_insn/u 11 10 12 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 12 11 13 2 (set (reg:DF 86)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_EQUAL (float_extend:DF (reg:SF 84))
+        (nil)))
+(insn 13 12 14 2 (set (reg:SI 87)
+        (high:SI (symbol_ref/u:SI ("*.LC0") [flags 0x82]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:DF 12 a2)
+        (mem/u/c:DF (lo_sum:SI (reg:SI 87)
+                (symbol_ref/u:SI ("*.LC0") [flags 0x82])) [0  S8 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_EQUAL (const_double:DF 8.05860805860805860106887976712641830090433359146e-4 [0x0.d3406739a6cdap-10])
+        (nil)))
+(insn 15 14 16 2 (set (reg:DF 10 a0)
+        (reg:DF 86)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (nil))
+(call_insn/u 16 15 17 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__muldf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__muldf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 17 16 18 2 (set (reg:DF 88)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_EQUAL (mult:DF (reg:DF 86)
+            (const_double:DF 8.05860805860805860106887976712641830090433359146e-4 [0x0.d3406739a6cdap-10]))
+        (nil)))
+(insn 18 17 19 2 (set (reg:SI 89)
+        (high:SI (symbol_ref/u:SI ("*.LC3") [flags 0x82]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:DF 12 a2)
+        (mem/u/c:DF (lo_sum:SI (reg:SI 89)
+                (symbol_ref/u:SI ("*.LC3") [flags 0x82])) [0  S8 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_EQUAL (const_double:DF 7.78200000000000002842170943040400743484497070312e-1 [0x0.c7381d7dbf488p+0])
+        (nil)))
+(insn 20 19 21 2 (set (reg:DF 10 a0)
+        (reg:DF 88)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (nil))
+(call_insn/u 21 20 22 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__subdf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__subdf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 22 21 23 2 (set (reg:DF 90)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_EQUAL (minus:DF (reg:DF 88)
+            (const_double:DF 7.78200000000000002842170943040400743484497070312e-1 [0x0.c7381d7dbf488p+0]))
+        (nil)))
+(insn 23 22 24 2 (set (reg:SI 91)
+        (high:SI (symbol_ref/u:SI ("*.LC4") [flags 0x82]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (nil))
+(insn 24 23 25 2 (set (reg:DF 12 a2)
+        (mem/u/c:DF (lo_sum:SI (reg:SI 91)
+                (symbol_ref/u:SI ("*.LC4") [flags 0x82])) [0  S8 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_EQUAL (const_double:DF 2.3999999999999997897515147116109801572747528553e-3 [0x0.9d495182a99308p-8])
+        (nil)))
+(insn 25 24 26 2 (set (reg:DF 10 a0)
+        (reg:DF 90)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (nil))
+(call_insn/u 26 25 27 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__divdf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__divdf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 27 26 28 2 (set (reg:DF 92)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_EQUAL (div:DF (reg:DF 90)
+            (const_double:DF 2.3999999999999997897515147116109801572747528553e-3 [0x0.9d495182a99308p-8]))
+        (nil)))
+(insn 28 27 29 2 (set (reg:SI 93)
+        (high:SI (symbol_ref/u:SI ("*.LC5") [flags 0x82]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (nil))
+(insn 29 28 30 2 (set (reg:DF 12 a2)
+        (mem/u/c:DF (lo_sum:SI (reg:SI 93)
+                (symbol_ref/u:SI ("*.LC5") [flags 0x82])) [0  S8 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_EQUAL (const_double:DF 2.8e+1 [0x0.ep+5])
+        (nil)))
+(insn 30 29 31 2 (set (reg:DF 10 a0)
+        (reg:DF 92)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (nil))
+(call_insn/u 31 30 32 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__adddf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__adddf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 32 31 33 2 (set (reg:DF 94)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_EQUAL (plus:DF (reg:DF 92)
+            (const_double:DF 2.8e+1 [0x0.ep+5]))
+        (nil)))
+(insn 33 32 34 2 (set (reg:DF 10 a0)
+        (reg:DF 94)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (nil))
+(call_insn/u 34 33 35 2 (parallel [
+            (set (reg:SF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__truncdfsf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__truncdfsf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 10 a0))
+        (nil)))
+(insn 35 34 36 2 (set (reg:SF 81)
+        (reg:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (expr_list:REG_EQUAL (float_truncate:SF (reg:DF 94))
+        (nil)))
+(insn 36 35 40 2 (set (reg:SF 79 [ <retval> ])
+        (reg:SF 81)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":316 -1
+     (nil))
+(insn 40 36 41 2 (set (reg/i:SF 10 a0)
+        (reg:SF 79 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":317 -1
+     (nil))
+(insn 41 40 0 2 (use (reg/i:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":317 -1
+     (nil))
+
+;; Function fGetDataFromRaw (fGetDataFromRaw, funcdef_no=44, decl_uid=16178, cgraph_uid=44, symbol_order=57)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+Purged non-fallthru edges from bb 10
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Edge 4->6 redirected to 7
+Forwarding edge 4->5 to 8 failed.
+Forwarding edge 4->5 to 8 failed.
+deleting block 6
+Removing jump 34.
+Merging block 10 into block 9...
+Merged blocks 9 and 10.
+Merged 9 and 10 without moving.
+
+
+try_optimize_cfg iteration 2
+
+Forwarding edge 4->5 to 8 failed.
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v:SF 79 [ fraw ])
+        (reg:SF 10 a0 [ fraw ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":320 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v/f:SI 80 [ CSC ])
+        (reg:SI 11 a1 [ CSC ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":320 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg:SF 81)
+        (mem:SF (reg/v/f:SI 80 [ CSC ]) [2 CSC_11(D)->data+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":324 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 82)
+        (lt:SI (reg/v:SF 79 [ fraw ])
+            (reg:SF 81))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":324 -1
+     (nil))
+(jump_insn 9 8 10 2 (set (pc)
+        (if_then_else (ne (reg:SI 82)
+                (const_int 0 [0]))
+            (label_ref 24)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":324 -1
+     (int_list:REG_BR_PROB 59055804 (nil))
+ -> 24)
+(note 10 9 11 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 11 10 12 4 (set (reg:SF 83)
+        (mem:SF (plus:SI (reg/v/f:SI 80 [ CSC ])
+                (const_int 12 [0xc])) [2 MEM[(struct LIN_COOF *)CSC_11(D) + 12B].data+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":324 -1
+     (nil))
+(insn 12 11 13 4 (set (reg:SI 84)
+        (lt:SI (reg/v:SF 79 [ fraw ])
+            (reg:SF 83))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":324 -1
+     (nil))
+(jump_insn 13 12 40 4 (set (pc)
+        (if_then_else (ne (reg:SI 84)
+                (const_int 0 [0]))
+            (label_ref:SI 42)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":324 180 {*branchsi}
+     (int_list:REG_BR_PROB 59055804 (nil))
+ -> 42)
+(note 40 13 14 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 14 40 15 5 (set (pc)
+        (label_ref 21)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":324 -1
+     (nil)
+ -> 21)
+(barrier 15 14 42)
+(code_label 42 15 17 7 68 (nil) [1 uses])
+(note 17 42 18 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 18 17 19 7 (set (reg/v/f:SI 80 [ CSC ])
+        (plus:SI (reg/v/f:SI 80 [ CSC ])
+            (const_int 12 [0xc]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":324 -1
+     (nil))
+(jump_insn 19 18 20 7 (set (pc)
+        (label_ref 24)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":324 -1
+     (nil)
+ -> 24)
+(barrier 20 19 21)
+(code_label 21 20 22 8 66 (nil) [1 uses])
+(note 22 21 23 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 8 (set (reg/v/f:SI 80 [ CSC ])
+        (plus:SI (reg/v/f:SI 80 [ CSC ])
+            (const_int 24 [0x18]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":324 -1
+     (nil))
+(code_label 24 23 25 9 65 (nil) [2 uses])
+(note 25 24 26 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 26 25 27 9 (set (reg:SF 85)
+        (mem:SF (plus:SI (reg/v/f:SI 80 [ CSC ])
+                (const_int 4 [0x4])) [2 _8->k+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":327 -1
+     (nil))
+(insn 27 26 28 9 (set (reg:SF 86)
+        (mem:SF (plus:SI (reg/v/f:SI 80 [ CSC ])
+                (const_int 8 [0x8])) [2 _8->b+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":327 -1
+     (nil))
+(insn 28 27 29 9 (set (reg/v:SF 75 [ fRes ])
+        (fma:SF (reg:SF 85)
+            (reg/v:SF 79 [ fraw ])
+            (reg:SF 86))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":327 -1
+     (nil))
+(insn 29 28 30 9 (set (reg:SI 90)
+        (high:SI (symbol_ref/u:SI ("*.LC6") [flags 0x82]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":328 -1
+     (nil))
+(insn 30 29 31 9 (set (reg:SF 89)
+        (mem/u/c:SF (lo_sum:SI (reg:SI 90)
+                (symbol_ref/u:SI ("*.LC6") [flags 0x82])) [0  S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":328 -1
+     (expr_list:REG_EQUAL (const_double:SF 1.0e+1 [0x0.ap+4])
+        (nil)))
+(insn 31 30 32 9 (set (reg:SF 88)
+        (div:SF (reg/v:SF 79 [ fraw ])
+            (reg:SF 89))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":328 -1
+     (nil))
+(insn 32 31 33 9 (set (reg:SF 87 [ fRes ])
+        (mult:SF (reg:SF 88)
+            (reg/v:SF 75 [ fRes ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":328 -1
+     (nil))
+(insn 33 32 37 9 (set (reg/v:SF 78 [ <retval> ])
+        (reg:SF 87 [ fRes ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":332 -1
+     (nil))
+(insn 37 33 38 9 (set (reg/i:SF 10 a0)
+        (reg/v:SF 78 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":333 -1
+     (nil))
+(insn 38 37 0 9 (use (reg/i:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":333 -1
+     (nil))
+
+;; Function usGetCurrentToFloat (usGetCurrentToFloat, funcdef_no=45, decl_uid=16052, cgraph_uid=45, symbol_order=58)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 23.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 5 NOTE_INSN_DELETED)
+(note 5 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 5 3 2 (set (reg/v:SI 77 [ rawdata ])
+        (reg:SI 10 a0 [ rawdata ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":336 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v/f:SI 78 [ xOut ])
+        (reg:SI 11 a1 [ xOut ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":336 -1
+     (nil))
+(note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 4 8 2 (set (reg:SF 79)
+        (unsigned_float:SF (reg/v:SI 77 [ rawdata ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SF 10 a0)
+        (reg:SF 79)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
+     (nil))
+(call_insn/u 9 8 10 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__extendsfdf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__extendsfdf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:SF 10 a0))
+        (nil)))
+(insn 10 9 11 2 (set (reg:DF 80)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
+     (expr_list:REG_EQUAL (float_extend:DF (reg:SF 79))
+        (nil)))
+(insn 11 10 12 2 (set (reg:SI 81)
+        (high:SI (symbol_ref/u:SI ("*.LC0") [flags 0x82]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:DF 12 a2)
+        (mem/u/c:DF (lo_sum:SI (reg:SI 81)
+                (symbol_ref/u:SI ("*.LC0") [flags 0x82])) [0  S8 A64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
+     (expr_list:REG_EQUAL (const_double:DF 8.05860805860805860106887976712641830090433359146e-4 [0x0.d3406739a6cdap-10])
+        (nil)))
+(insn 13 12 14 2 (set (reg:DF 10 a0)
+        (reg:DF 80)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
+     (nil))
+(call_insn/u 14 13 15 2 (parallel [
+            (set (reg:DF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__muldf3") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__muldf3") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 12 a2))
+        (expr_list (use (reg:DF 10 a0))
+            (nil))))
+(insn 15 14 16 2 (set (reg:DF 82)
+        (reg:DF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
+     (expr_list:REG_EQUAL (mult:DF (reg:DF 80)
+            (const_double:DF 8.05860805860805860106887976712641830090433359146e-4 [0x0.d3406739a6cdap-10]))
+        (nil)))
+(insn 16 15 17 2 (set (reg:DF 10 a0)
+        (reg:DF 82)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
+     (nil))
+(call_insn/u 17 16 18 2 (parallel [
+            (set (reg:SF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("__truncdfsf2") [flags 0x41]) [0  S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__truncdfsf2") [flags 0x41])
+        (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+            (nil)))
+    (expr_list (use (reg:DF 10 a0))
+        (nil)))
+(insn 18 17 19 2 (set (reg:SF 83)
+        (reg:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
+     (expr_list:REG_EQUAL (float_truncate:SF (reg:DF 82))
+        (nil)))
+(insn 19 18 20 2 (set (reg:SI 11 a1)
+        (reg/v/f:SI 78 [ xOut ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SF 10 a0)
+        (reg:SF 83)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
+     (nil))
+(call_insn/i 21 20 22 2 (parallel [
+            (set (reg:SF 10 a0)
+                (call (mem:SI (symbol_ref:SI ("fGetDataFromRaw") [flags 0x3] <function_decl 0675cc30 fGetDataFromRaw>) [0 fGetDataFromRaw S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("fGetDataFromRaw") [flags 0x3] <function_decl 0675cc30 fGetDataFromRaw>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list:SF (use (reg:SF 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (nil))))
+(insn 22 21 26 2 (set (reg:SF 76 [ <retval> ])
+        (reg:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
+     (nil))
+(insn 26 22 27 2 (set (reg/i:SF 10 a0)
+        (reg:SF 76 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":339 -1
+     (nil))
+(insn 27 26 0 2 (use (reg/i:SF 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":339 -1
+     (nil))
+
+;; Function getADC1Buffer (getADC1Buffer, funcdef_no=46, decl_uid=16055, cgraph_uid=46, symbol_order=59)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 8.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 75)
+        (high:SI (symbol_ref:SI ("*.LANCHOR7") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":345 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 74)
+        (lo_sum:SI (reg:SI 75)
+            (symbol_ref:SI ("*.LANCHOR7") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":345 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR7") [flags 0x182])
+        (nil)))
+(insn 7 6 11 2 (set (reg/f:SI 72 [ <retval> ])
+        (reg/f:SI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":345 -1
+     (nil))
+(insn 11 7 12 2 (set (reg/i:SI 10 a0)
+        (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":346 -1
+     (nil))
+(insn 12 11 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":346 -1
+     (nil))
+
+;; Function getADC2Buffer (getADC2Buffer, funcdef_no=47, decl_uid=16056, cgraph_uid=47, symbol_order=60)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 8.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 75)
+        (high:SI (symbol_ref:SI ("*.LANCHOR8") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":349 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 74)
+        (lo_sum:SI (reg:SI 75)
+            (symbol_ref:SI ("*.LANCHOR8") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":349 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR8") [flags 0x182])
+        (nil)))
+(insn 7 6 11 2 (set (reg/f:SI 72 [ <retval> ])
+        (reg/f:SI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":349 -1
+     (nil))
+(insn 11 7 12 2 (set (reg/i:SI 10 a0)
+        (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":350 -1
+     (nil))
+(insn 12 11 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":350 -1
+     (nil))
+
+;; Function getADC3Buffer (getADC3Buffer, funcdef_no=48, decl_uid=16057, cgraph_uid=48, symbol_order=61)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 8.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 75)
+        (high:SI (symbol_ref:SI ("*.LANCHOR9") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":353 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 74)
+        (lo_sum:SI (reg:SI 75)
+            (symbol_ref:SI ("*.LANCHOR9") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":353 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR9") [flags 0x182])
+        (nil)))
+(insn 7 6 11 2 (set (reg/f:SI 72 [ <retval> ])
+        (reg/f:SI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":353 -1
+     (nil))
+(insn 11 7 12 2 (set (reg/i:SI 10 a0)
+        (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":354 -1
+     (nil))
+(insn 12 11 0 2 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":354 -1
+     (nil))
+
+;; Function vInitADCDATA (vInitADCDATA, funcdef_no=49, decl_uid=16202, cgraph_uid=49, symbol_order=62)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 0 2 NOTE_INSN_FUNCTION_BEG)

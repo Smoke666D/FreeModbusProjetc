@@ -1,0 +1,1988 @@
+
+;; Function eMBRTUInit (eMBRTUInit, funcdef_no=30, decl_uid=6445, cgraph_uid=30, symbol_order=36)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+Edge 3->5 redirected to 10
+Edge 5->7 redirected to 11
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 50 from 10 to 11.
+Merging block 10 into block 9...
+Merged blocks 9 and 10.
+Merged 9 and 10 without moving.
+Removing jump 40.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 11 NOTE_INSN_DELETED)
+(note 11 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 11 3 2 (set (reg/v:SI 77 [ ucSlaveAddress ])
+        (reg:SI 10 a0 [ ucSlaveAddress ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":81 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v:SI 78 [ ucPort ])
+        (reg:SI 11 a1 [ ucPort ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":81 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 79 [ ulBaudRate ])
+        (reg:SI 12 a2 [ ulBaudRate ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":81 -1
+     (nil))
+(insn 5 4 6 2 (set (reg/v:SI 80 [ eParity ])
+        (reg:SI 13 a3 [ eParity ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":81 -1
+     (nil))
+(note 6 5 13 2 NOTE_INSN_FUNCTION_BEG)
+(insn 13 6 14 2 (set (reg:SI 13 a3)
+        (reg/v:SI 80 [ eParity ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":89 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 12 a2)
+        (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":89 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 11 a1)
+        (reg/v:SI 79 [ ulBaudRate ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":89 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 10 a0)
+        (reg/v:SI 78 [ ucPort ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":89 -1
+     (nil))
+(call_insn 17 16 18 2 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xMBPortSerialInit") [flags 0x41] <function_decl 06607d20 xMBPortSerialInit>) [0 xMBPortSerialInit S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":89 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortSerialInit") [flags 0x41] <function_decl 06607d20 xMBPortSerialInit>)
+        (nil))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:QI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (nil))))))
+(insn 18 17 19 2 (set (reg:SI 81)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":89 -1
+     (nil))
+(insn 19 18 20 2 (set (reg:SI 72 [ _1 ])
+        (reg:SI 81)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":89 -1
+     (nil))
+(insn 20 19 21 2 (set (reg:SI 82)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":89 -1
+     (nil))
+(jump_insn 21 20 22 2 (set (pc)
+        (if_then_else (ne (reg:SI 72 [ _1 ])
+                (reg:SI 82))
+            (label_ref 36)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":89 -1
+     (int_list:REG_BR_PROB 548789452 (nil))
+ -> 36)
+(note 22 21 23 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 4 (set (reg:SI 84)
+        (const_int 20480 [0x5000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":98 -1
+     (nil))
+(insn 24 23 25 4 (set (reg:SI 83)
+        (plus:SI (reg:SI 84)
+            (const_int -1280 [0xfffffffffffffb00]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":98 -1
+     (expr_list:REG_EQUAL (const_int 19200 [0x4b00])
+        (nil)))
+(jump_insn 25 24 26 4 (set (pc)
+        (if_then_else (gtu (reg/v:SI 79 [ ulBaudRate ])
+                (reg:SI 83))
+            (label_ref:SI 49)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":98 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 49)
+(note 26 25 8 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 8 26 46 5 (set (reg/v:SI 75 [ usTimerT35_50us ])
+        (const_int 40 [0x28])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":112 -1
+     (nil))
+(jump_insn 46 8 47 5 (set (pc)
+        (label_ref 27)) -1
+     (nil)
+ -> 27)
+(barrier 47 46 49)
+(code_label 49 47 48 6 5 (nil) [1 uses])
+(note 48 49 7 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 7 48 27 6 (set (reg/v:SI 75 [ usTimerT35_50us ])
+        (const_int 35 [0x23])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":100 -1
+     (nil))
+(code_label 27 7 28 7 3 (nil) [1 uses])
+(note 28 27 29 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 29 28 30 7 (set (reg:SI 85)
+        (zero_extend:SI (subreg:HI (reg/v:SI 75 [ usTimerT35_50us ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":115 -1
+     (nil))
+(insn 30 29 31 7 (set (reg:SI 10 a0)
+        (reg:SI 85)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":115 -1
+     (nil))
+(call_insn 31 30 32 7 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xMBPortTimersInit") [flags 0x41] <function_decl 065cc000 xMBPortTimersInit>) [0 xMBPortTimersInit S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":115 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortTimersInit") [flags 0x41] <function_decl 065cc000 xMBPortTimersInit>)
+        (nil))
+    (expr_list:HI (use (reg:SI 10 a0))
+        (nil)))
+(insn 32 31 33 7 (set (reg:SI 86)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":115 -1
+     (nil))
+(insn 33 32 34 7 (set (reg:SI 74 [ _3 ])
+        (reg:SI 86)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":115 -1
+     (nil))
+(insn 34 33 35 7 (set (reg:SI 87)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":115 -1
+     (nil))
+(jump_insn 35 34 36 7 (set (pc)
+        (if_then_else (eq (reg:SI 74 [ _3 ])
+                (reg:SI 87))
+            (label_ref:SI 53)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":115 180 {*branchsi}
+     (int_list:REG_BR_PROB 524952380 (nil))
+ -> 53)
+(code_label 36 35 37 8 2 (nil) [1 uses])
+(note 37 36 9 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 9 37 50 8 (set (reg/v:SI 76 [ <retval> ])
+        (const_int 3 [0x3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":117 -1
+     (nil))
+(jump_insn 50 9 51 8 (set (pc)
+        (label_ref:SI 42)) 250 {jump}
+     (nil)
+ -> 42)
+(barrier 51 50 53)
+(code_label 53 51 52 9 6 (nil) [1 uses])
+(note 52 53 10 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 10 52 42 9 (set (reg/v:SI 76 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":82 -1
+     (nil))
+(code_label 42 10 45 11 1 (nil) [1 uses])
+(note 45 42 43 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 43 45 44 11 (set (reg/i:SI 10 a0)
+        (reg/v:SI 76 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":123 -1
+     (nil))
+(insn 44 43 0 11 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":123 -1
+     (nil))
+
+;; Function eMBRTUStart (eMBRTUStart, funcdef_no=31, decl_uid=6447, cgraph_uid=31, symbol_order=37)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 73)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":134 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 72)
+        (lo_sum:SI (reg:SI 73)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":134 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 7 6 8 2 (set (mem/v/c:SI (reg/f:SI 72) [4 eRcvState+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":134 -1
+     (nil))
+(insn 8 7 9 2 (set (reg:SI 11 a1)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":135 -1
+     (nil))
+(insn 9 8 10 2 (set (reg:SI 10 a0)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":135 -1
+     (nil))
+(call_insn 10 9 11 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>) [0 vMBPortSerialEnable S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":135 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>)
+        (nil))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(call_insn 11 10 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 065cc0f0 vMBPortTimersEnable>) [0 vMBPortTimersEnable S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":136 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 065cc0f0 vMBPortTimersEnable>)
+        (nil))
+    (nil))
+
+;; Function eMBRTUStop (eMBRTUStop, funcdef_no=32, decl_uid=6449, cgraph_uid=32, symbol_order=38)
+
+
+;; Generating RTL for gimple basic block 2
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 11 a1)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":145 -1
+     (nil))
+(insn 6 5 7 2 (set (reg:SI 10 a0)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":145 -1
+     (nil))
+(call_insn 7 6 8 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>) [0 vMBPortSerialEnable S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":145 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>)
+        (nil))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(call_insn 8 7 0 2 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vMBPortTimersDisable") [flags 0x41] <function_decl 065cc168 vMBPortTimersDisable>) [0 vMBPortTimersDisable S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":146 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersDisable") [flags 0x41] <function_decl 065cc168 vMBPortTimersDisable>)
+        (nil))
+    (nil))
+
+;; Function eMBRTUReceive (eMBRTUReceive, funcdef_no=33, decl_uid=6453, cgraph_uid=33, symbol_order=39)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 36 from 9 to 10.
+Merging block 9 into block 8...
+Merged blocks 8 and 9.
+Merged 8 and 9 without moving.
+Removing jump 71.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 8 NOTE_INSN_DELETED)
+(note 8 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 8 3 2 (set (reg/v/f:SI 80 [ pucRcvAddress ])
+        (reg:SI 10 a0 [ pucRcvAddress ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":152 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v/f:SI 81 [ pucFrame ])
+        (reg:SI 11 a1 [ pucFrame ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":152 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v/f:SI 82 [ pusLength ])
+        (reg:SI 12 a2 [ pusLength ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":152 -1
+     (nil))
+(note 5 4 10 2 NOTE_INSN_FUNCTION_BEG)
+(insn 10 5 11 2 (set (reg:SI 84)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (nil))
+(insn 11 10 12 2 (set (reg/f:SI 83)
+        (lo_sum:SI (reg:SI 84)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 12 11 13 2 (set (reg:HI 85)
+        (mem/v/c:HI (reg/f:SI 83) [1 usRcvBufferPos+0 S2 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 72 [ usRcvBufferPos.0_1 ])
+        (zero_extend:SI (reg:HI 85))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 86)
+        (const_int 255 [0xff])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (nil))
+(jump_insn 15 14 16 2 (set (pc)
+        (if_then_else (leu (reg:SI 72 [ usRcvBufferPos.0_1 ])
+                (reg:SI 86))
+            (label_ref 27)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (int_list:REG_BR_PROB 1073312332 (nil))
+ -> 27)
+(note 16 15 17 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 17 16 18 4 (set (reg:SI 88)
+        (high:SI (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (nil))
+(insn 18 17 19 4 (set (reg/f:SI 87)
+        (lo_sum:SI (reg:SI 88)
+            (symbol_ref:SI ("*.LANCHOR2") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
+        (nil)))
+(insn 19 18 20 4 (set (reg:SI 89)
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 063a1b00 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (nil))
+(insn 20 19 21 4 (set (reg:SI 13 a3)
+        (lo_sum:SI (reg:SI 89)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 063a1b00 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 063a1b00 *.LC0>)
+        (nil)))
+(insn 21 20 22 4 (set (reg:SI 12 a2)
+        (reg/f:SI 87)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (nil))
+(insn 22 21 23 4 (set (reg:SI 11 a1)
+        (const_int 155 [0x9b])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (nil))
+(insn 23 22 24 4 (set (reg:SI 90)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (nil))
+(insn 24 23 25 4 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 90)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>)
+        (nil)))
+(call_insn 25 24 26 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062d3ac8 __assert_func>) [0 __assert_func S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062d3ac8 __assert_func>)
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (nil))))))
+(barrier 26 25 27)
+(code_label 27 26 28 5 13 (nil) [1 uses])
+(note 28 27 29 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 29 28 30 5 (set (reg:SI 92)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":157 -1
+     (nil))
+(insn 30 29 31 5 (set (reg/f:SI 91)
+        (lo_sum:SI (reg:SI 92)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":157 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 31 30 32 5 (set (reg:HI 93)
+        (mem/v/c:HI (reg/f:SI 91) [1 usRcvBufferPos+0 S2 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":157 -1
+     (nil))
+(insn 32 31 33 5 (set (reg:SI 73 [ usRcvBufferPos.1_2 ])
+        (zero_extend:SI (reg:HI 93))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":157 -1
+     (nil))
+(insn 33 32 34 5 (set (reg:SI 94)
+        (const_int 3 [0x3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":157 -1
+     (nil))
+(jump_insn 34 33 51 5 (set (pc)
+        (if_then_else (gtu (reg:SI 73 [ usRcvBufferPos.1_2 ])
+                (reg:SI 94))
+            (label_ref 38)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":157 -1
+     (int_list:REG_BR_PROB 512926476 (nil))
+ -> 38)
+(code_label 51 34 35 6 16 (nil) [1 uses])
+(note 35 51 7 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 7 35 36 6 (set (reg/v:SI 79 [ <retval> ])
+        (const_int 5 [0x5])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":176 -1
+     (nil))
+(jump_insn 36 7 37 6 (set (pc)
+        (label_ref:SI 73)) 250 {jump}
+     (nil)
+ -> 73)
+(barrier 37 36 38)
+(code_label 38 37 39 7 14 (nil) [1 uses])
+(note 39 38 40 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 40 39 41 7 (set (reg:SI 96)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":158 -1
+     (nil))
+(insn 41 40 42 7 (set (reg/f:SI 95)
+        (lo_sum:SI (reg:SI 96)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":158 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 42 41 43 7 (set (reg:HI 97)
+        (mem/v/c:HI (reg/f:SI 95) [1 usRcvBufferPos+0 S2 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":158 -1
+     (nil))
+(insn 43 42 44 7 (set (reg:SI 74 [ usRcvBufferPos.2_3 ])
+        (zero_extend:SI (reg:HI 97))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":158 -1
+     (nil))
+(insn 44 43 45 7 (set (reg:SI 99)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":158 -1
+     (nil))
+(insn 45 44 46 7 (set (reg/f:SI 98)
+        (lo_sum:SI (reg:SI 99)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":158 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 46 45 47 7 (set (reg:SI 11 a1)
+        (reg:SI 74 [ usRcvBufferPos.2_3 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":158 -1
+     (nil))
+(insn 47 46 48 7 (set (reg:SI 10 a0)
+        (reg/f:SI 98)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":158 -1
+     (nil))
+(call_insn 48 47 49 7 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("usMBCRC16") [flags 0x41] <function_decl 065cce88 usMBCRC16>) [0 usMBCRC16 S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":158 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("usMBCRC16") [flags 0x41] <function_decl 065cce88 usMBCRC16>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(insn 49 48 50 7 (set (reg:SI 100)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":158 -1
+     (nil))
+(insn 50 49 52 7 (set (reg:SI 75 [ _4 ])
+        (reg:SI 100)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":158 -1
+     (nil))
+(jump_insn 52 50 53 7 (set (pc)
+        (if_then_else (ne (reg:SI 75 [ _4 ])
+                (const_int 0 [0]))
+            (label_ref 51)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":158 -1
+     (int_list:REG_BR_PROB 375809644 (nil))
+ -> 51)
+(note 53 52 54 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 54 53 55 8 (set (reg:SI 102)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":163 -1
+     (nil))
+(insn 55 54 56 8 (set (reg/f:SI 101)
+        (lo_sum:SI (reg:SI 102)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":163 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 56 55 57 8 (set (reg:QI 103)
+        (mem/v/j/c:QI (reg/f:SI 101) [0 ucRTUBuf+0 S1 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":163 -1
+     (nil))
+(insn 57 56 58 8 (set (reg:SI 76 [ _5 ])
+        (zero_extend:SI (reg:QI 103))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":163 -1
+     (nil))
+(insn 58 57 59 8 (set (mem:QI (reg/v/f:SI 80 [ pucRcvAddress ]) [0 *pucRcvAddress_13(D)+0 S1 A8])
+        (subreg/s/v:QI (reg:SI 76 [ _5 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":163 -1
+     (nil))
+(insn 59 58 60 8 (set (reg:SI 105)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":168 -1
+     (nil))
+(insn 60 59 61 8 (set (reg/f:SI 104)
+        (lo_sum:SI (reg:SI 105)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":168 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 61 60 62 8 (set (reg:HI 106)
+        (mem/v/c:HI (reg/f:SI 104) [1 usRcvBufferPos+0 S2 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":168 -1
+     (nil))
+(insn 62 61 63 8 (set (reg:SI 77 [ usRcvBufferPos.3_6 ])
+        (zero_extend:SI (reg:HI 106))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":168 -1
+     (nil))
+(insn 63 62 64 8 (set (reg:SI 107)
+        (plus:SI (reg:SI 77 [ usRcvBufferPos.3_6 ])
+            (const_int -3 [0xfffffffffffffffd]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":168 -1
+     (nil))
+(insn 64 63 65 8 (set (mem:HI (reg/v/f:SI 82 [ pusLength ]) [1 *pusLength_15(D)+0 S2 A16])
+        (subreg:HI (reg:SI 107) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":168 -1
+     (nil))
+(insn 65 64 66 8 (set (reg:SI 109)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":171 -1
+     (nil))
+(insn 66 65 67 8 (set (reg/f:SI 108)
+        (lo_sum:SI (reg:SI 109)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":171 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 67 66 68 8 (set (reg:SI 110)
+        (plus:SI (reg/f:SI 108)
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":171 -1
+     (nil))
+(insn 68 67 6 8 (set (mem/f:SI (reg/v/f:SI 81 [ pucFrame ]) [2 *pucFrame_17(D)+0 S4 A32])
+        (reg:SI 110)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":171 -1
+     (nil))
+(insn 6 68 73 8 (set (reg/v:SI 79 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":153 -1
+     (nil))
+(code_label 73 6 76 10 12 (nil) [1 uses])
+(note 76 73 74 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 74 76 75 10 (set (reg/i:SI 10 a0)
+        (reg/v:SI 79 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":181 -1
+     (nil))
+(insn 75 74 0 10 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":181 -1
+     (nil))
+
+;; Function eMBRTUSend (eMBRTUSend, funcdef_no=34, decl_uid=6457, cgraph_uid=34, symbol_order=40)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+Edge 2->4 redirected to 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Redirecting jump 90 from 6 to 7.
+Merging block 6 into block 5...
+Merged blocks 5 and 6.
+Merged 5 and 6 without moving.
+Removing jump 84.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 8 NOTE_INSN_DELETED)
+(note 8 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(insn 2 8 3 2 (set (reg/v:SI 88 [ ucSlaveAddress ])
+        (reg:SI 10 a0 [ ucSlaveAddress ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":185 -1
+     (nil))
+(insn 3 2 4 2 (set (reg/v/f:SI 89 [ pucFrame ])
+        (reg:SI 11 a1 [ pucFrame ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":185 -1
+     (nil))
+(insn 4 3 5 2 (set (reg/v:SI 90 [ usLength ])
+        (reg:SI 12 a2 [ usLength ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":185 -1
+     (nil))
+(note 5 4 10 2 NOTE_INSN_FUNCTION_BEG)
+(insn 10 5 11 2 (set (reg:SI 92)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":195 -1
+     (nil))
+(insn 11 10 12 2 (set (reg/f:SI 91)
+        (lo_sum:SI (reg:SI 92)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":195 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 12 11 13 2 (set (reg:SI 72 [ eRcvState.4_1 ])
+        (mem/v/c:SI (reg/f:SI 91) [4 eRcvState+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":195 -1
+     (nil))
+(insn 13 12 14 2 (set (reg:SI 93)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":195 -1
+     (nil))
+(jump_insn 14 13 15 2 (set (pc)
+        (if_then_else (ne (reg:SI 72 [ eRcvState.4_1 ])
+                (reg:SI 93))
+            (label_ref:SI 93)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":195 180 {*branchsi}
+     (int_list:REG_BR_PROB 729822324 (nil))
+ -> 93)
+(note 15 14 16 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 16 15 17 4 (set (reg/f:SI 73 [ _2 ])
+        (plus:SI (reg/v/f:SI 89 [ pucFrame ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":198 -1
+     (nil))
+(insn 17 16 18 4 (set (reg:SI 95)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":198 -1
+     (nil))
+(insn 18 17 19 4 (set (reg/f:SI 94)
+        (lo_sum:SI (reg:SI 95)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":198 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 19 18 20 4 (set (mem/f/c:SI (reg/f:SI 94) [2 pucSndBufferCur+0 S4 A32])
+        (reg/f:SI 73 [ _2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":198 -1
+     (nil))
+(insn 20 19 21 4 (set (reg:SI 97)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":199 -1
+     (nil))
+(insn 21 20 22 4 (set (reg/f:SI 96)
+        (lo_sum:SI (reg:SI 97)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":199 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 22 21 23 4 (set (reg:HI 98)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":199 -1
+     (nil))
+(insn 23 22 24 4 (set (mem/v/c:HI (reg/f:SI 96) [1 usSndBufferCount+0 S2 A16])
+        (reg:HI 98)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":199 -1
+     (nil))
+(insn 24 23 25 4 (set (mem/v:QI (plus:SI (reg/v/f:SI 89 [ pucFrame ])
+                (const_int -1 [0xffffffffffffffff])) [0 MEM[(volatile UCHAR *)pucFrame_18(D) + 4294967295B]+0 S1 A8])
+        (subreg/s/v:QI (reg/v:SI 88 [ ucSlaveAddress ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":202 -1
+     (nil))
+(insn 25 24 26 4 (set (reg:SI 100)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":203 -1
+     (nil))
+(insn 26 25 27 4 (set (reg/f:SI 99)
+        (lo_sum:SI (reg:SI 100)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":203 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 27 26 28 4 (set (reg:HI 101)
+        (mem/v/c:HI (reg/f:SI 99) [1 usSndBufferCount+0 S2 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":203 -1
+     (nil))
+(insn 28 27 29 4 (set (reg:SI 74 [ usSndBufferCount.6_3 ])
+        (zero_extend:SI (reg:HI 101))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":203 -1
+     (nil))
+(insn 29 28 30 4 (set (reg:SI 102)
+        (plus:SI (reg:SI 74 [ usSndBufferCount.6_3 ])
+            (reg/v:SI 90 [ usLength ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":203 -1
+     (nil))
+(insn 30 29 31 4 (set (reg:SI 75 [ _4 ])
+        (zero_extend:SI (subreg:HI (reg:SI 102) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":203 -1
+     (nil))
+(insn 31 30 32 4 (set (reg:SI 104)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":203 -1
+     (nil))
+(insn 32 31 33 4 (set (reg/f:SI 103)
+        (lo_sum:SI (reg:SI 104)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":203 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 33 32 34 4 (set (mem/v/c:HI (reg/f:SI 103) [1 usSndBufferCount+0 S2 A16])
+        (subreg/s/v:HI (reg:SI 75 [ _4 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":203 -1
+     (nil))
+(insn 34 33 35 4 (set (reg:SI 106)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":206 -1
+     (nil))
+(insn 35 34 36 4 (set (reg/f:SI 105)
+        (lo_sum:SI (reg:SI 106)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":206 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 36 35 37 4 (set (reg:HI 107)
+        (mem/v/c:HI (reg/f:SI 105) [1 usSndBufferCount+0 S2 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":206 -1
+     (nil))
+(insn 37 36 38 4 (set (reg:SI 76 [ usSndBufferCount.8_5 ])
+        (zero_extend:SI (reg:HI 107))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":206 -1
+     (nil))
+(insn 38 37 39 4 (set (reg:SI 11 a1)
+        (reg:SI 76 [ usSndBufferCount.8_5 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":206 -1
+     (nil))
+(insn 39 38 40 4 (set (reg:SI 10 a0)
+        (reg/f:SI 73 [ _2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":206 -1
+     (nil))
+(call_insn 40 39 41 4 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("usMBCRC16") [flags 0x41] <function_decl 065cce88 usMBCRC16>) [0 usMBCRC16 S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":206 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("usMBCRC16") [flags 0x41] <function_decl 065cce88 usMBCRC16>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:HI (use (reg:SI 11 a1))
+            (nil))))
+(insn 41 40 42 4 (set (reg:SI 108)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":206 -1
+     (nil))
+(insn 42 41 43 4 (set (reg/v:SI 86 [ usCRC16 ])
+        (reg:SI 108)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":206 -1
+     (nil))
+(insn 43 42 44 4 (set (reg:SI 110)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":207 -1
+     (nil))
+(insn 44 43 45 4 (set (reg/f:SI 109)
+        (lo_sum:SI (reg:SI 110)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":207 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 45 44 46 4 (set (reg:HI 111)
+        (mem/v/c:HI (reg/f:SI 109) [1 usSndBufferCount+0 S2 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":207 -1
+     (nil))
+(insn 46 45 47 4 (set (reg:SI 77 [ usSndBufferCount.9_6 ])
+        (zero_extend:SI (reg:HI 111))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":207 -1
+     (nil))
+(insn 47 46 48 4 (set (reg:SI 112)
+        (plus:SI (reg:SI 77 [ usSndBufferCount.9_6 ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":207 -1
+     (nil))
+(insn 48 47 49 4 (set (reg:SI 78 [ _7 ])
+        (zero_extend:SI (subreg:HI (reg:SI 112) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":207 -1
+     (nil))
+(insn 49 48 50 4 (set (reg:SI 114)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":207 -1
+     (nil))
+(insn 50 49 51 4 (set (reg/f:SI 113)
+        (lo_sum:SI (reg:SI 114)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":207 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 51 50 52 4 (set (mem/v/c:HI (reg/f:SI 113) [1 usSndBufferCount+0 S2 A16])
+        (subreg/s/v:HI (reg:SI 78 [ _7 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":207 -1
+     (nil))
+(insn 52 51 53 4 (set (reg:SI 79 [ _8 ])
+        (reg:SI 77 [ usSndBufferCount.9_6 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":207 -1
+     (nil))
+(insn 53 52 54 4 (set (reg:SI 80 [ _9 ])
+        (zero_extend:SI (subreg:QI (reg/v:SI 86 [ usCRC16 ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":207 -1
+     (nil))
+(insn 54 53 55 4 (set (reg:SI 116)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":207 -1
+     (nil))
+(insn 55 54 56 4 (set (reg/f:SI 115)
+        (lo_sum:SI (reg:SI 116)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":207 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 56 55 57 4 (set (reg/f:SI 117)
+        (plus:SI (reg/f:SI 115)
+            (reg:SI 79 [ _8 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":207 -1
+     (nil))
+(insn 57 56 58 4 (set (mem/v/j:QI (reg/f:SI 117) [0 ucRTUBuf S1 A8])
+        (subreg/s/v:QI (reg:SI 80 [ _9 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":207 -1
+     (nil))
+(insn 58 57 59 4 (set (reg:SI 119)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (nil))
+(insn 59 58 60 4 (set (reg/f:SI 118)
+        (lo_sum:SI (reg:SI 119)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 60 59 61 4 (set (reg:HI 120)
+        (mem/v/c:HI (reg/f:SI 118) [1 usSndBufferCount+0 S2 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (nil))
+(insn 61 60 62 4 (set (reg:SI 82 [ usSndBufferCount.11_11 ])
+        (zero_extend:SI (reg:HI 120))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (nil))
+(insn 62 61 63 4 (set (reg:SI 121)
+        (plus:SI (reg:SI 82 [ usSndBufferCount.11_11 ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (nil))
+(insn 63 62 64 4 (set (reg:SI 83 [ _12 ])
+        (zero_extend:SI (subreg:HI (reg:SI 121) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (nil))
+(insn 64 63 65 4 (set (reg:SI 123)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (nil))
+(insn 65 64 66 4 (set (reg/f:SI 122)
+        (lo_sum:SI (reg:SI 123)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 66 65 67 4 (set (mem/v/c:HI (reg/f:SI 122) [1 usSndBufferCount+0 S2 A16])
+        (subreg/s/v:HI (reg:SI 83 [ _12 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (nil))
+(insn 67 66 68 4 (set (reg:SI 84 [ _13 ])
+        (reg:SI 82 [ usSndBufferCount.11_11 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (nil))
+(insn 68 67 69 4 (set (reg:SI 124)
+        (lshiftrt:SI (reg/v:SI 86 [ usCRC16 ])
+            (const_int 8 [0x8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (nil))
+(insn 69 68 70 4 (set (reg:QI 125)
+        (subreg:QI (reg:SI 124) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (nil))
+(insn 70 69 71 4 (set (reg:SI 85 [ _14 ])
+        (zero_extend:SI (reg:QI 125))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (nil))
+(insn 71 70 72 4 (set (reg:SI 127)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (nil))
+(insn 72 71 73 4 (set (reg/f:SI 126)
+        (lo_sum:SI (reg:SI 127)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 73 72 74 4 (set (reg/f:SI 128)
+        (plus:SI (reg/f:SI 126)
+            (reg:SI 84 [ _13 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (nil))
+(insn 74 73 75 4 (set (mem/v/j:QI (reg/f:SI 128) [0 ucRTUBuf S1 A8])
+        (subreg/s/v:QI (reg:SI 85 [ _14 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":208 -1
+     (nil))
+(insn 75 74 76 4 (set (reg:SI 130)
+        (high:SI (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":211 -1
+     (nil))
+(insn 76 75 77 4 (set (reg/f:SI 129)
+        (lo_sum:SI (reg:SI 130)
+            (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":211 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR6") [flags 0x182])
+        (nil)))
+(insn 77 76 78 4 (set (reg:SI 131)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":211 -1
+     (nil))
+(insn 78 77 79 4 (set (mem/v/c:SI (reg/f:SI 129) [6 eSndState+0 S4 A32])
+        (reg:SI 131)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":211 -1
+     (nil))
+(insn 79 78 80 4 (set (reg:SI 11 a1)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":212 -1
+     (nil))
+(insn 80 79 81 4 (set (reg:SI 10 a0)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":212 -1
+     (nil))
+(call_insn 81 80 6 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>) [0 vMBPortSerialEnable S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":212 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>)
+        (nil))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 6 81 90 4 (set (reg/v:SI 87 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":186 -1
+     (nil))
+(jump_insn 90 6 91 4 (set (pc)
+        (label_ref:SI 86)) 250 {jump}
+     (nil)
+ -> 86)
+(barrier 91 90 93)
+(code_label 93 91 92 5 20 (nil) [1 uses])
+(note 92 93 7 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 7 92 86 5 (set (reg/v:SI 87 [ <retval> ])
+        (const_int 5 [0x5])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":216 -1
+     (nil))
+(code_label 86 7 89 7 18 (nil) [1 uses])
+(note 89 86 87 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 87 89 88 7 (set (reg/i:SI 10 a0)
+        (reg/v:SI 87 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":220 -1
+     (nil))
+(insn 88 87 0 7 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":220 -1
+     (nil))
+
+;; Function xMBRTUReceiveFSM (xMBRTUReceiveFSM, funcdef_no=35, decl_uid=6459, cgraph_uid=35, symbol_order=41)
+
+Partition 0: size 1 align 1
+	ucByte
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 108.
+Merging block 16 into block 15...
+Merged blocks 15 and 16.
+Merged 15 and 16 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 85)
+        (high:SI (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 84)
+        (lo_sum:SI (reg:SI 85)
+            (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR6") [flags 0x182])
+        (nil)))
+(insn 7 6 8 2 (set (reg:SI 72 [ eSndState.13_1 ])
+        (mem/v/c:SI (reg/f:SI 84) [6 eSndState+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+     (nil))
+(jump_insn 8 7 9 2 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ eSndState.13_1 ])
+                (const_int 0 [0]))
+            (label_ref 20)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+     (int_list:REG_BR_PROB 1073312332 (nil))
+ -> 20)
+(note 9 8 10 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 10 9 11 4 (set (reg:SI 87)
+        (high:SI (symbol_ref:SI ("*.LANCHOR7") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+     (nil))
+(insn 11 10 12 4 (set (reg/f:SI 86)
+        (lo_sum:SI (reg:SI 87)
+            (symbol_ref:SI ("*.LANCHOR7") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR7") [flags 0x182])
+        (nil)))
+(insn 12 11 13 4 (set (reg:SI 88)
+        (high:SI (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 063a1e70 *.LC2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+     (nil))
+(insn 13 12 14 4 (set (reg:SI 13 a3)
+        (lo_sum:SI (reg:SI 88)
+            (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 063a1e70 *.LC2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 063a1e70 *.LC2>)
+        (nil)))
+(insn 14 13 15 4 (set (reg:SI 12 a2)
+        (reg/f:SI 86)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+     (nil))
+(insn 15 14 16 4 (set (reg:SI 11 a1)
+        (const_int 228 [0xe4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+     (nil))
+(insn 16 15 17 4 (set (reg:SI 89)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+     (nil))
+(insn 17 16 18 4 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 89)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>)
+        (nil)))
+(call_insn 18 17 19 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062d3ac8 __assert_func>) [0 __assert_func S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062d3ac8 __assert_func>)
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (nil))))))
+(barrier 19 18 20)
+(code_label 20 19 21 5 23 (nil) [1 uses])
+(note 21 20 22 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 22 21 23 5 (set (reg:SI 90)
+        (plus:SI (reg/f:SI 67 virtual-stack-vars)
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":231 -1
+     (nil))
+(insn 23 22 24 5 (set (reg:SI 10 a0)
+        (reg:SI 90)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":231 -1
+     (nil))
+(call_insn 24 23 25 5 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xMBPortSerialGetByte") [flags 0x41] <function_decl 06607f00 xMBPortSerialGetByte>) [0 xMBPortSerialGetByte S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":231 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortSerialGetByte") [flags 0x41] <function_decl 06607f00 xMBPortSerialGetByte>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 25 24 26 5 (set (reg:SI 92)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":233 -1
+     (nil))
+(insn 26 25 27 5 (set (reg/f:SI 91)
+        (lo_sum:SI (reg:SI 92)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":233 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 27 26 28 5 (set (reg:SI 73 [ eRcvState.14_2 ])
+        (mem/v/c:SI (reg/f:SI 91) [4 eRcvState+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":233 -1
+     (nil))
+(insn 28 27 29 5 (set (reg:SI 93)
+        (const_int 1 [0x1])) -1
+     (nil))
+(jump_insn 29 28 30 5 (set (pc)
+        (if_then_else (eq (reg:SI 73 [ eRcvState.14_2 ])
+                (reg:SI 93))
+            (label_ref 43)
+            (pc))) -1
+     (int_list:REG_BR_PROB 214748372 (nil))
+ -> 43)
+(note 30 29 31 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 31 30 32 6 (set (pc)
+        (if_then_else (eq (reg:SI 73 [ eRcvState.14_2 ])
+                (const_int 0 [0]))
+            (label_ref 38)
+            (pc))) -1
+     (int_list:REG_BR_PROB 268435460 (nil))
+ -> 38)
+(note 32 31 33 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 33 32 34 7 (set (reg:SI 94)
+        (const_int 2 [0x2])) -1
+     (nil))
+(jump_insn 34 33 35 7 (set (pc)
+        (if_then_else (eq (reg:SI 73 [ eRcvState.14_2 ])
+                (reg:SI 94))
+            (label_ref 70)
+            (pc))) -1
+     (int_list:REG_BR_PROB 357913948 (nil))
+ -> 70)
+(note 35 34 36 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 36 35 37 8 (set (reg:SI 95)
+        (const_int 3 [0x3])) -1
+     (nil))
+(jump_insn 37 36 38 8 (set (pc)
+        (if_then_else (ne (reg:SI 73 [ eRcvState.14_2 ])
+                (reg:SI 95))
+            (label_ref 105)
+            (pc))) -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 105)
+(code_label 38 37 39 9 25 (nil) [1 uses])
+(note 39 38 40 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(call_insn 40 39 41 9 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 065cc0f0 vMBPortTimersEnable>) [0 vMBPortTimersEnable S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":239 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 065cc0f0 vMBPortTimersEnable>)
+        (nil))
+    (nil))
+(jump_insn 41 40 42 9 (set (pc)
+        (label_ref 105)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":240 -1
+     (nil)
+ -> 105)
+(barrier 42 41 43)
+(code_label 43 42 44 10 24 (nil) [1 uses])
+(note 44 43 45 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 45 44 46 10 (set (reg:SI 97)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":255 -1
+     (nil))
+(insn 46 45 47 10 (set (reg/f:SI 96)
+        (lo_sum:SI (reg:SI 97)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":255 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 47 46 48 10 (set (mem/v/c:HI (reg/f:SI 96) [1 usRcvBufferPos+0 S2 A16])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":255 -1
+     (nil))
+(insn 48 47 49 10 (set (reg:SI 99)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":256 -1
+     (nil))
+(insn 49 48 50 10 (set (reg/f:SI 98)
+        (lo_sum:SI (reg:SI 99)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":256 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 50 49 51 10 (set (reg:HI 100)
+        (mem/v/c:HI (reg/f:SI 98) [1 usRcvBufferPos+0 S2 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":256 -1
+     (nil))
+(insn 51 50 52 10 (set (reg:SI 74 [ usRcvBufferPos.15_3 ])
+        (zero_extend:SI (reg:HI 100))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":256 -1
+     (nil))
+(insn 52 51 53 10 (set (reg:SI 101)
+        (plus:SI (reg:SI 74 [ usRcvBufferPos.15_3 ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":256 -1
+     (nil))
+(insn 53 52 54 10 (set (reg:SI 75 [ _4 ])
+        (zero_extend:SI (subreg:HI (reg:SI 101) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":256 -1
+     (nil))
+(insn 54 53 55 10 (set (reg:SI 103)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":256 -1
+     (nil))
+(insn 55 54 56 10 (set (reg/f:SI 102)
+        (lo_sum:SI (reg:SI 103)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":256 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 56 55 57 10 (set (mem/v/c:HI (reg/f:SI 102) [1 usRcvBufferPos+0 S2 A16])
+        (subreg/s/v:HI (reg:SI 75 [ _4 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":256 -1
+     (nil))
+(insn 57 56 58 10 (set (reg:SI 76 [ _5 ])
+        (reg:SI 74 [ usRcvBufferPos.15_3 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":256 -1
+     (nil))
+(insn 58 57 59 10 (set (reg:SI 77 [ ucByte.17_6 ])
+        (zero_extend:SI (mem/c:QI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                    (const_int -1 [0xffffffffffffffff])) [0 ucByte+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":256 -1
+     (nil))
+(insn 59 58 60 10 (set (reg:SI 105)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":256 -1
+     (nil))
+(insn 60 59 61 10 (set (reg/f:SI 104)
+        (lo_sum:SI (reg:SI 105)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":256 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 61 60 62 10 (set (reg/f:SI 106)
+        (plus:SI (reg/f:SI 104)
+            (reg:SI 76 [ _5 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":256 -1
+     (nil))
+(insn 62 61 63 10 (set (mem/v/j:QI (reg/f:SI 106) [0 ucRTUBuf S1 A8])
+        (subreg/s/v:QI (reg:SI 77 [ ucByte.17_6 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":256 -1
+     (nil))
+(insn 63 62 64 10 (set (reg:SI 108)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":257 -1
+     (nil))
+(insn 64 63 65 10 (set (reg/f:SI 107)
+        (lo_sum:SI (reg:SI 108)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":257 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 65 64 66 10 (set (reg:SI 109)
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":257 -1
+     (nil))
+(insn 66 65 67 10 (set (mem/v/c:SI (reg/f:SI 107) [4 eRcvState+0 S4 A32])
+        (reg:SI 109)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":257 -1
+     (nil))
+(call_insn 67 66 68 10 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 065cc0f0 vMBPortTimersEnable>) [0 vMBPortTimersEnable S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":260 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 065cc0f0 vMBPortTimersEnable>)
+        (nil))
+    (nil))
+(jump_insn 68 67 69 10 (set (pc)
+        (label_ref 105)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":261 -1
+     (nil)
+ -> 105)
+(barrier 69 68 70)
+(code_label 70 69 71 11 26 (nil) [1 uses])
+(note 71 70 72 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 72 71 73 11 (set (reg:SI 111)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":269 -1
+     (nil))
+(insn 73 72 74 11 (set (reg/f:SI 110)
+        (lo_sum:SI (reg:SI 111)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":269 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 74 73 75 11 (set (reg:HI 112)
+        (mem/v/c:HI (reg/f:SI 110) [1 usRcvBufferPos+0 S2 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":269 -1
+     (nil))
+(insn 75 74 76 11 (set (reg:SI 78 [ usRcvBufferPos.18_7 ])
+        (zero_extend:SI (reg:HI 112))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":269 -1
+     (nil))
+(insn 76 75 77 11 (set (reg:SI 113)
+        (const_int 255 [0xff])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":269 -1
+     (nil))
+(jump_insn 77 76 78 11 (set (pc)
+        (if_then_else (gtu (reg:SI 78 [ usRcvBufferPos.18_7 ])
+                (reg:SI 113))
+            (label_ref 96)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":269 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 96)
+(note 78 77 79 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 79 78 80 12 (set (reg:SI 115)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":271 -1
+     (nil))
+(insn 80 79 81 12 (set (reg/f:SI 114)
+        (lo_sum:SI (reg:SI 115)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":271 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 81 80 82 12 (set (reg:HI 116)
+        (mem/v/c:HI (reg/f:SI 114) [1 usRcvBufferPos+0 S2 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":271 -1
+     (nil))
+(insn 82 81 83 12 (set (reg:SI 79 [ usRcvBufferPos.19_8 ])
+        (zero_extend:SI (reg:HI 116))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":271 -1
+     (nil))
+(insn 83 82 84 12 (set (reg:SI 117)
+        (plus:SI (reg:SI 79 [ usRcvBufferPos.19_8 ])
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":271 -1
+     (nil))
+(insn 84 83 85 12 (set (reg:SI 80 [ _9 ])
+        (zero_extend:SI (subreg:HI (reg:SI 117) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":271 -1
+     (nil))
+(insn 85 84 86 12 (set (reg:SI 119)
+        (high:SI (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":271 -1
+     (nil))
+(insn 86 85 87 12 (set (reg/f:SI 118)
+        (lo_sum:SI (reg:SI 119)
+            (symbol_ref:SI ("*.LANCHOR1") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":271 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
+        (nil)))
+(insn 87 86 88 12 (set (mem/v/c:HI (reg/f:SI 118) [1 usRcvBufferPos+0 S2 A16])
+        (subreg/s/v:HI (reg:SI 80 [ _9 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":271 -1
+     (nil))
+(insn 88 87 89 12 (set (reg:SI 81 [ _10 ])
+        (reg:SI 79 [ usRcvBufferPos.19_8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":271 -1
+     (nil))
+(insn 89 88 90 12 (set (reg:SI 82 [ ucByte.21_11 ])
+        (zero_extend:SI (mem/c:QI (plus:SI (reg/f:SI 67 virtual-stack-vars)
+                    (const_int -1 [0xffffffffffffffff])) [0 ucByte+0 S1 A8]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":271 -1
+     (nil))
+(insn 90 89 91 12 (set (reg:SI 121)
+        (high:SI (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":271 -1
+     (nil))
+(insn 91 90 92 12 (set (reg/f:SI 120)
+        (lo_sum:SI (reg:SI 121)
+            (symbol_ref:SI ("*.LANCHOR3") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":271 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
+        (nil)))
+(insn 92 91 93 12 (set (reg/f:SI 122)
+        (plus:SI (reg/f:SI 120)
+            (reg:SI 81 [ _10 ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":271 -1
+     (nil))
+(insn 93 92 94 12 (set (mem/v/j:QI (reg/f:SI 122) [0 ucRTUBuf S1 A8])
+        (subreg/s/v:QI (reg:SI 82 [ ucByte.21_11 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":271 -1
+     (nil))
+(jump_insn 94 93 95 12 (set (pc)
+        (label_ref 102)) -1
+     (nil)
+ -> 102)
+(barrier 95 94 96)
+(code_label 96 95 97 13 28 (nil) [1 uses])
+(note 97 96 98 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 98 97 99 13 (set (reg:SI 124)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":276 -1
+     (nil))
+(insn 99 98 100 13 (set (reg/f:SI 123)
+        (lo_sum:SI (reg:SI 124)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":276 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 100 99 101 13 (set (reg:SI 125)
+        (const_int 3 [0x3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":276 -1
+     (nil))
+(insn 101 100 102 13 (set (mem/v/c:SI (reg/f:SI 123) [4 eRcvState+0 S4 A32])
+        (reg:SI 125)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":276 -1
+     (nil))
+(code_label 102 101 103 14 29 (nil) [1 uses])
+(note 103 102 104 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(call_insn 104 103 105 14 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 065cc0f0 vMBPortTimersEnable>) [0 vMBPortTimersEnable S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":278 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 065cc0f0 vMBPortTimersEnable>)
+        (nil))
+    (nil))
+(code_label 105 104 106 15 27 (nil) [3 uses])
+(note 106 105 107 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 107 106 111 15 (set (reg:SI 83 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":281 -1
+     (nil))
+(insn 111 107 112 15 (set (reg/i:SI 10 a0)
+        (reg:SI 83 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":282 -1
+     (nil))
+(insn 112 111 0 15 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":282 -1
+     (nil))
+
+;; Function xMBRTUTransmitFSM (xMBRTUTransmitFSM, funcdef_no=36, decl_uid=6461, cgraph_uid=36, symbol_order=42)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 92.
+Merging block 13 into block 12...
+Merged blocks 12 and 13.
+Merged 12 and 13 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 6 NOTE_INSN_DELETED)
+(note 6 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 6 8 2 NOTE_INSN_FUNCTION_BEG)
+(insn 8 2 9 2 (set (reg:SI 84)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+     (nil))
+(insn 9 8 10 2 (set (reg/f:SI 83)
+        (lo_sum:SI (reg:SI 84)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 10 9 11 2 (set (reg:SI 72 [ eRcvState.22_1 ])
+        (mem/v/c:SI (reg/f:SI 83) [4 eRcvState+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 85)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+     (nil))
+(jump_insn 12 11 13 2 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ eRcvState.22_1 ])
+                (reg:SI 85))
+            (label_ref 24)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+     (int_list:REG_BR_PROB 1073312332 (nil))
+ -> 24)
+(note 13 12 14 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 14 13 15 4 (set (reg:SI 87)
+        (high:SI (symbol_ref:SI ("*.LANCHOR8") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+     (nil))
+(insn 15 14 16 4 (set (reg/f:SI 86)
+        (lo_sum:SI (reg:SI 87)
+            (symbol_ref:SI ("*.LANCHOR8") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR8") [flags 0x182])
+        (nil)))
+(insn 16 15 17 4 (set (reg:SI 88)
+        (high:SI (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 0638fbb0 *.LC3>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+     (nil))
+(insn 17 16 18 4 (set (reg:SI 13 a3)
+        (lo_sum:SI (reg:SI 88)
+            (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 0638fbb0 *.LC3>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 0638fbb0 *.LC3>)
+        (nil)))
+(insn 18 17 19 4 (set (reg:SI 12 a2)
+        (reg/f:SI 86)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+     (nil))
+(insn 19 18 20 4 (set (reg:SI 11 a1)
+        (const_int 288 [0x120])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+     (nil))
+(insn 20 19 21 4 (set (reg:SI 89)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+     (nil))
+(insn 21 20 22 4 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 89)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>)
+        (nil)))
+(call_insn 22 21 23 4 (parallel [
+            (call (mem:SI (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062d3ac8 __assert_func>) [0 __assert_func S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062d3ac8 __assert_func>)
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (nil))))))
+(barrier 23 22 24)
+(code_label 24 23 25 5 36 (nil) [1 uses])
+(note 25 24 26 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 26 25 27 5 (set (reg:SI 91)
+        (high:SI (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":289 -1
+     (nil))
+(insn 27 26 28 5 (set (reg/f:SI 90)
+        (lo_sum:SI (reg:SI 91)
+            (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":289 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR6") [flags 0x182])
+        (nil)))
+(insn 28 27 29 5 (set (reg:SI 73 [ eSndState.23_2 ])
+        (mem/v/c:SI (reg/f:SI 90) [6 eSndState+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":289 -1
+     (nil))
+(jump_insn 29 28 30 5 (set (pc)
+        (if_then_else (eq (reg:SI 73 [ eSndState.23_2 ])
+                (const_int 0 [0]))
+            (label_ref 36)
+            (pc))) -1
+     (int_list:REG_BR_PROB 357913948 (nil))
+ -> 36)
+(note 30 29 31 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 31 30 32 6 (set (reg:SI 92)
+        (const_int 1 [0x1])) -1
+     (nil))
+(jump_insn 32 31 35 6 (set (pc)
+        (if_then_else (eq (reg:SI 73 [ eSndState.23_2 ])
+                (reg:SI 92))
+            (label_ref 43)
+            (pc))) -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 43)
+(note 35 32 5 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 5 35 33 7 (set (reg/v:SI 82 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":287 -1
+     (nil))
+(jump_insn 33 5 34 7 (set (pc)
+        (label_ref 89)) -1
+     (nil)
+ -> 89)
+(barrier 34 33 36)
+(code_label 36 34 37 8 37 (nil) [1 uses])
+(note 37 36 38 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 38 37 39 8 (set (reg:SI 11 a1)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":295 -1
+     (nil))
+(insn 39 38 40 8 (set (reg:SI 10 a0)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":295 -1
+     (nil))
+(call_insn 40 39 4 8 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>) [0 vMBPortSerialEnable S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":295 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>)
+        (nil))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(insn 4 40 41 8 (set (reg/v:SI 82 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":287 -1
+     (nil))
+(jump_insn 41 4 42 8 (set (pc)
+        (label_ref 89)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":296 -1
+     (nil)
+ -> 89)
+(barrier 42 41 43)
+(code_label 43 42 44 9 38 (nil) [1 uses])
+(note 44 43 45 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 45 44 46 9 (set (reg:SI 94)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":299 -1
+     (nil))
+(insn 46 45 47 9 (set (reg/f:SI 93)
+        (lo_sum:SI (reg:SI 94)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":299 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 47 46 48 9 (set (reg:HI 95)
+        (mem/v/c:HI (reg/f:SI 93) [1 usSndBufferCount+0 S2 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":299 -1
+     (nil))
+(insn 48 47 49 9 (set (reg:SI 74 [ usSndBufferCount.24_3 ])
+        (zero_extend:SI (reg:HI 95))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":299 -1
+     (nil))
+(jump_insn 49 48 50 9 (set (pc)
+        (if_then_else (eq (reg:SI 74 [ usSndBufferCount.24_3 ])
+                (const_int 0 [0]))
+            (label_ref 77)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":299 -1
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 77)
+(note 50 49 51 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 51 50 52 10 (set (reg:SI 97)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":301 -1
+     (nil))
+(insn 52 51 53 10 (set (reg/f:SI 96)
+        (lo_sum:SI (reg:SI 97)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":301 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 53 52 54 10 (set (reg/f:SI 75 [ pucSndBufferCur.25_4 ])
+        (mem/f/c:SI (reg/f:SI 96) [2 pucSndBufferCur+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":301 -1
+     (nil))
+(insn 54 53 55 10 (set (reg:QI 98)
+        (mem/v:QI (reg/f:SI 75 [ pucSndBufferCur.25_4 ]) [0 *pucSndBufferCur.25_4+0 S1 A8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":301 -1
+     (nil))
+(insn 55 54 56 10 (set (reg:SI 76 [ _5 ])
+        (zero_extend:SI (reg:QI 98))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":301 -1
+     (nil))
+(insn 56 55 57 10 (set (reg:SI 99)
+        (sign_extend:SI (subreg/v:QI (reg:SI 76 [ _5 ]) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":301 -1
+     (nil))
+(insn 57 56 58 10 (set (reg:SI 10 a0)
+        (reg:SI 99)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":301 -1
+     (nil))
+(call_insn 58 57 59 10 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xMBPortSerialPutByte") [flags 0x41] <function_decl 06607f78 xMBPortSerialPutByte>) [0 xMBPortSerialPutByte S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":301 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortSerialPutByte") [flags 0x41] <function_decl 06607f78 xMBPortSerialPutByte>)
+        (nil))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (nil)))
+(insn 59 58 60 10 (set (reg:SI 101)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":302 -1
+     (nil))
+(insn 60 59 61 10 (set (reg/f:SI 100)
+        (lo_sum:SI (reg:SI 101)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":302 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 61 60 62 10 (set (reg:SI 103)
+        (high:SI (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":302 -1
+     (nil))
+(insn 62 61 63 10 (set (reg/f:SI 102)
+        (lo_sum:SI (reg:SI 103)
+            (symbol_ref:SI ("*.LANCHOR4") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":302 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR4") [flags 0x182])
+        (nil)))
+(insn 63 62 64 10 (set (reg:SI 105)
+        (mem/f/c:SI (reg/f:SI 102) [2 pucSndBufferCur+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":302 -1
+     (nil))
+(insn 64 63 65 10 (set (reg:SI 104)
+        (plus:SI (reg:SI 105)
+            (const_int 1 [0x1]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":302 -1
+     (nil))
+(insn 65 64 66 10 (set (mem/f/c:SI (reg/f:SI 100) [2 pucSndBufferCur+0 S4 A32])
+        (reg:SI 104)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":302 -1
+     (nil))
+(insn 66 65 67 10 (set (reg:SI 107)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":303 -1
+     (nil))
+(insn 67 66 68 10 (set (reg/f:SI 106)
+        (lo_sum:SI (reg:SI 107)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":303 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 68 67 69 10 (set (reg:HI 108)
+        (mem/v/c:HI (reg/f:SI 106) [1 usSndBufferCount+0 S2 A16])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":303 -1
+     (nil))
+(insn 69 68 70 10 (set (reg:SI 80 [ usSndBufferCount.27_9 ])
+        (zero_extend:SI (reg:HI 108))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":303 -1
+     (nil))
+(insn 70 69 71 10 (set (reg:SI 109)
+        (plus:SI (reg:SI 80 [ usSndBufferCount.27_9 ])
+            (const_int -1 [0xffffffffffffffff]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":303 -1
+     (nil))
+(insn 71 70 72 10 (set (reg:SI 81 [ _10 ])
+        (zero_extend:SI (subreg:HI (reg:SI 109) 0))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":303 -1
+     (nil))
+(insn 72 71 73 10 (set (reg:SI 111)
+        (high:SI (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":303 -1
+     (nil))
+(insn 73 72 74 10 (set (reg/f:SI 110)
+        (lo_sum:SI (reg:SI 111)
+            (symbol_ref:SI ("*.LANCHOR5") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":303 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR5") [flags 0x182])
+        (nil)))
+(insn 74 73 3 10 (set (mem/v/c:HI (reg/f:SI 110) [1 usSndBufferCount+0 S2 A16])
+        (subreg/s/v:HI (reg:SI 81 [ _10 ]) 0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":303 -1
+     (nil))
+(insn 3 74 75 10 (set (reg/v:SI 82 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":287 -1
+     (nil))
+(jump_insn 75 3 76 10 (set (pc)
+        (label_ref 89)) -1
+     (nil)
+ -> 89)
+(barrier 76 75 77)
+(code_label 77 76 78 11 40 (nil) [1 uses])
+(note 78 77 79 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 79 78 80 11 (set (reg:SI 10 a0)
+        (const_int 3 [0x3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":307 -1
+     (nil))
+(call_insn 80 79 81 11 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06607c30 xMBPortEventPost>) [0 xMBPortEventPost S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":307 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06607c30 xMBPortEventPost>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 81 80 82 11 (set (reg:SI 112)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":307 -1
+     (nil))
+(insn 82 81 83 11 (set (reg/v:SI 82 [ <retval> ])
+        (reg:SI 112)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":307 -1
+     (nil))
+(insn 83 82 84 11 (set (reg:SI 114)
+        (high:SI (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":310 -1
+     (nil))
+(insn 84 83 85 11 (set (reg/f:SI 113)
+        (lo_sum:SI (reg:SI 114)
+            (symbol_ref:SI ("*.LANCHOR6") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":310 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR6") [flags 0x182])
+        (nil)))
+(insn 85 84 86 11 (set (mem/v/c:SI (reg/f:SI 113) [6 eSndState+0 S4 A32])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":310 -1
+     (nil))
+(insn 86 85 87 11 (set (reg:SI 11 a1)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":311 -1
+     (nil))
+(insn 87 86 88 11 (set (reg:SI 10 a0)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":311 -1
+     (nil))
+(call_insn 88 87 89 11 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>) [0 vMBPortSerialEnable S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":311 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>)
+        (nil))
+    (expr_list:QI (use (reg:SI 10 a0))
+        (expr_list:QI (use (reg:SI 11 a1))
+            (nil))))
+(code_label 89 88 90 12 39 (nil) [3 uses])
+(note 90 89 91 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 91 90 95 12 (set (reg/v:SI 82 [ <retval> ])
+        (reg/v:SI 82 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":316 -1
+     (nil))
+(insn 95 91 96 12 (set (reg/i:SI 10 a0)
+        (reg/v:SI 82 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":317 -1
+     (nil))
+(insn 96 95 0 12 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":317 -1
+     (nil))
+
+;; Function xMBRTUTimerT35Expired (xMBRTUTimerT35Expired, funcdef_no=37, decl_uid=6465, cgraph_uid=37, symbol_order=43)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+Edge 3->11 redirected to 14
+Edge 7->11 redirected to 15
+Edge 8->11 redirected to 16
+Edge 9->11 redirected to 17
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 71.
+Merging block 17 into block 16...
+Merged blocks 16 and 17.
+Merged 16 and 17 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 7 NOTE_INSN_DELETED)
+(note 7 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 7 9 2 NOTE_INSN_FUNCTION_BEG)
+(insn 9 2 10 2 (set (reg:SI 78)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":324 -1
+     (nil))
+(insn 10 9 11 2 (set (reg/f:SI 77)
+        (lo_sum:SI (reg:SI 78)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":324 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 11 10 12 2 (set (reg:SI 72 [ eRcvState.29_1 ])
+        (mem/v/c:SI (reg/f:SI 77) [4 eRcvState+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":324 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 79)
+        (const_int 2 [0x2])) -1
+     (nil))
+(jump_insn 13 12 14 2 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ eRcvState.29_1 ])
+                (reg:SI 79))
+            (label_ref 26)
+            (pc))) -1
+     (int_list:REG_BR_PROB 268435460 (nil))
+ -> 26)
+(note 14 13 15 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 15 14 16 4 (set (reg:SI 80)
+        (const_int 3 [0x3])) -1
+     (nil))
+(jump_insn 16 15 17 4 (set (pc)
+        (if_then_else (eq (reg:SI 72 [ eRcvState.29_1 ])
+                (reg:SI 80))
+            (label_ref:SI 78)
+            (pc))) 180 {*branchsi}
+     (int_list:REG_BR_PROB 357913948 (nil))
+ -> 78)
+(note 17 16 18 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 18 17 19 5 (set (pc)
+        (if_then_else (ne (reg:SI 72 [ eRcvState.29_1 ])
+                (const_int 0 [0]))
+            (label_ref 34)
+            (pc))) -1
+     (int_list:REG_BR_PROB 715827884 (nil))
+ -> 34)
+(note 19 18 20 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 20 19 21 6 (set (reg:SI 10 a0)
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":328 -1
+     (nil))
+(call_insn 21 20 22 6 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06607c30 xMBPortEventPost>) [0 xMBPortEventPost S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":328 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06607c30 xMBPortEventPost>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 22 21 23 6 (set (reg:SI 81)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":328 -1
+     (nil))
+(insn 23 22 24 6 (set (reg/v:SI 76 [ <retval> ])
+        (reg:SI 81)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":328 -1
+     (nil))
+(jump_insn 24 23 25 6 (set (pc)
+        (label_ref 63)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":329 -1
+     (nil)
+ -> 63)
+(barrier 25 24 26)
+(code_label 26 25 27 7 44 (nil) [1 uses])
+(note 27 26 28 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 28 27 29 7 (set (reg:SI 10 a0)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":334 -1
+     (nil))
+(call_insn 29 28 30 7 (parallel [
+            (set (reg:SI 10 a0)
+                (call (mem:SI (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06607c30 xMBPortEventPost>) [0 xMBPortEventPost S4 A32])
+                    (const_int 0 [0])))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":334 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06607c30 xMBPortEventPost>)
+        (nil))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (nil)))
+(insn 30 29 31 7 (set (reg:SI 82)
+        (reg:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":334 -1
+     (nil))
+(insn 31 30 32 7 (set (reg/v:SI 76 [ <retval> ])
+        (reg:SI 82)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":334 -1
+     (nil))
+(jump_insn 32 31 33 7 (set (pc)
+        (label_ref 63)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":335 -1
+     (nil)
+ -> 63)
+(barrier 33 32 34)
+(code_label 34 33 35 8 46 (nil) [1 uses])
+(note 35 34 36 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 36 35 37 8 (set (reg:SI 84)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (nil))
+(insn 37 36 38 8 (set (reg/f:SI 83)
+        (lo_sum:SI (reg:SI 84)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 38 37 39 8 (set (reg:SI 73 [ eRcvState.30_2 ])
+        (mem/v/c:SI (reg/f:SI 83) [4 eRcvState+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (nil))
+(jump_insn 39 38 40 8 (set (pc)
+        (if_then_else (eq (reg:SI 73 [ eRcvState.30_2 ])
+                (const_int 0 [0]))
+            (label_ref:SI 82)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 180 {*branchsi}
+     (int_list:REG_BR_PROB 536870916 (nil))
+ -> 82)
+(note 40 39 41 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 41 40 42 9 (set (reg:SI 86)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (nil))
+(insn 42 41 43 9 (set (reg/f:SI 85)
+        (lo_sum:SI (reg:SI 86)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 43 42 44 9 (set (reg:SI 74 [ eRcvState.31_3 ])
+        (mem/v/c:SI (reg/f:SI 85) [4 eRcvState+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (nil))
+(insn 44 43 45 9 (set (reg:SI 87)
+        (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (nil))
+(jump_insn 45 44 46 9 (set (pc)
+        (if_then_else (eq (reg:SI 74 [ eRcvState.31_3 ])
+                (reg:SI 87))
+            (label_ref:SI 86)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 180 {*branchsi}
+     (int_list:REG_BR_PROB 365072228 (nil))
+ -> 86)
+(note 46 45 47 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 47 46 48 10 (set (reg:SI 89)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (nil))
+(insn 48 47 49 10 (set (reg/f:SI 88)
+        (lo_sum:SI (reg:SI 89)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 49 48 50 10 (set (reg:SI 75 [ eRcvState.32_4 ])
+        (mem/v/c:SI (reg/f:SI 88) [4 eRcvState+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (nil))
+(insn 50 49 51 10 (set (reg:SI 90)
+        (const_int 3 [0x3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (nil))
+(jump_insn 51 50 52 10 (set (pc)
+        (if_then_else (eq (reg:SI 75 [ eRcvState.32_4 ])
+                (reg:SI 90))
+            (label_ref:SI 90)
+            (pc))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 180 {*branchsi}
+     (int_list:REG_BR_PROB 1073312332 (nil))
+ -> 90)
+(note 52 51 53 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 53 52 54 11 (set (reg:SI 92)
+        (high:SI (symbol_ref:SI ("*.LANCHOR9") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (nil))
+(insn 54 53 55 11 (set (reg/f:SI 91)
+        (lo_sum:SI (reg:SI 92)
+            (symbol_ref:SI ("*.LANCHOR9") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR9") [flags 0x182])
+        (nil)))
+(insn 55 54 56 11 (set (reg:SI 93)
+        (high:SI (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 0638fd10 *.LC4>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (nil))
+(insn 56 55 57 11 (set (reg:SI 13 a3)
+        (lo_sum:SI (reg:SI 93)
+            (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 0638fd10 *.LC4>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 0638fd10 *.LC4>)
+        (nil)))
+(insn 57 56 58 11 (set (reg:SI 12 a2)
+        (reg/f:SI 91)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (nil))
+(insn 58 57 59 11 (set (reg:SI 11 a1)
+        (const_int 344 [0x158])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (nil))
+(insn 59 58 60 11 (set (reg:SI 94)
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (nil))
+(insn 60 59 61 11 (set (reg:SI 10 a0)
+        (lo_sum:SI (reg:SI 94)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>)
+        (nil)))
+(call_insn 61 60 62 11 (parallel [
+            (call (mem:SI (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062d3ac8 __assert_func>) [0 __assert_func S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062d3ac8 __assert_func>)
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (nil)))
+    (expr_list:SI (use (reg:SI 10 a0))
+        (expr_list:SI (use (reg:SI 11 a1))
+            (expr_list:SI (use (reg:SI 12 a2))
+                (expr_list:SI (use (reg:SI 13 a3))
+                    (nil))))))
+(barrier 62 61 78)
+(code_label 78 62 77 12 47 (nil) [1 uses])
+(note 77 78 3 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 3 77 79 12 (set (reg/v:SI 76 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":322 -1
+     (nil))
+(jump_insn 79 3 80 12 (set (pc)
+        (label_ref 63)) -1
+     (nil)
+ -> 63)
+(barrier 80 79 82)
+(code_label 82 80 81 13 48 (nil) [1 uses])
+(note 81 82 5 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 5 81 83 13 (set (reg/v:SI 76 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":322 -1
+     (nil))
+(jump_insn 83 5 84 13 (set (pc)
+        (label_ref 63)) -1
+     (nil)
+ -> 63)
+(barrier 84 83 86)
+(code_label 86 84 85 14 49 (nil) [1 uses])
+(note 85 86 4 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 4 85 87 14 (set (reg/v:SI 76 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":322 -1
+     (nil))
+(jump_insn 87 4 88 14 (set (pc)
+        (label_ref 63)) -1
+     (nil)
+ -> 63)
+(barrier 88 87 90)
+(code_label 90 88 89 15 50 (nil) [1 uses])
+(note 89 90 6 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 6 89 63 15 (set (reg/v:SI 76 [ <retval> ])
+        (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":322 -1
+     (nil))
+(code_label 63 6 64 16 45 (nil) [5 uses])
+(note 64 63 65 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 65 64 66 16 (set (reg:SI 96)
+        (high:SI (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":346 -1
+     (nil))
+(insn 66 65 67 16 (set (reg/f:SI 95)
+        (lo_sum:SI (reg:SI 96)
+            (symbol_ref:SI ("*.LANCHOR0") [flags 0x182]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":346 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 67 66 68 16 (set (reg:SI 97)
+        (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":346 -1
+     (nil))
+(insn 68 67 69 16 (set (mem/v/c:SI (reg/f:SI 95) [4 eRcvState+0 S4 A32])
+        (reg:SI 97)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":346 -1
+     (nil))
+(call_insn 69 68 70 16 (parallel [
+            (call (mem:SI (symbol_ref:SI ("vMBPortTimersDisable") [flags 0x41] <function_decl 065cc168 vMBPortTimersDisable>) [0 vMBPortTimersDisable S4 A32])
+                (const_int 0 [0]))
+            (clobber (reg:SI 1 ra))
+        ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":347 -1
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersDisable") [flags 0x41] <function_decl 065cc168 vMBPortTimersDisable>)
+        (nil))
+    (nil))
+(insn 70 69 74 16 (set (reg/v:SI 76 [ <retval> ])
+        (reg/v:SI 76 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":350 -1
+     (nil))
+(insn 74 70 75 16 (set (reg/i:SI 10 a0)
+        (reg/v:SI 76 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":351 -1
+     (nil))
+(insn 75 74 0 16 (use (reg/i:SI 10 a0)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":351 -1
+     (nil))

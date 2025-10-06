@@ -55,7 +55,9 @@
 					"${project}/NetLib/eth_driver_RGMII.c",
 					"${project}/NetLib/eth_driver_MII.c",
 					"${project}/FreeRTOS/portable/Common/mpu_wrappers.c",
-					"${project}/Startup/startup_ch32v30x_D8.S"
+					"${project}/Startup/startup_ch32v30x_D8.S",
+					"${project}/cmake",
+					"${project}/build"
 				],
 				"optimization": {
 					"level": "size",
