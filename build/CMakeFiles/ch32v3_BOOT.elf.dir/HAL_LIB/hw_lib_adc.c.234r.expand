@@ -1527,11 +1527,11 @@ try_optimize_cfg iteration 2
         (reg:SI 117)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
      (nil))
 (call_insn 45 44 46 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vABLineKoofFinde") [flags 0x3] <function_decl 0675c000 vABLineKoofFinde>) [0 vABLineKoofFinde S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vABLineKoofFinde") [flags 0x3] <function_decl 0674c000 vABLineKoofFinde>) [0 vABLineKoofFinde S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":247 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vABLineKoofFinde") [flags 0x3] <function_decl 0675c000 vABLineKoofFinde>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vABLineKoofFinde") [flags 0x3] <function_decl 0674c000 vABLineKoofFinde>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1794,11 +1794,11 @@ try_optimize_cfg iteration 2
         (reg:SI 130)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
      (nil))
 (call_insn 55 54 56 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vABLineKoofFinde") [flags 0x3] <function_decl 0675c000 vABLineKoofFinde>) [0 vABLineKoofFinde S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vABLineKoofFinde") [flags 0x3] <function_decl 0674c000 vABLineKoofFinde>) [0 vABLineKoofFinde S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":268 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vABLineKoofFinde") [flags 0x3] <function_decl 0675c000 vABLineKoofFinde>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vABLineKoofFinde") [flags 0x3] <function_decl 0674c000 vABLineKoofFinde>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2023,11 +2023,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 29 28 30 2 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("fGetAinCalData") [flags 0x3] <function_decl 0675c078 fGetAinCalData>) [0 fGetAinCalData S4 A32])
+                (call (mem:SI (symbol_ref:SI ("fGetAinCalData") [flags 0x3] <function_decl 0674c078 fGetAinCalData>) [0 fGetAinCalData S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":299 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("fGetAinCalData") [flags 0x3] <function_decl 0675c078 fGetAinCalData>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("fGetAinCalData") [flags 0x3] <function_decl 0674c078 fGetAinCalData>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2663,11 +2663,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 21 20 22 2 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("fGetDataFromRaw") [flags 0x3] <function_decl 0675cc30 fGetDataFromRaw>) [0 fGetDataFromRaw S4 A32])
+                (call (mem:SI (symbol_ref:SI ("fGetDataFromRaw") [flags 0x3] <function_decl 0674cc30 fGetDataFromRaw>) [0 fGetDataFromRaw S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_adc.c":338 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("fGetDataFromRaw") [flags 0x3] <function_decl 0675cc30 fGetDataFromRaw>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("fGetDataFromRaw") [flags 0x3] <function_decl 0674cc30 fGetDataFromRaw>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SF (use (reg:SF 10 a0))

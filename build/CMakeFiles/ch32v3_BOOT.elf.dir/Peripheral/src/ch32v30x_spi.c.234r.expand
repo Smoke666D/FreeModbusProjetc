@@ -61,11 +61,11 @@ try_optimize_cfg iteration 2
         (const_int 4096 [0x1000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_spi.c":62 -1
      (nil))
 (call_insn 11 10 12 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 0644e7f8 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 0646e7f8 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_spi.c":62 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 0644e7f8 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 0646e7f8 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -77,11 +77,11 @@ try_optimize_cfg iteration 2
         (const_int 4096 [0x1000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_spi.c":63 -1
      (nil))
 (call_insn 14 13 15 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 0644e7f8 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 0646e7f8 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_spi.c":63 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 0644e7f8 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 0646e7f8 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -116,11 +116,11 @@ try_optimize_cfg iteration 2
         (const_int 16384 [0x4000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_spi.c":67 -1
      (nil))
 (call_insn 25 24 26 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 0644e870 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 0646e870 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_spi.c":67 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 0644e870 RCC_APB1PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 0646e870 RCC_APB1PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -132,11 +132,11 @@ try_optimize_cfg iteration 2
         (const_int 16384 [0x4000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_spi.c":68 -1
      (nil))
 (call_insn 28 27 29 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 0644e870 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 0646e870 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_spi.c":68 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 0644e870 RCC_APB1PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 0646e870 RCC_APB1PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -171,11 +171,11 @@ try_optimize_cfg iteration 2
         (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_spi.c":74 -1
      (nil))
 (call_insn 39 38 40 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 0644e870 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 0646e870 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_spi.c":74 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 0644e870 RCC_APB1PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 0646e870 RCC_APB1PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -187,11 +187,11 @@ try_optimize_cfg iteration 2
         (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_spi.c":75 -1
      (nil))
 (call_insn 42 41 45 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 0644e870 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 0646e870 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_spi.c":75 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 0644e870 RCC_APB1PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 0646e870 RCC_APB1PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -520,11 +520,11 @@ try_optimize_cfg iteration 2
         (reg:SI 130)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_spi.c":158 -1
      (nil))
 (call_insn 35 34 36 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_GetClocksFreq") [flags 0x41] <function_decl 0644e618 RCC_GetClocksFreq>) [0 RCC_GetClocksFreq S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_GetClocksFreq") [flags 0x41] <function_decl 0646e618 RCC_GetClocksFreq>) [0 RCC_GetClocksFreq S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_spi.c":158 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_GetClocksFreq") [flags 0x41] <function_decl 0644e618 RCC_GetClocksFreq>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_GetClocksFreq") [flags 0x41] <function_decl 0646e618 RCC_GetClocksFreq>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))

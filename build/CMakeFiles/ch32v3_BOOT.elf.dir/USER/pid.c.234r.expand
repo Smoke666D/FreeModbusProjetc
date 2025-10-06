@@ -1201,11 +1201,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ uPID ])) -1
      (nil))
 (call_insn 14 13 17 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("PID_SetOutputLimits.part.0") [flags 0x3] <function_decl 0579d3c0 PID_SetOutputLimits.part.0>) [0 PID_SetOutputLimits.part.0 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("PID_SetOutputLimits.part.0") [flags 0x3] <function_decl 057173c0 PID_SetOutputLimits.part.0>) [0 PID_SetOutputLimits.part.0 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID_SetOutputLimits.part.0") [flags 0x3] <function_decl 0579d3c0 PID_SetOutputLimits.part.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID_SetOutputLimits.part.0") [flags 0x3] <function_decl 057173c0 PID_SetOutputLimits.part.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1477,11 +1477,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":161 -1
      (nil))
 (call_insn 13 12 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("PID_SetTunings2") [flags 0x3] <function_decl 0579dd98 PID_SetTunings2>) [0 PID_SetTunings2 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("PID_SetTunings2") [flags 0x3] <function_decl 05717d98 PID_SetTunings2>) [0 PID_SetTunings2 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":161 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID_SetTunings2") [flags 0x3] <function_decl 0579dd98 PID_SetTunings2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID_SetTunings2") [flags 0x3] <function_decl 05717d98 PID_SetTunings2>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1661,11 +1661,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ uPID ])) -1
      (nil))
 (call_insn 19 18 20 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("PID_SetOutputLimits.part.0") [flags 0x3] <function_decl 0579d3c0 PID_SetOutputLimits.part.0>) [0 PID_SetOutputLimits.part.0 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("PID_SetOutputLimits.part.0") [flags 0x3] <function_decl 057173c0 PID_SetOutputLimits.part.0>) [0 PID_SetOutputLimits.part.0 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID_SetOutputLimits.part.0") [flags 0x3] <function_decl 0579d3c0 PID_SetOutputLimits.part.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID_SetOutputLimits.part.0") [flags 0x3] <function_decl 057173c0 PID_SetOutputLimits.part.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1686,11 +1686,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":54 -1
      (nil))
 (call_insn 24 23 25 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("PID_SetControllerDirection") [flags 0x3] <function_decl 0579de10 PID_SetControllerDirection>) [0 PID_SetControllerDirection S4 A32])
+            (call (mem:SI (symbol_ref:SI ("PID_SetControllerDirection") [flags 0x3] <function_decl 05717e10 PID_SetControllerDirection>) [0 PID_SetControllerDirection S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":54 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID_SetControllerDirection") [flags 0x3] <function_decl 0579de10 PID_SetControllerDirection>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID_SetControllerDirection") [flags 0x3] <function_decl 05717e10 PID_SetControllerDirection>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1709,11 +1709,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":55 -1
      (nil))
 (call_insn 29 28 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("PID_SetTunings2") [flags 0x3] <function_decl 0579dd98 PID_SetTunings2>) [0 PID_SetTunings2 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("PID_SetTunings2") [flags 0x3] <function_decl 05717d98 PID_SetTunings2>) [0 PID_SetTunings2 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":55 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID_SetTunings2") [flags 0x3] <function_decl 0579dd98 PID_SetTunings2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID_SetTunings2") [flags 0x3] <function_decl 05717d98 PID_SetTunings2>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1791,11 +1791,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ uPID ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":63 -1
      (nil))
 (call_insn 19 18 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("PID") [flags 0x3] <function_decl 0579db40 PID>) [0 PID S4 A32])
+            (call (mem:SI (symbol_ref:SI ("PID") [flags 0x3] <function_decl 05717b40 PID>) [0 PID S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/pid.c":63 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID") [flags 0x3] <function_decl 0579db40 PID>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PID") [flags 0x3] <function_decl 05717b40 PID>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

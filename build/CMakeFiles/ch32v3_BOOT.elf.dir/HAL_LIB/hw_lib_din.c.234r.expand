@@ -596,11 +596,11 @@ Forwarding edge 4->5 to 9 failed.
         (reg:SI 98)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_din.c":65 -1
      (nil))
 (call_insn 35 34 38 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vInitRunAverga") [flags 0x41] <function_decl 06920f00 vInitRunAverga>) [0 vInitRunAverga S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vInitRunAverga") [flags 0x41] <function_decl 05c13f00 vInitRunAverga>) [0 vInitRunAverga S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_din.c":65 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vInitRunAverga") [flags 0x41] <function_decl 06920f00 vInitRunAverga>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vInitRunAverga") [flags 0x41] <function_decl 05c13f00 vInitRunAverga>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SF (use (reg:SF 11 a1))
@@ -1878,11 +1878,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 53 52 54 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04b1f078 __builtin_memset>) [0 __builtin_memset S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 0562f078 __builtin_memset>) [0 __builtin_memset S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_din.c":235 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04b1f078 __builtin_memset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 0562f078 __builtin_memset>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -2123,11 +2123,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 43 42 44 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("MedianFilter") [flags 0x41] <function_decl 06920e10 MedianFilter>) [0 MedianFilter S4 A32])
+                (call (mem:SI (symbol_ref:SI ("MedianFilter") [flags 0x41] <function_decl 05c13e10 MedianFilter>) [0 MedianFilter S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_din.c":277 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("MedianFilter") [flags 0x41] <function_decl 06920e10 MedianFilter>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("MedianFilter") [flags 0x41] <function_decl 05c13e10 MedianFilter>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2339,11 +2339,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 77 [ ucCh ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_din.c":253 -1
      (nil))
 (call_insn 44 43 45 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RMPDataConvert") [flags 0x3] <function_decl 0687f258 RMPDataConvert>) [0 RMPDataConvert S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RMPDataConvert") [flags 0x3] <function_decl 05b72258 RMPDataConvert>) [0 RMPDataConvert S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_din.c":253 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RMPDataConvert") [flags 0x3] <function_decl 0687f258 RMPDataConvert>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RMPDataConvert") [flags 0x3] <function_decl 05b72258 RMPDataConvert>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

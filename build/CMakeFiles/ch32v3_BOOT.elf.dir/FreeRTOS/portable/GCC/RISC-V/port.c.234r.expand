@@ -66,11 +66,11 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":163 -1
      (nil))
 (insn 17 16 18 2 (set (reg:SI 82)
-        (high:SI (symbol_ref:SI ("SystemCoreClock") [flags 0xc4] <var_decl 063d0cb8 SystemCoreClock>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":164 -1
+        (high:SI (symbol_ref:SI ("SystemCoreClock") [flags 0xc4] <var_decl 063c7cb8 SystemCoreClock>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":164 -1
      (nil))
 (insn 18 17 19 2 (set (reg:SI 84)
         (mem/c:SI (lo_sum:SI (reg:SI 82)
-                (symbol_ref:SI ("SystemCoreClock") [flags 0xc4] <var_decl 063d0cb8 SystemCoreClock>)) [2 SystemCoreClock+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":164 -1
+                (symbol_ref:SI ("SystemCoreClock") [flags 0xc4] <var_decl 063c7cb8 SystemCoreClock>)) [2 SystemCoreClock+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":164 -1
      (nil))
 (insn 19 18 20 2 (set (reg:SI 85)
         (const_int 1000 [0x3e8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":164 -1
@@ -192,31 +192,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c:182) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":182 -1
      (nil))
 (insn 16 15 17 4 (set (reg:SI 82)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06632898 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":182 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06627898 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":182 -1
      (nil))
 (insn 17 16 18 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 82)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06632898 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":182 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06632898 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06627898 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":182 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06627898 *.LC0>)
         (nil)))
 (insn 18 17 19 4 (set (reg:SI 11 a1)
         (const_int 182 [0xb6])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":182 -1
      (nil))
 (insn 19 18 20 4 (set (reg:SI 83)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066328f0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":182 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066278f0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":182 -1
      (nil))
 (insn 20 19 21 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 83)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066328f0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":182 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066328f0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066278f0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":182 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066278f0 *.LC1>)
         (nil)))
 (call_insn 21 20 23 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06264f00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04aa4f00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":182 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06264f00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04aa4f00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -232,12 +232,12 @@ try_optimize_cfg iteration 2
 (code_label 26 25 27 6 3 (nil) [1 uses])
 (note 27 26 28 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 (insn 28 27 29 6 (set (reg:SI 86)
-        (high:SI (symbol_ref:SI ("__freertos_irq_stack_top") [flags 0xc0] <var_decl 065a8f78 __freertos_irq_stack_top>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":187 -1
+        (high:SI (symbol_ref:SI ("__freertos_irq_stack_top") [flags 0xc0] <var_decl 0659cf78 __freertos_irq_stack_top>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":187 -1
      (nil))
 (insn 29 28 30 6 (set (reg:SI 85)
         (lo_sum:SI (reg:SI 86)
-            (symbol_ref:SI ("__freertos_irq_stack_top") [flags 0xc0] <var_decl 065a8f78 __freertos_irq_stack_top>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":187 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("__freertos_irq_stack_top") [flags 0xc0] <var_decl 065a8f78 __freertos_irq_stack_top>)
+            (symbol_ref:SI ("__freertos_irq_stack_top") [flags 0xc0] <var_decl 0659cf78 __freertos_irq_stack_top>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":187 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("__freertos_irq_stack_top") [flags 0xc0] <var_decl 0659cf78 __freertos_irq_stack_top>)
         (nil)))
 (insn 30 29 31 6 (set (reg:SI 84)
         (and:SI (reg:SI 85)
@@ -268,31 +268,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c:187) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":187 -1
      (nil))
 (insn 36 35 37 7 (set (reg:SI 89)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06632898 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":187 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06627898 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":187 -1
      (nil))
 (insn 37 36 38 7 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 89)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06632898 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":187 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06632898 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06627898 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":187 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06627898 *.LC0>)
         (nil)))
 (insn 38 37 39 7 (set (reg:SI 11 a1)
         (const_int 187 [0xbb])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":187 -1
      (nil))
 (insn 39 38 40 7 (set (reg:SI 90)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066328f0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":187 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066278f0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":187 -1
      (nil))
 (insn 40 39 41 7 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 90)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066328f0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":187 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066328f0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066278f0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":187 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066278f0 *.LC1>)
         (nil)))
 (call_insn 41 40 43 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06264f00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04aa4f00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":187 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06264f00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04aa4f00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -308,11 +308,11 @@ try_optimize_cfg iteration 2
 (code_label 46 45 47 9 5 (nil) [1 uses])
 (note 47 46 48 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
 (call_insn 48 47 49 9 (parallel [
-            (call (mem:SI (symbol_ref/i:SI ("vPortSetupTimerInterrupt") [flags 0x3] <function_decl 065ff438 vPortSetupTimerInterrupt>) [0 vPortSetupTimerInterrupt S4 A32])
+            (call (mem:SI (symbol_ref/i:SI ("vPortSetupTimerInterrupt") [flags 0x3] <function_decl 065f4438 vPortSetupTimerInterrupt>) [0 vPortSetupTimerInterrupt S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":200 -1
-     (expr_list:REG_CALL_DECL (symbol_ref/i:SI ("vPortSetupTimerInterrupt") [flags 0x3] <function_decl 065ff438 vPortSetupTimerInterrupt>)
+     (expr_list:REG_CALL_DECL (symbol_ref/i:SI ("vPortSetupTimerInterrupt") [flags 0x3] <function_decl 065f4438 vPortSetupTimerInterrupt>)
         (nil))
     (nil))
 (insn 49 48 50 9 (set (reg/f:SI 91)
@@ -347,11 +347,11 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":219 -1
      (nil))
 (call_insn 58 57 59 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("xPortStartFirstTask") [flags 0x41] <function_decl 065ff5a0 xPortStartFirstTask>) [0 xPortStartFirstTask S4 A32])
+            (call (mem:SI (symbol_ref:SI ("xPortStartFirstTask") [flags 0x41] <function_decl 065f45a0 xPortStartFirstTask>) [0 xPortStartFirstTask S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":220 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xPortStartFirstTask") [flags 0x41] <function_decl 065ff5a0 xPortStartFirstTask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xPortStartFirstTask") [flags 0x41] <function_decl 065f45a0 xPortStartFirstTask>)
         (nil))
     (nil))
 (insn 59 58 63 9 (set (reg:SI 76 [ <retval> ])
@@ -457,11 +457,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 11 10 12 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskIncrementTick") [flags 0x41] <function_decl 063bad20 xTaskIncrementTick>) [0 xTaskIncrementTick S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskIncrementTick") [flags 0x41] <function_decl 063b0d20 xTaskIncrementTick>) [0 xTaskIncrementTick S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":240 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskIncrementTick") [flags 0x41] <function_decl 063bad20 xTaskIncrementTick>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskIncrementTick") [flags 0x41] <function_decl 063b0d20 xTaskIncrementTick>)
         (nil))
     (nil))
 (insn 12 11 13 2 (set (reg:SI 72 [ _1 ])
@@ -651,31 +651,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c:258) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":258 -1
      (nil))
 (insn 13 12 14 4 (set (reg:SI 78)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06632898 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":258 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06627898 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":258 -1
      (nil))
 (insn 14 13 15 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 78)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06632898 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":258 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06632898 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06627898 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":258 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06627898 *.LC0>)
         (nil)))
 (insn 15 14 16 4 (set (reg:SI 11 a1)
         (const_int 258 [0x102])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":258 -1
      (nil))
 (insn 16 15 17 4 (set (reg:SI 79)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066328f0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":258 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066278f0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":258 -1
      (nil))
 (insn 17 16 18 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 79)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066328f0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":258 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066328f0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066278f0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":258 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066278f0 *.LC1>)
         (nil)))
 (call_insn 18 17 20 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06264f00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04aa4f00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/GCC/RISC-V/port.c":258 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06264f00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04aa4f00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))

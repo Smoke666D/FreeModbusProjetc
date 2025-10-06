@@ -377,11 +377,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 9 8 10 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 062fdb40 mui_uif_is_cursor_selectable.isra.0>) [0 mui_uif_is_cursor_selectable.isra.0 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 0639db40 mui_uif_is_cursor_selectable.isra.0>) [0 mui_uif_is_cursor_selectable.isra.0 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":537 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 062fdb40 mui_uif_is_cursor_selectable.isra.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 0639db40 mui_uif_is_cursor_selectable.isra.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -465,11 +465,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 8 7 9 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 062fdb40 mui_uif_is_cursor_selectable.isra.0>) [0 mui_uif_is_cursor_selectable.isra.0 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 0639db40 mui_uif_is_cursor_selectable.isra.0>) [0 mui_uif_is_cursor_selectable.isra.0 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":551 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 062fdb40 mui_uif_is_cursor_selectable.isra.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 0639db40 mui_uif_is_cursor_selectable.isra.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -554,11 +554,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 10 9 11 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 062fdb40 mui_uif_is_cursor_selectable.isra.0>) [0 mui_uif_is_cursor_selectable.isra.0 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 0639db40 mui_uif_is_cursor_selectable.isra.0>) [0 mui_uif_is_cursor_selectable.isra.0 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":522 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 062fdb40 mui_uif_is_cursor_selectable.isra.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 0639db40 mui_uif_is_cursor_selectable.isra.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -679,11 +679,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 11 10 12 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 062fdb40 mui_uif_is_cursor_selectable.isra.0>) [0 mui_uif_is_cursor_selectable.isra.0 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 0639db40 mui_uif_is_cursor_selectable.isra.0>) [0 mui_uif_is_cursor_selectable.isra.0 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":562 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 062fdb40 mui_uif_is_cursor_selectable.isra.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 0639db40 mui_uif_is_cursor_selectable.isra.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -822,11 +822,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 10 9 11 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 062fdb40 mui_uif_is_cursor_selectable.isra.0>) [0 mui_uif_is_cursor_selectable.isra.0 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 0639db40 mui_uif_is_cursor_selectable.isra.0>) [0 mui_uif_is_cursor_selectable.isra.0 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":581 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 062fdb40 mui_uif_is_cursor_selectable.isra.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 0639db40 mui_uif_is_cursor_selectable.isra.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1038,11 +1038,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 22 21 23 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":100 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1426,11 +1426,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 10 9 11 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_fds_get_cmd_size_without_text") [flags 0x3] <function_decl 062fd4b0 mui_fds_get_cmd_size_without_text>) [0 mui_fds_get_cmd_size_without_text S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_fds_get_cmd_size_without_text") [flags 0x3] <function_decl 0639d4b0 mui_fds_get_cmd_size_without_text>) [0 mui_fds_get_cmd_size_without_text S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":278 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_get_cmd_size_without_text") [flags 0x3] <function_decl 062fd4b0 mui_fds_get_cmd_size_without_text>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_get_cmd_size_without_text") [flags 0x3] <function_decl 0639d4b0 mui_fds_get_cmd_size_without_text>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1443,11 +1443,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 13 12 14 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":279 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1526,11 +1526,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 35 34 36 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":131 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1567,11 +1567,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 44 43 45 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":143 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1747,11 +1747,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 10 9 11 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":201 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1924,11 +1924,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 9 8 10 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_fds_get_cmd_size_without_text") [flags 0x3] <function_decl 062fd4b0 mui_fds_get_cmd_size_without_text>) [0 mui_fds_get_cmd_size_without_text S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_fds_get_cmd_size_without_text") [flags 0x3] <function_decl 0639d4b0 mui_fds_get_cmd_size_without_text>) [0 mui_fds_get_cmd_size_without_text S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":185 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_get_cmd_size_without_text") [flags 0x3] <function_decl 062fd4b0 mui_fds_get_cmd_size_without_text>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_get_cmd_size_without_text") [flags 0x3] <function_decl 0639d4b0 mui_fds_get_cmd_size_without_text>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1949,11 +1949,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 14 13 15 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":186 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1981,11 +1981,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 21 20 22 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_fds_next_token") [flags 0x3] <function_decl 062bdbb8 mui_fds_next_token>) [0 mui_fds_next_token S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_fds_next_token") [flags 0x3] <function_decl 0635dbb8 mui_fds_next_token>) [0 mui_fds_next_token S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":188 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_next_token") [flags 0x3] <function_decl 062bdbb8 mui_fds_next_token>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_next_token") [flags 0x3] <function_decl 0635dbb8 mui_fds_next_token>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2052,11 +2052,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 10 9 11 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_fds_first_token") [flags 0x3] <function_decl 062bdb40 mui_fds_first_token>) [0 mui_fds_first_token S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_fds_first_token") [flags 0x3] <function_decl 0635db40 mui_fds_first_token>) [0 mui_fds_first_token S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":235 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_first_token") [flags 0x3] <function_decl 062bdb40 mui_fds_first_token>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_first_token") [flags 0x3] <function_decl 0635db40 mui_fds_first_token>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2096,11 +2096,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 20 19 21 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_fds_next_token") [flags 0x3] <function_decl 062bdbb8 mui_fds_next_token>) [0 mui_fds_next_token S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_fds_next_token") [flags 0x3] <function_decl 0635dbb8 mui_fds_next_token>) [0 mui_fds_next_token S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":245 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_next_token") [flags 0x3] <function_decl 062bdbb8 mui_fds_next_token>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_next_token") [flags 0x3] <function_decl 0635dbb8 mui_fds_next_token>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2183,11 +2183,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 8 7 9 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_fds_first_token") [flags 0x3] <function_decl 062bdb40 mui_fds_first_token>) [0 mui_fds_first_token S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_fds_first_token") [flags 0x3] <function_decl 0635db40 mui_fds_first_token>) [0 mui_fds_first_token S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":254 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_first_token") [flags 0x3] <function_decl 062bdb40 mui_fds_first_token>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_first_token") [flags 0x3] <function_decl 0635db40 mui_fds_first_token>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2223,11 +2223,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 16 15 17 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_fds_next_token") [flags 0x3] <function_decl 062bdbb8 mui_fds_next_token>) [0 mui_fds_next_token S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_fds_next_token") [flags 0x3] <function_decl 0635dbb8 mui_fds_next_token>) [0 mui_fds_next_token S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":259 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_next_token") [flags 0x3] <function_decl 062bdbb8 mui_fds_next_token>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_next_token") [flags 0x3] <function_decl 0635dbb8 mui_fds_next_token>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2318,11 +2318,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 16 15 17 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 06215078 __builtin_memset>) [0 __builtin_memset S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 062b5078 __builtin_memset>) [0 __builtin_memset S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":295 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 06215078 __builtin_memset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 062b5078 __builtin_memset>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -2600,11 +2600,11 @@ Forwarding edge 28->29 to 20 failed.
      (nil))
 (call_insn 16 15 17 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_fds_get_cmd_size") [flags 0x3] <function_decl 062fd7f8 mui_fds_get_cmd_size>) [0 mui_fds_get_cmd_size S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_fds_get_cmd_size") [flags 0x3] <function_decl 0639d7f8 mui_fds_get_cmd_size>) [0 mui_fds_get_cmd_size S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":341 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_get_cmd_size") [flags 0x3] <function_decl 062fd7f8 mui_fds_get_cmd_size>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_get_cmd_size") [flags 0x3] <function_decl 0639d7f8 mui_fds_get_cmd_size>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2626,11 +2626,11 @@ Forwarding edge 28->29 to 20 failed.
      (nil))
 (call_insn/i 21 20 22 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":345 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2823,11 +2823,11 @@ Forwarding edge 28->29 to 20 failed.
      (nil))
 (call_insn/i 79 78 80 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":367 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2851,11 +2851,11 @@ Forwarding edge 28->29 to 20 failed.
      (nil))
 (call_insn/i 85 84 86 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":368 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2879,11 +2879,11 @@ Forwarding edge 28->29 to 20 failed.
      (nil))
 (call_insn/i 91 90 92 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":369 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2907,11 +2907,11 @@ Forwarding edge 28->29 to 20 failed.
      (nil))
 (call_insn/i 97 96 98 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":370 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2964,11 +2964,11 @@ Forwarding edge 28->29 to 20 failed.
      (nil))
 (call_insn/i 113 112 114 17 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":373 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3007,11 +3007,11 @@ Forwarding edge 28->29 to 20 failed.
      (nil))
 (call_insn/i 126 125 127 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":378 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3035,11 +3035,11 @@ Forwarding edge 28->29 to 20 failed.
      (nil))
 (call_insn/i 132 131 133 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":379 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3084,11 +3084,11 @@ Forwarding edge 28->29 to 20 failed.
      (nil))
 (call_insn/i 146 145 147 21 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":384 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3122,11 +3122,11 @@ Forwarding edge 28->29 to 20 failed.
      (nil))
 (call_insn/i 157 156 158 22 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":390 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3150,11 +3150,11 @@ Forwarding edge 28->29 to 20 failed.
      (nil))
 (call_insn/i 163 162 164 22 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":391 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3201,11 +3201,11 @@ Forwarding edge 28->29 to 20 failed.
      (nil))
 (call_insn/i 177 176 178 24 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":394 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3241,11 +3241,11 @@ Forwarding edge 28->29 to 20 failed.
      (nil))
 (call_insn/i 188 187 189 25 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_find_uif") [flags 0x3] <function_decl 062fd960 mui_find_uif>) [0 mui_find_uif S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_find_uif") [flags 0x3] <function_decl 0639d960 mui_find_uif>) [0 mui_find_uif S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":402 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_find_uif") [flags 0x3] <function_decl 062fd960 mui_find_uif>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_find_uif") [flags 0x3] <function_decl 0639d960 mui_find_uif>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3379,11 +3379,11 @@ Forwarding edge 8->9 to 10 failed.
      (nil))
 (call_insn 10 9 11 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_fds_get_cmd_size") [flags 0x3] <function_decl 062fd7f8 mui_fds_get_cmd_size>) [0 mui_fds_get_cmd_size S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_fds_get_cmd_size") [flags 0x3] <function_decl 0639d7f8 mui_fds_get_cmd_size>) [0 mui_fds_get_cmd_size S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":427 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_get_cmd_size") [flags 0x3] <function_decl 062fd7f8 mui_fds_get_cmd_size>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_get_cmd_size") [flags 0x3] <function_decl 0639d7f8 mui_fds_get_cmd_size>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3415,11 +3415,11 @@ Forwarding edge 8->9 to 10 failed.
      (nil))
 (call_insn/i 18 17 19 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":432 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3454,11 +3454,11 @@ Forwarding edge 8->9 to 10 failed.
      (nil))
 (call_insn 27 26 28 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_prepare_current_field") [flags 0x3] <function_decl 062fd9d8 mui_prepare_current_field>) [0 mui_prepare_current_field S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_prepare_current_field") [flags 0x3] <function_decl 0639d9d8 mui_prepare_current_field>) [0 mui_prepare_current_field S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":435 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_prepare_current_field") [flags 0x3] <function_decl 062fd9d8 mui_prepare_current_field>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_prepare_current_field") [flags 0x3] <function_decl 0639d9d8 mui_prepare_current_field>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3599,11 +3599,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 73 [ ui ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":457 -1
      (nil))
 (call_insn 15 14 18 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("mui_inner_loop_over_form") [flags 0x3] <function_decl 062fdac8 mui_inner_loop_over_form>) [0 mui_inner_loop_over_form S4 A32])
+            (call (mem:SI (symbol_ref:SI ("mui_inner_loop_over_form") [flags 0x3] <function_decl 0639dac8 mui_inner_loop_over_form>) [0 mui_inner_loop_over_form S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":457 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_inner_loop_over_form") [flags 0x3] <function_decl 062fdac8 mui_inner_loop_over_form>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_inner_loop_over_form") [flags 0x3] <function_decl 0639dac8 mui_inner_loop_over_form>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3685,11 +3685,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 17 16 18 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_prepare_current_field") [flags 0x3] <function_decl 062fd9d8 mui_prepare_current_field>) [0 mui_prepare_current_field S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_prepare_current_field") [flags 0x3] <function_decl 0639d9d8 mui_prepare_current_field>) [0 mui_prepare_current_field S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":621 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_prepare_current_field") [flags 0x3] <function_decl 062fd9d8 mui_prepare_current_field>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_prepare_current_field") [flags 0x3] <function_decl 0639d9d8 mui_prepare_current_field>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3792,11 +3792,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 9 8 10 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":718 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3873,11 +3873,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 11 10 12 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":470 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3916,11 +3916,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 21 20 22 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":475 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3948,11 +3948,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 29 28 30 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_fds_get_cmd_size") [flags 0x3] <function_decl 062fd7f8 mui_fds_get_cmd_size>) [0 mui_fds_get_cmd_size S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_fds_get_cmd_size") [flags 0x3] <function_decl 0639d7f8 mui_fds_get_cmd_size>) [0 mui_fds_get_cmd_size S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":482 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_get_cmd_size") [flags 0x3] <function_decl 062fd7f8 mui_fds_get_cmd_size>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_get_cmd_size") [flags 0x3] <function_decl 0639d7f8 mui_fds_get_cmd_size>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4029,11 +4029,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 10 9 11 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 062fdb40 mui_uif_is_cursor_selectable.isra.0>) [0 mui_uif_is_cursor_selectable.isra.0 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 0639db40 mui_uif_is_cursor_selectable.isra.0>) [0 mui_uif_is_cursor_selectable.isra.0 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":593 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 062fdb40 mui_uif_is_cursor_selectable.isra.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_uif_is_cursor_selectable.isra.0") [flags 0x3] <function_decl 0639db40 mui_uif_is_cursor_selectable.isra.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4131,22 +4131,22 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":642 -1
      (nil))
 (insn 7 6 8 2 (set (reg:SI 74)
-        (high:SI (symbol_ref:SI ("mui_task_get_current_cursor_focus_position") [flags 0x3] <function_decl 062fd690 mui_task_get_current_cursor_focus_position>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":643 -1
+        (high:SI (symbol_ref:SI ("mui_task_get_current_cursor_focus_position") [flags 0x3] <function_decl 0639d690 mui_task_get_current_cursor_focus_position>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":643 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 74)
-            (symbol_ref:SI ("mui_task_get_current_cursor_focus_position") [flags 0x3] <function_decl 062fd690 mui_task_get_current_cursor_focus_position>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":643 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_get_current_cursor_focus_position") [flags 0x3] <function_decl 062fd690 mui_task_get_current_cursor_focus_position>)
+            (symbol_ref:SI ("mui_task_get_current_cursor_focus_position") [flags 0x3] <function_decl 0639d690 mui_task_get_current_cursor_focus_position>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":643 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_get_current_cursor_focus_position") [flags 0x3] <function_decl 0639d690 mui_task_get_current_cursor_focus_position>)
         (nil)))
 (insn 9 8 10 2 (set (reg:SI 10 a0)
         (reg/v/f:SI 73 [ ui ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":643 -1
      (nil))
 (call_insn 10 9 11 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
+            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":643 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4198,22 +4198,22 @@ try_optimize_cfg iteration 2
      (nil))
 (note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
 (insn 6 3 7 2 (set (reg:SI 73)
-        (high:SI (symbol_ref:SI ("mui_task_draw") [flags 0x3] <function_decl 062fdd20 mui_task_draw>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":651 -1
+        (high:SI (symbol_ref:SI ("mui_task_draw") [flags 0x3] <function_decl 0639dd20 mui_task_draw>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":651 -1
      (nil))
 (insn 7 6 8 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 73)
-            (symbol_ref:SI ("mui_task_draw") [flags 0x3] <function_decl 062fdd20 mui_task_draw>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":651 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_draw") [flags 0x3] <function_decl 062fdd20 mui_task_draw>)
+            (symbol_ref:SI ("mui_task_draw") [flags 0x3] <function_decl 0639dd20 mui_task_draw>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":651 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_draw") [flags 0x3] <function_decl 0639dd20 mui_task_draw>)
         (nil)))
 (insn 8 7 9 2 (set (reg:SI 10 a0)
         (reg/v/f:SI 72 [ ui ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":651 -1
      (nil))
 (call_insn 9 8 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
+            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":651 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4255,22 +4255,22 @@ try_optimize_cfg iteration 2
      (nil))
 (note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
 (insn 6 3 7 2 (set (reg:SI 75)
-        (high:SI (symbol_ref:SI ("mui_task_find_next_cursor_uif") [flags 0x3] <function_decl 062fd618 mui_task_find_next_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":656 -1
+        (high:SI (symbol_ref:SI ("mui_task_find_next_cursor_uif") [flags 0x3] <function_decl 0639d618 mui_task_find_next_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":656 -1
      (nil))
 (insn 7 6 8 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 75)
-            (symbol_ref:SI ("mui_task_find_next_cursor_uif") [flags 0x3] <function_decl 062fd618 mui_task_find_next_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":656 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_find_next_cursor_uif") [flags 0x3] <function_decl 062fd618 mui_task_find_next_cursor_uif>)
+            (symbol_ref:SI ("mui_task_find_next_cursor_uif") [flags 0x3] <function_decl 0639d618 mui_task_find_next_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":656 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_find_next_cursor_uif") [flags 0x3] <function_decl 0639d618 mui_task_find_next_cursor_uif>)
         (nil)))
 (insn 8 7 9 2 (set (reg:SI 10 a0)
         (reg/v/f:SI 74 [ ui ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":656 -1
      (nil))
 (call_insn 9 8 10 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
+            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":656 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4293,22 +4293,22 @@ try_optimize_cfg iteration 2
  -> 22)
 (note 13 12 14 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
 (insn 14 13 15 4 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("mui_task_find_first_cursor_uif") [flags 0x3] <function_decl 062fd438 mui_task_find_first_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":661 -1
+        (high:SI (symbol_ref:SI ("mui_task_find_first_cursor_uif") [flags 0x3] <function_decl 0639d438 mui_task_find_first_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":661 -1
      (nil))
 (insn 15 14 16 4 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("mui_task_find_first_cursor_uif") [flags 0x3] <function_decl 062fd438 mui_task_find_first_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":661 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_find_first_cursor_uif") [flags 0x3] <function_decl 062fd438 mui_task_find_first_cursor_uif>)
+            (symbol_ref:SI ("mui_task_find_first_cursor_uif") [flags 0x3] <function_decl 0639d438 mui_task_find_first_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":661 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_find_first_cursor_uif") [flags 0x3] <function_decl 0639d438 mui_task_find_first_cursor_uif>)
         (nil)))
 (insn 16 15 17 4 (set (reg:SI 10 a0)
         (reg/v/f:SI 74 [ ui ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":661 -1
      (nil))
 (call_insn 17 16 18 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
+            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":661 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4381,11 +4381,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 13 12 14 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_fds_get_nth_token") [flags 0x3] <function_decl 062bdc30 mui_fds_get_nth_token>) [0 mui_fds_get_nth_token S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_fds_get_nth_token") [flags 0x3] <function_decl 0635dc30 mui_fds_get_nth_token>) [0 mui_fds_get_nth_token S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":687 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_get_nth_token") [flags 0x3] <function_decl 062bdc30 mui_fds_get_nth_token>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_get_nth_token") [flags 0x3] <function_decl 0635dc30 mui_fds_get_nth_token>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4464,11 +4464,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 11 10 12 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_fds_get_token_cnt") [flags 0x3] <function_decl 062bdca8 mui_fds_get_token_cnt>) [0 mui_fds_get_token_cnt S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_fds_get_token_cnt") [flags 0x3] <function_decl 0635dca8 mui_fds_get_token_cnt>) [0 mui_fds_get_token_cnt S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":704 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_get_token_cnt") [flags 0x3] <function_decl 062bdca8 mui_fds_get_token_cnt>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_fds_get_token_cnt") [flags 0x3] <function_decl 0635dca8 mui_fds_get_token_cnt>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4550,11 +4550,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 11 10 12 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":773 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4565,22 +4565,22 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":774 -1
      (nil))
 (insn 13 12 14 4 (set (reg:SI 75)
-        (high:SI (symbol_ref:SI ("mui_task_form_end") [flags 0x3] <function_decl 062fde10 mui_task_form_end>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":778 -1
+        (high:SI (symbol_ref:SI ("mui_task_form_end") [flags 0x3] <function_decl 0639de10 mui_task_form_end>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":778 -1
      (nil))
 (insn 14 13 15 4 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 75)
-            (symbol_ref:SI ("mui_task_form_end") [flags 0x3] <function_decl 062fde10 mui_task_form_end>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":778 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_form_end") [flags 0x3] <function_decl 062fde10 mui_task_form_end>)
+            (symbol_ref:SI ("mui_task_form_end") [flags 0x3] <function_decl 0639de10 mui_task_form_end>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":778 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_form_end") [flags 0x3] <function_decl 0639de10 mui_task_form_end>)
         (nil)))
 (insn 15 14 16 4 (set (reg:SI 10 a0)
         (reg/v/f:SI 73 [ ui ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":778 -1
      (nil))
 (call_insn 16 15 17 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
+            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":778 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4656,11 +4656,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 13 12 14 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":802 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4680,11 +4680,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 18 17 19 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_GetCurrentCursorFocusPosition") [flags 0x3] <function_decl 062bdd98 mui_GetCurrentCursorFocusPosition>) [0 mui_GetCurrentCursorFocusPosition S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_GetCurrentCursorFocusPosition") [flags 0x3] <function_decl 0635dd98 mui_GetCurrentCursorFocusPosition>) [0 mui_GetCurrentCursorFocusPosition S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":803 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_GetCurrentCursorFocusPosition") [flags 0x3] <function_decl 062bdd98 mui_GetCurrentCursorFocusPosition>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_GetCurrentCursorFocusPosition") [flags 0x3] <function_decl 0635dd98 mui_GetCurrentCursorFocusPosition>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4757,11 +4757,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 10 9 11 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":820 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4913,11 +4913,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 12 11 13 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>) [0 mui_get_fds_char S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":855 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 062bdac8 mui_get_fds_char>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_get_fds_char") [flags 0x3] <function_decl 0635dac8 mui_get_fds_char>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4995,11 +4995,11 @@ Forwarding edge 5->6 to 7 failed.
      (nil))
 (call_insn 9 8 10 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":868 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5027,11 +5027,11 @@ Forwarding edge 5->6 to 7 failed.
      (nil))
 (call_insn 16 15 17 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":870 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5041,11 +5041,11 @@ Forwarding edge 5->6 to 7 failed.
         (reg/v/f:SI 74 [ ui ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":871 -1
      (nil))
 (call_insn 18 17 19 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("mui_next_field") [flags 0x3] <function_decl 062fd8e8 mui_next_field>) [0 mui_next_field S4 A32])
+            (call (mem:SI (symbol_ref:SI ("mui_next_field") [flags 0x3] <function_decl 0639d8e8 mui_next_field>) [0 mui_next_field S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":871 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_next_field") [flags 0x3] <function_decl 062fd8e8 mui_next_field>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_next_field") [flags 0x3] <function_decl 0639d8e8 mui_next_field>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5055,11 +5055,11 @@ Forwarding edge 5->6 to 7 failed.
      (nil))
 (call_insn 20 19 21 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_enter_msg") [flags 0x3] <function_decl 062fda50 mui_send_cursor_enter_msg>) [0 mui_send_cursor_enter_msg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_enter_msg") [flags 0x3] <function_decl 0639da50 mui_send_cursor_enter_msg>) [0 mui_send_cursor_enter_msg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":872 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_enter_msg") [flags 0x3] <function_decl 062fda50 mui_send_cursor_enter_msg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_enter_msg") [flags 0x3] <function_decl 0639da50 mui_send_cursor_enter_msg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5134,11 +5134,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 74 [ ui ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":728 -1
      (nil))
 (call_insn 9 8 10 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("mui_LeaveForm") [flags 0x3] <function_decl 062bd2d0 mui_LeaveForm>) [0 mui_LeaveForm S4 A32])
+            (call (mem:SI (symbol_ref:SI ("mui_LeaveForm") [flags 0x3] <function_decl 0635d2d0 mui_LeaveForm>) [0 mui_LeaveForm S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":728 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_LeaveForm") [flags 0x3] <function_decl 062bd2d0 mui_LeaveForm>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_LeaveForm") [flags 0x3] <function_decl 0635d2d0 mui_LeaveForm>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5164,44 +5164,44 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 75 [ fds ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":740 -1
      (nil))
 (insn 15 14 16 2 (set (reg:SI 77)
-        (high:SI (symbol_ref:SI ("mui_task_form_start") [flags 0x3] <function_decl 062fdd98 mui_task_form_start>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":744 -1
+        (high:SI (symbol_ref:SI ("mui_task_form_start") [flags 0x3] <function_decl 0639dd98 mui_task_form_start>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":744 -1
      (nil))
 (insn 16 15 17 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 77)
-            (symbol_ref:SI ("mui_task_form_start") [flags 0x3] <function_decl 062fdd98 mui_task_form_start>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":744 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_form_start") [flags 0x3] <function_decl 062fdd98 mui_task_form_start>)
+            (symbol_ref:SI ("mui_task_form_start") [flags 0x3] <function_decl 0639dd98 mui_task_form_start>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":744 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_form_start") [flags 0x3] <function_decl 0639dd98 mui_task_form_start>)
         (nil)))
 (insn 17 16 18 2 (set (reg:SI 10 a0)
         (reg/v/f:SI 74 [ ui ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":744 -1
      (nil))
 (call_insn 18 17 19 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
+            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":744 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
             (nil))))
 (insn 19 18 20 2 (set (reg:SI 78)
-        (high:SI (symbol_ref:SI ("mui_task_find_first_cursor_uif") [flags 0x3] <function_decl 062fd438 mui_task_find_first_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":748 -1
+        (high:SI (symbol_ref:SI ("mui_task_find_first_cursor_uif") [flags 0x3] <function_decl 0639d438 mui_task_find_first_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":748 -1
      (nil))
 (insn 20 19 21 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 78)
-            (symbol_ref:SI ("mui_task_find_first_cursor_uif") [flags 0x3] <function_decl 062fd438 mui_task_find_first_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":748 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_find_first_cursor_uif") [flags 0x3] <function_decl 062fd438 mui_task_find_first_cursor_uif>)
+            (symbol_ref:SI ("mui_task_find_first_cursor_uif") [flags 0x3] <function_decl 0639d438 mui_task_find_first_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":748 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_find_first_cursor_uif") [flags 0x3] <function_decl 0639d438 mui_task_find_first_cursor_uif>)
         (nil)))
 (insn 21 20 22 2 (set (reg:SI 10 a0)
         (reg/v/f:SI 74 [ ui ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":748 -1
      (nil))
 (call_insn 22 21 23 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
+            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":748 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5226,11 +5226,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 74 [ ui ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":754 -1
      (nil))
 (call_insn 29 28 30 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("mui_NextField") [flags 0x3] <function_decl 062fd168 mui_NextField>) [0 mui_NextField S4 A32])
+            (call (mem:SI (symbol_ref:SI ("mui_NextField") [flags 0x3] <function_decl 0639d168 mui_NextField>) [0 mui_NextField S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":754 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_NextField") [flags 0x3] <function_decl 062fd168 mui_NextField>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_NextField") [flags 0x3] <function_decl 0639d168 mui_NextField>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5263,11 +5263,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 74 [ ui ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":760 -1
      (nil))
 (call_insn 41 40 42 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("mui_NextField") [flags 0x3] <function_decl 062fd168 mui_NextField>) [0 mui_NextField S4 A32])
+            (call (mem:SI (symbol_ref:SI ("mui_NextField") [flags 0x3] <function_decl 0639d168 mui_NextField>) [0 mui_NextField S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":760 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_NextField") [flags 0x3] <function_decl 062fd168 mui_NextField>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_NextField") [flags 0x3] <function_decl 0639d168 mui_NextField>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5279,11 +5279,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 45 44 46 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_enter_msg") [flags 0x3] <function_decl 062fda50 mui_send_cursor_enter_msg>) [0 mui_send_cursor_enter_msg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_enter_msg") [flags 0x3] <function_decl 0639da50 mui_send_cursor_enter_msg>) [0 mui_send_cursor_enter_msg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":758 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_enter_msg") [flags 0x3] <function_decl 062fda50 mui_send_cursor_enter_msg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_enter_msg") [flags 0x3] <function_decl 0639da50 mui_send_cursor_enter_msg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5355,11 +5355,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 12 11 13 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_find_form") [flags 0x3] <function_decl 062fdca8 mui_find_form>) [0 mui_find_form S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_find_form") [flags 0x3] <function_decl 0639dca8 mui_find_form>) [0 mui_find_form S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":788 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_find_form") [flags 0x3] <function_decl 062fdca8 mui_find_form>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_find_form") [flags 0x3] <function_decl 0639dca8 mui_find_form>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5386,11 +5386,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 74 [ ui ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":792 -1
      (nil))
 (call_insn 19 18 6 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("mui_EnterForm") [flags 0x3] <function_decl 062bdf78 mui_EnterForm>) [0 mui_EnterForm S4 A32])
+            (call (mem:SI (symbol_ref:SI ("mui_EnterForm") [flags 0x3] <function_decl 0635df78 mui_EnterForm>) [0 mui_EnterForm S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":792 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_EnterForm") [flags 0x3] <function_decl 062bdf78 mui_EnterForm>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_EnterForm") [flags 0x3] <function_decl 0635df78 mui_EnterForm>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5469,11 +5469,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 11 10 0 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_GotoForm") [flags 0x3] <function_decl 062bd348 mui_GotoForm>) [0 mui_GotoForm S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_GotoForm") [flags 0x3] <function_decl 0635d348 mui_GotoForm>) [0 mui_GotoForm S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":811 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_GotoForm") [flags 0x3] <function_decl 062bd348 mui_GotoForm>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_GotoForm") [flags 0x3] <function_decl 0635d348 mui_GotoForm>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5580,11 +5580,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 23 22 24 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_GotoForm") [flags 0x3] <function_decl 062bd348 mui_GotoForm>) [0 mui_GotoForm S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_GotoForm") [flags 0x3] <function_decl 0635d348 mui_GotoForm>) [0 mui_GotoForm S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":845 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_GotoForm") [flags 0x3] <function_decl 062bd348 mui_GotoForm>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_GotoForm") [flags 0x3] <function_decl 0635d348 mui_GotoForm>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5656,11 +5656,11 @@ Forwarding edge 7->8 to 9 failed.
      (nil))
 (call_insn 9 8 10 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":885 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5688,33 +5688,33 @@ Forwarding edge 7->8 to 9 failed.
      (nil))
 (call_insn 16 15 17 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":887 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
             (nil))))
 (insn 17 16 18 5 (set (reg:SI 78)
-        (high:SI (symbol_ref:SI ("mui_task_find_prev_cursor_uif") [flags 0x3] <function_decl 062fdf78 mui_task_find_prev_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":889 -1
+        (high:SI (symbol_ref:SI ("mui_task_find_prev_cursor_uif") [flags 0x3] <function_decl 0639df78 mui_task_find_prev_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":889 -1
      (nil))
 (insn 18 17 19 5 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 78)
-            (symbol_ref:SI ("mui_task_find_prev_cursor_uif") [flags 0x3] <function_decl 062fdf78 mui_task_find_prev_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":889 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_find_prev_cursor_uif") [flags 0x3] <function_decl 062fdf78 mui_task_find_prev_cursor_uif>)
+            (symbol_ref:SI ("mui_task_find_prev_cursor_uif") [flags 0x3] <function_decl 0639df78 mui_task_find_prev_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":889 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_find_prev_cursor_uif") [flags 0x3] <function_decl 0639df78 mui_task_find_prev_cursor_uif>)
         (nil)))
 (insn 19 18 20 5 (set (reg:SI 10 a0)
         (reg/v/f:SI 76 [ ui ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":889 -1
      (nil))
 (call_insn 20 19 21 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
+            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":889 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5737,22 +5737,22 @@ Forwarding edge 7->8 to 9 failed.
  -> 31)
 (note 24 23 25 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 (insn 25 24 26 6 (set (reg:SI 79)
-        (high:SI (symbol_ref:SI ("mui_task_find_last_cursor_uif") [flags 0x3] <function_decl 062fd528 mui_task_find_last_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":894 -1
+        (high:SI (symbol_ref:SI ("mui_task_find_last_cursor_uif") [flags 0x3] <function_decl 0639d528 mui_task_find_last_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":894 -1
      (nil))
 (insn 26 25 27 6 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 79)
-            (symbol_ref:SI ("mui_task_find_last_cursor_uif") [flags 0x3] <function_decl 062fd528 mui_task_find_last_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":894 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_find_last_cursor_uif") [flags 0x3] <function_decl 062fd528 mui_task_find_last_cursor_uif>)
+            (symbol_ref:SI ("mui_task_find_last_cursor_uif") [flags 0x3] <function_decl 0639d528 mui_task_find_last_cursor_uif>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":894 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_find_last_cursor_uif") [flags 0x3] <function_decl 0639d528 mui_task_find_last_cursor_uif>)
         (nil)))
 (insn 27 26 28 6 (set (reg:SI 10 a0)
         (reg/v/f:SI 76 [ ui ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":894 -1
      (nil))
 (call_insn 28 27 29 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
+            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":894 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5773,11 +5773,11 @@ Forwarding edge 7->8 to 9 failed.
      (nil))
 (call_insn 34 33 35 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_enter_msg") [flags 0x3] <function_decl 062fda50 mui_send_cursor_enter_msg>) [0 mui_send_cursor_enter_msg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_enter_msg") [flags 0x3] <function_decl 0639da50 mui_send_cursor_enter_msg>) [0 mui_send_cursor_enter_msg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":897 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_enter_msg") [flags 0x3] <function_decl 062fda50 mui_send_cursor_enter_msg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_enter_msg") [flags 0x3] <function_decl 0639da50 mui_send_cursor_enter_msg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5839,11 +5839,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 8 7 0 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":903 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5887,22 +5887,22 @@ try_optimize_cfg iteration 2
      (nil))
 (note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
 (insn 6 3 7 2 (set (reg:SI 74)
-        (high:SI (symbol_ref:SI ("mui_task_find_execute_on_select_field") [flags 0x3] <function_decl 062fd780 mui_task_find_execute_on_select_field>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":916 -1
+        (high:SI (symbol_ref:SI ("mui_task_find_execute_on_select_field") [flags 0x3] <function_decl 0639d780 mui_task_find_execute_on_select_field>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":916 -1
      (nil))
 (insn 7 6 8 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 74)
-            (symbol_ref:SI ("mui_task_find_execute_on_select_field") [flags 0x3] <function_decl 062fd780 mui_task_find_execute_on_select_field>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":916 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_find_execute_on_select_field") [flags 0x3] <function_decl 062fd780 mui_task_find_execute_on_select_field>)
+            (symbol_ref:SI ("mui_task_find_execute_on_select_field") [flags 0x3] <function_decl 0639d780 mui_task_find_execute_on_select_field>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":916 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("mui_task_find_execute_on_select_field") [flags 0x3] <function_decl 0639d780 mui_task_find_execute_on_select_field>)
         (nil)))
 (insn 8 7 9 2 (set (reg:SI 10 a0)
         (reg/v/f:SI 73 [ ui ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":916 -1
      (nil))
 (call_insn 9 8 10 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
+            (call (mem:SI (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>) [0 mui_loop_over_form S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":916 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 062fdbb8 mui_loop_over_form>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_loop_over_form") [flags 0x3] <function_decl 0639dbb8 mui_loop_over_form>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5928,11 +5928,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 15 14 16 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":920 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5947,11 +5947,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 18 17 19 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_enter_msg") [flags 0x3] <function_decl 062fda50 mui_send_cursor_enter_msg>) [0 mui_send_cursor_enter_msg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_enter_msg") [flags 0x3] <function_decl 0639da50 mui_send_cursor_enter_msg>) [0 mui_send_cursor_enter_msg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":922 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_enter_msg") [flags 0x3] <function_decl 062fda50 mui_send_cursor_enter_msg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_enter_msg") [flags 0x3] <function_decl 0639da50 mui_send_cursor_enter_msg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5964,11 +5964,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 21 20 22 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":923 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5989,11 +5989,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 28 27 31 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":928 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -6039,11 +6039,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 8 7 0 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":935 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -6087,11 +6087,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 8 7 0 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>) [0 mui_send_cursor_msg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/mui.c":940 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 062fd870 mui_send_cursor_msg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("mui_send_cursor_msg") [flags 0x3] <function_decl 0639d870 mui_send_cursor_msg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

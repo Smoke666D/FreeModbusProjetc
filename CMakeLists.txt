@@ -3,6 +3,10 @@ set(CMAKE_SYSTEM_VERSION 1)
 
 cmake_minimum_required(VERSION 3.20)
 
+
+option(GCC "GCC8" ON)
+option(GCC12 "GCC12" OFF)
+
 set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/cmake/wch_gcc.cmake)
 
 project(ch32v3_BOOT C CXX ASM)

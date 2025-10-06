@@ -303,11 +303,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":292 -1
      (nil))
 (call_insn 27 26 9 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 0621c5a0 u8x8_d_helper_display_setup_memory>) [0 u8x8_d_helper_display_setup_memory S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 0625c5a0 u8x8_d_helper_display_setup_memory>) [0 u8x8_d_helper_display_setup_memory S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":292 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 0621c5a0 u8x8_d_helper_display_setup_memory>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 0625c5a0 u8x8_d_helper_display_setup_memory>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -386,11 +386,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":174 -1
      (nil))
 (call_insn 50 49 51 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 0621c618 u8x8_d_helper_display_init>) [0 u8x8_d_helper_display_init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 0625c618 u8x8_d_helper_display_init>) [0 u8x8_d_helper_display_init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":174 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 0621c618 u8x8_d_helper_display_init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 0625c618 u8x8_d_helper_display_init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -409,11 +409,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":175 -1
      (nil))
 (call_insn 55 54 10 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":175 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -451,11 +451,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":179 -1
      (nil))
 (call_insn 66 65 11 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":179 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -485,11 +485,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":181 -1
      (nil))
 (call_insn 75 74 16 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":181 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -527,11 +527,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":186 -1
      (nil))
 (call_insn 86 85 87 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":186 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -572,11 +572,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":191 -1
      (nil))
 (call_insn 98 97 99 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":191 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -607,11 +607,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 107 106 108 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0621cf78 u8x8_cad_StartTransfer>) [0 u8x8_cad_StartTransfer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0625cf78 u8x8_cad_StartTransfer>) [0 u8x8_cad_StartTransfer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":197 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0621cf78 u8x8_cad_StartTransfer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0625cf78 u8x8_cad_StartTransfer>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -623,11 +623,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 110 109 111 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0621cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0625cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":198 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0621cd98 u8x8_cad_SendCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0625cd98 u8x8_cad_SendCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -640,11 +640,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 113 112 114 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":199 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -654,11 +654,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 115 114 13 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 0626a000 u8x8_cad_EndTransfer>) [0 u8x8_cad_EndTransfer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 062aa000 u8x8_cad_EndTransfer>) [0 u8x8_cad_EndTransfer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":200 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 0626a000 u8x8_cad_EndTransfer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 062aa000 u8x8_cad_EndTransfer>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -677,11 +677,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 121 120 122 15 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0621cf78 u8x8_cad_StartTransfer>) [0 u8x8_cad_StartTransfer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0625cf78 u8x8_cad_StartTransfer>) [0 u8x8_cad_StartTransfer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":204 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0621cf78 u8x8_cad_StartTransfer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0625cf78 u8x8_cad_StartTransfer>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -848,11 +848,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 166 165 167 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0621cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0625cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":224 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0621cd98 u8x8_cad_SendCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0625cd98 u8x8_cad_SendCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -865,11 +865,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 169 168 170 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":225 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -882,11 +882,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 172 171 173 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":226 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -899,11 +899,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 175 174 176 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0621cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0625cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":228 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0621cd98 u8x8_cad_SendCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0625cd98 u8x8_cad_SendCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -916,11 +916,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 178 177 179 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":229 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -933,11 +933,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 181 180 182 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":230 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -947,11 +947,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 183 182 184 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_ssd1329_8to32.isra.0") [flags 0x3] <function_decl 062a6e88 u8x8_ssd1329_8to32.isra.0>) [0 u8x8_ssd1329_8to32.isra.0 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_ssd1329_8to32.isra.0") [flags 0x3] <function_decl 062e6e88 u8x8_ssd1329_8to32.isra.0>) [0 u8x8_ssd1329_8to32.isra.0 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":233 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_ssd1329_8to32.isra.0") [flags 0x3] <function_decl 062a6e88 u8x8_ssd1329_8to32.isra.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_ssd1329_8to32.isra.0") [flags 0x3] <function_decl 062e6e88 u8x8_ssd1329_8to32.isra.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -970,11 +970,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 188 187 189 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 0621cf00 u8x8_cad_SendData>) [0 u8x8_cad_SendData S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 0625cf00 u8x8_cad_SendData>) [0 u8x8_cad_SendData S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":233 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 0621cf00 u8x8_cad_SendData>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 0625cf00 u8x8_cad_SendData>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -995,11 +995,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 195 194 196 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0621cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0625cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":239 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0621cd98 u8x8_cad_SendCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0625cd98 u8x8_cad_SendCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1012,11 +1012,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 198 197 199 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":240 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1029,11 +1029,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 201 200 202 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":241 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1046,11 +1046,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 204 203 205 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":242 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1063,11 +1063,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 207 206 208 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":243 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1080,11 +1080,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 210 209 211 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":244 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1158,11 +1158,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 233 232 12 22 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 0626a000 u8x8_cad_EndTransfer>) [0 u8x8_cad_EndTransfer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 062aa000 u8x8_cad_EndTransfer>) [0 u8x8_cad_EndTransfer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":255 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 0626a000 u8x8_cad_EndTransfer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 062aa000 u8x8_cad_EndTransfer>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1294,11 +1294,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":509 -1
      (nil))
 (call_insn 27 26 9 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 0621c5a0 u8x8_d_helper_display_setup_memory>) [0 u8x8_d_helper_display_setup_memory S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 0625c5a0 u8x8_d_helper_display_setup_memory>) [0 u8x8_d_helper_display_setup_memory S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":509 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 0621c5a0 u8x8_d_helper_display_setup_memory>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 0625c5a0 u8x8_d_helper_display_setup_memory>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1377,11 +1377,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":391 -1
      (nil))
 (call_insn 50 49 51 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 0621c618 u8x8_d_helper_display_init>) [0 u8x8_d_helper_display_init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 0625c618 u8x8_d_helper_display_init>) [0 u8x8_d_helper_display_init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":391 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 0621c618 u8x8_d_helper_display_init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 0625c618 u8x8_d_helper_display_init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1400,11 +1400,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":392 -1
      (nil))
 (call_insn 55 54 10 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":392 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1442,11 +1442,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":396 -1
      (nil))
 (call_insn 66 65 11 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":396 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1476,11 +1476,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":398 -1
      (nil))
 (call_insn 75 74 16 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":398 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1518,11 +1518,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":403 -1
      (nil))
 (call_insn 86 85 87 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":403 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1563,11 +1563,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":408 -1
      (nil))
 (call_insn 98 97 99 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":408 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0626a168 u8x8_cad_SendSequence>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062aa168 u8x8_cad_SendSequence>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1598,11 +1598,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 107 106 108 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0621cf78 u8x8_cad_StartTransfer>) [0 u8x8_cad_StartTransfer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0625cf78 u8x8_cad_StartTransfer>) [0 u8x8_cad_StartTransfer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":414 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0621cf78 u8x8_cad_StartTransfer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0625cf78 u8x8_cad_StartTransfer>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1614,11 +1614,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 110 109 111 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0621cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0625cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":415 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0621cd98 u8x8_cad_SendCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0625cd98 u8x8_cad_SendCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1631,11 +1631,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 113 112 114 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":416 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1645,11 +1645,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 115 114 13 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 0626a000 u8x8_cad_EndTransfer>) [0 u8x8_cad_EndTransfer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 062aa000 u8x8_cad_EndTransfer>) [0 u8x8_cad_EndTransfer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":417 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 0626a000 u8x8_cad_EndTransfer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 062aa000 u8x8_cad_EndTransfer>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1668,11 +1668,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 121 120 122 15 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0621cf78 u8x8_cad_StartTransfer>) [0 u8x8_cad_StartTransfer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0625cf78 u8x8_cad_StartTransfer>) [0 u8x8_cad_StartTransfer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":421 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0621cf78 u8x8_cad_StartTransfer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_StartTransfer") [flags 0x41] <function_decl 0625cf78 u8x8_cad_StartTransfer>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1839,11 +1839,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 166 165 167 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0621cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0625cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":441 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0621cd98 u8x8_cad_SendCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0625cd98 u8x8_cad_SendCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1856,11 +1856,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 169 168 170 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":442 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1873,11 +1873,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 172 171 173 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":443 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1890,11 +1890,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 175 174 176 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0621cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0625cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":445 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0621cd98 u8x8_cad_SendCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0625cd98 u8x8_cad_SendCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1907,11 +1907,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 178 177 179 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":446 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1924,11 +1924,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 181 180 182 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":447 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1938,11 +1938,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 183 182 184 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_ssd1329_8to32.isra.0") [flags 0x3] <function_decl 062a6e88 u8x8_ssd1329_8to32.isra.0>) [0 u8x8_ssd1329_8to32.isra.0 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_ssd1329_8to32.isra.0") [flags 0x3] <function_decl 062e6e88 u8x8_ssd1329_8to32.isra.0>) [0 u8x8_ssd1329_8to32.isra.0 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":450 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_ssd1329_8to32.isra.0") [flags 0x3] <function_decl 062a6e88 u8x8_ssd1329_8to32.isra.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_ssd1329_8to32.isra.0") [flags 0x3] <function_decl 062e6e88 u8x8_ssd1329_8to32.isra.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1961,11 +1961,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 188 187 189 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 0621cf00 u8x8_cad_SendData>) [0 u8x8_cad_SendData S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 0625cf00 u8x8_cad_SendData>) [0 u8x8_cad_SendData S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":450 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 0621cf00 u8x8_cad_SendData>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 0625cf00 u8x8_cad_SendData>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1986,11 +1986,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 195 194 196 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0621cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0625cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":456 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0621cd98 u8x8_cad_SendCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0625cd98 u8x8_cad_SendCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2003,11 +2003,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 198 197 199 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":457 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2020,11 +2020,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 201 200 202 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":458 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2037,11 +2037,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 204 203 205 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":459 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2054,11 +2054,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 207 206 208 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":460 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2071,11 +2071,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 210 209 211 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>) [0 u8x8_cad_SendArg S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":461 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0621ce10 u8x8_cad_SendArg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendArg") [flags 0x41] <function_decl 0625ce10 u8x8_cad_SendArg>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2149,11 +2149,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 233 232 12 22 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 0626a000 u8x8_cad_EndTransfer>) [0 u8x8_cad_EndTransfer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 062aa000 u8x8_cad_EndTransfer>) [0 u8x8_cad_EndTransfer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_ssd1329.c":472 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 0626a000 u8x8_cad_EndTransfer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_EndTransfer") [flags 0x41] <function_decl 062aa000 u8x8_cad_EndTransfer>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))

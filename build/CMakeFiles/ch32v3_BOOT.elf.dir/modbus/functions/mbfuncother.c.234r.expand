@@ -146,11 +146,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 39 38 40 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0625cd98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 055dcd98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":68 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0625cd98 __builtin_memcpy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 055dcd98 __builtin_memcpy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -284,11 +284,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 19 18 20 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0625cd98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 055dcd98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncother.c":83 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0625cd98 __builtin_memcpy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 055dcd98 __builtin_memcpy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)

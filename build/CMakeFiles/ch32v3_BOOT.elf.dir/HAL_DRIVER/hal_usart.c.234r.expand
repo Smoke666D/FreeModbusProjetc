@@ -112,11 +112,11 @@ Forwarding edge 6->7 to 12 failed.
         (const_int 16384 [0x4000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":53 -1
      (nil))
 (call_insn 26 25 27 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB2") [flags 0x41] <function_decl 05bb0ca8 HAL_InitAPB2>) [0 HAL_InitAPB2 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB2") [flags 0x41] <function_decl 06890ca8 HAL_InitAPB2>) [0 HAL_InitAPB2 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":53 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB2") [flags 0x41] <function_decl 05bb0ca8 HAL_InitAPB2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB2") [flags 0x41] <function_decl 06890ca8 HAL_InitAPB2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -131,11 +131,11 @@ Forwarding edge 6->7 to 12 failed.
         (const_int 131072 [0x20000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":56 -1
      (nil))
 (call_insn 32 31 33 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05bb0c30 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 06890c30 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":56 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05bb0c30 HAL_InitAPB1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 06890c30 HAL_InitAPB1>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -150,11 +150,11 @@ Forwarding edge 6->7 to 12 failed.
         (const_int 262144 [0x40000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":59 -1
      (nil))
 (call_insn 38 37 39 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05bb0c30 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 06890c30 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":59 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05bb0c30 HAL_InitAPB1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 06890c30 HAL_InitAPB1>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -169,11 +169,11 @@ Forwarding edge 6->7 to 12 failed.
         (const_int 524288 [0x80000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":62 -1
      (nil))
 (call_insn 44 43 45 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05bb0c30 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 06890c30 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":62 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05bb0c30 HAL_InitAPB1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 06890c30 HAL_InitAPB1>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -236,11 +236,11 @@ Forwarding edge 6->7 to 12 failed.
         (reg:SI 90)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":73 -1
      (nil))
 (call_insn 62 61 0 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("USART_Init") [flags 0x41] <function_decl 059327f8 USART_Init>) [0 USART_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("USART_Init") [flags 0x41] <function_decl 066127f8 USART_Init>) [0 USART_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":73 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_Init") [flags 0x41] <function_decl 059327f8 USART_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_Init") [flags 0x41] <function_decl 066127f8 USART_Init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -406,11 +406,11 @@ Forwarding edge 4->5 to 8 failed.
         (const_int 54 [0x36])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":103 -1
      (nil))
 (call_insn 23 22 24 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 05bb0d20 PFIC_IRQ_ENABLE_PG2>) [0 PFIC_IRQ_ENABLE_PG2 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 06890d20 PFIC_IRQ_ENABLE_PG2>) [0 PFIC_IRQ_ENABLE_PG2 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":103 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 05bb0d20 PFIC_IRQ_ENABLE_PG2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 06890d20 PFIC_IRQ_ENABLE_PG2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -433,11 +433,11 @@ Forwarding edge 4->5 to 8 failed.
         (const_int 68 [0x44])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":113 -1
      (nil))
 (call_insn 31 30 32 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 05bb0d20 PFIC_IRQ_ENABLE_PG2>) [0 PFIC_IRQ_ENABLE_PG2 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 06890d20 PFIC_IRQ_ENABLE_PG2>) [0 PFIC_IRQ_ENABLE_PG2 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":113 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 05bb0d20 PFIC_IRQ_ENABLE_PG2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 06890d20 PFIC_IRQ_ENABLE_PG2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -775,11 +775,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 13 12 14 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("USART_GetITStatus") [flags 0x41] <function_decl 0593b438 USART_GetITStatus>) [0 USART_GetITStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("USART_GetITStatus") [flags 0x41] <function_decl 0661b438 USART_GetITStatus>) [0 USART_GetITStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":152 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_GetITStatus") [flags 0x41] <function_decl 0593b438 USART_GetITStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_GetITStatus") [flags 0x41] <function_decl 0661b438 USART_GetITStatus>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -825,11 +825,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 25 24 26 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("USART_GetITStatus") [flags 0x41] <function_decl 0593b438 USART_GetITStatus>) [0 USART_GetITStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("USART_GetITStatus") [flags 0x41] <function_decl 0661b438 USART_GetITStatus>) [0 USART_GetITStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":154 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_GetITStatus") [flags 0x41] <function_decl 0593b438 USART_GetITStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_GetITStatus") [flags 0x41] <function_decl 0661b438 USART_GetITStatus>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -928,11 +928,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 52 51 53 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("USART_GetITStatus") [flags 0x41] <function_decl 0593b438 USART_GetITStatus>) [0 USART_GetITStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("USART_GetITStatus") [flags 0x41] <function_decl 0661b438 USART_GetITStatus>) [0 USART_GetITStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":158 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_GetITStatus") [flags 0x41] <function_decl 0593b438 USART_GetITStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_GetITStatus") [flags 0x41] <function_decl 0661b438 USART_GetITStatus>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1051,11 +1051,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":174 -1
      (nil))
 (call_insn 6 5 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_UASRT_IRQ") [flags 0x3] <function_decl 05bb0e88 HAL_UASRT_IRQ>) [0 HAL_UASRT_IRQ S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_UASRT_IRQ") [flags 0x3] <function_decl 06890e88 HAL_UASRT_IRQ>) [0 HAL_UASRT_IRQ S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":174 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_UASRT_IRQ") [flags 0x3] <function_decl 05bb0e88 HAL_UASRT_IRQ>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_UASRT_IRQ") [flags 0x3] <function_decl 06890e88 HAL_UASRT_IRQ>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1091,11 +1091,11 @@ try_optimize_cfg iteration 2
         (const_int 3 [0x3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":187 -1
      (nil))
 (call_insn 6 5 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_UASRT_IRQ") [flags 0x3] <function_decl 05bb0e88 HAL_UASRT_IRQ>) [0 HAL_UASRT_IRQ S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_UASRT_IRQ") [flags 0x3] <function_decl 06890e88 HAL_UASRT_IRQ>) [0 HAL_UASRT_IRQ S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_usart.c":187 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_UASRT_IRQ") [flags 0x3] <function_decl 05bb0e88 HAL_UASRT_IRQ>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_UASRT_IRQ") [flags 0x3] <function_decl 06890e88 HAL_UASRT_IRQ>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

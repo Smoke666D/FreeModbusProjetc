@@ -340,11 +340,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":141 -1
      (nil))
 (call_insn 88 87 89 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 05841078 u8g2_SetDrawColor>) [0 u8g2_SetDrawColor S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 06491078 u8g2_SetDrawColor>) [0 u8g2_SetDrawColor S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":141 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 05841078 u8g2_SetDrawColor>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 06491078 u8g2_SetDrawColor>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -367,11 +367,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":143 -1
      (nil))
 (call_insn 96 95 97 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawFrame") [flags 0x41] <function_decl 05841708 u8g2_DrawFrame>) [0 u8g2_DrawFrame S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawFrame") [flags 0x41] <function_decl 06491708 u8g2_DrawFrame>) [0 u8g2_DrawFrame S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":143 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawFrame") [flags 0x41] <function_decl 05841708 u8g2_DrawFrame>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawFrame") [flags 0x41] <function_decl 06491708 u8g2_DrawFrame>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -386,11 +386,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":144 -1
      (nil))
 (call_insn 99 98 100 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 05841078 u8g2_SetDrawColor>) [0 u8g2_SetDrawColor S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 06491078 u8g2_SetDrawColor>) [0 u8g2_SetDrawColor S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":144 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 05841078 u8g2_SetDrawColor>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 06491078 u8g2_SetDrawColor>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -467,11 +467,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":155 -1
      (nil))
 (call_insn 119 118 120 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 05839f00 u8g2_DrawHLine>) [0 u8g2_DrawHLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 06489f00 u8g2_DrawHLine>) [0 u8g2_DrawHLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":155 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 05839f00 u8g2_DrawHLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 06489f00 u8g2_DrawHLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -540,11 +540,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
      (nil))
 (call_insn 138 137 139 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawVLine") [flags 0x41] <function_decl 05839f78 u8g2_DrawVLine>) [0 u8g2_DrawVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawVLine") [flags 0x41] <function_decl 06489f78 u8g2_DrawVLine>) [0 u8g2_DrawVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":156 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawVLine") [flags 0x41] <function_decl 05839f78 u8g2_DrawVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawVLine") [flags 0x41] <function_decl 06489f78 u8g2_DrawVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -677,11 +677,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":165 -1
      (nil))
 (call_insn 179 178 180 16 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 05841078 u8g2_SetDrawColor>) [0 u8g2_SetDrawColor S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 06491078 u8g2_SetDrawColor>) [0 u8g2_SetDrawColor S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":165 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 05841078 u8g2_SetDrawColor>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 06491078 u8g2_SetDrawColor>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -702,11 +702,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":166 -1
      (nil))
 (call_insn 185 184 186 16 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawBox") [flags 0x41] <function_decl 05841690 u8g2_DrawBox>) [0 u8g2_DrawBox S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawBox") [flags 0x41] <function_decl 06491690 u8g2_DrawBox>) [0 u8g2_DrawBox S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":166 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawBox") [flags 0x41] <function_decl 05841690 u8g2_DrawBox>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawBox") [flags 0x41] <function_decl 06491690 u8g2_DrawBox>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -721,11 +721,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 132 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":167 -1
      (nil))
 (call_insn 188 187 191 16 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 05841078 u8g2_SetDrawColor>) [0 u8g2_SetDrawColor S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 06491078 u8g2_SetDrawColor>) [0 u8g2_SetDrawColor S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":167 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 05841078 u8g2_SetDrawColor>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetDrawColor") [flags 0x41] <function_decl 06491078 u8g2_SetDrawColor>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -800,11 +800,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 18 17 19 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 05849528 u8g2_GetUTF8Width>) [0 u8g2_GetUTF8Width S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 06499528 u8g2_GetUTF8Width>) [0 u8g2_GetUTF8Width S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":173 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 05849528 u8g2_GetUTF8Width>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 06499528 u8g2_GetUTF8Width>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -908,11 +908,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 83 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":189 -1
      (nil))
 (call_insn 44 43 45 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_SetFontMode") [flags 0x41] <function_decl 05841e10 u8g2_SetFontMode>) [0 u8g2_SetFontMode S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetFontMode") [flags 0x41] <function_decl 06491e10 u8g2_SetFontMode>) [0 u8g2_SetFontMode S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":189 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetFontMode") [flags 0x41] <function_decl 05841e10 u8g2_SetFontMode>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetFontMode") [flags 0x41] <function_decl 06491e10 u8g2_SetFontMode>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -931,11 +931,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 49 48 50 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_DrawUTF8") [flags 0x41] <function_decl 05849258 u8g2_DrawUTF8>) [0 u8g2_DrawUTF8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_DrawUTF8") [flags 0x41] <function_decl 06499258 u8g2_DrawUTF8>) [0 u8g2_DrawUTF8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":190 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawUTF8") [flags 0x41] <function_decl 05849258 u8g2_DrawUTF8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawUTF8") [flags 0x41] <function_decl 06499258 u8g2_DrawUTF8>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -971,11 +971,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 83 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":191 -1
      (nil))
 (call_insn 59 58 60 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawButtonFrame") [flags 0x3] <function_decl 05841870 u8g2_DrawButtonFrame>) [0 u8g2_DrawButtonFrame S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawButtonFrame") [flags 0x3] <function_decl 06491870 u8g2_DrawButtonFrame>) [0 u8g2_DrawButtonFrame S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_button.c":191 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawButtonFrame") [flags 0x3] <function_decl 05841870 u8g2_DrawButtonFrame>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawButtonFrame") [flags 0x3] <function_decl 06491870 u8g2_DrawButtonFrame>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

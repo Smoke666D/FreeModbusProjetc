@@ -65,11 +65,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 17 16 18 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xMBPortSerialInit") [flags 0x41] <function_decl 06607d20 xMBPortSerialInit>) [0 xMBPortSerialInit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xMBPortSerialInit") [flags 0x41] <function_decl 06647d20 xMBPortSerialInit>) [0 xMBPortSerialInit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":89 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortSerialInit") [flags 0x41] <function_decl 06607d20 xMBPortSerialInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortSerialInit") [flags 0x41] <function_decl 06647d20 xMBPortSerialInit>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -132,11 +132,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 31 30 32 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xMBPortTimersInit") [flags 0x41] <function_decl 065cc000 xMBPortTimersInit>) [0 xMBPortTimersInit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xMBPortTimersInit") [flags 0x41] <function_decl 0660c000 xMBPortTimersInit>) [0 xMBPortTimersInit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":115 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortTimersInit") [flags 0x41] <function_decl 065cc000 xMBPortTimersInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortTimersInit") [flags 0x41] <function_decl 0660c000 xMBPortTimersInit>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -223,21 +223,21 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":135 -1
      (nil))
 (call_insn 10 9 11 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>) [0 vMBPortSerialEnable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06647e88 vMBPortSerialEnable>) [0 vMBPortSerialEnable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":135 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06647e88 vMBPortSerialEnable>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
             (nil))))
 (call_insn 11 10 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 065cc0f0 vMBPortTimersEnable>) [0 vMBPortTimersEnable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 0660c0f0 vMBPortTimersEnable>) [0 vMBPortTimersEnable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":136 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 065cc0f0 vMBPortTimersEnable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 0660c0f0 vMBPortTimersEnable>)
         (nil))
     (nil))
 
@@ -274,21 +274,21 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":145 -1
      (nil))
 (call_insn 7 6 8 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>) [0 vMBPortSerialEnable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06647e88 vMBPortSerialEnable>) [0 vMBPortSerialEnable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":145 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06647e88 vMBPortSerialEnable>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
             (nil))))
 (call_insn 8 7 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vMBPortTimersDisable") [flags 0x41] <function_decl 065cc168 vMBPortTimersDisable>) [0 vMBPortTimersDisable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vMBPortTimersDisable") [flags 0x41] <function_decl 0660c168 vMBPortTimersDisable>) [0 vMBPortTimersDisable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":146 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersDisable") [flags 0x41] <function_decl 065cc168 vMBPortTimersDisable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersDisable") [flags 0x41] <function_decl 0660c168 vMBPortTimersDisable>)
         (nil))
     (nil))
 
@@ -375,12 +375,12 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR2") [flags 0x182])
         (nil)))
 (insn 19 18 20 4 (set (reg:SI 89)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 063a1b00 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 063e1b00 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
      (nil))
 (insn 20 19 21 4 (set (reg:SI 13 a3)
         (lo_sum:SI (reg:SI 89)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 063a1b00 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 063a1b00 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 063e1b00 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 063e1b00 *.LC0>)
         (nil)))
 (insn 21 20 22 4 (set (reg:SI 12 a2)
         (reg/f:SI 87)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
@@ -389,19 +389,19 @@ try_optimize_cfg iteration 2
         (const_int 155 [0x9b])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
      (nil))
 (insn 23 22 24 4 (set (reg:SI 90)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063e1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
      (nil))
 (insn 24 23 25 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 90)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063e1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063e1b58 *.LC1>)
         (nil)))
 (call_insn 25 24 26 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062d3ac8 __assert_func>) [0 __assert_func S4 A32])
+            (call (mem:SI (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 06313ac8 __assert_func>) [0 __assert_func S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":155 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062d3ac8 __assert_func>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 06313ac8 __assert_func>)
         (expr_list:REG_NORETURN (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -478,11 +478,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 48 47 49 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("usMBCRC16") [flags 0x41] <function_decl 065cce88 usMBCRC16>) [0 usMBCRC16 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("usMBCRC16") [flags 0x41] <function_decl 0660ce88 usMBCRC16>) [0 usMBCRC16 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":158 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("usMBCRC16") [flags 0x41] <function_decl 065cce88 usMBCRC16>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("usMBCRC16") [flags 0x41] <function_decl 0660ce88 usMBCRC16>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -716,11 +716,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 40 39 41 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("usMBCRC16") [flags 0x41] <function_decl 065cce88 usMBCRC16>) [0 usMBCRC16 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("usMBCRC16") [flags 0x41] <function_decl 0660ce88 usMBCRC16>) [0 usMBCRC16 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":206 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("usMBCRC16") [flags 0x41] <function_decl 065cce88 usMBCRC16>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("usMBCRC16") [flags 0x41] <function_decl 0660ce88 usMBCRC16>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -865,11 +865,11 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":212 -1
      (nil))
 (call_insn 81 80 6 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>) [0 vMBPortSerialEnable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06647e88 vMBPortSerialEnable>) [0 vMBPortSerialEnable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":212 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06647e88 vMBPortSerialEnable>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -976,12 +976,12 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR7") [flags 0x182])
         (nil)))
 (insn 12 11 13 4 (set (reg:SI 88)
-        (high:SI (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 063a1e70 *.LC2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+        (high:SI (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 063e1e70 *.LC2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
      (nil))
 (insn 13 12 14 4 (set (reg:SI 13 a3)
         (lo_sum:SI (reg:SI 88)
-            (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 063a1e70 *.LC2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 063a1e70 *.LC2>)
+            (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 063e1e70 *.LC2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 063e1e70 *.LC2>)
         (nil)))
 (insn 14 13 15 4 (set (reg:SI 12 a2)
         (reg/f:SI 86)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
@@ -990,19 +990,19 @@ try_optimize_cfg iteration 2
         (const_int 228 [0xe4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
      (nil))
 (insn 16 15 17 4 (set (reg:SI 89)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063e1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
      (nil))
 (insn 17 16 18 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 89)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063e1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063e1b58 *.LC1>)
         (nil)))
 (call_insn 18 17 19 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062d3ac8 __assert_func>) [0 __assert_func S4 A32])
+            (call (mem:SI (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 06313ac8 __assert_func>) [0 __assert_func S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":228 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062d3ac8 __assert_func>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 06313ac8 __assert_func>)
         (expr_list:REG_NORETURN (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1022,11 +1022,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 24 23 25 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xMBPortSerialGetByte") [flags 0x41] <function_decl 06607f00 xMBPortSerialGetByte>) [0 xMBPortSerialGetByte S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xMBPortSerialGetByte") [flags 0x41] <function_decl 06647f00 xMBPortSerialGetByte>) [0 xMBPortSerialGetByte S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":231 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortSerialGetByte") [flags 0x41] <function_decl 06607f00 xMBPortSerialGetByte>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortSerialGetByte") [flags 0x41] <function_decl 06647f00 xMBPortSerialGetByte>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1084,11 +1084,11 @@ try_optimize_cfg iteration 2
 (code_label 38 37 39 9 25 (nil) [1 uses])
 (note 39 38 40 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
 (call_insn 40 39 41 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 065cc0f0 vMBPortTimersEnable>) [0 vMBPortTimersEnable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 0660c0f0 vMBPortTimersEnable>) [0 vMBPortTimersEnable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":239 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 065cc0f0 vMBPortTimersEnable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 0660c0f0 vMBPortTimersEnable>)
         (nil))
     (nil))
 (jump_insn 41 40 42 9 (set (pc)
@@ -1178,11 +1178,11 @@ try_optimize_cfg iteration 2
         (reg:SI 109)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":257 -1
      (nil))
 (call_insn 67 66 68 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 065cc0f0 vMBPortTimersEnable>) [0 vMBPortTimersEnable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 0660c0f0 vMBPortTimersEnable>) [0 vMBPortTimersEnable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":260 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 065cc0f0 vMBPortTimersEnable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 0660c0f0 vMBPortTimersEnable>)
         (nil))
     (nil))
 (jump_insn 68 67 69 10 (set (pc)
@@ -1295,11 +1295,11 @@ try_optimize_cfg iteration 2
 (code_label 102 101 103 14 29 (nil) [1 uses])
 (note 103 102 104 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
 (call_insn 104 103 105 14 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 065cc0f0 vMBPortTimersEnable>) [0 vMBPortTimersEnable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 0660c0f0 vMBPortTimersEnable>) [0 vMBPortTimersEnable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":278 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 065cc0f0 vMBPortTimersEnable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersEnable") [flags 0x41] <function_decl 0660c0f0 vMBPortTimersEnable>)
         (nil))
     (nil))
 (code_label 105 104 106 15 27 (nil) [3 uses])
@@ -1387,12 +1387,12 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR8") [flags 0x182])
         (nil)))
 (insn 16 15 17 4 (set (reg:SI 88)
-        (high:SI (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 0638fbb0 *.LC3>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+        (high:SI (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 063cfbb0 *.LC3>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
      (nil))
 (insn 17 16 18 4 (set (reg:SI 13 a3)
         (lo_sum:SI (reg:SI 88)
-            (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 0638fbb0 *.LC3>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 0638fbb0 *.LC3>)
+            (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 063cfbb0 *.LC3>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 063cfbb0 *.LC3>)
         (nil)))
 (insn 18 17 19 4 (set (reg:SI 12 a2)
         (reg/f:SI 86)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
@@ -1401,19 +1401,19 @@ try_optimize_cfg iteration 2
         (const_int 288 [0x120])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
      (nil))
 (insn 20 19 21 4 (set (reg:SI 89)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063e1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
      (nil))
 (insn 21 20 22 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 89)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063e1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063e1b58 *.LC1>)
         (nil)))
 (call_insn 22 21 23 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062d3ac8 __assert_func>) [0 __assert_func S4 A32])
+            (call (mem:SI (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 06313ac8 __assert_func>) [0 __assert_func S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":288 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062d3ac8 __assert_func>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 06313ac8 __assert_func>)
         (expr_list:REG_NORETURN (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1471,11 +1471,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":295 -1
      (nil))
 (call_insn 40 39 4 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>) [0 vMBPortSerialEnable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06647e88 vMBPortSerialEnable>) [0 vMBPortSerialEnable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":295 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06647e88 vMBPortSerialEnable>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1537,11 +1537,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 58 57 59 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xMBPortSerialPutByte") [flags 0x41] <function_decl 06607f78 xMBPortSerialPutByte>) [0 xMBPortSerialPutByte S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xMBPortSerialPutByte") [flags 0x41] <function_decl 06647f78 xMBPortSerialPutByte>) [0 xMBPortSerialPutByte S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":301 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortSerialPutByte") [flags 0x41] <function_decl 06607f78 xMBPortSerialPutByte>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortSerialPutByte") [flags 0x41] <function_decl 06647f78 xMBPortSerialPutByte>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (nil)))
@@ -1618,11 +1618,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 80 79 81 11 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06607c30 xMBPortEventPost>) [0 xMBPortEventPost S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06647c30 xMBPortEventPost>) [0 xMBPortEventPost S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":307 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06607c30 xMBPortEventPost>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06647c30 xMBPortEventPost>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1650,11 +1650,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":311 -1
      (nil))
 (call_insn 88 87 89 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>) [0 vMBPortSerialEnable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06647e88 vMBPortSerialEnable>) [0 vMBPortSerialEnable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":311 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06607e88 vMBPortSerialEnable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortSerialEnable") [flags 0x41] <function_decl 06647e88 vMBPortSerialEnable>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1765,11 +1765,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 21 20 22 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06607c30 xMBPortEventPost>) [0 xMBPortEventPost S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06647c30 xMBPortEventPost>) [0 xMBPortEventPost S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":328 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06607c30 xMBPortEventPost>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06647c30 xMBPortEventPost>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1791,11 +1791,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 29 28 30 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06607c30 xMBPortEventPost>) [0 xMBPortEventPost S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06647c30 xMBPortEventPost>) [0 xMBPortEventPost S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":334 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06607c30 xMBPortEventPost>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06647c30 xMBPortEventPost>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1884,12 +1884,12 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR9") [flags 0x182])
         (nil)))
 (insn 55 54 56 11 (set (reg:SI 93)
-        (high:SI (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 0638fd10 *.LC4>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+        (high:SI (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 063cfd10 *.LC4>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
      (nil))
 (insn 56 55 57 11 (set (reg:SI 13 a3)
         (lo_sum:SI (reg:SI 93)
-            (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 0638fd10 *.LC4>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 0638fd10 *.LC4>)
+            (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 063cfd10 *.LC4>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 063cfd10 *.LC4>)
         (nil)))
 (insn 57 56 58 11 (set (reg:SI 12 a2)
         (reg/f:SI 91)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
@@ -1898,19 +1898,19 @@ try_optimize_cfg iteration 2
         (const_int 344 [0x158])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
      (nil))
 (insn 59 58 60 11 (set (reg:SI 94)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063e1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
      (nil))
 (insn 60 59 61 11 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 94)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063a1b58 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063e1b58 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063e1b58 *.LC1>)
         (nil)))
 (call_insn 61 60 62 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062d3ac8 __assert_func>) [0 __assert_func S4 A32])
+            (call (mem:SI (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 06313ac8 __assert_func>) [0 __assert_func S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":343 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062d3ac8 __assert_func>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 06313ac8 __assert_func>)
         (expr_list:REG_NORETURN (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1971,11 +1971,11 @@ try_optimize_cfg iteration 2
         (reg:SI 97)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":346 -1
      (nil))
 (call_insn 69 68 70 16 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vMBPortTimersDisable") [flags 0x41] <function_decl 065cc168 vMBPortTimersDisable>) [0 vMBPortTimersDisable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vMBPortTimersDisable") [flags 0x41] <function_decl 0660c168 vMBPortTimersDisable>) [0 vMBPortTimersDisable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/rtu/mbrtu.c":347 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersDisable") [flags 0x41] <function_decl 065cc168 vMBPortTimersDisable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortTimersDisable") [flags 0x41] <function_decl 0660c168 vMBPortTimersDisable>)
         (nil))
     (nil))
 (insn 70 69 74 16 (set (reg/v:SI 76 [ <retval> ])

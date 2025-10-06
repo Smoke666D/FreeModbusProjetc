@@ -133,11 +133,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 22 21 23 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06441348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06571348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_bitmap.c":57 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06441348 u8g2_IsIntersection>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06571348 u8g2_IsIntersection>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -210,11 +210,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 82 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_bitmap.c":66 -1
      (nil))
 (call_insn 42 41 43 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 06439e88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 06569e88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_bitmap.c":66 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 06439e88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 06569e88 u8g2_DrawHVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -265,11 +265,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 82 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_bitmap.c":69 -1
      (nil))
 (call_insn 57 56 58 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 06439e88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 06569e88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_bitmap.c":69 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 06439e88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 06569e88 u8g2_DrawHVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -419,11 +419,11 @@ Forwarding edge 6->7 to 8 failed.
      (nil))
 (call_insn 22 21 23 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06441348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06571348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_bitmap.c":92 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06441348 u8g2_IsIntersection>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06571348 u8g2_IsIntersection>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -468,11 +468,11 @@ Forwarding edge 6->7 to 8 failed.
         (reg/v/f:SI 77 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_bitmap.c":98 -1
      (nil))
 (call_insn 35 34 36 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHorizontalBitmap") [flags 0x3] <function_decl 06441168 u8g2_DrawHorizontalBitmap>) [0 u8g2_DrawHorizontalBitmap S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHorizontalBitmap") [flags 0x3] <function_decl 06571168 u8g2_DrawHorizontalBitmap>) [0 u8g2_DrawHorizontalBitmap S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_bitmap.c":98 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHorizontalBitmap") [flags 0x3] <function_decl 06441168 u8g2_DrawHorizontalBitmap>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHorizontalBitmap") [flags 0x3] <function_decl 06571168 u8g2_DrawHorizontalBitmap>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -602,11 +602,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 22 21 23 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06441348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06571348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_bitmap.c":113 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06441348 u8g2_IsIntersection>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06571348 u8g2_IsIntersection>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -679,11 +679,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 82 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_bitmap.c":121 -1
      (nil))
 (call_insn 42 41 43 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 06439e88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 06569e88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_bitmap.c":121 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 06439e88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 06569e88 u8g2_DrawHVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -734,11 +734,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 82 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_bitmap.c":124 -1
      (nil))
 (call_insn 57 56 58 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 06439e88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 06569e88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_bitmap.c":124 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 06439e88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 06569e88 u8g2_DrawHVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -886,11 +886,11 @@ Forwarding edge 7->8 to 9 failed.
      (nil))
 (call_insn 20 19 21 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06441348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06571348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_bitmap.c":146 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06441348 u8g2_IsIntersection>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06571348 u8g2_IsIntersection>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -949,11 +949,11 @@ Forwarding edge 7->8 to 9 failed.
         (reg/v/f:SI 78 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_bitmap.c":152 -1
      (nil))
 (call_insn 41 40 42 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHXBM") [flags 0x3] <function_decl 0644f1e0 u8g2_DrawHXBM>) [0 u8g2_DrawHXBM S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHXBM") [flags 0x3] <function_decl 0657f1e0 u8g2_DrawHXBM>) [0 u8g2_DrawHXBM S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_bitmap.c":152 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHXBM") [flags 0x3] <function_decl 0644f1e0 u8g2_DrawHXBM>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHXBM") [flags 0x3] <function_decl 0657f1e0 u8g2_DrawHXBM>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1043,11 +1043,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8g2 ])) -1
      (nil))
 (call_insn 15 14 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHXBM") [flags 0x3] <function_decl 0644f1e0 u8g2_DrawHXBM>) [0 u8g2_DrawHXBM S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHXBM") [flags 0x3] <function_decl 0657f1e0 u8g2_DrawHXBM>) [0 u8g2_DrawHXBM S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHXBM") [flags 0x3] <function_decl 0644f1e0 u8g2_DrawHXBM>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHXBM") [flags 0x3] <function_decl 0657f1e0 u8g2_DrawHXBM>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1120,11 +1120,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8g2 ])) -1
      (nil))
 (call_insn 17 16 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawXBM") [flags 0x3] <function_decl 06441258 u8g2_DrawXBM>) [0 u8g2_DrawXBM S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawXBM") [flags 0x3] <function_decl 06571258 u8g2_DrawXBM>) [0 u8g2_DrawXBM S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawXBM") [flags 0x3] <function_decl 06441258 u8g2_DrawXBM>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawXBM") [flags 0x3] <function_decl 06571258 u8g2_DrawXBM>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

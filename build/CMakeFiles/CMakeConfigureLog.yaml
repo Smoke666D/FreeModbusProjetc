@@ -5,7 +5,7 @@ events:
     kind: "message-v1"
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake:207 (message)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     message: |
       The target system is: Generic - 1 - 
       The host system is: Windows - 10.0.19044 - AMD64
@@ -13,7 +13,7 @@ events:
     kind: "find-v1"
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeNinjaFindMake.cmake:5 (find_program)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "program"
     variable: "CMAKE_MAKE_PROGRAM"
     description: "Program used to build from build.ninja files."
@@ -368,7 +368,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -430,7 +430,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
       Compiler: C:/MounRiver/MounRiver_Studio/toolchain/RISC-V Embedded GCC/bin/riscv-none-embed-gcc.exe 
@@ -452,7 +452,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -514,7 +514,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
       Compiler: C:/MounRiver/MounRiver_Studio/toolchain/RISC-V Embedded GCC/bin/riscv-none-embed-gcc.exe 
@@ -535,7 +535,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "program"
     variable: "CMAKE_RANLIB"
     description: "Path to a program."
@@ -632,7 +632,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "program"
     variable: "CMAKE_STRIP"
     description: "Path to a program."
@@ -729,7 +729,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "program"
     variable: "CMAKE_LINKER"
     description: "Path to a program."
@@ -826,7 +826,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "program"
     variable: "CMAKE_NM"
     description: "Path to a program."
@@ -923,7 +923,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "program"
     variable: "CMAKE_READELF"
     description: "Path to a program."
@@ -1020,7 +1020,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "program"
     variable: "CMAKE_DLLTOOL"
     description: "Path to a program."
@@ -1320,7 +1320,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "program"
     variable: "CMAKE_ADDR2LINE"
     description: "Path to a program."
@@ -1417,7 +1417,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "program"
     variable: "CMAKE_TAPI"
     description: "Path to a program."
@@ -1717,7 +1717,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_AR"
     description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
@@ -2122,7 +2122,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "program"
     variable: "CMAKE_C_COMPILER_RANLIB"
     description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
@@ -2530,7 +2530,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -2592,7 +2592,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
       Compiler: C:/MounRiver/MounRiver_Studio/toolchain/RISC-V Embedded GCC/bin/riscv-none-embed-g++.exe 
@@ -2614,7 +2614,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -2676,7 +2676,7 @@ events:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler: C:/MounRiver/MounRiver_Studio/toolchain/RISC-V Embedded GCC/bin/riscv-none-embed-g++.exe 
@@ -2697,7 +2697,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_AR"
     description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
@@ -3102,7 +3102,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "program"
     variable: "CMAKE_CXX_COMPILER_RANLIB"
     description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
@@ -3507,7 +3507,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:1290 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     message: |
       Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
       riscv-none-embed-gcc.exe (xPack GNU RISC-V Embedded GCC, 32-bit) 8.2.0
@@ -3520,7 +3520,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineASMCompiler.cmake:268 (include)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "program"
     variable: "CMAKE_ASM_COMPILER_AR"
     description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
@@ -3823,7 +3823,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineASMCompiler.cmake:268 (include)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     mode: "program"
     variable: "CMAKE_ASM_COMPILER_RANLIB"
     description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
@@ -4126,12 +4126,12 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/CMakeScratch/TryCompile-dl57zg"
-      binary: "C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/CMakeScratch/TryCompile-dl57zg"
+      source: "C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/CMakeScratch/TryCompile-r8pf7s"
+      binary: "C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/CMakeScratch/TryCompile-r8pf7s"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -4140,18 +4140,18 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/CMakeScratch/TryCompile-dl57zg'
+        Change Dir: 'C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/CMakeScratch/TryCompile-r8pf7s'
         
-        Run Build Command(s): C:/Users/i.dymov/Desktop/Утилиты/ninja-win/ninja.exe -v cmTC_582e8
-        [1/2] C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI0D76~1.EXE   -std=gnu99   -v -o CMakeFiles/cmTC_582e8.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerABI.c"
+        Run Build Command(s): C:/Users/i.dymov/Desktop/Утилиты/ninja-win/ninja.exe -v cmTC_dec60
+        [1/2] C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI0D76~1.EXE   -std=gnu99   -v -o CMakeFiles/cmTC_dec60.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerABI.c"
         Using built-in specs.
         COLLECT_GCC=C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI0D76~1.EXE
         Target: riscv-none-embed
         Configured with: /Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/sources/riscv-gcc-8.2.0-3.1/configure --prefix=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc --infodir=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/doc/info --mandir=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/doc/man --htmldir=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/doc/html --pdfdir=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/doc/pdf --build=i686-pc-linux-gnu --host=i686-w64-mingw32 --target=riscv-none-embed --with-pkgversion='xPack GNU RISC-V Embedded GCC\\x2C 32-bit' --with-bugurl=https://github.com/sifive/freedom-tools/issues --enable-languages=c,c++ --enable-mingw-wildcard --enable-plugins --enable-lto --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-threads --disable-tls --enable-checking=yes --with-gnu-as --with-gnu-ld --with-newlib --with-headers=yes --with-python-dir=share/gcc-riscv-none-embed --with-sysroot=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/riscv-none-embed --with-abi=ilp32 --with-arch=rv32imac --disable-rpath --disable-build-format-warnings --with-system-zlib
         Thread model: single
         gcc version 8.2.0 (xPack GNU RISC-V Embedded GCC, 32-bit) 
-        COLLECT_GCC_OPTIONS='-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_582e8.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32imac' '-mabi=ilp32'
-         c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../libexec/gcc/riscv-none-embed/8.2.0/cc1.exe -quiet -v -imultilib rv32imac/ilp32 -iprefix c:\\mounri~1\\mounri~1\\toolch~1\\risc-v~1\\bin\\../lib/gcc/riscv-none-embed/8.2.0/ -isysroot c:\\mounri~1\\mounri~1\\toolch~1\\risc-v~1\\bin\\../riscv-none-embed C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -march=rv32imac -mabi=ilp32 -auxbase-strip CMakeFiles/cmTC_582e8.dir/CMakeCCompilerABI.c.obj -std=gnu99 -version -o C:\\Users\\IBA52~1.DYM\\AppData\\Local\\Temp\\ccmYkUG8.s
+        COLLECT_GCC_OPTIONS='-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_dec60.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32imac' '-mabi=ilp32'
+         c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../libexec/gcc/riscv-none-embed/8.2.0/cc1.exe -quiet -v -imultilib rv32imac/ilp32 -iprefix c:\\mounri~1\\mounri~1\\toolch~1\\risc-v~1\\bin\\../lib/gcc/riscv-none-embed/8.2.0/ -isysroot c:\\mounri~1\\mounri~1\\toolch~1\\risc-v~1\\bin\\../riscv-none-embed C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -march=rv32imac -mabi=ilp32 -auxbase-strip CMakeFiles/cmTC_dec60.dir/CMakeCCompilerABI.c.obj -std=gnu99 -version -o C:\\Users\\IBA52~1.DYM\\AppData\\Local\\Temp\\cc21zzAo.s
         GNU C99 (xPack GNU RISC-V Embedded GCC, 32-bit) version 8.2.0 (riscv-none-embed)
         	compiled by GNU C version 7.4.0, GMP version 6.1.2, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.18-GMP
         
@@ -4172,13 +4172,13 @@ events:
         
         GGC heuristics: --param ggc-min-expand=30 --param ggc-min-heapsize=4096
         Compiler executable checksum: 7057364bc5e0709d2366ae0bf75d83fc
-        COLLECT_GCC_OPTIONS='-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_582e8.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32imac' '-mabi=ilp32'
-         c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/bin/as.exe -v --traditional-format -march=rv32imac -mabi=ilp32 -o CMakeFiles/cmTC_582e8.dir/CMakeCCompilerABI.c.obj C:\\Users\\IBA52~1.DYM\\AppData\\Local\\Temp\\ccmYkUG8.s
+        COLLECT_GCC_OPTIONS='-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_dec60.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32imac' '-mabi=ilp32'
+         c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/bin/as.exe -v --traditional-format -march=rv32imac -mabi=ilp32 -o CMakeFiles/cmTC_dec60.dir/CMakeCCompilerABI.c.obj C:\\Users\\IBA52~1.DYM\\AppData\\Local\\Temp\\cc21zzAo.s
         GNU assembler version 2.32 (riscv-none-embed) using BFD version (xPack GNU RISC-V Embedded GCC, 32-bit) 2.32
         COMPILER_PATH=c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../libexec/gcc/riscv-none-embed/8.2.0/;c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../libexec/gcc/;c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/bin/
         LIBRARY_PATH=c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/;c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/;c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../riscv-none-embed/lib/rv32imac/ilp32/;c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/;c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/;c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/;c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../riscv-none-embed/lib/
-        COLLECT_GCC_OPTIONS='-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_582e8.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32imac' '-mabi=ilp32'
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f libcmTC_582e8.a && C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RISCV-~2.EXE qc libcmTC_582e8.a  CMakeFiles/cmTC_582e8.dir/CMakeCCompilerABI.c.obj && C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI4B51~1.EXE libcmTC_582e8.a && cd ."
+        COLLECT_GCC_OPTIONS='-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_dec60.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32imac' '-mabi=ilp32'
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f libcmTC_dec60.a && C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RISCV-~2.EXE qc libcmTC_dec60.a  CMakeFiles/cmTC_dec60.dir/CMakeCCompilerABI.c.obj && C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI4B51~1.EXE libcmTC_dec60.a && cd ."
         
       exitCode: 0
   -
@@ -4186,7 +4186,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     message: |
       Parsed C implicit include dir info: rv=done
         found start of include info
@@ -4206,23 +4206,23 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     message: |
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/CMakeScratch/TryCompile-dl57zg']
+        ignore line: [Change Dir: 'C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/CMakeScratch/TryCompile-r8pf7s']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/Users/i.dymov/Desktop/Утилиты/ninja-win/ninja.exe -v cmTC_582e8]
-        ignore line: [[1/2] C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI0D76~1.EXE   -std=gnu99   -v -o CMakeFiles/cmTC_582e8.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerABI.c"]
+        ignore line: [Run Build Command(s): C:/Users/i.dymov/Desktop/Утилиты/ninja-win/ninja.exe -v cmTC_dec60]
+        ignore line: [[1/2] C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI0D76~1.EXE   -std=gnu99   -v -o CMakeFiles/cmTC_dec60.dir/CMakeCCompilerABI.c.obj -c "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerABI.c"]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI0D76~1.EXE]
         ignore line: [Target: riscv-none-embed]
         ignore line: [Configured with: /Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/sources/riscv-gcc-8.2.0-3.1/configure --prefix=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc --infodir=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/doc/info --mandir=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/doc/man --htmldir=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/doc/html --pdfdir=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/doc/pdf --build=i686-pc-linux-gnu --host=i686-w64-mingw32 --target=riscv-none-embed --with-pkgversion='xPack GNU RISC-V Embedded GCC\\x2C 32-bit' --with-bugurl=https://github.com/sifive/freedom-tools/issues --enable-languages=c,c++ --enable-mingw-wildcard --enable-plugins --enable-lto --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-threads --disable-tls --enable-checking=yes --with-gnu-as --with-gnu-ld --with-newlib --with-headers=yes --with-python-dir=share/gcc-riscv-none-embed --with-sysroot=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/riscv-none-embed --with-abi=ilp32 --with-arch=rv32imac --disable-rpath --disable-build-format-warnings --with-system-zlib]
         ignore line: [Thread model: single]
         ignore line: [gcc version 8.2.0 (xPack GNU RISC-V Embedded GCC  32-bit) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_582e8.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32imac' '-mabi=ilp32']
-        ignore line: [ c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../libexec/gcc/riscv-none-embed/8.2.0/cc1.exe -quiet -v -imultilib rv32imac/ilp32 -iprefix c:\\mounri~1\\mounri~1\\toolch~1\\risc-v~1\\bin\\../lib/gcc/riscv-none-embed/8.2.0/ -isysroot c:\\mounri~1\\mounri~1\\toolch~1\\risc-v~1\\bin\\../riscv-none-embed C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -march=rv32imac -mabi=ilp32 -auxbase-strip CMakeFiles/cmTC_582e8.dir/CMakeCCompilerABI.c.obj -std=gnu99 -version -o C:\\Users\\IBA52~1.DYM\\AppData\\Local\\Temp\\ccmYkUG8.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_dec60.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32imac' '-mabi=ilp32']
+        ignore line: [ c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../libexec/gcc/riscv-none-embed/8.2.0/cc1.exe -quiet -v -imultilib rv32imac/ilp32 -iprefix c:\\mounri~1\\mounri~1\\toolch~1\\risc-v~1\\bin\\../lib/gcc/riscv-none-embed/8.2.0/ -isysroot c:\\mounri~1\\mounri~1\\toolch~1\\risc-v~1\\bin\\../riscv-none-embed C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -march=rv32imac -mabi=ilp32 -auxbase-strip CMakeFiles/cmTC_dec60.dir/CMakeCCompilerABI.c.obj -std=gnu99 -version -o C:\\Users\\IBA52~1.DYM\\AppData\\Local\\Temp\\cc21zzAo.s]
         ignore line: [GNU C99 (xPack GNU RISC-V Embedded GCC  32-bit) version 8.2.0 (riscv-none-embed)]
         ignore line: [	compiled by GNU C version 7.4.0  GMP version 6.1.2  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.18-GMP]
         ignore line: []
@@ -4243,8 +4243,8 @@ events:
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=30 --param ggc-min-heapsize=4096]
         ignore line: [Compiler executable checksum: 7057364bc5e0709d2366ae0bf75d83fc]
-        ignore line: [COLLECT_GCC_OPTIONS='-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_582e8.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32imac' '-mabi=ilp32']
-        ignore line: [ c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/bin/as.exe -v --traditional-format -march=rv32imac -mabi=ilp32 -o CMakeFiles/cmTC_582e8.dir/CMakeCCompilerABI.c.obj C:\\Users\\IBA52~1.DYM\\AppData\\Local\\Temp\\ccmYkUG8.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_dec60.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32imac' '-mabi=ilp32']
+        ignore line: [ c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/bin/as.exe -v --traditional-format -march=rv32imac -mabi=ilp32 -o CMakeFiles/cmTC_dec60.dir/CMakeCCompilerABI.c.obj C:\\Users\\IBA52~1.DYM\\AppData\\Local\\Temp\\cc21zzAo.s]
         ignore line: [GNU assembler version 2.32 (riscv-none-embed) using BFD version (xPack GNU RISC-V Embedded GCC  32-bit) 2.32]
         ignore line: [COMPILER_PATH=c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../libexec/gcc/riscv-none-embed/8.2.0/]
         ignore line: [c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../libexec/gcc/]
@@ -4256,8 +4256,8 @@ events:
         ignore line: [c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/]
         ignore line: [c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/]
         ignore line: [c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../riscv-none-embed/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_582e8.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32imac' '-mabi=ilp32']
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f libcmTC_582e8.a && C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RISCV-~2.EXE qc libcmTC_582e8.a  CMakeFiles/cmTC_582e8.dir/CMakeCCompilerABI.c.obj && C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI4B51~1.EXE libcmTC_582e8.a && cd ."]
+        ignore line: [COLLECT_GCC_OPTIONS='-std=gnu99' '-v' '-o' 'CMakeFiles/cmTC_dec60.dir/CMakeCCompilerABI.c.obj' '-c' '-march=rv32imac' '-mabi=ilp32']
+        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f libcmTC_dec60.a && C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RISCV-~2.EXE qc libcmTC_dec60.a  CMakeFiles/cmTC_dec60.dir/CMakeCCompilerABI.c.obj && C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI4B51~1.EXE libcmTC_dec60.a && cd ."]
         ignore line: []
         ignore line: []
         implicit libs: []
@@ -4271,12 +4271,12 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/CMakeScratch/TryCompile-u06k5p"
-      binary: "C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/CMakeScratch/TryCompile-u06k5p"
+      source: "C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/CMakeScratch/TryCompile-9uvv3f"
+      binary: "C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/CMakeScratch/TryCompile-9uvv3f"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -4286,18 +4286,18 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/CMakeScratch/TryCompile-u06k5p'
+        Change Dir: 'C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/CMakeScratch/TryCompile-9uvv3f'
         
-        Run Build Command(s): C:/Users/i.dymov/Desktop/Утилиты/ninja-win/ninja.exe -v cmTC_015c6
-        [1/2] C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI99B1~1.EXE   -std=gnu++11   -v -o CMakeFiles/cmTC_015c6.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp"
+        Run Build Command(s): C:/Users/i.dymov/Desktop/Утилиты/ninja-win/ninja.exe -v cmTC_b3fc7
+        [1/2] C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI99B1~1.EXE   -std=gnu++11   -v -o CMakeFiles/cmTC_b3fc7.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp"
         Using built-in specs.
         COLLECT_GCC=C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI99B1~1.EXE
         Target: riscv-none-embed
         Configured with: /Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/sources/riscv-gcc-8.2.0-3.1/configure --prefix=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc --infodir=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/doc/info --mandir=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/doc/man --htmldir=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/doc/html --pdfdir=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/doc/pdf --build=i686-pc-linux-gnu --host=i686-w64-mingw32 --target=riscv-none-embed --with-pkgversion='xPack GNU RISC-V Embedded GCC\\x2C 32-bit' --with-bugurl=https://github.com/sifive/freedom-tools/issues --enable-languages=c,c++ --enable-mingw-wildcard --enable-plugins --enable-lto --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-threads --disable-tls --enable-checking=yes --with-gnu-as --with-gnu-ld --with-newlib --with-headers=yes --with-python-dir=share/gcc-riscv-none-embed --with-sysroot=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/riscv-none-embed --with-abi=ilp32 --with-arch=rv32imac --disable-rpath --disable-build-format-warnings --with-system-zlib
         Thread model: single
         gcc version 8.2.0 (xPack GNU RISC-V Embedded GCC, 32-bit) 
-        COLLECT_GCC_OPTIONS='-std=gnu++11' '-v' '-o' 'CMakeFiles/cmTC_015c6.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32imac' '-mabi=ilp32'
-         c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../libexec/gcc/riscv-none-embed/8.2.0/cc1plus.exe -quiet -v -imultilib rv32imac/ilp32 -iprefix c:\\mounri~1\\mounri~1\\toolch~1\\risc-v~1\\bin\\../lib/gcc/riscv-none-embed/8.2.0/ -isysroot c:\\mounri~1\\mounri~1\\toolch~1\\risc-v~1\\bin\\../riscv-none-embed C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -march=rv32imac -mabi=ilp32 -auxbase-strip CMakeFiles/cmTC_015c6.dir/CMakeCXXCompilerABI.cpp.obj -std=gnu++11 -version -o C:\\Users\\IBA52~1.DYM\\AppData\\Local\\Temp\\cczSznqf.s
+        COLLECT_GCC_OPTIONS='-std=gnu++11' '-v' '-o' 'CMakeFiles/cmTC_b3fc7.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32imac' '-mabi=ilp32'
+         c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../libexec/gcc/riscv-none-embed/8.2.0/cc1plus.exe -quiet -v -imultilib rv32imac/ilp32 -iprefix c:\\mounri~1\\mounri~1\\toolch~1\\risc-v~1\\bin\\../lib/gcc/riscv-none-embed/8.2.0/ -isysroot c:\\mounri~1\\mounri~1\\toolch~1\\risc-v~1\\bin\\../riscv-none-embed C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -march=rv32imac -mabi=ilp32 -auxbase-strip CMakeFiles/cmTC_b3fc7.dir/CMakeCXXCompilerABI.cpp.obj -std=gnu++11 -version -o C:\\Users\\IBA52~1.DYM\\AppData\\Local\\Temp\\ccmub3pU.s
         GNU C++11 (xPack GNU RISC-V Embedded GCC, 32-bit) version 8.2.0 (riscv-none-embed)
         	compiled by GNU C version 7.4.0, GMP version 6.1.2, MPFR version 3.1.6, MPC version 1.0.3, isl version isl-0.18-GMP
         
@@ -4324,13 +4324,13 @@ events:
         
         GGC heuristics: --param ggc-min-expand=30 --param ggc-min-heapsize=4096
         Compiler executable checksum: e9b2656740a92bba5bef9c2b2c7a1e4f
-        COLLECT_GCC_OPTIONS='-std=gnu++11' '-v' '-o' 'CMakeFiles/cmTC_015c6.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32imac' '-mabi=ilp32'
-         c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/bin/as.exe -v --traditional-format -march=rv32imac -mabi=ilp32 -o CMakeFiles/cmTC_015c6.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\IBA52~1.DYM\\AppData\\Local\\Temp\\cczSznqf.s
+        COLLECT_GCC_OPTIONS='-std=gnu++11' '-v' '-o' 'CMakeFiles/cmTC_b3fc7.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32imac' '-mabi=ilp32'
+         c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/bin/as.exe -v --traditional-format -march=rv32imac -mabi=ilp32 -o CMakeFiles/cmTC_b3fc7.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\IBA52~1.DYM\\AppData\\Local\\Temp\\ccmub3pU.s
         GNU assembler version 2.32 (riscv-none-embed) using BFD version (xPack GNU RISC-V Embedded GCC, 32-bit) 2.32
         COMPILER_PATH=c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../libexec/gcc/riscv-none-embed/8.2.0/;c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../libexec/gcc/;c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/bin/
         LIBRARY_PATH=c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/;c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/;c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../riscv-none-embed/lib/rv32imac/ilp32/;c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/;c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/;c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/;c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../riscv-none-embed/lib/
-        COLLECT_GCC_OPTIONS='-std=gnu++11' '-v' '-o' 'CMakeFiles/cmTC_015c6.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32imac' '-mabi=ilp32'
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f libcmTC_015c6.a && C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RISCV-~2.EXE qc libcmTC_015c6.a  CMakeFiles/cmTC_015c6.dir/CMakeCXXCompilerABI.cpp.obj && C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI4B51~1.EXE libcmTC_015c6.a && cd ."
+        COLLECT_GCC_OPTIONS='-std=gnu++11' '-v' '-o' 'CMakeFiles/cmTC_b3fc7.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32imac' '-mabi=ilp32'
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f libcmTC_b3fc7.a && C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RISCV-~2.EXE qc libcmTC_b3fc7.a  CMakeFiles/cmTC_b3fc7.dir/CMakeCXXCompilerABI.cpp.obj && C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI4B51~1.EXE libcmTC_b3fc7.a && cd ."
         
       exitCode: 0
   -
@@ -4338,7 +4338,7 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     message: |
       Parsed CXX implicit include dir info: rv=done
         found start of include info
@@ -4364,23 +4364,23 @@ events:
     backtrace:
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
       - "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:8 (project)"
+      - "CMakeLists.txt:12 (project)"
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: 'C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/CMakeScratch/TryCompile-u06k5p']
+        ignore line: [Change Dir: 'C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/CMakeScratch/TryCompile-9uvv3f']
         ignore line: []
-        ignore line: [Run Build Command(s): C:/Users/i.dymov/Desktop/Утилиты/ninja-win/ninja.exe -v cmTC_015c6]
-        ignore line: [[1/2] C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI99B1~1.EXE   -std=gnu++11   -v -o CMakeFiles/cmTC_015c6.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp"]
+        ignore line: [Run Build Command(s): C:/Users/i.dymov/Desktop/Утилиты/ninja-win/ninja.exe -v cmTC_b3fc7]
+        ignore line: [[1/2] C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI99B1~1.EXE   -std=gnu++11   -v -o CMakeFiles/cmTC_b3fc7.dir/CMakeCXXCompilerABI.cpp.obj -c "C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp"]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI99B1~1.EXE]
         ignore line: [Target: riscv-none-embed]
         ignore line: [Configured with: /Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/sources/riscv-gcc-8.2.0-3.1/configure --prefix=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc --infodir=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/doc/info --mandir=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/doc/man --htmldir=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/doc/html --pdfdir=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/doc/pdf --build=i686-pc-linux-gnu --host=i686-w64-mingw32 --target=riscv-none-embed --with-pkgversion='xPack GNU RISC-V Embedded GCC\\x2C 32-bit' --with-bugurl=https://github.com/sifive/freedom-tools/issues --enable-languages=c,c++ --enable-mingw-wildcard --enable-plugins --enable-lto --disable-decimal-float --disable-libffi --disable-libgomp --disable-libmudflap --disable-libquadmath --disable-libssp --disable-libstdcxx-pch --disable-nls --disable-threads --disable-tls --enable-checking=yes --with-gnu-as --with-gnu-ld --with-newlib --with-headers=yes --with-python-dir=share/gcc-riscv-none-embed --with-sysroot=/Host/home/yyyy/Work/riscv-none-embed-gcc-8.2.0-3.1/win32-x32/install/riscv-none-embed-gcc/riscv-none-embed --with-abi=ilp32 --with-arch=rv32imac --disable-rpath --disable-build-format-warnings --with-system-zlib]
         ignore line: [Thread model: single]
         ignore line: [gcc version 8.2.0 (xPack GNU RISC-V Embedded GCC  32-bit) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-std=gnu++11' '-v' '-o' 'CMakeFiles/cmTC_015c6.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32imac' '-mabi=ilp32']
-        ignore line: [ c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../libexec/gcc/riscv-none-embed/8.2.0/cc1plus.exe -quiet -v -imultilib rv32imac/ilp32 -iprefix c:\\mounri~1\\mounri~1\\toolch~1\\risc-v~1\\bin\\../lib/gcc/riscv-none-embed/8.2.0/ -isysroot c:\\mounri~1\\mounri~1\\toolch~1\\risc-v~1\\bin\\../riscv-none-embed C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -march=rv32imac -mabi=ilp32 -auxbase-strip CMakeFiles/cmTC_015c6.dir/CMakeCXXCompilerABI.cpp.obj -std=gnu++11 -version -o C:\\Users\\IBA52~1.DYM\\AppData\\Local\\Temp\\cczSznqf.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-std=gnu++11' '-v' '-o' 'CMakeFiles/cmTC_b3fc7.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32imac' '-mabi=ilp32']
+        ignore line: [ c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../libexec/gcc/riscv-none-embed/8.2.0/cc1plus.exe -quiet -v -imultilib rv32imac/ilp32 -iprefix c:\\mounri~1\\mounri~1\\toolch~1\\risc-v~1\\bin\\../lib/gcc/riscv-none-embed/8.2.0/ -isysroot c:\\mounri~1\\mounri~1\\toolch~1\\risc-v~1\\bin\\../riscv-none-embed C:/Program Files/CMake/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -march=rv32imac -mabi=ilp32 -auxbase-strip CMakeFiles/cmTC_b3fc7.dir/CMakeCXXCompilerABI.cpp.obj -std=gnu++11 -version -o C:\\Users\\IBA52~1.DYM\\AppData\\Local\\Temp\\ccmub3pU.s]
         ignore line: [GNU C++11 (xPack GNU RISC-V Embedded GCC  32-bit) version 8.2.0 (riscv-none-embed)]
         ignore line: [	compiled by GNU C version 7.4.0  GMP version 6.1.2  MPFR version 3.1.6  MPC version 1.0.3  isl version isl-0.18-GMP]
         ignore line: []
@@ -4407,8 +4407,8 @@ events:
         ignore line: []
         ignore line: [GGC heuristics: --param ggc-min-expand=30 --param ggc-min-heapsize=4096]
         ignore line: [Compiler executable checksum: e9b2656740a92bba5bef9c2b2c7a1e4f]
-        ignore line: [COLLECT_GCC_OPTIONS='-std=gnu++11' '-v' '-o' 'CMakeFiles/cmTC_015c6.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32imac' '-mabi=ilp32']
-        ignore line: [ c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/bin/as.exe -v --traditional-format -march=rv32imac -mabi=ilp32 -o CMakeFiles/cmTC_015c6.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\IBA52~1.DYM\\AppData\\Local\\Temp\\cczSznqf.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-std=gnu++11' '-v' '-o' 'CMakeFiles/cmTC_b3fc7.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32imac' '-mabi=ilp32']
+        ignore line: [ c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/bin/as.exe -v --traditional-format -march=rv32imac -mabi=ilp32 -o CMakeFiles/cmTC_b3fc7.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\IBA52~1.DYM\\AppData\\Local\\Temp\\ccmub3pU.s]
         ignore line: [GNU assembler version 2.32 (riscv-none-embed) using BFD version (xPack GNU RISC-V Embedded GCC  32-bit) 2.32]
         ignore line: [COMPILER_PATH=c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../libexec/gcc/riscv-none-embed/8.2.0/]
         ignore line: [c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../libexec/gcc/]
@@ -4420,8 +4420,8 @@ events:
         ignore line: [c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/]
         ignore line: [c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/]
         ignore line: [c:/mounri~1/mounri~1/toolch~1/risc-v~1/bin/../riscv-none-embed/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-std=gnu++11' '-v' '-o' 'CMakeFiles/cmTC_015c6.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32imac' '-mabi=ilp32']
-        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f libcmTC_015c6.a && C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RISCV-~2.EXE qc libcmTC_015c6.a  CMakeFiles/cmTC_015c6.dir/CMakeCXXCompilerABI.cpp.obj && C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI4B51~1.EXE libcmTC_015c6.a && cd ."]
+        ignore line: [COLLECT_GCC_OPTIONS='-std=gnu++11' '-v' '-o' 'CMakeFiles/cmTC_b3fc7.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-march=rv32imac' '-mabi=ilp32']
+        ignore line: [[2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\CMake\\bin\\cmake.exe" -E rm -f libcmTC_b3fc7.a && C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RISCV-~2.EXE qc libcmTC_b3fc7.a  CMakeFiles/cmTC_b3fc7.dir/CMakeCXXCompilerABI.cpp.obj && C:\\MOUNRI~1\\MOUNRI~1\\TOOLCH~1\\RISC-V~1\\bin\\RI4B51~1.EXE libcmTC_b3fc7.a && cd ."]
         ignore line: []
         ignore line: []
         implicit libs: []

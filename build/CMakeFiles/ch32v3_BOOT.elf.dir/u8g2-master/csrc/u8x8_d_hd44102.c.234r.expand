@@ -214,11 +214,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 43 42 44 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 062bcd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0629cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":93 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 062bcd98 u8x8_cad_SendCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0629cd98 u8x8_cad_SendCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -234,11 +234,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 47 46 48 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 062bcf00 u8x8_cad_SendData>) [0 u8x8_cad_SendData S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 0629cf00 u8x8_cad_SendData>) [0 u8x8_cad_SendData S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":94 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 062bcf00 u8x8_cad_SendData>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 0629cf00 u8x8_cad_SendData>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -436,11 +436,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 100 99 101 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 062bcd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0629cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":115 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 062bcd98 u8x8_cad_SendCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0629cd98 u8x8_cad_SendCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -456,11 +456,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 104 103 105 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 062bcf00 u8x8_cad_SendData>) [0 u8x8_cad_SendData S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 0629cf00 u8x8_cad_SendData>) [0 u8x8_cad_SendData S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":116 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 062bcf00 u8x8_cad_SendData>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 0629cf00 u8x8_cad_SendData>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -658,11 +658,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 157 156 158 21 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 062bcd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0629cd98 u8x8_cad_SendCmd>) [0 u8x8_cad_SendCmd S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":137 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 062bcd98 u8x8_cad_SendCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendCmd") [flags 0x41] <function_decl 0629cd98 u8x8_cad_SendCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -678,11 +678,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 161 160 162 21 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 062bcf00 u8x8_cad_SendData>) [0 u8x8_cad_SendData S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 0629cf00 u8x8_cad_SendData>) [0 u8x8_cad_SendData S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":138 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 062bcf00 u8x8_cad_SendData>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendData") [flags 0x41] <function_decl 0629cf00 u8x8_cad_SendData>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -898,11 +898,11 @@ Forwarding edge 21->22 to 13 failed.
         (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":185 -1
      (nil))
 (call_insn 45 44 10 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 062bc5a0 u8x8_d_helper_display_setup_memory>) [0 u8x8_d_helper_display_setup_memory S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 0629c5a0 u8x8_d_helper_display_setup_memory>) [0 u8x8_d_helper_display_setup_memory S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":185 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 062bc5a0 u8x8_d_helper_display_setup_memory>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 0629c5a0 u8x8_d_helper_display_setup_memory>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -921,11 +921,11 @@ Forwarding edge 21->22 to 13 failed.
         (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":188 -1
      (nil))
 (call_insn 51 50 7 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 062bc618 u8x8_d_helper_display_init>) [0 u8x8_d_helper_display_init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 0629c618 u8x8_d_helper_display_init>) [0 u8x8_d_helper_display_init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":188 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 062bc618 u8x8_d_helper_display_init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 0629c618 u8x8_d_helper_display_init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -989,11 +989,11 @@ Forwarding edge 21->22 to 13 failed.
         (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":193 -1
      (nil))
 (call_insn 66 65 67 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0630a168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062ea168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":193 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0630a168 u8x8_cad_SendSequence>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062ea168 u8x8_cad_SendSequence>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1121,11 +1121,11 @@ Forwarding edge 21->22 to 13 failed.
         (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":205 -1
      (nil))
 (call_insn 97 96 98 16 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0630a168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062ea168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":205 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0630a168 u8x8_cad_SendSequence>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062ea168 u8x8_cad_SendSequence>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1152,11 +1152,11 @@ Forwarding edge 21->22 to 13 failed.
         (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":209 -1
      (nil))
 (call_insn 106 105 107 17 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0630a168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062ea168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":209 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0630a168 u8x8_cad_SendSequence>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062ea168 u8x8_cad_SendSequence>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1276,11 +1276,11 @@ Forwarding edge 21->22 to 13 failed.
         (reg/v/f:SI 89 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":228 -1
      (nil))
 (call_insn 143 142 144 21 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_hd44102_outy") [flags 0x3] <function_decl 06346c30 u8x8_hd44102_outy>) [0 u8x8_hd44102_outy S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_hd44102_outy") [flags 0x3] <function_decl 06326c30 u8x8_hd44102_outy>) [0 u8x8_hd44102_outy S4 A32])
                 (const_int 8 [0x8]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":228 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_hd44102_outy") [flags 0x3] <function_decl 06346c30 u8x8_hd44102_outy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_hd44102_outy") [flags 0x3] <function_decl 06326c30 u8x8_hd44102_outy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1499,11 +1499,11 @@ Forwarding edge 23->24 to 13 failed.
         (reg/v/f:SI 87 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":277 -1
      (nil))
 (call_insn 42 41 10 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 062bc5a0 u8x8_d_helper_display_setup_memory>) [0 u8x8_d_helper_display_setup_memory S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 0629c5a0 u8x8_d_helper_display_setup_memory>) [0 u8x8_d_helper_display_setup_memory S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":277 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 062bc5a0 u8x8_d_helper_display_setup_memory>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_setup_memory") [flags 0x41] <function_decl 0629c5a0 u8x8_d_helper_display_setup_memory>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1522,11 +1522,11 @@ Forwarding edge 23->24 to 13 failed.
         (reg/v/f:SI 87 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":280 -1
      (nil))
 (call_insn 48 47 7 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 062bc618 u8x8_d_helper_display_init>) [0 u8x8_d_helper_display_init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 0629c618 u8x8_d_helper_display_init>) [0 u8x8_d_helper_display_init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":280 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 062bc618 u8x8_d_helper_display_init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_d_helper_display_init") [flags 0x41] <function_decl 0629c618 u8x8_d_helper_display_init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1579,11 +1579,11 @@ Forwarding edge 23->24 to 13 failed.
         (reg/v/f:SI 87 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":285 -1
      (nil))
 (call_insn 60 59 61 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0630a168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062ea168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":285 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0630a168 u8x8_cad_SendSequence>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062ea168 u8x8_cad_SendSequence>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1703,11 +1703,11 @@ Forwarding edge 23->24 to 13 failed.
         (reg/v/f:SI 87 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":297 -1
      (nil))
 (call_insn 89 88 90 16 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0630a168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062ea168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":297 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0630a168 u8x8_cad_SendSequence>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062ea168 u8x8_cad_SendSequence>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1734,11 +1734,11 @@ Forwarding edge 23->24 to 13 failed.
         (reg/v/f:SI 87 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":301 -1
      (nil))
 (call_insn 98 97 99 17 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0630a168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062ea168 u8x8_cad_SendSequence>) [0 u8x8_cad_SendSequence S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":301 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 0630a168 u8x8_cad_SendSequence>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_SendSequence") [flags 0x41] <function_decl 062ea168 u8x8_cad_SendSequence>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1871,11 +1871,11 @@ Forwarding edge 23->24 to 13 failed.
         (reg/v/f:SI 87 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":322 -1
      (nil))
 (call_insn 138 137 139 21 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_hd44102_outy") [flags 0x3] <function_decl 06346c30 u8x8_hd44102_outy>) [0 u8x8_hd44102_outy S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_hd44102_outy") [flags 0x3] <function_decl 06326c30 u8x8_hd44102_outy>) [0 u8x8_hd44102_outy S4 A32])
                 (const_int 8 [0x8]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":322 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_hd44102_outy") [flags 0x3] <function_decl 06346c30 u8x8_hd44102_outy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_hd44102_outy") [flags 0x3] <function_decl 06326c30 u8x8_hd44102_outy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1958,11 +1958,11 @@ Forwarding edge 23->24 to 13 failed.
         (reg/v/f:SI 87 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":336 -1
      (nil))
 (call_insn 163 162 164 23 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_hd44102_outy") [flags 0x3] <function_decl 06346c30 u8x8_hd44102_outy>) [0 u8x8_hd44102_outy S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_hd44102_outy") [flags 0x3] <function_decl 06326c30 u8x8_hd44102_outy>) [0 u8x8_hd44102_outy S4 A32])
                 (const_int 8 [0x8]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_d_hd44102.c":336 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_hd44102_outy") [flags 0x3] <function_decl 06346c30 u8x8_hd44102_outy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_hd44102_outy") [flags 0x3] <function_decl 06326c30 u8x8_hd44102_outy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

@@ -1071,12 +1071,12 @@ Forwarding edge 44->45 to 46 failed.
      (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
         (nil)))
 (insn 17 16 18 2 (set (reg:SI 126)
-        (high:SI (symbol_ref:SI ("pg_inc") [flags 0x3] <function_decl 058d00f0 pg_inc>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":161 -1
+        (high:SI (symbol_ref:SI ("pg_inc") [flags 0x3] <function_decl 065a00f0 pg_inc>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":161 -1
      (nil))
 (insn 18 17 19 2 (set (reg/f:SI 125)
         (lo_sum:SI (reg:SI 126)
-            (symbol_ref:SI ("pg_inc") [flags 0x3] <function_decl 058d00f0 pg_inc>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":161 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("pg_inc") [flags 0x3] <function_decl 058d00f0 pg_inc>)
+            (symbol_ref:SI ("pg_inc") [flags 0x3] <function_decl 065a00f0 pg_inc>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":161 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("pg_inc") [flags 0x3] <function_decl 065a00f0 pg_inc>)
         (nil)))
 (insn 19 18 20 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 123)
                 (const_int 68 [0x44])) [3 u8g2_pg.pge[1].next_idx_fn+0 S4 A32])
@@ -1091,12 +1091,12 @@ Forwarding edge 44->45 to 46 failed.
      (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
         (nil)))
 (insn 22 21 23 2 (set (reg:SI 130)
-        (high:SI (symbol_ref:SI ("pg_dec") [flags 0x3] <function_decl 058d0168 pg_dec>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":162 -1
+        (high:SI (symbol_ref:SI ("pg_dec") [flags 0x3] <function_decl 065a0168 pg_dec>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":162 -1
      (nil))
 (insn 23 22 24 2 (set (reg/f:SI 129)
         (lo_sum:SI (reg:SI 130)
-            (symbol_ref:SI ("pg_dec") [flags 0x3] <function_decl 058d0168 pg_dec>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":162 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("pg_dec") [flags 0x3] <function_decl 058d0168 pg_dec>)
+            (symbol_ref:SI ("pg_dec") [flags 0x3] <function_decl 065a0168 pg_dec>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":162 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("pg_dec") [flags 0x3] <function_decl 065a0168 pg_dec>)
         (nil)))
 (insn 24 23 25 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 127)
                 (const_int 44 [0x2c])) [3 u8g2_pg.pge[0].next_idx_fn+0 S4 A32])
@@ -1343,11 +1343,11 @@ Forwarding edge 44->45 to 46 failed.
         (reg/v:SI 76 [ min_y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":191 -1
      (nil))
 (call_insn 89 88 90 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("pg_expand_min_y.constprop.7") [flags 0x3] <function_decl 058d0e10 pg_expand_min_y.constprop>) [0 pg_expand_min_y.constprop S4 A32])
+            (call (mem:SI (symbol_ref:SI ("pg_expand_min_y.constprop.7") [flags 0x3] <function_decl 065a0e10 pg_expand_min_y.constprop>) [0 pg_expand_min_y.constprop S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":191 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pg_expand_min_y.constprop.7") [flags 0x3] <function_decl 058d0e10 pg_expand_min_y.constprop>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pg_expand_min_y.constprop.7") [flags 0x3] <function_decl 065a0e10 pg_expand_min_y.constprop>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))
@@ -1360,11 +1360,11 @@ Forwarding edge 44->45 to 46 failed.
         (reg/v:SI 76 [ min_y ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":192 -1
      (nil))
 (call_insn 92 91 93 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("pg_expand_min_y.constprop.7") [flags 0x3] <function_decl 058d0e10 pg_expand_min_y.constprop>) [0 pg_expand_min_y.constprop S4 A32])
+            (call (mem:SI (symbol_ref:SI ("pg_expand_min_y.constprop.7") [flags 0x3] <function_decl 065a0e10 pg_expand_min_y.constprop>) [0 pg_expand_min_y.constprop S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":192 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pg_expand_min_y.constprop.7") [flags 0x3] <function_decl 058d0e10 pg_expand_min_y.constprop>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pg_expand_min_y.constprop.7") [flags 0x3] <function_decl 065a0e10 pg_expand_min_y.constprop>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))
@@ -1530,11 +1530,11 @@ Forwarding edge 44->45 to 46 failed.
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":272 -1
      (nil))
 (call_insn 138 137 139 18 (parallel [
-            (call (mem:SI (symbol_ref:SI ("pg_line_init.constprop.4") [flags 0x3] <function_decl 058d0ca8 pg_line_init.constprop>) [0 pg_line_init.constprop S4 A32])
+            (call (mem:SI (symbol_ref:SI ("pg_line_init.constprop.4") [flags 0x3] <function_decl 065a0ca8 pg_line_init.constprop>) [0 pg_line_init.constprop S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":272 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pg_line_init.constprop.4") [flags 0x3] <function_decl 058d0ca8 pg_line_init.constprop>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pg_line_init.constprop.4") [flags 0x3] <function_decl 065a0ca8 pg_line_init.constprop>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -1543,11 +1543,11 @@ Forwarding edge 44->45 to 46 failed.
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":273 -1
      (nil))
 (call_insn 140 139 141 18 (parallel [
-            (call (mem:SI (symbol_ref:SI ("pg_line_init.constprop.4") [flags 0x3] <function_decl 058d0ca8 pg_line_init.constprop>) [0 pg_line_init.constprop S4 A32])
+            (call (mem:SI (symbol_ref:SI ("pg_line_init.constprop.4") [flags 0x3] <function_decl 065a0ca8 pg_line_init.constprop>) [0 pg_line_init.constprop S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":273 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pg_line_init.constprop.4") [flags 0x3] <function_decl 058d0ca8 pg_line_init.constprop>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pg_line_init.constprop.4") [flags 0x3] <function_decl 065a0ca8 pg_line_init.constprop>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -1589,11 +1589,11 @@ Forwarding edge 44->45 to 46 failed.
      (nil))
 (call_insn 150 149 151 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("pge_Next") [flags 0x3] <function_decl 058d0078 pge_Next>) [0 pge_Next S4 A32])
+                (call (mem:SI (symbol_ref:SI ("pge_Next") [flags 0x3] <function_decl 065a0078 pge_Next>) [0 pge_Next S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":277 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pge_Next") [flags 0x3] <function_decl 058d0078 pge_Next>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pge_Next") [flags 0x3] <function_decl 065a0078 pge_Next>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1615,11 +1615,11 @@ Forwarding edge 44->45 to 46 failed.
      (nil))
 (call_insn 155 154 156 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("pge_Next") [flags 0x3] <function_decl 058d0078 pge_Next>) [0 pge_Next S4 A32])
+                (call (mem:SI (symbol_ref:SI ("pge_Next") [flags 0x3] <function_decl 065a0078 pge_Next>) [0 pge_Next S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":278 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pge_Next") [flags 0x3] <function_decl 058d0078 pge_Next>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pge_Next") [flags 0x3] <function_decl 065a0078 pge_Next>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1782,11 +1782,11 @@ Forwarding edge 44->45 to 46 failed.
         (reg/v/f:SI 122 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":231 -1
      (nil))
 (call_insn 200 199 201 30 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 058baf00 u8g2_DrawHLine>) [0 u8g2_DrawHLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 0658af00 u8g2_DrawHLine>) [0 u8g2_DrawHLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":231 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 058baf00 u8g2_DrawHLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 0658af00 u8g2_DrawHLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1884,11 +1884,11 @@ Forwarding edge 44->45 to 46 failed.
         (reg/v/f:SI 122 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":243 -1
      (nil))
 (call_insn 229 228 230 37 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 058baf00 u8g2_DrawHLine>) [0 u8g2_DrawHLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 0658af00 u8g2_DrawHLine>) [0 u8g2_DrawHLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":243 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 058baf00 u8g2_DrawHLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 0658af00 u8g2_DrawHLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1906,11 +1906,11 @@ Forwarding edge 44->45 to 46 failed.
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":286 -1
      (nil))
 (call_insn 234 233 235 38 (parallel [
-            (call (mem:SI (symbol_ref:SI ("pg_line_init.constprop.4") [flags 0x3] <function_decl 058d0ca8 pg_line_init.constprop>) [0 pg_line_init.constprop S4 A32])
+            (call (mem:SI (symbol_ref:SI ("pg_line_init.constprop.4") [flags 0x3] <function_decl 065a0ca8 pg_line_init.constprop>) [0 pg_line_init.constprop S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":286 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pg_line_init.constprop.4") [flags 0x3] <function_decl 058d0ca8 pg_line_init.constprop>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pg_line_init.constprop.4") [flags 0x3] <function_decl 065a0ca8 pg_line_init.constprop>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -1941,11 +1941,11 @@ Forwarding edge 44->45 to 46 failed.
      (nil))
 (call_insn 245 244 246 40 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("pge_Next") [flags 0x3] <function_decl 058d0078 pge_Next>) [0 pge_Next S4 A32])
+                (call (mem:SI (symbol_ref:SI ("pge_Next") [flags 0x3] <function_decl 065a0078 pge_Next>) [0 pge_Next S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":284 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pge_Next") [flags 0x3] <function_decl 058d0078 pge_Next>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pge_Next") [flags 0x3] <function_decl 065a0078 pge_Next>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1975,11 +1975,11 @@ Forwarding edge 44->45 to 46 failed.
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":290 -1
      (nil))
 (call_insn 255 254 256 42 (parallel [
-            (call (mem:SI (symbol_ref:SI ("pg_line_init.constprop.4") [flags 0x3] <function_decl 058d0ca8 pg_line_init.constprop>) [0 pg_line_init.constprop S4 A32])
+            (call (mem:SI (symbol_ref:SI ("pg_line_init.constprop.4") [flags 0x3] <function_decl 065a0ca8 pg_line_init.constprop>) [0 pg_line_init.constprop S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":290 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pg_line_init.constprop.4") [flags 0x3] <function_decl 058d0ca8 pg_line_init.constprop>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pg_line_init.constprop.4") [flags 0x3] <function_decl 065a0ca8 pg_line_init.constprop>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -2003,11 +2003,11 @@ Forwarding edge 44->45 to 46 failed.
      (nil))
 (call_insn 262 261 263 43 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("pge_Next") [flags 0x3] <function_decl 058d0078 pge_Next>) [0 pge_Next S4 A32])
+                (call (mem:SI (symbol_ref:SI ("pge_Next") [flags 0x3] <function_decl 065a0078 pge_Next>) [0 pge_Next S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":288 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pge_Next") [flags 0x3] <function_decl 058d0078 pge_Next>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pge_Next") [flags 0x3] <function_decl 065a0078 pge_Next>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2187,11 +2187,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":344 -1
      (nil))
 (call_insn 35 34 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawPolygon") [flags 0x3] <function_decl 058c2a50 u8g2_DrawPolygon>) [0 u8g2_DrawPolygon S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawPolygon") [flags 0x3] <function_decl 06592a50 u8g2_DrawPolygon>) [0 u8g2_DrawPolygon S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_polygon.c":344 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawPolygon") [flags 0x3] <function_decl 058c2a50 u8g2_DrawPolygon>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawPolygon") [flags 0x3] <function_decl 06592a50 u8g2_DrawPolygon>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

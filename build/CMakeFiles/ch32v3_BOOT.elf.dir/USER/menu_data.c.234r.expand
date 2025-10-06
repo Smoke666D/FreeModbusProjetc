@@ -161,11 +161,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 73 [ analog_state ])) -1
      (nil))
 (call_insn 10 9 11 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068bc7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068bc7f8 vSetAfterZone.part.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -510,11 +510,11 @@ Forwarding edge 38->39 to 41 failed.
         (const_int 104 [0x68])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":730 -1
      (nil))
 (call_insn 24 23 25 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 068a92d0 setReg8>) [0 setReg8 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 068b92d0 setReg8>) [0 setReg8 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":730 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 068a92d0 setReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 068b92d0 setReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -948,11 +948,11 @@ Forwarding edge 38->39 to 41 failed.
         (const_int 1 [0x1])) -1
      (nil))
 (call_insn 141 140 6 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068bc7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068bc7f8 vSetAfterZone.part.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -1106,11 +1106,11 @@ Forwarding edge 38->39 to 41 failed.
      (nil))
 (call_insn 183 182 184 15 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068a94b0 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068b94b0 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":545 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068a94b0 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068b94b0 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -1146,11 +1146,11 @@ Forwarding edge 38->39 to 41 failed.
         (const_int 3 [0x3])) -1
      (nil))
 (call_insn 193 192 194 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068bc7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068bc7f8 vSetAfterZone.part.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -1641,11 +1641,11 @@ Forwarding edge 38->39 to 41 failed.
         (const_int 1 [0x1])) -1
      (nil))
 (call_insn 328 327 10 23 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068bc7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068bc7f8 vSetAfterZone.part.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -1759,11 +1759,11 @@ Forwarding edge 38->39 to 41 failed.
      (nil))
 (call_insn 360 359 361 25 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068a94b0 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068b94b0 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":603 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068a94b0 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068b94b0 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -1787,11 +1787,11 @@ Forwarding edge 38->39 to 41 failed.
         (const_int 3 [0x3])) -1
      (nil))
 (call_insn 367 366 368 25 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068bc7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068bc7f8 vSetAfterZone.part.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -2259,11 +2259,11 @@ Forwarding edge 38->39 to 41 failed.
         (const_int 1 [0x1])) -1
      (nil))
 (call_insn 496 495 14 33 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068bc7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068bc7f8 vSetAfterZone.part.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -2397,11 +2397,11 @@ Forwarding edge 38->39 to 41 failed.
      (nil))
 (call_insn 533 532 534 35 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068a94b0 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068b94b0 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":665 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068a94b0 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068b94b0 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -2454,11 +2454,11 @@ Forwarding edge 38->39 to 41 failed.
         (const_int 3 [0x3])) -1
      (nil))
 (call_insn 548 547 549 35 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068bc7f8 vSetAfterZone.part.0>) [0 vSetAfterZone.part.0 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068ac7f8 vSetAfterZone.part.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone.part.0") [flags 0x3] <function_decl 068bc7f8 vSetAfterZone.part.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -2629,11 +2629,11 @@ Forwarding edge 38->39 to 41 failed.
      (nil))
 (call_insn 594 593 595 37 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068a94b0 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068b94b0 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":687 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068a94b0 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068b94b0 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -2650,11 +2650,11 @@ Forwarding edge 38->39 to 41 failed.
         (reg/v:SI 76 [ after_zone_enable ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":687 -1
      (nil))
 (call_insn 599 598 600 37 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vSetAfterZone") [flags 0x3] <function_decl 068ac438 vSetAfterZone>) [0 vSetAfterZone S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vSetAfterZone") [flags 0x3] <function_decl 068bc438 vSetAfterZone>) [0 vSetAfterZone S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":687 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone") [flags 0x3] <function_decl 068ac438 vSetAfterZone>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSetAfterZone") [flags 0x3] <function_decl 068bc438 vSetAfterZone>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -2820,11 +2820,11 @@ try_optimize_cfg iteration 2
         (const_int 104 [0x68])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":730 -1
      (nil))
 (call_insn 10 9 11 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 068a92d0 setReg8>) [0 setReg8 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 068b92d0 setReg8>) [0 setReg8 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/menu_data.c":730 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 068a92d0 setReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 068b92d0 setReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))

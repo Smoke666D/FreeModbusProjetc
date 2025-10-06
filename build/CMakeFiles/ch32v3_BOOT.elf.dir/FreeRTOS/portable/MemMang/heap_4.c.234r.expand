@@ -291,11 +291,11 @@ try_optimize_cfg iteration 2
      (nil))
 (note 3 2 18 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 18 3 19 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 064384b0 vTaskSuspendAll>) [0 vTaskSuspendAll S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 064644b0 vTaskSuspendAll>) [0 vTaskSuspendAll S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":122 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 064384b0 vTaskSuspendAll>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 064644b0 vTaskSuspendAll>)
         (nil))
     (nil))
 (insn 19 18 20 2 (set (reg:SI 114)
@@ -681,31 +681,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c:207) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":207 -1
      (nil))
 (insn 116 115 117 20 (set (reg:SI 148)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066d7b58 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":207 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066ffb58 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":207 -1
      (nil))
 (insn 117 116 118 20 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 148)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066d7b58 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":207 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066d7b58 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066ffb58 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":207 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066ffb58 *.LC0>)
         (nil)))
 (insn 118 117 119 20 (set (reg:SI 11 a1)
         (const_int 207 [0xcf])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":207 -1
      (nil))
 (insn 119 118 120 20 (set (reg:SI 149)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066d7bb0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":207 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066ffbb0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":207 -1
      (nil))
 (insn 120 119 121 20 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 149)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066d7bb0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":207 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066d7bb0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066ffbb0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":207 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066ffbb0 *.LC1>)
         (nil)))
 (call_insn 121 120 123 20 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04bf6f00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06316f00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":207 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04bf6f00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06316f00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -732,11 +732,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 99 [ pxNewBlockLink ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":215 -1
      (nil))
 (call_insn 131 130 132 22 (parallel [
-            (call (mem:SI (symbol_ref:SI ("prvInsertBlockIntoFreeList") [flags 0x3] <function_decl 06465ac8 prvInsertBlockIntoFreeList>) [0 prvInsertBlockIntoFreeList S4 A32])
+            (call (mem:SI (symbol_ref:SI ("prvInsertBlockIntoFreeList") [flags 0x3] <function_decl 06491ac8 prvInsertBlockIntoFreeList>) [0 prvInsertBlockIntoFreeList S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":215 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvInsertBlockIntoFreeList") [flags 0x3] <function_decl 06465ac8 prvInsertBlockIntoFreeList>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvInsertBlockIntoFreeList") [flags 0x3] <function_decl 06491ac8 prvInsertBlockIntoFreeList>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -869,11 +869,11 @@ try_optimize_cfg iteration 2
 (note 161 160 162 29 [bb 29] NOTE_INSN_BASIC_BLOCK)
 (call_insn 162 161 163 29 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 06438528 xTaskResumeAll>) [0 xTaskResumeAll S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 06464528 xTaskResumeAll>) [0 xTaskResumeAll S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":256 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 06438528 xTaskResumeAll>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 06464528 xTaskResumeAll>)
         (nil))
     (nil))
 (insn 163 162 164 29 (set (reg:SI 164)
@@ -905,31 +905,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c:272) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":272 -1
      (nil))
 (insn 169 168 170 30 (set (reg:SI 167)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066d7b58 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":272 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066ffb58 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":272 -1
      (nil))
 (insn 170 169 171 30 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 167)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066d7b58 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":272 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066d7b58 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066ffb58 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":272 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066ffb58 *.LC0>)
         (nil)))
 (insn 171 170 172 30 (set (reg:SI 11 a1)
         (const_int 272 [0x110])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":272 -1
      (nil))
 (insn 172 171 173 30 (set (reg:SI 168)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066d7bb0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":272 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066ffbb0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":272 -1
      (nil))
 (insn 173 172 174 30 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 168)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066d7bb0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":272 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066d7bb0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066ffbb0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":272 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066ffbb0 *.LC1>)
         (nil)))
 (call_insn 174 173 176 30 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04bf6f00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06316f00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":272 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04bf6f00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06316f00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1082,31 +1082,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c:292) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":292 -1
      (nil))
 (insn 18 17 19 5 (set (reg:SI 90)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066d7b58 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":292 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066ffb58 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":292 -1
      (nil))
 (insn 19 18 20 5 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 90)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066d7b58 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":292 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066d7b58 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066ffb58 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":292 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066ffb58 *.LC0>)
         (nil)))
 (insn 20 19 21 5 (set (reg:SI 11 a1)
         (const_int 292 [0x124])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":292 -1
      (nil))
 (insn 21 20 22 5 (set (reg:SI 91)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066d7bb0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":292 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066ffbb0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":292 -1
      (nil))
 (insn 22 21 23 5 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 91)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066d7bb0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":292 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066d7bb0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066ffbb0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":292 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066ffbb0 *.LC1>)
         (nil)))
 (call_insn 23 22 25 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04bf6f00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06316f00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":292 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04bf6f00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06316f00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1150,31 +1150,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c:293) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":293 -1
      (nil))
 (insn 36 35 37 8 (set (reg:SI 95)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066d7b58 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":293 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066ffb58 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":293 -1
      (nil))
 (insn 37 36 38 8 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 95)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066d7b58 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":293 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066d7b58 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066ffb58 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":293 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 066ffb58 *.LC0>)
         (nil)))
 (insn 38 37 39 8 (set (reg:SI 11 a1)
         (const_int 293 [0x125])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":293 -1
      (nil))
 (insn 39 38 40 8 (set (reg:SI 96)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066d7bb0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":293 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066ffbb0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":293 -1
      (nil))
 (insn 40 39 41 8 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 96)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066d7bb0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":293 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066d7bb0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066ffbb0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":293 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 066ffbb0 *.LC1>)
         (nil)))
 (call_insn 41 40 43 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04bf6f00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06316f00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":293 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04bf6f00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06316f00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1201,11 +1201,11 @@ try_optimize_cfg iteration 2
         (reg:SI 98)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":301 -1
      (nil))
 (call_insn 51 50 52 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 064384b0 vTaskSuspendAll>) [0 vTaskSuspendAll S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 064644b0 vTaskSuspendAll>) [0 vTaskSuspendAll S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":303 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 064384b0 vTaskSuspendAll>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 064644b0 vTaskSuspendAll>)
         (nil))
     (nil))
 (insn 52 51 53 10 (set (reg:SI 100)
@@ -1246,11 +1246,11 @@ try_optimize_cfg iteration 2
         (reg:SI 106 [ puc ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":308 -1
      (nil))
 (call_insn 62 61 63 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("prvInsertBlockIntoFreeList") [flags 0x3] <function_decl 06465ac8 prvInsertBlockIntoFreeList>) [0 prvInsertBlockIntoFreeList S4 A32])
+            (call (mem:SI (symbol_ref:SI ("prvInsertBlockIntoFreeList") [flags 0x3] <function_decl 06491ac8 prvInsertBlockIntoFreeList>) [0 prvInsertBlockIntoFreeList S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":308 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvInsertBlockIntoFreeList") [flags 0x3] <function_decl 06465ac8 prvInsertBlockIntoFreeList>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvInsertBlockIntoFreeList") [flags 0x3] <function_decl 06491ac8 prvInsertBlockIntoFreeList>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1283,11 +1283,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 70 69 73 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 06438528 xTaskResumeAll>) [0 xTaskResumeAll S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 06464528 xTaskResumeAll>) [0 xTaskResumeAll S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":311 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 06438528 xTaskResumeAll>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 06464528 xTaskResumeAll>)
         (nil))
     (nil))
 (code_label 73 70 74 12 34 (nil) [1 uses])
@@ -1459,11 +1459,11 @@ Forwarding edge 9->10 to 12 failed.
      (nil))
 (note 3 2 12 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 12 3 13 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 064384b0 vTaskSuspendAll>) [0 vTaskSuspendAll S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 064644b0 vTaskSuspendAll>) [0 vTaskSuspendAll S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":460 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 064384b0 vTaskSuspendAll>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 064644b0 vTaskSuspendAll>)
         (nil))
     (nil))
 (insn 13 12 14 2 (set (reg:SI 84)
@@ -1572,11 +1572,11 @@ Forwarding edge 9->10 to 12 failed.
 (note 34 33 35 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
 (call_insn 35 34 36 12 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 06438528 xTaskResumeAll>) [0 xTaskResumeAll S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 06464528 xTaskResumeAll>) [0 xTaskResumeAll S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":490 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 06438528 xTaskResumeAll>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 06464528 xTaskResumeAll>)
         (nil))
     (nil))
 (insn 36 35 37 12 (set (mem:SI (plus:SI (reg/v/f:SI 82 [ pxHeapStats ])
@@ -1592,11 +1592,11 @@ Forwarding edge 9->10 to 12 failed.
         (reg/v:SI 79 [ xBlocks ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":494 -1
      (nil))
 (call_insn 39 38 40 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 066b93c0 vPortEnterCritical>) [0 vPortEnterCritical S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 066e73c0 vPortEnterCritical>) [0 vPortEnterCritical S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":496 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 066b93c0 vPortEnterCritical>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 066e73c0 vPortEnterCritical>)
         (nil))
     (nil))
 (insn 40 39 41 12 (set (reg:SI 88)
@@ -1659,10 +1659,10 @@ Forwarding edge 9->10 to 12 failed.
         (reg:SI 98)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":501 -1
      (nil))
 (call_insn 56 55 0 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 066b9438 vPortExitCritical>) [0 vPortExitCritical S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 066e7438 vPortExitCritical>) [0 vPortExitCritical S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/portable/MemMang/heap_4.c":503 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 066b9438 vPortExitCritical>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 066e7438 vPortExitCritical>)
         (nil))
     (nil))

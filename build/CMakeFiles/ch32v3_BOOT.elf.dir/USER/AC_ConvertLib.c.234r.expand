@@ -470,11 +470,11 @@ Forwarding edge 7->8 to 22 failed.
         (reg/v:SI 125 [ AMP ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/AC_ConvertLib.c":96 -1
      (nil))
 (call_insn 32 31 33 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vADCSetFreqDetectParam") [flags 0x3] <function_decl 0671f0f0 vADCSetFreqDetectParam>) [0 vADCSetFreqDetectParam S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vADCSetFreqDetectParam") [flags 0x3] <function_decl 0677f0f0 vADCSetFreqDetectParam>) [0 vADCSetFreqDetectParam S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/AC_ConvertLib.c":96 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vADCSetFreqDetectParam") [flags 0x3] <function_decl 0671f0f0 vADCSetFreqDetectParam>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vADCSetFreqDetectParam") [flags 0x3] <function_decl 0677f0f0 vADCSetFreqDetectParam>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))
@@ -1091,11 +1091,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 47 46 48 6 (parallel [
             (set (reg:DF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("sqrt") [flags 0x41] <function_decl 061dc618 sqrt>) [0 __builtin_sqrt S4 A32])
+                (call (mem:SI (symbol_ref:SI ("sqrt") [flags 0x41] <function_decl 0623c618 sqrt>) [0 __builtin_sqrt S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/AC_ConvertLib.c":146 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("sqrt") [flags 0x41] <function_decl 061dc618 sqrt>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("sqrt") [flags 0x41] <function_decl 0623c618 sqrt>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:DF (use (reg:DF 10 a0))

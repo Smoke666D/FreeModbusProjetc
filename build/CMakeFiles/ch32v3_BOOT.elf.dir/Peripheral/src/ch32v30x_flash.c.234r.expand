@@ -83,11 +83,11 @@ try_optimize_cfg iteration 2
 (note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
 (note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 5 2 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("FLASH_Unlock") [flags 0x3] <function_decl 0665f000 FLASH_Unlock>) [0 FLASH_Unlock S4 A32])
+            (call (mem:SI (symbol_ref:SI ("FLASH_Unlock") [flags 0x3] <function_decl 065a2000 FLASH_Unlock>) [0 FLASH_Unlock S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_Unlock") [flags 0x3] <function_decl 0665f000 FLASH_Unlock>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_Unlock") [flags 0x3] <function_decl 065a2000 FLASH_Unlock>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -164,11 +164,11 @@ try_optimize_cfg iteration 2
 (note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
 (note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 5 2 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("FLASH_Lock") [flags 0x3] <function_decl 0665f078 FLASH_Lock>) [0 FLASH_Lock S4 A32])
+            (call (mem:SI (symbol_ref:SI ("FLASH_Lock") [flags 0x3] <function_decl 065a2078 FLASH_Lock>) [0 FLASH_Lock S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_Lock") [flags 0x3] <function_decl 0665f078 FLASH_Lock>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_Lock") [flags 0x3] <function_decl 065a2078 FLASH_Lock>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -797,11 +797,11 @@ Forwarding edge 8->9 to 12 failed.
 (note 3 2 8 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 8 3 9 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_GetBank1Status") [flags 0x3] <function_decl 0665fe10 FLASH_GetBank1Status>) [0 FLASH_GetBank1Status S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_GetBank1Status") [flags 0x3] <function_decl 065a2e10 FLASH_GetBank1Status>) [0 FLASH_GetBank1Status S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":758 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_GetBank1Status") [flags 0x3] <function_decl 0665fe10 FLASH_GetBank1Status>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_GetBank1Status") [flags 0x3] <function_decl 065a2e10 FLASH_GetBank1Status>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -817,11 +817,11 @@ Forwarding edge 8->9 to 12 failed.
 (note 12 21 13 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
 (call_insn 13 12 14 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_GetBank1Status") [flags 0x3] <function_decl 0665fe10 FLASH_GetBank1Status>) [0 FLASH_GetBank1Status S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_GetBank1Status") [flags 0x3] <function_decl 065a2e10 FLASH_GetBank1Status>) [0 FLASH_GetBank1Status S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":761 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_GetBank1Status") [flags 0x3] <function_decl 0665fe10 FLASH_GetBank1Status>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_GetBank1Status") [flags 0x3] <function_decl 065a2e10 FLASH_GetBank1Status>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -929,11 +929,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 7 6 8 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":126 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1000,11 +1000,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 25 24 26 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":134 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1075,11 +1075,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 6 5 7 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":154 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1139,11 +1139,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 22 21 23 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":160 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1206,11 +1206,11 @@ try_optimize_cfg iteration 2
 (note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 5 2 6 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_EraseAllPages") [flags 0x3] <function_decl 0665f168 FLASH_EraseAllPages>) [0 FLASH_EraseAllPages S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_EraseAllPages") [flags 0x3] <function_decl 065a2168 FLASH_EraseAllPages>) [0 FLASH_EraseAllPages S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_EraseAllPages") [flags 0x3] <function_decl 0665f168 FLASH_EraseAllPages>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_EraseAllPages") [flags 0x3] <function_decl 065a2168 FLASH_EraseAllPages>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -1284,11 +1284,11 @@ try_optimize_cfg iteration 2
 (note 2 5 7 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 7 2 8 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_GetReadOutProtectionStatus") [flags 0x3] <function_decl 0665f618 FLASH_GetReadOutProtectionStatus>) [0 FLASH_GetReadOutProtectionStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_GetReadOutProtectionStatus") [flags 0x3] <function_decl 065a2618 FLASH_GetReadOutProtectionStatus>) [0 FLASH_GetReadOutProtectionStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":208 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_GetReadOutProtectionStatus") [flags 0x3] <function_decl 0665f618 FLASH_GetReadOutProtectionStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_GetReadOutProtectionStatus") [flags 0x3] <function_decl 065a2618 FLASH_GetReadOutProtectionStatus>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -1323,11 +1323,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 14 13 15 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":212 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1417,11 +1417,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 38 37 39 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":220 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1492,11 +1492,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 57 56 58 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":227 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1764,11 +1764,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 9 8 10 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":273 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1819,11 +1819,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 23 22 24 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":280 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1872,11 +1872,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 36 35 37 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":286 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1978,11 +1978,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 8 7 9 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":313 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2030,11 +2030,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 21 20 22 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":319 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2135,11 +2135,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 8 7 9 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":344 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2623,11 +2623,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 7 6 8 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":405 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3117,11 +3117,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 10 9 11 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":460 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3622,11 +3622,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 17 16 18 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_flash.c":524 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4022,11 +4022,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 7 6 8 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
+                (call (mem:SI (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>) [0 FLASH_WaitForLastOperation S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 0665f870 FLASH_WaitForLastOperation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("FLASH_WaitForLastOperation") [flags 0x3] <function_decl 065a2870 FLASH_WaitForLastOperation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

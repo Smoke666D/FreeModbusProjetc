@@ -195,20 +195,20 @@ Deleted label in block 7.
         (reg:SI 85)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portevent.c":66 -1
      (nil))
 (insn 24 23 25 6 (set (reg:SI 86)
-        (high:SI (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066675a0 vEventGroupSetBitsCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portevent.c":66 -1
+        (high:SI (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066475a0 vEventGroupSetBitsCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portevent.c":66 -1
      (nil))
 (insn 25 24 26 6 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 86)
-            (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066675a0 vEventGroupSetBitsCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portevent.c":66 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066675a0 vEventGroupSetBitsCallback>)
+            (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066475a0 vEventGroupSetBitsCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portevent.c":66 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066475a0 vEventGroupSetBitsCallback>)
         (nil)))
 (call_insn 26 25 27 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTimerPendFunctionCallFromISR") [flags 0x41] <function_decl 0618fd98 xTimerPendFunctionCallFromISR>) [0 xTimerPendFunctionCallFromISR S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTimerPendFunctionCallFromISR") [flags 0x41] <function_decl 0616fd98 xTimerPendFunctionCallFromISR>) [0 xTimerPendFunctionCallFromISR S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portevent.c":66 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTimerPendFunctionCallFromISR") [flags 0x41] <function_decl 0618fd98 xTimerPendFunctionCallFromISR>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTimerPendFunctionCallFromISR") [flags 0x41] <function_decl 0616fd98 xTimerPendFunctionCallFromISR>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -291,20 +291,20 @@ Deleted label in block 7.
         (reg:SI 93)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portevent.c":86 -1
      (nil))
 (insn 53 52 54 10 (set (reg:SI 94)
-        (high:SI (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066675a0 vEventGroupSetBitsCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portevent.c":86 -1
+        (high:SI (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066475a0 vEventGroupSetBitsCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portevent.c":86 -1
      (nil))
 (insn 54 53 55 10 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 94)
-            (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066675a0 vEventGroupSetBitsCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portevent.c":86 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066675a0 vEventGroupSetBitsCallback>)
+            (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066475a0 vEventGroupSetBitsCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portevent.c":86 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066475a0 vEventGroupSetBitsCallback>)
         (nil)))
 (call_insn 55 54 56 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTimerPendFunctionCallFromISR") [flags 0x41] <function_decl 0618fd98 xTimerPendFunctionCallFromISR>) [0 xTimerPendFunctionCallFromISR S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTimerPendFunctionCallFromISR") [flags 0x41] <function_decl 0616fd98 xTimerPendFunctionCallFromISR>) [0 xTimerPendFunctionCallFromISR S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portevent.c":86 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTimerPendFunctionCallFromISR") [flags 0x41] <function_decl 0618fd98 xTimerPendFunctionCallFromISR>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTimerPendFunctionCallFromISR") [flags 0x41] <function_decl 0616fd98 xTimerPendFunctionCallFromISR>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -431,11 +431,11 @@ Forwarding edge 6->7 to 12 failed.
      (nil))
 (call_insn 14 13 15 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 066672d0 xEventGroupWaitBits>) [0 xEventGroupWaitBits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 066472d0 xEventGroupWaitBits>) [0 xEventGroupWaitBits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portevent.c":110 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 066672d0 xEventGroupWaitBits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 066472d0 xEventGroupWaitBits>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))

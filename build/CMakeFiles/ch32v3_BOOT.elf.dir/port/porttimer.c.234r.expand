@@ -26,11 +26,11 @@ try_optimize_cfg iteration 2
 (note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
 (note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
 (insn 5 2 6 2 (set (reg:SI 73)
-        (high:SI (symbol_ref:SI ("pxMBPortCBTimerExpired") [flags 0xc4] <var_decl 06521b00 pxMBPortCBTimerExpired>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttimer.c":58 -1
+        (high:SI (symbol_ref:SI ("pxMBPortCBTimerExpired") [flags 0xc4] <var_decl 0636eb00 pxMBPortCBTimerExpired>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttimer.c":58 -1
      (nil))
 (insn 6 5 7 2 (set (reg/f:SI 74)
         (mem/f/c:SI (lo_sum:SI (reg:SI 73)
-                (symbol_ref:SI ("pxMBPortCBTimerExpired") [flags 0xc4] <var_decl 06521b00 pxMBPortCBTimerExpired>)) [1 pxMBPortCBTimerExpired+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttimer.c":58 -1
+                (symbol_ref:SI ("pxMBPortCBTimerExpired") [flags 0xc4] <var_decl 0636eb00 pxMBPortCBTimerExpired>)) [1 pxMBPortCBTimerExpired+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttimer.c":58 -1
      (nil))
 (call_insn 7 6 0 2 (parallel [
             (set (reg:SI 10 a0)
@@ -79,12 +79,12 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttimer.c":38 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 75)
-        (high:SI (symbol_ref:SI ("rvvTIMERExpiredISR") [flags 0x3] <function_decl 068f2000 rvvTIMERExpiredISR>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttimer.c":38 -1
+        (high:SI (symbol_ref:SI ("rvvTIMERExpiredISR") [flags 0x3] <function_decl 06745000 rvvTIMERExpiredISR>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttimer.c":38 -1
      (nil))
 (insn 9 8 10 2 (set (reg:SI 13 a3)
         (lo_sum:SI (reg:SI 75)
-            (symbol_ref:SI ("rvvTIMERExpiredISR") [flags 0x3] <function_decl 068f2000 rvvTIMERExpiredISR>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttimer.c":38 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("rvvTIMERExpiredISR") [flags 0x3] <function_decl 068f2000 rvvTIMERExpiredISR>)
+            (symbol_ref:SI ("rvvTIMERExpiredISR") [flags 0x3] <function_decl 06745000 rvvTIMERExpiredISR>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttimer.c":38 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("rvvTIMERExpiredISR") [flags 0x3] <function_decl 06745000 rvvTIMERExpiredISR>)
         (nil)))
 (insn 10 9 11 2 (set (reg:SI 12 a2)
         (reg/v:SI 74 [ usTim1Timerout50us ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttimer.c":38 -1
@@ -101,11 +101,11 @@ try_optimize_cfg iteration 2
         (const_int 3 [0x3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttimer.c":38 -1
      (nil))
 (call_insn 14 13 15 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TIMER_InitIt") [flags 0x41] <function_decl 069b2d20 HAL_TIMER_InitIt>) [0 HAL_TIMER_InitIt S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TIMER_InitIt") [flags 0x41] <function_decl 06807d20 HAL_TIMER_InitIt>) [0 HAL_TIMER_InitIt S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttimer.c":38 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIMER_InitIt") [flags 0x41] <function_decl 069b2d20 HAL_TIMER_InitIt>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIMER_InitIt") [flags 0x41] <function_decl 06807d20 HAL_TIMER_InitIt>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -153,11 +153,11 @@ try_optimize_cfg iteration 2
         (const_int 3 [0x3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttimer.c":45 -1
      (nil))
 (call_insn 6 5 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 069b2bb8 HAL_TiemrEneblae>) [0 HAL_TiemrEneblae S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 06807bb8 HAL_TiemrEneblae>) [0 HAL_TiemrEneblae S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttimer.c":45 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 069b2bb8 HAL_TiemrEneblae>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 06807bb8 HAL_TiemrEneblae>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -192,11 +192,11 @@ try_optimize_cfg iteration 2
         (const_int 3 [0x3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttimer.c":52 -1
      (nil))
 (call_insn 6 5 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TiemrDisable") [flags 0x41] <function_decl 069b2c30 HAL_TiemrDisable>) [0 HAL_TiemrDisable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TiemrDisable") [flags 0x41] <function_decl 06807c30 HAL_TiemrDisable>) [0 HAL_TiemrDisable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttimer.c":52 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TiemrDisable") [flags 0x41] <function_decl 069b2c30 HAL_TiemrDisable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TiemrDisable") [flags 0x41] <function_decl 06807c30 HAL_TiemrDisable>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))

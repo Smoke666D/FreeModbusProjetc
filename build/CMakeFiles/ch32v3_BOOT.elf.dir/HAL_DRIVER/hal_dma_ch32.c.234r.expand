@@ -52,11 +52,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 11 10 12 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("DMA_GetITStatus") [flags 0x41] <function_decl 06504b40 DMA_GetITStatus>) [0 DMA_GetITStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("DMA_GetITStatus") [flags 0x41] <function_decl 05894b40 DMA_GetITStatus>) [0 DMA_GetITStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":201 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_GetITStatus") [flags 0x41] <function_decl 06504b40 DMA_GetITStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_GetITStatus") [flags 0x41] <function_decl 05894b40 DMA_GetITStatus>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -112,11 +112,11 @@ try_optimize_cfg iteration 2
         (reg:SI 87)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":204 -1
      (nil))
 (call_insn 25 24 28 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("DMA_ClearITPendingBit") [flags 0x41] <function_decl 06504bb8 DMA_ClearITPendingBit>) [0 DMA_ClearITPendingBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("DMA_ClearITPendingBit") [flags 0x41] <function_decl 05894bb8 DMA_ClearITPendingBit>) [0 DMA_ClearITPendingBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":204 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_ClearITPendingBit") [flags 0x41] <function_decl 06504bb8 DMA_ClearITPendingBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_ClearITPendingBit") [flags 0x41] <function_decl 05894bb8 DMA_ClearITPendingBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -539,11 +539,11 @@ try_optimize_cfg iteration 2
         (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":74 -1
      (nil))
 (call_insn 38 37 39 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_AHBPeriphClockCmd") [flags 0x41] <function_decl 0656f078 RCC_AHBPeriphClockCmd>) [0 RCC_AHBPeriphClockCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_AHBPeriphClockCmd") [flags 0x41] <function_decl 058ff078 RCC_AHBPeriphClockCmd>) [0 RCC_AHBPeriphClockCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":74 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_AHBPeriphClockCmd") [flags 0x41] <function_decl 0656f078 RCC_AHBPeriphClockCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_AHBPeriphClockCmd") [flags 0x41] <function_decl 058ff078 RCC_AHBPeriphClockCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -663,11 +663,11 @@ try_optimize_cfg iteration 2
         (reg:SI 76 [ Init ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":97 -1
      (nil))
 (call_insn 62 61 63 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_DMA_Disable") [flags 0x3] <function_decl 06810c30 HAL_DMA_Disable>) [0 HAL_DMA_Disable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_DMA_Disable") [flags 0x3] <function_decl 05ba0c30 HAL_DMA_Disable>) [0 HAL_DMA_Disable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":97 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_DMA_Disable") [flags 0x3] <function_decl 06810c30 HAL_DMA_Disable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_DMA_Disable") [flags 0x3] <function_decl 05ba0c30 HAL_DMA_Disable>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -804,11 +804,11 @@ try_optimize_cfg iteration 2
         (reg:SI 139)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":116 -1
      (nil))
 (call_insn 98 97 99 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 06810e88 PFIC_IRQ_ENABLE_PG2>) [0 PFIC_IRQ_ENABLE_PG2 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 05ba0e88 PFIC_IRQ_ENABLE_PG2>) [0 PFIC_IRQ_ENABLE_PG2 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":116 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 06810e88 PFIC_IRQ_ENABLE_PG2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 05ba0e88 PFIC_IRQ_ENABLE_PG2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -835,11 +835,11 @@ try_optimize_cfg iteration 2
         (reg:SI 140)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":122 -1
      (nil))
 (call_insn 107 106 110 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 06810e88 PFIC_IRQ_ENABLE_PG2>) [0 PFIC_IRQ_ENABLE_PG2 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 05ba0e88 PFIC_IRQ_ENABLE_PG2>) [0 PFIC_IRQ_ENABLE_PG2 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":122 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 06810e88 PFIC_IRQ_ENABLE_PG2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 05ba0e88 PFIC_IRQ_ENABLE_PG2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -955,11 +955,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 86 [ stream ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":142 -1
      (nil))
 (call_insn 28 27 29 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_DMA_Disable") [flags 0x3] <function_decl 06810c30 HAL_DMA_Disable>) [0 HAL_DMA_Disable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_DMA_Disable") [flags 0x3] <function_decl 05ba0c30 HAL_DMA_Disable>) [0 HAL_DMA_Disable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":142 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_DMA_Disable") [flags 0x3] <function_decl 06810c30 HAL_DMA_Disable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_DMA_Disable") [flags 0x3] <function_decl 05ba0c30 HAL_DMA_Disable>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1045,11 +1045,11 @@ try_optimize_cfg iteration 2
         (reg:SI 110)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":153 -1
      (nil))
 (call_insn 51 50 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 06810e88 PFIC_IRQ_ENABLE_PG2>) [0 PFIC_IRQ_ENABLE_PG2 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 05ba0e88 PFIC_IRQ_ENABLE_PG2>) [0 PFIC_IRQ_ENABLE_PG2 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":153 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 06810e88 PFIC_IRQ_ENABLE_PG2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 05ba0e88 PFIC_IRQ_ENABLE_PG2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1263,11 +1263,11 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":213 -1
      (nil))
 (call_insn 6 5 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("DMA_IRQ") [flags 0x3] <function_decl 0675e528 DMA_IRQ>) [0 DMA_IRQ S4 A32])
+            (call (mem:SI (symbol_ref:SI ("DMA_IRQ") [flags 0x3] <function_decl 05aee528 DMA_IRQ>) [0 DMA_IRQ S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":213 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_IRQ") [flags 0x3] <function_decl 0675e528 DMA_IRQ>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_IRQ") [flags 0x3] <function_decl 05aee528 DMA_IRQ>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -1303,11 +1303,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":220 -1
      (nil))
 (call_insn 6 5 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("DMA_IRQ") [flags 0x3] <function_decl 0675e528 DMA_IRQ>) [0 DMA_IRQ S4 A32])
+            (call (mem:SI (symbol_ref:SI ("DMA_IRQ") [flags 0x3] <function_decl 05aee528 DMA_IRQ>) [0 DMA_IRQ S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":220 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_IRQ") [flags 0x3] <function_decl 0675e528 DMA_IRQ>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_IRQ") [flags 0x3] <function_decl 05aee528 DMA_IRQ>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -1343,11 +1343,11 @@ try_optimize_cfg iteration 2
         (const_int 3 [0x3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":234 -1
      (nil))
 (call_insn 6 5 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("DMA_IRQ") [flags 0x3] <function_decl 0675e528 DMA_IRQ>) [0 DMA_IRQ S4 A32])
+            (call (mem:SI (symbol_ref:SI ("DMA_IRQ") [flags 0x3] <function_decl 05aee528 DMA_IRQ>) [0 DMA_IRQ S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":234 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_IRQ") [flags 0x3] <function_decl 0675e528 DMA_IRQ>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_IRQ") [flags 0x3] <function_decl 05aee528 DMA_IRQ>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -1383,11 +1383,11 @@ try_optimize_cfg iteration 2
         (const_int 4 [0x4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":241 -1
      (nil))
 (call_insn 6 5 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("DMA_IRQ") [flags 0x3] <function_decl 0675e528 DMA_IRQ>) [0 DMA_IRQ S4 A32])
+            (call (mem:SI (symbol_ref:SI ("DMA_IRQ") [flags 0x3] <function_decl 05aee528 DMA_IRQ>) [0 DMA_IRQ S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_dma_ch32.c":241 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_IRQ") [flags 0x3] <function_decl 0675e528 DMA_IRQ>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_IRQ") [flags 0x3] <function_decl 05aee528 DMA_IRQ>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))

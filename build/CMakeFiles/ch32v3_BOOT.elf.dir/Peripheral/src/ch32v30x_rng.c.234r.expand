@@ -399,11 +399,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 7 6 8 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("RNG_GetFlagStatus") [flags 0x3] <function_decl 05922078 RNG_GetFlagStatus>) [0 RNG_GetFlagStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("RNG_GetFlagStatus") [flags 0x3] <function_decl 0662e078 RNG_GetFlagStatus>) [0 RNG_GetFlagStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RNG_GetFlagStatus") [flags 0x3] <function_decl 05922078 RNG_GetFlagStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RNG_GetFlagStatus") [flags 0x3] <function_decl 0662e078 RNG_GetFlagStatus>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))

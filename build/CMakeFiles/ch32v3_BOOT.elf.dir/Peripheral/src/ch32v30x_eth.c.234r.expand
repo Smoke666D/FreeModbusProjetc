@@ -32,11 +32,11 @@ try_optimize_cfg iteration 2
         (const_int 16384 [0x4000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_eth.c":30 -1
      (nil))
 (call_insn 7 6 8 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_AHBPeriphResetCmd") [flags 0x41] <function_decl 065c0168 RCC_AHBPeriphResetCmd>) [0 RCC_AHBPeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_AHBPeriphResetCmd") [flags 0x41] <function_decl 06477168 RCC_AHBPeriphResetCmd>) [0 RCC_AHBPeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_eth.c":30 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_AHBPeriphResetCmd") [flags 0x41] <function_decl 065c0168 RCC_AHBPeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_AHBPeriphResetCmd") [flags 0x41] <function_decl 06477168 RCC_AHBPeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -48,11 +48,11 @@ try_optimize_cfg iteration 2
         (const_int 16384 [0x4000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_eth.c":31 -1
      (nil))
 (call_insn 10 9 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_AHBPeriphResetCmd") [flags 0x41] <function_decl 065c0168 RCC_AHBPeriphResetCmd>) [0 RCC_AHBPeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_AHBPeriphResetCmd") [flags 0x41] <function_decl 06477168 RCC_AHBPeriphResetCmd>) [0 RCC_AHBPeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_eth.c":31 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_AHBPeriphResetCmd") [flags 0x41] <function_decl 065c0168 RCC_AHBPeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_AHBPeriphResetCmd") [flags 0x41] <function_decl 06477168 RCC_AHBPeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1958,11 +1958,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 9 8 10 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x3] <function_decl 066c54b0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x3] <function_decl 065d74b0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_eth.c":373 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x3] <function_decl 066c54b0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x3] <function_decl 065d74b0 ETH_ReadPHYRegister>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))
@@ -2027,11 +2027,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 30 29 31 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x3] <function_decl 066c5528 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x3] <function_decl 065d7528 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_eth.c":384 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x3] <function_decl 066c5528 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x3] <function_decl 065d7528 ETH_WritePHYRegister>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))
@@ -2497,11 +2497,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 7 6 8 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_GetMACFlagStatus") [flags 0x3] <function_decl 066c5870 ETH_GetMACFlagStatus>) [0 ETH_GetMACFlagStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_GetMACFlagStatus") [flags 0x3] <function_decl 065d7870 ETH_GetMACFlagStatus>) [0 ETH_GetMACFlagStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_GetMACFlagStatus") [flags 0x3] <function_decl 066c5870 ETH_GetMACFlagStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_GetMACFlagStatus") [flags 0x3] <function_decl 065d7870 ETH_GetMACFlagStatus>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5394,11 +5394,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 7 6 8 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_GetDMAFlagStatus") [flags 0x3] <function_decl 066c9708 ETH_GetDMAFlagStatus>) [0 ETH_GetDMAFlagStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_GetDMAFlagStatus") [flags 0x3] <function_decl 065db708 ETH_GetDMAFlagStatus>) [0 ETH_GetDMAFlagStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_GetDMAFlagStatus") [flags 0x3] <function_decl 066c9708 ETH_GetDMAFlagStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_GetDMAFlagStatus") [flags 0x3] <function_decl 065db708 ETH_GetDMAFlagStatus>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5669,11 +5669,11 @@ try_optimize_cfg iteration 2
         (reg:SI 79 [ _14 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_eth.c":407 -1
      (nil))
 (call_insn 10 9 11 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_FlushTransmitFIFO") [flags 0x3] <function_decl 066c99d8 ETH_FlushTransmitFIFO>) [0 ETH_FlushTransmitFIFO S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_FlushTransmitFIFO") [flags 0x3] <function_decl 065db9d8 ETH_FlushTransmitFIFO>) [0 ETH_FlushTransmitFIFO S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_eth.c":109 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_FlushTransmitFIFO") [flags 0x3] <function_decl 066c99d8 ETH_FlushTransmitFIFO>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_FlushTransmitFIFO") [flags 0x3] <function_decl 065db9d8 ETH_FlushTransmitFIFO>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))

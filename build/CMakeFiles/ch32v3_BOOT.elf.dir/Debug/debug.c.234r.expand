@@ -26,11 +26,11 @@ try_optimize_cfg iteration 2
 (note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
 (note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
 (insn 5 2 6 2 (set (reg:SI 77)
-        (high:SI (symbol_ref:SI ("SystemCoreClock") [flags 0xc4] <var_decl 063edcb8 SystemCoreClock>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":27 -1
+        (high:SI (symbol_ref:SI ("SystemCoreClock") [flags 0xc4] <var_decl 06386cb8 SystemCoreClock>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":27 -1
      (nil))
 (insn 6 5 7 2 (set (reg:SI 79)
         (mem/c:SI (lo_sum:SI (reg:SI 77)
-                (symbol_ref:SI ("SystemCoreClock") [flags 0xc4] <var_decl 063edcb8 SystemCoreClock>)) [2 SystemCoreClock+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":27 -1
+                (symbol_ref:SI ("SystemCoreClock") [flags 0xc4] <var_decl 06386cb8 SystemCoreClock>)) [2 SystemCoreClock+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":27 -1
      (nil))
 (insn 7 6 8 2 (set (reg:SI 82)
         (const_int 7999488 [0x7a1000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":27 -1
@@ -423,11 +423,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 16388 [0x4004])
         (nil)))
 (call_insn 9 8 10 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 0655d2d0 RCC_APB2PeriphClockCmd>) [0 RCC_APB2PeriphClockCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 064fe2d0 RCC_APB2PeriphClockCmd>) [0 RCC_APB2PeriphClockCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":96 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 0655d2d0 RCC_APB2PeriphClockCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 064fe2d0 RCC_APB2PeriphClockCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -469,11 +469,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073809408 [0x40010800])
         (nil)))
 (call_insn 20 19 21 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 065298e8 GPIO_Init>) [0 GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 064cd8e8 GPIO_Init>) [0 GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":101 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 065298e8 GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 064cd8e8 GPIO_Init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -513,11 +513,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073821696 [0x40013800])
         (nil)))
 (call_insn 30 29 31 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("USART_Init") [flags 0x41] <function_decl 065979d8 USART_Init>) [0 USART_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("USART_Init") [flags 0x41] <function_decl 065319d8 USART_Init>) [0 USART_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":131 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_Init") [flags 0x41] <function_decl 065979d8 USART_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_Init") [flags 0x41] <function_decl 065319d8 USART_Init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -534,11 +534,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073821696 [0x40013800])
         (nil)))
 (call_insn 34 33 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("USART_Cmd") [flags 0x41] <function_decl 06597bb8 USART_Cmd>) [0 USART_Cmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("USART_Cmd") [flags 0x41] <function_decl 06531bb8 USART_Cmd>) [0 USART_Cmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":132 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_Cmd") [flags 0x41] <function_decl 06597bb8 USART_Cmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_Cmd") [flags 0x41] <function_decl 06531bb8 USART_Cmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -611,11 +611,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 15 14 16 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("USART_GetFlagStatus") [flags 0x41] <function_decl 065a9528 USART_GetFlagStatus>) [0 USART_GetFlagStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("USART_GetFlagStatus") [flags 0x41] <function_decl 06543528 USART_GetFlagStatus>) [0 USART_GetFlagStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":162 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_GetFlagStatus") [flags 0x41] <function_decl 065a9528 USART_GetFlagStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_GetFlagStatus") [flags 0x41] <function_decl 06543528 USART_GetFlagStatus>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -653,11 +653,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073821696 [0x40013800])
         (nil)))
 (call_insn 26 25 27 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("USART_SendData") [flags 0x41] <function_decl 06597f78 USART_SendData>) [0 USART_SendData S4 A32])
+            (call (mem:SI (symbol_ref:SI ("USART_SendData") [flags 0x41] <function_decl 06531f78 USART_SendData>) [0 USART_SendData S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":163 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_SendData") [flags 0x41] <function_decl 06597f78 USART_SendData>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_SendData") [flags 0x41] <function_decl 06531f78 USART_SendData>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -741,12 +741,12 @@ try_optimize_cfg iteration 2
             (reg/v:SI 75 [ incr ]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":189 -1
      (nil))
 (insn 12 11 13 2 (set (reg:SI 79)
-        (high:SI (symbol_ref:SI ("_end") [flags 0xc0] <var_decl 065b0630 _end>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":189 -1
+        (high:SI (symbol_ref:SI ("_end") [flags 0xc0] <var_decl 0654a630 _end>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":189 -1
      (nil))
 (insn 13 12 14 2 (set (reg/f:SI 78)
         (lo_sum:SI (reg:SI 79)
-            (symbol_ref:SI ("_end") [flags 0xc0] <var_decl 065b0630 _end>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":189 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("_end") [flags 0xc0] <var_decl 065b0630 _end>)
+            (symbol_ref:SI ("_end") [flags 0xc0] <var_decl 0654a630 _end>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":189 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("_end") [flags 0xc0] <var_decl 0654a630 _end>)
         (nil)))
 (jump_insn 14 13 15 2 (set (pc)
         (if_then_else (ltu (reg/f:SI 73 [ _3 ])
@@ -757,12 +757,12 @@ try_optimize_cfg iteration 2
  -> 34)
 (note 15 14 16 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
 (insn 16 15 17 4 (set (reg:SI 81)
-        (high:SI (symbol_ref:SI ("_heap_end") [flags 0xc0] <var_decl 065b0688 _heap_end>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":189 -1
+        (high:SI (symbol_ref:SI ("_heap_end") [flags 0xc0] <var_decl 0654a688 _heap_end>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":189 -1
      (nil))
 (insn 17 16 18 4 (set (reg/f:SI 80)
         (lo_sum:SI (reg:SI 81)
-            (symbol_ref:SI ("_heap_end") [flags 0xc0] <var_decl 065b0688 _heap_end>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":189 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("_heap_end") [flags 0xc0] <var_decl 065b0688 _heap_end>)
+            (symbol_ref:SI ("_heap_end") [flags 0xc0] <var_decl 0654a688 _heap_end>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Debug/debug.c":189 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("_heap_end") [flags 0xc0] <var_decl 0654a688 _heap_end>)
         (nil)))
 (jump_insn 18 17 19 4 (set (pc)
         (if_then_else (gtu (reg/f:SI 73 [ _3 ])

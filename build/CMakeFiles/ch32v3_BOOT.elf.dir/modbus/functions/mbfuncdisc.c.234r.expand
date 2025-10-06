@@ -264,11 +264,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 72 71 73 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eMBRegDiscreteCB") [flags 0x41] <function_decl 0662a9d8 eMBRegDiscreteCB>) [0 eMBRegDiscreteCB S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eMBRegDiscreteCB") [flags 0x41] <function_decl 065fa9d8 eMBRegDiscreteCB>) [0 eMBRegDiscreteCB S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncdisc.c":96 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eMBRegDiscreteCB") [flags 0x41] <function_decl 0662a9d8 eMBRegDiscreteCB>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eMBRegDiscreteCB") [flags 0x41] <function_decl 065fa9d8 eMBRegDiscreteCB>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -290,11 +290,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 77 76 78 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 0662aa50 prveMBError2Exception>) [0 prveMBError2Exception S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 065faa50 prveMBError2Exception>) [0 prveMBError2Exception S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncdisc.c":101 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 0662aa50 prveMBError2Exception>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 065faa50 prveMBError2Exception>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))

@@ -55,11 +55,11 @@ try_optimize_cfg iteration 2
         (const_int 4096 [0x1000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_spi_ch32.c":59 -1
      (nil))
 (call_insn 10 9 11 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB2") [flags 0x41] <function_decl 05bbfd98 HAL_InitAPB2>) [0 HAL_InitAPB2 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB2") [flags 0x41] <function_decl 0686ed98 HAL_InitAPB2>) [0 HAL_InitAPB2 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_spi_ch32.c":59 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB2") [flags 0x41] <function_decl 05bbfd98 HAL_InitAPB2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB2") [flags 0x41] <function_decl 0686ed98 HAL_InitAPB2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -85,11 +85,11 @@ try_optimize_cfg iteration 2
         (const_int 16384 [0x4000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_spi_ch32.c":64 -1
      (nil))
 (call_insn 19 18 20 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05bbfd20 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 0686ed20 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_spi_ch32.c":64 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05bbfd20 HAL_InitAPB1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 0686ed20 HAL_InitAPB1>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -115,11 +115,11 @@ try_optimize_cfg iteration 2
         (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_spi_ch32.c":68 -1
      (nil))
 (call_insn 28 27 29 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05bbfd20 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 0686ed20 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_spi_ch32.c":68 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05bbfd20 HAL_InitAPB1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 0686ed20 HAL_InitAPB1>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -342,11 +342,11 @@ Deleted label in block 4.
         (const_int 52 [0x34])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_spi_ch32.c":102 -1
      (nil))
 (call_insn 20 19 21 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 05bbfe10 PFIC_IRQ_ENABLE_PG2>) [0 PFIC_IRQ_ENABLE_PG2 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 0686ee10 PFIC_IRQ_ENABLE_PG2>) [0 PFIC_IRQ_ENABLE_PG2 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_spi_ch32.c":102 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 05bbfe10 PFIC_IRQ_ENABLE_PG2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 0686ee10 PFIC_IRQ_ENABLE_PG2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -422,11 +422,11 @@ Deleted label in block 4.
         (reg:SI 87)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_spi_ch32.c":136 -1
      (nil))
 (call_insn 43 42 0 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("SPI_Cmd") [flags 0x41] <function_decl 0591f618 SPI_Cmd>) [0 SPI_Cmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("SPI_Cmd") [flags 0x41] <function_decl 065c0618 SPI_Cmd>) [0 SPI_Cmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_spi_ch32.c":136 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_Cmd") [flags 0x41] <function_decl 0591f618 SPI_Cmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_Cmd") [flags 0x41] <function_decl 065c0618 SPI_Cmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -565,11 +565,11 @@ try_optimize_cfg iteration 2
         (const_int 4096 [0x1000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_spi_ch32.c":152 -1
      (nil))
 (call_insn 10 9 11 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB2") [flags 0x41] <function_decl 05bbfd98 HAL_InitAPB2>) [0 HAL_InitAPB2 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB2") [flags 0x41] <function_decl 0686ed98 HAL_InitAPB2>) [0 HAL_InitAPB2 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_spi_ch32.c":152 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB2") [flags 0x41] <function_decl 05bbfd98 HAL_InitAPB2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB2") [flags 0x41] <function_decl 0686ed98 HAL_InitAPB2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -584,11 +584,11 @@ try_optimize_cfg iteration 2
         (const_int 16384 [0x4000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_spi_ch32.c":156 -1
      (nil))
 (call_insn 16 15 17 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05bbfd20 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 0686ed20 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_spi_ch32.c":156 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05bbfd20 HAL_InitAPB1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 0686ed20 HAL_InitAPB1>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1066,11 +1066,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 8 7 9 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SPI_I2S_GetITStatus") [flags 0x41] <function_decl 0591fd98 SPI_I2S_GetITStatus>) [0 SPI_I2S_GetITStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SPI_I2S_GetITStatus") [flags 0x41] <function_decl 065c0d98 SPI_I2S_GetITStatus>) [0 SPI_I2S_GetITStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_spi_ch32.c":218 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_GetITStatus") [flags 0x41] <function_decl 0591fd98 SPI_I2S_GetITStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_GetITStatus") [flags 0x41] <function_decl 065c0d98 SPI_I2S_GetITStatus>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1121,11 +1121,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 21 20 22 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SPI_I2S_GetITStatus") [flags 0x41] <function_decl 0591fd98 SPI_I2S_GetITStatus>) [0 SPI_I2S_GetITStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SPI_I2S_GetITStatus") [flags 0x41] <function_decl 065c0d98 SPI_I2S_GetITStatus>) [0 SPI_I2S_GetITStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_spi_ch32.c":222 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_GetITStatus") [flags 0x41] <function_decl 0591fd98 SPI_I2S_GetITStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_GetITStatus") [flags 0x41] <function_decl 065c0d98 SPI_I2S_GetITStatus>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))

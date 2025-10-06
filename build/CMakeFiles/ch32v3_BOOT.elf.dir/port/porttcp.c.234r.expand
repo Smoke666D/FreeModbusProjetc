@@ -39,11 +39,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 9 8 10 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("WCHNET_SocketClose") [flags 0x41] <function_decl 0641b168 WCHNET_SocketClose>) [0 WCHNET_SocketClose S4 A32])
+                (call (mem:SI (symbol_ref:SI ("WCHNET_SocketClose") [flags 0x41] <function_decl 0632b168 WCHNET_SocketClose>) [0 WCHNET_SocketClose S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":373 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_SocketClose") [flags 0x41] <function_decl 0641b168 WCHNET_SocketClose>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_SocketClose") [flags 0x41] <function_decl 0632b168 WCHNET_SocketClose>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -110,21 +110,21 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":86 -1
      (nil))
 (call_insn 10 9 11 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphClockCmd") [flags 0x41] <function_decl 065bd438 RCC_APB1PeriphClockCmd>) [0 RCC_APB1PeriphClockCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphClockCmd") [flags 0x41] <function_decl 064cd438 RCC_APB1PeriphClockCmd>) [0 RCC_APB1PeriphClockCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":86 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphClockCmd") [flags 0x41] <function_decl 065bd438 RCC_APB1PeriphClockCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphClockCmd") [flags 0x41] <function_decl 064cd438 RCC_APB1PeriphClockCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
             (nil))))
 (insn 11 10 12 2 (set (reg:SI 75)
-        (high:SI (symbol_ref:SI ("SystemCoreClock") [flags 0xc4] <var_decl 06451cb8 SystemCoreClock>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":88 -1
+        (high:SI (symbol_ref:SI ("SystemCoreClock") [flags 0xc4] <var_decl 06361cb8 SystemCoreClock>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":88 -1
      (nil))
 (insn 12 11 13 2 (set (reg:SI 77)
         (mem/c:SI (lo_sum:SI (reg:SI 75)
-                (symbol_ref:SI ("SystemCoreClock") [flags 0xc4] <var_decl 06451cb8 SystemCoreClock>)) [3 SystemCoreClock+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":88 -1
+                (symbol_ref:SI ("SystemCoreClock") [flags 0xc4] <var_decl 06361cb8 SystemCoreClock>)) [3 SystemCoreClock+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":88 -1
      (nil))
 (insn 13 12 14 2 (set (reg:SI 80)
         (const_int 999424 [0xf4000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":88 -1
@@ -169,11 +169,11 @@ try_optimize_cfg iteration 2
         (const_int 1073741824 [0x40000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":92 -1
      (nil))
 (call_insn 24 23 25 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TIM_TimeBaseInit") [flags 0x41] <function_decl 065d91e0 TIM_TimeBaseInit>) [0 TIM_TimeBaseInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TIM_TimeBaseInit") [flags 0x41] <function_decl 064e91e0 TIM_TimeBaseInit>) [0 TIM_TimeBaseInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":92 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_TimeBaseInit") [flags 0x41] <function_decl 065d91e0 TIM_TimeBaseInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_TimeBaseInit") [flags 0x41] <function_decl 064e91e0 TIM_TimeBaseInit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -188,11 +188,11 @@ try_optimize_cfg iteration 2
         (const_int 1073741824 [0x40000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":93 -1
      (nil))
 (call_insn 28 27 29 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TIM_ITConfig") [flags 0x41] <function_decl 065d9870 TIM_ITConfig>) [0 TIM_ITConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TIM_ITConfig") [flags 0x41] <function_decl 064e9870 TIM_ITConfig>) [0 TIM_ITConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":93 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_ITConfig") [flags 0x41] <function_decl 065d9870 TIM_ITConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_ITConfig") [flags 0x41] <function_decl 064e9870 TIM_ITConfig>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -205,11 +205,11 @@ try_optimize_cfg iteration 2
         (const_int 1073741824 [0x40000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":95 -1
      (nil))
 (call_insn 31 30 32 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TIM_Cmd") [flags 0x41] <function_decl 065d9780 TIM_Cmd>) [0 TIM_Cmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TIM_Cmd") [flags 0x41] <function_decl 064e9780 TIM_Cmd>) [0 TIM_Cmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":95 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_Cmd") [flags 0x41] <function_decl 065d9780 TIM_Cmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_Cmd") [flags 0x41] <function_decl 064e9780 TIM_Cmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -221,11 +221,11 @@ try_optimize_cfg iteration 2
         (const_int 1073741824 [0x40000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":96 -1
      (nil))
 (call_insn 34 33 35 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TIM_ClearITPendingBit") [flags 0x41] <function_decl 065f69d8 TIM_ClearITPendingBit>) [0 TIM_ClearITPendingBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TIM_ClearITPendingBit") [flags 0x41] <function_decl 065069d8 TIM_ClearITPendingBit>) [0 TIM_ClearITPendingBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":96 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_ClearITPendingBit") [flags 0x41] <function_decl 065f69d8 TIM_ClearITPendingBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM_ClearITPendingBit") [flags 0x41] <function_decl 065069d8 TIM_ClearITPendingBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -285,20 +285,20 @@ try_optimize_cfg iteration 2
         (reg/f:SI 85)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":106 -1
      (nil))
 (call_insn 9 8 10 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("WCHNET_GetMacAddr") [flags 0x41] <function_decl 06662a50 WCHNET_GetMacAddr>) [0 WCHNET_GetMacAddr S4 A32])
+            (call (mem:SI (symbol_ref:SI ("WCHNET_GetMacAddr") [flags 0x41] <function_decl 06572a50 WCHNET_GetMacAddr>) [0 WCHNET_GetMacAddr S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":106 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_GetMacAddr") [flags 0x41] <function_decl 06662a50 WCHNET_GetMacAddr>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_GetMacAddr") [flags 0x41] <function_decl 06572a50 WCHNET_GetMacAddr>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 10 9 3 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TIM2_Init") [flags 0x3] <function_decl 069568e8 TIM2_Init>) [0 TIM2_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TIM2_Init") [flags 0x3] <function_decl 068668e8 TIM2_Init>) [0 TIM2_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":107 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM2_Init") [flags 0x3] <function_decl 069568e8 TIM2_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TIM2_Init") [flags 0x3] <function_decl 068668e8 TIM2_Init>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -322,11 +322,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 16 15 17 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 069564b0 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068664b0 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":110 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 069564b0 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068664b0 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -363,11 +363,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 26 25 27 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 069564b0 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068664b0 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":111 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 069564b0 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068664b0 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -404,11 +404,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 36 35 37 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 069564b0 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068664b0 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":112 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 069564b0 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 068664b0 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -494,11 +494,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 60 59 61 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_LibInit") [flags 0x41] <function_decl 0641bd98 ETH_LibInit>) [0 ETH_LibInit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_LibInit") [flags 0x41] <function_decl 0632bd98 ETH_LibInit>) [0 ETH_LibInit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":114 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_LibInit") [flags 0x41] <function_decl 0641bd98 ETH_LibInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_LibInit") [flags 0x41] <function_decl 0632bd98 ETH_LibInit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -544,21 +544,21 @@ try_optimize_cfg iteration 2
         (reg:SI 119)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":119 -1
      (nil))
 (call_insn 71 70 72 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("WCHNET_ConfigKeepLive") [flags 0x41] <function_decl 0641b7f8 WCHNET_ConfigKeepLive>) [0 WCHNET_ConfigKeepLive S4 A32])
+            (call (mem:SI (symbol_ref:SI ("WCHNET_ConfigKeepLive") [flags 0x41] <function_decl 0632b7f8 WCHNET_ConfigKeepLive>) [0 WCHNET_ConfigKeepLive S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":119 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_ConfigKeepLive") [flags 0x41] <function_decl 0641b7f8 WCHNET_ConfigKeepLive>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_ConfigKeepLive") [flags 0x41] <function_decl 0632b7f8 WCHNET_ConfigKeepLive>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 72 71 73 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xGetOSEvent") [flags 0x41] <function_decl 068bd8e8 xGetOSEvent>) [0 xGetOSEvent S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xGetOSEvent") [flags 0x41] <function_decl 067cd8e8 xGetOSEvent>) [0 xGetOSEvent S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":120 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xGetOSEvent") [flags 0x41] <function_decl 068bd8e8 xGetOSEvent>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xGetOSEvent") [flags 0x41] <function_decl 067cd8e8 xGetOSEvent>)
         (nil))
     (nil))
 (insn 73 72 74 5 (set (reg/f:SI 75 [ _9 ])
@@ -652,20 +652,20 @@ try_optimize_cfg iteration 2
         (reg/v:SI 73 [ iError ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":133 -1
      (nil))
 (insn 9 8 10 4 (set (reg:SI 74)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 069c1058 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":133 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 068d1058 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":133 -1
      (nil))
 (insn 10 9 11 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 74)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 069c1058 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":133 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 069c1058 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 068d1058 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":133 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 068d1058 *.LC0>)
         (nil)))
 (call_insn 11 10 14 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 062e5f00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061f5f00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":133 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 062e5f00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061f5f00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -792,11 +792,11 @@ Deleted label in block 4.
         (reg/v:SI 99 [ sss ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":157 -1
      (nil))
 (insn 20 19 21 5 (set (reg:SI 115)
-        (high:SI (symbol_ref:SI ("SocketInf") [flags 0xc0] <var_decl 06418478 SocketInf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":157 -1
+        (high:SI (symbol_ref:SI ("SocketInf") [flags 0xc0] <var_decl 06328478 SocketInf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":157 -1
      (nil))
 (insn 21 20 22 5 (set (reg/f:SI 116)
         (lo_sum:SI (reg:SI 115)
-            (symbol_ref:SI ("SocketInf") [flags 0xc0] <var_decl 06418478 SocketInf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":157 -1
+            (symbol_ref:SI ("SocketInf") [flags 0xc0] <var_decl 06328478 SocketInf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":157 -1
      (nil))
 (insn 22 21 23 5 (set (reg:SI 118)
         (const_int 60 [0x3c])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":157 -1
@@ -810,11 +810,11 @@ Deleted label in block 4.
             (reg:SI 119))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":157 -1
      (nil))
 (insn 25 24 26 5 (set (reg:SI 120)
-        (high:SI (symbol_ref:SI ("SocketInf") [flags 0xc0] <var_decl 06418478 SocketInf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":157 -1
+        (high:SI (symbol_ref:SI ("SocketInf") [flags 0xc0] <var_decl 06328478 SocketInf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":157 -1
      (nil))
 (insn 26 25 27 5 (set (reg/f:SI 121)
         (lo_sum:SI (reg:SI 120)
-            (symbol_ref:SI ("SocketInf") [flags 0xc0] <var_decl 06418478 SocketInf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":157 -1
+            (symbol_ref:SI ("SocketInf") [flags 0xc0] <var_decl 06328478 SocketInf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":157 -1
      (nil))
 (insn 27 26 28 5 (set (reg:SI 123)
         (const_int 60 [0x3c])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":157 -1
@@ -840,11 +840,11 @@ Deleted label in block 4.
             (reg:SI 126))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":157 -1
      (nil))
 (insn 33 32 34 5 (set (reg:SI 127)
-        (high:SI (symbol_ref:SI ("SocketInf") [flags 0xc0] <var_decl 06418478 SocketInf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":158 -1
+        (high:SI (symbol_ref:SI ("SocketInf") [flags 0xc0] <var_decl 06328478 SocketInf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":158 -1
      (nil))
 (insn 34 33 35 5 (set (reg/f:SI 128)
         (lo_sum:SI (reg:SI 127)
-            (symbol_ref:SI ("SocketInf") [flags 0xc0] <var_decl 06418478 SocketInf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":158 -1
+            (symbol_ref:SI ("SocketInf") [flags 0xc0] <var_decl 06328478 SocketInf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":158 -1
      (nil))
 (insn 35 34 36 5 (set (reg:SI 130)
         (const_int 60 [0x3c])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":158 -1
@@ -862,11 +862,11 @@ Deleted label in block 4.
                 (const_int 20 [0x14])) [3 SocketInf[_1].RecvReadPoint+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":158 -1
      (nil))
 (insn 39 38 40 5 (set (reg:SI 132)
-        (high:SI (symbol_ref:SI ("SocketInf") [flags 0xc0] <var_decl 06418478 SocketInf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":158 -1
+        (high:SI (symbol_ref:SI ("SocketInf") [flags 0xc0] <var_decl 06328478 SocketInf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":158 -1
      (nil))
 (insn 40 39 41 5 (set (reg/f:SI 133)
         (lo_sum:SI (reg:SI 132)
-            (symbol_ref:SI ("SocketInf") [flags 0xc0] <var_decl 06418478 SocketInf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":158 -1
+            (symbol_ref:SI ("SocketInf") [flags 0xc0] <var_decl 06328478 SocketInf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":158 -1
      (nil))
 (insn 41 40 42 5 (set (reg:SI 135)
         (const_int 60 [0x3c])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":158 -1
@@ -940,11 +940,11 @@ Deleted label in block 4.
         (reg:SI 142)) -1
      (nil))
 (call_insn 61 60 62 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06956f78 prvvMBPortReleaseClient.part.0>) [0 prvvMBPortReleaseClient.part.0 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06866f78 prvvMBPortReleaseClient.part.0>) [0 prvvMBPortReleaseClient.part.0 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06956f78 prvvMBPortReleaseClient.part.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06866f78 prvvMBPortReleaseClient.part.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -983,11 +983,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 73 72 74 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("WCHNET_SocketRecv") [flags 0x41] <function_decl 06662f00 WCHNET_SocketRecv>) [0 WCHNET_SocketRecv S4 A32])
+                (call (mem:SI (symbol_ref:SI ("WCHNET_SocketRecv") [flags 0x41] <function_decl 06572f00 WCHNET_SocketRecv>) [0 WCHNET_SocketRecv S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":178 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_SocketRecv") [flags 0x41] <function_decl 06662f00 WCHNET_SocketRecv>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_SocketRecv") [flags 0x41] <function_decl 06572f00 WCHNET_SocketRecv>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1108,11 +1108,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 107 106 108 12 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06204ca8 xMBPortEventPost>) [0 xMBPortEventPost S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06114ca8 xMBPortEventPost>) [0 xMBPortEventPost S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":199 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06204ca8 xMBPortEventPost>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBPortEventPost") [flags 0x41] <function_decl 06114ca8 xMBPortEventPost>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1144,11 +1144,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 116 115 117 12 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 066a02d0 xEventGroupWaitBits>) [0 xEventGroupWaitBits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 065b02d0 xEventGroupWaitBits>) [0 xEventGroupWaitBits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":200 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 066a02d0 xEventGroupWaitBits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 065b02d0 xEventGroupWaitBits>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1183,11 +1183,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 124 123 125 12 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("WCHNET_SocketSend") [flags 0x41] <function_decl 06662e88 WCHNET_SocketSend>) [0 WCHNET_SocketSend S4 A32])
+                (call (mem:SI (symbol_ref:SI ("WCHNET_SocketSend") [flags 0x41] <function_decl 06572e88 WCHNET_SocketSend>) [0 WCHNET_SocketSend S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":202 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_SocketSend") [flags 0x41] <function_decl 06662e88 WCHNET_SocketSend>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_SocketSend") [flags 0x41] <function_decl 06572e88 WCHNET_SocketSend>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1215,11 +1215,11 @@ Deleted label in block 4.
         (reg:SI 175)) -1
      (nil))
 (call_insn 131 130 132 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06956f78 prvvMBPortReleaseClient.part.0>) [0 prvvMBPortReleaseClient.part.0 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06866f78 prvvMBPortReleaseClient.part.0>) [0 prvvMBPortReleaseClient.part.0 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06956f78 prvvMBPortReleaseClient.part.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06866f78 prvvMBPortReleaseClient.part.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1245,11 +1245,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 139 138 140 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xEventGroupSetBits") [flags 0x41] <function_decl 066a03c0 xEventGroupSetBits>) [0 xEventGroupSetBits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xEventGroupSetBits") [flags 0x41] <function_decl 065b03c0 xEventGroupSetBits>) [0 xEventGroupSetBits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":217 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupSetBits") [flags 0x41] <function_decl 066a03c0 xEventGroupSetBits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupSetBits") [flags 0x41] <function_decl 065b03c0 xEventGroupSetBits>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1308,11 +1308,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 156 155 157 17 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("WCHNET_SocketSetKeepLive") [flags 0x41] <function_decl 0641b870 WCHNET_SocketSetKeepLive>) [0 WCHNET_SocketSetKeepLive S4 A32])
+                (call (mem:SI (symbol_ref:SI ("WCHNET_SocketSetKeepLive") [flags 0x41] <function_decl 0632b870 WCHNET_SocketSetKeepLive>) [0 WCHNET_SocketSetKeepLive S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":235 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_SocketSetKeepLive") [flags 0x41] <function_decl 0641b870 WCHNET_SocketSetKeepLive>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_SocketSetKeepLive") [flags 0x41] <function_decl 0632b870 WCHNET_SocketSetKeepLive>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1334,12 +1334,12 @@ Deleted label in block 4.
             (reg:SI 188))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":236 -1
      (nil))
 (insn 161 160 162 17 (set (reg:SI 192)
-        (high:SI (symbol_ref:SI ("SocketRecvBuf") [flags 0x82] <var_decl 063ae9a0 SocketRecvBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":236 -1
+        (high:SI (symbol_ref:SI ("SocketRecvBuf") [flags 0x82] <var_decl 062be9a0 SocketRecvBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":236 -1
      (nil))
 (insn 162 161 163 17 (set (reg:SI 191)
         (lo_sum:SI (reg:SI 192)
-            (symbol_ref:SI ("SocketRecvBuf") [flags 0x82] <var_decl 063ae9a0 SocketRecvBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":236 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("SocketRecvBuf") [flags 0x82] <var_decl 063ae9a0 SocketRecvBuf>)
+            (symbol_ref:SI ("SocketRecvBuf") [flags 0x82] <var_decl 062be9a0 SocketRecvBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":236 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("SocketRecvBuf") [flags 0x82] <var_decl 062be9a0 SocketRecvBuf>)
         (nil)))
 (insn 163 162 164 17 (set (reg:SI 190)
         (plus:SI (reg:SI 187)
@@ -1360,11 +1360,11 @@ Deleted label in block 4.
         (reg:SI 95 [ socketid.21_30 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":236 -1
      (nil))
 (call_insn 168 167 169 17 (parallel [
-            (call (mem:SI (symbol_ref:SI ("WCHNET_ModifyRecvBuf") [flags 0x41] <function_decl 0641b1e0 WCHNET_ModifyRecvBuf>) [0 WCHNET_ModifyRecvBuf S4 A32])
+            (call (mem:SI (symbol_ref:SI ("WCHNET_ModifyRecvBuf") [flags 0x41] <function_decl 0632b1e0 WCHNET_ModifyRecvBuf>) [0 WCHNET_ModifyRecvBuf S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":236 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_ModifyRecvBuf") [flags 0x41] <function_decl 0641b1e0 WCHNET_ModifyRecvBuf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_ModifyRecvBuf") [flags 0x41] <function_decl 0632b1e0 WCHNET_ModifyRecvBuf>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1521,11 +1521,11 @@ Deleted label in block 12.
 (note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 5 2 6 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("WCHNET_GetGlobalInt") [flags 0x41] <function_decl 06662d98 WCHNET_GetGlobalInt>) [0 WCHNET_GetGlobalInt S4 A32])
+                (call (mem:SI (symbol_ref:SI ("WCHNET_GetGlobalInt") [flags 0x41] <function_decl 06572d98 WCHNET_GetGlobalInt>) [0 WCHNET_GetGlobalInt S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":268 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_GetGlobalInt") [flags 0x41] <function_decl 06662d98 WCHNET_GetGlobalInt>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_GetGlobalInt") [flags 0x41] <function_decl 06572d98 WCHNET_GetGlobalInt>)
         (nil))
     (nil))
 (insn 6 5 7 2 (set (reg:SI 81)
@@ -1553,20 +1553,20 @@ Deleted label in block 12.
  -> 16)
 (note 12 11 13 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
 (insn 13 12 14 4 (set (reg:SI 85)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 069c1318 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":271 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 068d1318 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":271 -1
      (nil))
 (insn 14 13 15 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 85)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 069c1318 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":271 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 069c1318 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 068d1318 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":271 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 068d1318 *.LC1>)
         (nil)))
 (call_insn 15 14 16 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("puts") [flags 0x41] <function_decl 062e8258 __builtin_puts>) [0 __builtin_puts S4 A32])
+                (call (mem:SI (symbol_ref:SI ("puts") [flags 0x41] <function_decl 061f8258 __builtin_puts>) [0 __builtin_puts S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":271 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("puts") [flags 0x41] <function_decl 062e8258 __builtin_puts>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("puts") [flags 0x41] <function_decl 061f8258 __builtin_puts>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1591,20 +1591,20 @@ Deleted label in block 12.
  -> 26)
 (note 22 21 23 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 (insn 23 22 24 6 (set (reg:SI 89)
-        (high:SI (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 069c1370 *.LC2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":275 -1
+        (high:SI (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 068d1370 *.LC2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":275 -1
      (nil))
 (insn 24 23 25 6 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 89)
-            (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 069c1370 *.LC2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":275 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 069c1370 *.LC2>)
+            (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 068d1370 *.LC2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":275 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 068d1370 *.LC2>)
         (nil)))
 (call_insn 25 24 26 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("puts") [flags 0x41] <function_decl 062e8258 __builtin_puts>) [0 __builtin_puts S4 A32])
+                (call (mem:SI (symbol_ref:SI ("puts") [flags 0x41] <function_decl 061f8258 __builtin_puts>) [0 __builtin_puts S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":275 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("puts") [flags 0x41] <function_decl 062e8258 __builtin_puts>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("puts") [flags 0x41] <function_decl 061f8258 __builtin_puts>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1637,11 +1637,11 @@ Deleted label in block 12.
 (note 36 35 37 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
 (call_insn 37 36 38 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("WCHNET_GetPHYStatus") [flags 0x41] <function_decl 06662ca8 WCHNET_GetPHYStatus>) [0 WCHNET_GetPHYStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("WCHNET_GetPHYStatus") [flags 0x41] <function_decl 06572ca8 WCHNET_GetPHYStatus>) [0 WCHNET_GetPHYStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":279 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_GetPHYStatus") [flags 0x41] <function_decl 06662ca8 WCHNET_GetPHYStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_GetPHYStatus") [flags 0x41] <function_decl 06572ca8 WCHNET_GetPHYStatus>)
         (nil))
     (nil))
 (insn 38 37 39 9 (set (reg:SI 93)
@@ -1669,20 +1669,20 @@ Deleted label in block 12.
  -> 49)
 (note 45 44 46 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
 (insn 46 45 47 10 (set (reg:SI 97)
-        (high:SI (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 069c13c8 *.LC3>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":282 -1
+        (high:SI (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 068d13c8 *.LC3>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":282 -1
      (nil))
 (insn 47 46 48 10 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 97)
-            (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 069c13c8 *.LC3>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":282 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 069c13c8 *.LC3>)
+            (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 068d13c8 *.LC3>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":282 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 068d13c8 *.LC3>)
         (nil)))
 (call_insn 48 47 49 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("puts") [flags 0x41] <function_decl 062e8258 __builtin_puts>) [0 __builtin_puts S4 A32])
+                (call (mem:SI (symbol_ref:SI ("puts") [flags 0x41] <function_decl 061f8258 __builtin_puts>) [0 __builtin_puts S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":282 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("puts") [flags 0x41] <function_decl 062e8258 __builtin_puts>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("puts") [flags 0x41] <function_decl 061f8258 __builtin_puts>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1718,11 +1718,11 @@ Deleted label in block 12.
      (nil))
 (call_insn 61 60 62 13 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("WCHNET_GetSocketInt") [flags 0x41] <function_decl 06662f78 WCHNET_GetSocketInt>) [0 WCHNET_GetSocketInt S4 A32])
+                (call (mem:SI (symbol_ref:SI ("WCHNET_GetSocketInt") [flags 0x41] <function_decl 06572f78 WCHNET_GetSocketInt>) [0 WCHNET_GetSocketInt S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":288 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_GetSocketInt") [flags 0x41] <function_decl 06662f78 WCHNET_GetSocketInt>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_GetSocketInt") [flags 0x41] <function_decl 06572f78 WCHNET_GetSocketInt>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (nil)))
@@ -1747,11 +1747,11 @@ Deleted label in block 12.
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":290 -1
      (nil))
 (call_insn 68 67 69 14 (parallel [
-            (call (mem:SI (symbol_ref:SI ("WCHNET_HandleSockInt") [flags 0x3] <function_decl 06956ac8 WCHNET_HandleSockInt>) [0 WCHNET_HandleSockInt S4 A32])
+            (call (mem:SI (symbol_ref:SI ("WCHNET_HandleSockInt") [flags 0x3] <function_decl 06866ac8 WCHNET_HandleSockInt>) [0 WCHNET_HandleSockInt S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":290 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_HandleSockInt") [flags 0x3] <function_decl 06956ac8 WCHNET_HandleSockInt>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_HandleSockInt") [flags 0x3] <function_decl 06866ac8 WCHNET_HandleSockInt>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -1764,11 +1764,11 @@ Deleted label in block 12.
      (nil))
 (call_insn 72 71 73 15 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("WCHNET_GetSocketInt") [flags 0x41] <function_decl 06662f78 WCHNET_GetSocketInt>) [0 WCHNET_GetSocketInt S4 A32])
+                (call (mem:SI (symbol_ref:SI ("WCHNET_GetSocketInt") [flags 0x41] <function_decl 06572f78 WCHNET_GetSocketInt>) [0 WCHNET_GetSocketInt S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":288 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_GetSocketInt") [flags 0x41] <function_decl 06662f78 WCHNET_GetSocketInt>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_GetSocketInt") [flags 0x41] <function_decl 06572f78 WCHNET_GetSocketInt>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (nil)))
@@ -1793,11 +1793,11 @@ Deleted label in block 12.
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":290 -1
      (nil))
 (call_insn 80 79 83 16 (parallel [
-            (call (mem:SI (symbol_ref:SI ("WCHNET_HandleSockInt") [flags 0x3] <function_decl 06956ac8 WCHNET_HandleSockInt>) [0 WCHNET_HandleSockInt S4 A32])
+            (call (mem:SI (symbol_ref:SI ("WCHNET_HandleSockInt") [flags 0x3] <function_decl 06866ac8 WCHNET_HandleSockInt>) [0 WCHNET_HandleSockInt S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":290 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_HandleSockInt") [flags 0x3] <function_decl 06956ac8 WCHNET_HandleSockInt>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_HandleSockInt") [flags 0x3] <function_decl 06866ac8 WCHNET_HandleSockInt>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -1895,11 +1895,11 @@ Forwarding edge 2->4 to 6 failed.
      (nil))
 (call_insn 20 19 21 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 062e1078 __builtin_memset>) [0 __builtin_memset S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 061f1078 __builtin_memset>) [0 __builtin_memset S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":335 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 062e1078 __builtin_memset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 061f1078 __builtin_memset>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -1942,11 +1942,11 @@ Forwarding edge 2->4 to 6 failed.
      (nil))
 (call_insn 30 29 31 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("WCHNET_SocketCreat") [flags 0x41] <function_decl 06662e10 WCHNET_SocketCreat>) [0 WCHNET_SocketCreat S4 A32])
+                (call (mem:SI (symbol_ref:SI ("WCHNET_SocketCreat") [flags 0x41] <function_decl 06572e10 WCHNET_SocketCreat>) [0 WCHNET_SocketCreat S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":340 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_SocketCreat") [flags 0x41] <function_decl 06662e10 WCHNET_SocketCreat>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_SocketCreat") [flags 0x41] <function_decl 06572e10 WCHNET_SocketCreat>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1981,11 +1981,11 @@ Forwarding edge 2->4 to 6 failed.
      (nil))
 (call_insn 39 38 40 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("WCHNET_SocketListen") [flags 0x41] <function_decl 0641b0f0 WCHNET_SocketListen>) [0 WCHNET_SocketListen S4 A32])
+                (call (mem:SI (symbol_ref:SI ("WCHNET_SocketListen") [flags 0x41] <function_decl 0632b0f0 WCHNET_SocketListen>) [0 WCHNET_SocketListen S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":347 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_SocketListen") [flags 0x41] <function_decl 0641b0f0 WCHNET_SocketListen>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_SocketListen") [flags 0x41] <function_decl 0632b0f0 WCHNET_SocketListen>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (nil)))
@@ -2022,11 +2022,11 @@ Forwarding edge 2->4 to 6 failed.
      (nil))
 (call_insn 49 48 6 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("WCHNET_SocketClose") [flags 0x41] <function_decl 0641b168 WCHNET_SocketClose>) [0 WCHNET_SocketClose S4 A32])
+                (call (mem:SI (symbol_ref:SI ("WCHNET_SocketClose") [flags 0x41] <function_decl 0632b168 WCHNET_SocketClose>) [0 WCHNET_SocketClose S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":351 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_SocketClose") [flags 0x41] <function_decl 0641b168 WCHNET_SocketClose>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_SocketClose") [flags 0x41] <function_decl 0632b168 WCHNET_SocketClose>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2111,11 +2111,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ SocketID ])) -1
      (nil))
 (call_insn 9 8 12 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06956f78 prvvMBPortReleaseClient.part.0>) [0 prvvMBPortReleaseClient.part.0 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06866f78 prvvMBPortReleaseClient.part.0>) [0 prvvMBPortReleaseClient.part.0 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06956f78 prvvMBPortReleaseClient.part.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06866f78 prvvMBPortReleaseClient.part.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2161,21 +2161,21 @@ try_optimize_cfg iteration 2
         (reg/f:SI 72)) -1
      (nil))
 (call_insn 8 7 9 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06956f78 prvvMBPortReleaseClient.part.0>) [0 prvvMBPortReleaseClient.part.0 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06866f78 prvvMBPortReleaseClient.part.0>) [0 prvvMBPortReleaseClient.part.0 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06956f78 prvvMBPortReleaseClient.part.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06866f78 prvvMBPortReleaseClient.part.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 9 8 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vMBPortEventClose") [flags 0x41] <function_decl 06956bb8 vMBPortEventClose>) [0 vMBPortEventClose S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vMBPortEventClose") [flags 0x41] <function_decl 06866bb8 vMBPortEventClose>) [0 vMBPortEventClose S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":386 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortEventClose") [flags 0x41] <function_decl 06956bb8 vMBPortEventClose>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortEventClose") [flags 0x41] <function_decl 06866bb8 vMBPortEventClose>)
         (nil))
     (nil))
 
@@ -2217,11 +2217,11 @@ try_optimize_cfg iteration 2
         (reg/f:SI 72)) -1
      (nil))
 (call_insn 8 7 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06956f78 prvvMBPortReleaseClient.part.0>) [0 prvvMBPortReleaseClient.part.0 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06866f78 prvvMBPortReleaseClient.part.0>) [0 prvvMBPortReleaseClient.part.0 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06956f78 prvvMBPortReleaseClient.part.0>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvvMBPortReleaseClient.part.0") [flags 0x3] <function_decl 06866f78 prvvMBPortReleaseClient.part.0>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2369,11 +2369,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 16 15 17 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 062dfd98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 061efd98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":426 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 062dfd98 __builtin_memcpy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 061efd98 __builtin_memcpy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -2434,11 +2434,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 31 30 32 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xEventGroupSetBits") [flags 0x41] <function_decl 066a03c0 xEventGroupSetBits>) [0 xEventGroupSetBits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xEventGroupSetBits") [flags 0x41] <function_decl 065b03c0 xEventGroupSetBits>) [0 xEventGroupSetBits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":430 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupSetBits") [flags 0x41] <function_decl 066a03c0 xEventGroupSetBits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupSetBits") [flags 0x41] <function_decl 065b03c0 xEventGroupSetBits>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2471,11 +2471,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 40 39 41 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 066a02d0 xEventGroupWaitBits>) [0 xEventGroupWaitBits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 065b02d0 xEventGroupWaitBits>) [0 xEventGroupWaitBits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/porttcp.c":431 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 066a02d0 xEventGroupWaitBits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 065b02d0 xEventGroupWaitBits>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))

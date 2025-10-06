@@ -189,11 +189,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 11 10 12 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_u16toap") [flags 0x3] <function_decl 063b8c30 u8x8_u16toap>) [0 u8x8_u16toap S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_u16toap") [flags 0x3] <function_decl 06348c30 u8x8_u16toap>) [0 u8x8_u16toap S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_u16toa.c":66 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_u16toap") [flags 0x3] <function_decl 063b8c30 u8x8_u16toap>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_u16toap") [flags 0x3] <function_decl 06348c30 u8x8_u16toap>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -274,11 +274,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 8 7 9 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_u16toa") [flags 0x3] <function_decl 063b2d98 u8x8_u16toa>) [0 u8x8_u16toa S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_u16toa") [flags 0x3] <function_decl 06342d98 u8x8_u16toa>) [0 u8x8_u16toa S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_u16toa.c":71 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_u16toa") [flags 0x3] <function_decl 063b2d98 u8x8_u16toa>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_u16toa") [flags 0x3] <function_decl 06342d98 u8x8_u16toa>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))

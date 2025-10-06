@@ -229,6 +229,12 @@ CMAKE_TOOLCHAIN_FILE:FILEPATH=C:/Users/i.dymov/Documents/FreeModbusProjetc/cmake
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//GCC8
+GCC:BOOL=ON
+
+//GCC12
+GCC12:BOOL=OFF
+
 //Value Computed by CMake
 ch32v3_BOOT_BINARY_DIR:STATIC=C:/Users/i.dymov/Documents/FreeModbusProjetc/build
 

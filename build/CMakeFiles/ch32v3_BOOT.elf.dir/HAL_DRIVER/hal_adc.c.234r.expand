@@ -176,11 +176,11 @@ try_optimize_cfg iteration 2
         (const_int 49152 [0xc000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":123 -1
      (nil))
 (call_insn 48 47 0 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_ADCCLKConfig") [flags 0x41] <function_decl 0652ed98 RCC_ADCCLKConfig>) [0 RCC_ADCCLKConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_ADCCLKConfig") [flags 0x41] <function_decl 0659ed98 RCC_ADCCLKConfig>) [0 RCC_ADCCLKConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":123 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_ADCCLKConfig") [flags 0x41] <function_decl 0652ed98 RCC_ADCCLKConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_ADCCLKConfig") [flags 0x41] <function_decl 0659ed98 RCC_ADCCLKConfig>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -292,11 +292,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 24 23 25 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ADC_GetResetCalibrationStatus") [flags 0x41] <function_decl 063b6bb8 ADC_GetResetCalibrationStatus>) [0 ADC_GetResetCalibrationStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ADC_GetResetCalibrationStatus") [flags 0x41] <function_decl 06426bb8 ADC_GetResetCalibrationStatus>) [0 ADC_GetResetCalibrationStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":131 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_GetResetCalibrationStatus") [flags 0x41] <function_decl 063b6bb8 ADC_GetResetCalibrationStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_GetResetCalibrationStatus") [flags 0x41] <function_decl 06426bb8 ADC_GetResetCalibrationStatus>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -330,11 +330,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 34 33 35 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ADC_GetCalibrationStatus") [flags 0x41] <function_decl 063b6ca8 ADC_GetCalibrationStatus>) [0 ADC_GetCalibrationStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ADC_GetCalibrationStatus") [flags 0x41] <function_decl 06426ca8 ADC_GetCalibrationStatus>) [0 ADC_GetCalibrationStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":133 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_GetCalibrationStatus") [flags 0x41] <function_decl 063b6ca8 ADC_GetCalibrationStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_GetCalibrationStatus") [flags 0x41] <function_decl 06426ca8 ADC_GetCalibrationStatus>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -354,11 +354,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 40 39 41 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("Get_CalibrationValue") [flags 0x41] <function_decl 064bca50 Get_CalibrationValue>) [0 Get_CalibrationValue S4 A32])
+                (call (mem:SI (symbol_ref:SI ("Get_CalibrationValue") [flags 0x41] <function_decl 0652ca50 Get_CalibrationValue>) [0 Get_CalibrationValue S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":134 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Get_CalibrationValue") [flags 0x41] <function_decl 064bca50 Get_CalibrationValue>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Get_CalibrationValue") [flags 0x41] <function_decl 0652ca50 Get_CalibrationValue>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -504,11 +504,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 8 7 9 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ADC_GetITStatus") [flags 0x41] <function_decl 064bc870 ADC_GetITStatus>) [0 ADC_GetITStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ADC_GetITStatus") [flags 0x41] <function_decl 0652c870 ADC_GetITStatus>) [0 ADC_GetITStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":72 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_GetITStatus") [flags 0x41] <function_decl 064bc870 ADC_GetITStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_GetITStatus") [flags 0x41] <function_decl 0652c870 ADC_GetITStatus>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -558,11 +558,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 21 20 22 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ADC_GetITStatus") [flags 0x41] <function_decl 064bc870 ADC_GetITStatus>) [0 ADC_GetITStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ADC_GetITStatus") [flags 0x41] <function_decl 0652c870 ADC_GetITStatus>) [0 ADC_GetITStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":78 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_GetITStatus") [flags 0x41] <function_decl 064bc870 ADC_GetITStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_GetITStatus") [flags 0x41] <function_decl 0652c870 ADC_GetITStatus>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -858,11 +858,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 15 14 16 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 06200078 __builtin_memset>) [0 __builtin_memset S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 06270078 __builtin_memset>) [0 __builtin_memset S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":143 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 06200078 __builtin_memset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 06270078 __builtin_memset>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -878,11 +878,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 87 [ adc ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":144 -1
      (nil))
 (call_insn 18 17 19 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ADC_InitReinitRCC") [flags 0x3] <function_decl 067307f8 HAL_ADC_InitReinitRCC>) [0 HAL_ADC_InitReinitRCC S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ADC_InitReinitRCC") [flags 0x3] <function_decl 067a07f8 HAL_ADC_InitReinitRCC>) [0 HAL_ADC_InitReinitRCC S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":144 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ADC_InitReinitRCC") [flags 0x3] <function_decl 067307f8 HAL_ADC_InitReinitRCC>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ADC_InitReinitRCC") [flags 0x3] <function_decl 067a07f8 HAL_ADC_InitReinitRCC>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -952,11 +952,11 @@ try_optimize_cfg iteration 2
         (reg/f:SI 72 [ _1 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":155 -1
      (nil))
 (call_insn 36 35 37 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ADC_Init") [flags 0x41] <function_decl 063b68e8 ADC_Init>) [0 ADC_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ADC_Init") [flags 0x41] <function_decl 064268e8 ADC_Init>) [0 ADC_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":155 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_Init") [flags 0x41] <function_decl 063b68e8 ADC_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_Init") [flags 0x41] <function_decl 064268e8 ADC_Init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1019,11 +1019,11 @@ try_optimize_cfg iteration 2
         (reg/f:SI 72 [ _1 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":158 -1
      (nil))
 (call_insn 54 53 55 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ADC_RegularChannelConfig") [flags 0x41] <function_decl 063b6f00 ADC_RegularChannelConfig>) [0 ADC_RegularChannelConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ADC_RegularChannelConfig") [flags 0x41] <function_decl 06426f00 ADC_RegularChannelConfig>) [0 ADC_RegularChannelConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":158 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_RegularChannelConfig") [flags 0x41] <function_decl 063b6f00 ADC_RegularChannelConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_RegularChannelConfig") [flags 0x41] <function_decl 06426f00 ADC_RegularChannelConfig>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1115,11 +1115,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 87 [ adc ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":169 -1
      (nil))
 (call_insn 83 82 0 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ADC_Calubration") [flags 0x3] <function_decl 06730870 HAL_ADC_Calubration>) [0 HAL_ADC_Calubration S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ADC_Calubration") [flags 0x3] <function_decl 067a0870 HAL_ADC_Calubration>) [0 HAL_ADC_Calubration S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":169 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ADC_Calubration") [flags 0x3] <function_decl 06730870 HAL_ADC_Calubration>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ADC_Calubration") [flags 0x3] <function_decl 067a0870 HAL_ADC_Calubration>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1178,11 +1178,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 77 [ adc ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":174 -1
      (nil))
 (call_insn 11 10 12 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ADC_InitReinitRCC") [flags 0x3] <function_decl 067307f8 HAL_ADC_InitReinitRCC>) [0 HAL_ADC_InitReinitRCC S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ADC_InitReinitRCC") [flags 0x3] <function_decl 067a07f8 HAL_ADC_InitReinitRCC>) [0 HAL_ADC_InitReinitRCC S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":174 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ADC_InitReinitRCC") [flags 0x3] <function_decl 067307f8 HAL_ADC_InitReinitRCC>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ADC_InitReinitRCC") [flags 0x3] <function_decl 067a07f8 HAL_ADC_InitReinitRCC>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1224,11 +1224,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 22 21 23 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 06200078 __builtin_memset>) [0 __builtin_memset S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 06270078 __builtin_memset>) [0 __builtin_memset S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":176 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 06200078 __builtin_memset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 06270078 __builtin_memset>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -1336,11 +1336,11 @@ try_optimize_cfg iteration 2
         (reg/f:SI 72 [ pretmp_14 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":193 -1
      (nil))
 (call_insn 53 52 54 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ADC_Init") [flags 0x41] <function_decl 063b68e8 ADC_Init>) [0 ADC_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ADC_Init") [flags 0x41] <function_decl 064268e8 ADC_Init>) [0 ADC_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":193 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_Init") [flags 0x41] <function_decl 063b68e8 ADC_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_Init") [flags 0x41] <function_decl 064268e8 ADC_Init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1355,11 +1355,11 @@ try_optimize_cfg iteration 2
         (const_int 34 [0x22])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":194 -1
      (nil))
 (call_insn 57 56 58 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 067300f0 PFIC_IRQ_ENABLE_PG2>) [0 PFIC_IRQ_ENABLE_PG2 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 067a00f0 PFIC_IRQ_ENABLE_PG2>) [0 PFIC_IRQ_ENABLE_PG2 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":194 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 067300f0 PFIC_IRQ_ENABLE_PG2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 067a00f0 PFIC_IRQ_ENABLE_PG2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1375,11 +1375,11 @@ try_optimize_cfg iteration 2
         (reg/f:SI 72 [ pretmp_14 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":195 -1
      (nil))
 (call_insn 61 60 62 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ADC_ITConfig") [flags 0x41] <function_decl 063b6ac8 ADC_ITConfig>) [0 ADC_ITConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ADC_ITConfig") [flags 0x41] <function_decl 06426ac8 ADC_ITConfig>) [0 ADC_ITConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":195 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_ITConfig") [flags 0x41] <function_decl 063b6ac8 ADC_ITConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_ITConfig") [flags 0x41] <function_decl 06426ac8 ADC_ITConfig>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1389,11 +1389,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 77 [ adc ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":196 -1
      (nil))
 (call_insn 63 62 0 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ADC_Calubration") [flags 0x3] <function_decl 06730870 HAL_ADC_Calubration>) [0 HAL_ADC_Calubration S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ADC_Calubration") [flags 0x3] <function_decl 067a0870 HAL_ADC_Calubration>) [0 HAL_ADC_Calubration S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_adc.c":196 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ADC_Calubration") [flags 0x3] <function_decl 06730870 HAL_ADC_Calubration>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ADC_Calubration") [flags 0x3] <function_decl 067a0870 HAL_ADC_Calubration>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

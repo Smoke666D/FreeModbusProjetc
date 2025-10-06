@@ -61,11 +61,11 @@ try_optimize_cfg iteration 2
         (const_int 512 [0x200])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_adc.c":124 -1
      (nil))
 (call_insn 12 11 13 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 064e35a0 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 058335a0 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_adc.c":124 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 064e35a0 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 058335a0 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -77,11 +77,11 @@ try_optimize_cfg iteration 2
         (const_int 512 [0x200])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_adc.c":125 -1
      (nil))
 (call_insn 15 14 16 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 064e35a0 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 058335a0 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_adc.c":125 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 064e35a0 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 058335a0 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -116,11 +116,11 @@ try_optimize_cfg iteration 2
         (const_int 1024 [0x400])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_adc.c":129 -1
      (nil))
 (call_insn 26 25 27 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 064e35a0 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 058335a0 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_adc.c":129 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 064e35a0 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 058335a0 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -132,11 +132,11 @@ try_optimize_cfg iteration 2
         (const_int 1024 [0x400])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_adc.c":130 -1
      (nil))
 (call_insn 29 28 32 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 064e35a0 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 058335a0 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_adc.c":130 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 064e35a0 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 058335a0 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -3333,11 +3333,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 15 14 16 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ADC_GetResetCalibrationStatus") [flags 0x3] <function_decl 065f3000 ADC_GetResetCalibrationStatus>) [0 ADC_GetResetCalibrationStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ADC_GetResetCalibrationStatus") [flags 0x3] <function_decl 05943000 ADC_GetResetCalibrationStatus>) [0 ADC_GetResetCalibrationStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_adc.c":1152 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_GetResetCalibrationStatus") [flags 0x3] <function_decl 065f3000 ADC_GetResetCalibrationStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_GetResetCalibrationStatus") [flags 0x3] <function_decl 05943000 ADC_GetResetCalibrationStatus>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3372,11 +3372,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 25 24 26 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ADC_GetCalibrationStatus") [flags 0x3] <function_decl 065f30f0 ADC_GetCalibrationStatus>) [0 ADC_GetCalibrationStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ADC_GetCalibrationStatus") [flags 0x3] <function_decl 059430f0 ADC_GetCalibrationStatus>) [0 ADC_GetCalibrationStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_adc.c":1155 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_GetCalibrationStatus") [flags 0x3] <function_decl 065f30f0 ADC_GetCalibrationStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC_GetCalibrationStatus") [flags 0x3] <function_decl 059430f0 ADC_GetCalibrationStatus>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

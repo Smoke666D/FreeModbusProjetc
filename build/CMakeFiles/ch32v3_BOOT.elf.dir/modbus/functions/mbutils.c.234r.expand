@@ -61,12 +61,12 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR0") [flags 0x182])
         (nil)))
 (insn 14 13 15 4 (set (reg:SI 113)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0639faa8 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbutils.c":56 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 063dfaa8 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbutils.c":56 -1
      (nil))
 (insn 15 14 16 4 (set (reg:SI 13 a3)
         (lo_sum:SI (reg:SI 113)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0639faa8 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbutils.c":56 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0639faa8 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 063dfaa8 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbutils.c":56 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 063dfaa8 *.LC0>)
         (nil)))
 (insn 16 15 17 4 (set (reg:SI 12 a2)
         (reg/f:SI 111)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbutils.c":56 -1
@@ -75,19 +75,19 @@ try_optimize_cfg iteration 2
         (const_int 56 [0x38])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbutils.c":56 -1
      (nil))
 (insn 18 17 19 4 (set (reg:SI 114)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0639fb00 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbutils.c":56 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063dfb00 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbutils.c":56 -1
      (nil))
 (insn 19 18 20 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 114)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0639fb00 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbutils.c":56 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0639fb00 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063dfb00 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbutils.c":56 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063dfb00 *.LC1>)
         (nil)))
 (call_insn 20 19 21 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062ddac8 __assert_func>) [0 __assert_func S4 A32])
+            (call (mem:SI (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 0631dac8 __assert_func>) [0 __assert_func S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbutils.c":56 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 062ddac8 __assert_func>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 0631dac8 __assert_func>)
         (expr_list:REG_NORETURN (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

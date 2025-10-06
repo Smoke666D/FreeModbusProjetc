@@ -76,11 +76,11 @@ try_optimize_cfg iteration 2
         (const_int 4 [0x4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":36 -1
      (nil))
 (call_insn 12 11 13 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":36 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -92,11 +92,11 @@ try_optimize_cfg iteration 2
         (const_int 4 [0x4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":37 -1
      (nil))
 (call_insn 15 14 16 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":37 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -131,11 +131,11 @@ try_optimize_cfg iteration 2
         (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":41 -1
      (nil))
 (call_insn 26 25 27 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":41 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -147,11 +147,11 @@ try_optimize_cfg iteration 2
         (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":42 -1
      (nil))
 (call_insn 29 28 30 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":42 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -181,11 +181,11 @@ try_optimize_cfg iteration 2
         (const_int 16 [0x10])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":46 -1
      (nil))
 (call_insn 39 38 40 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":46 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -197,11 +197,11 @@ try_optimize_cfg iteration 2
         (const_int 16 [0x10])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":47 -1
      (nil))
 (call_insn 42 41 43 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":47 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -236,11 +236,11 @@ try_optimize_cfg iteration 2
         (const_int 32 [0x20])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":51 -1
      (nil))
 (call_insn 53 52 54 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":51 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -252,11 +252,11 @@ try_optimize_cfg iteration 2
         (const_int 32 [0x20])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":52 -1
      (nil))
 (call_insn 56 55 57 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":52 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -291,11 +291,11 @@ try_optimize_cfg iteration 2
         (const_int 64 [0x40])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":56 -1
      (nil))
 (call_insn 67 66 68 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":56 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -307,11 +307,11 @@ try_optimize_cfg iteration 2
         (const_int 64 [0x40])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":57 -1
      (nil))
 (call_insn 70 69 73 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":57 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -352,11 +352,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":71 -1
      (nil))
 (call_insn 7 6 8 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":71 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -368,11 +368,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":72 -1
      (nil))
 (call_insn 10 9 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>) [0 RCC_APB2PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":72 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 063d3f78 RCC_APB2PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphResetCmd") [flags 0x41] <function_decl 06423f78 RCC_APB2PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2171,11 +2171,11 @@ Forwarding edge 11->12 to 18 failed.
         (const_int 124 [0x7c])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":582 -1
      (nil))
 (call_insn 10 9 11 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 063d3e88 RCC_APB2PeriphClockCmd>) [0 RCC_APB2PeriphClockCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 06423e88 RCC_APB2PeriphClockCmd>) [0 RCC_APB2PeriphClockCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":582 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 063d3e88 RCC_APB2PeriphClockCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 06423e88 RCC_APB2PeriphClockCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2367,11 +2367,11 @@ Forwarding edge 11->12 to 18 failed.
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":597 -1
      (nil))
 (call_insn 63 62 64 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>) [0 GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>) [0 GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":597 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2407,11 +2407,11 @@ Forwarding edge 11->12 to 18 failed.
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 72 71 73 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>) [0 GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>) [0 GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":607 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2447,11 +2447,11 @@ Forwarding edge 11->12 to 18 failed.
      (expr_list:REG_EQUAL (const_int 1073813504 [0x40011800])
         (nil)))
 (call_insn 81 80 82 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>) [0 GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>) [0 GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":617 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2494,11 +2494,11 @@ Forwarding edge 11->12 to 18 failed.
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 94 93 95 14 (parallel [
-            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>) [0 GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>) [0 GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":631 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2534,11 +2534,11 @@ Forwarding edge 11->12 to 18 failed.
      (expr_list:REG_EQUAL (const_int 1073813504 [0x40011800])
         (nil)))
 (call_insn 103 102 104 14 (parallel [
-            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>) [0 GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>) [0 GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":641 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2586,11 +2586,11 @@ Forwarding edge 11->12 to 18 failed.
      (expr_list:REG_EQUAL (const_int 1073809408 [0x40010800])
         (nil)))
 (call_insn 117 116 118 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>) [0 GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>) [0 GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":676 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2626,11 +2626,11 @@ Forwarding edge 11->12 to 18 failed.
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 126 125 127 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>) [0 GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>) [0 GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":682 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2661,11 +2661,11 @@ Forwarding edge 11->12 to 18 failed.
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":690 -1
      (nil))
 (call_insn 134 133 135 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>) [0 GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>) [0 GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":690 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2701,11 +2701,11 @@ Forwarding edge 11->12 to 18 failed.
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 143 142 144 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>) [0 GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>) [0 GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":700 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2741,11 +2741,11 @@ Forwarding edge 11->12 to 18 failed.
      (expr_list:REG_EQUAL (const_int 1073813504 [0x40011800])
         (nil)))
 (call_insn 152 151 153 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>) [0 GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>) [0 GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":711 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2788,11 +2788,11 @@ Forwarding edge 11->12 to 18 failed.
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 165 164 166 16 (parallel [
-            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>) [0 GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>) [0 GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":772 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2828,11 +2828,11 @@ Forwarding edge 11->12 to 18 failed.
      (expr_list:REG_EQUAL (const_int 1073813504 [0x40011800])
         (nil)))
 (call_insn 174 173 177 16 (parallel [
-            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>) [0 GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>) [0 GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_gpio.c":782 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 06562780 GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x3] <function_decl 065b2780 GPIO_Init>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

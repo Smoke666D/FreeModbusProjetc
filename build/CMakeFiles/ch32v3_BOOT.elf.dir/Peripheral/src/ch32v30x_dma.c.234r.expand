@@ -1799,11 +1799,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 7 6 8 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("DMA_GetFlagStatus") [flags 0x3] <function_decl 0658ed20 DMA_GetFlagStatus>) [0 DMA_GetFlagStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("DMA_GetFlagStatus") [flags 0x3] <function_decl 0657ed20 DMA_GetFlagStatus>) [0 DMA_GetFlagStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_GetFlagStatus") [flags 0x3] <function_decl 0658ed20 DMA_GetFlagStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_GetFlagStatus") [flags 0x3] <function_decl 0657ed20 DMA_GetFlagStatus>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1850,11 +1850,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 72 [ DMAy_IT ])) -1
      (nil))
 (call_insn 7 6 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("DMA_ClearFlag") [flags 0x3] <function_decl 0658ed98 DMA_ClearFlag>) [0 DMA_ClearFlag S4 A32])
+            (call (mem:SI (symbol_ref:SI ("DMA_ClearFlag") [flags 0x3] <function_decl 0657ed98 DMA_ClearFlag>) [0 DMA_ClearFlag S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_ClearFlag") [flags 0x3] <function_decl 0658ed98 DMA_ClearFlag>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DMA_ClearFlag") [flags 0x3] <function_decl 0657ed98 DMA_ClearFlag>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

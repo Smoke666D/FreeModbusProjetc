@@ -89,11 +89,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8log_u8x8.c":47 -1
      (nil))
 (call_insn 23 22 24 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_DrawGlyph") [flags 0x41] <function_decl 0569b870 u8x8_DrawGlyph>) [0 u8x8_DrawGlyph S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_DrawGlyph") [flags 0x41] <function_decl 062e2870 u8x8_DrawGlyph>) [0 u8x8_DrawGlyph S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8log_u8x8.c":47 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawGlyph") [flags 0x41] <function_decl 0569b870 u8x8_DrawGlyph>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawGlyph") [flags 0x41] <function_decl 062e2870 u8x8_DrawGlyph>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -200,11 +200,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 75 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8log_u8x8.c":57 -1
      (nil))
 (call_insn 18 17 19 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_DrawLogLine") [flags 0x3] <function_decl 056a1c30 u8x8_DrawLogLine>) [0 u8x8_DrawLogLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_DrawLogLine") [flags 0x3] <function_decl 062e8c30 u8x8_DrawLogLine>) [0 u8x8_DrawLogLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8log_u8x8.c":57 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawLogLine") [flags 0x3] <function_decl 056a1c30 u8x8_DrawLogLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawLogLine") [flags 0x3] <function_decl 062e8c30 u8x8_DrawLogLine>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -309,11 +309,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 75 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8log_u8x8.c":68 -1
      (nil))
 (call_insn 14 13 15 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_DrawLog") [flags 0x3] <function_decl 056a1b40 u8x8_DrawLog>) [0 u8x8_DrawLog S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_DrawLog") [flags 0x3] <function_decl 062e8b40 u8x8_DrawLog>) [0 u8x8_DrawLog S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8log_u8x8.c":68 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawLog") [flags 0x3] <function_decl 056a1b40 u8x8_DrawLog>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawLog") [flags 0x3] <function_decl 062e8b40 u8x8_DrawLog>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -360,11 +360,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 75 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8log_u8x8.c":72 -1
      (nil))
 (call_insn 28 27 31 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_DrawLogLine") [flags 0x3] <function_decl 056a1c30 u8x8_DrawLogLine>) [0 u8x8_DrawLogLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_DrawLogLine") [flags 0x3] <function_decl 062e8c30 u8x8_DrawLogLine>) [0 u8x8_DrawLogLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8log_u8x8.c":72 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawLogLine") [flags 0x3] <function_decl 056a1c30 u8x8_DrawLogLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawLogLine") [flags 0x3] <function_decl 062e8c30 u8x8_DrawLogLine>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

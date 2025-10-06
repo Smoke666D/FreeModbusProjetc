@@ -269,36 +269,36 @@ try_optimize_cfg iteration 2
         (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":87 -1
      (nil))
 (call_insn 6 5 7 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("NVIC_PriorityGroupConfig") [flags 0x41] <function_decl 066008e8 NVIC_PriorityGroupConfig>) [0 NVIC_PriorityGroupConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("NVIC_PriorityGroupConfig") [flags 0x41] <function_decl 065708e8 NVIC_PriorityGroupConfig>) [0 NVIC_PriorityGroupConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":87 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("NVIC_PriorityGroupConfig") [flags 0x41] <function_decl 066008e8 NVIC_PriorityGroupConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("NVIC_PriorityGroupConfig") [flags 0x41] <function_decl 065708e8 NVIC_PriorityGroupConfig>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 7 6 8 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("SystemCoreClockUpdate") [flags 0x41] <function_decl 0644c7f8 SystemCoreClockUpdate>) [0 SystemCoreClockUpdate S4 A32])
+            (call (mem:SI (symbol_ref:SI ("SystemCoreClockUpdate") [flags 0x41] <function_decl 063bc7f8 SystemCoreClockUpdate>) [0 SystemCoreClockUpdate S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":88 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SystemCoreClockUpdate") [flags 0x41] <function_decl 0644c7f8 SystemCoreClockUpdate>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SystemCoreClockUpdate") [flags 0x41] <function_decl 063bc7f8 SystemCoreClockUpdate>)
         (nil))
     (nil))
 (call_insn 8 7 9 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("Delay_Init") [flags 0x41] <function_decl 0664fb40 Delay_Init>) [0 Delay_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("Delay_Init") [flags 0x41] <function_decl 065bfb40 Delay_Init>) [0 Delay_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":90 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Init") [flags 0x41] <function_decl 0664fb40 Delay_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Init") [flags 0x41] <function_decl 065bfb40 Delay_Init>)
         (nil))
     (nil))
 (call_insn 9 8 10 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vInit_DeviceConfig") [flags 0x41] <function_decl 067b2ca8 vInit_DeviceConfig>) [0 vInit_DeviceConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vInit_DeviceConfig") [flags 0x41] <function_decl 06722ca8 vInit_DeviceConfig>) [0 vInit_DeviceConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":91 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vInit_DeviceConfig") [flags 0x41] <function_decl 067b2ca8 vInit_DeviceConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vInit_DeviceConfig") [flags 0x41] <function_decl 06722ca8 vInit_DeviceConfig>)
         (nil))
     (nil))
 (insn 10 9 11 2 (set (reg:SI 74)
@@ -310,98 +310,98 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 115200 [0x1c200])
         (nil)))
 (call_insn 12 11 13 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("USART_Printf_Init") [flags 0x41] <function_decl 0664fca8 USART_Printf_Init>) [0 USART_Printf_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("USART_Printf_Init") [flags 0x41] <function_decl 065bfca8 USART_Printf_Init>) [0 USART_Printf_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":92 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_Printf_Init") [flags 0x41] <function_decl 0664fca8 USART_Printf_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("USART_Printf_Init") [flags 0x41] <function_decl 065bfca8 USART_Printf_Init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 13 12 14 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vRTC_Init") [flags 0x41] <function_decl 0683b618 vRTC_Init>) [0 vRTC_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vRTC_Init") [flags 0x41] <function_decl 067ab618 vRTC_Init>) [0 vRTC_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":93 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vRTC_Init") [flags 0x41] <function_decl 0683b618 vRTC_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vRTC_Init") [flags 0x41] <function_decl 067ab618 vRTC_Init>)
         (nil))
     (nil))
 (call_insn 14 13 15 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("DataModel_Init") [flags 0x41] <function_decl 067dcca8 DataModel_Init>) [0 DataModel_Init S4 A32])
+                (call (mem:SI (symbol_ref:SI ("DataModel_Init") [flags 0x41] <function_decl 0674cca8 DataModel_Init>) [0 DataModel_Init S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":95 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DataModel_Init") [flags 0x41] <function_decl 067dcca8 DataModel_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DataModel_Init") [flags 0x41] <function_decl 0674cca8 DataModel_Init>)
         (nil))
     (nil))
 (call_insn 15 14 16 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vSYSqueueInit") [flags 0x41] <function_decl 06914870 vSYSqueueInit>) [0 vSYSqueueInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vSYSqueueInit") [flags 0x41] <function_decl 06884870 vSYSqueueInit>) [0 vSYSqueueInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":96 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSYSqueueInit") [flags 0x41] <function_decl 06914870 vSYSqueueInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSYSqueueInit") [flags 0x41] <function_decl 06884870 vSYSqueueInit>)
         (nil))
     (nil))
 (call_insn 16 15 17 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vSYSeventInit") [flags 0x41] <function_decl 069147f8 vSYSeventInit>) [0 vSYSeventInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vSYSeventInit") [flags 0x41] <function_decl 068847f8 vSYSeventInit>) [0 vSYSeventInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":97 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSYSeventInit") [flags 0x41] <function_decl 069147f8 vSYSeventInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSYSeventInit") [flags 0x41] <function_decl 068847f8 vSYSeventInit>)
         (nil))
     (nil))
 (call_insn 17 16 18 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vSYStaskInit") [flags 0x41] <function_decl 06914780 vSYStaskInit>) [0 vSYStaskInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vSYStaskInit") [flags 0x41] <function_decl 06884780 vSYStaskInit>) [0 vSYStaskInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":98 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSYStaskInit") [flags 0x41] <function_decl 06914780 vSYStaskInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSYStaskInit") [flags 0x41] <function_decl 06884780 vSYStaskInit>)
         (nil))
     (nil))
 (call_insn 18 17 19 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vNetInit") [flags 0x41] <function_decl 061c4ac8 vNetInit>) [0 vNetInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vNetInit") [flags 0x41] <function_decl 06134ac8 vNetInit>) [0 vNetInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":99 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vNetInit") [flags 0x41] <function_decl 061c4ac8 vNetInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vNetInit") [flags 0x41] <function_decl 06134ac8 vNetInit>)
         (nil))
     (nil))
 (insn 19 18 20 2 (set (reg:SI 75)
-        (high:SI (symbol_ref:SI ("SystemCoreClock") [flags 0xc4] <var_decl 0643ddc0 SystemCoreClock>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":101 -1
+        (high:SI (symbol_ref:SI ("SystemCoreClock") [flags 0xc4] <var_decl 063addc0 SystemCoreClock>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":101 -1
      (nil))
 (insn 20 19 21 2 (set (reg:SI 76)
         (mem/c:SI (lo_sum:SI (reg:SI 75)
-                (symbol_ref:SI ("SystemCoreClock") [flags 0xc4] <var_decl 0643ddc0 SystemCoreClock>)) [3 SystemCoreClock+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":101 -1
+                (symbol_ref:SI ("SystemCoreClock") [flags 0xc4] <var_decl 063addc0 SystemCoreClock>)) [3 SystemCoreClock+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":101 -1
      (nil))
 (insn 21 20 22 2 (set (reg:SI 11 a1)
         (reg:SI 76)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":101 -1
      (nil))
 (insn 22 21 23 2 (set (reg:SI 77)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0691ee70 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":101 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0688ee70 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":101 -1
      (nil))
 (insn 23 22 24 2 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 77)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0691ee70 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":101 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0691ee70 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0688ee70 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":101 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0688ee70 *.LC1>)
         (nil)))
 (call_insn 24 23 25 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 062a3f00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06213f00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":101 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 062a3f00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06213f00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
             (nil))))
 (call_insn 25 24 27 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskStartScheduler") [flags 0x41] <function_decl 0665b1e0 vTaskStartScheduler>) [0 vTaskStartScheduler S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskStartScheduler") [flags 0x41] <function_decl 065cb1e0 vTaskStartScheduler>) [0 vTaskStartScheduler S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/main.c":102 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskStartScheduler") [flags 0x41] <function_decl 0665b1e0 vTaskStartScheduler>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskStartScheduler") [flags 0x41] <function_decl 065cb1e0 vTaskStartScheduler>)
         (nil))
     (nil))
 (code_label 27 25 26 4 8 (nil) [1 uses])

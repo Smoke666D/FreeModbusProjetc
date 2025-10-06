@@ -147,11 +147,11 @@ Deleted label in block 21.
      (nil))
 (call_insn 10 9 11 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 067f89d8 HAL_I2C_GET_STAR1>) [0 HAL_I2C_GET_STAR1 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 0688e9d8 HAL_I2C_GET_STAR1>) [0 HAL_I2C_GET_STAR1 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":36 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 067f89d8 HAL_I2C_GET_STAR1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 0688e9d8 HAL_I2C_GET_STAR1>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -282,11 +282,11 @@ Deleted label in block 21.
         (reg:SI 178)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":42 -1
      (nil))
 (call_insn 44 43 45 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND_ADDR_TRANS") [flags 0x41] <function_decl 067f8d98 HAL_I2C_SEND_ADDR_TRANS>) [0 HAL_I2C_SEND_ADDR_TRANS S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND_ADDR_TRANS") [flags 0x41] <function_decl 0688ed98 HAL_I2C_SEND_ADDR_TRANS>) [0 HAL_I2C_SEND_ADDR_TRANS S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":42 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND_ADDR_TRANS") [flags 0x41] <function_decl 067f8d98 HAL_I2C_SEND_ADDR_TRANS>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND_ADDR_TRANS") [flags 0x41] <function_decl 0688ed98 HAL_I2C_SEND_ADDR_TRANS>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -348,11 +348,11 @@ Deleted label in block 21.
      (nil))
 (call_insn 62 61 63 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 067f8960 HAL_I2C_GET_STAR2>) [0 HAL_I2C_GET_STAR2 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 0688e960 HAL_I2C_GET_STAR2>) [0 HAL_I2C_GET_STAR2 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":49 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 067f8960 HAL_I2C_GET_STAR2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 0688e960 HAL_I2C_GET_STAR2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -401,11 +401,11 @@ Deleted label in block 21.
         (reg:SI 197)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":50 -1
      (nil))
 (call_insn 75 74 76 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 067f8d20 HAL_I2C_SEND>) [0 HAL_I2C_SEND S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 0688ed20 HAL_I2C_SEND>) [0 HAL_I2C_SEND S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":50 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 067f8d20 HAL_I2C_SEND>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 0688ed20 HAL_I2C_SEND>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -484,11 +484,11 @@ Deleted label in block 21.
         (reg:SI 210)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":57 -1
      (nil))
 (call_insn 98 97 99 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 067f8d20 HAL_I2C_SEND>) [0 HAL_I2C_SEND S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 0688ed20 HAL_I2C_SEND>) [0 HAL_I2C_SEND S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":57 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 067f8d20 HAL_I2C_SEND>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 0688ed20 HAL_I2C_SEND>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -549,11 +549,11 @@ Deleted label in block 21.
         (reg:SI 219)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":64 -1
      (nil))
 (call_insn 116 115 117 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 067f8ca8 HAL_I2C_START>) [0 HAL_I2C_START S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 0688eca8 HAL_I2C_START>) [0 HAL_I2C_START S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":64 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 067f8ca8 HAL_I2C_START>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 0688eca8 HAL_I2C_START>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -628,11 +628,11 @@ Deleted label in block 21.
         (reg:SI 231)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":71 -1
      (nil))
 (call_insn 138 137 139 14 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND_ADDR_RECIEVE") [flags 0x41] <function_decl 067f8e10 HAL_I2C_SEND_ADDR_RECIEVE>) [0 HAL_I2C_SEND_ADDR_RECIEVE S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND_ADDR_RECIEVE") [flags 0x41] <function_decl 0688ee10 HAL_I2C_SEND_ADDR_RECIEVE>) [0 HAL_I2C_SEND_ADDR_RECIEVE S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":71 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND_ADDR_RECIEVE") [flags 0x41] <function_decl 067f8e10 HAL_I2C_SEND_ADDR_RECIEVE>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND_ADDR_RECIEVE") [flags 0x41] <function_decl 0688ee10 HAL_I2C_SEND_ADDR_RECIEVE>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -694,11 +694,11 @@ Deleted label in block 21.
      (nil))
 (call_insn 156 155 157 16 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 067f8960 HAL_I2C_GET_STAR2>) [0 HAL_I2C_GET_STAR2 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 0688e960 HAL_I2C_GET_STAR2>) [0 HAL_I2C_GET_STAR2 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":78 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 067f8960 HAL_I2C_GET_STAR2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 0688e960 HAL_I2C_GET_STAR2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -795,11 +795,11 @@ Deleted label in block 21.
      (nil))
 (call_insn 183 182 184 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_I2C_READ_DATA") [flags 0x41] <function_decl 06731000 HAL_I2C_READ_DATA>) [0 HAL_I2C_READ_DATA S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_I2C_READ_DATA") [flags 0x41] <function_decl 067cb000 HAL_I2C_READ_DATA>) [0 HAL_I2C_READ_DATA S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":87 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_READ_DATA") [flags 0x41] <function_decl 06731000 HAL_I2C_READ_DATA>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_READ_DATA") [flags 0x41] <function_decl 067cb000 HAL_I2C_READ_DATA>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -867,11 +867,11 @@ Deleted label in block 21.
         (reg:SI 155 [ pretmp_134 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":91 -1
      (nil))
 (call_insn 203 202 204 20 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ACK_DISABLE") [flags 0x41] <function_decl 067f8f00 HAL_I2C_ACK_DISABLE>) [0 HAL_I2C_ACK_DISABLE S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ACK_DISABLE") [flags 0x41] <function_decl 0688ef00 HAL_I2C_ACK_DISABLE>) [0 HAL_I2C_ACK_DISABLE S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":91 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ACK_DISABLE") [flags 0x41] <function_decl 067f8f00 HAL_I2C_ACK_DISABLE>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ACK_DISABLE") [flags 0x41] <function_decl 0688ef00 HAL_I2C_ACK_DISABLE>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -892,11 +892,11 @@ Deleted label in block 21.
      (nil))
 (call_insn 208 207 209 20 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_I2C_READ_DATA") [flags 0x41] <function_decl 06731000 HAL_I2C_READ_DATA>) [0 HAL_I2C_READ_DATA S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_I2C_READ_DATA") [flags 0x41] <function_decl 067cb000 HAL_I2C_READ_DATA>) [0 HAL_I2C_READ_DATA S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":92 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_READ_DATA") [flags 0x41] <function_decl 06731000 HAL_I2C_READ_DATA>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_READ_DATA") [flags 0x41] <function_decl 067cb000 HAL_I2C_READ_DATA>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -969,11 +969,11 @@ Deleted label in block 21.
         (reg:SI 279)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":93 -1
      (nil))
 (call_insn 227 226 228 20 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_STOP") [flags 0x41] <function_decl 067f8c30 HAL_I2C_STOP>) [0 HAL_I2C_STOP S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_STOP") [flags 0x41] <function_decl 0688ec30 HAL_I2C_STOP>) [0 HAL_I2C_STOP S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":93 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_STOP") [flags 0x41] <function_decl 067f8c30 HAL_I2C_STOP>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_STOP") [flags 0x41] <function_decl 0688ec30 HAL_I2C_STOP>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1024,11 +1024,11 @@ Deleted label in block 21.
      (nil))
 (call_insn 241 240 242 20 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 065dab40 xTaskGenericNotifyFromISR>) [0 xTaskGenericNotifyFromISR S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06674b40 xTaskGenericNotifyFromISR>) [0 xTaskGenericNotifyFromISR S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":94 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 065dab40 xTaskGenericNotifyFromISR>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06674b40 xTaskGenericNotifyFromISR>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1136,11 +1136,11 @@ Deleted label in block 21.
         (reg:SI 300)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":104 -1
      (nil))
 (call_insn 274 273 275 25 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND_ADDR_TRANS") [flags 0x41] <function_decl 067f8d98 HAL_I2C_SEND_ADDR_TRANS>) [0 HAL_I2C_SEND_ADDR_TRANS S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND_ADDR_TRANS") [flags 0x41] <function_decl 0688ed98 HAL_I2C_SEND_ADDR_TRANS>) [0 HAL_I2C_SEND_ADDR_TRANS S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":104 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND_ADDR_TRANS") [flags 0x41] <function_decl 067f8d98 HAL_I2C_SEND_ADDR_TRANS>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND_ADDR_TRANS") [flags 0x41] <function_decl 0688ed98 HAL_I2C_SEND_ADDR_TRANS>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1209,11 +1209,11 @@ Deleted label in block 21.
         (reg:SI 309)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":111 -1
      (nil))
 (call_insn 294 293 295 27 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ClearFlag") [flags 0x41] <function_decl 067f8f78 HAL_I2C_ClearFlag>) [0 HAL_I2C_ClearFlag S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ClearFlag") [flags 0x41] <function_decl 0688ef78 HAL_I2C_ClearFlag>) [0 HAL_I2C_ClearFlag S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":111 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ClearFlag") [flags 0x41] <function_decl 067f8f78 HAL_I2C_ClearFlag>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ClearFlag") [flags 0x41] <function_decl 0688ef78 HAL_I2C_ClearFlag>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1234,11 +1234,11 @@ Deleted label in block 21.
         (reg:SI 313)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":112 -1
      (nil))
 (call_insn 299 298 300 27 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 067f8ca8 HAL_I2C_START>) [0 HAL_I2C_START S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 0688eca8 HAL_I2C_START>) [0 HAL_I2C_START S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":112 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 067f8ca8 HAL_I2C_START>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 0688eca8 HAL_I2C_START>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1299,11 +1299,11 @@ Deleted label in block 21.
      (nil))
 (call_insn 317 316 318 29 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 067f8960 HAL_I2C_GET_STAR2>) [0 HAL_I2C_GET_STAR2 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 0688e960 HAL_I2C_GET_STAR2>) [0 HAL_I2C_GET_STAR2 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":119 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 067f8960 HAL_I2C_GET_STAR2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 0688e960 HAL_I2C_GET_STAR2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1352,11 +1352,11 @@ Deleted label in block 21.
         (reg:SI 332)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":120 -1
      (nil))
 (call_insn 330 329 331 29 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 067f8d20 HAL_I2C_SEND>) [0 HAL_I2C_SEND S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 0688ed20 HAL_I2C_SEND>) [0 HAL_I2C_SEND S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":120 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 067f8d20 HAL_I2C_SEND>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 0688ed20 HAL_I2C_SEND>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1435,11 +1435,11 @@ Deleted label in block 21.
         (reg:SI 345)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":128 -1
      (nil))
 (call_insn 353 352 354 31 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 067f8d20 HAL_I2C_SEND>) [0 HAL_I2C_SEND S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 0688ed20 HAL_I2C_SEND>) [0 HAL_I2C_SEND S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":128 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 067f8d20 HAL_I2C_SEND>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 0688ed20 HAL_I2C_SEND>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1554,11 +1554,11 @@ Deleted label in block 21.
         (reg:SI 364)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":138 -1
      (nil))
 (call_insn 385 384 386 34 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 067f8d20 HAL_I2C_SEND>) [0 HAL_I2C_SEND S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 0688ed20 HAL_I2C_SEND>) [0 HAL_I2C_SEND S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":138 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 067f8d20 HAL_I2C_SEND>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 0688ed20 HAL_I2C_SEND>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1654,11 +1654,11 @@ Deleted label in block 21.
         (reg:SI 379)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":148 -1
      (nil))
 (call_insn 414 413 415 37 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_STOP") [flags 0x41] <function_decl 067f8c30 HAL_I2C_STOP>) [0 HAL_I2C_STOP S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_STOP") [flags 0x41] <function_decl 0688ec30 HAL_I2C_STOP>) [0 HAL_I2C_STOP S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":148 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_STOP") [flags 0x41] <function_decl 067f8c30 HAL_I2C_STOP>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_STOP") [flags 0x41] <function_decl 0688ec30 HAL_I2C_STOP>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1709,11 +1709,11 @@ Deleted label in block 21.
      (nil))
 (call_insn 428 427 430 37 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 065dab40 xTaskGenericNotifyFromISR>) [0 xTaskGenericNotifyFromISR S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06674b40 xTaskGenericNotifyFromISR>) [0 xTaskGenericNotifyFromISR S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":149 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 065dab40 xTaskGenericNotifyFromISR>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06674b40 xTaskGenericNotifyFromISR>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1866,20 +1866,20 @@ try_optimize_cfg iteration 2
             (const_int -16 [0xfffffffffffffff0]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":22 -1
      (nil))
 (insn 28 27 29 2 (set (reg:SI 86)
-        (high:SI (symbol_ref:SI ("I2C_FSM") [flags 0x3] <function_decl 06731870 I2C_FSM>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":22 -1
+        (high:SI (symbol_ref:SI ("I2C_FSM") [flags 0x3] <function_decl 067cb870 I2C_FSM>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":22 -1
      (nil))
 (insn 29 28 30 2 (set (reg:SI 15 a5)
         (lo_sum:SI (reg:SI 86)
-            (symbol_ref:SI ("I2C_FSM") [flags 0x3] <function_decl 06731870 I2C_FSM>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":22 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("I2C_FSM") [flags 0x3] <function_decl 06731870 I2C_FSM>)
+            (symbol_ref:SI ("I2C_FSM") [flags 0x3] <function_decl 067cb870 I2C_FSM>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":22 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("I2C_FSM") [flags 0x3] <function_decl 067cb870 I2C_FSM>)
         (nil)))
 (insn 30 29 31 2 (set (reg:SI 87)
-        (high:SI (symbol_ref:SI ("I2C_FSM") [flags 0x3] <function_decl 06731870 I2C_FSM>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":22 -1
+        (high:SI (symbol_ref:SI ("I2C_FSM") [flags 0x3] <function_decl 067cb870 I2C_FSM>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":22 -1
      (nil))
 (insn 31 30 32 2 (set (reg:SI 14 a4)
         (lo_sum:SI (reg:SI 87)
-            (symbol_ref:SI ("I2C_FSM") [flags 0x3] <function_decl 06731870 I2C_FSM>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":22 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("I2C_FSM") [flags 0x3] <function_decl 06731870 I2C_FSM>)
+            (symbol_ref:SI ("I2C_FSM") [flags 0x3] <function_decl 067cb870 I2C_FSM>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":22 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("I2C_FSM") [flags 0x3] <function_decl 067cb870 I2C_FSM>)
         (nil)))
 (insn 32 31 33 2 (set (reg:SI 13 a3)
         (reg/v:SI 74 [ subprior ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":22 -1
@@ -1894,11 +1894,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 72 [ i2c ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":22 -1
      (nil))
 (call_insn 36 35 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("InitI2CIT") [flags 0x41] <function_decl 06731078 InitI2CIT>) [0 InitI2CIT S4 A32])
+            (call (mem:SI (symbol_ref:SI ("InitI2CIT") [flags 0x41] <function_decl 067cb078 InitI2CIT>) [0 InitI2CIT S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":22 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("InitI2CIT") [flags 0x41] <function_decl 06731078 InitI2CIT>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("InitI2CIT") [flags 0x41] <function_decl 067cb078 InitI2CIT>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2080,11 +2080,11 @@ try_optimize_cfg iteration 2
         (reg:SI 134)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":165 -1
      (nil))
 (call_insn 38 37 47 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 067f8a50 HAL_I2C_ENABLE>) [0 HAL_I2C_ENABLE S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 0688ea50 HAL_I2C_ENABLE>) [0 HAL_I2C_ENABLE S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":165 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 067f8a50 HAL_I2C_ENABLE>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 0688ea50 HAL_I2C_ENABLE>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2107,11 +2107,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 44 43 45 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 067f8960 HAL_I2C_GET_STAR2>) [0 HAL_I2C_GET_STAR2 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 0688e960 HAL_I2C_GET_STAR2>) [0 HAL_I2C_GET_STAR2 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":166 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 067f8960 HAL_I2C_GET_STAR2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 0688e960 HAL_I2C_GET_STAR2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2155,11 +2155,11 @@ try_optimize_cfg iteration 2
         (reg:SI 144)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":167 -1
      (nil))
 (call_insn 57 56 66 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 067f8ca8 HAL_I2C_START>) [0 HAL_I2C_START S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 0688eca8 HAL_I2C_START>) [0 HAL_I2C_START S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":167 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 067f8ca8 HAL_I2C_START>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 0688eca8 HAL_I2C_START>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2182,11 +2182,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 63 62 64 11 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 067f89d8 HAL_I2C_GET_STAR1>) [0 HAL_I2C_GET_STAR1 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 0688e9d8 HAL_I2C_GET_STAR1>) [0 HAL_I2C_GET_STAR1 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":168 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 067f89d8 HAL_I2C_GET_STAR1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 0688e9d8 HAL_I2C_GET_STAR1>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2245,11 +2245,11 @@ try_optimize_cfg iteration 2
         (reg:SI 157)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":170 -1
      (nil))
 (call_insn 80 79 89 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND_ADDR_TRANS") [flags 0x41] <function_decl 067f8d98 HAL_I2C_SEND_ADDR_TRANS>) [0 HAL_I2C_SEND_ADDR_TRANS S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND_ADDR_TRANS") [flags 0x41] <function_decl 0688ed98 HAL_I2C_SEND_ADDR_TRANS>) [0 HAL_I2C_SEND_ADDR_TRANS S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":170 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND_ADDR_TRANS") [flags 0x41] <function_decl 067f8d98 HAL_I2C_SEND_ADDR_TRANS>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND_ADDR_TRANS") [flags 0x41] <function_decl 0688ed98 HAL_I2C_SEND_ADDR_TRANS>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2273,11 +2273,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 86 85 87 13 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 067f89d8 HAL_I2C_GET_STAR1>) [0 HAL_I2C_GET_STAR1 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 0688e9d8 HAL_I2C_GET_STAR1>) [0 HAL_I2C_GET_STAR1 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":171 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 067f89d8 HAL_I2C_GET_STAR1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 0688e9d8 HAL_I2C_GET_STAR1>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2322,11 +2322,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 99 98 100 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 067f8960 HAL_I2C_GET_STAR2>) [0 HAL_I2C_GET_STAR2 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 0688e960 HAL_I2C_GET_STAR2>) [0 HAL_I2C_GET_STAR2 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":172 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 067f8960 HAL_I2C_GET_STAR2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 0688e960 HAL_I2C_GET_STAR2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2363,11 +2363,11 @@ try_optimize_cfg iteration 2
         (reg:SI 174)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":173 -1
      (nil))
 (call_insn 109 108 118 14 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 067f8d20 HAL_I2C_SEND>) [0 HAL_I2C_SEND S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 0688ed20 HAL_I2C_SEND>) [0 HAL_I2C_SEND S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":173 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 067f8d20 HAL_I2C_SEND>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 0688ed20 HAL_I2C_SEND>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2391,11 +2391,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 115 114 116 15 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 067f89d8 HAL_I2C_GET_STAR1>) [0 HAL_I2C_GET_STAR1 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 0688e9d8 HAL_I2C_GET_STAR1>) [0 HAL_I2C_GET_STAR1 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":174 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 067f89d8 HAL_I2C_GET_STAR1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 0688e9d8 HAL_I2C_GET_STAR1>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2445,11 +2445,11 @@ try_optimize_cfg iteration 2
         (reg:SI 185)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":175 -1
      (nil))
 (call_insn 130 129 139 16 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 067f8d20 HAL_I2C_SEND>) [0 HAL_I2C_SEND S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 0688ed20 HAL_I2C_SEND>) [0 HAL_I2C_SEND S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":175 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 067f8d20 HAL_I2C_SEND>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 0688ed20 HAL_I2C_SEND>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2473,11 +2473,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 136 135 137 17 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 067f89d8 HAL_I2C_GET_STAR1>) [0 HAL_I2C_GET_STAR1 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 0688e9d8 HAL_I2C_GET_STAR1>) [0 HAL_I2C_GET_STAR1 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":176 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 067f89d8 HAL_I2C_GET_STAR1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 0688e9d8 HAL_I2C_GET_STAR1>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2540,11 +2540,11 @@ try_optimize_cfg iteration 2
         (reg:SI 198)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":179 -1
      (nil))
 (call_insn 153 152 162 19 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 067f8d20 HAL_I2C_SEND>) [0 HAL_I2C_SEND S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 0688ed20 HAL_I2C_SEND>) [0 HAL_I2C_SEND S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":179 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 067f8d20 HAL_I2C_SEND>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_SEND") [flags 0x41] <function_decl 0688ed20 HAL_I2C_SEND>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2568,11 +2568,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 159 158 160 20 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 067f89d8 HAL_I2C_GET_STAR1>) [0 HAL_I2C_GET_STAR1 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 0688e9d8 HAL_I2C_GET_STAR1>) [0 HAL_I2C_GET_STAR1 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":180 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 067f89d8 HAL_I2C_GET_STAR1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR1") [flags 0x41] <function_decl 0688e9d8 HAL_I2C_GET_STAR1>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2634,11 +2634,11 @@ try_optimize_cfg iteration 2
         (reg:SI 210)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":182 -1
      (nil))
 (call_insn 178 177 179 22 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_STOP") [flags 0x41] <function_decl 067f8c30 HAL_I2C_STOP>) [0 HAL_I2C_STOP S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_STOP") [flags 0x41] <function_decl 0688ec30 HAL_I2C_STOP>) [0 HAL_I2C_STOP S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":182 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_STOP") [flags 0x41] <function_decl 067f8c30 HAL_I2C_STOP>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_STOP") [flags 0x41] <function_decl 0688ec30 HAL_I2C_STOP>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2646,20 +2646,20 @@ try_optimize_cfg iteration 2
         (const_int 5 [0x5])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":201 -1
      (nil))
 (call_insn 180 179 181 22 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06596ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06634ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":201 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06596ca8 vTaskDelay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06634ca8 vTaskDelay>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 181 180 182 22 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_WDTReset") [flags 0x41] <function_decl 06731bb8 HAL_WDTReset>) [0 HAL_WDTReset S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_WDTReset") [flags 0x41] <function_decl 067cbbb8 HAL_WDTReset>) [0 HAL_WDTReset S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":202 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_WDTReset") [flags 0x41] <function_decl 06731bb8 HAL_WDTReset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_WDTReset") [flags 0x41] <function_decl 067cbbb8 HAL_WDTReset>)
         (nil))
     (nil))
 (insn 182 181 183 22 (set (reg:SI 211)
@@ -2935,11 +2935,11 @@ Forwarding edge 15->16 to 20 failed.
      (nil))
 (call_insn 52 51 53 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 04974348 xTaskGetCurrentTaskHandle>) [0 xTaskGetCurrentTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 061d4348 xTaskGetCurrentTaskHandle>) [0 xTaskGetCurrentTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":226 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 04974348 xTaskGetCurrentTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 061d4348 xTaskGetCurrentTaskHandle>)
         (nil))
     (nil))
 (insn 53 52 54 9 (set (reg/f:SI 81 [ _34 ])
@@ -2988,11 +2988,11 @@ Forwarding edge 15->16 to 20 failed.
         (reg:SI 128)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":228 -1
      (nil))
 (call_insn 65 64 74 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 067f8a50 HAL_I2C_ENABLE>) [0 HAL_I2C_ENABLE S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 0688ea50 HAL_I2C_ENABLE>) [0 HAL_I2C_ENABLE S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":228 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 067f8a50 HAL_I2C_ENABLE>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 0688ea50 HAL_I2C_ENABLE>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -3015,11 +3015,11 @@ Forwarding edge 15->16 to 20 failed.
      (nil))
 (call_insn 71 70 72 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 067f8960 HAL_I2C_GET_STAR2>) [0 HAL_I2C_GET_STAR2 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 0688e960 HAL_I2C_GET_STAR2>) [0 HAL_I2C_GET_STAR2 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":229 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 067f8960 HAL_I2C_GET_STAR2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 0688e960 HAL_I2C_GET_STAR2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -3066,11 +3066,11 @@ Forwarding edge 15->16 to 20 failed.
         (reg:SI 138)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":230 -1
      (nil))
 (call_insn 85 84 86 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("I2C_IT_ENABLE") [flags 0x41] <function_decl 067f8b40 I2C_IT_ENABLE>) [0 I2C_IT_ENABLE S4 A32])
+            (call (mem:SI (symbol_ref:SI ("I2C_IT_ENABLE") [flags 0x41] <function_decl 0688eb40 I2C_IT_ENABLE>) [0 I2C_IT_ENABLE S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":230 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("I2C_IT_ENABLE") [flags 0x41] <function_decl 067f8b40 I2C_IT_ENABLE>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("I2C_IT_ENABLE") [flags 0x41] <function_decl 0688eb40 I2C_IT_ENABLE>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3091,11 +3091,11 @@ Forwarding edge 15->16 to 20 failed.
         (reg:SI 141)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":231 -1
      (nil))
 (call_insn 90 89 91 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 067f8ca8 HAL_I2C_START>) [0 HAL_I2C_START S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 0688eca8 HAL_I2C_START>) [0 HAL_I2C_START S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":231 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 067f8ca8 HAL_I2C_START>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 0688eca8 HAL_I2C_START>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -3121,11 +3121,11 @@ Forwarding edge 15->16 to 20 failed.
      (nil))
 (call_insn 97 96 98 11 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 065daca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06674ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":232 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 065daca8 ulTaskGenericNotifyTake>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06674ca8 ulTaskGenericNotifyTake>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -3153,11 +3153,11 @@ Forwarding edge 15->16 to 20 failed.
         (reg:SI 147)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":233 -1
      (nil))
 (call_insn 104 103 105 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("I2C_IT_DISABLE") [flags 0x41] <function_decl 067f8bb8 I2C_IT_DISABLE>) [0 I2C_IT_DISABLE S4 A32])
+            (call (mem:SI (symbol_ref:SI ("I2C_IT_DISABLE") [flags 0x41] <function_decl 0688ebb8 I2C_IT_DISABLE>) [0 I2C_IT_DISABLE S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":233 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("I2C_IT_DISABLE") [flags 0x41] <function_decl 067f8bb8 I2C_IT_DISABLE>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("I2C_IT_DISABLE") [flags 0x41] <function_decl 0688ebb8 I2C_IT_DISABLE>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3178,11 +3178,11 @@ Forwarding edge 15->16 to 20 failed.
         (reg:SI 150)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":234 -1
      (nil))
 (call_insn 109 108 110 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_DISABLE") [flags 0x41] <function_decl 067f8ac8 HAL_I2C_DISABLE>) [0 HAL_I2C_DISABLE S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_DISABLE") [flags 0x41] <function_decl 0688eac8 HAL_I2C_DISABLE>) [0 HAL_I2C_DISABLE S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":234 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_DISABLE") [flags 0x41] <function_decl 067f8ac8 HAL_I2C_DISABLE>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_DISABLE") [flags 0x41] <function_decl 0688eac8 HAL_I2C_DISABLE>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -3195,11 +3195,11 @@ Forwarding edge 15->16 to 20 failed.
  -> 148)
 (note 111 110 112 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
 (call_insn 112 111 113 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_WDTReset") [flags 0x41] <function_decl 06731bb8 HAL_WDTReset>) [0 HAL_WDTReset S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_WDTReset") [flags 0x41] <function_decl 067cbbb8 HAL_WDTReset>) [0 HAL_WDTReset S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":259 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_WDTReset") [flags 0x41] <function_decl 06731bb8 HAL_WDTReset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_WDTReset") [flags 0x41] <function_decl 067cbbb8 HAL_WDTReset>)
         (nil))
     (nil))
 (insn 113 112 115 12 (set (reg:SI 93 [ ivtmp_69 ])
@@ -3420,11 +3420,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 32 31 33 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 04974348 xTaskGetCurrentTaskHandle>) [0 xTaskGetCurrentTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 061d4348 xTaskGetCurrentTaskHandle>) [0 xTaskGetCurrentTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":284 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 04974348 xTaskGetCurrentTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 061d4348 xTaskGetCurrentTaskHandle>)
         (nil))
     (nil))
 (insn 33 32 34 4 (set (reg/f:SI 75 [ _14 ])
@@ -3473,11 +3473,11 @@ try_optimize_cfg iteration 2
         (reg:SI 113)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":286 -1
      (nil))
 (call_insn 45 44 54 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 067f8a50 HAL_I2C_ENABLE>) [0 HAL_I2C_ENABLE S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 0688ea50 HAL_I2C_ENABLE>) [0 HAL_I2C_ENABLE S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":286 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 067f8a50 HAL_I2C_ENABLE>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 0688ea50 HAL_I2C_ENABLE>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -3500,11 +3500,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 51 50 52 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 067f8960 HAL_I2C_GET_STAR2>) [0 HAL_I2C_GET_STAR2 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 0688e960 HAL_I2C_GET_STAR2>) [0 HAL_I2C_GET_STAR2 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":287 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 067f8960 HAL_I2C_GET_STAR2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_GET_STAR2") [flags 0x41] <function_decl 0688e960 HAL_I2C_GET_STAR2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -3548,11 +3548,11 @@ try_optimize_cfg iteration 2
         (reg:SI 123)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":288 -1
      (nil))
 (call_insn 64 63 65 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ACK_ENABLE") [flags 0x41] <function_decl 067f8e88 HAL_I2C_ACK_ENABLE>) [0 HAL_I2C_ACK_ENABLE S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ACK_ENABLE") [flags 0x41] <function_decl 0688ee88 HAL_I2C_ACK_ENABLE>) [0 HAL_I2C_ACK_ENABLE S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":288 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ACK_ENABLE") [flags 0x41] <function_decl 067f8e88 HAL_I2C_ACK_ENABLE>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ACK_ENABLE") [flags 0x41] <function_decl 0688ee88 HAL_I2C_ACK_ENABLE>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -3572,11 +3572,11 @@ try_optimize_cfg iteration 2
         (reg:SI 126)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":289 -1
      (nil))
 (call_insn 69 68 70 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 067f8ca8 HAL_I2C_START>) [0 HAL_I2C_START S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 0688eca8 HAL_I2C_START>) [0 HAL_I2C_START S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":289 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 067f8ca8 HAL_I2C_START>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_START") [flags 0x41] <function_decl 0688eca8 HAL_I2C_START>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -3599,11 +3599,11 @@ try_optimize_cfg iteration 2
         (reg:SI 129)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":290 -1
      (nil))
 (call_insn 75 74 76 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("I2C_IT_ENABLE") [flags 0x41] <function_decl 067f8b40 I2C_IT_ENABLE>) [0 I2C_IT_ENABLE S4 A32])
+            (call (mem:SI (symbol_ref:SI ("I2C_IT_ENABLE") [flags 0x41] <function_decl 0688eb40 I2C_IT_ENABLE>) [0 I2C_IT_ENABLE S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":290 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("I2C_IT_ENABLE") [flags 0x41] <function_decl 067f8b40 I2C_IT_ENABLE>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("I2C_IT_ENABLE") [flags 0x41] <function_decl 0688eb40 I2C_IT_ENABLE>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3630,11 +3630,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 82 81 83 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 065daca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06674ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":291 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 065daca8 ulTaskGenericNotifyTake>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06674ca8 ulTaskGenericNotifyTake>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -3662,11 +3662,11 @@ try_optimize_cfg iteration 2
         (reg:SI 135)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":292 -1
      (nil))
 (call_insn 89 88 90 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("I2C_IT_DISABLE") [flags 0x41] <function_decl 067f8bb8 I2C_IT_DISABLE>) [0 I2C_IT_DISABLE S4 A32])
+            (call (mem:SI (symbol_ref:SI ("I2C_IT_DISABLE") [flags 0x41] <function_decl 0688ebb8 I2C_IT_DISABLE>) [0 I2C_IT_DISABLE S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":292 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("I2C_IT_DISABLE") [flags 0x41] <function_decl 067f8bb8 I2C_IT_DISABLE>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("I2C_IT_DISABLE") [flags 0x41] <function_decl 0688ebb8 I2C_IT_DISABLE>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3687,11 +3687,11 @@ try_optimize_cfg iteration 2
         (reg:SI 138)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":293 -1
      (nil))
 (call_insn 94 93 95 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_DISABLE") [flags 0x41] <function_decl 067f8ac8 HAL_I2C_DISABLE>) [0 HAL_I2C_DISABLE S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_DISABLE") [flags 0x41] <function_decl 0688eac8 HAL_I2C_DISABLE>) [0 HAL_I2C_DISABLE S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":293 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_DISABLE") [flags 0x41] <function_decl 067f8ac8 HAL_I2C_DISABLE>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_DISABLE") [flags 0x41] <function_decl 0688eac8 HAL_I2C_DISABLE>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -3790,11 +3790,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 12 11 13 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eEEPROMRd") [flags 0x3] <function_decl 067319d8 eEEPROMRd>) [0 eEEPROMRd S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eEEPROMRd") [flags 0x3] <function_decl 067cb9d8 eEEPROMRd>) [0 eEEPROMRd S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_eeprom_i2c.c":306 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eEEPROMRd") [flags 0x3] <function_decl 067319d8 eEEPROMRd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eEEPROMRd") [flags 0x3] <function_decl 067cb9d8 eEEPROMRd>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))

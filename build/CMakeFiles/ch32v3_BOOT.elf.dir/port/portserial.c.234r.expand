@@ -64,20 +64,20 @@ try_optimize_cfg iteration 2
         (reg:SI 78)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
      (nil))
 (insn 13 12 14 2 (set (reg:SI 79)
-        (high:SI (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066665a0 vEventGroupSetBitsCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
+        (high:SI (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066d65a0 vEventGroupSetBitsCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
      (nil))
 (insn 14 13 15 2 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 79)
-            (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066665a0 vEventGroupSetBitsCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066665a0 vEventGroupSetBitsCallback>)
+            (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066d65a0 vEventGroupSetBitsCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("vEventGroupSetBitsCallback") [flags 0x41] <function_decl 066d65a0 vEventGroupSetBitsCallback>)
         (nil)))
 (call_insn 15 14 16 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTimerPendFunctionCallFromISR") [flags 0x41] <function_decl 0618ed98 xTimerPendFunctionCallFromISR>) [0 xTimerPendFunctionCallFromISR S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTimerPendFunctionCallFromISR") [flags 0x41] <function_decl 061fed98 xTimerPendFunctionCallFromISR>) [0 xTimerPendFunctionCallFromISR S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":182 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTimerPendFunctionCallFromISR") [flags 0x41] <function_decl 0618ed98 xTimerPendFunctionCallFromISR>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTimerPendFunctionCallFromISR") [flags 0x41] <function_decl 061fed98 xTimerPendFunctionCallFromISR>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -194,21 +194,21 @@ try_optimize_cfg iteration 2
         (reg:SI 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":218 -1
      (nil))
 (call_insn 18 17 19 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_RecieveByte_IT") [flags 0x41] <function_decl 0679d348 HAL_RecieveByte_IT>) [0 HAL_RecieveByte_IT S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_RecieveByte_IT") [flags 0x41] <function_decl 0680d348 HAL_RecieveByte_IT>) [0 HAL_RecieveByte_IT S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":218 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_RecieveByte_IT") [flags 0x41] <function_decl 0679d348 HAL_RecieveByte_IT>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_RecieveByte_IT") [flags 0x41] <function_decl 0680d348 HAL_RecieveByte_IT>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
             (nil))))
 (insn 19 18 20 2 (set (reg:SI 85)
-        (high:SI (symbol_ref:SI ("pxMBFrameCBByteReceived") [flags 0xc4] <var_decl 065a7058 pxMBFrameCBByteReceived>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":219 -1
+        (high:SI (symbol_ref:SI ("pxMBFrameCBByteReceived") [flags 0xc4] <var_decl 06617058 pxMBFrameCBByteReceived>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":219 -1
      (nil))
 (insn 20 19 21 2 (set (reg/f:SI 86)
         (mem/f/c:SI (lo_sum:SI (reg:SI 85)
-                (symbol_ref:SI ("pxMBFrameCBByteReceived") [flags 0xc4] <var_decl 065a7058 pxMBFrameCBByteReceived>)) [4 pxMBFrameCBByteReceived+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":219 -1
+                (symbol_ref:SI ("pxMBFrameCBByteReceived") [flags 0xc4] <var_decl 06617058 pxMBFrameCBByteReceived>)) [4 pxMBFrameCBByteReceived+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":219 -1
      (nil))
 (call_insn 21 20 0 2 (parallel [
             (set (reg:SI 10 a0)
@@ -441,11 +441,11 @@ try_optimize_cfg iteration 2
         (reg:SI 72 [ _1 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":107 -1
      (nil))
 (call_insn 32 31 33 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HALUSARTInit") [flags 0x41] <function_decl 0679d168 HALUSARTInit>) [0 HALUSARTInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HALUSARTInit") [flags 0x41] <function_decl 0680d168 HALUSARTInit>) [0 HALUSARTInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":107 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTInit") [flags 0x41] <function_decl 0679d168 HALUSARTInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTInit") [flags 0x41] <function_decl 0680d168 HALUSARTInit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -471,30 +471,30 @@ try_optimize_cfg iteration 2
         (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
      (nil))
 (insn 38 37 39 8 (set (reg:SI 89)
-        (high:SI (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 0679d438 HAL_UART_TxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
+        (high:SI (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 0680d438 HAL_UART_TxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
      (nil))
 (insn 39 38 40 8 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 89)
-            (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 0679d438 HAL_UART_TxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 0679d438 HAL_UART_TxCpltCallback>)
+            (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 0680d438 HAL_UART_TxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 0680d438 HAL_UART_TxCpltCallback>)
         (nil)))
 (insn 40 39 41 8 (set (reg:SI 90)
-        (high:SI (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 0679d4b0 HAL_UART_RxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
+        (high:SI (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 0680d4b0 HAL_UART_RxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
      (nil))
 (insn 41 40 42 8 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 90)
-            (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 0679d4b0 HAL_UART_RxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 0679d4b0 HAL_UART_RxCpltCallback>)
+            (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 0680d4b0 HAL_UART_RxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 0680d4b0 HAL_UART_RxCpltCallback>)
         (nil)))
 (insn 42 41 43 8 (set (reg:SI 10 a0)
         (reg:SI 88)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
      (nil))
 (call_insn 43 42 44 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HALUSARTInitIT") [flags 0x41] <function_decl 0679d258 HALUSARTInitIT>) [0 HALUSARTInitIT S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HALUSARTInitIT") [flags 0x41] <function_decl 0680d258 HALUSARTInitIT>) [0 HALUSARTInitIT S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":108 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTInitIT") [flags 0x41] <function_decl 0679d258 HALUSARTInitIT>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTInitIT") [flags 0x41] <function_decl 0680d258 HALUSARTInitIT>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -517,11 +517,11 @@ try_optimize_cfg iteration 2
         (reg:SI 93)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":109 -1
      (nil))
 (call_insn 48 47 49 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HALUSARTEnable") [flags 0x41] <function_decl 0679d1e0 HALUSARTEnable>) [0 HALUSARTEnable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HALUSARTEnable") [flags 0x41] <function_decl 0680d1e0 HALUSARTEnable>) [0 HALUSARTEnable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":109 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTEnable") [flags 0x41] <function_decl 0679d1e0 HALUSARTEnable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTEnable") [flags 0x41] <function_decl 0680d1e0 HALUSARTEnable>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -613,11 +613,11 @@ try_optimize_cfg iteration 2
         (reg:SI 73 [ pretmp_12 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":118 -1
      (nil))
 (call_insn 16 15 17 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_RecieveByte_IT") [flags 0x41] <function_decl 0679d348 HAL_RecieveByte_IT>) [0 HAL_RecieveByte_IT S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_RecieveByte_IT") [flags 0x41] <function_decl 0680d348 HAL_RecieveByte_IT>) [0 HAL_RecieveByte_IT S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":118 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_RecieveByte_IT") [flags 0x41] <function_decl 0679d348 HAL_RecieveByte_IT>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_RecieveByte_IT") [flags 0x41] <function_decl 0680d348 HAL_RecieveByte_IT>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -634,11 +634,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 20 19 21 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 0684fc30 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 068bfc30 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":74 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 0684fc30 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 068bfc30 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -654,11 +654,11 @@ try_optimize_cfg iteration 2
         (reg:SI 73 [ pretmp_12 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":129 -1
      (nil))
 (call_insn 26 25 27 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_RecieveITDisable") [flags 0x41] <function_decl 0679d3c0 HAL_RecieveITDisable>) [0 HAL_RecieveITDisable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_RecieveITDisable") [flags 0x41] <function_decl 0680d3c0 HAL_RecieveITDisable>) [0 HAL_RecieveITDisable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":129 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_RecieveITDisable") [flags 0x41] <function_decl 0679d3c0 HAL_RecieveITDisable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_RecieveITDisable") [flags 0x41] <function_decl 0680d3c0 HAL_RecieveITDisable>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -674,11 +674,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 30 29 31 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 0684fbb8 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 068bfbb8 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":79 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 0684fbb8 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 068bfbb8 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -712,11 +712,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 40 39 41 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xEventGroupSetBits") [flags 0x41] <function_decl 066663c0 xEventGroupSetBits>) [0 xEventGroupSetBits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xEventGroupSetBits") [flags 0x41] <function_decl 066d63c0 xEventGroupSetBits>) [0 xEventGroupSetBits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":140 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupSetBits") [flags 0x41] <function_decl 066663c0 xEventGroupSetBits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupSetBits") [flags 0x41] <function_decl 066d63c0 xEventGroupSetBits>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -736,11 +736,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 47 46 50 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xEventGroupClearBits") [flags 0x41] <function_decl 06666348 xEventGroupClearBits>) [0 xEventGroupClearBits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xEventGroupClearBits") [flags 0x41] <function_decl 066d6348 xEventGroupClearBits>) [0 xEventGroupClearBits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":147 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupClearBits") [flags 0x41] <function_decl 06666348 xEventGroupClearBits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupClearBits") [flags 0x41] <function_decl 066d6348 xEventGroupClearBits>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -817,11 +817,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 9 8 10 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 0684fbb8 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 068bfbb8 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":162 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 0684fbb8 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 068bfbb8 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -847,11 +847,11 @@ try_optimize_cfg iteration 2
         (reg:SI 80)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":163 -1
      (nil))
 (call_insn 16 15 17 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SendByte_IT") [flags 0x41] <function_decl 0679d2d0 HAL_SendByte_IT>) [0 HAL_SendByte_IT S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SendByte_IT") [flags 0x41] <function_decl 0680d2d0 HAL_SendByte_IT>) [0 HAL_SendByte_IT S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":163 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SendByte_IT") [flags 0x41] <function_decl 0679d2d0 HAL_SendByte_IT>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SendByte_IT") [flags 0x41] <function_decl 0680d2d0 HAL_SendByte_IT>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -983,11 +983,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 16 15 17 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 066662d0 xEventGroupWaitBits>) [0 xEventGroupWaitBits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 066d62d0 xEventGroupWaitBits>) [0 xEventGroupWaitBits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":203 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 066662d0 xEventGroupWaitBits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupWaitBits") [flags 0x41] <function_decl 066d62d0 xEventGroupWaitBits>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1010,11 +1010,11 @@ try_optimize_cfg iteration 2
  -> 18)
 (note 21 20 22 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 (insn 22 21 23 6 (set (reg:SI 80)
-        (high:SI (symbol_ref:SI ("pxMBFrameCBTransmitterEmpty") [flags 0xc4] <var_decl 065a70b0 pxMBFrameCBTransmitterEmpty>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":207 -1
+        (high:SI (symbol_ref:SI ("pxMBFrameCBTransmitterEmpty") [flags 0xc4] <var_decl 066170b0 pxMBFrameCBTransmitterEmpty>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":207 -1
      (nil))
 (insn 23 22 24 6 (set (reg/f:SI 81)
         (mem/f/c:SI (lo_sum:SI (reg:SI 80)
-                (symbol_ref:SI ("pxMBFrameCBTransmitterEmpty") [flags 0xc4] <var_decl 065a70b0 pxMBFrameCBTransmitterEmpty>)) [4 pxMBFrameCBTransmitterEmpty+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":207 -1
+                (symbol_ref:SI ("pxMBFrameCBTransmitterEmpty") [flags 0xc4] <var_decl 066170b0 pxMBFrameCBTransmitterEmpty>)) [4 pxMBFrameCBTransmitterEmpty+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portserial.c":207 -1
      (nil))
 (call_insn 24 23 26 6 (parallel [
             (set (reg:SI 10 a0)

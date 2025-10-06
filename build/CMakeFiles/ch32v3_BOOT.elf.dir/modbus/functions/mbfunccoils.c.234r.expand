@@ -267,11 +267,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 73 72 74 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eMBRegCoilsCB") [flags 0x41] <function_decl 065aa960 eMBRegCoilsCB>) [0 eMBRegCoilsCB S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eMBRegCoilsCB") [flags 0x41] <function_decl 0668a960 eMBRegCoilsCB>) [0 eMBRegCoilsCB S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfunccoils.c":116 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eMBRegCoilsCB") [flags 0x41] <function_decl 065aa960 eMBRegCoilsCB>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eMBRegCoilsCB") [flags 0x41] <function_decl 0668a960 eMBRegCoilsCB>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -294,11 +294,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 78 77 79 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 065aaa50 prveMBError2Exception>) [0 prveMBError2Exception S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 0668aa50 prveMBError2Exception>) [0 prveMBError2Exception S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfunccoils.c":122 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 065aaa50 prveMBError2Exception>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 0668aa50 prveMBError2Exception>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -544,11 +544,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 48 47 49 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eMBRegCoilsCB") [flags 0x41] <function_decl 065aa960 eMBRegCoilsCB>) [0 eMBRegCoilsCB S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eMBRegCoilsCB") [flags 0x41] <function_decl 0668a960 eMBRegCoilsCB>) [0 eMBRegCoilsCB S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfunccoils.c":176 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eMBRegCoilsCB") [flags 0x41] <function_decl 065aa960 eMBRegCoilsCB>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eMBRegCoilsCB") [flags 0x41] <function_decl 0668a960 eMBRegCoilsCB>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -571,11 +571,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 53 52 54 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 065aaa50 prveMBError2Exception>) [0 prveMBError2Exception S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 0668aa50 prveMBError2Exception>) [0 prveMBError2Exception S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfunccoils.c":181 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 065aaa50 prveMBError2Exception>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 0668aa50 prveMBError2Exception>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -878,11 +878,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 66 65 67 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eMBRegCoilsCB") [flags 0x41] <function_decl 065aa960 eMBRegCoilsCB>) [0 eMBRegCoilsCB S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eMBRegCoilsCB") [flags 0x41] <function_decl 0668a960 eMBRegCoilsCB>) [0 eMBRegCoilsCB S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfunccoils.c":238 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eMBRegCoilsCB") [flags 0x41] <function_decl 065aa960 eMBRegCoilsCB>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eMBRegCoilsCB") [flags 0x41] <function_decl 0668a960 eMBRegCoilsCB>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -905,11 +905,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 71 70 72 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 065aaa50 prveMBError2Exception>) [0 prveMBError2Exception S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 0668aa50 prveMBError2Exception>) [0 prveMBError2Exception S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfunccoils.c":244 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 065aaa50 prveMBError2Exception>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 0668aa50 prveMBError2Exception>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))

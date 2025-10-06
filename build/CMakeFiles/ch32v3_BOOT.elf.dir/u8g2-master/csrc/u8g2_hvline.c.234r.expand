@@ -714,11 +714,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_hvline.c":209 -1
      (nil))
 (call_insn 14 13 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x3] <function_decl 06479e88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x3] <function_decl 0646ae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_hvline.c":209 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x3] <function_decl 06479e88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x3] <function_decl 0646ae88 u8g2_DrawHVLine>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -782,11 +782,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_hvline.c":218 -1
      (nil))
 (call_insn 14 13 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x3] <function_decl 06479e88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x3] <function_decl 0646ae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_hvline.c":218 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x3] <function_decl 06479e88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x3] <function_decl 0646ae88 u8g2_DrawHVLine>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -909,11 +909,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_hvline.c":233 -1
      (nil))
 (call_insn 25 24 28 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x3] <function_decl 06479e88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x3] <function_decl 0646ae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_hvline.c":233 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x3] <function_decl 06479e88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x3] <function_decl 0646ae88 u8g2_DrawHVLine>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

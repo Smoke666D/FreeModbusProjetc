@@ -230,11 +230,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 62 61 63 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eMBRegInputCB") [flags 0x41] <function_decl 0661a870 eMBRegInputCB>) [0 eMBRegInputCB S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eMBRegInputCB") [flags 0x41] <function_decl 065ba870 eMBRegInputCB>) [0 eMBRegInputCB S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncinput.c":96 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eMBRegInputCB") [flags 0x41] <function_decl 0661a870 eMBRegInputCB>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eMBRegInputCB") [flags 0x41] <function_decl 065ba870 eMBRegInputCB>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -256,11 +256,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 67 66 68 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 0661aa50 prveMBError2Exception>) [0 prveMBError2Exception S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 065baa50 prveMBError2Exception>) [0 prveMBError2Exception S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/functions/mbfuncinput.c":101 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 0661aa50 prveMBError2Exception>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prveMBError2Exception") [flags 0x41] <function_decl 065baa50 prveMBError2Exception>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))

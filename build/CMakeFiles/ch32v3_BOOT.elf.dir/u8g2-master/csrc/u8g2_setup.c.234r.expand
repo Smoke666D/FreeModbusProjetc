@@ -180,11 +180,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":215 -1
      (nil))
 (call_insn 7 6 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_update_dimension_common") [flags 0x3] <function_decl 062e4708 u8g2_update_dimension_common>) [0 u8g2_update_dimension_common S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_update_dimension_common") [flags 0x3] <function_decl 06337708 u8g2_update_dimension_common>) [0 u8g2_update_dimension_common S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":215 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_update_dimension_common") [flags 0x3] <function_decl 062e4708 u8g2_update_dimension_common>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_update_dimension_common") [flags 0x3] <function_decl 06337708 u8g2_update_dimension_common>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -223,11 +223,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 75 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":234 -1
      (nil))
 (call_insn 7 6 8 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_update_dimension_common") [flags 0x3] <function_decl 062e4708 u8g2_update_dimension_common>) [0 u8g2_update_dimension_common S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_update_dimension_common") [flags 0x3] <function_decl 06337708 u8g2_update_dimension_common>) [0 u8g2_update_dimension_common S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":234 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_update_dimension_common") [flags 0x3] <function_decl 062e4708 u8g2_update_dimension_common>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_update_dimension_common") [flags 0x3] <function_decl 06337708 u8g2_update_dimension_common>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -285,11 +285,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8g2 ])) -1
      (nil))
 (call_insn 7 6 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_update_dimension_r1") [flags 0x3] <function_decl 062e48e8 u8g2_update_dimension_r1>) [0 u8g2_update_dimension_r1 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_update_dimension_r1") [flags 0x3] <function_decl 063378e8 u8g2_update_dimension_r1>) [0 u8g2_update_dimension_r1 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_update_dimension_r1") [flags 0x3] <function_decl 062e48e8 u8g2_update_dimension_r1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_update_dimension_r1") [flags 0x3] <function_decl 063378e8 u8g2_update_dimension_r1>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -352,11 +352,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":313 -1
      (nil))
 (call_insn 15 14 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 062e4bb8 u8g2_draw_hv_line_2dir>) [0 u8g2_draw_hv_line_2dir S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 06337bb8 u8g2_draw_hv_line_2dir>) [0 u8g2_draw_hv_line_2dir S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":313 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 062e4bb8 u8g2_draw_hv_line_2dir>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 06337bb8 u8g2_draw_hv_line_2dir>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -480,11 +480,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":329 -1
      (nil))
 (call_insn 33 32 0 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 062e4bb8 u8g2_draw_hv_line_2dir>) [0 u8g2_draw_hv_line_2dir S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 06337bb8 u8g2_draw_hv_line_2dir>) [0 u8g2_draw_hv_line_2dir S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":329 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 062e4bb8 u8g2_draw_hv_line_2dir>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 06337bb8 u8g2_draw_hv_line_2dir>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -608,11 +608,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":345 -1
      (nil))
 (call_insn 33 32 0 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 062e4bb8 u8g2_draw_hv_line_2dir>) [0 u8g2_draw_hv_line_2dir S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 06337bb8 u8g2_draw_hv_line_2dir>) [0 u8g2_draw_hv_line_2dir S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":345 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 062e4bb8 u8g2_draw_hv_line_2dir>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 06337bb8 u8g2_draw_hv_line_2dir>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -739,11 +739,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 77 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":371 -1
      (nil))
 (call_insn 33 32 0 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 062e4bb8 u8g2_draw_hv_line_2dir>) [0 u8g2_draw_hv_line_2dir S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 06337bb8 u8g2_draw_hv_line_2dir>) [0 u8g2_draw_hv_line_2dir S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":371 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 062e4bb8 u8g2_draw_hv_line_2dir>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 06337bb8 u8g2_draw_hv_line_2dir>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -895,11 +895,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":416 -1
      (nil))
 (call_insn 40 39 0 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 062e4bb8 u8g2_draw_hv_line_2dir>) [0 u8g2_draw_hv_line_2dir S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 06337bb8 u8g2_draw_hv_line_2dir>) [0 u8g2_draw_hv_line_2dir S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":416 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 062e4bb8 u8g2_draw_hv_line_2dir>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 06337bb8 u8g2_draw_hv_line_2dir>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1019,11 +1019,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":442 -1
      (nil))
 (call_insn 32 31 0 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 062e4bb8 u8g2_draw_hv_line_2dir>) [0 u8g2_draw_hv_line_2dir S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 06337bb8 u8g2_draw_hv_line_2dir>) [0 u8g2_draw_hv_line_2dir S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":442 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 062e4bb8 u8g2_draw_hv_line_2dir>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_hv_line_2dir") [flags 0x41] <function_decl 06337bb8 u8g2_draw_hv_line_2dir>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1116,11 +1116,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 15 14 16 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 064b2348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06512348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":190 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 064b2348 u8g2_IsIntersection>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06512348 u8g2_IsIntersection>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1302,11 +1302,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 74 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":227 -1
      (nil))
 (call_insn 12 11 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_apply_clip_window") [flags 0x3] <function_decl 062e4780 u8g2_apply_clip_window>) [0 u8g2_apply_clip_window S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_apply_clip_window") [flags 0x3] <function_decl 06337780 u8g2_apply_clip_window>) [0 u8g2_apply_clip_window S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":227 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_apply_clip_window") [flags 0x3] <function_decl 062e4780 u8g2_apply_clip_window>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_apply_clip_window") [flags 0x3] <function_decl 06337780 u8g2_apply_clip_window>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1365,11 +1365,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 74 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":250 -1
      (nil))
 (call_insn 12 11 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_apply_clip_window") [flags 0x3] <function_decl 062e4780 u8g2_apply_clip_window>) [0 u8g2_apply_clip_window S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_apply_clip_window") [flags 0x3] <function_decl 06337780 u8g2_apply_clip_window>) [0 u8g2_apply_clip_window S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":250 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_apply_clip_window") [flags 0x3] <function_decl 062e4780 u8g2_apply_clip_window>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_apply_clip_window") [flags 0x3] <function_decl 06337780 u8g2_apply_clip_window>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1466,11 +1466,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 78 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":272 -1
      (nil))
 (call_insn 22 21 0 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_apply_clip_window") [flags 0x3] <function_decl 062e4780 u8g2_apply_clip_window>) [0 u8g2_apply_clip_window S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_apply_clip_window") [flags 0x3] <function_decl 06337780 u8g2_apply_clip_window>) [0 u8g2_apply_clip_window S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":272 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_apply_clip_window") [flags 0x3] <function_decl 062e4780 u8g2_apply_clip_window>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_apply_clip_window") [flags 0x3] <function_decl 06337780 u8g2_apply_clip_window>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1567,11 +1567,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 78 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":299 -1
      (nil))
 (call_insn 22 21 0 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_apply_clip_window") [flags 0x3] <function_decl 062e4780 u8g2_apply_clip_window>) [0 u8g2_apply_clip_window S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_apply_clip_window") [flags 0x3] <function_decl 06337780 u8g2_apply_clip_window>) [0 u8g2_apply_clip_window S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":299 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_apply_clip_window") [flags 0x3] <function_decl 062e4780 u8g2_apply_clip_window>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_apply_clip_window") [flags 0x3] <function_decl 06337780 u8g2_apply_clip_window>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1610,11 +1610,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":215 -1
      (nil))
 (call_insn 7 6 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_update_dimension_common") [flags 0x3] <function_decl 062e4708 u8g2_update_dimension_common>) [0 u8g2_update_dimension_common S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_update_dimension_common") [flags 0x3] <function_decl 06337708 u8g2_update_dimension_common>) [0 u8g2_update_dimension_common S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":215 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_update_dimension_common") [flags 0x3] <function_decl 062e4708 u8g2_update_dimension_common>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_update_dimension_common") [flags 0x3] <function_decl 06337708 u8g2_update_dimension_common>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1865,11 +1865,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 73 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":95 -1
      (nil))
 (call_insn 25 24 26 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_SetMaxClipWindow") [flags 0x3] <function_decl 0636fd20 u8g2_SetMaxClipWindow>) [0 u8g2_SetMaxClipWindow S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetMaxClipWindow") [flags 0x3] <function_decl 063cbd20 u8g2_SetMaxClipWindow>) [0 u8g2_SetMaxClipWindow S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":95 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetMaxClipWindow") [flags 0x3] <function_decl 0636fd20 u8g2_SetMaxClipWindow>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetMaxClipWindow") [flags 0x3] <function_decl 063cbd20 u8g2_SetMaxClipWindow>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1878,11 +1878,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 73 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":100 -1
      (nil))
 (call_insn 27 26 28 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_SetFontPosBaseline") [flags 0x41] <function_decl 064ba5a0 u8g2_SetFontPosBaseline>) [0 u8g2_SetFontPosBaseline S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetFontPosBaseline") [flags 0x41] <function_decl 0651a5a0 u8g2_SetFontPosBaseline>) [0 u8g2_SetFontPosBaseline S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":100 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetFontPosBaseline") [flags 0x41] <function_decl 064ba5a0 u8g2_SetFontPosBaseline>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetFontPosBaseline") [flags 0x41] <function_decl 0651a5a0 u8g2_SetFontPosBaseline>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2047,11 +2047,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 73 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":124 -1
      (nil))
 (call_insn 20 19 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_cad_vsendf") [flags 0x41] <function_decl 06330078 u8x8_cad_vsendf>) [0 u8x8_cad_vsendf S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_cad_vsendf") [flags 0x41] <function_decl 06391078 u8x8_cad_vsendf>) [0 u8x8_cad_vsendf S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":124 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_vsendf") [flags 0x41] <function_decl 06330078 u8x8_cad_vsendf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_cad_vsendf") [flags 0x41] <function_decl 06391078 u8x8_cad_vsendf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2103,30 +2103,30 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 74 [ byte_cb ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":463 -1
      (nil))
 (insn 11 10 12 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("u8x8_cad_empty") [flags 0x41] <function_decl 063301e0 u8x8_cad_empty>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":463 -1
+        (high:SI (symbol_ref:SI ("u8x8_cad_empty") [flags 0x41] <function_decl 063911e0 u8x8_cad_empty>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":463 -1
      (nil))
 (insn 12 11 13 2 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("u8x8_cad_empty") [flags 0x41] <function_decl 063301e0 u8x8_cad_empty>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":463 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_cad_empty") [flags 0x41] <function_decl 063301e0 u8x8_cad_empty>)
+            (symbol_ref:SI ("u8x8_cad_empty") [flags 0x41] <function_decl 063911e0 u8x8_cad_empty>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":463 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_cad_empty") [flags 0x41] <function_decl 063911e0 u8x8_cad_empty>)
         (nil)))
 (insn 13 12 14 2 (set (reg:SI 77)
-        (high:SI (symbol_ref:SI ("u8x8_d_null_cb") [flags 0x41] <function_decl 0633b780 u8x8_d_null_cb>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":463 -1
+        (high:SI (symbol_ref:SI ("u8x8_d_null_cb") [flags 0x41] <function_decl 0639c780 u8x8_d_null_cb>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":463 -1
      (nil))
 (insn 14 13 15 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 77)
-            (symbol_ref:SI ("u8x8_d_null_cb") [flags 0x41] <function_decl 0633b780 u8x8_d_null_cb>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":463 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_d_null_cb") [flags 0x41] <function_decl 0633b780 u8x8_d_null_cb>)
+            (symbol_ref:SI ("u8x8_d_null_cb") [flags 0x41] <function_decl 0639c780 u8x8_d_null_cb>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":463 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_d_null_cb") [flags 0x41] <function_decl 0639c780 u8x8_d_null_cb>)
         (nil)))
 (insn 15 14 16 2 (set (reg:SI 10 a0)
         (reg/v/f:SI 72 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":463 -1
      (nil))
 (call_insn 16 15 17 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_Setup") [flags 0x41] <function_decl 0628c780 u8x8_Setup>) [0 u8x8_Setup S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_Setup") [flags 0x41] <function_decl 062ec780 u8x8_Setup>) [0 u8x8_Setup S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":463 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_Setup") [flags 0x41] <function_decl 0628c780 u8x8_Setup>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_Setup") [flags 0x41] <function_decl 062ec780 u8x8_Setup>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2146,12 +2146,12 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 73 [ rotation ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":464 -1
      (nil))
 (insn 20 19 21 2 (set (reg:SI 80)
-        (high:SI (symbol_ref:SI ("u8g2_ll_hvline_vertical_top_lsb") [flags 0x41] <function_decl 064aad98 u8g2_ll_hvline_vertical_top_lsb>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":464 -1
+        (high:SI (symbol_ref:SI ("u8g2_ll_hvline_vertical_top_lsb") [flags 0x41] <function_decl 0650ad98 u8g2_ll_hvline_vertical_top_lsb>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":464 -1
      (nil))
 (insn 21 20 22 2 (set (reg:SI 13 a3)
         (lo_sum:SI (reg:SI 80)
-            (symbol_ref:SI ("u8g2_ll_hvline_vertical_top_lsb") [flags 0x41] <function_decl 064aad98 u8g2_ll_hvline_vertical_top_lsb>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":464 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2_ll_hvline_vertical_top_lsb") [flags 0x41] <function_decl 064aad98 u8g2_ll_hvline_vertical_top_lsb>)
+            (symbol_ref:SI ("u8g2_ll_hvline_vertical_top_lsb") [flags 0x41] <function_decl 0650ad98 u8g2_ll_hvline_vertical_top_lsb>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":464 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2_ll_hvline_vertical_top_lsb") [flags 0x41] <function_decl 0650ad98 u8g2_ll_hvline_vertical_top_lsb>)
         (nil)))
 (insn 22 21 23 2 (set (reg:SI 12 a2)
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":464 -1
@@ -2163,11 +2163,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":464 -1
      (nil))
 (call_insn 25 24 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_SetupBuffer") [flags 0x3] <function_decl 0636fe10 u8g2_SetupBuffer>) [0 u8g2_SetupBuffer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetupBuffer") [flags 0x3] <function_decl 063cbe10 u8g2_SetupBuffer>) [0 u8g2_SetupBuffer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_setup.c":464 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetupBuffer") [flags 0x3] <function_decl 0636fe10 u8g2_SetupBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetupBuffer") [flags 0x3] <function_decl 063cbe10 u8g2_SetupBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

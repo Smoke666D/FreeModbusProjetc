@@ -407,12 +407,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":90 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.10873") [flags 0x82] <var_decl 0662f5d8 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":91 -1
+        (high:SI (symbol_ref:SI ("buf.10873") [flags 0x82] <var_decl 0654f5d8 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":91 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.10873") [flags 0x82] <var_decl 0662f5d8 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":91 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.10873") [flags 0x82] <var_decl 0662f5d8 buf>)
+            (symbol_ref:SI ("buf.10873") [flags 0x82] <var_decl 0654f5d8 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":91 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.10873") [flags 0x82] <var_decl 0654f5d8 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":93 -1
@@ -457,12 +457,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":101 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.10877") [flags 0x82] <var_decl 0662f688 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":102 -1
+        (high:SI (symbol_ref:SI ("buf.10877") [flags 0x82] <var_decl 0654f688 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":102 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.10877") [flags 0x82] <var_decl 0662f688 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":102 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.10877") [flags 0x82] <var_decl 0662f688 buf>)
+            (symbol_ref:SI ("buf.10877") [flags 0x82] <var_decl 0654f688 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":102 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.10877") [flags 0x82] <var_decl 0654f688 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":104 -1
@@ -1567,12 +1567,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":332 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.10961") [flags 0x82] <var_decl 0634a528 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":333 -1
+        (high:SI (symbol_ref:SI ("buf.10961") [flags 0x82] <var_decl 0626a528 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":333 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.10961") [flags 0x82] <var_decl 0634a528 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":333 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.10961") [flags 0x82] <var_decl 0634a528 buf>)
+            (symbol_ref:SI ("buf.10961") [flags 0x82] <var_decl 0626a528 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":333 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.10961") [flags 0x82] <var_decl 0626a528 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":335 -1
@@ -1723,12 +1723,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":365 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.10973") [flags 0x82] <var_decl 0634a738 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":366 -1
+        (high:SI (symbol_ref:SI ("buf.10973") [flags 0x82] <var_decl 0626a738 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":366 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.10973") [flags 0x82] <var_decl 0634a738 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":366 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.10973") [flags 0x82] <var_decl 0634a738 buf>)
+            (symbol_ref:SI ("buf.10973") [flags 0x82] <var_decl 0626a738 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":366 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.10973") [flags 0x82] <var_decl 0626a738 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":368 -1
@@ -1879,12 +1879,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":398 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.10985") [flags 0x82] <var_decl 0634a948 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":399 -1
+        (high:SI (symbol_ref:SI ("buf.10985") [flags 0x82] <var_decl 0626a948 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":399 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.10985") [flags 0x82] <var_decl 0634a948 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":399 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.10985") [flags 0x82] <var_decl 0634a948 buf>)
+            (symbol_ref:SI ("buf.10985") [flags 0x82] <var_decl 0626a948 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":399 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.10985") [flags 0x82] <var_decl 0626a948 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":401 -1
@@ -2035,12 +2035,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":431 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.10997") [flags 0x82] <var_decl 0634ab58 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":432 -1
+        (high:SI (symbol_ref:SI ("buf.10997") [flags 0x82] <var_decl 0626ab58 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":432 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.10997") [flags 0x82] <var_decl 0634ab58 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":432 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.10997") [flags 0x82] <var_decl 0634ab58 buf>)
+            (symbol_ref:SI ("buf.10997") [flags 0x82] <var_decl 0626ab58 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":432 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.10997") [flags 0x82] <var_decl 0626ab58 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":434 -1
@@ -4099,12 +4099,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":860 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11153") [flags 0x82] <var_decl 06369688 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":861 -1
+        (high:SI (symbol_ref:SI ("buf.11153") [flags 0x82] <var_decl 06289688 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":861 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11153") [flags 0x82] <var_decl 06369688 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":861 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11153") [flags 0x82] <var_decl 06369688 buf>)
+            (symbol_ref:SI ("buf.11153") [flags 0x82] <var_decl 06289688 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":861 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11153") [flags 0x82] <var_decl 06289688 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":863 -1
@@ -4255,12 +4255,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":893 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11165") [flags 0x82] <var_decl 06369898 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":894 -1
+        (high:SI (symbol_ref:SI ("buf.11165") [flags 0x82] <var_decl 06289898 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":894 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11165") [flags 0x82] <var_decl 06369898 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":894 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11165") [flags 0x82] <var_decl 06369898 buf>)
+            (symbol_ref:SI ("buf.11165") [flags 0x82] <var_decl 06289898 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":894 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11165") [flags 0x82] <var_decl 06289898 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":896 -1
@@ -5047,12 +5047,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1058 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11225") [flags 0x82] <var_decl 06372318 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1059 -1
+        (high:SI (symbol_ref:SI ("buf.11225") [flags 0x82] <var_decl 06292318 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1059 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11225") [flags 0x82] <var_decl 06372318 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1059 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11225") [flags 0x82] <var_decl 06372318 buf>)
+            (symbol_ref:SI ("buf.11225") [flags 0x82] <var_decl 06292318 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1059 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11225") [flags 0x82] <var_decl 06292318 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1061 -1
@@ -5203,12 +5203,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1091 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11237") [flags 0x82] <var_decl 06372528 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1092 -1
+        (high:SI (symbol_ref:SI ("buf.11237") [flags 0x82] <var_decl 06292528 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1092 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11237") [flags 0x82] <var_decl 06372528 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1092 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11237") [flags 0x82] <var_decl 06372528 buf>)
+            (symbol_ref:SI ("buf.11237") [flags 0x82] <var_decl 06292528 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1092 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11237") [flags 0x82] <var_decl 06292528 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1094 -1
@@ -5359,12 +5359,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1124 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11249") [flags 0x82] <var_decl 06372738 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1125 -1
+        (high:SI (symbol_ref:SI ("buf.11249") [flags 0x82] <var_decl 06292738 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1125 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11249") [flags 0x82] <var_decl 06372738 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1125 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11249") [flags 0x82] <var_decl 06372738 buf>)
+            (symbol_ref:SI ("buf.11249") [flags 0x82] <var_decl 06292738 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1125 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11249") [flags 0x82] <var_decl 06292738 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1127 -1
@@ -5515,12 +5515,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1157 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11261") [flags 0x82] <var_decl 06372948 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1158 -1
+        (high:SI (symbol_ref:SI ("buf.11261") [flags 0x82] <var_decl 06292948 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1158 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11261") [flags 0x82] <var_decl 06372948 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1158 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11261") [flags 0x82] <var_decl 06372948 buf>)
+            (symbol_ref:SI ("buf.11261") [flags 0x82] <var_decl 06292948 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1158 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11261") [flags 0x82] <var_decl 06292948 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1160 -1
@@ -5671,12 +5671,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1190 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11273") [flags 0x82] <var_decl 06372b58 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1191 -1
+        (high:SI (symbol_ref:SI ("buf.11273") [flags 0x82] <var_decl 06292b58 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1191 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11273") [flags 0x82] <var_decl 06372b58 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1191 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11273") [flags 0x82] <var_decl 06372b58 buf>)
+            (symbol_ref:SI ("buf.11273") [flags 0x82] <var_decl 06292b58 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1191 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11273") [flags 0x82] <var_decl 06292b58 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1193 -1
@@ -5827,12 +5827,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1223 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11285") [flags 0x82] <var_decl 06372d68 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1224 -1
+        (high:SI (symbol_ref:SI ("buf.11285") [flags 0x82] <var_decl 06292d68 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1224 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11285") [flags 0x82] <var_decl 06372d68 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1224 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11285") [flags 0x82] <var_decl 06372d68 buf>)
+            (symbol_ref:SI ("buf.11285") [flags 0x82] <var_decl 06292d68 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1224 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11285") [flags 0x82] <var_decl 06292d68 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1226 -1
@@ -5983,12 +5983,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1256 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11297") [flags 0x82] <var_decl 06372f78 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1257 -1
+        (high:SI (symbol_ref:SI ("buf.11297") [flags 0x82] <var_decl 06292f78 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1257 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11297") [flags 0x82] <var_decl 06372f78 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1257 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11297") [flags 0x82] <var_decl 06372f78 buf>)
+            (symbol_ref:SI ("buf.11297") [flags 0x82] <var_decl 06292f78 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1257 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11297") [flags 0x82] <var_decl 06292f78 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1259 -1
@@ -6139,12 +6139,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1289 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11309") [flags 0x82] <var_decl 0637b1b8 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1290 -1
+        (high:SI (symbol_ref:SI ("buf.11309") [flags 0x82] <var_decl 0629b1b8 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1290 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11309") [flags 0x82] <var_decl 0637b1b8 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1290 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11309") [flags 0x82] <var_decl 0637b1b8 buf>)
+            (symbol_ref:SI ("buf.11309") [flags 0x82] <var_decl 0629b1b8 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1290 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11309") [flags 0x82] <var_decl 0629b1b8 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1292 -1
@@ -6931,12 +6931,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1454 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11369") [flags 0x82] <var_decl 0637bc08 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1455 -1
+        (high:SI (symbol_ref:SI ("buf.11369") [flags 0x82] <var_decl 0629bc08 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1455 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11369") [flags 0x82] <var_decl 0637bc08 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1455 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11369") [flags 0x82] <var_decl 0637bc08 buf>)
+            (symbol_ref:SI ("buf.11369") [flags 0x82] <var_decl 0629bc08 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1455 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11369") [flags 0x82] <var_decl 0629bc08 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1457 -1
@@ -7087,12 +7087,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1487 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11381") [flags 0x82] <var_decl 0637be18 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1488 -1
+        (high:SI (symbol_ref:SI ("buf.11381") [flags 0x82] <var_decl 0629be18 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1488 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11381") [flags 0x82] <var_decl 0637be18 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1488 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11381") [flags 0x82] <var_decl 0637be18 buf>)
+            (symbol_ref:SI ("buf.11381") [flags 0x82] <var_decl 0629be18 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1488 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11381") [flags 0x82] <var_decl 0629be18 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1490 -1
@@ -7243,12 +7243,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1520 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11393") [flags 0x82] <var_decl 06382058 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1521 -1
+        (high:SI (symbol_ref:SI ("buf.11393") [flags 0x82] <var_decl 062a2058 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1521 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11393") [flags 0x82] <var_decl 06382058 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1521 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11393") [flags 0x82] <var_decl 06382058 buf>)
+            (symbol_ref:SI ("buf.11393") [flags 0x82] <var_decl 062a2058 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1521 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11393") [flags 0x82] <var_decl 062a2058 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1523 -1
@@ -7558,12 +7558,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1586 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11417") [flags 0x82] <var_decl 06382478 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1587 -1
+        (high:SI (symbol_ref:SI ("buf.11417") [flags 0x82] <var_decl 062a2478 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1587 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11417") [flags 0x82] <var_decl 06382478 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1587 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11417") [flags 0x82] <var_decl 06382478 buf>)
+            (symbol_ref:SI ("buf.11417") [flags 0x82] <var_decl 062a2478 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1587 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11417") [flags 0x82] <var_decl 062a2478 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1589 -1
@@ -7714,12 +7714,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1619 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11429") [flags 0x82] <var_decl 06382688 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1620 -1
+        (high:SI (symbol_ref:SI ("buf.11429") [flags 0x82] <var_decl 062a2688 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1620 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11429") [flags 0x82] <var_decl 06382688 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1620 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11429") [flags 0x82] <var_decl 06382688 buf>)
+            (symbol_ref:SI ("buf.11429") [flags 0x82] <var_decl 062a2688 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1620 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11429") [flags 0x82] <var_decl 062a2688 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1622 -1
@@ -8188,12 +8188,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1718 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11465") [flags 0x82] <var_decl 06382cb8 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1719 -1
+        (high:SI (symbol_ref:SI ("buf.11465") [flags 0x82] <var_decl 062a2cb8 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1719 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11465") [flags 0x82] <var_decl 06382cb8 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1719 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11465") [flags 0x82] <var_decl 06382cb8 buf>)
+            (symbol_ref:SI ("buf.11465") [flags 0x82] <var_decl 062a2cb8 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1719 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11465") [flags 0x82] <var_decl 062a2cb8 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1721 -1
@@ -8662,12 +8662,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1817 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11501") [flags 0x82] <var_decl 0638c318 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1818 -1
+        (high:SI (symbol_ref:SI ("buf.11501") [flags 0x82] <var_decl 062ac318 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1818 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11501") [flags 0x82] <var_decl 0638c318 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1818 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11501") [flags 0x82] <var_decl 0638c318 buf>)
+            (symbol_ref:SI ("buf.11501") [flags 0x82] <var_decl 062ac318 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1818 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11501") [flags 0x82] <var_decl 062ac318 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1820 -1
@@ -8818,12 +8818,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1850 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11513") [flags 0x82] <var_decl 0638c528 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1851 -1
+        (high:SI (symbol_ref:SI ("buf.11513") [flags 0x82] <var_decl 062ac528 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1851 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11513") [flags 0x82] <var_decl 0638c528 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1851 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11513") [flags 0x82] <var_decl 0638c528 buf>)
+            (symbol_ref:SI ("buf.11513") [flags 0x82] <var_decl 062ac528 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1851 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11513") [flags 0x82] <var_decl 062ac528 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1853 -1
@@ -8974,12 +8974,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1883 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11525") [flags 0x82] <var_decl 0638c738 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1884 -1
+        (high:SI (symbol_ref:SI ("buf.11525") [flags 0x82] <var_decl 062ac738 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1884 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11525") [flags 0x82] <var_decl 0638c738 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1884 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11525") [flags 0x82] <var_decl 0638c738 buf>)
+            (symbol_ref:SI ("buf.11525") [flags 0x82] <var_decl 062ac738 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1884 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11525") [flags 0x82] <var_decl 062ac738 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":1886 -1
@@ -10084,12 +10084,12 @@ try_optimize_cfg iteration 2
         (reg:QI 74)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":2114 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("buf.11609") [flags 0x82] <var_decl 0663b5d8 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":2115 -1
+        (high:SI (symbol_ref:SI ("buf.11609") [flags 0x82] <var_decl 0655b5d8 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":2115 -1
      (nil))
 (insn 9 8 13 2 (set (reg/f:SI 72 [ <retval> ])
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("buf.11609") [flags 0x82] <var_decl 0663b5d8 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":2115 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11609") [flags 0x82] <var_decl 0663b5d8 buf>)
+            (symbol_ref:SI ("buf.11609") [flags 0x82] <var_decl 0655b5d8 buf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":2115 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("buf.11609") [flags 0x82] <var_decl 0655b5d8 buf>)
         (nil)))
 (insn 13 9 14 2 (set (reg/i:SI 10 a0)
         (reg/f:SI 72 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_d_memory.c":2117 -1

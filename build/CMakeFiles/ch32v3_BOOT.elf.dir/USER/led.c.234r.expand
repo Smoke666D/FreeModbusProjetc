@@ -43,11 +43,11 @@ try_optimize_cfg iteration 2
         (const_int 4 [0x4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":178 -1
      (nil))
 (call_insn 10 9 11 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 067a3ca8 HAL_TiemrEneblae>) [0 HAL_TiemrEneblae S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 0679cca8 HAL_TiemrEneblae>) [0 HAL_TiemrEneblae S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":178 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 067a3ca8 HAL_TiemrEneblae>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 0679cca8 HAL_TiemrEneblae>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -62,11 +62,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 14 13 0 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 065b7ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06366ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":179 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 065b7ca8 ulTaskGenericNotifyTake>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06366ca8 ulTaskGenericNotifyTake>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -195,11 +195,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 18 17 19 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memcmp") [flags 0x41] <function_decl 061edd20 memcmp>) [0 __builtin_memcmp S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memcmp") [flags 0x41] <function_decl 04a2dd20 memcmp>) [0 __builtin_memcmp S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":44 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcmp") [flags 0x41] <function_decl 061edd20 memcmp>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcmp") [flags 0x41] <function_decl 04a2dd20 memcmp>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -270,11 +270,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 10 9 11 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":52 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -291,11 +291,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 14 13 15 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":53 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -307,11 +307,11 @@ try_optimize_cfg iteration 2
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":54 -1
      (nil))
 (call_insn 17 16 18 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":54 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -320,11 +320,11 @@ try_optimize_cfg iteration 2
         (const_int 10 [0xa])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":55 -1
      (nil))
 (call_insn 19 18 20 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06577ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06570ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":55 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06577ca8 vTaskDelay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06570ca8 vTaskDelay>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -335,11 +335,11 @@ try_optimize_cfg iteration 2
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":56 -1
      (nil))
 (call_insn 22 21 23 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067691e0 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067621e0 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":56 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067691e0 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067621e0 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -348,11 +348,11 @@ try_optimize_cfg iteration 2
         (const_int 10 [0xa])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":57 -1
      (nil))
 (call_insn 24 23 25 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06577ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06570ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":57 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06577ca8 vTaskDelay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06570ca8 vTaskDelay>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -368,11 +368,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 28 27 29 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067691e0 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067621e0 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":58 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067691e0 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067621e0 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -384,11 +384,11 @@ try_optimize_cfg iteration 2
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":59 -1
      (nil))
 (call_insn 31 30 32 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":59 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -397,11 +397,11 @@ try_optimize_cfg iteration 2
         (const_int 10 [0xa])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":60 -1
      (nil))
 (call_insn 33 32 34 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06577ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06570ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":60 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06577ca8 vTaskDelay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06570ca8 vTaskDelay>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -412,11 +412,11 @@ try_optimize_cfg iteration 2
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":61 -1
      (nil))
 (call_insn 36 35 37 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067691e0 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067621e0 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":61 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067691e0 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067621e0 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -425,11 +425,11 @@ try_optimize_cfg iteration 2
         (const_int 10 [0xa])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":62 -1
      (nil))
 (call_insn 38 37 39 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06577ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06570ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":62 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06577ca8 vTaskDelay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06570ca8 vTaskDelay>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -445,11 +445,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 42 41 43 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":63 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -471,11 +471,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":65 -1
      (nil))
 (call_insn 46 45 47 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06577ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06570ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":65 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06577ca8 vTaskDelay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06570ca8 vTaskDelay>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -491,11 +491,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 50 49 51 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067691e0 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067621e0 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":66 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067691e0 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067621e0 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -517,11 +517,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":68 -1
      (nil))
 (call_insn 54 53 120 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06577ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06570ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":68 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06577ca8 vTaskDelay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06570ca8 vTaskDelay>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -538,11 +538,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 59 58 60 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 065b7ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06366ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":76 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 065b7ca8 ulTaskGenericNotifyTake>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06366ca8 ulTaskGenericNotifyTake>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -588,11 +588,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 71 70 72 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 061edd98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 04a2dd98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":77 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 061edd98 __builtin_memcpy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 04a2dd98 __builtin_memcpy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -632,11 +632,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 80 79 81 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":80 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -686,11 +686,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 90 89 91 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067691e0 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067621e0 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":83 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067691e0 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067621e0 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -775,11 +775,11 @@ try_optimize_cfg iteration 2
         (const_int 4 [0x4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":169 -1
      (nil))
 (call_insn 109 108 110 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 067a3ca8 HAL_TiemrEneblae>) [0 HAL_TiemrEneblae S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 0679cca8 HAL_TiemrEneblae>) [0 HAL_TiemrEneblae S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":169 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 067a3ca8 HAL_TiemrEneblae>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 0679cca8 HAL_TiemrEneblae>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -794,11 +794,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 113 112 114 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 065b7ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06366ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":170 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 065b7ca8 ulTaskGenericNotifyTake>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06366ca8 ulTaskGenericNotifyTake>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -871,11 +871,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 8 7 9 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_GetPort") [flags 0x41] <function_decl 06769348 HAL_GetPort>) [0 HAL_GetPort S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_GetPort") [flags 0x41] <function_decl 06762348 HAL_GetPort>) [0 HAL_GetPort S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":95 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetPort") [flags 0x41] <function_decl 06769348 HAL_GetPort>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetPort") [flags 0x41] <function_decl 06762348 HAL_GetPort>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -953,11 +953,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 30 29 31 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetPort") [flags 0x41] <function_decl 067692d0 HAL_SetPort>) [0 HAL_SetPort S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetPort") [flags 0x41] <function_decl 067622d0 HAL_SetPort>) [0 HAL_SetPort S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":97 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetPort") [flags 0x41] <function_decl 067692d0 HAL_SetPort>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetPort") [flags 0x41] <function_decl 067622d0 HAL_SetPort>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -972,11 +972,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 33 32 34 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_GetPort") [flags 0x41] <function_decl 06769348 HAL_GetPort>) [0 HAL_GetPort S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_GetPort") [flags 0x41] <function_decl 06762348 HAL_GetPort>) [0 HAL_GetPort S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":98 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetPort") [flags 0x41] <function_decl 06769348 HAL_GetPort>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetPort") [flags 0x41] <function_decl 06762348 HAL_GetPort>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1029,11 +1029,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073813504 [0x40011800])
         (nil)))
 (call_insn 48 47 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetPort") [flags 0x41] <function_decl 067692d0 HAL_SetPort>) [0 HAL_SetPort S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetPort") [flags 0x41] <function_decl 067622d0 HAL_SetPort>) [0 HAL_SetPort S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":100 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetPort") [flags 0x41] <function_decl 067692d0 HAL_SetPort>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetPort") [flags 0x41] <function_decl 067622d0 HAL_SetPort>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1139,11 +1139,11 @@ Deleted label in block 15.
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 14 13 15 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":112 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1179,11 +1179,11 @@ Deleted label in block 15.
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 23 22 24 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":115 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1243,11 +1243,11 @@ Deleted label in block 15.
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 39 38 40 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067691e0 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067621e0 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":121 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067691e0 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067621e0 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1287,11 +1287,11 @@ Deleted label in block 15.
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 49 48 50 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067691e0 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067621e0 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":123 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067691e0 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067621e0 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1315,11 +1315,11 @@ Deleted label in block 15.
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 57 56 58 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":125 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1384,11 +1384,11 @@ Deleted label in block 15.
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 75 74 76 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067691e0 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067621e0 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":128 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067691e0 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067621e0 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1426,11 +1426,11 @@ Deleted label in block 15.
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 87 86 88 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":133 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1560,11 +1560,11 @@ Deleted label in block 15.
         (const_int 4 [0x4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":140 -1
      (nil))
 (call_insn 126 125 127 16 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TiemrDisable") [flags 0x41] <function_decl 067a3d20 HAL_TiemrDisable>) [0 HAL_TiemrDisable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TiemrDisable") [flags 0x41] <function_decl 0679cd20 HAL_TiemrDisable>) [0 HAL_TiemrDisable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":140 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TiemrDisable") [flags 0x41] <function_decl 067a3d20 HAL_TiemrDisable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TiemrDisable") [flags 0x41] <function_decl 0679cd20 HAL_TiemrDisable>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1603,11 +1603,11 @@ Deleted label in block 15.
      (nil))
 (call_insn 137 136 139 16 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 065b7b40 xTaskGenericNotifyFromISR>) [0 xTaskGenericNotifyFromISR S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06366b40 xTaskGenericNotifyFromISR>) [0 xTaskGenericNotifyFromISR S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":141 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 065b7b40 xTaskGenericNotifyFromISR>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06366b40 xTaskGenericNotifyFromISR>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1712,11 +1712,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 72 [ TimerName ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":153 -1
      (nil))
 (call_insn 14 13 15 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TIMER_InitIt") [flags 0x41] <function_decl 067a3e10 HAL_TIMER_InitIt>) [0 HAL_TIMER_InitIt S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TIMER_InitIt") [flags 0x41] <function_decl 0679ce10 HAL_TIMER_InitIt>) [0 HAL_TIMER_InitIt S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":153 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIMER_InitIt") [flags 0x41] <function_decl 067a3e10 HAL_TIMER_InitIt>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIMER_InitIt") [flags 0x41] <function_decl 0679ce10 HAL_TIMER_InitIt>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1737,11 +1737,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 18 17 19 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":154 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06769258 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06762258 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1761,22 +1761,22 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":155 -1
      (nil))
 (insn 23 22 24 2 (set (reg:SI 78)
-        (high:SI (symbol_ref:SI ("u8g2_cb_r0") [flags 0xc0] <var_decl 066c6000 u8g2_cb_r0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":155 -1
+        (high:SI (symbol_ref:SI ("u8g2_cb_r0") [flags 0xc0] <var_decl 066bf000 u8g2_cb_r0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":155 -1
      (nil))
 (insn 24 23 25 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 78)
-            (symbol_ref:SI ("u8g2_cb_r0") [flags 0xc0] <var_decl 066c6000 u8g2_cb_r0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":155 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2_cb_r0") [flags 0xc0] <var_decl 066c6000 u8g2_cb_r0>)
+            (symbol_ref:SI ("u8g2_cb_r0") [flags 0xc0] <var_decl 066bf000 u8g2_cb_r0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":155 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2_cb_r0") [flags 0xc0] <var_decl 066bf000 u8g2_cb_r0>)
         (nil)))
 (insn 25 24 26 2 (set (reg:SI 10 a0)
         (reg/f:SI 76)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":155 -1
      (nil))
 (call_insn 26 25 27 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_Setup_ks0108_128x64_f") [flags 0x41] <function_decl 0679e960 u8g2_Setup_ks0108_128x64_f>) [0 u8g2_Setup_ks0108_128x64_f S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_Setup_ks0108_128x64_f") [flags 0x41] <function_decl 06797960 u8g2_Setup_ks0108_128x64_f>) [0 u8g2_Setup_ks0108_128x64_f S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":155 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_Setup_ks0108_128x64_f") [flags 0x41] <function_decl 0679e960 u8g2_Setup_ks0108_128x64_f>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_Setup_ks0108_128x64_f") [flags 0x41] <function_decl 06797960 u8g2_Setup_ks0108_128x64_f>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1792,22 +1792,22 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR3") [flags 0x182])
         (nil)))
 (insn 29 28 30 2 (set (reg:SI 81)
-        (high:SI (symbol_ref:SI ("u8g2_font_6x13_t_cyrillic") [flags 0xc0] <var_decl 067da058 u8g2_font_6x13_t_cyrillic>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":156 -1
+        (high:SI (symbol_ref:SI ("u8g2_font_6x13_t_cyrillic") [flags 0xc0] <var_decl 067d3058 u8g2_font_6x13_t_cyrillic>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":156 -1
      (nil))
 (insn 30 29 31 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 81)
-            (symbol_ref:SI ("u8g2_font_6x13_t_cyrillic") [flags 0xc0] <var_decl 067da058 u8g2_font_6x13_t_cyrillic>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":156 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2_font_6x13_t_cyrillic") [flags 0xc0] <var_decl 067da058 u8g2_font_6x13_t_cyrillic>)
+            (symbol_ref:SI ("u8g2_font_6x13_t_cyrillic") [flags 0xc0] <var_decl 067d3058 u8g2_font_6x13_t_cyrillic>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":156 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2_font_6x13_t_cyrillic") [flags 0xc0] <var_decl 067d3058 u8g2_font_6x13_t_cyrillic>)
         (nil)))
 (insn 31 30 32 2 (set (reg:SI 10 a0)
         (reg/f:SI 79)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":156 -1
      (nil))
 (call_insn 32 31 33 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_SetFont") [flags 0x41] <function_decl 067c95a0 u8g2_SetFont>) [0 u8g2_SetFont S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetFont") [flags 0x41] <function_decl 067c25a0 u8g2_SetFont>) [0 u8g2_SetFont S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":156 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetFont") [flags 0x41] <function_decl 067c95a0 u8g2_SetFont>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetFont") [flags 0x41] <function_decl 067c25a0 u8g2_SetFont>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1824,11 +1824,11 @@ try_optimize_cfg iteration 2
         (reg/f:SI 82)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":157 -1
      (nil))
 (call_insn 36 35 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_ClearBuffer") [flags 0x41] <function_decl 067c10f0 u8g2_ClearBuffer>) [0 u8g2_ClearBuffer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_ClearBuffer") [flags 0x41] <function_decl 067ba0f0 u8g2_ClearBuffer>) [0 u8g2_ClearBuffer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/led.c":157 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_ClearBuffer") [flags 0x41] <function_decl 067c10f0 u8g2_ClearBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_ClearBuffer") [flags 0x41] <function_decl 067ba0f0 u8g2_ClearBuffer>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))

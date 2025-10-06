@@ -66,11 +66,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 15 14 16 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 06935ca8 HAL_InitGpioAF>) [0 HAL_InitGpioAF S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 0685fca8 HAL_InitGpioAF>) [0 HAL_InitGpioAF S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":22 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 06935ca8 HAL_InitGpioAF>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 0685fca8 HAL_InitGpioAF>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -95,11 +95,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 21 20 22 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 06935ca8 HAL_InitGpioAF>) [0 HAL_InitGpioAF S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 0685fca8 HAL_InitGpioAF>) [0 HAL_InitGpioAF S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":23 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 06935ca8 HAL_InitGpioAF>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 0685fca8 HAL_InitGpioAF>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -150,11 +150,11 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":30 -1
      (nil))
 (call_insn 34 33 35 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_Init") [flags 0x41] <function_decl 068de690 HAL_I2C_Init>) [0 HAL_I2C_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_Init") [flags 0x41] <function_decl 06808690 HAL_I2C_Init>) [0 HAL_I2C_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":30 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_Init") [flags 0x41] <function_decl 068de690 HAL_I2C_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_Init") [flags 0x41] <function_decl 06808690 HAL_I2C_Init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -170,11 +170,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":31 -1
      (nil))
 (call_insn 38 37 39 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_Init") [flags 0x41] <function_decl 068de690 HAL_I2C_Init>) [0 HAL_I2C_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_Init") [flags 0x41] <function_decl 06808690 HAL_I2C_Init>) [0 HAL_I2C_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":31 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_Init") [flags 0x41] <function_decl 068de690 HAL_I2C_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_Init") [flags 0x41] <function_decl 06808690 HAL_I2C_Init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -183,11 +183,11 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":32 -1
      (nil))
 (call_insn 40 39 41 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 068bfac8 HAL_I2C_ENABLE>) [0 HAL_I2C_ENABLE S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 067ebac8 HAL_I2C_ENABLE>) [0 HAL_I2C_ENABLE S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":32 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 068bfac8 HAL_I2C_ENABLE>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 067ebac8 HAL_I2C_ENABLE>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -195,11 +195,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":33 -1
      (nil))
 (call_insn 42 41 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 068bfac8 HAL_I2C_ENABLE>) [0 HAL_I2C_ENABLE S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 067ebac8 HAL_I2C_ENABLE>) [0 HAL_I2C_ENABLE S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":33 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 068bfac8 HAL_I2C_ENABLE>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x41] <function_decl 067ebac8 HAL_I2C_ENABLE>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -233,11 +233,11 @@ try_optimize_cfg iteration 2
 (note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
 (note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 5 2 6 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGPO") [flags 0x41] <function_decl 06935bb8 HAL_InitGPO>) [0 HAL_InitGPO S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGPO") [flags 0x41] <function_decl 0685fbb8 HAL_InitGPO>) [0 HAL_InitGPO S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":40 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGPO") [flags 0x41] <function_decl 06935bb8 HAL_InitGPO>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGPO") [flags 0x41] <function_decl 0685fbb8 HAL_InitGPO>)
         (nil))
     (nil))
 (insn 6 5 7 2 (set (reg:SI 13 a3)
@@ -258,11 +258,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073809408 [0x40010800])
         (nil)))
 (call_insn 11 10 12 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 06935ca8 HAL_InitGpioAF>) [0 HAL_InitGpioAF S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 0685fca8 HAL_InitGpioAF>) [0 HAL_InitGpioAF S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":41 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 06935ca8 HAL_InitGpioAF>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 0685fca8 HAL_InitGpioAF>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -281,11 +281,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 15 14 16 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAIN") [flags 0x41] <function_decl 06881000 HAL_InitGpioAIN>) [0 HAL_InitGpioAIN S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAIN") [flags 0x41] <function_decl 067ad000 HAL_InitGpioAIN>) [0 HAL_InitGpioAIN S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":42 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAIN") [flags 0x41] <function_decl 06881000 HAL_InitGpioAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAIN") [flags 0x41] <function_decl 067ad000 HAL_InitGpioAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -297,11 +297,11 @@ try_optimize_cfg iteration 2
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":43 -1
      (nil))
 (call_insn 18 17 19 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAIN") [flags 0x41] <function_decl 06881000 HAL_InitGpioAIN>) [0 HAL_InitGpioAIN S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAIN") [flags 0x41] <function_decl 067ad000 HAL_InitGpioAIN>) [0 HAL_InitGpioAIN S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":43 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAIN") [flags 0x41] <function_decl 06881000 HAL_InitGpioAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAIN") [flags 0x41] <function_decl 067ad000 HAL_InitGpioAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -318,11 +318,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073809408 [0x40010800])
         (nil)))
 (call_insn 22 21 23 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAIN") [flags 0x41] <function_decl 06881000 HAL_InitGpioAIN>) [0 HAL_InitGpioAIN S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAIN") [flags 0x41] <function_decl 067ad000 HAL_InitGpioAIN>) [0 HAL_InitGpioAIN S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":44 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAIN") [flags 0x41] <function_decl 06881000 HAL_InitGpioAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAIN") [flags 0x41] <function_decl 067ad000 HAL_InitGpioAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -339,11 +339,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073813504 [0x40011800])
         (nil)))
 (call_insn 26 25 27 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":45 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -360,11 +360,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 30 29 31 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":46 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -376,11 +376,11 @@ try_optimize_cfg iteration 2
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":47 -1
      (nil))
 (call_insn 33 32 34 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":47 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -397,11 +397,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 37 36 38 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":48 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -418,11 +418,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 41 40 42 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":49 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -439,11 +439,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 45 44 46 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":50 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -460,11 +460,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 49 48 50 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":51 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -487,11 +487,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 55 54 56 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 06935ca8 HAL_InitGpioAF>) [0 HAL_InitGpioAF S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 0685fca8 HAL_InitGpioAF>) [0 HAL_InitGpioAF S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":52 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 06935ca8 HAL_InitGpioAF>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 0685fca8 HAL_InitGpioAF>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -540,11 +540,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 67 66 68 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 06650708 GPIO_Init>) [0 GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 06572708 GPIO_Init>) [0 GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":56 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 06650708 GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 06572708 GPIO_Init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -561,11 +561,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 71 70 72 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":57 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -577,11 +577,11 @@ try_optimize_cfg iteration 2
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":58 -1
      (nil))
 (call_insn 74 73 75 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":58 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -598,11 +598,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 78 77 79 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":59 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -635,11 +635,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 86 85 87 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 06935ca8 HAL_InitGpioAF>) [0 HAL_InitGpioAF S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 0685fca8 HAL_InitGpioAF>) [0 HAL_InitGpioAF S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":60 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 06935ca8 HAL_InitGpioAF>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 0685fca8 HAL_InitGpioAF>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -658,11 +658,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 90 89 91 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":61 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -679,11 +679,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 94 93 95 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":62 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -700,11 +700,11 @@ try_optimize_cfg iteration 2
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":63 -1
      (nil))
 (call_insn 98 97 99 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":63 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -721,11 +721,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073813504 [0x40011800])
         (nil)))
 (call_insn 102 101 103 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioIn") [flags 0x41] <function_decl 06935c30 HAL_InitGpioIn>) [0 HAL_InitGpioIn S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioIn") [flags 0x41] <function_decl 0685fc30 HAL_InitGpioIn>) [0 HAL_InitGpioIn S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":64 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioIn") [flags 0x41] <function_decl 06935c30 HAL_InitGpioIn>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioIn") [flags 0x41] <function_decl 0685fc30 HAL_InitGpioIn>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -742,11 +742,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 106 105 107 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioIn") [flags 0x41] <function_decl 06935c30 HAL_InitGpioIn>) [0 HAL_InitGpioIn S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioIn") [flags 0x41] <function_decl 0685fc30 HAL_InitGpioIn>) [0 HAL_InitGpioIn S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":65 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioIn") [flags 0x41] <function_decl 06935c30 HAL_InitGpioIn>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioIn") [flags 0x41] <function_decl 0685fc30 HAL_InitGpioIn>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -768,11 +768,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073813504 [0x40011800])
         (nil)))
 (call_insn 111 110 112 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioIn") [flags 0x41] <function_decl 06935c30 HAL_InitGpioIn>) [0 HAL_InitGpioIn S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioIn") [flags 0x41] <function_decl 0685fc30 HAL_InitGpioIn>) [0 HAL_InitGpioIn S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":66 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioIn") [flags 0x41] <function_decl 06935c30 HAL_InitGpioIn>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioIn") [flags 0x41] <function_decl 0685fc30 HAL_InitGpioIn>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -784,11 +784,11 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":67 -1
      (nil))
 (call_insn 114 113 115 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("DAC_SetChannel1Data") [flags 0x41] <function_decl 0662a258 DAC_SetChannel1Data>) [0 DAC_SetChannel1Data S4 A32])
+            (call (mem:SI (symbol_ref:SI ("DAC_SetChannel1Data") [flags 0x41] <function_decl 0654c258 DAC_SetChannel1Data>) [0 DAC_SetChannel1Data S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":67 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DAC_SetChannel1Data") [flags 0x41] <function_decl 0662a258 DAC_SetChannel1Data>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DAC_SetChannel1Data") [flags 0x41] <function_decl 0654c258 DAC_SetChannel1Data>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -805,11 +805,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 118 117 119 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 06935e10 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 0685fe10 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":68 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 06935e10 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 0685fe10 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -826,11 +826,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 122 121 123 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":69 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -858,11 +858,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073813504 [0x40011800])
         (nil)))
 (call_insn 129 128 130 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 06935ca8 HAL_InitGpioAF>) [0 HAL_InitGpioAF S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 0685fca8 HAL_InitGpioAF>) [0 HAL_InitGpioAF S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":70 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 06935ca8 HAL_InitGpioAF>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 0685fca8 HAL_InitGpioAF>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -892,11 +892,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073813504 [0x40011800])
         (nil)))
 (call_insn 136 135 137 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 06935ca8 HAL_InitGpioAF>) [0 HAL_InitGpioAF S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 0685fca8 HAL_InitGpioAF>) [0 HAL_InitGpioAF S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":71 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 06935ca8 HAL_InitGpioAF>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 0685fca8 HAL_InitGpioAF>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -921,11 +921,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073809408 [0x40010800])
         (nil)))
 (call_insn 142 141 143 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 06935ca8 HAL_InitGpioAF>) [0 HAL_InitGpioAF S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 0685fca8 HAL_InitGpioAF>) [0 HAL_InitGpioAF S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":72 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 06935ca8 HAL_InitGpioAF>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioAF") [flags 0x41] <function_decl 0685fca8 HAL_InitGpioAF>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -944,11 +944,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073809408 [0x40010800])
         (nil)))
 (call_insn 146 145 147 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>) [0 HAL_InitGpioOut S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":73 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 06935d98 HAL_InitGpioOut>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitGpioOut") [flags 0x41] <function_decl 0685fd98 HAL_InitGpioOut>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -965,11 +965,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073809408 [0x40010800])
         (nil)))
 (call_insn 150 149 151 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06935e88 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 0685fe88 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":74 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06935e88 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 0685fe88 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -981,11 +981,11 @@ try_optimize_cfg iteration 2
         (const_int 16384 [0x4000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":85 -1
      (nil))
 (call_insn 153 152 154 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphClockCmd") [flags 0x41] <function_decl 0668f168 RCC_APB1PeriphClockCmd>) [0 RCC_APB1PeriphClockCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphClockCmd") [flags 0x41] <function_decl 065ad168 RCC_APB1PeriphClockCmd>) [0 RCC_APB1PeriphClockCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":85 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphClockCmd") [flags 0x41] <function_decl 0668f168 RCC_APB1PeriphClockCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphClockCmd") [flags 0x41] <function_decl 065ad168 RCC_APB1PeriphClockCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -994,20 +994,20 @@ try_optimize_cfg iteration 2
         (const_int 4 [0x4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":86 -1
      (nil))
 (call_insn 155 154 156 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vLCDInit") [flags 0x41] <function_decl 069d9438 vLCDInit>) [0 vLCDInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vLCDInit") [flags 0x41] <function_decl 068f9438 vLCDInit>) [0 vLCDInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":86 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vLCDInit") [flags 0x41] <function_decl 069d9438 vLCDInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vLCDInit") [flags 0x41] <function_decl 068f9438 vLCDInit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 156 155 157 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ADC1_Init") [flags 0x41] <function_decl 064b8bb8 ADC1_Init>) [0 ADC1_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ADC1_Init") [flags 0x41] <function_decl 063d0bb8 ADC1_Init>) [0 ADC1_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":87 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC1_Init") [flags 0x41] <function_decl 064b8bb8 ADC1_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ADC1_Init") [flags 0x41] <function_decl 063d0bb8 ADC1_Init>)
         (nil))
     (nil))
 (insn 157 156 158 2 (set (reg:SI 12 a2)
@@ -1025,11 +1025,11 @@ try_optimize_cfg iteration 2
         (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":88 -1
      (nil))
 (call_insn 161 160 162 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HW_TIMER_TimerInit") [flags 0x41] <function_decl 06881348 HW_TIMER_TimerInit>) [0 HW_TIMER_TimerInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HW_TIMER_TimerInit") [flags 0x41] <function_decl 067ad348 HW_TIMER_TimerInit>) [0 HW_TIMER_TimerInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":88 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HW_TIMER_TimerInit") [flags 0x41] <function_decl 06881348 HW_TIMER_TimerInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HW_TIMER_TimerInit") [flags 0x41] <function_decl 067ad348 HW_TIMER_TimerInit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1042,11 +1042,11 @@ try_optimize_cfg iteration 2
         (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":89 -1
      (nil))
 (call_insn 164 163 165 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HW_TIMER_SelectOutTrigger") [flags 0x41] <function_decl 06881690 HW_TIMER_SelectOutTrigger>) [0 HW_TIMER_SelectOutTrigger S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HW_TIMER_SelectOutTrigger") [flags 0x41] <function_decl 067ad690 HW_TIMER_SelectOutTrigger>) [0 HW_TIMER_SelectOutTrigger S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":89 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HW_TIMER_SelectOutTrigger") [flags 0x41] <function_decl 06881690 HW_TIMER_SelectOutTrigger>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HW_TIMER_SelectOutTrigger") [flags 0x41] <function_decl 067ad690 HW_TIMER_SelectOutTrigger>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1074,11 +1074,11 @@ try_optimize_cfg iteration 2
         (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":90 -1
      (nil))
 (call_insn 171 170 172 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TIMER_PWMTimersInit") [flags 0x41] <function_decl 068815a0 HAL_TIMER_PWMTimersInit>) [0 HAL_TIMER_PWMTimersInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TIMER_PWMTimersInit") [flags 0x41] <function_decl 067ad5a0 HAL_TIMER_PWMTimersInit>) [0 HAL_TIMER_PWMTimersInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":90 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIMER_PWMTimersInit") [flags 0x41] <function_decl 068815a0 HAL_TIMER_PWMTimersInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIMER_PWMTimersInit") [flags 0x41] <function_decl 067ad5a0 HAL_TIMER_PWMTimersInit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1095,11 +1095,11 @@ try_optimize_cfg iteration 2
         (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":91 -1
      (nil))
 (call_insn 175 174 176 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TIMER_SetPWMPulse") [flags 0x41] <function_decl 06881618 HAL_TIMER_SetPWMPulse>) [0 HAL_TIMER_SetPWMPulse S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TIMER_SetPWMPulse") [flags 0x41] <function_decl 067ad618 HAL_TIMER_SetPWMPulse>) [0 HAL_TIMER_SetPWMPulse S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":91 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIMER_SetPWMPulse") [flags 0x41] <function_decl 06881618 HAL_TIMER_SetPWMPulse>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIMER_SetPWMPulse") [flags 0x41] <function_decl 067ad618 HAL_TIMER_SetPWMPulse>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1109,11 +1109,11 @@ try_optimize_cfg iteration 2
         (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":92 -1
      (nil))
 (call_insn 177 176 178 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TIMER_EnablePWMCH") [flags 0x41] <function_decl 068814b0 HAL_TIMER_EnablePWMCH>) [0 HAL_TIMER_EnablePWMCH S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TIMER_EnablePWMCH") [flags 0x41] <function_decl 067ad4b0 HAL_TIMER_EnablePWMCH>) [0 HAL_TIMER_EnablePWMCH S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":92 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIMER_EnablePWMCH") [flags 0x41] <function_decl 068814b0 HAL_TIMER_EnablePWMCH>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIMER_EnablePWMCH") [flags 0x41] <function_decl 067ad4b0 HAL_TIMER_EnablePWMCH>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1121,11 +1121,11 @@ try_optimize_cfg iteration 2
         (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":93 -1
      (nil))
 (call_insn 179 178 180 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 068813c0 HAL_TiemrEneblae>) [0 HAL_TiemrEneblae S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 067ad3c0 HAL_TiemrEneblae>) [0 HAL_TiemrEneblae S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":93 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 068813c0 HAL_TiemrEneblae>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 067ad3c0 HAL_TiemrEneblae>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1157,11 +1157,11 @@ try_optimize_cfg iteration 2
         (reg:SI 110)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":100 -1
      (nil))
 (call_insn 187 186 188 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_DAC_Init") [flags 0x41] <function_decl 068bf960 HAL_DAC_Init>) [0 HAL_DAC_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_DAC_Init") [flags 0x41] <function_decl 067eb960 HAL_DAC_Init>) [0 HAL_DAC_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":100 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_DAC_Init") [flags 0x41] <function_decl 068bf960 HAL_DAC_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_DAC_Init") [flags 0x41] <function_decl 067eb960 HAL_DAC_Init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1172,11 +1172,11 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":101 -1
      (nil))
 (call_insn 190 189 191 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("DAC_Cmd") [flags 0x41] <function_decl 0662a000 DAC_Cmd>) [0 DAC_Cmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("DAC_Cmd") [flags 0x41] <function_decl 0654c000 DAC_Cmd>) [0 DAC_Cmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":101 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DAC_Cmd") [flags 0x41] <function_decl 0662a000 DAC_Cmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DAC_Cmd") [flags 0x41] <function_decl 0654c000 DAC_Cmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1188,21 +1188,21 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":102 -1
      (nil))
 (call_insn 193 192 194 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("DAC_SetChannel1Data") [flags 0x41] <function_decl 0662a258 DAC_SetChannel1Data>) [0 DAC_SetChannel1Data S4 A32])
+            (call (mem:SI (symbol_ref:SI ("DAC_SetChannel1Data") [flags 0x41] <function_decl 0654c258 DAC_SetChannel1Data>) [0 DAC_SetChannel1Data S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":102 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DAC_SetChannel1Data") [flags 0x41] <function_decl 0662a258 DAC_SetChannel1Data>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DAC_SetChannel1Data") [flags 0x41] <function_decl 0654c258 DAC_SetChannel1Data>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
             (nil))))
 (call_insn 194 193 195 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vDIN_DOUT_Init") [flags 0x41] <function_decl 068bf870 vDIN_DOUT_Init>) [0 vDIN_DOUT_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vDIN_DOUT_Init") [flags 0x41] <function_decl 067eb870 vDIN_DOUT_Init>) [0 vDIN_DOUT_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":103 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vDIN_DOUT_Init") [flags 0x41] <function_decl 068bf870 vDIN_DOUT_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vDIN_DOUT_Init") [flags 0x41] <function_decl 067eb870 vDIN_DOUT_Init>)
         (nil))
     (nil))
 (insn 195 194 196 2 (set (reg:SI 11 a1)
@@ -1212,20 +1212,20 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":104 -1
      (nil))
 (call_insn 197 196 198 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("InitEEPROM") [flags 0x41] <function_decl 068b22d0 InitEEPROM>) [0 InitEEPROM S4 A32])
+            (call (mem:SI (symbol_ref:SI ("InitEEPROM") [flags 0x41] <function_decl 067de2d0 InitEEPROM>) [0 InitEEPROM S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":104 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("InitEEPROM") [flags 0x41] <function_decl 068b22d0 InitEEPROM>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("InitEEPROM") [flags 0x41] <function_decl 067de2d0 InitEEPROM>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
             (nil))))
 (call_insn 198 197 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_WDTInit") [flags 0x41] <function_decl 069d9528 HAL_WDTInit>) [0 HAL_WDTInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_WDTInit") [flags 0x41] <function_decl 068f9528 HAL_WDTInit>) [0 HAL_WDTInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/init.c":105 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_WDTInit") [flags 0x41] <function_decl 069d9528 HAL_WDTInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_WDTInit") [flags 0x41] <function_decl 068f9528 HAL_WDTInit>)
         (nil))
     (nil))

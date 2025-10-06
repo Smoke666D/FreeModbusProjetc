@@ -109,11 +109,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 25 24 26 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":23 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -144,11 +144,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 35 34 36 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":25 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -179,11 +179,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 45 44 46 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":27 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -214,11 +214,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 55 54 56 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":29 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -249,11 +249,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 65 64 66 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":31 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -399,11 +399,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 24 23 25 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":101 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -431,11 +431,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 33 32 34 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":103 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -463,11 +463,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 42 41 43 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":105 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -495,11 +495,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 51 50 52 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":107 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -527,11 +527,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 60 59 61 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":109 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -559,11 +559,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 69 68 70 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>) [0 HAL_GetBit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":111 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06769168 HAL_GetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetBit") [flags 0x41] <function_decl 06729168 HAL_GetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -731,11 +731,11 @@ Forwarding edge 6->7 to 21 failed.
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 27 26 28 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 06825f00 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067e5f00 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":47 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 06825f00 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067e5f00 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -759,11 +759,11 @@ Forwarding edge 6->7 to 21 failed.
      (expr_list:REG_EQUAL (const_int 1073812480 [0x40011400])
         (nil)))
 (call_insn 35 34 36 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06825f78 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067e5f78 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":49 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06825f78 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067e5f78 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -795,11 +795,11 @@ Forwarding edge 6->7 to 21 failed.
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 45 44 46 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 06825f00 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067e5f00 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":53 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 06825f00 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067e5f00 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -823,11 +823,11 @@ Forwarding edge 6->7 to 21 failed.
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 53 52 54 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06825f78 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067e5f78 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":55 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06825f78 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067e5f78 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -859,11 +859,11 @@ Forwarding edge 6->7 to 21 failed.
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 63 62 64 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 06825f00 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067e5f00 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":59 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 06825f00 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067e5f00 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -887,11 +887,11 @@ Forwarding edge 6->7 to 21 failed.
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 71 70 72 16 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06825f78 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067e5f78 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":61 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06825f78 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067e5f78 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -923,11 +923,11 @@ Forwarding edge 6->7 to 21 failed.
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 81 80 82 18 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 06825f00 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067e5f00 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":65 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 06825f00 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067e5f00 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -951,11 +951,11 @@ Forwarding edge 6->7 to 21 failed.
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 89 88 92 19 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06825f78 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067e5f78 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":67 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 06825f78 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067e5f78 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1012,12 +1012,12 @@ try_optimize_cfg iteration 2
         (reg:SI 73)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":80 -1
      (nil))
 (insn 10 9 11 2 (set (reg:SI 75)
-        (high:SI (symbol_ref:SI ("fDinStateCallback") [flags 0x3] <function_decl 0679a7f8 fDinStateCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":81 -1
+        (high:SI (symbol_ref:SI ("fDinStateCallback") [flags 0x3] <function_decl 0675a7f8 fDinStateCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":81 -1
      (nil))
 (insn 11 10 12 2 (set (reg/f:SI 74)
         (lo_sum:SI (reg:SI 75)
-            (symbol_ref:SI ("fDinStateCallback") [flags 0x3] <function_decl 0679a7f8 fDinStateCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":81 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("fDinStateCallback") [flags 0x3] <function_decl 0679a7f8 fDinStateCallback>)
+            (symbol_ref:SI ("fDinStateCallback") [flags 0x3] <function_decl 0675a7f8 fDinStateCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":81 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("fDinStateCallback") [flags 0x3] <function_decl 0675a7f8 fDinStateCallback>)
         (nil)))
 (insn 12 11 13 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
                 (const_int -4 [0xfffffffffffffffc])) [5 DIN_CONFIG.getPortCallback+0 S4 A32])
@@ -1035,11 +1035,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 16 15 17 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0679a5a0 eDinConfigWtihStruct>) [0 eDinConfigWtihStruct S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0675a5a0 eDinConfigWtihStruct>) [0 eDinConfigWtihStruct S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":82 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0679a5a0 eDinConfigWtihStruct>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0675a5a0 eDinConfigWtihStruct>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1056,11 +1056,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 20 19 21 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0679a5a0 eDinConfigWtihStruct>) [0 eDinConfigWtihStruct S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0675a5a0 eDinConfigWtihStruct>) [0 eDinConfigWtihStruct S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":83 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0679a5a0 eDinConfigWtihStruct>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0675a5a0 eDinConfigWtihStruct>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1077,11 +1077,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 24 23 25 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0679a5a0 eDinConfigWtihStruct>) [0 eDinConfigWtihStruct S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0675a5a0 eDinConfigWtihStruct>) [0 eDinConfigWtihStruct S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":84 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0679a5a0 eDinConfigWtihStruct>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0675a5a0 eDinConfigWtihStruct>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1098,11 +1098,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 28 27 29 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0679a5a0 eDinConfigWtihStruct>) [0 eDinConfigWtihStruct S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0675a5a0 eDinConfigWtihStruct>) [0 eDinConfigWtihStruct S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":85 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0679a5a0 eDinConfigWtihStruct>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0675a5a0 eDinConfigWtihStruct>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1119,22 +1119,22 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 32 31 33 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0679a5a0 eDinConfigWtihStruct>) [0 eDinConfigWtihStruct S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0675a5a0 eDinConfigWtihStruct>) [0 eDinConfigWtihStruct S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":86 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0679a5a0 eDinConfigWtihStruct>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDinConfigWtihStruct") [flags 0x41] <function_decl 0675a5a0 eDinConfigWtihStruct>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
             (nil))))
 (insn 33 32 34 2 (set (reg:SI 82)
-        (high:SI (symbol_ref:SI ("vSetDoutState") [flags 0x3] <function_decl 0679a870 vSetDoutState>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":87 -1
+        (high:SI (symbol_ref:SI ("vSetDoutState") [flags 0x3] <function_decl 0675a870 vSetDoutState>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":87 -1
      (nil))
 (insn 34 33 35 2 (set (reg/f:SI 81)
         (lo_sum:SI (reg:SI 82)
-            (symbol_ref:SI ("vSetDoutState") [flags 0x3] <function_decl 0679a870 vSetDoutState>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":87 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("vSetDoutState") [flags 0x3] <function_decl 0679a870 vSetDoutState>)
+            (symbol_ref:SI ("vSetDoutState") [flags 0x3] <function_decl 0675a870 vSetDoutState>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":87 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("vSetDoutState") [flags 0x3] <function_decl 0675a870 vSetDoutState>)
         (nil)))
 (insn 35 34 36 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
                 (const_int -32 [0xffffffffffffffe0])) [8 DOUT_CONFIG.setPortCallback+0 S4 A64])
@@ -1156,11 +1156,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 40 39 41 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eDOUTConfigWtihStruct") [flags 0x41] <function_decl 0679a0f0 eDOUTConfigWtihStruct>) [0 eDOUTConfigWtihStruct S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eDOUTConfigWtihStruct") [flags 0x41] <function_decl 0675a0f0 eDOUTConfigWtihStruct>) [0 eDOUTConfigWtihStruct S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":89 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDOUTConfigWtihStruct") [flags 0x41] <function_decl 0679a0f0 eDOUTConfigWtihStruct>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDOUTConfigWtihStruct") [flags 0x41] <function_decl 0675a0f0 eDOUTConfigWtihStruct>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1177,11 +1177,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 44 43 45 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eDOUTConfigWtihStruct") [flags 0x41] <function_decl 0679a0f0 eDOUTConfigWtihStruct>) [0 eDOUTConfigWtihStruct S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eDOUTConfigWtihStruct") [flags 0x41] <function_decl 0675a0f0 eDOUTConfigWtihStruct>) [0 eDOUTConfigWtihStruct S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":90 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDOUTConfigWtihStruct") [flags 0x41] <function_decl 0679a0f0 eDOUTConfigWtihStruct>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDOUTConfigWtihStruct") [flags 0x41] <function_decl 0675a0f0 eDOUTConfigWtihStruct>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1198,11 +1198,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 48 47 49 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eDOUTConfigWtihStruct") [flags 0x41] <function_decl 0679a0f0 eDOUTConfigWtihStruct>) [0 eDOUTConfigWtihStruct S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eDOUTConfigWtihStruct") [flags 0x41] <function_decl 0675a0f0 eDOUTConfigWtihStruct>) [0 eDOUTConfigWtihStruct S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":91 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDOUTConfigWtihStruct") [flags 0x41] <function_decl 0679a0f0 eDOUTConfigWtihStruct>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDOUTConfigWtihStruct") [flags 0x41] <function_decl 0675a0f0 eDOUTConfigWtihStruct>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1219,11 +1219,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 52 51 0 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eDOUTConfigWtihStruct") [flags 0x41] <function_decl 0679a0f0 eDOUTConfigWtihStruct>) [0 eDOUTConfigWtihStruct S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eDOUTConfigWtihStruct") [flags 0x41] <function_decl 0675a0f0 eDOUTConfigWtihStruct>) [0 eDOUTConfigWtihStruct S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":92 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDOUTConfigWtihStruct") [flags 0x41] <function_decl 0679a0f0 eDOUTConfigWtihStruct>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eDOUTConfigWtihStruct") [flags 0x41] <function_decl 0675a0f0 eDOUTConfigWtihStruct>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1320,12 +1320,12 @@ try_optimize_cfg iteration 2
         (reg:HI 80)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":130 -1
      (nil))
 (insn 21 20 22 2 (set (reg:SI 83)
-        (high:SI (symbol_ref:SI ("fPortState") [flags 0x3] <function_decl 0679a960 fPortState>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":131 -1
+        (high:SI (symbol_ref:SI ("fPortState") [flags 0x3] <function_decl 0675a960 fPortState>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":131 -1
      (nil))
 (insn 22 21 23 2 (set (reg/f:SI 82)
         (lo_sum:SI (reg:SI 83)
-            (symbol_ref:SI ("fPortState") [flags 0x3] <function_decl 0679a960 fPortState>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":131 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("fPortState") [flags 0x3] <function_decl 0679a960 fPortState>)
+            (symbol_ref:SI ("fPortState") [flags 0x3] <function_decl 0675a960 fPortState>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":131 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("fPortState") [flags 0x3] <function_decl 0675a960 fPortState>)
         (nil)))
 (insn 23 22 24 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
                 (const_int -4 [0xfffffffffffffffc])) [12 KeyboardInit.getPortCallback+0 S4 A32])
@@ -1340,11 +1340,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 26 25 0 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eKeyboardInit") [flags 0x41] <function_decl 06769258 eKeyboardInit>) [0 eKeyboardInit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eKeyboardInit") [flags 0x41] <function_decl 06729258 eKeyboardInit>) [0 eKeyboardInit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":132 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eKeyboardInit") [flags 0x41] <function_decl 06769258 eKeyboardInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eKeyboardInit") [flags 0x41] <function_decl 06729258 eKeyboardInit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1379,11 +1379,11 @@ try_optimize_cfg iteration 2
      (nil))
 (note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 6 3 15 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vKeyboarInit") [flags 0x3] <function_decl 0679a9d8 vKeyboarInit>) [0 vKeyboarInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vKeyboarInit") [flags 0x3] <function_decl 0675a9d8 vKeyboarInit>) [0 vKeyboarInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":137 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vKeyboarInit") [flags 0x3] <function_decl 0679a9d8 vKeyboarInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vKeyboarInit") [flags 0x3] <function_decl 0675a9d8 vKeyboarInit>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -1391,11 +1391,11 @@ try_optimize_cfg iteration 2
 (note 7 15 8 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
 (call_insn 8 7 9 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HW_LIB_GetKeyboardPeriod") [flags 0x41] <function_decl 06769348 HW_LIB_GetKeyboardPeriod>) [0 HW_LIB_GetKeyboardPeriod S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HW_LIB_GetKeyboardPeriod") [flags 0x41] <function_decl 06729348 HW_LIB_GetKeyboardPeriod>) [0 HW_LIB_GetKeyboardPeriod S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":140 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HW_LIB_GetKeyboardPeriod") [flags 0x41] <function_decl 06769348 HW_LIB_GetKeyboardPeriod>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HW_LIB_GetKeyboardPeriod") [flags 0x41] <function_decl 06729348 HW_LIB_GetKeyboardPeriod>)
         (nil))
     (nil))
 (insn 9 8 10 4 (set (reg:SI 75)
@@ -1408,28 +1408,28 @@ try_optimize_cfg iteration 2
         (reg:SI 72 [ _1 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":140 -1
      (nil))
 (call_insn 12 11 13 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 065afa50 vTaskDelay>) [0 vTaskDelay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 0656fa50 vTaskDelay>) [0 vTaskDelay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":140 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 065afa50 vTaskDelay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 0656fa50 vTaskDelay>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 13 12 14 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HW_LIB_KeyboradFSM") [flags 0x41] <function_decl 067693c0 HW_LIB_KeyboradFSM>) [0 HW_LIB_KeyboradFSM S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HW_LIB_KeyboradFSM") [flags 0x41] <function_decl 067293c0 HW_LIB_KeyboradFSM>) [0 HW_LIB_KeyboradFSM S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":141 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HW_LIB_KeyboradFSM") [flags 0x41] <function_decl 067693c0 HW_LIB_KeyboradFSM>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HW_LIB_KeyboradFSM") [flags 0x41] <function_decl 067293c0 HW_LIB_KeyboradFSM>)
         (nil))
     (nil))
 (call_insn 14 13 16 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vDinDoutProcess") [flags 0x41] <function_decl 0679a4b0 vDinDoutProcess>) [0 vDinDoutProcess S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vDinDoutProcess") [flags 0x41] <function_decl 0675a4b0 vDinDoutProcess>) [0 vDinDoutProcess S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/din_dout_task.c":142 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vDinDoutProcess") [flags 0x41] <function_decl 0679a4b0 vDinDoutProcess>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vDinDoutProcess") [flags 0x41] <function_decl 0675a4b0 vDinDoutProcess>)
         (nil))
     (nil))
 (jump_insn 16 14 17 4 (set (pc)

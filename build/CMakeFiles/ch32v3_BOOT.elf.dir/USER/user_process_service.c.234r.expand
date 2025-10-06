@@ -88,11 +88,11 @@ Forwarding edge 10->11 to 16 failed.
      (nil))
 (call_insn 15 14 16 2 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 06768870 getRegFloat>) [0 getRegFloat S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 05bb8870 getRegFloat>) [0 getRegFloat S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":27 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 06768870 getRegFloat>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 05bb8870 getRegFloat>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -123,11 +123,11 @@ Forwarding edge 10->11 to 16 failed.
      (nil))
 (call_insn 23 22 24 2 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 06768870 getRegFloat>) [0 getRegFloat S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 05bb8870 getRegFloat>) [0 getRegFloat S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":28 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 06768870 getRegFloat>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 05bb8870 getRegFloat>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -154,11 +154,11 @@ Forwarding edge 10->11 to 16 failed.
      (nil))
 (call_insn 30 29 31 2 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>) [0 getAIN S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>) [0 getAIN S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":29 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -189,11 +189,11 @@ Forwarding edge 10->11 to 16 failed.
      (nil))
 (call_insn 38 37 39 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":31 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -834,11 +834,11 @@ Forwarding edge 10->11 to 16 failed.
      (nil))
 (call_insn 170 169 171 14 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 06768870 getRegFloat>) [0 getRegFloat S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 05bb8870 getRegFloat>) [0 getRegFloat S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":50 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 06768870 getRegFloat>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 05bb8870 getRegFloat>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -922,11 +922,11 @@ Forwarding edge 4->5 to 9 failed.
      (nil))
 (call_insn 9 8 10 2 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SensorConver") [flags 0x3] <function_decl 0665e7f8 SensorConver>) [0 SensorConver S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SensorConver") [flags 0x3] <function_decl 05aae7f8 SensorConver>) [0 SensorConver S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":57 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SensorConver") [flags 0x3] <function_decl 0665e7f8 SensorConver>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SensorConver") [flags 0x3] <function_decl 05aae7f8 SensorConver>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -1046,11 +1046,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 6 5 7 2 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SensorConver") [flags 0x3] <function_decl 0665e7f8 SensorConver>) [0 SensorConver S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SensorConver") [flags 0x3] <function_decl 05aae7f8 SensorConver>) [0 SensorConver S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":67 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SensorConver") [flags 0x3] <function_decl 0665e7f8 SensorConver>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SensorConver") [flags 0x3] <function_decl 05aae7f8 SensorConver>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -1060,11 +1060,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 8 7 9 2 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SensorConver") [flags 0x3] <function_decl 0665e7f8 SensorConver>) [0 SensorConver S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SensorConver") [flags 0x3] <function_decl 05aae7f8 SensorConver>) [0 SensorConver S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":71 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SensorConver") [flags 0x3] <function_decl 0665e7f8 SensorConver>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SensorConver") [flags 0x3] <function_decl 05aae7f8 SensorConver>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -1125,11 +1125,11 @@ Forwarding edge 4->5 to 10 failed.
      (nil))
 (call_insn 9 8 10 2 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SensorConver") [flags 0x3] <function_decl 0665e7f8 SensorConver>) [0 SensorConver S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SensorConver") [flags 0x3] <function_decl 05aae7f8 SensorConver>) [0 SensorConver S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":78 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SensorConver") [flags 0x3] <function_decl 0665e7f8 SensorConver>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SensorConver") [flags 0x3] <function_decl 05aae7f8 SensorConver>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -1312,11 +1312,11 @@ Deleted label in block 5.
      (nil))
 (call_insn 19 18 20 6 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>) [0 getAIN S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>) [0 getAIN S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":91 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1337,11 +1337,11 @@ Deleted label in block 5.
      (nil))
 (call_insn 25 24 26 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>) [0 getReg16 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>) [0 getReg16 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":92 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -1375,11 +1375,11 @@ Deleted label in block 5.
      (nil))
 (call_insn 36 35 37 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>) [0 getReg16 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>) [0 getReg16 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":95 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -1416,11 +1416,11 @@ Deleted label in block 5.
      (nil))
 (call_insn 48 47 49 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>) [0 getReg16 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>) [0 getReg16 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":99 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -1435,11 +1435,11 @@ Deleted label in block 5.
      (nil))
 (call_insn 52 51 53 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>) [0 getReg16 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>) [0 getReg16 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":100 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -1454,11 +1454,11 @@ Deleted label in block 5.
      (nil))
 (call_insn 56 55 57 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>) [0 getReg16 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>) [0 getReg16 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":100 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -1518,11 +1518,11 @@ Deleted label in block 5.
      (nil))
 (call_insn 74 73 75 11 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":103 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -1551,11 +1551,11 @@ Deleted label in block 5.
         (const_int 38 [0x26])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":105 -1
      (nil))
 (call_insn 83 82 84 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 067689d8 setReg8>) [0 setReg8 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 05bb89d8 setReg8>) [0 setReg8 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":105 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 067689d8 setReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 05bb89d8 setReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1676,11 +1676,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 19 18 20 6 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>) [0 getAIN S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>) [0 getAIN S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":121 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1724,11 +1724,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 33 32 34 7 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>) [0 getAIN S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>) [0 getAIN S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":124 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1803,11 +1803,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 6 5 7 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":136 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -1892,11 +1892,11 @@ Forwarding edge 6->7 to 9 failed.
      (nil))
 (call_insn 8 7 9 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":146 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -1933,11 +1933,11 @@ Forwarding edge 6->7 to 9 failed.
      (nil))
 (call_insn 19 18 20 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":146 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -1960,11 +1960,11 @@ Forwarding edge 6->7 to 9 failed.
      (nil))
 (call_insn 26 25 27 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":150 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -2077,11 +2077,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 11 10 12 4 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>) [0 getAIN S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>) [0 getAIN S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":163 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2117,11 +2117,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 23 22 24 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":168 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -2161,11 +2161,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 34 33 35 8 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getTSensor") [flags 0x3] <function_decl 0689fd20 getTSensor>) [0 getTSensor S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getTSensor") [flags 0x3] <function_decl 05cefd20 getTSensor>) [0 getTSensor S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":173 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getTSensor") [flags 0x3] <function_decl 0689fd20 getTSensor>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getTSensor") [flags 0x3] <function_decl 05cefd20 getTSensor>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -2184,11 +2184,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 41 40 42 9 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getCO2Sensor") [flags 0x3] <function_decl 0689fd98 getCO2Sensor>) [0 getCO2Sensor S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getCO2Sensor") [flags 0x3] <function_decl 05cefd98 getCO2Sensor>) [0 getCO2Sensor S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":177 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getCO2Sensor") [flags 0x3] <function_decl 0689fd98 getCO2Sensor>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getCO2Sensor") [flags 0x3] <function_decl 05cefd98 getCO2Sensor>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -2207,11 +2207,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 48 47 49 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getHumanitySensor") [flags 0x3] <function_decl 0689fca8 getHumanitySensor>) [0 getHumanitySensor S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getHumanitySensor") [flags 0x3] <function_decl 05cefca8 getHumanitySensor>) [0 getHumanitySensor S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":181 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getHumanitySensor") [flags 0x3] <function_decl 0689fca8 getHumanitySensor>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getHumanitySensor") [flags 0x3] <function_decl 05cefca8 getHumanitySensor>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -2236,11 +2236,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 57 56 58 11 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>) [0 getAIN S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>) [0 getAIN S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":187 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2369,11 +2369,11 @@ Deleted label in block 7.
         (const_int 218 [0xda])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":207 -1
      (nil))
 (call_insn 8 7 9 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 067689d8 setReg8>) [0 setReg8 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 05bb89d8 setReg8>) [0 setReg8 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":207 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 067689d8 setReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 05bb89d8 setReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2387,11 +2387,11 @@ Deleted label in block 7.
  -> 17)
 (note 10 9 11 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
 (call_insn 11 10 12 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("InitCleanTimer") [flags 0x3] <function_decl 0689fbb8 InitCleanTimer>) [0 InitCleanTimer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("InitCleanTimer") [flags 0x3] <function_decl 05cefbb8 InitCleanTimer>) [0 InitCleanTimer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":210 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("InitCleanTimer") [flags 0x3] <function_decl 0689fbb8 InitCleanTimer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("InitCleanTimer") [flags 0x3] <function_decl 05cefbb8 InitCleanTimer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -2402,11 +2402,11 @@ Deleted label in block 7.
         (const_int 214 [0xd6])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":211 -1
      (nil))
 (call_insn 14 13 15 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 067689d8 setReg8>) [0 setReg8 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 05bb89d8 setReg8>) [0 setReg8 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":211 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 067689d8 setReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 05bb89d8 setReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2423,11 +2423,11 @@ Deleted label in block 7.
      (nil))
 (call_insn 20 19 21 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ucDinGet") [flags 0x41] <function_decl 0689f618 ucDinGet>) [0 ucDinGet S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ucDinGet") [flags 0x41] <function_decl 05cef618 ucDinGet>) [0 ucDinGet S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":216 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ucDinGet") [flags 0x41] <function_decl 0689f618 ucDinGet>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ucDinGet") [flags 0x41] <function_decl 05cef618 ucDinGet>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2612,11 +2612,11 @@ Deleted label in block 7.
      (nil))
 (call_insn 74 73 75 11 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":231 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -2676,11 +2676,11 @@ Deleted label in block 7.
         (const_int 214 [0xd6])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":235 -1
      (nil))
 (call_insn 90 89 91 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 067689d8 setReg8>) [0 setReg8 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 05bb89d8 setReg8>) [0 setReg8 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":235 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 067689d8 setReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 05bb89d8 setReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2699,11 +2699,11 @@ Deleted label in block 7.
         (const_int 218 [0xda])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":240 -1
      (nil))
 (call_insn 97 96 98 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 067689d8 setReg8>) [0 setReg8 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 05bb89d8 setReg8>) [0 setReg8 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":240 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 067689d8 setReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 05bb89d8 setReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2713,11 +2713,11 @@ Deleted label in block 7.
      (nil))
 (call_insn 99 98 100 13 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":241 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -2742,11 +2742,11 @@ Deleted label in block 7.
         (const_int 214 [0xd6])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":241 -1
      (nil))
 (call_insn 107 106 108 14 (parallel [
-            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 067689d8 setReg8>) [0 setReg8 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 05bb89d8 setReg8>) [0 setReg8 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":241 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 067689d8 setReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 05bb89d8 setReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2906,11 +2906,11 @@ Forwarding edge 33->34 to 36 failed.
      (nil))
 (call_insn 9 8 10 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":256 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -2974,11 +2974,11 @@ Forwarding edge 33->34 to 36 failed.
      (nil))
 (call_insn 29 28 30 6 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>) [0 getAIN S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>) [0 getAIN S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":264 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2990,11 +2990,11 @@ Forwarding edge 33->34 to 36 failed.
      (nil))
 (call_insn 32 31 33 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>) [0 getReg16 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>) [0 getReg16 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":264 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -3069,11 +3069,11 @@ Forwarding edge 33->34 to 36 failed.
      (nil))
 (call_insn 52 51 53 11 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>) [0 getAIN S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>) [0 getAIN S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":268 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -3085,11 +3085,11 @@ Forwarding edge 33->34 to 36 failed.
      (nil))
 (call_insn 55 54 56 11 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>) [0 getReg16 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>) [0 getReg16 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":268 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -3288,11 +3288,11 @@ Forwarding edge 33->34 to 36 failed.
      (nil))
 (call_insn 115 114 116 24 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>) [0 getAIN S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>) [0 getAIN S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":286 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -3304,11 +3304,11 @@ Forwarding edge 33->34 to 36 failed.
      (nil))
 (call_insn 118 117 119 24 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>) [0 getReg16 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>) [0 getReg16 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":286 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -3362,11 +3362,11 @@ Forwarding edge 33->34 to 36 failed.
      (nil))
 (call_insn 137 136 138 28 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>) [0 getAIN S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>) [0 getAIN S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":290 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -3378,11 +3378,11 @@ Forwarding edge 33->34 to 36 failed.
      (nil))
 (call_insn 140 139 141 28 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>) [0 getReg16 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>) [0 getReg16 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":290 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 06768ac8 getReg16>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg16") [flags 0x41] <function_decl 05bb8ac8 getReg16>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -3535,11 +3535,11 @@ Deleted label in block 7.
      (nil))
 (call_insn 10 9 11 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":304 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -3576,11 +3576,11 @@ Deleted label in block 7.
      (nil))
 (call_insn 20 19 21 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":307 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -3610,11 +3610,11 @@ Deleted label in block 7.
      (nil))
 (call_insn 28 27 29 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":307 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -3648,11 +3648,11 @@ Deleted label in block 7.
      (nil))
 (call_insn 37 36 38 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":307 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -3670,11 +3670,11 @@ Deleted label in block 7.
      (nil))
 (call_insn 42 41 43 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("vSensorErrorCheck") [flags 0x3] <function_decl 0689ff00 vSensorErrorCheck>) [0 vSensorErrorCheck S4 A32])
+                (call (mem:SI (symbol_ref:SI ("vSensorErrorCheck") [flags 0x3] <function_decl 05ceff00 vSensorErrorCheck>) [0 vSensorErrorCheck S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":307 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSensorErrorCheck") [flags 0x3] <function_decl 0689ff00 vSensorErrorCheck>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSensorErrorCheck") [flags 0x3] <function_decl 05ceff00 vSensorErrorCheck>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -3792,11 +3792,11 @@ Deleted label in block 7.
      (nil))
 (call_insn 80 79 81 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":321 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -3852,11 +3852,11 @@ Deleted label in block 7.
      (nil))
 (call_insn 95 94 96 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":322 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -3874,11 +3874,11 @@ Deleted label in block 7.
      (nil))
 (call_insn 100 99 101 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("vSensorErrorCheck") [flags 0x3] <function_decl 0689ff00 vSensorErrorCheck>) [0 vSensorErrorCheck S4 A32])
+                (call (mem:SI (symbol_ref:SI ("vSensorErrorCheck") [flags 0x3] <function_decl 05ceff00 vSensorErrorCheck>) [0 vSensorErrorCheck S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":322 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSensorErrorCheck") [flags 0x3] <function_decl 0689ff00 vSensorErrorCheck>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vSensorErrorCheck") [flags 0x3] <function_decl 05ceff00 vSensorErrorCheck>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -4013,11 +4013,11 @@ Forwarding edge 4->5 to 8 failed.
      (nil))
 (call_insn 6 5 7 2 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 06768870 getRegFloat>) [0 getRegFloat S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 05bb8870 getRegFloat>) [0 getRegFloat S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":344 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 06768870 getRegFloat>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 05bb8870 getRegFloat>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -4029,11 +4029,11 @@ Forwarding edge 4->5 to 8 failed.
      (nil))
 (call_insn 9 8 10 2 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 06768870 getRegFloat>) [0 getRegFloat S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 05bb8870 getRegFloat>) [0 getRegFloat S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":345 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 06768870 getRegFloat>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getRegFloat") [flags 0x41] <function_decl 05bb8870 getRegFloat>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -4049,11 +4049,11 @@ Forwarding edge 4->5 to 8 failed.
      (nil))
 (call_insn 13 12 14 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":346 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -4090,11 +4090,11 @@ Forwarding edge 4->5 to 8 failed.
      (nil))
 (call_insn 23 22 24 2 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>) [0 getAIN S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>) [0 getAIN S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":347 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0638fc30 getAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 057dfc30 getAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -4146,11 +4146,11 @@ Forwarding edge 4->5 to 8 failed.
      (nil))
 (call_insn 35 34 36 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":348 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 06768bb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 05bb8bb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -4700,11 +4700,11 @@ Forwarding edge 5->6 to 11 failed.
      (nil))
 (call_insn 14 13 15 2 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("fGetDacCalData") [flags 0x41] <function_decl 0665e690 fGetDacCalData>) [0 fGetDacCalData S4 A32])
+                (call (mem:SI (symbol_ref:SI ("fGetDacCalData") [flags 0x41] <function_decl 05aae690 fGetDacCalData>) [0 fGetDacCalData S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":368 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("fGetDacCalData") [flags 0x41] <function_decl 0665e690 fGetDacCalData>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("fGetDacCalData") [flags 0x41] <function_decl 05aae690 fGetDacCalData>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SF (use (reg:SF 11 a1))
@@ -4771,11 +4771,11 @@ Forwarding edge 5->6 to 11 failed.
         (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":372 -1
      (nil))
 (call_insn 35 34 36 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TIMER_SetPWMPulse") [flags 0x41] <function_decl 06894168 HAL_TIMER_SetPWMPulse>) [0 HAL_TIMER_SetPWMPulse S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TIMER_SetPWMPulse") [flags 0x41] <function_decl 05ce4168 HAL_TIMER_SetPWMPulse>) [0 HAL_TIMER_SetPWMPulse S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":372 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIMER_SetPWMPulse") [flags 0x41] <function_decl 06894168 HAL_TIMER_SetPWMPulse>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIMER_SetPWMPulse") [flags 0x41] <function_decl 05ce4168 HAL_TIMER_SetPWMPulse>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -4798,11 +4798,11 @@ Forwarding edge 5->6 to 11 failed.
         (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":375 -1
      (nil))
 (call_insn 43 42 44 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TIMER_SetPWMPulse") [flags 0x41] <function_decl 06894168 HAL_TIMER_SetPWMPulse>) [0 HAL_TIMER_SetPWMPulse S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TIMER_SetPWMPulse") [flags 0x41] <function_decl 05ce4168 HAL_TIMER_SetPWMPulse>) [0 HAL_TIMER_SetPWMPulse S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":375 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIMER_SetPWMPulse") [flags 0x41] <function_decl 06894168 HAL_TIMER_SetPWMPulse>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIMER_SetPWMPulse") [flags 0x41] <function_decl 05ce4168 HAL_TIMER_SetPWMPulse>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -4825,11 +4825,11 @@ Forwarding edge 5->6 to 11 failed.
         (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":378 -1
      (nil))
 (call_insn 51 50 54 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TIMER_SetPWMPulse") [flags 0x41] <function_decl 06894168 HAL_TIMER_SetPWMPulse>) [0 HAL_TIMER_SetPWMPulse S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TIMER_SetPWMPulse") [flags 0x41] <function_decl 05ce4168 HAL_TIMER_SetPWMPulse>) [0 HAL_TIMER_SetPWMPulse S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/user_process_service.c":378 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIMER_SetPWMPulse") [flags 0x41] <function_decl 06894168 HAL_TIMER_SetPWMPulse>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TIMER_SetPWMPulse") [flags 0x41] <function_decl 05ce4168 HAL_TIMER_SetPWMPulse>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))

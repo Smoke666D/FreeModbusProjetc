@@ -122,11 +122,11 @@ Deleted label in block 9.
      (nil))
 (call_insn 9 8 10 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_SPI_GetData") [flags 0x41] <function_decl 0686fc30 HAL_SPI_GetData>) [0 HAL_SPI_GetData S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_SPI_GetData") [flags 0x41] <function_decl 0684fc30 HAL_SPI_GetData>) [0 HAL_SPI_GetData S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":28 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_GetData") [flags 0x41] <function_decl 0686fc30 HAL_SPI_GetData>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_GetData") [flags 0x41] <function_decl 0684fc30 HAL_SPI_GetData>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -265,11 +265,11 @@ Deleted label in block 9.
         (reg:SI 137)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":33 -1
      (nil))
 (call_insn 46 45 47 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":33 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -315,11 +315,11 @@ Deleted label in block 9.
         (reg:SI 144)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":36 -1
      (nil))
 (call_insn 60 59 61 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":36 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -365,11 +365,11 @@ Deleted label in block 9.
         (reg:SI 150)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":40 -1
      (nil))
 (call_insn 74 73 75 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":40 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -440,11 +440,11 @@ Deleted label in block 9.
         (reg:SI 159)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":48 -1
      (nil))
 (call_insn 97 96 98 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":48 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -545,11 +545,11 @@ Deleted label in block 9.
         (reg:SI 174)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":58 -1
      (nil))
 (call_insn 126 125 127 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":58 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -617,11 +617,11 @@ Deleted label in block 9.
         (reg:SI 186)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":67 -1
      (nil))
 (call_insn 146 145 147 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":67 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -667,11 +667,11 @@ Deleted label in block 9.
         (reg:SI 193)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":70 -1
      (nil))
 (call_insn 160 159 161 14 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":70 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -784,11 +784,11 @@ Deleted label in block 9.
         (reg:SI 100 [ _29 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":76 -1
      (nil))
 (call_insn 191 190 192 16 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":76 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -851,11 +851,11 @@ Deleted label in block 9.
      (nil))
 (call_insn 210 209 211 17 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06655b40 xTaskGenericNotifyFromISR>) [0 xTaskGenericNotifyFromISR S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06635b40 xTaskGenericNotifyFromISR>) [0 xTaskGenericNotifyFromISR S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":89 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06655b40 xTaskGenericNotifyFromISR>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06635b40 xTaskGenericNotifyFromISR>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -982,11 +982,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 72 [ spi ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":105 -1
      (nil))
 (call_insn 22 21 23 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SPI_MsterBaseInit") [flags 0x41] <function_decl 0686fa50 HAL_SPI_MsterBaseInit>) [0 HAL_SPI_MsterBaseInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SPI_MsterBaseInit") [flags 0x41] <function_decl 0684fa50 HAL_SPI_MsterBaseInit>) [0 HAL_SPI_MsterBaseInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":105 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_MsterBaseInit") [flags 0x41] <function_decl 0686fa50 HAL_SPI_MsterBaseInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_MsterBaseInit") [flags 0x41] <function_decl 0684fa50 HAL_SPI_MsterBaseInit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -998,30 +998,30 @@ try_optimize_cfg iteration 2
         (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":106 -1
      (nil))
 (insn 25 24 26 2 (set (reg:SI 81)
-        (high:SI (symbol_ref:SI ("WriteCallBack") [flags 0x3] <function_decl 067ed348 WriteCallBack>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":106 -1
+        (high:SI (symbol_ref:SI ("WriteCallBack") [flags 0x3] <function_decl 067cd348 WriteCallBack>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":106 -1
      (nil))
 (insn 26 25 27 2 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 81)
-            (symbol_ref:SI ("WriteCallBack") [flags 0x3] <function_decl 067ed348 WriteCallBack>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":106 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("WriteCallBack") [flags 0x3] <function_decl 067ed348 WriteCallBack>)
+            (symbol_ref:SI ("WriteCallBack") [flags 0x3] <function_decl 067cd348 WriteCallBack>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":106 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("WriteCallBack") [flags 0x3] <function_decl 067cd348 WriteCallBack>)
         (nil)))
 (insn 27 26 28 2 (set (reg:SI 82)
-        (high:SI (symbol_ref:SI ("ReadCallBack") [flags 0x3] <function_decl 067ed3c0 ReadCallBack>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":106 -1
+        (high:SI (symbol_ref:SI ("ReadCallBack") [flags 0x3] <function_decl 067cd3c0 ReadCallBack>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":106 -1
      (nil))
 (insn 28 27 29 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 82)
-            (symbol_ref:SI ("ReadCallBack") [flags 0x3] <function_decl 067ed3c0 ReadCallBack>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":106 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("ReadCallBack") [flags 0x3] <function_decl 067ed3c0 ReadCallBack>)
+            (symbol_ref:SI ("ReadCallBack") [flags 0x3] <function_decl 067cd3c0 ReadCallBack>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":106 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("ReadCallBack") [flags 0x3] <function_decl 067cd3c0 ReadCallBack>)
         (nil)))
 (insn 29 28 30 2 (set (reg:SI 10 a0)
         (reg/v:SI 72 [ spi ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":106 -1
      (nil))
 (call_insn 30 29 31 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SPI_ConfgiIT") [flags 0x41] <function_decl 0686f960 HAL_SPI_ConfgiIT>) [0 HAL_SPI_ConfgiIT S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SPI_ConfgiIT") [flags 0x41] <function_decl 0684f960 HAL_SPI_ConfgiIT>) [0 HAL_SPI_ConfgiIT S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":106 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_ConfgiIT") [flags 0x41] <function_decl 0686f960 HAL_SPI_ConfgiIT>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_ConfgiIT") [flags 0x41] <function_decl 0684f960 HAL_SPI_ConfgiIT>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1044,11 +1044,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073756160 [0x40003800])
         (nil)))
 (call_insn 35 34 36 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 065a9708 SPI_I2S_ITConfig>) [0 SPI_I2S_ITConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 06589708 SPI_I2S_ITConfig>) [0 SPI_I2S_ITConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":107 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 065a9708 SPI_I2S_ITConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 06589708 SPI_I2S_ITConfig>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1066,11 +1066,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 39 38 40 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":108 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1090,11 +1090,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 73 [ TimerName ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":109 -1
      (nil))
 (call_insn 44 43 45 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HW_TIMER_TimerInit") [flags 0x41] <function_decl 067bd348 HW_TIMER_TimerInit>) [0 HW_TIMER_TimerInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HW_TIMER_TimerInit") [flags 0x41] <function_decl 0679d348 HW_TIMER_TimerInit>) [0 HW_TIMER_TimerInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":109 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HW_TIMER_TimerInit") [flags 0x41] <function_decl 067bd348 HW_TIMER_TimerInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HW_TIMER_TimerInit") [flags 0x41] <function_decl 0679d348 HW_TIMER_TimerInit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1180,11 +1180,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 16 15 17 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 061b4348 xTaskGetCurrentTaskHandle>) [0 xTaskGetCurrentTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 06194348 xTaskGetCurrentTaskHandle>) [0 xTaskGetCurrentTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":118 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 061b4348 xTaskGetCurrentTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 06194348 xTaskGetCurrentTaskHandle>)
         (nil))
     (nil))
 (insn 17 16 18 2 (set (reg/f:SI 72 [ _1 ])
@@ -1214,11 +1214,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 24 23 25 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067ed078 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067cd078 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":119 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067ed078 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067cd078 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1242,11 +1242,11 @@ try_optimize_cfg iteration 2
         (reg:SI 90)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":120 -1
      (nil))
 (call_insn 30 29 31 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":120 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1273,11 +1273,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 37 36 38 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06655ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06635ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":121 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06655ca8 ulTaskGenericNotifyTake>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06635ca8 ulTaskGenericNotifyTake>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1290,11 +1290,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":122 -1
      (nil))
 (call_insn 40 39 41 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06615ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 065f5ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":122 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06615ca8 vTaskDelay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 065f5ca8 vTaskDelay>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1310,11 +1310,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 44 43 45 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":123 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1418,11 +1418,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 16 15 17 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 061b4348 xTaskGetCurrentTaskHandle>) [0 xTaskGetCurrentTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 06194348 xTaskGetCurrentTaskHandle>) [0 xTaskGetCurrentTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":132 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 061b4348 xTaskGetCurrentTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 06194348 xTaskGetCurrentTaskHandle>)
         (nil))
     (nil))
 (insn 17 16 18 2 (set (reg/f:SI 72 [ _1 ])
@@ -1452,11 +1452,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 24 23 25 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067ed078 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067cd078 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":133 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067ed078 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067cd078 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1480,11 +1480,11 @@ try_optimize_cfg iteration 2
         (reg:SI 90)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":134 -1
      (nil))
 (call_insn 30 29 31 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":134 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1511,11 +1511,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 37 36 38 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06655ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06635ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":135 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06655ca8 ulTaskGenericNotifyTake>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06635ca8 ulTaskGenericNotifyTake>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1536,11 +1536,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 42 41 43 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":136 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1690,11 +1690,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 27 26 28 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 061b4348 xTaskGetCurrentTaskHandle>) [0 xTaskGetCurrentTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 06194348 xTaskGetCurrentTaskHandle>) [0 xTaskGetCurrentTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":148 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 061b4348 xTaskGetCurrentTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 06194348 xTaskGetCurrentTaskHandle>)
         (nil))
     (nil))
 (insn 28 27 29 2 (set (reg/f:SI 72 [ _1 ])
@@ -1720,11 +1720,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 34 33 35 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("GetEEPROMStatus") [flags 0x3] <function_decl 067ed528 GetEEPROMStatus>) [0 GetEEPROMStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("GetEEPROMStatus") [flags 0x3] <function_decl 067cd528 GetEEPROMStatus>) [0 GetEEPROMStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":149 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GetEEPROMStatus") [flags 0x3] <function_decl 067ed528 GetEEPROMStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GetEEPROMStatus") [flags 0x3] <function_decl 067cd528 GetEEPROMStatus>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1753,11 +1753,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 41 40 42 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067ed078 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067cd078 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":152 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067ed078 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067cd078 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1796,11 +1796,11 @@ try_optimize_cfg iteration 2
         (reg:SI 101)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":154 -1
      (nil))
 (call_insn 51 50 52 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":154 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1827,11 +1827,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 58 57 59 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06655ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06635ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":155 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06655ca8 ulTaskGenericNotifyTake>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06635ca8 ulTaskGenericNotifyTake>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1852,11 +1852,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 63 62 64 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":156 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1963,11 +1963,11 @@ try_optimize_cfg iteration 2
         (reg:SI 89)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":164 -1
      (nil))
 (call_insn 14 13 15 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TimerReset") [flags 0x41] <function_decl 067bd258 HAL_TimerReset>) [0 HAL_TimerReset S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TimerReset") [flags 0x41] <function_decl 0679d258 HAL_TimerReset>) [0 HAL_TimerReset S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":164 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TimerReset") [flags 0x41] <function_decl 067bd258 HAL_TimerReset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TimerReset") [flags 0x41] <function_decl 0679d258 HAL_TimerReset>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1995,11 +1995,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 22 21 23 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_GetTimerCnt") [flags 0x41] <function_decl 067bd2d0 HAL_GetTimerCnt>) [0 HAL_GetTimerCnt S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_GetTimerCnt") [flags 0x41] <function_decl 0679d2d0 HAL_GetTimerCnt>) [0 HAL_GetTimerCnt S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":167 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetTimerCnt") [flags 0x41] <function_decl 067bd2d0 HAL_GetTimerCnt>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetTimerCnt") [flags 0x41] <function_decl 0679d2d0 HAL_GetTimerCnt>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2038,11 +2038,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 33 32 34 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SPI_I2S_GetFlagStatus") [flags 0x41] <function_decl 065a9ca8 SPI_I2S_GetFlagStatus>) [0 SPI_I2S_GetFlagStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SPI_I2S_GetFlagStatus") [flags 0x41] <function_decl 06589ca8 SPI_I2S_GetFlagStatus>) [0 SPI_I2S_GetFlagStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":165 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_GetFlagStatus") [flags 0x41] <function_decl 065a9ca8 SPI_I2S_GetFlagStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_GetFlagStatus") [flags 0x41] <function_decl 06589ca8 SPI_I2S_GetFlagStatus>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2073,11 +2073,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073756160 [0x40003800])
         (nil)))
 (call_insn 42 41 43 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("SPI_I2S_SendData") [flags 0x41] <function_decl 065a97f8 SPI_I2S_SendData>) [0 SPI_I2S_SendData S4 A32])
+            (call (mem:SI (symbol_ref:SI ("SPI_I2S_SendData") [flags 0x41] <function_decl 065897f8 SPI_I2S_SendData>) [0 SPI_I2S_SendData S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":170 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_SendData") [flags 0x41] <function_decl 065a97f8 SPI_I2S_SendData>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_SendData") [flags 0x41] <function_decl 065897f8 SPI_I2S_SendData>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2098,11 +2098,11 @@ try_optimize_cfg iteration 2
         (reg:SI 98)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":171 -1
      (nil))
 (call_insn 47 46 48 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TimerReset") [flags 0x41] <function_decl 067bd258 HAL_TimerReset>) [0 HAL_TimerReset S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TimerReset") [flags 0x41] <function_decl 0679d258 HAL_TimerReset>) [0 HAL_TimerReset S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":171 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TimerReset") [flags 0x41] <function_decl 067bd258 HAL_TimerReset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TimerReset") [flags 0x41] <function_decl 0679d258 HAL_TimerReset>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2130,11 +2130,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 55 54 56 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("HAL_GetTimerCnt") [flags 0x41] <function_decl 067bd2d0 HAL_GetTimerCnt>) [0 HAL_GetTimerCnt S4 A32])
+                (call (mem:SI (symbol_ref:SI ("HAL_GetTimerCnt") [flags 0x41] <function_decl 0679d2d0 HAL_GetTimerCnt>) [0 HAL_GetTimerCnt S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":174 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetTimerCnt") [flags 0x41] <function_decl 067bd2d0 HAL_GetTimerCnt>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_GetTimerCnt") [flags 0x41] <function_decl 0679d2d0 HAL_GetTimerCnt>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2163,11 +2163,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 64 63 65 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SPI_I2S_GetFlagStatus") [flags 0x41] <function_decl 065a9ca8 SPI_I2S_GetFlagStatus>) [0 SPI_I2S_GetFlagStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SPI_I2S_GetFlagStatus") [flags 0x41] <function_decl 06589ca8 SPI_I2S_GetFlagStatus>) [0 SPI_I2S_GetFlagStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":172 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_GetFlagStatus") [flags 0x41] <function_decl 065a9ca8 SPI_I2S_GetFlagStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_GetFlagStatus") [flags 0x41] <function_decl 06589ca8 SPI_I2S_GetFlagStatus>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2193,11 +2193,11 @@ try_optimize_cfg iteration 2
         (nil)))
 (call_insn 71 70 72 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SPI_I2S_ReceiveData") [flags 0x41] <function_decl 065a9870 SPI_I2S_ReceiveData>) [0 SPI_I2S_ReceiveData S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SPI_I2S_ReceiveData") [flags 0x41] <function_decl 06589870 SPI_I2S_ReceiveData>) [0 SPI_I2S_ReceiveData S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":178 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_ReceiveData") [flags 0x41] <function_decl 065a9870 SPI_I2S_ReceiveData>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_ReceiveData") [flags 0x41] <function_decl 06589870 SPI_I2S_ReceiveData>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2274,11 +2274,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 9 8 25 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067ed078 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067cd078 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":186 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067ed078 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067cd078 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2300,11 +2300,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 15 14 16 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":189 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -2363,11 +2363,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 32 31 36 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":192 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2441,11 +2441,11 @@ try_optimize_cfg iteration 2
         (reg:SI 91)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":200 -1
      (nil))
 (call_insn 14 13 15 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 067bd3c0 HAL_TiemrEneblae>) [0 HAL_TiemrEneblae S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 0679d3c0 HAL_TiemrEneblae>) [0 HAL_TiemrEneblae S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":200 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 067bd3c0 HAL_TiemrEneblae>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TiemrEneblae") [flags 0x41] <function_decl 0679d3c0 HAL_TiemrEneblae>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2464,11 +2464,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073756160 [0x40003800])
         (nil)))
 (call_insn 19 18 20 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 065a9708 SPI_I2S_ITConfig>) [0 SPI_I2S_ITConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 06589708 SPI_I2S_ITConfig>) [0 SPI_I2S_ITConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":201 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 065a9708 SPI_I2S_ITConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 06589708 SPI_I2S_ITConfig>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2479,11 +2479,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 21 20 22 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("GetEEPROMStatusPolling") [flags 0x3] <function_decl 067ed690 GetEEPROMStatusPolling>) [0 GetEEPROMStatusPolling S4 A32])
+                (call (mem:SI (symbol_ref:SI ("GetEEPROMStatusPolling") [flags 0x3] <function_decl 067cd690 GetEEPROMStatusPolling>) [0 GetEEPROMStatusPolling S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":202 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GetEEPROMStatusPolling") [flags 0x3] <function_decl 067ed690 GetEEPROMStatusPolling>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GetEEPROMStatusPolling") [flags 0x3] <function_decl 067cd690 GetEEPROMStatusPolling>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2500,11 +2500,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 25 24 26 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067ed078 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067cd078 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":203 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067ed078 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067cd078 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2524,11 +2524,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 30 29 31 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":204 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -2560,11 +2560,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 38 37 39 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":205 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -2589,11 +2589,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 44 43 45 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":206 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -2634,11 +2634,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 55 54 56 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":209 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -2691,11 +2691,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 71 70 72 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":212 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2715,11 +2715,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073756160 [0x40003800])
         (nil)))
 (call_insn 76 75 77 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 065a9708 SPI_I2S_ITConfig>) [0 SPI_I2S_ITConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 06589708 SPI_I2S_ITConfig>) [0 SPI_I2S_ITConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":213 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 065a9708 SPI_I2S_ITConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 06589708 SPI_I2S_ITConfig>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2741,11 +2741,11 @@ try_optimize_cfg iteration 2
         (reg:SI 109)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":214 -1
      (nil))
 (call_insn 81 80 85 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_TiemrDisable") [flags 0x41] <function_decl 067bd438 HAL_TiemrDisable>) [0 HAL_TiemrDisable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_TiemrDisable") [flags 0x41] <function_decl 0679d438 HAL_TiemrDisable>) [0 HAL_TiemrDisable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":214 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TiemrDisable") [flags 0x41] <function_decl 067bd438 HAL_TiemrDisable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_TiemrDisable") [flags 0x41] <function_decl 0679d438 HAL_TiemrDisable>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2799,11 +2799,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 9 8 10 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067ed078 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067cd078 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":222 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067ed078 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067cd078 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2823,11 +2823,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 14 13 15 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":223 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -2844,11 +2844,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":224 -1
      (nil))
 (call_insn 18 17 19 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 06649c30 Delay_Ms>) [0 Delay_Ms S4 A32])
+            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 06629c30 Delay_Ms>) [0 Delay_Ms S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":224 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 06649c30 Delay_Ms>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 06629c30 Delay_Ms>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2864,11 +2864,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 22 21 23 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":225 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2944,11 +2944,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 13 12 14 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067ed078 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067cd078 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":233 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067ed078 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067cd078 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2968,11 +2968,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 18 17 19 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":234 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -3004,11 +3004,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 26 25 27 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":235 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -3033,11 +3033,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 32 31 33 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":236 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -3085,11 +3085,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 45 44 46 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>) [0 SPI1_ReadWriteByte S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":239 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067ed618 SPI1_ReadWriteByte>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI1_ReadWriteByte") [flags 0x3] <function_decl 067cd618 SPI1_ReadWriteByte>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -3142,11 +3142,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 61 60 65 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":242 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3228,11 +3228,11 @@ Forwarding edge 10->11 to 14 failed.
      (expr_list:REG_EQUAL (const_int 1073756160 [0x40003800])
         (nil)))
 (call_insn 16 15 17 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 065a9708 SPI_I2S_ITConfig>) [0 SPI_I2S_ITConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 06589708 SPI_I2S_ITConfig>) [0 SPI_I2S_ITConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":251 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 065a9708 SPI_I2S_ITConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 06589708 SPI_I2S_ITConfig>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3271,11 +3271,11 @@ Forwarding edge 10->11 to 14 failed.
      (nil))
 (call_insn 24 23 25 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("GetEEPROMStatusPolling") [flags 0x3] <function_decl 067ed690 GetEEPROMStatusPolling>) [0 GetEEPROMStatusPolling S4 A32])
+                (call (mem:SI (symbol_ref:SI ("GetEEPROMStatusPolling") [flags 0x3] <function_decl 067cd690 GetEEPROMStatusPolling>) [0 GetEEPROMStatusPolling S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":261 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GetEEPROMStatusPolling") [flags 0x3] <function_decl 067ed690 GetEEPROMStatusPolling>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GetEEPROMStatusPolling") [flags 0x3] <function_decl 067cd690 GetEEPROMStatusPolling>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3357,11 +3357,11 @@ Forwarding edge 10->11 to 14 failed.
      (nil))
 (call_insn 47 46 48 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0628ed98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0626ed98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":264 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0628ed98 __builtin_memcpy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0626ed98 __builtin_memcpy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -3378,11 +3378,11 @@ Forwarding edge 10->11 to 14 failed.
      (nil))
 (call_insn 50 49 51 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SetEEPROMUnprotectPolling") [flags 0x3] <function_decl 067ed780 SetEEPROMUnprotectPolling>) [0 SetEEPROMUnprotectPolling S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SetEEPROMUnprotectPolling") [flags 0x3] <function_decl 067cd780 SetEEPROMUnprotectPolling>) [0 SetEEPROMUnprotectPolling S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":265 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SetEEPROMUnprotectPolling") [flags 0x3] <function_decl 067ed780 SetEEPROMUnprotectPolling>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SetEEPROMUnprotectPolling") [flags 0x3] <function_decl 067cd780 SetEEPROMUnprotectPolling>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3420,11 +3420,11 @@ Forwarding edge 10->11 to 14 failed.
      (nil))
 (call_insn 60 59 61 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("WriteEEPROMDataPolling") [flags 0x3] <function_decl 067ed7f8 WriteEEPROMDataPolling>) [0 WriteEEPROMDataPolling S4 A32])
+                (call (mem:SI (symbol_ref:SI ("WriteEEPROMDataPolling") [flags 0x3] <function_decl 067cd7f8 WriteEEPROMDataPolling>) [0 WriteEEPROMDataPolling S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":267 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WriteEEPROMDataPolling") [flags 0x3] <function_decl 067ed7f8 WriteEEPROMDataPolling>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WriteEEPROMDataPolling") [flags 0x3] <function_decl 067cd7f8 WriteEEPROMDataPolling>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))
@@ -3509,11 +3509,11 @@ Forwarding edge 10->11 to 14 failed.
      (expr_list:REG_EQUAL (const_int 1073756160 [0x40003800])
         (nil)))
 (call_insn 78 77 82 14 (parallel [
-            (call (mem:SI (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 065a9708 SPI_I2S_ITConfig>) [0 SPI_I2S_ITConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 06589708 SPI_I2S_ITConfig>) [0 SPI_I2S_ITConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":275 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 065a9708 SPI_I2S_ITConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SPI_I2S_ITConfig") [flags 0x41] <function_decl 06589708 SPI_I2S_ITConfig>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3638,11 +3638,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 27 26 28 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 061b4348 xTaskGetCurrentTaskHandle>) [0 xTaskGetCurrentTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 06194348 xTaskGetCurrentTaskHandle>) [0 xTaskGetCurrentTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":292 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 061b4348 xTaskGetCurrentTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 06194348 xTaskGetCurrentTaskHandle>)
         (nil))
     (nil))
 (insn 28 27 29 2 (set (reg/f:SI 72 [ _1 ])
@@ -3668,11 +3668,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 34 33 35 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("GetEEPROMStatus") [flags 0x3] <function_decl 067ed528 GetEEPROMStatus>) [0 GetEEPROMStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("GetEEPROMStatus") [flags 0x3] <function_decl 067cd528 GetEEPROMStatus>) [0 GetEEPROMStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":293 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GetEEPROMStatus") [flags 0x3] <function_decl 067ed528 GetEEPROMStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GetEEPROMStatus") [flags 0x3] <function_decl 067cd528 GetEEPROMStatus>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3701,11 +3701,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 41 40 42 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067ed078 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067cd078 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":296 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067ed078 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 067cd078 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3744,11 +3744,11 @@ try_optimize_cfg iteration 2
         (reg:SI 101)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":298 -1
      (nil))
 (call_insn 51 50 52 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>) [0 HAL_SPI_Send S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":298 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0686fca8 HAL_SPI_Send>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SPI_Send") [flags 0x41] <function_decl 0684fca8 HAL_SPI_Send>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3775,11 +3775,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 58 57 59 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06655ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06635ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":299 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06655ca8 ulTaskGenericNotifyTake>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06635ca8 ulTaskGenericNotifyTake>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -3800,11 +3800,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int 1073810432 [0x40010c00])
         (nil)))
 (call_insn 63 62 64 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":300 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067ed000 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 067cd000 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -4014,11 +4014,11 @@ Forwarding edge 11->12 to 16 failed.
      (nil))
 (call_insn 41 40 42 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0628ed98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0626ed98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":321 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0628ed98 __builtin_memcpy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0626ed98 __builtin_memcpy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -4038,11 +4038,11 @@ Forwarding edge 11->12 to 16 failed.
      (nil))
 (call_insn 45 44 46 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("GetEEPROMStatus") [flags 0x3] <function_decl 067ed528 GetEEPROMStatus>) [0 GetEEPROMStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("GetEEPROMStatus") [flags 0x3] <function_decl 067cd528 GetEEPROMStatus>) [0 GetEEPROMStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":322 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GetEEPROMStatus") [flags 0x3] <function_decl 067ed528 GetEEPROMStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GetEEPROMStatus") [flags 0x3] <function_decl 067cd528 GetEEPROMStatus>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4067,11 +4067,11 @@ Forwarding edge 11->12 to 16 failed.
      (nil))
 (call_insn 51 50 52 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SetEEPROMUnprotect") [flags 0x3] <function_decl 067bda50 SetEEPROMUnprotect>) [0 SetEEPROMUnprotect S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SetEEPROMUnprotect") [flags 0x3] <function_decl 0679da50 SetEEPROMUnprotect>) [0 SetEEPROMUnprotect S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":324 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SetEEPROMUnprotect") [flags 0x3] <function_decl 067bda50 SetEEPROMUnprotect>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SetEEPROMUnprotect") [flags 0x3] <function_decl 0679da50 SetEEPROMUnprotect>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4113,11 +4113,11 @@ Forwarding edge 11->12 to 16 failed.
      (nil))
 (call_insn 62 61 63 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("WriteEEPROMData") [flags 0x3] <function_decl 067bd960 WriteEEPROMData>) [0 WriteEEPROMData S4 A32])
+                (call (mem:SI (symbol_ref:SI ("WriteEEPROMData") [flags 0x3] <function_decl 0679d960 WriteEEPROMData>) [0 WriteEEPROMData S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/EEPROM_25C.c":326 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WriteEEPROMData") [flags 0x3] <function_decl 067bd960 WriteEEPROMData>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WriteEEPROMData") [flags 0x3] <function_decl 0679d960 WriteEEPROMData>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))

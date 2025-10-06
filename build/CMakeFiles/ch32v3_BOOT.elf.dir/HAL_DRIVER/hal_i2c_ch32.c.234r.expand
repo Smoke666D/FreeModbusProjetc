@@ -72,11 +72,11 @@ try_optimize_cfg iteration 2
         (const_int 2097152 [0x200000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":80 -1
      (nil))
 (call_insn 10 9 11 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05b13e10 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05ad4e10 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":80 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05b13e10 HAL_InitAPB1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05ad4e10 HAL_InitAPB1>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -102,11 +102,11 @@ try_optimize_cfg iteration 2
         (const_int 4194304 [0x400000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":87 -1
      (nil))
 (call_insn 19 18 20 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05b13e10 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05ad4e10 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":87 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05b13e10 HAL_InitAPB1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05ad4e10 HAL_InitAPB1>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -120,11 +120,11 @@ try_optimize_cfg iteration 2
         (reg:SI 111)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":94 -1
      (nil))
 (call_insn 24 23 25 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_GetClocksFreq") [flags 0x41] <function_decl 0591f000 RCC_GetClocksFreq>) [0 RCC_GetClocksFreq S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_GetClocksFreq") [flags 0x41] <function_decl 058de000 RCC_GetClocksFreq>) [0 RCC_GetClocksFreq S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":94 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_GetClocksFreq") [flags 0x41] <function_decl 0591f000 RCC_GetClocksFreq>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_GetClocksFreq") [flags 0x41] <function_decl 058de000 RCC_GetClocksFreq>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -939,11 +939,11 @@ try_optimize_cfg iteration 2
         (const_int 2097152 [0x200000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":147 -1
      (nil))
 (call_insn 14 13 15 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05b13e10 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05ad4e10 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":147 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05b13e10 HAL_InitAPB1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05ad4e10 HAL_InitAPB1>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -969,11 +969,11 @@ try_optimize_cfg iteration 2
         (const_int 4194304 [0x400000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":155 -1
      (nil))
 (call_insn 23 22 24 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05b13e10 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05ad4e10 HAL_InitAPB1>) [0 HAL_InitAPB1 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":155 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05b13e10 HAL_InitAPB1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_InitAPB1") [flags 0x41] <function_decl 05ad4e10 HAL_InitAPB1>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -986,11 +986,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 73 [ i2c ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":159 -1
      (nil))
 (call_insn 28 27 29 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_Init") [flags 0x3] <function_decl 05b13618 HAL_I2C_Init>) [0 HAL_I2C_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_Init") [flags 0x3] <function_decl 05ad4618 HAL_I2C_Init>) [0 HAL_I2C_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":159 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_Init") [flags 0x3] <function_decl 05b13618 HAL_I2C_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_Init") [flags 0x3] <function_decl 05ad4618 HAL_I2C_Init>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1022,11 +1022,11 @@ try_optimize_cfg iteration 2
         (reg:SI 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":174 -1
      (nil))
 (call_insn 36 35 37 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("I2C_DualAddressCmd") [flags 0x41] <function_decl 05908348 I2C_DualAddressCmd>) [0 I2C_DualAddressCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("I2C_DualAddressCmd") [flags 0x41] <function_decl 058c4348 I2C_DualAddressCmd>) [0 I2C_DualAddressCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":174 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("I2C_DualAddressCmd") [flags 0x41] <function_decl 05908348 I2C_DualAddressCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("I2C_DualAddressCmd") [flags 0x41] <function_decl 058c4348 I2C_DualAddressCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1035,11 +1035,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 73 [ i2c ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":175 -1
      (nil))
 (call_insn 38 37 0 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x3] <function_decl 05bd8a50 HAL_I2C_ENABLE>) [0 HAL_I2C_ENABLE S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x3] <function_decl 05b97a50 HAL_I2C_ENABLE>) [0 HAL_I2C_ENABLE S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":175 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x3] <function_decl 05bd8a50 HAL_I2C_ENABLE>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_I2C_ENABLE") [flags 0x3] <function_decl 05b97a50 HAL_I2C_ENABLE>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1770,11 +1770,11 @@ try_optimize_cfg iteration 2
         (reg:SI 79)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":209 -1
      (nil))
 (call_insn 15 14 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("I2C_ClearFlag") [flags 0x41] <function_decl 05908ca8 I2C_ClearFlag>) [0 I2C_ClearFlag S4 A32])
+            (call (mem:SI (symbol_ref:SI ("I2C_ClearFlag") [flags 0x41] <function_decl 058c4ca8 I2C_ClearFlag>) [0 I2C_ClearFlag S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_i2c_ch32.c":209 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("I2C_ClearFlag") [flags 0x41] <function_decl 05908ca8 I2C_ClearFlag>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("I2C_ClearFlag") [flags 0x41] <function_decl 058c4ca8 I2C_ClearFlag>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))

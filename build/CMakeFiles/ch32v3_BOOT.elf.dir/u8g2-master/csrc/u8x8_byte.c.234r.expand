@@ -45,11 +45,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 74 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":465 -1
      (nil))
 (call_insn 11 10 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":465 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -95,11 +95,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":481 -1
      (nil))
 (call_insn 9 8 10 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":481 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -109,11 +109,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":483 -1
      (nil))
 (call_insn 11 10 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>) [0 i2c_delay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>) [0 i2c_delay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":483 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -158,11 +158,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":494 -1
      (nil))
 (call_insn 9 8 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":494 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -219,11 +219,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":539 -1
      (nil))
 (call_insn 10 9 11 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 06365d20 i2c_read_sda>) [0 i2c_read_sda S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 062d5d20 i2c_read_sda>) [0 i2c_read_sda S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":539 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 06365d20 i2c_read_sda>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 062d5d20 i2c_read_sda>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -245,11 +245,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":500 -1
      (nil))
 (call_insn 18 17 19 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":500 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -261,11 +261,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":543 -1
      (nil))
 (call_insn 22 21 23 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>) [0 i2c_delay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>) [0 i2c_delay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":543 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -274,11 +274,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":544 -1
      (nil))
 (call_insn 24 23 25 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_read_scl_and_delay") [flags 0x3] <function_decl 06365c30 i2c_read_scl_and_delay>) [0 i2c_read_scl_and_delay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_read_scl_and_delay") [flags 0x3] <function_decl 062d5c30 i2c_read_scl_and_delay>) [0 i2c_read_scl_and_delay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":544 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_scl_and_delay") [flags 0x3] <function_decl 06365c30 i2c_read_scl_and_delay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_scl_and_delay") [flags 0x3] <function_decl 062d5c30 i2c_read_scl_and_delay>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -293,11 +293,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":488 -1
      (nil))
 (call_insn 28 27 0 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":488 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -350,11 +350,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":563 -1
      (nil))
 (call_insn 11 10 12 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0639e000 i2c_write_bit>) [0 i2c_write_bit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0630e000 i2c_write_bit>) [0 i2c_write_bit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":563 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0639e000 i2c_write_bit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0630e000 i2c_write_bit>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -374,11 +374,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":564 -1
      (nil))
 (call_insn 16 15 17 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0639e000 i2c_write_bit>) [0 i2c_write_bit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0630e000 i2c_write_bit>) [0 i2c_write_bit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":564 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0639e000 i2c_write_bit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0630e000 i2c_write_bit>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -398,11 +398,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":565 -1
      (nil))
 (call_insn 21 20 22 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0639e000 i2c_write_bit>) [0 i2c_write_bit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0630e000 i2c_write_bit>) [0 i2c_write_bit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":565 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0639e000 i2c_write_bit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0630e000 i2c_write_bit>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -422,11 +422,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":566 -1
      (nil))
 (call_insn 26 25 27 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0639e000 i2c_write_bit>) [0 i2c_write_bit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0630e000 i2c_write_bit>) [0 i2c_write_bit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":566 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0639e000 i2c_write_bit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0630e000 i2c_write_bit>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -446,11 +446,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":567 -1
      (nil))
 (call_insn 31 30 32 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0639e000 i2c_write_bit>) [0 i2c_write_bit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0630e000 i2c_write_bit>) [0 i2c_write_bit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":567 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0639e000 i2c_write_bit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0630e000 i2c_write_bit>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -470,11 +470,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":568 -1
      (nil))
 (call_insn 36 35 37 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0639e000 i2c_write_bit>) [0 i2c_write_bit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0630e000 i2c_write_bit>) [0 i2c_write_bit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":568 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0639e000 i2c_write_bit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0630e000 i2c_write_bit>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -494,11 +494,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":569 -1
      (nil))
 (call_insn 41 40 42 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0639e000 i2c_write_bit>) [0 i2c_write_bit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0630e000 i2c_write_bit>) [0 i2c_write_bit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":569 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0639e000 i2c_write_bit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0630e000 i2c_write_bit>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -518,11 +518,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":570 -1
      (nil))
 (call_insn 46 45 47 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0639e000 i2c_write_bit>) [0 i2c_write_bit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0630e000 i2c_write_bit>) [0 i2c_write_bit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":570 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0639e000 i2c_write_bit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_bit") [flags 0x3] <function_decl 0630e000 i2c_write_bit>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -532,11 +532,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":552 -1
      (nil))
 (call_insn 48 47 49 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 06365d20 i2c_read_sda>) [0 i2c_read_sda S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 062d5d20 i2c_read_sda>) [0 i2c_read_sda S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":552 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 06365d20 i2c_read_sda>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 062d5d20 i2c_read_sda>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -545,11 +545,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":553 -1
      (nil))
 (call_insn 50 49 51 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>) [0 i2c_delay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>) [0 i2c_delay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":553 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -558,11 +558,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":554 -1
      (nil))
 (call_insn 52 51 53 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_read_scl_and_delay") [flags 0x3] <function_decl 06365c30 i2c_read_scl_and_delay>) [0 i2c_read_scl_and_delay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_read_scl_and_delay") [flags 0x3] <function_decl 062d5c30 i2c_read_scl_and_delay>) [0 i2c_read_scl_and_delay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":554 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_scl_and_delay") [flags 0x3] <function_decl 06365c30 i2c_read_scl_and_delay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_scl_and_delay") [flags 0x3] <function_decl 062d5c30 i2c_read_scl_and_delay>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -571,11 +571,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":555 -1
      (nil))
 (call_insn 54 53 55 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 06365d20 i2c_read_sda>) [0 i2c_read_sda S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 062d5d20 i2c_read_sda>) [0 i2c_read_sda S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":555 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 06365d20 i2c_read_sda>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 062d5d20 i2c_read_sda>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -584,11 +584,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":556 -1
      (nil))
 (call_insn 56 55 57 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>) [0 i2c_delay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>) [0 i2c_delay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":556 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -603,11 +603,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":488 -1
      (nil))
 (call_insn 60 59 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":488 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -826,11 +826,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 13 12 14 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_byte_SendBytes") [flags 0x3] <function_decl 0632a8e8 u8x8_byte_SendBytes>) [0 u8x8_byte_SendBytes S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_byte_SendBytes") [flags 0x3] <function_decl 0629a8e8 u8x8_byte_SendBytes>) [0 u8x8_byte_SendBytes S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":51 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_byte_SendBytes") [flags 0x3] <function_decl 0632a8e8 u8x8_byte_SendBytes>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_byte_SendBytes") [flags 0x3] <function_decl 0629a8e8 u8x8_byte_SendBytes>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1240,11 +1240,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 96 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":126 -1
      (nil))
 (call_insn 51 50 52 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":126 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1267,11 +1267,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 96 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":128 -1
      (nil))
 (call_insn 59 58 60 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":128 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1306,11 +1306,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 96 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":131 -1
      (nil))
 (call_insn 70 69 71 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":131 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1333,11 +1333,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 96 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":132 -1
      (nil))
 (call_insn 76 75 77 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":132 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1353,11 +1353,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 96 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":133 -1
      (nil))
 (call_insn 80 79 81 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":133 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1380,11 +1380,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 96 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":134 -1
      (nil))
 (call_insn 86 85 87 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":134 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1438,11 +1438,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 96 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":141 -1
      (nil))
 (call_insn 104 103 105 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":141 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1472,11 +1472,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 96 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":145 -1
      (nil))
 (call_insn 112 111 9 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":145 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1502,11 +1502,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 96 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":148 -1
      (nil))
 (call_insn 120 119 8 14 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":148 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1535,11 +1535,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 96 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":151 -1
      (nil))
 (call_insn 129 128 130 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":151 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1641,11 +1641,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 96 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":156 -1
      (nil))
 (call_insn 154 153 11 16 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":156 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1836,11 +1836,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":182 -1
      (nil))
 (call_insn 42 41 43 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":182 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1888,11 +1888,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":186 -1
      (nil))
 (call_insn 56 55 57 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":186 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1908,11 +1908,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":187 -1
      (nil))
 (call_insn 60 59 61 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":187 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1935,11 +1935,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":188 -1
      (nil))
 (call_insn 66 65 67 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":188 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1955,11 +1955,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":189 -1
      (nil))
 (call_insn 70 69 71 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":189 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2002,11 +2002,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":195 -1
      (nil))
 (call_insn 85 84 86 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":195 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2022,11 +2022,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":197 -1
      (nil))
 (call_insn 89 88 9 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":197 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2052,11 +2052,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":200 -1
      (nil))
 (call_insn 97 96 8 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":200 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2088,11 +2088,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":203 -1
      (nil))
 (call_insn 107 106 108 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":203 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2197,11 +2197,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":208 -1
      (nil))
 (call_insn 133 132 11 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":208 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2392,11 +2392,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":232 -1
      (nil))
 (call_insn 42 41 43 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":232 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2444,11 +2444,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":236 -1
      (nil))
 (call_insn 56 55 57 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":236 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2464,11 +2464,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":237 -1
      (nil))
 (call_insn 60 59 61 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":237 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2491,11 +2491,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":238 -1
      (nil))
 (call_insn 66 65 67 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":238 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2511,11 +2511,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":239 -1
      (nil))
 (call_insn 70 69 71 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":239 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2558,11 +2558,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":245 -1
      (nil))
 (call_insn 85 84 86 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":245 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2578,11 +2578,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":247 -1
      (nil))
 (call_insn 89 88 9 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":247 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2608,11 +2608,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":250 -1
      (nil))
 (call_insn 97 96 8 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":250 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2644,11 +2644,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":253 -1
      (nil))
 (call_insn 107 106 108 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":253 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -2753,11 +2753,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":258 -1
      (nil))
 (call_insn 133 132 11 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":258 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3021,11 +3021,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 98 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":291 -1
      (nil))
 (call_insn 63 62 64 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":291 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3048,11 +3048,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 98 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":293 -1
      (nil))
 (call_insn 71 70 72 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":293 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3087,11 +3087,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 98 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":296 -1
      (nil))
 (call_insn 82 81 83 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":296 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3114,11 +3114,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 98 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":297 -1
      (nil))
 (call_insn 88 87 89 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":297 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3134,11 +3134,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 98 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":298 -1
      (nil))
 (call_insn 92 91 93 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":298 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3161,11 +3161,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 98 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":299 -1
      (nil))
 (call_insn 98 97 99 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":299 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3219,11 +3219,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 98 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":306 -1
      (nil))
 (call_insn 116 115 117 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":306 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3253,11 +3253,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 98 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":310 -1
      (nil))
 (call_insn 124 123 9 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":310 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3307,11 +3307,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 98 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":316 -1
      (nil))
 (call_insn 140 139 141 17 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":316 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3413,11 +3413,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 98 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":321 -1
      (nil))
 (call_insn 165 164 11 18 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":321 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3496,11 +3496,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 77 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":333 -1
      (nil))
 (call_insn 12 11 13 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":333 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3530,11 +3530,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 77 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":335 -1
      (nil))
 (call_insn 20 19 21 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":335 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3564,11 +3564,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 77 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":337 -1
      (nil))
 (call_insn 28 27 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":337 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3736,11 +3736,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 88 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":357 -1
      (nil))
 (call_insn 42 41 43 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":357 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3788,11 +3788,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 88 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":361 -1
      (nil))
 (call_insn 56 55 57 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":361 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3808,11 +3808,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 88 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":362 -1
      (nil))
 (call_insn 60 59 61 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":362 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3835,11 +3835,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 88 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":363 -1
      (nil))
 (call_insn 66 65 67 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":363 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3855,11 +3855,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 88 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":364 -1
      (nil))
 (call_insn 70 69 71 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":364 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3902,11 +3902,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 88 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":370 -1
      (nil))
 (call_insn 85 84 86 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":370 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3922,11 +3922,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 88 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":372 -1
      (nil))
 (call_insn 89 88 9 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":372 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3952,11 +3952,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 88 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":375 -1
      (nil))
 (call_insn 97 96 8 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":375 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -3979,11 +3979,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 88 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":379 -1
      (nil))
 (call_insn 104 103 105 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_byte_set_ks0108_cs") [flags 0x3] <function_decl 0632aca8 u8x8_byte_set_ks0108_cs>) [0 u8x8_byte_set_ks0108_cs S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_byte_set_ks0108_cs") [flags 0x3] <function_decl 0629aca8 u8x8_byte_set_ks0108_cs>) [0 u8x8_byte_set_ks0108_cs S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":379 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_byte_set_ks0108_cs") [flags 0x3] <function_decl 0632aca8 u8x8_byte_set_ks0108_cs>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_byte_set_ks0108_cs") [flags 0x3] <function_decl 0629aca8 u8x8_byte_set_ks0108_cs>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4078,11 +4078,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 88 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":384 -1
      (nil))
 (call_insn 127 126 11 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_byte_set_ks0108_cs") [flags 0x3] <function_decl 0632aca8 u8x8_byte_set_ks0108_cs>) [0 u8x8_byte_set_ks0108_cs S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_byte_set_ks0108_cs") [flags 0x3] <function_decl 0629aca8 u8x8_byte_set_ks0108_cs>) [0 u8x8_byte_set_ks0108_cs S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":384 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_byte_set_ks0108_cs") [flags 0x3] <function_decl 0632aca8 u8x8_byte_set_ks0108_cs>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_byte_set_ks0108_cs") [flags 0x3] <function_decl 0629aca8 u8x8_byte_set_ks0108_cs>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4289,11 +4289,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":414 -1
      (nil))
 (call_insn 46 45 47 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":414 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -4341,11 +4341,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":418 -1
      (nil))
 (call_insn 60 59 61 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":418 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -4372,11 +4372,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":419 -1
      (nil))
 (call_insn 67 66 68 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":419 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -4392,11 +4392,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":420 -1
      (nil))
 (call_insn 71 70 72 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":420 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -4419,11 +4419,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":421 -1
      (nil))
 (call_insn 77 76 78 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":421 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -4450,11 +4450,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":422 -1
      (nil))
 (call_insn 84 83 85 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":422 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -4498,11 +4498,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":428 -1
      (nil))
 (call_insn 99 98 100 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":428 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -4518,11 +4518,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":430 -1
      (nil))
 (call_insn 103 102 104 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":430 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -4538,11 +4538,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":431 -1
      (nil))
 (call_insn 107 106 108 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":431 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -4582,11 +4582,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 84 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":435 -1
      (nil))
 (call_insn 119 118 8 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":435 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -4814,11 +4814,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":589 -1
      (nil))
 (call_insn 38 37 39 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_write_byte") [flags 0x3] <function_decl 0639e0f0 i2c_write_byte>) [0 i2c_write_byte S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_write_byte") [flags 0x3] <function_decl 0630e0f0 i2c_write_byte>) [0 i2c_write_byte S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":589 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_byte") [flags 0x3] <function_decl 0639e0f0 i2c_write_byte>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_byte") [flags 0x3] <function_decl 0630e0f0 i2c_write_byte>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4865,11 +4865,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":470 -1
      (nil))
 (call_insn 54 53 55 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":470 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -4885,11 +4885,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":471 -1
      (nil))
 (call_insn 58 57 59 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":471 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -4899,11 +4899,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":473 -1
      (nil))
 (call_insn 60 59 8 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>) [0 i2c_delay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>) [0 i2c_delay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":473 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4934,11 +4934,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":508 -1
      (nil))
 (call_insn 69 68 70 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 06365d20 i2c_read_sda>) [0 i2c_read_sda S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 062d5d20 i2c_read_sda>) [0 i2c_read_sda S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":508 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 06365d20 i2c_read_sda>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 062d5d20 i2c_read_sda>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4947,11 +4947,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":509 -1
      (nil))
 (call_insn 71 70 72 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>) [0 i2c_delay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>) [0 i2c_delay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":509 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4960,11 +4960,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":510 -1
      (nil))
 (call_insn 73 72 74 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_read_scl_and_delay") [flags 0x3] <function_decl 06365c30 i2c_read_scl_and_delay>) [0 i2c_read_scl_and_delay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_read_scl_and_delay") [flags 0x3] <function_decl 062d5c30 i2c_read_scl_and_delay>) [0 i2c_read_scl_and_delay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":510 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_scl_and_delay") [flags 0x3] <function_decl 06365c30 i2c_read_scl_and_delay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_scl_and_delay") [flags 0x3] <function_decl 062d5c30 i2c_read_scl_and_delay>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4975,11 +4975,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":512 -1
      (nil))
 (call_insn 77 76 78 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 06365d20 i2c_read_sda>) [0 i2c_read_sda S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 062d5d20 i2c_read_sda>) [0 i2c_read_sda S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":512 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 06365d20 i2c_read_sda>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 062d5d20 i2c_read_sda>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4994,11 +4994,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":500 -1
      (nil))
 (call_insn 81 80 82 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":500 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -5008,11 +5008,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":515 -1
      (nil))
 (call_insn 83 82 84 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>) [0 i2c_delay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>) [0 i2c_delay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":515 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5027,11 +5027,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":488 -1
      (nil))
 (call_insn 87 86 88 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":488 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -5055,11 +5055,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":603 -1
      (nil))
 (call_insn 93 92 11 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_write_byte") [flags 0x3] <function_decl 0639e0f0 i2c_write_byte>) [0 i2c_write_byte S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_write_byte") [flags 0x3] <function_decl 0630e0f0 i2c_write_byte>) [0 i2c_write_byte S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":603 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_byte") [flags 0x3] <function_decl 0639e0f0 i2c_write_byte>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_write_byte") [flags 0x3] <function_decl 0630e0f0 i2c_write_byte>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5085,11 +5085,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":500 -1
      (nil))
 (call_insn 101 100 102 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":500 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0632af00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 0629af00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -5099,11 +5099,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":525 -1
      (nil))
 (call_insn 103 102 104 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>) [0 i2c_delay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>) [0 i2c_delay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":525 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5112,11 +5112,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":528 -1
      (nil))
 (call_insn 105 104 106 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_read_scl_and_delay") [flags 0x3] <function_decl 06365c30 i2c_read_scl_and_delay>) [0 i2c_read_scl_and_delay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_read_scl_and_delay") [flags 0x3] <function_decl 062d5c30 i2c_read_scl_and_delay>) [0 i2c_read_scl_and_delay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":528 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_scl_and_delay") [flags 0x3] <function_decl 06365c30 i2c_read_scl_and_delay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_scl_and_delay") [flags 0x3] <function_decl 062d5c30 i2c_read_scl_and_delay>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5125,11 +5125,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":531 -1
      (nil))
 (call_insn 107 106 108 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 06365d20 i2c_read_sda>) [0 i2c_read_sda S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 062d5d20 i2c_read_sda>) [0 i2c_read_sda S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":531 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 06365d20 i2c_read_sda>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_read_sda") [flags 0x3] <function_decl 062d5d20 i2c_read_sda>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5138,11 +5138,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":532 -1
      (nil))
 (call_insn 109 108 110 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>) [0 i2c_delay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>) [0 i2c_delay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_byte.c":532 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 06365e88 i2c_delay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("i2c_delay") [flags 0x3] <function_decl 062d5e88 i2c_delay>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

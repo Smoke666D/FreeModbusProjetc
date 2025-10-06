@@ -56,11 +56,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 97 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8log_u8g2.c":58 -1
      (nil))
 (call_insn 14 13 9 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_SetFontDirection") [flags 0x41] <function_decl 0591a0f0 u8g2_SetFontDirection>) [0 u8g2_SetFontDirection S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetFontDirection") [flags 0x41] <function_decl 064790f0 u8g2_SetFontDirection>) [0 u8g2_SetFontDirection S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8log_u8g2.c":58 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetFontDirection") [flags 0x41] <function_decl 0591a0f0 u8g2_SetFontDirection>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetFontDirection") [flags 0x41] <function_decl 064790f0 u8g2_SetFontDirection>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -111,11 +111,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 28 27 29 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_DrawGlyph") [flags 0x41] <function_decl 05912f78 u8g2_DrawGlyph>) [0 u8g2_DrawGlyph S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_DrawGlyph") [flags 0x41] <function_decl 06471f78 u8g2_DrawGlyph>) [0 u8g2_DrawGlyph S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8log_u8g2.c":65 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawGlyph") [flags 0x41] <function_decl 05912f78 u8g2_DrawGlyph>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawGlyph") [flags 0x41] <function_decl 06471f78 u8g2_DrawGlyph>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -291,11 +291,11 @@ Forwarding edge 5->6 to 7 failed.
         (reg/v/f:SI 77 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8log_u8g2.c":90 -1
      (nil))
 (call_insn 14 13 27 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_FirstPage") [flags 0x41] <function_decl 0590a9d8 u8g2_FirstPage>) [0 u8g2_FirstPage S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_FirstPage") [flags 0x41] <function_decl 064699d8 u8g2_FirstPage>) [0 u8g2_FirstPage S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8log_u8g2.c":90 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_FirstPage") [flags 0x41] <function_decl 0590a9d8 u8g2_FirstPage>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_FirstPage") [flags 0x41] <function_decl 064699d8 u8g2_FirstPage>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -321,11 +321,11 @@ Forwarding edge 5->6 to 7 failed.
         (reg/v/f:SI 77 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8log_u8g2.c":93 -1
      (nil))
 (call_insn 22 21 23 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawLog") [flags 0x3] <function_decl 0591a8e8 u8g2_DrawLog>) [0 u8g2_DrawLog S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawLog") [flags 0x3] <function_decl 064798e8 u8g2_DrawLog>) [0 u8g2_DrawLog S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8log_u8g2.c":93 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawLog") [flags 0x3] <function_decl 0591a8e8 u8g2_DrawLog>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawLog") [flags 0x3] <function_decl 064798e8 u8g2_DrawLog>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -338,11 +338,11 @@ Forwarding edge 5->6 to 7 failed.
      (nil))
 (call_insn 24 23 25 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_NextPage") [flags 0x41] <function_decl 0590aa50 u8g2_NextPage>) [0 u8g2_NextPage S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_NextPage") [flags 0x41] <function_decl 06469a50 u8g2_NextPage>) [0 u8g2_NextPage S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8log_u8g2.c":95 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_NextPage") [flags 0x41] <function_decl 0590aa50 u8g2_NextPage>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_NextPage") [flags 0x41] <function_decl 06469a50 u8g2_NextPage>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))

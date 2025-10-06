@@ -40,11 +40,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 9 8 10 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xMBTCPPortInit") [flags 0x41] <function_decl 066c0258 xMBTCPPortInit>) [0 xMBTCPPortInit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xMBTCPPortInit") [flags 0x41] <function_decl 06600258 xMBTCPPortInit>) [0 xMBTCPPortInit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/tcp/mbtcp.c":85 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBTCPPortInit") [flags 0x41] <function_decl 066c0258 xMBTCPPortInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBTCPPortInit") [flags 0x41] <function_decl 06600258 xMBTCPPortInit>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -137,11 +137,11 @@ try_optimize_cfg iteration 2
 (note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
 (note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 5 2 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vMBTCPPortDisable") [flags 0x41] <function_decl 066c0348 vMBTCPPortDisable>) [0 vMBTCPPortDisable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vMBTCPPortDisable") [flags 0x41] <function_decl 06600348 vMBTCPPortDisable>) [0 vMBTCPPortDisable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/tcp/mbtcp.c":101 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBTCPPortDisable") [flags 0x41] <function_decl 066c0348 vMBTCPPortDisable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBTCPPortDisable") [flags 0x41] <function_decl 06600348 vMBTCPPortDisable>)
         (nil))
     (nil))
 
@@ -211,11 +211,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 15 14 16 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xMBTCPPortGetRequest") [flags 0x41] <function_decl 066c03c0 xMBTCPPortGetRequest>) [0 xMBTCPPortGetRequest S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xMBTCPPortGetRequest") [flags 0x41] <function_decl 066003c0 xMBTCPPortGetRequest>) [0 xMBTCPPortGetRequest S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/tcp/mbtcp.c":112 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBTCPPortGetRequest") [flags 0x41] <function_decl 066c03c0 xMBTCPPortGetRequest>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBTCPPortGetRequest") [flags 0x41] <function_decl 066003c0 xMBTCPPortGetRequest>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -431,11 +431,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 21 20 22 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xMBTCPPortSendResponse") [flags 0x41] <function_decl 066c0438 xMBTCPPortSendResponse>) [0 xMBTCPPortSendResponse S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xMBTCPPortSendResponse") [flags 0x41] <function_decl 06600438 xMBTCPPortSendResponse>) [0 xMBTCPPortSendResponse S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/modbus/tcp/mbtcp.c":153 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBTCPPortSendResponse") [flags 0x41] <function_decl 066c0438 xMBTCPPortSendResponse>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xMBTCPPortSendResponse") [flags 0x41] <function_decl 06600438 xMBTCPPortSendResponse>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))

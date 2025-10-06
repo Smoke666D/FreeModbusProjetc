@@ -217,11 +217,11 @@ Forwarding edge 6->7 to 11 failed.
      (nil))
 (call_insn 20 19 21 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 05951078 RTC_GetCounter>) [0 RTC_GetCounter S4 A32])
+                (call (mem:SI (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 06561078 RTC_GetCounter>) [0 RTC_GetCounter S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":40 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 05951078 RTC_GetCounter>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 06561078 RTC_GetCounter>)
         (nil))
     (nil))
 (insn 21 20 22 2 (set (reg/v:SI 88 [ rtc_data ])
@@ -278,11 +278,11 @@ Forwarding edge 6->7 to 11 failed.
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":43 -1
      (nil))
 (call_insn 36 35 6 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_LSEConfig") [flags 0x41] <function_decl 0593ce10 RCC_LSEConfig>) [0 RCC_LSEConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_LSEConfig") [flags 0x41] <function_decl 0654ce10 RCC_LSEConfig>) [0 RCC_LSEConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":43 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_LSEConfig") [flags 0x41] <function_decl 0593ce10 RCC_LSEConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_LSEConfig") [flags 0x41] <function_decl 0654ce10 RCC_LSEConfig>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (nil)))
@@ -307,11 +307,11 @@ Forwarding edge 6->7 to 11 failed.
         (const_int 20 [0x14])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":47 -1
      (nil))
 (call_insn 43 42 44 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 059d9c30 Delay_Ms>) [0 Delay_Ms S4 A32])
+            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 065e9c30 Delay_Ms>) [0 Delay_Ms S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":47 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 059d9c30 Delay_Ms>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 065e9c30 Delay_Ms>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -322,11 +322,11 @@ Forwarding edge 6->7 to 11 failed.
      (nil))
 (call_insn 47 46 48 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("RCC_GetFlagStatus") [flags 0x41] <function_decl 0594d438 RCC_GetFlagStatus>) [0 RCC_GetFlagStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("RCC_GetFlagStatus") [flags 0x41] <function_decl 0655d438 RCC_GetFlagStatus>) [0 RCC_GetFlagStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":44 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_GetFlagStatus") [flags 0x41] <function_decl 0594d438 RCC_GetFlagStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_GetFlagStatus") [flags 0x41] <function_decl 0655d438 RCC_GetFlagStatus>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (nil)))
@@ -410,27 +410,27 @@ Forwarding edge 6->7 to 11 failed.
         (reg:SI 84 [ _14 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":51 -1
      (nil))
 (call_insn 73 72 74 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 059512d0 RTC_WaitForLastTask>) [0 RTC_WaitForLastTask S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 065612d0 RTC_WaitForLastTask>) [0 RTC_WaitForLastTask S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":53 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 059512d0 RTC_WaitForLastTask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 065612d0 RTC_WaitForLastTask>)
         (nil))
     (nil))
 (call_insn 74 73 75 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RTC_WaitForSynchro") [flags 0x41] <function_decl 05951348 RTC_WaitForSynchro>) [0 RTC_WaitForSynchro S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RTC_WaitForSynchro") [flags 0x41] <function_decl 06561348 RTC_WaitForSynchro>) [0 RTC_WaitForSynchro S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":55 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_WaitForSynchro") [flags 0x41] <function_decl 05951348 RTC_WaitForSynchro>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_WaitForSynchro") [flags 0x41] <function_decl 06561348 RTC_WaitForSynchro>)
         (nil))
     (nil))
 (call_insn 75 74 76 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 059512d0 RTC_WaitForLastTask>) [0 RTC_WaitForLastTask S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 065612d0 RTC_WaitForLastTask>) [0 RTC_WaitForLastTask S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":57 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 059512d0 RTC_WaitForLastTask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 065612d0 RTC_WaitForLastTask>)
         (nil))
     (nil))
 (insn 76 75 77 9 (set (reg:SI 112)
@@ -442,28 +442,28 @@ Forwarding edge 6->7 to 11 failed.
      (expr_list:REG_EQUAL (const_int 32767 [0x7fff])
         (nil)))
 (call_insn 78 77 79 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RTC_SetPrescaler") [flags 0x41] <function_decl 05951168 RTC_SetPrescaler>) [0 RTC_SetPrescaler S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RTC_SetPrescaler") [flags 0x41] <function_decl 06561168 RTC_SetPrescaler>) [0 RTC_SetPrescaler S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":59 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_SetPrescaler") [flags 0x41] <function_decl 05951168 RTC_SetPrescaler>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_SetPrescaler") [flags 0x41] <function_decl 06561168 RTC_SetPrescaler>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 79 78 80 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 059512d0 RTC_WaitForLastTask>) [0 RTC_WaitForLastTask S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 065612d0 RTC_WaitForLastTask>) [0 RTC_WaitForLastTask S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":60 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 059512d0 RTC_WaitForLastTask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 065612d0 RTC_WaitForLastTask>)
         (nil))
     (nil))
 (call_insn 80 79 81 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RTC_ExitConfigMode") [flags 0x41] <function_decl 05951000 RTC_ExitConfigMode>) [0 RTC_ExitConfigMode S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RTC_ExitConfigMode") [flags 0x41] <function_decl 06561000 RTC_ExitConfigMode>) [0 RTC_ExitConfigMode S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":62 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_ExitConfigMode") [flags 0x41] <function_decl 05951000 RTC_ExitConfigMode>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_ExitConfigMode") [flags 0x41] <function_decl 06561000 RTC_ExitConfigMode>)
         (nil))
     (nil))
 (insn 81 80 82 9 (set (reg:SI 114)
@@ -508,11 +508,11 @@ Forwarding edge 6->7 to 11 failed.
         (const_int 19 [0x13])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":70 -1
      (nil))
 (call_insn 93 92 94 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 05bffd98 PFIC_IRQ_ENABLE_PG2>) [0 PFIC_IRQ_ENABLE_PG2 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 0680fd98 PFIC_IRQ_ENABLE_PG2>) [0 PFIC_IRQ_ENABLE_PG2 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":70 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 05bffd98 PFIC_IRQ_ENABLE_PG2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PFIC_IRQ_ENABLE_PG2") [flags 0x41] <function_decl 0680fd98 PFIC_IRQ_ENABLE_PG2>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -522,11 +522,11 @@ Forwarding edge 6->7 to 11 failed.
         (reg/v:SI 88 [ rtc_data ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":73 -1
      (nil))
 (call_insn 95 94 96 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RTC_SetCounter") [flags 0x41] <function_decl 059510f0 RTC_SetCounter>) [0 RTC_SetCounter S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RTC_SetCounter") [flags 0x41] <function_decl 065610f0 RTC_SetCounter>) [0 RTC_SetCounter S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":73 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_SetCounter") [flags 0x41] <function_decl 059510f0 RTC_SetCounter>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_SetCounter") [flags 0x41] <function_decl 065610f0 RTC_SetCounter>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -542,20 +542,20 @@ Forwarding edge 6->7 to 11 failed.
         (reg/v/f:SI 89 [ rtc_it_callback ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":75 -1
      (nil))
 (insn 99 98 100 9 (set (reg:SI 121)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 05ba8210 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":76 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 067b8210 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":76 -1
      (nil))
 (insn 100 99 101 9 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 121)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 05ba8210 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":76 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 05ba8210 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 067b8210 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":76 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 067b8210 *.LC0>)
         (nil)))
 (call_insn 101 100 104 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("puts") [flags 0x41] <function_decl 031f6258 __builtin_puts>) [0 __builtin_puts S4 A32])
+                (call (mem:SI (symbol_ref:SI ("puts") [flags 0x41] <function_decl 04a76258 __builtin_puts>) [0 __builtin_puts S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":76 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("puts") [flags 0x41] <function_decl 031f6258 __builtin_puts>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("puts") [flags 0x41] <function_decl 04a76258 __builtin_puts>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -680,11 +680,11 @@ try_optimize_cfg iteration 2
 (code_label 28 27 29 5 12 (nil) [1 uses])
 (note 29 28 30 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
 (call_insn 30 29 0 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 059512d0 RTC_WaitForLastTask>) [0 RTC_WaitForLastTask S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 065612d0 RTC_WaitForLastTask>) [0 RTC_WaitForLastTask S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":90 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 059512d0 RTC_WaitForLastTask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 065612d0 RTC_WaitForLastTask>)
         (nil))
     (nil))
 
@@ -719,11 +719,11 @@ try_optimize_cfg iteration 2
 (note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 6 3 7 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 05951078 RTC_GetCounter>) [0 RTC_GetCounter S4 A32])
+                (call (mem:SI (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 06561078 RTC_GetCounter>) [0 RTC_GetCounter S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":98 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 05951078 RTC_GetCounter>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 06561078 RTC_GetCounter>)
         (nil))
     (nil))
 (insn 7 6 8 2 (set (reg:SI 72 [ _1 ])
@@ -856,11 +856,11 @@ try_optimize_cfg iteration 2
 (note 3 2 8 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 8 3 9 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 05951078 RTC_GetCounter>) [0 RTC_GetCounter S4 A32])
+                (call (mem:SI (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 06561078 RTC_GetCounter>) [0 RTC_GetCounter S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":129 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 05951078 RTC_GetCounter>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 06561078 RTC_GetCounter>)
         (nil))
     (nil))
 (insn 9 8 10 2 (set (reg/v:SI 87 [ timecount ])
@@ -893,11 +893,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/u 17 16 18 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("Is_Leap_Year") [flags 0x3] <function_decl 05bffe10 Is_Leap_Year>) [0 Is_Leap_Year S4 A32])
+                (call (mem:SI (symbol_ref:SI ("Is_Leap_Year") [flags 0x3] <function_decl 0680fe10 Is_Leap_Year>) [0 Is_Leap_Year S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":135 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Is_Leap_Year") [flags 0x3] <function_decl 05bffe10 Is_Leap_Year>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Is_Leap_Year") [flags 0x3] <function_decl 0680fe10 Is_Leap_Year>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))
@@ -994,11 +994,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/u 52 51 53 12 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("Is_Leap_Year") [flags 0x3] <function_decl 05bffe10 Is_Leap_Year>) [0 Is_Leap_Year S4 A32])
+                (call (mem:SI (symbol_ref:SI ("Is_Leap_Year") [flags 0x3] <function_decl 0680fe10 Is_Leap_Year>) [0 Is_Leap_Year S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":154 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Is_Leap_Year") [flags 0x3] <function_decl 05bffe10 Is_Leap_Year>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Is_Leap_Year") [flags 0x3] <function_decl 0680fe10 Is_Leap_Year>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))
@@ -1163,11 +1163,11 @@ try_optimize_cfg iteration 2
 (note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 6 3 7 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 05951078 RTC_GetCounter>) [0 RTC_GetCounter S4 A32])
+                (call (mem:SI (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 06561078 RTC_GetCounter>) [0 RTC_GetCounter S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":178 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 05951078 RTC_GetCounter>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 06561078 RTC_GetCounter>)
         (nil))
     (nil))
 (insn 7 6 8 2 (set (reg:SI 72 [ _1 ])
@@ -1243,11 +1243,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":180 -1
      (nil))
 (call_insn 26 25 27 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("PWR_BackupAccessCmd") [flags 0x41] <function_decl 0593c168 PWR_BackupAccessCmd>) [0 PWR_BackupAccessCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("PWR_BackupAccessCmd") [flags 0x41] <function_decl 0654c168 PWR_BackupAccessCmd>) [0 PWR_BackupAccessCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":180 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PWR_BackupAccessCmd") [flags 0x41] <function_decl 0593c168 PWR_BackupAccessCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PWR_BackupAccessCmd") [flags 0x41] <function_decl 0654c168 PWR_BackupAccessCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1255,20 +1255,20 @@ try_optimize_cfg iteration 2
         (reg/v:SI 85 [ data ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":181 -1
      (nil))
 (call_insn 28 27 29 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RTC_SetCounter") [flags 0x41] <function_decl 059510f0 RTC_SetCounter>) [0 RTC_SetCounter S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RTC_SetCounter") [flags 0x41] <function_decl 065610f0 RTC_SetCounter>) [0 RTC_SetCounter S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":181 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_SetCounter") [flags 0x41] <function_decl 059510f0 RTC_SetCounter>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_SetCounter") [flags 0x41] <function_decl 065610f0 RTC_SetCounter>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 29 28 30 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 059512d0 RTC_WaitForLastTask>) [0 RTC_WaitForLastTask S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 065612d0 RTC_WaitForLastTask>) [0 RTC_WaitForLastTask S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":182 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 059512d0 RTC_WaitForLastTask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 065612d0 RTC_WaitForLastTask>)
         (nil))
     (nil))
 (insn 30 29 34 2 (set (reg:SI 88 [ <retval> ])
@@ -1337,11 +1337,11 @@ try_optimize_cfg iteration 2
 (note 3 2 11 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 11 3 12 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 05951078 RTC_GetCounter>) [0 RTC_GetCounter S4 A32])
+                (call (mem:SI (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 06561078 RTC_GetCounter>) [0 RTC_GetCounter S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":188 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 05951078 RTC_GetCounter>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_GetCounter") [flags 0x41] <function_decl 06561078 RTC_GetCounter>)
         (nil))
     (nil))
 (insn 12 11 13 2 (set (reg:SI 72 [ _1 ])
@@ -1375,11 +1375,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/u 18 17 19 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("Is_Leap_Year") [flags 0x3] <function_decl 05bffe10 Is_Leap_Year>) [0 Is_Leap_Year S4 A32])
+                (call (mem:SI (symbol_ref:SI ("Is_Leap_Year") [flags 0x3] <function_decl 0680fe10 Is_Leap_Year>) [0 Is_Leap_Year S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":195 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Is_Leap_Year") [flags 0x3] <function_decl 05bffe10 Is_Leap_Year>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Is_Leap_Year") [flags 0x3] <function_decl 0680fe10 Is_Leap_Year>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))
@@ -1518,11 +1518,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/u 59 58 60 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("Is_Leap_Year") [flags 0x3] <function_decl 05bffe10 Is_Leap_Year>) [0 Is_Leap_Year S4 A32])
+                (call (mem:SI (symbol_ref:SI ("Is_Leap_Year") [flags 0x3] <function_decl 0680fe10 Is_Leap_Year>) [0 Is_Leap_Year S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":204 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Is_Leap_Year") [flags 0x3] <function_decl 05bffe10 Is_Leap_Year>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Is_Leap_Year") [flags 0x3] <function_decl 0680fe10 Is_Leap_Year>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))
@@ -1630,11 +1630,11 @@ try_optimize_cfg iteration 2
         (const_int 402653184 [0x18000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":210 -1
      (nil))
 (call_insn 91 90 92 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphClockCmd") [flags 0x41] <function_decl 0594d168 RCC_APB1PeriphClockCmd>) [0 RCC_APB1PeriphClockCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphClockCmd") [flags 0x41] <function_decl 0655d168 RCC_APB1PeriphClockCmd>) [0 RCC_APB1PeriphClockCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":210 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphClockCmd") [flags 0x41] <function_decl 0594d168 RCC_APB1PeriphClockCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphClockCmd") [flags 0x41] <function_decl 0655d168 RCC_APB1PeriphClockCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1643,11 +1643,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":211 -1
      (nil))
 (call_insn 93 92 94 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("PWR_BackupAccessCmd") [flags 0x41] <function_decl 0593c168 PWR_BackupAccessCmd>) [0 PWR_BackupAccessCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("PWR_BackupAccessCmd") [flags 0x41] <function_decl 0654c168 PWR_BackupAccessCmd>) [0 PWR_BackupAccessCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":211 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PWR_BackupAccessCmd") [flags 0x41] <function_decl 0593c168 PWR_BackupAccessCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("PWR_BackupAccessCmd") [flags 0x41] <function_decl 0654c168 PWR_BackupAccessCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1655,20 +1655,20 @@ try_optimize_cfg iteration 2
         (reg/v:SI 97 [ seccount ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":212 -1
      (nil))
 (call_insn 95 94 96 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RTC_SetCounter") [flags 0x41] <function_decl 059510f0 RTC_SetCounter>) [0 RTC_SetCounter S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RTC_SetCounter") [flags 0x41] <function_decl 065610f0 RTC_SetCounter>) [0 RTC_SetCounter S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":212 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_SetCounter") [flags 0x41] <function_decl 059510f0 RTC_SetCounter>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_SetCounter") [flags 0x41] <function_decl 065610f0 RTC_SetCounter>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 96 95 7 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 059512d0 RTC_WaitForLastTask>) [0 RTC_WaitForLastTask S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 065612d0 RTC_WaitForLastTask>) [0 RTC_WaitForLastTask S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_DRIVER/hal_rtc_ch32.c":213 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 059512d0 RTC_WaitForLastTask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RTC_WaitForLastTask") [flags 0x41] <function_decl 065612d0 RTC_WaitForLastTask>)
         (nil))
     (nil))
 (insn 7 96 106 15 (set (reg:SI 99 [ <retval> ])

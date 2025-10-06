@@ -117,11 +117,11 @@ Forwarding edge 5->6 to 7 failed.
      (nil))
 (call_insn 30 29 31 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 0625c7f8 u8x8_DrawTile>) [0 u8x8_DrawTile S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 0629c7f8 u8x8_DrawTile>) [0 u8x8_DrawTile S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":63 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 0625c7f8 u8x8_DrawTile>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 0629c7f8 u8x8_DrawTile>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -238,11 +238,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 17 16 18 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 0620f078 __builtin_memset>) [0 __builtin_memset S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04a8f078 __builtin_memset>) [0 __builtin_memset S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":46 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 0620f078 __builtin_memset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04a8f078 __builtin_memset>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -288,11 +288,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":95 -1
      (nil))
 (call_insn 7 6 8 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_send_buffer") [flags 0x3] <function_decl 062a74b0 u8g2_send_buffer>) [0 u8g2_send_buffer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_send_buffer") [flags 0x3] <function_decl 062e74b0 u8g2_send_buffer>) [0 u8g2_send_buffer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":95 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_send_buffer") [flags 0x3] <function_decl 062a74b0 u8g2_send_buffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_send_buffer") [flags 0x3] <function_decl 062e74b0 u8g2_send_buffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -301,11 +301,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":96 -1
      (nil))
 (call_insn 9 8 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_RefreshDisplay") [flags 0x41] <function_decl 0625cca8 u8x8_RefreshDisplay>) [0 u8x8_RefreshDisplay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_RefreshDisplay") [flags 0x41] <function_decl 0629cca8 u8x8_RefreshDisplay>) [0 u8x8_RefreshDisplay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":96 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_RefreshDisplay") [flags 0x41] <function_decl 0625cca8 u8x8_RefreshDisplay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_RefreshDisplay") [flags 0x41] <function_decl 0629cca8 u8x8_RefreshDisplay>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -435,11 +435,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 73 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":111 -1
      (nil))
 (call_insn 10 9 11 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_ClearBuffer") [flags 0x3] <function_decl 064698e8 u8g2_ClearBuffer>) [0 u8g2_ClearBuffer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_ClearBuffer") [flags 0x3] <function_decl 064ba8e8 u8g2_ClearBuffer>) [0 u8g2_ClearBuffer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":111 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_ClearBuffer") [flags 0x3] <function_decl 064698e8 u8g2_ClearBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_ClearBuffer") [flags 0x3] <function_decl 064ba8e8 u8g2_ClearBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -453,11 +453,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 73 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":113 -1
      (nil))
 (call_insn 15 14 0 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_SetBufferCurrTileRow") [flags 0x3] <function_decl 06469960 u8g2_SetBufferCurrTileRow>) [0 u8g2_SetBufferCurrTileRow S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetBufferCurrTileRow") [flags 0x3] <function_decl 064ba960 u8g2_SetBufferCurrTileRow>) [0 u8g2_SetBufferCurrTileRow S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":113 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetBufferCurrTileRow") [flags 0x3] <function_decl 06469960 u8g2_SetBufferCurrTileRow>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetBufferCurrTileRow") [flags 0x3] <function_decl 064ba960 u8g2_SetBufferCurrTileRow>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -508,11 +508,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 79 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":119 -1
      (nil))
 (call_insn 9 8 10 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_send_buffer") [flags 0x3] <function_decl 062a74b0 u8g2_send_buffer>) [0 u8g2_send_buffer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_send_buffer") [flags 0x3] <function_decl 062e74b0 u8g2_send_buffer>) [0 u8g2_send_buffer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":119 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_send_buffer") [flags 0x3] <function_decl 062a74b0 u8g2_send_buffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_send_buffer") [flags 0x3] <function_decl 062e74b0 u8g2_send_buffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -551,11 +551,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 79 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":124 -1
      (nil))
 (call_insn 19 18 4 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_RefreshDisplay") [flags 0x41] <function_decl 0625cca8 u8x8_RefreshDisplay>) [0 u8x8_RefreshDisplay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_RefreshDisplay") [flags 0x41] <function_decl 0629cca8 u8x8_RefreshDisplay>) [0 u8x8_RefreshDisplay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":124 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_RefreshDisplay") [flags 0x41] <function_decl 0625cca8 u8x8_RefreshDisplay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_RefreshDisplay") [flags 0x41] <function_decl 0629cca8 u8x8_RefreshDisplay>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -585,11 +585,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 79 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":129 -1
      (nil))
 (call_insn 28 27 29 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_ClearBuffer") [flags 0x3] <function_decl 064698e8 u8g2_ClearBuffer>) [0 u8g2_ClearBuffer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_ClearBuffer") [flags 0x3] <function_decl 064ba8e8 u8g2_ClearBuffer>) [0 u8g2_ClearBuffer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":129 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_ClearBuffer") [flags 0x3] <function_decl 064698e8 u8g2_ClearBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_ClearBuffer") [flags 0x3] <function_decl 064ba8e8 u8g2_ClearBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -603,11 +603,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 79 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":131 -1
      (nil))
 (call_insn 33 32 5 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_SetBufferCurrTileRow") [flags 0x3] <function_decl 06469960 u8g2_SetBufferCurrTileRow>) [0 u8g2_SetBufferCurrTileRow S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetBufferCurrTileRow") [flags 0x3] <function_decl 064ba960 u8g2_SetBufferCurrTileRow>) [0 u8g2_SetBufferCurrTileRow S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":131 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetBufferCurrTileRow") [flags 0x3] <function_decl 06469960 u8g2_SetBufferCurrTileRow>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetBufferCurrTileRow") [flags 0x3] <function_decl 064ba960 u8g2_SetBufferCurrTileRow>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -761,11 +761,11 @@ Forwarding edge 7->8 to 9 failed.
      (nil))
 (call_insn 35 34 36 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 0625c7f8 u8x8_DrawTile>) [0 u8x8_DrawTile S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 0629c7f8 u8x8_DrawTile>) [0 u8x8_DrawTile S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":170 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 0625c7f8 u8x8_DrawTile>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_DrawTile") [flags 0x41] <function_decl 0629c7f8 u8x8_DrawTile>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -830,11 +830,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":180 -1
      (nil))
 (call_insn 7 6 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_send_buffer") [flags 0x3] <function_decl 062a74b0 u8g2_send_buffer>) [0 u8g2_send_buffer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_send_buffer") [flags 0x3] <function_decl 062e74b0 u8g2_send_buffer>) [0 u8g2_send_buffer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":180 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_send_buffer") [flags 0x3] <function_decl 062a74b0 u8g2_send_buffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_send_buffer") [flags 0x3] <function_decl 062e74b0 u8g2_send_buffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -893,11 +893,11 @@ try_optimize_cfg iteration 2
         (reg:SI 83)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":189 -1
      (nil))
 (call_insn 13 12 14 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_capture_write_pbm_pre") [flags 0x41] <function_decl 0633b3c0 u8x8_capture_write_pbm_pre>) [0 u8x8_capture_write_pbm_pre S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_capture_write_pbm_pre") [flags 0x41] <function_decl 0637e3c0 u8x8_capture_write_pbm_pre>) [0 u8x8_capture_write_pbm_pre S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":189 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_capture_write_pbm_pre") [flags 0x41] <function_decl 0633b3c0 u8x8_capture_write_pbm_pre>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_capture_write_pbm_pre") [flags 0x41] <function_decl 0637e3c0 u8x8_capture_write_pbm_pre>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -922,12 +922,12 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ out ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":190 -1
      (nil))
 (insn 19 18 20 2 (set (reg:SI 88)
-        (high:SI (symbol_ref:SI ("u8x8_capture_get_pixel_1") [flags 0x41] <function_decl 0633b2d0 u8x8_capture_get_pixel_1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":190 -1
+        (high:SI (symbol_ref:SI ("u8x8_capture_get_pixel_1") [flags 0x41] <function_decl 0637e2d0 u8x8_capture_get_pixel_1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":190 -1
      (nil))
 (insn 20 19 21 2 (set (reg:SI 13 a3)
         (lo_sum:SI (reg:SI 88)
-            (symbol_ref:SI ("u8x8_capture_get_pixel_1") [flags 0x41] <function_decl 0633b2d0 u8x8_capture_get_pixel_1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":190 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_capture_get_pixel_1") [flags 0x41] <function_decl 0633b2d0 u8x8_capture_get_pixel_1>)
+            (symbol_ref:SI ("u8x8_capture_get_pixel_1") [flags 0x41] <function_decl 0637e2d0 u8x8_capture_get_pixel_1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":190 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_capture_get_pixel_1") [flags 0x41] <function_decl 0637e2d0 u8x8_capture_get_pixel_1>)
         (nil)))
 (insn 21 20 22 2 (set (reg:SI 12 a2)
         (reg:SI 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":190 -1
@@ -939,11 +939,11 @@ try_optimize_cfg iteration 2
         (reg:SI 87)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":190 -1
      (nil))
 (call_insn 24 23 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_capture_write_pbm_buffer") [flags 0x41] <function_decl 0633b438 u8x8_capture_write_pbm_buffer>) [0 u8x8_capture_write_pbm_buffer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_capture_write_pbm_buffer") [flags 0x41] <function_decl 0637e438 u8x8_capture_write_pbm_buffer>) [0 u8x8_capture_write_pbm_buffer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":190 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_capture_write_pbm_buffer") [flags 0x41] <function_decl 0633b438 u8x8_capture_write_pbm_buffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_capture_write_pbm_buffer") [flags 0x41] <function_decl 0637e438 u8x8_capture_write_pbm_buffer>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1005,11 +1005,11 @@ try_optimize_cfg iteration 2
         (reg:SI 83)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":195 -1
      (nil))
 (call_insn 13 12 14 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_capture_write_xbm_pre") [flags 0x41] <function_decl 0633b4b0 u8x8_capture_write_xbm_pre>) [0 u8x8_capture_write_xbm_pre S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_capture_write_xbm_pre") [flags 0x41] <function_decl 0637e4b0 u8x8_capture_write_xbm_pre>) [0 u8x8_capture_write_xbm_pre S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":195 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_capture_write_xbm_pre") [flags 0x41] <function_decl 0633b4b0 u8x8_capture_write_xbm_pre>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_capture_write_xbm_pre") [flags 0x41] <function_decl 0637e4b0 u8x8_capture_write_xbm_pre>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1034,12 +1034,12 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ out ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":196 -1
      (nil))
 (insn 19 18 20 2 (set (reg:SI 88)
-        (high:SI (symbol_ref:SI ("u8x8_capture_get_pixel_1") [flags 0x41] <function_decl 0633b2d0 u8x8_capture_get_pixel_1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":196 -1
+        (high:SI (symbol_ref:SI ("u8x8_capture_get_pixel_1") [flags 0x41] <function_decl 0637e2d0 u8x8_capture_get_pixel_1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":196 -1
      (nil))
 (insn 20 19 21 2 (set (reg:SI 13 a3)
         (lo_sum:SI (reg:SI 88)
-            (symbol_ref:SI ("u8x8_capture_get_pixel_1") [flags 0x41] <function_decl 0633b2d0 u8x8_capture_get_pixel_1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":196 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_capture_get_pixel_1") [flags 0x41] <function_decl 0633b2d0 u8x8_capture_get_pixel_1>)
+            (symbol_ref:SI ("u8x8_capture_get_pixel_1") [flags 0x41] <function_decl 0637e2d0 u8x8_capture_get_pixel_1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":196 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_capture_get_pixel_1") [flags 0x41] <function_decl 0637e2d0 u8x8_capture_get_pixel_1>)
         (nil)))
 (insn 21 20 22 2 (set (reg:SI 12 a2)
         (reg:SI 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":196 -1
@@ -1051,11 +1051,11 @@ try_optimize_cfg iteration 2
         (reg:SI 87)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":196 -1
      (nil))
 (call_insn 24 23 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_capture_write_xbm_buffer") [flags 0x41] <function_decl 0633b528 u8x8_capture_write_xbm_buffer>) [0 u8x8_capture_write_xbm_buffer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_capture_write_xbm_buffer") [flags 0x41] <function_decl 0637e528 u8x8_capture_write_xbm_buffer>) [0 u8x8_capture_write_xbm_buffer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":196 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_capture_write_xbm_buffer") [flags 0x41] <function_decl 0633b528 u8x8_capture_write_xbm_buffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_capture_write_xbm_buffer") [flags 0x41] <function_decl 0637e528 u8x8_capture_write_xbm_buffer>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1117,11 +1117,11 @@ try_optimize_cfg iteration 2
         (reg:SI 83)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":204 -1
      (nil))
 (call_insn 13 12 14 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_capture_write_pbm_pre") [flags 0x41] <function_decl 0633b3c0 u8x8_capture_write_pbm_pre>) [0 u8x8_capture_write_pbm_pre S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_capture_write_pbm_pre") [flags 0x41] <function_decl 0637e3c0 u8x8_capture_write_pbm_pre>) [0 u8x8_capture_write_pbm_pre S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":204 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_capture_write_pbm_pre") [flags 0x41] <function_decl 0633b3c0 u8x8_capture_write_pbm_pre>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_capture_write_pbm_pre") [flags 0x41] <function_decl 0637e3c0 u8x8_capture_write_pbm_pre>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1146,12 +1146,12 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ out ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":205 -1
      (nil))
 (insn 19 18 20 2 (set (reg:SI 88)
-        (high:SI (symbol_ref:SI ("u8x8_capture_get_pixel_2") [flags 0x41] <function_decl 0633b348 u8x8_capture_get_pixel_2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":205 -1
+        (high:SI (symbol_ref:SI ("u8x8_capture_get_pixel_2") [flags 0x41] <function_decl 0637e348 u8x8_capture_get_pixel_2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":205 -1
      (nil))
 (insn 20 19 21 2 (set (reg:SI 13 a3)
         (lo_sum:SI (reg:SI 88)
-            (symbol_ref:SI ("u8x8_capture_get_pixel_2") [flags 0x41] <function_decl 0633b348 u8x8_capture_get_pixel_2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":205 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_capture_get_pixel_2") [flags 0x41] <function_decl 0633b348 u8x8_capture_get_pixel_2>)
+            (symbol_ref:SI ("u8x8_capture_get_pixel_2") [flags 0x41] <function_decl 0637e348 u8x8_capture_get_pixel_2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":205 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_capture_get_pixel_2") [flags 0x41] <function_decl 0637e348 u8x8_capture_get_pixel_2>)
         (nil)))
 (insn 21 20 22 2 (set (reg:SI 12 a2)
         (reg:SI 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":205 -1
@@ -1163,11 +1163,11 @@ try_optimize_cfg iteration 2
         (reg:SI 87)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":205 -1
      (nil))
 (call_insn 24 23 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_capture_write_pbm_buffer") [flags 0x41] <function_decl 0633b438 u8x8_capture_write_pbm_buffer>) [0 u8x8_capture_write_pbm_buffer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_capture_write_pbm_buffer") [flags 0x41] <function_decl 0637e438 u8x8_capture_write_pbm_buffer>) [0 u8x8_capture_write_pbm_buffer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":205 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_capture_write_pbm_buffer") [flags 0x41] <function_decl 0633b438 u8x8_capture_write_pbm_buffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_capture_write_pbm_buffer") [flags 0x41] <function_decl 0637e438 u8x8_capture_write_pbm_buffer>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1229,11 +1229,11 @@ try_optimize_cfg iteration 2
         (reg:SI 83)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":210 -1
      (nil))
 (call_insn 13 12 14 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_capture_write_xbm_pre") [flags 0x41] <function_decl 0633b4b0 u8x8_capture_write_xbm_pre>) [0 u8x8_capture_write_xbm_pre S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_capture_write_xbm_pre") [flags 0x41] <function_decl 0637e4b0 u8x8_capture_write_xbm_pre>) [0 u8x8_capture_write_xbm_pre S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":210 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_capture_write_xbm_pre") [flags 0x41] <function_decl 0633b4b0 u8x8_capture_write_xbm_pre>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_capture_write_xbm_pre") [flags 0x41] <function_decl 0637e4b0 u8x8_capture_write_xbm_pre>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1258,12 +1258,12 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ out ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":211 -1
      (nil))
 (insn 19 18 20 2 (set (reg:SI 88)
-        (high:SI (symbol_ref:SI ("u8x8_capture_get_pixel_2") [flags 0x41] <function_decl 0633b348 u8x8_capture_get_pixel_2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":211 -1
+        (high:SI (symbol_ref:SI ("u8x8_capture_get_pixel_2") [flags 0x41] <function_decl 0637e348 u8x8_capture_get_pixel_2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":211 -1
      (nil))
 (insn 20 19 21 2 (set (reg:SI 13 a3)
         (lo_sum:SI (reg:SI 88)
-            (symbol_ref:SI ("u8x8_capture_get_pixel_2") [flags 0x41] <function_decl 0633b348 u8x8_capture_get_pixel_2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":211 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_capture_get_pixel_2") [flags 0x41] <function_decl 0633b348 u8x8_capture_get_pixel_2>)
+            (symbol_ref:SI ("u8x8_capture_get_pixel_2") [flags 0x41] <function_decl 0637e348 u8x8_capture_get_pixel_2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":211 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_capture_get_pixel_2") [flags 0x41] <function_decl 0637e348 u8x8_capture_get_pixel_2>)
         (nil)))
 (insn 21 20 22 2 (set (reg:SI 12 a2)
         (reg:SI 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":211 -1
@@ -1275,11 +1275,11 @@ try_optimize_cfg iteration 2
         (reg:SI 87)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":211 -1
      (nil))
 (call_insn 24 23 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_capture_write_xbm_buffer") [flags 0x41] <function_decl 0633b528 u8x8_capture_write_xbm_buffer>) [0 u8x8_capture_write_xbm_buffer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_capture_write_xbm_buffer") [flags 0x41] <function_decl 0637e528 u8x8_capture_write_xbm_buffer>) [0 u8x8_capture_write_xbm_buffer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_buffer.c":211 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_capture_write_xbm_buffer") [flags 0x41] <function_decl 0633b528 u8x8_capture_write_xbm_buffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_capture_write_xbm_buffer") [flags 0x41] <function_decl 0637e528 u8x8_capture_write_xbm_buffer>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))

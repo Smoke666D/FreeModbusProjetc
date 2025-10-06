@@ -181,11 +181,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/u 16 15 17 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_is_intersection_decision_tree") [flags 0x3] <function_decl 0645f078 u8g2_is_intersection_decision_tree>) [0 u8g2_is_intersection_decision_tree S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_is_intersection_decision_tree") [flags 0x3] <function_decl 064d0078 u8g2_is_intersection_decision_tree>) [0 u8g2_is_intersection_decision_tree S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_intersection.c":168 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_is_intersection_decision_tree") [flags 0x3] <function_decl 0645f078 u8g2_is_intersection_decision_tree>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_is_intersection_decision_tree") [flags 0x3] <function_decl 064d0078 u8g2_is_intersection_decision_tree>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))
@@ -229,11 +229,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/u 27 26 28 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_is_intersection_decision_tree") [flags 0x3] <function_decl 0645f078 u8g2_is_intersection_decision_tree>) [0 u8g2_is_intersection_decision_tree S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_is_intersection_decision_tree") [flags 0x3] <function_decl 064d0078 u8g2_is_intersection_decision_tree>) [0 u8g2_is_intersection_decision_tree S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_intersection.c":171 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_is_intersection_decision_tree") [flags 0x3] <function_decl 0645f078 u8g2_is_intersection_decision_tree>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_is_intersection_decision_tree") [flags 0x3] <function_decl 064d0078 u8g2_is_intersection_decision_tree>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))

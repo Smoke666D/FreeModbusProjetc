@@ -94,11 +94,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 22 21 23 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xQueueGenericSend") [flags 0x41] <function_decl 065b4690 xQueueGenericSend>) [0 xQueueGenericSend S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xQueueGenericSend") [flags 0x41] <function_decl 065d4690 xQueueGenericSend>) [0 xQueueGenericSend S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_keyboard.c":55 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xQueueGenericSend") [flags 0x41] <function_decl 065b4690 xQueueGenericSend>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xQueueGenericSend") [flags 0x41] <function_decl 065d4690 xQueueGenericSend>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -369,11 +369,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 36 35 37 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04a2e078 __builtin_memset>) [0 __builtin_memset S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04a6e078 __builtin_memset>) [0 __builtin_memset S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_keyboard.c":39 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04a2e078 __builtin_memset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04a6e078 __builtin_memset>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -418,11 +418,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 47 46 48 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04a2e078 __builtin_memset>) [0 __builtin_memset S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04a6e078 __builtin_memset>) [0 __builtin_memset S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_keyboard.c":41 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04a2e078 __builtin_memset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04a6e078 __builtin_memset>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -453,11 +453,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 54 53 55 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xQueueGenericReset") [flags 0x41] <function_decl 065b9780 xQueueGenericReset>) [0 xQueueGenericReset S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xQueueGenericReset") [flags 0x41] <function_decl 065d9780 xQueueGenericReset>) [0 xQueueGenericReset S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_keyboard.c":43 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xQueueGenericReset") [flags 0x41] <function_decl 065b9780 xQueueGenericReset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xQueueGenericReset") [flags 0x41] <function_decl 065d9780 xQueueGenericReset>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -644,11 +644,11 @@ Deleted label in block 19.
         (reg/v:SI 92 [ i ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_keyboard.c":69 -1
      (nil))
 (call_insn 33 32 34 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPostState") [flags 0x3] <function_decl 067425a0 vPostState>) [0 vPostState S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPostState") [flags 0x3] <function_decl 067625a0 vPostState>) [0 vPostState S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_keyboard.c":69 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPostState") [flags 0x3] <function_decl 067425a0 vPostState>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPostState") [flags 0x3] <function_decl 067625a0 vPostState>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -750,11 +750,11 @@ Deleted label in block 19.
         (reg/v:SI 92 [ i ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_keyboard.c":80 -1
      (nil))
 (call_insn 63 62 64 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPostState") [flags 0x3] <function_decl 067425a0 vPostState>) [0 vPostState S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPostState") [flags 0x3] <function_decl 067625a0 vPostState>) [0 vPostState S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_keyboard.c":80 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPostState") [flags 0x3] <function_decl 067425a0 vPostState>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPostState") [flags 0x3] <function_decl 067625a0 vPostState>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -844,11 +844,11 @@ Deleted label in block 19.
         (reg/v:SI 92 [ i ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_keyboard.c":89 -1
      (nil))
 (call_insn 90 89 91 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPostState") [flags 0x3] <function_decl 067425a0 vPostState>) [0 vPostState S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPostState") [flags 0x3] <function_decl 067625a0 vPostState>) [0 vPostState S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_keyboard.c":89 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPostState") [flags 0x3] <function_decl 067425a0 vPostState>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPostState") [flags 0x3] <function_decl 067625a0 vPostState>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -970,11 +970,11 @@ Deleted label in block 19.
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_keyboard.c":99 -1
      (nil))
 (call_insn 131 130 134 22 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPostState") [flags 0x3] <function_decl 067425a0 vPostState>) [0 vPostState S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPostState") [flags 0x3] <function_decl 067625a0 vPostState>) [0 vPostState S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/HAL_LIB/hw_lib_keyboard.c":99 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPostState") [flags 0x3] <function_decl 067425a0 vPostState>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPostState") [flags 0x3] <function_decl 067625a0 vPostState>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))

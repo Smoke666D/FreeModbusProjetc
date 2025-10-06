@@ -44,11 +44,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 6 5 7 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("eGetDOUT") [flags 0x41] <function_decl 06730690 eGetDOUT>) [0 eGetDOUT S4 A32])
+                (call (mem:SI (symbol_ref:SI ("eGetDOUT") [flags 0x41] <function_decl 05b73690 eGetDOUT>) [0 eGetDOUT S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/rtc_task.c":22 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eGetDOUT") [flags 0x41] <function_decl 06730690 eGetDOUT>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("eGetDOUT") [flags 0x41] <function_decl 05b73690 eGetDOUT>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -157,11 +157,11 @@ Deleted label in block 4.
         (const_int 204 [0xcc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/rtc_task.c":28 -1
      (nil))
 (call_insn 39 38 42 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("setReg32") [flags 0x41] <function_decl 0687f438 setReg32>) [0 setReg32 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("setReg32") [flags 0x41] <function_decl 05ccf438 setReg32>) [0 setReg32 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/rtc_task.c":28 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg32") [flags 0x41] <function_decl 0687f438 setReg32>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg32") [flags 0x41] <function_decl 05ccf438 setReg32>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -354,19 +354,19 @@ try_optimize_cfg iteration 2
         (const_int 3 [0x3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/rtc_task.c":50 -1
      (nil))
 (insn 7 6 8 2 (set (reg:SI 72)
-        (high:SI (symbol_ref:SI ("vRTCTaskITCallback") [flags 0x3] <function_decl 0687f870 vRTCTaskITCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/rtc_task.c":50 -1
+        (high:SI (symbol_ref:SI ("vRTCTaskITCallback") [flags 0x3] <function_decl 05ccf870 vRTCTaskITCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/rtc_task.c":50 -1
      (nil))
 (insn 8 7 9 2 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 72)
-            (symbol_ref:SI ("vRTCTaskITCallback") [flags 0x3] <function_decl 0687f870 vRTCTaskITCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/rtc_task.c":50 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("vRTCTaskITCallback") [flags 0x3] <function_decl 0687f870 vRTCTaskITCallback>)
+            (symbol_ref:SI ("vRTCTaskITCallback") [flags 0x3] <function_decl 05ccf870 vRTCTaskITCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/rtc_task.c":50 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("vRTCTaskITCallback") [flags 0x3] <function_decl 05ccf870 vRTCTaskITCallback>)
         (nil)))
 (call_insn 9 8 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_RTC_IT_Init") [flags 0x41] <function_decl 067e2c30 HAL_RTC_IT_Init>) [0 HAL_RTC_IT_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_RTC_IT_Init") [flags 0x41] <function_decl 05c25c30 HAL_RTC_IT_Init>) [0 HAL_RTC_IT_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/rtc_task.c":50 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_RTC_IT_Init") [flags 0x41] <function_decl 067e2c30 HAL_RTC_IT_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_RTC_IT_Init") [flags 0x41] <function_decl 05c25c30 HAL_RTC_IT_Init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -404,11 +404,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 6 5 7 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg32") [flags 0x41] <function_decl 0687f348 getReg32>) [0 getReg32 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg32") [flags 0x41] <function_decl 05ccf348 getReg32>) [0 getReg32 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/rtc_task.c":55 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg32") [flags 0x41] <function_decl 0687f348 getReg32>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg32") [flags 0x41] <function_decl 05ccf348 getReg32>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))

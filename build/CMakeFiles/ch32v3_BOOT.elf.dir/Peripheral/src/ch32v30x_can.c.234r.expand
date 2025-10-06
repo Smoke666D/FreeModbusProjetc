@@ -58,11 +58,11 @@ try_optimize_cfg iteration 2
         (const_int 33554432 [0x2000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_can.c":63 -1
      (nil))
 (call_insn 12 11 13 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 06499d20 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 05829d20 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_can.c":63 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 06499d20 RCC_APB1PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 05829d20 RCC_APB1PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -74,11 +74,11 @@ try_optimize_cfg iteration 2
         (const_int 33554432 [0x2000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_can.c":64 -1
      (nil))
 (call_insn 15 14 16 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 06499d20 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 05829d20 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_can.c":64 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 06499d20 RCC_APB1PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 05829d20 RCC_APB1PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -97,11 +97,11 @@ try_optimize_cfg iteration 2
         (const_int 67108864 [0x4000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_can.c":68 -1
      (nil))
 (call_insn 22 21 23 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 06499d20 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 05829d20 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_can.c":68 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 06499d20 RCC_APB1PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 05829d20 RCC_APB1PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -113,11 +113,11 @@ try_optimize_cfg iteration 2
         (const_int 67108864 [0x4000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_can.c":69 -1
      (nil))
 (call_insn 25 24 28 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 06499d20 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 05829d20 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_can.c":69 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 06499d20 RCC_APB1PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 05829d20 RCC_APB1PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))

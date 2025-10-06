@@ -82,20 +82,20 @@ try_optimize_cfg iteration 2
         (reg:SI 81)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":124 -1
      (nil))
 (insn 20 19 21 2 (set (reg:SI 82)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0645d8f0 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":124 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 063ad8f0 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":124 -1
      (nil))
 (insn 21 20 22 2 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 82)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0645d8f0 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":124 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0645d8f0 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 063ad8f0 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":124 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 063ad8f0 *.LC0>)
         (nil)))
 (call_insn 22 21 23 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 062e3f00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06233f00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":124 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 062e3f00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 06233f00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -125,11 +125,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 29 28 0 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("vprintf") [flags 0x41] <function_decl 062e6a50 vprintf>) [0 __builtin_vprintf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("vprintf") [flags 0x41] <function_decl 06236a50 vprintf>) [0 __builtin_vprintf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":126 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vprintf") [flags 0x41] <function_decl 062e6a50 vprintf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vprintf") [flags 0x41] <function_decl 06236a50 vprintf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -211,12 +211,12 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (symbol_ref:SI ("*.LANCHOR1") [flags 0x182])
         (nil)))
 (insn 22 21 23 4 (set (reg:SI 93)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0645de70 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":47 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063ade70 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":47 -1
      (nil))
 (insn 23 22 24 4 (set (reg:SI 13 a3)
         (lo_sum:SI (reg:SI 93)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0645de70 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":47 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0645de70 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063ade70 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":47 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 063ade70 *.LC1>)
         (nil)))
 (insn 24 23 25 4 (set (reg:SI 12 a2)
         (reg/f:SI 91)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":47 -1
@@ -225,19 +225,19 @@ try_optimize_cfg iteration 2
         (const_int 47 [0x2f])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":47 -1
      (nil))
 (insn 26 25 27 4 (set (reg:SI 94)
-        (high:SI (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 0645dec8 *.LC2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":47 -1
+        (high:SI (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 063adec8 *.LC2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":47 -1
      (nil))
 (insn 27 26 28 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 94)
-            (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 0645dec8 *.LC2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":47 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 0645dec8 *.LC2>)
+            (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 063adec8 *.LC2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":47 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC2") [flags 0x82] <var_decl 063adec8 *.LC2>)
         (nil)))
 (call_insn 28 27 29 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 063f9708 __assert_func>) [0 __assert_func S4 A32])
+            (call (mem:SI (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 06349708 __assert_func>) [0 __assert_func S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":47 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 063f9708 __assert_func>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("__assert_func") [flags 0x41] <function_decl 06349708 __assert_func>)
         (expr_list:REG_NORETURN (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -302,12 +302,12 @@ try_optimize_cfg iteration 2
 (code_label 43 42 44 7 12 (nil) [1 uses])
 (note 44 43 45 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
 (insn 45 44 46 7 (set (reg:SI 101)
-        (high:SI (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 0683b000 *.LC3>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":56 -1
+        (high:SI (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 0678b000 *.LC3>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":56 -1
      (nil))
 (insn 46 45 47 7 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 101)
-            (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 0683b000 *.LC3>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":56 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 0683b000 *.LC3>)
+            (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 0678b000 *.LC3>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":56 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC3") [flags 0x82] <var_decl 0678b000 *.LC3>)
         (nil)))
 (insn 47 46 48 7 (set (reg:SI 11 a1)
         (reg/v:SI 79 [ iBufLeft ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":56 -1
@@ -317,11 +317,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 49 48 8 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062e65a0 snprintf>) [0 __builtin_snprintf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062365a0 snprintf>) [0 __builtin_snprintf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":56 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062e65a0 snprintf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062365a0 snprintf>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -339,12 +339,12 @@ try_optimize_cfg iteration 2
 (code_label 52 51 53 8 11 (nil) [1 uses])
 (note 53 52 54 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
 (insn 54 53 55 8 (set (reg:SI 102)
-        (high:SI (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 0683b058 *.LC4>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":60 -1
+        (high:SI (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 0678b058 *.LC4>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":60 -1
      (nil))
 (insn 55 54 56 8 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 102)
-            (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 0683b058 *.LC4>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":60 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 0683b058 *.LC4>)
+            (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 0678b058 *.LC4>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":60 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC4") [flags 0x82] <var_decl 0678b058 *.LC4>)
         (nil)))
 (insn 56 55 57 8 (set (reg:SI 11 a1)
         (reg/v:SI 79 [ iBufLeft ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":60 -1
@@ -354,11 +354,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 58 57 7 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062e65a0 snprintf>) [0 __builtin_snprintf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062365a0 snprintf>) [0 __builtin_snprintf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":60 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062e65a0 snprintf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062365a0 snprintf>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -376,12 +376,12 @@ try_optimize_cfg iteration 2
 (code_label 61 60 62 9 10 (nil) [1 uses])
 (note 62 61 63 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
 (insn 63 62 64 9 (set (reg:SI 103)
-        (high:SI (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 0683b0b0 *.LC5>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":64 -1
+        (high:SI (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 0678b0b0 *.LC5>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":64 -1
      (nil))
 (insn 64 63 65 9 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 103)
-            (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 0683b0b0 *.LC5>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":64 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 0683b0b0 *.LC5>)
+            (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 0678b0b0 *.LC5>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":64 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 0678b0b0 *.LC5>)
         (nil)))
 (insn 65 64 66 9 (set (reg:SI 11 a1)
         (reg/v:SI 79 [ iBufLeft ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":64 -1
@@ -391,11 +391,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 67 66 6 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062e65a0 snprintf>) [0 __builtin_snprintf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062365a0 snprintf>) [0 __builtin_snprintf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":64 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062e65a0 snprintf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062365a0 snprintf>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -413,12 +413,12 @@ try_optimize_cfg iteration 2
 (code_label 70 69 71 10 9 (nil) [1 uses])
 (note 71 70 72 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
 (insn 72 71 73 10 (set (reg:SI 104)
-        (high:SI (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 0683b108 *.LC6>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":68 -1
+        (high:SI (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 0678b108 *.LC6>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":68 -1
      (nil))
 (insn 73 72 74 10 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 104)
-            (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 0683b108 *.LC6>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":68 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 0683b108 *.LC6>)
+            (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 0678b108 *.LC6>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":68 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 0678b108 *.LC6>)
         (nil)))
 (insn 74 73 75 10 (set (reg:SI 11 a1)
         (reg/v:SI 79 [ iBufLeft ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":68 -1
@@ -428,11 +428,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 76 75 11 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062e65a0 snprintf>) [0 __builtin_snprintf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062365a0 snprintf>) [0 __builtin_snprintf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":68 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062e65a0 snprintf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062365a0 snprintf>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -450,12 +450,12 @@ try_optimize_cfg iteration 2
 (code_label 79 78 80 11 8 (nil) [1 uses])
 (note 80 79 81 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
 (insn 81 80 82 11 (set (reg:SI 105)
-        (high:SI (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 0683b160 *.LC7>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":72 -1
+        (high:SI (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 0678b160 *.LC7>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":72 -1
      (nil))
 (insn 82 81 83 11 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 105)
-            (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 0683b160 *.LC7>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":72 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 0683b160 *.LC7>)
+            (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 0678b160 *.LC7>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":72 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 0678b160 *.LC7>)
         (nil)))
 (insn 83 82 84 11 (set (reg:SI 11 a1)
         (reg/v:SI 79 [ iBufLeft ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":72 -1
@@ -465,11 +465,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 85 84 10 11 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062e65a0 snprintf>) [0 __builtin_snprintf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062365a0 snprintf>) [0 __builtin_snprintf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":72 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062e65a0 snprintf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062365a0 snprintf>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -487,12 +487,12 @@ try_optimize_cfg iteration 2
 (code_label 88 87 89 12 6 (nil) [1 uses])
 (note 89 88 90 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
 (insn 90 89 91 12 (set (reg:SI 106)
-        (high:SI (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 0683b1b8 *.LC8>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":76 -1
+        (high:SI (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 0678b1b8 *.LC8>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":76 -1
      (nil))
 (insn 91 90 92 12 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 106)
-            (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 0683b1b8 *.LC8>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":76 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 0683b1b8 *.LC8>)
+            (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 0678b1b8 *.LC8>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":76 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 0678b1b8 *.LC8>)
         (nil)))
 (insn 92 91 93 12 (set (reg:SI 11 a1)
         (reg/v:SI 79 [ iBufLeft ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":76 -1
@@ -502,11 +502,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 94 93 9 12 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062e65a0 snprintf>) [0 __builtin_snprintf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062365a0 snprintf>) [0 __builtin_snprintf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":76 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062e65a0 snprintf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062365a0 snprintf>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -559,12 +559,12 @@ try_optimize_cfg iteration 2
         (reg:SI 108)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":93 -1
      (nil))
 (insn 105 104 106 14 (set (reg:SI 112)
-        (high:SI (symbol_ref/f:SI ("*.LC9") [flags 0x82] <var_decl 0683b210 *.LC9>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":93 -1
+        (high:SI (symbol_ref/f:SI ("*.LC9") [flags 0x82] <var_decl 0678b210 *.LC9>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":93 -1
      (nil))
 (insn 106 105 107 14 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 112)
-            (symbol_ref/f:SI ("*.LC9") [flags 0x82] <var_decl 0683b210 *.LC9>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":93 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC9") [flags 0x82] <var_decl 0683b210 *.LC9>)
+            (symbol_ref/f:SI ("*.LC9") [flags 0x82] <var_decl 0678b210 *.LC9>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":93 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC9") [flags 0x82] <var_decl 0678b210 *.LC9>)
         (nil)))
 (insn 107 106 108 14 (set (reg:SI 11 a1)
         (reg/v:SI 84 [ iBufLeft ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":93 -1
@@ -574,11 +574,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 109 108 110 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062e65a0 snprintf>) [0 __builtin_snprintf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062365a0 snprintf>) [0 __builtin_snprintf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":93 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062e65a0 snprintf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062365a0 snprintf>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -637,12 +637,12 @@ try_optimize_cfg iteration 2
  -> 118)
 (note 120 119 121 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
 (insn 121 120 122 17 (set (reg:SI 115)
-        (high:SI (symbol_ref/f:SI ("*.LC10") [flags 0x82] <var_decl 0683b268 *.LC10>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":108 -1
+        (high:SI (symbol_ref/f:SI ("*.LC10") [flags 0x82] <var_decl 0678b268 *.LC10>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":108 -1
      (nil))
 (insn 122 121 123 17 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 115)
-            (symbol_ref/f:SI ("*.LC10") [flags 0x82] <var_decl 0683b268 *.LC10>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":108 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC10") [flags 0x82] <var_decl 0683b268 *.LC10>)
+            (symbol_ref/f:SI ("*.LC10") [flags 0x82] <var_decl 0678b268 *.LC10>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":108 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC10") [flags 0x82] <var_decl 0678b268 *.LC10>)
         (nil)))
 (insn 123 122 124 17 (set (reg:SI 11 a1)
         (reg/v:SI 79 [ iBufLeft ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":108 -1
@@ -652,11 +652,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 125 124 126 17 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062e65a0 snprintf>) [0 __builtin_snprintf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062365a0 snprintf>) [0 __builtin_snprintf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":108 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062e65a0 snprintf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("snprintf") [flags 0x41] <function_decl 062365a0 snprintf>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -675,12 +675,12 @@ try_optimize_cfg iteration 2
         (reg/f:SI 116)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":111 -1
      (nil))
 (insn 129 128 130 17 (set (reg:SI 118)
-        (high:SI (symbol_ref/f:SI ("*.LC11") [flags 0x82] <var_decl 0683b2c0 *.LC11>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":111 -1
+        (high:SI (symbol_ref/f:SI ("*.LC11") [flags 0x82] <var_decl 0678b2c0 *.LC11>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":111 -1
      (nil))
 (insn 130 129 131 17 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 118)
-            (symbol_ref/f:SI ("*.LC11") [flags 0x82] <var_decl 0683b2c0 *.LC11>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":111 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC11") [flags 0x82] <var_decl 0683b2c0 *.LC11>)
+            (symbol_ref/f:SI ("*.LC11") [flags 0x82] <var_decl 0678b2c0 *.LC11>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":111 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC11") [flags 0x82] <var_decl 0678b2c0 *.LC11>)
         (nil)))
 (insn 131 130 132 17 (set (reg:SI 11 a1)
         (reg/v/f:SI 88 [ pucMsg ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":111 -1
@@ -689,11 +689,11 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":111 -1
      (nil))
 (call_insn 133 132 0 17 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vMBPortLog") [flags 0x3] <function_decl 066900f0 vMBPortLog>) [0 vMBPortLog S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vMBPortLog") [flags 0x3] <function_decl 065e00f0 vMBPortLog>) [0 vMBPortLog S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/port/portother.c":111 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortLog") [flags 0x3] <function_decl 066900f0 vMBPortLog>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMBPortLog") [flags 0x3] <function_decl 065e00f0 vMBPortLog>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

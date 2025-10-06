@@ -461,11 +461,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 43 42 44 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06530348 u8g2_font_get_word>) [0 u8g2_font_get_word S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06500348 u8g2_font_get_word>) [0 u8g2_font_get_word S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":159 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06530348 u8g2_font_get_word>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06500348 u8g2_font_get_word>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -489,11 +489,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 49 48 50 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06530348 u8g2_font_get_word>) [0 u8g2_font_get_word S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06500348 u8g2_font_get_word>) [0 u8g2_font_get_word S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":160 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06530348 u8g2_font_get_word>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06500348 u8g2_font_get_word>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -517,11 +517,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 55 54 56 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06530348 u8g2_font_get_word>) [0 u8g2_font_get_word S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06500348 u8g2_font_get_word>) [0 u8g2_font_get_word S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":164 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06530348 u8g2_font_get_word>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06500348 u8g2_font_get_word>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -621,11 +621,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 20 19 21 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06530348 u8g2_font_get_word>) [0 u8g2_font_get_word S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06500348 u8g2_font_get_word>) [0 u8g2_font_get_word S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":187 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06530348 u8g2_font_get_word>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06500348 u8g2_font_get_word>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1178,11 +1178,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 13 12 14 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":590 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1210,11 +1210,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 20 19 21 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":591 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1288,11 +1288,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 9 8 10 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":285 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1804,11 +1804,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/u 31 30 32 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_add_vector_x") [flags 0x3] <function_decl 06522ca8 u8g2_add_vector_x>) [0 u8g2_add_vector_x S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_add_vector_x") [flags 0x3] <function_decl 064f2ca8 u8g2_add_vector_x>) [0 u8g2_add_vector_x S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":431 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_add_vector_x") [flags 0x3] <function_decl 06522ca8 u8g2_add_vector_x>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_add_vector_x") [flags 0x3] <function_decl 064f2ca8 u8g2_add_vector_x>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))
@@ -1836,11 +1836,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/u 38 37 39 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_add_vector_y") [flags 0x3] <function_decl 06522c30 u8g2_add_vector_y>) [0 u8g2_add_vector_y S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_add_vector_y") [flags 0x3] <function_decl 064f2c30 u8g2_add_vector_y>) [0 u8g2_add_vector_y S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":432 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_add_vector_y") [flags 0x3] <function_decl 06522c30 u8g2_add_vector_y>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_add_vector_y") [flags 0x3] <function_decl 064f2c30 u8g2_add_vector_y>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))
@@ -1889,11 +1889,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 94 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":445 -1
      (nil))
 (call_insn 51 50 52 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 0651ae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064eae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":445 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 0651ae88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064eae88 u8g2_DrawHVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1947,11 +1947,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 94 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":459 -1
      (nil))
 (call_insn 67 66 68 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 0651ae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064eae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":459 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 0651ae88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064eae88 u8g2_DrawHVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2194,11 +2194,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 100 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":533 -1
      (nil))
 (call_insn 46 45 47 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 0651ae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064eae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":533 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 0651ae88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064eae88 u8g2_DrawHVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2229,11 +2229,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 100 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":539 -1
      (nil))
 (call_insn 54 53 55 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 0651ae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064eae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":539 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 0651ae88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064eae88 u8g2_DrawHVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2294,11 +2294,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 100 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":549 -1
      (nil))
 (call_insn 72 71 73 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 0651ae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064eae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":549 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 0651ae88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064eae88 u8g2_DrawHVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2329,11 +2329,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 100 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":555 -1
      (nil))
 (call_insn 80 79 81 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 0651ae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064eae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":555 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 0651ae88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064eae88 u8g2_DrawHVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2472,11 +2472,11 @@ Deleted label in block 4.
         (reg/v/f:SI 117 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":620 -1
      (nil))
 (call_insn 16 15 17 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_font_setup_decode") [flags 0x3] <function_decl 06530e88 u8g2_font_setup_decode>) [0 u8g2_font_setup_decode S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_font_setup_decode") [flags 0x3] <function_decl 06500e88 u8g2_font_setup_decode>) [0 u8g2_font_setup_decode S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":620 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_setup_decode") [flags 0x3] <function_decl 06530e88 u8g2_font_setup_decode>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_setup_decode") [flags 0x3] <function_decl 06500e88 u8g2_font_setup_decode>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2498,11 +2498,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 21 20 22 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":623 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2526,11 +2526,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 27 26 28 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":624 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2554,11 +2554,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 33 32 34 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":625 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2630,11 +2630,11 @@ Deleted label in block 4.
      (nil))
 (call_insn/u 55 54 56 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_add_vector_x") [flags 0x3] <function_decl 06522ca8 u8g2_add_vector_x>) [0 u8g2_add_vector_x S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_add_vector_x") [flags 0x3] <function_decl 064f2ca8 u8g2_add_vector_x>) [0 u8g2_add_vector_x S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":630 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_add_vector_x") [flags 0x3] <function_decl 06522ca8 u8g2_add_vector_x>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_add_vector_x") [flags 0x3] <function_decl 064f2ca8 u8g2_add_vector_x>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))
@@ -2670,11 +2670,11 @@ Deleted label in block 4.
      (nil))
 (call_insn/u 64 63 65 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_add_vector_y") [flags 0x3] <function_decl 06522c30 u8g2_add_vector_y>) [0 u8g2_add_vector_y S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_add_vector_y") [flags 0x3] <function_decl 064f2c30 u8g2_add_vector_y>) [0 u8g2_add_vector_y S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":631 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_add_vector_y") [flags 0x3] <function_decl 06522c30 u8g2_add_vector_y>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_add_vector_y") [flags 0x3] <function_decl 064f2c30 u8g2_add_vector_y>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:HI (use (reg:SI 10 a0))
@@ -2949,11 +2949,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 147 146 148 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06522348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 064f2348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":682 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06522348 u8g2_IsIntersection>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 064f2348 u8g2_IsIntersection>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2993,11 +2993,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 158 157 159 16 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":694 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3021,11 +3021,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 164 163 165 16 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":695 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3049,11 +3049,11 @@ Deleted label in block 4.
         (reg/v/f:SI 117 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":698 -1
      (nil))
 (call_insn 171 170 172 17 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_len") [flags 0x3] <function_decl 06530d98 u8g2_font_decode_len>) [0 u8g2_font_decode_len S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_len") [flags 0x3] <function_decl 06500d98 u8g2_font_decode_len>) [0 u8g2_font_decode_len S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":698 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_len") [flags 0x3] <function_decl 06530d98 u8g2_font_decode_len>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_len") [flags 0x3] <function_decl 06500d98 u8g2_font_decode_len>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3070,11 +3070,11 @@ Deleted label in block 4.
         (reg/v/f:SI 117 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":699 -1
      (nil))
 (call_insn 175 174 176 17 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_len") [flags 0x3] <function_decl 06530d98 u8g2_font_decode_len>) [0 u8g2_font_decode_len S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_len") [flags 0x3] <function_decl 06500d98 u8g2_font_decode_len>) [0 u8g2_font_decode_len S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":699 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_len") [flags 0x3] <function_decl 06530d98 u8g2_font_decode_len>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_len") [flags 0x3] <function_decl 06500d98 u8g2_font_decode_len>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3089,11 +3089,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 178 177 179 17 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":700 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3206,11 +3206,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":721 -1
      (nil))
 (call_insn 10 9 11 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_font_setup_decode") [flags 0x3] <function_decl 06530e88 u8g2_font_setup_decode>) [0 u8g2_font_setup_decode S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_font_setup_decode") [flags 0x3] <function_decl 06500e88 u8g2_font_setup_decode>) [0 u8g2_font_setup_decode S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":721 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_setup_decode") [flags 0x3] <function_decl 06530e88 u8g2_font_setup_decode>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_setup_decode") [flags 0x3] <function_decl 06500e88 u8g2_font_setup_decode>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3232,11 +3232,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 15 14 16 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":724 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3260,11 +3260,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 21 20 22 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":725 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3288,11 +3288,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 27 26 28 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":726 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3410,11 +3410,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 60 59 61 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06522348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 064f2348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":744 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06522348 u8g2_IsIntersection>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 064f2348 u8g2_IsIntersection>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3471,11 +3471,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 77 76 78 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":756 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3499,11 +3499,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 83 82 84 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":757 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3527,11 +3527,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":760 -1
      (nil))
 (call_insn 90 89 91 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_font_2x_decode_len") [flags 0x3] <function_decl 06530e10 u8g2_font_2x_decode_len>) [0 u8g2_font_2x_decode_len S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_font_2x_decode_len") [flags 0x3] <function_decl 06500e10 u8g2_font_2x_decode_len>) [0 u8g2_font_2x_decode_len S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":760 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_2x_decode_len") [flags 0x3] <function_decl 06530e10 u8g2_font_2x_decode_len>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_2x_decode_len") [flags 0x3] <function_decl 06500e10 u8g2_font_2x_decode_len>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3548,11 +3548,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":761 -1
      (nil))
 (call_insn 94 93 95 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_font_2x_decode_len") [flags 0x3] <function_decl 06530e10 u8g2_font_2x_decode_len>) [0 u8g2_font_2x_decode_len S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_font_2x_decode_len") [flags 0x3] <function_decl 06500e10 u8g2_font_2x_decode_len>) [0 u8g2_font_2x_decode_len S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":761 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_2x_decode_len") [flags 0x3] <function_decl 06530e10 u8g2_font_2x_decode_len>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_2x_decode_len") [flags 0x3] <function_decl 06500e10 u8g2_font_2x_decode_len>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3567,11 +3567,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 97 96 98 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>) [0 u8g2_font_decode_get_unsigned_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":762 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06530ac8 u8g2_font_decode_get_unsigned_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_unsigned_bits") [flags 0x3] <function_decl 06500ac8 u8g2_font_decode_get_unsigned_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3841,11 +3841,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 55 54 56 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06530348 u8g2_font_get_word>) [0 u8g2_font_get_word S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06500348 u8g2_font_get_word>) [0 u8g2_font_get_word S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":831 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06530348 u8g2_font_get_word>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06500348 u8g2_font_get_word>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3869,11 +3869,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/i 61 60 62 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06530348 u8g2_font_get_word>) [0 u8g2_font_get_word S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06500348 u8g2_font_get_word>) [0 u8g2_font_get_word S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":832 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06530348 u8g2_font_get_word>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_word") [flags 0x3] <function_decl 06500348 u8g2_font_get_word>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4051,11 +4051,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 78 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1300 -1
      (nil))
 (call_insn 10 9 11 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063db690 u8x8_utf8_init>) [0 u8x8_utf8_init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063ab690 u8x8_utf8_init>) [0 u8x8_utf8_init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1300 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063db690 u8x8_utf8_init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063ab690 u8x8_utf8_init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -4142,11 +4142,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/c/i 35 34 36 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065303c0 u8g2_font_get_glyph_data>) [0 u8g2_font_get_glyph_data S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065003c0 u8g2_font_get_glyph_data>) [0 u8g2_font_get_glyph_data S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1309 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065303c0 u8g2_font_get_glyph_data>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065003c0 u8g2_font_get_glyph_data>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4228,11 +4228,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/c/i 9 8 10 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065303c0 u8g2_font_get_glyph_data>) [0 u8g2_font_get_glyph_data S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065003c0 u8g2_font_get_glyph_data>) [0 u8g2_font_get_glyph_data S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":902 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065303c0 u8g2_font_get_glyph_data>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065003c0 u8g2_font_get_glyph_data>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4306,11 +4306,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/c/i 10 9 11 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065303c0 u8g2_font_get_glyph_data>) [0 u8g2_font_get_glyph_data S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065003c0 u8g2_font_get_glyph_data>) [0 u8g2_font_get_glyph_data S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":910 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065303c0 u8g2_font_get_glyph_data>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065003c0 u8g2_font_get_glyph_data>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4334,11 +4334,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 79 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":914 -1
      (nil))
 (call_insn 16 15 17 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_font_setup_decode") [flags 0x3] <function_decl 06530e88 u8g2_font_setup_decode>) [0 u8g2_font_setup_decode S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_font_setup_decode") [flags 0x3] <function_decl 06500e88 u8g2_font_setup_decode>) [0 u8g2_font_setup_decode S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":914 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_setup_decode") [flags 0x3] <function_decl 06530e88 u8g2_font_setup_decode>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_setup_decode") [flags 0x3] <function_decl 06500e88 u8g2_font_setup_decode>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4360,11 +4360,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 21 20 22 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":915 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4392,11 +4392,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 28 27 29 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":916 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4414,11 +4414,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 32 31 33 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":920 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4512,11 +4512,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 87 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1334 -1
      (nil))
 (call_insn 12 11 5 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063db690 u8x8_utf8_init>) [0 u8x8_utf8_init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063ab690 u8x8_utf8_init>) [0 u8x8_utf8_init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1334 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063db690 u8x8_utf8_init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063ab690 u8x8_utf8_init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -4612,11 +4612,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 37 36 38 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_GetGlyphWidth") [flags 0x3] <function_decl 06522f00 u8g2_GetGlyphWidth>) [0 u8g2_GetGlyphWidth S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_GetGlyphWidth") [flags 0x3] <function_decl 064f2f00 u8g2_GetGlyphWidth>) [0 u8g2_GetGlyphWidth S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1350 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetGlyphWidth") [flags 0x3] <function_decl 06522f00 u8g2_GetGlyphWidth>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetGlyphWidth") [flags 0x3] <function_decl 064f2f00 u8g2_GetGlyphWidth>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5044,11 +5044,11 @@ Forwarding edge 6->7 to 12 failed.
      (nil))
 (call_insn/c/i 73 72 74 12 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065303c0 u8g2_font_get_glyph_data>) [0 u8g2_font_get_glyph_data S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065003c0 u8g2_font_get_glyph_data>) [0 u8g2_font_get_glyph_data S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":876 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065303c0 u8g2_font_get_glyph_data>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065003c0 u8g2_font_get_glyph_data>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5073,11 +5073,11 @@ Forwarding edge 6->7 to 12 failed.
      (nil))
 (call_insn 79 78 80 13 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_glyph") [flags 0x3] <function_decl 06530f00 u8g2_font_decode_glyph>) [0 u8g2_font_decode_glyph S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_glyph") [flags 0x3] <function_decl 06500f00 u8g2_font_decode_glyph>) [0 u8g2_font_decode_glyph S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":879 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_glyph") [flags 0x3] <function_decl 06530f00 u8g2_font_decode_glyph>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_glyph") [flags 0x3] <function_decl 06500f00 u8g2_font_decode_glyph>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5184,11 +5184,11 @@ Forwarding edge 10->11 to 16 failed.
         (reg/v/f:SI 79 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":971 -1
      (nil))
 (call_insn 11 10 7 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063db690 u8x8_utf8_init>) [0 u8x8_utf8_init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063ab690 u8x8_utf8_init>) [0 u8x8_utf8_init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":971 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063db690 u8x8_utf8_init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063ab690 u8x8_utf8_init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -5284,11 +5284,11 @@ Forwarding edge 10->11 to 16 failed.
      (nil))
 (call_insn 38 37 39 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_DrawGlyph") [flags 0x3] <function_decl 06522f78 u8g2_DrawGlyph>) [0 u8g2_DrawGlyph S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_DrawGlyph") [flags 0x3] <function_decl 064f2f78 u8g2_DrawGlyph>) [0 u8g2_DrawGlyph S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":981 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawGlyph") [flags 0x3] <function_decl 06522f78 u8g2_DrawGlyph>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawGlyph") [flags 0x3] <function_decl 064f2f78 u8g2_DrawGlyph>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5525,11 +5525,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/c/i 22 21 23 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065303c0 u8g2_font_get_glyph_data>) [0 u8g2_font_get_glyph_data S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065003c0 u8g2_font_get_glyph_data>) [0 u8g2_font_get_glyph_data S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":889 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065303c0 u8g2_font_get_glyph_data>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065003c0 u8g2_font_get_glyph_data>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5554,11 +5554,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 28 27 29 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_2x_decode_glyph") [flags 0x3] <function_decl 06530f78 u8g2_font_2x_decode_glyph>) [0 u8g2_font_2x_decode_glyph S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_2x_decode_glyph") [flags 0x3] <function_decl 06500f78 u8g2_font_2x_decode_glyph>) [0 u8g2_font_2x_decode_glyph S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":892 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_2x_decode_glyph") [flags 0x3] <function_decl 06530f78 u8g2_font_2x_decode_glyph>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_2x_decode_glyph") [flags 0x3] <function_decl 06500f78 u8g2_font_2x_decode_glyph>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5647,11 +5647,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 78 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1021 -1
      (nil))
 (call_insn 11 10 7 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063db690 u8x8_utf8_init>) [0 u8x8_utf8_init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063ab690 u8x8_utf8_init>) [0 u8x8_utf8_init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1021 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063db690 u8x8_utf8_init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063ab690 u8x8_utf8_init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -5747,11 +5747,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 38 37 39 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_DrawGlyphX2") [flags 0x3] <function_decl 0652a000 u8g2_DrawGlyphX2>) [0 u8g2_DrawGlyphX2 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_DrawGlyphX2") [flags 0x3] <function_decl 064fa000 u8g2_DrawGlyphX2>) [0 u8g2_DrawGlyphX2 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1031 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawGlyphX2") [flags 0x3] <function_decl 0652a000 u8g2_DrawGlyphX2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawGlyphX2") [flags 0x3] <function_decl 064fa000 u8g2_DrawGlyphX2>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5835,12 +5835,12 @@ try_optimize_cfg iteration 2
      (nil))
 (note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
 (insn 9 6 10 2 (set (reg:SI 78)
-        (high:SI (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063db708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1041 -1
+        (high:SI (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063ab708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1041 -1
      (nil))
 (insn 10 9 11 2 (set (reg/f:SI 77)
         (lo_sum:SI (reg:SI 78)
-            (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063db708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1041 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063db708 u8x8_ascii_next>)
+            (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063ab708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1041 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063ab708 u8x8_ascii_next>)
         (nil)))
 (insn 11 10 12 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 73 [ u8g2 ])
                 (const_int 4 [0x4])) [8 u8g2_2(D)->u8x8.next_cb+0 S4 A32])
@@ -5860,11 +5860,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 16 15 17 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_draw_string") [flags 0x3] <function_decl 0634c258 u8g2_draw_string>) [0 u8g2_draw_string S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_draw_string") [flags 0x3] <function_decl 0631c258 u8g2_draw_string>) [0 u8g2_draw_string S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1042 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_string") [flags 0x3] <function_decl 0634c258 u8g2_draw_string>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_string") [flags 0x3] <function_decl 0631c258 u8g2_draw_string>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5927,12 +5927,12 @@ try_optimize_cfg iteration 2
      (nil))
 (note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
 (insn 9 6 10 2 (set (reg:SI 78)
-        (high:SI (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063db708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1047 -1
+        (high:SI (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063ab708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1047 -1
      (nil))
 (insn 10 9 11 2 (set (reg/f:SI 77)
         (lo_sum:SI (reg:SI 78)
-            (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063db708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1047 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063db708 u8x8_ascii_next>)
+            (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063ab708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1047 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063ab708 u8x8_ascii_next>)
         (nil)))
 (insn 11 10 12 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 73 [ u8g2 ])
                 (const_int 4 [0x4])) [8 u8g2_2(D)->u8x8.next_cb+0 S4 A32])
@@ -5952,11 +5952,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 16 15 17 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_draw_string_2x") [flags 0x3] <function_decl 0634c348 u8g2_draw_string_2x>) [0 u8g2_draw_string_2x S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_draw_string_2x") [flags 0x3] <function_decl 0631c348 u8g2_draw_string_2x>) [0 u8g2_draw_string_2x S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1048 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_string_2x") [flags 0x3] <function_decl 0634c348 u8g2_draw_string_2x>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_string_2x") [flags 0x3] <function_decl 0631c348 u8g2_draw_string_2x>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -6019,12 +6019,12 @@ try_optimize_cfg iteration 2
      (nil))
 (note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
 (insn 9 6 10 2 (set (reg:SI 78)
-        (high:SI (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1063 -1
+        (high:SI (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1063 -1
      (nil))
 (insn 10 9 11 2 (set (reg/f:SI 77)
         (lo_sum:SI (reg:SI 78)
-            (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1063 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>)
+            (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1063 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>)
         (nil)))
 (insn 11 10 12 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 73 [ u8g2 ])
                 (const_int 4 [0x4])) [8 u8g2_2(D)->u8x8.next_cb+0 S4 A32])
@@ -6044,11 +6044,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 16 15 17 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_draw_string") [flags 0x3] <function_decl 0634c258 u8g2_draw_string>) [0 u8g2_draw_string S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_draw_string") [flags 0x3] <function_decl 0631c258 u8g2_draw_string>) [0 u8g2_draw_string S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1064 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_string") [flags 0x3] <function_decl 0634c258 u8g2_draw_string>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_string") [flags 0x3] <function_decl 0631c258 u8g2_draw_string>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -6111,12 +6111,12 @@ try_optimize_cfg iteration 2
      (nil))
 (note 6 5 9 2 NOTE_INSN_FUNCTION_BEG)
 (insn 9 6 10 2 (set (reg:SI 78)
-        (high:SI (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1069 -1
+        (high:SI (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1069 -1
      (nil))
 (insn 10 9 11 2 (set (reg/f:SI 77)
         (lo_sum:SI (reg:SI 78)
-            (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1069 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>)
+            (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1069 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>)
         (nil)))
 (insn 11 10 12 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 73 [ u8g2 ])
                 (const_int 4 [0x4])) [8 u8g2_2(D)->u8x8.next_cb+0 S4 A32])
@@ -6136,11 +6136,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 16 15 17 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_draw_string_2x") [flags 0x3] <function_decl 0634c348 u8g2_draw_string_2x>) [0 u8g2_draw_string_2x S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_draw_string_2x") [flags 0x3] <function_decl 0631c348 u8g2_draw_string_2x>) [0 u8g2_draw_string_2x S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1070 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_string_2x") [flags 0x3] <function_decl 0634c348 u8g2_draw_string_2x>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_string_2x") [flags 0x3] <function_decl 0631c348 u8g2_draw_string_2x>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -6229,12 +6229,12 @@ try_optimize_cfg iteration 2
      (nil))
 (note 8 7 15 2 NOTE_INSN_FUNCTION_BEG)
 (insn 15 8 16 2 (set (reg:SI 94)
-        (high:SI (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1076 -1
+        (high:SI (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1076 -1
      (nil))
 (insn 16 15 17 2 (set (reg/f:SI 93)
         (lo_sum:SI (reg:SI 94)
-            (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1076 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>)
+            (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1076 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>)
         (nil)))
 (insn 17 16 18 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 86 [ u8g2 ])
                 (const_int 4 [0x4])) [8 u8g2_18(D)->u8x8.next_cb+0 S4 A32])
@@ -6244,11 +6244,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 86 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1080 -1
      (nil))
 (call_insn 19 18 10 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063db690 u8x8_utf8_init>) [0 u8x8_utf8_init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063ab690 u8x8_utf8_init>) [0 u8x8_utf8_init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1080 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063db690 u8x8_utf8_init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063ab690 u8x8_utf8_init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -6346,11 +6346,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 44 43 45 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_GetGlyphWidth") [flags 0x3] <function_decl 06522f00 u8g2_GetGlyphWidth>) [0 u8g2_GetGlyphWidth S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_GetGlyphWidth") [flags 0x3] <function_decl 064f2f00 u8g2_GetGlyphWidth>) [0 u8g2_GetGlyphWidth S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1090 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetGlyphWidth") [flags 0x3] <function_decl 06522f00 u8g2_GetGlyphWidth>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetGlyphWidth") [flags 0x3] <function_decl 064f2f00 u8g2_GetGlyphWidth>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -6387,11 +6387,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 54 53 55 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_GetKerning") [flags 0x41] <function_decl 06522b40 u8g2_GetKerning>) [0 u8g2_GetKerning S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_GetKerning") [flags 0x41] <function_decl 064f2b40 u8g2_GetKerning>) [0 u8g2_GetKerning S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1094 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetKerning") [flags 0x41] <function_decl 06522b40 u8g2_GetKerning>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetKerning") [flags 0x41] <function_decl 064f2b40 u8g2_GetKerning>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -6449,11 +6449,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 72 71 73 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_GetKerning") [flags 0x41] <function_decl 06522b40 u8g2_GetKerning>) [0 u8g2_GetKerning S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_GetKerning") [flags 0x41] <function_decl 064f2b40 u8g2_GetKerning>) [0 u8g2_GetKerning S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1100 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetKerning") [flags 0x41] <function_decl 06522b40 u8g2_GetKerning>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetKerning") [flags 0x41] <function_decl 064f2b40 u8g2_GetKerning>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -6492,11 +6492,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 84 83 85 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_DrawGlyph") [flags 0x3] <function_decl 06522f78 u8g2_DrawGlyph>) [0 u8g2_DrawGlyph S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_DrawGlyph") [flags 0x3] <function_decl 064f2f78 u8g2_DrawGlyph>) [0 u8g2_DrawGlyph S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1105 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawGlyph") [flags 0x3] <function_decl 06522f78 u8g2_DrawGlyph>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawGlyph") [flags 0x3] <function_decl 064f2f78 u8g2_DrawGlyph>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -6616,12 +6616,12 @@ try_optimize_cfg iteration 2
      (nil))
 (note 8 7 15 2 NOTE_INSN_FUNCTION_BEG)
 (insn 15 8 16 2 (set (reg:SI 94)
-        (high:SI (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1123 -1
+        (high:SI (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1123 -1
      (nil))
 (insn 16 15 17 2 (set (reg/f:SI 93)
         (lo_sum:SI (reg:SI 94)
-            (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1123 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>)
+            (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1123 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>)
         (nil)))
 (insn 17 16 18 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 86 [ u8g2 ])
                 (const_int 4 [0x4])) [8 u8g2_17(D)->u8x8.next_cb+0 S4 A32])
@@ -6631,11 +6631,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 86 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1127 -1
      (nil))
 (call_insn 19 18 10 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063db690 u8x8_utf8_init>) [0 u8x8_utf8_init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063ab690 u8x8_utf8_init>) [0 u8x8_utf8_init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1127 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063db690 u8x8_utf8_init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_utf8_init") [flags 0x41] <function_decl 063ab690 u8x8_utf8_init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -6733,11 +6733,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 44 43 45 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_GetGlyphWidth") [flags 0x3] <function_decl 06522f00 u8g2_GetGlyphWidth>) [0 u8g2_GetGlyphWidth S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_GetGlyphWidth") [flags 0x3] <function_decl 064f2f00 u8g2_GetGlyphWidth>) [0 u8g2_GetGlyphWidth S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1137 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetGlyphWidth") [flags 0x3] <function_decl 06522f00 u8g2_GetGlyphWidth>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetGlyphWidth") [flags 0x3] <function_decl 064f2f00 u8g2_GetGlyphWidth>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -6774,11 +6774,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 54 53 55 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_GetKerningByTable") [flags 0x41] <function_decl 06522bb8 u8g2_GetKerningByTable>) [0 u8g2_GetKerningByTable S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_GetKerningByTable") [flags 0x41] <function_decl 064f2bb8 u8g2_GetKerningByTable>) [0 u8g2_GetKerningByTable S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1141 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetKerningByTable") [flags 0x41] <function_decl 06522bb8 u8g2_GetKerningByTable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetKerningByTable") [flags 0x41] <function_decl 064f2bb8 u8g2_GetKerningByTable>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -6836,11 +6836,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 72 71 73 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_GetKerningByTable") [flags 0x41] <function_decl 06522bb8 u8g2_GetKerningByTable>) [0 u8g2_GetKerningByTable S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_GetKerningByTable") [flags 0x41] <function_decl 064f2bb8 u8g2_GetKerningByTable>) [0 u8g2_GetKerningByTable S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1147 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetKerningByTable") [flags 0x41] <function_decl 06522bb8 u8g2_GetKerningByTable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetKerningByTable") [flags 0x41] <function_decl 064f2bb8 u8g2_GetKerningByTable>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -6886,11 +6886,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 86 85 87 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_DrawGlyph") [flags 0x3] <function_decl 06522f78 u8g2_DrawGlyph>) [0 u8g2_DrawGlyph S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_DrawGlyph") [flags 0x3] <function_decl 064f2f78 u8g2_DrawGlyph>) [0 u8g2_DrawGlyph S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1159 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawGlyph") [flags 0x3] <function_decl 06522f78 u8g2_DrawGlyph>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawGlyph") [flags 0x3] <function_decl 064f2f78 u8g2_DrawGlyph>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -7173,11 +7173,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1209 -1
      (nil))
 (call_insn 8 7 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_UpdateRefHeight") [flags 0x3] <function_decl 0634c708 u8g2_UpdateRefHeight>) [0 u8g2_UpdateRefHeight S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_UpdateRefHeight") [flags 0x3] <function_decl 0631c708 u8g2_UpdateRefHeight>) [0 u8g2_UpdateRefHeight S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1209 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_UpdateRefHeight") [flags 0x3] <function_decl 0634c708 u8g2_UpdateRefHeight>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_UpdateRefHeight") [flags 0x3] <function_decl 0631c708 u8g2_UpdateRefHeight>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -7223,11 +7223,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1215 -1
      (nil))
 (call_insn 9 8 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_UpdateRefHeight") [flags 0x3] <function_decl 0634c708 u8g2_UpdateRefHeight>) [0 u8g2_UpdateRefHeight S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_UpdateRefHeight") [flags 0x3] <function_decl 0631c708 u8g2_UpdateRefHeight>) [0 u8g2_UpdateRefHeight S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1215 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_UpdateRefHeight") [flags 0x3] <function_decl 0634c708 u8g2_UpdateRefHeight>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_UpdateRefHeight") [flags 0x3] <function_decl 0631c708 u8g2_UpdateRefHeight>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -7273,11 +7273,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1221 -1
      (nil))
 (call_insn 9 8 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_UpdateRefHeight") [flags 0x3] <function_decl 0634c708 u8g2_UpdateRefHeight>) [0 u8g2_UpdateRefHeight S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_UpdateRefHeight") [flags 0x3] <function_decl 0631c708 u8g2_UpdateRefHeight>) [0 u8g2_UpdateRefHeight S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1221 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_UpdateRefHeight") [flags 0x3] <function_decl 0634c708 u8g2_UpdateRefHeight>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_UpdateRefHeight") [flags 0x3] <function_decl 0631c708 u8g2_UpdateRefHeight>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -7313,12 +7313,12 @@ try_optimize_cfg iteration 2
      (nil))
 (note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
 (insn 6 3 7 2 (set (reg:SI 74)
-        (high:SI (symbol_ref:SI ("u8g2_font_calc_vref_font") [flags 0x3] <function_decl 0634c8e8 u8g2_font_calc_vref_font>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1234 -1
+        (high:SI (symbol_ref:SI ("u8g2_font_calc_vref_font") [flags 0x3] <function_decl 0631c8e8 u8g2_font_calc_vref_font>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1234 -1
      (nil))
 (insn 7 6 8 2 (set (reg/f:SI 73)
         (lo_sum:SI (reg:SI 74)
-            (symbol_ref:SI ("u8g2_font_calc_vref_font") [flags 0x3] <function_decl 0634c8e8 u8g2_font_calc_vref_font>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1234 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2_font_calc_vref_font") [flags 0x3] <function_decl 0634c8e8 u8g2_font_calc_vref_font>)
+            (symbol_ref:SI ("u8g2_font_calc_vref_font") [flags 0x3] <function_decl 0631c8e8 u8g2_font_calc_vref_font>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1234 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2_font_calc_vref_font") [flags 0x3] <function_decl 0631c8e8 u8g2_font_calc_vref_font>)
         (nil)))
 (insn 8 7 0 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 72 [ u8g2 ])
                 (const_int 92 [0x5c])) [13 u8g2_2(D)->font_calc_vref+0 S4 A32])
@@ -7355,12 +7355,12 @@ try_optimize_cfg iteration 2
      (nil))
 (note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
 (insn 6 3 7 2 (set (reg:SI 74)
-        (high:SI (symbol_ref:SI ("u8g2_font_calc_vref_bottom") [flags 0x3] <function_decl 0634c9d8 u8g2_font_calc_vref_bottom>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1245 -1
+        (high:SI (symbol_ref:SI ("u8g2_font_calc_vref_bottom") [flags 0x3] <function_decl 0631c9d8 u8g2_font_calc_vref_bottom>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1245 -1
      (nil))
 (insn 7 6 8 2 (set (reg/f:SI 73)
         (lo_sum:SI (reg:SI 74)
-            (symbol_ref:SI ("u8g2_font_calc_vref_bottom") [flags 0x3] <function_decl 0634c9d8 u8g2_font_calc_vref_bottom>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1245 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2_font_calc_vref_bottom") [flags 0x3] <function_decl 0634c9d8 u8g2_font_calc_vref_bottom>)
+            (symbol_ref:SI ("u8g2_font_calc_vref_bottom") [flags 0x3] <function_decl 0631c9d8 u8g2_font_calc_vref_bottom>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1245 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2_font_calc_vref_bottom") [flags 0x3] <function_decl 0631c9d8 u8g2_font_calc_vref_bottom>)
         (nil)))
 (insn 8 7 0 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 72 [ u8g2 ])
                 (const_int 92 [0x5c])) [13 u8g2_2(D)->font_calc_vref+0 S4 A32])
@@ -7397,12 +7397,12 @@ try_optimize_cfg iteration 2
      (nil))
 (note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
 (insn 6 3 7 2 (set (reg:SI 74)
-        (high:SI (symbol_ref:SI ("u8g2_font_calc_vref_top") [flags 0x3] <function_decl 0634cac8 u8g2_font_calc_vref_top>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1259 -1
+        (high:SI (symbol_ref:SI ("u8g2_font_calc_vref_top") [flags 0x3] <function_decl 0631cac8 u8g2_font_calc_vref_top>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1259 -1
      (nil))
 (insn 7 6 8 2 (set (reg/f:SI 73)
         (lo_sum:SI (reg:SI 74)
-            (symbol_ref:SI ("u8g2_font_calc_vref_top") [flags 0x3] <function_decl 0634cac8 u8g2_font_calc_vref_top>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1259 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2_font_calc_vref_top") [flags 0x3] <function_decl 0634cac8 u8g2_font_calc_vref_top>)
+            (symbol_ref:SI ("u8g2_font_calc_vref_top") [flags 0x3] <function_decl 0631cac8 u8g2_font_calc_vref_top>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1259 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2_font_calc_vref_top") [flags 0x3] <function_decl 0631cac8 u8g2_font_calc_vref_top>)
         (nil)))
 (insn 8 7 0 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 72 [ u8g2 ])
                 (const_int 92 [0x5c])) [13 u8g2_2(D)->font_calc_vref+0 S4 A32])
@@ -7439,12 +7439,12 @@ try_optimize_cfg iteration 2
      (nil))
 (note 3 2 6 2 NOTE_INSN_FUNCTION_BEG)
 (insn 6 3 7 2 (set (reg:SI 74)
-        (high:SI (symbol_ref:SI ("u8g2_font_calc_vref_center") [flags 0x3] <function_decl 0634cbb8 u8g2_font_calc_vref_center>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1274 -1
+        (high:SI (symbol_ref:SI ("u8g2_font_calc_vref_center") [flags 0x3] <function_decl 0631cbb8 u8g2_font_calc_vref_center>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1274 -1
      (nil))
 (insn 7 6 8 2 (set (reg/f:SI 73)
         (lo_sum:SI (reg:SI 74)
-            (symbol_ref:SI ("u8g2_font_calc_vref_center") [flags 0x3] <function_decl 0634cbb8 u8g2_font_calc_vref_center>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1274 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2_font_calc_vref_center") [flags 0x3] <function_decl 0634cbb8 u8g2_font_calc_vref_center>)
+            (symbol_ref:SI ("u8g2_font_calc_vref_center") [flags 0x3] <function_decl 0631cbb8 u8g2_font_calc_vref_center>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1274 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2_font_calc_vref_center") [flags 0x3] <function_decl 0631cbb8 u8g2_font_calc_vref_center>)
         (nil)))
 (insn 8 7 0 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 72 [ u8g2 ])
                 (const_int 92 [0x5c])) [13 u8g2_2(D)->font_calc_vref+0 S4 A32])
@@ -7515,11 +7515,11 @@ try_optimize_cfg iteration 2
         (reg:SI 77)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1288 -1
      (nil))
 (call_insn 14 13 15 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_read_font_info") [flags 0x3] <function_decl 06530438 u8g2_read_font_info>) [0 u8g2_read_font_info S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_read_font_info") [flags 0x3] <function_decl 06500438 u8g2_read_font_info>) [0 u8g2_read_font_info S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1288 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_read_font_info") [flags 0x3] <function_decl 06530438 u8g2_read_font_info>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_read_font_info") [flags 0x3] <function_decl 06500438 u8g2_read_font_info>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -7529,11 +7529,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 74 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1289 -1
      (nil))
 (call_insn 16 15 19 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_UpdateRefHeight") [flags 0x3] <function_decl 0634c708 u8g2_UpdateRefHeight>) [0 u8g2_UpdateRefHeight S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_UpdateRefHeight") [flags 0x3] <function_decl 0631c708 u8g2_UpdateRefHeight>) [0 u8g2_UpdateRefHeight S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1289 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_UpdateRefHeight") [flags 0x3] <function_decl 0634c708 u8g2_UpdateRefHeight>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_UpdateRefHeight") [flags 0x3] <function_decl 0631c708 u8g2_UpdateRefHeight>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -7575,12 +7575,12 @@ try_optimize_cfg iteration 2
      (nil))
 (note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
 (insn 7 4 8 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1318 -1
+        (high:SI (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1318 -1
      (nil))
 (insn 8 7 9 2 (set (reg/f:SI 75)
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1318 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>)
+            (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1318 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>)
         (nil)))
 (insn 9 8 10 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 73 [ u8g2 ])
                 (const_int 4 [0x4])) [8 u8g2_2(D)->u8x8.next_cb+0 S4 A32])
@@ -7594,11 +7594,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 12 11 13 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_is_all_valid") [flags 0x3] <function_decl 0634cd20 u8g2_is_all_valid>) [0 u8g2_is_all_valid S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_is_all_valid") [flags 0x3] <function_decl 0631cd20 u8g2_is_all_valid>) [0 u8g2_is_all_valid S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1319 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_is_all_valid") [flags 0x3] <function_decl 0634cd20 u8g2_is_all_valid>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_is_all_valid") [flags 0x3] <function_decl 0631cd20 u8g2_is_all_valid>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -7671,11 +7671,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn/c/i 12 11 13 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065303c0 u8g2_font_get_glyph_data>) [0 u8g2_font_get_glyph_data S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065003c0 u8g2_font_get_glyph_data>) [0 u8g2_font_get_glyph_data S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1382 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065303c0 u8g2_font_get_glyph_data>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_get_glyph_data") [flags 0x3] <function_decl 065003c0 u8g2_font_get_glyph_data>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -7699,11 +7699,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 80 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1386 -1
      (nil))
 (call_insn 18 17 19 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_font_setup_decode") [flags 0x3] <function_decl 06530e88 u8g2_font_setup_decode>) [0 u8g2_font_setup_decode S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_font_setup_decode") [flags 0x3] <function_decl 06500e88 u8g2_font_setup_decode>) [0 u8g2_font_setup_decode S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1386 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_setup_decode") [flags 0x3] <function_decl 06530e88 u8g2_font_setup_decode>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_setup_decode") [flags 0x3] <function_decl 06500e88 u8g2_font_setup_decode>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -7725,11 +7725,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 23 22 24 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1388 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -7753,11 +7753,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 29 28 30 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1389 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -7775,11 +7775,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 33 32 43 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>) [0 u8g2_font_decode_get_signed_bits S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1390 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06530c30 u8g2_font_decode_get_signed_bits>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_font_decode_get_signed_bits") [flags 0x3] <function_decl 06500c30 u8g2_font_decode_get_signed_bits>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -7840,12 +7840,12 @@ try_optimize_cfg iteration 2
      (nil))
 (note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
 (insn 7 4 8 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063db708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1504 -1
+        (high:SI (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063ab708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1504 -1
      (nil))
 (insn 8 7 9 2 (set (reg/f:SI 75)
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063db708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1504 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063db708 u8x8_ascii_next>)
+            (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063ab708 u8x8_ascii_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1504 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_ascii_next") [flags 0x41] <function_decl 063ab708 u8x8_ascii_next>)
         (nil)))
 (insn 9 8 10 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 73 [ u8g2 ])
                 (const_int 4 [0x4])) [8 u8g2_2(D)->u8x8.next_cb+0 S4 A32])
@@ -7859,11 +7859,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 12 11 13 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_string_width") [flags 0x3] <function_decl 0634ce88 u8g2_string_width>) [0 u8g2_string_width S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_string_width") [flags 0x3] <function_decl 0631ce88 u8g2_string_width>) [0 u8g2_string_width S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1505 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_string_width") [flags 0x3] <function_decl 0634ce88 u8g2_string_width>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_string_width") [flags 0x3] <function_decl 0631ce88 u8g2_string_width>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -7918,12 +7918,12 @@ try_optimize_cfg iteration 2
      (nil))
 (note 4 3 7 2 NOTE_INSN_FUNCTION_BEG)
 (insn 7 4 8 2 (set (reg:SI 76)
-        (high:SI (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1528 -1
+        (high:SI (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1528 -1
      (nil))
 (insn 8 7 9 2 (set (reg/f:SI 75)
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1528 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063db780 u8x8_utf8_next>)
+            (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1528 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8x8_utf8_next") [flags 0x41] <function_decl 063ab780 u8x8_utf8_next>)
         (nil)))
 (insn 9 8 10 2 (set (mem/f:SI (plus:SI (reg/v/f:SI 73 [ u8g2 ])
                 (const_int 4 [0x4])) [8 u8g2_2(D)->u8x8.next_cb+0 S4 A32])
@@ -7937,11 +7937,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 12 11 13 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_string_width") [flags 0x3] <function_decl 0634ce88 u8g2_string_width>) [0 u8g2_string_width S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_string_width") [flags 0x3] <function_decl 0631ce88 u8g2_string_width>) [0 u8g2_string_width S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_font.c":1529 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_string_width") [flags 0x3] <function_decl 0634ce88 u8g2_string_width>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_string_width") [flags 0x3] <function_decl 0631ce88 u8g2_string_width>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

@@ -63,11 +63,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 15 14 16 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_GetStringLineCnt") [flags 0x41] <function_decl 06328e88 u8x8_GetStringLineCnt>) [0 u8x8_GetStringLineCnt S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_GetStringLineCnt") [flags 0x41] <function_decl 06387e88 u8x8_GetStringLineCnt>) [0 u8x8_GetStringLineCnt S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":52 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_GetStringLineCnt") [flags 0x41] <function_decl 06328e88 u8x8_GetStringLineCnt>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_GetStringLineCnt") [flags 0x41] <function_decl 06387e88 u8x8_GetStringLineCnt>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -98,11 +98,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 23 22 24 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_GetStringLineStart") [flags 0x41] <function_decl 06328f00 u8x8_GetStringLineStart>) [0 u8x8_GetStringLineStart S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_GetStringLineStart") [flags 0x41] <function_decl 06387f00 u8x8_GetStringLineStart>) [0 u8x8_GetStringLineStart S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":59 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_GetStringLineStart") [flags 0x41] <function_decl 06328f00 u8x8_GetStringLineStart>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_GetStringLineStart") [flags 0x41] <function_decl 06387f00 u8x8_GetStringLineStart>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -118,11 +118,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 27 26 28 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 0647a528 u8g2_GetUTF8Width>) [0 u8g2_GetUTF8Width S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 064da528 u8g2_GetUTF8Width>) [0 u8g2_GetUTF8Width S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":59 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 0647a528 u8g2_GetUTF8Width>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 064da528 u8g2_GetUTF8Width>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -218,11 +218,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 57 56 58 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_GetStringLineStart") [flags 0x41] <function_decl 06328f00 u8x8_GetStringLineStart>) [0 u8x8_GetStringLineStart S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_GetStringLineStart") [flags 0x41] <function_decl 06387f00 u8x8_GetStringLineStart>) [0 u8x8_GetStringLineStart S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":80 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_GetStringLineStart") [flags 0x41] <function_decl 06328f00 u8x8_GetStringLineStart>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_GetStringLineStart") [flags 0x41] <function_decl 06387f00 u8x8_GetStringLineStart>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -266,11 +266,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 91 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":80 -1
      (nil))
 (call_insn 70 69 71 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawUTF8Line") [flags 0x41] <function_decl 0647a9d8 u8g2_DrawUTF8Line>) [0 u8g2_DrawUTF8Line S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawUTF8Line") [flags 0x41] <function_decl 064da9d8 u8g2_DrawUTF8Line>) [0 u8g2_DrawUTF8Line S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":80 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawUTF8Line") [flags 0x41] <function_decl 0647a9d8 u8g2_DrawUTF8Line>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawUTF8Line") [flags 0x41] <function_decl 064da9d8 u8g2_DrawUTF8Line>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -288,11 +288,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 73 72 74 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_GetStringLineStart") [flags 0x41] <function_decl 06328f00 u8x8_GetStringLineStart>) [0 u8x8_GetStringLineStart S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_GetStringLineStart") [flags 0x41] <function_decl 06387f00 u8x8_GetStringLineStart>) [0 u8x8_GetStringLineStart S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":81 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_GetStringLineStart") [flags 0x41] <function_decl 06328f00 u8x8_GetStringLineStart>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_GetStringLineStart") [flags 0x41] <function_decl 06387f00 u8x8_GetStringLineStart>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -308,11 +308,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 77 76 78 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 0647a528 u8g2_GetUTF8Width>) [0 u8g2_GetUTF8Width S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 064da528 u8g2_GetUTF8Width>) [0 u8g2_GetUTF8Width S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":81 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 0647a528 u8g2_GetUTF8Width>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 064da528 u8g2_GetUTF8Width>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -470,11 +470,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":111 -1
      (nil))
 (call_insn 16 15 17 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_SetFontDirection") [flags 0x41] <function_decl 0647a0f0 u8g2_SetFontDirection>) [0 u8g2_SetFontDirection S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetFontDirection") [flags 0x41] <function_decl 064da0f0 u8g2_SetFontDirection>) [0 u8g2_SetFontDirection S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":111 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetFontDirection") [flags 0x41] <function_decl 0647a0f0 u8g2_SetFontDirection>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetFontDirection") [flags 0x41] <function_decl 064da0f0 u8g2_SetFontDirection>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -483,11 +483,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":114 -1
      (nil))
 (call_insn 18 17 19 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_SetFontPosBaseline") [flags 0x41] <function_decl 0647a5a0 u8g2_SetFontPosBaseline>) [0 u8g2_SetFontPosBaseline S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetFontPosBaseline") [flags 0x41] <function_decl 064da5a0 u8g2_SetFontPosBaseline>) [0 u8g2_SetFontPosBaseline S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":114 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetFontPosBaseline") [flags 0x41] <function_decl 0647a5a0 u8g2_SetFontPosBaseline>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetFontPosBaseline") [flags 0x41] <function_decl 064da5a0 u8g2_SetFontPosBaseline>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -511,11 +511,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 24 23 25 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_GetStringLineCnt") [flags 0x41] <function_decl 06328e88 u8x8_GetStringLineCnt>) [0 u8x8_GetStringLineCnt S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_GetStringLineCnt") [flags 0x41] <function_decl 06387e88 u8x8_GetStringLineCnt>) [0 u8x8_GetStringLineCnt S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":123 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_GetStringLineCnt") [flags 0x41] <function_decl 06328e88 u8x8_GetStringLineCnt>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_GetStringLineCnt") [flags 0x41] <function_decl 06387e88 u8x8_GetStringLineCnt>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -561,11 +561,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 40 39 41 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_GetStringLineCnt") [flags 0x41] <function_decl 06328e88 u8x8_GetStringLineCnt>) [0 u8x8_GetStringLineCnt S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_GetStringLineCnt") [flags 0x41] <function_decl 06387e88 u8x8_GetStringLineCnt>) [0 u8x8_GetStringLineCnt S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":126 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_GetStringLineCnt") [flags 0x41] <function_decl 06328e88 u8x8_GetStringLineCnt>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_GetStringLineCnt") [flags 0x41] <function_decl 06387e88 u8x8_GetStringLineCnt>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -667,11 +667,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":148 -1
      (nil))
 (call_insn 69 68 125 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_FirstPage") [flags 0x41] <function_decl 0646a9d8 u8g2_FirstPage>) [0 u8g2_FirstPage S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_FirstPage") [flags 0x41] <function_decl 064ca9d8 u8g2_FirstPage>) [0 u8g2_FirstPage S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":148 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_FirstPage") [flags 0x41] <function_decl 0646a9d8 u8g2_FirstPage>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_FirstPage") [flags 0x41] <function_decl 064ca9d8 u8g2_FirstPage>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -701,11 +701,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 78 77 79 12 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_DrawUTF8Lines") [flags 0x41] <function_decl 0647aa50 u8g2_DrawUTF8Lines>) [0 u8g2_DrawUTF8Lines S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_DrawUTF8Lines") [flags 0x41] <function_decl 064daa50 u8g2_DrawUTF8Lines>) [0 u8g2_DrawUTF8Lines S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":154 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawUTF8Lines") [flags 0x41] <function_decl 0647aa50 u8g2_DrawUTF8Lines>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawUTF8Lines") [flags 0x41] <function_decl 064daa50 u8g2_DrawUTF8Lines>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -761,11 +761,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 107 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":157 -1
      (nil))
 (call_insn 93 92 94 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawUTF8Line") [flags 0x41] <function_decl 0647a9d8 u8g2_DrawUTF8Line>) [0 u8g2_DrawUTF8Line S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawUTF8Line") [flags 0x41] <function_decl 064da9d8 u8g2_DrawUTF8Line>) [0 u8g2_DrawUTF8Line S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":157 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawUTF8Line") [flags 0x41] <function_decl 0647a9d8 u8g2_DrawUTF8Line>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawUTF8Line") [flags 0x41] <function_decl 064da9d8 u8g2_DrawUTF8Line>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -808,11 +808,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 105 104 106 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_DrawUTF8Lines") [flags 0x41] <function_decl 0647aa50 u8g2_DrawUTF8Lines>) [0 u8g2_DrawUTF8Lines S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_DrawUTF8Lines") [flags 0x41] <function_decl 064daa50 u8g2_DrawUTF8Lines>) [0 u8g2_DrawUTF8Lines S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":160 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawUTF8Lines") [flags 0x41] <function_decl 0647aa50 u8g2_DrawUTF8Lines>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawUTF8Lines") [flags 0x41] <function_decl 064daa50 u8g2_DrawUTF8Lines>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -862,11 +862,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 118 117 119 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_draw_button_line") [flags 0x3] <function_decl 06480078 u8g2_draw_button_line>) [0 u8g2_draw_button_line S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_draw_button_line") [flags 0x3] <function_decl 064e0078 u8g2_draw_button_line>) [0 u8g2_draw_button_line S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":163 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_button_line") [flags 0x3] <function_decl 06480078 u8g2_draw_button_line>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_draw_button_line") [flags 0x3] <function_decl 064e0078 u8g2_draw_button_line>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -886,11 +886,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 122 121 123 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_NextPage") [flags 0x41] <function_decl 0646aa50 u8g2_NextPage>) [0 u8g2_NextPage S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_NextPage") [flags 0x41] <function_decl 064caa50 u8g2_NextPage>) [0 u8g2_NextPage S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":165 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_NextPage") [flags 0x41] <function_decl 0646aa50 u8g2_NextPage>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_NextPage") [flags 0x41] <function_decl 064caa50 u8g2_NextPage>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -914,11 +914,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 129 128 130 15 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8x8_GetMenuEvent") [flags 0x41] <function_decl 062f1f78 u8x8_GetMenuEvent>) [0 u8x8_GetMenuEvent S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8x8_GetMenuEvent") [flags 0x41] <function_decl 06351f78 u8x8_GetMenuEvent>) [0 u8x8_GetMenuEvent S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_message.c":173 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_GetMenuEvent") [flags 0x41] <function_decl 062f1f78 u8x8_GetMenuEvent>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_GetMenuEvent") [flags 0x41] <function_decl 06351f78 u8x8_GetMenuEvent>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))

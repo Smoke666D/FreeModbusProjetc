@@ -100,11 +100,11 @@ Forwarding edge 10->11 to 25 failed.
         (reg/v/f:SI 92 [ u8x8 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":52 -1
      (nil))
 (call_insn 24 23 25 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 062eaf00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 062aaf00 u8x8_gpio_call>) [0 u8x8_gpio_call S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8x8_debounce.c":52 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 062eaf00 u8x8_gpio_call>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8x8_gpio_call") [flags 0x41] <function_decl 062aaf00 u8x8_gpio_call>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))

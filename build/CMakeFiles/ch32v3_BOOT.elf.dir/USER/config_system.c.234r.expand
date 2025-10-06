@@ -57,11 +57,11 @@ try_optimize_cfg iteration 2
         (reg:SI 77)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":73 -1
      (nil))
 (call_insn 12 11 13 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskGenericNotifyGiveFromISR") [flags 0x41] <function_decl 06627c30 vTaskGenericNotifyGiveFromISR>) [0 vTaskGenericNotifyGiveFromISR S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskGenericNotifyGiveFromISR") [flags 0x41] <function_decl 065d7c30 vTaskGenericNotifyGiveFromISR>) [0 vTaskGenericNotifyGiveFromISR S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":73 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskGenericNotifyGiveFromISR") [flags 0x41] <function_decl 06627c30 vTaskGenericNotifyGiveFromISR>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskGenericNotifyGiveFromISR") [flags 0x41] <function_decl 065d7c30 vTaskGenericNotifyGiveFromISR>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -173,11 +173,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 18 17 19 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xQueueGenericSendFromISR") [flags 0x41] <function_decl 06841ca8 xQueueGenericSendFromISR>) [0 xQueueGenericSendFromISR S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xQueueGenericSendFromISR") [flags 0x41] <function_decl 067f7ca8 xQueueGenericSendFromISR>) [0 xQueueGenericSendFromISR S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":66 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xQueueGenericSendFromISR") [flags 0x41] <function_decl 06841ca8 xQueueGenericSendFromISR>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xQueueGenericSendFromISR") [flags 0x41] <function_decl 067f7ca8 xQueueGenericSendFromISR>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -424,11 +424,11 @@ try_optimize_cfg iteration 2
         (reg:SI 90 [ data$reg_addres ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":41 -1
      (nil))
 (call_insn 33 32 5 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 068d6168 setReg8>) [0 setReg8 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 06896168 setReg8>) [0 setReg8 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":41 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 068d6168 setReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg8") [flags 0x41] <function_decl 06896168 setReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -484,11 +484,11 @@ try_optimize_cfg iteration 2
         (reg:SI 90 [ data$reg_addres ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":44 -1
      (nil))
 (call_insn 48 47 6 12 (parallel [
-            (call (mem:SI (symbol_ref:SI ("setReg16") [flags 0x41] <function_decl 068d60f0 setReg16>) [0 setReg16 S4 A32])
+            (call (mem:SI (symbol_ref:SI ("setReg16") [flags 0x41] <function_decl 068960f0 setReg16>) [0 setReg16 S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":44 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg16") [flags 0x41] <function_decl 068d60f0 setReg16>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setReg16") [flags 0x41] <function_decl 068960f0 setReg16>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -541,11 +541,11 @@ try_optimize_cfg iteration 2
         (reg:SI 90 [ data$reg_addres ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":49 -1
      (nil))
 (call_insn 63 62 8 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("saveRegFloat") [flags 0x41] <function_decl 068d63c0 saveRegFloat>) [0 saveRegFloat S4 A32])
+            (call (mem:SI (symbol_ref:SI ("saveRegFloat") [flags 0x41] <function_decl 068963c0 saveRegFloat>) [0 saveRegFloat S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":49 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("saveRegFloat") [flags 0x41] <function_decl 068d63c0 saveRegFloat>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("saveRegFloat") [flags 0x41] <function_decl 068963c0 saveRegFloat>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:SF (use (reg:SF 11 a1))
@@ -635,11 +635,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":80 -1
      (nil))
 (call_insn 14 13 15 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SendByte_IT") [flags 0x41] <function_decl 068d69d8 HAL_SendByte_IT>) [0 HAL_SendByte_IT S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SendByte_IT") [flags 0x41] <function_decl 068969d8 HAL_SendByte_IT>) [0 HAL_SendByte_IT S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":80 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SendByte_IT") [flags 0x41] <function_decl 068d69d8 HAL_SendByte_IT>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SendByte_IT") [flags 0x41] <function_decl 068969d8 HAL_SendByte_IT>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -655,11 +655,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 18 17 0 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06627ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 065d7ca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":81 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 06627ca8 ulTaskGenericNotifyTake>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 065d7ca8 ulTaskGenericNotifyTake>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -752,11 +752,11 @@ try_optimize_cfg iteration 2
         (const_int 64 [0x40])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":89 -1
      (nil))
 (call_insn 15 14 16 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_AHBPeriphClockCmd") [flags 0x41] <function_decl 0659f078 RCC_AHBPeriphClockCmd>) [0 RCC_AHBPeriphClockCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_AHBPeriphClockCmd") [flags 0x41] <function_decl 0654f078 RCC_AHBPeriphClockCmd>) [0 RCC_AHBPeriphClockCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":89 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_AHBPeriphClockCmd") [flags 0x41] <function_decl 0659f078 RCC_AHBPeriphClockCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_AHBPeriphClockCmd") [flags 0x41] <function_decl 0654f078 RCC_AHBPeriphClockCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -782,11 +782,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":90 -1
      (nil))
 (call_insn 22 21 23 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HALUSARTInit") [flags 0x41] <function_decl 068d6870 HALUSARTInit>) [0 HALUSARTInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HALUSARTInit") [flags 0x41] <function_decl 06896870 HALUSARTInit>) [0 HALUSARTInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":90 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTInit") [flags 0x41] <function_decl 068d6870 HALUSARTInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTInit") [flags 0x41] <function_decl 06896870 HALUSARTInit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -801,30 +801,30 @@ try_optimize_cfg iteration 2
         (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
      (nil))
 (insn 25 24 26 2 (set (reg:SI 99)
-        (high:SI (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 068d6d20 HAL_UART_TxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
+        (high:SI (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 06896d20 HAL_UART_TxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
      (nil))
 (insn 26 25 27 2 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 99)
-            (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 068d6d20 HAL_UART_TxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 068d6d20 HAL_UART_TxCpltCallback>)
+            (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 06896d20 HAL_UART_TxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("HAL_UART_TxCpltCallback") [flags 0x3] <function_decl 06896d20 HAL_UART_TxCpltCallback>)
         (nil)))
 (insn 27 26 28 2 (set (reg:SI 100)
-        (high:SI (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 068d6ca8 HAL_UART_RxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
+        (high:SI (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 06896ca8 HAL_UART_RxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
      (nil))
 (insn 28 27 29 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 100)
-            (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 068d6ca8 HAL_UART_RxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 068d6ca8 HAL_UART_RxCpltCallback>)
+            (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 06896ca8 HAL_UART_RxCpltCallback>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("HAL_UART_RxCpltCallback") [flags 0x3] <function_decl 06896ca8 HAL_UART_RxCpltCallback>)
         (nil)))
 (insn 29 28 30 2 (set (reg:SI 10 a0)
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
      (nil))
 (call_insn 30 29 31 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HALUSARTInitIT") [flags 0x41] <function_decl 068d6960 HALUSARTInitIT>) [0 HALUSARTInitIT S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HALUSARTInitIT") [flags 0x41] <function_decl 06896960 HALUSARTInitIT>) [0 HALUSARTInitIT S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":91 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTInitIT") [flags 0x41] <function_decl 068d6960 HALUSARTInitIT>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTInitIT") [flags 0x41] <function_decl 06896960 HALUSARTInitIT>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -836,11 +836,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":92 -1
      (nil))
 (call_insn 32 31 9 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HALUSARTEnable") [flags 0x41] <function_decl 068d68e8 HALUSARTEnable>) [0 HALUSARTEnable S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HALUSARTEnable") [flags 0x41] <function_decl 068968e8 HALUSARTEnable>) [0 HALUSARTEnable S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":92 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTEnable") [flags 0x41] <function_decl 068d68e8 HALUSARTEnable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HALUSARTEnable") [flags 0x41] <function_decl 068968e8 HALUSARTEnable>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -886,11 +886,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 47 46 48 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xQueueReceive") [flags 0x41] <function_decl 06841ac8 xQueueReceive>) [0 xQueueReceive S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xQueueReceive") [flags 0x41] <function_decl 067f7ac8 xQueueReceive>) [0 xQueueReceive S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":97 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xQueueReceive") [flags 0x41] <function_decl 06841ac8 xQueueReceive>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xQueueReceive") [flags 0x41] <function_decl 067f7ac8 xQueueReceive>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1042,11 +1042,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":114 -1
      (nil))
 (call_insn 91 90 5 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>) [0 SendAnswer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 06896d98 SendAnswer>) [0 SendAnswer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":114 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 06896d98 SendAnswer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1079,11 +1079,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":121 -1
      (nil))
 (call_insn 101 100 102 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>) [0 SendAnswer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 06896d98 SendAnswer>) [0 SendAnswer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":121 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 06896d98 SendAnswer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1233,11 +1233,11 @@ try_optimize_cfg iteration 2
  -> 35)
 (note 148 147 149 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
 (call_insn 149 148 150 20 (parallel [
-            (call (mem:SI (symbol_ref:SI ("CRC_ResetDR") [flags 0x41] <function_decl 0652abb8 CRC_ResetDR>) [0 CRC_ResetDR S4 A32])
+            (call (mem:SI (symbol_ref:SI ("CRC_ResetDR") [flags 0x41] <function_decl 064d3bb8 CRC_ResetDR>) [0 CRC_ResetDR S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":149 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("CRC_ResetDR") [flags 0x41] <function_decl 0652abb8 CRC_ResetDR>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("CRC_ResetDR") [flags 0x41] <function_decl 064d3bb8 CRC_ResetDR>)
         (nil))
     (nil))
 (insn 150 149 151 20 (set (reg:SI 144)
@@ -1252,22 +1252,22 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 153 152 154 20 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("CRC_CalcBlockCRC") [flags 0x41] <function_decl 0652aca8 CRC_CalcBlockCRC>) [0 CRC_CalcBlockCRC S4 A32])
+                (call (mem:SI (symbol_ref:SI ("CRC_CalcBlockCRC") [flags 0x41] <function_decl 064d3ca8 CRC_CalcBlockCRC>) [0 CRC_CalcBlockCRC S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":150 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("CRC_CalcBlockCRC") [flags 0x41] <function_decl 0652aca8 CRC_CalcBlockCRC>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("CRC_CalcBlockCRC") [flags 0x41] <function_decl 064d3ca8 CRC_CalcBlockCRC>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
             (nil))))
 (call_insn 154 153 155 20 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("CRC_GetCRC") [flags 0x41] <function_decl 0652ad20 CRC_GetCRC>) [0 CRC_GetCRC S4 A32])
+                (call (mem:SI (symbol_ref:SI ("CRC_GetCRC") [flags 0x41] <function_decl 064d3d20 CRC_GetCRC>) [0 CRC_GetCRC S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":151 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("CRC_GetCRC") [flags 0x41] <function_decl 0652ad20 CRC_GetCRC>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("CRC_GetCRC") [flags 0x41] <function_decl 064d3d20 CRC_GetCRC>)
         (nil))
     (nil))
 (insn 155 154 156 20 (set (reg:SI 80 [ _12 ])
@@ -1350,11 +1350,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 176 175 177 21 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0625cd98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 04a4cd98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":160 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 0625cd98 __builtin_memcpy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 04a4cd98 __builtin_memcpy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -1375,11 +1375,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 180 179 181 21 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("SetConfigData") [flags 0x3] <function_decl 068d6c30 SetConfigData>) [0 SetConfigData S4 A32])
+                (call (mem:SI (symbol_ref:SI ("SetConfigData") [flags 0x3] <function_decl 06896c30 SetConfigData>) [0 SetConfigData S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":160 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SetConfigData") [flags 0x3] <function_decl 068d6c30 SetConfigData>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SetConfigData") [flags 0x3] <function_decl 06896c30 SetConfigData>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1399,11 +1399,11 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":161 -1
      (nil))
 (call_insn 185 184 186 22 (parallel [
-            (call (mem:SI (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>) [0 SendAnswer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 06896d98 SendAnswer>) [0 SendAnswer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":161 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 06896d98 SendAnswer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1419,11 +1419,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":163 -1
      (nil))
 (call_insn 191 190 194 23 (parallel [
-            (call (mem:SI (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>) [0 SendAnswer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 06896d98 SendAnswer>) [0 SendAnswer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":163 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 06896d98 SendAnswer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1439,11 +1439,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":166 -1
      (nil))
 (call_insn 199 198 200 25 (parallel [
-            (call (mem:SI (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>) [0 SendAnswer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 06896d98 SendAnswer>) [0 SendAnswer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/config_system.c":166 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 068d6d98 SendAnswer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("SendAnswer") [flags 0x3] <function_decl 06896d98 SendAnswer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

@@ -39,11 +39,11 @@ try_optimize_cfg iteration 2
      (nil))
 (note 4 3 9 2 NOTE_INSN_FUNCTION_BEG)
 (insn 9 4 10 2 (set (reg:SI 87)
-        (high:SI (symbol_ref:SI ("DMATxDescToSet") [flags 0xc4] <var_decl 0598e790 DMATxDescToSet>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":860 -1
+        (high:SI (symbol_ref:SI ("DMATxDescToSet") [flags 0xc4] <var_decl 059ad790 DMATxDescToSet>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":860 -1
      (nil))
 (insn 10 9 11 2 (set (reg/f:SI 72 [ DMATxDescToSet.137_1 ])
         (mem/f/c:SI (lo_sum:SI (reg:SI 87)
-                (symbol_ref:SI ("DMATxDescToSet") [flags 0xc4] <var_decl 0598e790 DMATxDescToSet>)) [3 DMATxDescToSet+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":860 -1
+                (symbol_ref:SI ("DMATxDescToSet") [flags 0xc4] <var_decl 059ad790 DMATxDescToSet>)) [3 DMATxDescToSet+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":860 -1
      (nil))
 (insn 11 10 12 2 (set (reg:SI 73 [ _2 ])
         (mem/v:SI (reg/f:SI 72 [ DMATxDescToSet.137_1 ]) [1 DMATxDescToSet.137_1->Status+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":860 -1
@@ -137,14 +137,14 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":882 -1
      (nil))
 (insn 37 36 38 4 (set (reg:SI 101)
-        (high:SI (symbol_ref:SI ("DMATxDescToSet") [flags 0xc4] <var_decl 0598e790 DMATxDescToSet>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":887 -1
+        (high:SI (symbol_ref:SI ("DMATxDescToSet") [flags 0xc4] <var_decl 059ad790 DMATxDescToSet>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":887 -1
      (nil))
 (insn 38 37 39 4 (set (reg:SI 102)
         (mem:SI (plus:SI (reg/f:SI 72 [ DMATxDescToSet.137_1 ])
                 (const_int 12 [0xc])) [1 DMATxDescToSet.137_1->Buffer2NextDescAddr+0 S4 A32])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":887 -1
      (nil))
 (insn 39 38 5 4 (set (mem/f/c:SI (lo_sum:SI (reg:SI 101)
-                (symbol_ref:SI ("DMATxDescToSet") [flags 0xc4] <var_decl 0598e790 DMATxDescToSet>)) [3 DMATxDescToSet+0 S4 A32])
+                (symbol_ref:SI ("DMATxDescToSet") [flags 0xc4] <var_decl 059ad790 DMATxDescToSet>)) [3 DMATxDescToSet+0 S4 A32])
         (reg:SI 102)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":887 -1
      (nil))
 (insn 5 39 48 4 (set (reg:SI 84 [ <retval> ])
@@ -227,11 +227,11 @@ try_optimize_cfg iteration 2
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":380 -1
      (nil))
 (call_insn 12 11 13 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 05bf8bb8 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 05c0fbb8 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":380 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 05bf8bb8 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 05c0fbb8 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -255,11 +255,11 @@ try_optimize_cfg iteration 2
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":384 -1
      (nil))
 (call_insn 20 19 23 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 05bf8c30 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 05c0fc30 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":384 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 05bf8c30 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 05c0fc30 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -321,11 +321,11 @@ try_optimize_cfg iteration 2
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":361 -1
      (nil))
 (call_insn 11 10 12 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 05bf8bb8 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 05c0fbb8 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":361 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 05bf8bb8 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 05c0fbb8 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -344,11 +344,11 @@ try_optimize_cfg iteration 2
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":365 -1
      (nil))
 (call_insn 18 17 21 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 05bf8c30 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 05c0fc30 HAL_ResetBit>) [0 HAL_ResetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":365 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 05bf8c30 HAL_ResetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_ResetBit") [flags 0x41] <function_decl 05c0fc30 HAL_ResetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -608,11 +608,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 25 24 26 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":123 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -687,11 +687,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 49 48 50 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":128 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -936,11 +936,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 10 9 11 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":173 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -970,11 +970,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 18 17 19 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":174 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1069,11 +1069,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 44 43 45 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":182 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1161,11 +1161,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 72 71 73 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":182 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1190,11 +1190,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 78 77 79 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":182 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1241,11 +1241,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 91 90 92 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":182 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1270,11 +1270,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 97 96 98 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":182 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1314,11 +1314,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 108 107 109 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":182 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1465,11 +1465,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 151 150 152 13 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":195 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1526,11 +1526,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 167 166 168 13 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":195 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1566,11 +1566,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 176 175 177 13 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":195 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1617,11 +1617,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 189 188 190 13 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":195 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1646,11 +1646,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 195 194 196 13 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":195 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1690,11 +1690,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 206 205 207 13 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":195 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1835,11 +1835,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 248 247 249 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":211 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1896,11 +1896,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 264 263 265 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":211 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1936,11 +1936,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 273 272 274 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":211 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1987,11 +1987,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 286 285 287 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":211 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2016,11 +2016,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 292 291 293 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":211 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2060,11 +2060,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 303 302 304 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":211 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2085,11 +2085,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 310 309 311 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":212 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2153,11 +2153,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 328 327 329 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":212 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2196,11 +2196,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 338 337 339 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":212 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2247,11 +2247,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 351 350 352 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":212 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2276,11 +2276,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 357 356 358 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":212 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2320,11 +2320,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 368 367 369 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":212 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2456,11 +2456,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 407 406 408 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":226 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2481,11 +2481,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 414 413 415 24 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":229 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2573,11 +2573,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 442 441 443 27 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":229 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2602,11 +2602,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 448 447 449 27 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":229 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2653,11 +2653,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 461 460 462 27 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":229 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2682,11 +2682,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 467 466 468 27 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":229 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2726,11 +2726,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 478 477 479 27 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":229 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2892,11 +2892,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 527 526 528 32 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":240 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2935,11 +2935,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 537 536 538 32 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":240 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -2986,11 +2986,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 550 549 551 32 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":240 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3015,11 +3015,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 556 555 557 32 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":240 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3059,11 +3059,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 567 566 568 32 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":240 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3154,11 +3154,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 596 595 597 36 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":250 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3222,11 +3222,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 614 613 615 36 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":250 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3265,11 +3265,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 624 623 625 36 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":250 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3316,11 +3316,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 637 636 638 36 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":250 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3345,11 +3345,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 643 642 644 36 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":250 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3389,11 +3389,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 654 653 655 36 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":250 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3526,11 +3526,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 694 693 695 40 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":261 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3569,11 +3569,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 704 703 705 40 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":261 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3620,11 +3620,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 717 716 718 40 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":261 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3649,11 +3649,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 723 722 724 40 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":261 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3693,11 +3693,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 734 733 735 40 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":261 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3754,11 +3754,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 751 750 752 42 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":266 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -3866,11 +3866,11 @@ try_optimize_cfg iteration 3
      (nil))
 (call_insn 780 779 783 42 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":266 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -4096,11 +4096,11 @@ Deleted label in block 20.
      (nil))
 (call_insn 41 40 42 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":289 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -4208,11 +4208,11 @@ Deleted label in block 20.
      (nil))
 (call_insn 70 69 71 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":289 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -4292,11 +4292,11 @@ Deleted label in block 20.
      (nil))
 (call_insn 95 94 96 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":295 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -4522,11 +4522,11 @@ Deleted label in block 20.
         (reg:SI 97 [ LocalTime.106_40 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":299 -1
      (nil))
 (call_insn 162 161 163 16 (parallel [
-            (call (mem:SI (symbol_ref:SI ("WCHNET_LinkProcess") [flags 0x3] <function_decl 05b413c0 WCHNET_LinkProcess>) [0 WCHNET_LinkProcess S4 A32])
+            (call (mem:SI (symbol_ref:SI ("WCHNET_LinkProcess") [flags 0x3] <function_decl 05b5d3c0 WCHNET_LinkProcess>) [0 WCHNET_LinkProcess S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":300 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_LinkProcess") [flags 0x3] <function_decl 05b413c0 WCHNET_LinkProcess>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_LinkProcess") [flags 0x3] <function_decl 05b5d3c0 WCHNET_LinkProcess>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -4662,11 +4662,11 @@ Deleted label in block 20.
      (nil))
 (call_insn 206 205 207 22 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":310 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -4699,11 +4699,11 @@ Deleted label in block 20.
         (reg:SI 104 [ _47 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":313 -1
      (nil))
 (call_insn 215 214 216 23 (parallel [
-            (call (mem:SI (symbol_ref:SI ("WCHNET_PhyStatus") [flags 0x41] <function_decl 05990ca8 WCHNET_PhyStatus>) [0 WCHNET_PhyStatus S4 A32])
+            (call (mem:SI (symbol_ref:SI ("WCHNET_PhyStatus") [flags 0x41] <function_decl 059afca8 WCHNET_PhyStatus>) [0 WCHNET_PhyStatus S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":313 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_PhyStatus") [flags 0x41] <function_decl 05990ca8 WCHNET_PhyStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_PhyStatus") [flags 0x41] <function_decl 059afca8 WCHNET_PhyStatus>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -4729,11 +4729,11 @@ Deleted label in block 20.
      (nil))
 (call_insn 222 221 223 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":314 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -4841,11 +4841,11 @@ Deleted label in block 20.
      (nil))
 (call_insn 251 250 252 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":314 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -4910,11 +4910,11 @@ Deleted label in block 20.
  -> 272)
 (note 268 267 269 26 [bb 26] NOTE_INSN_BASIC_BLOCK)
 (call_insn 269 268 272 26 (parallel [
-            (call (mem:SI (symbol_ref:SI ("WCHNET_PhyPNProcess") [flags 0x3] <function_decl 05b412d0 WCHNET_PhyPNProcess>) [0 WCHNET_PhyPNProcess S4 A32])
+            (call (mem:SI (symbol_ref:SI ("WCHNET_PhyPNProcess") [flags 0x3] <function_decl 05b5d2d0 WCHNET_PhyPNProcess>) [0 WCHNET_PhyPNProcess S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":322 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_PhyPNProcess") [flags 0x3] <function_decl 05b412d0 WCHNET_PhyPNProcess>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_PhyPNProcess") [flags 0x3] <function_decl 05b5d2d0 WCHNET_PhyPNProcess>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -4968,11 +4968,11 @@ try_optimize_cfg iteration 2
         (const_int 16 [0x10])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":401 -1
      (nil))
 (call_insn 10 9 11 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 0594f0f0 RCC_APB2PeriphClockCmd>) [0 RCC_APB2PeriphClockCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 0595f0f0 RCC_APB2PeriphClockCmd>) [0 RCC_APB2PeriphClockCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":401 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 0594f0f0 RCC_APB2PeriphClockCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB2PeriphClockCmd") [flags 0x41] <function_decl 0595f0f0 RCC_APB2PeriphClockCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -5009,11 +5009,11 @@ try_optimize_cfg iteration 2
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":405 -1
      (nil))
 (call_insn 20 19 21 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 05910708 GPIO_Init>) [0 GPIO_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 05931708 GPIO_Init>) [0 GPIO_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":405 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 05910708 GPIO_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("GPIO_Init") [flags 0x41] <function_decl 05931708 GPIO_Init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -5030,11 +5030,11 @@ try_optimize_cfg iteration 2
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":380 -1
      (nil))
 (call_insn 24 23 25 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 05bf8bb8 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 05c0fbb8 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":380 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 05bf8bb8 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 05c0fbb8 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -5046,11 +5046,11 @@ try_optimize_cfg iteration 2
         (const_int 1073811456 [0x40011000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":361 -1
      (nil))
 (call_insn 27 26 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 05bf8bb8 HAL_SetBit>) [0 HAL_SetBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 05c0fbb8 HAL_SetBit>) [0 HAL_SetBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":361 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 05bf8bb8 HAL_SetBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_SetBit") [flags 0x41] <function_decl 05c0fbb8 HAL_SetBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -5091,11 +5091,11 @@ try_optimize_cfg iteration 2
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":421 -1
      (nil))
 (call_insn 6 5 7 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_PLL3Cmd") [flags 0x41] <function_decl 0594f9d8 RCC_PLL3Cmd>) [0 RCC_PLL3Cmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_PLL3Cmd") [flags 0x41] <function_decl 0595f9d8 RCC_PLL3Cmd>) [0 RCC_PLL3Cmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":421 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_PLL3Cmd") [flags 0x41] <function_decl 0594f9d8 RCC_PLL3Cmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_PLL3Cmd") [flags 0x41] <function_decl 0595f9d8 RCC_PLL3Cmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -5103,11 +5103,11 @@ try_optimize_cfg iteration 2
         (const_int 16 [0x10])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":422 -1
      (nil))
 (call_insn 8 7 9 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_PREDIV2Config") [flags 0x41] <function_decl 0594f7f8 RCC_PREDIV2Config>) [0 RCC_PREDIV2Config S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_PREDIV2Config") [flags 0x41] <function_decl 0595f7f8 RCC_PREDIV2Config>) [0 RCC_PREDIV2Config S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":422 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_PREDIV2Config") [flags 0x41] <function_decl 0594f7f8 RCC_PREDIV2Config>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_PREDIV2Config") [flags 0x41] <function_decl 0595f7f8 RCC_PREDIV2Config>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -5115,11 +5115,11 @@ try_optimize_cfg iteration 2
         (const_int 53248 [0xd000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":423 -1
      (nil))
 (call_insn 10 9 11 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_PLL3Config") [flags 0x41] <function_decl 0594f960 RCC_PLL3Config>) [0 RCC_PLL3Config S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_PLL3Config") [flags 0x41] <function_decl 0595f960 RCC_PLL3Config>) [0 RCC_PLL3Config S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":423 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_PLL3Config") [flags 0x41] <function_decl 0594f960 RCC_PLL3Config>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_PLL3Config") [flags 0x41] <function_decl 0595f960 RCC_PLL3Config>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -5127,11 +5127,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":424 -1
      (nil))
 (call_insn 12 11 17 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_PLL3Cmd") [flags 0x41] <function_decl 0594f9d8 RCC_PLL3Cmd>) [0 RCC_PLL3Cmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_PLL3Cmd") [flags 0x41] <function_decl 0595f9d8 RCC_PLL3Cmd>) [0 RCC_PLL3Cmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":424 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_PLL3Cmd") [flags 0x41] <function_decl 0594f9d8 RCC_PLL3Cmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_PLL3Cmd") [flags 0x41] <function_decl 0595f9d8 RCC_PLL3Cmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -5142,11 +5142,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 15 14 16 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("RCC_GetFlagStatus") [flags 0x41] <function_decl 0594f438 RCC_GetFlagStatus>) [0 RCC_GetFlagStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("RCC_GetFlagStatus") [flags 0x41] <function_decl 0595f438 RCC_GetFlagStatus>) [0 RCC_GetFlagStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":425 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_GetFlagStatus") [flags 0x41] <function_decl 0594f438 RCC_GetFlagStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_GetFlagStatus") [flags 0x41] <function_decl 0595f438 RCC_GetFlagStatus>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (nil)))
@@ -5236,11 +5236,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 10 9 11 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":442 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -5270,11 +5270,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 18 17 19 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":443 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -5387,11 +5387,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 107 [ phy_stat ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":451 -1
      (nil))
 (call_insn 51 50 52 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("WCHNET_PhyStatus") [flags 0x41] <function_decl 05990ca8 WCHNET_PhyStatus>) [0 WCHNET_PhyStatus S4 A32])
+            (call (mem:SI (symbol_ref:SI ("WCHNET_PhyStatus") [flags 0x41] <function_decl 059afca8 WCHNET_PhyStatus>) [0 WCHNET_PhyStatus S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":451 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_PhyStatus") [flags 0x41] <function_decl 05990ca8 WCHNET_PhyStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_PhyStatus") [flags 0x41] <function_decl 059afca8 WCHNET_PhyStatus>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -5432,11 +5432,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 62 61 63 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":455 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -5711,11 +5711,11 @@ try_optimize_cfg iteration 2
         (reg:SI 96 [ LocalTime.122_25 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":480 -1
      (nil))
 (call_insn 146 145 147 14 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_Start") [flags 0x41] <function_decl 0597bc30 ETH_Start>) [0 ETH_Start S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_Start") [flags 0x41] <function_decl 0599ac30 ETH_Start>) [0 ETH_Start S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":481 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_Start") [flags 0x41] <function_decl 0597bc30 ETH_Start>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_Start") [flags 0x41] <function_decl 0599ac30 ETH_Start>)
         (nil))
     (nil))
 (jump_insn 147 146 148 14 (set (pc)
@@ -5956,11 +5956,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 28 27 29 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":512 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -6048,11 +6048,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 56 55 57 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":512 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -6061,11 +6061,11 @@ try_optimize_cfg iteration 2
 (code_label 57 56 58 10 112 (nil) [1 uses])
 (note 58 57 59 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
 (call_insn 59 58 3 10 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_SoftwareReset") [flags 0x41] <function_decl 0597bac8 ETH_SoftwareReset>) [0 ETH_SoftwareReset S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_SoftwareReset") [flags 0x41] <function_decl 0599aac8 ETH_SoftwareReset>) [0 ETH_SoftwareReset S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":515 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_SoftwareReset") [flags 0x41] <function_decl 0597bac8 ETH_SoftwareReset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_SoftwareReset") [flags 0x41] <function_decl 0599aac8 ETH_SoftwareReset>)
         (nil))
     (nil))
 (insn 3 59 4 10 (set (reg:SI 164)
@@ -6082,11 +6082,11 @@ try_optimize_cfg iteration 2
         (const_int 10 [0xa])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":519 -1
      (nil))
 (call_insn 62 61 63 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("Delay_Us") [flags 0x41] <function_decl 059cabb8 Delay_Us>) [0 Delay_Us S4 A32])
+            (call (mem:SI (symbol_ref:SI ("Delay_Us") [flags 0x41] <function_decl 059e9bb8 Delay_Us>) [0 Delay_Us S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":519 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Us") [flags 0x41] <function_decl 059cabb8 Delay_Us>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Us") [flags 0x41] <function_decl 059e9bb8 Delay_Us>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -6132,20 +6132,20 @@ try_optimize_cfg iteration 2
 (code_label 74 73 75 13 115 (nil) [1 uses])
 (note 75 74 76 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
 (insn 76 75 77 13 (set (reg:SI 193)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 05da7ec8 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":522 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 05db7ec8 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":522 -1
      (nil))
 (insn 77 76 78 13 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 193)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 05da7ec8 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":522 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 05da7ec8 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 05db7ec8 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":522 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 05db7ec8 *.LC0>)
         (nil)))
 (call_insn 78 77 79 13 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("puts") [flags 0x41] <function_decl 0561d258 __builtin_puts>) [0 __builtin_puts S4 A32])
+                (call (mem:SI (symbol_ref:SI ("puts") [flags 0x41] <function_decl 03e4d258 __builtin_puts>) [0 __builtin_puts S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":522 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("puts") [flags 0x41] <function_decl 0561d258 __builtin_puts>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("puts") [flags 0x41] <function_decl 03e4d258 __builtin_puts>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -6157,11 +6157,11 @@ try_optimize_cfg iteration 2
         (reg:SI 194)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":527 -1
      (nil))
 (call_insn 81 80 82 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_StructInit") [flags 0x41] <function_decl 0597ba50 ETH_StructInit>) [0 ETH_StructInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_StructInit") [flags 0x41] <function_decl 0599aa50 ETH_StructInit>) [0 ETH_StructInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":527 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_StructInit") [flags 0x41] <function_decl 0597ba50 ETH_StructInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_StructInit") [flags 0x41] <function_decl 0599aa50 ETH_StructInit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -6619,11 +6619,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 143 [ tmpreg ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":625 -1
      (nil))
 (insn 202 201 203 13 (set (reg:SI 272)
-        (high:SI (symbol_ref:SI ("MACAddr") [flags 0xc4] <var_decl 05b52420 MACAddr>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":628 -1
+        (high:SI (symbol_ref:SI ("MACAddr") [flags 0xc4] <var_decl 05b6e420 MACAddr>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":628 -1
      (nil))
 (insn 203 202 204 13 (set (reg/f:SI 273)
         (lo_sum:SI (reg:SI 272)
-            (symbol_ref:SI ("MACAddr") [flags 0xc4] <var_decl 05b52420 MACAddr>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":628 -1
+            (symbol_ref:SI ("MACAddr") [flags 0xc4] <var_decl 05b6e420 MACAddr>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":628 -1
      (nil))
 (insn 204 203 205 13 (set (reg:SI 274)
         (zero_extend:SI (mem/c:QI (plus:SI (reg/f:SI 273)
@@ -6652,15 +6652,15 @@ try_optimize_cfg iteration 2
         (reg:SI 111 [ _63 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":628 -1
      (nil))
 (insn 211 210 212 13 (set (reg:SI 279)
-        (high:SI (symbol_ref:SI ("MACAddr") [flags 0xc4] <var_decl 05b52420 MACAddr>))) -1
+        (high:SI (symbol_ref:SI ("MACAddr") [flags 0xc4] <var_decl 05b6e420 MACAddr>))) -1
      (nil))
 (insn 212 211 213 13 (set (reg:SI 280)
         (zero_extend:SI (mem/c:QI (lo_sum:SI (reg:SI 279)
-                    (symbol_ref:SI ("MACAddr") [flags 0xc4] <var_decl 05b52420 MACAddr>)) [0 MEM[(u8[6] *)&MACAddr]+0 S1 A8]))) -1
+                    (symbol_ref:SI ("MACAddr") [flags 0xc4] <var_decl 05b6e420 MACAddr>)) [0 MEM[(u8[6] *)&MACAddr]+0 S1 A8]))) -1
      (nil))
 (insn 213 212 214 13 (set (reg:SI 281)
         (zero_extend:SI (mem/c:QI (lo_sum:SI (reg:SI 279)
-                    (const:SI (plus:SI (symbol_ref:SI ("MACAddr") [flags 0xc4] <var_decl 05b52420 MACAddr>)
+                    (const:SI (plus:SI (symbol_ref:SI ("MACAddr") [flags 0xc4] <var_decl 05b6e420 MACAddr>)
                             (const_int 1 [0x1])))) [0 MEM[(u8[6] *)&MACAddr]+1 S1 A8]))) -1
      (nil))
 (insn 214 213 215 13 (set (reg:SI 282)
@@ -6673,7 +6673,7 @@ try_optimize_cfg iteration 2
      (nil))
 (insn 216 215 217 13 (set (reg:SI 284)
         (zero_extend:SI (mem/c:QI (lo_sum:SI (reg:SI 279)
-                    (const:SI (plus:SI (symbol_ref:SI ("MACAddr") [flags 0xc4] <var_decl 05b52420 MACAddr>)
+                    (const:SI (plus:SI (symbol_ref:SI ("MACAddr") [flags 0xc4] <var_decl 05b6e420 MACAddr>)
                             (const_int 2 [0x2])))) [0 MEM[(u8[6] *)&MACAddr]+2 S1 A8]))) -1
      (nil))
 (insn 217 216 218 13 (set (reg:SI 285)
@@ -6686,7 +6686,7 @@ try_optimize_cfg iteration 2
      (nil))
 (insn 219 218 220 13 (set (reg:SI 287)
         (zero_extend:SI (mem/c:QI (lo_sum:SI (reg:SI 279)
-                    (const:SI (plus:SI (symbol_ref:SI ("MACAddr") [flags 0xc4] <var_decl 05b52420 MACAddr>)
+                    (const:SI (plus:SI (symbol_ref:SI ("MACAddr") [flags 0xc4] <var_decl 05b6e420 MACAddr>)
                             (const_int 3 [0x3])))) [0 MEM[(u8[6] *)&MACAddr]+3 S1 A8]))) -1
      (nil))
 (insn 220 219 221 13 (set (reg:SI 288)
@@ -6744,11 +6744,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int -2147385151 [0xffffffff800180c1])
         (nil)))
 (call_insn 235 234 236 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_DMAITConfig") [flags 0x41] <function_decl 059c57f8 ETH_DMAITConfig>) [0 ETH_DMAITConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_DMAITConfig") [flags 0x41] <function_decl 059e47f8 ETH_DMAITConfig>) [0 ETH_DMAITConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":637 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMAITConfig") [flags 0x41] <function_decl 059c57f8 ETH_DMAITConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMAITConfig") [flags 0x41] <function_decl 059e47f8 ETH_DMAITConfig>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -6765,22 +6765,22 @@ try_optimize_cfg iteration 2
         (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":645 -1
      (nil))
 (insn 239 238 240 13 (set (reg:SI 299)
-        (high:SI (symbol_ref:SI ("MACTxBuf") [flags 0x82] <var_decl 05af3b00 MACTxBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":645 -1
+        (high:SI (symbol_ref:SI ("MACTxBuf") [flags 0x82] <var_decl 05b0fb00 MACTxBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":645 -1
      (nil))
 (insn 240 239 241 13 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 299)
-            (symbol_ref:SI ("MACTxBuf") [flags 0x82] <var_decl 05af3b00 MACTxBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":645 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("MACTxBuf") [flags 0x82] <var_decl 05af3b00 MACTxBuf>)
+            (symbol_ref:SI ("MACTxBuf") [flags 0x82] <var_decl 05b0fb00 MACTxBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":645 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("MACTxBuf") [flags 0x82] <var_decl 05b0fb00 MACTxBuf>)
         (nil)))
 (insn 241 240 242 13 (set (reg:SI 10 a0)
         (reg/f:SI 297)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":645 -1
      (nil))
 (call_insn 242 241 243 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_DMATxDescChainInit") [flags 0x41] <function_decl 059bf870 ETH_DMATxDescChainInit>) [0 ETH_DMATxDescChainInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_DMATxDescChainInit") [flags 0x41] <function_decl 059de870 ETH_DMATxDescChainInit>) [0 ETH_DMATxDescChainInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":645 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMATxDescChainInit") [flags 0x41] <function_decl 059bf870 ETH_DMATxDescChainInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMATxDescChainInit") [flags 0x41] <function_decl 059de870 ETH_DMATxDescChainInit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -6798,22 +6798,22 @@ try_optimize_cfg iteration 2
         (const_int 7 [0x7])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":646 -1
      (nil))
 (insn 246 245 247 13 (set (reg:SI 302)
-        (high:SI (symbol_ref:SI ("MACRxBuf") [flags 0x82] <var_decl 05af3aa8 MACRxBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":646 -1
+        (high:SI (symbol_ref:SI ("MACRxBuf") [flags 0x82] <var_decl 05b0faa8 MACRxBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":646 -1
      (nil))
 (insn 247 246 248 13 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 302)
-            (symbol_ref:SI ("MACRxBuf") [flags 0x82] <var_decl 05af3aa8 MACRxBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":646 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("MACRxBuf") [flags 0x82] <var_decl 05af3aa8 MACRxBuf>)
+            (symbol_ref:SI ("MACRxBuf") [flags 0x82] <var_decl 05b0faa8 MACRxBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":646 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("MACRxBuf") [flags 0x82] <var_decl 05b0faa8 MACRxBuf>)
         (nil)))
 (insn 248 247 249 13 (set (reg:SI 10 a0)
         (reg/f:SI 300)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":646 -1
      (nil))
 (call_insn 249 248 250 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_DMARxDescChainInit") [flags 0x41] <function_decl 059bff00 ETH_DMARxDescChainInit>) [0 ETH_DMARxDescChainInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_DMARxDescChainInit") [flags 0x41] <function_decl 059def00 ETH_DMARxDescChainInit>) [0 ETH_DMARxDescChainInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":646 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMARxDescChainInit") [flags 0x41] <function_decl 059bff00 ETH_DMARxDescChainInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMARxDescChainInit") [flags 0x41] <function_decl 059def00 ETH_DMARxDescChainInit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -6951,11 +6951,11 @@ try_optimize_cfg iteration 2
         (reg:SI 118 [ _85 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":656 -1
      (nil))
 (call_insn 288 287 289 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_Start") [flags 0x41] <function_decl 0597bc30 ETH_Start>) [0 ETH_Start S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_Start") [flags 0x41] <function_decl 0599ac30 ETH_Start>) [0 ETH_Start S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":658 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_Start") [flags 0x41] <function_decl 0597bc30 ETH_Start>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_Start") [flags 0x41] <function_decl 0599ac30 ETH_Start>)
         (nil))
     (nil))
 (insn 289 288 290 15 (set (reg:SI 327)
@@ -7000,11 +7000,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 300 299 301 16 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":664 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -7112,11 +7112,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 329 328 330 16 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":664 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -7148,11 +7148,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 339 338 340 17 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>) [0 ETH_ReadPHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":660 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059bf0f0 ETH_ReadPHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_ReadPHYRegister") [flags 0x41] <function_decl 059de0f0 ETH_ReadPHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -7240,11 +7240,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 367 366 369 20 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":660 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -7397,11 +7397,11 @@ try_optimize_cfg iteration 2
  -> 23)
 (note 19 18 20 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
 (call_insn 20 19 23 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ReInitMACReg") [flags 0x3] <function_decl 05b41168 ReInitMACReg>) [0 ReInitMACReg S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ReInitMACReg") [flags 0x3] <function_decl 05b5d168 ReInitMACReg>) [0 ReInitMACReg S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":155 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ReInitMACReg") [flags 0x3] <function_decl 05b41168 ReInitMACReg>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ReInitMACReg") [flags 0x3] <function_decl 05b5d168 ReInitMACReg>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -7435,36 +7435,36 @@ try_optimize_cfg iteration 2
 (note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
 (note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 5 2 6 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("WCHNET_NetInput") [flags 0x41] <function_decl 059caf78 WCHNET_NetInput>) [0 WCHNET_NetInput S4 A32])
+            (call (mem:SI (symbol_ref:SI ("WCHNET_NetInput") [flags 0x41] <function_decl 059e9f78 WCHNET_NetInput>) [0 WCHNET_NetInput S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":340 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_NetInput") [flags 0x41] <function_decl 059caf78 WCHNET_NetInput>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_NetInput") [flags 0x41] <function_decl 059e9f78 WCHNET_NetInput>)
         (nil))
     (nil))
 (call_insn 6 5 7 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("WCHNET_PeriodicHandle") [flags 0x41] <function_decl 059caf00 WCHNET_PeriodicHandle>) [0 WCHNET_PeriodicHandle S4 A32])
+            (call (mem:SI (symbol_ref:SI ("WCHNET_PeriodicHandle") [flags 0x41] <function_decl 059e9f00 WCHNET_PeriodicHandle>) [0 WCHNET_PeriodicHandle S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":343 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_PeriodicHandle") [flags 0x41] <function_decl 059caf00 WCHNET_PeriodicHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_PeriodicHandle") [flags 0x41] <function_decl 059e9f00 WCHNET_PeriodicHandle>)
         (nil))
     (nil))
 (call_insn 7 6 8 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("WCHNET_HandlePhyNegotiation") [flags 0x3] <function_decl 05b41438 WCHNET_HandlePhyNegotiation>) [0 WCHNET_HandlePhyNegotiation S4 A32])
+            (call (mem:SI (symbol_ref:SI ("WCHNET_HandlePhyNegotiation") [flags 0x3] <function_decl 05b5d438 WCHNET_HandlePhyNegotiation>) [0 WCHNET_HandlePhyNegotiation S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":345 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_HandlePhyNegotiation") [flags 0x3] <function_decl 05b41438 WCHNET_HandlePhyNegotiation>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_HandlePhyNegotiation") [flags 0x3] <function_decl 05b5d438 WCHNET_HandlePhyNegotiation>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
 (call_insn 8 7 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("WCHNET_RecProcess") [flags 0x3] <function_decl 05b41348 WCHNET_RecProcess>) [0 WCHNET_RecProcess S4 A32])
+            (call (mem:SI (symbol_ref:SI ("WCHNET_RecProcess") [flags 0x3] <function_decl 05b5d348 WCHNET_RecProcess>) [0 WCHNET_RecProcess S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":346 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_RecProcess") [flags 0x3] <function_decl 05b41348 WCHNET_RecProcess>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_RecProcess") [flags 0x3] <function_decl 05b5d348 WCHNET_RecProcess>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -7983,11 +7983,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 133 132 134 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":755 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -8004,11 +8004,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 137 136 138 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>) [0 ETH_WritePHYRegister S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":756 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059bf168 ETH_WritePHYRegister>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_WritePHYRegister") [flags 0x41] <function_decl 059de168 ETH_WritePHYRegister>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -8067,11 +8067,11 @@ try_optimize_cfg iteration 2
         (const_int 114688 [0x1c000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":773 -1
      (nil))
 (call_insn 10 9 11 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_AHBPeriphClockCmd") [flags 0x41] <function_decl 0594f078 RCC_AHBPeriphClockCmd>) [0 RCC_AHBPeriphClockCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_AHBPeriphClockCmd") [flags 0x41] <function_decl 0595f078 RCC_AHBPeriphClockCmd>) [0 RCC_AHBPeriphClockCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":773 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_AHBPeriphClockCmd") [flags 0x41] <function_decl 0594f078 RCC_AHBPeriphClockCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_AHBPeriphClockCmd") [flags 0x41] <function_decl 0595f078 RCC_AHBPeriphClockCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -8091,11 +8091,11 @@ try_optimize_cfg iteration 2
         (reg:HI 85)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":777 -1
      (nil))
 (call_insn 15 14 16 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_SetClock") [flags 0x3] <function_decl 05b41690 ETH_SetClock>) [0 ETH_SetClock S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_SetClock") [flags 0x3] <function_decl 05b5d690 ETH_SetClock>) [0 ETH_SetClock S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":778 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_SetClock") [flags 0x3] <function_decl 05b41690 ETH_SetClock>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_SetClock") [flags 0x3] <function_decl 05b5d690 ETH_SetClock>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -8126,19 +8126,19 @@ try_optimize_cfg iteration 2
         (reg:SI 73 [ _2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":781 -1
      (nil))
 (call_insn 23 22 24 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_DeInit") [flags 0x41] <function_decl 0597b9d8 ETH_DeInit>) [0 ETH_DeInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_DeInit") [flags 0x41] <function_decl 0599a9d8 ETH_DeInit>) [0 ETH_DeInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":784 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DeInit") [flags 0x41] <function_decl 0597b9d8 ETH_DeInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DeInit") [flags 0x41] <function_decl 0599a9d8 ETH_DeInit>)
         (nil))
     (nil))
 (call_insn 24 23 4 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_SoftwareReset") [flags 0x41] <function_decl 0597bac8 ETH_SoftwareReset>) [0 ETH_SoftwareReset S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_SoftwareReset") [flags 0x41] <function_decl 0599aac8 ETH_SoftwareReset>) [0 ETH_SoftwareReset S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":787 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_SoftwareReset") [flags 0x41] <function_decl 0597bac8 ETH_SoftwareReset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_SoftwareReset") [flags 0x41] <function_decl 0599aac8 ETH_SoftwareReset>)
         (nil))
     (nil))
 (insn 4 24 5 2 (set (reg:SI 82)
@@ -8155,11 +8155,11 @@ try_optimize_cfg iteration 2
         (const_int 10 [0xa])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":791 -1
      (nil))
 (call_insn 27 26 28 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("Delay_Us") [flags 0x41] <function_decl 059cabb8 Delay_Us>) [0 Delay_Us S4 A32])
+            (call (mem:SI (symbol_ref:SI ("Delay_Us") [flags 0x41] <function_decl 059e9bb8 Delay_Us>) [0 Delay_Us S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":791 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Us") [flags 0x41] <function_decl 059cabb8 Delay_Us>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Us") [flags 0x41] <function_decl 059e9bb8 Delay_Us>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -8212,11 +8212,11 @@ try_optimize_cfg iteration 2
         (reg:SI 95)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":797 -1
      (nil))
 (call_insn 43 42 44 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_StructInit") [flags 0x41] <function_decl 0597ba50 ETH_StructInit>) [0 ETH_StructInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_StructInit") [flags 0x41] <function_decl 0599aa50 ETH_StructInit>) [0 ETH_StructInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":797 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_StructInit") [flags 0x41] <function_decl 0597ba50 ETH_StructInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_StructInit") [flags 0x41] <function_decl 0599aa50 ETH_StructInit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -8337,11 +8337,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 75 74 76 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ETH_RegInit") [flags 0x3] <function_decl 05b417f8 ETH_RegInit>) [0 ETH_RegInit S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ETH_RegInit") [flags 0x3] <function_decl 05b5d7f8 ETH_RegInit>) [0 ETH_RegInit S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":826 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_RegInit") [flags 0x3] <function_decl 05b417f8 ETH_RegInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_RegInit") [flags 0x3] <function_decl 05b5d7f8 ETH_RegInit>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -8459,11 +8459,11 @@ try_optimize_cfg iteration 2
      (expr_list:REG_EQUAL (const_int -2147385151 [0xffffffff800180c1])
         (nil)))
 (call_insn 106 105 0 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_DMAITConfig") [flags 0x41] <function_decl 059c57f8 ETH_DMAITConfig>) [0 ETH_DMAITConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_DMAITConfig") [flags 0x41] <function_decl 059e47f8 ETH_DMAITConfig>) [0 ETH_DMAITConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":838 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMAITConfig") [flags 0x41] <function_decl 059c57f8 ETH_DMAITConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMAITConfig") [flags 0x41] <function_decl 059e47f8 ETH_DMAITConfig>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -8635,11 +8635,11 @@ try_optimize_cfg iteration 2
         (const_int 128 [0x80])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":915 -1
      (nil))
 (call_insn 37 36 38 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059c54b0 ETH_DMAClearITPendingBit>) [0 ETH_DMAClearITPendingBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059e44b0 ETH_DMAClearITPendingBit>) [0 ETH_DMAClearITPendingBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":915 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059c54b0 ETH_DMAClearITPendingBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059e44b0 ETH_DMAClearITPendingBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -8649,11 +8649,11 @@ try_optimize_cfg iteration 2
         (const_int 32768 [0x8000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":917 -1
      (nil))
 (call_insn 41 40 42 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059c54b0 ETH_DMAClearITPendingBit>) [0 ETH_DMAClearITPendingBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059e44b0 ETH_DMAClearITPendingBit>) [0 ETH_DMAClearITPendingBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":917 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059c54b0 ETH_DMAClearITPendingBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059e44b0 ETH_DMAClearITPendingBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -8690,11 +8690,11 @@ try_optimize_cfg iteration 2
         (const_int 64 [0x40])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":926 -1
      (nil))
 (call_insn 52 51 53 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059c54b0 ETH_DMAClearITPendingBit>) [0 ETH_DMAClearITPendingBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059e44b0 ETH_DMAClearITPendingBit>) [0 ETH_DMAClearITPendingBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":926 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059c54b0 ETH_DMAClearITPendingBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059e44b0 ETH_DMAClearITPendingBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -8716,11 +8716,11 @@ try_optimize_cfg iteration 2
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":930 -1
      (nil))
 (call_insn 59 58 60 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059c54b0 ETH_DMAClearITPendingBit>) [0 ETH_DMAClearITPendingBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059e44b0 ETH_DMAClearITPendingBit>) [0 ETH_DMAClearITPendingBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":930 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059c54b0 ETH_DMAClearITPendingBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059e44b0 ETH_DMAClearITPendingBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -8735,11 +8735,11 @@ try_optimize_cfg iteration 2
  -> 67)
 (note 63 62 64 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
 (call_insn 64 63 65 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_PHYLink") [flags 0x3] <function_decl 05990d20 ETH_PHYLink>) [0 ETH_PHYLink S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_PHYLink") [flags 0x3] <function_decl 059afd20 ETH_PHYLink>) [0 ETH_PHYLink S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":934 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_PHYLink") [flags 0x3] <function_decl 05990d20 ETH_PHYLink>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_PHYLink") [flags 0x3] <function_decl 059afd20 ETH_PHYLink>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -8747,11 +8747,11 @@ try_optimize_cfg iteration 2
         (const_int -2147483648 [0xffffffff80000000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":935 -1
      (nil))
 (call_insn 66 65 67 15 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059c54b0 ETH_DMAClearITPendingBit>) [0 ETH_DMAClearITPendingBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059e44b0 ETH_DMAClearITPendingBit>) [0 ETH_DMAClearITPendingBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":935 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059c54b0 ETH_DMAClearITPendingBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059e44b0 ETH_DMAClearITPendingBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -8761,11 +8761,11 @@ try_optimize_cfg iteration 2
         (const_int 65536 [0x10000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":937 -1
      (nil))
 (call_insn 70 69 73 16 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059c54b0 ETH_DMAClearITPendingBit>) [0 ETH_DMAClearITPendingBit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059e44b0 ETH_DMAClearITPendingBit>) [0 ETH_DMAClearITPendingBit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":937 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059c54b0 ETH_DMAClearITPendingBit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMAClearITPendingBit") [flags 0x41] <function_decl 059e44b0 ETH_DMAClearITPendingBit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -8805,21 +8805,21 @@ try_optimize_cfg iteration 2
         (const_int 100 [0x64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":950 -1
      (nil))
 (call_insn 7 6 8 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 059cac30 Delay_Ms>) [0 Delay_Ms S4 A32])
+            (call (mem:SI (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 059e9c30 Delay_Ms>) [0 Delay_Ms S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":950 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 059cac30 Delay_Ms>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("Delay_Ms") [flags 0x41] <function_decl 059e9c30 Delay_Ms>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 8 7 9 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("DBGMCU_GetCHIPID") [flags 0x41] <function_decl 058e8690 DBGMCU_GetCHIPID>) [0 DBGMCU_GetCHIPID S4 A32])
+                (call (mem:SI (symbol_ref:SI ("DBGMCU_GetCHIPID") [flags 0x41] <function_decl 0590b690 DBGMCU_GetCHIPID>) [0 DBGMCU_GetCHIPID S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":951 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DBGMCU_GetCHIPID") [flags 0x41] <function_decl 058e8690 DBGMCU_GetCHIPID>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DBGMCU_GetCHIPID") [flags 0x41] <function_decl 0590b690 DBGMCU_GetCHIPID>)
         (nil))
     (nil))
 (insn 9 8 10 2 (set (reg:SI 72 [ _1 ])
@@ -8837,11 +8837,11 @@ try_optimize_cfg iteration 2
         (reg:SI 72 [ _1 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":951 -1
      (nil))
 (call_insn 13 12 14 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_LedConfiguration") [flags 0x3] <function_decl 05990e88 ETH_LedConfiguration>) [0 ETH_LedConfiguration S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_LedConfiguration") [flags 0x3] <function_decl 059afe88 ETH_LedConfiguration>) [0 ETH_LedConfiguration S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":952 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_LedConfiguration") [flags 0x3] <function_decl 05990e88 ETH_LedConfiguration>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_LedConfiguration") [flags 0x3] <function_decl 059afe88 ETH_LedConfiguration>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -8910,11 +8910,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 82 [ macAddr ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":954 -1
      (nil))
 (call_insn 31 30 32 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_Configuration") [flags 0x3] <function_decl 05996078 ETH_Configuration>) [0 ETH_Configuration S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_Configuration") [flags 0x3] <function_decl 059b5078 ETH_Configuration>) [0 ETH_Configuration S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":954 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_Configuration") [flags 0x3] <function_decl 05996078 ETH_Configuration>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_Configuration") [flags 0x3] <function_decl 059b5078 ETH_Configuration>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -8931,22 +8931,22 @@ try_optimize_cfg iteration 2
         (const_int 2 [0x2])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":955 -1
      (nil))
 (insn 35 34 36 2 (set (reg:SI 102)
-        (high:SI (symbol_ref:SI ("MACTxBuf") [flags 0x82] <var_decl 05af3b00 MACTxBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":955 -1
+        (high:SI (symbol_ref:SI ("MACTxBuf") [flags 0x82] <var_decl 05b0fb00 MACTxBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":955 -1
      (nil))
 (insn 36 35 37 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 102)
-            (symbol_ref:SI ("MACTxBuf") [flags 0x82] <var_decl 05af3b00 MACTxBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":955 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("MACTxBuf") [flags 0x82] <var_decl 05af3b00 MACTxBuf>)
+            (symbol_ref:SI ("MACTxBuf") [flags 0x82] <var_decl 05b0fb00 MACTxBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":955 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("MACTxBuf") [flags 0x82] <var_decl 05b0fb00 MACTxBuf>)
         (nil)))
 (insn 37 36 38 2 (set (reg:SI 10 a0)
         (reg/f:SI 100)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":955 -1
      (nil))
 (call_insn 38 37 39 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_DMATxDescChainInit") [flags 0x41] <function_decl 059bf870 ETH_DMATxDescChainInit>) [0 ETH_DMATxDescChainInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_DMATxDescChainInit") [flags 0x41] <function_decl 059de870 ETH_DMATxDescChainInit>) [0 ETH_DMATxDescChainInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":955 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMATxDescChainInit") [flags 0x41] <function_decl 059bf870 ETH_DMATxDescChainInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMATxDescChainInit") [flags 0x41] <function_decl 059de870 ETH_DMATxDescChainInit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -8964,22 +8964,22 @@ try_optimize_cfg iteration 2
         (const_int 7 [0x7])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":956 -1
      (nil))
 (insn 42 41 43 2 (set (reg:SI 105)
-        (high:SI (symbol_ref:SI ("MACRxBuf") [flags 0x82] <var_decl 05af3aa8 MACRxBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":956 -1
+        (high:SI (symbol_ref:SI ("MACRxBuf") [flags 0x82] <var_decl 05b0faa8 MACRxBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":956 -1
      (nil))
 (insn 43 42 44 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 105)
-            (symbol_ref:SI ("MACRxBuf") [flags 0x82] <var_decl 05af3aa8 MACRxBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":956 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("MACRxBuf") [flags 0x82] <var_decl 05af3aa8 MACRxBuf>)
+            (symbol_ref:SI ("MACRxBuf") [flags 0x82] <var_decl 05b0faa8 MACRxBuf>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":956 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("MACRxBuf") [flags 0x82] <var_decl 05b0faa8 MACRxBuf>)
         (nil)))
 (insn 44 43 45 2 (set (reg:SI 10 a0)
         (reg/f:SI 103)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":956 -1
      (nil))
 (call_insn 45 44 46 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_DMARxDescChainInit") [flags 0x41] <function_decl 059bff00 ETH_DMARxDescChainInit>) [0 ETH_DMARxDescChainInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_DMARxDescChainInit") [flags 0x41] <function_decl 059def00 ETH_DMARxDescChainInit>) [0 ETH_DMARxDescChainInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":956 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMARxDescChainInit") [flags 0x41] <function_decl 059bff00 ETH_DMARxDescChainInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_DMARxDescChainInit") [flags 0x41] <function_decl 059def00 ETH_DMARxDescChainInit>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -9153,36 +9153,36 @@ try_optimize_cfg iteration 2
         (reg:SI 86)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":981 -1
      (nil))
 (insn 27 26 28 2 (set (reg:SI 89)
-        (high:SI (symbol_ref:SI ("ETH_LedLinkSet") [flags 0x3] <function_decl 05990f78 ETH_LedLinkSet>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":982 -1
+        (high:SI (symbol_ref:SI ("ETH_LedLinkSet") [flags 0x3] <function_decl 059aff78 ETH_LedLinkSet>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":982 -1
      (nil))
 (insn 28 27 29 2 (set (reg/f:SI 88)
         (lo_sum:SI (reg:SI 89)
-            (symbol_ref:SI ("ETH_LedLinkSet") [flags 0x3] <function_decl 05990f78 ETH_LedLinkSet>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":982 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("ETH_LedLinkSet") [flags 0x3] <function_decl 05990f78 ETH_LedLinkSet>)
+            (symbol_ref:SI ("ETH_LedLinkSet") [flags 0x3] <function_decl 059aff78 ETH_LedLinkSet>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":982 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("ETH_LedLinkSet") [flags 0x3] <function_decl 059aff78 ETH_LedLinkSet>)
         (nil)))
 (insn 29 28 30 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
                 (const_int -20 [0xffffffffffffffec])) [12 cfg.led_link+0 S4 A32])
         (reg/f:SI 88)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":982 -1
      (nil))
 (insn 30 29 31 2 (set (reg:SI 91)
-        (high:SI (symbol_ref:SI ("ETH_LedDataSet") [flags 0x3] <function_decl 05990d98 ETH_LedDataSet>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":983 -1
+        (high:SI (symbol_ref:SI ("ETH_LedDataSet") [flags 0x3] <function_decl 059afd98 ETH_LedDataSet>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":983 -1
      (nil))
 (insn 31 30 32 2 (set (reg/f:SI 90)
         (lo_sum:SI (reg:SI 91)
-            (symbol_ref:SI ("ETH_LedDataSet") [flags 0x3] <function_decl 05990d98 ETH_LedDataSet>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":983 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("ETH_LedDataSet") [flags 0x3] <function_decl 05990d98 ETH_LedDataSet>)
+            (symbol_ref:SI ("ETH_LedDataSet") [flags 0x3] <function_decl 059afd98 ETH_LedDataSet>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":983 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("ETH_LedDataSet") [flags 0x3] <function_decl 059afd98 ETH_LedDataSet>)
         (nil)))
 (insn 32 31 33 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
                 (const_int -16 [0xfffffffffffffff0])) [12 cfg.led_data+0 S4 A32])
         (reg/f:SI 90)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":983 -1
      (nil))
 (insn 33 32 34 2 (set (reg:SI 93)
-        (high:SI (symbol_ref:SI ("ETH_TxPktChainMode") [flags 0x3] <function_decl 05b418e8 ETH_TxPktChainMode>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":984 -1
+        (high:SI (symbol_ref:SI ("ETH_TxPktChainMode") [flags 0x3] <function_decl 05b5d8e8 ETH_TxPktChainMode>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":984 -1
      (nil))
 (insn 34 33 35 2 (set (reg/f:SI 92)
         (lo_sum:SI (reg:SI 93)
-            (symbol_ref:SI ("ETH_TxPktChainMode") [flags 0x3] <function_decl 05b418e8 ETH_TxPktChainMode>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":984 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("ETH_TxPktChainMode") [flags 0x3] <function_decl 05b418e8 ETH_TxPktChainMode>)
+            (symbol_ref:SI ("ETH_TxPktChainMode") [flags 0x3] <function_decl 05b5d8e8 ETH_TxPktChainMode>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":984 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("ETH_TxPktChainMode") [flags 0x3] <function_decl 05b5d8e8 ETH_TxPktChainMode>)
         (nil)))
 (insn 35 34 36 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 67 virtual-stack-vars)
                 (const_int -12 [0xfffffffffffffff4])) [13 cfg.net_send+0 S4 A32])
@@ -9209,11 +9209,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 41 40 42 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("WCHNET_ConfigLIB") [flags 0x41] <function_decl 059cae88 WCHNET_ConfigLIB>) [0 WCHNET_ConfigLIB S4 A32])
+                (call (mem:SI (symbol_ref:SI ("WCHNET_ConfigLIB") [flags 0x41] <function_decl 059e9e88 WCHNET_ConfigLIB>) [0 WCHNET_ConfigLIB S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":986 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_ConfigLIB") [flags 0x41] <function_decl 059cae88 WCHNET_ConfigLIB>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_ConfigLIB") [flags 0x41] <function_decl 059e9e88 WCHNET_ConfigLIB>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -9245,11 +9245,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 50 49 51 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("WCHNET_Init") [flags 0x41] <function_decl 059cad20 WCHNET_Init>) [0 WCHNET_Init S4 A32])
+                (call (mem:SI (symbol_ref:SI ("WCHNET_Init") [flags 0x41] <function_decl 059e9d20 WCHNET_Init>) [0 WCHNET_Init S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":990 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_Init") [flags 0x41] <function_decl 059cad20 WCHNET_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_Init") [flags 0x41] <function_decl 059e9d20 WCHNET_Init>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -9266,11 +9266,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ macaddr ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":991 -1
      (nil))
 (call_insn 54 53 55 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("ETH_Init") [flags 0x3] <function_decl 05990f00 ETH_Init>) [0 ETH_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("ETH_Init") [flags 0x3] <function_decl 059aff00 ETH_Init>) [0 ETH_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/NetLib/eth_driver_10M.c":991 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_Init") [flags 0x3] <function_decl 05990f00 ETH_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ETH_Init") [flags 0x3] <function_decl 059aff00 ETH_Init>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

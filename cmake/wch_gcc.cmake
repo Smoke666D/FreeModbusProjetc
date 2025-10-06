@@ -3,9 +3,12 @@
 
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
-set(TOOLPATH  "C:/MounRiver/MounRiver_Studio/toolchain/RISC-V Embedded GCC/bin/riscv-none-embed-")
-#set(TOOLPATH  "C:/MounRiver/MounRiver_Studio/toolchain/RISC-V Embedded GCC12/bin/riscv-none-elf-")
-
+if (GCC)
+	set(TOOLPATH  "C:/MounRiver/MounRiver_Studio/toolchain/RISC-V Embedded GCC/bin/riscv-none-embed-")
+endif(GCC)
+if (GCC12)
+	set(TOOLPATH  "C:/MounRiver/MounRiver_Studio/toolchain/RISC-V Embedded GCC12/bin/riscv-none-elf-")
+endif(GCC12)
     
 set(CMAKE_C_COMPILER ${TOOLPATH}gcc.exe)
 set(CMAKE_CXX_COMPILER ${TOOLPATH}g++.exe)

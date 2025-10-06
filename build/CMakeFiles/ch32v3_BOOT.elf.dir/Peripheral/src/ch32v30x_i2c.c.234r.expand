@@ -58,11 +58,11 @@ try_optimize_cfg iteration 2
         (const_int 2097152 [0x200000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_i2c.c":106 -1
      (nil))
 (call_insn 12 11 13 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 064598e8 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 064d58e8 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_i2c.c":106 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 064598e8 RCC_APB1PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 064d58e8 RCC_APB1PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -74,11 +74,11 @@ try_optimize_cfg iteration 2
         (const_int 2097152 [0x200000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_i2c.c":107 -1
      (nil))
 (call_insn 15 14 16 4 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 064598e8 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 064d58e8 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_i2c.c":107 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 064598e8 RCC_APB1PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 064d58e8 RCC_APB1PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -97,11 +97,11 @@ try_optimize_cfg iteration 2
         (const_int 4194304 [0x400000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_i2c.c":111 -1
      (nil))
 (call_insn 22 21 23 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 064598e8 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 064d58e8 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_i2c.c":111 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 064598e8 RCC_APB1PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 064d58e8 RCC_APB1PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -113,11 +113,11 @@ try_optimize_cfg iteration 2
         (const_int 4194304 [0x400000])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_i2c.c":112 -1
      (nil))
 (call_insn 25 24 28 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 064598e8 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 064d58e8 RCC_APB1PeriphResetCmd>) [0 RCC_APB1PeriphResetCmd S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_i2c.c":112 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 064598e8 RCC_APB1PeriphResetCmd>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_APB1PeriphResetCmd") [flags 0x41] <function_decl 064d58e8 RCC_APB1PeriphResetCmd>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -200,11 +200,11 @@ try_optimize_cfg iteration 2
         (reg:SI 115)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_i2c.c":137 -1
      (nil))
 (call_insn 14 13 15 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("RCC_GetClocksFreq") [flags 0x41] <function_decl 06459690 RCC_GetClocksFreq>) [0 RCC_GetClocksFreq S4 A32])
+            (call (mem:SI (symbol_ref:SI ("RCC_GetClocksFreq") [flags 0x41] <function_decl 064d5690 RCC_GetClocksFreq>) [0 RCC_GetClocksFreq S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_i2c.c":137 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_GetClocksFreq") [flags 0x41] <function_decl 06459690 RCC_GetClocksFreq>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_GetClocksFreq") [flags 0x41] <function_decl 064d5690 RCC_GetClocksFreq>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2230,11 +2230,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 72 [ I2Cx ])) -1
      (nil))
 (call_insn 9 8 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("I2C_NACKPositionConfig") [flags 0x3] <function_decl 065d47f8 I2C_NACKPositionConfig>) [0 I2C_NACKPositionConfig S4 A32])
+            (call (mem:SI (symbol_ref:SI ("I2C_NACKPositionConfig") [flags 0x3] <function_decl 0664f7f8 I2C_NACKPositionConfig>) [0 I2C_NACKPositionConfig S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("I2C_NACKPositionConfig") [flags 0x3] <function_decl 065d47f8 I2C_NACKPositionConfig>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("I2C_NACKPositionConfig") [flags 0x3] <function_decl 0664f7f8 I2C_NACKPositionConfig>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))

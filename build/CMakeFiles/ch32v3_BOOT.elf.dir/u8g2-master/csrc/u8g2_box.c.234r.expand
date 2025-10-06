@@ -81,11 +81,11 @@ Forwarding edge 6->7 to 8 failed.
      (nil))
 (call_insn 19 18 20 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 064c2348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06502348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":45 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 064c2348 u8g2_IsIntersection>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06502348 u8g2_IsIntersection>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -130,11 +130,11 @@ Forwarding edge 6->7 to 8 failed.
         (reg/v/f:SI 75 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":50 -1
      (nil))
 (call_insn 32 31 33 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064bae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064fae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":50 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064bae88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064fae88 u8g2_DrawHVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -252,11 +252,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 19 18 20 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 064c2348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06502348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":66 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 064c2348 u8g2_IsIntersection>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06502348 u8g2_IsIntersection>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -301,11 +301,11 @@ Deleted label in block 4.
         (reg/v/f:SI 78 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":70 -1
      (nil))
 (call_insn 33 32 35 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064bae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064fae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":70 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064bae88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064fae88 u8g2_DrawHVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -362,11 +362,11 @@ Deleted label in block 4.
         (reg/v/f:SI 78 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":75 -1
      (nil))
 (call_insn 49 48 50 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064bae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064fae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":75 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064bae88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064fae88 u8g2_DrawHVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -397,11 +397,11 @@ Deleted label in block 4.
         (reg/v/f:SI 78 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":78 -1
      (nil))
 (call_insn 57 56 58 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064bae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064fae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":78 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064bae88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064fae88 u8g2_DrawHVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -434,11 +434,11 @@ Deleted label in block 4.
         (reg/v/f:SI 78 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":81 -1
      (nil))
 (call_insn 67 66 70 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064bae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064fae88 u8g2_DrawHVLine>) [0 u8g2_DrawHVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":81 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064bae88 u8g2_DrawHVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHVLine") [flags 0x41] <function_decl 064fae88 u8g2_DrawHVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -542,11 +542,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 20 19 21 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 064c2348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06502348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":94 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 064c2348 u8g2_IsIntersection>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06502348 u8g2_IsIntersection>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -625,11 +625,11 @@ Deleted label in block 4.
         (reg/v/f:SI 88 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":113 -1
      (nil))
 (call_insn 44 43 45 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawDisc") [flags 0x41] <function_decl 064c2438 u8g2_DrawDisc>) [0 u8g2_DrawDisc S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawDisc") [flags 0x41] <function_decl 06502438 u8g2_DrawDisc>) [0 u8g2_DrawDisc S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":113 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawDisc") [flags 0x41] <function_decl 064c2438 u8g2_DrawDisc>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawDisc") [flags 0x41] <function_decl 06502438 u8g2_DrawDisc>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -653,11 +653,11 @@ Deleted label in block 4.
         (reg/v/f:SI 88 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":114 -1
      (nil))
 (call_insn 50 49 51 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawDisc") [flags 0x41] <function_decl 064c2438 u8g2_DrawDisc>) [0 u8g2_DrawDisc S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawDisc") [flags 0x41] <function_decl 06502438 u8g2_DrawDisc>) [0 u8g2_DrawDisc S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":114 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawDisc") [flags 0x41] <function_decl 064c2438 u8g2_DrawDisc>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawDisc") [flags 0x41] <function_decl 06502438 u8g2_DrawDisc>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -681,11 +681,11 @@ Deleted label in block 4.
         (reg/v/f:SI 88 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":115 -1
      (nil))
 (call_insn 56 55 57 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawDisc") [flags 0x41] <function_decl 064c2438 u8g2_DrawDisc>) [0 u8g2_DrawDisc S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawDisc") [flags 0x41] <function_decl 06502438 u8g2_DrawDisc>) [0 u8g2_DrawDisc S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":115 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawDisc") [flags 0x41] <function_decl 064c2438 u8g2_DrawDisc>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawDisc") [flags 0x41] <function_decl 06502438 u8g2_DrawDisc>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -709,11 +709,11 @@ Deleted label in block 4.
         (reg/v/f:SI 88 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":116 -1
      (nil))
 (call_insn 62 61 63 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawDisc") [flags 0x41] <function_decl 064c2438 u8g2_DrawDisc>) [0 u8g2_DrawDisc S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawDisc") [flags 0x41] <function_decl 06502438 u8g2_DrawDisc>) [0 u8g2_DrawDisc S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":116 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawDisc") [flags 0x41] <function_decl 064c2438 u8g2_DrawDisc>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawDisc") [flags 0x41] <function_decl 06502438 u8g2_DrawDisc>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -783,11 +783,11 @@ Deleted label in block 4.
         (reg/v/f:SI 88 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":130 -1
      (nil))
 (call_insn 81 80 82 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawBox") [flags 0x3] <function_decl 064c2690 u8g2_DrawBox>) [0 u8g2_DrawBox S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawBox") [flags 0x3] <function_decl 06502690 u8g2_DrawBox>) [0 u8g2_DrawBox S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":130 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawBox") [flags 0x3] <function_decl 064c2690 u8g2_DrawBox>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawBox") [flags 0x3] <function_decl 06502690 u8g2_DrawBox>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -812,11 +812,11 @@ Deleted label in block 4.
         (reg/v/f:SI 88 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":131 -1
      (nil))
 (call_insn 87 86 88 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawBox") [flags 0x3] <function_decl 064c2690 u8g2_DrawBox>) [0 u8g2_DrawBox S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawBox") [flags 0x3] <function_decl 06502690 u8g2_DrawBox>) [0 u8g2_DrawBox S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":131 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawBox") [flags 0x3] <function_decl 064c2690 u8g2_DrawBox>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawBox") [flags 0x3] <function_decl 06502690 u8g2_DrawBox>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -875,11 +875,11 @@ Deleted label in block 4.
         (reg/v/f:SI 88 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":141 -1
      (nil))
 (call_insn 105 104 108 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawBox") [flags 0x3] <function_decl 064c2690 u8g2_DrawBox>) [0 u8g2_DrawBox S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawBox") [flags 0x3] <function_decl 06502690 u8g2_DrawBox>) [0 u8g2_DrawBox S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":141 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawBox") [flags 0x3] <function_decl 064c2690 u8g2_DrawBox>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawBox") [flags 0x3] <function_decl 06502690 u8g2_DrawBox>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -984,11 +984,11 @@ Deleted label in block 4.
      (nil))
 (call_insn 20 19 21 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 064c2348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06502348 u8g2_IsIntersection>) [0 u8g2_IsIntersection S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":152 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 064c2348 u8g2_IsIntersection>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_IsIntersection") [flags 0x41] <function_decl 06502348 u8g2_IsIntersection>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1067,11 +1067,11 @@ Deleted label in block 4.
         (reg/v/f:SI 91 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":174 -1
      (nil))
 (call_insn 44 43 45 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawCircle") [flags 0x41] <function_decl 064c23c0 u8g2_DrawCircle>) [0 u8g2_DrawCircle S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawCircle") [flags 0x41] <function_decl 065023c0 u8g2_DrawCircle>) [0 u8g2_DrawCircle S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":174 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawCircle") [flags 0x41] <function_decl 064c23c0 u8g2_DrawCircle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawCircle") [flags 0x41] <function_decl 065023c0 u8g2_DrawCircle>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1095,11 +1095,11 @@ Deleted label in block 4.
         (reg/v/f:SI 91 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":175 -1
      (nil))
 (call_insn 50 49 51 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawCircle") [flags 0x41] <function_decl 064c23c0 u8g2_DrawCircle>) [0 u8g2_DrawCircle S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawCircle") [flags 0x41] <function_decl 065023c0 u8g2_DrawCircle>) [0 u8g2_DrawCircle S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":175 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawCircle") [flags 0x41] <function_decl 064c23c0 u8g2_DrawCircle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawCircle") [flags 0x41] <function_decl 065023c0 u8g2_DrawCircle>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1123,11 +1123,11 @@ Deleted label in block 4.
         (reg/v/f:SI 91 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":176 -1
      (nil))
 (call_insn 56 55 57 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawCircle") [flags 0x41] <function_decl 064c23c0 u8g2_DrawCircle>) [0 u8g2_DrawCircle S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawCircle") [flags 0x41] <function_decl 065023c0 u8g2_DrawCircle>) [0 u8g2_DrawCircle S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":176 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawCircle") [flags 0x41] <function_decl 064c23c0 u8g2_DrawCircle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawCircle") [flags 0x41] <function_decl 065023c0 u8g2_DrawCircle>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1151,11 +1151,11 @@ Deleted label in block 4.
         (reg/v/f:SI 91 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":177 -1
      (nil))
 (call_insn 62 61 63 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawCircle") [flags 0x41] <function_decl 064c23c0 u8g2_DrawCircle>) [0 u8g2_DrawCircle S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawCircle") [flags 0x41] <function_decl 065023c0 u8g2_DrawCircle>) [0 u8g2_DrawCircle S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":177 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawCircle") [flags 0x41] <function_decl 064c23c0 u8g2_DrawCircle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawCircle") [flags 0x41] <function_decl 065023c0 u8g2_DrawCircle>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1222,11 +1222,11 @@ Deleted label in block 4.
         (reg/v/f:SI 91 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":197 -1
      (nil))
 (call_insn 80 79 81 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 064baf00 u8g2_DrawHLine>) [0 u8g2_DrawHLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 064faf00 u8g2_DrawHLine>) [0 u8g2_DrawHLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":197 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 064baf00 u8g2_DrawHLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 064faf00 u8g2_DrawHLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1260,11 +1260,11 @@ Deleted label in block 4.
         (reg/v/f:SI 91 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":198 -1
      (nil))
 (call_insn 89 88 90 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 064baf00 u8g2_DrawHLine>) [0 u8g2_DrawHLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 064faf00 u8g2_DrawHLine>) [0 u8g2_DrawHLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":198 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 064baf00 u8g2_DrawHLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawHLine") [flags 0x41] <function_decl 064faf00 u8g2_DrawHLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1311,11 +1311,11 @@ Deleted label in block 4.
         (reg/v/f:SI 91 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":205 -1
      (nil))
 (call_insn 104 103 105 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawVLine") [flags 0x41] <function_decl 064baf78 u8g2_DrawVLine>) [0 u8g2_DrawVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawVLine") [flags 0x41] <function_decl 064faf78 u8g2_DrawVLine>) [0 u8g2_DrawVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":205 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawVLine") [flags 0x41] <function_decl 064baf78 u8g2_DrawVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawVLine") [flags 0x41] <function_decl 064faf78 u8g2_DrawVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -1349,11 +1349,11 @@ Deleted label in block 4.
         (reg/v/f:SI 91 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":206 -1
      (nil))
 (call_insn 113 112 116 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_DrawVLine") [flags 0x41] <function_decl 064baf78 u8g2_DrawVLine>) [0 u8g2_DrawVLine S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_DrawVLine") [flags 0x41] <function_decl 064faf78 u8g2_DrawVLine>) [0 u8g2_DrawVLine S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_box.c":206 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawVLine") [flags 0x41] <function_decl 064baf78 u8g2_DrawVLine>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_DrawVLine") [flags 0x41] <function_decl 064faf78 u8g2_DrawVLine>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))

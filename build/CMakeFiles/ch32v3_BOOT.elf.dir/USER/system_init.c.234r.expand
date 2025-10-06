@@ -90,11 +90,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (note 3 2 14 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 14 3 15 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vMenuInit") [flags 0x41] <function_decl 0677cbb8 vMenuInit>) [0 vMenuInit S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vMenuInit") [flags 0x41] <function_decl 0679abb8 vMenuInit>) [0 vMenuInit S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":175 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMenuInit") [flags 0x41] <function_decl 0677cbb8 vMenuInit>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMenuInit") [flags 0x41] <function_decl 0679abb8 vMenuInit>)
         (nil))
     (nil))
 (insn 15 14 16 2 (set (reg:SI 12 a2)
@@ -108,11 +108,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 18 17 7 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 065cdca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
+                (call (mem:SI (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 065ecca8 ulTaskGenericNotifyTake>) [0 ulTaskGenericNotifyTake S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":176 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 065cdca8 ulTaskGenericNotifyTake>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("ulTaskGenericNotifyTake") [flags 0x41] <function_decl 065ecca8 ulTaskGenericNotifyTake>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -146,11 +146,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 25 24 26 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0674ebb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0676cbb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":179 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0674ebb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0676cbb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -173,11 +173,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 31 30 32 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0674ebb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0676cbb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":181 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0674ebb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0676cbb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -299,11 +299,11 @@ Forwarding edge 18->19 to 22 failed.
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":183 -1
      (nil))
 (call_insn 56 55 57 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("DAC_SetChannel1Data") [flags 0x41] <function_decl 064dd258 DAC_SetChannel1Data>) [0 DAC_SetChannel1Data S4 A32])
+            (call (mem:SI (symbol_ref:SI ("DAC_SetChannel1Data") [flags 0x41] <function_decl 064f4258 DAC_SetChannel1Data>) [0 DAC_SetChannel1Data S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":183 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DAC_SetChannel1Data") [flags 0x41] <function_decl 064dd258 DAC_SetChannel1Data>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("DAC_SetChannel1Data") [flags 0x41] <function_decl 064f4258 DAC_SetChannel1Data>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:HI (use (reg:SI 11 a1))
@@ -341,20 +341,20 @@ Forwarding edge 18->19 to 22 failed.
  -> 323)
 (note 67 66 68 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
 (call_insn 68 67 69 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vDrawBitmap") [flags 0x41] <function_decl 067ad000 vDrawBitmap>) [0 vDrawBitmap S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vDrawBitmap") [flags 0x41] <function_decl 067cb000 vDrawBitmap>) [0 vDrawBitmap S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":192 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vDrawBitmap") [flags 0x41] <function_decl 067ad000 vDrawBitmap>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vDrawBitmap") [flags 0x41] <function_decl 067cb000 vDrawBitmap>)
         (nil))
     (nil))
 (call_insn 69 68 70 11 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0677c000 getLCDTaskHandle>) [0 getLCDTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0679a000 getLCDTaskHandle>) [0 getLCDTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":193 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0677c000 getLCDTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0679a000 getLCDTaskHandle>)
         (nil))
     (nil))
 (insn 70 69 71 11 (set (reg/f:SI 78 [ _7 ])
@@ -380,11 +380,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 77 76 78 11 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065cdac8 xTaskGenericNotify>) [0 xTaskGenericNotify S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065ecac8 xTaskGenericNotify>) [0 xTaskGenericNotify S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":193 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065cdac8 xTaskGenericNotify>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065ecac8 xTaskGenericNotify>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -397,11 +397,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 79 78 80 11 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0674ebb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0676cbb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":194 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0674ebb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0676cbb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -432,11 +432,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 87 86 88 12 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0636cc30 getAIN>) [0 getAIN S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 06397c30 getAIN>) [0 getAIN S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":197 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0636cc30 getAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 06397c30 getAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -475,11 +475,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 98 97 99 15 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0636cc30 getAIN>) [0 getAIN S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 06397c30 getAIN>) [0 getAIN S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":197 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0636cc30 getAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 06397c30 getAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -518,11 +518,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 109 108 110 18 (parallel [
             (set (reg:SF 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0636cc30 getAIN>) [0 getAIN S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 06397c30 getAIN>) [0 getAIN S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":197 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 0636cc30 getAIN>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getAIN") [flags 0x41] <function_decl 06397c30 getAIN>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -561,23 +561,23 @@ Forwarding edge 18->19 to 22 failed.
             (const_int -52 [0xffffffffffffffcc]))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":200 -1
      (nil))
 (insn 120 119 121 21 (set (reg:SI 162)
-        (high:SI (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 069bab00 *.LC5>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":200 -1
+        (high:SI (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 069d7b00 *.LC5>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":200 -1
      (nil))
 (insn 121 120 122 21 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 162)
-            (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 069bab00 *.LC5>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":200 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 069bab00 *.LC5>)
+            (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 069d7b00 *.LC5>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":200 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC5") [flags 0x82] <var_decl 069d7b00 *.LC5>)
         (nil)))
 (insn 122 121 123 21 (set (reg:SI 10 a0)
         (reg:SI 161)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":200 -1
      (nil))
 (call_insn 123 122 124 21 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 04a58690 sprintf>) [0 __builtin_sprintf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 06238690 sprintf>) [0 __builtin_sprintf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":200 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 04a58690 sprintf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 06238690 sprintf>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -591,20 +591,20 @@ Forwarding edge 18->19 to 22 failed.
         (reg:SI 163)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":201 -1
      (nil))
 (insn 126 125 127 21 (set (reg:SI 164)
-        (high:SI (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06769738 u8g2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":201 -1
+        (high:SI (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06787738 u8g2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":201 -1
      (nil))
 (insn 127 126 128 21 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 164)
-            (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06769738 u8g2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":201 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06769738 u8g2>)
+            (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06787738 u8g2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":201 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06787738 u8g2>)
         (nil)))
 (call_insn 128 127 129 21 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 067dfd20 u8g2_GetUTF8Width>) [0 u8g2_GetUTF8Width S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 067fdd20 u8g2_GetUTF8Width>) [0 u8g2_GetUTF8Width S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":201 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 067dfd20 u8g2_GetUTF8Width>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 067fdd20 u8g2_GetUTF8Width>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -649,11 +649,11 @@ Forwarding edge 18->19 to 22 failed.
         (reg:SI 173)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":202 -1
      (nil))
 (call_insn 141 140 142 21 (parallel [
-            (call (mem:SI (symbol_ref:SI ("MENU_DrawString") [flags 0x41] <function_decl 0677cf78 MENU_DrawString>) [0 MENU_DrawString S4 A32])
+            (call (mem:SI (symbol_ref:SI ("MENU_DrawString") [flags 0x41] <function_decl 0679af78 MENU_DrawString>) [0 MENU_DrawString S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":202 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("MENU_DrawString") [flags 0x41] <function_decl 0677cf78 MENU_DrawString>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("MENU_DrawString") [flags 0x41] <function_decl 0679af78 MENU_DrawString>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -661,11 +661,11 @@ Forwarding edge 18->19 to 22 failed.
                 (nil)))))
 (call_insn 142 141 143 21 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0677c000 getLCDTaskHandle>) [0 getLCDTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0679a000 getLCDTaskHandle>) [0 getLCDTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":203 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0677c000 getLCDTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0679a000 getLCDTaskHandle>)
         (nil))
     (nil))
 (insn 143 142 144 21 (set (reg/f:SI 90 [ _19 ])
@@ -691,11 +691,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 150 149 151 21 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065cdac8 xTaskGenericNotify>) [0 xTaskGenericNotify S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065ecac8 xTaskGenericNotify>) [0 xTaskGenericNotify S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":203 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065cdac8 xTaskGenericNotify>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065ecac8 xTaskGenericNotify>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -705,11 +705,11 @@ Forwarding edge 18->19 to 22 failed.
                         (nil)))))))
 (call_insn 151 150 152 21 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getI2CTaskHandle") [flags 0x41] <function_decl 0636c870 getI2CTaskHandle>) [0 getI2CTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getI2CTaskHandle") [flags 0x41] <function_decl 06397870 getI2CTaskHandle>) [0 getI2CTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":204 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getI2CTaskHandle") [flags 0x41] <function_decl 0636c870 getI2CTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getI2CTaskHandle") [flags 0x41] <function_decl 06397870 getI2CTaskHandle>)
         (nil))
     (nil))
 (insn 152 151 153 21 (set (reg/f:SI 92 [ _21 ])
@@ -722,33 +722,33 @@ Forwarding edge 18->19 to 22 failed.
         (reg:SI 175)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":204 -1
      (nil))
 (call_insn 155 154 156 21 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065cd0f0 vTaskResume>) [0 vTaskResume S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065ec0f0 vTaskResume>) [0 vTaskResume S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":204 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065cd0f0 vTaskResume>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065ec0f0 vTaskResume>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (code_label 156 155 157 22 7 (nil) [3 uses])
 (note 157 156 158 22 [bb 22] NOTE_INSN_BASIC_BLOCK)
 (call_insn 158 157 159 22 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_WDTReset") [flags 0x41] <function_decl 068849d8 HAL_WDTReset>) [0 HAL_WDTReset S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_WDTReset") [flags 0x41] <function_decl 068a49d8 HAL_WDTReset>) [0 HAL_WDTReset S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":207 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_WDTReset") [flags 0x41] <function_decl 068849d8 HAL_WDTReset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_WDTReset") [flags 0x41] <function_decl 068a49d8 HAL_WDTReset>)
         (nil))
     (nil))
 (insn 159 158 160 22 (set (reg:SI 10 a0)
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":208 -1
      (nil))
 (call_insn 160 159 161 22 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06588ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 065acca8 vTaskDelay>) [0 vTaskDelay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":208 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06588ca8 vTaskDelay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 065acca8 vTaskDelay>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -764,11 +764,11 @@ Forwarding edge 18->19 to 22 failed.
  -> 252)
 (note 163 162 164 23 [bb 23] NOTE_INSN_BASIC_BLOCK)
 (call_insn 164 163 165 23 (parallel [
-            (call (mem:SI (symbol_ref:SI ("MENU_ClearScreen") [flags 0x41] <function_decl 0677cb40 MENU_ClearScreen>) [0 MENU_ClearScreen S4 A32])
+            (call (mem:SI (symbol_ref:SI ("MENU_ClearScreen") [flags 0x41] <function_decl 0679ab40 MENU_ClearScreen>) [0 MENU_ClearScreen S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":211 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("MENU_ClearScreen") [flags 0x41] <function_decl 0677cb40 MENU_ClearScreen>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("MENU_ClearScreen") [flags 0x41] <function_decl 0679ab40 MENU_ClearScreen>)
         (nil))
     (nil))
 (insn 165 164 166 23 (set (reg:SI 178)
@@ -790,11 +790,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 170 169 171 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getModeString") [flags 0x41] <function_decl 0677ce10 getModeString>) [0 getModeString S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getModeString") [flags 0x41] <function_decl 0679ae10 getModeString>) [0 getModeString S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":212 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getModeString") [flags 0x41] <function_decl 0677ce10 getModeString>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getModeString") [flags 0x41] <function_decl 0679ae10 getModeString>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (nil)))
@@ -813,11 +813,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 175 174 176 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("strcpy") [flags 0x41] <function_decl 04a51870 strcpy>) [0 __builtin_strcpy S4 A32])
+                (call (mem:SI (symbol_ref:SI ("strcpy") [flags 0x41] <function_decl 06231870 strcpy>) [0 __builtin_strcpy S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":212 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("strcpy") [flags 0x41] <function_decl 04a51870 strcpy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("strcpy") [flags 0x41] <function_decl 06231870 strcpy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -833,20 +833,20 @@ Forwarding edge 18->19 to 22 failed.
         (reg:SI 182)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":213 -1
      (nil))
 (insn 178 177 179 23 (set (reg:SI 183)
-        (high:SI (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06769738 u8g2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":213 -1
+        (high:SI (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06787738 u8g2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":213 -1
      (nil))
 (insn 179 178 180 23 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 183)
-            (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06769738 u8g2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":213 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06769738 u8g2>)
+            (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06787738 u8g2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":213 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06787738 u8g2>)
         (nil)))
 (call_insn 180 179 181 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 067dfd20 u8g2_GetUTF8Width>) [0 u8g2_GetUTF8Width S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 067fdd20 u8g2_GetUTF8Width>) [0 u8g2_GetUTF8Width S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":213 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 067dfd20 u8g2_GetUTF8Width>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 067fdd20 u8g2_GetUTF8Width>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -891,22 +891,22 @@ Forwarding edge 18->19 to 22 failed.
         (reg:SI 192)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":214 -1
      (nil))
 (call_insn 193 192 194 23 (parallel [
-            (call (mem:SI (symbol_ref:SI ("MENU_DrawString") [flags 0x41] <function_decl 0677cf78 MENU_DrawString>) [0 MENU_DrawString S4 A32])
+            (call (mem:SI (symbol_ref:SI ("MENU_DrawString") [flags 0x41] <function_decl 0679af78 MENU_DrawString>) [0 MENU_DrawString S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":214 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("MENU_DrawString") [flags 0x41] <function_decl 0677cf78 MENU_DrawString>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("MENU_DrawString") [flags 0x41] <function_decl 0679af78 MENU_DrawString>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
             (expr_list:SI (use (reg:SI 12 a2))
                 (nil)))))
 (call_insn 194 193 195 23 (parallel [
-            (call (mem:SI (symbol_ref:SI ("MenuSetDevice") [flags 0x41] <function_decl 0677cf00 MenuSetDevice>) [0 MenuSetDevice S4 A32])
+            (call (mem:SI (symbol_ref:SI ("MenuSetDevice") [flags 0x41] <function_decl 0679af00 MenuSetDevice>) [0 MenuSetDevice S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":215 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("MenuSetDevice") [flags 0x41] <function_decl 0677cf00 MenuSetDevice>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("MenuSetDevice") [flags 0x41] <function_decl 0679af00 MenuSetDevice>)
         (nil))
     (nil))
 (insn 195 194 196 23 (set (reg:SI 10 a0)
@@ -914,11 +914,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 196 195 197 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0674ebb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0676cbb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":216 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0674ebb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0676cbb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -933,11 +933,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 200 199 201 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0674ebb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0676cbb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":216 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0674ebb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0676cbb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -952,11 +952,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 204 203 205 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0674ebb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0676cbb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":216 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0674ebb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0676cbb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -980,23 +980,23 @@ Forwarding edge 18->19 to 22 failed.
         (reg:SI 102 [ _31 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":216 -1
      (nil))
 (insn 211 210 212 23 (set (reg:SI 197)
-        (high:SI (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 069bab58 *.LC6>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":216 -1
+        (high:SI (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 069d7b58 *.LC6>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":216 -1
      (nil))
 (insn 212 211 213 23 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 197)
-            (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 069bab58 *.LC6>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":216 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 069bab58 *.LC6>)
+            (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 069d7b58 *.LC6>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":216 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC6") [flags 0x82] <var_decl 069d7b58 *.LC6>)
         (nil)))
 (insn 213 212 214 23 (set (reg:SI 10 a0)
         (reg:SI 196)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":216 -1
      (nil))
 (call_insn 214 213 215 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 04a58690 sprintf>) [0 __builtin_sprintf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 06238690 sprintf>) [0 __builtin_sprintf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":216 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 04a58690 sprintf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("sprintf") [flags 0x41] <function_decl 06238690 sprintf>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1013,20 +1013,20 @@ Forwarding edge 18->19 to 22 failed.
         (reg:SI 198)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":217 -1
      (nil))
 (insn 217 216 218 23 (set (reg:SI 199)
-        (high:SI (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06769738 u8g2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":217 -1
+        (high:SI (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06787738 u8g2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":217 -1
      (nil))
 (insn 218 217 219 23 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 199)
-            (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06769738 u8g2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":217 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06769738 u8g2>)
+            (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06787738 u8g2>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":217 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("u8g2") [flags 0xc0] <var_decl 06787738 u8g2>)
         (nil)))
 (call_insn 219 218 220 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 067dfd20 u8g2_GetUTF8Width>) [0 u8g2_GetUTF8Width S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 067fdd20 u8g2_GetUTF8Width>) [0 u8g2_GetUTF8Width S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":217 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 067dfd20 u8g2_GetUTF8Width>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_GetUTF8Width") [flags 0x41] <function_decl 067fdd20 u8g2_GetUTF8Width>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1071,11 +1071,11 @@ Forwarding edge 18->19 to 22 failed.
         (reg:SI 208)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":218 -1
      (nil))
 (call_insn 232 231 233 23 (parallel [
-            (call (mem:SI (symbol_ref:SI ("MENU_DrawString") [flags 0x41] <function_decl 0677cf78 MENU_DrawString>) [0 MENU_DrawString S4 A32])
+            (call (mem:SI (symbol_ref:SI ("MENU_DrawString") [flags 0x41] <function_decl 0679af78 MENU_DrawString>) [0 MENU_DrawString S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":218 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("MENU_DrawString") [flags 0x41] <function_decl 0677cf78 MENU_DrawString>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("MENU_DrawString") [flags 0x41] <function_decl 0679af78 MENU_DrawString>)
         (nil))
     (expr_list:QI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
@@ -1083,11 +1083,11 @@ Forwarding edge 18->19 to 22 failed.
                 (nil)))))
 (call_insn 233 232 234 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0677c000 getLCDTaskHandle>) [0 getLCDTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0679a000 getLCDTaskHandle>) [0 getLCDTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":219 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0677c000 getLCDTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0679a000 getLCDTaskHandle>)
         (nil))
     (nil))
 (insn 234 233 235 23 (set (reg/f:SI 113 [ _42 ])
@@ -1113,11 +1113,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 241 240 242 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065cdac8 xTaskGenericNotify>) [0 xTaskGenericNotify S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065ecac8 xTaskGenericNotify>) [0 xTaskGenericNotify S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":219 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065cdac8 xTaskGenericNotify>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065ecac8 xTaskGenericNotify>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1127,11 +1127,11 @@ Forwarding edge 18->19 to 22 failed.
                         (nil)))))))
 (call_insn 242 241 243 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getUserProcessTaskHandle") [flags 0x41] <function_decl 0688c168 getUserProcessTaskHandle>) [0 getUserProcessTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getUserProcessTaskHandle") [flags 0x41] <function_decl 068ac168 getUserProcessTaskHandle>) [0 getUserProcessTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":220 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getUserProcessTaskHandle") [flags 0x41] <function_decl 0688c168 getUserProcessTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getUserProcessTaskHandle") [flags 0x41] <function_decl 068ac168 getUserProcessTaskHandle>)
         (nil))
     (nil))
 (insn 243 242 244 23 (set (reg/f:SI 115 [ _44 ])
@@ -1144,21 +1144,21 @@ Forwarding edge 18->19 to 22 failed.
         (reg:SI 210)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":220 -1
      (nil))
 (call_insn 246 245 247 23 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065cd0f0 vTaskResume>) [0 vTaskResume S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065ec0f0 vTaskResume>) [0 vTaskResume S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":220 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065cd0f0 vTaskResume>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065ec0f0 vTaskResume>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 247 246 248 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getI2CTaskHandle") [flags 0x41] <function_decl 0636c870 getI2CTaskHandle>) [0 getI2CTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getI2CTaskHandle") [flags 0x41] <function_decl 06397870 getI2CTaskHandle>) [0 getI2CTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":221 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getI2CTaskHandle") [flags 0x41] <function_decl 0636c870 getI2CTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getI2CTaskHandle") [flags 0x41] <function_decl 06397870 getI2CTaskHandle>)
         (nil))
     (nil))
 (insn 248 247 249 23 (set (reg/f:SI 117 [ _46 ])
@@ -1171,11 +1171,11 @@ Forwarding edge 18->19 to 22 failed.
         (reg:SI 211)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":221 -1
      (nil))
 (call_insn 251 250 252 23 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065cd0f0 vTaskResume>) [0 vTaskResume S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065ec0f0 vTaskResume>) [0 vTaskResume S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":221 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065cd0f0 vTaskResume>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065ec0f0 vTaskResume>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1219,11 +1219,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 266 265 267 26 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0674ebb8 getReg8>) [0 getReg8 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0676cbb8 getReg8>) [0 getReg8 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":229 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0674ebb8 getReg8>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getReg8") [flags 0x41] <function_decl 0676cbb8 getReg8>)
         (nil))
     (expr_list:HI (use (reg:SI 10 a0))
         (nil)))
@@ -1246,11 +1246,11 @@ Forwarding edge 18->19 to 22 failed.
 (note 271 270 272 27 [bb 27] NOTE_INSN_BASIC_BLOCK)
 (call_insn 272 271 273 27 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getSerialTask") [flags 0x41] <function_decl 06724e10 getSerialTask>) [0 getSerialTask S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getSerialTask") [flags 0x41] <function_decl 06742e10 getSerialTask>) [0 getSerialTask S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":231 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getSerialTask") [flags 0x41] <function_decl 06724e10 getSerialTask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getSerialTask") [flags 0x41] <function_decl 06742e10 getSerialTask>)
         (nil))
     (nil))
 (insn 273 272 274 27 (set (reg/f:SI 120 [ _50 ])
@@ -1263,11 +1263,11 @@ Forwarding edge 18->19 to 22 failed.
         (reg:SI 217)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":231 -1
      (nil))
 (call_insn 276 275 277 27 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065cd0f0 vTaskResume>) [0 vTaskResume S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065ec0f0 vTaskResume>) [0 vTaskResume S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":231 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065cd0f0 vTaskResume>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065ec0f0 vTaskResume>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1288,11 +1288,11 @@ Forwarding edge 18->19 to 22 failed.
 (code_label 281 280 282 28 13 (nil) [1 uses])
 (note 282 281 283 28 [bb 28] NOTE_INSN_BASIC_BLOCK)
 (call_insn 283 282 284 28 (parallel [
-            (call (mem:SI (symbol_ref:SI ("setWorkMode") [flags 0x41] <function_decl 0677ca50 setWorkMode>) [0 setWorkMode S4 A32])
+            (call (mem:SI (symbol_ref:SI ("setWorkMode") [flags 0x41] <function_decl 0679aa50 setWorkMode>) [0 setWorkMode S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":234 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setWorkMode") [flags 0x41] <function_decl 0677ca50 setWorkMode>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("setWorkMode") [flags 0x41] <function_decl 0679aa50 setWorkMode>)
         (nil))
     (nil))
 (insn 284 283 285 28 (set (reg:SI 222)
@@ -1310,11 +1310,11 @@ Forwarding edge 18->19 to 22 failed.
         (reg:SI 223)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":235 -1
      (nil))
 (call_insn 288 287 5 28 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065cd0f0 vTaskResume>) [0 vTaskResume S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065ec0f0 vTaskResume>) [0 vTaskResume S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":235 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065cd0f0 vTaskResume>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskResume") [flags 0x41] <function_decl 065ec0f0 vTaskResume>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1329,19 +1329,19 @@ Forwarding edge 18->19 to 22 failed.
 (code_label 291 290 292 29 4 (nil) [1 uses])
 (note 292 291 293 29 [bb 29] NOTE_INSN_BASIC_BLOCK)
 (call_insn 293 292 294 29 (parallel [
-            (call (mem:SI (symbol_ref:SI ("HAL_WDTReset") [flags 0x41] <function_decl 068849d8 HAL_WDTReset>) [0 HAL_WDTReset S4 A32])
+            (call (mem:SI (symbol_ref:SI ("HAL_WDTReset") [flags 0x41] <function_decl 068a49d8 HAL_WDTReset>) [0 HAL_WDTReset S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":239 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_WDTReset") [flags 0x41] <function_decl 068849d8 HAL_WDTReset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("HAL_WDTReset") [flags 0x41] <function_decl 068a49d8 HAL_WDTReset>)
         (nil))
     (nil))
 (call_insn 294 293 295 29 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vMenuTask") [flags 0x41] <function_decl 067ad078 vMenuTask>) [0 vMenuTask S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vMenuTask") [flags 0x41] <function_decl 067cb078 vMenuTask>) [0 vMenuTask S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":240 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMenuTask") [flags 0x41] <function_decl 067ad078 vMenuTask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vMenuTask") [flags 0x41] <function_decl 067cb078 vMenuTask>)
         (nil))
     (nil))
 (insn 295 294 296 29 (set (reg:SI 224)
@@ -1364,11 +1364,11 @@ Forwarding edge 18->19 to 22 failed.
 (note 299 298 300 30 [bb 30] NOTE_INSN_BASIC_BLOCK)
 (call_insn 300 299 301 30 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("LED_BufferCompare") [flags 0x41] <function_decl 0674ef78 LED_BufferCompare>) [0 LED_BufferCompare S4 A32])
+                (call (mem:SI (symbol_ref:SI ("LED_BufferCompare") [flags 0x41] <function_decl 0676cf78 LED_BufferCompare>) [0 LED_BufferCompare S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":244 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("LED_BufferCompare") [flags 0x41] <function_decl 0674ef78 LED_BufferCompare>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("LED_BufferCompare") [flags 0x41] <function_decl 0676cf78 LED_BufferCompare>)
         (nil))
     (nil))
 (insn 301 300 302 30 (set (reg:SI 226)
@@ -1387,11 +1387,11 @@ Forwarding edge 18->19 to 22 failed.
 (note 304 303 305 31 [bb 31] NOTE_INSN_BASIC_BLOCK)
 (call_insn 305 304 306 31 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0677c000 getLCDTaskHandle>) [0 getLCDTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0679a000 getLCDTaskHandle>) [0 getLCDTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":246 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0677c000 getLCDTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0679a000 getLCDTaskHandle>)
         (nil))
     (nil))
 (insn 306 305 307 31 (set (reg/f:SI 123 [ _54 ])
@@ -1417,11 +1417,11 @@ Forwarding edge 18->19 to 22 failed.
      (nil))
 (call_insn 313 312 11 31 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065cdac8 xTaskGenericNotify>) [0 xTaskGenericNotify S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065ecac8 xTaskGenericNotify>) [0 xTaskGenericNotify S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":246 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065cdac8 xTaskGenericNotify>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065ecac8 xTaskGenericNotify>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1438,11 +1438,11 @@ Forwarding edge 18->19 to 22 failed.
         (const_int 100 [0x64])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":249 -1
      (nil))
 (call_insn 317 316 318 32 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06588ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 065acca8 vTaskDelay>) [0 vTaskDelay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":249 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06588ca8 vTaskDelay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 065acca8 vTaskDelay>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1505,11 +1505,11 @@ Deleted label in block 5.
         (const_int 0 [0])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":271 -1
      (nil))
 (call_insn 9 8 10 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vRTC_TASK_Init") [flags 0x41] <function_decl 067ad690 vRTC_TASK_Init>) [0 vRTC_TASK_Init S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vRTC_TASK_Init") [flags 0x41] <function_decl 067cb690 vRTC_TASK_Init>) [0 vRTC_TASK_Init S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":273 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vRTC_TASK_Init") [flags 0x41] <function_decl 067ad690 vRTC_TASK_Init>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vRTC_TASK_Init") [flags 0x41] <function_decl 067cb690 vRTC_TASK_Init>)
         (nil))
     (nil))
 (insn 10 9 11 2 (set (reg:SI 79)
@@ -1540,11 +1540,11 @@ Deleted label in block 5.
      (nil))
 (call_insn 18 17 41 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065cdac8 xTaskGenericNotify>) [0 xTaskGenericNotify S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065ecac8 xTaskGenericNotify>) [0 xTaskGenericNotify S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":274 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065cdac8 xTaskGenericNotify>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 065ecac8 xTaskGenericNotify>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1581,20 +1581,20 @@ Deleted label in block 5.
 (code_label 27 26 28 6 25 (nil) [1 uses])
 (note 28 27 29 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 (call_insn 29 28 30 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("WCHNET_MainTask") [flags 0x41] <function_decl 06582e10 WCHNET_MainTask>) [0 WCHNET_MainTask S4 A32])
+            (call (mem:SI (symbol_ref:SI ("WCHNET_MainTask") [flags 0x41] <function_decl 065a6e10 WCHNET_MainTask>) [0 WCHNET_MainTask S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":279 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_MainTask") [flags 0x41] <function_decl 06582e10 WCHNET_MainTask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_MainTask") [flags 0x41] <function_decl 065a6e10 WCHNET_MainTask>)
         (nil))
     (nil))
 (call_insn 30 29 31 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("WCHNET_QueryGlobalInt") [flags 0x41] <function_decl 065820f0 WCHNET_QueryGlobalInt>) [0 WCHNET_QueryGlobalInt S4 A32])
+                (call (mem:SI (symbol_ref:SI ("WCHNET_QueryGlobalInt") [flags 0x41] <function_decl 065a60f0 WCHNET_QueryGlobalInt>) [0 WCHNET_QueryGlobalInt S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":282 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_QueryGlobalInt") [flags 0x41] <function_decl 065820f0 WCHNET_QueryGlobalInt>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_QueryGlobalInt") [flags 0x41] <function_decl 065a60f0 WCHNET_QueryGlobalInt>)
         (nil))
     (nil))
 (insn 31 30 32 6 (set (reg:SI 84)
@@ -1612,11 +1612,11 @@ Deleted label in block 5.
  -> 37)
 (note 35 34 36 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
 (call_insn 36 35 37 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("WCHNET_HandleGlobalInt") [flags 0x41] <function_decl 04974b40 WCHNET_HandleGlobalInt>) [0 WCHNET_HandleGlobalInt S4 A32])
+            (call (mem:SI (symbol_ref:SI ("WCHNET_HandleGlobalInt") [flags 0x41] <function_decl 06154b40 WCHNET_HandleGlobalInt>) [0 WCHNET_HandleGlobalInt S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":284 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_HandleGlobalInt") [flags 0x41] <function_decl 04974b40 WCHNET_HandleGlobalInt>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("WCHNET_HandleGlobalInt") [flags 0x41] <function_decl 06154b40 WCHNET_HandleGlobalInt>)
         (nil))
     (nil))
 (code_label 37 36 38 8 26 (nil) [2 uses])
@@ -1625,11 +1625,11 @@ Deleted label in block 5.
         (const_int 1 [0x1])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":288 -1
      (nil))
 (call_insn 40 39 42 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06588ca8 vTaskDelay>) [0 vTaskDelay S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 065acca8 vTaskDelay>) [0 vTaskDelay S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":288 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 06588ca8 vTaskDelay>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskDelay") [flags 0x41] <function_decl 065acca8 vTaskDelay>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1808,21 +1808,21 @@ try_optimize_cfg iteration 2
         (reg:SI 83)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":91 -1
      (nil))
 (call_insn 9 8 10 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065cd078 vTaskSuspend>) [0 vTaskSuspend S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065ec078 vTaskSuspend>) [0 vTaskSuspend S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":91 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065cd078 vTaskSuspend>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065ec078 vTaskSuspend>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 10 9 11 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getSerialTask") [flags 0x41] <function_decl 06724e10 getSerialTask>) [0 getSerialTask S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getSerialTask") [flags 0x41] <function_decl 06742e10 getSerialTask>) [0 getSerialTask S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":92 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getSerialTask") [flags 0x41] <function_decl 06724e10 getSerialTask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getSerialTask") [flags 0x41] <function_decl 06742e10 getSerialTask>)
         (nil))
     (nil))
 (insn 11 10 12 2 (set (reg/f:SI 73 [ _2 ])
@@ -1835,21 +1835,21 @@ try_optimize_cfg iteration 2
         (reg:SI 84)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":92 -1
      (nil))
 (call_insn 14 13 15 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065cd078 vTaskSuspend>) [0 vTaskSuspend S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065ec078 vTaskSuspend>) [0 vTaskSuspend S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":92 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065cd078 vTaskSuspend>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065ec078 vTaskSuspend>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 15 14 16 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getUserProcessTaskHandle") [flags 0x41] <function_decl 0688c168 getUserProcessTaskHandle>) [0 getUserProcessTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getUserProcessTaskHandle") [flags 0x41] <function_decl 068ac168 getUserProcessTaskHandle>) [0 getUserProcessTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":93 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getUserProcessTaskHandle") [flags 0x41] <function_decl 0688c168 getUserProcessTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getUserProcessTaskHandle") [flags 0x41] <function_decl 068ac168 getUserProcessTaskHandle>)
         (nil))
     (nil))
 (insn 16 15 17 2 (set (reg/f:SI 75 [ _4 ])
@@ -1862,21 +1862,21 @@ try_optimize_cfg iteration 2
         (reg:SI 85)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":93 -1
      (nil))
 (call_insn 19 18 20 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065cd078 vTaskSuspend>) [0 vTaskSuspend S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065ec078 vTaskSuspend>) [0 vTaskSuspend S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":93 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065cd078 vTaskSuspend>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065ec078 vTaskSuspend>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 20 19 21 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getI2CTaskHandle") [flags 0x41] <function_decl 0636c870 getI2CTaskHandle>) [0 getI2CTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getI2CTaskHandle") [flags 0x41] <function_decl 06397870 getI2CTaskHandle>) [0 getI2CTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":94 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getI2CTaskHandle") [flags 0x41] <function_decl 0636c870 getI2CTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getI2CTaskHandle") [flags 0x41] <function_decl 06397870 getI2CTaskHandle>)
         (nil))
     (nil))
 (insn 21 20 22 2 (set (reg/f:SI 77 [ _6 ])
@@ -1889,21 +1889,21 @@ try_optimize_cfg iteration 2
         (reg:SI 86)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":94 -1
      (nil))
 (call_insn 24 23 25 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065cd078 vTaskSuspend>) [0 vTaskSuspend S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065ec078 vTaskSuspend>) [0 vTaskSuspend S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":94 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065cd078 vTaskSuspend>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065ec078 vTaskSuspend>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (call_insn 25 24 26 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getConfigTaskHandle") [flags 0x41] <function_decl 067ad4b0 getConfigTaskHandle>) [0 getConfigTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getConfigTaskHandle") [flags 0x41] <function_decl 067cb4b0 getConfigTaskHandle>) [0 getConfigTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":95 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getConfigTaskHandle") [flags 0x41] <function_decl 067ad4b0 getConfigTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getConfigTaskHandle") [flags 0x41] <function_decl 067cb4b0 getConfigTaskHandle>)
         (nil))
     (nil))
 (insn 26 25 27 2 (set (reg/f:SI 79 [ _8 ])
@@ -1916,11 +1916,11 @@ try_optimize_cfg iteration 2
         (reg:SI 87)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":95 -1
      (nil))
 (call_insn 29 28 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065cd078 vTaskSuspend>) [0 vTaskSuspend S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065ec078 vTaskSuspend>) [0 vTaskSuspend S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":95 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065cd078 vTaskSuspend>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspend") [flags 0x41] <function_decl 065ec078 vTaskSuspend>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1953,11 +1953,11 @@ try_optimize_cfg iteration 2
 (note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 5 2 6 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getConfigTaskHandle") [flags 0x41] <function_decl 067ad4b0 getConfigTaskHandle>) [0 getConfigTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getConfigTaskHandle") [flags 0x41] <function_decl 067cb4b0 getConfigTaskHandle>) [0 getConfigTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":101 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getConfigTaskHandle") [flags 0x41] <function_decl 067ad4b0 getConfigTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getConfigTaskHandle") [flags 0x41] <function_decl 067cb4b0 getConfigTaskHandle>)
         (nil))
     (nil))
 (insn 6 5 7 2 (set (reg/f:SI 72 [ _1 ])
@@ -1995,28 +1995,28 @@ try_optimize_cfg iteration 2
         (const_int 128 [0x80])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":102 -1
      (nil))
 (insn 16 15 17 2 (set (reg:SI 90)
-        (high:SI (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 069ba058 *.LC7>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":102 -1
+        (high:SI (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 069d7058 *.LC7>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":102 -1
      (nil))
 (insn 17 16 18 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 90)
-            (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 069ba058 *.LC7>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":102 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 069ba058 *.LC7>)
+            (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 069d7058 *.LC7>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":102 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC7") [flags 0x82] <var_decl 069d7058 *.LC7>)
         (nil)))
 (insn 18 17 19 2 (set (reg:SI 91)
-        (high:SI (symbol_ref:SI ("config_process_task") [flags 0x41] <function_decl 067ad5a0 config_process_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":102 -1
+        (high:SI (symbol_ref:SI ("config_process_task") [flags 0x41] <function_decl 067cb5a0 config_process_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":102 -1
      (nil))
 (insn 19 18 20 2 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 91)
-            (symbol_ref:SI ("config_process_task") [flags 0x41] <function_decl 067ad5a0 config_process_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":102 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("config_process_task") [flags 0x41] <function_decl 067ad5a0 config_process_task>)
+            (symbol_ref:SI ("config_process_task") [flags 0x41] <function_decl 067cb5a0 config_process_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":102 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("config_process_task") [flags 0x41] <function_decl 067cb5a0 config_process_task>)
         (nil)))
 (call_insn 20 19 21 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":102 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2034,11 +2034,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 23 22 24 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getI2CTaskHandle") [flags 0x41] <function_decl 0636c870 getI2CTaskHandle>) [0 getI2CTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getI2CTaskHandle") [flags 0x41] <function_decl 06397870 getI2CTaskHandle>) [0 getI2CTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":105 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getI2CTaskHandle") [flags 0x41] <function_decl 0636c870 getI2CTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getI2CTaskHandle") [flags 0x41] <function_decl 06397870 getI2CTaskHandle>)
         (nil))
     (nil))
 (insn 24 23 25 2 (set (reg/f:SI 74 [ _3 ])
@@ -2076,28 +2076,28 @@ try_optimize_cfg iteration 2
         (const_int 256 [0x100])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":106 -1
      (nil))
 (insn 34 33 35 2 (set (reg:SI 96)
-        (high:SI (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 069ba0b0 *.LC8>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":106 -1
+        (high:SI (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 069d70b0 *.LC8>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":106 -1
      (nil))
 (insn 35 34 36 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 96)
-            (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 069ba0b0 *.LC8>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":106 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 069ba0b0 *.LC8>)
+            (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 069d70b0 *.LC8>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":106 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC8") [flags 0x82] <var_decl 069d70b0 *.LC8>)
         (nil)))
 (insn 36 35 37 2 (set (reg:SI 97)
-        (high:SI (symbol_ref:SI ("I2C_task") [flags 0x41] <function_decl 0636c7f8 I2C_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":106 -1
+        (high:SI (symbol_ref:SI ("I2C_task") [flags 0x41] <function_decl 063977f8 I2C_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":106 -1
      (nil))
 (insn 37 36 38 2 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 97)
-            (symbol_ref:SI ("I2C_task") [flags 0x41] <function_decl 0636c7f8 I2C_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":106 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("I2C_task") [flags 0x41] <function_decl 0636c7f8 I2C_task>)
+            (symbol_ref:SI ("I2C_task") [flags 0x41] <function_decl 063977f8 I2C_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":106 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("I2C_task") [flags 0x41] <function_decl 063977f8 I2C_task>)
         (nil)))
 (call_insn 38 37 39 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":106 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2115,11 +2115,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 41 40 42 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getSerialTask") [flags 0x41] <function_decl 06724e10 getSerialTask>) [0 getSerialTask S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getSerialTask") [flags 0x41] <function_decl 06742e10 getSerialTask>) [0 getSerialTask S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":109 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getSerialTask") [flags 0x41] <function_decl 06724e10 getSerialTask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getSerialTask") [flags 0x41] <function_decl 06742e10 getSerialTask>)
         (nil))
     (nil))
 (insn 42 41 43 2 (set (reg/f:SI 76 [ _5 ])
@@ -2157,28 +2157,28 @@ try_optimize_cfg iteration 2
         (const_int 128 [0x80])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":110 -1
      (nil))
 (insn 52 51 53 2 (set (reg:SI 102)
-        (high:SI (symbol_ref/f:SI ("*.LC9") [flags 0x82] <var_decl 069ba108 *.LC9>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":110 -1
+        (high:SI (symbol_ref/f:SI ("*.LC9") [flags 0x82] <var_decl 069d7108 *.LC9>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":110 -1
      (nil))
 (insn 53 52 54 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 102)
-            (symbol_ref/f:SI ("*.LC9") [flags 0x82] <var_decl 069ba108 *.LC9>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":110 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC9") [flags 0x82] <var_decl 069ba108 *.LC9>)
+            (symbol_ref/f:SI ("*.LC9") [flags 0x82] <var_decl 069d7108 *.LC9>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":110 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC9") [flags 0x82] <var_decl 069d7108 *.LC9>)
         (nil)))
 (insn 54 53 55 2 (set (reg:SI 103)
-        (high:SI (symbol_ref:SI ("StartUARTTask") [flags 0x41] <function_decl 06724e88 StartUARTTask>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":110 -1
+        (high:SI (symbol_ref:SI ("StartUARTTask") [flags 0x41] <function_decl 06742e88 StartUARTTask>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":110 -1
      (nil))
 (insn 55 54 56 2 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 103)
-            (symbol_ref:SI ("StartUARTTask") [flags 0x41] <function_decl 06724e88 StartUARTTask>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":110 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("StartUARTTask") [flags 0x41] <function_decl 06724e88 StartUARTTask>)
+            (symbol_ref:SI ("StartUARTTask") [flags 0x41] <function_decl 06742e88 StartUARTTask>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":110 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("StartUARTTask") [flags 0x41] <function_decl 06742e88 StartUARTTask>)
         (nil)))
 (call_insn 56 55 57 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":110 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2196,11 +2196,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 59 58 60 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0677c000 getLCDTaskHandle>) [0 getLCDTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0679a000 getLCDTaskHandle>) [0 getLCDTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":113 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0677c000 getLCDTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getLCDTaskHandle") [flags 0x41] <function_decl 0679a000 getLCDTaskHandle>)
         (nil))
     (nil))
 (insn 60 59 61 2 (set (reg/f:SI 78 [ _7 ])
@@ -2218,12 +2218,12 @@ try_optimize_cfg iteration 2
         (reg/f:SI 104)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":114 -1
      (nil))
 (insn 64 63 65 2 (set (reg:SI 106)
-        (high:SI (symbol_ref:SI ("LCDTaskBuffer") [flags 0x82] <var_decl 0688a898 LCDTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":114 -1
+        (high:SI (symbol_ref:SI ("LCDTaskBuffer") [flags 0x82] <var_decl 068aa898 LCDTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":114 -1
      (nil))
 (insn 65 64 66 2 (set (reg:SI 15 a5)
         (lo_sum:SI (reg:SI 106)
-            (symbol_ref:SI ("LCDTaskBuffer") [flags 0x82] <var_decl 0688a898 LCDTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":114 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("LCDTaskBuffer") [flags 0x82] <var_decl 0688a898 LCDTaskBuffer>)
+            (symbol_ref:SI ("LCDTaskBuffer") [flags 0x82] <var_decl 068aa898 LCDTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":114 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("LCDTaskBuffer") [flags 0x82] <var_decl 068aa898 LCDTaskBuffer>)
         (nil)))
 (insn 66 65 67 2 (set (reg:SI 14 a4)
         (const_int 7 [0x7])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":114 -1
@@ -2235,28 +2235,28 @@ try_optimize_cfg iteration 2
         (const_int 512 [0x200])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":114 -1
      (nil))
 (insn 69 68 70 2 (set (reg:SI 107)
-        (high:SI (symbol_ref/f:SI ("*.LC10") [flags 0x82] <var_decl 069ba1b8 *.LC10>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":114 -1
+        (high:SI (symbol_ref/f:SI ("*.LC10") [flags 0x82] <var_decl 069d71b8 *.LC10>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":114 -1
      (nil))
 (insn 70 69 71 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 107)
-            (symbol_ref/f:SI ("*.LC10") [flags 0x82] <var_decl 069ba1b8 *.LC10>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":114 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC10") [flags 0x82] <var_decl 069ba1b8 *.LC10>)
+            (symbol_ref/f:SI ("*.LC10") [flags 0x82] <var_decl 069d71b8 *.LC10>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":114 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC10") [flags 0x82] <var_decl 069d71b8 *.LC10>)
         (nil)))
 (insn 71 70 72 2 (set (reg:SI 108)
-        (high:SI (symbol_ref:SI ("LCD_task") [flags 0x41] <function_decl 0677c078 LCD_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":114 -1
+        (high:SI (symbol_ref:SI ("LCD_task") [flags 0x41] <function_decl 0679a078 LCD_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":114 -1
      (nil))
 (insn 72 71 73 2 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 108)
-            (symbol_ref:SI ("LCD_task") [flags 0x41] <function_decl 0677c078 LCD_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":114 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("LCD_task") [flags 0x41] <function_decl 0677c078 LCD_task>)
+            (symbol_ref:SI ("LCD_task") [flags 0x41] <function_decl 0679a078 LCD_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":114 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("LCD_task") [flags 0x41] <function_decl 0679a078 LCD_task>)
         (nil)))
 (call_insn 73 72 74 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":114 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2274,11 +2274,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 76 75 77 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getADCTaskHandle") [flags 0x41] <function_decl 0636ca50 getADCTaskHandle>) [0 getADCTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getADCTaskHandle") [flags 0x41] <function_decl 06397a50 getADCTaskHandle>) [0 getADCTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":117 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getADCTaskHandle") [flags 0x41] <function_decl 0636ca50 getADCTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getADCTaskHandle") [flags 0x41] <function_decl 06397a50 getADCTaskHandle>)
         (nil))
     (nil))
 (insn 77 76 78 2 (set (reg/f:SI 80 [ _9 ])
@@ -2316,28 +2316,28 @@ try_optimize_cfg iteration 2
         (const_int 256 [0x100])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":118 -1
      (nil))
 (insn 87 86 88 2 (set (reg:SI 113)
-        (high:SI (symbol_ref/f:SI ("*.LC11") [flags 0x82] <var_decl 069ba210 *.LC11>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":118 -1
+        (high:SI (symbol_ref/f:SI ("*.LC11") [flags 0x82] <var_decl 069d7210 *.LC11>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":118 -1
      (nil))
 (insn 88 87 89 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 113)
-            (symbol_ref/f:SI ("*.LC11") [flags 0x82] <var_decl 069ba210 *.LC11>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":118 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC11") [flags 0x82] <var_decl 069ba210 *.LC11>)
+            (symbol_ref/f:SI ("*.LC11") [flags 0x82] <var_decl 069d7210 *.LC11>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":118 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC11") [flags 0x82] <var_decl 069d7210 *.LC11>)
         (nil)))
 (insn 89 88 90 2 (set (reg:SI 114)
-        (high:SI (symbol_ref:SI ("ADC_task") [flags 0x41] <function_decl 0636cb40 ADC_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":118 -1
+        (high:SI (symbol_ref:SI ("ADC_task") [flags 0x41] <function_decl 06397b40 ADC_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":118 -1
      (nil))
 (insn 90 89 91 2 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 114)
-            (symbol_ref:SI ("ADC_task") [flags 0x41] <function_decl 0636cb40 ADC_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":118 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("ADC_task") [flags 0x41] <function_decl 0636cb40 ADC_task>)
+            (symbol_ref:SI ("ADC_task") [flags 0x41] <function_decl 06397b40 ADC_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":118 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("ADC_task") [flags 0x41] <function_decl 06397b40 ADC_task>)
         (nil)))
 (call_insn 91 90 92 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":118 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2365,12 +2365,12 @@ try_optimize_cfg iteration 2
         (reg/f:SI 115)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":121 -1
      (nil))
 (insn 97 96 98 2 (set (reg:SI 117)
-        (high:SI (symbol_ref:SI ("MBTCPTaskBuffer") [flags 0x82] <var_decl 0688aa50 MBTCPTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":121 -1
+        (high:SI (symbol_ref:SI ("MBTCPTaskBuffer") [flags 0x82] <var_decl 068aaa50 MBTCPTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":121 -1
      (nil))
 (insn 98 97 99 2 (set (reg:SI 15 a5)
         (lo_sum:SI (reg:SI 117)
-            (symbol_ref:SI ("MBTCPTaskBuffer") [flags 0x82] <var_decl 0688aa50 MBTCPTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":121 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("MBTCPTaskBuffer") [flags 0x82] <var_decl 0688aa50 MBTCPTaskBuffer>)
+            (symbol_ref:SI ("MBTCPTaskBuffer") [flags 0x82] <var_decl 068aaa50 MBTCPTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":121 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("MBTCPTaskBuffer") [flags 0x82] <var_decl 068aaa50 MBTCPTaskBuffer>)
         (nil)))
 (insn 99 98 100 2 (set (reg:SI 14 a4)
         (const_int 5 [0x5])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":121 -1
@@ -2382,28 +2382,28 @@ try_optimize_cfg iteration 2
         (const_int 700 [0x2bc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":121 -1
      (nil))
 (insn 102 101 103 2 (set (reg:SI 118)
-        (high:SI (symbol_ref/f:SI ("*.LC12") [flags 0x82] <var_decl 069ba268 *.LC12>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":121 -1
+        (high:SI (symbol_ref/f:SI ("*.LC12") [flags 0x82] <var_decl 069d7268 *.LC12>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":121 -1
      (nil))
 (insn 103 102 104 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 118)
-            (symbol_ref/f:SI ("*.LC12") [flags 0x82] <var_decl 069ba268 *.LC12>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":121 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC12") [flags 0x82] <var_decl 069ba268 *.LC12>)
+            (symbol_ref/f:SI ("*.LC12") [flags 0x82] <var_decl 069d7268 *.LC12>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":121 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC12") [flags 0x82] <var_decl 069d7268 *.LC12>)
         (nil)))
 (insn 104 103 105 2 (set (reg:SI 119)
-        (high:SI (symbol_ref:SI ("MBRTU_task") [flags 0x41] <function_decl 0677cc30 MBRTU_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":121 -1
+        (high:SI (symbol_ref:SI ("MBRTU_task") [flags 0x41] <function_decl 0679ac30 MBRTU_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":121 -1
      (nil))
 (insn 105 104 106 2 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 119)
-            (symbol_ref:SI ("MBRTU_task") [flags 0x41] <function_decl 0677cc30 MBRTU_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":121 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("MBRTU_task") [flags 0x41] <function_decl 0677cc30 MBRTU_task>)
+            (symbol_ref:SI ("MBRTU_task") [flags 0x41] <function_decl 0679ac30 MBRTU_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":121 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("MBRTU_task") [flags 0x41] <function_decl 0679ac30 MBRTU_task>)
         (nil)))
 (call_insn 106 105 107 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":121 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2429,11 +2429,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 111 110 112 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getUserProcessTaskHandle") [flags 0x41] <function_decl 0688c168 getUserProcessTaskHandle>) [0 getUserProcessTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getUserProcessTaskHandle") [flags 0x41] <function_decl 068ac168 getUserProcessTaskHandle>) [0 getUserProcessTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":124 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getUserProcessTaskHandle") [flags 0x41] <function_decl 0688c168 getUserProcessTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getUserProcessTaskHandle") [flags 0x41] <function_decl 068ac168 getUserProcessTaskHandle>)
         (nil))
     (nil))
 (insn 112 111 113 2 (set (reg/f:SI 83 [ _12 ])
@@ -2451,12 +2451,12 @@ try_optimize_cfg iteration 2
         (reg/f:SI 122)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":125 -1
      (nil))
 (insn 116 115 117 2 (set (reg:SI 124)
-        (high:SI (symbol_ref:SI ("USERTaskBuffer") [flags 0x82] <var_decl 0688a948 USERTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":125 -1
+        (high:SI (symbol_ref:SI ("USERTaskBuffer") [flags 0x82] <var_decl 068aa948 USERTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":125 -1
      (nil))
 (insn 117 116 118 2 (set (reg:SI 15 a5)
         (lo_sum:SI (reg:SI 124)
-            (symbol_ref:SI ("USERTaskBuffer") [flags 0x82] <var_decl 0688a948 USERTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":125 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("USERTaskBuffer") [flags 0x82] <var_decl 0688a948 USERTaskBuffer>)
+            (symbol_ref:SI ("USERTaskBuffer") [flags 0x82] <var_decl 068aa948 USERTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":125 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("USERTaskBuffer") [flags 0x82] <var_decl 068aa948 USERTaskBuffer>)
         (nil)))
 (insn 118 117 119 2 (set (reg:SI 14 a4)
         (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":125 -1
@@ -2468,28 +2468,28 @@ try_optimize_cfg iteration 2
         (const_int 512 [0x200])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":125 -1
      (nil))
 (insn 121 120 122 2 (set (reg:SI 125)
-        (high:SI (symbol_ref/f:SI ("*.LC13") [flags 0x82] <var_decl 069ba2c0 *.LC13>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":125 -1
+        (high:SI (symbol_ref/f:SI ("*.LC13") [flags 0x82] <var_decl 069d72c0 *.LC13>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":125 -1
      (nil))
 (insn 122 121 123 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 125)
-            (symbol_ref/f:SI ("*.LC13") [flags 0x82] <var_decl 069ba2c0 *.LC13>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":125 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC13") [flags 0x82] <var_decl 069ba2c0 *.LC13>)
+            (symbol_ref/f:SI ("*.LC13") [flags 0x82] <var_decl 069d72c0 *.LC13>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":125 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC13") [flags 0x82] <var_decl 069d72c0 *.LC13>)
         (nil)))
 (insn 123 122 124 2 (set (reg:SI 126)
-        (high:SI (symbol_ref:SI ("user_process_task") [flags 0x41] <function_decl 0688c1e0 user_process_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":125 -1
+        (high:SI (symbol_ref:SI ("user_process_task") [flags 0x41] <function_decl 068ac1e0 user_process_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":125 -1
      (nil))
 (insn 124 123 125 2 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 126)
-            (symbol_ref:SI ("user_process_task") [flags 0x41] <function_decl 0688c1e0 user_process_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":125 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("user_process_task") [flags 0x41] <function_decl 0688c1e0 user_process_task>)
+            (symbol_ref:SI ("user_process_task") [flags 0x41] <function_decl 068ac1e0 user_process_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":125 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("user_process_task") [flags 0x41] <function_decl 068ac1e0 user_process_task>)
         (nil)))
 (call_insn 125 124 126 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":125 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2517,12 +2517,12 @@ try_optimize_cfg iteration 2
         (reg/f:SI 127)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":129 -1
      (nil))
 (insn 131 130 132 2 (set (reg:SI 129)
-        (high:SI (symbol_ref:SI ("WCHNETTaskBuffer") [flags 0x82] <var_decl 0688a580 WCHNETTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":129 -1
+        (high:SI (symbol_ref:SI ("WCHNETTaskBuffer") [flags 0x82] <var_decl 068aa580 WCHNETTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":129 -1
      (nil))
 (insn 132 131 133 2 (set (reg:SI 15 a5)
         (lo_sum:SI (reg:SI 129)
-            (symbol_ref:SI ("WCHNETTaskBuffer") [flags 0x82] <var_decl 0688a580 WCHNETTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":129 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("WCHNETTaskBuffer") [flags 0x82] <var_decl 0688a580 WCHNETTaskBuffer>)
+            (symbol_ref:SI ("WCHNETTaskBuffer") [flags 0x82] <var_decl 068aa580 WCHNETTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":129 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("WCHNETTaskBuffer") [flags 0x82] <var_decl 068aa580 WCHNETTaskBuffer>)
         (nil)))
 (insn 133 132 134 2 (set (reg:SI 14 a4)
         (const_int 8 [0x8])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":129 -1
@@ -2534,28 +2534,28 @@ try_optimize_cfg iteration 2
         (const_int 800 [0x320])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":129 -1
      (nil))
 (insn 136 135 137 2 (set (reg:SI 130)
-        (high:SI (symbol_ref/f:SI ("*.LC12") [flags 0x82] <var_decl 069ba268 *.LC12>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":129 -1
+        (high:SI (symbol_ref/f:SI ("*.LC12") [flags 0x82] <var_decl 069d7268 *.LC12>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":129 -1
      (nil))
 (insn 137 136 138 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 130)
-            (symbol_ref/f:SI ("*.LC12") [flags 0x82] <var_decl 069ba268 *.LC12>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":129 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC12") [flags 0x82] <var_decl 069ba268 *.LC12>)
+            (symbol_ref/f:SI ("*.LC12") [flags 0x82] <var_decl 069d7268 *.LC12>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":129 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC12") [flags 0x82] <var_decl 069d7268 *.LC12>)
         (nil)))
 (insn 138 137 139 2 (set (reg:SI 131)
-        (high:SI (symbol_ref:SI ("WCHNET_task") [flags 0x3] <function_decl 0688c3c0 WCHNET_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":129 -1
+        (high:SI (symbol_ref:SI ("WCHNET_task") [flags 0x3] <function_decl 068ac3c0 WCHNET_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":129 -1
      (nil))
 (insn 139 138 140 2 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 131)
-            (symbol_ref:SI ("WCHNET_task") [flags 0x3] <function_decl 0688c3c0 WCHNET_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":129 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("WCHNET_task") [flags 0x3] <function_decl 0688c3c0 WCHNET_task>)
+            (symbol_ref:SI ("WCHNET_task") [flags 0x3] <function_decl 068ac3c0 WCHNET_task>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":129 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("WCHNET_task") [flags 0x3] <function_decl 068ac3c0 WCHNET_task>)
         (nil)))
 (call_insn 140 139 141 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":129 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2597,28 +2597,28 @@ try_optimize_cfg iteration 2
         (const_int 128 [0x80])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":133 -1
      (nil))
 (insn 150 149 151 2 (set (reg:SI 136)
-        (high:SI (symbol_ref/f:SI ("*.LC14") [flags 0x82] <var_decl 069ba370 *.LC14>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":133 -1
+        (high:SI (symbol_ref/f:SI ("*.LC14") [flags 0x82] <var_decl 069d7370 *.LC14>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":133 -1
      (nil))
 (insn 151 150 152 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 136)
-            (symbol_ref/f:SI ("*.LC14") [flags 0x82] <var_decl 069ba370 *.LC14>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":133 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC14") [flags 0x82] <var_decl 069ba370 *.LC14>)
+            (symbol_ref/f:SI ("*.LC14") [flags 0x82] <var_decl 069d7370 *.LC14>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":133 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC14") [flags 0x82] <var_decl 069d7370 *.LC14>)
         (nil)))
 (insn 152 151 153 2 (set (reg:SI 137)
-        (high:SI (symbol_ref:SI ("vKeyboardTask") [flags 0x41] <function_decl 0677c9d8 vKeyboardTask>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":133 -1
+        (high:SI (symbol_ref:SI ("vKeyboardTask") [flags 0x41] <function_decl 0679a9d8 vKeyboardTask>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":133 -1
      (nil))
 (insn 153 152 154 2 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 137)
-            (symbol_ref:SI ("vKeyboardTask") [flags 0x41] <function_decl 0677c9d8 vKeyboardTask>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":133 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("vKeyboardTask") [flags 0x41] <function_decl 0677c9d8 vKeyboardTask>)
+            (symbol_ref:SI ("vKeyboardTask") [flags 0x41] <function_decl 0679a9d8 vKeyboardTask>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":133 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("vKeyboardTask") [flags 0x41] <function_decl 0679a9d8 vKeyboardTask>)
         (nil)))
 (call_insn 154 153 155 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":133 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2640,12 +2640,12 @@ try_optimize_cfg iteration 2
         (reg/f:SI 138)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
      (nil))
 (insn 158 157 159 2 (set (reg:SI 140)
-        (high:SI (symbol_ref:SI ("defaultTaskBuffer") [flags 0x82] <var_decl 0688ab00 defaultTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
+        (high:SI (symbol_ref:SI ("defaultTaskBuffer") [flags 0x82] <var_decl 068aab00 defaultTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
      (nil))
 (insn 159 158 160 2 (set (reg:SI 15 a5)
         (lo_sum:SI (reg:SI 140)
-            (symbol_ref:SI ("defaultTaskBuffer") [flags 0x82] <var_decl 0688ab00 defaultTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("defaultTaskBuffer") [flags 0x82] <var_decl 0688ab00 defaultTaskBuffer>)
+            (symbol_ref:SI ("defaultTaskBuffer") [flags 0x82] <var_decl 068aab00 defaultTaskBuffer>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("defaultTaskBuffer") [flags 0x82] <var_decl 068aab00 defaultTaskBuffer>)
         (nil)))
 (insn 160 159 161 2 (set (reg:SI 14 a4)
         (const_int 5 [0x5])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
@@ -2657,28 +2657,28 @@ try_optimize_cfg iteration 2
         (const_int 700 [0x2bc])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
      (nil))
 (insn 163 162 164 2 (set (reg:SI 141)
-        (high:SI (symbol_ref/f:SI ("*.LC15") [flags 0x82] <var_decl 069ba420 *.LC15>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
+        (high:SI (symbol_ref/f:SI ("*.LC15") [flags 0x82] <var_decl 069d7420 *.LC15>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
      (nil))
 (insn 164 163 165 2 (set (reg:SI 11 a1)
         (lo_sum:SI (reg:SI 141)
-            (symbol_ref/f:SI ("*.LC15") [flags 0x82] <var_decl 069ba420 *.LC15>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC15") [flags 0x82] <var_decl 069ba420 *.LC15>)
+            (symbol_ref/f:SI ("*.LC15") [flags 0x82] <var_decl 069d7420 *.LC15>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC15") [flags 0x82] <var_decl 069d7420 *.LC15>)
         (nil)))
 (insn 165 164 166 2 (set (reg:SI 142)
-        (high:SI (symbol_ref:SI ("vDefaultTask") [flags 0x3] <function_decl 0688c348 vDefaultTask>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
+        (high:SI (symbol_ref:SI ("vDefaultTask") [flags 0x3] <function_decl 068ac348 vDefaultTask>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
      (nil))
 (insn 166 165 167 2 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 142)
-            (symbol_ref:SI ("vDefaultTask") [flags 0x3] <function_decl 0688c348 vDefaultTask>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
-     (expr_list:REG_EQUAL (symbol_ref:SI ("vDefaultTask") [flags 0x3] <function_decl 0688c348 vDefaultTask>)
+            (symbol_ref:SI ("vDefaultTask") [flags 0x3] <function_decl 068ac348 vDefaultTask>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
+     (expr_list:REG_EQUAL (symbol_ref:SI ("vDefaultTask") [flags 0x3] <function_decl 068ac348 vDefaultTask>)
         (nil)))
 (call_insn 167 166 168 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>) [0 xTaskCreateStatic S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 06588b40 xTaskCreateStatic>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCreateStatic") [flags 0x41] <function_decl 065acb40 xTaskCreateStatic>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2703,11 +2703,11 @@ try_optimize_cfg iteration 2
         (reg/f:SI 85 [ _16 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":136 -1
      (nil))
 (call_insn 172 171 0 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("TaskSuspend") [flags 0x3] <function_decl 0688c528 TaskSuspend>) [0 TaskSuspend S4 A32])
+            (call (mem:SI (symbol_ref:SI ("TaskSuspend") [flags 0x3] <function_decl 068ac528 TaskSuspend>) [0 TaskSuspend S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":137 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TaskSuspend") [flags 0x3] <function_decl 0688c528 TaskSuspend>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("TaskSuspend") [flags 0x3] <function_decl 068ac528 TaskSuspend>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (nil))
@@ -2740,11 +2740,11 @@ try_optimize_cfg iteration 2
 (note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 5 2 6 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xGetOSEvent") [flags 0x41] <function_decl 067e78e8 xGetOSEvent>) [0 xGetOSEvent S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xGetOSEvent") [flags 0x41] <function_decl 068058e8 xGetOSEvent>) [0 xGetOSEvent S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":143 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xGetOSEvent") [flags 0x41] <function_decl 067e78e8 xGetOSEvent>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xGetOSEvent") [flags 0x41] <function_decl 068058e8 xGetOSEvent>)
         (nil))
     (nil))
 (insn 6 5 7 2 (set (reg/f:SI 72 [ _1 ])
@@ -2763,11 +2763,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 10 9 11 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xEventGroupCreateStatic") [flags 0x41] <function_decl 0636c258 xEventGroupCreateStatic>) [0 xEventGroupCreateStatic S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xEventGroupCreateStatic") [flags 0x41] <function_decl 06397258 xEventGroupCreateStatic>) [0 xEventGroupCreateStatic S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":143 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupCreateStatic") [flags 0x41] <function_decl 0636c258 xEventGroupCreateStatic>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupCreateStatic") [flags 0x41] <function_decl 06397258 xEventGroupCreateStatic>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2779,11 +2779,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 13 12 14 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("getSerialEvenGroup") [flags 0x41] <function_decl 06724d98 getSerialEvenGroup>) [0 getSerialEvenGroup S4 A32])
+                (call (mem:SI (symbol_ref:SI ("getSerialEvenGroup") [flags 0x41] <function_decl 06742d98 getSerialEvenGroup>) [0 getSerialEvenGroup S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":144 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getSerialEvenGroup") [flags 0x41] <function_decl 06724d98 getSerialEvenGroup>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("getSerialEvenGroup") [flags 0x41] <function_decl 06742d98 getSerialEvenGroup>)
         (nil))
     (nil))
 (insn 14 13 15 2 (set (reg/f:SI 74 [ _3 ])
@@ -2802,11 +2802,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 18 17 19 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xEventGroupCreateStatic") [flags 0x41] <function_decl 0636c258 xEventGroupCreateStatic>) [0 xEventGroupCreateStatic S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xEventGroupCreateStatic") [flags 0x41] <function_decl 06397258 xEventGroupCreateStatic>) [0 xEventGroupCreateStatic S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":144 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupCreateStatic") [flags 0x41] <function_decl 0636c258 xEventGroupCreateStatic>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xEventGroupCreateStatic") [flags 0x41] <function_decl 06397258 xEventGroupCreateStatic>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2845,11 +2845,11 @@ try_optimize_cfg iteration 2
 (note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
 (call_insn 5 2 6 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xKeyboardQueue") [flags 0x41] <function_decl 0677c7f8 xKeyboardQueue>) [0 xKeyboardQueue S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xKeyboardQueue") [flags 0x41] <function_decl 0679a7f8 xKeyboardQueue>) [0 xKeyboardQueue S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":150 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xKeyboardQueue") [flags 0x41] <function_decl 0677c7f8 xKeyboardQueue>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xKeyboardQueue") [flags 0x41] <function_decl 0679a7f8 xKeyboardQueue>)
         (nil))
     (nil))
 (insn 6 5 7 2 (set (reg/f:SI 72 [ _1 ])
@@ -2888,11 +2888,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 16 15 17 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xQueueGenericCreateStatic") [flags 0x41] <function_decl 06724780 xQueueGenericCreateStatic>) [0 xQueueGenericCreateStatic S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xQueueGenericCreateStatic") [flags 0x41] <function_decl 06742780 xQueueGenericCreateStatic>) [0 xQueueGenericCreateStatic S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":150 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xQueueGenericCreateStatic") [flags 0x41] <function_decl 06724780 xQueueGenericCreateStatic>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xQueueGenericCreateStatic") [flags 0x41] <function_decl 06742780 xQueueGenericCreateStatic>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2908,11 +2908,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 19 18 20 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xConfigSystemRxQueue") [flags 0x41] <function_decl 067ad528 xConfigSystemRxQueue>) [0 xConfigSystemRxQueue S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xConfigSystemRxQueue") [flags 0x41] <function_decl 067cb528 xConfigSystemRxQueue>) [0 xConfigSystemRxQueue S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":151 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xConfigSystemRxQueue") [flags 0x41] <function_decl 067ad528 xConfigSystemRxQueue>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xConfigSystemRxQueue") [flags 0x41] <function_decl 067cb528 xConfigSystemRxQueue>)
         (nil))
     (nil))
 (insn 20 19 21 2 (set (reg/f:SI 74 [ _3 ])
@@ -2951,11 +2951,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 30 29 31 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xQueueGenericCreateStatic") [flags 0x41] <function_decl 06724780 xQueueGenericCreateStatic>) [0 xQueueGenericCreateStatic S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xQueueGenericCreateStatic") [flags 0x41] <function_decl 06742780 xQueueGenericCreateStatic>) [0 xQueueGenericCreateStatic S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/USER/system_init.c":151 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xQueueGenericCreateStatic") [flags 0x41] <function_decl 06724780 xQueueGenericCreateStatic>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xQueueGenericCreateStatic") [flags 0x41] <function_decl 06742780 xQueueGenericCreateStatic>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))

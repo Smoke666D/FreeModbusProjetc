@@ -131,11 +131,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 13 12 14 2 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04a4b0f0 memset>) [0 __builtin_memset S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 061eb0f0 memset>) [0 __builtin_memset S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1267 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04a4b0f0 memset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 061eb0f0 memset>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -172,31 +172,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:1267) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1267 -1
      (nil))
 (insn 20 19 21 4 (set (reg:SI 80)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1267 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1267 -1
      (nil))
 (insn 21 20 22 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 80)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1267 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1267 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 22 21 23 4 (set (reg:SI 11 a1)
         (const_int 1267 [0x4f3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1267 -1
      (nil))
 (insn 23 22 24 4 (set (reg:SI 81)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1267 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1267 -1
      (nil))
 (insn 24 23 25 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 81)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1267 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1267 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 25 24 27 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1267 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -228,11 +228,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 37 36 38 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04a4b078 __builtin_memset>) [0 __builtin_memset S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 061eb078 __builtin_memset>) [0 __builtin_memset S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1271 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04a4b078 __builtin_memset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 061eb078 __builtin_memset>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -377,31 +377,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:1156) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1156 -1
      (nil))
 (insn 21 20 22 6 (set (reg:SI 92)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1156 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1156 -1
      (nil))
 (insn 22 21 23 6 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 92)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1156 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1156 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 23 22 24 6 (set (reg:SI 11 a1)
         (const_int 1156 [0x484])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1156 -1
      (nil))
 (insn 24 23 25 6 (set (reg:SI 93)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1156 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1156 -1
      (nil))
 (insn 25 24 26 6 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 93)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1156 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1156 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 26 25 28 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1156 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -444,11 +444,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 41 40 42 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 04a49d98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 061e9d98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1157 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 04a49d98 __builtin_memcpy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 061e9d98 __builtin_memcpy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -501,31 +501,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:1164) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1164 -1
      (nil))
 (insn 52 51 53 10 (set (reg:SI 103)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1164 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1164 -1
      (nil))
 (insn 53 52 54 10 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 103)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1164 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1164 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 54 53 55 10 (set (reg:SI 11 a1)
         (const_int 1164 [0x48c])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1164 -1
      (nil))
 (insn 55 54 56 10 (set (reg:SI 104)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1164 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1164 -1
      (nil))
 (insn 56 55 57 10 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 104)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1164 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1164 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 57 56 59 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1164 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -568,11 +568,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 72 71 73 12 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 04a49d98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 061e9d98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1165 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 04a49d98 __builtin_memcpy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 061e9d98 __builtin_memcpy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -726,11 +726,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 24 23 25 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvWriteBytesToBuffer.part.1") [flags 0x3] <function_decl 063b1f78 prvWriteBytesToBuffer.part.1>) [0 prvWriteBytesToBuffer.part.1 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvWriteBytesToBuffer.part.1") [flags 0x3] <function_decl 06380f78 prvWriteBytesToBuffer.part.1>) [0 prvWriteBytesToBuffer.part.1 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvWriteBytesToBuffer.part.1") [flags 0x3] <function_decl 063b1f78 prvWriteBytesToBuffer.part.1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvWriteBytesToBuffer.part.1") [flags 0x3] <function_decl 06380f78 prvWriteBytesToBuffer.part.1>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -808,11 +808,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 49 48 50 11 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvWriteBytesToBuffer.part.1") [flags 0x3] <function_decl 063b1f78 prvWriteBytesToBuffer.part.1>) [0 prvWriteBytesToBuffer.part.1 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvWriteBytesToBuffer.part.1") [flags 0x3] <function_decl 06380f78 prvWriteBytesToBuffer.part.1>) [0 prvWriteBytesToBuffer.part.1 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvWriteBytesToBuffer.part.1") [flags 0x3] <function_decl 063b1f78 prvWriteBytesToBuffer.part.1>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvWriteBytesToBuffer.part.1") [flags 0x3] <function_decl 06380f78 prvWriteBytesToBuffer.part.1>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -954,31 +954,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:1203) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1203 -1
      (nil))
 (insn 20 19 21 6 (set (reg:SI 90)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1203 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1203 -1
      (nil))
 (insn 21 20 22 6 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 90)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1203 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1203 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 22 21 23 6 (set (reg:SI 11 a1)
         (const_int 1203 [0x4b3])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1203 -1
      (nil))
 (insn 23 22 24 6 (set (reg:SI 91)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1203 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1203 -1
      (nil))
 (insn 24 23 25 6 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 91)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1203 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1203 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 25 24 27 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1203 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1022,31 +1022,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:1204) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1204 -1
      (nil))
 (insn 38 37 39 9 (set (reg:SI 95)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1204 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1204 -1
      (nil))
 (insn 39 38 40 9 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 95)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1204 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1204 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 40 39 41 9 (set (reg:SI 11 a1)
         (const_int 1204 [0x4b4])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1204 -1
      (nil))
 (insn 41 40 42 9 (set (reg:SI 96)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1204 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1204 -1
      (nil))
 (insn 42 41 43 9 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 96)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1204 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1204 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 43 42 45 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1204 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1089,11 +1089,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 58 57 59 11 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 04a49d98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 061e9d98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1205 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 04a49d98 __builtin_memcpy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 061e9d98 __builtin_memcpy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -1145,11 +1145,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 71 70 72 12 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 04a49d98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 061e9d98 __builtin_memcpy>) [0 __builtin_memcpy S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1212 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 04a49d98 __builtin_memcpy>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memcpy") [flags 0x41] <function_decl 061e9d98 __builtin_memcpy>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -1290,11 +1290,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 23 22 24 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvReadBytesFromBuffer.part.2") [flags 0x3] <function_decl 063b1e88 prvReadBytesFromBuffer.part.2>) [0 prvReadBytesFromBuffer.part.2 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvReadBytesFromBuffer.part.2") [flags 0x3] <function_decl 06380e88 prvReadBytesFromBuffer.part.2>) [0 prvReadBytesFromBuffer.part.2 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvReadBytesFromBuffer.part.2") [flags 0x3] <function_decl 063b1e88 prvReadBytesFromBuffer.part.2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvReadBytesFromBuffer.part.2") [flags 0x3] <function_decl 06380e88 prvReadBytesFromBuffer.part.2>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1374,11 +1374,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 41 40 42 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvReadBytesFromBuffer.part.2") [flags 0x3] <function_decl 063b1e88 prvReadBytesFromBuffer.part.2>) [0 prvReadBytesFromBuffer.part.2 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvReadBytesFromBuffer.part.2") [flags 0x3] <function_decl 06380e88 prvReadBytesFromBuffer.part.2>) [0 prvReadBytesFromBuffer.part.2 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvReadBytesFromBuffer.part.2") [flags 0x3] <function_decl 063b1e88 prvReadBytesFromBuffer.part.2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvReadBytesFromBuffer.part.2") [flags 0x3] <function_decl 06380e88 prvReadBytesFromBuffer.part.2>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1510,31 +1510,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:250) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":250 -1
      (nil))
 (insn 21 20 22 5 (set (reg:SI 84)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":250 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":250 -1
      (nil))
 (insn 22 21 23 5 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 84)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":250 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":250 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 23 22 24 5 (set (reg:SI 11 a1)
         (const_int 250 [0xfa])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":250 -1
      (nil))
 (insn 24 23 25 5 (set (reg:SI 85)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":250 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":250 -1
      (nil))
 (insn 25 24 26 5 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 85)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":250 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":250 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 26 25 28 5 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":250 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1574,31 +1574,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:256) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":256 -1
      (nil))
 (insn 38 37 39 8 (set (reg:SI 88)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":256 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":256 -1
      (nil))
 (insn 39 38 40 8 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 88)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":256 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":256 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 40 39 41 8 (set (reg:SI 11 a1)
         (const_int 256 [0x100])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":256 -1
      (nil))
 (insn 41 40 42 8 (set (reg:SI 89)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":256 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":256 -1
      (nil))
 (insn 42 41 43 8 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 89)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":256 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":256 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 43 42 45 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":256 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1653,31 +1653,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:259) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":259 -1
      (nil))
 (insn 55 54 56 13 (set (reg:SI 92)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":259 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":259 -1
      (nil))
 (insn 56 55 57 13 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 92)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":259 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":259 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 57 56 58 13 (set (reg:SI 11 a1)
         (const_int 259 [0x103])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":259 -1
      (nil))
 (insn 58 57 59 13 (set (reg:SI 93)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":259 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":259 -1
      (nil))
 (insn 59 58 60 13 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 93)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":259 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":259 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 60 59 62 13 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":259 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1725,11 +1725,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 76 75 77 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("pvPortMalloc") [flags 0x41] <function_decl 065a50f0 pvPortMalloc>) [0 pvPortMalloc S4 A32])
+                (call (mem:SI (symbol_ref:SI ("pvPortMalloc") [flags 0x41] <function_decl 065780f0 pvPortMalloc>) [0 pvPortMalloc S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":279 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pvPortMalloc") [flags 0x41] <function_decl 065a50f0 pvPortMalloc>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("pvPortMalloc") [flags 0x41] <function_decl 065780f0 pvPortMalloc>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -1768,11 +1768,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 76 [ <retval> ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":288 -1
      (nil))
 (call_insn 87 86 102 19 (parallel [
-            (call (mem:SI (symbol_ref:SI ("prvInitialiseNewStreamBuffer") [flags 0x3] <function_decl 063b1e10 prvInitialiseNewStreamBuffer>) [0 prvInitialiseNewStreamBuffer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("prvInitialiseNewStreamBuffer") [flags 0x3] <function_decl 06380e10 prvInitialiseNewStreamBuffer>) [0 prvInitialiseNewStreamBuffer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":288 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvInitialiseNewStreamBuffer") [flags 0x3] <function_decl 063b1e10 prvInitialiseNewStreamBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvInitialiseNewStreamBuffer") [flags 0x3] <function_decl 06380e10 prvInitialiseNewStreamBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -1907,31 +1907,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:319) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":319 -1
      (nil))
 (insn 18 17 19 4 (set (reg:SI 84)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":319 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":319 -1
      (nil))
 (insn 19 18 20 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 84)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":319 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":319 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 20 19 21 4 (set (reg:SI 11 a1)
         (const_int 319 [0x13f])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":319 -1
      (nil))
 (insn 21 20 22 4 (set (reg:SI 85)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":319 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":319 -1
      (nil))
 (insn 22 21 23 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 85)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":319 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":319 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 23 22 25 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":319 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -1971,31 +1971,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:320) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":320 -1
      (nil))
 (insn 35 34 36 7 (set (reg:SI 88)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":320 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":320 -1
      (nil))
 (insn 36 35 37 7 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 88)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":320 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":320 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 37 36 38 7 (set (reg:SI 11 a1)
         (const_int 320 [0x140])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":320 -1
      (nil))
 (insn 38 37 39 7 (set (reg:SI 89)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":320 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":320 -1
      (nil))
 (insn 39 38 40 7 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 89)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":320 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":320 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 40 39 42 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":320 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2035,31 +2035,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:321) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":321 -1
      (nil))
 (insn 52 51 53 10 (set (reg:SI 92)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":321 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":321 -1
      (nil))
 (insn 53 52 54 10 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 92)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":321 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":321 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 54 53 55 10 (set (reg:SI 11 a1)
         (const_int 321 [0x141])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":321 -1
      (nil))
 (insn 55 54 56 10 (set (reg:SI 93)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":321 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":321 -1
      (nil))
 (insn 56 55 57 10 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 93)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":321 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":321 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 57 56 59 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":321 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2138,31 +2138,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:345) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":345 -1
      (nil))
 (insn 78 77 79 18 (set (reg:SI 97)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":345 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":345 -1
      (nil))
 (insn 79 78 80 18 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 97)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":345 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":345 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 80 79 81 18 (set (reg:SI 11 a1)
         (const_int 345 [0x159])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":345 -1
      (nil))
 (insn 81 80 82 18 (set (reg:SI 98)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":345 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":345 -1
      (nil))
 (insn 82 81 83 18 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 98)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":345 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":345 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 83 82 85 18 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":345 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2216,31 +2216,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:353) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":353 -1
      (nil))
 (insn 99 98 100 21 (set (reg:SI 103)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":353 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":353 -1
      (nil))
 (insn 100 99 101 21 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 103)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":353 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":353 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 101 100 102 21 (set (reg:SI 11 a1)
         (const_int 353 [0x161])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":353 -1
      (nil))
 (insn 102 101 103 21 (set (reg:SI 104)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":353 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":353 -1
      (nil))
 (insn 103 102 104 21 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 104)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":353 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":353 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 104 103 106 21 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":353 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2271,11 +2271,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 81 [ pxStaticStreamBuffer ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":359 -1
      (nil))
 (call_insn 116 115 117 23 (parallel [
-            (call (mem:SI (symbol_ref:SI ("prvInitialiseNewStreamBuffer") [flags 0x3] <function_decl 063b1e10 prvInitialiseNewStreamBuffer>) [0 prvInitialiseNewStreamBuffer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("prvInitialiseNewStreamBuffer") [flags 0x3] <function_decl 06380e10 prvInitialiseNewStreamBuffer>) [0 prvInitialiseNewStreamBuffer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":359 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvInitialiseNewStreamBuffer") [flags 0x3] <function_decl 063b1e10 prvInitialiseNewStreamBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvInitialiseNewStreamBuffer") [flags 0x3] <function_decl 06380e10 prvInitialiseNewStreamBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2372,31 +2372,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:389) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":389 -1
      (nil))
 (insn 11 10 12 4 (set (reg:SI 77)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":389 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":389 -1
      (nil))
 (insn 12 11 13 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 77)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":389 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":389 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 13 12 14 4 (set (reg:SI 11 a1)
         (const_int 389 [0x185])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":389 -1
      (nil))
 (insn 14 13 15 4 (set (reg:SI 78)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":389 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":389 -1
      (nil))
 (insn 15 14 16 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 78)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":389 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":389 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 16 15 18 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":389 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2437,11 +2437,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 74 [ xStreamBuffer ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":399 -1
      (nil))
 (call_insn 30 29 31 7 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPortFree") [flags 0x41] <function_decl 065a5168 vPortFree>) [0 vPortFree S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPortFree") [flags 0x41] <function_decl 06578168 vPortFree>) [0 vPortFree S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":399 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortFree") [flags 0x41] <function_decl 065a5168 vPortFree>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortFree") [flags 0x41] <function_decl 06578168 vPortFree>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -2469,11 +2469,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 40 39 41 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04a4b078 __builtin_memset>) [0 __builtin_memset S4 A32])
+                (call (mem:SI (symbol_ref:SI ("memset") [flags 0x41] <function_decl 061eb078 __builtin_memset>) [0 __builtin_memset S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":413 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 04a4b078 __builtin_memset>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("memset") [flags 0x41] <function_decl 061eb078 __builtin_memset>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (set (reg:SI 10 a0)
@@ -2557,31 +2557,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:427) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":427 -1
      (nil))
 (insn 14 13 15 4 (set (reg:SI 82)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":427 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":427 -1
      (nil))
 (insn 15 14 16 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 82)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":427 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":427 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 16 15 17 4 (set (reg:SI 11 a1)
         (const_int 427 [0x1ab])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":427 -1
      (nil))
 (insn 17 16 18 4 (set (reg:SI 83)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":427 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":427 -1
      (nil))
 (insn 18 17 19 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 83)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":427 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":427 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 19 18 21 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":427 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2597,11 +2597,11 @@ try_optimize_cfg iteration 2
 (code_label 24 23 25 6 83 (nil) [1 uses])
 (note 25 24 26 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 (call_insn 26 25 27 6 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 065dcd98 vPortEnterCritical>) [0 vPortEnterCritical S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 065afd98 vPortEnterCritical>) [0 vPortEnterCritical S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":438 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 065dcd98 vPortEnterCritical>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 065afd98 vPortEnterCritical>)
         (nil))
     (nil))
 (insn 27 26 28 6 (set (reg/f:SI 72 [ _1 ])
@@ -2660,11 +2660,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 79 [ xStreamBuffer ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":444 -1
      (nil))
 (call_insn 42 41 4 8 (parallel [
-            (call (mem:SI (symbol_ref:SI ("prvInitialiseNewStreamBuffer") [flags 0x3] <function_decl 063b1e10 prvInitialiseNewStreamBuffer>) [0 prvInitialiseNewStreamBuffer S4 A32])
+            (call (mem:SI (symbol_ref:SI ("prvInitialiseNewStreamBuffer") [flags 0x3] <function_decl 06380e10 prvInitialiseNewStreamBuffer>) [0 prvInitialiseNewStreamBuffer S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":444 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvInitialiseNewStreamBuffer") [flags 0x3] <function_decl 063b1e10 prvInitialiseNewStreamBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvInitialiseNewStreamBuffer") [flags 0x3] <function_decl 06380e10 prvInitialiseNewStreamBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -2699,11 +2699,11 @@ try_optimize_cfg iteration 2
 (code_label 43 6 44 11 85 (nil) [2 uses])
 (note 44 43 45 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
 (call_insn 45 44 49 11 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 065dce10 vPortExitCritical>) [0 vPortExitCritical S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 065afe10 vPortExitCritical>) [0 vPortExitCritical S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":461 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 065dce10 vPortExitCritical>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 065afe10 vPortExitCritical>)
         (nil))
     (nil))
 (insn 49 45 50 11 (set (reg/i:SI 10 a0)
@@ -2786,31 +2786,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:473) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":473 -1
      (nil))
 (insn 15 14 16 4 (set (reg:SI 78)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":473 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":473 -1
      (nil))
 (insn 16 15 17 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 78)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":473 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":473 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 17 16 18 4 (set (reg:SI 11 a1)
         (const_int 473 [0x1d9])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":473 -1
      (nil))
 (insn 18 17 19 4 (set (reg:SI 79)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":473 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":473 -1
      (nil))
 (insn 19 18 20 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 79)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":473 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":473 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 20 19 22 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":473 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -2945,31 +2945,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:503) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":503 -1
      (nil))
 (insn 11 10 12 4 (set (reg:SI 83)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":503 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":503 -1
      (nil))
 (insn 12 11 13 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 83)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":503 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":503 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 13 12 14 4 (set (reg:SI 11 a1)
         (const_int 503 [0x1f7])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":503 -1
      (nil))
 (insn 14 13 15 4 (set (reg:SI 84)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":503 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":503 -1
      (nil))
 (insn 15 14 16 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 84)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":503 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":503 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 16 15 18 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":503 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -3104,31 +3104,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:535) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":535 -1
      (nil))
 (insn 11 10 12 4 (set (reg:SI 76)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":535 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":535 -1
      (nil))
 (insn 12 11 13 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 76)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":535 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":535 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 13 12 14 4 (set (reg:SI 11 a1)
         (const_int 535 [0x217])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":535 -1
      (nil))
 (insn 14 13 15 4 (set (reg:SI 77)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":535 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":535 -1
      (nil))
 (insn 15 14 16 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 77)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":535 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":535 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 16 15 18 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":535 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -3148,11 +3148,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 24 23 25 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 063b1bb8 prvBytesInBuffer>) [0 prvBytesInBuffer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 06380bb8 prvBytesInBuffer>) [0 prvBytesInBuffer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":537 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 063b1bb8 prvBytesInBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 06380bb8 prvBytesInBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3305,31 +3305,31 @@ Deleted label in block 30.
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:553) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":553 -1
      (nil))
 (insn 14 13 15 4 (set (reg:SI 93)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":553 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":553 -1
      (nil))
 (insn 15 14 16 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 93)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":553 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":553 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 16 15 17 4 (set (reg:SI 11 a1)
         (const_int 553 [0x229])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":553 -1
      (nil))
 (insn 17 16 18 4 (set (reg:SI 94)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":553 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":553 -1
      (nil))
 (insn 18 17 19 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 94)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":553 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":553 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 19 18 21 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":553 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -3369,31 +3369,31 @@ Deleted label in block 30.
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:554) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":554 -1
      (nil))
 (insn 31 30 32 7 (set (reg:SI 97)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":554 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":554 -1
      (nil))
 (insn 32 31 33 7 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 97)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":554 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":554 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 33 32 34 7 (set (reg:SI 11 a1)
         (const_int 554 [0x22a])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":554 -1
      (nil))
 (insn 34 33 35 7 (set (reg:SI 98)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":554 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":554 -1
      (nil))
 (insn 35 34 36 7 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 98)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":554 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":554 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 36 35 38 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":554 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -3467,31 +3467,31 @@ Deleted label in block 30.
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:569) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":569 -1
      (nil))
 (insn 57 56 58 11 (set (reg:SI 106)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":569 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":569 -1
      (nil))
 (insn 58 57 59 11 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 106)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":569 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":569 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 59 58 60 11 (set (reg:SI 11 a1)
         (const_int 569 [0x239])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":569 -1
      (nil))
 (insn 60 59 61 11 (set (reg:SI 107)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":569 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":569 -1
      (nil))
 (insn 61 60 62 11 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 107)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":569 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":569 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 62 61 64 11 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":569 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -3559,11 +3559,11 @@ Deleted label in block 30.
      (nil))
 (call_insn 86 85 87 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xStreamBufferSpacesAvailable") [flags 0x3] <function_decl 063b17f8 xStreamBufferSpacesAvailable>) [0 xStreamBufferSpacesAvailable S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xStreamBufferSpacesAvailable") [flags 0x3] <function_decl 063807f8 xStreamBufferSpacesAvailable>) [0 xStreamBufferSpacesAvailable S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":640 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xStreamBufferSpacesAvailable") [flags 0x3] <function_decl 063b17f8 xStreamBufferSpacesAvailable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xStreamBufferSpacesAvailable") [flags 0x3] <function_decl 063807f8 xStreamBufferSpacesAvailable>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3586,22 +3586,22 @@ Deleted label in block 30.
         (reg:SI 109)) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":601 -1
      (nil))
 (call_insn 94 93 141 20 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskSetTimeOutState") [flags 0x41] <function_decl 063a79d8 vTaskSetTimeOutState>) [0 vTaskSetTimeOutState S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskSetTimeOutState") [flags 0x41] <function_decl 063769d8 vTaskSetTimeOutState>) [0 vTaskSetTimeOutState S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":601 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSetTimeOutState") [flags 0x41] <function_decl 063a79d8 vTaskSetTimeOutState>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSetTimeOutState") [flags 0x41] <function_decl 063769d8 vTaskSetTimeOutState>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
 (code_label 141 94 95 21 126 (nil) [1 uses])
 (note 95 141 96 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
 (call_insn 96 95 97 21 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 065dcd98 vPortEnterCritical>) [0 vPortEnterCritical S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 065afd98 vPortEnterCritical>) [0 vPortEnterCritical S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":607 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 065dcd98 vPortEnterCritical>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 065afd98 vPortEnterCritical>)
         (nil))
     (nil))
 (insn 97 96 98 21 (set (reg:SI 10 a0)
@@ -3609,11 +3609,11 @@ Deleted label in block 30.
      (nil))
 (call_insn 98 97 99 21 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xStreamBufferSpacesAvailable") [flags 0x3] <function_decl 063b17f8 xStreamBufferSpacesAvailable>) [0 xStreamBufferSpacesAvailable S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xStreamBufferSpacesAvailable") [flags 0x3] <function_decl 063807f8 xStreamBufferSpacesAvailable>) [0 xStreamBufferSpacesAvailable S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":609 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xStreamBufferSpacesAvailable") [flags 0x3] <function_decl 063b17f8 xStreamBufferSpacesAvailable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xStreamBufferSpacesAvailable") [flags 0x3] <function_decl 063807f8 xStreamBufferSpacesAvailable>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3637,11 +3637,11 @@ Deleted label in block 30.
      (nil))
 (call_insn 104 103 105 22 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyStateClear") [flags 0x41] <function_decl 063a78e8 xTaskGenericNotifyStateClear>) [0 xTaskGenericNotifyStateClear S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyStateClear") [flags 0x41] <function_decl 063768e8 xTaskGenericNotifyStateClear>) [0 xTaskGenericNotifyStateClear S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":614 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyStateClear") [flags 0x41] <function_decl 063a78e8 xTaskGenericNotifyStateClear>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyStateClear") [flags 0x41] <function_decl 063768e8 xTaskGenericNotifyStateClear>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -3675,31 +3675,31 @@ Deleted label in block 30.
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:617) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":617 -1
      (nil))
 (insn 111 110 112 23 (set (reg:SI 112)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":617 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":617 -1
      (nil))
 (insn 112 111 113 23 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 112)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":617 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":617 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 113 112 114 23 (set (reg:SI 11 a1)
         (const_int 617 [0x269])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":617 -1
      (nil))
 (insn 114 113 115 23 (set (reg:SI 113)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":617 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":617 -1
      (nil))
 (insn 115 114 116 23 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 113)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":617 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":617 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 116 115 118 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":617 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -3716,11 +3716,11 @@ Deleted label in block 30.
 (note 122 121 123 25 [bb 25] NOTE_INSN_BASIC_BLOCK)
 (call_insn 123 122 124 25 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 063a7f00 xTaskGetCurrentTaskHandle>) [0 xTaskGetCurrentTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 06376f00 xTaskGetCurrentTaskHandle>) [0 xTaskGetCurrentTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":618 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 063a7f00 xTaskGetCurrentTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 06376f00 xTaskGetCurrentTaskHandle>)
         (nil))
     (nil))
 (insn 124 123 125 25 (set (reg/f:SI 76 [ _5 ])
@@ -3731,11 +3731,11 @@ Deleted label in block 30.
         (reg/f:SI 76 [ _5 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":618 -1
      (nil))
 (call_insn 126 125 127 25 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 065dce10 vPortExitCritical>) [0 vPortExitCritical S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 065afe10 vPortExitCritical>) [0 vPortExitCritical S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":626 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 065dce10 vPortExitCritical>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 065afe10 vPortExitCritical>)
         (nil))
     (nil))
 (insn 127 126 128 25 (set (reg:SI 114)
@@ -3759,11 +3759,11 @@ Deleted label in block 30.
      (nil))
 (call_insn 133 132 134 25 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyWait") [flags 0x41] <function_decl 063a7780 xTaskGenericNotifyWait>) [0 xTaskGenericNotifyWait S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyWait") [flags 0x41] <function_decl 06376780 xTaskGenericNotifyWait>) [0 xTaskGenericNotifyWait S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":629 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyWait") [flags 0x41] <function_decl 063a7780 xTaskGenericNotifyWait>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyWait") [flags 0x41] <function_decl 06376780 xTaskGenericNotifyWait>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -3791,11 +3791,11 @@ Deleted label in block 30.
      (nil))
 (call_insn 139 138 140 25 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskCheckForTimeOut") [flags 0x41] <function_decl 063a7a50 xTaskCheckForTimeOut>) [0 xTaskCheckForTimeOut S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskCheckForTimeOut") [flags 0x41] <function_decl 06376a50 xTaskCheckForTimeOut>) [0 xTaskCheckForTimeOut S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":631 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCheckForTimeOut") [flags 0x41] <function_decl 063a7a50 xTaskCheckForTimeOut>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskCheckForTimeOut") [flags 0x41] <function_decl 06376a50 xTaskCheckForTimeOut>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -3819,11 +3819,11 @@ Deleted label in block 30.
 (code_label 146 144 147 27 123 (nil) [1 uses])
 (note 147 146 148 27 [bb 27] NOTE_INSN_BASIC_BLOCK)
 (call_insn 148 147 149 27 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 065dce10 vPortExitCritical>) [0 vPortExitCritical S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 065afe10 vPortExitCritical>) [0 vPortExitCritical S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":622 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 065dce10 vPortExitCritical>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 065afe10 vPortExitCritical>)
         (nil))
     (nil))
 (code_label 149 148 150 28 127 (nil) [1 uses])
@@ -3854,11 +3854,11 @@ Deleted label in block 30.
      (nil))
 (call_insn 160 159 161 29 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvWriteMessageToBuffer") [flags 0x3] <function_decl 063b1d20 prvWriteMessageToBuffer>) [0 prvWriteMessageToBuffer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvWriteMessageToBuffer") [flags 0x3] <function_decl 06380d20 prvWriteMessageToBuffer>) [0 prvWriteMessageToBuffer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":647 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvWriteMessageToBuffer") [flags 0x3] <function_decl 063b1d20 prvWriteMessageToBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvWriteMessageToBuffer") [flags 0x3] <function_decl 06380d20 prvWriteMessageToBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3890,11 +3890,11 @@ Deleted label in block 30.
      (nil))
 (call_insn 169 168 170 31 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 063b1bb8 prvBytesInBuffer>) [0 prvBytesInBuffer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 06380bb8 prvBytesInBuffer>) [0 prvBytesInBuffer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":654 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 063b1bb8 prvBytesInBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 06380bb8 prvBytesInBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -3915,11 +3915,11 @@ Deleted label in block 30.
  -> 194)
 (note 174 173 175 32 [bb 32] NOTE_INSN_BASIC_BLOCK)
 (call_insn 175 174 176 32 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 065a5e88 vTaskSuspendAll>) [0 vTaskSuspendAll S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 06578e88 vTaskSuspendAll>) [0 vTaskSuspendAll S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":656 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 065a5e88 vTaskSuspendAll>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 06578e88 vTaskSuspendAll>)
         (nil))
     (nil))
 (insn 176 175 177 32 (set (reg/f:SI 81 [ _10 ])
@@ -3955,11 +3955,11 @@ Deleted label in block 30.
      (nil))
 (call_insn 185 184 186 33 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 063a7690 xTaskGenericNotify>) [0 xTaskGenericNotify S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 06376690 xTaskGenericNotify>) [0 xTaskGenericNotify S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":656 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 063a7690 xTaskGenericNotify>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 06376690 xTaskGenericNotify>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -3975,11 +3975,11 @@ Deleted label in block 30.
 (note 188 187 189 34 [bb 34] NOTE_INSN_BASIC_BLOCK)
 (call_insn 189 188 194 34 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 065a5f00 xTaskResumeAll>) [0 xTaskResumeAll S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 06578f00 xTaskResumeAll>) [0 xTaskResumeAll S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":656 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 065a5f00 xTaskResumeAll>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 06578f00 xTaskResumeAll>)
         (nil))
     (nil))
 (code_label 194 189 197 36 111 (nil) [2 uses])
@@ -4088,31 +4088,31 @@ Deleted label in block 13.
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:682) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":682 -1
      (nil))
 (insn 15 14 16 4 (set (reg:SI 88)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":682 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":682 -1
      (nil))
 (insn 16 15 17 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 88)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":682 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":682 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 17 16 18 4 (set (reg:SI 11 a1)
         (const_int 682 [0x2aa])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":682 -1
      (nil))
 (insn 18 17 19 4 (set (reg:SI 89)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":682 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":682 -1
      (nil))
 (insn 19 18 20 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 89)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":682 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":682 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 20 19 22 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":682 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -4152,31 +4152,31 @@ Deleted label in block 13.
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:683) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":683 -1
      (nil))
 (insn 32 31 33 7 (set (reg:SI 92)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":683 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":683 -1
      (nil))
 (insn 33 32 34 7 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 92)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":683 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":683 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 34 33 35 7 (set (reg:SI 11 a1)
         (const_int 683 [0x2ab])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":683 -1
      (nil))
 (insn 35 34 36 7 (set (reg:SI 93)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":683 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":683 -1
      (nil))
 (insn 36 35 37 7 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 93)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":683 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":683 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 37 36 39 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":683 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -4234,11 +4234,11 @@ Deleted label in block 13.
      (nil))
 (call_insn 54 53 55 12 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xStreamBufferSpacesAvailable") [flags 0x3] <function_decl 063b17f8 xStreamBufferSpacesAvailable>) [0 xStreamBufferSpacesAvailable S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xStreamBufferSpacesAvailable") [flags 0x3] <function_decl 063807f8 xStreamBufferSpacesAvailable>) [0 xStreamBufferSpacesAvailable S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":698 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xStreamBufferSpacesAvailable") [flags 0x3] <function_decl 063b17f8 xStreamBufferSpacesAvailable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xStreamBufferSpacesAvailable") [flags 0x3] <function_decl 063807f8 xStreamBufferSpacesAvailable>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4263,11 +4263,11 @@ Deleted label in block 13.
      (nil))
 (call_insn 61 60 62 12 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvWriteMessageToBuffer") [flags 0x3] <function_decl 063b1d20 prvWriteMessageToBuffer>) [0 prvWriteMessageToBuffer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvWriteMessageToBuffer") [flags 0x3] <function_decl 06380d20 prvWriteMessageToBuffer>) [0 prvWriteMessageToBuffer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":699 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvWriteMessageToBuffer") [flags 0x3] <function_decl 063b1d20 prvWriteMessageToBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvWriteMessageToBuffer") [flags 0x3] <function_decl 06380d20 prvWriteMessageToBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4299,11 +4299,11 @@ Deleted label in block 13.
      (nil))
 (call_insn 70 69 71 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 063b1bb8 prvBytesInBuffer>) [0 prvBytesInBuffer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 06380bb8 prvBytesInBuffer>) [0 prvBytesInBuffer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":704 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 063b1bb8 prvBytesInBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 06380bb8 prvBytesInBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4325,11 +4325,11 @@ Deleted label in block 13.
 (note 75 74 76 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
 (call_insn 76 75 77 15 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 065dce88 xPortSetInterruptMask>) [0 xPortSetInterruptMask S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 065afe88 xPortSetInterruptMask>) [0 xPortSetInterruptMask S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":706 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 065dce88 xPortSetInterruptMask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 065afe88 xPortSetInterruptMask>)
         (nil))
     (nil))
 (insn 77 76 78 15 (set (reg/v:SI 80 [ uxSavedInterruptStatus ])
@@ -4371,11 +4371,11 @@ Deleted label in block 13.
      (nil))
 (call_insn 88 87 89 16 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 063a7708 xTaskGenericNotifyFromISR>) [0 xTaskGenericNotifyFromISR S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06376708 xTaskGenericNotifyFromISR>) [0 xTaskGenericNotifyFromISR S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":706 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 063a7708 xTaskGenericNotifyFromISR>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06376708 xTaskGenericNotifyFromISR>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -4394,11 +4394,11 @@ Deleted label in block 13.
         (reg/v:SI 80 [ uxSavedInterruptStatus ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":706 -1
      (nil))
 (call_insn 93 92 98 17 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 065dcf00 vPortClearInterruptMask>) [0 vPortClearInterruptMask S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 065aff00 vPortClearInterruptMask>) [0 vPortClearInterruptMask S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":706 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 065dcf00 vPortClearInterruptMask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 065aff00 vPortClearInterruptMask>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -4522,31 +4522,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:775) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":775 -1
      (nil))
 (insn 17 16 18 4 (set (reg:SI 87)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":775 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":775 -1
      (nil))
 (insn 18 17 19 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 87)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":775 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":775 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 19 18 20 4 (set (reg:SI 11 a1)
         (const_int 775 [0x307])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":775 -1
      (nil))
 (insn 20 19 21 4 (set (reg:SI 88)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":775 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":775 -1
      (nil))
 (insn 21 20 22 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 88)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":775 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":775 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 22 21 24 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":775 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -4586,31 +4586,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:776) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":776 -1
      (nil))
 (insn 34 33 35 7 (set (reg:SI 91)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":776 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":776 -1
      (nil))
 (insn 35 34 36 7 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 91)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":776 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":776 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 36 35 37 7 (set (reg:SI 11 a1)
         (const_int 776 [0x308])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":776 -1
      (nil))
 (insn 37 36 38 7 (set (reg:SI 92)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":776 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":776 -1
      (nil))
 (insn 38 37 39 7 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 92)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":776 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":776 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 39 38 41 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":776 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -4671,11 +4671,11 @@ try_optimize_cfg iteration 2
  -> 103)
 (note 55 54 56 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
 (call_insn 56 55 57 13 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 065dcd98 vPortEnterCritical>) [0 vPortEnterCritical S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 065afd98 vPortEnterCritical>) [0 vPortEnterCritical S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":796 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 065dcd98 vPortEnterCritical>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortEnterCritical") [flags 0x41] <function_decl 065afd98 vPortEnterCritical>)
         (nil))
     (nil))
 (insn 57 56 58 13 (set (reg:SI 10 a0)
@@ -4683,11 +4683,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 58 57 59 13 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 063b1bb8 prvBytesInBuffer>) [0 prvBytesInBuffer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 06380bb8 prvBytesInBuffer>) [0 prvBytesInBuffer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":798 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 063b1bb8 prvBytesInBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 06380bb8 prvBytesInBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4711,11 +4711,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 64 63 65 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyStateClear") [flags 0x41] <function_decl 063a78e8 xTaskGenericNotifyStateClear>) [0 xTaskGenericNotifyStateClear S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyStateClear") [flags 0x41] <function_decl 063768e8 xTaskGenericNotifyStateClear>) [0 xTaskGenericNotifyStateClear S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":808 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyStateClear") [flags 0x41] <function_decl 063a78e8 xTaskGenericNotifyStateClear>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyStateClear") [flags 0x41] <function_decl 063768e8 xTaskGenericNotifyStateClear>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -4749,31 +4749,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:811) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":811 -1
      (nil))
 (insn 71 70 72 15 (set (reg:SI 99)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":811 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":811 -1
      (nil))
 (insn 72 71 73 15 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 99)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":811 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":811 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 73 72 74 15 (set (reg:SI 11 a1)
         (const_int 811 [0x32b])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":811 -1
      (nil))
 (insn 74 73 75 15 (set (reg:SI 100)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":811 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":811 -1
      (nil))
 (insn 75 74 76 15 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 100)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":811 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":811 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 76 75 78 15 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":811 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -4790,11 +4790,11 @@ try_optimize_cfg iteration 2
 (note 82 81 83 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
 (call_insn 83 82 84 17 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 063a7f00 xTaskGetCurrentTaskHandle>) [0 xTaskGetCurrentTaskHandle S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 06376f00 xTaskGetCurrentTaskHandle>) [0 xTaskGetCurrentTaskHandle S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":812 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 063a7f00 xTaskGetCurrentTaskHandle>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGetCurrentTaskHandle") [flags 0x41] <function_decl 06376f00 xTaskGetCurrentTaskHandle>)
         (nil))
     (nil))
 (insn 84 83 85 17 (set (reg/f:SI 74 [ _3 ])
@@ -4807,11 +4807,11 @@ try_optimize_cfg iteration 2
 (code_label 86 85 87 18 165 (nil) [1 uses])
 (note 87 86 88 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
 (call_insn 88 87 89 18 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 065dce10 vPortExitCritical>) [0 vPortExitCritical S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 065afe10 vPortExitCritical>) [0 vPortExitCritical S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":819 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 065dce10 vPortExitCritical>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortExitCritical") [flags 0x41] <function_decl 065afe10 vPortExitCritical>)
         (nil))
     (nil))
 (jump_insn 89 88 90 18 (set (pc)
@@ -4839,11 +4839,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 96 95 97 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyWait") [flags 0x41] <function_decl 063a7780 xTaskGenericNotifyWait>) [0 xTaskGenericNotifyWait S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyWait") [flags 0x41] <function_decl 06376780 xTaskGenericNotifyWait>) [0 xTaskGenericNotifyWait S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":825 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyWait") [flags 0x41] <function_decl 063a7780 xTaskGenericNotifyWait>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyWait") [flags 0x41] <function_decl 06376780 xTaskGenericNotifyWait>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -4860,11 +4860,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 99 98 100 19 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 063b1bb8 prvBytesInBuffer>) [0 prvBytesInBuffer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 06380bb8 prvBytesInBuffer>) [0 prvBytesInBuffer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":829 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 063b1bb8 prvBytesInBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 06380bb8 prvBytesInBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4884,11 +4884,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 106 105 107 20 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 063b1bb8 prvBytesInBuffer>) [0 prvBytesInBuffer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 06380bb8 prvBytesInBuffer>) [0 prvBytesInBuffer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":838 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 063b1bb8 prvBytesInBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 06380bb8 prvBytesInBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4931,11 +4931,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 120 119 121 23 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvReadMessageFromBuffer") [flags 0x3] <function_decl 063b1ca8 prvReadMessageFromBuffer>) [0 prvReadMessageFromBuffer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvReadMessageFromBuffer") [flags 0x3] <function_decl 06380ca8 prvReadMessageFromBuffer>) [0 prvReadMessageFromBuffer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":848 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvReadMessageFromBuffer") [flags 0x3] <function_decl 063b1ca8 prvReadMessageFromBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvReadMessageFromBuffer") [flags 0x3] <function_decl 06380ca8 prvReadMessageFromBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -4955,11 +4955,11 @@ try_optimize_cfg iteration 2
  -> 122)
 (note 124 123 125 24 [bb 24] NOTE_INSN_BASIC_BLOCK)
 (call_insn 125 124 126 24 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 065a5e88 vTaskSuspendAll>) [0 vTaskSuspendAll S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 06578e88 vTaskSuspendAll>) [0 vTaskSuspendAll S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":854 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 065a5e88 vTaskSuspendAll>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vTaskSuspendAll") [flags 0x41] <function_decl 06578e88 vTaskSuspendAll>)
         (nil))
     (nil))
 (insn 126 125 127 24 (set (reg/f:SI 75 [ _4 ])
@@ -4995,11 +4995,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 135 134 136 25 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 063a7690 xTaskGenericNotify>) [0 xTaskGenericNotify S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 06376690 xTaskGenericNotify>) [0 xTaskGenericNotify S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":854 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 063a7690 xTaskGenericNotify>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotify") [flags 0x41] <function_decl 06376690 xTaskGenericNotify>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -5015,11 +5015,11 @@ try_optimize_cfg iteration 2
 (note 138 137 139 26 [bb 26] NOTE_INSN_BASIC_BLOCK)
 (call_insn 139 138 144 26 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 065a5f00 xTaskResumeAll>) [0 xTaskResumeAll S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 06578f00 xTaskResumeAll>) [0 xTaskResumeAll S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":854 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 065a5f00 xTaskResumeAll>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskResumeAll") [flags 0x41] <function_decl 06578f00 xTaskResumeAll>)
         (nil))
     (nil))
 (code_label 144 139 147 28 158 (nil) [1 uses])
@@ -5108,31 +5108,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:877) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":877 -1
      (nil))
 (insn 12 11 13 4 (set (reg:SI 80)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":877 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":877 -1
      (nil))
 (insn 13 12 14 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 80)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":877 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":877 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 14 13 15 4 (set (reg:SI 11 a1)
         (const_int 877 [0x36d])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":877 -1
      (nil))
 (insn 15 14 16 4 (set (reg:SI 81)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":877 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":877 -1
      (nil))
 (insn 16 15 17 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 81)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":877 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":877 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 17 16 19 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":877 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -5174,11 +5174,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 31 30 32 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 063b1bb8 prvBytesInBuffer>) [0 prvBytesInBuffer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 06380bb8 prvBytesInBuffer>) [0 prvBytesInBuffer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":882 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 063b1bb8 prvBytesInBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 06380bb8 prvBytesInBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5218,11 +5218,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 42 41 43 8 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvReadBytesFromBuffer.part.2") [flags 0x3] <function_decl 063b1e88 prvReadBytesFromBuffer.part.2>) [0 prvReadBytesFromBuffer.part.2 S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvReadBytesFromBuffer.part.2") [flags 0x3] <function_decl 06380e88 prvReadBytesFromBuffer.part.2>) [0 prvReadBytesFromBuffer.part.2 S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvReadBytesFromBuffer.part.2") [flags 0x3] <function_decl 063b1e88 prvReadBytesFromBuffer.part.2>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvReadBytesFromBuffer.part.2") [flags 0x3] <function_decl 06380e88 prvReadBytesFromBuffer.part.2>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5266,31 +5266,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:898) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":898 -1
      (nil))
 (insn 53 52 54 10 (set (reg:SI 90)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":898 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":898 -1
      (nil))
 (insn 54 53 55 10 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 90)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":898 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":898 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 55 54 56 10 (set (reg:SI 11 a1)
         (const_int 898 [0x382])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":898 -1
      (nil))
 (insn 56 55 57 10 (set (reg:SI 91)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":898 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":898 -1
      (nil))
 (insn 57 56 58 10 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 91)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":898 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":898 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 58 57 60 10 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":898 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -5410,31 +5410,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:919) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":919 -1
      (nil))
 (insn 17 16 18 4 (set (reg:SI 86)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":919 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":919 -1
      (nil))
 (insn 18 17 19 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 86)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":919 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":919 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 19 18 20 4 (set (reg:SI 11 a1)
         (const_int 919 [0x397])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":919 -1
      (nil))
 (insn 20 19 21 4 (set (reg:SI 87)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":919 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":919 -1
      (nil))
 (insn 21 20 22 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 87)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":919 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":919 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 22 21 24 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":919 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -5474,31 +5474,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:920) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":920 -1
      (nil))
 (insn 34 33 35 7 (set (reg:SI 90)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":920 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":920 -1
      (nil))
 (insn 35 34 36 7 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 90)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":920 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":920 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 36 35 37 7 (set (reg:SI 11 a1)
         (const_int 920 [0x398])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":920 -1
      (nil))
 (insn 37 36 38 7 (set (reg:SI 91)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":920 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":920 -1
      (nil))
 (insn 38 37 39 7 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 91)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":920 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":920 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 39 38 41 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":920 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -5555,11 +5555,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 55 54 56 12 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 063b1bb8 prvBytesInBuffer>) [0 prvBytesInBuffer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 06380bb8 prvBytesInBuffer>) [0 prvBytesInBuffer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":936 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 063b1bb8 prvBytesInBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvBytesInBuffer") [flags 0x3] <function_decl 06380bb8 prvBytesInBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5600,11 +5600,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 67 66 68 14 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("prvReadMessageFromBuffer") [flags 0x3] <function_decl 063b1ca8 prvReadMessageFromBuffer>) [0 prvReadMessageFromBuffer S4 A32])
+                (call (mem:SI (symbol_ref:SI ("prvReadMessageFromBuffer") [flags 0x3] <function_decl 06380ca8 prvReadMessageFromBuffer>) [0 prvReadMessageFromBuffer S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":945 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvReadMessageFromBuffer") [flags 0x3] <function_decl 063b1ca8 prvReadMessageFromBuffer>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("prvReadMessageFromBuffer") [flags 0x3] <function_decl 06380ca8 prvReadMessageFromBuffer>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -5625,11 +5625,11 @@ try_optimize_cfg iteration 2
 (note 71 70 72 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
 (call_insn 72 71 73 15 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 065dce88 xPortSetInterruptMask>) [0 xPortSetInterruptMask S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 065afe88 xPortSetInterruptMask>) [0 xPortSetInterruptMask S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":950 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 065dce88 xPortSetInterruptMask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 065afe88 xPortSetInterruptMask>)
         (nil))
     (nil))
 (insn 73 72 74 15 (set (reg/v:SI 78 [ uxSavedInterruptStatus ])
@@ -5671,11 +5671,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 84 83 85 16 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 063a7708 xTaskGenericNotifyFromISR>) [0 xTaskGenericNotifyFromISR S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06376708 xTaskGenericNotifyFromISR>) [0 xTaskGenericNotifyFromISR S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":950 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 063a7708 xTaskGenericNotifyFromISR>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06376708 xTaskGenericNotifyFromISR>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -5694,11 +5694,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 78 [ uxSavedInterruptStatus ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":950 -1
      (nil))
 (call_insn 89 88 94 17 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 065dcf00 vPortClearInterruptMask>) [0 vPortClearInterruptMask S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 065aff00 vPortClearInterruptMask>) [0 vPortClearInterruptMask S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":950 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 065dcf00 vPortClearInterruptMask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 065aff00 vPortClearInterruptMask>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -5771,31 +5771,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:1026) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1026 -1
      (nil))
 (insn 11 10 12 4 (set (reg:SI 79)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1026 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1026 -1
      (nil))
 (insn 12 11 13 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 79)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1026 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1026 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 13 12 14 4 (set (reg:SI 11 a1)
         (const_int 1026 [0x402])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1026 -1
      (nil))
 (insn 14 13 15 4 (set (reg:SI 80)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1026 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1026 -1
      (nil))
 (insn 15 14 16 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 80)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1026 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1026 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 16 15 18 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1026 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -5900,31 +5900,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:1050) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1050 -1
      (nil))
 (insn 13 12 14 4 (set (reg:SI 81)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1050 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1050 -1
      (nil))
 (insn 14 13 15 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 81)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1050 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1050 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 15 14 16 4 (set (reg:SI 11 a1)
         (const_int 1050 [0x41a])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1050 -1
      (nil))
 (insn 16 15 17 4 (set (reg:SI 82)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1050 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1050 -1
      (nil))
 (insn 17 16 18 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 82)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1050 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1050 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 18 17 20 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1050 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -5981,11 +5981,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 34 33 35 9 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xStreamBufferSpacesAvailable") [flags 0x3] <function_decl 063b17f8 xStreamBufferSpacesAvailable>) [0 xStreamBufferSpacesAvailable S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xStreamBufferSpacesAvailable") [flags 0x3] <function_decl 063807f8 xStreamBufferSpacesAvailable>) [0 xStreamBufferSpacesAvailable S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1066 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xStreamBufferSpacesAvailable") [flags 0x3] <function_decl 063b17f8 xStreamBufferSpacesAvailable>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xStreamBufferSpacesAvailable") [flags 0x3] <function_decl 063807f8 xStreamBufferSpacesAvailable>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:SI (use (reg:SI 10 a0))
@@ -6079,31 +6079,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:1086) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1086 -1
      (nil))
 (insn 14 13 15 4 (set (reg:SI 80)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1086 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1086 -1
      (nil))
 (insn 15 14 16 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 80)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1086 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1086 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 16 15 17 4 (set (reg:SI 11 a1)
         (const_int 1086 [0x43e])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1086 -1
      (nil))
 (insn 17 16 18 4 (set (reg:SI 81)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1086 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1086 -1
      (nil))
 (insn 18 17 19 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 81)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1086 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1086 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 19 18 21 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1086 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -6120,11 +6120,11 @@ try_optimize_cfg iteration 2
 (note 25 24 26 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 (call_insn 26 25 27 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 065dce88 xPortSetInterruptMask>) [0 xPortSetInterruptMask S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 065afe88 xPortSetInterruptMask>) [0 xPortSetInterruptMask S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1088 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 065dce88 xPortSetInterruptMask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 065afe88 xPortSetInterruptMask>)
         (nil))
     (nil))
 (insn 27 26 28 6 (set (reg/v:SI 74 [ uxSavedInterruptStatus ])
@@ -6166,11 +6166,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 38 37 39 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 063a7708 xTaskGenericNotifyFromISR>) [0 xTaskGenericNotifyFromISR S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06376708 xTaskGenericNotifyFromISR>) [0 xTaskGenericNotifyFromISR S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1092 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 063a7708 xTaskGenericNotifyFromISR>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06376708 xTaskGenericNotifyFromISR>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -6202,11 +6202,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 74 [ uxSavedInterruptStatus ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1104 -1
      (nil))
 (call_insn 43 42 47 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 065dcf00 vPortClearInterruptMask>) [0 vPortClearInterruptMask S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 065aff00 vPortClearInterruptMask>) [0 vPortClearInterruptMask S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1104 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 065dcf00 vPortClearInterruptMask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 065aff00 vPortClearInterruptMask>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -6285,31 +6285,31 @@ try_optimize_cfg iteration 2
          [] C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c:1117) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1117 -1
      (nil))
 (insn 14 13 15 4 (set (reg:SI 80)
-        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1117 -1
+        (high:SI (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1117 -1
      (nil))
 (insn 15 14 16 4 (set (reg:SI 12 a2)
         (lo_sum:SI (reg:SI 80)
-            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1117 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 06739160 *.LC0>)
+            (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1117 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC0") [flags 0x82] <var_decl 0670a160 *.LC0>)
         (nil)))
 (insn 16 15 17 4 (set (reg:SI 11 a1)
         (const_int 1117 [0x45d])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1117 -1
      (nil))
 (insn 17 16 18 4 (set (reg:SI 81)
-        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1117 -1
+        (high:SI (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1117 -1
      (nil))
 (insn 18 17 19 4 (set (reg:SI 10 a0)
         (lo_sum:SI (reg:SI 81)
-            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1117 -1
-     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 067394d0 *.LC1>)
+            (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>))) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1117 -1
+     (expr_list:REG_EQUAL (symbol_ref/f:SI ("*.LC1") [flags 0x82] <var_decl 0670a4d0 *.LC1>)
         (nil)))
 (call_insn 19 18 21 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>) [0 __builtin_printf S4 A32])
+                (call (mem:SI (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>) [0 __builtin_printf S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1117 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 04a4ff00 printf>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("printf") [flags 0x41] <function_decl 061eff00 printf>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -6326,11 +6326,11 @@ try_optimize_cfg iteration 2
 (note 25 24 26 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
 (call_insn 26 25 27 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 065dce88 xPortSetInterruptMask>) [0 xPortSetInterruptMask S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 065afe88 xPortSetInterruptMask>) [0 xPortSetInterruptMask S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1119 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 065dce88 xPortSetInterruptMask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xPortSetInterruptMask") [flags 0x41] <function_decl 065afe88 xPortSetInterruptMask>)
         (nil))
     (nil))
 (insn 27 26 28 6 (set (reg/v:SI 74 [ uxSavedInterruptStatus ])
@@ -6372,11 +6372,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 38 37 39 7 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 063a7708 xTaskGenericNotifyFromISR>) [0 xTaskGenericNotifyFromISR S4 A32])
+                (call (mem:SI (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06376708 xTaskGenericNotifyFromISR>) [0 xTaskGenericNotifyFromISR S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1123 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 063a7708 xTaskGenericNotifyFromISR>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("xTaskGenericNotifyFromISR") [flags 0x41] <function_decl 06376708 xTaskGenericNotifyFromISR>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:SI (use (reg:SI 11 a1))
@@ -6408,11 +6408,11 @@ try_optimize_cfg iteration 2
         (reg/v:SI 74 [ uxSavedInterruptStatus ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1135 -1
      (nil))
 (call_insn 43 42 47 9 (parallel [
-            (call (mem:SI (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 065dcf00 vPortClearInterruptMask>) [0 vPortClearInterruptMask S4 A32])
+            (call (mem:SI (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 065aff00 vPortClearInterruptMask>) [0 vPortClearInterruptMask S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/FreeRTOS/stream_buffer.c":1135 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 065dcf00 vPortClearInterruptMask>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("vPortClearInterruptMask") [flags 0x41] <function_decl 065aff00 vPortClearInterruptMask>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))

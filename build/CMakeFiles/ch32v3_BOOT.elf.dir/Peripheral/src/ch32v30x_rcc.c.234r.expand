@@ -3281,11 +3281,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 8 7 9 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("RCC_GetFlagStatus") [flags 0x3] <function_decl 06641438 RCC_GetFlagStatus>) [0 RCC_GetFlagStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("RCC_GetFlagStatus") [flags 0x3] <function_decl 06607438 RCC_GetFlagStatus>) [0 RCC_GetFlagStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_rcc.c":155 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_GetFlagStatus") [flags 0x3] <function_decl 06641438 RCC_GetFlagStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_GetFlagStatus") [flags 0x3] <function_decl 06607438 RCC_GetFlagStatus>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))
@@ -3334,11 +3334,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 22 21 23 6 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("RCC_GetFlagStatus") [flags 0x3] <function_decl 06641438 RCC_GetFlagStatus>) [0 RCC_GetFlagStatus S4 A32])
+                (call (mem:SI (symbol_ref:SI ("RCC_GetFlagStatus") [flags 0x3] <function_decl 06607438 RCC_GetFlagStatus>) [0 RCC_GetFlagStatus S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/Peripheral/src/ch32v30x_rcc.c":159 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_GetFlagStatus") [flags 0x3] <function_decl 06641438 RCC_GetFlagStatus>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("RCC_GetFlagStatus") [flags 0x3] <function_decl 06607438 RCC_GetFlagStatus>)
         (expr_list:REG_EH_REGION (const_int 0 [0])
             (nil)))
     (expr_list:QI (use (reg:SI 10 a0))

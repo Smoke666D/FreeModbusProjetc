@@ -36,11 +36,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 73 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_cleardisplay.c":41 -1
      (nil))
 (call_insn 7 6 13 2 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_FirstPage") [flags 0x41] <function_decl 0645a9d8 u8g2_FirstPage>) [0 u8g2_FirstPage S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_FirstPage") [flags 0x41] <function_decl 0649a9d8 u8g2_FirstPage>) [0 u8g2_FirstPage S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_cleardisplay.c":41 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_FirstPage") [flags 0x41] <function_decl 0645a9d8 u8g2_FirstPage>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_FirstPage") [flags 0x41] <function_decl 0649a9d8 u8g2_FirstPage>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -51,11 +51,11 @@ try_optimize_cfg iteration 2
      (nil))
 (call_insn 10 9 11 4 (parallel [
             (set (reg:SI 10 a0)
-                (call (mem:SI (symbol_ref:SI ("u8g2_NextPage") [flags 0x41] <function_decl 0645aa50 u8g2_NextPage>) [0 u8g2_NextPage S4 A32])
+                (call (mem:SI (symbol_ref:SI ("u8g2_NextPage") [flags 0x41] <function_decl 0649aa50 u8g2_NextPage>) [0 u8g2_NextPage S4 A32])
                     (const_int 0 [0])))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_cleardisplay.c":43 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_NextPage") [flags 0x41] <function_decl 0645aa50 u8g2_NextPage>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_NextPage") [flags 0x41] <function_decl 0649aa50 u8g2_NextPage>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (nil)))
@@ -80,11 +80,11 @@ try_optimize_cfg iteration 2
         (reg/v/f:SI 73 [ u8g2 ])) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_cleardisplay.c":52 -1
      (nil))
 (call_insn 18 17 0 5 (parallel [
-            (call (mem:SI (symbol_ref:SI ("u8g2_SetBufferCurrTileRow") [flags 0x41] <function_decl 0645a960 u8g2_SetBufferCurrTileRow>) [0 u8g2_SetBufferCurrTileRow S4 A32])
+            (call (mem:SI (symbol_ref:SI ("u8g2_SetBufferCurrTileRow") [flags 0x41] <function_decl 0649a960 u8g2_SetBufferCurrTileRow>) [0 u8g2_SetBufferCurrTileRow S4 A32])
                 (const_int 0 [0]))
             (clobber (reg:SI 1 ra))
         ]) "C:/Users/i.dymov/Documents/FreeModbusProjetc/u8g2-master/csrc/u8g2_cleardisplay.c":52 -1
-     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetBufferCurrTileRow") [flags 0x41] <function_decl 0645a960 u8g2_SetBufferCurrTileRow>)
+     (expr_list:REG_CALL_DECL (symbol_ref:SI ("u8g2_SetBufferCurrTileRow") [flags 0x41] <function_decl 0649a960 u8g2_SetBufferCurrTileRow>)
         (nil))
     (expr_list:SI (use (reg:SI 10 a0))
         (expr_list:QI (use (reg:SI 11 a1))
