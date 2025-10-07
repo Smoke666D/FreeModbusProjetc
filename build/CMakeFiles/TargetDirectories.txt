@@ -1,3 +1,0 @@
-C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/ch32v3_BOOT.elf.dir
-C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/edit_cache.dir
-C:/Users/i.dymov/Documents/FreeModbusProjetc/build/CMakeFiles/rebuild_cache.dir

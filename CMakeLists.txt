@@ -8,6 +8,8 @@ option(GCC "GCC8" ON)
 option(GCC12 "GCC12" OFF)
 
 set(CMAKE_TOOLCHAIN_FILE ${CMAKE_CURRENT_SOURCE_DIR}/cmake/wch_gcc.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/FreeRTOS.cmake)
+
 
 project(ch32v3_BOOT C CXX ASM)
 
@@ -21,7 +23,6 @@ add_compile_options(-fmessage-length=0 -fsigned-char -ffunction-sections -fdata-
 include_directories(USER
 		    HAL_LIB
 		    HAL_DRIVER
-		    FreeRTOS/include
                     Core
                     Debug 
 		    port
@@ -30,10 +31,6 @@ include_directories(USER
                     modbus/include
 	            NetLib
 		    u8g2-master/csrc	
-		    FreeRTOS/portable/MemMang
-		    FreeRTOS/portable/GCC/RISC-V
-		    FreeRTOS/portable/GCC/RISC-V/chip_specific_extensions/RV32I_PFIC_no_extensions
-		    FreeRTOS
                     Peripheral/inc)
 
  link_directories(NetLib)
