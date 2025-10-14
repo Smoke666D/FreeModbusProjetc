@@ -694,7 +694,7 @@ void vSetRegData( u16 adress)
        }
 }
 
-
+static int iReadCurRecord= 0;
 
 void UodateFMCHInputs()
 {
@@ -710,16 +710,20 @@ void UodateFMCHInputs()
                           memset(&usRegInputBuf[JOURNAL_CUR_DATE_MB],0,7*sizeof(uint16_t));  //§¦§ã§Ý§Ú §ä§Ö§Ü§å§ë§Ñ §Ó§í§Ò§â§Ñ§ß§Ñ§ñ §Ù§á§Ú§ã§î 0, §ä§à §Ù§Ñ§á§à§Ý§ß§ñ§Ö§Þ §â§Ö§Ô§Ú§ã§ä§â§í 0-§Þ§Ú
     else                                                    //§¦§ã§Ý§Ú §ß§à§Þ§Ö§â §Ù§Ñ§á§Ú§ã§Ú §Ñ§Ü§ä§å§Ñ§Ý§î§ß§Ö, §ä§à §Ó§í§Ó§à§Õ§Ú§Þ §ß§å§Ø§ß§í§Ö §Õ§Ñ§ß§ß§í§Ö §à §Ù§Ñ§á§Ú§ã§Ú
     {
-        static HAL_TimeConfig_T time;
-        static HAL_DateConfig_T date;
-        vGetRecord(cur_journal_rec -1 ,&temp_state,&time,&date);
-        usRegInputBuf[JOURNAL_CUR_DATE_MB]   = date.date;
-        usRegInputBuf[JOURNAL_CUR_MOUNTH_MB] = date.month;
-        usRegInputBuf[JOURNAL_CUR_YEAR_MB]   = date.year;
-        usRegInputBuf[JOURNAL_CUR_HOUR_MB]   = time.hours;
-        usRegInputBuf[JOURNAL_CUR_MIN_MB]    = time.minutes;
-        usRegInputBuf[JOURNAL_CUR_SEC_MB]    = time.seconds;
-        usRegInputBuf[JOURNAL_CUR_E_CODE_MB] = temp_state;
+        if (iReadCurRecord !=cur_journal_rec)
+        { 
+            static HAL_TimeConfig_T time;
+            static HAL_DateConfig_T date;
+            vGetRecord(cur_journal_rec -1 ,&temp_state,&time,&date);
+            usRegInputBuf[JOURNAL_CUR_DATE_MB]   = date.date;
+            usRegInputBuf[JOURNAL_CUR_MOUNTH_MB] = date.month;
+            usRegInputBuf[JOURNAL_CUR_YEAR_MB]   = date.year;
+            usRegInputBuf[JOURNAL_CUR_HOUR_MB]   = time.hours;
+            usRegInputBuf[JOURNAL_CUR_MIN_MB]    = time.minutes;
+            usRegInputBuf[JOURNAL_CUR_SEC_MB]    = time.seconds;
+            usRegInputBuf[JOURNAL_CUR_E_CODE_MB] = temp_state;
+            iReadCurRecord =cur_journal_rec;
+        }
     }
 }
 

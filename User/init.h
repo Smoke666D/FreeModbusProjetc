@@ -9,7 +9,7 @@
 #define USER_INIT_H_
 
 #include "main.h"
-#include "hal_typedef.h"
+//#include "hal_typedef.h"
 
 #define CRACH_Port                  PORT_C
 #define CRACH_Pin                   GPIO_2

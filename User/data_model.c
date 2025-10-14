@@ -435,7 +435,10 @@ void vGetRecord( uint16_t addr,uint8_t * flag, HAL_TimeConfig_T * time, HAL_Date
               index = addr - (total - cur_index + 1);
           }
       }
-      ReadEEPROMData(EEPROM_REGISTER_COUNT+  index*RECORD_SIZE  ,pData , RECORD_SIZE ,20,2);
+      for (int i= 0;i<5;i++)
+      {
+       if (ReadEEPROMData(EEPROM_REGISTER_COUNT+  index*RECORD_SIZE  ,pData , RECORD_SIZE ,20,2)==EEPROM_OK) break;
+      }
       u8 temp = pData[0];
       for (index=0;index<5;index++)
       {
