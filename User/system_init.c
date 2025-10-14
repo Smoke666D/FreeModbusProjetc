@@ -53,7 +53,7 @@ static TaskHandle_t DefautTask_Handler;
 static StackType_t ConfigTaskBuffer[CONFIG_TASK_STACK_SIZE];
 static StaticTask_t ConfigTaskControlBlock;
 
-
+static StaticSemaphore_t xMutexBuffer;
 
 static StackType_t ADCTaskBuffer[ADC_STK_SIZE];
 static StaticTask_t ADCTaskControlBlock;
@@ -142,6 +142,7 @@ void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer,
 {
   *(xGetOSEvent() ) = xEventGroupCreateStatic(&xOSStateEventGroup );
   *(getSerialEvenGroup()) = xEventGroupCreateStatic(&xSerialStateEventGroup );
+  *(xGetADCSemaphore()) = xSemaphoreCreateMutexStatic( &xMutexBuffer );
 }
 
 

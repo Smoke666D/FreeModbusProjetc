@@ -12,6 +12,7 @@
 #include "eth_driver.h"
 #include "debug.h"
 #include "FreeRTOS.h"
+#include "semphr.h"
 #include "task.h"
 #include "wchnet.h"
 #include "port.h"

@@ -60,7 +60,7 @@ static inline void ADC_RESET_CAL( ADC_NUMBER_t adc  )  { ADCS[adc]->CTLR2 |= CTL
 static inline void ADC_START_CAL ( ADC_NUMBER_t adc  )     {ADCS[adc]->CTLR2 |= CTLR2_CAL_Set; }
 
 
-#ifdef ADC_1_IT_ENABLE || ADC_2_IT_ENABLE
+#if defined(ADC_1_IT_ENABLE) || defined(ADC_2_IT_ENABLE)
 
 void ADC1_2_IRQHandler(void) __attribute__((interrupt()));
 

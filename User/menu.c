@@ -1539,8 +1539,9 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                      sprintf(str,"%02i/%02i",journal_index+1, record_count);
                      if (JournalReadFlag == 0)
                      {
-                        JournalReadFlag = 1;
                         vGetRecord(journal_index,&error_flag,&time,&date);
+                        JournalReadFlag = 1;
+                        
                      }
                   }
                   break;

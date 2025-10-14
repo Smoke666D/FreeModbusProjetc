@@ -15,11 +15,12 @@
 #include "hal_gpio.h"
 #include "hal_i2c.h"
 
-
+static  SemaphoreHandle_t xSemaphore = NULL;
 static TaskHandle_t pADCTaskHandle;
 static TaskHandle_t pI2CTaskHandle;
 static float PressSens[2]={0,0};
-float AC_220_VALUE;
+float AC_220_VALUE[2];
+//float BUF_AC_220_VALUE = 0;
 float AC_220_VALUE_CONTROL;
 static uint16_t ADC2_Buffer[DC_CHANNEL];
 static int16_t  ADC1_DMABuffer[AC_CONVERION_NUMBER*ADC_CHANNEL];
@@ -87,6 +88,10 @@ static int16_t Extr5V[DC_AIN_BufferSize];
 /*
  *
  */
+  SemaphoreHandle_t * xGetADCSemaphore()
+  {
+     return  (&xSemaphore);
+  }
 
 void vSetCount( u16 coount)
 {
@@ -203,6 +208,7 @@ float getAINConver( u8 ch)
 
 float getAIN( AIN_CHANNEL_t channel)
 {
+     uint8_t index=0;
     u16 temp_data;
     float temp_float;
     switch (channel)
@@ -239,8 +245,13 @@ float getAIN( AIN_CHANNEL_t channel)
        case DIG2_PRES:
            return (float)(sens_press1);
         case AC220:
-           return (AC_220_VALUE);
-        case AC220_CONTROL:
+            if (xSemaphoreTake( xSemaphore, 0 ) == pdTRUE)
+            {
+                AC_220_VALUE[1] = AC_220_VALUE[0];
+                xSemaphoreGive( xSemaphore );
+            }
+            return (AC_220_VALUE[1]);
+        case AC220_CONTROL:      
            return (AC_220_VALUE_CONTROL);
     }
     return (0);
@@ -472,7 +483,9 @@ void ADC_task(void *pvParameters)
                            uint16_t data1 = xADCRMS(&ADC1_DMABuffer[0],uCurPeriod,2);
                            AC_220_VALUE_CONTROL = (float)data1 * ( 401U * 3.3 / 4095U );
                            data1 = vRCFilter(data1, &old);
-                           AC_220_VALUE = (float)data1 * ( 401U * 3.3 / 4095U );
+                           xSemaphoreTake( xSemaphore, portMAX_DELAY );
+                           AC_220_VALUE[0] = (float)data1 * ( 401U * 3.3 / 4095U );
+                           xSemaphoreGive( xSemaphore );
                       }
                        HAL_DMA_SetCounter(DMA1_CH1, AC_CONVERION_NUMBER*2);
                        HAL_DMA_Enable(DMA1_CH1);
