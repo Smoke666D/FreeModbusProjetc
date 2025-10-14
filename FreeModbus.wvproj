@@ -146,8 +146,8 @@
 					},
 					"includes": {
 						"include_paths": [
-							"C:/Users/i.dymov/Documents/SYSTEM_LIB/HAL_DRIVER",
-							"C:/Users/i.dymov/Documents/SYSTEM_LIB/HAL_LIB",
+							"${project}/HAL_DRIVER",
+							"${project}/HAL_LIB",
 							"${project}/Debug",
 							"${project}/u8g2-master/csrc",
 							"${project}/port",

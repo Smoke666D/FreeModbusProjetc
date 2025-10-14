@@ -108,6 +108,7 @@ static u8 blink_counter = 0;
 static u8 SelectEditFlag = 0;
 static HAL_TimeConfig_T time;
 static uint8_t error_flag;
+static uint8_t JournalReadFlag = 0;
 static const u8 * SENSOR_COUNT_STRING[]={"0.1","0.5","1.0","2.0","3.0","5.0","10.0"};
 static const u8 * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
 static const u8 * AfterZoneStrig[]={"Отопление","Охлаждение","Автомат"};
@@ -230,10 +231,10 @@ void ViewScreenCallback( u8 key_code)
                  journal_index = 0;
                  break;
              case JOURNAL_NEXT:
-                 if ((journal_index+1) < getReg16(RECORD_COUNT)) journal_index++;
+                 if ((journal_index+1) < getReg16(RECORD_COUNT)) { journal_index++; JournalReadFlag = 0;}
                  break;
               case JOURNAL_PREV:
-                 if ((journal_index+1) > 1) journal_index--;
+                 if ((journal_index+1) > 1) { journal_index--; JournalReadFlag = 0;}
                  break;
               case EXIT_COMMAND:
                   NVIC_SystemReset();
@@ -1536,7 +1537,12 @@ void vSetFMCH(u16 data_id, u8 * str, DATA_VIEW_COMMAND_t command,  u8 * len, u8 
                   else
                   {
                      sprintf(str,"%02i/%02i",journal_index+1, record_count);
-                     vGetRecord(journal_index,&error_flag,&time,&date);
+                     if (JournalReadFlag == 0)
+                     {
+                        vGetRecord(journal_index,&error_flag,&time,&date);
+                        JournalReadFlag = 1;
+                        
+                     }
                   }
                   break;
             case JOURNAL_COUNT_ID:

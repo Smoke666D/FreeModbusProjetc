@@ -94,6 +94,7 @@ typedef struct
 #define COOF_10V ((R1_10V+R2_10V)/R2_10V)
 #define COOF_NTC ((R1_10V+R2_10V)/R2_10V)
 
+SemaphoreHandle_t * xGetADCSemaphore();
 u8 CalibrationZeroWhait();
 void vSetCount( u16 coount);
 void CalibrateZeroStart();
