@@ -245,11 +245,9 @@ float getAIN( AIN_CHANNEL_t channel)
        case DIG2_PRES:
            return (float)(sens_press1);
         case AC220:
-            if (xSemaphoreTake( xSemaphore, 0 ) == pdTRUE)
-            {
-                AC_220_VALUE[1] = AC_220_VALUE[0];
-                xSemaphoreGive( xSemaphore );
-            }
+            xSemaphoreTake( xSemaphore, portMAX_DELAY );
+            AC_220_VALUE[1] = AC_220_VALUE[0];
+            xSemaphoreGive( xSemaphore );
             return (AC_220_VALUE[1]);
         case AC220_CONTROL:      
            return (AC_220_VALUE_CONTROL);
