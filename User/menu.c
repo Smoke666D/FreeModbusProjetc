@@ -110,7 +110,7 @@ static HAL_TimeConfig_T time;
 static uint8_t error_flag;
 static uint8_t JournalReadFlag = 0;
 static const u8 * SENSOR_COUNT_STRING[]={"0.1","0.5","1.0","2.0","3.0","5.0","10.0"};
-static const u8 * ControlModeStrig[]={"DIput","RS-485","TCP IP"};
+static const u8 * ControlModeStrig[]={"Dinput","MB-RTU","MB-TCP"};
 static const u8 * AfterZoneStrig[]={"Отопление","Охлаждение","Автомат"};
 static const u8 * MUnitStrig[] = {"м^3/ч","м/c ","Па "};
 static const u8 * SensUnitString[]={"T","ppm","%"};

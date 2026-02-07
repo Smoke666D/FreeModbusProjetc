@@ -372,7 +372,7 @@ void vSetRegData( u16 adress)
        switch (adress)
        {
              case ZERO_MB:
-                 if  (byte_data !=0)
+                 if  (byte_data != 0)
                  {
                      if  ((USER_GetProccesState() == USER_PROCCES_WORK) && ( dev_type==DEV_CAV_VAV_BP))
                      {
@@ -1171,8 +1171,8 @@ eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT us
 
     if (usAddress + usNDiscrete    <= REG_DISCRETE_START  + REG_DISCRETE_NREGS)
     {
-        iRegBitIndex = (USHORT) (usAddress -REG_DISCRETE_START);
-        xGetDins(  ucSDiscInBuf);
+        iRegBitIndex = (USHORT) (usAddress - REG_DISCRETE_START);
+        xGetDins(  ucSDiscInBuf );
         while (usNDiscrete > 0)
         {
             UCHAR ucResult = xMBUtilGetBits( ucSDiscInBuf, iRegBitIndex, 1 );
@@ -1208,7 +1208,6 @@ void MBRTU_task(void *pvParameters)
          {
              if( eMBEnable() == MB_ENOERR )
              {
-
                 do
                 {
                     xStatus = eMBPoll(  );

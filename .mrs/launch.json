@@ -5,7 +5,7 @@
 			"type": "mrs-debugger",
 			"request": "launch",
 			"name": "FreeModbus",
-			"cwd": "c:\\Users\\i.dymov\\Documents\\FreeModbusProjetc",
+			"cwd": "c:\\Users\\smoke\\Documents\\FreeModbusProjetc",
 			"openOCDCfg": {
 				"useLocalOpenOCD": true,
 				"executable": "c:/MounRiver/MounRiver_Studio2/resources/app/resources/win32/components/WCH/OpenOCD/OpenOCD/bin/openocd.exe",
@@ -22,7 +22,7 @@
 				"enableNoZeroWaitingAreaFlash": false
 			},
 			"gdbCfg": {
-				"executable": "c:/MounRiver/MounRiver_Studio2/resources/app/resources/win32/components/WCH/Toolchain/RISC-V Embedded GCC12/bin/riscv-wch-elf-gdb.exe",
+				"executable": "c:/MounRiver/MounRiver_Studio2/resources/app/resources/win32/components/WCH/Toolchain/RISC-V Embedded GCC/bin/riscv-none-embed-gdb.exe",
 				"commands": [
 					"set mem inaccessible-by-default off",
 					"set architecture riscv:rv32",
@@ -39,8 +39,8 @@
 					"additionalCommands": []
 				},
 				"loadedFiles": {
-					"executableFile": "c:\\Users\\i.dymov\\Documents\\FreeModbusProjetc\\obj\\FreeModbus.elf",
-					"symbolFile": "c:\\Users\\i.dymov\\Documents\\FreeModbusProjetc\\obj\\FreeModbus.elf",
+					"executableFile": "c:\\Users\\smoke\\Documents\\FreeModbusProjetc\\obj\\FreeModbus.elf",
+					"symbolFile": "c:\\Users\\smoke\\Documents\\FreeModbusProjetc\\obj\\FreeModbus.elf",
 					"executableFileOffset": 0,
 					"symbolFileOffset": 0
 				},
