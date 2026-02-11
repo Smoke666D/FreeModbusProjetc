@@ -191,7 +191,7 @@ void vDefaultTask( void  * argument )
                  break;
             case STATE_INIT:
                 vDrawBitmap();
-                xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
+                xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_UPDATE, eSetValueWithOverwrite);
                 device = getReg8(DEVICE_TYPE);
                 for (uint16_t k=0; k< 3000;k++)
                 {
@@ -201,7 +201,7 @@ void vDefaultTask( void  * argument )
                         sprintf(temp_str,"Режим онбонвления конфигурации");
                         u8 len = u8g2_GetUTF8Width(&u8g2,temp_str);
                         MENU_DrawString((128-len)/2, 40, temp_str);
-                        xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
+                        xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_UPDATE, eSetValueWithOverwrite);
                         vTaskResume(*getI2CTaskHandle());
                     }
 
@@ -217,7 +217,7 @@ void vDefaultTask( void  * argument )
                         sprintf(temp_str,"Версия ПО %02i.%02i.%02i",getReg8(SOFT_V1 ),getReg8(SOFT_V2 ),getReg8(SOFT_V3 ));
                         len = u8g2_GetUTF8Width(&u8g2,temp_str);
                         MENU_DrawString((128-len)/2, 40, temp_str);
-                        xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
+                        xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_UPDATE, eSetValueWithOverwrite);
                         vTaskResume(*getUserProcessTaskHandle());
                         vTaskResume(*getI2CTaskHandle());
                     }
@@ -244,7 +244,7 @@ void vDefaultTask( void  * argument )
                     buffer_draw_counter = 0;
                     if (LED_BufferCompare())
                     {
-                        xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, 0x01, eSetValueWithOverwrite);
+                        xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_UPDATE, eSetValueWithOverwrite);
                     }
                 }
                 vTaskDelay(100);

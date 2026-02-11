@@ -68,23 +68,37 @@ u8 LED_BufferCompare()
     vTaskDelay(1);
 }
 
+/*
+* Процесс обработки LCD экрана.
+*/
 void LCD_task(void *pvParameters)
 {
+    led_command_t _event;
     vLCDHWInit();
     while (1)
     {
-           ulTaskNotifyTakeIndexed( 0, pdTRUE, portMAX_DELAY );
-           memcpy(screen_buufer,u8g2.tile_buf_ptr,SCREEN_BUFFER_SIZE );
-           for (u8 i =0;i<8;i++)
-           {
-                CS1_ENABLE;
-                WriteCommand( 0x040  );
-                WriteCommand( 0x0b8 | i );
-                CS2_ENABLE;
-                WriteCommand( 0x040  );
-                WriteCommand( 0x0b8 | i );
-                WriteDispalay(&screen_buufer[i*128],128);
-           }
+        _event = ulTaskNotifyTakeIndexed( 0, pdTRUE, portMAX_DELAY );
+        switch(_event)
+        {
+            case LCD_REINIT:
+                vTaskDelay(1000);
+                vLCDHWInit();
+                //breake 
+            case LCD_UPDATE:
+                memcpy(screen_buufer,u8g2.tile_buf_ptr, SCREEN_BUFFER_SIZE);
+                for (u8 i = 0 ; i < 8; i++)
+                {
+                    CS1_ENABLE;
+                    WriteCommand(0x040);
+                    WriteCommand(0x0b8 | i);
+                    CS2_ENABLE;
+                    WriteCommand(0x040);
+                    WriteCommand(0x0b8 | i);
+                    WriteDispalay(&screen_buufer[i * 128], 128);
+                }
+                break;
+        }
+
     }
 }
 

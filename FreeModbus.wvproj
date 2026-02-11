@@ -9,6 +9,7 @@
 			"rtos": "FreeRTOS",
 			"mcu": "CH32V307-FreeRTOS",
 			"description": "================Website: http://www.wch.cn/products/CH32V307.html?\\nROM(byte): 256K, SRAM(byte): 64K, CHIP PINS: 64, GPIO PORTS: 51.\\nWCH CH32V3 series of mainstream MCUs covers the needs of a large variety of applications in the industrial,medical and consumer markets. High performance with first-class peripherals and low-power,low-voltage operation is paired with a high level of integration at accessible prices with a simple architecture and easy-to-use tools.",
+			"artifactType": "executable",
 			"link": "WCH-Link",
 			"peripheral_version": "================2.2",
 			"calibrateSupport": false,
@@ -340,6 +341,7 @@
 					"show_totals": false,
 					"other_flags": ""
 				},
+				"configVariables": [],
 				"riscvTargetProcessor": {
 					"architecture": "rv32i",
 					"multiply_extension": true,
@@ -359,8 +361,7 @@
 					"other_target_flags": ""
 				},
 				"component_toolchain": "${WCH:Toolchain:GCC8}",
-				"name": "obj",
-				"configVariables": []
+				"name": "obj"
 			}
 		]
 	},
@@ -369,7 +370,7 @@
 		"address": "0x08000000",
 		"target_path": "obj\\FreeModbus.hex",
 		"clkSpeed": "High",
-		"debug_interface_mode": "1-wire serial",
+		"debug_interface_mode": "",
 		"erase": true,
 		"program": true,
 		"verify": true,

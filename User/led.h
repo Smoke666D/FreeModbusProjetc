@@ -24,6 +24,12 @@ typedef struct
    u16 tile;
 } LCD_DATA_t;
 
+ typedef enum
+ {
+    LCD_UPDATE = 0x01,
+    LCD_REINIT = 0x02,
+ } led_command_t;
+
 #define LED_TIME_OUT  100
 
 u8 LED_BufferCompare();

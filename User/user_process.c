@@ -643,6 +643,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                             start_clear_timer = 0;
                             task_fsm = USER_PROCCES_WORK;
                             eSetDUT(OUT_2, 0);
+                            xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_REINIT, eSetValueWithOverwrite);
                         }
                     }
                 }
@@ -650,6 +651,7 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 {
                     (start_clear_timer)++;
                      eSetDUT(OUT_2, 1);
+                     xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_REINIT, eSetValueWithOverwrite);
                 }
                 break;
             case USER_PROCESS_ALARM:
