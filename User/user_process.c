@@ -8,7 +8,7 @@
 #include "user_process_service.h"
 #include "string.h"
 #include "pid.h"
-#include "hw_lib_din.h"
+
 #include "hw_lib_adc.h"
 #include "hal_timers.h"
 
@@ -205,7 +205,7 @@ void vFMCH_FSM( FMCH_Device_t * dev)
 {
     u8 c_type  = getReg8( CONTROL_TYPE );
     if (c_type == MKV_MB_DIN ) setReg8(LIGTH, ucDinGet(INPUT_2));  //Проверияем состояние сигнала включения света
-    eSetDUT(OUT_2, getReg8(LIGTH));                                //Закидываем его на реле света
+    user_dout_set(OUT_2, getReg8(LIGTH));                                //Закидываем его на реле света
     USER_SETTING_CHECK(c_type,  dev);
 
 
@@ -235,7 +235,7 @@ void vFMCH_FSM( FMCH_Device_t * dev)
       {
            task_fsm = USER_PROCCES_IDLE;
            HAL_SetBit(CRACH_Port,  CRACH_Pin);
-           eSetDUT(OUT_3,FALSE);
+           user_dout_set(OUT_3,FALSE);
       }
       if ((task_fsm != USER_PROCESS_ALARM) && (task_fsm != USER_PROCCES_IDLE) && ucDinGet(INPUT_4))
       {
@@ -258,7 +258,7 @@ void vFMCH_FSM( FMCH_Device_t * dev)
       {
           case USER_PROCCES_IDLE:
               dev->HEPA_CONTROL_FLAG= 0;
-              eSetDUT(OUT_1,FALSE);
+              user_dout_set(OUT_1,FALSE);
               PIDOut = 0;
               USER_AOUT_SET(DAC1,0);
               USER_AOUT_SET(DAC2,0);
@@ -310,13 +310,13 @@ void vFMCH_FSM( FMCH_Device_t * dev)
                   }
                   dev->HEPA_CONTROL_FLAG = (fabs(SET_POINT-Temp) <= ( SET_POINT*0.02) ) ? 1 : 0 ;
                }
-               eSetDUT(OUT_1,TRUE);
+               user_dout_set(OUT_1,TRUE);
                break;
          case USER_PROCESS_ALARM:
                if ( ( error_state & (LOW_VOLTAGE_ERROR | HIGH_VOLTAGE_ERROR)) == 0 )  task_fsm = USER_PROCCES_IDLE;
                PIDOut = 0;
                USER_AOUT_SET(DAC2,0);
-               eSetDUT(OUT_1,FALSE);
+               user_dout_set(OUT_1,FALSE);
                error_state &= ~SETTING_ERROR;
                dev->HEPA_CONTROL_FLAG = 0;
                dev->start_timeout = 0;
@@ -642,16 +642,16 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                             *cal_flag = 0;
                             start_clear_timer = 0;
                             task_fsm = USER_PROCCES_WORK;
-                            eSetDUT(OUT_2, 0);
-                            xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_REINIT, eSetValueWithOverwrite);
+                            user_dout_set(OUT_2, 0);
+                            //xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_REINIT, eSetValueWithOverwrite);
                         }
                     }
                 }
                 else
                 {
                     (start_clear_timer)++;
-                     eSetDUT(OUT_2, 1);
-                     xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_REINIT, eSetValueWithOverwrite);
+                     user_dout_set(OUT_2, 1);
+                     //xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_REINIT, eSetValueWithOverwrite);
                 }
                 break;
             case USER_PROCESS_ALARM:
@@ -793,14 +793,23 @@ void user_process_task(void *pvParameters)
            if ( error_state )
            {
                  HAL_ResetBit(CRACH_Port,  CRACH_Pin);
-                 eSetDUT(OUT_3,TRUE);
+                 user_dout_set(OUT_3,TRUE);
            }
            else
            {
                  HAL_SetBit(CRACH_Port,  CRACH_Pin);
-                 eSetDUT(OUT_3,FALSE);
+                 user_dout_set(OUT_3,FALSE);
            }
        }
    }
 }
 
+/// Функция установки состония дискрентого выхода и перезапуска индикатора, если состоние поменялось
+void user_dout_set(OUT_NAME_TYPE ucCh, uint8_t state)
+{
+    if (eGetDOUT(ucCh) != state)
+    {
+        xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_REINIT, eSetValueWithOverwrite);
+    }
+    eSetDUT(ucCh,state);
+}
