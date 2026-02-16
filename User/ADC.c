@@ -356,7 +356,6 @@ void ADC1_Init()
 
 void vDataBufferInit()
 {
-
     DataBuffer[0].ConversionalSize = sensor_timer[getReg8(SENSOR_COUNT )];
     DataBuffer[1].ConversionalSize = sensor_timer[getReg8(SENSOR_COUNT )];
     DataBuffer[0].offset =getRegi16(SENSOR1_ZERO);
@@ -700,13 +699,13 @@ u16 calib_data[2][CALIB_COUNT];
 void CalibrateZeroStart()
 {
     calibration_zero_flag = 1;
+    calibration_zero_count = 0;
     cla_zero_end = 0;
 }
 
 
 u8 CalibrationZeroWhait()
 {
-
     return (cla_zero_end);
 }
 
@@ -714,9 +713,8 @@ void CalibrateZero()
 {
   if (calibration_zero_flag)
   {
-      if ( calibration_zero_count < 10 )
+      if (calibration_zero_count < 10)
       {
-
           calib_data[0][calibration_zero_count] = sens_press;
           calib_data[1][calibration_zero_count] = sens_press1;
           calibration_zero_count++;
@@ -730,7 +728,7 @@ void CalibrateZero()
               temp = temp + calib_data[0][i];
               temp1 = temp1 + calib_data[1][i];
           }
-          DataBuffer[0].offset    =  temp  / CALIB_COUNT;
+          DataBuffer[0].offset    = temp  / CALIB_COUNT;
           DataBuffer[1].offset    = temp1 / CALIB_COUNT;
           calibration_zero_flag = 0;
           calibration_zero_count = 0;

@@ -40,8 +40,8 @@ static float PIDOut2;
 static float PIDOut3;
 
 
-
-static float CumputeChannel2Setpoit( float setpoint);
+static void __switch_to_calibration_state(void);
+static float CumputeChannel2Setpoit(float setpoint);
 
 float GetChanne2Setting()
 {
@@ -324,9 +324,10 @@ void vFMCH_FSM( FMCH_Device_t * dev)
      }
 }
 
+
 void SystemCalibraionStart()
 {
-   task_fsm = USER_PROCESS_ZERO_CALIB;
+   __switch_to_calibration_state();
 }
 void SystemCalibraionStop()
 {
@@ -534,7 +535,7 @@ float getSETPOINT()
     return (SET_POINT);
 }
 
-void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
+void vCDV_FSM(u8 * cal_flag, FMCH_Device_t * dev)
 {
     if (task_fsm != USER_PROCESS_ZERO_CALIB)
     {
@@ -549,11 +550,9 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 error_state = 0;
                 dev->start_timeout = 0;
                 InitCleanTimer();
-                task_fsm =USER_PROCCES_WORK;
+                task_fsm = USER_PROCCES_WORK;
                 break;
             case USER_PROCCES_WORK:
-
-
                 *cal_flag = 0;
                 if ((error_state & DIN_ERROR) || (error_state & ANALOG_SENSOR_ERROR))
                 {
@@ -567,7 +566,6 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                 {
                     if (++dev->pid_counter >=10)
                     {
-
                         INPUT_SENSOR_t  temp_inp_sens_type = getReg8(INPUT_CONTROL_TYPE);
                         temp_control_state = getReg8(CDV_CONTOROL);
                         float pid_input = UPDATE_PRES_COOFCAV();   //)(temp_inp_sens_type , temp_control_state);
@@ -620,16 +618,13 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                     }
                 }
                 if ( ++zero_calibration_timer >= ( getReg8(AUTO_CALIB_TIMER)*3600*100))
-                {
-                    zero_calibration_timer = 0;
-                    task_fsm = USER_PROCESS_ZERO_CALIB;
+                {              
+                    __switch_to_calibration_state();      
                 }
                 break;
-            case USER_PROCESS_ZERO_CALIB:
-
-                if ((start_clear_timer) >= ( getReg16(ZERO_POINT_TIMEOUT)*100) )
+            case USER_PROCESS_ZERO_CALIB:                
+                if (start_clear_timer >= (getReg16(ZERO_POINT_TIMEOUT) * 100) )
                 {
-
                     if (*cal_flag == 0)
                     {
                         CalibrateZeroStart();
@@ -639,19 +634,21 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
                     {
                         if (CalibrationZeroWhait())
                         {
-                            *cal_flag = 0;
-                            start_clear_timer = 0;
-                            task_fsm = USER_PROCCES_WORK;
+                            *cal_flag = 0;                                                        
                             eSetDUT(OUT_2, 0);
                             xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_REINIT, eSetValueWithOverwrite);
+                            task_fsm = USER_PROCCES_WORK;
                         }
                     }
                 }
                 else
                 {
-                    (start_clear_timer)++;
-                     eSetDUT(OUT_2, 1);
-                     xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_REINIT, eSetValueWithOverwrite);
+                    if (start_clear_timer == 0) 
+                    {
+                        xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_REINIT, eSetValueWithOverwrite);
+                    }
+                    start_clear_timer++;
+                    eSetDUT(OUT_2, 1);                    
                 }
                 break;
             case USER_PROCESS_ALARM:
@@ -689,11 +686,12 @@ void vCDV_FSM(   u8 * cal_flag, FMCH_Device_t * dev)
 }
 
 
-
-
-
-
-
+static void __switch_to_calibration_state()
+{
+    task_fsm = USER_PROCESS_ZERO_CALIB;                    
+    start_clear_timer = 0;
+    zero_calibration_timer = 0;
+}
 
 
 void VoltageControlCheck( AC_VOLTAGE_CONTROL_t * ac_control)

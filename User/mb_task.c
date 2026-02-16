@@ -373,22 +373,25 @@ void vSetRegData( u16 adress)
        {
              case ZERO_MB:
                  if  (byte_data != 0)
-                 {
-                     if  ((USER_GetProccesState() == USER_PROCCES_WORK) && ( dev_type==DEV_CAV_VAV_BP))
+                 {                     
+                     if (true
+                        && dev_type == DEV_CAV_VAV_BP
+                        && USER_GetProccesState() == USER_PROCCES_WORK
+                     )
                      {
                          SystemCalibraionStart();
                      }
-                     else
-
-                     if ((USER_GetProccesState() == USER_PROCCES_IDLE) && ( dev_type==DEV_FMCH))
-                    {
-
-                         CalibrateZeroStart();
-                    }
-                     else
-                     {
-                         usRegHoldingBuf[adress] = 0;
-                     }
+                     else if (true
+                              && dev_type == DEV_FMCH
+                              && USER_GetProccesState() == USER_PROCCES_IDLE
+                            )
+                            {
+                                CalibrateZeroStart();
+                            }
+                            else
+                            {
+                                usRegHoldingBuf[adress] = 0;
+                            }
                  }
                  break;
              case MODE_MB:
@@ -408,7 +411,6 @@ void vSetRegData( u16 adress)
                         else
                         if (byte_data == 0xAA) ResetMotorHour();
                          usRegHoldingBuf[adress] = WORK_MODE;
-
                      }
                  else
                  {
