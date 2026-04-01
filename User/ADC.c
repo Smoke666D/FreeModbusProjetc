@@ -765,27 +765,6 @@ void I2C_task(void *pvParameters)
         SENS2_FSM = SENSOR_START_CONVERSION;
         while (1)
         {
-          /*  if ( (i2c2_error_counter == 1000) || (i2c1_error_counter  ==1000))
-            {
-
-                HAL_ResetBit(I2C_EN_PORT, I2C_EN_PIN);
-                vTaskDelay(1000);
-                HAL_SetBit(I2C_EN_PORT, I2C_EN_PIN);
-                vTaskDelay(1000);
-                I2C_SoftwareResetCmd(I2C1,ENABLE);
-                I2C_SoftwareResetCmd(I2C2,ENABLE);
-              //  vTaskDelay(1000);
-               // InitI2C();
-                I2C_SoftwareResetCmd(I2C1,DISABLE);
-               I2C_SoftwareResetCmd(I2C2,DISABLE);
-                i2c2_error_counter = 0;
-                i2c1_error_counter = 0;
-                SENS1_FSM = SENSOR_START_CONVERSION;
-                        SENS2_FSM = SENSOR_START_CONVERSION;
-                        printf("i2c_restart\r\n");
-                        xLastWakeTime =  xTaskGetTickCount ();
-            }
-*/
             if (( (SENS1_FSM ==SENSOR_IDLE)  || ( SENS1_FSM ==SENSOR_TIME_OUT )    ) && ((SENS2_FSM ==SENSOR_IDLE) || ( SENS2_FSM ==SENSOR_TIME_OUT )) )
             {
                 vTaskDelay(1);
@@ -795,19 +774,22 @@ void I2C_task(void *pvParameters)
             {
                 if (SENS1_FSM !=SENSOR_IDLE)
                 {
-                   // i2c2_error_counter++;
                     HAL_I2C_STOP(I2C_2);
                     fsm = I2C_GET_BUSY;
                 }
+                else 
+                {
+                    PressSens[0] = ((float)GetConversionali2c(&DataBuffer[0]));    
+                }
                 if (SENS2_FSM !=SENSOR_IDLE)
                 {
-                    //i2c1_error_counter++;
                     HAL_I2C_STOP(I2C_1);
                     fsm1 = I2C_GET_BUSY;
                 }
-                PressSens[0] = ((float)GetConversionali2c(&DataBuffer[0]));
-                PressSens[1] = ((float)GetConversionali2c(&DataBuffer[1]));
-
+                else 
+                {
+                    PressSens[1] = ((float)GetConversionali2c(&DataBuffer[1]));    
+                }
                 break;
             }
             else if (sensor_time_out > 5)
