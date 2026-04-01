@@ -694,7 +694,7 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  u1
 static u8 cla_zero_end = 0;
 u8 calibration_zero_flag = 0;
 u8 calibration_zero_count = 0;
-u16 calib_data[2][CALIB_COUNT];
+int16_t calib_data[2][CALIB_COUNT];
 
 void CalibrateZeroStart()
 {
@@ -709,11 +709,14 @@ u8 CalibrationZeroWhait()
     return (cla_zero_end);
 }
 
+/*
+* §¶§å§ß§Ü§è§Ú§ñ §Ü§Ñ§Ý§Ú§â§à§Ó§Ü§Ú §ß§å§Ý§ñ. §³§à§Ò§â§Ñ§Ö§ä 10 §Ù§ß§Ñ§é§Ö§ß§Ú§Û §ã §Õ§Ñ§ä§é§Ú§Ü§à§Ó §Ú §ã§â§Ö§Õ§ß§Ö§Ö §á§â§Ú§ß§Ú§Þ§Ñ§Ö§ä §Ü§Ñ§Ü §ã§Þ§Ö§ë§Ö§ß§Ú§Ö §ß§å§Ý§ñ
+*/
 void CalibrateZero()
 {
   if (calibration_zero_flag)
   {
-      if (calibration_zero_count < 10)
+      if (calibration_zero_count < CALIB_COUNT)
       {
           calib_data[0][calibration_zero_count] = sens_press;
           calib_data[1][calibration_zero_count] = sens_press1;
@@ -721,24 +724,22 @@ void CalibrateZero()
       }
       else
       {
-          int32_t temp= 0;
+          int32_t temp  = 0;
           int32_t temp1 = 0;
-          for (u8 i=0;i<CALIB_COUNT;i++)
+          for (u8 i = 0; i < CALIB_COUNT; i++)
           {
-              temp = temp + calib_data[0][i];
+              temp  = temp  + calib_data[0][i];
               temp1 = temp1 + calib_data[1][i];
           }
-          DataBuffer[0].offset    = temp  / CALIB_COUNT;
-          DataBuffer[1].offset    = temp1 / CALIB_COUNT;
-          calibration_zero_flag = 0;
+          DataBuffer[0].offset   = temp  / CALIB_COUNT;
+          DataBuffer[1].offset   = temp1 / CALIB_COUNT;
+          calibration_zero_flag  = 0;
           calibration_zero_count = 0;
-          setReg16(SENSOR1_ZERO, DataBuffer[0].offset );
-          setReg16(SENSOR2_ZERO, DataBuffer[1].offset );
+          setReg16(SENSOR1_ZERO, DataBuffer[0].offset);
+          setReg16(SENSOR2_ZERO, DataBuffer[1].offset);
           cla_zero_end = 1;
       }
   }
-
-
 }
 
 void I2C_task(void *pvParameters)
