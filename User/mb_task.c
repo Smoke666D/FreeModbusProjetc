@@ -1141,7 +1141,7 @@ eMBErrorCode eMBRegCoilsCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCo
                 while ( usNCoils > 0 )
                 {
                     UCHAR ucResult = pucRegBuffer[0];
-                    eSetDUT(iRegBitIndex,ucResult);
+                    user_dout_set(iRegBitIndex,ucResult);
                     iRegBitIndex++;
                     usNCoils--;
                 }

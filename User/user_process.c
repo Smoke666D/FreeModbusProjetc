@@ -8,7 +8,7 @@
 #include "user_process_service.h"
 #include "string.h"
 #include "pid.h"
-#include "hw_lib_din.h"
+
 #include "hw_lib_adc.h"
 #include "hal_timers.h"
 
@@ -18,7 +18,9 @@
 
 static const u16 PCOOFMAP[] ={COOF_P_CAV,COOF_PT,COOF_PCO2,COOF_PH};
 static const u16 ICOOFMAP[] ={COOF_I_CAV,COOF_IT,COOF_ICO2,COOF_IH};
-
+static uint32_t zero_calibration_timer = 0;
+static  DISCRET_STATE_t temp_control_state = SETTING_CLOSE;
+static const uint16_t SettingRegMap[]={SENS_SETTING1,SENS_SETTING2,SENS_SETTING3};
 
 #define FILTER_WARNINR_VALUE 90
 static PID_TypeDef TPID;
@@ -38,7 +40,10 @@ static float Temp;
 static float PIDOut;
 static float PIDOut2;
 static float PIDOut3;
-
+static u8 cur_state = 0;
+static u8 system_start =  MKV_MB_RTU;
+static u8 din_state_update = 0;
+static u32 start_clear_timer =0;
 
 static void __switch_to_calibration_state(void);
 static float CumputeChannel2Setpoit(float setpoint);
@@ -75,12 +80,10 @@ void USER_SetControlState(u8 state)
     setReg8(SYSTEM_START,state);
 }
 
-
 uint16_t USER_GetSetting()
 {
     return (u16)(setpoint);
 }
-
 
 USER_PROCESS_FSM_t USER_GetProccesState()
 {
@@ -114,7 +117,6 @@ uint16_t USER_GetFact(u8 * state)
     return 0;
  }
  }
-
 
 static void USER_SETTING_CHECK(u8 control_type, FMCH_Device_t * dev)
 {
@@ -199,13 +201,11 @@ float UPDATE_COOFCAV( INPUT_SENSOR_t inp_sensor, DISCRET_STATE_t control_state)
      return (PIDOut3);
 }
 
-
-
 void vFMCH_FSM( FMCH_Device_t * dev)
 {
     u8 c_type  = getReg8( CONTROL_TYPE );
     if (c_type == MKV_MB_DIN ) setReg8(LIGTH, ucDinGet(INPUT_2));  //Проверияем состояние сигнала включения света
-    eSetDUT(OUT_2, getReg8(LIGTH));                                //Закидываем его на реле света
+    user_dout_set(OUT_2, getReg8(LIGTH));                                //Закидываем его на реле света
     USER_SETTING_CHECK(c_type,  dev);
 
 
@@ -235,7 +235,7 @@ void vFMCH_FSM( FMCH_Device_t * dev)
       {
            task_fsm = USER_PROCCES_IDLE;
            HAL_SetBit(CRACH_Port,  CRACH_Pin);
-           eSetDUT(OUT_3,FALSE);
+           user_dout_set(OUT_3,FALSE);
       }
       if ((task_fsm != USER_PROCESS_ALARM) && (task_fsm != USER_PROCCES_IDLE) && ucDinGet(INPUT_4))
       {
@@ -258,7 +258,7 @@ void vFMCH_FSM( FMCH_Device_t * dev)
       {
           case USER_PROCCES_IDLE:
               dev->HEPA_CONTROL_FLAG= 0;
-              eSetDUT(OUT_1,FALSE);
+              user_dout_set(OUT_1,FALSE);
               PIDOut = 0;
               USER_AOUT_SET(DAC1,0);
               USER_AOUT_SET(DAC2,0);
@@ -310,20 +310,19 @@ void vFMCH_FSM( FMCH_Device_t * dev)
                   }
                   dev->HEPA_CONTROL_FLAG = (fabs(SET_POINT-Temp) <= ( SET_POINT*0.02) ) ? 1 : 0 ;
                }
-               eSetDUT(OUT_1,TRUE);
+               user_dout_set(OUT_1,TRUE);
                break;
          case USER_PROCESS_ALARM:
                if ( ( error_state & (LOW_VOLTAGE_ERROR | HIGH_VOLTAGE_ERROR)) == 0 )  task_fsm = USER_PROCCES_IDLE;
                PIDOut = 0;
                USER_AOUT_SET(DAC2,0);
-               eSetDUT(OUT_1,FALSE);
+               user_dout_set(OUT_1,FALSE);
                error_state &= ~SETTING_ERROR;
                dev->HEPA_CONTROL_FLAG = 0;
                dev->start_timeout = 0;
                break;
      }
 }
-
 
 void SystemCalibraionStart()
 {
@@ -333,12 +332,6 @@ void SystemCalibraionStop()
 {
    task_fsm = USER_PROCCES_WORK;
 }
-
-
-static u8 cur_state = 0;
-static u8 system_start =  MKV_MB_RTU;
-static u8 din_state_update = 0;
-static u32 start_clear_timer =0;
 
 void vCDV_SetpointCheck(   u32 * timeout  )
 {
@@ -352,14 +345,12 @@ void vCDV_SetpointCheck(   u32 * timeout  )
             din_state_update = 0;
             cur_state = 0;
         }
-
         u8 new_state =( (u8)uiGetDinMask() & 0x0F ) ; //Проверяем режим работы
         if (( new_state!= cur_state ) && (din_state_update ==0))
         {
             din_state_update = 1;
             *timeout = 0;
         }
-
         if (din_state_update)
         {
             printf("%i  %i\r\n",*timeout,getReg8(SETTING_TIMER)*100 );
@@ -370,27 +361,27 @@ void vCDV_SetpointCheck(   u32 * timeout  )
                 cur_state = new_state;
                 switch (cur_state )
                 {
-                         case 0:
-                             setReg8(CDV_CONTOROL,SETTING_CLOSE);
-                             break;
-                         case 1:
-                             setReg8(CDV_CONTOROL,SETTING_MINIMUM);
-                             break;
-                         case 3:
-                             setReg8(CDV_CONTOROL,SETTING_MIDIUM);
-                             break;
-                         case 7:
-                             setReg8(CDV_CONTOROL,SETTING_MAXIMUN);
-                             break;
-                         case 0xF:
-                             setReg8(CDV_CONTOROL,SETTING_OPEN);
-                             break;
-                         default:
-                             error_state |=DIN_ERROR;
-                             setReg8(CDV_CONTOROL,SETTING_CLOSE);
-                             return;
-                         break;
-                     }
+                    case 0:
+                        setReg8(CDV_CONTOROL,SETTING_CLOSE);
+                        break;
+                    case 1:
+                        setReg8(CDV_CONTOROL,SETTING_MINIMUM);
+                        break;
+                    case 3:
+                        setReg8(CDV_CONTOROL,SETTING_MIDIUM);
+                        break;
+                    case 7:
+                        setReg8(CDV_CONTOROL,SETTING_MAXIMUN);
+                        break;
+                    case 0xF:
+                        setReg8(CDV_CONTOROL,SETTING_OPEN);
+                        break;
+                    default:
+                        error_state |=DIN_ERROR;
+                        setReg8(CDV_CONTOROL,SETTING_CLOSE);
+                        return;
+                        break;
+                }
             }
         }
     }
@@ -409,11 +400,6 @@ void vCDV_SetpointCheck(   u32 * timeout  )
     return ;
 }
 
-
-
-
-//static DISCRET_STATE_t state = SETTING_CLOSE;
-
 u8 getStateDCV()
 {
     return getReg8(CDV_CONTOROL);
@@ -424,15 +410,10 @@ u8 getStateVAV()
     return getReg8(CDV_CONTOROL);
 }
 
-
 void vBP()
 {
 
-
 }
-
-
-
 
 static float CumputeChannel2Setpoit( float setpoint)
 {
@@ -449,9 +430,7 @@ static float CumputeChannel2Setpoit( float setpoint)
             break;
     }
     return (temp_f );
-
 }
-
 
 void Channel2Reg(  float setpoint )
 {
@@ -487,19 +466,9 @@ void Channel2Reg(  float setpoint )
         USER_AOUT_SET(DAC2,0);
 }
 
-
-
-
-static const uint16_t SettingRegMap[]={SENS_SETTING1,SENS_SETTING2,SENS_SETTING3};
-
-
-
 float fGetAnalogSetting()
 {
-
     return getRegFloat(SettingRegMap[getReg8(PRIOR_SENSOR)]);
-
-
 }
 
 float vAnalogSensorFSM( )
@@ -518,17 +487,10 @@ float vAnalogSensorFSM( )
     return (PID_Out);
 }
 
-
-static uint32_t zero_calibration_timer = 0;
-static  DISCRET_STATE_t temp_control_state = SETTING_CLOSE;
-
 DISCRET_STATE_t getCurSettingState()
 {
-
-
     return temp_control_state;
 }
-
 
 float getSETPOINT()
 {
@@ -545,146 +507,137 @@ void vCDV_FSM(u8 * cal_flag, FMCH_Device_t * dev)
     }
     switch (task_fsm)
     {
-            case USER_PROCCES_IDLE:
-
-                error_state = 0;
-                dev->start_timeout = 0;
-                InitCleanTimer();
-                task_fsm = USER_PROCCES_WORK;
-                break;
-            case USER_PROCCES_WORK:
-                *cal_flag = 0;
-                if ((error_state & DIN_ERROR) || (error_state & ANALOG_SENSOR_ERROR))
+        case USER_PROCCES_IDLE:
+            error_state = 0;
+            dev->start_timeout = 0;
+            InitCleanTimer();
+            task_fsm = USER_PROCCES_WORK;
+            break;
+        case USER_PROCCES_WORK:
+            *cal_flag = 0;
+            if ((error_state & DIN_ERROR) || (error_state & ANALOG_SENSOR_ERROR))
+            {
+                task_fsm  = USER_PROCESS_ALARM;
+            }
+            else if (error_state & ( FIRST_CHANNEL_ERROR | SECOND_CHANNEL_ERROR ))
+            {
+                task_fsm  = USER_PROCESS_DOUBLE_CHANNEL_ERROR;
+            }
+            else
+            {
+                if (++dev->pid_counter >=10)
                 {
-                   task_fsm  = USER_PROCESS_ALARM;
+                    INPUT_SENSOR_t  temp_inp_sens_type = getReg8(INPUT_CONTROL_TYPE);
+                    temp_control_state = getReg8(CDV_CONTOROL);
+                    float pid_input = UPDATE_PRES_COOFCAV();   //)(temp_inp_sens_type , temp_control_state);
+                    dev->pid_counter = 0;
+                    u8 compute_falg = 1;
+                    if (getReg8(CLEAR_TIMER_STATE) == 1 )  //Если включился таймер уборки и состоние системы не выкл.
+                    {
+                        temp_control_state = SETTING_MAXIMUN;  //То переводим системы в состния максимальной уставки
+                    }
+                    switch (temp_control_state)
+                    {
+                        case SETTING_OPEN:
+                            USER_AOUT_SET(DAC1,10.0);
+                            compute_falg = 0;
+                            break;
+                        case SETTING_MINIMUM:
+                            SET_POINT = getRegFloat(SETTING_MIN);
+                            break;
+                        case SETTING_MAXIMUN:
+                            SET_POINT = getRegFloat(SETTING_MAX);
+                            break;
+                        default:
+                        case SETTING_CLOSE:
+                            USER_AOUT_SET(DAC1,0.0);
+                            compute_falg = 0;
+                            break;
+                        case SETTING_MIDIUM:
+                            switch (temp_inp_sens_type)
+                            {
+                                case DISCRETE_INPUT:
+                                    SET_POINT =getRegFloat(SETTING_MID);
+                                    break;
+                                case ROOM_CONTROLLER:
+                                    SET_POINT = ComputeSetPoint();
+                                    break;
+                                case ANALOG_SENSOR:
+                                case STATIC_TERMSENSOR:
+                                    SET_POINT = UPDATE_COOFCAV (temp_inp_sens_type , temp_control_state);
+                                    break;
+                            }
+                    }
+                    if (compute_falg)
+                    {
+                        PID_Compute(&TPID,pid_input);
+                        float PID_Out = PIDOut/1000.0;
+                        USER_AOUT_SET(DAC1,PID_Out);
+                    }
+                    Channel2Reg(GetChanne2Setting());
                 }
-                else if (error_state & ( FIRST_CHANNEL_ERROR | SECOND_CHANNEL_ERROR ))
+            }
+            if ( ++zero_calibration_timer >= ( getReg8(AUTO_CALIB_TIMER)*3600*100))
+            {              
+                __switch_to_calibration_state();      
+            }
+            break;
+        case USER_PROCESS_ZERO_CALIB:                
+            if (start_clear_timer >= (getReg16(ZERO_POINT_TIMEOUT) * 100) )
+            {
+                if (*cal_flag == 0)
                 {
-                    task_fsm  = USER_PROCESS_DOUBLE_CHANNEL_ERROR;
+                    CalibrateZeroStart();
+                    *cal_flag = 1;
                 }
                 else
                 {
-                    if (++dev->pid_counter >=10)
+                    if (CalibrationZeroWhait())
                     {
-                        INPUT_SENSOR_t  temp_inp_sens_type = getReg8(INPUT_CONTROL_TYPE);
-                        temp_control_state = getReg8(CDV_CONTOROL);
-                        float pid_input = UPDATE_PRES_COOFCAV();   //)(temp_inp_sens_type , temp_control_state);
-                        dev->pid_counter = 0;
-
-                        u8 compute_falg = 1;
-                        if (getReg8(CLEAR_TIMER_STATE) == 1 )  //Если включился таймер уборки и состоние системы не выкл.
-                        {
-                            temp_control_state = SETTING_MAXIMUN;  //То переводим системы в состния максимальной уставки
-                        }
-                        switch (temp_control_state)
-                        {
-                            case SETTING_OPEN:
-                                     USER_AOUT_SET(DAC1,10.0);
-                                     compute_falg = 0;
-                                     break;
-                            case SETTING_MINIMUM:
-                                     SET_POINT = getRegFloat(SETTING_MIN);
-                                     break;
-                            case SETTING_MAXIMUN:
-                                     SET_POINT = getRegFloat(SETTING_MAX);
-                                     break;
-                            default:
-                            case SETTING_CLOSE:
-                                 USER_AOUT_SET(DAC1,0.0);
-                                 compute_falg = 0;
-                                 break;
-                            case SETTING_MIDIUM:
-                                switch (temp_inp_sens_type)
-                                {
-                                    case DISCRETE_INPUT:
-                                        SET_POINT =getRegFloat(SETTING_MID);
-                                        break;
-                                    case ROOM_CONTROLLER:
-                                        SET_POINT = ComputeSetPoint();
-                                        break;
-                                    case ANALOG_SENSOR:
-                                    case STATIC_TERMSENSOR:
-                                        SET_POINT = UPDATE_COOFCAV (temp_inp_sens_type , temp_control_state);
-                                        break;
-                                }
-                        }
-                        if (compute_falg)
-                        {
-                              PID_Compute(&TPID,pid_input);
-                              float PID_Out = PIDOut/1000.0;
-                              USER_AOUT_SET(DAC1,PID_Out);
-                         }
-                         Channel2Reg(GetChanne2Setting());
+                        *cal_flag = 0;                                                   
+                        user_dout_set(OUT_2, 0);
+                        task_fsm = USER_PROCCES_WORK;
+                        //xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_REINIT, eSetValueWithOverwrite);
                     }
                 }
-                if ( ++zero_calibration_timer >= ( getReg8(AUTO_CALIB_TIMER)*3600*100))
-                {              
-                    __switch_to_calibration_state();      
-                }
-                break;
-            case USER_PROCESS_ZERO_CALIB:                
-                if (start_clear_timer >= (getReg16(ZERO_POINT_TIMEOUT) * 100) )
-                {
-                    if (*cal_flag == 0)
-                    {
-                        CalibrateZeroStart();
-                        *cal_flag = 1;
-                    }
-                    else
-                    {
-                        if (CalibrationZeroWhait())
-                        {
-                            *cal_flag = 0;                                                        
-                            eSetDUT(OUT_2, 0);
-                            xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_REINIT, eSetValueWithOverwrite);
-                            task_fsm = USER_PROCCES_WORK;
-                        }
-                    }
-                }
-                else
-                {
-                    if (start_clear_timer == 0) 
-                    {
-                        xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_REINIT, eSetValueWithOverwrite);
-                    }
-                    start_clear_timer++;
-                    eSetDUT(OUT_2, 1);                    
-                }
-                break;
-            case USER_PROCESS_ALARM:
-
-                if ((error_state & (DIN_ERROR | ANALOG_SENSOR_ERROR)) == 0)
-                {
-                    task_fsm = USER_PROCCES_IDLE;
-                }
-                else
-                {
-                    USER_AOUT_SET(DAC1,0.0);
-                    USER_AOUT_SET(DAC2,0.0);
-                }
-                break;
-            case USER_PROCESS_DOUBLE_CHANNEL_ERROR:
-                printf("dcherr\r\n");
-                if (error_state & FIRST_CHANNEL_ERROR)
-                {
-                    USER_AOUT_SET(DAC2,0.0);
-                    USER_AOUT_SET(DAC1,10.0);
-                }
-                else if (error_state & SECOND_CHANNEL_ERROR)
-                {
-                    USER_AOUT_SET(DAC1,0.0);
-                    USER_AOUT_SET(DAC2,10.0);
-
-                }
-                else
-                {
-                    task_fsm = USER_PROCCES_IDLE;
-                }
-                break;
-
+            }
+            else
+            {
+                start_clear_timer++;
+                user_dout_set(OUT_2, 1);
+                //xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_REINIT, eSetValueWithOverwrite);
+            }
+            break;
+        case USER_PROCESS_ALARM:
+            if ((error_state & (DIN_ERROR | ANALOG_SENSOR_ERROR)) == 0)
+            {
+                task_fsm = USER_PROCCES_IDLE;
+            }
+            else
+            {
+                USER_AOUT_SET(DAC1,0.0);
+                USER_AOUT_SET(DAC2,0.0);
+            }
+            break;
+        case USER_PROCESS_DOUBLE_CHANNEL_ERROR:
+            printf("dcherr\r\n");
+            if (error_state & FIRST_CHANNEL_ERROR)
+            {
+                USER_AOUT_SET(DAC2,0.0);
+                USER_AOUT_SET(DAC1,10.0);
+            }
+            else if (error_state & SECOND_CHANNEL_ERROR)
+            {
+                USER_AOUT_SET(DAC1,0.0);
+                USER_AOUT_SET(DAC2,10.0);
+            }
+            else
+            {
+                task_fsm = USER_PROCCES_IDLE;
+            }
+            break;
     }
 }
-
 
 static void __switch_to_calibration_state()
 {
@@ -693,55 +646,54 @@ static void __switch_to_calibration_state()
     zero_calibration_timer = 0;
 }
 
-
 void VoltageControlCheck( AC_VOLTAGE_CONTROL_t * ac_control)
 {
-    if ( ac_control->power_on_flag)
+    if (ac_control->power_on_flag)
     {
-         if ( ac_control->Voltage >= (uint16_t)getReg8(HIGH_VOLTAGE_ON))
-         {
-             if ((error_state & HIGH_VOLTAGE_ERROR) == 0)
-             {
-                 if  (++ac_control->high_voltage_timeout>100)
-                 {
-                     error_state |= HIGH_VOLTAGE_ERROR;
-                     vADDRecord(HIGH_VOLTAGE_ERROR);
-                 }
-             }
-         }
-         else
-             ac_control->high_voltage_timeout = 0;
-
-         if ( ac_control->Voltage <= (uint16_t)getReg8(LOW_VOLTAGE_ON))
-         {
-             if ((error_state & LOW_VOLTAGE_ERROR) == 0)
-             {
-                 if  (++ac_control->low_voltage_timeout>100)
-                 {
-                     error_state |= LOW_VOLTAGE_ERROR;
-                     vADDRecord(LOW_VOLTAGE_ERROR);
-                 }
-             }
-         }
-         else
-             ac_control->low_voltage_timeout = 0;
-         if  ((ac_control->Voltage <= (uint16_t)getReg8(HIGH_VOLTAGE_OFF)) && ( ac_control->Voltage >=  (uint16_t)getReg8(LOW_VOLTAGE_OFF)))
-         {
-             error_state &= (~(LOW_VOLTAGE_ERROR | HIGH_VOLTAGE_ERROR ));
-         }
-         if ( ac_control->Voltage < 20 )
-         {
-             if    (++ac_control->power_off_timeout> 2)
-              {
-                     HAL_ResetBit(LDCDATA_2_3_E_REW_CD_LED_Port,  LCDLED_Pin);
-                     SaveBeforePowerOff();
-                     ac_control->power_on_flag = 0;
-                     ac_control->power_off_flag = 1;
-                     task_fsm = USER_PROCCES_IDLE;
-              }
-         }
-         else {
-             ac_control->power_off_timeout = 0;
+        if (ac_control->Voltage >= (uint16_t)getReg8(HIGH_VOLTAGE_ON))
+        {
+            if ((error_state & HIGH_VOLTAGE_ERROR) == 0)
+            {
+                if  (++ac_control->high_voltage_timeout>100)
+                {
+                    error_state |= HIGH_VOLTAGE_ERROR;
+                    vADDRecord(HIGH_VOLTAGE_ERROR);
+                }
+            }        
+        }
+        else
+            ac_control->high_voltage_timeout = 0;
+        if ( ac_control->Voltage <= (uint16_t)getReg8(LOW_VOLTAGE_ON))
+        {            
+            if ((error_state & LOW_VOLTAGE_ERROR) == 0)
+            {
+                if  (++ac_control->low_voltage_timeout>100)
+                {
+                    error_state |= LOW_VOLTAGE_ERROR;
+                    vADDRecord(LOW_VOLTAGE_ERROR);
+                }            
+            }
+        }
+        else
+            ac_control->low_voltage_timeout = 0;
+        if  ((ac_control->Voltage <= (uint16_t)getReg8(HIGH_VOLTAGE_OFF)) && ( ac_control->Voltage >=  (uint16_t)getReg8(LOW_VOLTAGE_OFF)))
+        {
+            error_state &= (~(LOW_VOLTAGE_ERROR | HIGH_VOLTAGE_ERROR ));
+        }
+        if (ac_control->Voltage < 20)
+        {
+            if  (++ac_control->power_off_timeout> 2)
+            {
+                HAL_ResetBit(LDCDATA_2_3_E_REW_CD_LED_Port,  LCDLED_Pin);
+                SaveBeforePowerOff();
+                ac_control->power_on_flag = 0;
+                ac_control->power_off_flag = 1;
+                task_fsm = USER_PROCCES_IDLE;
+            }
+        }
+        else 
+        {
+            ac_control->power_off_timeout = 0;
         }
     }
     else
@@ -749,13 +701,12 @@ void VoltageControlCheck( AC_VOLTAGE_CONTROL_t * ac_control)
         if  ( ac_control->Voltage >= (uint16_t)getReg8(LOW_VOLTAGE_OFF) ) ac_control->power_on_flag = 1;
         if ((ac_control->Voltage >40) && (ac_control->power_off_flag))
         {
-              vTaskDelay(10);
-              NVIC_SystemReset();
+            vTaskDelay(10);
+            NVIC_SystemReset();
         }
     }
 
 }
-
 
 void user_process_task(void *pvParameters)
 {
@@ -776,29 +727,40 @@ void user_process_task(void *pvParameters)
    PID_SetOutputLimits(&TPID3,(float)0000.0,(float)10000.0);
    while(1)
    {
-       vTaskDelay(10);
-
-       if (MB_TASK_GetMode()!=2)
-       {
-           ac_contorl.Voltage = (uint16_t)getAIN(AC220);
-           VoltageControlCheck(&ac_contorl);
-           if (process_mode == DEV_FMCH )
-                   vFMCH_FSM(  &Dev );
-           else
-                   vCDV_FSM(&flag, &Dev  );
-
-           //Ecли есть ошибка включаем реле и зажигаем светодиод
-           if ( error_state )
-           {
-                 HAL_ResetBit(CRACH_Port,  CRACH_Pin);
-                 eSetDUT(OUT_3,TRUE);
-           }
-           else
-           {
-                 HAL_SetBit(CRACH_Port,  CRACH_Pin);
-                 eSetDUT(OUT_3,FALSE);
-           }
-       }
-   }
+        vTaskDelay(10);
+        if (MB_TASK_GetMode()!=2)
+        {
+            ac_contorl.Voltage = (uint16_t)getAIN(AC220);
+            VoltageControlCheck(&ac_contorl);
+            if (process_mode == DEV_FMCH )
+            {
+                vFMCH_FSM(  &Dev );
+            }
+            else 
+            {
+                vCDV_FSM(&flag, &Dev  );
+            }
+            //Ecли есть ошибка включаем реле и зажигаем светодиод
+            if ( error_state )
+            {
+                HAL_ResetBit(CRACH_Port,  CRACH_Pin);
+                user_dout_set(OUT_3,TRUE);
+            }
+            else
+            {
+                HAL_SetBit(CRACH_Port,  CRACH_Pin);
+                user_dout_set(OUT_3,FALSE);
+            }
+        }
+    }
 }
 
+/// Функция установки состония дискрентого выхода и перезапуска индикатора, если состоние поменялось
+void user_dout_set(OUT_NAME_TYPE ucCh, uint8_t state)
+{
+    if (eGetDOUT(ucCh) != state)
+    {
+        xTaskNotifyIndexed(*(getLCDTaskHandle()), 0, LCD_REINIT, eSetValueWithOverwrite);
+    }
+    eSetDUT(ucCh,state);
+}

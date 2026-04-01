@@ -5,7 +5,7 @@
 			"type": "mrs-debugger",
 			"request": "launch",
 			"name": "FreeModbus",
-			"cwd": "c:\\Users\\smoke\\Documents\\FreeModbusProjetc",
+			"cwd": "c:\\Users\\dymov-i.d\\Documents\\FreeModbusProjetc",
 			"openOCDCfg": {
 				"useLocalOpenOCD": true,
 				"executable": "c:/MounRiver/MounRiver_Studio2/resources/app/resources/win32/components/WCH/OpenOCD/OpenOCD/bin/openocd.exe",
@@ -39,8 +39,8 @@
 					"additionalCommands": []
 				},
 				"loadedFiles": {
-					"executableFile": "c:\\Users\\smoke\\Documents\\FreeModbusProjetc\\obj\\FreeModbus.elf",
-					"symbolFile": "c:\\Users\\smoke\\Documents\\FreeModbusProjetc\\obj\\FreeModbus.elf",
+					"executableFile": "c:\\Users\\dymov-i.d\\Documents\\FreeModbusProjetc\\obj\\FreeModbus.elf",
+					"symbolFile": "c:\\Users\\dymov-i.d\\Documents\\FreeModbusProjetc\\obj\\FreeModbus.elf",
 					"executableFileOffset": 0,
 					"symbolFileOffset": 0
 				},
