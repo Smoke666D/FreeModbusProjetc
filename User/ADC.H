@@ -10,15 +10,34 @@
 
 #include "main.h"
 
-#define DC_CHANNEL 7
-#define DC_CONVERSION_NUMBER 3
-#define AC_CONVERION_NUMBER 1500
-#define ADC_CHANNEL 2
-#define R2   75
-#define R1   470
 
-#define ADC1_DATA_READY 0x04
-#define ADC2_DATA_READY 0x02
+#define I2C_SENSOR_1          0
+#define I2C_SENSOR_2          1
+#define I2C_SENSOR_CNT        2
+#define ADC1_CH_COUNT         2
+#define DC_CHANNEL            7
+#define DC_CONVERSION_NUMBER  3
+#define AC_CONVERION_NUMBER   1500
+#define ADC_CHANNEL           2
+#define R2                    75
+#define R1                    470
+#define CALIB_COUNT           10
+#define ADC1_DATA_READY       0x04
+#define ADC2_DATA_READY       0x02
+#define DC_24_BufferSize      3
+#define DC_AIN_BufferSize     10
+#define Sens_BufferSize_MAX   400
+#define SENOR_MAX_DATA        1000
+#define AIN1_ERROR            0x01
+#define AIN2_ERROR            0x02
+#define AIN3_ERROR            0x04
+#define MIN_BAR_VALUE         -2500
+#define MAX_BAR_VALUE         2500
+#define MIN_VDD_VALUE         0.177
+#define MAX_VDD_VALUE         2.7
+#define SICLE_I2C             100
+#define VDD_RANGE             (MAX_VDD_VALUE - MIN_VDD_VALUE)
+#define DELTA                 ((MAX_VDD_VALUE -MIN_VDD_VALUE )/(MIN_BAR_VALUE -  MAX_BAR_VALUE))
 
 typedef enum
 {
