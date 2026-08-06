@@ -39,17 +39,53 @@
 #define VDD_RANGE             (MAX_VDD_VALUE - MIN_VDD_VALUE)
 #define DELTA                 ((MAX_VDD_VALUE -MIN_VDD_VALUE )/(MIN_BAR_VALUE -  MAX_BAR_VALUE))
 
+#define NEW_PRESS_SENS
+
+
+#ifdef NEW_PRESS_SENS
+
+#define SENSOR_ADDR 0x58
+#define CMD_REG_ADDR 0x01
+#define STATUS_MASK 0x20
+#define START_COMMAND 0x01
+#define DALA_MSB 0x04
+#define DATA_CSB 0x05
+#define DATA_LSB 0X06
+#define TEMM_MSB 0x07
+#define TEMP_LSB 0x08
+#define TEMP_COOF_MSB 0x20
+#define TEMP_COOF_LSB 0x21
+#define BYTE1_INDEX 8
+#define BYTE2_INDEX 9
+#define PMAX  2500.0
+#define PMIN  -2500.0
+
+#else
+#define SENSOR_ADDR 0x6D
+#define CMD_REG_ADDR 0x30
+#define STATUS_MASK 0x08
+#define START_COMMAND 0x0A
+#define DALA_MSB 0x06
+#define DATA_CSB 0x07
+#define DATA_LSB 0X08
+#define TEMM_MSB 0x09
+#define TEMP_LSB 0x0A
+#endif
+
+
 typedef enum
 {
-  SENSOR_START_CONVERSION = 0,
-  SENSOR_GET_STATUS       = 1,
-  SENSOR_GET_PERS_1       = 2,
-  SENSOR_GET_PERS_2       = 3,
-  SENSOR_GET_PERS_3       = 4,
-  SENSOR_GET_TEMP_1       = 5,
-  SENSOR_GET_TEMP_2       = 6,
-  SENSOR_IDLE             = 7,
-  SENSOR_TIME_OUT         = 8,
+    SENSOR_START_CONVERSION = 0,
+    SENSOR_GET_STATUS = 1,
+    SENSOR_GET_PERS_1 = 2,
+    SENSOR_GET_PERS_2 = 3,
+    SENSOR_GET_PERS_3 = 4,
+    SENSOR_GET_TEMP_1 = 5,
+    SENSOR_GET_TEMP_2 = 6,
+    SENSOR_IDLE = 7,
+    SENSOR_TIME_OUT = 8,
+    SENSOR_READ_TEMP_COOF_1 = 9,
+    SENSOR_READ_TEMP_COOF_2 = 10,
 } SENSOR_FSM_t;
 
 typedef enum
