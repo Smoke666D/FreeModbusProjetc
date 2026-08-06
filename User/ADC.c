@@ -579,7 +579,7 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  in
          case SENSOR_GET_STATUS:
               if (GetI2CDataFSM(i2c, CMD_REG_ADDR,&status,fsm) == 1)
               {
-                  if ((status & STATUS_MASK) == STATUS_MASK)
+                  if ((status & STATUS_MASK) == DATA_READY_MASK)
                   {
                       *SENS_FSM = SENSOR_GET_PERS_1;
                   }

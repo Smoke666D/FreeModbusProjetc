@@ -39,7 +39,7 @@
 #define VDD_RANGE             (MAX_VDD_VALUE - MIN_VDD_VALUE)
 #define DELTA                 ((MAX_VDD_VALUE -MIN_VDD_VALUE )/(MIN_BAR_VALUE -  MAX_BAR_VALUE))
 
-#define NEW_PRESS_SENS
+//#define NEW_PRESS_SENS
 
 
 #ifdef NEW_PRESS_SENS
@@ -47,6 +47,7 @@
 #define SENSOR_ADDR 0x58
 #define CMD_REG_ADDR 0x01
 #define STATUS_MASK 0x20
+#define DATA_READY_MASK STATUS_MASK
 #define START_COMMAND 0x01
 #define DALA_MSB 0x04
 #define DATA_CSB 0x05
@@ -64,6 +65,7 @@
 #define SENSOR_ADDR 0x6D
 #define CMD_REG_ADDR 0x30
 #define STATUS_MASK 0x08
+#define DATA_READY_MASK 0
 #define START_COMMAND 0x0A
 #define DALA_MSB 0x06
 #define DATA_CSB 0x07
