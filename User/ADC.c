@@ -217,13 +217,11 @@ float getAIN( AIN_CHANNEL_t channel)
             else
             return (temp_float);
        case DIG_TEMP:
-        return temp_snes_data[0];
-        //   return ((float)GetConversional(&DataBuffer[9])/256);
+           return ((float)GetConversional(&DataBuffer[9])/256);
        case DIG_PRES:
            return (float)(sens_press);
        case DIG2_TEMP:
-           return temp_snes_data[1];
-           //return ((float)GetConversional(&DataBuffer[10])/256);
+           return ((float)GetConversional(&DataBuffer[10])/256);
        case DIG2_PRES:
            return (float)(sens_press1);
         case AC220:
@@ -635,7 +633,6 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  in
                    AddBufferDataI2C(&DataBuffer[index], *sens_press  );
                    *SENS_FSM = SENSOR_GET_TEMP_1;
                    *fsm = I2C_GET_BUSY;
-
                 }
                 break;
             case SENSOR_GET_TEMP_1:
@@ -649,61 +646,19 @@ static void vSensFSM(u8 channel , SENSOR_FSM_t  * SENS_FSM, I2C_FSM_t * fsm,  in
                 if ( GetI2CDataFSM(i2c, TEMP_LSB, &i2cdata[index][4],fsm) == 1)
                 {                                            
 #ifdef NEW_PRESS_SENS
-                        *SENS_FSM = SENSOR_READ_TEMP_COOF_1;
+                    AddBufferData(&DataBuffer[index ? 10 : 9], 0);
 #else
-                     uint16_t sens_temp = i2cdata[index][3]<<8 | i2cdata[index][4];
-                      if (sens_temp > 32768)
-                             temperature = (sens_temp -65536);
-                      else
-                          temperature = sens_temp;
-                        AddBufferData(&DataBuffer[index ? 10 : 9], temperature);
-                        *SENS_FSM = SENSOR_IDLE;
+                    uint16_t sens_temp = i2cdata[index][3]<<8 | i2cdata[index][4];
+                    if (sens_temp > 32768)
+                           temperature = (sens_temp -65536);
+                    else
+                        temperature = sens_temp;
+                    AddBufferData(&DataBuffer[index ? 10 : 9], temperature);
+
 #endif
-                        *fsm = I2C_GET_BUSY;
-                }
-#ifdef NEW_PRESS_SENS
-            case SENSOR_READ_TEMP_COOF_1:
-                 if ( GetI2CDataFSM(i2c, TEMP_COOF_MSB, &i2cdata[index][BYTE1_INDEX],fsm) == 1)
-                {
-                    *SENS_FSM = SENSOR_READ_TEMP_COOF_2;
-                    *fsm = I2C_GET_BUSY;
-                }
-                break;
-            case SENSOR_READ_TEMP_COOF_2:
-                if ( GetI2CDataFSM(i2c, TEMP_COOF_LSB, &i2cdata[index][BYTE2_INDEX],fsm) == 1)
-                {
-                    uint16_t sens_temp = i2cdata[index][3] << 8 | i2cdata[index][4];
-
-                    int32_t EOFFout;
-                    uint32_t shiftN;
-                    int16_t out_temp;
-                    switch ( i2cdata[index][BYTE1_INDEX] )
-                    {
-                        case 0x0C: EOFFout = 4096;  break;
-                        case 0x8C: EOFFout = -4096; break;
-                        case 0x0D: EOFFout = 8192;  break;
-                        case 0x8D: EOFFout = -8192; break;
-                        case 0x0E: EOFFout = 16384; break;
-                        case 0x8E: EOFFout = -16384;break;
-                        default: EOFFout = 0;       break;
-                    }
-
-                    int32_t _temp = (sens_temp > 32768) ? (sens_temp - 65536) : sens_temp;
-                    _temp = _temp - EOFFout;
-
-                    shiftN = (uint32_t)(i2cdata[index][BYTE2_INDEX] / 10.0);
-                    float temp_f = (float)_temp / (1 << shiftN) + 25;
-
-                    temp_snes_data[index ? 1 : 0] = temp_f;
-
-
-                    out_temp = (int16_t)(temp_f * 256.0f);
-                    AddBufferData(&DataBuffer[index ? 10 : 9], out_temp);
                     *SENS_FSM = SENSOR_IDLE;
                     *fsm = I2C_GET_BUSY;
                 }
-                break;
-#endif
                 break;
             case SENSOR_IDLE:
                 *fsm = I2C_GET_BUSY;
